@@ -9,5 +9,5 @@
 | 48.4 | Card lê só da `aulas` (`indice-aula-repositorio.js`, `indice-aula-data.js`) | ✅ Concluído | 2026-10-06 | `node --check` |
 | 48.5 | Modal CRUD da aula com lista de atividades (Editar / Excluir / Nova) (`indice-aula-modal.js`, `atividades-crud-modal.js`) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
 | 48.6 | Regras no `CLAUDE.md` (card 100% `aulas`, modal CRUD, rótulo "AULA NN", 1 card = 1 aula) | ✅ Concluído | 2026-10-06 | Leitura |
-| 48.7 | Rótulos fora do padrão "AULA NN" (28 aulas) — decisão do usuário | ⬜ Pendente | — | Lista para o usuário preencher: `docs/rotulos-aulas-ajustar.md` |
+| 48.7 | Rótulos fora do padrão "AULA NN" (28 aulas) — decisão do usuário — falta: o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite | 👀 Aguardando o usuário | — | Lista para o usuário preencher: `docs/rotulos-aulas-ajustar.md` |
 | 48.8 | Aceite do usuário | ⬜ Pendente | — | — |

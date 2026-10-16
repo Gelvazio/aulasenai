@@ -8,7 +8,7 @@ Remove seções menos críticas de forma inteligente para atingir 14.800–14.95
 import os
 import re
 
-BASE_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BASE_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
 
 # Matérias que estão acima e precisam ser ajustadas
 MATERIAS_ACIMA = [

@@ -1,9 +1,16 @@
 // Professor: depois de escolher um aluno em "Respostas dos alunos", mostra embaixo da prova o
-// botão "✅ Finalizar Atividade". Ao clicar, confere se o aluno entregou e se todas as alternativas
-// respondidas têm a nota do professor (botões Certa / Meia certa / Errada) e lança a nota:
+// botão "✅ Confirmar Correção" (só para o professor; o aluno mantém o "Finalizar"). Ao clicar,
+// confere se o aluno entregou e se todas as alternativas respondidas têm a nota do professor
+// (botões Certa / Meia certa / Errada). A alternativa ainda sem nota do professor que a IA marcou
+// como CERTA (nota da IA cheia) é confirmada com a nota da IA; as demais (meia certa, errada ou
+// sem nota da IA) o professor é obrigado a corrigir (tarefa #154). Então lança a nota:
 // soma das notas confirmadas ÷ pontos da prova × 10 × (total de questões ÷ mínimo do aluno),
 // no máximo 10 — a mesma conta da função notas_media_final, que leva a nota à média final.
 // As notas confirmadas já são definitivas (trigger correcao_discursiva_validar).
+// Prova já corrigida (entregue e com a nota do professor em todas as respondidas, mesma regra de
+// assets/js/corrigidos-discursiva.js): no lugar do botão, só a mensagem "Prova Já Corrigida!"
+// (tarefa #169); depois de confirmar, o combo "Pendente Correcao" é atualizado. O aluno não vê
+// este bloco (mantém a mensagem dele).
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js e assets/js/popup.js.
 // Regra: docs/regras/atividades.md
 
@@ -12,7 +19,11 @@ const SELETOR_DESTINO_FINALIZAR = '.content-section';
 const SELETOR_ENTREGA_FINALIZAR = '.entrega-discursiva';
 const ROTA_MINIMO_FINALIZAR = '/rest/v1/rpc/minimo_questoes_para_entregar';
 const NOTA_MAXIMA_FINALIZAR = 10;
+const TITULO_POPUP_CONFIRMAR_CORRECAO = 'Confirmar Correção';
+const TEXTO_BOTAO_CONFIRMAR_CORRECAO = '✅ Confirmar Correção';
 const TOLERANCIA_FINALIZAR = 0.001;
+const MSG_PROVA_JA_CORRIGIDA = 'Prova Já Corrigida!';
+const CLASSE_JA_CORRIGIDA = CLASSE_FINALIZAR + '__corrigida';
 const BASE_SCRIPTS_FINALIZAR = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -50,11 +61,54 @@ async function lerDadosParaFinalizar(aluno, atividadeId) {
     const [topicos, respostas, correcoes, entregas, minimo] = await Promise.all([
         sbGet('topico_discursivo', 'select=item,topico,pontos&' + filtro),
         sbGet('resposta_discursiva', 'select=item,topico,texto&' + doAluno),
-        sbGet('correcao_discursiva', 'select=item,topico,nota_professor&' + doAluno),
+        sbGet('correcao_discursiva', 'select=item,topico,nota_ia,nota_professor&' + doAluno),
         sbGet('entrega_atividade', 'select=entregue_em&' + doAluno),
         lerMinimoParaFinalizar(atividadeId, aluno.alunoId),
     ]);
     return { topicos, respostas, correcoes, entregue: entregas.length > 0, minimo };
+}
+
+/**
+ * Acha as alternativas respondidas, ainda sem nota do professor, que a IA marcou como certa
+ * (nota da IA cheia) — as únicas que o professor não precisa corrigir à mão.
+ * @param {Object} dados - Resultado de lerDadosParaFinalizar.
+ * @returns {Object[]} Linhas {item, topico, pontos} a confirmar com a nota da IA.
+ */
+function listarCertasDaIaSemNotaDoProfessor(dados) {
+    const chave = (linha) => linha.item + '|' + linha.topico;
+    const correcoes = new Map(dados.correcoes.map((linha) => [chave(linha), linha]));
+    const pontos = new Map(dados.topicos.map((linha) => [chave(linha), Number(linha.pontos)]));
+    return dados.respostas.filter((linha) => (linha.texto || '').trim())
+        .map((linha) => ({ item: linha.item, topico: linha.topico, correcao:
+            correcoes.get(chave(linha)), pontos: pontos.get(chave(linha)) || 0 }))
+        .filter(({ correcao, pontos: cheia }) => {
+            const semNotaDoProfessor = !correcao ||
+                correcao.nota_professor === null || correcao.nota_professor === undefined;
+            const iaMarcouCerta = correcao && correcao.nota_ia !== null &&
+                correcao.nota_ia !== undefined &&
+                Number(correcao.nota_ia) >= cheia - TOLERANCIA_FINALIZAR;
+            return semNotaDoProfessor && cheia > 0 && Boolean(iaMarcouCerta);
+        })
+        .map(({ item, topico, pontos: cheia }) => ({ item, topico, pontos: cheia }));
+}
+
+/**
+ * Confirma no banco, com a nota cheia da IA, as alternativas certas ainda sem nota do professor
+ * e atualiza os dados lidos (a nota confirmada vale na média e não muda mais).
+ * @param {Object[]} certas - Resultado de listarCertasDaIaSemNotaDoProfessor.
+ * @param {{aluno: Object, atividadeId: number, dados: Object}} contexto - Aluno, atividade e
+ *     dados lidos (alterados no lugar: ganham a nota_professor).
+ * @throws {Error} Se o banco recusar alguma gravação.
+ */
+async function confirmarCertasDaIa(certas, contexto) {
+    for (const certa of certas) {
+        await gravarNotaDoProfessor({ aluno_id: contexto.aluno.alunoId,
+            atividade_id: contexto.atividadeId, tentativa: contexto.aluno.tentativa,
+            item: certa.item, topico: certa.topico, nota_professor: certa.pontos });
+        const linha = contexto.dados.correcoes.find((correcao) =>
+            correcao.item === certa.item && correcao.topico === certa.topico);
+        linha.nota_professor = certa.pontos;
+    }
 }
 
 /**
@@ -108,7 +162,8 @@ function motivoParaNaoFinalizar(dados, resultado) {
     if (!resultado.respondidas) return 'O aluno não respondeu nenhuma alternativa.';
     if (!resultado.pendentes) return '';
     return 'Ainda faltam ' + resultado.pendentes + ' alternativa(s) respondida(s) sem a sua ' +
-        'confirmação (✅ Certa / 🟡 Meia certa / ❌ Errada).';
+        'confirmação (✅ Certa / 🟡 Meia certa / ❌ Errada). Só as que a IA marcou como certas ' +
+        'são confirmadas por ela; as demais você precisa corrigir.';
 }
 
 /**
@@ -124,59 +179,137 @@ async function mostrarNotaLancada(resultado, situacao) {
         ' em branco (não contam).';
     situacao.textContent = texto;
     await mostrarPopup(texto + '\n\nA nota já vale na média final do aluno.',
-        { tipo: 'sucesso', titulo: 'Atividade finalizada' });
+        { tipo: 'sucesso', titulo: 'Correção confirmada' });
 }
 
 /**
- * Trata o clique em "Finalizar Atividade".
- * @param {{aluno: Object, atividadeId: number, botao: HTMLElement, situacao: HTMLElement}} tela
- *     Aluno, atividade e elementos do bloco.
+ * Pede a confirmação do professor para aceitar a nota da IA nas certas e as grava.
+ * @param {Object[]} certas - Resultado de listarCertasDaIaSemNotaDoProfessor.
+ * @param {Object} dados - Dados lidos do banco (ganham a nota_professor das certas da IA).
+ * @param {{aluno: Object, atividadeId: number}} tela - Aluno e atividade.
+ * @returns {Promise<boolean>} false se o professor desistiu (nada é gravado).
+ * @throws {Error} Se o banco recusar alguma gravação.
+ */
+async function aceitarCertasDaIa(certas, dados, tela) {
+    if (!certas.length) return true;
+
+    const aceitou = await confirmarPopup(certas.length + ' alternativa(s) sem a sua correção ' +
+        'estão certas pela IA e serão confirmadas com a nota da IA. Depois de confirmada, a ' +
+        'nota só pode ser mudada com uma justificativa, que fica no histórico. Confirmar?',
+    { titulo: TITULO_POPUP_CONFIRMAR_CORRECAO, textoConfirmar: 'Confirmar' });
+    if (!aceitou) return false;
+
+    await confirmarCertasDaIa(certas, { aluno: tela.aluno, atividadeId: tela.atividadeId,
+        dados });
+    return true;
+}
+
+/**
+ * Trata o clique em "Confirmar Correção".
+ * @param {{aluno: Object, atividadeId: number, bloco: HTMLElement, botao: HTMLElement,
+ *     situacao: HTMLElement}} tela - Aluno, atividade e elementos do bloco.
  */
 async function finalizarAtividadeDoAluno(tela) {
     tela.botao.disabled = true;
     try {
         const dados = await lerDadosParaFinalizar(tela.aluno, tela.atividadeId);
-        const resultado = calcularNotaDoAluno(dados);
-        const motivo = motivoParaNaoFinalizar(dados, resultado);
-        if (motivo) {
-            tela.situacao.textContent = '⚠️ ' + motivo;
-            await mostrarPopup(motivo, { tipo: 'aviso', titulo: 'Finalizar Atividade' });
-            return;
-        }
-        await mostrarNotaLancada(resultado, tela.situacao);
+        const certasDaIa = listarCertasDaIaSemNotaDoProfessor(dados);
+        const previa = calcularNotaDoAluno(dados);
+        const pendentesSemIa = { ...previa, pendentes: previa.pendentes - certasDaIa.length };
+        const motivo = motivoParaNaoFinalizar(dados, pendentesSemIa);
+        if (motivo) return await avisarMotivo(motivo, tela);
+
+        if (!await aceitarCertasDaIa(certasDaIa, dados, tela)) return;
+        await mostrarNotaLancada(calcularNotaDoAluno(dados), tela.situacao);
+        mostrarProvaJaCorrigida(tela.bloco);
+        await window.mostrarConfirmacaoProfessor?.(tela.aluno, tela.atividadeId);
+        await window.atualizarPendenteCorrecao?.();
     } catch (erro) {
-        await mostrarPopup('Não foi possível finalizar: ' + erro.message,
-            { tipo: 'erro', titulo: 'Finalizar Atividade' });
+        await mostrarPopup('Não foi possível confirmar a correção: ' + erro.message,
+            { tipo: 'erro', titulo: TITULO_POPUP_CONFIRMAR_CORRECAO });
     } finally {
         tela.botao.disabled = false;
     }
 }
 
 /**
- * Mostra embaixo da prova o botão "Finalizar Atividade" do aluno escolhido (ou limpa).
+ * Mostra por que ainda não dá para confirmar a correção.
+ * @param {string} motivo - Texto do bloqueio.
+ * @param {{situacao: HTMLElement}} tela - Elementos do bloco.
+ */
+async function avisarMotivo(motivo, tela) {
+    tela.situacao.textContent = '⚠️ ' + motivo;
+    await mostrarPopup(motivo, { tipo: 'aviso', titulo: TITULO_POPUP_CONFIRMAR_CORRECAO });
+}
+
+/**
+ * Troca o conteúdo do bloco pela mensagem única "Prova Já Corrigida!".
+ * @param {HTMLElement} bloco - Bloco embaixo da prova.
+ */
+function mostrarProvaJaCorrigida(bloco) {
+    const mensagem = document.createElement('p');
+    mensagem.className = CLASSE_JA_CORRIGIDA;
+    mensagem.textContent = MSG_PROVA_JA_CORRIGIDA;
+    bloco.replaceChildren(mensagem);
+}
+
+/**
+ * Diz se a prova do aluno já foi corrigida: entregue, com alguma resposta e com a nota do
+ * professor em todas as alternativas respondidas.
+ * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<boolean>} true se já corrigida.
+ * @throws {Error} Se o banco recusar.
+ */
+async function provaJaCorrigida(aluno, atividadeId) {
+    const dados = await lerDadosParaFinalizar(aluno, atividadeId);
+    const resultado = calcularNotaDoAluno(dados);
+    return dados.entregue && resultado.respondidas > 0 && resultado.pendentes === 0;
+}
+
+/**
+ * Põe no bloco o botão "Confirmar Correção" e o texto de explicação.
+ * @param {HTMLElement} bloco - Bloco embaixo da prova.
+ * @param {{aluno: Object, atividadeId: number}} contexto - Aluno e atividade.
+ */
+function montarBotaoConfirmarCorrecao(bloco, contexto) {
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = CLASSE_FINALIZAR + '__botao';
+    botao.textContent = TEXTO_BOTAO_CONFIRMAR_CORRECAO;
+    const situacao = document.createElement('p');
+    situacao.className = CLASSE_FINALIZAR + '__situacao';
+    situacao.textContent = 'Lança a nota de ' + (contexto.aluno.nome || 'aluno') + ' com base ' +
+        'nas alternativas que você confirmou (certa, meia certa, errada); as que você não ' +
+        'corrigiu e a IA marcou como certas entram com a nota da IA.';
+    botao.addEventListener('click', () =>
+        finalizarAtividadeDoAluno({ ...contexto, bloco, botao, situacao }));
+    bloco.replaceChildren(botao, situacao);
+}
+
+/**
+ * Mostra embaixo da prova o botão "Confirmar Correção" do aluno escolhido, ou só a mensagem
+ * "Prova Já Corrigida!" se a prova já foi corrigida (ou limpa).
  * @param {{alunoId: string, tentativa: number, nome: string}|null} aluno - Aluno; null limpa.
  * @param {number} atividadeId - Id da atividade.
  */
-function mostrarFinalizarAtividade(aluno, atividadeId) {
+async function mostrarFinalizarAtividade(aluno, atividadeId) {
     limparFinalizarAtividade();
     const destino = document.querySelector(SELETOR_DESTINO_FINALIZAR);
     if (!aluno || !atividadeId || !destino) return;
 
     const bloco = document.createElement('section');
     bloco.className = 'aula-card ' + CLASSE_FINALIZAR;
-    const botao = document.createElement('button');
-    botao.type = 'button';
-    botao.className = CLASSE_FINALIZAR + '__botao';
-    botao.textContent = '✅ Finalizar Atividade';
-    const situacao = document.createElement('p');
-    situacao.className = CLASSE_FINALIZAR + '__situacao';
-    situacao.textContent = 'Lança a nota de ' + (aluno.nome || 'aluno') + ' com base nas ' +
-        'alternativas que você confirmou (certa, meia certa, errada).';
-    botao.addEventListener('click', () =>
-        finalizarAtividadeDoAluno({ aluno, atividadeId, botao, situacao }));
-    bloco.append(botao, situacao);
-    const entrega = destino.querySelector(SELETOR_ENTREGA_FINALIZAR);
-    destino.insertBefore(bloco, entrega);
+    destino.insertBefore(bloco, destino.querySelector(SELETOR_ENTREGA_FINALIZAR));
+    let corrigida = false;
+    try {
+        corrigida = await provaJaCorrigida(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Prova já corrigida:', erro.message);
+    }
+    if (!bloco.isConnected) return;
+    if (corrigida) mostrarProvaJaCorrigida(bloco);
+    else montarBotaoConfirmarCorrecao(bloco, { aluno, atividadeId });
 }
 
 (function incluirEstiloFinalizar() {

@@ -1,0 +1,155 @@
+/* Suspeita de Cópia nas discursivas (só professor): coluna do Progresso da turma e alerta na
+   questão. Módulo: assets/js/suspeita-copia-discursiva.js (tarefa #129). */
+
+:root {
+    --suspeita-vermelho: #c53030;
+    --suspeita-vermelho-escuro: #9b2c2c;
+    --suspeita-fundo: #fff5f5;
+    --suspeita-fundo-forte: #fed7d7;
+    --suspeita-verde: #2f855a;
+    --suspeita-largura-coluna: 170px;
+    --suspeita-tempo-piscar: 1.2s;
+}
+
+/* Progresso da turma: 7ª coluna na grade (as outras 6 iguais às de progresso-turma-global.css). */
+.progresso-turma--com-suspeita .progresso-turma__linha {
+    grid-template-columns: 220px minmax(0, 1fr) 70px 150px 150px 120px
+        var(--suspeita-largura-coluna);
+}
+
+.suspeita-copia__celula {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-end;
+    color: #718096;
+}
+
+.suspeita-copia__item {
+    padding: 2px 6px;
+    border-radius: 8px;
+    background: var(--suspeita-fundo-forte);
+    color: var(--suspeita-vermelho-escuro);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    cursor: help;
+}
+
+.suspeita-copia__liberado {
+    padding: 2px 6px;
+    border-radius: 8px;
+    background: #e6fffa;
+    color: var(--suspeita-verde);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.suspeita-copia__aluno-botao {
+    padding: 2px 8px;
+    border: 1px solid var(--suspeita-verde);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--suspeita-verde);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.suspeita-copia__item--confirmada {
+    background: var(--suspeita-vermelho);
+    color: #fff;
+}
+
+/* Questão com suspeita pendente: a questão inteira em vermelho, piscando. */
+.questao-discursiva--suspeita-copia {
+    border: 3px solid var(--suspeita-vermelho);
+    animation: suspeita-copia-piscar var(--suspeita-tempo-piscar) ease-in-out infinite;
+}
+
+@keyframes suspeita-copia-piscar {
+    0%, 100% { background-color: var(--suspeita-fundo); box-shadow: 0 0 0 0 transparent; }
+    50% {
+        background-color: var(--suspeita-fundo-forte);
+        box-shadow: 0 0 14px 2px rgba(197, 48, 48, 0.55);
+    }
+}
+
+.suspeita-copia__alerta {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--suspeita-vermelho);
+    color: #fff;
+}
+
+.suspeita-copia__alerta--confirmada {
+    background: var(--suspeita-vermelho-escuro);
+}
+
+.suspeita-copia__titulo {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.suspeita-copia__parecido {
+    font-size: 13px;
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+.suspeita-copia__botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.suspeita-copia__botao {
+    padding: 7px 14px;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.suspeita-copia__botao--nao {
+    background: #fff;
+    color: var(--suspeita-verde);
+}
+
+.suspeita-copia__botao--sim {
+    background: var(--suspeita-vermelho-escuro);
+    color: #fff;
+}
+
+@media (max-width: 700px) {
+    .progresso-turma--com-suspeita .progresso-turma__linha {
+        grid-template-columns: 1fr;
+    }
+
+    .suspeita-copia__celula {
+        justify-content: flex-start;
+    }
+}
+
+/* Quem pede menos movimento no sistema: borda e fundo fortes, sem piscar. */
+@media (prefers-reduced-motion: reduce) {
+    .questao-discursiva--suspeita-copia {
+        animation: none;
+        background-color: var(--suspeita-fundo-forte);
+    }
+}
+
+@media print {
+    .suspeita-copia__alerta,
+    .suspeita-copia__celula {
+        display: none;
+    }
+}

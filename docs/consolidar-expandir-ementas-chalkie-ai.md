@@ -85,7 +85,7 @@ import json
 from pathlib import Path
 from collections import defaultdict
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 
 def get_file_size(filepath):
@@ -225,7 +225,7 @@ if __name__ == "__main__":
 **Verificação:**
 
 ```powershell
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 python consolidar-ementas.py
 ```
 
@@ -242,7 +242,7 @@ Esperado: Relatório JSON com ações executadas, 5 duplicatas deletadas.
 **Comando:**
 
 ```powershell
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 python consolidar-ementas.py
 ```
 
@@ -250,7 +250,7 @@ python consolidar-ementas.py
 
 ```powershell
 # Verificar que não há mais DOCUMENTACAO/EMENTA-CHALKIE-AI.md duplicados
-Get-ChildItem -Recurse -Path "C:\fontes\aulas-senai\MATERIAIS" -Filter "EMENTA-CHALKIE-AI.md" | Group-Object -Property Name | Where-Object { $_.Count -gt 1 }
+Get-ChildItem -Recurse -Path "C:\fontes\aulasenai\MATERIAIS" -Filter "EMENTA-CHALKIE-AI.md" | Group-Object -Property Name | Where-Object { $_.Count -gt 1 }
 ```
 
 Esperado: 0 duplicatas encontradas (output vazio)
@@ -268,9 +268,9 @@ Esperado: 0 duplicatas encontradas (output vazio)
 ```powershell
 # Encontrar e deletar duplicatas
 $patterns = @(
-    "C:\fontes\aulas-senai\MATERIAIS\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md",
-    "C:\fontes\aulas-senai\MATERIAIS\*\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md",
-    "C:\fontes\aulas-senai\MATERIAIS\*\*\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md"
+    "C:\fontes\aulasenai\MATERIAIS\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md",
+    "C:\fontes\aulasenai\MATERIAIS\*\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md",
+    "C:\fontes\aulasenai\MATERIAIS\*\*\*\DOCUMENTACAO\EMENTA-CHALKIE-AI.md"
 )
 
 foreach ($pattern in $patterns) {
@@ -283,7 +283,7 @@ Write-Host "✅ Duplicatas removidas"
 **Verificação:**
 
 ```powershell
-Get-ChildItem -Recurse -Path "C:\fontes\aulas-senai\MATERIAIS" -Filter "EMENTA-CHALKIE-AI.md" | Measure-Object
+Get-ChildItem -Recurse -Path "C:\fontes\aulasenai\MATERIAIS" -Filter "EMENTA-CHALKIE-AI.md" | Measure-Object
 ```
 
 Esperado: Count = 25 (uma por disciplina, todas em RAIZ)
@@ -316,7 +316,7 @@ import os
 import re
 from pathlib import Path
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 TEMPLATE_PATH = PROJECT_ROOT / "TEMPLATE-EMENTA-CHALKIE-AI.md"
 
@@ -550,7 +550,7 @@ if __name__ == "__main__":
 **Verificação:**
 
 ```powershell
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 python expandir-ementas.py
 ```
 
@@ -577,7 +577,7 @@ import os
 import json
 from pathlib import Path
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 
 PADRAO_MIN = 14800
@@ -652,7 +652,7 @@ if __name__ == "__main__":
 **Verificação:**
 
 ```powershell
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 python validar-ementas-final.py
 ```
 
@@ -669,7 +669,7 @@ Esperado: "✅ SUCESSO! Todas as 25 ementas estão dentro do padrão!" + saída 
 **Comandos:**
 
 ```powershell
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 
 # Status geral
 git status

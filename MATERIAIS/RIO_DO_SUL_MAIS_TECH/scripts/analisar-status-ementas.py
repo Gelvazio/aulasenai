@@ -12,7 +12,7 @@ import os
 import re
 from datetime import datetime
 
-BASE_MATERIAIS = r"C:\fontes\aulas-senai\MATERIAIS"
+BASE_MATERIAIS = r"C:\fontes\aulasenai\MATERIAIS"
 
 # Cursos válidos (cada pasta = 1 curso)
 CURSOS = {}

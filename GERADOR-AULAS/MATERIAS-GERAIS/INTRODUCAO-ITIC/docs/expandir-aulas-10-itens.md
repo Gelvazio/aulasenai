@@ -46,7 +46,7 @@ Expandir significativamente o arquivo `PLANO-DE-AULAS.md` para detalhar completa
 ### Etapa 1: Leitura da Ementa Completa
 - **Status:** ⬜ Pendente
 - **Ação:** Ler completamente `EMENTA-INTRODUCAO-TENOLOGIA-INFORMACAO.md` para extrair todos os tópicos
-- **Arquivo:** `C:\fontes\aulas-senai\MATERIAIS\OPERADOR-PRODUCAO-INDUSTRIAL\INTRODUCAO-TIC\EMENTA-INTRODUCAO-TENOLOGIA-INFORMACAO.md`
+- **Arquivo:** `C:\fontes\aulasenai\MATERIAIS\OPERADOR-PRODUCAO-INDUSTRIAL\INTRODUCAO-TIC\EMENTA-INTRODUCAO-TENOLOGIA-INFORMACAO.md`
 - **Verificação:** Confirmar que entendi todos os 10 domínios de conhecimento (4.1-4.10) + 5 capacidades
 
 ### Etapa 2: Estruturar Seção 3 — Detalhamento por Aula

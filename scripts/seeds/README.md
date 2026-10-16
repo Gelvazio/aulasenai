@@ -23,10 +23,11 @@ repositório. Rascunhos (lotes, JSON) ficam numa pasta temporária, nunca no rep
 
 | Comando | O que faz |
 |---|---|
+| `python3 scripts/status-materias/gerar_status_materia.py` | Gera o `STATUS_MATERIA.md` de **todas** as matérias (situação pelos arquivos da pasta; Banco pelo `database/SEEDS-APLICADOS.md`) e o `tasks/ORDEM-MATERIAS.md`; sobrescreve (não editar à mão) |
 | `python3 scripts/status-materias/criar_status_aulas.py` | Cria `AULAS/STATUS-AULAS.md` (todas as aulas em ⬜, 1 a cada 4 h da ementa) nas matérias que não têm |
 | `SAIDA_LISTA=/tmp/criados.txt python3 scripts/status-materias/criar_status_faltantes.py` | Cria `STATUS-ATIVIDADES.md`, `STATUS-EMENTAS.md` e `STATUS-APOSTILA.md` que faltam (só a estrutura) e lista os criados |
 
-Nenhum dos dois sobrescreve arquivo existente.
+Os dois `criar_*` não sobrescrevem arquivo existente.
 
 ## Aulas de Banco de Dados (`scripts/banco-de-dados/`)
 

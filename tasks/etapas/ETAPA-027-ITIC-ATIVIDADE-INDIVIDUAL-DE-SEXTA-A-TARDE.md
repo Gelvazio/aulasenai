@@ -13,4 +13,4 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 27.4 | Aplicar o seed no Supabase (sem ele a marcação das respostas fica bloqueada) | ✅ Concluído | 2026-10-06 | Atividade id 80 (aula 27), ativa e liberada para todas as turmas; 40 itens no gabarito (10 de cada letra) |
 | 27.5 | Bloquear para a turma da manhã (135080) pela função `definir_bloqueio_turma`, como o Professor Administrador | ✅ Concluído | 2026-10-06 | `atividade.bloqueio` = ["135080"], `ativo` = true |
 | 27.6 | Card da atividade no índice de atividades da ITIC (`ATIVIDADES/index.html`, feito à mão) | ✅ Concluído | 2026-10-06 | Card após o trabalho v2; só o link `.html` da atividade (o bloqueio por turma acha o card) |
-| 27.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 27.7 | Aceite do usuário: atividade individual da ITIC, sexta à tarde | 👀 Aguardando o usuário | — | — |

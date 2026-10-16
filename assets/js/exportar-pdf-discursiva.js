@@ -10,6 +10,8 @@
 // CAPACIDADES) e rótulo junto do texto, para caber em menos folhas. PDF sem respostas
 // (<body data-pdf-sem-respostas="sim">): o PDF sai sem as caixas de resposta e com a instrução
 // de responder no caderno (a página continua com os campos). Sem os atributos, nada muda.
+// Só o PROFESSOR vê o botão (2026-10-16, #198): ele nasce escondido e aparece com o perfil
+// confirmado na sessão; a barra sem itens visíveis some (assets/css/atividade.css).
 
 const URL_JSPDF_DISCURSIVA = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
 const URL_AUTOTABLE_DISCURSIVA =
@@ -28,6 +30,7 @@ const ALTURA_RESPOSTA_VAZIA_MM = 24;
 const ESTILO_TABELA_PDF_DISCURSIVA = { fontSize: 10, cellPadding: 3, lineColor: [0, 0, 0],
     lineWidth: 0.1, textColor: [0, 0, 0] };
 const VALOR_SIM_PDF_DISCURSIVA = 'sim';
+const PERFIL_PROFESSOR_PDF_DISCURSIVA = 'PROFESSOR';
 const INSTRUCAO_CADERNO_DISCURSIVA =
     'RESPONDA TODAS AS QUESTÕES NO CADERNO, indicando o número do item (ex.: ITEM 01).';
 const ROTULO_CAPACIDADE_DISCURSIVA = 'CAPACIDADE';
@@ -90,7 +93,7 @@ async function dadosCabecalhoDiscursiva() {
     if (cliente) {
         const { data } = await cliente.auth.getSession();
         const usuario = data?.session?.user;
-        if (usuario?.app_metadata?.perfil === 'PROFESSOR') {
+        if (usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_PDF_DISCURSIVA) {
             docente = usuario.user_metadata?.nome || usuario.email || docente;
         }
     }
@@ -330,7 +333,24 @@ async function exportarPdfDiscursiva() {
 }
 
 /**
- * Coloca a barra de exportação (com o botão) no início do conteúdo e carrega a lista "Turma".
+ * Mostra o botão só quando o usuário logado é PROFESSOR (aluno e visitante não o veem).
+ * @param {HTMLButtonElement} botao - Botão "Exportar PDF", já escondido.
+ */
+async function mostrarBotaoPdfSeProfessorDiscursiva(botao) {
+    const cliente = typeof obterClienteSupabase === 'function' ? obterClienteSupabase() : null;
+    if (!cliente) return;
+    try {
+        const { data } = await cliente.auth.getSession();
+        const perfil = data?.session?.user?.app_metadata?.perfil;
+        botao.hidden = perfil !== PERFIL_PROFESSOR_PDF_DISCURSIVA;
+    } catch (erro) {
+        console.warn('Perfil do Exportar PDF não conferido:', erro.message);
+    }
+}
+
+/**
+ * Coloca a barra de exportação (com o botão, só do professor) no início do conteúdo e carrega
+ * a lista "Turma".
  */
 function montarBarraPdfDiscursiva() {
     const conteudo = document.querySelector('main');
@@ -342,8 +362,10 @@ function montarBarraPdfDiscursiva() {
     botao.type = 'button';
     botao.className = 'btn-export';
     botao.textContent = '📥 Exportar PDF';
+    botao.hidden = true;
     botao.addEventListener('click', exportarPdfDiscursiva);
     barra.append(botao);
+    mostrarBotaoPdfSeProfessorDiscursiva(botao);
     conteudo.prepend(barra);
     if (typeof obterTurmaParaExportacao !== 'function' && BASE_SCRIPTS_PDF_DISCURSIVA) {
         carregarScriptPdfDiscursiva(BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_UNIDADE_DISCURSIVA)

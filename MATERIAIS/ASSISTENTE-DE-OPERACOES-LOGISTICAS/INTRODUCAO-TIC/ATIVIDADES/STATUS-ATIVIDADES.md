@@ -29,13 +29,14 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ⛔ id 80 — retirada do índice e do menu em 2026-10-07 (juntada na de 100 questões); página e banco guardados (3 entregas) |
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` | 30 questões discursivas individuais (ampliada e depois ajustada a 30 em 2026-10-07, para caber em 4 h; respostas na apostila, cap. 01 a 07; correção com IA + professor) — fonte e padrão de resposta (fora do Git) em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 81 — 30 tópicos; ITEM 01 a 20 mantidos (respostas de 2 alunos preservadas, entregas reabertas); bloqueada até sexta |
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html` | 100 questões objetivas individuais (revisão da apostila, capítulos 01 a 07, toda resposta na apostila; sexta 09/10/2026, todas as turmas) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` (fora do Git) | ✅ id 85 (aula 20) — 100 itens no gabarito (25 de cada letra); bloqueada para todas as turmas até sexta |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `CONTEUDO/` | ✅ id 80 — retirada do índice em 2026-10-07; voltou em 2026-10-14 no card único "ATIVIDADE SEXTA FEIRA" (09/10/2026), junto com as ids 81 e 85 (#117) |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` | 30 questões discursivas individuais (ampliada e depois ajustada a 30 em 2026-10-07, para caber em 4 h; respostas na apostila, cap. 01 a 07; correção com IA + professor) — fonte e padrão de resposta (fora do Git) em `CONTEUDO/` | ✅ id 81 — 30 tópicos; ITEM 01 a 20 mantidos (respostas de 2 alunos preservadas, entregas reabertas); bloqueada até sexta |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html` | 100 questões objetivas individuais (revisão da apostila, capítulos 01 a 07, toda resposta na apostila; sexta 09/10/2026, todas as turmas) — fonte `CONTEUDO/` (fora do Git) | ✅ id 85 (aula 20) — 100 itens no gabarito (25 de cada letra); bloqueada para todas as turmas até sexta |
 | `ATIVIDADE-PRATICA-AULA-01.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-02.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-03.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-04.html` | discursiva/prática/composição | ✅ bloqueada |
+| `ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html` | 20 questões discursivas da Aula 04 (atividade de sala de 16/10/2026: as 12 objetivas da página avulsa da #189 reescritas como discursivas + as situações práticas; correção com IA + professor) — fonte e padrão de resposta em `CONTEUDO/` | ✅ id 152 (aula 24) — 20 tópicos, 10 pontos; nasce bloqueada (#191) |
 | `ATIVIDADE-PRATICA-AULA-05.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-06.html` | discursiva/prática/composição | ✅ no banco (id 102, nasce bloqueada; seed aplicado e conferido em 2026-10-09 19:30) |
 | `AVALIACAO-MEDIA-FINAL.html` | discursiva/prática/composição | ⬜ sem cadastro |

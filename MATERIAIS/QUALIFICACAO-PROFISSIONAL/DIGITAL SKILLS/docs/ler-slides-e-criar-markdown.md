@@ -25,7 +25,7 @@
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.pptx`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.pptx`
 
 **Ação:** Extrair conteúdo completo usando Python (python-pptx):
 - Número total de slides
@@ -35,7 +35,7 @@
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.pptx"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.pptx"
 ```
 
 Esperado: `True`
@@ -59,7 +59,7 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
+**Arquivo:** Criar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
 
 **Ação:** Documentar cada slide com formato:
 ```markdown
@@ -83,7 +83,7 @@ Esperado: `True`
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md"
 ```
 
 Esperado: Arquivo criado com conteúdo de todos os slides
@@ -110,7 +110,7 @@ Esperado: Arquivo criado com conteúdo de todos os slides
 **Ação:** Adicionar arquivo ao git
 
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 git add SlidesDigitalSkills.md docs/ler-slides-e-criar-markdown.md
 git commit -m "docs: converter SlidesDigitalSkills.pptx para Markdown
 

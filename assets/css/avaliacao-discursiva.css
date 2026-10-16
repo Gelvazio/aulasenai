@@ -25,6 +25,12 @@
     --discursiva-aviso-fundo: #fff5f5;
     --discursiva-aviso-borda: #c53030;
     --discursiva-aviso-texto: #742a2a;
+    --discursiva-entregue-fundo: #fefcbf;
+    --discursiva-entregue-borda: #b7791f;
+    --discursiva-entregue-texto: #744210;
+    --discursiva-corrigida-fundo: #f0fff4;
+    --discursiva-corrigida-borda: #2f855a;
+    --discursiva-corrigida-texto: #22543d;
 }
 
 /* Questão */
@@ -198,6 +204,28 @@
 .entrega-discursiva__texto {
     font-size: 14px;
     line-height: 1.5;
+}
+
+/* Alerta no lugar do botão quando o aluno já entregou (entregue ou corrigida). */
+.entrega-discursiva__alerta {
+    margin: 0;
+    padding: 12px 14px;
+    border-left: 4px solid;
+    border-radius: var(--discursiva-raio);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.entrega-discursiva__alerta--entregue {
+    border-color: var(--discursiva-entregue-borda);
+    background: var(--discursiva-entregue-fundo);
+    color: var(--discursiva-entregue-texto);
+}
+
+.entrega-discursiva__alerta--corrigida {
+    border-color: var(--discursiva-corrigida-borda);
+    background: var(--discursiva-corrigida-fundo);
+    color: var(--discursiva-corrigida-texto);
 }
 
 .entrega-discursiva__botao[hidden] {

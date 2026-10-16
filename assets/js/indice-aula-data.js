@@ -1,28 +1,34 @@
 // Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo
-// (aulas.rotulo_card ou "AULA NN"), nome (aulas.nome_card ou aulas.titulo) e "📅 Data da aula"
-// (aulas.data_planejada). Regra: cada card ligado a apenas 1 aula. A aula do card vem da
+// (aulas.rotulo_card ou "AULA NN") e nome (aulas.nome_card ou aulas.titulo). A data da aula não
+// aparece no card (pedido de 2026-10-16, #204); ela fica só no modal "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
-// "Aula liberada / Aula bloqueada" (aulas.ativo) fica antes de "Editar aula" e a aula bloqueada
-// bloqueia o card inteiro para os alunos (assets/js/indice-aula-bloqueio.js).
-// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, assets/js/indice-aula-modal.js,
-// assets/js/atividades-crud-repositorio.js e assets/js/atividades-crud-modal.js (obterCaminhoHtml).
+// "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
+// inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
+// combo "Turma:" (aula_turma, #206): trocar a turma no combo relê e redesenha os cards.
+// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, aula-turma-repositorio.js,
+// assets/js/indice-aula-modal.js, assets/js/atividades-crud-repositorio.js e
+// assets/js/atividades-crud-modal.js (obterCaminhoHtml).
 
 const SELETOR_CARD_AULA = 'article.aula';
 const SELETOR_LINK_PRINCIPAL_AULA = 'a.btn.principal';
 const SELETOR_ROTULO_CARD_AULA = '.num';
 const SELETOR_NOME_CARD_AULA = '.topo h2';
+// Começo do texto do link que não é letra nem número (emoji e "🔒 "): fica antes do nome do banco.
+const REGEX_PREFIXO_LINK_ATIVIDADE = /^[^\p{L}\p{N}]*/u;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
-const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
-const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
+const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
+const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
+// Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
+const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
 
-const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
+const estadoCardsAula = { cards: [], ehProfessor: false };
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -36,18 +42,6 @@ function criarElementoCardAula(tag, classe, texto) {
     if (classe) elemento.className = classe;
     if (texto) elemento.textContent = texto;
     return elemento;
-}
-
-/**
- * Converte a data do banco (AAAA-MM-DD) para DD/MM/AAAA, sem passar por fuso horário.
- * @param {string|null} dataIso - Data do banco.
- * @returns {string} Data formatada ou texto vazio.
- */
-function formatarDataAula(dataIso) {
-    if (!dataIso) return '';
-
-    const [ano, mes, dia] = dataIso.split('-');
-    return dia + '/' + mes + '/' + ano;
 }
 
 /**
@@ -94,13 +88,57 @@ function encontrarAulaPeloRotulo(item, aulas) {
 }
 
 /**
+ * Nome da pasta da matéria pelo endereço (.../<MATERIA>/ATIVIDADES/index.html), com espaços no
+ * lugar dos hífens, como na coluna materia.descricao.
+ * @returns {string} Nome da matéria ou texto vazio.
+ */
+function lerNomeMateriaDaPasta() {
+    const partes = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+    const posicao = partes.map((parte) => parte.toUpperCase()).lastIndexOf(PASTA_ATIVIDADES_AULA);
+    if (posicao < 1) return '';
+
+    return partes[posicao - 1].replace(/-/g, ' ');
+}
+
+/**
+ * Id da matéria do índice: pela aula de um card já encontrada ou, se nenhuma veio (o aluno não
+ * lê atividades bloqueadas), pelo nome da pasta e pelo curso da faixa de matérias.
+ * @param {Object[]} itens - Cards e aulas.
+ * @returns {Promise<number|null>} Id da matéria ou null.
+ */
+async function descobrirMateriaDoIndice(itens) {
+    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
+    if (materia) return materia;
+
+    const nome = lerNomeMateriaDaPasta();
+    if (!nome) return null;
+
+    const curso = document.querySelector(SELETOR_CURSO_DO_INDICE)?.dataset.cursoId || '';
+    return buscarMateriaPeloNomeCard(nome, curso);
+}
+
+/**
+ * Aula do card: a da primeira página do card que o usuário consegue ler no banco (o aluno não
+ * lê as atividades bloqueadas, então a primeira página pode não vir).
+ * @param {{paginas: string[]}} item - Card com as páginas dos links principais.
+ * @param {Map<string, Object>} aulas - Aula de cada página lida.
+ * @returns {Object|null} Aula do card ou null.
+ */
+function encontrarAulaPelasPaginas(item, aulas) {
+    const pagina = item.paginas.find((caminho) => aulas.has(caminho));
+    return pagina ? aulas.get(pagina) : null;
+}
+
+/**
  * Completa os cards sem aula (atividade não lida) buscando a aula na mesma matéria.
  * @param {Object[]} itens - Cards e aulas.
  */
 async function completarAulasPeloRotulo(itens) {
     const faltando = itens.filter((item) => !item.aula);
-    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
-    if (!faltando.length || !materia) return;
+    if (!faltando.length) return;
+
+    const materia = await descobrirMateriaDoIndice(itens);
+    if (!materia) return;
 
     const aulas = await listarAulasDaMateriaCard(materia);
     faltando.forEach((item) => { item.aula = encontrarAulaPeloRotulo(item, aulas); });
@@ -117,27 +155,6 @@ function renderizarTextosNoCard(item) {
     const nome = item.card.querySelector(SELETOR_NOME_CARD_AULA);
     if (rotulo) rotulo.textContent = obterRotuloDaAula(item.aula);
     if (nome) nome.textContent = obterNomeDaAula(item.aula);
-}
-
-/**
- * Escreve a linha da data no card (cria a linha na primeira vez).
- * @param {{card: HTMLElement, aula: Object|null}} item - Card e a aula dele.
- */
-function renderizarDataNoCard(item) {
-    let linha = item.card.querySelector('.aula-data');
-    if (!linha) {
-        linha = criarElementoCardAula('p', 'aula-data');
-        const referencia = item.card.querySelector('.meta') || item.card.querySelector('.topo');
-        referencia?.after(linha);
-    }
-    const data = formatarDataAula(item.aula?.data_planejada);
-    const semData = !data;
-    linha.classList.toggle('aula-data--vazia', semData);
-    if (data) linha.textContent = '📅 Data da aula: ' + data;
-    if (semData && item.aula) linha.textContent = TEXTO_SEM_DATA_AULA;
-    if (!item.aula) linha.textContent = TEXTO_AULA_SEM_CADASTRO;
-
-    linha.hidden = semData && !estadoCardsAula.ehProfessor;
 }
 
 /**
@@ -161,13 +178,12 @@ function atualizarCardsDaAula(aula) {
 }
 
 /**
- * Desenha o card inteiro (textos, data e visibilidade) a partir da aula.
+ * Desenha o card inteiro (textos e visibilidade) a partir da aula.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
-    renderizarDataNoCard(item);
     if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
 }
 
@@ -191,7 +207,6 @@ function adicionarBotaoEditarAula(item) {
     botao.type = 'button';
     botao.addEventListener('click', () => abrirModalAulaCard(item, {
         cards: estadoCardsAula.cards,
-        ehAdministrador: estadoCardsAula.ehAdministrador,
         aoGravar: atualizarCardsDaAula,
     }));
     if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
@@ -211,54 +226,118 @@ async function verificarProfessorCardAula() {
 }
 
 /**
- * Caminho da página do link principal do card (lerHrefCrud também lê o link guardado do card
- * bloqueado, em data-href-bloqueado).
- * @param {HTMLElement} card - Card do índice.
- * @returns {string|null} Caminho da página ou null.
+ * Troca o texto do link da atividade pelo nome do banco, mantendo o emoji do começo e os
+ * elementos de dentro do link (ex.: etiqueta "ID NN" do professor).
+ * @param {HTMLAnchorElement} link - Link principal da atividade.
+ * @param {string} nome - atividade.nome_atividade.
  */
-function lerPaginaPrincipalDoCard(card) {
-    const link = card.querySelector(SELETOR_LINK_PRINCIPAL_AULA);
-    if (!link) return null;
+function escreverNomeNoLink(link, nome) {
+    const textos = [...link.childNodes].filter((no) => no.nodeType === Node.TEXT_NODE);
+    if (!textos.length) return;
 
-    return obterCaminhoHtml(lerHrefCrud(link));
+    const prefixo = textos.map((no) => no.textContent).join('').trimStart()
+        .match(REGEX_PREFIXO_LINK_ATIVIDADE)[0];
+    textos[0].textContent = ' ' + prefixo + nome;
+    textos.slice(1).forEach((no) => no.remove());
+}
+
+/**
+ * Escreve nos links principais de todos os cards o nome da atividade cadastrado no banco
+ * (sem nome no banco, ou atividade que o usuário não lê, o link fica como no HTML).
+ * @param {Object[]} itens - Cards do índice.
+ */
+async function renderizarNomesDasAtividades(itens) {
+    try {
+        const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
+        const nomes = await buscarNomesDasAtividadesCard(paginas);
+        document.querySelectorAll(SELETOR_CARD_AULA + ' ' + SELETOR_LINK_PRINCIPAL_AULA)
+            .forEach((link) => {
+                const nome = nomes.get(obterCaminhoHtml(lerHrefCrud(link)));
+                if (nome) escreverNomeNoLink(link, nome);
+            });
+    } catch (erro) {
+        console.warn('Nomes das atividades indisponíveis:', erro.message);
+    }
+}
+
+/**
+ * Reescreve o nome das atividades nos cards já desenhados (chamado depois de salvar no modal).
+ */
+function atualizarNomesDasAtividadesDoIndice() {
+    renderizarNomesDasAtividades(estadoCardsAula.cards);
+}
+
+/**
+ * Caminhos das páginas dos links principais do card (lerHrefCrud também lê o link guardado do
+ * card bloqueado, em data-href-bloqueado).
+ * @param {HTMLElement} card - Card do índice.
+ * @returns {string[]} Caminhos das páginas, na ordem do card.
+ */
+function lerPaginasPrincipaisDoCard(card) {
+    const links = [...card.querySelectorAll(SELETOR_LINK_PRINCIPAL_AULA)];
+    return links.map((link) => obterCaminhoHtml(lerHrefCrud(link))).filter(Boolean);
 }
 
 /**
  * Monta a lista de cards com os textos do HTML (usados só para achar a aula).
- * @returns {Object[]} Itens { card, pagina, rotuloHtml, nomeHtml, aula }.
+ * @returns {Object[]} Itens { card, paginas, pagina, rotuloHtml, nomeHtml, aula }.
  */
 function lerCardsDoIndice() {
-    return [...document.querySelectorAll(SELETOR_CARD_AULA)].map((card) => ({
-        card,
-        pagina: lerPaginaPrincipalDoCard(card),
-        rotuloHtml: lerTextoDoCard(card, SELETOR_ROTULO_CARD_AULA),
-        nomeHtml: lerTextoDoCard(card, SELETOR_NOME_CARD_AULA),
-        aula: null,
-    }));
+    return [...document.querySelectorAll(SELETOR_CARD_AULA)].map((card) => {
+        const paginas = lerPaginasPrincipaisDoCard(card);
+        return { card, paginas, pagina: paginas[0] || null,
+            rotuloHtml: lerTextoDoCard(card, SELETOR_ROTULO_CARD_AULA),
+            nomeHtml: lerTextoDoCard(card, SELETOR_NOME_CARD_AULA), aula: null };
+    });
+}
+
+/**
+ * Inicia os cards e, no fim (mesmo com erro), destrava os links travados pelo
+ * atividades-crud-modal.js enquanto o bloqueio da aula era conferido.
+ */
+async function iniciarCardsAula() {
+    try {
+        await desenharCardsDoIndice();
+    } finally {
+        if (typeof liberarLinksDosCardsIndice === 'function') liberarLinksDosCardsIndice();
+    }
 }
 
 /**
  * Lê a aula de cada card, desenha os cards e, para o professor, o botão de edição.
  */
-async function iniciarCardsAula() {
+async function desenharCardsDoIndice() {
     const itens = lerCardsDoIndice();
     if (!itens.length) return;
 
     estadoCardsAula.ehProfessor = await verificarProfessorCardAula();
-    if (estadoCardsAula.ehProfessor) {
-        estadoCardsAula.ehAdministrador = await verificarAdministradorCard().catch(() => false);
-    }
     try {
-        const paginas = [...new Set(itens.map((item) => item.pagina).filter(Boolean))];
+        const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
         const aulas = await buscarAulasDasPaginasCard(paginas);
-        itens.forEach((item) => { item.aula = aulas.get(item.pagina) || null; });
+        itens.forEach((item) => { item.aula = encontrarAulaPelasPaginas(item, aulas); });
         await completarAulasPeloRotulo(itens);
     } catch (erro) {
         console.warn('Aulas dos cards indisponíveis:', erro.message);
     }
+    if (bloqueioDaAulaNoIndice()) await prepararBloqueioAulaTurma(estadoCardsAula.ehProfessor);
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
     itens.forEach(desenharCardAula);
+    await renderizarNomesDasAtividades(itens);
 }
+
+/**
+ * Troca a turma do índice: relê o bloqueio das aulas nela e redesenha os cards.
+ * @param {string} turmaCodigo - Código da turma escolhida no combo.
+ */
+async function trocarTurmaDosCardsAula(turmaCodigo) {
+    if (!bloqueioDaAulaNoIndice()) return;
+
+    await carregarBloqueioAulaTurma({ turma: turmaCodigo || '' });
+    estadoCardsAula.cards.forEach(desenharCardAula);
+}
+
+document.addEventListener(EVENTO_TURMA_INDICE_CARDS_AULA,
+    (evento) => trocarTurmaDosCardsAula(evento.detail));
 
 iniciarCardsAula();

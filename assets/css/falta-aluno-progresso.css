@@ -1,0 +1,23 @@
+/* Professor: área "Mostrar quem faltou" do Progresso da turma
+   (assets/js/falta-aluno-progresso.js). A chave ON/OFF é a .progresso-turma__interruptor de
+   progresso-turma-global.css. */
+
+:root {
+    --falta-aluno-texto-suave: #4a5568;
+}
+
+.falta-aluno {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.falta-aluno__contagem {
+    color: var(--falta-aluno-texto-suave);
+}
+
+.falta-aluno__interruptor--aluno {
+    font-size: 11px;
+}

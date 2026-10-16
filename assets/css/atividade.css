@@ -123,6 +123,9 @@ footer {
     .content-section { padding: 20px; }
 }
 
+/* Questões depois da quantidade mínima (assets/js/questoes-ate-minimo.js): fora da tela e do PDF */
+.aula-card.questao--fora-do-minimo { display: none; }
+
 /* Celular: menos margens aninhadas (mais largura para o texto), letras maiores e
    alternativas com área de toque confortável (mínimo de 44 px de altura). */
 @media (max-width: 600px) {
@@ -162,5 +165,8 @@ footer {
 .export-bar[hidden] { display: none; }
 
 .export-bar .btn-export[hidden] { display: none; }
+.export-bar small[hidden] { display: none; }
+/* "Exportar PDF" só do professor (#198): sem nenhum item visível, a barra some para o aluno */
+.export-bar:not(:has(> :not([hidden]))) { display: none; }
 .export-bar { flex-wrap: wrap; }
 

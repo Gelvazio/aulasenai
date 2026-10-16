@@ -25,7 +25,8 @@ const filtroFezRelatorio = new Set(['sim']);
 const filtroStatusRelatorio = new Set();
 const filtroTentativasRelatorio = new Set();
 const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
-const TEXTO_STATUS = { entregue: '📨 Entregue', andamento: '✏️ Andamento' };
+const TEXTO_STATUS = { entregue: '📨 Entregue', andamento: '✏️ Andamento',
+    professor: '📨 Entregue pelo professor' };
 const TEXTO_SELECIONE_ALUNO = 'Seleciona o aluno';
 const CLASSE_CONFERENCIA_CERTA = 'conferencia--certa';
 const CLASSE_CONFERENCIA_ERRADA = 'conferencia--errada';
@@ -113,6 +114,7 @@ function formatarDataHora(dataIso) {
  * @returns {string} Texto da situação.
  */
 function descreverSituacao(linha) {
+    if (linha.entregue_por) return 'Entregue pelo professor';
     if (linha.entregue_em) return 'Entregue';
 
     return 'Em andamento (' + linha.respondidas + '/' + linha.total + ')';
@@ -199,6 +201,7 @@ function criarControleLiberar(contexto) {
     const celula = criarElemento('span', CLASSE_RELATORIO + '__acao');
     if (!linha.entregue_em) {
         celula.textContent = 'Aguardando a entrega';
+        acrescentarEntregaProfessor(celula, contexto);
         return celula;
     }
     const limite = calcularLimiteTentativas(notaFinal, maximo);
@@ -209,7 +212,20 @@ function criarControleLiberar(contexto) {
     botao.disabled = linha.tentativa >= limite;
     if (botao.disabled) botao.title = 'Sem ' + termos.nova + ' disponível para este aluno.';
     celula.appendChild(botao);
+    acrescentarEntregaProfessor(celula, contexto);
     return celula;
+}
+
+/**
+ * Acrescenta à célula o "Marcar como entregue" / "Desfazer entrega" (marcar-entregue-
+ * professor.js).
+ * @param {HTMLElement} celula - Célula de ações.
+ * @param {Object} contexto - {secao, atividadeId, maximo, linha}.
+ */
+function acrescentarEntregaProfessor(celula, contexto) {
+    const { secao, atividadeId, maximo } = contexto;
+    window.acrescentarControleEntrega?.(celula, { linha: contexto.linha, atividadeId,
+        aoMudar: () => montarRelatorioProfessor(secao, atividadeId, maximo) });
 }
 
 /**
@@ -349,6 +365,7 @@ function montarBlocoAluno(tentativas, base) {
     const bloco = criarElemento('tbody', CLASSE_RELATORIO + '__aluno');
     const notaFinal = semResposta ? null : calcularNotaFinalAluno(tentativas);
     const naoAtingiu = notaFinal === null || notaFinal < NOTA_MINIMA_APROVACAO;
+    const ultimaEntreguePeloProfessor = Boolean(tentativas[tentativas.length - 1].entregue_por);
     Object.assign(bloco.dataset, { turma: primeira.turma_codigo || TURMA_SEM_CODIGO,
         aluno: primeira.aluno_id, tentativas: String(semResposta ? 0 : tentativas.length),
         naoAtingiu: String(naoAtingiu), fez: semResposta ? 'nao' : 'sim',
@@ -366,11 +383,14 @@ function montarBlocoAluno(tentativas, base) {
             (primeira.fora_da_chamada ? ' (fora da chamada)' : '')),
         criarCelulaRelatorio(semResposta ? '❌ Não' : '✅ Sim',
             CLASSE_RELATORIO + (semResposta ? '__fez--nao' : '__fez--sim')),
-        criarCelulaRelatorio(TEXTO_STATUS[bloco.dataset.status] || '—'),
+        criarCelulaRelatorio(ultimaEntreguePeloProfessor ? TEXTO_STATUS.professor
+            : TEXTO_STATUS[bloco.dataset.status] || '—'),
         criarCelulaRelatorio((semResposta ? 0 : tentativas.length) + ' de ' + base.maximo),
         celulaNota);
-    linha.appendChild(semResposta ? criarElemento('td') :
-        criarCelulaAcoesAluno(bloco, tentativas, { ...base, notaFinal }));
+    const acoes = semResposta ? criarElemento('td') :
+        criarCelulaAcoesAluno(bloco, tentativas, { ...base, notaFinal });
+    if (semResposta) acrescentarEntregaProfessor(acoes, { ...base, linha: primeira });
+    linha.appendChild(acoes);
     bloco.appendChild(linha);
     if (!semResposta) bloco.appendChild(montarDetalheAluno(tentativas, base));
     return bloco;
@@ -411,7 +431,8 @@ function montarListaAlunosRelatorio(linhas, base) {
  */
 async function buscarDadosTurmas() {
     try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito,hora_inicio,hora_fim');
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome),' +
+            'uc,favorito,hora_inicio,hora_fim,bloquear_horario');
         return new Map(turmas.map((turma) => [turma.codigo, turma]));
     } catch (erro) {
         return new Map();
@@ -484,6 +505,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
             local: [dados.unidade?.nome, dados.turno].filter(Boolean).join(' ').toUpperCase(),
             favorita: Boolean(dados.favorito),
             inicio: formatarHoraTurma(dados.hora_inicio), fim: formatarHoraTurma(dados.hora_fim),
+            bloquearHorario: dados.bloquear_horario !== false,
             alunos: new Set(),
         };
         turma.alunos.add(linha.aluno_id);
@@ -824,8 +846,9 @@ function criarCampoHorarioRelatorio(rotulo) {
 }
 
 /**
- * Cria o bloco onde o professor define o horário (início e fim) da turma escolhida nas abas.
- * Fora desse horário o aluno da turma não grava alternativas nem entrega. Vazio = sem limite.
+ * Cria o bloco onde o professor define o horário (início e fim) da turma escolhida nas abas e o
+ * ON/OFF "Bloquear horário" (turma-horario.js). Ligado, fora do horário o aluno da turma não
+ * grava alternativas nem entrega; desligado ou horário vazio = sem limite.
  * @param {{codigo: string, inicio: string, fim: string}[]} turmas - Turmas do relatório.
  * @returns {HTMLElement} Bloco com os campos e o botão de salvar.
  */
@@ -848,9 +871,13 @@ function criarHorarioTurmaRelatorio(turmas) {
             await mostrarPopup(erro.message, { tipo: 'erro' });
         }
     });
-    bloco.append(inicio.etiqueta, fim.etiqueta, botao);
+    const bloqueio = criarBotaoBloqueioHorario({
+        obterTurma: () => turmas.find((item) => item.codigo === turmaEscolhidaRelatorio),
+        avisar: (texto, tipo) => mostrarPopup(texto, { tipo, titulo: 'Bloqueio de horário' }) });
+    bloco.append(inicio.etiqueta, fim.etiqueta, botao, bloqueio);
     bloco.atualizar = () => {
         const turma = turmas.find((item) => item.codigo === turmaEscolhidaRelatorio);
+        bloqueio.atualizar();
         inicio.campo.value = turma?.inicio || '';
         fim.campo.value = turma?.fim || '';
     };

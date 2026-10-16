@@ -5,4 +5,4 @@
 |------|-----------|--------|--------------|-------------|
 | 21.1 | Caixa de marcar na tabela "Alunos por turma" que filtra pela turma escolhida no formulário (`alunos.html`, `assets/js/turmas-aluno-pagina.js`, `assets/css/turmas-aluno.css`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
 | 21.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 21.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
+| 21.3 | Aceite do usuário (testar no navegador) | 👀 Aguardando o usuário | — | — |

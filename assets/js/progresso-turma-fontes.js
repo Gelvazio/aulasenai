@@ -5,7 +5,10 @@
 //     e entrega; a conta é feita no banco e o gabarito não sai de lá);
 //   - discursiva: resposta_discursiva (tópicos com texto) + correcao_discursiva (nota da IA).
 // Formato do aluno: { alunoId, nome, porQuestao: Map(item → partes respondidas), entregue,
-//   minimoDoAluno, correcao: {nota, possivel, corrigidos, certas, meias, erradas} | null }.
+//   entreguePorProfessor, minimoDoAluno, provaCorrigida (objetiva: entregue; discursiva:
+//   entregue e com nota do professor em todas as questões respondidas — tarefa #147),
+//   notaProfessor (soma das notas do professor; só discursiva — tarefa #163),
+//   correcao: {nota, possivel, corrigidos, certas, meias, erradas} | null }.
 // A "nota" da correção está na escala da prova inteira (0 a 10); o painel a torna proporcional
 // ao mínimo do aluno. Só leitura; o RLS limita aos alunos das turmas do professor.
 // Depende de js/supabase.js (obterClienteSupabase, sbGet). Regra: docs/regras/atividades.md
@@ -106,7 +109,8 @@ async function carregarNomesDosAlunos(ids, nomes) {
 /**
  * Monta a lista final de alunos no formato comum, em ordem alfabética.
  * @param {Map<string, Object>} progresso - Saída de contarPartesPorAluno.
- * @param {Object} extras - nomes, minimos, entregues (Set "aluno|tentativa") e correcoes (Map).
+ * @param {Object} extras - nomes, minimos, entregues e peloProfessor (Set "aluno|tentativa") e
+ *     correcoes (Map).
  * @returns {Object[]} Alunos no formato comum.
  */
 function montarAlunosDoProgresso(progresso, extras) {
@@ -115,9 +119,11 @@ function montarAlunosDoProgresso(progresso, extras) {
         const chave = id + '|' + tentativa;
         return {
             alunoId: id,
+            tentativa,
             nome: extras.nomes.get(id) || 'Aluno sem nome',
             porQuestao,
             entregue: extras.entregues.has(chave),
+            entreguePorProfessor: extras.peloProfessor.has(chave),
             minimoDoAluno: extras.minimos.get(id) || null,
             correcao: extras.correcoes.get(chave) || null,
         };
@@ -185,16 +191,19 @@ async function lerAlunosObjetiva(atividadeId, memoria) {
     ]);
     const correcoes = new Map();
     const entregues = new Set();
+    const peloProfessor = new Set();
     resumo.forEach((linha) => {
         const chave = linha.aluno_id + '|' + linha.tentativa;
         correcoes.set(chave, converterAcertosEmCorrecao(linha));
         if (linha.entregue_em) entregues.add(chave);
+        if (linha.entregue_por) peloProfessor.add(chave);
         if (linha.nome) memoria.nomes.set(linha.aluno_id, linha.nome);
     });
     const progresso = contarPartesPorAluno(respostas);
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
+    // A objetiva é corrigida pelo banco: entregue = corrigida.
     return montarAlunosDoProgresso(progresso, { nomes: memoria.nomes, minimos, entregues,
-        correcoes });
+        peloProfessor, correcoes }).map((aluno) => ({ ...aluno, provaCorrigida: aluno.entregue }));
 }
 
 /**
@@ -256,6 +265,51 @@ function somarCorrecoesDaIa(linhas, pontos) {
 }
 
 /**
+ * Discursiva: conta, por aluno e tentativa, os tópicos com a nota do professor.
+ * @param {Object[]} linhas - Linhas de correcao_discursiva (nota_professor).
+ * @returns {Map<string, number>} Chave "aluno|tentativa" → tópicos com nota do professor.
+ */
+function contarNotasDoProfessor(linhas) {
+    const contagem = new Map();
+    linhas.forEach((linha) => {
+        const temNota = linha.nota_professor !== null && linha.nota_professor !== undefined;
+        if (!temNota) return;
+        const chave = linha.aluno_id + '|' + linha.tentativa;
+        contagem.set(chave, (contagem.get(chave) || 0) + 1);
+    });
+    return contagem;
+}
+
+/**
+ * Discursiva: soma, por aluno e tentativa, as notas do professor (escala da prova inteira).
+ * @param {Object[]} linhas - Linhas de correcao_discursiva (nota_professor).
+ * @returns {Map<string, number>} Chave "aluno|tentativa" → soma das notas do professor.
+ */
+function somarNotasDoProfessor(linhas) {
+    const somas = new Map();
+    linhas.forEach((linha) => {
+        const temNota = linha.nota_professor !== null && linha.nota_professor !== undefined;
+        if (!temNota) return;
+        const chave = linha.aluno_id + '|' + linha.tentativa;
+        somas.set(chave, (somas.get(chave) || 0) + Number(linha.nota_professor));
+    });
+    return somas;
+}
+
+/**
+ * Discursiva: prova corrigida = entregue e com a nota do professor em todas as questões
+ * respondidas (pelo menos uma).
+ * @param {Object} aluno - Aluno no formato comum.
+ * @param {Map<string, number>} notasDoProfessor - Tópicos com nota do professor por tentativa.
+ * @returns {boolean} true se o professor já corrigiu a prova.
+ */
+function discursivaFoiCorrigida(aluno, notasDoProfessor) {
+    const respondidos = [...aluno.porQuestao.values()].reduce((soma, valor) => soma + valor, 0);
+    const doProfessor = notasDoProfessor.get(aluno.alunoId + '|' + aluno.tentativa) || 0;
+    return aluno.entregue && doProfessor > 0 && doProfessor >= respondidos;
+}
+
+/**
  * Discursiva: lê o progresso de cada aluno.
  * @param {number} atividadeId - Id da atividade.
  * @param {Object} memoria - Memória da fonte entre as leituras.
@@ -266,9 +320,10 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
         lerTodasAsLinhasProgresso({ tabela: 'resposta_discursiva',
             colunas: 'aluno_id,tentativa,item,texto', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
-        sbGet('entrega_atividade', 'select=aluno_id,tentativa&atividade_id=eq.' + atividadeId),
+        sbGet('entrega_atividade',
+            'select=aluno_id,tentativa,entregue_por&atividade_id=eq.' + atividadeId),
         lerTodasAsLinhasProgresso({ tabela: 'correcao_discursiva',
-            colunas: 'aluno_id,tentativa,item,topico,nota_ia', atividadeId,
+            colunas: 'aluno_id,tentativa,item,topico,nota_ia,nota_professor', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
         lerPontosDosTopicos(atividadeId, memoria),
         lerMinimosDosAlunos(atividadeId),
@@ -277,10 +332,17 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
     const progresso = contarPartesPorAluno(respostas,
         (linha) => (linha.texto || '').trim() !== '');
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
-    return montarAlunosDoProgresso(progresso, {
+    const notasDoProfessor = contarNotasDoProfessor(linhasIa);
+    const somasDoProfessor = somarNotasDoProfessor(linhasIa);
+    const alunos = montarAlunosDoProgresso(progresso, {
         nomes: memoria.nomes, minimos, correcoes: somarCorrecoesDaIa(linhasIa, pontos),
         entregues: new Set(entregas.map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
+        peloProfessor: new Set(entregas.filter((entrega) => entrega.entregue_por)
+            .map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
     });
+    return alunos.map((aluno) => ({ ...aluno,
+        provaCorrigida: discursivaFoiCorrigida(aluno, notasDoProfessor),
+        notaProfessor: somasDoProfessor.get(aluno.alunoId + '|' + aluno.tentativa) }));
 }
 
 // Textos de cada tipo: a coluna "parcial" vale também antes da entrega; a "final" só com a
@@ -304,13 +366,16 @@ const FONTES_PROGRESSO_TURMA = {
         lerEstrutura: lerEstruturaDiscursiva,
         lerAlunos: lerAlunosDiscursiva,
         textos: {
-            colunaParcial: 'Nota parcial IA', colunaFinal: 'Nota IA (a confirmar)', icone: '🤖',
+            colunaParcial: 'Nota parcial IA', colunaFinal: 'Nota final', icone: '🤖',
+            iconeProfessor: '🎓',
             parte: 'tópico', partes: 'tópicos', descricaoAcerto: 'alternativas corrigidas',
             dicaParcial: 'Nota parcial sugerida pela IA (sobre o mínimo do aluno, máximo 10) — ' +
                 'prévia; vale só depois da confirmação do professor.',
-            dicaFinal: 'Nota sugerida pela IA com a prova entregue e as respostas corrigidas ' +
+            dicaFinal: '🤖 Nota sugerida pela IA com a prova entregue e as respostas corrigidas ' +
                 '(sobre o mínimo do aluno, máximo 10) — vale só depois da confirmação do ' +
                 'professor.',
+            dicaProfessor: '🎓 Nota confirmada pelo professor em todas as questões respondidas ' +
+                '(sobre o mínimo do aluno, máximo 10) — é a que vale na média.',
             graficoCorrecao: '4. Correção da IA (alternativas)',
             rotulosCorrecao: ['Certas', 'Meias certas', 'Erradas'],
             graficoNota: '5. Nota parcial da IA por aluno (a confirmar)',

@@ -12,4 +12,4 @@ Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Et
 | 103.3 | Ligar cada prática à aula (`- **Aula:**` e `- **Conteúdo-base:**`) | ⬜ Pendente | — | — |
 | 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ✅ Concluído | 2026-10-08 20:31:12 | grep: nenhuma referência ao caminho antigo; materia.json válido |
 | 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ✅ Concluído | 2026-10-08 20:31:40 | 52 links, 0 quebrados; sem 'Vale Digital'; commit local |
-| 103.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 103.6 | Aceite do usuário: conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | 👀 Aguardando o usuário | — | — |

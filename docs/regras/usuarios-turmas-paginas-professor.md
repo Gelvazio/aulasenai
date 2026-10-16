@@ -1,6 +1,6 @@
 # 📚 Regras do projeto — Usuários, turmas e páginas do professor
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md).
 
 ---
 
@@ -52,8 +52,9 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
   aulas deve filtrar `excluido = 0`.
 - ✅ **Card com 100% dos dados da tabela `aulas`** (2026-10-06, pedido do usuário; plano
   `docs/card-dados-100-tabela-aulas.md`): o rótulo do card é `aulas.rotulo_card` (vazio =
-  "AULA NN" pelo `numero`), o nome é `aulas.nome_card` (vazio = `aulas.titulo`) e a data é
-  `aulas.data_planejada`. O texto escrito no HTML do índice só é usado para **achar** a aula quando
+  "AULA NN" pelo `numero`) e o nome é `aulas.nome_card` (vazio = `aulas.titulo`). A linha
+  "📅 Data da aula" **não aparece mais nos cards** (2026-10-16, #204); `aulas.data_planejada` fica
+  só no modal "Editar aula". O texto escrito no HTML do índice só é usado para **achar** a aula quando
   a atividade não pôde ser lida (ex.: bloqueada para o aluno), pelo rótulo; card sem aula no banco
   fica como está no HTML. Código: `assets/js/indice-aula-repositorio.js` (dados),
   `assets/js/indice-aula-data.js` (cards) e `assets/js/indice-aula-modal.js` (modal), carregados
@@ -127,6 +128,23 @@ SQL: `database/2026-10-06-pendencias.sql` (✅ aplicado no Supabase em 2026-10-0
   `AGENDA_COLABORADOR` (`PASTAS_IGNORADAS` em `assets/gerador-indices/gerar_indices.py`) — não
   gera `index.html` dentro dela nem card dela no índice raiz. Índice gerado ali por engano deve ser
   removido.
+
+## 🏫 REGRA — MENU TURMAS: CRUD DA `turma` + BOTÃO PROFESSORES (SÓ PROFESSOR ADMINISTRADOR)
+
+Registrada em 2026-10-16 (tarefa #201, etapa `tasks/etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md`).
+
+- ✅ **`turmas.html`** começa pela **consulta** das turmas (busca por código, nome, unidade, curso
+  ou professor) e tem **➕ Nova turma**. Cada linha: **✏️ Editar** (modal com código — só no
+  cadastro —, nome, turno, horário, hora início/fim, UC, unidade, curso e "Bloquear horário"),
+  **👥 Professores** (vincular / desvincular na `turmaprofessor`) e **🗑️ Excluir**.
+- ✅ **Só o Professor Administrador** grava (RLS `turma_insert_admin`, `turma_update_admin`,
+  `turma_delete_admin` + `eh_professor_administrador()`); o menu escondido é só visual.
+- ✅ **Excluir só turma vazia** (`turma_esta_vazia`: sem alunos e sem equipes); com alunos, tirar
+  os alunos antes (menu ALUNOS). ❌ Nunca liberar a exclusão em cascata de alunos ou equipes.
+- ✅ Trocar o professor de uma turma = desvincular e vincular no botão Professores.
+- Arquivos: `assets/js/turmas-professor-pagina.js` (tabela), `assets/js/turmas-dados-modal.js`
+  (modal da turma), `assets/js/turmas-professor-modais.js` (Professores),
+  `assets/js/turmas-professor-repositorio.js` (dados), `assets/css/turmas-professor.css`.
 
 ## 🎓 REGRA — ÍNDICE DE CURSOS: SÓ OS CURSOS DO USUÁRIO LOGADO
 
@@ -244,8 +262,9 @@ Registrada em 2026-10-05 a pedido do usuário.
   vê, com o aviso das turmas liberadas; sem login, pede para entrar.
 - ⚠️ É restrição de **exibição** (a página é estática e publicada): nunca colocar nela gabarito,
   dados pessoais ou outro conteúdo sensível.
-- 📌 Primeira página: `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`
-  (versão simplificada do trabalho em equipe), só para a turma **135081 — AI AOPL 2026/2 V1 · Tarde**.
+- 📌 A primeira página que usou a restrição (`INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/`
+  `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`, só para a turma 135081) foi excluída em
+  2026-10-16 (#212). Hoje nenhuma página usa a restrição; o script e o CSS continuam prontos.
 
 ## 👤 REGRA — E-MAIL DE LOGIN DO ALUNO: `nome.sobrenome@senai.local`
 

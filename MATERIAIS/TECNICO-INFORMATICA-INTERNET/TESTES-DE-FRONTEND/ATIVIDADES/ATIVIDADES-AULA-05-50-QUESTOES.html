@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 — Integração Avançada e Mock de APIs (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-exportar-meu-gabarito="sim" data-marcar-entregue="sim"
+      data-aula="05" data-tema="Integração Avançada e Mock de APIs" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🛰️ Aula 05: Integração Avançada e Mock de APIs</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-05-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-05-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Por Que Simular a API</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que os testes de integração não devem depender da API real?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a API real é lenta, muda de dados e pode estar fora do ar, deixando o teste instável.</li>
+                        <li><span class="letra">B)</span>Porque a API real nunca devolve erros.</li>
+                        <li><span class="letra">C)</span>Porque é proibido fazer requisições em JavaScript.</li>
+                        <li><span class="letra">D)</span>Porque a API real sempre responde mais rápido que a simulação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Teste Instável</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um teste instável (flaky)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um teste que roda mais rápido que os outros.</li>
+                        <li><span class="letra">B)</span>Um teste que nunca é executado.</li>
+                        <li><span class="letra">C)</span>Um teste que sempre falha.</li>
+                        <li><span class="letra">D)</span>Um teste que passa ou falha sem que o código tenha mudado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Controle da Resposta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a grande vantagem de simular a API no teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste controla exatamente o que a API responde, inclusive erros.</li>
+                        <li><span class="letra">B)</span>O servidor real fica mais rápido.</li>
+                        <li><span class="letra">C)</span>O teste deixa de precisar de expect.</li>
+                        <li><span class="letra">D)</span>A tela passa a funcionar sem internet em produção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Provocar Erro 500</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é difícil testar o erro 500 com a API real?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o navegador bloqueia o status 500.</li>
+                        <li><span class="letra">B)</span>Porque não dá para fazer o servidor real falhar na hora em que o teste precisa.</li>
+                        <li><span class="letra">C)</span>Porque o erro 500 não existe em APIs reais.</li>
+                        <li><span class="letra">D)</span>Porque o erro 500 só acontece no banco de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">vi.fn por Parâmetro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando usar um vi.fn() passado por parâmetro para simular a API?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para medir a cobertura de testes.</li>
+                        <li><span class="letra">B)</span>Para simular a rede inteira sem mudar a tela.</li>
+                        <li><span class="letra">C)</span>No teste E2E com o navegador aberto.</li>
+                        <li><span class="letra">D)</span>No teste unitário de um serviço que recebe o cliente HTTP por parâmetro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">vi.spyOn no fetch</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz vi.spyOn(globalThis, &#x27;fetch&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Liga o servidor real da API.</li>
+                        <li><span class="letra">B)</span>Espiona e troca o fetch global, útil em casos simples e pontuais.</li>
+                        <li><span class="letra">C)</span>Instala o MSW no projeto.</li>
+                        <li><span class="letra">D)</span>Apaga todas as requisições do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">O Que É o MSW</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o MSW (Mock Service Worker)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma ferramenta que intercepta a requisição de rede e responde no lugar do servidor.</li>
+                        <li><span class="letra">B)</span>Um navegador para testes E2E.</li>
+                        <li><span class="letra">C)</span>Um banco de dados para testes.</li>
+                        <li><span class="letra">D)</span>Um framework de CSS.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">MSW e o Código da Tela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o MSW é indicado para os testes de integração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o código da tela não muda: só a resposta da rede é simulada.</li>
+                        <li><span class="letra">B)</span>Porque ele reescreve o código da tela automaticamente.</li>
+                        <li><span class="letra">C)</span>Porque ele só funciona em produção.</li>
+                        <li><span class="letra">D)</span>Porque ele dispensa a Testing Library.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Instalação do MSW</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o MSW como dependência de desenvolvimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm run msw</li>
+                        <li><span class="letra">B)</span>npm uninstall msw</li>
+                        <li><span class="letra">C)</span>npx msw publish</li>
+                        <li><span class="letra">D)</span>npm install -D msw</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Import do Handler</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que se importa do pacote msw para escrever um handler?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>render e fireEvent</li>
+                        <li><span class="letra">B)</span>http e HttpResponse</li>
+                        <li><span class="letra">C)</span>screen e userEvent</li>
+                        <li><span class="letra">D)</span>describe e it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Handler de POST</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha cria a simulação de um POST na rota de login?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>fetch.post(&#x27;/login&#x27;)</li>
+                        <li><span class="letra">B)</span>http.get(&#x27;/carrinho&#x27;, () =&gt; { ... })</li>
+                        <li><span class="letra">C)</span>http.post(URL_API + &#x27;/login&#x27;, async ({ request }) =&gt; { ... })</li>
+                        <li><span class="letra">D)</span>servidor.close(&#x27;/login&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Ler o Corpo da Requisição</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Dentro do handler, como ler o e-mail e a senha enviados pela tela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>const { email, senha } = await request.json();</li>
+                        <li><span class="letra">B)</span>const dados = screen.getByText(&#x27;email&#x27;);</li>
+                        <li><span class="letra">C)</span>const senha = localStorage.getItem(&#x27;senha&#x27;);</li>
+                        <li><span class="letra">D)</span>const email = document.body.email;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Resposta 401</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha responde 401 com a mensagem de erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>return new HttpResponse(null, { status: 500 });</li>
+                        <li><span class="letra">B)</span>return HttpResponse.json({ nome: &#x27;Aluno&#x27; }, { status: 200 });</li>
+                        <li><span class="letra">C)</span>return fetch(&#x27;/login&#x27;);</li>
+                        <li><span class="letra">D)</span>return HttpResponse.json({ erro: &#x27;Credenciais inválidas&#x27; }, { status: 401 });</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">setupServer</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">De onde vem o setupServer usado nos testes que rodam no Node?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>@testing-library/dom</li>
+                        <li><span class="letra">B)</span>vitest/config</li>
+                        <li><span class="letra">C)</span>react-dom</li>
+                        <li><span class="letra">D)</span>msw/node</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Servidor em Módulo Próprio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o servidor do MSW fica num módulo próprio (src/mocks/servidor.js)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para esconder o código dos alunos.</li>
+                        <li><span class="letra">B)</span>Para que cada teste crie um servidor diferente.</li>
+                        <li><span class="letra">C)</span>Para que o setup e os testes usem o mesmo servidor.</li>
+                        <li><span class="letra">D)</span>Para que ele rode só em produção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">URL Completa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que, no Node, a requisição precisa de URL completa (http://localhost:3000/api/login)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a URL completa é mais rápida.</li>
+                        <li><span class="letra">B)</span>Porque o fetch do Node não entende caminho relativo como /api/login.</li>
+                        <li><span class="letra">C)</span>Porque o MSW não aceita a palavra login.</li>
+                        <li><span class="letra">D)</span>Porque o navegador exige.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">servidor.listen</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde se liga o servidor do MSW no tests/setup.js?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No beforeAll, com servidor.listen().</li>
+                        <li><span class="letra">B)</span>Dentro de cada expect.</li>
+                        <li><span class="letra">C)</span>No afterAll, com servidor.listen().</li>
+                        <li><span class="letra">D)</span>No package.json.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">onUnhandledRequest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz a opção onUnhandledRequest: &#x27;error&#x27; no servidor.listen?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desliga o servidor depois de cada teste.</li>
+                        <li><span class="letra">B)</span>Esconde os erros da API.</li>
+                        <li><span class="letra">C)</span>Faz o teste falhar se a tela chamar uma rota que não tem simulação.</li>
+                        <li><span class="letra">D)</span>Deixa as requisições sem simulação irem para a internet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">resetHandlers</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve servidor.resetHandlers() no afterEach?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Limpar o localStorage.</li>
+                        <li><span class="letra">B)</span>Ligar o servidor real.</li>
+                        <li><span class="letra">C)</span>Desfazer as respostas trocadas com servidor.use, voltando à simulação padrão.</li>
+                        <li><span class="letra">D)</span>Apagar os arquivos de teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">servidor.close</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o servidor do MSW é desligado com servidor.close()?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No afterAll, depois de todos os testes.</li>
+                        <li><span class="letra">B)</span>Nunca, ele fica ligado para sempre.</li>
+                        <li><span class="letra">C)</span>Antes de cada teste.</li>
+                        <li><span class="letra">D)</span>No meio de cada teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Limpar o localStorage</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha do afterEach evita que dados guardados num teste apareçam no próximo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>localStorage.clear();</li>
+                        <li><span class="letra">B)</span>servidor.listen();</li>
+                        <li><span class="letra">C)</span>userEvent.setup();</li>
+                        <li><span class="letra">D)</span>document.title = &#x27;&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Login Aceito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No teste do login aceito, o que se confere além da mensagem de boas-vindas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o servidor real respondeu.</li>
+                        <li><span class="letra">B)</span>Que a senha apareceu na tela.</li>
+                        <li><span class="letra">C)</span>Que o token foi guardado no localStorage.</li>
+                        <li><span class="letra">D)</span>Que o botão sumiu do HTML.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Conferir o Token</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha confere o token guardado depois do login aceito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(screen.getByText(&#x27;token&#x27;)).toBeDisabled();</li>
+                        <li><span class="letra">B)</span>expect(servidor.token).toBe(&#x27;mock-jwt-xyz&#x27;);</li>
+                        <li><span class="letra">C)</span>expect(localStorage.getItem(&#x27;token&#x27;)).toBe(&#x27;mock-jwt-xyz&#x27;);</li>
+                        <li><span class="letra">D)</span>expect(localStorage.setItem(&#x27;token&#x27;)).toBe(true);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Senha Errada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No teste da senha errada, o que se espera do localStorage?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a senha errada fique guardada.</li>
+                        <li><span class="letra">B)</span>Que não haja token: localStorage.getItem(&#x27;token&#x27;) é null.</li>
+                        <li><span class="letra">C)</span>Que o token seja &#x27;mock-jwt-xyz&#x27;.</li>
+                        <li><span class="letra">D)</span>Que o localStorage seja apagado do navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Por Que findByText no Login</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste do login usa findByText para a mensagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque findByText desliga o MSW.</li>
+                        <li><span class="letra">B)</span>Porque a mensagem aparece antes do clique.</li>
+                        <li><span class="letra">C)</span>Porque a mensagem só aparece depois que a resposta assíncrona do fetch chega.</li>
+                        <li><span class="letra">D)</span>Porque getByText não existe na Testing Library.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Função Auxiliar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a vantagem da função auxiliar entrarCom(email, senha) nos testes de login?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dispensar o expect nos testes.</li>
+                        <li><span class="letra">B)</span>Reaproveitar os passos repetidos (montar, digitar e clicar) em vários testes.</li>
+                        <li><span class="letra">C)</span>Ligar o servidor real.</li>
+                        <li><span class="letra">D)</span>Deixar os testes dependentes uns dos outros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Confiabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é confiabilidade (4.3) numa tela de front-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O código ter poucas linhas.</li>
+                        <li><span class="letra">B)</span>A tela carregar em menos de um segundo.</li>
+                        <li><span class="letra">C)</span>A tela ter cores agradáveis.</li>
+                        <li><span class="letra">D)</span>A tela continuar útil quando algo dá errado, como erro do servidor ou rede lenta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">servidor.use</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve servidor.use(...) dentro de um teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instalar o MSW.</li>
+                        <li><span class="letra">B)</span>Trocar a resposta de uma rota só naquele teste.</li>
+                        <li><span class="letra">C)</span>Desligar o servidor para sempre.</li>
+                        <li><span class="letra">D)</span>Apagar todos os handlers do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Simular Erro 500</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual handler faz a rota de login responder com erro 500?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>http.post(URL_API + &#x27;/login&#x27;, () =&gt; new HttpResponse(null, { status: 500 }))</li>
+                        <li><span class="letra">B)</span>http.get(URL_API + &#x27;/login&#x27;, () =&gt; HttpResponse.json({}, { status: 200 }))</li>
+                        <li><span class="letra">C)</span>http.post(URL_API + &#x27;/login&#x27;, () =&gt; HttpResponse.json({ nome: &#x27;Aluno&#x27; }))</li>
+                        <li><span class="letra">D)</span>http.post(URL_API + &#x27;/login&#x27;, () =&gt; delay(500))</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Comportamento no Erro 500</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a tela deve fazer quando o servidor responde 500?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ficar em branco.</li>
+                        <li><span class="letra">B)</span>Mostrar &quot;Serviço indisponível, tente novamente&quot; e reativar o botão.</li>
+                        <li><span class="letra">C)</span>Recarregar a página sem parar.</li>
+                        <li><span class="letra">D)</span>Guardar um token vazio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Comportamento no 404</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a tela deve fazer quando a API responde 404?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostrar o código-fonte da página.</li>
+                        <li><span class="letra">B)</span>Apagar o formulário.</li>
+                        <li><span class="letra">C)</span>Mostrar uma mensagem amigável, sem quebrar a página.</li>
+                        <li><span class="letra">D)</span>Esconder todos os botões para sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Comportamento na Rede Lenta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a tela deve fazer quando a rede está lenta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não mostrar nada até a resposta chegar.</li>
+                        <li><span class="letra">B)</span>Mostrar uma mensagem de erro imediatamente.</li>
+                        <li><span class="letra">C)</span>Desabilitar a página para sempre.</li>
+                        <li><span class="letra">D)</span>Mostrar &quot;Carregando...&quot; e retirar o aviso quando a resposta chegar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Simular Demora</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso do MSW simula a rede lenta dentro do handler?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await delay(800)</li>
+                        <li><span class="letra">B)</span>servidor.close()</li>
+                        <li><span class="letra">C)</span>localStorage.clear()</li>
+                        <li><span class="letra">D)</span>setTimeout no expect</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Corpo Vazio no 500</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A resposta 500 da simulação vem sem corpo. O que acontece com resposta.json() na tela do exemplo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Lança erro, e a tela precisa de try/catch e de uma mensagem própria.</li>
+                        <li><span class="letra">B)</span>Funciona normalmente, sem nenhum problema.</li>
+                        <li><span class="letra">C)</span>Devolve o nome do aluno.</li>
+                        <li><span class="letra">D)</span>Devolve o token mock-jwt-xyz.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Objetivo do Teste de Confiabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o teste do erro 500 falha e revela que a tela não trata o erro, isso significa que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A API real deve ser usada no lugar da simulação.</li>
+                        <li><span class="letra">B)</span>O MSW está com defeito.</li>
+                        <li><span class="letra">C)</span>O teste cumpriu o objetivo: encontrou um defeito de confiabilidade.</li>
+                        <li><span class="letra">D)</span>O teste está errado e deve ser apagado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Espera com Tempo Fixo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema de await new Promise((r) =&gt; setTimeout(r, 1000)) no teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Faz o MSW parar de funcionar.</li>
+                        <li><span class="letra">B)</span>Não tem nenhum problema.</li>
+                        <li><span class="letra">C)</span>Deixa o teste mais confiável em todos os computadores.</li>
+                        <li><span class="letra">D)</span>Fica lento quando sobra tempo e intermitente quando falta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Espera Confiável</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha espera a mensagem &quot;Bem-vindo, Aluno&quot; sem tempo fixo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>screen.getByText(&#x27;Bem-vindo, Aluno&#x27;).wait()</li>
+                        <li><span class="letra">B)</span>await screen.findByText(&#x27;Bem-vindo, Aluno&#x27;)</li>
+                        <li><span class="letra">C)</span>await new Promise((r) =&gt; setTimeout(r, 2000))</li>
+                        <li><span class="letra">D)</span>sleep(2000)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">waitFor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha espera o botão ficar habilitado sem tempo fixo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>setTimeout(() =&gt; expect(botao).toBeEnabled(), 2000);</li>
+                        <li><span class="letra">B)</span>await waitFor(() =&gt; expect(botao).toBeEnabled());</li>
+                        <li><span class="letra">C)</span>await botao.enable();</li>
+                        <li><span class="letra">D)</span>expect(botao).toBeEnabled().wait();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Aviso que Some</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha espera o aviso &quot;Carregando...&quot; sair da tela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(screen.getByText(&#x27;Carregando...&#x27;)).toBeInTheDocument()</li>
+                        <li><span class="letra">B)</span>servidor.close(&#x27;Carregando...&#x27;)</li>
+                        <li><span class="letra">C)</span>localStorage.removeItem(&#x27;Carregando...&#x27;)</li>
+                        <li><span class="letra">D)</span>await waitForElementToBeRemoved(() =&gt; screen.queryByText(&#x27;Carregando...&#x27;))</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Limite de Espera</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como funcionam findBy e waitFor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tentam uma única vez e desistem.</li>
+                        <li><span class="letra">B)</span>Esperam para sempre, sem limite.</li>
+                        <li><span class="letra">C)</span>Tentam de novo até dar certo ou até o limite de tempo (1 s por padrão).</li>
+                        <li><span class="letra">D)</span>Esperam sempre exatamente 5 segundos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">localStorage entre Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O segundo teste do carrinho encontra os produtos do primeiro. Qual é a causa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste usou findBy.</li>
+                        <li><span class="letra">B)</span>O MSW guardou os produtos.</li>
+                        <li><span class="letra">C)</span>O navegador real estava aberto.</li>
+                        <li><span class="letra">D)</span>O localStorage não foi limpo entre os testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Ler o Carrinho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O carrinho fica no localStorage em JSON na chave &quot;carrinho&quot;. Como ler a lista no teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>JSON.parse(localStorage.getItem(&#x27;carrinho&#x27;))</li>
+                        <li><span class="letra">B)</span>screen.getByText(&#x27;carrinho&#x27;)</li>
+                        <li><span class="letra">C)</span>JSON.stringify(localStorage)</li>
+                        <li><span class="letra">D)</span>localStorage.carrinho.length</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Quantidade de Itens</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que o carrinho tem exatamente 1 item?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBeVisible(1)</li>
+                        <li><span class="letra">B)</span>toHaveAttribute(1)</li>
+                        <li><span class="letra">C)</span>toBeDisabled(1)</li>
+                        <li><span class="letra">D)</span>toHaveLength(1)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Isolamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cada teste deve começar com o localStorage vazio?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para que o próximo teste aproveite os dados.</li>
+                        <li><span class="letra">B)</span>Para deixar o navegador mais rápido.</li>
+                        <li><span class="letra">C)</span>Para ser independente e ter o mesmo resultado em qualquer ordem.</li>
+                        <li><span class="letra">D)</span>Para economizar memória do servidor real.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Executar os Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é executar os testes (7.3)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar os testes que falham.</li>
+                        <li><span class="letra">B)</span>Publicar o site.</li>
+                        <li><span class="letra">C)</span>Escrever o plano de testes.</li>
+                        <li><span class="letra">D)</span>Rodar a suíte e registrar o resultado de cada caso: passou, falhou ou foi pulado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Comando de Execução</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando roda uma vez só os testes do arquivo fluxoLogin?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm publish fluxoLogin</li>
+                        <li><span class="letra">B)</span>npx vitest run fluxoLogin</li>
+                        <li><span class="letra">C)</span>npm install fluxoLogin</li>
+                        <li><span class="letra">D)</span>npx vitest uninstall fluxoLogin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Leitura do Resumo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que se lê no resumo da execução do Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cor dos botões.</li>
+                        <li><span class="letra">B)</span>Quantos arquivos e testes passaram ou falharam e o tempo total.</li>
+                        <li><span class="letra">C)</span>A senha dos usuários.</li>
+                        <li><span class="letra">D)</span>O código-fonte do MSW.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Leitura da Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando um teste falha, o que ajuda a entender o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A mensagem com esperado × recebido e o trecho do DOM impresso pela Testing Library.</li>
+                        <li><span class="letra">B)</span>O tamanho do arquivo de teste.</li>
+                        <li><span class="letra">C)</span>Apenas a cor vermelha do terminal.</li>
+                        <li><span class="letra">D)</span>O nome do computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Rodar 3 Vezes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que rodar a suíte 3 vezes seguidas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para triplicar a cobertura.</li>
+                        <li><span class="letra">B)</span>Para descobrir testes instáveis, cujo resultado muda sem mudança no código.</li>
+                        <li><span class="letra">C)</span>Para deixar o computador mais rápido.</li>
+                        <li><span class="letra">D)</span>Para gastar o tempo da aula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Mock Esconde Defeito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No debate &quot;O mock pode esconder um defeito?&quot;, qual cuidado é correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A simulação deve sempre responder sucesso.</li>
+                        <li><span class="letra">B)</span>O mock deve ser usado também em produção.</li>
+                        <li><span class="letra">C)</span>A simulação deve imitar as respostas reais da API (sucesso e erros) para não esconder defeitos.</li>
+                        <li><span class="letra">D)</span>Não é preciso conhecer as respostas reais da API.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 05: Integração Avançada e Mock de APIs</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

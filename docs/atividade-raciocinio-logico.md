@@ -68,7 +68,7 @@ Criar um questionário com **30+ questões de raciocínio lógico** apropriadas 
 - Formatação profissional
 - Cabeçalhos, seções, tabelas
 
-**Localização:** `C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\ATIVIDADE-RACIOCINIO-LOGICO.docx`
+**Localização:** `C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\ATIVIDADE-RACIOCINIO-LOGICO.docx`
 
 ---
 
@@ -111,7 +111,7 @@ Criar um questionário com **30+ questões de raciocínio lógico** apropriadas 
 ## 📦 Resultado Final
 
 **Arquivo criado:** `ATIVIDADE-RACIOCINIO-LOGICO.docx`
-**Localização:** `C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\`
+**Localização:** `C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\`
 **Questões:** 35 (5 por seção × 7 seções)
 **Formato:** Múltipla escolha (A-E)
 **Gabarito:** Página separada ao final

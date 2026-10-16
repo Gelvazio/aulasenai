@@ -287,8 +287,8 @@ def aplicar_em_disciplina(template_path, auditoria_path):
     return resultados
 
 if __name__ == '__main__':
-    template_path = r"C:\fontes\aulas-senai\TEMPLATE-EMENTA-CHALKIE-AI.md"
-    auditoria_path = r"C:\fontes\aulas-senai\AUDITORIA-TAMANHO-EMENTA.json"
+    template_path = r"C:\fontes\aulasenai\TEMPLATE-EMENTA-CHALKIE-AI.md"
+    auditoria_path = r"C:\fontes\aulasenai\AUDITORIA-TAMANHO-EMENTA.json"
 
     print("🚀 Aplicando template em 24 disciplinas...")
     resultados = aplicar_em_disciplina(template_path, auditoria_path)

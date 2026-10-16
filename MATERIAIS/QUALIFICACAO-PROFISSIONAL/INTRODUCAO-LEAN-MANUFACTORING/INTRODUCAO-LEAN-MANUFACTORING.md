@@ -2,7 +2,7 @@
 
 **Data Última Atualização:** 2026-09-08  
 **Versão:** 1.0 (Inicial)  
-**Localização:** `C:\fontes\aulas-senai\sistema\QUALIFICACAO-PROFISSIONAL\`  
+**Localização:** `C:\fontes\aulasenai\sistema\QUALIFICACAO-PROFISSIONAL\`  
 **Status:** ✅ Ativa  
 
 ---

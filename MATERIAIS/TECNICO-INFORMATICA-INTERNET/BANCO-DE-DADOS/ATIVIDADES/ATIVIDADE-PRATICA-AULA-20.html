@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
 <script src="../../../../js/header-usuario.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade Prática — Aula 20 — Projeto Integrador: Banco Documentado para o Back-end (10 Questões Discursivas)</title>
+    <title>Atividade Prática — Aula 20 — Projeto Integrador: Banco Documentado para o Back-End (10 Questões Discursivas)</title>
     <link rel="stylesheet" href="../../../../assets/css/atividade.css">
     <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
     <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
 
 </head>
-<body data-aula="AP-20" data-tema="Projeto Integrador: Banco Documentado para o Back-end" data-total="10" data-topicos="30"
+<body data-aula="AP-20" data-tema="Projeto Integrador: Banco Documentado para o Back-End" data-total="10" data-topicos="30"
       data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
       data-maximo-caracteres="3000" data-login="sim">
 <div id="header-usuario"></div>
     <div class="container">
         <header>
             <a class="voltar" href="index.html">← Índice</a>
-            <h1>📦 Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-end</h1>
+            <h1>🧩 Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-End</h1>
             <p>Banco de Dados · Técnico em Informática para Internet — 10 Questões Discursivas</p>
         </header>
 
@@ -46,15 +46,15 @@
                 </div>
                 <div class="content-box">
                     <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
-                    <div class="content-text">Você, como aluno consultor, vai entregar o banco escola_db da escola de cursos livres (tabelas curso, turma, aluno, matricula e parcela, procedimento matricular, triggers e segurança das aulas 12 a 19) à empresa que fará o back-end do sistema de matrículas.</div>
+                    <div class="content-text">Você, como aluno consultor, fecha o projeto integrador do banco escola_db da escola de cursos livres (scripts 01-ddl-escola.sql a 07-seguranca.sql das aulas 12 a 19) e entrega o banco documentado para a equipe do back-end.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">💡 COMO RESPONDER</div>
-                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>: <strong>(1)</strong> o conceito ou o trecho pedido; <strong>(2)</strong> o código, a tabela ou a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>: <strong>(1)</strong> o conceito ou o trecho pedido; <strong>(2)</strong> o código ou a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
-                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: peças e comandos corretos para o PostgreSQL e justificativas ligadas aos requisitos do escopo, com as palavras-chave do conteúdo. Respostas equivalentes que produzam o mesmo resultado valem.</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: comandos que funcionam no PostgreSQL e no psql, documentação que outra pessoa consiga seguir, e justificativa com as palavras-chave do conteúdo. Comandos e textos equivalentes que produzam o mesmo resultado valem.</div>
                 </div>
             </section>
 
@@ -66,24 +66,24 @@
             <section class="aula-card questao-discursiva" id="item-01" data-item="1">
                 <span class="aula-badge">ITEM 01</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">O Pacote da Entrega</h2>
+                <h2 class="aula-title">Do Requisito ao Banco</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, recebe da empresa do back-end o pedido: &quot;mandem tudo o que precisamos para usar o banco sem ter que ligar para vocês&quot;.</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta o banco à direção da escola, que pergunta: &quot;como eu sei que tudo o que pedimos está no banco?&quot;. O escopo tem, entre outros, os requisitos R2 (o aluno não se matricula duas vezes na mesma turma), R3 (a turma tem no máximo 25 alunos ativos) e R6 (o financeiro não vê o CPF).</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Monte o pacote de documentação técnica.</div>
+                    <div class="content-text">Mostre a rastreabilidade entre o escopo e o banco.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="1" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-01-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Explique quando um banco está realmente pronto para ser entregue.
+                        Explique o que é rastreabilidade no projeto do banco.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
@@ -98,11 +98,11 @@
                 <div class="topico-resposta" data-item="1" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-01-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Liste as peças da documentação técnica do banco e diga em uma frase para que serve cada uma.
+                        Diga onde cada um dos requisitos R2, R3 e R6 está atendido no banco (tabela, restrição, procedimento ou permissão).
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
-                              maxlength="3000" rows="9" readonly
+                              maxlength="3000" rows="6" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -113,11 +113,11 @@
                 <div class="topico-resposta" data-item="1" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-01-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique por que o guia de instalação (README) é a peça que a empresa vai abrir primeiro e o que ele precisa explicar.
+                        Explique o que indicam, na conferência, uma tabela que não atende a nenhum requisito e um requisito sem nada no banco.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
-                              maxlength="3000" rows="6" readonly
+                              maxlength="3000" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -129,24 +129,24 @@
             <section class="aula-card questao-discursiva" id="item-02" data-item="2">
                 <span class="aula-badge">ITEM 02</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Escopo como Referência</h2>
+                <h2 class="aula-title">O Script Mestre</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, confere a entrega contra o escopo da aula 5 e encontra: (1) o requisito &quot;registrar o telefone de um responsável pelo aluno menor de idade&quot; não está em nenhuma tabela; (2) existe uma tabela &quot;brinde&quot; que nenhum requisito pede.</div>
+                    <div class="content-text">Você, como aluno consultor, junta os sete scripts da SA 2 na pasta sql/ do projeto. O colega do back-end precisa instalar o banco inteiro com um único comando.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Avalie a entrega com base no escopo.</div>
+                    <div class="content-text">Monte o script mestre 00-instalar.sql.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="2" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-02-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Diga qual documento é a referência para conferir a entrega final e o que ele contém.
+                        Explique por que os scripts precisam rodar numa ordem, com um exemplo de dependência.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
@@ -161,11 +161,11 @@
                 <div class="topico-resposta" data-item="2" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-02-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Classifique as situações 1 e 2 e diga o que fazer com cada uma.
+                        Escreva o 00-instalar.sql que chama os scripts 01 a 07 na ordem certa e para no primeiro erro, e o comando psql que o executa.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
-                              maxlength="3000" rows="6" readonly
+                              maxlength="3000" rows="8" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -176,7 +176,7 @@
                 <div class="topico-resposta" data-item="2" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-02-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique como uma mudança de escopo deve ser tratada para que a tabela &quot;brinde&quot; pudesse fazer parte da entrega.
+                        Explique o que acontece se o script mestre não tiver \set ON_ERROR_STOP on e um dos scripts der erro.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
@@ -192,24 +192,24 @@
             <section class="aula-card questao-discursiva" id="item-03" data-item="3">
                 <span class="aula-badge">ITEM 03</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Dicionário de Dados</h2>
+                <h2 class="aula-title">Banco Limpo e Scripts que Rodam de Novo</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C14 — Aplicar boas práticas de segurança da informação</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, revisa o dicionário de dados e percebe que a coluna data_pagamento da tabela parcela aparece no documento como &quot;pago_em&quot;, com tipo texto.</div>
+                    <div class="content-text">Você, como aluno consultor, ouve do colega: &quot;na minha máquina funciona&quot;. Na máquina do professor, o script 06 para com &quot;function registrar_historico_nota() does not exist&quot;, e uma segunda execução do script 05 dá &quot;procedure matricular already exists&quot;.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Atualize o dicionário de dados.</div>
+                    <div class="content-text">Prepare o teste num banco limpo e deixe os scripts prontos para rodar de novo.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="3" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-03-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Diga quais informações o dicionário de dados traz para cada coluna.
+                        Explique por que o teste da instalação deve ser feito num banco limpo e em qual banco ele nunca deve ser feito.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
@@ -224,7 +224,7 @@
                 <div class="topico-resposta" data-item="3" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-03-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Escreva a linha correta do dicionário para a coluna data_pagamento da tabela parcela.
+                        Escreva os comandos que criam um banco limpo escola_teste e instalam o projeto nele com o script mestre.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
@@ -239,11 +239,11 @@
                 <div class="topico-resposta" data-item="3" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-03-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique o problema de entregar o dicionário desatualizado em relação ao SQL.
+                        Diga como corrigir os dois erros do contexto (o da função e o do procedimento) para os scripts rodarem do zero e também uma segunda vez.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="9" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -255,24 +255,24 @@
             <section class="aula-card questao-discursiva" id="item-04" data-item="4">
                 <span class="aula-badge">ITEM 04</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Scripts Numerados</h2>
+                <h2 class="aula-title">Escopo, README e Dicionário</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, encontra os scripts do grupo com os nomes: seguranca.sql, tabelas.sql, dados.sql, rotinas.sql, chaves.sql, banco.sql e consultas.sql.</div>
+                    <div class="content-text">Você, como aluno consultor, revisa a documentação antes da entrega. O README só diz &quot;rode os scripts&quot;, o escopo é o mesmo da aula 5 e o dicionário de dados lista só o nome das colunas.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Organize os scripts da entrega.</div>
+                    <div class="content-text">Complete a documentação técnica.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="4" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-04-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Explique por que os scripts precisam ser numerados.
+                        Explique para que serve a documentação técnica do banco.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
@@ -287,11 +287,11 @@
                 <div class="topico-resposta" data-item="4" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-04-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Renomeie os sete scripts com números na ordem correta de execução, dizendo o conteúdo de cada um.
+                        Liste o que o README e o escopo atualizado precisam ter para outra pessoa instalar e entender o banco.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
-                              maxlength="3000" rows="8" readonly
+                              maxlength="3000" rows="7" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -302,11 +302,11 @@
                 <div class="topico-resposta" data-item="4" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-04-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Cite três boas práticas que todo script da entrega deve seguir e explique uma delas.
+                        Escreva a linha do dicionário de dados da coluna valor da tabela parcela, com todos os campos que o dicionário pede.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
-                              maxlength="3000" rows="6" readonly
+                              maxlength="3000" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -318,24 +318,24 @@
             <section class="aula-card questao-discursiva" id="item-05" data-item="5">
                 <span class="aula-badge">ITEM 05</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Recriar do Zero</h2>
+                <h2 class="aula-title">Cronograma e Fluxograma</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento<br>C8 — Aplicar linguagem de manipulação de dados</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, ouve de um colega: &quot;no meu computador o banco funciona, não precisa testar de novo&quot;. Na recriação num banco limpo, o script de chaves falhou, mas o psql seguiu executando os outros arquivos.</div>
+                    <div class="content-text">Você, como aluno consultor, atualiza o cronograma e o fluxograma da aula 11. Os procedimentos estavam previstos para a aula 17, mas ficaram prontos na aula 18 porque a regra de vagas mudou. O fluxograma da matrícula tem as decisões &quot;Aluno já matriculado na turma?&quot; e &quot;Há vagas?&quot;.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Recrie o banco do zero de forma segura.</div>
+                    <div class="content-text">Atualize o cronograma e ligue o fluxograma às regras do banco.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="5" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-05-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Explique por que o banco deve ser recriado do zero num banco limpo antes da entrega.
+                        Diga quais colunas o cronograma da entrega final precisa ter.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
@@ -350,7 +350,7 @@
                 <div class="topico-resposta" data-item="5" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-05-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Escreva os comandos do psql que executam, na ordem, os scripts 02-tabelas.sql e 03-chaves-e-restricoes.sql no banco escola_db, parando no primeiro erro.
+                        Escreva a linha do cronograma da tarefa dos procedimentos com o previsto, o realizado e a observação.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
@@ -365,11 +365,11 @@
                 <div class="topico-resposta" data-item="5" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-05-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique o que a opção -v ON_ERROR_STOP=1 evita e como executar um arquivo de dentro do psql.
+                        Diga qual recurso do banco executa cada uma das duas decisões do fluxograma e explique por que ligar o fluxograma ao banco melhora a documentação.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="8" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -381,24 +381,24 @@
             <section class="aula-card questao-discursiva" id="item-06" data-item="6">
                 <span class="aula-badge">ITEM 06</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Rastreabilidade</h2>
+                <h2 class="aula-title">Revisão do Modelo</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, precisa provar ao cliente que os requisitos foram atendidos: R1 — CPF do aluno não se repete; R2 — turma com no máximo 25 alunos; R4 — parcela paga não pode mudar de valor; R6 — financeiro não vê o CPF.</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o DDL de outra equipe e encontra: a tabela turma com as colunas id_curso e nome_curso; a tabela aluno com a coluna telefones = &#x27;4799990000;4798880000&#x27;; e a coluna IdMatrícula na tabela matricula.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Monte a matriz de rastreabilidade.</div>
+                    <div class="content-text">Revise o modelo pelo checklist da aula.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="6" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-06-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Explique o que é a matriz de rastreabilidade.
+                        Cite dois itens do checklist do modelo que conferem o DER com o banco.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
@@ -413,11 +413,11 @@
                 <div class="topico-resposta" data-item="6" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-06-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Escreva as linhas da matriz para R1, R2, R4 e R6, com o que atende cada requisito no banco e o script.
+                        Diga qual regra cada um dos três problemas do contexto fere (forma normal ou padrão de nomes).
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
-                              maxlength="3000" rows="6" readonly
+                              maxlength="3000" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -428,11 +428,11 @@
                 <div class="topico-resposta" data-item="6" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-06-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique como a matriz de rastreabilidade ajuda a encontrar pendências e excessos na entrega.
+                        Explique como corrigir cada um dos três problemas.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="7" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -444,24 +444,24 @@
             <section class="aula-card questao-discursiva" id="item-07" data-item="7">
                 <span class="aula-badge">ITEM 07</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Conferência Final e Relatório de Testes</h2>
+                <h2 class="aula-title">As Consultas do Back-End</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
                     <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, faz a conferência final no banco recriado do zero, antes de chamar o cliente.</div>
+                    <div class="content-text">Você, como aluno consultor, fecha o script 04-relatorios.sql com as consultas que as telas do back-end vão usar: a tela de cobrança e o painel da coordenação.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Monte e execute o checklist de conferência.</div>
+                    <div class="content-text">Escreva as consultas e justifique cada uma.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="7" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-07-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Diga os comandos do psql que listam as tabelas do banco e que mostram as colunas e restrições da tabela matricula.
+                        Explique por que cada consulta do script deve ter um comentário dizendo qual tela ou relatório a usa.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
@@ -476,11 +476,11 @@
                 <div class="topico-resposta" data-item="7" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-07-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Descreva três testes da conferência final (estrutura ou dados, regra do negócio e permissões), com o comando ou a ação e o resultado esperado de cada um.
+                        Escreva a consulta das parcelas vencidas e não pagas, com o nome do aluno, para a tela de cobrança.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
-                              maxlength="3000" rows="9" readonly
+                              maxlength="3000" rows="6" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -491,11 +491,11 @@
                 <div class="topico-resposta" data-item="7" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-07-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique o que cada linha do relatório de testes registra e por que um erro do banco pode ser o resultado esperado.
+                        Escreva a consulta das turmas sem nenhuma matrícula para o painel da coordenação e explique o recurso que encontra essas turmas.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="6" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -507,28 +507,28 @@
             <section class="aula-card questao-discursiva" id="item-08" data-item="8">
                 <span class="aula-badge">ITEM 08</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Backup da Entrega</h2>
+                <h2 class="aula-title">O Contrato com o Back-End</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
                     <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, vai guardar uma cópia do banco no dia da entrega. Um colega sugere salvar o arquivo na pasta do repositório Git, &quot;para ficar junto com os scripts&quot;.</div>
+                    <div class="content-text">Você, como aluno consultor, recebe o pedido do programador do back-end: &quot;me passa a senha do postgres que eu faço o resto&quot;. A aplicação precisa matricular alunos, registrar pagamentos e editar nome, e-mail e telefone do aluno.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Faça e teste o backup da entrega.</div>
+                    <div class="content-text">Defina o contrato entre o banco e o back-end.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="8" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-08-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Escreva o comando que gera o backup do banco escola_db no formato custom.
+                        Explique o que é o contrato com o back-end e por que o pedido do programador deve ser recusado.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="7" readonly
                               placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -539,11 +539,11 @@
                 <div class="topico-resposta" data-item="8" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-08-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Escreva os comandos que criam o banco escola_db_teste, restauram o backup nele e conferem a quantidade de alunos.
+                        Escreva os GRANT do app_escola para matricular, registrar pagamento e editar só nome, e-mail e telefone do aluno.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
-                              maxlength="3000" rows="5" readonly
+                              maxlength="3000" rows="8" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -554,11 +554,11 @@
                 <div class="topico-resposta" data-item="8" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-08-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique por que o backup só vale depois da restauração e por que o arquivo não deve ir para o Git.
+                        Explique por que o back-end deve usar consultas com parâmetros e onde deve ficar a senha do app_escola.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
-                              maxlength="3000" rows="6" readonly
+                              maxlength="3000" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -570,24 +570,24 @@
             <section class="aula-card questao-discursiva" id="item-09" data-item="9">
                 <span class="aula-badge">ITEM 09</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">O que o Back-end Recebe</h2>
+                <h2 class="aula-title">Teste de Ponta a Ponta e Backup</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C8 — Aplicar linguagem de manipulação de dados<br>C14 — Aplicar boas práticas de segurança da informação</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, recebe o pedido do desenvolvedor do back-end: &quot;me passem a senha do postgres que eu me viro&quot;.</div>
+                    <div class="content-text">Você, como aluno consultor, roda o roteiro final no banco escola_teste antes da entrega e precisa entregar também um backup que o professor consiga restaurar.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Entregue ao back-end só o que ele precisa.</div>
+                    <div class="content-text">Execute o teste final e prepare o backup de entrega.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="9" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-09-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Diga com qual login o back-end deve se conectar e onde fica a string de conexão.
+                        Cite os comandos do psql que conferem, depois da instalação, as tabelas, as visões, as funções e procedimentos e os papéis.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
@@ -602,7 +602,7 @@
                 <div class="topico-resposta" data-item="9" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-09-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Escreva o exemplo da variável de ambiente DATABASE_URL e liste o que entra no &quot;contrato&quot; do banco entregue ao back-end.
+                        Escreva dois testes do roteiro com o resultado esperado: uma matrícula repetida e o login do financeiro tentando ver o CPF.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
@@ -617,7 +617,7 @@
                 <div class="topico-resposta" data-item="9" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-09-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique por que a senha do postgres não é entregue e o que o back-end deve fazer quando o banco devolve um erro de regra (por exemplo, a turma cheia).
+                        Escreva o comando do backup de entrega e os comandos que provam que ele funciona, e explique por que essa prova é necessária.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
@@ -633,24 +633,24 @@
             <section class="aula-card questao-discursiva" id="item-10" data-item="10">
                 <span class="aula-badge">ITEM 10</span>
                 <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
-                <h2 class="aula-title">Revisão Cruzada e Justificativas</h2>
+                <h2 class="aula-title">Revisão em Pares e Decisões</h2>
                 <div class="content-box">
                     <div class="content-label">🎯 CAPACIDADE</div>
-                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
-                    <div class="content-text">Você, como aluno consultor, recebe a revisão de outro grupo com duas perguntas: (1) &quot;por que a parcela tem chave (id_matricula, numero) e não um id próprio?&quot;; (2) &quot;por que o limite de 25 alunos está no procedimento e não num CHECK?&quot;. O grupo revisor também sugere renomear a tabela matricula para inscricao.</div>
+                    <div class="content-text">Você, como aluno consultor, participa da revisão cruzada. Sua equipe recebeu do colega a sugestão &quot;o script de vocês está ruim&quot; e precisa registrar no projeto por que decidiu cancelar matrículas em vez de apagá-las.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎯 COMANDO</div>
-                    <div class="content-text">Responda à revisão com atitude e base técnica.</div>
+                    <div class="content-text">Melhore a sugestão recebida e registre a decisão.</div>
                 </div>
                 <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
                 <div class="topico-resposta" data-item="10" data-topico="1">
                     <label class="topico-resposta__rotulo" for="resposta-10-a">
                         <span class="topico-resposta__letra">a)</span>
-                        Diga como a sugestão de renomear a tabela deve ser registrada pelo grupo.
+                        Diga como a revisão cruzada testa o projeto de outra equipe.
                         <span class="topico-resposta__pontos">0,2 ponto</span>
                     </label>
                     <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
@@ -665,11 +665,11 @@
                 <div class="topico-resposta" data-item="10" data-topico="2">
                     <label class="topico-resposta__rotulo" for="resposta-10-b">
                         <span class="topico-resposta__letra">b)</span>
-                        Justifique tecnicamente as escolhas 1 e 2.
+                        Reescreva a sugestão no formato &quot;o quê, onde, efeito&quot; com um problema real de instalação e diga como a equipe deve receber a sugestão.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
-                              maxlength="3000" rows="8" readonly
+                              maxlength="3000" rows="7" readonly
                               placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -680,11 +680,11 @@
                 <div class="topico-resposta" data-item="10" data-topico="3">
                     <label class="topico-resposta__rotulo" for="resposta-10-c">
                         <span class="topico-resposta__letra">c)</span>
-                        Explique as atitudes esperadas do revisor e do autor na revisão cruzada e decida, com justificativa, se aceita a troca de matricula para inscricao.
+                        Escreva a linha do registro de decisões para &quot;matrícula é cancelada, não apagada&quot;, com o motivo e a alternativa descartada.
                         <span class="topico-resposta__pontos">0,4 ponto</span>
                     </label>
                     <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
-                              maxlength="3000" rows="10" readonly
+                              maxlength="3000" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -707,7 +707,7 @@
     </div>
 
     <footer>
-        <p><strong>Banco de Dados — Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-end</strong></p>
+        <p><strong>Banco de Dados — Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-End</strong></p>
         <p>Técnico em Informática para Internet — SENAI</p>
         <p>10 Questões • Discursiva</p>
     </footer>
@@ -715,6 +715,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../../../../js/supabase.js"></script>
     <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
     <script src="../../../../assets/js/popup.js"></script>
     <script src="../../../../assets/js/termos-tentativa.js"></script>
     <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>

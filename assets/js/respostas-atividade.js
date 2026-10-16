@@ -33,6 +33,14 @@ const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no 
     'Verifique a conexão e tente finalizar de novo.';
 const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
 const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
+const ARQUIVO_MEU_PROGRESSO_OBJETIVA = 'progresso-do-aluno.js';
+const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
+const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
+const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
+const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
+const VALOR_ATIVO_MEU_GABARITO = 'sim';
+const SELETOR_MEU_GABARITO_PADRAO = '.folha-respostas';
+const SELETOR_MEU_GABARITO_TOPO = '.export-bar';
 
 /**
  * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
@@ -614,6 +622,9 @@ async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
     try {
         await carregarScript('turma-favorita.js');
         await carregarScript('turma-horario.js');
+        const faltaModuloEntrega = document.body.dataset.marcarEntregue === 'sim' &&
+            typeof window.acrescentarControleEntrega !== 'function';
+        if (faltaModuloEntrega) await carregarScript('marcar-entregue-professor.js');
         await carregarScript('respostas-atividade-professor.js');
         await montarRelatorioProfessor(secao, atividadeId, maximo);
     } catch (erro) {
@@ -678,6 +689,126 @@ async function abrirRespostasDoAlunoProfessor(estado, identificacao, atividadeId
 }
 
 /**
+ * Mostra só as questões 1 até o mínimo quando a página pede (body data-questoes-ate-minimo="sim";
+ * assets/js/questoes-ate-minimo.js). Sem login ou com falha ao carregar, mostra todas.
+ * @param {Object} estado - Estado da página (minimo).
+ * @param {Object} carregado - Dados do provedor (logado, ehProfessor, atividadeId).
+ */
+async function mostrarSoAteOMinimo(estado, carregado) {
+    const estaAtivo = document.body.dataset.questoesAteMinimo ===
+        VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA;
+    if (!estaAtivo || !carregado.logado) return;
+    try {
+        if (typeof window.iniciarQuestoesAteMinimo !== 'function') {
+            await carregarScript(ARQUIVO_QUESTOES_ATE_MINIMO);
+        }
+        await window.iniciarQuestoesAteMinimo({ minimo: estado.minimo,
+            ehProfessor: Boolean(carregado.ehProfessor), atividadeId: carregado.atividadeId });
+    } catch (erro) {
+        console.warn(erro.message);
+    }
+}
+
+/**
+ * Aluno com a objetiva entregue: se o professor já liberou os gabaritos da turma, marca ✅/❌ em
+ * cada questão e a alternativa certa nas erradas (assets/js/correcao-objetiva-aluno.js).
+ * Uma falha aqui não pode impedir o resto da página.
+ * @param {Object} estado - Estado da página (itens, entregue).
+ * @param {Object} carregado - Dados do provedor (atividadeId, respostas da tentativa).
+ */
+async function abrirCorrecaoDoAluno(estado, carregado) {
+    if (!estado.entregue) return;
+    try {
+        if (typeof window.mostrarCorrecaoObjetivaAluno !== 'function') {
+            await carregarScript(ARQUIVO_CORRECAO_OBJETIVA_ALUNO);
+        }
+        await window.mostrarCorrecaoObjetivaAluno({ atividadeId: carregado.atividadeId,
+            respostas: carregado.respostas, itens: estado.itens });
+    } catch (erro) {
+        console.warn('Correção da objetiva:', erro.message);
+    }
+}
+
+/**
+ * Descreve a nota da tentativa entregue para o PDF (ex.: "8,0 (40 acertos em 50 questões)").
+ * @param {Object} estado - Estado da página (minimo).
+ * @param {{acertos: number, total: number}|null} resultado - Resultado da tentativa.
+ * @returns {string} Nota descrita (vazia sem resultado).
+ */
+function descreverNotaObjetiva(estado, resultado) {
+    if (!resultado) return '';
+    const nota = calcularNota({ ...resultado, minimo: estado.minimo });
+    return formatarNota(nota) + ' (' + resultado.acertos + ' acertos em ' + resultado.total +
+        ' questões)';
+}
+
+/**
+ * Onde fica o "Exportar Meu Gabarito": na folha de respostas ou, com
+ * <body data-meu-gabarito-no-topo="sim">, na barra do topo, ao lado do "Exportar PDF".
+ * @returns {HTMLElement|null} Destino do botão.
+ */
+function obterDestinoMeuGabarito() {
+    const pedeNoTopo = document.body.dataset.meuGabaritoNoTopo === VALOR_ATIVO_MEU_GABARITO;
+    const barraDoTopo = document.querySelector(SELETOR_MEU_GABARITO_TOPO);
+    if (pedeNoTopo && barraDoTopo) return barraDoTopo;
+    return document.querySelector(SELETOR_MEU_GABARITO_PADRAO);
+}
+
+/**
+ * Aluno: botão "Exportar Meu Gabarito" na folha de respostas (ou no topo) quando a página pede
+ * (body data-exportar-meu-gabarito="sim"; assets/js/minhas-respostas-objetiva.js).
+ * Uma falha aqui não pode impedir o resto da página.
+ * @param {Object} estado - Estado da página.
+ * @param {Object} carregado - Dados do provedor.
+ */
+async function abrirMeuGabaritoObjetiva(estado, carregado) {
+    const estaAtivo = document.body.dataset.exportarMeuGabarito === VALOR_ATIVO_MEU_GABARITO;
+    if (!estaAtivo) return;
+    try {
+        if (typeof window.iniciarMeuGabaritoObjetiva !== 'function') {
+            await carregarScript(ARQUIVO_MEU_GABARITO_OBJETIVA);
+        }
+        await window.iniciarMeuGabaritoObjetiva({ carregado, itens: estado.itens,
+            notaTexto: descreverNotaObjetiva(estado, carregado.resultado),
+            rotuloTentativa: maiusculaInicial(termosTentativa().rotulo(estado.tentativa,
+                estado.maximoTentativas)),
+            destino: obterDestinoMeuGabarito() });
+    } catch (erro) {
+        console.warn('Exportar Meu Gabarito:', erro.message);
+    }
+}
+
+/**
+ * Aluno: quadro "📊 Meu progresso" (só a linha dele, sem notas; progresso-do-aluno.js). Uma
+ * falha aqui não atrapalha a atividade.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirMeuProgressoObjetiva(atividadeId) {
+    try {
+        if (typeof window.montarMeuProgresso !== 'function') {
+            await carregarScript(ARQUIVO_MEU_PROGRESSO_OBJETIVA);
+        }
+        await window.montarMeuProgresso(atividadeId, TIPO_PROGRESSO_GLOBAL_OBJETIVA);
+    } catch (erro) {
+        console.warn('Meu progresso indisponível:', erro.message);
+    }
+}
+
+/**
+ * Recursos só do aluno logado: meu progresso, correção depois da liberação e o "Exportar Meu
+ * Gabarito".
+ * @param {Object} estado - Estado da página.
+ * @param {Object} carregado - Dados do provedor (logado, ehProfessor).
+ */
+async function abrirRecursosDoAluno(estado, carregado) {
+    const ehAlunoLogado = Boolean(carregado.logado && !carregado.ehProfessor);
+    if (!ehAlunoLogado) return;
+    await abrirMeuProgressoObjetiva(carregado.atividadeId);
+    await abrirCorrecaoDoAluno(estado, carregado);
+    await abrirMeuGabaritoObjetiva(estado, carregado);
+}
+
+/**
  * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
  */
 async function iniciarRespostasAtividade() {
@@ -706,8 +837,10 @@ async function iniciarRespostasAtividade() {
     ligarAlternativas(estado);
     if (!estado.entregue) esconderQuestoesHerdadas(estado, carregado.herdadas || []);
     estado.atualizarFolha();
+    await mostrarSoAteOMinimo(estado, carregado);
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
+    await abrirRecursosDoAluno(estado, carregado);
     if (carregado.ehProfessor) {
         await abrirProgressoDaTurmaObjetiva(carregado.atividadeId);
         await abrirRespostasDoAlunoProfessor(estado, identificacao, carregado.atividadeId);

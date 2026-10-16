@@ -5,4 +5,4 @@
 |------|-----------|--------|--------------|-------------|
 | 38.1 | SQL `solicitar_gabarito_discursivo` + funções internas, aplicado no Supabase | ✅ Concluído | 2026-10-06 | Permissões conferidas (anon sem execução; internas sem execução pela API) |
 | 38.2 | Painel da discursiva: professor libera por turma; aluno "🔑 Ver Gabarito" (aviso + registro antes da liberação) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 38.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 38.3 | Aceite do usuário: gabarito nas discursivas | 👀 Aguardando o usuário | — | — |

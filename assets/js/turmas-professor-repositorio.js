@@ -1,15 +1,26 @@
 // ── Repositório da página turmas.html ────────────────────────────
-// Acesso ao Supabase para o CRUD de turmaprofessor (vínculo professor × turma).
-// Quem pode gravar é decidido pelo banco: RLS da turmaprofessor + eh_professor_administrador()
+// Acesso ao Supabase para o CRUD da turma, da turmaprofessor (vínculo professor × turma) e da
+// turma_materia (vínculo turma × matéria, #211; RLS: só o administrador grava).
+// Quem pode gravar é decidido pelo banco: RLS da turma e da turmaprofessor +
+// eh_professor_administrador(); a turma só é excluída se estiver vazia (turma_esta_vazia, #201)
 // (só gelvazio.camargo@senai.local). O trigger turmaprofessor_exige_professor recusa quem não é
 // PROFESSOR. Depende de js/supabase.js (obterClienteSupabase).
 
 const TABELA_TURMAPROFESSOR = "turmaprofessor";
+const TABELA_TURMA_MATERIA = "turma_materia";
+const TABELA_MATERIA_REPOSITORIO = "materia";
+const COLUNAS_MATERIA_REPOSITORIO = "id, descricao, curso:curso_id(nome_completo)";
+const COLUNAS_TURMA_MATERIA_REPOSITORIO = "id, turma_codigo, materia_id";
 const TABELA_TURMA_REPOSITORIO = "turma";
 const TABELA_USUARIO_REPOSITORIO = "usuario";
 const RPC_ADMINISTRADOR_REPOSITORIO = "eh_professor_administrador";
 const PERFIL_PROFESSOR_REPOSITORIO = "PROFESSOR";
-const COLUNAS_TURMA_REPOSITORIO = "codigo, nome, turno, horario, unidade:unidade_id(nome), uc";
+const TABELA_UNIDADE_REPOSITORIO = "unidade";
+const TABELA_CURSO_REPOSITORIO = "curso";
+const COLUNAS_TURMA_REPOSITORIO = "codigo, nome, turno, horario, uc, hora_inicio, hora_fim, " +
+  "unidade_id, curso_id, bloquear_horario, unidade:unidade_id(nome), curso:curso_id(nome_completo)";
+const COLUNAS_UNIDADE_REPOSITORIO = "id, nome";
+const COLUNAS_CURSO_REPOSITORIO = "id, nome_completo";
 const COLUNAS_PROFESSOR_REPOSITORIO = "id, nome_completo, email";
 const COLUNAS_VINCULO_REPOSITORIO = "id, turma_codigo, professor_id, criado_em";
 
@@ -48,6 +59,49 @@ function criarRepositorioTurmasProfessor(cliente) {
         .select(COLUNAS_TURMA_REPOSITORIO).order("codigo"));
     },
 
+    /** @returns {Promise<Object[]>} Unidades pelo nome. */
+    async listarUnidades() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_UNIDADE_REPOSITORIO)
+        .select(COLUNAS_UNIDADE_REPOSITORIO).order("nome"));
+    },
+
+    /** @returns {Promise<Object[]>} Cursos pelo nome. */
+    async listarCursos() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_CURSO_REPOSITORIO)
+        .select(COLUNAS_CURSO_REPOSITORIO).order("nome_completo"));
+    },
+
+    /**
+     * Cria uma turma.
+     * @param {Object} turma - Colunas da turma (com o código).
+     * @returns {Promise<void>}
+     */
+    async criarTurma(turma) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_REPOSITORIO).insert(turma));
+    },
+
+    /**
+     * Altera os dados de uma turma (o código não muda).
+     * @param {string} codigo - Código da turma.
+     * @param {Object} dados - Colunas a gravar.
+     * @returns {Promise<void>}
+     */
+    async alterarTurma(codigo, dados) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_REPOSITORIO).update(dados)
+        .eq("codigo", codigo));
+    },
+
+    /**
+     * Exclui uma turma; o RLS só deixa excluir turma vazia.
+     * @param {string} codigo - Código da turma.
+     * @returns {Promise<boolean>} Verdadeiro se o banco excluiu a linha.
+     */
+    async excluirTurma(codigo) {
+      const linhas = dadosOuErroTurmas(await cliente.from(TABELA_TURMA_REPOSITORIO).delete()
+        .eq("codigo", codigo).select("codigo"));
+      return Boolean(linhas?.length);
+    },
+
     /** @returns {Promise<Object[]>} Usuários com perfil PROFESSOR, pelo nome. */
     async listarProfessores() {
       return dadosOuErroTurmas(await cliente.from(TABELA_USUARIO_REPOSITORIO)
@@ -71,22 +125,42 @@ function criarRepositorioTurmasProfessor(cliente) {
     },
 
     /**
-     * Altera a turma e/ou o professor de um vínculo.
-     * @param {number} id - Id do vínculo.
-     * @param {{turma_codigo: string, professor_id: string}} vinculo - Novos valores.
-     * @returns {Promise<void>}
-     */
-    async alterarVinculo(id, vinculo) {
-      dadosOuErroTurmas(await cliente.from(TABELA_TURMAPROFESSOR).update(vinculo).eq("id", id));
-    },
-
-    /**
      * Exclui um vínculo.
      * @param {number} id - Id do vínculo.
      * @returns {Promise<void>}
      */
     async excluirVinculo(id) {
       dadosOuErroTurmas(await cliente.from(TABELA_TURMAPROFESSOR).delete().eq("id", id));
+    },
+
+    /** @returns {Promise<Object[]>} Matérias pela descrição, com o curso. */
+    async listarMaterias() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_MATERIA_REPOSITORIO)
+        .select(COLUNAS_MATERIA_REPOSITORIO).order("descricao"));
+    },
+
+    /** @returns {Promise<Object[]>} Vínculos turma × matéria. */
+    async listarTurmasMaterias() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA)
+        .select(COLUNAS_TURMA_MATERIA_REPOSITORIO).order("turma_codigo"));
+    },
+
+    /**
+     * Vincula uma turma a uma matéria.
+     * @param {{turma_codigo: string, materia_id: number}} vinculo - Turma e matéria.
+     * @returns {Promise<void>}
+     */
+    async criarTurmaMateria(vinculo) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA).insert(vinculo));
+    },
+
+    /**
+     * Desvincula uma turma de uma matéria.
+     * @param {number} id - Id do vínculo turma × matéria.
+     * @returns {Promise<void>}
+     */
+    async excluirTurmaMateria(id) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA).delete().eq("id", id));
     },
   };
 }

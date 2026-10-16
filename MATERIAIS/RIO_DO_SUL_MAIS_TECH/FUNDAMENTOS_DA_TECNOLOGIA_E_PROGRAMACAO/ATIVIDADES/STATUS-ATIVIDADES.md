@@ -41,17 +41,17 @@ tabela `aulas` tem número único por matéria e as aulas antigas usam 1 a 5, as
 | 03 | Ferramentas de Produtividade | `ATIVIDADES-AULA-27-10-2026-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-AULA-27-10-2026-50-QUESTOES.md` | ✅ liberada | ✅ Concluída |
 | 04 | Ferramentas de Apresentação e Pesquisa Online | `ATIVIDADES-AULA-03-11-2026-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-AULA-03-11-2026-50-QUESTOES.md` | ✅ liberada | ✅ Concluída |
 | 05 | Introdução aos Algoritmos | `ATIVIDADES-AULA-10-11-2026-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-AULA-10-11-2026-50-QUESTOES.md` | ✅ liberada | ✅ Concluída |
-| 06 | Produtividade Digital: Apresentações (Google Slides/PowerPoint) | ⬜ `ATIVIDADES-AULA-06-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 07 | Produtividade Digital: Planilhas Eletrônicas (Excel/Google Sheets) | ⬜ `ATIVIDADES-AULA-07-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 08 | Internet: Navegadores e Boas Práticas de Pesquisa | ⬜ `ATIVIDADES-AULA-08-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 09 | Segurança na Internet: Senhas, Vírus e Privacidade | ⬜ `ATIVIDADES-AULA-09-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 10 | Pensamento Computacional: Decomposição e Padrões | ⬜ `ATIVIDADES-AULA-10-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 11 | Algoritmos: Sequência, Decisão e Repetição | ⬜ `ATIVIDADES-AULA-11-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 12 | Fluxogramas e Representação Visual de Algoritmos | ⬜ `ATIVIDADES-AULA-12-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 13 | Introdução a Programação: Conceitos Básicos | ⬜ `ATIVIDADES-AULA-13-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 14 | Scratch: Primeiros Projetos e Movimentação | ⬜ `ATIVIDADES-AULA-14-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 15 | Scratch: Condições, Variáveis e Lógica | ⬜ `ATIVIDADES-AULA-15-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 16 | Scratch: Projetos Criativos Finais e Apresentação | ⬜ `ATIVIDADES-AULA-16-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 06 | Produtividade Digital: Apresentações (Google Slides/PowerPoint) | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 07 | Produtividade Digital: Planilhas Eletrônicas (Excel/Google Sheets) | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 08 | Internet: Navegadores e Boas Práticas de Pesquisa | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 09 | Segurança na Internet: Senhas, Vírus e Privacidade | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 10 | Pensamento Computacional: Decomposição e Padrões | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 11 | Algoritmos: Sequência, Decisão e Repetição | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 12 | Fluxogramas e Representação Visual de Algoritmos | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 13 | Introdução a Programação: Conceitos Básicos | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 14 | Scratch: Primeiros Projetos e Movimentação | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 15 | Scratch: Condições, Variáveis e Lógica | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
+| 16 | Scratch: Projetos Criativos Finais e Apresentação | ⛔ substituída pelas aulas da ementa | — | ⛔ | ⛔ | ⛔ Não se aplica |
 
 ## Demais atividades da pasta (adicionais)
 

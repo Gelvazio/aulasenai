@@ -50,7 +50,7 @@ def change_text_to_black(prs):
     return changed_count
 
 def main():
-    pptx_folder = Path(r"C:\fontes\aulas-senai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\AULAS-CHALKIE-AI-VERSAO-FINAL")
+    pptx_folder = Path(r"C:\fontes\aulasenai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\AULAS-CHALKIE-AI-VERSAO-FINAL")
 
     # Arquivos PPTX a processar
     files = [

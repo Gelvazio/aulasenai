@@ -5,6 +5,27 @@
 - **Tempo decorrido:** —
 - **Status:** ✅ Implementado e SQL aplicado (aprovado em 2026-10-06: bloquear recuperação após liberar e aplicar o SQL)
 
+## Atualização 2026-10-15 (tarefa #176, etapa 303-5d996631)
+
+Pedido do usuário: "este botão 🔑 Exportar Gabarito só deve aparecer para o professor". O botão
+fica visível e ativo só para o perfil PROFESSOR (`assets/js/avaliacao-pdf-professor.js`); o
+aluno vê a correção na própria página depois da liberação (`correcao-objetiva-aluno.js`). As
+menções abaixo ao botão do aluno valem até 2026-10-15.
+
+## Atualização 2026-10-15 (tarefa #175, etapa 302-cfc044e9)
+
+Pedido do usuário: "tem aluno que não fez a atividade, bloqueie o preenchimento de todos (...) e
+libere o botão Liberar gabaritos". Aprovado em 2026-10-15 14:28 para **todas as atividades**:
+
+- o botão fica **sempre ativo**; com alunos sem entrega, aviso e confirmação dizem "Faltam N
+  aluno(s) entregar: eles não poderão mais responder";
+- `liberar_gabarito_turma` deixa de recusar quando faltam alunos;
+- depois da liberação, `item_valido`/`topico_valido` recusam resposta do aluno da turma
+  liberada (função `preenchimento_encerrado_para_usuario`): o preenchimento fica encerrado, mas
+  a atividade continua visível (nota e gabarito de quem entregou); "Recolher gabarito" reabre.
+
+SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (✅ aplicado em 2026-10-15 15:06). A regra "só com todos entregues" abaixo vale até 2026-10-15.
+
 ## Objetivo
 
 O aluno **não vê** o gabarito nem o botão "🔑 Exportar Gabarito" até o professor liberar. O

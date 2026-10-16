@@ -3,12 +3,15 @@
 // confirmar a nota: ✅ Certa (pontos inteiros), 🟡 Meia certa (metade) e ❌ Errada (zero).
 // Grava a nota_professor na correcao_discursiva — a nota que vale na média — sem mexer na
 // nota_ia nem no comentário. O RLS só deixa o professor gravar alunos das turmas dele.
-// Depois de confirmada, a nota NÃO pode mais ser mudada, nem pelo professor: os botões travam e o
-// banco recusa (trigger correcao_discursiva_validar).
+// Depois de confirmada, a nota só muda com uma JUSTIFICATIVA (modal "Justificativa de mudança da
+// nota na Pergunta", justificativa-mudanca-nota.js): o banco (trigger correcao_discursiva_validar)
+// recusa sem ela e cada confirmação/mudança vira evento do histórico, que o botão "🕒 Histórico"
+// (depois de "Errada"; historico-nota-discursiva.js) mostra em linha do tempo. Tarefa #156.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js e assets/js/popup.js.
 // Regra: docs/regras/atividades.md
 
 const CLASSE_CONFIRMAR_PROFESSOR = 'confirmar-professor';
+const EVENTO_NOTA_PROFESSOR_CONFIRMADA = 'nota-professor-confirmada';
 const TABELA_CONFIRMAR_PROFESSOR = 'correcao_discursiva';
 const CHAVE_CONFIRMAR_PROFESSOR = 'aluno_id,atividade_id,tentativa,item,topico';
 const SELETOR_BLOCO_CONFIRMAR = '.topico-resposta';
@@ -16,8 +19,9 @@ const SELETOR_RODAPE_CONFIRMAR = '.topico-resposta__rodape';
 const SELETOR_GRAVAR_CONFIRMAR = '.topico-resposta__gravar';
 const BASE_SCRIPTS_CONFIRMAR = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const TOLERANCIA_NOTA_CONFIRMAR = 0.001;
-const MSG_NOTA_TRAVADA = 'Depois de confirmada, a nota não pode mais ser alterada, nem pelo ' +
-    'professor.';
+const MSG_NOTA_TRAVADA = 'Depois de confirmada, a nota só pode ser mudada com uma ' +
+    'justificativa, que fica no histórico.';
+const SELETOR_BOTAO_HISTORICO_CONFIRMAR = '.historico-nota__botao';
 const OPCOES_CONFIRMAR_PROFESSOR = [
     { chave: 'certa', icone: '✅', texto: 'Certa', fracao: 1 },
     { chave: 'meia', icone: '🟡', texto: 'Meia certa', fracao: 0.5 },
@@ -35,9 +39,12 @@ function limparConfirmacaoProfessor() {
  * Lê as notas já confirmadas pelo professor e os pontos de cada alternativa.
  * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{notas: Map<string, number|null>, pontos: Map<string, number>}>} Por chave.
+ * @returns {Promise<{notas: Map<string, number|null>, pontos: Map<string, number>,
+ *     comHistorico: Set<string>}>} Por chave "item|topico".
  */
 async function lerConfirmacoesDoAluno(aluno, atividadeId) {
+    const comHistorico = await lerAlternativasComHistorico(aluno, atividadeId)
+        .catch(() => new Set());
     const filtro = 'atividade_id=eq.' + atividadeId;
     const [correcoes, topicos] = await Promise.all([
         sbGet(TABELA_CONFIRMAR_PROFESSOR, 'select=item,topico,nota_professor&' + filtro +
@@ -45,6 +52,7 @@ async function lerConfirmacoesDoAluno(aluno, atividadeId) {
         sbGet('topico_discursivo', 'select=item,topico,pontos&' + filtro),
     ]);
     return {
+        comHistorico,
         notas: new Map(correcoes.map((linha) =>
             [linha.item + '|' + linha.topico, linha.nota_professor])),
         pontos: new Map(topicos.map((linha) =>
@@ -67,15 +75,17 @@ async function gravarNotaDoProfessor(linha) {
 }
 
 /**
- * Marca no grupo o botão da nota confirmada e trava os botões (nota confirmada não muda mais).
+ * Marca no grupo o botão da nota confirmada. Só ele fica travado: as outras opções continuam
+ * livres, mas mudar a nota exige justificativa.
  * @param {HTMLElement} grupo - Grupo de botões da alternativa.
  * @param {string} chaveAtiva - Chave da opção confirmada ('' = nenhuma, botões liberados).
  */
 function marcarOpcaoConfirmada(grupo, chaveAtiva) {
     const estaConfirmada = chaveAtiva !== '';
     grupo.classList.toggle(CLASSE_CONFIRMAR_PROFESSOR + '--confirmada', estaConfirmada);
+    grupo.dataset.chaveAtual = chaveAtiva;
     if (estaConfirmada) grupo.title = MSG_NOTA_TRAVADA;
-    grupo.querySelectorAll('button').forEach((botao) => {
+    grupo.querySelectorAll('button[data-opcao]').forEach((botao) => {
         const estaAtivo = botao.dataset.opcao === chaveAtiva;
         botao.classList.toggle(CLASSE_CONFIRMAR_PROFESSOR + '__botao--ativo', estaAtivo);
         botao.classList.toggle(CLASSE_CONFIRMAR_PROFESSOR + '__botao--inativo',
@@ -99,22 +109,47 @@ function opcaoDaNota(nota, pontos) {
 }
 
 /**
- * Trata o clique numa opção: grava a nota do professor e marca o botão.
+ * Pede o aceite do professor: na 1ª confirmação, um popup; ao mudar uma nota já confirmada, o
+ * modal de justificativa (a justificativa é gravada junto com a nova nota).
+ * @param {{grupo: HTMLElement, opcao: Object, nota: number}} dados - Grupo, opção e nota nova.
+ * @returns {Promise<{aceitou: boolean, justificativa: string}>} Aceite e justificativa
+ *     ('' na 1ª confirmação).
+ */
+async function pedirAceiteDaNota(dados) {
+    const chaveAtual = dados.grupo.dataset.chaveAtual || '';
+    const atual = OPCOES_CONFIRMAR_PROFESSOR.find((opcao) => opcao.chave === chaveAtual);
+    if (atual) {
+        const justificativa = await window.pedirJustificativaMudanca({
+            de: atual.icone + ' ' + atual.texto,
+            para: dados.opcao.icone + ' ' + dados.opcao.texto });
+        return { aceitou: justificativa !== null, justificativa: justificativa || '' };
+    }
+    const aceitou = await confirmarPopup('Confirmar esta alternativa como "' +
+        dados.opcao.texto + '" (' + dados.nota.toLocaleString('pt-BR') + ' ponto)? ' +
+        MSG_NOTA_TRAVADA, { titulo: 'Confirmar nota', textoConfirmar: 'Confirmar' });
+    return { aceitou, justificativa: '' };
+}
+
+/**
+ * Trata o clique numa opção: grava a nota do professor (com a justificativa, se for mudança) e
+ * marca o botão.
  * @param {{grupo: HTMLElement, opcao: Object, linhaBase: Object, pontos: number}} contexto
  *     Grupo de botões, opção escolhida, chave da alternativa e pontos dela.
  */
 async function confirmarOpcao(contexto) {
     const { grupo, opcao, linhaBase, pontos } = contexto;
     const nota = Math.round(opcao.fracao * pontos * 100) / 100;
-    const confirmou = await confirmarPopup('Confirmar esta alternativa como "' + opcao.texto +
-        '" (' + nota.toLocaleString('pt-BR') + ' ponto)? ' + MSG_NOTA_TRAVADA,
-    { titulo: 'Confirmar nota', textoConfirmar: 'Confirmar' });
-    if (!confirmou) return;
+    const { aceitou, justificativa } = await pedirAceiteDaNota({ grupo, opcao, nota });
+    if (!aceitou) return;
 
     grupo.classList.add(CLASSE_CONFIRMAR_PROFESSOR + '--gravando');
     try {
-        await gravarNotaDoProfessor({ ...linhaBase, nota_professor: nota });
+        const linha = { ...linhaBase, nota_professor: nota };
+        if (justificativa) linha.justificativa_mudanca = justificativa;
+        await gravarNotaDoProfessor(linha);
         marcarOpcaoConfirmada(grupo, opcao.chave);
+        grupo.querySelector(SELETOR_BOTAO_HISTORICO_CONFIRMAR).disabled = false;
+        document.dispatchEvent(new CustomEvent(EVENTO_NOTA_PROFESSOR_CONFIRMADA));
     } catch (erro) {
         await mostrarPopup('Nota não gravada: ' + erro.message, { tipo: 'erro', titulo: 'Erro' });
     } finally {
@@ -124,8 +159,8 @@ async function confirmarOpcao(contexto) {
 
 /**
  * Cria o grupo com os três botões de uma alternativa.
- * @param {{linhaBase: Object, pontos: number, notaAtual: number|null}} dados - Chave da
- *     alternativa, pontos e nota já confirmada.
+ * @param {{linhaBase: Object, pontos: number, notaAtual: number|null, temHistorico: boolean}}
+ *     dados - Chave da alternativa, pontos, nota já confirmada e se há eventos no histórico.
  * @returns {HTMLElement} Grupo pronto.
  */
 function criarGrupoConfirmacao(dados) {
@@ -143,6 +178,8 @@ function criarGrupoConfirmacao(dados) {
             linhaBase: dados.linhaBase, pontos: dados.pontos }));
         grupo.appendChild(botao);
     });
+    grupo.appendChild(window.criarBotaoHistoricoNota({ alternativa: dados.linhaBase,
+        pontos: dados.pontos, temEventos: dados.temHistorico }));
     marcarOpcaoConfirmada(grupo, opcaoDaNota(dados.notaAtual, dados.pontos));
     return grupo;
 }
@@ -156,7 +193,7 @@ async function mostrarConfirmacaoProfessor(aluno, atividadeId) {
     limparConfirmacaoProfessor();
     if (!aluno || !atividadeId) return;
 
-    const { notas, pontos } = await lerConfirmacoesDoAluno(aluno, atividadeId);
+    const { notas, pontos, comHistorico } = await lerConfirmacoesDoAluno(aluno, atividadeId);
     document.querySelectorAll(SELETOR_BLOCO_CONFIRMAR).forEach((bloco) => {
         const rodape = bloco.querySelector(SELETOR_RODAPE_CONFIRMAR);
         if (!rodape) return;
@@ -166,6 +203,7 @@ async function mostrarConfirmacaoProfessor(aluno, atividadeId) {
                 tentativa: aluno.tentativa, item: Number(bloco.dataset.item),
                 topico: Number(bloco.dataset.topico) },
             pontos: pontos.get(chave) || 0, notaAtual: notas.get(chave),
+            temHistorico: comHistorico.has(chave),
         });
         const botaoGravar = rodape.querySelector(SELETOR_GRAVAR_CONFIRMAR);
         rodape.insertBefore(grupo, botaoGravar);

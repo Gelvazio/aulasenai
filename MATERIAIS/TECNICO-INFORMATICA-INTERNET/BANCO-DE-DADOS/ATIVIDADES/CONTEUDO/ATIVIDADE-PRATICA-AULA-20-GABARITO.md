@@ -1,7 +1,7 @@
 # Padrão de Resposta — Atividade Prática — Aula 20 — Banco de Dados (uso exclusivo do professor e da correção por IA)
 
 > ⚠️ Arquivo com padrão de resposta: fica no Git, mas não vai para o site (`.vercelignore`). O conteúdo vai para a tabela
-> `topico_discursivo` (leitura só do professor) pelo seed gerado. Tema da aula: Projeto Integrador: Banco Documentado para o Back-end.
+> `topico_discursivo` (leitura só do professor) pelo seed gerado. Tema da aula: Projeto Integrador: Banco Documentado para o Back-End.
 > **Pontos:** tópico a) 0,2 (metade 0,1); tópicos b) e c) 0,4 (metade 0,2). 10 questões × 1,0 = 10.
 
 ## Instruções para a IA corretora (valem para todos os tópicos)
@@ -27,121 +27,121 @@
 ---
 
 ### ITEM 01-a
-**Resposta esperada:** Quando **outra pessoa** (o back-end, o DBA, a próxima equipe) consegue **entender, recriar e usar** o banco **sem perguntar** ao grupo que o fez.
-**Critérios:** Nota cheia (0,2): outra pessoa + entender/recriar/usar sem perguntar. Metade (0,1): só "funciona no computador do grupo" com a ideia de usar. Zero (0): sem relação.
+**Resposta esperada:** Rastreabilidade é ligar cada **tabela**, coluna importante e **regra** do banco a um **requisito** do escopo do cliente, para saber por que cada coisa existe e se todo pedido foi atendido.
+**Critérios:** Nota cheia (0,2): ligação banco ↔ requisito do escopo. Metade (0,1): ideia incompleta (ex.: "conferir o banco" sem citar o requisito). Zero (0): sem relação.
 
 ### ITEM 01-b
-**Resposta esperada:** **Escopo** (objetivo, requisitos, entra/não entra); **DER** (modelo final); **dicionário de dados** (cada coluna com tipo, formato, domínio); **cronograma** (planejado × realizado); **fluxograma** (processo da matrícula e pontos do banco); **scripts numerados** (recriam o banco); **matriz de acesso** (quem pode S, I, U, D); **README/guia de instalação** (recriar, conectar e testar).
-**Critérios:** Nota cheia (0,4): pelo menos seis peças com a função certa. Metade (0,2): três a cinco peças, ou peças sem a função. Zero (0): duas ou menos.
+**Resposta esperada:** R2 = **UNIQUE (id_aluno, id_turma)** na tabela matricula; R3 = procedimento **matricular**, que conta as matrículas ativas (com FOR UPDATE) e barra a 26ª; R6 = **GRANT SELECT (id_aluno, nome) ON aluno** para o grupo do financeiro (permissão por coluna), sem SELECT no CPF.
+**Critérios:** Nota cheia (0,4): os três certos. Metade (0,2): dois certos. Zero (0): um ou nenhum.
 
 ### ITEM 01-c
-**Resposta esperada:** Porque é o **ponto de partida** de quem não fez o banco: explica **como recriar do zero** (ordem dos scripts e comandos), **como conectar** (login app_escola e variável de ambiente) e **como testar** (conferência e testes); sem ele, a empresa teria de perguntar ao grupo.
-**Critérios:** Nota cheia (0,4): recriar + conectar + testar. Metade (0,2): dois dos três. Zero (0): um ou nenhum.
+**Resposta esperada:** Tabela sem requisito **sobra** no modelo: precisa ser justificada ou retirada. Requisito sem tabela, restrição ou procedimento **falta**: o banco ainda não atende ao cliente e precisa ser completado.
+**Critérios:** Nota cheia (0,4): sobra e falta, com o que fazer em cada caso. Metade (0,2): só um dos casos. Zero (0): sem relação.
 
 ### ITEM 02-a
-**Resposta esperada:** O **documento de escopo** (aula 5): objetivo, partes interessadas, o que **entra** e o que **não entra**, **requisitos de dados**, entregas e prazos, premissas e riscos.
-**Critérios:** Nota cheia (0,2): escopo + pelo menos três itens. Metade (0,1): só "escopo". Zero (0): outro documento.
+**Resposta esperada:** Porque um objeto **depende** de outro: turma precisa de curso (chave estrangeira), o trigger precisa da função, o GRANT precisa da tabela já criada. Fora da ordem, o script dá erro.
+**Critérios:** Nota cheia (0,2): dependência + exemplo correto. Metade (0,1): só a dependência sem exemplo, ou exemplo sem explicar. Zero (0): sem relação.
 
 ### ITEM 02-b
-**Resposta esperada:** (1) requisito sem tabela = **pendência**: criar o que falta (ex.: coluna ou tabela de responsável) e registrar no cronograma; (2) tabela sem requisito = **excesso** (ou mudança de escopo sem registro): retirar da entrega ou registrar a mudança e pedir aprovação.
-**Critérios:** Nota cheia (0,4): as duas classificações + o que fazer. Metade (0,2): classificações sem a ação, ou só uma completa. Zero (0): trocadas.
+**Resposta esperada:** `\set ON_ERROR_STOP on`, depois `\i 01-ddl-escola.sql`, `\i 02-dados-teste.sql`, `\i 03-consultas-basicas.sql`, `\i 04-relatorios.sql`, `\i 05-procedimentos.sql`, `\i 06-triggers.sql`, `\i 07-seguranca.sql` (aceitar `\ir` e `\echo` entre eles). Execução: `psql -U postgres -d escola_teste -f sql/00-instalar.sql` (aceitar outro banco de teste).
+**Critérios:** Nota cheia (0,4): ON_ERROR_STOP + os 7 scripts na ordem + comando psql -f. Metade (0,2): scripts na ordem sem ON_ERROR_STOP ou sem o comando de execução. Zero (0): ordem errada ou sem \i.
 
 ### ITEM 02-c
-**Resposta esperada:** Registrar o **pedido**, o **impacto** (tempo, tabelas, custo) e obter a **aprovação** do cliente; só então a tabela entra no escopo, no cronograma e na rastreabilidade.
-**Critérios:** Nota cheia (0,4): pedido + impacto + aprovação. Metade (0,2): só um ou dois. Zero (0): "cria e pronto".
+**Resposta esperada:** O psql **mostra o erro e continua** executando os outros scripts; o banco fica **pela metade** (falta tabela, função ou permissão) e o erro passa despercebido no meio das mensagens.
+**Critérios:** Nota cheia (0,4): continua + banco incompleto/erro escondido. Metade (0,2): só um dos dois. Zero (0): diz que o psql para ou desfaz tudo.
 
 ### ITEM 03-a
-**Resposta esperada:** **Nome padronizado**, **tipo**, **formato**, **obrigatoriedade** (NOT NULL), **domínio** (valores aceitos) e **descrição**.
-**Critérios:** Nota cheia (0,2): pelo menos quatro. Metade (0,1): duas ou três. Zero (0): uma ou nenhuma.
+**Resposta esperada:** O banco de desenvolvimento pode ter objetos **criados à mão** que não estão nos scripts; só um banco **limpo** prova que os scripts sozinhos instalam tudo. Nunca testar no banco de **produção** (dados reais da escola).
+**Critérios:** Nota cheia (0,2): motivo + produção. Metade (0,1): só um dos dois. Zero (0): sem relação.
 
 ### ITEM 03-b
-**Resposta esperada:** Tabela **parcela** · coluna **data_pagamento** · tipo **date** · formato AAAA-MM-DD · **opcional** (nula enquanto não paga) · descrição: **data em que a parcela foi paga**; só o financeiro altera (aula 19).
-**Critérios:** Nota cheia (0,4): nome certo + date + opcional + descrição. Metade (0,2): nome e tipo certos sem obrigatoriedade/descrição. Zero (0): mantém "pago_em" ou tipo texto.
+**Resposta esperada:** `DROP DATABASE IF EXISTS escola_teste;` e `CREATE DATABASE escola_teste;` (no psql ou com dropdb/createdb), depois `psql -U postgres -d escola_teste -f sql/00-instalar.sql`.
+**Critérios:** Nota cheia (0,4): criar o banco limpo + rodar o mestre nele. Metade (0,2): só um dos dois. Zero (0): roda no banco de produção ou comandos sem relação.
 
 ### ITEM 03-c
-**Resposta esperada:** A documentação **deixa de bater com o banco**: o back-end escreve consultas com o nome ou o tipo errado, tem **erro** e perde a confiança no documento; o dicionário é o que **guia o SQL** e precisa ser atualizado junto.
-**Critérios:** Nota cheia (0,4): não bate + consequência. Metade (0,2): só um. Zero (0): sem relação.
+**Resposta esperada:** (1) A função **registrar_historico_nota** existia só no banco de desenvolvimento: colocar o **CREATE OR REPLACE FUNCTION** dela no script 06, **antes** do CREATE TRIGGER (e usar `DROP TRIGGER IF EXISTS ... ON matricula` antes do CREATE TRIGGER). (2) Trocar `CREATE PROCEDURE` por **CREATE OR REPLACE PROCEDURE matricular** no script 05, para rodar de novo sem o erro "já existe".
+**Critérios:** Nota cheia (0,4): as duas correções. Metade (0,2): uma correção. Zero (0): sem relação ou "apagar o banco toda vez".
 
 ### ITEM 04-a
-**Resposta esperada:** Porque **a ordem de execução importa**: a tabela de referência precisa existir antes da **chave estrangeira**, e as tabelas antes do **GRANT** e das rotinas.
-**Critérios:** Nota cheia (0,2): ordem + exemplo de dependência. Metade (0,1): só "por causa da ordem". Zero (0): estética.
+**Resposta esperada:** Deixar **outra pessoa** (colega do back-end, professor, próxima equipe) **entender, instalar e usar** o banco sem precisar perguntar para quem fez.
+**Critérios:** Nota cheia (0,2): outra pessoa + entender/instalar/usar. Metade (0,1): ideia incompleta. Zero (0): "para ter mais páginas" ou sem relação.
 
 ### ITEM 04-b
-**Resposta esperada:** **01-banco-e-usuario.sql** (banco e login app_escola); **02-tabelas.sql** (CREATE TABLE); **03-chaves-e-restricoes.sql** (PK, FK, UNIQUE, CHECK); **04-dados-iniciais.sql** (INSERT); **05-consultas.sql** (relatórios); **06-procedimentos-e-triggers.sql** (matricular e triggers); **07-seguranca.sql** (grupos, GRANT, visão, auditoria).
-**Critérios:** Nota cheia (0,4): os sete na ordem com o conteúdo. Metade (0,2): ordem com uma ou duas trocas, ou sem o conteúdo. Zero (0): segurança antes das tabelas ou ordem sem sentido.
+**Resposta esperada:** README: **versão do PostgreSQL**, como **criar o banco**, o **comando do script mestre**, os **logins** que precisam existir (sem as senhas) e **como testar**. Escopo atualizado: **objetivo** do sistema, **requisitos**, o que **entra**, o que **não entra** e as **mudanças de escopo** aceitas durante o projeto.
+**Critérios:** Nota cheia (0,4): pelo menos 4 itens do README + 4 do escopo. Metade (0,2): só um dos documentos completo, ou os dois incompletos. Zero (0): sem relação ou com senha no README.
 
 ### ITEM 04-c
-**Resposta esperada:** **Comentário no início** (o que faz, dependência, quem alterou); **idempotente** (IF NOT EXISTS, CREATE OR REPLACE); **transação** (BEGIN/COMMIT: se falhar, nada fica pela metade); **sem senha real**; **versionado no Git**. Explicação de uma delas.
-**Critérios:** Nota cheia (0,4): três práticas + explicação correta de uma. Metade (0,2): três sem explicação, ou duas com explicação. Zero (0): uma ou nenhuma.
+**Resposta esperada:** Exemplo: coluna **valor** · tipo **numeric(10,2)** · **não nula** (NOT NULL) · não é chave · regra **CHECK (valor > 0)** e não muda depois de paga (trigger) · exemplo **350.00**.
+**Critérios:** Nota cheia (0,4): nome, tipo, nulo, chave, regra e exemplo. Metade (0,2): três ou quatro desses campos. Zero (0): só o nome.
 
 ### ITEM 05-a
-**Resposta esperada:** O banco do próprio computador pode estar **"remendado"** (comandos rodados à mão, fora dos scripts) e **esconder erros**; só a recriação **num banco limpo** prova que os **scripts sozinhos** criam o banco.
-**Critérios:** Nota cheia (0,2): remendado/esconde erro + só os scripts. Metade (0,1): só um. Zero (0): sem relação.
+**Resposta esperada:** **Tarefa**, **responsável**, data **prevista**, data **realizada** e **observação** (motivo dos atrasos).
+**Critérios:** Nota cheia (0,2): previsto + realizado + responsável. Metade (0,1): só o previsto ou sem responsável. Zero (0): sem relação.
 
 ### ITEM 05-b
-**Resposta esperada:** psql -U postgres -d escola_db **-v ON_ERROR_STOP=1** -f 02-tabelas.sql e depois psql -U postgres -d escola_db **-v ON_ERROR_STOP=1** -f 03-chaves-e-restricoes.sql (nessa ordem).
-**Critérios:** Nota cheia (0,4): os dois comandos com -d escola_db, -f e ON_ERROR_STOP, na ordem. Metade (0,2): sem ON_ERROR_STOP, ou ordem trocada. Zero (0): comandos sem relação.
+**Resposta esperada:** | Procedimentos (05) | responsável (ex.: Bruno) | Aula 17 | Aula 18 | Atraso: a regra de vagas mudou (mudança de escopo aceita) |
+**Critérios:** Nota cheia (0,4): previsto 17 + realizado 18 + motivo. Metade (0,2): sem o motivo, ou trocando previsto e realizado. Zero (0): esconde o atraso (realizado igual ao previsto).
 
 ### ITEM 05-c
-**Resposta esperada:** Faz o psql **parar no primeiro erro**, em vez de **seguir e esconder** o problema (o 03 falhou e os outros rodaram por cima). Dentro do psql, **\i 02-tabelas.sql** executa o arquivo.
-**Critérios:** Nota cheia (0,4): para no primeiro erro + \i. Metade (0,2): só um. Zero (0): nenhum.
+**Resposta esperada:** "Aluno já matriculado na turma?" = **UNIQUE (id_aluno, id_turma)** da tabela matricula; "Há vagas?" = procedimento **matricular** (conta as matrículas ativas e barra acima de 25). Ligar o fluxograma ao banco mostra **onde cada regra é executada**: o desenho deixa de ser só ilustração e vira a **explicação das regras** do banco, conferível no código.
+**Critérios:** Nota cheia (0,4): os dois recursos + o motivo. Metade (0,2): os dois recursos sem o motivo, ou um recurso com o motivo. Zero (0): recursos trocados.
 
 ### ITEM 06-a
-**Resposta esperada:** É uma tabela que **liga cada requisito do escopo** ao que o **atende no banco** (tabela, restrição, rotina, permissão) e ao **script** onde está.
-**Critérios:** Nota cheia (0,2): requisito → banco → script. Metade (0,1): sem o script ou sem o requisito. Zero (0): confunde com cronograma.
+**Resposta esperada:** Dois entre: toda entidade virou tabela e toda tabela está no DER; toda tabela tem **chave primária**; toda ligação 1:N tem a **chave estrangeira** do lado N; N:N virou **tabela associativa**; o DER bate com o `\d` de cada tabela.
+**Critérios:** Nota cheia (0,2): dois itens certos. Metade (0,1): um item. Zero (0): nenhum.
 
 ### ITEM 06-b
-**Resposta esperada:** R1 → **UNIQUE (cpf)** em aluno, scripts 02/03; R2 → **procedimento matricular** (conta e barra a 26ª), script 06; R4 → **trigger de validação** da parcela, script 06; R6 → **GRANT SELECT (id_aluno, nome) ON aluno** ao grupo do financeiro, script 07.
-**Critérios:** Nota cheia (0,4): os quatro com peça e script. Metade (0,2): dois ou três certos, ou os quatro sem script. Zero (0): um ou nenhum.
+**Resposta esperada:** nome_curso em turma = **3FN** (depende do curso, não da chave da turma — dependência transitiva); telefones com lista = **1FN** (valor não atômico); IdMatrícula = **padrão de nomes** da UC (minúsculas, sem acento, id_ no início).
+**Critérios:** Nota cheia (0,4): os três certos. Metade (0,2): dois certos. Zero (0): um ou nenhum.
 
 ### ITEM 06-c
-**Resposta esperada:** Requisito **sem linha** (nada no banco o atende) é **pendência**; tabela ou rotina que **não aparece** em nenhuma linha é **excesso** ou mudança de escopo sem registro. A matriz também prova ao cliente que **nada ficou de fora**.
-**Critérios:** Nota cheia (0,4): pendência + excesso. Metade (0,2): só um. Zero (0): sem relação.
+**Resposta esperada:** Tirar **nome_curso** da turma e buscar o nome pelo JOIN com curso (id_curso); separar os telefones numa **tabela própria** (ex.: telefone_aluno com id_aluno) ou em colunas definidas com um telefone por coluna; renomear para **id_matricula** (`ALTER TABLE matricula RENAME COLUMN ...`).
+**Critérios:** Nota cheia (0,4): as três correções. Metade (0,2): duas correções. Zero (0): uma ou nenhuma.
 
 ### ITEM 07-a
-**Resposta esperada:** **\dt** lista as tabelas; **\d matricula** mostra colunas, tipos e restrições.
-**Critérios:** Nota cheia (0,2): os dois. Metade (0,1): um. Zero (0): nenhum.
+**Resposta esperada:** Para mostrar o **uso** de cada consulta no sistema (rastreabilidade): o colega do back-end sabe qual usar em cada tela, e consulta que **ninguém usa** sai do script.
+**Critérios:** Nota cheia (0,2): uso no sistema/tela + retirar o que não é usado ou orientar o back-end. Metade (0,1): ideia incompleta. Zero (0): sem relação.
 
 ### ITEM 07-b
-**Resposta esperada:** Ex.: (1) SELECT count(*) FROM curso; → a quantidade de cursos dos dados iniciais; (2) CALL matricular(...) numa turma com 25 alunos → **erro** com a mensagem do RAISE EXCEPTION; (3) login do financeiro: SELECT cpf FROM aluno; → **permission denied**. Outros testes válidos: gravar FK inexistente (erro), alterar a nota e ver o histórico, alterar parcela e ver a auditoria, \dp.
-**Critérios:** Nota cheia (0,4): três testes de tipos diferentes com ação e resultado esperado. Metade (0,2): dois, ou três sem o resultado esperado. Zero (0): um ou nenhum.
+**Resposta esperada:** `SELECT a.nome, p.id_matricula, p.numero, p.vencimento, p.valor FROM parcela p JOIN matricula m ON m.id_matricula = p.id_matricula JOIN aluno a ON a.id_aluno = m.id_aluno WHERE p.vencimento < current_date AND p.data_pagamento IS NULL ORDER BY p.vencimento;`
+**Critérios:** Nota cheia (0,4): JOIN parcela-matricula-aluno + vencimento < current_date + data_pagamento IS NULL. Metade (0,2): uma das condições faltando ou sem o nome do aluno. Zero (0): condição invertida ou sem JOIN.
 
 ### ITEM 07-c
-**Resposta esperada:** Cada linha registra **o que foi testado**, o **resultado esperado** e o **resultado obtido**. O erro pode ser o esperado porque prova que a **regra funciona** (FK, CHECK, turma cheia, permission denied).
-**Critérios:** Nota cheia (0,4): as três colunas + erro esperado. Metade (0,2): só uma das partes. Zero (0): sem relação.
+**Resposta esperada:** `SELECT t.codigo FROM turma t LEFT JOIN matricula m ON m.id_turma = t.id_turma WHERE m.id_matricula IS NULL;` (aceitar NOT EXISTS). O **LEFT JOIN** mantém todas as turmas; as que não têm matrícula ficam com as colunas de matricula **nulas**, e o IS NULL filtra essas.
+**Critérios:** Nota cheia (0,4): consulta certa + explicação do LEFT JOIN/IS NULL (ou NOT EXISTS). Metade (0,2): consulta certa sem explicação, ou explicação certa com erro pequeno no SQL. Zero (0): INNER JOIN ou sem relação.
 
 ### ITEM 08-a
-**Resposta esperada:** pg_dump -U postgres **-Fc** -d escola_db -f escola_db_entrega.dump
-**Critérios:** Nota cheia (0,2): pg_dump com -Fc e o banco. Metade (0,1): pg_dump sem -Fc (formato texto). Zero (0): pg_restore ou outro.
+**Resposta esperada:** O contrato é a **lista do que a aplicação pode chamar** no banco (visões, procedimentos, comandos) e **com quais permissões**, pelo login **app_escola**. A senha do postgres não é entregue porque o postgres **pode tudo** (apagar o banco, criar papéis): fere o **menor privilégio**.
+**Critérios:** Nota cheia (0,2): lista do que pode chamar + motivo da recusa. Metade (0,1): só um dos dois. Zero (0): aceita entregar o postgres.
 
 ### ITEM 08-b
-**Resposta esperada:** createdb -U postgres escola_db_teste; pg_restore -U postgres -d escola_db_teste escola_db_entrega.dump; psql -U postgres -d escola_db_teste -c "SELECT count(*) FROM aluno;"
-**Critérios:** Nota cheia (0,4): os três passos em outro banco. Metade (0,2): restaura sem conferir, ou restaura no banco original. Zero (0): nenhum passo certo.
+**Resposta esperada:** `GRANT CONNECT ON DATABASE escola_db TO app_escola; GRANT USAGE ON SCHEMA public TO app_escola; GRANT EXECUTE ON PROCEDURE matricular(integer, integer) TO app_escola; GRANT EXECUTE ON PROCEDURE registrar_pagamento(integer, smallint) TO app_escola; GRANT SELECT, UPDATE (nome, email, telefone) ON aluno TO app_escola;` (aceitar SELECT nas colunas que a tela mostra).
+**Critérios:** Nota cheia (0,4): EXECUTE nos dois procedimentos + UPDATE só nas três colunas. Metade (0,2): falta um procedimento ou UPDATE na tabela inteira. Zero (0): GRANT ALL ou DELETE.
 
 ### ITEM 08-c
-**Resposta esperada:** Backup **nunca restaurado não é garantia** (disponibilidade): só a restauração prova que o arquivo serve. O arquivo tem **dados pessoais** (CPF etc.): no **Git** ficaria exposto a quem acessa o repositório (confidencialidade, LGPD); fica num lugar com **acesso restrito**.
-**Critérios:** Nota cheia (0,4): as duas explicações. Metade (0,2): só uma. Zero (0): nenhuma.
+**Resposta esperada:** Consultas com **parâmetros** ($1, $2) impedem o **SQL injection**: o texto digitado pelo usuário nunca vira comando. A senha do app_escola fica numa **variável de ambiente** do servidor, **nunca no Git** nem no JavaScript do site.
+**Critérios:** Nota cheia (0,4): SQL injection + variável de ambiente fora do Git. Metade (0,2): só um dos dois. Zero (0): senha no README ou no código.
 
 ### ITEM 09-a
-**Resposta esperada:** Login **app_escola** (só o que o sistema precisa); string de conexão numa **variável de ambiente**.
-**Critérios:** Nota cheia (0,2): os dois. Metade (0,1): um. Zero (0): postgres ou senha no código.
+**Resposta esperada:** **\dt** (tabelas), **\dv** (visões), **\df** (funções e procedimentos) e **\du** (papéis).
+**Critérios:** Nota cheia (0,2): os quatro. Metade (0,1): dois ou três. Zero (0): um ou nenhum.
 
 ### ITEM 09-b
-**Resposta esperada:** DATABASE_URL=**postgresql://app_escola:<senha>@servidor:5432/escola_db**. Contrato: **tabelas e colunas** (dicionário), **visões** (vw_matriculas_por_turma), **procedimentos** (CALL matricular(id_aluno, id_turma)) e as **mensagens de erro** que devolvem.
-**Critérios:** Nota cheia (0,4): URL com app_escola + pelo menos três itens do contrato. Metade (0,2): só a URL ou só o contrato. Zero (0): URL com postgres e sem contrato.
+**Resposta esperada:** (1) Repetir `CALL matricular(1, 2);` → **erro** do UNIQUE (id_aluno, id_turma) (matrícula duplicada), mostrando que a regra R2 funciona. (2) No login do financeiro, `SELECT cpf FROM aluno;` → **ERROR: permission denied**, mostrando que a matriz de acesso (R6) foi respeitada.
+**Critérios:** Nota cheia (0,4): os dois testes com o resultado esperado. Metade (0,2): um teste completo, ou os dois sem o resultado. Zero (0): resultados trocados (aceitar a matrícula repetida ou mostrar o CPF).
 
 ### ITEM 09-c
-**Resposta esperada:** O postgres tem **poder total**: entregar a senha fere o **menor privilégio** e, se vazar, o invasor pode tudo. Quando o banco devolve um erro de regra, o back-end deve **tratar o erro** e mostrar uma **mensagem clara** ao usuário (ex.: "turma sem vagas"), sem desligar a regra do banco.
-**Critérios:** Nota cheia (0,4): menor privilégio + tratar o erro. Metade (0,2): só um. Zero (0): entrega a senha ou ignora o erro.
+**Resposta esperada:** Backup: `pg_dump -U postgres -d escola_teste -F c -f escola.dump`. Prova: `createdb escola_restaurado` e `pg_restore -d escola_restaurado escola.dump`, conferindo as tabelas e os dados. Backup que **nunca foi restaurado** não é garantia de **disponibilidade**: só a restauração prova que o arquivo serve.
+**Critérios:** Nota cheia (0,4): pg_dump + pg_restore num banco novo + motivo. Metade (0,2): pg_dump sem a restauração, ou restauração sem o motivo. Zero (0): sem relação.
 
 ### ITEM 10-a
-**Resposta esperada:** Uma linha no registro da revisão com a **sugestão**, a **decisão** (aceita ou não), o **motivo** e **quem ajusta**.
-**Critérios:** Nota cheia (0,2): os quatro campos (aceitar três). Metade (0,1): só a sugestão e a decisão. Zero (0): não registrar.
+**Resposta esperada:** A equipe revisora segue **só o README** e roda o **script mestre num banco limpo**, preenchendo a ficha (instalação, teste de ponta a ponta, modelo, segurança e documentação). Toda dificuldade aponta uma falha da documentação.
+**Critérios:** Nota cheia (0,2): só pelo README + banco limpo/ficha. Metade (0,1): só um dos dois. Zero (0): sem relação.
 
 ### ITEM 10-b
-**Resposta esperada:** (1) A parcela é **entidade fraca**: só existe dentro da matrícula; a chave **(id_matricula, numero)** identifica a parcela pela dona e **impede parcela repetida** na mesma matrícula. (2) O limite precisa **contar as matrículas** da turma (consulta em outras linhas); um **CHECK só olha a própria linha**, por isso a regra fica no **procedimento** (com a trava da aula 17).
-**Critérios:** Nota cheia (0,4): as duas justificativas técnicas. Metade (0,2): só uma. Zero (0): "porque sim" ou justificativas erradas.
+**Resposta esperada:** Exemplo: "O **06-triggers.sql** (o quê/onde) cria o trigger antes da função registrar_historico_nota, e a instalação **para com erro no passo 6** (efeito)." A equipe **anota** a sugestão no registro, agradece, **decide** se aceita e **responde com o motivo** — crítica ao trabalho, nunca à pessoa.
+**Critérios:** Nota cheia (0,4): sugestão com o quê, onde e efeito + como receber. Metade (0,2): só uma das duas partes. Zero (0): crítica pessoal ou sem relação.
 
 ### ITEM 10-c
-**Resposta esperada:** **Revisor** pergunta em vez de acusar, aponta onde está o problema e sugere; **autor** escuta, confere nos requisitos e **aceita ou justifica**. Decisão (qualquer uma vale com base técnica): ex.: **não aceitar**, porque "matricula" é o termo do **escopo** e do cliente e já está no dicionário, nos scripts, no procedimento e na matriz de acesso — renomear agora geraria retrabalho e risco; ou **aceitar**, registrando e ajustando todas as peças.
-**Critérios:** Nota cheia (0,4): atitudes dos dois + decisão justificada com requisito/impacto. Metade (0,2): só as atitudes ou só a decisão justificada. Zero (0): decisão sem justificativa e sem atitudes.
+**Resposta esperada:** | Matrícula é cancelada, não apagada | Guardar o **histórico** e as parcelas, protegendo a **integridade** (requisito de saber quem alterou e de manter os pagamentos) | DELETE com ON DELETE CASCADE |
+**Critérios:** Nota cheia (0,4): decisão + motivo ligado ao requisito/integridade + alternativa descartada. Metade (0,2): falta o motivo ou a alternativa. Zero (0): sem relação.

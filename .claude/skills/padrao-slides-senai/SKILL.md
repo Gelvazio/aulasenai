@@ -132,7 +132,7 @@ Pequeno: Century Gothic 14pt — Cinza médio
 - Fácil legibilidade
 
 #### 2. Fundo com Imagem TEMA-SENAI
-- Imagem: `C:\fontes\aulas-senai\GERADOR-AULAS\TEMA-SENAI.png`
+- Imagem: `GERADOR-AULAS\TEMA-SENAI.png`
 - Aplicada em todas as slides
 - Caixas semi-transparentes para texto (legibilidade)
 - Título: Fundo branco com borda azul (#008AD1)
@@ -189,7 +189,7 @@ A skill gera um arquivo PowerPoint (`.pptx`) pronto para:
 ## Arquivo Base para Referência
 
 **Arquivo de Tema:** `PADRAO-SLIDES-TEMA-SENAI.pptx`
-- Localização: `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
+- Localização: `MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
 - Contém: 6 slides de referência com todos os layouts
 - Fonte: Century Gothic
 - Cor: #008AD1

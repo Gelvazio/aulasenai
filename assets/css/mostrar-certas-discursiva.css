@@ -1,0 +1,86 @@
+/* Professor: ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos" da discursiva
+   (assets/js/mostrar-certas-discursiva.js). */
+
+:root {
+    --mostrar-certas-chave-fundo: #cbd5e0;
+    --mostrar-certas-chave-ligada: #2f855a;
+    --mostrar-certas-bolinha-cor: #ffffff;
+    --mostrar-certas-largura: 30px;
+    --mostrar-certas-altura: 16px;
+    --mostrar-certas-bolinha: 12px;
+}
+
+.mostrar-certas__cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.mostrar-certas__cabecalho .respostas-aluno-professor__titulo {
+    width: auto;
+}
+
+.mostrar-certas {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* A caixa fica invisível: quem aparece é a chave ao lado. */
+.mostrar-certas input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mostrar-certas__chave {
+    position: relative;
+    flex: none;
+    width: var(--mostrar-certas-largura);
+    height: var(--mostrar-certas-altura);
+    border-radius: var(--mostrar-certas-altura);
+    background: var(--mostrar-certas-chave-fundo);
+    transition: background 0.2s;
+}
+
+.mostrar-certas__chave::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: var(--mostrar-certas-bolinha);
+    height: var(--mostrar-certas-bolinha);
+    border-radius: 50%;
+    background: var(--mostrar-certas-bolinha-cor);
+    transition: transform 0.2s;
+}
+
+.mostrar-certas input:checked + .mostrar-certas__chave {
+    background: var(--mostrar-certas-chave-ligada);
+}
+
+.mostrar-certas input:checked + .mostrar-certas__chave::after {
+    transform: translateX(
+        calc(var(--mostrar-certas-largura) - var(--mostrar-certas-bolinha) - 4px));
+}
+
+.mostrar-certas input:focus-visible + .mostrar-certas__chave {
+    outline: 2px solid var(--mostrar-certas-chave-ligada);
+    outline-offset: 2px;
+}
+
+/* Questão de uma categoria não marcada (Certas / Meia Certas / Erradas), escondida quando há
+   algum filtro de categoria marcado. */
+.questao-discursiva.questao-discursiva--categoria-oculta {
+    display: none;
+}
+
+/* Questão já corrigida pelo professor, escondida com "Falta Corrigir?" ligado. */
+.questao-discursiva.questao-discursiva--corrigida-oculta {
+    display: none;
+}

@@ -3,8 +3,8 @@
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
 // Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
-// ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
-// assets/js/regras-modal.js). Os demais professores não veem esses menus.
+// ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS e REGRAS (nova aba; REGRAS = visualizador
+// .claude/rules/index.html, 2026-10-13). Os demais professores não veem esses menus.
 // Guarda de sessão (2026-10-09): em toda página, menos index.html e login.html da raiz, sem login
 // nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o index.html.
 // Uso na página: <script src=".../js/header-usuario.js"></script> como PRIMEIRO script do <head>
@@ -31,11 +31,10 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "TURMAS", rota: "../turmas.html" },
   { rotulo: "CURSO", rota: "../cursos.html" },
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
+  // Só visualizador das regras e do quadro (gerado por scripts/regras/gerar_visualizador_regras.py).
+  { rotulo: "Regras", rota: "../.claude/rules/index.html" },
 ];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
-const TEXTO_REGRAS_HEADER = "Regras";
-const ROTA_REGRAS_JS = "../assets/js/regras-modal.js";
-const ROTA_CLAUDE_MD = "../CLAUDE.md";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "HOME";
 const TEXTO_SAIR = "SAIR";
@@ -164,26 +163,6 @@ function criarLinkMenuHeader(item) {
 }
 
 /**
- * Cria o botão REGRAS: carrega o modal sob demanda e abre o CLAUDE.md renderizado.
- * @returns {HTMLButtonElement} Botão do menu.
- */
-function criarBotaoRegrasHeader() {
-  const botao = criarElementoHeader("button", "header-usuario__menu-link", TEXTO_REGRAS_HEADER);
-  botao.type = "button";
-  botao.addEventListener("click", async () => {
-    try {
-      if (typeof window.abrirModalRegras !== "function") {
-        await carregarScriptHeader(resolverRotaHeader(ROTA_REGRAS_JS));
-      }
-      await window.abrirModalRegras(resolverRotaHeader(ROTA_CLAUDE_MD));
-    } catch (erro) {
-      console.error("Não foi possível abrir as regras:", erro);
-    }
-  });
-  return botao;
-}
-
-/**
  * Descobre a pasta da matéria da página atual (/MATERIAIS/<CURSO>/<MATÉRIA>/).
  * @returns {string|null} URL absoluta da pasta da matéria ou null fora de uma matéria.
  */
@@ -275,7 +254,6 @@ async function incluirMenuAdministrador(cliente, menu) {
     const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_HEADER);
     if (error || data !== true) return;
     MENU_ADMINISTRADOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
-    menu.append(criarBotaoRegrasHeader());
   } catch (erro) {
     console.warn("Não foi possível conferir o Professor Administrador:", erro);
   }

@@ -1,6 +1,6 @@
 # 📚 Regras do projeto — Apostilas
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md).
 
 ---
 
@@ -166,8 +166,8 @@ Registrada em 2026-10-03 a pedido do usuário.
      conteúdos), tabela **capacidades × conhecimentos** e tabela **capacidades por capítulo**;
   6. **glossário** de todos os capítulos, em ordem alfabética, com `_(cap. NN)_`;
   6a. **referências** da ementa;
-  7. **capítulos** (identificação com aula, carga horária e capacidades + teoria, vídeos, resumo
-     e exercícios).
+  7. **capítulos** (identificação com aula, carga horária e capacidades + teoria, vídeos e
+     resumo — **sem exercícios**, regra de 2026-10-14).
 - ✅ O que o usuário acrescentar no Markdown completo **vale para o HTML**; o gerador **não
   sobrescreve** o Markdown completo existente sem pedido (`--forcar`) e, ao entrar um capítulo
   novo, apenas o acrescenta.
@@ -265,14 +265,14 @@ faltava. Vale para **todas as matérias**.
 | Justificativa | `justificativa` | Introdução (Apresentação) |
 | Objetivo geral e competência integradora/BNCC | `objetivo_geral`, `competencia_integradora` | Introdução |
 | Capacidades básicas e socioemocionais | `capacidades`, `capacidades_socioemocionais` | Página de capacidades + abertura de cada capítulo |
-| Indicadores de desempenho | `indicadores_desempenho` + `indicadores`/`indicadores_numeros` do capítulo | Exercícios do capítulo (cada indicador vira ao menos 1 exercício) |
+| Indicadores de desempenho | `indicadores_desempenho` + `indicadores`/`indicadores_numeros` do capítulo | Teoria do capítulo (sem exercícios na apostila; as questões ficam nas atividades do banco) |
 | Conhecimentos (domínios) e detalhamento didático | `conhecimentos`, `detalhamento_didatico_conhecimentos`, `capacidades_x_conhecimentos` | Teoria dos capítulos (todo conteúdo oficial do capítulo é tratado) |
 | Sequência de aulas, estratégias, aula padrão, marcos | `aulas`, `horas_por_aula`, `estrategias_siglas`, `aula_padrao_4h`, `marcos` | Plano de capítulos (1 capítulo = 1 aula de 4 h) |
-| Situações-problema | `situacao_problema` do capítulo | Teoria/exercícios do capítulo |
+| Situações-problema | `situacao_problema` do capítulo | Teoria do capítulo |
 | Avaliação (instrumentos, tarefas, formativa, recuperação, rubrica) | `avaliacao` | Introdução ("Como você será avaliado") |
 | Mapeamento BNCC | `mapeamento_bncc` + `bncc` do capítulo | Plano de capítulos |
 | Recursos, ambientes e acessibilidade | `recursos`, `acessibilidade` | Introdução ("Ambientes, recursos e acessibilidade") |
-| Ideias de conteúdo (prompts da ementa) | `ideias_ementa` do capítulo | Exemplos e exercícios do capítulo |
+| Ideias de conteúdo (prompts da ementa) | `ideias_ementa` do capítulo | Exemplos da teoria do capítulo |
 | Regras para IA | `regras_ia` | Seguidas na escrita (sem marca imposta, norma declarada, oficial ≠ didático) |
 | Glossário da ementa | `glossario_ementa` + `termos_glossario_ementa` do capítulo | Glossário do capítulo (termo oficial obrigatório) |
 | Métricas e referências | `metricas`, `referencias` | Uso do professor / referências |
@@ -282,8 +282,8 @@ faltava. Vale para **todas as matérias**.
   capítulo tem de conter os termos de `termos_glossario_ementa`. Avisos devem ser resolvidos antes
   de pedir a validação do capítulo ao usuário.
 - ✅ **Conferência manual por capítulo** (antes de pedir validação): todos os
-  `conteudos_oficiais` tratados na teoria; cada indicador coberto por ao menos 1 exercício; a
-  situação-problema da aula usada na teoria ou nos exercícios; as `ideias_ementa` aproveitadas.
+  `conteudos_oficiais` tratados na teoria; a situação-problema da aula usada na teoria; as
+  `ideias_ementa` aproveitadas (sem virar exercício: a apostila não tem perguntas).
 - ✅ Encontrou algo na ementa que não está em nenhum campo: **acrescentar ao `materia.json`**,
   registrar nesta tabela e avisar o usuário.
 
@@ -304,13 +304,6 @@ faltava. Vale para **todas as matérias**.
 ## Vídeos
 - [<título exato>](https://www.youtube.com/watch?v=<id>) — mm:ss — <canal>
 
-## Exercícios
-### ITEM 1
-- **Capacidade:** C1
-- **Contexto:** <situação profissional>
-- **Comando:** <o que o aluno deve fazer>
-- **Linhas:** 4                     ← linhas de resposta (opcional; padrão 3)
-
 ## Resumo
 - <ponto principal>
 
@@ -318,6 +311,8 @@ faltava. Vale para **todas as matérias**.
 - **<Termo>:** <definição>
 ```
 
+- ⛔ **Sem `## Exercícios`** (2026-10-14): apostila não tem atividades nem perguntas; o gerador
+  recusa o capítulo que tiver essa seção.
 - ✅ Nenhum "## " extra dentro da teoria (quebraria as seções); subtítulos da teoria sempre "###".
 - ✅ **`CONTEUDO/INTRODUCAO.md`:** título `# Introdução` e subtítulos `###`: Apresentação,
   Objetivo geral da unidade curricular, Como a apostila está organizada, Como estudar com esta
@@ -334,7 +329,7 @@ faltava. Vale para **todas as matérias**.
 
 1. **Capa** (tema SESI SENAI);
 2. **Sumário detalhado** com número de página: introdução, capacidades, glossário, cada capítulo
-   e, dentro dele, teoria (com os subtítulos), vídeos, resumo e exercícios;
+   e, dentro dele, teoria (com os subtítulos), vídeos e resumo;
 3. **Introdução** ao conteúdo (apresentação/justificativa, objetivo geral, organização, como
    estudar, como você será avaliado, ambientes/recursos/acessibilidade, competência integradora);
 4. **Capacidades da matéria:** **todas** as capacidades básicas (C1...) e socioemocionais (S1...)
@@ -351,15 +346,13 @@ faltava. Vale para **todas as matérias**.
    título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
    mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
    conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
-   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e abrir uma tarefa no quadro (`tasks/STATUS.md` + etapa) para
    conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
-5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM
-   (CAPACIDADE → linha divisória → Contexto → Comando → Resposta com linhas), cobrindo todos os
-   indicadores da aula, em **páginas próprias**, com campos Aluno(a)/Turma/Data e o botão
-   **📥 Exportar PDF
-   ao lado do título "Exercícios"**, que exporta só os exercícios daquele capítulo.
+5. ⛔ **Sem exercícios, questões ou atividades** (regra de 2026-10-14, pedido do usuário: "as
+   apostilas não devem ter atividades ou perguntas"). A antiga exigência de 5 exercícios ITEM por
+   capítulo foi revogada; as questões ficam nas atividades do banco (`atividades-banco.md`).
 
 ### Páginas A4 e PDF
 
@@ -373,8 +366,8 @@ faltava. Vale para **todas as matérias**.
 - ✅ **No PDF, cada card sai como uma página A4**, igual ao tema (`@page { size: A4; margin: 0 }`).
   A margem zero **remove o endereço e a paginação que o navegador imprime**; se algum navegador
   ainda mostrar, desmarcar "Cabeçalhos e rodapés" na impressão.
-- ✅ Botões: **Exportar PDF (apostila completa)** no topo e **Exportar PDF** dos exercícios de cada
-  capítulo. Os botões não aparecem no PDF.
+- ✅ Botão **Exportar PDF (apostila completa)** no topo (não aparece no PDF). O botão dos
+  exercícios só existe nas apostilas antigas, geradas antes de 2026-10-14.
 - ✅ **Paginação no PDF (2026-10-08, todas as apostilas):** o rodapé de toda folha mostra
   **"Página N de T"**; na exportação parcial (só os exercícios de um capítulo), as folhas
   exportadas são numeradas entre si ("Página 1 de 2") e a numeração da apostila volta depois.
@@ -398,8 +391,8 @@ Registrada em 2026-10-08 a pedido do usuário (1ª edição: ITIC V2 com até 40
   `gerar_apostila.py <pasta da matéria> --edicao=V2` (HTML). A **conferência com a ementa
   (100%)** vale igual para a edição.
 - ✅ Com `sem_videos_e_exercicios` (pedido do usuário: ele faz vídeos e exercícios à parte), cada
-  capítulo tem só **Teoria, Resumo e Glossário**; sem essa opção, Vídeos e Exercícios continuam
-  obrigatórios (mínimo de 5 exercícios). Mesmo reduzida, a edição trata **todos os conteúdos
+  capítulo tem só **Teoria, Resumo e Glossário**; sem essa opção, os Vídeos continuam
+  obrigatórios. Exercícios nunca entram (regra de 2026-10-14). Mesmo reduzida, a edição trata **todos os conteúdos
   oficiais** de cada aula e mantém os termos oficiais do glossário com a definição da ementa.
 - ✅ Código: `assets/gerador-apostilas/edicao_apostila.py`.
 - ✅ **Referências complementares (2026-10-08):** `"referencias_complementares": [...]` (na edição

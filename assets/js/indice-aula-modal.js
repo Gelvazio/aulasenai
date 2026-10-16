@@ -1,19 +1,22 @@
 // Modal "✏️ Editar aula" dos cards do ATIVIDADES/index.html: CRUD completo da linha da tabela
 // aulas (todos os campos editáveis) e a lista das atividades da aula, cada uma com "✏️ Editar"
 // (abre o CADASTRAR ATIVIDADES com a atividade) e "🗑️ Excluir". "➕ Nova atividade nesta aula"
-// abre o cadastro com a aula já escolhida. O Professor Administrador também vê "🗑️ Excluir aula"
-// (exclusão lógica, aulas.excluido = 1). Só o professor abre o modal; o RLS garante no banco.
-// Depende de: assets/js/indice-aula-repositorio.js e assets/js/atividades-crud-modal.js
-// (abrirEdicaoAtividadeCrud); estilos de atividades-crud-modal.css e indice-aula-data.css.
+// abre o cadastro com a aula já escolhida. O "🗑️ Excluir aula" saiu do modal (#219). Só o
+// professor abre o modal; o RLS garante no banco.
+// "Data da aula" e "Aula bloqueada nesta turma" valem para a turma do combo "Turma:" do índice
+// (aula_turma, tarefa #206) e ficam em assets/js/indice-aula-modal-turma.js. "🔗 Gerenciar
+// atividades" abre o modal de vincular/desvincular (assets/js/indice-aula-modal-vinculo.js, #213).
+// Depende de: assets/js/indice-aula-repositorio.js, indice-aula-modal-turma.js e
+// assets/js/atividades-crud-modal.js (abrirEdicaoAtividadeCrud); estilos de
+// atividades-crud-modal.css e indice-aula-data.css.
 
 const URL_POPUP_AULA_MODAL = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 const MSG_AULA_GRAVADA = '✅ Aula gravada.';
+const ID_FORMULARIO_MODAL_AULA = 'formulario-modal-aula';
 const MSG_AULA_ERRO = '❌ Não foi possível gravar. Confira o login de professor, o número da ' +
     'aula (não pode repetir na matéria) e o banco.';
 const MSG_AULA_TITULO = 'Informe o número e o título da aula.';
 const MSG_AULA_JSON = 'O campo Conteúdo precisa ser um JSON válido (ou ficar vazio).';
-const MSG_EXCLUIR_AULA_ERRO_MODAL = 'Não foi possível excluir a aula. Só o Professor ' +
-    'Administrador pode excluir; confira o login e o banco.';
 const MSG_SEM_ATIVIDADES_AULA = 'Nenhuma atividade ligada a esta aula.';
 const MSG_ATIVIDADES_ERRO = '❌ Não foi possível carregar as atividades desta aula.';
 const MSG_EXCLUIR_ATIVIDADE = ' será EXCLUÍDA. O gabarito, as respostas e as entregas dos ' +
@@ -25,7 +28,6 @@ const CAMPOS_MODAL_AULA = [
     { nome: 'titulo', rotulo: 'Título da aula', tipo: 'text', obrigatorio: true },
     { nome: 'rotulo_card', rotulo: 'Rótulo do card (vazio = "AULA NN")', tipo: 'text', maximo: 60 },
     { nome: 'nome_card', rotulo: 'Nome do card (vazio = título)', tipo: 'text', maximo: 200 },
-    { nome: 'data_planejada', rotulo: 'Data da aula', tipo: 'date' },
     { nome: 'duracao_minutos', rotulo: 'Duração (minutos)', tipo: 'number' },
     { nome: 'sequencia', rotulo: 'Sequência', tipo: 'number' },
     { nome: 'descricao', rotulo: 'Descrição', tipo: 'textarea' },
@@ -107,19 +109,50 @@ function criarCampoModalAula(definicao) {
 }
 
 /**
- * Monta o formulário da aula: informações fixas, campos editáveis e botões.
- * @returns {{formulario: HTMLFormElement, info: HTMLElement, botaoExcluir: HTMLElement}}
+ * Monta o formulário da aula: informações fixas e campos editáveis (os botões ficam na barra do
+ * topo, montarBarraModalAula).
+ * @returns {{formulario: HTMLFormElement, info: HTMLElement}}
  */
 function montarFormularioModalAula() {
     const formulario = criarElementoModalAula('form', 'crud-form aula-modal-form');
+    formulario.id = ID_FORMULARIO_MODAL_AULA;
     const info = criarElementoModalAula('p', 'aula-modal-info');
-    const acoes = criarElementoModalAula('div', 'crud-form__acoes');
-    const botaoExcluir = criarBotaoModalAula('🗑️ Excluir aula', 'aula-excluir-botao',
-        'excluir-aula');
-    acoes.append(criarBotaoModalAula('Salvar', 'crud-btn--principal', 'salvar'),
-        criarBotaoModalAula('✕ Fechar', '', 'fechar'), botaoExcluir);
-    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), acoes);
-    return { formulario, info, botaoExcluir };
+    const camposDaTurma = typeof criarCamposTurmaModalAula === 'function'
+        ? criarCamposTurmaModalAula() : [];
+    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), ...camposDaTurma);
+    return { formulario, info };
+}
+
+/**
+ * Monta a barra do topo do modal: só o "✕ Fechar", vermelho e encostado à direita (#216). O
+ * "Excluir aula" saiu do modal a pedido do usuário (#219).
+ * @returns {HTMLElement} Barra com o botão.
+ */
+function montarBarraModalAula() {
+    const barra = criarElementoModalAula('div', 'crud-form__acoes aula-modal-barra');
+    barra.append(criarBotaoModalAula('✕ Fechar', 'aula-modal-fechar', 'fechar'));
+    return barra;
+}
+
+/**
+ * Monta a grade 2 × 2 de botões do mesmo tamanho, centralizada como uma tabela (#220):
+ * Gerenciar atividades e Nova atividade nesta aula em cima; Salvar (azul, envia o formulário
+ * pelo atributo form) e Cancelar (verde, fecha sem gravar) embaixo.
+ * @returns {HTMLElement} Grade com os quatro botões.
+ */
+function montarGradeBotoesModalAula() {
+    const grade = criarElementoModalAula('div', 'aula-modal-grade');
+    const salvar = criarBotaoModalAula('💾 Salvar', 'crud-btn--principal', 'salvar');
+    salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
+    const botoes = [
+        criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
+        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'),
+        salvar,
+        criarBotaoModalAula('↩ Cancelar', 'aula-modal-cancelar', 'cancelar'),
+    ];
+    botoes.forEach((botao) => botao.classList.add('aula-modal-grade__botao'));
+    grade.append(...botoes);
+    return grade;
 }
 
 /**
@@ -132,19 +165,19 @@ function montarModalAula() {
     caixa.setAttribute('role', 'dialog');
     caixa.setAttribute('aria-modal', 'true');
     const titulo = criarElementoModalAula('h2', '', 'Editar aula');
-    const { formulario, info, botaoExcluir } = montarFormularioModalAula();
+    const barra = montarBarraModalAula();
+    const { formulario, info } = montarFormularioModalAula();
+    // A mensagem fica logo abaixo da grade de botões, perto do Salvar.
     const mensagem = criarElementoModalAula('p', 'crud-mensagem');
-    const cabecalhoLista = criarElementoModalAula('div', 'aula-modal-atividades__cabecalho');
-    cabecalhoLista.append(criarElementoModalAula('h3', '', 'Atividades desta aula'),
-        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'));
     const lista = criarElementoModalAula('div', 'crud-lista');
-    caixa.append(titulo, formulario, mensagem, cabecalhoLista, lista);
+    caixa.append(titulo, barra, montarGradeBotoesModalAula(), mensagem, formulario,
+        criarElementoModalAula('h3', '', 'Atividades desta aula'), lista);
     fundo.append(caixa);
     fundo.hidden = true;
     document.body.append(fundo);
     fundo.addEventListener('click', aoClicarModalAula);
     formulario.addEventListener('submit', aoSalvarModalAula);
-    return { fundo, titulo, formulario, info, botaoExcluir, mensagem, lista };
+    return { fundo, titulo, formulario, info, mensagem, lista };
 }
 
 /**
@@ -171,6 +204,9 @@ function preencherFormularioModalAula(aula) {
     elementosModalAula.info.textContent = 'ID da aula: ' + aula.id + ' · Matéria: ' +
         (aula.materia?.descricao || aula.materia_id) + ' · Curso: ' +
         (aula.curso?.nome_completo || aula.curso_id);
+    if (typeof preencherCamposTurmaModalAula === 'function') {
+        preencherCamposTurmaModalAula(elementosModalAula.formulario, aula);
+    }
 }
 
 /**
@@ -213,9 +249,12 @@ async function aoSalvarModalAula(evento) {
 
     try {
         if (!await gravarAulaCard(aula.id, valores)) throw new Error('Nenhuma linha alterada');
-        estadoModalAula.contexto.aoGravar({ ...aula, ...valores });
-        atualizarTituloModalAula();
-        mostrarMensagemModalAula(MSG_AULA_GRAVADA);
+        const gravada = { ...aula, ...valores };
+        estadoModalAula.contexto.aoGravar(typeof gravarCamposTurmaModalAula === 'function'
+            ? await gravarCamposTurmaModalAula(elementosModalAula.formulario, gravada) : gravada);
+        fecharModalAula();
+        await garantirPopupModalAula();
+        window.mostrarPopup?.(MSG_AULA_GRAVADA, { tipo: 'sucesso', titulo: 'Editar aula' });
     } catch (erro) {
         mostrarMensagemModalAula(MSG_AULA_ERRO, true);
     }
@@ -322,24 +361,6 @@ async function aoExcluirAtividadeAula(idAtividade) {
 }
 
 /**
- * Exclui (logicamente) a aula, depois de confirmar (só Professor Administrador).
- */
-async function aoExcluirAulaModal() {
-    const aula = estadoModalAula.item?.aula;
-    if (!aula || !estadoModalAula.contexto.ehAdministrador) return;
-
-    const texto = 'A aula "' + obterNomeDaAula(aula) + '" será marcada como excluída e o card ' +
-        'dela deixará de aparecer no índice. Continuar?';
-    if (!await confirmarModalAula(texto, 'Excluir aula')) return;
-
-    if (!await excluirAulaCard(aula.id)) return mostrarMensagemModalAula(
-        MSG_EXCLUIR_AULA_ERRO_MODAL, true);
-    estadoModalAula.contexto.aoGravar({ ...aula, excluido: AULA_EXCLUIDA });
-    fecharModalAula();
-    await window.mostrarPopup?.('✅ Aula excluída.', { tipo: 'sucesso', titulo: 'Excluir aula' });
-}
-
-/**
  * Fecha o modal da aula e abre o CADASTRAR ATIVIDADES (editar uma ou cadastrar nova na aula).
  * @param {number|null} idAtividade - Id da atividade a editar ou null para nova.
  */
@@ -347,6 +368,17 @@ function abrirCadastroAtividadeDaAula(idAtividade) {
     const { item } = estadoModalAula;
     fecharModalAula();
     abrirEdicaoAtividadeCrud({ idAtividade, idAula: item.aula.id, pagina: item.pagina });
+}
+
+/**
+ * Abre por cima o "🔗 Gerenciar atividades" (indice-aula-modal-vinculo.js) da aula em edição;
+ * ao fechar, se algo mudou, relê a lista de atividades da aula.
+ */
+function abrirGerenciarAtividadesDaAula() {
+    const aula = estadoModalAula.item?.aula;
+    if (!aula || typeof abrirModalVinculoAula !== 'function') return;
+
+    abrirModalVinculoAula(aula, carregarAtividadesModalAula);
 }
 
 /**
@@ -362,10 +394,11 @@ function aoClicarModalAula(evento) {
     const idAtividade = Number(botao.closest('.crud-linha')?.dataset.id);
     const acoes = {
         fechar: fecharModalAula,
-        'excluir-aula': aoExcluirAulaModal,
+        cancelar: fecharModalAula,
         'editar-atividade': () => abrirCadastroAtividadeDaAula(idAtividade),
         'excluir-atividade': () => aoExcluirAtividadeAula(idAtividade),
         'nova-atividade': () => abrirCadastroAtividadeDaAula(null),
+        'gerenciar-atividades': abrirGerenciarAtividadesDaAula,
     };
     acoes[botao.dataset.acao]?.();
 }
@@ -381,15 +414,14 @@ function fecharModalAula() {
 /**
  * Abre o modal CRUD da aula de um card.
  * @param {{aula: Object, pagina: string|null}} item - Card com a aula.
- * @param {{cards: Object[], ehAdministrador: boolean, aoGravar: Function}} contexto - Dados do
- *   índice e a função que redesenha os cards da aula depois de gravar.
+ * @param {{cards: Object[], aoGravar: Function}} contexto - Dados do índice e a função que
+ *   redesenha os cards da aula depois de gravar.
  */
 function abrirModalAulaCard(item, contexto) {
     if (!elementosModalAula) elementosModalAula = montarModalAula();
 
     estadoModalAula.item = item;
     estadoModalAula.contexto = contexto;
-    elementosModalAula.botaoExcluir.hidden = !contexto.ehAdministrador;
     atualizarTituloModalAula();
     preencherFormularioModalAula(item.aula);
     mostrarMensagemModalAula('');

@@ -9,7 +9,7 @@ Mantém APENAS: EMENTA-CHALKIE-AI.md, STATUS-EMENTAS.md
 import os
 import re
 
-BASE_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BASE_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
 
 # Matérias que já estão conformes (não expandir, apenas consolidar)
 MATERIAS_CONFORMES = [

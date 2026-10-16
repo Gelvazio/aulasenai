@@ -20,6 +20,12 @@ const CODIGO_ENTREGA_REPETIDA = 409;
 const MSG_ERRO_GRAVAR_TOPICO = 'Resposta NÃO gravada. Confira a internet e tente de novo.';
 const MSG_ERRO_ENTREGAR_DISCURSIVA = 'Não foi possível registrar a entrega. Confira se todos ' +
     'os tópicos estão gravados e tente de novo.';
+// Carga da abertura: uma chamada ao Supabase pendurada deixava a página parada em
+// "Carregando..." sem o botão "Exportar Meu Gabarito" (#196.3); a mesma carga, repetida, termina.
+const LIMITE_CARGA_DISCURSIVA_MS = 8000;
+const TENTATIVAS_CARGA_DISCURSIVA = 3;
+const MSG_CARGA_DEMORADA = 'A carga da avaliação passou de ' +
+    LIMITE_CARGA_DISCURSIVA_MS / 1000 + ' s';
 
 /**
  * Monta a chave de um tópico usada nos mapas de respostas (ex.: item 3, tópico 2 → "3-2").
@@ -199,15 +205,6 @@ async function lerGabaritoLiberadoDiscursiva(sessao) {
 }
 
 /**
- * Indica se a página esconde do aluno as próprias respostas depois da entrega
- * (data-ocultar-respostas-entregue="sim" no <body>; campo da fonte .md).
- * @returns {boolean} true quando o bloqueio está ligado.
- */
-function ocultaRespostasEntregues() {
-    return document.body?.dataset.ocultarRespostasEntregue === 'sim';
-}
-
-/**
  * Carrega sessão, atividade, tentativa, respostas e entrega do usuário logado.
  * @param {Object} sessao - Estado do repositório (preenchido aqui).
  * @returns {Promise<Object>} Dados iniciais da página (disponivel=false sem banco ou cadastro).
@@ -234,10 +231,9 @@ async function carregarDiscursiva(sessao) {
     // Gabarito liberado para a turma do aluno que entregou: a prova volta com respostas e nota.
     const gabaritoLiberado = Boolean(!ehProfessor && entregueEm &&
         await lerGabaritoLiberadoDiscursiva(sessao));
-    // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco
-    // (exceto com o gabarito liberado).
-    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado &&
-        ocultaRespostasEntregues());
+    // Regra global das práticas (#160): o aluno que já entregou não vê mais as próprias respostas
+    // até o professor liberar o gabarito; elas nem são lidas do banco.
+    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado);
     const respostas = respostasOcultas ? {} : await lerRespostasDiscursivas(sessao);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
     if (deveRegistrarAbertura) {
@@ -250,6 +246,40 @@ async function carregarDiscursiva(sessao) {
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
         maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };
+}
+
+/**
+ * Espera a promessa até o limite de tempo.
+ * @param {Promise<*>} promessa - Operação a esperar.
+ * @param {number} milissegundos - Tempo máximo.
+ * @returns {Promise<*>} Resultado da promessa.
+ * @throws {Error} Se passar do limite ou a promessa falhar.
+ */
+function esperarComLimiteDiscursiva(promessa, milissegundos) {
+    let temporizador = null;
+    const limite = new Promise((_, rejeitar) => {
+        temporizador = setTimeout(() => rejeitar(new Error(MSG_CARGA_DEMORADA)), milissegundos);
+    });
+    return Promise.race([promessa, limite]).finally(() => clearTimeout(temporizador));
+}
+
+/**
+ * Carrega os dados da página com limite de tempo, repetindo a carga se ela travar ou falhar
+ * (só leituras; a abertura repetida é ignorada pelo banco).
+ * @param {Object} sessao - Estado do repositório.
+ * @returns {Promise<Object>} Dados iniciais da página (ver carregarDiscursiva).
+ * @throws {Error} Se todas as tentativas falharem.
+ */
+async function carregarDiscursivaComLimite(sessao) {
+    for (let tentativa = 1; ; tentativa++) {
+        try {
+            const carga = carregarDiscursiva(sessao);
+            return await esperarComLimiteDiscursiva(carga, LIMITE_CARGA_DISCURSIVA_MS);
+        } catch (erro) {
+            if (tentativa >= TENTATIVAS_CARGA_DISCURSIVA) throw erro;
+            console.warn('Carga da avaliação repetida (' + tentativa + '):', erro.message);
+        }
+    }
 }
 
 /**
@@ -296,14 +326,15 @@ async function entregarDiscursiva(sessao) {
 /**
  * Cria o repositório das respostas discursivas desta página.
  * @returns {{carregar: Function, gravarTopico: Function, lerGravadas: Function,
- *     entregar: Function, chaveTopico: Function}} Operações de dados.
+ *     lerEntrega: Function, entregar: Function, chaveTopico: Function}} Operações de dados.
  */
 function criarRepositorioDiscursivo() {
     const sessao = { usuario: null, atividade: null, tentativa: 1 };
     return {
-        carregar: () => carregarDiscursiva(sessao),
+        carregar: () => carregarDiscursivaComLimite(sessao),
         gravarTopico: (resposta) => gravarTopicoDiscursivo(sessao, resposta),
         lerGravadas: () => lerRespostasDiscursivas(sessao),
+        lerEntrega: () => lerEntregaDiscursiva(sessao),
         entregar: () => entregarDiscursiva(sessao),
         chaveTopico,
     };

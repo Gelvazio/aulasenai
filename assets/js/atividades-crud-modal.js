@@ -2,15 +2,20 @@
 // das atividades cadastradas no banco e o CRUD (cadastrar, editar, excluir).
 // Só o professor logado vê o botão. O link da atividade é escolhido entre as páginas HTML desta
 // pasta (os links dos cards do índice).
+// Ao lado de cada atividade cadastrada, o professor também vê o botão ✏️, que abre a edição
+// dela (nome, data, aula, ativa...) direto no formulário.
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
 const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
 const SELETOR_CARD = 'article.aula';
 const SELETOR_LINK_ATIVIDADE = 'a.btn.principal';
 const SELETOR_ACOES = '.acoes';
+const ALVO_NOVA_ABA_CRUD = '_blank';
+const REL_NOVA_ABA_CRUD = 'noopener';
 const MSG_SEM_ATIVIDADES_CRUD = 'Nenhuma atividade cadastrada para as páginas desta pasta.';
 const MSG_ERRO_CRUD = 'Não foi possível concluir. Confira o login de professor e o banco.';
 const MSG_CAMPOS_CRUD = 'Informe descrição, data, total de itens, aula e link da atividade.';
+const MSG_ATIVIDADE_SALVA_CRUD = '✅ Atividade salva.';
 const MSG_LINK_EM_USO = 'Já existe uma atividade cadastrada para este link.';
 const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas e as entregas ' +
     'dos alunos dela também serão apagados.';
@@ -18,13 +23,25 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
 const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
 const CLASSE_ID_CARD = 'crud-id-atividade';
+const CLASSE_EDITAR_CARD = 'crud-editar-atividade';
+const TEXTO_EDITAR_CARD = '✏️';
+const SELETOR_INTERRUPTOR_CARD = '.interruptor-atividade';
+const TITULO_EDITAR_CARD = 'Editar esta atividade no banco (nome, data, aula, ativa...)';
 // IDs menores que 10 com zero à esquerda (7 → 07); de 10 em diante, normal.
 const DIGITOS_ID_ATIVIDADE = 2;
 // Botão "🧾 LOG" dos cards escondido em todos os índices (pedido do usuário, 2026-10-09); o banco
 // continua gravando o log_resposta_atividade. Para mostrar de novo, trocar para true.
 const LOG_ALTERNATIVAS_LIGADO = false;
+// Links dos cards travados até o indice-aula-data.js conferir o bloqueio da aula (sem isso, o
+// aluno abria os slides da aula bloqueada enquanto a página consultava o banco).
+const CLASSE_INDICE_CONFERINDO_AULA = 'indice--conferindo-aula';
 
-const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
+const TITULO_MODAL_COMPLETO_CRUD = 'Atividades cadastradas';
+const TITULO_MODAL_UNICA_CRUD = '✏️ Editar atividade ID ';
+// Modal aberto pelo ✏️ de uma atividade: só o formulário dela, sem a lista das outras.
+const CLASSE_MODAL_UNICA_CRUD = 'crud-caixa--unica';
+
+const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null, idUnica: null };
 let elementosCrud = null;
 
 /**
@@ -147,8 +164,8 @@ function montarFormularioCrud() {
 
 /**
  * Monta o modal (fundo, caixa, lista, formulário e mensagem) e o anexa à página.
- * @returns {{fundo: HTMLElement, lista: HTMLElement, formulario: HTMLFormElement,
- *   mensagem: HTMLElement}} Referências dos elementos.
+ * @returns {{fundo: HTMLElement, caixa: HTMLElement, titulo: HTMLElement, lista: HTMLElement,
+ *   formulario: HTMLFormElement, mensagem: HTMLElement}} Referências dos elementos.
  */
 function montarModalCrud() {
     const fundo = criarElementoCrud('div', 'crud-fundo');
@@ -156,16 +173,16 @@ function montarModalCrud() {
     caixa.setAttribute('role', 'dialog');
     caixa.setAttribute('aria-modal', 'true');
     const cabecalho = criarElementoCrud('div', 'crud-cabecalho');
-    cabecalho.append(criarElementoCrud('h2', '', 'Atividades cadastradas'),
-        criarBotaoCrud('✕ Fechar', '', 'fechar'));
+    const titulo = criarElementoCrud('h2', '', TITULO_MODAL_COMPLETO_CRUD);
+    cabecalho.append(titulo, criarBotaoCrud('✕ Fechar', '', 'fechar'));
     const lista = criarElementoCrud('div', 'crud-lista');
     const mensagem = criarElementoCrud('p', 'crud-mensagem');
     const formulario = montarFormularioCrud();
-    caixa.append(cabecalho, lista, criarElementoCrud('h3', '', 'Cadastrar / editar'),
+    caixa.append(cabecalho, lista, criarElementoCrud('h3', 'crud-subtitulo', 'Cadastrar / editar'),
         formulario, mensagem);
     fundo.append(caixa);
     document.body.append(fundo);
-    return { fundo, lista, formulario, mensagem };
+    return { fundo, caixa, titulo, lista, formulario, mensagem };
 }
 
 /**
@@ -312,10 +329,23 @@ async function aoSalvarCrud(evento) {
     try {
         await gravarAtividadeCrud(dados);
         await recarregarListaCrud();
-        preencherFormularioCrud(null);
-        mostrarMensagemCrud('✅ Atividade salva.');
+        fecharModalCrud();
+        avisarAtividadeSalvaCrud();
     } catch (erro) {
         mostrarMensagemCrud(MSG_ERRO_CRUD, true);
+    }
+}
+
+/**
+ * Depois de salvar (modal já fechado): atualiza o nome das atividades nos cards e avisa.
+ */
+async function avisarAtividadeSalvaCrud() {
+    if (typeof atualizarNomesDasAtividadesDoIndice === 'function') {
+        atualizarNomesDasAtividadesDoIndice();
+    }
+    await garantirPopupCrud();
+    if (typeof window.mostrarPopup === 'function') {
+        window.mostrarPopup(MSG_ATIVIDADE_SALVA_CRUD, { tipo: 'sucesso' });
     }
 }
 
@@ -376,7 +406,7 @@ function garantirOpcaoPaginaCrud(pagina) {
  * @param {{idAtividade: number|null, idAula: number, pagina: string|null}} pedido - O que abrir.
  */
 async function abrirEdicaoAtividadeCrud({ idAtividade, idAula, pagina }) {
-    await abrirModalCrud(pagina);
+    await abrirModalCrud(pagina, idAtividade);
     if (!idAtividade) {
         elementosCrud.formulario.elements.aula_id.value = String(idAula);
         return;
@@ -421,15 +451,40 @@ function aoClicarModalCrud(evento) {
 }
 
 /**
+ * Atividade do modal aberto pelo ✏️ (modo de uma atividade só), já recarregada do banco.
+ * @returns {Object|null} Atividade em edição, ou null no modo completo.
+ */
+function obterAtividadeUnicaCrud() {
+    if (!estadoCrud.idUnica) return null;
+    return estadoCrud.atividades.find((item) => item.id === estadoCrud.idUnica) || null;
+}
+
+/**
+ * Liga o modo do modal: completo (lista + cadastro) ou de uma atividade só (sem a lista).
+ * @param {number|null} idUnica - Id da atividade do ✏️; null = modo completo.
+ */
+function definirModoModalCrud(idUnica) {
+    estadoCrud.idUnica = idUnica || null;
+    const { caixa, titulo } = elementosCrud;
+    caixa.classList.toggle(CLASSE_MODAL_UNICA_CRUD, Boolean(estadoCrud.idUnica));
+    titulo.textContent = estadoCrud.idUnica
+        ? TITULO_MODAL_UNICA_CRUD + formatarIdAtividadeCrud(estadoCrud.idUnica)
+        : TITULO_MODAL_COMPLETO_CRUD;
+}
+
+/**
  * Abre o modal, carrega aulas e atividades e prepara o formulário para uma nova atividade.
  * @param {string} paginaDoCard - Link da atividade do card clicado.
+ * @param {number|null} [idUnica] - Id da atividade do ✏️ (mostra só ela, sem a lista).
  */
-async function abrirModalCrud(paginaDoCard) {
+async function abrirModalCrud(paginaDoCard, idUnica = null) {
     if (!elementosCrud) {
         elementosCrud = montarModalCrud();
         elementosCrud.fundo.addEventListener('click', aoClicarModalCrud);
         elementosCrud.formulario.addEventListener('submit', aoSalvarCrud);
     }
+    definirModoModalCrud(idUnica);
+    mostrarMensagemCrud('');
     elementosCrud.fundo.hidden = false;
     try {
         estadoCrud.aulas = await listarAulasCrud();
@@ -472,7 +527,8 @@ function formatarIdAtividadeCrud(id) {
  * @param {Object[]} atividades - Atividades cadastradas das páginas do índice.
  */
 function mostrarIdNoCard(card, atividades) {
-    card.querySelectorAll('.' + CLASSE_ID_CARD).forEach((etiqueta) => etiqueta.remove());
+    const seletorAntigos = '.' + CLASSE_ID_CARD + ', .' + CLASSE_EDITAR_CARD;
+    card.querySelectorAll(seletorAntigos).forEach((elemento) => elemento.remove());
     card.querySelectorAll('a.btn').forEach((link) => {
         const pagina = obterCaminhoHtml(lerHrefCrud(link));
         const atividade = atividades.find((linha) => linha.pagina === pagina);
@@ -481,7 +537,36 @@ function mostrarIdNoCard(card, atividades) {
         const etiqueta = criarElementoCrud('span', CLASSE_ID_CARD,
             'ID ' + formatarIdAtividadeCrud(atividade.id));
         link.prepend(etiqueta);
+        posicionarBotaoEditar(link, criarBotaoEditarAtividade(atividade));
     });
+}
+
+/**
+ * Põe o ✏️ na mesma linha do link, sempre depois do ON/OFF (quando ele já estiver lá). Se o
+ * ON/OFF chegar depois, ele entra logo após o link: a ordem fica link → ON/OFF → ✏️.
+ * @param {HTMLElement} link - Link da atividade.
+ * @param {HTMLButtonElement} botao - Botão ✏️.
+ */
+function posicionarBotaoEditar(link, botao) {
+    const vizinho = link.nextElementSibling;
+    const temInterruptor = vizinho?.matches(SELETOR_INTERRUPTOR_CARD);
+    if (temInterruptor) return vizinho.after(botao);
+    link.after(botao);
+}
+
+/**
+ * Cria o botão ✏️ que fica ao lado do link da atividade e abre a edição dela no banco.
+ * @param {{id: number, aula_id: number, pagina: string}} atividade - Atividade cadastrada.
+ * @returns {HTMLButtonElement} Botão de edição.
+ */
+function criarBotaoEditarAtividade(atividade) {
+    const botao = criarElementoCrud('button', 'btn ' + CLASSE_EDITAR_CARD, TEXTO_EDITAR_CARD);
+    botao.type = 'button';
+    botao.title = TITULO_EDITAR_CARD;
+    botao.setAttribute('aria-label', TITULO_EDITAR_CARD);
+    botao.addEventListener('click', () => abrirEdicaoAtividadeCrud({ idAtividade: atividade.id,
+        idAula: atividade.aula_id, pagina: atividade.pagina }));
+    return botao;
 }
 
 /**
@@ -513,6 +598,8 @@ async function iniciarCrudAtividades() {
 function carregarMarcacaoFeitas() {
     if (!BASE_ASSETS_CRUD) return;
 
+    document.body.classList.add(CLASSE_INDICE_CONFERINDO_AULA);
+
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-feitas.css';
@@ -535,6 +622,17 @@ function carregarMarcacaoFeitas() {
 }
 
 /**
+ * Links das atividades dos cards (botões principais) abrem em nova aba, para todos os perfis.
+ * O bloqueio só troca o href (data-href-bloqueado), então o target continua valendo.
+ */
+function abrirAtividadesEmNovaAba() {
+    document.querySelectorAll(SELETOR_CARD + ' ' + SELETOR_LINK_ATIVIDADE).forEach((link) => {
+        link.target = ALVO_NOVA_ABA_CRUD;
+        link.rel = REL_NOVA_ABA_CRUD;
+    });
+}
+
+/**
  * Carrega o link "🧾 LOG" dos cards (professor): log das alternativas marcadas pelos alunos.
  */
 function carregarLogAlternativasIndice() {
@@ -549,17 +647,28 @@ function carregarLogAlternativasIndice() {
 }
 
 /**
- * Carrega a data da aula nos cards e o botão "Editar aula" (professor).
+ * Destrava os links dos cards (fim da conferência do bloqueio da aula).
+ */
+function liberarLinksDosCardsIndice() {
+    document.body.classList.remove(CLASSE_INDICE_CONFERINDO_AULA);
+}
+
+/**
+ * Carrega os dados da aula nos cards e o botão "Editar aula" (professor).
  */
 function carregarDataAulasIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
-    const scripts = ['js/indice-aula-repositorio.js', 'js/indice-aula-modal.js',
-        'js/indice-aula-bloqueio.js', 'js/indice-aula-data.js'].map((caminho) => {
+    const scripts = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
+        'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
+        'js/indice-aula-modal.js', 'js/indice-aula-bloqueio.js',
+        'js/indice-aula-data.js'].map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;
+        // Script que não carrega não pode deixar os links travados para sempre.
+        script.addEventListener('error', liberarLinksDosCardsIndice);
         return script;
     });
     document.head.append(estilo, ...scripts);
@@ -581,5 +690,6 @@ function carregarTurmaFavoritaIndice() {
     document.head.append(estilo, ...scripts);
 }
 
+abrirAtividadesEmNovaAba();
 carregarMarcacaoFeitas();
 iniciarCrudAtividades();

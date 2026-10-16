@@ -624,10 +624,26 @@ SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplica
 
 | Tabela / objeto | Campos / regra |
 |--------|---------|
-| `correcao_discursiva` | PK (`aluno_id`, `atividade_id`, `tentativa`, `item`, `topico`); `nota_ia` (sugestão), `nota_ia_em` (quando a IA deu a nota; correção parcial, 2026-10-08), `nota_professor` (a que vale), `comentario`, `corrigido_por`, `corrigido_em`; notas ≥ 0 |
-| `correcao_discursiva_validar_trg` | nota ≤ `topico_discursivo.pontos` do tópico; tópico tem de existir; grava `corrigido_por`/`corrigido_em` quando a nota do professor muda; **recusa alterar `nota_professor` já confirmada** (2026-10-08) |
+| `correcao_discursiva` | PK (`aluno_id`, `atividade_id`, `tentativa`, `item`, `topico`); `nota_ia` (sugestão), `nota_ia_em` (quando a IA deu a nota; correção parcial, 2026-10-08), `nota_professor` (a que vale), `comentario`, `corrigido_por`, `corrigido_em`, `justificativa_mudanca` (texto que acompanha a mudança de uma nota já confirmada; #156); notas ≥ 0 |
+| `correcao_discursiva_validar_trg` | nota ≤ `topico_discursivo.pontos` do tópico; tópico tem de existir; grava `corrigido_por`/`corrigido_em` quando a nota do professor muda; **a `nota_professor` já confirmada só muda com `justificativa_mudanca` nova (mín. 5 letras) e nunca é apagada** (antes, 2026-10-08, era travada de vez; #156, 2026-10-14) |
+| `correcao_discursiva_historico` | **Eventos da nota (#156, 2026-10-14):** `id` (identity), `aluno_id`, `atividade_id`, `tentativa`, `item`, `topico` (FK composta para `correcao_discursiva`, `on delete cascade`), `tipo` (`confirmacao` ou `mudanca`), `nota_anterior`, `nota_nova`, `justificativa`, `feito_por`, `feito_em`. Quem grava é o trigger `correcao_discursiva_historico_trg` (`after insert or update` em `correcao_discursiva`, função `correcao_discursiva_registrar_historico`, `security definer`); ninguém grava direto. RLS só de leitura: professor via `professor_pode_ver_aluno`; aluno só os próprios, com `aluno_pode_ver_gabarito`. SQL `database/2026-10-14-historico-mudanca-nota-discursiva.sql` (aplicado; 33 eventos de confirmação criados a partir das notas existentes) |
 | RLS | professor lê e grava só alunos de `professor_pode_ver_aluno` (administrador todos); aluno lê só as próprias linhas com `nota_professor` preenchida; sem delete; `anon` sem acesso; TRUNCATE revogado |
 | `notas_media_final(p_paginas text[])` | `security definer`, só `authenticated`: para o aluno logado (`auth.uid()`), a melhor nota (0–10) entregue de cada página — objetiva = acertos ÷ total; discursiva = soma de `nota_professor` ÷ soma dos pontos, só com todos os tópicos corrigidos (senão `situacao = 'AGUARDANDO_CORRECAO'`). Não depende do bloqueio da atividade e não devolve gabarito |
+
+## 🕵️ Atualização 2026-10-14 — Suspeita de Cópia nas discursivas
+
+SQL: `database/2026-10-14-suspeita-copia-discursiva.sql` (✅ aplicado no Supabase em 2026-10-14,
+tarefa #129). Procedimento da IA: `docs/regras/suspeita-copia-discursiva.md`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `suspeita_copia_discursiva` | PK (`atividade_id`, `aluno_id`, `tentativa`, `item`, `topico`); `aluno_parecido_id` (aluno da mesma turma com a resposta mais parecida), `semelhanca` (0–1), `motivo` (IA, sem nomes), `situacao` (`pendente` · `nao_copia` · `copia`), `detectado_em`, `validado_por`, `validado_em` |
+| RLS | só **professor** lê (`eh_professor()` + `professor_pode_ver_aluno`); aluno e `anon` sem acesso; ninguém grava pelo site (insert/update/delete/truncate revogados) — a IA grava pelo conector |
+| `validar_suspeita_copia(p_atividade, p_aluno, p_tentativa, p_item, p_topico, p_e_copia)` | `security definer`, só professor do aluno: grava `situacao`, `validado_por/em`; **É cópia** grava `nota_professor = 0` no tópico em `correcao_discursiva` (recusa se a nota do professor já foi confirmada com outro valor) |
+| `pg_trgm` | extensão (schema `extensions`): `similarity()` para achar os pares parecidos |
+| `aluno_liberado_copia` | (#133, `database/2026-10-14-aluno-liberado-copia.sql`) PK (`atividade_id`, `aluno_id`); `liberado_por`, `liberado_em`: aluno marcado pelo professor como **"Não é cópia"** na atividade — fora da comparação da IA. RLS: só professor do aluno lê; ninguém grava direto pelo site |
+| `falta_aluno` | (#138, `database/2026-10-14-falta-aluno.sql`) PK (`aluno_id`, `data`); `marcada_por`, `marcada_em`: falta do aluno **no dia** marcada pelo professor no Progresso da Turma ("Faltou?"). RLS: aluno lê a própria; professor lê, grava e apaga só alunos de `professor_pode_ver_aluno`; `anon` sem acesso |
+| `liberar_aluno_copia(p_atividade, p_aluno, p_liberar)` | `security definer`, só professor do aluno: liberar grava a linha e muda para `nao_copia` todas as suspeitas **pendentes** da atividade em que o aluno aparece (dele e dos colegas que apontam para ele); desfazer tira a linha. Nenhuma nota muda |
 
 ## 🎯 Atualização 2026-10-08 — Quantidade mínima de questões nas discursivas
 
@@ -644,6 +660,58 @@ Plano: `docs/quantidade-minima-questoes-discursiva.md`.
 | `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
 | `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
 
+## 📨 Atualização 2026-10-14 — Professor marca a atividade do aluno como entregue
+
+SQL: `database/2026-10-14-professor-marca-entregue.sql` (✅ aplicado no Supabase em 2026-10-14).
+Tarefa #45 (etapa 172-0ef7953a). Telas: "Respostas dos alunos" e "Progresso da turma", só nas
+páginas com `<body data-marcar-entregue="sim">` (`assets/js/marcar-entregue-professor.js`).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `entrega_atividade.entregue_por` | `uuid` → `auth.users`, nula = o próprio aluno entregou; preenchida = professor que marcou. A política de INSERT do aluno não muda |
+| `tentativa_atual_do_aluno(uuid, bigint)` | interna (`security definer`, sem execução pela API): maior tentativa liberada do aluno, ou 1 |
+| `professor_marcar_entregue(uuid, bigint)` | `security definer`, só `authenticated`: só professor e só aluno de `professor_pode_ver_aluno`; grava a entrega da tentativa atual **sem exigir o mínimo nem o horário** (em branco = errada; sem resposta = nota 0); recusa se já entregue |
+| `professor_desmarcar_entregue(uuid, bigint)` | `security definer`, só `authenticated`: apaga só a entrega da tentativa atual feita pelo professor; recusa entrega do próprio aluno e tentativa com `nota_professor` lançada (discursiva) |
+| `resumo_tentativas_atividade(bigint)` | recriada (drop + create): traz também o aluno entregue sem nenhuma resposta (0 acertos) e a coluna `entregue_por`; `anon` sem acesso |
+
+## 🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)
+
+SQL: `database/2026-10-11-regras-no-banco.sql` (✅ aplicado no Supabase em 2026-10-11).
+Plano: `docs/regras-no-banco.md` (tarefa #26). Script: `scripts/regras/sincronizar_regras.py`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `regra_documento` | `id` (identity), `caminho` (único: `CLAUDE.md`, `docs/regras/*.md`…), `versao_regras`, `conteudo`, `md5`, `commit_sha`, `ativo`, `sincronizado_em`. RLS: select só `eh_professor_administrador()`; sem insert/update/delete pela API (só o conector grava) |
+| `regra_secao` | `id`, `documento_id` (FK), `caminho`, `ordem` (único com `caminho`), `nivel` (1 = antes do primeiro `##`, 2 = `##`, 3 = `###`), `titulo`, `secao_pai`, `conteudo`, `md5`, `ativo` (seção que sumiu = false), `sincronizado_em`. Mesmo RLS |
+
+## 🗂️ Atualização 2026-10-11 — Fila `tasks` do agendador único
+
+> ⛔ **Sem uso desde 2026-10-13** (tarefa #29, decisão D1): o quadro de tarefas tem fonte única nos arquivos (`tasks/STATUS.md` + etapas). A tabela e as funções continuam no banco (nada foi apagado); `tasks.html`, `tasks/fila/` e `scripts/tasks/sincronizar_tasks.py` saíram do repositório.
+
+SQL: `database/2026-10-11-tasks-fila-agendador.sql` (✅ aplicado no Supabase em 2026-10-11).
+Plano: `docs/fila-tasks-agendador-unico.md` (tarefa #24). Tela: `tasks.html` (menu TASKS).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `tasks` | `id` (identity), `codigo` (único: `#NN-uuid` do `TASKS.md` ou `TASK-NNNN`), `origem` (`pagina`/`repositorio`), `arquivo_md`, `md5_md`, `sincronizado_em`, `titulo`, `instrucao`, `prioridade` (1–5), `executar` (ON/OFF), `executar_apos`, `status` (`pendente`, `em_execucao`, `concluida`, `recusada`, `erro`, `cancelada`), `tentativas`/`max_tentativas`, `trava_frente`, `trava_em`, `expira_em`, `resultado`, `pr_url`, `commit_sha`, `log_id`, `excluido`, `criado_em`, `atualizado_em`, `criado_por`, `atualizado_por`. RLS: select/insert/update só `eh_professor_administrador()`; sem DELETE nem `anon` |
+| `tasks.ordem` / `tasks.task_dependente` | (2026-10-11) posição na fila e `bigint[]` com os ids das tasks de que ela depende (default `{}`) |
+| `tasks_validar_dependencias_trg` | (2026-10-11) dependências sem repetição, existentes e diferentes da própria task |
+| `tasks_preencher_trg` | código `TASK-NNNN`, `arquivo_md` em `tasks/fila/`, datas e `auth.uid()` |
+| `tasks_validar_pagina_trg` | usuário logado não põe nem tira task de `em_execucao` |
+| `pegar_proxima_task(text)` | `security definer`, sem execução pela API: devolve a task vencida para a fila, pega 1 ligada com **todas as dependentes concluídas**, na ordem prioridade → `ordem` → criação (`for update skip locked`), trava por 90 min |
+| `finalizar_task(bigint, text, text, text, text)` | `security definer`, sem execução pela API: `concluida`, `recusada` ou `erro` (erro com tentativas sobrando volta a `pendente`) |
+
+## 🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma
+
+SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (✅ aplicado no Supabase em 2026-10-15 15:06 pelo conector; md5 53bbd05fcd3b66a3b6fffce9c79ebe96). Tarefa #175 (etapa 302-cfc044e9).
+Tela: botão "🔓 Liberar gabaritos (turma X)" (`assets/js/liberacao-respostas-professor.js`).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `preenchimento_encerrado_para_usuario(jsonb)` | `security definer`, só `authenticated`: verdadeiro para o aluno logado com alguma turma (`turmaaluno`) em `atividade.gabarito_liberado`; professor e visitante nunca |
+| `item_valido(bigint, smallint)` / `topico_valido(bigint, smallint, smallint)` | definição de 2026-10-05 + recusam resposta quando `preenchimento_encerrado_para_usuario(gabarito_liberado)` (a atividade continua visível) |
+| `liberar_gabarito_turma(bigint, text, boolean)` | não exige mais todos os alunos com entrega; continua só para o professor da turma; recolher reabre o preenchimento |
+
 ## 🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma
 
 SQL: `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado no Supabase em 2026-10-06).
@@ -655,7 +723,7 @@ Plano: `docs/liberacao-respostas-por-turma.md`. Telas: quadro "Respostas dos alu
 | `atividade.gabarito_liberado` | `jsonb not null default '[]'`: códigos das turmas que já podem ver o gabarito real |
 | `tentativaacessogabarito` | `id` (identity), `atividade_id` → `atividade`, `aluno_id` → `auth.users`, `data_hora` (padrão `now()`): cada pedido de gabarito feito pelo aluno antes da liberação. RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API (só a função); `anon` sem acesso |
 | `alunos_sem_entrega_turma(bigint, text)` | `security definer`: quantos alunos da turma (`turmaaluno`) não entregaram a última tentativa liberada; só o professor da turma recebe a contagem (demais: 0) |
-| `liberar_gabarito_turma(bigint, text, boolean)` | `security definer`, só `authenticated`: professor da turma (administrador em todas) libera — **só com todos os alunos da turma com entrega** — ou recolhe o gabarito |
+| `liberar_gabarito_turma(bigint, text, boolean)` | `security definer`, só `authenticated`: professor da turma (administrador em todas) libera ou recolhe o gabarito (até 2026-10-15 só com todos os alunos da turma com entrega; ver a atualização de 2026-10-15) |
 | `solicitar_gabarito(bigint)` | `security definer`, só `authenticated`: devolve o gabarito real ao aluno logado só se a turma dele estiver em `gabarito_liberado` e ele tiver entrega; senão grava o pedido em `tentativaacessogabarito` e devolve vazio |
 | `liberacao_gabarito_liberado_trg` | trigger em `liberacao_atividade`: recusa nova tentativa/recuperação quando o gabarito já foi liberado para a turma do aluno |
 | `gabarito` | sem mudança: RLS só do professor |
@@ -782,6 +850,88 @@ Este arquivo deve ser referenciado em:
 ```
 
 ---
+
+## 📅 Atualização 2026-10-16 — Tabela `aula_turma`: data e bloqueio da aula por turma (#206)
+
+A remoção pedida na #193 (`database/2026-10-16-remover-aula-turma.sql`) **nunca rodou** e ficou
+SUBSTITUÍDA: a tabela continua no banco e a #206 acrescentou a chave da matéria
+(`database/2026-10-16-aula-turma-materia.sql`, aplicado em 2026-10-16). Scripts anteriores:
+`2026-10-16-aula-turma.sql`, `2026-10-16-aula-turma-bloqueio.sql` e
+`2026-10-16-aula-turma-calendario-itic.sql`.
+
+| Coluna / objeto | Tipo | Descrição |
+|-----------------|------|-----------|
+| `id` | `bigint` (PK) | — |
+| `aula_id` | `bigint` → `aulas.id` | chave da aula; único junto com `turma_codigo` |
+| `materia_id` | `bigint not null` → `materia.id` | chave da matéria; o gatilho `aula_turma_materia_da_aula_trg` (BEFORE) copia sempre a da aula |
+| `turma_codigo` | `text` → `turma.codigo` | chave da turma |
+| `data_aula` | `date` (aceita vazio) | data da aula nessa turma (cada turma tem dias diferentes) |
+| `bloqueio` | `boolean default false` | `true` = aula bloqueada **nessa turma** |
+| `created_at`, `updated_at` | `timestamptz` | — |
+| `aula_turma_bloqueio_propaga_atividades_trg` | gatilho (AFTER) | bloquear a aula na turma põe a turma em `atividade.bloqueio` das atividades ativas da aula; liberar não mexe nelas |
+| RLS | 4 políticas | leitura para logado; insert/update/delete só com `eh_professor()` |
+
+- **Tela:** `ATIVIDADES/index.html`. O combo "Turma:" (abre na favorita) escolhe a turma; o botão
+  "Aula liberada / Aula bloqueada" e o "✏️ Editar aula" (campos "Data da aula" e "Aula bloqueada
+  nesta turma") leem e gravam a linha dessa turma. Código: `assets/js/aula-turma-repositorio.js`,
+  `indice-aula-bloqueio.js`, `indice-aula-modal-turma.js`.
+- **Aluno:** perde a aula só se ela estiver bloqueada em **todas** as turmas dele (`turmaaluno`),
+  como o RLS das atividades.
+- `aulas.ativo = false` continua bloqueando a aula para **todas** as turmas. Liberar no índice uma
+  aula assim deixa `aula_turma.bloqueio = true` nas outras turmas do combo e libera só a escolhida.
+- `aulas.data_planejada` não aparece mais no "Editar aula"; a data da aula é a da turma.
+- **#210 (2026-10-16):** bloqueio da aula ligado em todas as matérias;`database/2026-10-16-aula-turma-bloqueio-cards-fechados.sql` gravou `bloqueio = true` nos 26 pares aula × turma cujas atividades estavam TODAS bloqueadas para a turma (o card continuou fechado para o aluno).
+
+## 🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma (#200)
+
+**Script:** `database/2026-10-16-turma-bloquear-horario.sql` (aplicado em 2026-10-16 pelo
+conector do Supabase). **Plano:** etapa `tasks/etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma.bloquear_horario` | `boolean not null default true` | ON (padrão, como antes): o aluno só grava e entrega dentro do horário da turma; OFF: o horário não bloqueia nada, nem nas avaliações |
+| `horario_da_turma_do_aluno()` | função (mudou) | turma com o bloqueio desligado conta como `dentro`; por ela seguem `dentro_do_horario_da_turma()`, `pode_responder_no_horario(id)` (RLS) e os avisos das páginas |
+| `definir_bloqueio_horario_turma(codigo, ligado)` | função (só professor da turma) | liga/desliga; recusa turma não vinculada; sem `anon` |
+
+Tela: botão **🔒 Bloquear horário: ON / 🔓 OFF** ao lado do horário da turma, no relatório do
+professor das atividades (`assets/js/turma-horario.js`).
+
+## 🏫 Atualização 2026-10-16 — CRUD da `turma` pelo Professor Administrador (#201)
+
+**Script:** `database/2026-10-16-turma-crud-administrador.sql` (aplicado em 2026-10-16 pelo
+conector do Supabase). **Plano:** etapa `tasks/etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma_insert_admin` / `turma_update_admin` | políticas RLS | criar e editar turma só com `eh_professor_administrador()` |
+| `turma_delete_admin` | política RLS | excluir só com `eh_professor_administrador()` **e** `turma_esta_vazia(codigo)`; os vínculos da `turmaprofessor` saem em cascata |
+| `turma_esta_vazia(codigo)` | função (security definer, só `authenticated`) | verdadeiro se a turma não tem `turmaaluno`, `aluno.turma_codigo` nem `equipe` (evita apagar alunos e equipes em cascata) |
+| Privilégios da `turma` | `revoke` | `anon` sem nenhum privilégio; `TRUNCATE` revogado de `authenticated` (TRUNCATE ignora o RLS) |
+
+A leitura continua pela `turma_select` (todo usuário logado). Conferido por simulação em transação
+desfeita: outro professor tem insert recusado e update sem efeito; o administrador cria, edita e
+exclui turma vazia; turma com alunos não sai; `TRUNCATE` recusado. Tela: `turmas.html` (consulta,
+➕ Nova turma, ✏️ Editar no modal, 🗑️ Excluir e 👥 Professores = vínculos da `turmaprofessor`).
+
+## 📚 Atualização 2026-10-16 — `turma_materia` (turma × matéria, #211)
+
+**Script:** `database/2026-10-16-turma-materia.sql` (aplicado em 2026-10-16 pelo conector do
+Supabase). **Plano:** etapa `tasks/etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma_materia.id` | `bigint` identity (PK) | identificador do vínculo |
+| `turma_materia.turma_codigo` | `text` → `turma.codigo` (on update/delete cascade) | turma |
+| `turma_materia.materia_id` | `bigint` → `materia.id` (on delete cascade) | matéria |
+| `turma_materia.criado_em` / `criado_por` | `timestamptz` / `uuid` | quando e quem vinculou |
+| `turma_materia_unica` | `unique (turma_codigo, materia_id)` | sem vínculo repetido |
+
+**RLS:** ligado; `anon` sem acesso; SELECT = todo usuário logado; INSERT/DELETE = **somente**
+`eh_professor_administrador()`; sem política de UPDATE (troca = apagar e vincular de novo);
+TRUNCATE revogado. Vínculo inicial: Introdução à TIC (`materia.id` 25) × 135080 e 135081.
+Uso: botão 📚 Matérias de `turmas.html` (cadastro) e combo "Turma:" do `ATIVIDADES/index.html`
+(`assets/js/indice-turma-favorita.js`): só as turmas da matéria; matéria sem vínculo = todas.
+Conferido: outro professor tem o insert recusado (simulação em transação desfeita).
 
 ## ✅ Checklist de Conformidade
 

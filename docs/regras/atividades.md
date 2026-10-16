@@ -1,8 +1,13 @@
 # 📚 Regras do projeto — Atividades, avaliações, respostas e gabarito
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md).
 
 ---
+
+> ⚠️ **Regra nova (2026-10-11 06:01:03, `CLAUDE.md` "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA
+> SÓ COM CONTEÚDO"):** questões da objetiva e da prática só no banco, layout global e nenhum HTML na
+> pasta da matéria. O que está descrito aqui sobre páginas e fontes por aula é o jeito **atual**,
+> que vale só até a migração da tarefa #25-b3e29764-940b-4a82; não criar página nova por aula sem o plano dela.
 
 ## 💾 REGRA CRÍTICA — ALTERNATIVAS SEMPRE SALVAS NO BANCO DE DADOS
 
@@ -71,6 +76,20 @@ escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` 
 Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
 `respostas-atividade.js`.
 
+**Professor marca como entregue (2026-10-14, tarefa #45):** nas páginas com
+`<body data-marcar-entregue="sim">` (objetivas e práticas), o professor tem
+**"📨 Marcar como entregue"** na tentativa atual do aluno que não entregou e
+**"↩️ Desfazer entrega"** na entrega que ele mesmo marcou (os dois com popup de confirmação).
+- Não exige o mínimo de questões nem o horário: em branco conta como errada; quem nunca abriu
+  fica com nota 0. Depois de marcada, o aluno não responde mais aquela tentativa.
+- Desfazer só vale para entrega feita pelo professor, sem tentativa nova liberada e sem nota
+  lançada (discursiva). A situação mostra **"📨 Entregue pelo professor"**.
+- Onde aparece: "Respostas dos alunos" (objetivas, inclusive alunos sem resposta) e
+  "Progresso da turma" (objetivas e práticas), que ganha a lista **"Alunos sem nenhuma resposta"**.
+- Código: `assets/js/marcar-entregue-professor.js`, `assets/js/alunos-sem-inicio-entrega.js`;
+  banco: `database/2026-10-14-professor-marca-entregue.sql` (`docs/database.md`).
+- Ligado em Testes de Front-End; as demais matérias recebem o atributo nas tarefas #46 a #79.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
@@ -125,6 +144,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   caderno; a página continua com os campos) e `- **Máximo de caracteres:** N` (limite de cada
   resposta; padrão 3000). Primeira: discursiva de sexta da ITIC (id 81), 20 questões, PDF em 3
   páginas.
+- ✅ **`- **Matéria no banco:** NOME` (2026-10-16, #191):** opcional; o seed procura a aula pela
+  matéria com esse nome (`materia.descricao`) quando ele não é igual à UC do `materia.json`
+  (ex.: ITIC = `INTRODUCAO TIC`). Sem o campo, vale a UC.
 - ✅ Banco: `resposta_discursiva` (texto por aluno, tentativa, item e tópico) e `topico_discursivo`
   (enunciado, pontos, padrão de resposta; só o professor lê). `atividade_completa()` exige todos
   os tópicos gravados para entregar. SQL: `database/2026-10-01-respostas-discursivas.sql`.
@@ -196,6 +218,99 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (discursivas) e pelo `respostas-atividade.js` (objetivas) só para o professor; o RLS limita
   às turmas dele; a leitura é paginada de 1000 em 1000 linhas. Plano:
   `docs/progresso-global-atividades.md`.
+  - **Todos os alunos sempre (2026-10-14, #137):** a lista tem **todos os alunos das turmas do
+    curso da atividade** (curso da aula, ou da matéria), também quem não respondeu nada (linha com
+    0 questões). Vale em toda atividade com Progresso, as de hoje e as futuras. Código:
+    `assets/js/alunos-da-turma-progresso.js`.
+  - **Combo "Turma" (2026-10-14, #139):** ao lado do título "Progresso da turma", com as turmas
+    do curso da atividade e "Todas as turmas"; abre na **turma favorita** (`turma.favorito`, com
+    ⭐) quando ela é do curso. A lista (e o resumo, Gráficos e Cálculo Nota) fica **só com os
+    alunos da turma escolhida**.
+  - **Filtro "Questões respondidas" (2026-10-14, #135):** combobox acima do resumo, em toda
+    atividade: **Todas**, **5 ou menos**, **6 a 10**, **11 a 15** e **16 a 20** questões completas
+    (o número da coluna Situação); embaixo dos filtros, "Mostrando N de T alunos" conta a lista
+    com todos os filtros (#146). Só filtra a lista na tela (o
+    resumo continua com a turma toda). Código: `assets/js/filtro-respondidas-progresso.js`.
+  - **Aluno: "📊 Meu progresso" (2026-10-14, #141):** na objetiva e na discursiva, o aluno logado
+    vê no topo **só a própria linha** (célula por questão nas cores do painel, barra e "N de T
+    questões respondidas"). **Nunca** mostra colegas, notas (nem acertos), suspeita de cópia,
+    faltas, quantidade mínima, Gráficos, Cálculo Nota nem "Entregue". Só lê as respostas dele
+    (RLS); banco sem mudança. Código: `assets/js/progresso-do-aluno.js`.
+  - **ON/OFF "Tarefa Entregue?" (2026-10-14, #140):** acima do resumo, em toda atividade. Abre
+    **desligado = só quem não entregou**; ligado = **só quem entregou** (revisão #146). Só filtra a lista na
+    tela. Código: `assets/js/filtro-entregue-progresso.js` (chave ON/OFF comum
+    `.progresso-turma__interruptor` em `progresso-turma-global.css`).
+  - **Combo "Aluno" (2026-10-14, #143):** ao lado do combo "Turma", com "Todos os alunos" e os
+    alunos da lista; escolhido um aluno, a lista mostra só a linha dele (resumo, Gráficos e
+    Cálculo Nota seguem com a turma inteira). A escolha fica no localStorage (`progresso-turma:
+    aluno`); aluno guardado fora da turma escolhida vale como "Todos os alunos". Código:
+    `assets/js/filtro-aluno-progresso.js`.
+  - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
+    **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
+    desligado (padrão), **7 ou mais** (invertido em 2026-10-14, #146). Aluno sem nota final continua na lista. Lembrado no localStorage
+    (`progresso-turma:recuperacao`). Código: `assets/js/filtro-recuperacao-progresso.js`.
+  - **ON/OFF "Prova Corrigida" (2026-10-14, #147):** depois do "RECUPERAÇÃO". Desligado
+    (padrão) lista só as provas **não corrigidas**; ligado, só as **corrigidas**. Objetiva:
+    **entregue = corrigida** (correção automática). Discursiva: entregue e com a **nota do
+    professor** em todas as questões respondidas. Lembrado no localStorage
+    (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
+    `provaCorrigida` em `progresso-turma-fontes.js`.
+  - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
+    dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
+    certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia do
+    **professor ou da IA** — qualquer das duas vale; corrigido na #152). Questão sem nota nunca
+    some. Código:
+    `assets/js/mostrar-certas-discursiva.js` + CSS.
+  - **Discursiva — ON/OFF "Falta Corrigir?" (2026-10-14, #150):** ao lado de "Mostrar Certas".
+    **Ligado (padrão)**: ao escolher um aluno, a prova mostra só as questões que o professor ainda
+    **não marcou** (algum tópico **respondido** sem nota do professor; tópico em branco não
+    conta; a lista se refaz quando o professor marca Certa/Meia/Errada — #155) ; desligado,
+    mostra também as já corrigidas. Os dois filtros valem **juntos** (um não anula o outro). Só
+    muda a tela. Mesmo arquivo do "Mostrar Certas".
+  - **Combo "Aluno" — ON/OFF "Pendente Correcao" (2026-10-14, #153):** ao lado do combo
+    "Aluno:" de "Respostas dos alunos" (objetiva e discursiva). Desligado (padrão): lista todos;
+    ligado: lista só os alunos que o professor **ainda não corrigiu**. Discursiva: corrigido =
+    entregou e tem nota do professor em todas as questões respondidas
+    (`assets/js/corrigidos-discursiva.js`); objetiva: corrigido = entregue. Só muda a tela.
+    Código: `assets/js/respostas-aluno-professor.js` + CSS.
+  - **Filtros de categoria — Mostrar Certas / Mostrar Meia Certas / Mostrar Erradas (2026-10-14,
+    #159; substitui o "Mostrar Certas" sozinho das #148/#152/#158):** três ON/OFF no painel do
+    professor (ao lado de "Falta Corrigir?") e, **liberados aos alunos**, no quadro da nota da prova
+    corrigida. **Todos desmarcados: mostra todas as perguntas**; marcados **combinam** (mostra as
+    de qualquer categoria marcada). Categoria da pergunta: **certa** = todos os tópicos com nota
+    cheia; **errada** = todos com nota zero; **meia certa** = o resto (só tópicos respondidos).
+    Nota que vale: a do professor; sem ela, a da IA (aluno: só a confirmada do professor).
+    Pergunta ainda sem nota nunca some. No professor combinam também com "Falta Corrigir?". As
+    escolhas ficam no **localStorage** (`respostas-aluno:categoria-*` e `resultado-aluno:categoria-*`).
+    Código: `assets/js/categorias-pergunta-discursiva.js` (compartilhado),
+    `mostrar-certas-discursiva.js` (professor) e `mostrar-certas-aluno-discursiva.js` (aluno).
+  - **Card de entrega com alerta (2026-10-14, #164):** no card "ENTREGA" do aluno que **já
+    entregou** a discursiva, o botão some e aparece o alerta **"Atividade já entregue! Aguarde a
+    correção!"**; quando a prova já está corrigida e a nota já pode ser vista (gabarito liberado),
+    o alerta vira **"Atividade Corrigida, veja sua nota no início!"**. Código:
+    `mostrarAlertaDeEntrega` em `assets/js/avaliacao-discursiva.js` (chamada também pelo
+    `resultado-aluno-discursiva.js`) + CSS `entrega-discursiva__alerta`.
+  - **Progresso da turma — "Nota final" mostra a nota do professor (2026-10-14, #163):** na
+    discursiva, a coluna **Nota final** mostra a **🎓 nota confirmada pelo professor** quando a
+    prova está corrigida (entregue e com nota do professor em todas as questões respondidas);
+    antes disso continua a **🤖 nota sugerida pela IA** (a confirmar). Antes só aparecia a da IA.
+    Código: `progresso-turma-fontes.js` (`somarNotasDoProfessor`) e `progresso-turma-global.js`.
+  - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
+    filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
+    Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência
+    de tela) e voltam ao abrir; sem escolha guardada, ou se o aluno não estiver mais na lista,
+    fica "— Selecione o aluno —". Padrões sem escolha: Falta Corrigir? ligado; os outros dois
+    desligados. Código: `assets/js/respostas-aluno-professor.js` e `mostrar-certas-discursiva.js`.
+  - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
+    "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
+    `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
+    guardada, o padrão (Todas · desligado · desligado).
+  - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
+    falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
+    ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (esconde quem faltou). Dia =
+    `atividade.data_atividade`, senão `aulas.data_planejada`; sem nenhuma, os botões ficam
+    desligados. Quem faltou **entra nas contas** (resumo, Gráficos, Cálculo Nota). Código:
+    `assets/js/falta-aluno-progresso.js` + CSS.
   - **Objetiva (2026-10-09):** colunas **"Nota parcial (acertos)"** (nota sobre o mínimo até
     agora, % de acerto nas questões respondidas e "(N/50)") e **"Nota final"** (só com a entrega),
     pelos acertos da função `resumo_tentativas_atividade` (o gabarito não sai do banco). As
@@ -218,20 +333,55 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor; só o painel e o
     Progresso da turma aparecem. A prova, com as respostas do aluno, aparece ao escolher um aluno
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
-    `avaliacao-discursiva.js` + CSS).
+    `avaliacao-discursiva.js` + CSS). Desde 2026-10-14 o painel do professor tem também o botão
+    **👁️ Mostrar questões / 🙈 Esconder questões**, que mostra a prova sem escolher aluno (#119).
+  - **✅ Confirmar Todas (2026-10-14, #134):** botão ao lado do nome do aluno no Progresso da
+    turma (só depois da entrega): grava a nota da IA como nota do professor (travada) em todas as
+    questões dele; pula as com suspeita de cópia pendente; se faltar nota da IA em alguma, mostra
+    **"QUESTÕES SEM NOTA! GERE A CORREÇÃO DE IA DE NOVO!"** e não grava nada. Para isso, depois
+    da entrega a IA dá 0 às questões em branco. Código: `assets/js/confirmar-todas-professor.js`.
+  - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
+    e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
+    **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao
+    escolher o aluno, a questão vermelha piscando com **✅ Não é cópia / ❌ É cópia** (É cópia zera
+    a nota da questão). Código: `assets/js/suspeita-copia-discursiva.js` + `assets/css/suspeita-copia.css`.
+    Só conta com **90% ou mais** e mostra o % (#131). Botão **🛡️ Não é cópia** no aluno (#133):
+    tira o aluno da comparação **naquela atividade** (as suspeitas dele e as que apontam para ele
+    viram "não é cópia"); **↩️ Voltar a comparar** desfaz.
   - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código
     `assets/js/confirmar-nota-professor-discursiva.js` + CSS, pelo `aoMostrarAluno`.
-  - **Botão "✅ Finalizar Atividade" (2026-10-08):** embaixo da prova, depois de escolher o
-    aluno (só professor). Confere que o aluno entregou e que todas as alternativas respondidas
-    têm `nota_professor`; então lança a nota (soma ÷ pontos × 10 × total ÷ mínimo, máximo 10)
+  - **Botão "✅ Confirmar Correção" (antes "Finalizar Atividade", 2026-10-08; renomeado na
+    #154, 2026-10-14 — só para o professor, o botão "Finalizar" do aluno não muda):** embaixo da
+    prova, depois de escolher o aluno. Confere que o aluno entregou e que todas as alternativas
+    respondidas têm `nota_professor`. A alternativa **sem nota do professor que a IA marcou como
+    certa** (nota da IA cheia) é confirmada com a nota da IA, depois de o professor aceitar num
+    popup (nota confirmada é definitiva); as **demais** (meia certa, errada ou sem nota da IA) o
+    professor é **obrigado a corrigir**. Então lança a nota (soma ÷ pontos × 10 × total ÷ mínimo, máximo 10)
     e mostra a contagem de certas, meias certas, erradas e em branco. A nota entra na média
     final pela `notas_media_final`. `assets/js/finalizar-atividade-professor.js` + CSS.
-  - ⛔ **Nota confirmada é definitiva:** pede confirmação antes de gravar; depois os botões travam
-    e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
-    gravada, **nem o professor altera** (SQL
-    `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado).
+    **Prova já corrigida (2026-10-14, #169):** se o aluno entregou e todas as respondidas têm
+    `nota_professor`, no lugar do botão aparece só a mensagem **"Prova Já Corrigida!"** (também
+    logo depois de confirmar). Depois de confirmar, com o "Pendente Correcao" ligado, o aluno
+    sai do combo e a prova dele fica na tela (`window.atualizarPendenteCorrecao`, de
+    `respostas-aluno-professor.js`). O aluno continua com a mensagem dele.
+  - **Nota confirmada só muda com justificativa (2026-10-14, #156):** o professor pode clicar em
+    outra opção (Certa / Meia certa / Errada) numa alternativa já confirmada — para cima ou para
+    baixo; abre o modal **"Justificativa de mudança da nota na Pergunta"** (texto obrigatório, a
+    justificativa apresentada pelo aluno; `justificativa-mudanca-nota.js`). O trigger
+    `correcao_discursiva_validar` recusa sem justificativa nova e nunca deixa apagar a nota (SQL
+    `database/2026-10-14-historico-mudanca-nota-discursiva.sql`, aplicado).
+  - **Histórico em linha do tempo (2026-10-14, #156):** cada confirmação e cada mudança vira um
+    evento da tabela `correcao_discursiva_historico` (gravada só pelo trigger). Botão
+    **"🕒 Histórico"** logo depois de "Errada" (professor) e ao lado do resultado (aluno) abre o
+    modal "Histórico" (`historico-nota-discursiva.js` + `modal-nota-discursiva.js` + CSS): data e
+    hora, "Meia certa → Certa", motivo e "Por: Professor" (nunca IA). **Habilitado só se houver
+    eventos**; sem eventos fica desabilitado no professor e nem aparece no aluno.
+  - **Aluno vê a explicação abaixo da alternativa (2026-10-14, #156):** só depois de entregar, de
+    o professor confirmar a nota e do gabarito liberado, **abaixo da alternativa errada ou meia
+    certa** aparece "💬 Explicação: …" (o comentário, **sem dizer que foi a IA**) e, se a nota
+    mudou, "Esta alternativa estava X, e foi considerada Y pelo motivo: …".
   - **Global (2026-10-08 nas discursivas; 2026-10-09 também nas objetivas):** o painel aparece
     para o professor em **todas** as atividades com banco, sem campo na fonte.
   - **Botão "📈 Gráficos"** ao lado do título: modal com 5 gráficos dos dados de agora — barras
@@ -243,12 +393,19 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - ✅ **Feito em 2026-10-09:** o progresso aparece em **todas as atividades** com banco
     (discursivas e objetivas), pelo módulo global; ⛔ não voltar ao antigo
     `progresso-turma-discursiva.js` nem criar painel por matéria ou por página.
-- ✅ **Ocultar as respostas depois da entrega (2026-10-08, pedido do usuário):** campo opcional
-  `- **Ocultar respostas após entrega:** sim` → `data-ocultar-respostas-entregue="sim"`. O aluno que
-  já entregou **não vê** as próprias respostas: a página **nem as lê do banco**
-  (`carregarDiscursiva` em `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a
-  barra do aluno some e o painel avisa. Logo após entregar, a tela também é limpa. O professor
-  continua vendo tudo; nada é apagado do banco. 1º uso: Prova Prática ADAG (id 82).
+- ✅ **Regra global das práticas — depois de entregar, o aluno não vê mais as próprias respostas
+  até o professor liberar o gabarito (2026-10-08, pedido do usuário; global em 2026-10-14,
+  #160):** vale para **toda** atividade prática/discursiva, sem campo na fonte `.md` (o antigo
+  `- **Ocultar respostas após entrega:** sim` deixou de ser necessário). O aluno que já entregou
+  **não vê** as próprias respostas: a página **nem as lê do banco** (`carregarDiscursiva` em
+  `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a barra do aluno some e o
+  painel avisa; logo após entregar, a tela também é limpa. Com o **gabarito liberado** para a
+  turma, a prova corrigida volta com as respostas dele. O professor continua vendo tudo; nada é
+  apagado do banco. É regra de tela (o aluno tecnicamente ainda lê a própria linha pelo RLS).
+  Página que ficou aberta (#161): ao voltar para a aba, a página confere no banco se a tentativa
+  já foi entregue (em outra aba ou aparelho) e recarrega; voltar/avançar do navegador também
+  recarrega (`pageshow`), como na objetiva. Aba aberta **antes** da publicação do #160 só se
+  corrige ao recarregar (F5).
 - ✅ **Quantidade mínima de questões para entregar (2026-10-08, pedido do usuário):** toda
   discursiva tem um mínimo de **questões completas** (todas as alternativas com texto); padrão =
   todas (`atividade.minimo_questoes_entrega` vazio). O professor muda **por aluno** no Progresso
@@ -271,13 +428,20 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     mostra o resumo e a tabela dos alunos, e o botão **"Quantidade Mínima de Questões"** grava o
     mínimo informado **só para quem ainda está com o total** (quem tem mínimo próprio não muda).
     A nota continua seguindo o mínimo de cada aluno. `assets/js/calculo-nota-progresso.js` + CSS.
+  - **Tela e PDF só até o mínimo (2026-10-14, #33):** na objetiva com
+    `data-questoes-ate-minimo="sim"` no `<body>`, a página mostra só as questões **1 até o
+    mínimo** e o "Exportar PDF (atividade completa)" leva só essas (total e gabarito também).
+    Aluno: o mínimo dele; professor: muda na hora ao aplicar no Cálculo Nota e, ao abrir, usa o
+    mínimo mais usado da atividade. `assets/js/questoes-ate-minimo.js` (+ `atividade.js` e
+    `.questao--fora-do-minimo` em `atividade.css`). Ligado em Testes de Front-End, Aula 02; as
+    demais matérias entram pela #34 (etapa 161-7aee2d7e).
 - ✅ **Prova corrigida para o aluno (2026-10-08, pedido do usuário):** aluno que entregou e com o
   gabarito liberado para a turma (`aluno_pode_ver_gabarito`, sem registrar pedido; execução
   liberada para `authenticated` em `database/2026-10-08-aluno-pode-ver-gabarito-execute.sql`,
-  aplicado) vê a prova com as respostas dele (o "Ocultar respostas após entrega" deixa de
-  valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
+  aplicado) vê a prova com as respostas dele (a regra de ocultar as respostas após a entrega deixa
+  de valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
   nota do professor (✅ Certa / 🟡 Meia certa / ❌ Errada / ⏳ aguardando) com a **observação da
-  IA** num balão grande, e o padrão de resposta (mesma caixa do "Ver Gabarito"). O aluno só lê
+  IA** num balão grande, e o padrão de resposta (mesma caixa do "Gabarito da Atividade-Respostas"). O aluno só lê
   as próprias correções confirmadas (RLS da `correcao_discursiva`).
   `assets/js/resultado-aluno-discursiva.js` + CSS.
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
@@ -310,43 +474,93 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**. **Única exceção (2026-10-06, pedido do
-usuário):** a liberação pelo professor, por atividade e turma, depois que todos entregaram.
+usuário):** a liberação pelo professor, por atividade e turma (desde 2026-10-15, #175, mesmo
+com alunos sem entrega: liberar encerra o preenchimento da turma).
 
 - ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
   nunca embutido nas páginas.
-- ✅ Nas avaliações e atividades, no fim da página: **Exportar Gabarito** (professor = gabarito
-  real; aluno = ver a liberação abaixo). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
+- ✅ Nas avaliações e atividades, no fim da página: **Exportar Gabarito**, **só para o
+  professor** (gabarito real; 2026-10-15, #176, pedido do usuário: "só deve aparecer para o
+  professor"). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
   **removido** de todas as páginas e do gerador em 2026-10-06 (pedido do usuário); fica só a
   variante "📥 Gabarito" (`data-modo="gabarito"`, só professor) onde já existia.
+- ✅ **"📥 Exportar PDF" só para o professor (2026-10-16, #198, pedido do usuário: "deve aparecer
+  apenas para o professor"):** em **todas as atividades** (objetivas/geradas e práticas/
+  discursivas) o botão nasce escondido e só aparece para o perfil **PROFESSOR** logado; aluno e
+  visitante não o veem. Objetivas: `assets/js/atividade.js` marca o botão e a dica com
+  `data-somente-perfil="PROFESSOR"` (o `js/header-usuario.js` mostra). Discursivas:
+  `assets/js/exportar-pdf-discursiva.js` confere o perfil na sessão. A `.export-bar` sem nenhum
+  item visível some (`assets/css/atividade.css`); o "📄 Exportar Meu Gabarito" do aluno continua
+  na barra. Apostilas não mudam.
 - ✅ **REGRA GLOBAL: vale para todas as avaliações e atividades de todas as matérias e de todos
   os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
-  pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`), e o gabarito só é
-  liberado **depois que todos os alunos da turma entregaram**.
+  pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`; visível e ativo
+  só para o perfil PROFESSOR desde 2026-10-15, #176), e o gabarito só é
+  liberado pelo professor; liberar **encerra o preenchimento da turma** (2026-10-15, #175; até
+  então só depois que todos os alunos da turma entregaram).
 - ✅ **Liberar gabaritos (2026-10-06)** — plano `docs/liberacao-respostas-por-turma.md`, SQL
   `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado):
   - no quadro "Respostas dos alunos nesta atividade", o professor tem o botão
-    **"🔓 Liberar gabaritos (turma X)"** (turma da aba), que **só funciona quando todos os alunos
-    da turma entregaram** (senão fica desativado com "Faltam N aluno(s) entregar"); depois vira
+    **"🔓 Liberar gabaritos (turma X)"** (turma da aba), **sempre ativo** desde 2026-10-15 (#175,
+    pedido do usuário: "tem aluno que não fez a atividade"); com alunos sem entrega, o aviso e a
+    confirmação dizem "Faltam N aluno(s) entregar: eles não poderão mais responder"; depois vira
     "🔒 Recolher gabarito". Código: `assets/js/liberacao-respostas-professor.js` (+ css);
   - grava o código da turma em `atividade.gabarito_liberado` (função `liberar_gabarito_turma`);
   - **depois da liberação, nenhuma nova tentativa nem recuperação** para os alunos da turma
-    (trigger em `liberacao_atividade`);
-  - **aluno** clica em "Exportar Gabarito": se a turma dele foi liberada e ele entregou, recebe o
-    gabarito real (função `solicitar_gabarito`); senão vê **"Aguarde professor liberar os
-    gabaritos"** e o pedido é gravado na tabela **`tentativaacessogabarito`** (atividade, aluno,
-    data e hora; só o professor lê).
+    (trigger em `liberacao_atividade`) **e nenhuma resposta nova** (preenchimento encerrado:
+    `item_valido`/`topico_valido`, SQL `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql`); a atividade continua visível
+    para quem entregou ver nota e gabarito; "Recolher gabarito" reabre o preenchimento;
+  - **aluno** não tem mais o botão "Exportar Gabarito" (2026-10-15, #176): com a turma liberada
+    e a atividade entregue, vê a correção na própria página (✅/❌ e a alternativa certa,
+    `correcao-objetiva-aluno.js`, função `solicitar_gabarito`). Até 2026-10-15 o aluno também
+    exportava o gabarito real por esse botão (antes da liberação via "Aguarde professor liberar
+    os gabaritos" e o pedido ia para a tabela **`tentativaacessogabarito`**, que segue
+    recebendo os pedidos do "🔑 Gabarito da Atividade-Respostas" das discursivas).
 - ✅ **Também nas DISCURSIVAS** (2026-10-06, pedido do usuário; 19 páginas): o "gabarito" é o
   padrão de resposta (`topico_discursivo.resposta_esperada`, só do professor). No painel da página
   (`assets/js/liberacao-respostas-discursiva.js`, carregado pelo `avaliacao-discursiva.js`):
-  professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (só com todos
-  entregues); aluno clica em **"🔑 Ver Gabarito"** — antes da liberação, "Aguarde professor
+  professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (encerra o
+  preenchimento da turma, 2026-10-15); aluno clica em **"🔑 Gabarito da Atividade-Respostas"** — antes da liberação, "Aguarde professor
   liberar os gabaritos" + registro em `tentativaacessogabarito`; depois, a resposta esperada de
   cada tópico aparece abaixo da resposta dele (função `solicitar_gabarito_discursivo`; SQL
   `database/2026-10-06-liberacao-respostas-discursiva.sql`, ✅ aplicado).
 - ❌ Fora dessa liberação, nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa
   nem o padrão de resposta das discursivas.
   Código: `assets/js/avaliacao-pdf-professor.js`.
+- ✅ **Correção da objetiva para o aluno (2026-10-14, #82, todas as objetivas):** com a
+  objetiva entregue e o gabarito liberado para a turma, cada questão mostra a alternativa do
+  aluno com ✅ (acertou) ou ❌ (errou) e, nas erradas, a alternativa certa; o cartão
+  "RESULTADO — Sua nota" continua no topo. A página confere antes com `aluno_pode_ver_gabarito`
+  (não grava pedido) e só então chama `solicitar_gabarito`. Código:
+  `assets/js/correcao-objetiva-aluno.js` (carregado por `respostas-atividade.js`) + CSS em
+  `assets/css/respostas-atividade.css`.
+- ✅ **"📄 Exportar Meu Gabarito" (2026-10-14, #82):** em toda atividade (objetiva, prática,
+  discursiva e avaliação) com `<body data-exportar-meu-gabarito="sim">`, o **aluno** tem o
+  botão, desativado ("Disponível depois de entregar") até a **última tentativa liberada** estar
+  entregue. Gera um PDF para postar no Ambiente Virtual com cabeçalho (estudante, turma, UC,
+  atividade, docente, tentativa, data e hora da entrega), a **nota** (objetiva: acertos sobre o
+  mínimo; prática/discursiva: `notas_media_final` ou "aguardando a correção") e **só as
+  respostas do aluno** daquela tentativa. ⛔ Nunca leva a resposta certa nem o padrão de
+  resposta. Código: `assets/js/botao-minhas-respostas.js` (botão) e
+  `pdf-minhas-respostas.js` (PDF), adaptadores `minhas-respostas-objetiva.js` (carregado por
+  `respostas-atividade.js`) e `minhas-respostas-discursiva.js` (carregado por
+  `avaliacao-discursiva.js`); CSS `assets/css/minhas-respostas.css`. Sem mudança no banco.
+  Ligado em Testes de Front-End e em Introdução às TIC (23 páginas, #84, 2026-10-15); as demais
+  matérias entram pelas tarefas #83 e #85 a #116.
+  **Discursivas depois da entrega (2026-10-16, #196):** como a página não carrega mais as
+  respostas de quem entregou (regra das práticas, #160), o PDF das práticas/discursivas lê as
+  respostas gravadas no banco **na hora do clique** (`minhas-respostas-discursiva.js`, leitor
+  `lerGravadas` do repositório); a tela continua sem mostrá-las. No gerador de discursivas, o
+  campo `- **Exportar Meu Gabarito:** sim` da fonte liga o botão. Ligado na Atividade de Sala
+  16/10 da ITIC (id 152); as demais discursivas entram pela #197.
+  **Lugar na discursiva (2026-10-16, #196.5; substitui a #196.4):** nas práticas/discursivas o
+  botão fica no painel IDENTIFICAÇÃO, ao lado do **"🔑 Gabarito da Atividade-Respostas"** (antes
+  "Ver Gabarito"), no mesmo grupo (`liberacao-respostas-discursiva.js`; `avaliacao-discursiva.js`
+  espera o grupo ser montado); sem esse botão, fica no painel.
+  **No topo (2026-10-15, #180):** com `<body data-meu-gabarito-no-topo="sim">`, a objetiva põe
+  o botão na `.export-bar`, ao lado do "📥 Exportar PDF (atividade completa)", em vez da folha
+  de respostas (`respostas-atividade.js`). Ligado nas 15 objetivas de Introdução às TIC.
 
 ## 📑 REGRA CRÍTICA — ÍNDICES DE ATIVIDADES: SÓ HTML, EM ORDEM DE DATA
 
@@ -401,6 +615,34 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - **bloquear a aula (`aulas.ativo = false`) bloqueia todas as atividades dela** (trigger
     `aulas_bloqueio_propaga_atividades_trg`, 2026-10-09: grava `atividade.ativo = false`);
     desbloquear a aula não mexe nas atividades;
+  - **bloqueio da aula POR TURMA** (2026-10-16, tarefa #206; tabela `aula_turma` em
+    `docs/database.md`): o combo **"Turma:"** do índice abre na **turma favorita** e comanda o
+    botão "Aula liberada / Aula bloqueada", o "✏️ Editar aula" ("Data da aula" e "Aula bloqueada
+    nesta turma") e o ON/OFF das atividades; trocar a turma no combo relê tudo. Bloquear a aula
+    na turma põe a turma no `bloqueio` das atividades da aula (gatilho); liberar não mexe nelas.
+    O aluno perde a aula só se ela estiver bloqueada em todas as turmas dele. `aulas.ativo = false`
+    continua valendo para todas as turmas; liberar uma aula assim no índice mantém o bloqueio nas
+    outras turmas do combo e libera só a escolhida. Sem combo (sem turmas), o botão grava
+    `aulas.ativo`. Código: `assets/js/aula-turma-repositorio.js`, `indice-aula-bloqueio.js`,
+    `indice-aula-modal-turma.js`;
+  - **"🔗 Gerenciar atividades" no "✏️ Editar aula"** (2026-10-16, tarefa #213): 2.º modal que vincula
+    (`atividade.aula_id` = a aula) e desvincula (`aula_id` vazio, a atividade não é apagada)
+    atividades que já existem no banco, pelo ID ou pela lista das outras aulas da matéria e das
+    sem aula; tirar uma atividade de outra aula pede confirmação. Os links dos cards são do HTML:
+    vincular não cria link no card. Código: `assets/js/indice-aula-modal-vinculo.js`;
+  - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
+    de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
+    `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards
+    que antes fechavam sozinhos porque TODAS as atividades estavam bloqueadas para a turma
+    passaram a ter `aula_turma.bloqueio = true` nessa turma
+    (`database/2026-10-16-aula-turma-bloqueio-cards-fechados.sql`, 26 pares);
+  - **slides da aula bloqueada fechados para o aluno** (2026-10-14, tarefa #31; todas as matérias
+    desde a #210): no índice, os links dos cards ficam travados
+    (classe `indice--conferindo-aula`) até o `indice-aula-data.js` conferir o bloqueio; na página
+    da atividade (objetiva e prática), `assets/js/atividade-bloqueio-aula.js` esconde o conteúdo
+    e tira os links dos slides (PDF) quando o aluno não consegue ler a atividade (RLS); o script
+    só entra nas páginas que estão em `atividade.pagina` (fora do banco, ele esconderia a página).
+    O PDF aberto pelo endereço direto continua acessível (arquivo estático do site);
   - aluno: vê a atividade se **alguma** turma dele (`turmaaluno`) estiver liberada; aluno sem
     turma e visitante, liberado. Garantido no banco pela política `atividade_select` e por
     `item_valido`/`topico_valido` (função `atividade_liberada_para_usuario`);
@@ -512,7 +754,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   for criada, alterada, cadastrada no banco ou liberada/bloqueada; criar o arquivo se não existir.
 - ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
-  `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
+  `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano (na etapa) e aprovação;
   aplicar o seed no Supabase só com pedido do usuário (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
   EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras

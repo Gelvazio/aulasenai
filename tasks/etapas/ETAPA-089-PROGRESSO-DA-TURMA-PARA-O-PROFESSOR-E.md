@@ -10,4 +10,4 @@ Pedido do usuário: barra de progresso por aluno e por questão, só para o prof
 | 89.2 | Gerador: campo `Progresso para o professor: sim` → `data-progresso-professor`; ligado na prova e página regerada | ✅ Concluído | 2026-10-08 14:34:44 | `py_compile`; `git diff` só com o atributo novo no `<body>` |
 | 89.3 | Nome da prova no HTML: "Prova Prática 06-10-2026" → "08-10-2026" (título, h1 e rodapé; nome do arquivo e banco sem mudança) | ✅ Concluído | 2026-10-08 14:34:44 | 3 trocas conferidas com `grep` |
 | 89.4 | Regra no `CLAUDE.md` (versão + histórico) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:34:44 | Leitura dos arquivos |
-| 89.5 | Aceite do usuário (testar logado como professor: painel no topo, atualização a cada 5 s) | ⬜ Pendente | — | — |
+| 89.5 | Aceite do usuário (testar logado como professor: painel no topo, atualização a cada 5 s) | 👀 Aguardando o usuário | — | — |

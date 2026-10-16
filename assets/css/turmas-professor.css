@@ -1,10 +1,14 @@
-/* Página turmas.html — CRUD de turmaprofessor (complementa criar-usuarios-comando.css) */
+/* Página turmas.html — CRUD da turma e da turmaprofessor (complementa criar-usuarios-comando.css) */
 :root {
     --tp-espaco: 12px;
     --tp-cinza: #4a5568;
     --tp-perigo: #b42318;
     --tp-fundo-edicao: #eef4fb;
+    --tp-largura-pagina: min(1600px, 96vw);
 }
+
+/* Página mais larga que o padrão .guia (900px), para a tabela de turmas caber (#201.5) */
+.guia.guia--larga { max-width: var(--tp-largura-pagina); }
 
 .tp-formulario {
     display: grid;
@@ -113,3 +117,42 @@
 }
 .tp-modal__caixa h2 { color: var(--guia-azul); font-size: 18px; }
 .tp-modal__subtitulo { color: var(--tp-cinza); font-size: 14px; }
+
+/* Modal dos dados da turma (turmas-dados-modal.js, #201) */
+.tp-modal__caixa--largo { width: min(720px, 100%); }
+.tp-grade-campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--tp-espaco);
+}
+.tp-campo--largo { grid-column: 1 / -1; }
+.tp-campo--marcar {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+.tp-campo .guia-filtro:disabled { background: var(--guia-fundo); color: var(--tp-cinza); }
+.tp-acoes--fim { align-items: end; }
+
+@media (max-width: 760px) {
+    .tp-grade-campos { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Cabeçalho azul com o menu de cadastros à direita (botão 📚 Matérias, #211) */
+.tp-cabecalho-pagina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--tp-espaco);
+}
+
+.tp-menu-cabecalho { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tp-botao-cabecalho {
+    background: #fff;
+    color: var(--guia-azul);
+    font-weight: 700;
+}

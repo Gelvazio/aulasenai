@@ -17,7 +17,7 @@ MATERIAS = {
     "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO": 644,
 }
 
-BASE_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BASE_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
 
 def remover_secoes_menos_criticas(conteudo):
     """Remove seções menos essenciais para reduzir tamanho."""

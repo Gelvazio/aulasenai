@@ -26,7 +26,7 @@
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md`
 
 **Ação:** Extrator conteúdo completo do arquivo para entender:
 - Objetivo e propósito da matéria
@@ -36,7 +36,7 @@
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md"
 ```
 
 Esperado: `True`
@@ -47,7 +47,7 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md`
 
 **Ação:** Extrator conteúdo completo para entender:
 - Conteúdo programático detalhado
@@ -57,7 +57,7 @@ Esperado: `True`
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md"
 ```
 
 Esperado: `True`
@@ -96,7 +96,7 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md`
+**Arquivo:** Criar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md`
 
 **Ação:** Escrever arquivo consolidado com:
 - Conteúdo mesclado de ambos os arquivos
@@ -106,8 +106,8 @@ Esperado: `True`
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md"
-Get-Content "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md" | Measure-Object -Line
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md"
+Get-Content "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md" | Measure-Object -Line
 ```
 
 Esperado: Arquivo criado com conteúdo consolidado
@@ -126,7 +126,7 @@ Esperado: Arquivo criado com conteúdo consolidado
 
 **Verificação:**
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 Get-Content "EMENTA-DIGITAL-SKILLS.md" | Select-Object -First 50
 ```
 
@@ -141,7 +141,7 @@ Esperado: Conteúdo bem formatado e estruturado
 **Ação:** Adicionar arquivo ao git
 
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 git add EMENTA-DIGITAL-SKILLS.md
 git commit -m "docs: criar ementa consolidada de Digital Skills
 

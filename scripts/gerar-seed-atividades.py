@@ -50,9 +50,9 @@ ATIVIDADES = [
     (7, "Textos Técnicos e Redação Empresarial", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
     (7, "Textos Técnicos e Redação Empresarial", "2026-10-09",
-     f"{PASTA_TIC}/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-QUESTOES.md"),
+     f"{PASTA_TIC}/CONTEUDO/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-QUESTOES.md"),
     (20, "Revisão da Apostila — Capítulos 01 a 07", "2026-10-09",
-     f"{PASTA_TIC}/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md"),
+     f"{PASTA_TIC}/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md"),
     (8, "Editor de Planilhas: Organização e Fórmulas", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
     (9, "Planilhas Eletrônicas: Análise Visual e Gráficos", DATA_PROVISORIA,
@@ -185,6 +185,10 @@ ATIVIDADES_TESTES_FRONTEND = [
      f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
     (3, "Testes Unitários no Front-End com Vitest", "2026-10-15",
      f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
+    (4, "Testes de Integração com DOM usando Testing Library", "2026-10-22",
+     f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
+    (5, "Integração Avançada e Mock de APIs", "2026-10-29",
+     f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
 ]
 
 PASTA_BANCO_DADOS = "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES"
@@ -230,7 +234,7 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-18-50-QUESTOES.md"),
     (19, "Segurança da Informação: Pilares, Acesso e Auditoria", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-19-50-QUESTOES.md"),
-    (20, "Projeto Integrador: Banco Documentado para o Back-end", DATA_PROVISORIA,
+    (20, "Projeto Integrador: Banco Documentado para o Back-End", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-20-50-QUESTOES.md"),
 ]
 

@@ -15,14 +15,14 @@ echo  5. Criar PASSOS.md com relatório completo
 echo.
 pause
 
-C:\Python314\python.exe "..\..\scripts\gerador-materia-inteligente.py" --caminho-curso "C:\fontes\aulas-senai\sistema\assets"
+C:\Python314\python.exe "..\..\scripts\gerador-materia-inteligente.py" --caminho-curso "C:\fontes\aulasenai\sistema\assets"
 
 echo.
 echo ====================================================
 echo Processamento finalizado!
 echo.
 echo Arquivos criados em:
-echo   C:\fontes\aulas-senai\sistema\assets
+echo   C:\fontes\aulasenai\sistema\assets
 echo.
 echo Verifique o arquivo PASSOS.md para detalhes completos.
 echo ====================================================

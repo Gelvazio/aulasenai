@@ -5,7 +5,7 @@
 // Vocabulário avaliação/recuperação: assets/js/termos-tentativa.js.
 // Plano: docs/avaliacao-pratica-discursiva-itic.md
 // Gabarito (padrão de resposta): assets/js/liberacao-respostas-discursiva.js, carregado aqui —
-// professor libera por turma (só com todos entregues); aluno vê depois da liberação.
+// professor libera por turma (encerra o preenchimento da turma); aluno vê depois da liberação.
 // PDF no padrão SENAI: assets/js/exportar-pdf-discursiva.js (botão "📥 Exportar PDF"), carregado aqui.
 
 const ATRASO_GRAVACAO_MS = 1500;
@@ -13,14 +13,31 @@ const SELETOR_CAMPO = '.topico-resposta__campo';
 const SELETOR_BLOCO_TOPICO = '.topico-resposta';
 const ID_PAINEL = 'painel-discursivo';
 const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
+const SELETOR_CARD_ENTREGA = '.entrega-discursiva';
+const SELETOR_TEXTO_ENTREGA = '.entrega-discursiva__texto';
+const SELETOR_TITULO_ENTREGA = '.aula-title';
+const TITULO_ENTREGA_FEITA = 'Avaliação entregue';
+const MSG_ENTREGUE_AGUARDE = 'Atividade já entregue! Aguarde a correção!';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
+const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
+const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
+const ARQUIVO_CATEGORIAS_PERGUNTA = 'categorias-pergunta-discursiva.js';
+const scriptsCarregadosDiscursiva = new Map();
+const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
+const ARQUIVO_MOSTRAR_CERTAS_ALUNO = 'mostrar-certas-aluno-discursiva.js';
+const ARQUIVOS_MODAIS_NOTA = ['modal-nota-discursiva.js', 'historico-nota-discursiva.js',
+    'justificativa-mudanca-nota.js'];
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
+const ARQUIVO_SUSPEITA_COPIA_DISCURSIVA = 'suspeita-copia-discursiva.js';
+const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'minhas-respostas-discursiva.js';
+const VALOR_ATIVO_MEU_GABARITO_DISCURSIVA = 'sim';
+const SELETOR_GRUPO_GABARITO_ALUNO = '.liberacao-discursiva--aluno';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -41,14 +58,18 @@ const MSG_LEITURA_LIVRE_DISCURSIVA = 'Você pode ler a avaliação à vontade. P
 const MSG_ENTRAR_DISCURSIVA = 'Para responder, entre com o seu usuário e senha.\n\n' +
     'Ir para a página de login agora?';
 const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só os alunos escrevem. ' +
-    'A prova fica escondida: ela aparece, com as respostas do aluno, só quando você escolhe um ' +
-    'aluno em "Respostas dos alunos".';
+    'A prova fica escondida: ela aparece, com as respostas do aluno, quando você escolhe um ' +
+    'aluno em "Respostas dos alunos", ou sem respostas no botão "Mostrar questões".';
 const CLASSE_RESPOSTAS_OCULTAS_PROFESSOR = 'discursiva--respostas-ocultas';
+const ID_BOTAO_QUESTOES_PROFESSOR = 'btnMostrarQuestoesProfessor';
+const ROTULO_MOSTRAR_QUESTOES = '👁️ Mostrar questões';
+const ROTULO_ESCONDER_QUESTOES = '🙈 Esconder questões';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';
 const NOTA_MAXIMA_DISCURSIVA = 10;
 const MSG_RESPOSTAS_OCULTAS ='🔒 Depois da entrega, as respostas não ficam mais visíveis nesta ' +
-    'página. Elas estão gravadas no banco para a correção do professor.';
+    'página até o professor liberar o gabarito. Elas estão gravadas no banco para a correção ' +
+    'do professor.';
 const MSG_AUTOMATICO ='Cada resposta é gravada sozinha no banco quando você para de digitar.';
 const MSG_SAIDA_PENDENTE = 'Há respostas ainda não gravadas.';
 
@@ -159,6 +180,30 @@ function aplicarPermissaoDeEscrita() {
     const liberado = podeEscrever();
     obterCamposDiscursivos().forEach((campo) => { campo.readOnly = !liberado; });
     document.getElementById(ID_BOTAO_FINALIZAR).hidden = !liberado;
+    mostrarAlertaDeEntrega();
+}
+
+/**
+ * No card "ENTREGA" do aluno que já entregou, troca a explicação e o botão por um alerta:
+ * "Atividade já entregue! Aguarde a correção!" (o resultado do aluno troca por "Atividade
+ * Corrigida..." quando a nota já puder ser vista). Tarefa #164.
+ * @param {string} [texto] - Texto do alerta (padrão: aguardando a correção).
+ * @param {string} [situacao] - 'entregue' (amarelo) ou 'corrigida' (verde).
+ */
+function mostrarAlertaDeEntrega(texto = MSG_ENTREGUE_AGUARDE, situacao = 'entregue') {
+    const dados = estadoDiscursivo.dados;
+    const ehAluno = Boolean(dados?.disponivel && dados.logado && !dados.ehProfessor);
+    const card = document.querySelector(SELETOR_CARD_ENTREGA);
+    if (!card || !ehAluno || !dados.entregueEm) return;
+
+    const alerta = card.querySelector(SELETOR_TEXTO_ENTREGA);
+    if (!alerta) return;
+    alerta.textContent = texto;
+    alerta.className = 'entrega-discursiva__texto entrega-discursiva__alerta ' +
+        'entrega-discursiva__alerta--' + situacao;
+    alerta.setAttribute('role', 'alert');
+    const titulo = card.querySelector(SELETOR_TITULO_ENTREGA);
+    if (titulo) titulo.textContent = TITULO_ENTREGA_FEITA;
 }
 
 /**
@@ -298,9 +343,40 @@ function montarPainel(dados) {
     painel.appendChild(criarBotaoDiscursivo('btn-export btn-export--secundario', '🚪 Sair',
         fazerLogout));
     atualizarProgresso();
+    if (dados.ehProfessor) painel.appendChild(criarBotaoQuestoesProfessor());
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
     if (dados.ehProfessor) abrirProgressoDaTurma(dados);
-    abrirLiberacaoRespostas(painel, dados);
+    if (!dados.ehProfessor) abrirMeuProgressoDiscursiva(dados);
+    const liberacao = abrirLiberacaoRespostas(painel, dados);
+    if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados, liberacao);
+}
+
+/**
+ * Aluno: botão "Exportar Meu Gabarito" ao lado do "🔑 Gabarito da Atividade-Respostas" (#196.5)
+ * quando a página pede (body data-exportar-meu-gabarito="sim";
+ * assets/js/minhas-respostas-discursiva.js). Sem esse botão, fica no painel. Uma falha aqui não
+ * atrapalha a avaliação.
+ * @param {HTMLElement} painel - Painel de identificação.
+ * @param {Object} dados - Estado carregado do banco.
+ * @param {Promise<void>} liberacao - Montagem do botão do gabarito (abrirLiberacaoRespostas).
+ */
+async function abrirMeuGabaritoDiscursiva(painel, dados, liberacao) {
+    const estaAtivo = document.body.dataset.exportarMeuGabarito ===
+        VALOR_ATIVO_MEU_GABARITO_DISCURSIVA;
+    if (!estaAtivo) return;
+    try {
+        if (typeof window.iniciarMeuGabaritoDiscursiva !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MEU_GABARITO_DISCURSIVA);
+        }
+        await liberacao;
+        const destino = painel.querySelector(SELETOR_GRUPO_GABARITO_ALUNO) || painel;
+        const { repositorio } = estadoDiscursivo;
+        await window.iniciarMeuGabaritoDiscursiva({ dados, destino,
+            chaveTopico: (item, topico) => repositorio.chaveTopico(item, topico),
+            lerGravadas: () => repositorio.lerGravadas() });
+    } catch (erro) {
+        console.warn('Exportar Meu Gabarito:', erro.message);
+    }
 }
 
 /**
@@ -333,13 +409,17 @@ async function abrirRespostasDoAluno(painel, dados) {
             colunas: 'item,topico,texto',
             converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
+            lerCorrigidos: lerCorrigidosDaDiscursiva,
             aoMostrarAluno: (aluno) => Promise.all([
                 alternarRespostasDoProfessor(Boolean(aluno)),
                 mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
                 mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
                 mostrarFinalizarDoProfessor(aluno, dados.atividadeId),
+                mostrarSuspeitasDoAluno(aluno, dados.atividadeId),
+                mostrarCertasDasRespostas(aluno, dados.atividadeId),
             ]),
         });
+        await prepararMostrarCertas(painel);
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);
     }
@@ -365,6 +445,24 @@ async function abrirProgressoDaTurma(dados) {
 }
 
 /**
+ * Aluno: quadro "📊 Meu progresso" (só a linha dele, sem notas; progresso-do-aluno.js). Uma
+ * falha aqui não atrapalha a avaliação.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirMeuProgressoDiscursiva(dados) {
+    if (!dados.atividadeId) return;
+
+    try {
+        if (typeof window.montarMeuProgresso !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MEU_PROGRESSO_DISCURSIVA);
+        }
+        await window.montarMeuProgresso(dados.atividadeId, 'discursiva');
+    } catch (erro) {
+        console.warn('Meu progresso:', erro.message);
+    }
+}
+
+/**
  * Aluno que entregou, com o gabarito liberado para a turma: mostra a prova corrigida (nota,
  * resultado de cada alternativa, observação da IA e padrão de resposta). Falha não quebra a página.
  * @param {Object} dados - Estado carregado do banco.
@@ -376,6 +474,9 @@ async function abrirResultadoDoAluno(dados) {
         if (typeof window.mostrarResultadoDoAluno !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
         }
+        await carregarModaisDaNota();
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS_ALUNO);
         await window.mostrarResultadoDoAluno(dados.atividadeId);
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
@@ -389,6 +490,21 @@ async function abrirResultadoDoAluno(dados) {
  */
 function alternarRespostasDoProfessor(mostrar) {
     document.body.classList.toggle(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR, !mostrar);
+    const botao = document.getElementById(ID_BOTAO_QUESTOES_PROFESSOR);
+    if (botao) botao.textContent = mostrar ? ROTULO_ESCONDER_QUESTOES : ROTULO_MOSTRAR_QUESTOES;
+}
+
+/**
+ * Professor: botão que mostra ou esconde a prova (instruções e questões) sem escolher aluno.
+ * @returns {HTMLButtonElement} Botão "Mostrar questões" / "Esconder questões".
+ */
+function criarBotaoQuestoesProfessor() {
+    const estaoOcultas = () => document.body.classList.contains(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR);
+    const rotulo = estaoOcultas() ? ROTULO_MOSTRAR_QUESTOES : ROTULO_ESCONDER_QUESTOES;
+    const botao = criarBotaoDiscursivo('btn-export btn-export--secundario', rotulo,
+        () => alternarRespostasDoProfessor(estaoOcultas()));
+    botao.id = ID_BOTAO_QUESTOES_PROFESSOR;
+    return botao;
 }
 
 /**
@@ -409,7 +525,71 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
 }
 
 /**
- * Professor: ao carregar um aluno, mostra embaixo da prova o botão "Finalizar Atividade", que
+ * Professor: quem já foi corrigido (para o ON/OFF "Pendente Correcao" do combo de aluno,
+ * assets/js/corrigidos-discursiva.js).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Set<string>>} Chaves "alunoId|tentativa" dos alunos corrigidos.
+ * @throws {Error} Se o módulo ou o banco falhar.
+ */
+async function lerCorrigidosDaDiscursiva(atividadeId) {
+    if (typeof window.lerCorrigidosDiscursiva !== 'function') {
+        await carregarModuloDiscursiva(ARQUIVO_CORRIGIDOS);
+    }
+    return window.lerCorrigidosDiscursiva(atividadeId);
+}
+
+/**
+ * Professor: ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos"
+ * (assets/js/mostrar-certas-discursiva.js). Uma falha aqui não atrapalha a avaliação.
+ * @param {HTMLElement} painel - Painel do professor.
+ */
+async function prepararMostrarCertas(painel) {
+    try {
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        window.ligarMostrarCertas(painel);
+    } catch (erro) {
+        console.warn('Mostrar Certas:', erro.message);
+    }
+}
+
+/**
+ * Professor: com "Mostrar Certas" desligado, esconde as questões certas do aluno escolhido
+ * (sem aluno, mostra todas). Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno escolhido no combo (null = nenhum).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarCertasDasRespostas(aluno, atividadeId) {
+    try {
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        await window.mostrarCertasDoAluno(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Mostrar Certas:', erro.message);
+    }
+}
+
+/**
+ * Professor: alerta vermelho piscando nas questões com suspeita de cópia do aluno escolhido, com
+ * "Não é cópia" / "É cópia" (assets/js/suspeita-copia-discursiva.js). Sem aluno, limpa os
+ * alertas. Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno escolhido no combo (null = nenhum).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarSuspeitasDoAluno(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarSuspeitasNaProva !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_SUSPEITA_COPIA_DISCURSIVA);
+        }
+        await window.mostrarSuspeitasNaProva(aluno, atividadeId,
+            () => mostrarConfirmacaoDoProfessor(aluno, atividadeId));
+    } catch (erro) {
+        console.warn('Suspeita de cópia:', erro.message);
+    }
+}
+
+/**
+ * Professor: ao carregar um aluno, mostra embaixo da prova o botão "Confirmar Correção" (só do professor), que
  * lança a nota com base nas alternativas confirmadas. Uma falha aqui não atrapalha a avaliação.
  * @param {Object|null} aluno - Aluno mostrado no combo (null ao limpar).
  * @param {number} atividadeId - Id da atividade.
@@ -421,7 +601,7 @@ async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
         }
         window.mostrarFinalizarAtividade(aluno, atividadeId);
     } catch (erro) {
-        console.warn('Finalizar Atividade:', erro.message);
+        console.warn('Confirmar Correção:', erro.message);
     }
 }
 
@@ -434,6 +614,7 @@ async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
  */
 async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
     try {
+        await carregarModaisDaNota();
         if (typeof window.mostrarConfirmacaoProfessor !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_CONFIRMAR_PROFESSOR);
         }
@@ -444,18 +625,36 @@ async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
 }
 
 /**
- * Carrega um script de assets/js/ (ao lado deste).
+ * Carrega (uma vez) o modal, o histórico e a justificativa de mudança da nota, em ordem.
+ * @returns {Promise<void>} Resolve quando os três scripts carregaram.
+ */
+async function carregarModaisDaNota() {
+    if (typeof window.pedirJustificativaMudanca === 'function') return;
+    for (const arquivo of ARQUIVOS_MODAIS_NOTA) {
+        await carregarModuloDiscursiva(arquivo);
+    }
+}
+
+/**
+ * Carrega um script de assets/js/ (ao lado deste), uma única vez por arquivo.
  * @param {string} arquivo - Nome do script.
  * @returns {Promise<void>} Resolve quando carregou.
  */
 function carregarModuloDiscursiva(arquivo) {
-    return new Promise((resolver, rejeitar) => {
+    if (scriptsCarregadosDiscursiva.has(arquivo)) return scriptsCarregadosDiscursiva.get(arquivo);
+
+    const promessa = new Promise((resolver, rejeitar) => {
         const script = document.createElement('script');
         script.src = BASE_SCRIPTS_DISCURSIVA + arquivo;
         script.onload = () => resolver();
-        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        script.onerror = () => {
+            scriptsCarregadosDiscursiva.delete(arquivo);
+            rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        };
         document.head.appendChild(script);
     });
+    scriptsCarregadosDiscursiva.set(arquivo, promessa);
+    return promessa;
 }
 
 /**
@@ -710,12 +909,10 @@ async function gravarPeloBotao(evento) {
 }
 
 /**
- * Depois da entrega, limpa as respostas da tela quando a página pede (campo "Ocultar respostas
- * após entrega" da fonte .md). Nada é apagado do banco.
+ * Depois da entrega, limpa as respostas da tela (regra global das práticas, #160: o aluno só as
+ * revê depois que o professor liberar o gabarito). Nada é apagado do banco.
  */
 function esconderRespostasDepoisDaEntrega() {
-    if (!ocultaRespostasEntregues()) return;
-
     estadoDiscursivo.dados.respostasOcultas = true;
     preencherCampos({});
 }
@@ -730,6 +927,32 @@ function avisarSaidaComPendencia(evento) {
     if (!temPendencia) return;
     evento.preventDefault();
     evento.returnValue = MSG_SAIDA_PENDENTE;
+}
+
+/**
+ * Aluno com a página aberta: ao voltar para a aba, confere no banco se a tentativa já foi
+ * entregue (em outra aba ou aparelho). Entregue → recarrega a página, que esconde as respostas
+ * até o professor liberar o gabarito (regra global das práticas, #160 e #161).
+ */
+async function conferirEntregaAoVoltar() {
+    const dados = estadoDiscursivo.dados;
+    const deveConferir = document.visibilityState === 'visible' && dados?.logado &&
+        !dados.ehProfessor && !dados.entregueEm;
+    if (!deveConferir) return;
+    try {
+        if (await estadoDiscursivo.repositorio.lerEntrega()) window.location.reload();
+    } catch (erro) {
+        console.warn('Entrega não conferida:', erro.message);
+    }
+}
+
+/**
+ * Voltar/avançar pode restaurar a página do cache do navegador com respostas antigas na tela:
+ * recarrega para que tudo venha do banco (mesmo cuidado de assets/js/respostas-atividade.js).
+ * @param {PageTransitionEvent} evento - Evento pageshow.
+ */
+function recarregarSeVeioDoCache(evento) {
+    if (evento.persisted) window.location.reload();
 }
 
 /**
@@ -752,7 +975,11 @@ async function iniciarAvaliacaoDiscursiva() {
     document.getElementById(ID_BOTAO_FINALIZAR).addEventListener('click', finalizarDiscursiva);
     document.addEventListener('click', gravarPeloBotao);
     window.addEventListener('beforeunload', avisarSaidaComPendencia);
+    document.addEventListener('visibilitychange', conferirEntregaAoVoltar);
 }
 
+window.mostrarAlertaDeEntrega = mostrarAlertaDeEntrega;
+
 document.addEventListener('DOMContentLoaded', iniciarAvaliacaoDiscursiva);
+window.addEventListener('pageshow', recarregarSeVeioDoCache);
 document.addEventListener('DOMContentLoaded', abrirExportacaoPdfDiscursiva);

@@ -4,3 +4,15 @@ graphify-out/
 variaveis.js
 
 .env
+
+# PDFs pesados do Office Fácil (> 100MB)
+GERADOR-AULAS/OFFICE FACIL/*.pdf
+
+# Arquivos grandes (slides e PDFs) ficam so na pasta local, fora do Git
+*.pptx
+*.PPTX
+*.pdf
+*.PDF
+
+# Configuração pessoal do Claude Code (permissões e preferências de cada máquina)
+.claude/settings.local.json

@@ -1,7 +1,8 @@
 // Turma da exportação em PDF — REGRA GLOBAL de todas as atividades e avaliações.
 // Para o PROFESSOR logado, coloca uma lista "Turma" no início da .export-bar (antes dos botões
-// de exportar). Se o professor tiver só 1 turma, ela já vem escolhida; com mais de uma, ele
-// precisa escolher antes de exportar. A turma escolhida preenche o campo "Turma" do PDF.
+// de exportar). Se o professor tiver só 1 turma, ela já vem escolhida; com mais de uma, vem
+// escolhida a turma favorita (turma.favorito) e, sem favorita entre elas, ele precisa escolher
+// antes de exportar. A turma escolhida preenche o campo "Turma" do PDF.
 // Turmas visíveis: o administrador (confirmado pelo banco) vê todas; os demais professores, só
 // os vínculos próprios em turmaprofessor. Aluno ou sem login: sem lista, campo em branco.
 // Carregado por assets/js/atividade.js (ou direto pela página). Inclui sozinho o
@@ -20,6 +21,7 @@ const TENTATIVAS_CLIENTE_EXPORTACAO = 20;
 const INTERVALO_CLIENTE_EXPORTACAO_MS = 250;
 const ORIGEM_TURMA_EXPORTACAO = document.currentScript?.src || '';
 const CSS_TURMA_EXPORTACAO = 'css/turma-exportacao.css';
+const CAMPOS_TURMA_EXPORTACAO = 'codigo,nome,turno,favorito,unidade:unidade_id(nome)';
 
 /**
  * Inclui o assets/css/turma-exportacao.css (caminho calculado a partir deste script).
@@ -72,7 +74,7 @@ async function lerProfessorExportacao(cliente) {
  * Lista as turmas do professor: todas para o administrador; senão, as da turmaprofessor.
  * @param {Object} cliente - Cliente autenticado do Supabase.
  * @param {Object} usuario - Professor logado.
- * @returns {Promise<Object[]>} Turmas {codigo, nome, turno} em ordem de nome.
+ * @returns {Promise<Object[]>} Turmas {codigo, nome, turno, favorito} em ordem de nome.
  * @throws {Error} Se o banco recusar a consulta.
  */
 async function listarTurmasDoProfessorExportacao(cliente, usuario) {
@@ -80,7 +82,7 @@ async function listarTurmasDoProfessorExportacao(cliente, usuario) {
         await cliente.rpc(RPC_ADMINISTRADOR_EXPORTACAO);
     if (erroAdministrador) throw erroAdministrador;
 
-    let consulta = cliente.from('turma').select('codigo,nome,turno,unidade:unidade_id(nome)').order('nome');
+    let consulta = cliente.from('turma').select(CAMPOS_TURMA_EXPORTACAO).order('nome');
     if (ehAdministrador !== true) {
         const { data: vinculos, error: erroVinculos } = await cliente
             .from('turmaprofessor').select('turma_codigo').eq('professor_id', usuario.id);
@@ -119,7 +121,8 @@ function criarOpcaoExportacao(valor, texto) {
 }
 
 /**
- * Monta o campo "Turma" com a lista; 1 turma = já escolhida, várias = o professor escolhe.
+ * Monta o campo "Turma" com a lista; 1 turma = já escolhida; várias = vem escolhida a favorita
+ * (sem favorita entre elas, o professor escolhe).
  * @param {Object[]} turmas - Turmas do professor.
  * @returns {HTMLLabelElement} Campo pronto para a .export-bar.
  */
@@ -138,6 +141,8 @@ function criarCampoTurmaExportacao(turmas) {
     if (turmas.length > 1) lista.append(criarOpcaoExportacao('', TEXTO_ESCOLHA_TURMA_EXPORTACAO));
     turmas.forEach((turma) =>
         lista.append(criarOpcaoExportacao(turma.codigo, textoTurmaExportacao(turma))));
+    const favorita = turmas.find((turma) => turma.favorito === true);
+    if (favorita) lista.value = favorita.codigo;
     campo.append(lista);
     return campo;
 }

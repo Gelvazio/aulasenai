@@ -68,7 +68,7 @@
 
 ### Passo 1: Gerador
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\assets\gerador-indices\gerar_indices.py`
+**Arquivo:** Criar `C:\fontes\aulasenai\assets\gerador-indices\gerar_indices.py`
 
 **Ação:** funções curtas (≤ 45 linhas, docstring, nomes em português): listar cursos, listar
 matérias, listar atividades, montar card, montar página, gravar índice (respeitando o marcador).

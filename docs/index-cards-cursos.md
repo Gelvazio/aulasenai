@@ -65,7 +65,7 @@ cards, um card por pasta de `MATERIAIS/`, e registrar essa regra no `CLAUDE.md`.
 
 ### Passo 1: CSS do índice
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\assets\css\indice-cursos.css`
+**Arquivo:** Criar `C:\fontes\aulasenai\assets\css\indice-cursos.css`
 
 **Ação:** Tokens em `:root`, tema escuro por `prefers-color-scheme`, grade responsiva de cards
 (`.indice-cursos`, `.cartao-curso`, `.cartao-curso__nome`, `.cartao-curso__materias`).
@@ -74,7 +74,7 @@ cards, um card por pasta de `MATERIAIS/`, e registrar essa regra no `CLAUDE.md`.
 
 ### Passo 2: INDEX.HTML
 
-**Arquivo:** Modificar `C:\fontes\aulas-senai\INDEX.HTML`
+**Arquivo:** Modificar `C:\fontes\aulasenai\INDEX.HTML`
 
 **Ação:** Substituir todo o conteúdo por `header` + `main` com 16 `<a class="cartao-curso">`,
 referenciando `assets/css/indice-cursos.css`.
@@ -84,7 +84,7 @@ referenciando `assets/css/indice-cursos.css`.
 
 ### Passo 3: Regra no CLAUDE.md
 
-**Arquivo:** Modificar `C:\fontes\aulas-senai\CLAUDE.md`
+**Arquivo:** Modificar `C:\fontes\aulasenai\CLAUDE.md`
 
 **Ação:** Nova seção "🗂️ REGRA — INDEX.HTML É SÓ O ÍNDICE DE CURSOS": apenas cards de cursos,
 1 card por pasta de `MATERIAIS/` (exceto `MATERIAS-GERAIS/`), nada além disso; ao criar/renomear/

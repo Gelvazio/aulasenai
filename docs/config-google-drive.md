@@ -25,7 +25,7 @@ Criar arquivo de configuração para Google Drive Sync que **ignora automaticame
 ## 🛠️ Tecnologias
 
 - **Padrão:** `.gdriveignore` (similar a `.gitignore`)
-- **Localização:** `C:\fontes\aulas-senai\.gdriveignore`
+- **Localização:** `C:\fontes\aulasenai\.gdriveignore`
 - **Aplicação:** Google Drive Sync, Insync, rclone, ou cliente compatível
 
 ## 📁 Arquivos Afetados
@@ -43,7 +43,7 @@ Criar arquivo de configuração para Google Drive Sync que **ignora automaticame
 
 ### ✅ Passo 1: Criar arquivo `.gdriveignore`
 - **Ação:** ✅ Escrever arquivo `.gdriveignore` com padrões de exclusão
-- **Arquivo:** `C:\fontes\aulas-senai\.gdriveignore`
+- **Arquivo:** `C:\fontes\aulasenai\.gdriveignore`
 - **Conteúdo:** ✅ Criado com 14 linhas
 - **Verificação:** ✅ Arquivo criado com sucesso
 

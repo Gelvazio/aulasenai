@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-09 22:51)
+## Resumo (atualizado em 2026-10-16 18:56)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 2 | 1 | 62 | 0 | 65 |
+| 0 | 3 | 67 | 0 | 70 |
 
 ## Todos os seeds
 
@@ -73,13 +73,27 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-16-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:21 | Aplicado em partes pelo conector (atividade id 136, aula id 120, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-17-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:22 | Aplicado em partes pelo conector (atividade id 138, aula id 121, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-18-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:24 | Aplicado em partes pelo conector (atividade id 140, aula id 122, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
-| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 20 | **PENDENTE** | 2026-10-09 22:51 | Arquivo mudou em 2026-10-10: aula 20 acrescentada (falta aplicar só ela). Aulas 01 a 19 já no banco, conferidas pelo md5 (atividades 103 a 141, ímpares sem 119) |
+| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 20 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado em partes pelo conector, uma aula por comando: as 20 aulas conferidas pelo md5 (aulas 01 a 19 em 2026-10-09 22:46; aula 20 = atividade 145, aula id 125, em 2026-10-10 22:13) |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-01-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-02-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-03-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-objetivas-seed-atividades.sql` | Testes de Front-End (TII) | 3 | **CONCLUÍDO** | 2026-10-09 19:23 | 3 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **APLICADO** | 2026-10-09 22:46 | Aplicado em partes pelo conector (atividade id 142, aula id 123, bloqueada): 29 de 30 tópicos. Falta o tópico 6c: o texto cita DELETE FROM parcela e o conector pede confirmação do usuário (comando voltou cancelado) |
-| `2026-10-10-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 125, item 125.8 |
+| `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 143 (aula id 124), 50 itens; md5 conferido — Etapa 137-13665a7e |
+| `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
+| `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 04:36 | Aplicado pelo conector (atividade id 150, aula id 126, 50 itens); falta conferir o md5 — Etapa 137-13665a7e |
+| `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 05:07 | Parte 1 aplicada pelo conector (atividade id 151, aula id 126, bloqueada): 15 de 30 tópicos; falta a parte 2 — Etapa 137-13665a7e |
+| `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
+| `2026-10-16-atividade-sala-aula-16-10-2026-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-16 09:49 | Aplicado pelo conector (atividade id 152, aula id 24 INTRODUCAO TIC, bloqueada, 20 tópicos, 10 pontos); md5 dos tópicos igual ao dos arquivos (21c1fa26...) |
+
+| `2026-10-16-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 06:50 | Tabela `aula_turma` criada e carregada pelo conector: 19 aulas × 2 turmas (135080 e 135081), datas das atividades; RLS com 4 políticas — Etapa 312-5df765a9 |
+| `2026-10-16-aula-turma-bloqueio.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 07:40 | Coluna `bloqueio` + `data_aula` opcional + gatilho que propaga a `atividade.bloqueio`; testado em transação revertida (aula 21, turma 135080: 2 atividades bloqueadas) — Etapa 313-937e5036 |
+| `2026-10-16-aula-turma-calendario-itic.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 08:15 | 20 datas do calendário gravadas em `aula_turma` (10 por turma, 135080 e 135081); conferido pelo retorno do `returning` — Etapa 314-d7f180ea |
+| `2026-10-16-remover-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **SUBSTITUÍDO** | 2026-10-16 15:25 | NUNCA aplicado e não será mais: o usuário desistiu da remoção (o erro era outro); a aula_turma continua no banco com 38 linhas (conferido 2026-10-16 15:30) — Etapa 333-e75bddc3 (#206) |
+| `2026-10-16-aula-turma-materia.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 15:54 | Aplicado pelo conector: aula_turma com materia_id not null, FK para materia.id, gatilho da matéria da aula e índice; 38 linhas, 0 sem matéria, 0 diferentes da aula; gatilho testado em transação desfeita (matéria errada vira a da aula) — Etapa 333-e75bddc3 (#206.3) |
+| `2026-10-16-slides-storage.sql` | Testes de Front-End | 0 | **SUBSTITUÍDO** | 2026-10-16 18:46 | Desfeito pelo 2026-10-16-remover-slides-storage.sql a pedido do usuário (#209.7) |
+| `2026-10-16-remover-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:46 | Aplicado pelo conector (#209.7): 0 políticas slides_* e função slide_liberado_para_usuario removida; o bucket slides (vazio) só sai pelo painel (o Supabase recusa delete por SQL) |
+| `2026-10-16-aula-turma-bloqueio-cards-fechados.sql` | Várias matérias | 0 | **CONCLUÍDO** | 2026-10-16 18:56 | Aplicado pelo conector (#210.2): 26 pares aula x turma com bloqueio = true (ITIC 16, Automacao 6, Analise de Dados 2, Comunicacao 2); md5 das 148 atividades igual antes e depois (89f9302b...); 38 datas mantidas |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

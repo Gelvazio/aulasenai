@@ -2,8 +2,8 @@
 
 - **Aula:** AP-20
 - **Rótulo da aula:** Atividade Prática — Aula 20
-- **Tema:** Projeto Integrador: Banco Documentado para o Back-end
-- **Ícone:** 📦
+- **Tema:** Projeto Integrador: Banco Documentado para o Back-End
+- **Ícone:** 🧩
 - **Duração:** 90–120 minutos
 - **Formato:** Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)
 - **Total de questões:** 10
@@ -15,208 +15,208 @@
 - **Botão gravar:** sim
 - **Progresso para o professor:** sim
 - **Ocultar respostas após entrega:** sim
-- **Capacidade avaliada:** Aplicar, por escrito e em situações reais, os conteúdos da aula 20 (CONTEUDO/AULA-20-PROJETO-INTEGRADOR-BANCO-DOCUMENTADO-PARA-O-BACK-END.md): peças da documentação técnica, escopo como referência da entrega, dicionário de dados, scripts numerados e idempotentes, recriação do zero, rastreabilidade, conferência final e relatório de testes, backup com restauração, o que o back-end recebe, revisão cruzada e justificativa técnica das escolhas.
+- **Capacidade avaliada:** Aplicar, por escrito e em situações reais, os conteúdos da aula 20 (CONTEUDO/AULA-20-PROJETO-INTEGRADOR-BANCO-DOCUMENTADO-PARA-O-BACK-END.md): rastreabilidade dos requisitos, pasta do projeto e script mestre, documentação técnica (escopo, DER e dicionário, cronograma planejado × realizado, fluxograma, matriz de acesso, README e registro de decisões), revisão do DER e da 3FN, consultas do back-end, contrato com o back-end, teste de ponta a ponta, backup de entrega e revisão em pares.
 - **Correção:** as respostas ficam gravadas no banco e são corrigidas depois: a IA sugere a nota de cada tópico pelo padrão de resposta (ATIVIDADE-PRATICA-AULA-20-GABARITO.md, fora do site) e o professor confirma ou ajusta.
 - **Folha de respostas:** sim
 - **Aula no banco:** 20
 
-**Seu papel em todas as questões:** Você, como aluno consultor, vai entregar o banco escola_db da escola de cursos livres (tabelas curso, turma, aluno, matricula e parcela, procedimento matricular, triggers e segurança das aulas 12 a 19) à empresa que fará o back-end do sistema de matrículas.
+**Seu papel em todas as questões:** Você, como aluno consultor, fecha o projeto integrador do banco escola_db da escola de cursos livres (scripts 01-ddl-escola.sql a 07-seguranca.sql das aulas 12 a 19) e entrega o banco documentado para a equipe do back-end.
 
-**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito ou o trecho pedido; **(2)** o código, a tabela ou a aplicação na situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
+**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito ou o trecho pedido; **(2)** o código ou a aplicação na situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
 
-**Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: peças e comandos corretos para o PostgreSQL e justificativas ligadas aos requisitos do escopo, com as palavras-chave do conteúdo. Respostas equivalentes que produzam o mesmo resultado valem.
+**Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: comandos que funcionam no PostgreSQL e no psql, documentação que outra pessoa consiga seguir, e justificativa com as palavras-chave do conteúdo. Comandos e textos equivalentes que produzam o mesmo resultado valem.
 
 ## Cobertura da aula
 
 | Conteúdo da aula 20 | Questões |
 |---|---|
-| Peças da documentação técnica | 01 |
-| Escopo como referência da entrega | 02 |
-| Dicionário de dados | 03 |
-| Scripts numerados, ordem e boas práticas | 04, 05 |
-| Recriação do zero | 05 |
-| Rastreabilidade dos requisitos | 06 |
-| Conferência final e relatório de testes | 07 |
-| Backup e teste de restauração | 08 |
-| O que o back-end recebe | 09 |
-| Revisão cruzada (S1) e justificativa técnica (S2) | 10 |
+| Rastreabilidade: requisito do cliente → banco | 01 |
+| Pasta do projeto, ordem dos scripts e script mestre | 02 |
+| Banco limpo e scripts que rodam de novo | 03 |
+| Escopo atualizado, README e dicionário de dados | 04 |
+| Cronograma planejado × realizado e fluxograma ligado ao banco | 05 |
+| Revisão do DER e da normalização (3FN, padrão de nomes) | 06 |
+| As consultas do back-end | 07 |
+| Contrato com o back-end (app_escola, EXECUTE, parâmetros) | 08 |
+| Teste de ponta a ponta e backup de entrega | 09 |
+| Revisão em pares e registro de decisões | 10 |
 
 ---
 
-## ITEM 01 — O Pacote da Entrega
+## ITEM 01 — Do Requisito ao Banco
 
 - **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C1
+- **Capacidade:** C1, C2
 
 **Contexto:**
-Você, como aluno consultor, recebe da empresa do back-end o pedido: "mandem tudo o que precisamos para usar o banco sem ter que ligar para vocês".
+Você, como aluno consultor, apresenta o banco à direção da escola, que pergunta: "como eu sei que tudo o que pedimos está no banco?". O escopo tem, entre outros, os requisitos R2 (o aluno não se matricula duas vezes na mesma turma), R3 (a turma tem no máximo 25 alunos ativos) e R6 (o financeiro não vê o CPF).
 
 **Comando:**
-Monte o pacote de documentação técnica.
+Mostre a rastreabilidade entre o escopo e o banco.
 
 **Tópicos:**
-- a) Explique quando um banco está realmente pronto para ser entregue. (0,2)
-- b) Liste as peças da documentação técnica do banco e diga em uma frase para que serve cada uma. (0,4)
-- c) Explique por que o guia de instalação (README) é a peça que a empresa vai abrir primeiro e o que ele precisa explicar. (0,4)
+- a) Explique o que é rastreabilidade no projeto do banco. (0,2)
+- b) Diga onde cada um dos requisitos R2, R3 e R6 está atendido no banco (tabela, restrição, procedimento ou permissão). (0,4)
+- c) Explique o que indicam, na conferência, uma tabela que não atende a nenhum requisito e um requisito sem nada no banco. (0,4)
 
 ---
 
-## ITEM 02 — Escopo como Referência
-
-- **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C1
-
-**Contexto:**
-Você, como aluno consultor, confere a entrega contra o escopo da aula 5 e encontra: (1) o requisito "registrar o telefone de um responsável pelo aluno menor de idade" não está em nenhuma tabela; (2) existe uma tabela "brinde" que nenhum requisito pede.
-
-**Comando:**
-Avalie a entrega com base no escopo.
-
-**Tópicos:**
-- a) Diga qual documento é a referência para conferir a entrega final e o que ele contém. (0,2)
-- b) Classifique as situações 1 e 2 e diga o que fazer com cada uma. (0,4)
-- c) Explique como uma mudança de escopo deve ser tratada para que a tabela "brinde" pudesse fazer parte da entrega. (0,4)
-
----
-
-## ITEM 03 — Dicionário de Dados
-
-- **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C3
-
-**Contexto:**
-Você, como aluno consultor, revisa o dicionário de dados e percebe que a coluna data_pagamento da tabela parcela aparece no documento como "pago_em", com tipo texto.
-
-**Comando:**
-Atualize o dicionário de dados.
-
-**Tópicos:**
-- a) Diga quais informações o dicionário de dados traz para cada coluna. (0,2)
-- b) Escreva a linha correta do dicionário para a coluna data_pagamento da tabela parcela. (0,4)
-- c) Explique o problema de entregar o dicionário desatualizado em relação ao SQL. (0,4)
-
----
-
-## ITEM 04 — Scripts Numerados
+## ITEM 02 — O Script Mestre
 
 - **Aula:** 20 · Projeto Integrador
 - **Capacidade:** C7
 
 **Contexto:**
-Você, como aluno consultor, encontra os scripts do grupo com os nomes: seguranca.sql, tabelas.sql, dados.sql, rotinas.sql, chaves.sql, banco.sql e consultas.sql.
+Você, como aluno consultor, junta os sete scripts da SA 2 na pasta sql/ do projeto. O colega do back-end precisa instalar o banco inteiro com um único comando.
 
 **Comando:**
-Organize os scripts da entrega.
+Monte o script mestre 00-instalar.sql.
 
 **Tópicos:**
-- a) Explique por que os scripts precisam ser numerados. (0,2)
-- b) Renomeie os sete scripts com números na ordem correta de execução, dizendo o conteúdo de cada um. (0,4)
-- c) Cite três boas práticas que todo script da entrega deve seguir e explique uma delas. (0,4)
+- a) Explique por que os scripts precisam rodar numa ordem, com um exemplo de dependência. (0,2)
+- b) Escreva o 00-instalar.sql que chama os scripts 01 a 07 na ordem certa e para no primeiro erro, e o comando psql que o executa. (0,4)
+- c) Explique o que acontece se o script mestre não tiver \set ON_ERROR_STOP on e um dos scripts der erro. (0,4)
 
 ---
 
-## ITEM 05 — Recriar do Zero
+## ITEM 03 — Banco Limpo e Scripts que Rodam de Novo
 
 - **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C7
+- **Capacidade:** C7, C14
 
 **Contexto:**
-Você, como aluno consultor, ouve de um colega: "no meu computador o banco funciona, não precisa testar de novo". Na recriação num banco limpo, o script de chaves falhou, mas o psql seguiu executando os outros arquivos.
+Você, como aluno consultor, ouve do colega: "na minha máquina funciona". Na máquina do professor, o script 06 para com "function registrar_historico_nota() does not exist", e uma segunda execução do script 05 dá "procedure matricular already exists".
 
 **Comando:**
-Recrie o banco do zero de forma segura.
+Prepare o teste num banco limpo e deixe os scripts prontos para rodar de novo.
 
 **Tópicos:**
-- a) Explique por que o banco deve ser recriado do zero num banco limpo antes da entrega. (0,2)
-- b) Escreva os comandos do psql que executam, na ordem, os scripts 02-tabelas.sql e 03-chaves-e-restricoes.sql no banco escola_db, parando no primeiro erro. (0,4)
-- c) Explique o que a opção -v ON_ERROR_STOP=1 evita e como executar um arquivo de dentro do psql. (0,4)
+- a) Explique por que o teste da instalação deve ser feito num banco limpo e em qual banco ele nunca deve ser feito. (0,2)
+- b) Escreva os comandos que criam um banco limpo escola_teste e instalam o projeto nele com o script mestre. (0,4)
+- c) Diga como corrigir os dois erros do contexto (o da função e o do procedimento) para os scripts rodarem do zero e também uma segunda vez. (0,4)
 
 ---
 
-## ITEM 06 — Rastreabilidade
+## ITEM 04 — Escopo, README e Dicionário
 
 - **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C2
+- **Capacidade:** C1, C3
 
 **Contexto:**
-Você, como aluno consultor, precisa provar ao cliente que os requisitos foram atendidos: R1 — CPF do aluno não se repete; R2 — turma com no máximo 25 alunos; R4 — parcela paga não pode mudar de valor; R6 — financeiro não vê o CPF.
+Você, como aluno consultor, revisa a documentação antes da entrega. O README só diz "rode os scripts", o escopo é o mesmo da aula 5 e o dicionário de dados lista só o nome das colunas.
 
 **Comando:**
-Monte a matriz de rastreabilidade.
+Complete a documentação técnica.
 
 **Tópicos:**
-- a) Explique o que é a matriz de rastreabilidade. (0,2)
-- b) Escreva as linhas da matriz para R1, R2, R4 e R6, com o que atende cada requisito no banco e o script. (0,4)
-- c) Explique como a matriz de rastreabilidade ajuda a encontrar pendências e excessos na entrega. (0,4)
+- a) Explique para que serve a documentação técnica do banco. (0,2)
+- b) Liste o que o README e o escopo atualizado precisam ter para outra pessoa instalar e entender o banco. (0,4)
+- c) Escreva a linha do dicionário de dados da coluna valor da tabela parcela, com todos os campos que o dicionário pede. (0,4)
 
 ---
 
-## ITEM 07 — Conferência Final e Relatório de Testes
+## ITEM 05 — Cronograma e Fluxograma
+
+- **Aula:** 20 · Projeto Integrador
+- **Capacidade:** C1, C2, C8
+
+**Contexto:**
+Você, como aluno consultor, atualiza o cronograma e o fluxograma da aula 11. Os procedimentos estavam previstos para a aula 17, mas ficaram prontos na aula 18 porque a regra de vagas mudou. O fluxograma da matrícula tem as decisões "Aluno já matriculado na turma?" e "Há vagas?".
+
+**Comando:**
+Atualize o cronograma e ligue o fluxograma às regras do banco.
+
+**Tópicos:**
+- a) Diga quais colunas o cronograma da entrega final precisa ter. (0,2)
+- b) Escreva a linha do cronograma da tarefa dos procedimentos com o previsto, o realizado e a observação. (0,4)
+- c) Diga qual recurso do banco executa cada uma das duas decisões do fluxograma e explique por que ligar o fluxograma ao banco melhora a documentação. (0,4)
+
+---
+
+## ITEM 06 — Revisão do Modelo
+
+- **Aula:** 20 · Projeto Integrador
+- **Capacidade:** C2, C3
+
+**Contexto:**
+Você, como aluno consultor, revisa o DDL de outra equipe e encontra: a tabela turma com as colunas id_curso e nome_curso; a tabela aluno com a coluna telefones = '4799990000;4798880000'; e a coluna IdMatrícula na tabela matricula.
+
+**Comando:**
+Revise o modelo pelo checklist da aula.
+
+**Tópicos:**
+- a) Cite dois itens do checklist do modelo que conferem o DER com o banco. (0,2)
+- b) Diga qual regra cada um dos três problemas do contexto fere (forma normal ou padrão de nomes). (0,4)
+- c) Explique como corrigir cada um dos três problemas. (0,4)
+
+---
+
+## ITEM 07 — As Consultas do Back-End
 
 - **Aula:** 20 · Projeto Integrador
 - **Capacidade:** C8
 
 **Contexto:**
-Você, como aluno consultor, faz a conferência final no banco recriado do zero, antes de chamar o cliente.
+Você, como aluno consultor, fecha o script 04-relatorios.sql com as consultas que as telas do back-end vão usar: a tela de cobrança e o painel da coordenação.
 
 **Comando:**
-Monte e execute o checklist de conferência.
+Escreva as consultas e justifique cada uma.
 
 **Tópicos:**
-- a) Diga os comandos do psql que listam as tabelas do banco e que mostram as colunas e restrições da tabela matricula. (0,2)
-- b) Descreva três testes da conferência final (estrutura ou dados, regra do negócio e permissões), com o comando ou a ação e o resultado esperado de cada um. (0,4)
-- c) Explique o que cada linha do relatório de testes registra e por que um erro do banco pode ser o resultado esperado. (0,4)
+- a) Explique por que cada consulta do script deve ter um comentário dizendo qual tela ou relatório a usa. (0,2)
+- b) Escreva a consulta das parcelas vencidas e não pagas, com o nome do aluno, para a tela de cobrança. (0,4)
+- c) Escreva a consulta das turmas sem nenhuma matrícula para o painel da coordenação e explique o recurso que encontra essas turmas. (0,4)
 
 ---
 
-## ITEM 08 — Backup da Entrega
+## ITEM 08 — O Contrato com o Back-End
 
 - **Aula:** 20 · Projeto Integrador
 - **Capacidade:** C14
 
 **Contexto:**
-Você, como aluno consultor, vai guardar uma cópia do banco no dia da entrega. Um colega sugere salvar o arquivo na pasta do repositório Git, "para ficar junto com os scripts".
+Você, como aluno consultor, recebe o pedido do programador do back-end: "me passa a senha do postgres que eu faço o resto". A aplicação precisa matricular alunos, registrar pagamentos e editar nome, e-mail e telefone do aluno.
 
 **Comando:**
-Faça e teste o backup da entrega.
+Defina o contrato entre o banco e o back-end.
 
 **Tópicos:**
-- a) Escreva o comando que gera o backup do banco escola_db no formato custom. (0,2)
-- b) Escreva os comandos que criam o banco escola_db_teste, restauram o backup nele e conferem a quantidade de alunos. (0,4)
-- c) Explique por que o backup só vale depois da restauração e por que o arquivo não deve ir para o Git. (0,4)
+- a) Explique o que é o contrato com o back-end e por que o pedido do programador deve ser recusado. (0,2)
+- b) Escreva os GRANT do app_escola para matricular, registrar pagamento e editar só nome, e-mail e telefone do aluno. (0,4)
+- c) Explique por que o back-end deve usar consultas com parâmetros e onde deve ficar a senha do app_escola. (0,4)
 
 ---
 
-## ITEM 09 — O que o Back-end Recebe
+## ITEM 09 — Teste de Ponta a Ponta e Backup
 
 - **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C14
+- **Capacidade:** C7, C8, C14
 
 **Contexto:**
-Você, como aluno consultor, recebe o pedido do desenvolvedor do back-end: "me passem a senha do postgres que eu me viro".
+Você, como aluno consultor, roda o roteiro final no banco escola_teste antes da entrega e precisa entregar também um backup que o professor consiga restaurar.
 
 **Comando:**
-Entregue ao back-end só o que ele precisa.
+Execute o teste final e prepare o backup de entrega.
 
 **Tópicos:**
-- a) Diga com qual login o back-end deve se conectar e onde fica a string de conexão. (0,2)
-- b) Escreva o exemplo da variável de ambiente DATABASE_URL e liste o que entra no "contrato" do banco entregue ao back-end. (0,4)
-- c) Explique por que a senha do postgres não é entregue e o que o back-end deve fazer quando o banco devolve um erro de regra (por exemplo, a turma cheia). (0,4)
+- a) Cite os comandos do psql que conferem, depois da instalação, as tabelas, as visões, as funções e procedimentos e os papéis. (0,2)
+- b) Escreva dois testes do roteiro com o resultado esperado: uma matrícula repetida e o login do financeiro tentando ver o CPF. (0,4)
+- c) Escreva o comando do backup de entrega e os comandos que provam que ele funciona, e explique por que essa prova é necessária. (0,4)
 
 ---
 
-## ITEM 10 — Revisão Cruzada e Justificativas
+## ITEM 10 — Revisão em Pares e Decisões
 
 - **Aula:** 20 · Projeto Integrador
-- **Capacidade:** C2
+- **Capacidade:** C1
 
 **Contexto:**
-Você, como aluno consultor, recebe a revisão de outro grupo com duas perguntas: (1) "por que a parcela tem chave (id_matricula, numero) e não um id próprio?"; (2) "por que o limite de 25 alunos está no procedimento e não num CHECK?". O grupo revisor também sugere renomear a tabela matricula para inscricao.
+Você, como aluno consultor, participa da revisão cruzada. Sua equipe recebeu do colega a sugestão "o script de vocês está ruim" e precisa registrar no projeto por que decidiu cancelar matrículas em vez de apagá-las.
 
 **Comando:**
-Responda à revisão com atitude e base técnica.
+Melhore a sugestão recebida e registre a decisão.
 
 **Tópicos:**
-- a) Diga como a sugestão de renomear a tabela deve ser registrada pelo grupo. (0,2)
-- b) Justifique tecnicamente as escolhas 1 e 2. (0,4)
-- c) Explique as atitudes esperadas do revisor e do autor na revisão cruzada e decida, com justificativa, se aceita a troca de matricula para inscricao. (0,4)
+- a) Diga como a revisão cruzada testa o projeto de outra equipe. (0,2)
+- b) Reescreva a sugestão no formato "o quê, onde, efeito" com um problema real de instalação e diga como a equipe deve receber a sugestão. (0,4)
+- c) Escreva a linha do registro de decisões para "matrícula é cancelada, não apagada", com o motivo e a alternativa descartada. (0,4)

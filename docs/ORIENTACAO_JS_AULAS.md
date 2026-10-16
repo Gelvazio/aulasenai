@@ -4,7 +4,7 @@
 Gerenciar operações CRUD (Create, Read, Update, Delete) de **Aulas** no sistema.
 
 ## Localização
-`C:\fontes\aulas-senai\sistema\js\aulas.js`
+`C:\fontes\aulasenai\sistema\js\aulas.js`
 
 ## Responsabilidades
 - ✅ Listar aulas (tabela, filtros, ordenação)

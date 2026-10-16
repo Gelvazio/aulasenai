@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 — Testes de Integração com DOM usando Testing Library (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-exportar-meu-gabarito="sim" data-marcar-entregue="sim"
+      data-aula="04" data-tema="Testes de Integração com DOM usando Testing Library" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Aula 04: Testes de Integração com DOM usando Testing Library</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-04-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-04-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Aplicar testes definidos no Plano de Testes.</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que o Teste de Integração Verifica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o teste de integração verifica no front-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas a velocidade de carregamento da página no servidor.</li>
+                        <li><span class="letra">B)</span>Várias partes trabalhando juntas: HTML, eventos, validação e mensagem na tela.</li>
+                        <li><span class="letra">C)</span>Uma única função isolada, sem nenhuma tela.</li>
+                        <li><span class="letra">D)</span>Somente a aparência das cores e fontes do site.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Lugar na Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde o teste de integração fica na pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No meio, entre os testes unitários e os testes E2E.</li>
+                        <li><span class="letra">B)</span>No topo, acima dos testes E2E.</li>
+                        <li><span class="letra">C)</span>Fora da pirâmide, porque não é teste automatizado.</li>
+                        <li><span class="letra">D)</span>Na base, junto com os testes unitários.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Velocidade Comparada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Comparado aos testes unitários e E2E, o teste de integração é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mais lento que o unitário e bem mais rápido que o E2E.</li>
+                        <li><span class="letra">B)</span>Mais rápido que o unitário e mais lento que o E2E.</li>
+                        <li><span class="letra">C)</span>Mais lento que todos os outros tipos.</li>
+                        <li><span class="letra">D)</span>Igual em velocidade ao teste E2E.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">O Que É o JSDOM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o JSDOM?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um editor de código para escrever os testes.</li>
+                        <li><span class="letra">B)</span>Um navegador real que abre uma janela durante o teste.</li>
+                        <li><span class="letra">C)</span>Um banco de dados para guardar os resultados dos testes.</li>
+                        <li><span class="letra">D)</span>Um DOM simulado que roda no Node, sem abrir o navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Por Que o JSDOM É Rápido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste de integração com JSDOM é rápido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque não executa nenhum código da aplicação.</li>
+                        <li><span class="letra">B)</span>Porque pula todas as verificações do teste.</li>
+                        <li><span class="letra">C)</span>Porque roda só depois da publicação do site.</li>
+                        <li><span class="letra">D)</span>Porque monta a tela num DOM simulado, sem abrir o navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Comando de Instalação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala as ferramentas da aula como dependências de desenvolvimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm run build @testing-library/dom</li>
+                        <li><span class="letra">B)</span>npm uninstall vitest jsdom</li>
+                        <li><span class="letra">C)</span>npm install -D jsdom @testing-library/dom @testing-library/user-event @testing-library/jest-dom</li>
+                        <li><span class="letra">D)</span>npm start jsdom testing-library</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Opção -D</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a opção -D no comando npm install -D?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instala o pacote como dependência de desenvolvimento.</li>
+                        <li><span class="letra">B)</span>Instala o pacote só no servidor de produção.</li>
+                        <li><span class="letra">C)</span>Apaga o pacote do projeto.</li>
+                        <li><span class="letra">D)</span>Desliga os testes do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Ambiente do Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No vitest.config.js, qual configuração faz os testes rodarem com o DOM simulado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>environment: &#x27;mysql&#x27;</li>
+                        <li><span class="letra">B)</span>browser: &#x27;chrome&#x27;</li>
+                        <li><span class="letra">C)</span>mode: &#x27;production&#x27;</li>
+                        <li><span class="letra">D)</span>environment: &#x27;jsdom&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Arquivo de Setup</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o setupFiles: [&#x27;./tests/setup.js&#x27;] na configuração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Define a cor do relatório de testes.</li>
+                        <li><span class="letra">B)</span>Roda o arquivo de preparação antes dos testes, como o import do jest-dom.</li>
+                        <li><span class="letra">C)</span>Publica o site depois dos testes.</li>
+                        <li><span class="letra">D)</span>Apaga todos os testes antes de rodar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Conteúdo do Setup</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha vai no tests/setup.js para ativar os matchers do jest-dom no Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm install jest-dom</li>
+                        <li><span class="letra">B)</span>export default defineConfig({});</li>
+                        <li><span class="letra">C)</span>import &#x27;@testing-library/jest-dom/vitest&#x27;;</li>
+                        <li><span class="letra">D)</span>import React from &#x27;react&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Projeto React</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num projeto React, o que muda em relação à Testing Library do DOM?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As queries mudam todas de nome.</li>
+                        <li><span class="letra">B)</span>Não é possível testar componentes React com a Testing Library.</li>
+                        <li><span class="letra">C)</span>Usa-se @testing-library/react e render(&lt;Componente /&gt;); queries e userEvent são os mesmos.</li>
+                        <li><span class="letra">D)</span>O userEvent deixa de existir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Comportamento × Implementação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste verifica o comportamento visível, e não a implementação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ler uma variável interna do componente.</li>
+                        <li><span class="letra">B)</span>Chamar a função do evento diretamente.</li>
+                        <li><span class="letra">C)</span>document.querySelector(&#x27;.btn-primary&#x27;)</li>
+                        <li><span class="letra">D)</span>screen.getByRole(&#x27;button&#x27;, { name: &#x27;Seguir&#x27; })</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Teste que Quebra com CSS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um teste quebrou porque só o nome de uma classe CSS mudou. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a tela tem um defeito de funcionalidade.</li>
+                        <li><span class="letra">B)</span>Que é preciso desligar o CSS do projeto.</li>
+                        <li><span class="letra">C)</span>Que o teste testa a implementação e deve ser reescrito.</li>
+                        <li><span class="letra">D)</span>Que o teste está perfeito e deve continuar assim.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Caixa Preta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Testar pelo comportamento visível corresponde a qual tipo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Revisão de código sem execução.</li>
+                        <li><span class="letra">B)</span>Teste de caixa branca dos caminhos do código.</li>
+                        <li><span class="letra">C)</span>Teste funcional de caixa preta.</li>
+                        <li><span class="letra">D)</span>Teste de carga do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Interação como o Usuário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a forma recomendada de disparar um clique no teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Chamar a função do evento direto no código.</li>
+                        <li><span class="letra">B)</span>Clicar com userEvent, como o usuário faria.</li>
+                        <li><span class="letra">C)</span>Esperar o usuário clicar durante o teste.</li>
+                        <li><span class="letra">D)</span>Alterar o atributo do botão à mão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Primeira Query</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual query tem a maior prioridade na Testing Library?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>getByText</li>
+                        <li><span class="letra">B)</span>getByRole</li>
+                        <li><span class="letra">C)</span>getByTestId</li>
+                        <li><span class="letra">D)</span>getByPlaceholderText</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Última Query</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual query é o último recurso, usada só quando não há outra forma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>getByText</li>
+                        <li><span class="letra">B)</span>getByRole</li>
+                        <li><span class="letra">C)</span>getByTestId</li>
+                        <li><span class="letra">D)</span>getByLabelText</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Campo com Rótulo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para encontrar um campo que tem o label &quot;Senha&quot;, a melhor query é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>document.querySelector(&#x27;#senha&#x27;)</li>
+                        <li><span class="letra">B)</span>getByText(&#x27;input&#x27;)</li>
+                        <li><span class="letra">C)</span>getByLabelText(&#x27;Senha&#x27;)</li>
+                        <li><span class="letra">D)</span>getByTestId(&#x27;senha&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Botão Cadastrar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual query encontra o botão Cadastrar pelo papel e pelo nome?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>getByRole(&#x27;button&#x27;, { name: &#x27;Cadastrar&#x27; })</li>
+                        <li><span class="letra">B)</span>getByTestId(&#x27;btn&#x27;)</li>
+                        <li><span class="letra">C)</span>querySelector(&#x27;button.cadastrar&#x27;)</li>
+                        <li><span class="letra">D)</span>getByRole(&#x27;textbox&#x27;, { name: &#x27;Cadastrar&#x27; })</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Papel de um Título</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual papel acessível corresponde a um título da página?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>checkbox</li>
+                        <li><span class="letra">B)</span>textbox</li>
+                        <li><span class="letra">C)</span>button</li>
+                        <li><span class="letra">D)</span>heading</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Papel de um Campo de Texto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual papel acessível corresponde a um campo de texto comum?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>textbox</li>
+                        <li><span class="letra">B)</span>link</li>
+                        <li><span class="letra">C)</span>button</li>
+                        <li><span class="letra">D)</span>heading</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Ordem das Queries</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem de prioridade das queries da Testing Library?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>getByText, getByTestId, getByRole, getByLabelText, getByPlaceholderText.</li>
+                        <li><span class="letra">B)</span>getByRole, getByLabelText, getByPlaceholderText, getByText, getByTestId.</li>
+                        <li><span class="letra">C)</span>getByTestId, getByText, getByRole, getByLabelText, getByPlaceholderText.</li>
+                        <li><span class="letra">D)</span>getByPlaceholderText, getByTestId, getByRole, getByText, getByLabelText.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Bônus da Query por Papel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que vantagem extra tem buscar os elementos pelo papel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dispensa escrever o expect.</li>
+                        <li><span class="letra">B)</span>Faz o teste rodar no servidor de produção.</li>
+                        <li><span class="letra">C)</span>Revela problemas de acessibilidade: se o teste não acha o botão, o leitor de tela também não acha.</li>
+                        <li><span class="letra">D)</span>Deixa o site mais bonito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">getBy</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece quando getBy... não encontra o elemento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cria o elemento automaticamente.</li>
+                        <li><span class="letra">B)</span>O teste falha com erro, porque o elemento deve existir.</li>
+                        <li><span class="letra">C)</span>Espera o elemento aparecer por alguns segundos.</li>
+                        <li><span class="letra">D)</span>Devolve null e o teste continua.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">queryBy</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o queryBy...?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esperar um elemento que aparece depois de uma resposta do servidor.</li>
+                        <li><span class="letra">B)</span>Conferir que algo não está na tela, pois devolve null quando não encontra.</li>
+                        <li><span class="letra">C)</span>Clicar em um botão.</li>
+                        <li><span class="letra">D)</span>Digitar em um campo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">findBy</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o findBy...?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esperar o elemento aparecer, de forma assíncrona.</li>
+                        <li><span class="letra">B)</span>Conferir que o elemento não existe.</li>
+                        <li><span class="letra">C)</span>Trocar a classe CSS do elemento.</li>
+                        <li><span class="letra">D)</span>Apagar o elemento da tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Mensagem que Não Deve Aparecer</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha confere que a mensagem de erro não aparece na tela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(screen.findByText(&#x27;Erro&#x27;)).toBeVisible();</li>
+                        <li><span class="letra">B)</span>expect(screen.getByText(&#x27;Erro&#x27;)).not.toBeInTheDocument();</li>
+                        <li><span class="letra">C)</span>expect(screen.queryByText(&#x27;Erro&#x27;)).not.toBeInTheDocument();</li>
+                        <li><span class="letra">D)</span>expect(screen.getByTestId(&#x27;Erro&#x27;)).toBeInTheDocument();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">findBy com await</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como usar corretamente o findByText?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>const aviso = await screen.findByText(&#x27;Cadastro realizado!&#x27;);</li>
+                        <li><span class="letra">B)</span>const aviso = screen.findByText(&#x27;Cadastro realizado!&#x27;).click();</li>
+                        <li><span class="letra">C)</span>findByText(&#x27;Cadastro realizado!&#x27;) = true;</li>
+                        <li><span class="letra">D)</span>const aviso = screen.findByText;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">userEvent.setup</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o userEvent.setup() cria?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um usuário simulado que dispara a sequência real de eventos (foco, teclado, clique).</li>
+                        <li><span class="letra">B)</span>Um novo projeto npm.</li>
+                        <li><span class="letra">C)</span>Um relatório de cobertura.</li>
+                        <li><span class="letra">D)</span>Um servidor web para o teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">await nas Ações</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é obrigatório usar await antes de usuario.click(...)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque sem await o botão some da tela.</li>
+                        <li><span class="letra">B)</span>Porque o await desliga o JSDOM.</li>
+                        <li><span class="letra">C)</span>Porque o await deixa o teste mais bonito.</li>
+                        <li><span class="letra">D)</span>Porque as ações do userEvent são assíncronas; sem await o expect pode rodar antes do clique.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Digitação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha digita &quot;123&quot; no campo Senha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await usuario.type(&#x27;Senha&#x27;);</li>
+                        <li><span class="letra">B)</span>usuario.click(&#x27;123&#x27;);</li>
+                        <li><span class="letra">C)</span>screen.getByLabelText(&#x27;Senha&#x27;).value === &#x27;123&#x27;;</li>
+                        <li><span class="letra">D)</span>await usuario.type(screen.getByLabelText(&#x27;Senha&#x27;), &#x27;123&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">beforeEach</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o beforeEach(() =&gt; { document.body.innerHTML = &#x27;&#x27;; })?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Limpar a tela antes de cada teste, para um teste não interferir no outro.</li>
+                        <li><span class="letra">B)</span>Desabilitar os botões da tela.</li>
+                        <li><span class="letra">C)</span>Rodar todos os testes duas vezes.</li>
+                        <li><span class="letra">D)</span>Apagar os arquivos de teste do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Vários Elementos Encontrados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O erro &quot;Found multiple elements&quot; no segundo teste do arquivo geralmente indica que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste está usando await demais.</li>
+                        <li><span class="letra">B)</span>Sobraram na tela os elementos do teste anterior.</li>
+                        <li><span class="letra">C)</span>O botão foi encontrado pelo papel correto.</li>
+                        <li><span class="letra">D)</span>O JSDOM não foi instalado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Testes Independentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cada teste deve ser independente dos outros?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para economizar linhas de código.</li>
+                        <li><span class="letra">B)</span>Para rodar sozinho e em qualquer ordem com o mesmo resultado.</li>
+                        <li><span class="letra">C)</span>Para que um teste prepare os dados do próximo.</li>
+                        <li><span class="letra">D)</span>Para que os testes rodem só uma vez por mês.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Simulando o Callback</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No teste do botão Seguir, para que serve o vi.fn() passado como aoAlternar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o texto do botão.</li>
+                        <li><span class="letra">B)</span>Instalar a Testing Library.</li>
+                        <li><span class="letra">C)</span>Criar uma função falsa que registra as chamadas, para conferir se o callback foi chamado.</li>
+                        <li><span class="letra">D)</span>Desenhar o botão na tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Conferir a Chamada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha confere que aoAlternar foi chamado com true?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(aoAlternar).toBe(true);</li>
+                        <li><span class="letra">B)</span>expect(aoAlternar).toHaveValue(true);</li>
+                        <li><span class="letra">C)</span>expect(aoAlternar).toBeDisabled();</li>
+                        <li><span class="letra">D)</span>expect(aoAlternar).toHaveBeenCalledWith(true);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">toBeInTheDocument</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o matcher toBeInTheDocument() confere?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se o elemento está na página.</li>
+                        <li><span class="letra">B)</span>Se o elemento tem a cor certa.</li>
+                        <li><span class="letra">C)</span>Se o campo tem um valor.</li>
+                        <li><span class="letra">D)</span>Se o elemento está desabilitado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">toBeVisible</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o toBeVisible() confere a mais que o toBeInTheDocument()?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o usuário consegue ver o elemento (não está escondido).</li>
+                        <li><span class="letra">B)</span>Que o elemento é um botão.</li>
+                        <li><span class="letra">C)</span>Que o elemento foi apagado.</li>
+                        <li><span class="letra">D)</span>Que o elemento tem um data-testid.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">toBeDisabled</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que o botão Cadastrar está desabilitado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBeDisabled()</li>
+                        <li><span class="letra">B)</span>toBeVisible()</li>
+                        <li><span class="letra">C)</span>toHaveBeenCalled()</li>
+                        <li><span class="letra">D)</span>toHaveValue()</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">toHaveTextContent</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que o botão mostra o texto &quot;Seguindo&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toHaveTextContent(&#x27;Seguindo&#x27;)</li>
+                        <li><span class="letra">B)</span>toBeDisabled(&#x27;Seguindo&#x27;)</li>
+                        <li><span class="letra">C)</span>toHaveBeenCalledWith(&#x27;Seguindo&#x27;)</li>
+                        <li><span class="letra">D)</span>toHaveValue(&#x27;Seguindo&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">toHaveValue</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere o valor digitado num campo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBeVisible(&#x27;ana@escola.com&#x27;)</li>
+                        <li><span class="letra">B)</span>toBeEnabled(&#x27;ana@escola.com&#x27;)</li>
+                        <li><span class="letra">C)</span>toHaveTextContent(&#x27;ana@escola.com&#x27;)</li>
+                        <li><span class="letra">D)</span>toHaveValue(&#x27;ana@escola.com&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">toHaveAttribute</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha confere que o botão Seguir ficou pressionado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(botao).toHaveValue(&#x27;true&#x27;);</li>
+                        <li><span class="letra">B)</span>expect(botao).toBeDisabled();</li>
+                        <li><span class="letra">C)</span>expect(botao).not.toBeInTheDocument();</li>
+                        <li><span class="letra">D)</span>expect(botao).toHaveAttribute(&#x27;aria-pressed&#x27;, &#x27;true&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Pré-condição no AAA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao transformar um caso de teste em teste automatizado, a pré-condição &quot;formulário aberto&quot; vira:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Act: clicar no botão.</li>
+                        <li><span class="letra">B)</span>O Arrange: montar o formulário no document.body.</li>
+                        <li><span class="letra">C)</span>O Assert: conferir a mensagem.</li>
+                        <li><span class="letra">D)</span>Um comentário que não vira código.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Passos no AAA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Os passos do caso de teste (&quot;digitar a senha e clicar em Cadastrar&quot;) viram:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O beforeEach.</li>
+                        <li><span class="letra">B)</span>O Act, com userEvent.type e userEvent.click.</li>
+                        <li><span class="letra">C)</span>O Arrange, com vi.fn.</li>
+                        <li><span class="letra">D)</span>O Assert, com expect.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Resultado Esperado no AAA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O resultado esperado do caso de teste (&quot;aparece a mensagem de aviso&quot;) vira:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Act, com o clique.</li>
+                        <li><span class="letra">B)</span>A instalação do jsdom.</li>
+                        <li><span class="letra">C)</span>O Assert, com expect e o matcher adequado.</li>
+                        <li><span class="letra">D)</span>O Arrange, com a montagem da tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Teste de Funcionalidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Conferir se o formulário cadastra e avisa como o requisito pede é um teste de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Carga do servidor.</li>
+                        <li><span class="letra">B)</span>Manutenibilidade.</li>
+                        <li><span class="letra">C)</span>Desempenho.</li>
+                        <li><span class="letra">D)</span>Funcionalidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Defeito do Cadastro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com senha de 5 caracteres, o botão fica desabilitado, mas o aviso não aparece. Qual é o defeito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O botão não deveria ficar desabilitado.</li>
+                        <li><span class="letra">B)</span>A mensagem de aviso não é exibida, e o usuário não sabe por que não avança.</li>
+                        <li><span class="letra">C)</span>Não há defeito, a tela está correta.</li>
+                        <li><span class="letra">D)</span>A senha de 5 caracteres deveria ser aceita.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Teste que Comprova o Defeito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No caso do defeito do cadastro, qual linha do teste falha hoje?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(screen.getByRole(&#x27;button&#x27;, { name: &#x27;Cadastrar&#x27; })).toBeDisabled();</li>
+                        <li><span class="letra">B)</span>document.body.append(criarFormCadastro());</li>
+                        <li><span class="letra">C)</span>expect(screen.getByText(&#x27;A senha deve ter no mínimo 6 dígitos&#x27;)).toBeInTheDocument();</li>
+                        <li><span class="letra">D)</span>const usuario = userEvent.setup();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Teste Após a Correção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois que a equipe corrige o defeito, o que deve acontecer com o teste que falhava?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele é trocado por um teste manual.</li>
+                        <li><span class="letra">B)</span>Ele passa e fica na suíte como teste de regressão.</li>
+                        <li><span class="letra">C)</span>Ele é apagado, porque já cumpriu o papel.</li>
+                        <li><span class="letra">D)</span>Ele é desligado com skip.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Query sem Olhar o Código</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Encontre sem olhar o código&quot;, por que escolher a query pensando como o usuário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o usuário escreve os testes.</li>
+                        <li><span class="letra">B)</span>Porque as classes CSS são a melhor forma de encontrar elementos.</li>
+                        <li><span class="letra">C)</span>Porque o código do HTML é secreto.</li>
+                        <li><span class="letra">D)</span>Porque o teste deve encontrar os elementos como o usuário os percebe, e não como o HTML foi escrito.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 04: Testes de Integração com DOM usando Testing Library</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

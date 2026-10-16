@@ -1,4 +1,4 @@
-/* Professor: botão "Finalizar Atividade" embaixo da prova (finalizar-atividade-professor.js). */
+/* Professor: botão "Confirmar Correção" embaixo da prova (finalizar-atividade-professor.js). */
 
 :root {
     --finalizar-destaque: #2f855a;
@@ -42,4 +42,11 @@
     .finalizar-atividade {
         display: none;
     }
+}
+
+.finalizar-atividade__corrigida {
+    margin: 0;
+    color: var(--finalizar-destaque);
+    font-size: 18px;
+    font-weight: 700;
 }

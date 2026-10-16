@@ -7,8 +7,12 @@
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
 // E o assets/js/documento-word.js + assets/js/exportar-word.js (hoje sem botões de Word).
 // Toda atividade com folha de respostas no banco (body data-login="sim") ganha o botão
+// Questões escondidas por passarem da quantidade mínima (assets/js/questoes-ate-minimo.js)
+// não vão para o PDF completo.
 // "🔑 Exportar Gabarito" (assets/js/avaliacao-pdf-professor.js): o aluno só recebe o gabarito
 // depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
+// "📥 Exportar PDF" só para o PROFESSOR (2026-10-16, #198): o botão e a dica nascem escondidos e
+// o js/header-usuario.js (data-somente-perfil) os mostra quando o perfil logado é PROFESSOR.
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
 const ARQUIVO_TURMA_UNIDADE = 'unidade.js';
@@ -19,6 +23,9 @@ const ID_BOTAO_EXPORTAR_GABARITO = 'btnExportarGabarito';
 const TEXTO_BOTAO_EXPORTAR_GABARITO = '🔑 Exportar Gabarito';
 const ORIGEM_ATIVIDADE_JS = document.currentScript?.src || '';
 const TURMA_EM_BRANCO_ATIVIDADE_PDF = '___________________';
+const ID_BOTAO_EXPORTAR_PDF = 'btnExportarPDF';
+const SELETOR_DICA_EXPORTAR_PDF = '.export-bar small';
+const PERFIL_SO_EXPORTAR_PDF = 'PROFESSOR';
 const MSG_JSPDF_NAO_CARREGADO = 'Erro: jsPDF não carregado (verifique a conexão com a internet).';
 
 /**
@@ -43,7 +50,7 @@ carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade ===
 
 /**
  * Acrescenta o botão "Exportar Gabarito" às atividades com folha de respostas no banco que ainda
- * não o têm e carrega o script que o liga (a liberação para o aluno é decidida no banco).
+ * não o têm e carrega o script que o liga (o botão só aparece para o perfil PROFESSOR).
  */
 function incluirBotaoExportarGabarito() {
     const barra = document.querySelector('.export-bar');
@@ -58,8 +65,25 @@ function incluirBotaoExportarGabarito() {
     botao.textContent = TEXTO_BOTAO_EXPORTAR_GABARITO;
     barra.append(botao);
     carregarModuloExportacao(ARQUIVO_EXPORTAR_GABARITO,
-        typeof exportarGabaritoPorPerfil === 'function');
+        typeof exportarGabaritoProfessor === 'function');
 }
+
+/**
+ * Esconde o "Exportar PDF" e a dica dele e os marca para o header mostrar só ao PROFESSOR.
+ * Roda antes do DOMContentLoaded, quando o js/header-usuario.js aplica os perfis.
+ */
+function reservarExportarPdfAoProfessor() {
+    const botao = document.getElementById(ID_BOTAO_EXPORTAR_PDF);
+    if (!botao) return;
+
+    const dica = document.querySelector(SELETOR_DICA_EXPORTAR_PDF);
+    [botao, dica].filter(Boolean).forEach((elemento) => {
+        elemento.dataset.somentePerfil = PERFIL_SO_EXPORTAR_PDF;
+        elemento.hidden = true;
+    });
+}
+
+reservarExportarPdfAoProfessor();
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', incluirBotaoExportarGabarito);
@@ -257,9 +281,27 @@ function ganchosRotuloNegritoPDF(doc, margin) {
     };
 }
 
+const CLASSE_FORA_DO_MINIMO_PDF = 'questao--fora-do-minimo';
+
+/**
+ * Limita o PDF às questões da tela quando a página esconde as que passam da quantidade mínima
+ * (assets/js/questoes-ate-minimo.js): o total do cabeçalho e o gabarito vão só até o mínimo.
+ * @param {Object} pagina - Dados da página (total e gabarito; alterados aqui).
+ * @param {number} quantidade - Questões que vão para o PDF.
+ */
+function limitarPDFAoMinimo(pagina, quantidade) {
+    const temQuestaoEscondida = Boolean(document.querySelector('.' + CLASSE_FORA_DO_MINIMO_PDF));
+    if (!temQuestaoEscondida) return;
+
+    pagina.total = String(quantidade);
+    pagina.gabarito = pagina.gabarito.filter((linha) =>
+        Number((String(linha[0]).match(/\d+/) || [0])[0]) <= quantidade);
+}
+
 function coletarQuestoes() {
     const questoes = [];
-    document.querySelectorAll('.aula-card.questao').forEach(card => {
+    const seletor = '.aula-card.questao:not(.' + CLASSE_FORA_DO_MINIMO_PDF + ')';
+    document.querySelectorAll(seletor).forEach(card => {
         const linhas = [];
         card.querySelectorAll('.content-box').forEach(box => {
             const rotulo = textoPDF(box.querySelector('.content-label')?.textContent);
@@ -308,6 +350,7 @@ async function exportarPDFAtividade(gabaritoExterno) {
     const pagina = await dadosDaPaginaParaPDF();
     const questoes = coletarQuestoes();
     if (gabaritoExterno) pagina.gabarito = gabaritoExterno;
+    limitarPDFAoMinimo(pagina, questoes.length);
     const incluirGabarito = Boolean(gabaritoExterno) || document.getElementById('incluirGabarito')?.checked;
     const doc = new jsPDF('p', 'mm', 'a4');
     const margin = 15;
@@ -422,4 +465,4 @@ async function exportarSomenteGabaritoPDF(gabarito, opcoes = {}) {
     doc.save((opcoes.arquivo || 'Gabarito') + '-' + rotulo.replace(/\s+/g, '-') + '-' + pagina.total + '-Questoes.pdf');
 }
 
-document.getElementById('btnExportarPDF')?.addEventListener('click', () => exportarPDFAtividade());
+document.getElementById(ID_BOTAO_EXPORTAR_PDF)?.addEventListener('click', () => exportarPDFAtividade());

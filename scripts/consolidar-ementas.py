@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from collections import defaultdict
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 
 def get_file_size(filepath):

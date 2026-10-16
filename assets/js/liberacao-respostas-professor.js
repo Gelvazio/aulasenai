@@ -1,9 +1,11 @@
 // Botão "🔓 Liberar gabaritos (turma X)" no quadro "Respostas dos alunos nesta atividade" (só
 // PROFESSOR, só nas páginas com o botão "Exportar Gabarito"). Libera o gabarito real para a turma
-// da aba escolhida, SOMENTE quando todos os alunos dela entregaram; depois de liberado, o botão
-// vira "🔒 Recolher gabarito (turma X)". Depois da liberação o banco recusa nova tentativa ou
-// recuperação para os alunos da turma. Funções do banco: liberar_gabarito_turma e
-// alunos_sem_entrega_turma (database/2026-10-06-liberacao-respostas-turma.sql).
+// da aba escolhida, mesmo com alunos sem entrega (avisados no aviso e na confirmação); depois de
+// liberado, o botão vira "🔒 Recolher gabarito (turma X)". Depois da liberação o banco encerra o
+// preenchimento da turma: recusa resposta, nova tentativa e recuperação (recolher reabre).
+// Funções do banco: liberar_gabarito_turma e alunos_sem_entrega_turma
+// (database/2026-10-06-liberacao-respostas-turma.sql e
+// database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql).
 // Também usado nas discursivas (liberacao-respostas-discursiva.js), com a turma escolhida numa lista.
 // Plano: docs/liberacao-respostas-por-turma.md. Depende de popup.js e js/supabase.js (sbGet, sbH).
 
@@ -12,7 +14,7 @@ const ROTA_SEM_ENTREGA_GABARITO = '/rest/v1/rpc/alunos_sem_entrega_turma';
 const CLASSE_LIBERAR_GABARITO = 'liberar-gabarito';
 const EVENTO_TURMA_LIBERAR_GABARITO = 'relatorio-professor:turma';
 const estadoLiberarGabarito = { botao: null, aviso: null, atividadeId: null, turma: '',
-    liberado: false };
+    liberado: false, faltam: 0 };
 
 /**
  * Chama uma função (RPC) do banco com o JWT do professor.
@@ -58,9 +60,10 @@ async function atualizarBotaoLiberarGabarito() {
     try {
         const { liberado, faltam } = await lerSituacaoGabaritoTurma();
         estadoLiberarGabarito.liberado = liberado;
+        estadoLiberarGabarito.faltam = faltam;
         botao.textContent = (liberado ? '🔒 Recolher gabarito' : '🔓 Liberar gabaritos') +
             ' (turma ' + turma + ')';
-        botao.disabled = !liberado && faltam > 0;
+        botao.disabled = false;
         aviso.textContent = descreverSituacaoGabarito(liberado, faltam);
     } catch (erro) {
         botao.disabled = true;
@@ -75,9 +78,30 @@ async function atualizarBotaoLiberarGabarito() {
  * @returns {string} Aviso.
  */
 function descreverSituacaoGabarito(liberado, faltam) {
-    if (liberado) return 'Gabarito liberado: sem nova tentativa ou recuperação nesta turma.';
-    if (faltam > 0) return 'Faltam ' + faltam + ' aluno(s) entregar para liberar o gabarito.';
+    if (liberado) return 'Gabarito liberado: preenchimento encerrado nesta turma.';
+    if (faltam > 0) {
+        return 'Faltam ' + faltam + ' aluno(s) entregar: ao liberar o gabarito, eles não poderão ' +
+            'mais responder.';
+    }
     return 'Todos os alunos entregaram: o gabarito pode ser liberado.';
+}
+
+/**
+ * Pergunta de confirmação para liberar ou recolher o gabarito da turma.
+ * @param {{turma: string, liberado: boolean, faltam: number}} situacao - Turma e situação atual.
+ * @returns {string} Pergunta do popup.
+ */
+function montarPerguntaGabarito({ turma, liberado, faltam }) {
+    if (liberado) {
+        return 'Recolher o gabarito da turma ' + turma + '? Os alunos deixam de vê-lo e o ' +
+            'preenchimento é reaberto.';
+    }
+    const avisoFaltam = faltam > 0
+        ? ' Faltam ' + faltam + ' aluno(s) entregar: eles não poderão mais responder.'
+        : '';
+    return 'Liberar o gabarito para a turma ' + turma + '? Os alunos verão as respostas certas ' +
+        'e o preenchimento desta atividade será encerrado (sem nova tentativa nem recuperação).' +
+        avisoFaltam;
 }
 
 /**
@@ -85,10 +109,7 @@ function descreverSituacaoGabarito(liberado, faltam) {
  */
 async function alternarLiberacaoGabarito() {
     const { atividadeId, turma, liberado } = estadoLiberarGabarito;
-    const pergunta = liberado
-        ? 'Recolher o gabarito da turma ' + turma + '? Os alunos deixam de vê-lo.'
-        : 'Liberar o gabarito para a turma ' + turma + '? Os alunos verão as respostas certas ' +
-          'e não haverá mais nova tentativa nem recuperação nesta atividade.';
+    const pergunta = montarPerguntaGabarito(estadoLiberarGabarito);
     if (!(await confirmarPopup(pergunta, { tipo: 'pergunta', titulo: 'Gabarito' }))) return;
 
     try {

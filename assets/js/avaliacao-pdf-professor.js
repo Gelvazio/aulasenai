@@ -2,21 +2,19 @@
 //  • Botão btnExportarPDFGabarito, só PROFESSOR: hoje só a variante data-modo="gabarito" (rótulo
 //    "📥 Gabarito", PDF SOMENTE com o gabarito). O "Exportar PDF com gabarito" (atividade completa)
 //    foi removido das páginas em 2026-10-06 a pedido do usuário.
-//  • "Exportar Gabarito": PROFESSOR recebe o gabarito real (só as alternativas certas); ALUNO
-//    recebe o gabarito real SÓ depois que o professor liberar para a turma dele (função
-//    solicitar_gabarito do banco); antes disso vê "Aguarde professor liberar os gabaritos" e o
-//    pedido fica gravado em tentativaacessogabarito. O gabarito real nunca fica na página.
+//  • "🔑 Exportar Gabarito", só PROFESSOR (2026-10-15, #176): o botão só aparece e só funciona
+//    para o perfil PROFESSOR, que recebe o gabarito real (só as alternativas certas). O aluno vê
+//    a correção na própria página depois da liberação (assets/js/correcao-objetiva-aluno.js).
+//    O gabarito real nunca fica na página.
 // As funções recebem o formato (PDF por padrão; FORMATO_WORD_EXPORTACAO, hoje sem botão).
 // Depende de: atividade.js, respostas-atividade-banco.js (buscarAtividadeDaPagina) e
-// js/supabase.js (sbGet, sbH).
+// js/supabase.js (sbGet).
 
 const ID_BOTAO_PDF_GABARITO = 'btnExportarPDFGabarito';
 const ID_BOTAO_SO_GABARITO = 'btnExportarGabarito';
 const MSG_ERRO_PDF_GABARITO = 'Não foi possível gerar o PDF: ';
 const MSG_SO_PROFESSOR_PDF = 'Somente o perfil PROFESSOR pode exportar o PDF com gabarito.';
-const MSG_SEM_LOGIN_PDF = 'Entre com o seu usuário para exportar.';
-const MSG_AGUARDE_GABARITO = 'Aguarde professor liberar os gabaritos';
-const ROTA_SOLICITAR_GABARITO = '/rest/v1/rpc/solicitar_gabarito';
+const MSG_SO_PROFESSOR_GABARITO = 'Somente o perfil PROFESSOR pode exportar o gabarito.';
 const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
 const MODO_SO_GABARITO_PDF = 'gabarito';
 
@@ -79,26 +77,6 @@ function formatarLinhasGabarito(linhas) {
 }
 
 /**
- * Pede ao banco o gabarito liberado para o aluno logado (função solicitar_gabarito). Sem
- * liberação, o banco grava o pedido em tentativaacessogabarito e devolve lista vazia.
- * @returns {Promise<string[][]>} Linhas [item, título, letra] (vazio = ainda não liberado).
- * @throws {Error} Se a atividade não estiver cadastrada ou o banco recusar.
- */
-async function solicitarGabaritoAluno() {
-    const atividade = await buscarAtividadeDaPagina();
-    if (!atividade) throw new Error('atividade não cadastrada no banco.');
-
-    const resposta = await fetch(SUPABASE.URL + ROTA_SOLICITAR_GABARITO, {
-        method: 'POST',
-        headers: await sbH(),
-        body: JSON.stringify({ p_atividade: atividade.id }),
-    });
-    const dados = await resposta.json().catch(() => ({}));
-    if (!resposta.ok) throw new Error(dados.message || 'erro ' + resposta.status);
-    return formatarLinhasGabarito(dados);
-}
-
-/**
  * Botão "Exportar PDF com gabarito" (só professor): atividade completa + gabarito real; no modo
  * "gabarito" (data-modo do botão), só o gabarito.
  * @param {Object} [formato] - FORMATO_PDF_EXPORTACAO (padrão) ou FORMATO_WORD_EXPORTACAO.
@@ -121,52 +99,33 @@ async function exportarPdfCompletoProfessor(formato = FORMATO_PDF_EXPORTACAO) {
 }
 
 /**
- * Botão "Exportar Gabarito": professor recebe o gabarito real; aluno, o gabarito real só depois
- * da liberação pelo professor (antes, o aviso de aguardar).
+ * Botão "Exportar Gabarito" (só professor): exporta somente o gabarito real da atividade.
  * @param {Object} [formato] - FORMATO_PDF_EXPORTACAO (padrão) ou FORMATO_WORD_EXPORTACAO.
  */
-async function exportarGabaritoPorPerfil(formato = FORMATO_PDF_EXPORTACAO) {
+async function exportarGabaritoProfessor(formato = FORMATO_PDF_EXPORTACAO) {
     try {
-        const perfil = await lerPerfilPdf();
-        if (!perfil.logado) throw new Error(MSG_SEM_LOGIN_PDF);
+        if (!(await lerPerfilPdf()).ehProfessor) throw new Error(MSG_SO_PROFESSOR_GABARITO);
 
-        const gabarito = perfil.ehProfessor
-            ? await lerGabaritoDoBanco() : await solicitarGabaritoAluno();
-        if (gabarito.length) {
-            formato.soGabarito(gabarito);
-            return;
-        }
-        await avisarAguardeGabarito();
+        formato.soGabarito(await lerGabaritoDoBanco());
     } catch (erro) {
-        await avisarErroPdfGabarito(erro.message === MSG_SEM_LOGIN_PDF
+        await avisarErroPdfGabarito(erro.message === MSG_SO_PROFESSOR_GABARITO
             ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
     }
 }
 
 /**
- * Avisa o aluno de que o gabarito ainda não foi liberado (popup quando disponível).
+ * Mostra o botão "Exportar Gabarito" só para o perfil PROFESSOR (aluno e visitante não o veem).
  */
-async function avisarAguardeGabarito() {
-    if (typeof window.mostrarPopup === 'function') {
-        await mostrarPopup(MSG_AGUARDE_GABARITO, { tipo: 'aviso', titulo: 'Gabarito' });
-        return;
-    }
-    console.warn(MSG_AGUARDE_GABARITO);
-}
-
-/**
- * Mostra o botão "Exportar Gabarito" para qualquer usuário logado (aluno ou professor).
- */
-async function mostrarBotaoGabaritoSeLogado() {
+async function mostrarBotaoGabaritoSeProfessor() {
     const botao = document.getElementById(ID_BOTAO_SO_GABARITO);
     if (!botao) return;
 
     const perfil = await lerPerfilPdf();
-    if (perfil.logado) botao.hidden = false;
+    if (perfil.ehProfessor) botao.hidden = false;
 }
 
 document.getElementById(ID_BOTAO_PDF_GABARITO)
     ?.addEventListener('click', () => exportarPdfCompletoProfessor());
 document.getElementById(ID_BOTAO_SO_GABARITO)
-    ?.addEventListener('click', () => exportarGabaritoPorPerfil());
-mostrarBotaoGabaritoSeLogado();
+    ?.addEventListener('click', () => exportarGabaritoProfessor());
+mostrarBotaoGabaritoSeProfessor();

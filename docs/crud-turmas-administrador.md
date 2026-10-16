@@ -9,7 +9,7 @@
 no banco de dados".
 
 **Criado em:** 2026-10-09
-**Concluído em:** —
+**Concluído em:** 2026-10-16 (feito na tarefa #201, etapa 328-d0739bde; ver a seção "Resultado")
 **Tempo decorrido:** —
 
 ---
@@ -76,3 +76,12 @@ create policy turma_delete_administrador on public.turma for delete to authentic
 | Apagar alunos/equipes ao excluir turma | Política de delete só aceita turma sem alunos e sem equipes |
 | Outro professor gravar turma | Todas as políticas exigem `eh_professor_administrador()` |
 | Trocar o código e quebrar vínculos | Código não é editável no modal (só no cadastro) |
+
+## Resultado (2026-10-16, tarefa #201)
+
+Feito pela tarefa #201 (`tasks/etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md`),
+com estas mudanças em relação à proposta acima: SQL em
+`database/2026-10-16-turma-crud-administrador.sql`; a exclusão usa a função
+`turma_esta_vazia(codigo)` (security definer, também confere `aluno.turma_codigo`); o `anon` perdeu
+todos os privilégios da `turma`; o modal tem unidade, curso e "Bloquear horário" (a coluna `local`
+não existe mais); o vínculo de professores virou o botão **👥 Professores** na linha da turma.

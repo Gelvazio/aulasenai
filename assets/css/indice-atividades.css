@@ -132,3 +132,7 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .faixa-materias__item > .faixa-materias__card { flex: 1 1 auto; margin-bottom: 0; }
 .faixa-materias__onoff { font: inherit; font-size: 11px; font-weight: 800; color: #4a5568; background: #edf2f7; border: 2px solid #cbd5e0; border-radius: 8px; padding: 0 8px; cursor: pointer; min-width: 44px; }
 .faixa-materias__onoff--ligado { color: white; background: #38a169; border-color: #38a169; }
+
+/* Enquanto o bloqueio da aula é conferido (assets/js/indice-aula-data.js), nenhum link do card
+   abre: sem isso, o aluno abria os slides da aula bloqueada antes de o card ser bloqueado. */
+.indice--conferindo-aula .aula a { pointer-events: none; opacity: 0.6; }

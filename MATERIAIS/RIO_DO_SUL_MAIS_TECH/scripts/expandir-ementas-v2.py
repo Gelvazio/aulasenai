@@ -19,7 +19,7 @@ MATERIAS = [
     "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO"
 ]
 
-BASE_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BASE_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
 
 # Seções de expansão (cada uma é um "bloco" que pode ser adicionado/removido)
 SECOES = {

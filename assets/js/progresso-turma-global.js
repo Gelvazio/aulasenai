@@ -8,6 +8,22 @@
 // professor. Ligado por assets/js/respostas-atividade.js (objetivas) e
 // assets/js/avaliacao-discursiva.js (discursivas). Substitui o antigo
 // progresso-turma-discursiva.js (2026-10-09). Depende de js/supabase.js e assets/js/popup.js.
+// Com <body data-marcar-entregue="sim">: "Marcar como entregue" / "Desfazer entrega" na situação
+// do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
+// (alunos-sem-inicio-entrega.js).
+// Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
+// ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; ligado: só quem entregou;
+// filtro-entregue-progresso.js). "Mostrando N de T alunos" conta a lista com todos os filtros.
+// ON/OFF "RECUPERAÇÃO" pela nota final (ligado < 7 = recuperação, desligado >= 7;
+// filtro-recuperacao-progresso.js). ON/OFF "Prova Corrigida" (desligado: não corrigidas;
+// filtro-corrigida-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
+// escolhido (filtro-aluno-progresso.js).
+// As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
+// e voltam ao abrir a página; sem escolha guardada, vale o padrão.
+// A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
+// turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
+// ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
+// vale para o dia da atividade).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -18,6 +34,30 @@ const ARQUIVO_GRAFICOS_PROGRESSO_GLOBAL = 'graficos-progresso-turma.js';
 const ARQUIVO_MINIMO_PROGRESSO_GLOBAL = 'minimo-questoes-discursiva.js';
 const ARQUIVO_CALCULO_PROGRESSO_GLOBAL = 'calculo-nota-progresso.js';
 const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
+const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
+const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
+const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
+const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
+const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
+const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
+const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
+const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
+const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
+// Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
+// de aluno nem gabarito).
+const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
+// Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
+// ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
+// preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
+const COLUNAS_EXTRAS_POR_TIPO_GLOBAL = {
+    discursiva: [{ arquivo: 'suspeita-copia-discursiva.js', funcao: 'criarColunaSuspeitaCopia' }],
+};
+// Botões extras ao lado do nome do aluno, por tipo: a função recebe {atividadeId, aluno, aoMudar}
+// e devolve o botão (ex.: "✅ Confirmar Todas" das discursivas).
+const BOTOES_NOME_POR_TIPO_GLOBAL = {
+    discursiva: [{ arquivo: 'confirmar-todas-professor.js', funcao: 'criarBotaoConfirmarTodas' }],
+};
+const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
 const SEM_NOTA_PROGRESSO_GLOBAL = -1;
@@ -33,7 +73,8 @@ const SITUACOES_QUESTAO_GLOBAL = {
 const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
-    atividadeId: null, fonte: null, memoria: { nomes: new Map() },
+    atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
+    botoesNome: [], filtro: null, faltas: null, filtrosDaLista: [],
 };
 
 /**
@@ -79,6 +120,8 @@ function colunasDoProgressoGlobal() {
         { titulo: 'Situação', chave: 'valorSituacao' },
         { titulo: textos.colunaParcial, chave: 'valorNotaParcial' },
         { titulo: textos.colunaFinal, chave: 'valorNotaFinal' },
+        ...estadoProgressoGlobal.colunasExtras.map((coluna) => ({ titulo: coluna.titulo,
+            chave: '' })),
     ];
 }
 
@@ -169,7 +212,8 @@ function montarCelulaNotaParcialGlobal(aluno, totalPartes) {
 }
 
 /**
- * Monta a célula da nota final: só com a entrega feita e tudo o que foi respondido corrigido.
+ * Monta a célula da nota final: a nota confirmada pelo professor (🎓) quando a prova está
+ * corrigida; senão a sugerida pela IA (🤖), só com a entrega feita e tudo corrigido pela IA.
  * @param {Object} aluno - Aluno com indicadores.
  * @returns {HTMLElement} Célula pronta.
  */
@@ -178,6 +222,14 @@ function montarCelulaNotaFinalGlobal(aluno) {
     const { textos } = estadoProgressoGlobal.fonte;
     if (aluno.valorNotaFinal === SEM_NOTA_PROGRESSO_GLOBAL) {
         return criarElementoProgressoGlobal('span', classe + ' ' + classe + '--vazia', '—');
+    }
+    if (aluno.notaDoProfessor !== null && aluno.notaDoProfessor !== undefined) {
+        const confirmada = criarElementoProgressoGlobal('span', classe + ' ' + classe +
+            '--professor', textos.iconeProfessor + ' ' +
+            formatarNotaProgressoGlobal(aluno.notaDoProfessor));
+        confirmada.title = textos.dicaProfessor + ' Mínimo do aluno: ' + aluno.minimo +
+            ' questões.';
+        return confirmada;
     }
 
     const celula = criarElementoProgressoGlobal('span', classe,
@@ -214,11 +266,15 @@ function calcularIndicadoresDoAlunoGlobal(aluno, medida) {
         ? notaProporcionalGlobal(aluno.correcao.nota, { totalQuestoes, minimo }) : null;
     const temNotaFinal = aluno.entregue && respondidos > 0 &&
         aluno.correcao?.corrigidos >= respondidos;
+    const notaDoProfessor = aluno.provaCorrigida && aluno.notaProfessor !== undefined
+        ? notaProporcionalGlobal(aluno.notaProfessor, { totalQuestoes, minimo }) : null;
+    const valorNotaFinal = temNotaFinal ? notaParcial : SEM_NOTA_PROGRESSO_GLOBAL;
     return {
         ...aluno, respondidos, percentual, completas, totalQuestoes, minimo, notaParcial,
+        notaDoProfessor,
         valorSituacao: aluno.entregue ? totalQuestoes + 1 : completas,
         valorNotaParcial: notaParcial === null ? SEM_NOTA_PROGRESSO_GLOBAL : notaParcial,
-        valorNotaFinal: temNotaFinal ? notaParcial : SEM_NOTA_PROGRESSO_GLOBAL,
+        valorNotaFinal: notaDoProfessor === null ? valorNotaFinal : notaDoProfessor,
     };
 }
 
@@ -292,12 +348,20 @@ function montarTitulosDasColunasGlobal(aoOrdenar) {
 }
 
 /**
- * Redesenha os títulos e as linhas dos alunos na ordem escolhida (sem ler o banco de novo).
+ * Redesenha os títulos e as linhas dos alunos que passam em todos os filtros, na ordem
+ * escolhida, e a contagem "Mostrando N de T alunos" (sem ler o banco de novo).
  * @param {{lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
  */
 function desenharListaDeAlunosGlobal(tela, medida) {
-    const alunos = [...estadoProgressoGlobal.ultimosAlunos].sort(compararAlunosGlobal);
+    const { ultimosAlunos, filtrosDaLista } = estadoProgressoGlobal;
+    const visiveis = filtrosDaLista.reduce((lista, filtro) => filtro.filtrar(lista),
+        ultimosAlunos);
+    const alunos = [...visiveis].sort(compararAlunosGlobal);
+    if (tela.contagem) {
+        tela.contagem.textContent = 'Mostrando ' + alunos.length + ' de ' +
+            ultimosAlunos.length + ' alunos (com os filtros acima)';
+    }
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
         ...alunos.map((aluno) => montarLinhaDoAlunoGlobal(aluno, medida)));
@@ -318,7 +382,11 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     botao.type = 'button';
     if (aluno.minimoDoAluno) botao.classList.add(CLASSE_PROGRESSO_GLOBAL + '__minimo--proprio');
     botao.addEventListener('click', () => abrirMinimoDoAlunoGlobal(aluno));
-    celula.append(nome, botao);
+    const extras = estadoProgressoGlobal.botoesNome.map((criarBotao) => criarBotao({
+        atividadeId: estadoProgressoGlobal.atividadeId, aluno,
+        aoMudar: estadoProgressoGlobal.atualizarAgora }));
+    const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
+    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []));
     return celula;
 }
 
@@ -356,23 +424,42 @@ function abrirMinimoDoAlunoGlobal(aluno) {
 }
 
 /**
+ * Monta a situação do aluno ("✅ Entregue" ou questões feitas) com o "Marcar como entregue" /
+ * "Desfazer entrega" do professor (marcar-entregue-professor.js), se a página o ligar.
+ * @param {Object} aluno - Aluno com indicadores.
+ * @returns {HTMLElement} Situação pronta.
+ */
+function montarSituacaoDoAlunoGlobal(aluno) {
+    const controle = window.criarControleEntregaProfessor?.({ alunoId: aluno.alunoId,
+        atividadeId: estadoProgressoGlobal.atividadeId, nome: aluno.nome,
+        entregue: aluno.entregue, entreguePorProfessor: aluno.entreguePorProfessor,
+        aoMudar: estadoProgressoGlobal.atualizarAgora });
+    const texto = aluno.entregue
+        ? '✅ Entregue'
+        : aluno.completas + '/' + aluno.totalQuestoes + ' questões · mín. ' + aluno.minimo;
+    const avisoNoControle = Boolean(controle) && aluno.entreguePorProfessor;
+    const situacao = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__situacao',
+        avisoNoControle ? '' : texto);
+    if (controle) situacao.appendChild(controle);
+    return situacao;
+}
+
+/**
  * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final.
  * @param {Object} aluno - Aluno com indicadores.
  * @param {{estrutura: Map<number, number>, totalPartes: number}} medida - Estrutura da prova.
  * @returns {HTMLElement} Linha pronta.
  */
 function montarLinhaDoAlunoGlobal(aluno, medida) {
-    const situacao = aluno.entregue
-        ? '✅ Entregue'
-        : aluno.completas + '/' + aluno.totalQuestoes + ' questões · mín. ' + aluno.minimo;
     const linha = criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL + '__linha');
     linha.append(
         montarCelulaNomeDoAlunoGlobal(aluno),
         montarCelulasDasQuestoesGlobal(aluno.porQuestao, medida.estrutura),
         montarBarraGlobal(aluno.percentual, aluno.entregue ? 'entregue' : ''),
-        criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__situacao', situacao),
+        montarSituacaoDoAlunoGlobal(aluno),
         montarCelulaNotaParcialGlobal(aluno, medida.totalPartes),
-        montarCelulaNotaFinalGlobal(aluno));
+        montarCelulaNotaFinalGlobal(aluno),
+        ...estadoProgressoGlobal.colunasExtras.map((coluna) => coluna.montarCelula(aluno)));
     return linha;
 }
 
@@ -394,6 +481,94 @@ function montarResumoDaTurmaGlobal(alunos, totalPartes) {
 }
 
 /**
+ * Redesenha a lista dos alunos sem nenhuma resposta (alunos-sem-inicio-entrega.js), se a
+ * página ligar a entrega pelo professor.
+ * @param {{semInicio: HTMLElement|undefined}} tela - Elementos da área.
+ */
+async function atualizarSemInicioGlobal(tela) {
+    if (!tela.semInicio || typeof window.atualizarAlunosSemInicio !== 'function') return;
+
+    await window.atualizarAlunosSemInicio(tela.semInicio, {
+        atividadeId: estadoProgressoGlobal.atividadeId,
+        idsQueComecaram: new Set(estadoProgressoGlobal.ultimosAlunos.map((aluno) => aluno.alunoId)),
+        aoMudar: estadoProgressoGlobal.atualizarAgora,
+    });
+}
+
+/**
+ * Lê os dados das colunas extras; a falha de uma coluna não derruba o painel.
+ */
+async function atualizarColunasExtrasGlobal() {
+    const { colunasExtras, atividadeId } = estadoProgressoGlobal;
+    await Promise.all(colunasExtras.map(async (coluna) => {
+        try {
+            await coluna.atualizar(atividadeId);
+        } catch (erro) {
+            console.warn(coluna.titulo + ':', erro.message);
+        }
+    }));
+}
+
+/**
+ * Carrega as colunas extras do tipo da atividade (ex.: "Suspeita de Cópia" nas discursivas) e
+ * marca a área com a classe de cada uma (o CSS da coluna ajusta a grade).
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ * @param {HTMLElement} area - Área do painel.
+ */
+async function prepararColunasExtrasGlobal(tipo, area) {
+    const modulos = COLUNAS_EXTRAS_POR_TIPO_GLOBAL[tipo] || [];
+    for (const modulo of modulos) {
+        try {
+            if (typeof window[modulo.funcao] !== 'function') {
+                await carregarScriptProgressoGlobal(modulo.arquivo);
+            }
+            const coluna = window[modulo.funcao]();
+            estadoProgressoGlobal.colunasExtras.push(coluna);
+            area.classList.add(coluna.classeArea);
+        } catch (erro) {
+            console.warn('Coluna extra do progresso:', erro.message);
+        }
+    }
+}
+
+/**
+ * Carrega os botões extras do nome do aluno do tipo da atividade (falha não derruba o painel).
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ */
+async function prepararBotoesNomeGlobal(tipo) {
+    const modulos = BOTOES_NOME_POR_TIPO_GLOBAL[tipo] || [];
+    for (const modulo of modulos) {
+        try {
+            if (typeof window[modulo.funcao] !== 'function') {
+                await carregarScriptProgressoGlobal(modulo.arquivo);
+            }
+            estadoProgressoGlobal.botoesNome.push(window[modulo.funcao]);
+        } catch (erro) {
+            console.warn('Botão do aluno no progresso:', erro.message);
+        }
+    }
+}
+
+/**
+ * Acrescenta os alunos das turmas do curso que ainda não responderam nada (carrega o módulo na
+ * primeira vez). Se a leitura falhar, segue só com quem respondeu (o painel não cai).
+ * @param {Object[]} alunos - Alunos com resposta (formato comum).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Object[]>} Todos os alunos.
+ */
+async function completarAlunosDaTurmaGlobal(alunos, atividadeId) {
+    try {
+        if (typeof window.completarComAlunosDaTurma !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL);
+        }
+        return await window.completarComAlunosDaTurma(alunos, atividadeId);
+    } catch (erro) {
+        console.warn('Alunos da turma no progresso:', erro.message);
+        return alunos;
+    }
+}
+
+/**
  * Lê o banco e redesenha o resumo e as linhas dos alunos (sem leituras sobrepostas).
  * @param {{resumo: HTMLElement, lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
@@ -404,11 +579,15 @@ async function atualizarProgressoGlobal(tela, medida) {
     estadoProgressoGlobal.lendo = true;
     try {
         const { fonte, memoria, atividadeId } = estadoProgressoGlobal;
-        const alunos = await fonte.lerAlunos(atividadeId, memoria);
+        const alunos = await completarAlunosDaTurmaGlobal(
+            await fonte.lerAlunos(atividadeId, memoria), atividadeId);
         estadoProgressoGlobal.ultimosAlunos = alunos.map((aluno) =>
             calcularIndicadoresDoAlunoGlobal(aluno, medida));
+        await atualizarSemInicioGlobal(tela);
+        await atualizarColunasExtrasGlobal();
+        await atualizarFaltasGlobal();
         if (!alunos.length) {
-            tela.resumo.replaceChildren('Nenhum aluno das suas turmas começou ainda · ' +
+            tela.resumo.replaceChildren('Nenhum aluno nas turmas do curso · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
             tela.lista.replaceChildren();
             return;
@@ -494,6 +673,208 @@ async function obterFonteProgressoGlobal(tipo) {
 }
 
 /**
+ * Liga a entrega pelo professor no painel (só com <body data-marcar-entregue="sim">): carrega
+ * os módulos e cria a área dos alunos sem nenhuma resposta. Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Object} tela - Elementos da área (recebe semInicio).
+ */
+async function prepararEntregaProfessorGlobal(area, tela) {
+    if (document.body.dataset.marcarEntregue !== VALOR_LIGADO_ENTREGA_GLOBAL) return;
+
+    try {
+        if (typeof window.acrescentarControleEntrega !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ENTREGA_PROGRESSO_GLOBAL);
+        }
+        if (typeof window.atualizarAlunosSemInicio !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL);
+        }
+        tela.semInicio = criarElementoProgressoGlobal('div', 'sem-inicio-entrega');
+        area.appendChild(tela.semInicio);
+    } catch (erro) {
+        console.warn('Entrega pelo professor indisponível:', erro.message);
+    }
+}
+
+/**
+ * Preferências dos filtros do painel no localStorage do navegador. Sem armazenamento (bloqueado
+ * ou modo privado), lê null e não grava: os filtros usam o padrão.
+ */
+const preferenciasProgressoGlobal = {
+    /**
+     * Lê uma escolha guardada.
+     * @param {string} chave - Nome do filtro.
+     * @returns {string|null} Valor guardado ou null.
+     */
+    ler(chave) {
+        try {
+            return window.localStorage.getItem(PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL + chave);
+        } catch (erro) {
+            return null;
+        }
+    },
+    /**
+     * Guarda uma escolha.
+     * @param {string} chave - Nome do filtro.
+     * @param {string} valor - Valor escolhido.
+     */
+    gravar(chave, valor) {
+        try {
+            window.localStorage.setItem(PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL + chave, valor);
+        } catch (erro) {
+            // Sem armazenamento, a escolha vale só enquanto a página estiver aberta.
+        }
+    },
+};
+
+/**
+ * Cria o combobox "Questões respondidas" e o põe na área. Uma falha aqui não derruba o painel
+ * (a lista sai sem filtro).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando a faixa muda.
+ */
+async function prepararFiltroGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroRespondidas !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_PROGRESSO_GLOBAL);
+        }
+        estadoProgressoGlobal.filtro = window.criarFiltroRespondidas(aoMudar,
+            preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.filtro);
+        area.appendChild(estadoProgressoGlobal.filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro do progresso:', erro.message);
+    }
+}
+
+/**
+ * Cria o ON/OFF "Mostrar quem faltou" (e o "Faltou?" de cada aluno) e o põe na área. Uma falha
+ * aqui não derruba o painel (a lista sai sem as faltas).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando uma falta ou o ON/OFF muda.
+ */
+async function prepararFaltasGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarControleFaltas !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FALTAS_PROGRESSO_GLOBAL);
+        }
+        estadoProgressoGlobal.faltas = await window.criarControleFaltas({
+            atividadeId: estadoProgressoGlobal.atividadeId, aoMudar,
+            preferencias: preferenciasProgressoGlobal });
+        estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.faltas);
+        area.appendChild(estadoProgressoGlobal.faltas.elemento);
+    } catch (erro) {
+        console.warn('Faltas do progresso:', erro.message);
+    }
+}
+
+/**
+ * Cria o ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou) e o põe na área. Uma falha
+ * aqui não derruba o painel (a lista sai sem esse filtro).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroEntregueGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroEntregue !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroEntregue(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "Tarefa Entregue?" do progresso:', erro.message);
+    }
+}
+
+/**
+ * Cria o ON/OFF "RECUPERAÇÃO" (pela nota final: ligado < 7, desligado >= 7) e o põe na área,
+ * depois do "Mostrar quem faltou". Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroRecuperacaoGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroRecuperacao !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroRecuperacao(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "RECUPERAÇÃO" do progresso:', erro.message);
+    }
+}
+
+/**
+ * Cria o ON/OFF "Prova Corrigida" (desligado: não corrigidas; ligado: corrigidas) e o põe na
+ * área, depois do "RECUPERAÇÃO". Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroCorrigidaGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroCorrigida !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroCorrigida(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "Prova Corrigida" do progresso:', erro.message);
+    }
+}
+
+/**
+ * Põe o combo "Aluno" ao lado do título (filtro-aluno-progresso.js; a escolha fica no
+ * navegador). Ele é o primeiro filtro da lista, para as opções terem todos os alunos da turma.
+ * Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel (com o título).
+ * @param {Function} aoMudar - Redesenha a lista quando o aluno muda.
+ */
+async function prepararFiltroAlunoGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroAluno !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroAluno(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.unshift(filtro);
+        area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')?.after(filtro.elemento);
+    } catch (erro) {
+        console.warn('Combo de aluno do progresso:', erro.message);
+    }
+}
+
+/**
+ * Põe o combo "Turma" ao lado do título (abre na turma favorita; alunos-da-turma-progresso.js).
+ * Trocar a turma lê a lista de novo. Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel (com o título).
+ */
+async function prepararComboTurmaGlobal(area) {
+    try {
+        if (typeof window.criarComboTurmaProgresso !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL);
+        }
+        const combo = await window.criarComboTurmaProgresso({
+            atividadeId: estadoProgressoGlobal.atividadeId,
+            aoMudar: () => estadoProgressoGlobal.atualizarAgora?.() });
+        area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')?.after(combo);
+    } catch (erro) {
+        console.warn('Combo de turma do progresso:', erro.message);
+    }
+}
+
+/**
+ * Lê as faltas do dia da atividade (uma falha mantém as últimas lidas).
+ */
+async function atualizarFaltasGlobal() {
+    try {
+        await estadoProgressoGlobal.faltas?.atualizar();
+    } catch (erro) {
+        console.warn('Faltas do progresso:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -517,11 +898,29 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
             'Lendo...'),
         lista: criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL + '__lista'),
     };
-    area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal(),
-        tela.resumo, tela.lista);
+    area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal());
+    const redesenhar = () => {
+        if (estadoProgressoGlobal.ultimosAlunos.length) desenharListaDeAlunosGlobal(tela, medida);
+    };
+    await prepararFiltroGlobal(area, redesenhar);
+    await prepararFiltroEntregueGlobal(area, redesenhar);
+    await prepararFaltasGlobal(area, redesenhar);
+    await prepararFiltroRecuperacaoGlobal(area, redesenhar);
+    await prepararFiltroCorrigidaGlobal(area, redesenhar);
+    tela.contagem = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__contagem');
+    area.appendChild(tela.contagem);
+    await prepararFiltroAlunoGlobal(area, redesenhar);
+    await prepararComboTurmaGlobal(area);
+    area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
+    await prepararColunasExtrasGlobal(tipo, area);
+    await prepararBotoesNomeGlobal(tipo);
+    await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);
+    estadoProgressoGlobal.colunasExtras.forEach((coluna) => {
+        coluna.aoMudar = estadoProgressoGlobal.atualizarAgora;
+    });
     await atualizarProgressoGlobal(tela, medida);
     estadoProgressoGlobal.temporizador = setInterval(
         () => atualizarProgressoGlobal(tela, medida), INTERVALO_PROGRESSO_GLOBAL_MS);

@@ -59,7 +59,7 @@ AULAS/
 
 ```powershell
 # Navegar até pasta AULAS
-cd "C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\AULAS"
+cd "C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\AULAS"
 
 # Criar pasta de assets
 mkdir _assets
@@ -903,7 +903,7 @@ Esperado: Arquivo `.backup` criado
 
 ```powershell
 # Navegar até raiz
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 
 # Adicionar todos os arquivos
 git add .

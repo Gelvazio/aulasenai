@@ -4,5 +4,5 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 20.1 | Acrescentar a aluna (nº 12, `bianca.pamela@senai.local`, senha inicial gerada) em `scripts/LISTA-PRESENCA-CEPLAS-MANHA.js` (fora do Git, LGPD) | ✅ Concluído | 2026-10-06 | `node --check` OK; e-mail sem repetição nas listas |
-| 20.2 | Criar a conta no Supabase Auth pela página `scripts/criarUsuariosBancoDados.html` | ⬜ Pendente | — | Feito pelo professor na página local |
+| 20.2 | Criar a conta no Supabase Auth pela página `scripts/criarUsuariosBancoDados.html` | 👀 Aguardando o usuário | — | Feito pelo professor na página local |
 | 20.3 | Aceite do usuário | ⬜ Pendente | — | — |

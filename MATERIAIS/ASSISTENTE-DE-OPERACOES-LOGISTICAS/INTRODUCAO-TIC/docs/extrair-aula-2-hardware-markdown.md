@@ -56,7 +56,7 @@
 **Verificação:**
 
 ```powershell
-Select-String -Path "C:\fontes\aulas-senai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\INTRODUCAO-TIC\AULAS-CHALKIE-AI\INFORMATICA-BASICA.md" -Pattern "^#### Slide" | Measure-Object
+Select-String -Path "C:\fontes\aulasenai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\INTRODUCAO-TIC\AULAS-CHALKIE-AI\INFORMATICA-BASICA.md" -Pattern "^#### Slide" | Measure-Object
 ```
 
 Esperado: `Count = 44`.
@@ -68,8 +68,8 @@ Esperado: `Count = 44`.
 **Status:** ✅ Concluído
 
 ```powershell
-git -C C:\fontes\aulas-senai add "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/AULAS-CHALKIE-AI/INFORMATICA-BASICA.md" "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/docs/extrair-aula-2-hardware-markdown.md"
-git -C C:\fontes\aulas-senai commit -m "docs: INFORMATICA-BASICA.md para geração de slides (aula 2 ITIC)"
+git -C C:\fontes\aulasenai add "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/AULAS-CHALKIE-AI/INFORMATICA-BASICA.md" "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/docs/extrair-aula-2-hardware-markdown.md"
+git -C C:\fontes\aulasenai commit -m "docs: INFORMATICA-BASICA.md para geração de slides (aula 2 ITIC)"
 ```
 
 ---

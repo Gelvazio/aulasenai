@@ -444,6 +444,38 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>📅 Atualização 2026-10-16 — tabela aula_turma (data e bloqueio da aula por turma, #206)</h2>
+    <div class="section">
+      <p>Scripts: <code>database/2026-10-16-aula-turma.sql</code>, <code>database/2026-10-16-aula-turma-bloqueio.sql</code> e <code>database/2026-10-16-aula-turma-materia.sql</code> (✅ aplicados; a remoção da #193 nunca rodou e foi SUBSTITUÍDA) · Tela: <code>ATIVIDADES/index.html</code> (combo "Turma:" e "✏️ Editar aula")</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>aula_turma</td>
+          <td>Tabela</td>
+          <td>Uma linha por aula × turma (única por aula_id + turma_codigo): aula_id → aulas.id, materia_id → materia.id (not null), turma_codigo → turma.codigo, data_aula (aceita vazio), bloqueio (padrão false = aula liberada na turma), created_at, updated_at</td>
+        </tr>
+        <tr>
+          <td>aula_turma_materia_da_aula_trg</td>
+          <td>Trigger (BEFORE)</td>
+          <td>Copia sempre a matéria da aula para materia_id (a matéria nunca diverge da aula)</td>
+        </tr>
+        <tr>
+          <td>aula_turma_bloqueio_propaga_atividades_trg</td>
+          <td>Trigger (AFTER)</td>
+          <td>Ao bloquear a aula na turma, põe a turma em atividade.bloqueio das atividades ativas da aula; liberar não mexe nas atividades</td>
+        </tr>
+        <tr>
+          <td>RLS</td>
+          <td>4 políticas</td>
+          <td>Leitura para logado; insert, update e delete só com eh_professor()</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>✍️ Atualização 2026-10-06 — correção das discursivas e notas da média final</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-notas-media-final-correcao-discursiva.sql</code> (✅ aplicado em 2026-10-06) · Telas: <code>correcao-discursiva.html</code> (menu CORREÇÃO) e <code>AVALIACAO-MEDIA-FINAL.html</code> (aluno)</p>
@@ -456,12 +488,17 @@
         <tr>
           <td>correcao_discursiva</td>
           <td>Tabela</td>
-          <td>PK aluno + atividade + tentativa + item + tópico; nota_ia, nota_ia_em (correção parcial, 2026-10-08) (sugestão), nota_professor (vale), comentario, corrigido_por, corrigido_em</td>
+          <td>PK aluno + atividade + tentativa + item + tópico; nota_ia, nota_ia_em (correção parcial, 2026-10-08) (sugestão), nota_professor (vale), comentario, corrigido_por, corrigido_em, justificativa_mudanca (#156)</td>
         </tr>
         <tr>
           <td>correcao_discursiva_validar_trg</td>
           <td>Trigger</td>
-          <td>Nota até os pontos do tópico; registra quem confirmou a nota do professor; recusa alterar nota_professor já confirmada (2026-10-08)</td>
+          <td>Nota até os pontos do tópico; registra quem confirmou a nota do professor; a nota_professor já confirmada só muda com justificativa_mudanca nova e nunca é apagada (#156, 2026-10-14)</td>
+        </tr>
+        <tr>
+          <td>correcao_discursiva_historico</td>
+          <td>Tabela</td>
+          <td>Eventos da nota (confirmacao/mudanca): chave da alternativa, tipo, nota_anterior, nota_nova, justificativa, feito_por, feito_em; gravada só pelo trigger correcao_discursiva_historico_trg; RLS só leitura (professor das turmas dele; aluno só os próprios com gabarito liberado) (#156, 2026-10-14)</td>
         </tr>
         <tr>
           <td>correcao_discursiva_select/insert/update</td>
@@ -472,6 +509,31 @@
           <td>notas_media_final(p_paginas text[])</td>
           <td>Função (security definer)</td>
           <td>Melhor nota do aluno logado por página (objetiva ou discursiva corrigida); AGUARDANDO_CORRECAO quando faltam notas; independe do bloqueio; sem gabarito</td>
+        </tr>
+        <tr>
+          <td>suspeita_copia_discursiva</td>
+          <td>Tabela (RLS)</td>
+          <td>Suspeita de cópia nas discursivas (2026-10-14): PK atividade + aluno + tentativa + item + tópico; aluno_parecido_id (mesma turma), semelhanca, motivo, situacao (pendente/nao_copia/copia), validado_por/em; só o professor lê; a IA grava pelo conector</td>
+        </tr>
+        <tr>
+          <td>validar_suspeita_copia(...)</td>
+          <td>Função (security definer)</td>
+          <td>Professor do aluno valida: "não é cópia" ou "é cópia" (grava nota_professor = 0 no tópico; recusa se a nota já foi confirmada com outro valor)</td>
+        </tr>
+        <tr>
+          <td>aluno_liberado_copia</td>
+          <td>Tabela (RLS)</td>
+          <td>Aluno marcado pelo professor como "Não é cópia" na atividade (2026-10-14): PK atividade + aluno; fora da comparação de cópia da IA; só o professor lê</td>
+        </tr>
+        <tr>
+          <td>falta_aluno</td>
+          <td>Tabela (RLS)</td>
+          <td>Falta do aluno por dia (2026-10-14, #138): PK aluno + data; marcada pelo professor no Progresso da Turma ("Faltou?"); aluno lê a própria; professor marca e apaga só alunos das turmas dele</td>
+        </tr>
+        <tr>
+          <td>liberar_aluno_copia(...)</td>
+          <td>Função (security definer)</td>
+          <td>Professor do aluno libera (suspeitas pendentes dele e dos colegas que apontam para ele viram nao_copia) ou volta a comparar; nenhuma nota muda</td>
         </tr>
         <tr>
           <td>minimo_questoes_aluno</td>
@@ -817,6 +879,231 @@
       </table>
     </div>
 
+    <h2>📨 Atualização 2026-10-14 — Professor marca a atividade do aluno como entregue</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-14-professor-marca-entregue.sql</code> (aplicado em 2026-10-14) · Tela: <code>assets/js/marcar-entregue-professor.js</code></p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>entrega_atividade.entregue_por</td>
+          <td>Coluna</td>
+          <td>Professor que marcou a entrega (nula = o próprio aluno entregou)</td>
+        </tr>
+        <tr>
+          <td>tentativa_atual_do_aluno(uuid, bigint)</td>
+          <td>Função interna</td>
+          <td>Maior tentativa liberada do aluno, ou 1; sem execução pela API</td>
+        </tr>
+        <tr>
+          <td>professor_marcar_entregue(uuid, bigint)</td>
+          <td>Função</td>
+          <td>Professor marca a tentativa atual do aluno como entregue, sem exigir mínimo nem horário; só alunos das turmas dele</td>
+        </tr>
+        <tr>
+          <td>professor_desmarcar_entregue(uuid, bigint)</td>
+          <td>Função</td>
+          <td>Desfaz só a entrega feita pelo professor; recusa se a nota já foi lançada</td>
+        </tr>
+        <tr>
+          <td>resumo_tentativas_atividade(bigint)</td>
+          <td>Função (recriada)</td>
+          <td>Inclui o aluno entregue sem resposta e a coluna entregue_por</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-11-regras-no-banco.sql</code> (aplicado em 2026-10-11) · Cópia: <code>scripts/regras/sincronizar_regras.py</code></p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>regra_documento</td>
+          <td>Tabela (RLS)</td>
+          <td>Cada arquivo de regras inteiro (CLAUDE.md, docs/regras/, histórico): versão, conteúdo, md5 e commit; leitura só do Professor Administrador; gravação só pelo conector</td>
+        </tr>
+        <tr>
+          <td>regra_secao</td>
+          <td>Tabela (RLS)</td>
+          <td>Uma linha por seção (## e ###) de cada arquivo, com nível, título, seção pai, conteúdo e md5; seção que sumiu fica inativa</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>🗂️ Atualização 2026-10-11 — Fila tasks do agendador único</h2>
+    <p><strong>⛔ Sem uso desde 2026-10-13</strong> (tarefa #29): o quadro de tarefas tem fonte única nos arquivos. A tabela e as funções continuam no banco; a página <code>tasks.html</code> saiu do site.</p>
+    <div class="section">
+      <p>Script: <code>database/2026-10-11-tasks-fila-agendador.sql</code> (aplicado em 2026-10-11)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>tasks</td>
+          <td>Tabela (RLS)</td>
+          <td>Fila do agendador único: código, origem, título, instrução, prioridade, ON/OFF, executar após, status, tentativas, trava, resultado, PR; só o Professor Administrador lê e grava; sem DELETE</td>
+        </tr>
+        <tr>
+          <td>tasks.ordem / tasks.task_dependente</td>
+          <td>Colunas</td>
+          <td>Posição na fila e ids das tasks de que ela depende (só começa com todas concluídas)</td>
+        </tr>
+        <tr>
+          <td>tasks_validar_dependencias_trg</td>
+          <td>Trigger</td>
+          <td>Dependências sem repetição, existentes e diferentes da própria task</td>
+        </tr>
+        <tr>
+          <td>tasks_preencher_trg</td>
+          <td>Trigger</td>
+          <td>Código TASK-NNNN, arquivo em tasks/fila/, datas e auth.uid()</td>
+        </tr>
+        <tr>
+          <td>tasks_validar_pagina_trg</td>
+          <td>Trigger</td>
+          <td>Usuário logado não põe nem tira task de em_execucao</td>
+        </tr>
+        <tr>
+          <td>pegar_proxima_task(text)</td>
+          <td>Função (security definer)</td>
+          <td>Pega 1 task ligada com as dependentes concluídas (prioridade, ordem, criação; skip locked) e trava por 90 min; sem execução pela API</td>
+        </tr>
+        <tr>
+          <td>finalizar_task(bigint, text, text, text, text)</td>
+          <td>Função (security definer)</td>
+          <td>Fecha a task: concluida, recusada ou erro (erro com tentativas sobrando volta à fila)</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>📚 Atualização 2026-10-16 — turma_materia (turma × matéria)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-materia.sql</code> (aplicado em 2026-10-16) · Tela: botão 📚 Matérias de <code>turmas.html</code> e combo "Turma:" do índice de atividades · Tarefa #211</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma_materia (id, turma_codigo, materia_id, criado_em, criado_por)</td>
+          <td>Tabela</td>
+          <td>Vínculo turma × matéria; unique (turma_codigo, materia_id); cascata ao apagar turma ou matéria</td>
+        </tr>
+        <tr>
+          <td>turma_materia_select</td>
+          <td>Política RLS</td>
+          <td>Todo usuário logado lê</td>
+        </tr>
+        <tr>
+          <td>turma_materia_insert_admin / turma_materia_delete_admin</td>
+          <td>Políticas RLS</td>
+          <td>Vincular e desvincular só com eh_professor_administrador(); sem UPDATE; anon sem acesso; TRUNCATE revogado</td>
+        </tr>
+        <tr>
+          <td>Dados iniciais</td>
+          <td>insert</td>
+          <td>Introdução à TIC (25) × turmas 135080 e 135081</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>🏫 Atualização 2026-10-16 — CRUD da turma pelo Professor Administrador</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-crud-administrador.sql</code> (aplicado em 2026-10-16) · Tela: <code>turmas.html</code> (consulta, modal de edição, excluir e botão Professores) · Tarefa #201</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma_insert_admin / turma_update_admin</td>
+          <td>Políticas RLS</td>
+          <td>Criar e editar turma só com eh_professor_administrador()</td>
+        </tr>
+        <tr>
+          <td>turma_delete_admin</td>
+          <td>Política RLS</td>
+          <td>Excluir só o administrador e só turma vazia (turma_esta_vazia); vínculos de professor saem em cascata</td>
+        </tr>
+        <tr>
+          <td>turma_esta_vazia(text)</td>
+          <td>Função (security definer)</td>
+          <td>Sem turmaaluno, sem aluno.turma_codigo e sem equipe; só authenticated</td>
+        </tr>
+        <tr>
+          <td>Privilégios da turma</td>
+          <td>revoke</td>
+          <td>anon sem privilégios; TRUNCATE revogado de authenticated</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-bloquear-horario.sql</code> (aplicado em 2026-10-16) · Tela: botão "Bloquear horário" ao lado do horário da turma (professor) · Tarefa #200</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma.bloquear_horario</td>
+          <td>boolean not null default true</td>
+          <td>ON: aluno só grava e entrega no horário da turma; OFF: o horário não bloqueia nada (nem nas avaliações)</td>
+        </tr>
+        <tr>
+          <td>horario_da_turma_do_aluno()</td>
+          <td>Função (security definer)</td>
+          <td>Turma com o bloqueio desligado conta como dentro do horário (RLS e avisos seguem por ela)</td>
+        </tr>
+        <tr>
+          <td>definir_bloqueio_horario_turma(text, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Só o professor da turma liga ou desliga; sem acesso para anon</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql</code> (aplicado em 2026-10-15) · Tela: botão "Liberar gabaritos" (professor) · Tarefa #175</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>preenchimento_encerrado_para_usuario(jsonb)</td>
+          <td>Função (security definer)</td>
+          <td>Verdadeiro para o aluno logado com alguma turma em gabarito_liberado; professor e visitante nunca</td>
+        </tr>
+        <tr>
+          <td>item_valido / topico_valido</td>
+          <td>Funções (security definer)</td>
+          <td>Recusam resposta do aluno da turma com o gabarito liberado; a atividade continua visível</td>
+        </tr>
+        <tr>
+          <td>liberar_gabarito_turma(bigint, text, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Libera mesmo com alunos sem entrega (encerra o preenchimento da turma); recolher reabre</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-liberacao-respostas-turma.sql</code> (aplicado em 2026-10-06) · Telas: quadro "Respostas dos alunos" (professor) e "Exportar Gabarito" (aluno)</p>
@@ -844,7 +1131,7 @@
         <tr>
           <td>liberar_gabarito_turma(bigint, text, boolean)</td>
           <td>Função (security definer)</td>
-          <td>Libera (só com todos os alunos com entrega) ou recolhe o gabarito para uma turma</td>
+          <td>Libera ou recolhe o gabarito para uma turma (até 2026-10-15 só com todos os alunos com entrega)</td>
         </tr>
         <tr>
           <td>solicitar_gabarito(bigint)</td>
@@ -1122,8 +1409,8 @@
         <tr>
           <td>entrega_atividade</td>
           <td>Nova</td>
-          <td><code>aluno_id</code>, <code>atividade_id</code>, <code>entregue_em</code></td>
-          <td>Aluno entrega 1 vez, só completa · Professor: todas</td>
+          <td><code>aluno_id</code>, <code>atividade_id</code>, <code>entregue_em</code>, <code>entregue_por</code> (2026-10-14)</td>
+          <td>Aluno entrega 1 vez, só completa · Professor: todas; marca/desfaz pela função</td>
         </tr>
         <tr>
           <td>turma</td>

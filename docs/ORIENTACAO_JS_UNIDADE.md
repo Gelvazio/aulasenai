@@ -4,7 +4,7 @@
 Gerenciar operações CRUD (Create, Read, Update, Delete) de **Unidades** (filiais/locais) no sistema.
 
 ## Localização
-`C:\fontes\aulas-senai\sistema\js\unidade.js`
+`C:\fontes\aulasenai\sistema\js\unidade.js`
 
 ## Responsabilidades
 - ✅ Listar unidades (tabela, filtros, ordenação)

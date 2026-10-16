@@ -65,7 +65,7 @@
 
 **Status:** ✅ Concluído
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\GERADOR-AULAS\OFFICE FACIL\extrair_excel_basico.py`
+**Arquivo:** Criar `C:\fontes\aulasenai\GERADOR-AULAS\OFFICE FACIL\extrair_excel_basico.py`
 
 **Ação:**
 - Renderizar páginas 1–20 em JPEG (200 DPI) com PyMuPDF;
@@ -76,7 +76,7 @@
 **Verificação:**
 
 ```powershell
-C:\Python314\python.exe "C:\fontes\aulas-senai\GERADOR-AULAS\OFFICE FACIL\extrair_excel_basico.py"
+C:\Python314\python.exe "C:\fontes\aulasenai\GERADOR-AULAS\OFFICE FACIL\extrair_excel_basico.py"
 ```
 
 Esperado: mensagem com o caminho do `.md` e 20 páginas processadas.
@@ -98,7 +98,7 @@ Esperado: mensagem com o caminho do `.md` e 20 páginas processadas.
 **Verificação:**
 
 ```powershell
-Select-String -Path "C:\fontes\aulas-senai\GERADOR-AULAS\OFFICE FACIL\Excel-Basico-paginas-01-20.md" -Pattern "^## Página" | Measure-Object
+Select-String -Path "C:\fontes\aulasenai\GERADOR-AULAS\OFFICE FACIL\Excel-Basico-paginas-01-20.md" -Pattern "^## Página" | Measure-Object
 ```
 
 Esperado: `Count = 20`.
@@ -110,8 +110,8 @@ Esperado: `Count = 20`.
 **Status:** ✅ Concluído
 
 ```powershell
-git -C C:\fontes\aulas-senai add "GERADOR-AULAS/OFFICE FACIL" "GERADOR-AULAS/docs/extrair-excel-basico-pdf-markdown.md"
-git -C C:\fontes\aulas-senai commit -m "feat: script para extrair Excel Básico (pág. 1-20) em Markdown"
+git -C C:\fontes\aulasenai add "GERADOR-AULAS/OFFICE FACIL" "GERADOR-AULAS/docs/extrair-excel-basico-pdf-markdown.md"
+git -C C:\fontes\aulasenai commit -m "feat: script para extrair Excel Básico (pág. 1-20) em Markdown"
 ```
 
 ---
