@@ -234,9 +234,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #187-d7f180ea-6a88-4ea9-93fd-9377380ba12f | Datas das aulas das 2 turmas de ITIC pelo CALENDARIO AULAS ITIC.txt | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
 | #188-d5d991b9-ce60-4c8e-a642-479c623ebc3d | Data da aula pela turma: recarregar ao trocar a turma e editar em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
 | #190-63a0d7ac-5496-49bf-a67b-a53e6074225c | Botões de bloquear atividade com problema | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
@@ -661,6 +658,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-16 16:35 | Tarefa #186 (bloqueio da aula por turma na `aula_turma`) **cancelada** e tirada do quadro | Usuário ("cancela a 186 e remove do quadro") | O escopo dela já está na #206 |
 | 2026-10-16 16:34 | Tarefa #16 (bloqueio da aula `aulas.ativo` × ON/OFF da atividade, matéria a matéria) **cancelada** | Usuário ("cancela a 16") | O bloqueio da aula por turma segue pela #206 |
 | 2026-10-16 10:05 | Tarefas #185 a #188 (tabela `aula_turma`: datas e bloqueio da aula por turma) **desfeitas**: o sistema volta ao estado de antes delas (commit `95bf1974`), mantendo o bloqueio de atividade por turma e a correção da #190 | Usuário (#193, "QUERO QUE VOLTE COMO ESTAVA ANTES DE CRIAR A TABELA AULA_TURMA") | O botão de bloqueio de atividade continuava sem funcionar |
 | 2026-10-15 19:02 | Sistema de níveis (LEVE/MEDIO/PESADO) e subtarefas com linha e reserva próprias (`.claude/rules/niveis.md`); tabela "quem pega o quê" é do usuário; tarefas antigas não são migradas | Gelvazio (#182, "sim, aprovado") | Modelos mais fracos fazem as tarefas simples e o forte fica com as difíceis |

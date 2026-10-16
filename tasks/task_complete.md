@@ -58,3 +58,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #206.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.2 | SQL: acrescentar a chave da matéria à `aula_turma` que já existe (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.3 | Aplicar o SQL da matéria na `aula_turma` e conferir (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | ⛔ Cancelada pelo usuário | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⛔ Cancelada pelo usuário | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Cancelada pelo usuário | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
