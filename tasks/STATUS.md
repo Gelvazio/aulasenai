@@ -33,6 +33,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
 | local · main · s6 | #200 ([327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md)) aguarda aceite; #199.1 livre (aguarda o usuário escolher simular ou mandar o console); #198 livre; #196, #195, #192 e #191 aguardam aceite; #193.4 aguarda o usuário rodar o SQL; #194 sem reserva | 👀 Aguardando o usuário | 2026-10-16 12:06 |
+| local · main · s7 | #201 ([328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md)) em execução | 🔄 Ativa | 2026-10-16 12:11 |
 
 ## 📌 Tarefas
 
@@ -290,6 +291,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | 👀 Aguardando o usuário | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #201-d0739bde-aadc-4b89-84b0-16de29658ab2 | CRUD de turmas (consulta, modal de edição, criar, excluir) e botão Professores na linha | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
+| #201.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s7) (desde 2026-10-16 12:11) | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -652,6 +655,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 325-86c5c42e | Botão "Exportar PDF" só para o professor (#198, pedida em 2026-10-16) | [ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | 326-65a7038f | Bug: "Exportar Meu Gabarito" não aparece na 152 (#199, pedida em 2026-10-16) | [ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | 327-c87b8754 | ON/OFF do professor para o bloqueio de horário (#200, pedida em 2026-10-16) | [ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| 328-d0739bde | CRUD de turmas e botão Professores (#201, pedida em 2026-10-16) | [ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
