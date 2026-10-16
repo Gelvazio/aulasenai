@@ -28,7 +28,7 @@ const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 // Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
 const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
 
-const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
+const estadoCardsAula = { cards: [], ehProfessor: false };
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -207,7 +207,6 @@ function adicionarBotaoEditarAula(item) {
     botao.type = 'button';
     botao.addEventListener('click', () => abrirModalAulaCard(item, {
         cards: estadoCardsAula.cards,
-        ehAdministrador: estadoCardsAula.ehAdministrador,
         aoGravar: atualizarCardsDaAula,
     }));
     if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
@@ -312,9 +311,6 @@ async function desenharCardsDoIndice() {
     if (!itens.length) return;
 
     estadoCardsAula.ehProfessor = await verificarProfessorCardAula();
-    if (estadoCardsAula.ehProfessor) {
-        estadoCardsAula.ehAdministrador = await verificarAdministradorCard().catch(() => false);
-    }
     try {
         const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
         const aulas = await buscarAulasDasPaginasCard(paginas);

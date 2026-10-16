@@ -5,9 +5,6 @@
     --aula-data-vazia: #a0aec0;
     --aula-data-botao-fundo: #eef0fd;
     --aula-data-botao-borda: #667eea;
-    --aula-excluir-fundo: #fdecec;
-    --aula-excluir-borda: #c53030;
-    --aula-excluir-texto: #9b2c2c;
     --aula-fechar-fundo: #c53030;
     --aula-fechar-texto: #ffffff;
     --aula-cancelar-fundo: #2f855a;
@@ -99,13 +96,6 @@
 .aula-vinculo-fundo { z-index: 1001; }
 .crud-form.aula-vinculo-form { grid-template-columns: minmax(0, 220px) 1fr; align-items: end; }
 
-.aula-excluir-botao {
-    background: var(--aula-excluir-fundo);
-    border: 1px solid var(--aula-excluir-borda);
-    color: var(--aula-excluir-texto);
-}
-
-.aula-excluir-botao[hidden] { display: none; }
 /* Campo "Aula bloqueada nesta turma" escondido nas matérias sem bloqueio da aula (#206). */
 .aula-modal-form .crud-campo[hidden] { display: none; }
 

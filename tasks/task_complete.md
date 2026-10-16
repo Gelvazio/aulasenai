@@ -89,3 +89,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #216.1 | Fechar vermelho à direita (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
 | #217.1 | Linha com Salvar e Cancelar grandes (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [344-84f3a506](etapas/ETAPA-344-84f3a506-SALVAR-E-CANCELAR-GRANDES-NO-EDITAR-AULA.md) |
 | #218.1 | Espaço entre as linhas (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
+| #219.1 | Remover o botão e o código dele (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |

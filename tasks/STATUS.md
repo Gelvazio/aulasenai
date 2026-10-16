@@ -296,9 +296,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #217.2 | Aceite do usuário | 🟠 Alta | #217.1 | 👀 Aguardando o usuário | — | [344-84f3a506](etapas/ETAPA-344-84f3a506-SALVAR-E-CANCELAR-GRANDES-NO-EDITAR-AULA.md) |
 | #218-b37c4b79-33f6-46a1-85b7-2e1716d979e9 | **Espaço entre as linhas de botões do "Editar aula"** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
 | #218.2 | Aceite do usuário | 🟠 Alta | #218.1 | 👀 Aguardando o usuário | — | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
-| #219-8c368c8c-c8ae-4311-8009-ca46f2c8b2ec | **Remover o "Excluir aula" do "Editar aula"** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
-| #219.1 | Remover o botão e o código dele (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 20:04) | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
-| #219.2 | Aceite do usuário | 🟠 Alta | #219.1 | ⬜ Pendente | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
+| #219-8c368c8c-c8ae-4311-8009-ca46f2c8b2ec | **Remover o "Excluir aula" do "Editar aula"** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
+| #219.2 | Aceite do usuário | 🟠 Alta | #219.1 | 👀 Aguardando o usuário | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

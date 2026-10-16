@@ -1,7 +1,7 @@
 // Acesso ao Supabase para os cards de aula do ATIVIDADES/index.html (tabela aulas) e para o
 // modal "✏️ Editar aula" (CRUD da aula e lista das atividades dela) e para o "Gerenciar
 // atividades" (vincular/desvincular atividade.aula_id, #213).
-// Depende de: js/supabase.js (obterClienteSupabase, sbGet, sbPatch, sbDelete).
+// Depende de: js/supabase.js (sbGet, sbPatch, sbDelete).
 
 const TABELA_AULAS_CARD = 'aulas';
 const TABELA_ATIVIDADE_AULA = 'atividade';
@@ -18,8 +18,6 @@ const CAMPOS_ATIVIDADE_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas' + 
 // "!inner": só as atividades cuja aula é da matéria pedida.
 const CAMPOS_ATIVIDADE_DA_MATERIA_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas!inner' +
     CAMPOS_AULA_VINCULO;
-const RPC_EXCLUIR_AULA_CARD = 'excluir_aula';
-const RPC_ADMINISTRADOR_CARD = 'eh_professor_administrador';
 
 /**
  * Lê as atividades das páginas dos cards, cada uma com a aula completa.
@@ -137,32 +135,9 @@ async function gravarAulaCard(idAula, valores) {
 }
 
 /**
- * Exclui a aula logicamente (aulas.excluido = 1) pela função do banco (só administrador).
- * @param {number} idAula - Id da aula.
- * @returns {Promise<boolean>} true se excluiu.
- */
-async function excluirAulaCard(idAula) {
-    const { data, error } = await obterClienteSupabase().rpc(RPC_EXCLUIR_AULA_CARD,
-        { p_aula: idAula });
-    return !error && data === true;
-}
-
-/**
  * Exclui uma atividade (gabarito, respostas e entregas dela são apagados em cascata).
  * @param {number} idAtividade - Id da atividade.
  */
 async function excluirAtividadeDaAulaCard(idAtividade) {
     await sbDelete(TABELA_ATIVIDADE_AULA, 'id=eq.' + encodeURIComponent(idAtividade));
-}
-
-/**
- * Diz se o usuário logado é o Professor Administrador (só ele exclui aulas).
- * @returns {Promise<boolean>} true se for o administrador.
- */
-async function verificarAdministradorCard() {
-    const cliente = obterClienteSupabase();
-    if (!cliente) return false;
-
-    const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_CARD);
-    return !error && data === true;
 }

@@ -8,13 +8,19 @@
 
 ### #219.1 — Remover o botão e o código dele
 
-**Próximo passo:** ajustar `indice-aula-modal.js`, `indice-aula-data.js`,
-`indice-aula-repositorio.js` e `indice-aula-data.css`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código com lógica em até 4 arquivos ligados (só remoção, sem banco).
+- **Entrega (2026-10-16 20:06, Opus 5.5, s14):** `indice-aula-modal.js` sem o botão, sem `aoExcluirAulaModal` e sem a
+  mensagem dele; `indice-aula-data.js` sem `ehAdministrador` (servia só ao botão);
+  `indice-aula-repositorio.js` sem `excluirAulaCard` e `verificarAdministradorCard`;
+  `indice-aula-data.css` sem o estilo do botão. Continua: o card de aula com `aulas.excluido = 1`
+  some do índice; a função `excluir_aula` do banco não mudou.
+- **Verificação:** `node --check` nos 3 scripts; nenhum nome removido é usado em `assets/js`, `js`
+  ou `assets/css`. Sem navegador: o teste na tela é o aceite.
 
 ### #219.2 — Aceite do usuário
 
-**Próximo passo:** depende da #219.1.
+**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere que não há mais "Excluir aula".
 
 - **Nível:** LEVE — conferência do usuário.
