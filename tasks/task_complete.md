@@ -51,3 +51,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #203.1 | Conferir a aula no banco e aprovar a mudança (PESADO) | 🟡 Média | — | ✅ Concluído | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #203.2 | Gravar o rótulo AULA 06 no banco (PESADO, só Claude Code local) | 🟡 Média | #203.1 | ✅ Concluído | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |

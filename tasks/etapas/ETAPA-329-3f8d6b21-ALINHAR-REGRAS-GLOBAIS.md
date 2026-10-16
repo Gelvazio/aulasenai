@@ -53,6 +53,7 @@
 
 ### 202.5 — Aceite do usuário
 
-**Próximo passo:** o usuário confere as regras do aulasenai contra o global.
+**Próximo passo:** nenhum — concluída.
 
-- **Nível:** — (👀 usuário)
+- **Nível:** — (usuário) · **Aceite:** Gelvazio, 2026-10-16: "Aceito o alinhamento (ALINHAR.6 e #202.5)."
+- **Entrega:** commit `docs(board)` do aceite · **Verificação:** #202.1 a #202.4 ✅ no `task_complete.md`.
