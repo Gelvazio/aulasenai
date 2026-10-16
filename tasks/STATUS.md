@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s16 | #221.1 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) em execução | 🔄 Ativa | 2026-10-16 20:12 |
+| local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
 | local · main · s14 | #220.2 ([347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md)), #219.2, #218.2, #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 20:09 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
@@ -301,9 +301,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #219.2 | Aceite do usuário | 🟠 Alta | #219.1 | 👀 Aguardando o usuário | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 | #220-aa8b3abc-1b58-4105-ae40-2198a8584d10 | **Grade de botões do "Editar aula" (mesmo tamanho, centralizada)** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md) |
 | #220.2 | Aceite do usuário | 🟠 Alta | #220.1 | 👀 Aguardando o usuário | — | [347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md) |
-| #221-c7244bf6-9b58-4d1a-866c-f20d325e287a | **Dois cards da Aula 06 editam a mesma aula** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
-| #221.1 | Investigar e corrigir os dois cards da Aula 06 (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s16) (desde 2026-10-16 20:12) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
-| #221.2 | Aceite do usuário | 🟠 Alta | #221.1 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| #221-c7244bf6-9b58-4d1a-866c-f20d325e287a | **Dois cards da Aula 06 editam a mesma aula** | 🟠 Alta | — | 👀 Aguardando aprovação | — (não reservável) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| #221.2 | Voltar a atividade 19 para a aula 69 no banco (PESADO) | 🟠 Alta | #221.1 | 👀 Aguardando aprovação | Claude Code (Opus 5.5) (local · main · s16) (desde 2026-10-16 20:27) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| #221.3 | Trava no Gerenciar atividades e aviso no Editar aula (MEDIO) | 🟠 Alta | #221.2 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| #221.4 | Aceite do usuário | 🟠 Alta | #221.2, #221.3 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

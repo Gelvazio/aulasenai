@@ -91,3 +91,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #218.1 | Espaço entre as linhas (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
 | #219.1 | Remover o botão e o código dele (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 | #220.1 | Grade 2 × 2 dos botões (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md) |
+| #221.1 | Investigar por que os dois cards editam a mesma aula (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
