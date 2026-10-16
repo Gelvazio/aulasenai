@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s15 | #211.2 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) em execução | 🔄 Ativa | 2026-10-16 19:18 |
+| local · main · s15 | #211.3 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) em execução | 🔄 Ativa | 2026-10-16 19:18 |
 | local · main · s14 | #210.3 ([337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md)) aguarda o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 18:56 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
@@ -281,8 +281,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #210-be64cb29-48d8-4052-a6a1-5c9bd72d045e | **Bloqueio da aula ligado em todas as matérias** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #210.3 | Aceite do usuário | 🟠 Alta | #210.2 | 👀 Aguardando o usuário | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #211-3c6cc913-7d2d-4eac-bbc3-88094817cc2d | **Vincular turmas às matérias (combo de turma só da matéria)** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
-| #211.2 | Tabela `turma_materia` + RLS + vínculo ITIC (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s15) (desde 2026-10-16 19:18) | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
-| #211.3 | Botão e modal "Matérias" em turmas.html (MEDIO) | 🟠 Alta | #211.2 | ⬜ Pendente | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
+| #211.3 | Botão e modal "Matérias" em turmas.html (MEDIO) | 🟠 Alta | #211.2 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s15) (desde 2026-10-16 19:30) | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.4 | Combo "Turma:" filtrado pela matéria (MEDIO) | 🟠 Alta | #211.2 | ⬜ Pendente | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.5 | Aceite do usuário | 🟠 Alta | #211.3, #211.4 | ⬜ Pendente | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 

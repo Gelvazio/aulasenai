@@ -913,6 +913,26 @@ desfeita: outro professor tem insert recusado e update sem efeito; o administrad
 exclui turma vazia; turma com alunos não sai; `TRUNCATE` recusado. Tela: `turmas.html` (consulta,
 ➕ Nova turma, ✏️ Editar no modal, 🗑️ Excluir e 👥 Professores = vínculos da `turmaprofessor`).
 
+## 📚 Atualização 2026-10-16 — `turma_materia` (turma × matéria, #211)
+
+**Script:** `database/2026-10-16-turma-materia.sql` (aplicado em 2026-10-16 pelo conector do
+Supabase). **Plano:** etapa `tasks/etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma_materia.id` | `bigint` identity (PK) | identificador do vínculo |
+| `turma_materia.turma_codigo` | `text` → `turma.codigo` (on update/delete cascade) | turma |
+| `turma_materia.materia_id` | `bigint` → `materia.id` (on delete cascade) | matéria |
+| `turma_materia.criado_em` / `criado_por` | `timestamptz` / `uuid` | quando e quem vinculou |
+| `turma_materia_unica` | `unique (turma_codigo, materia_id)` | sem vínculo repetido |
+
+**RLS:** ligado; `anon` sem acesso; SELECT = todo usuário logado; INSERT/DELETE = **somente**
+`eh_professor_administrador()`; sem política de UPDATE (troca = apagar e vincular de novo);
+TRUNCATE revogado. Vínculo inicial: Introdução à TIC (`materia.id` 25) × 135080 e 135081.
+Uso: botão 📚 Matérias de `turmas.html` (cadastro) e combo "Turma:" do `ATIVIDADES/index.html`
+(`assets/js/indice-turma-favorita.js`): só as turmas da matéria; matéria sem vínculo = todas.
+Conferido: outro professor tem o insert recusado (simulação em transação desfeita).
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas

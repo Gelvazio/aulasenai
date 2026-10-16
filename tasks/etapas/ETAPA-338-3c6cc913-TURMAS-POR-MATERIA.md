@@ -62,13 +62,18 @@ cadastrado pelo professor administrador em `turmas.html`.
 
 ### #211.2 — Tabela `turma_materia` + RLS + vínculo ITIC
 
-**Próximo passo:** escrever `database/2026-10-16-turma-materia.sql`, aplicar e conferir.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — tabela nova e RLS no banco
+- **Entrega:** `database/2026-10-16-turma-materia.sql` aplicado pelo conector (migração
+  `turma_materia`), `docs/database.md` e `docs/relatorio_verificacao_database.html`.
+- **Verificação:** consulta no banco — RLS ligado, 3 políticas (select, insert_admin,
+  delete_admin), `anon` sem privilégio, 2 vínculos (25 × 135080 e 135081); simulação em transação
+  desfeita: professor não administrador tem o insert recusado e lê as 2 linhas.
 
 ### #211.3 — Botão e modal "Matérias" em `turmas.html`
 
-**Próximo passo:** começar depois da #211.2.
+**Próximo passo:** criar o botão no cabeçalho, o modal e o JS do vínculo.
 
 - **Nível:** MEDIO — tela (HTML + JS), até 3 arquivos
 

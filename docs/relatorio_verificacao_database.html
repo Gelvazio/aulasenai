@@ -986,6 +986,38 @@
       </table>
     </div>
 
+    <h2>📚 Atualização 2026-10-16 — turma_materia (turma × matéria)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-materia.sql</code> (aplicado em 2026-10-16) · Tela: botão 📚 Matérias de <code>turmas.html</code> e combo "Turma:" do índice de atividades · Tarefa #211</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma_materia (id, turma_codigo, materia_id, criado_em, criado_por)</td>
+          <td>Tabela</td>
+          <td>Vínculo turma × matéria; unique (turma_codigo, materia_id); cascata ao apagar turma ou matéria</td>
+        </tr>
+        <tr>
+          <td>turma_materia_select</td>
+          <td>Política RLS</td>
+          <td>Todo usuário logado lê</td>
+        </tr>
+        <tr>
+          <td>turma_materia_insert_admin / turma_materia_delete_admin</td>
+          <td>Políticas RLS</td>
+          <td>Vincular e desvincular só com eh_professor_administrador(); sem UPDATE; anon sem acesso; TRUNCATE revogado</td>
+        </tr>
+        <tr>
+          <td>Dados iniciais</td>
+          <td>insert</td>
+          <td>Introdução à TIC (25) × turmas 135080 e 135081</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🏫 Atualização 2026-10-16 — CRUD da turma pelo Professor Administrador</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-16-turma-crud-administrador.sql</code> (aplicado em 2026-10-16) · Tela: <code>turmas.html</code> (consulta, modal de edição, excluir e botão Professores) · Tarefa #201</p>
