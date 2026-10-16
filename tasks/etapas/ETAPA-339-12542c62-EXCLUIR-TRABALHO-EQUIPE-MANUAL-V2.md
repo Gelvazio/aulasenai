@@ -37,6 +37,10 @@ Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNI
   de planejamento ficam (só os links mudam); o seed antigo `database/2026-10-05-…sql` fica como
   histórico.
 
+### Decisões
+
+- **Aprovação:** plano aprovado pelo usuário em 2026-10-16 19:55 ("Sim, aprovo o plano da #212").
+
 ### Riscos
 
 - Alguém com a página aberta perde a atividade → sem dados gravados, nada se perde.
@@ -50,6 +54,26 @@ Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNI
 
 ### #212.1 — Levantamento e plano (tarefa grande: apaga dados)
 
-**Próximo passo:** aguardar a aprovação do plano pelo usuário.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — apagar dados do banco
+- **Entrega:** levantamento e plano nesta etapa · **Verificação:** aprovação em Decisões.
+
+### #212.2 — Banco: SQL do DELETE + aulas 70/71 excluídas
+
+**Próximo passo:** escrever o SQL, marcar as aulas 70/71 `excluido = 1` e pedir ao usuário para
+rodar o DELETE no SQL Editor.
+
+- **Nível:** PESADO — apagar dados do banco
+
+### #212.3 — Cards, arquivos e links
+
+**Próximo passo:** tirar os 2 cards, apagar os 2 HTML e ajustar os links e o `STATUS_MATERIA.md`.
+
+- **Nível:** MEDIO — HTML de até 3 arquivos + remoção de 2 arquivos
+
+### #212.4 — Aceite do usuário
+
+**Próximo passo:** usuário conferir o índice ITIC sem os 2 cards.
+
+- **Nível:** LEVE — conferência do usuário
