@@ -76,3 +76,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #209.2 | SQL: bucket `slides`, função e políticas do Storage (PESADO) | 🟠 Alta | #209.1 | ✅ Concluído | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #210.1 | Verificar as matérias (só leitura) (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #210.2 | Ligar o bloqueio da aula em todas as matérias (PESADO) | 🟠 Alta | #210.1 | ✅ Concluído | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
+| #211.1 | Levantamento e plano (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |

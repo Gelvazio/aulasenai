@@ -26,7 +26,11 @@ cadastrado pelo professor administrador em `turmas.html`.
      (e, para professor não administrador, só as dele entre essas).
 - **Não entra:** outras telas com lista de turmas (progresso, correção etc.).
 
-### Decisões a aprovar
+### Decisões
+
+- **Aprovação:** plano, D1 e D2 aprovados pelo usuário em 2026-10-16 19:18 ("Sim, aprovo o
+  plano da #211 com D1 e D2 como estão").
+
 
 - **D1 — Matéria sem nenhum vínculo:** o combo continua mostrando **todas** as turmas (como hoje),
   para não esvaziar as outras matérias até você vincular. Com 1 vínculo ou mais, só as vinculadas.
@@ -48,9 +52,34 @@ cadastrado pelo professor administrador em `turmas.html`.
 
 ### #211.1 — Levantamento e plano (tarefa grande: banco + tela)
 
-**Próximo passo:** aguardar a aprovação do plano (D1 e D2) pelo usuário.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — banco (tabela nova + RLS) e várias partes ligadas
 - **Descrição:** plano da tabela de vínculo, do botão "Matérias" em `turmas.html` e do filtro do
   combo de turma nas páginas de matéria.
 - **Critérios de aceitação:** plano escrito nesta etapa e aprovado pelo usuário.
+- **Entrega:** plano nesta etapa · **Verificação:** aprovação registrada em Decisões.
+
+### #211.2 — Tabela `turma_materia` + RLS + vínculo ITIC
+
+**Próximo passo:** escrever `database/2026-10-16-turma-materia.sql`, aplicar e conferir.
+
+- **Nível:** PESADO — tabela nova e RLS no banco
+
+### #211.3 — Botão e modal "Matérias" em `turmas.html`
+
+**Próximo passo:** começar depois da #211.2.
+
+- **Nível:** MEDIO — tela (HTML + JS), até 3 arquivos
+
+### #211.4 — Combo "Turma:" filtrado pela matéria
+
+**Próximo passo:** começar depois da #211.2.
+
+- **Nível:** MEDIO — JS de 1 arquivo (`assets/js/indice-turma-favorita.js`)
+
+### #211.5 — Aceite do usuário
+
+**Próximo passo:** usuário conferir `turmas.html` (botão Matérias) e o combo do índice ITIC.
+
+- **Nível:** LEVE — conferência do usuário
