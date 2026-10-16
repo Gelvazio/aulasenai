@@ -7,6 +7,28 @@ ATIVIDADE, SE LIGADO, N DEIXA FAZER ATIVIDADE FORA DA HORA,SE DESLIGADO,NAO BLOQ
 só faz e entrega a atividade dentro do horário da turma (como hoje); **desligado**, o horário
 não bloqueia nada.
 
+### Escopo
+
+- **Entra:** coluna nova `turma.bloquear_horario` (boolean, padrão `true` = como hoje); função
+  `definir_bloqueio_horario_turma(codigo, ligado)` só do professor da turma; a função
+  `horario_da_turma_do_aluno()` passa a tratar turma com o bloqueio **desligado** como "dentro
+  do horário" — assim o RLS (`pode_responder_no_horario`) e os avisos das páginas (objetivas e
+  discursivas) seguem sozinhos, sem mexer em cada página; botão **ON/OFF "Bloquear horário"**
+  ao lado do horário da turma, na tela do professor que já define o horário
+  (`assets/js/respostas-atividade-professor.js` + `assets/js/turma-horario.js`); `docs/database.md`
+  e `docs/relatorio_verificacao_database.html`.
+- **Não entra:** mudar o horário em si, a liberação por aluno (`atividade_liberada_fora_horario`)
+  e o bloqueio de aula/atividade (`atividade.bloqueio`).
+- **Critério de pronto:** ligado, aluno fora do horário não grava nem entrega (o banco recusa);
+  desligado, grava e entrega a qualquer hora; só o professor da turma muda; aceite do usuário.
+
+### Riscos
+
+- Desligar vale também para as **avaliações** (hoje sempre seguem o horário). Plano B: se o
+  usuário quiser, as avaliações continuam presas ao horário mesmo desligado.
+- Erro no SQL trava a gravação dos alunos. Plano B: SQL idempotente, conferido por consulta
+  antes e depois; o padrão `true` mantém tudo como está até o professor desligar.
+
 ### Decisões
 
 - 2026-10-16 11:20 — Tarefa criada **sem reserva**: a frente `local · main · s6` já está com a
@@ -14,9 +36,8 @@ não bloqueia nada.
 
 ### #200.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** escrever o plano aqui e pedir ao usuário: o ON/OFF vale **por atividade**,
-**por turma** ou **para tudo**? Onde fica o botão (página da atividade, índice, painel do
-professor)? Vale também para as avaliações?
+**Próximo passo:** 👀 aguardando o "sim" do usuário ao plano (ON/OFF **por turma**, ao lado do
+horário, valendo também para as avaliações).
 
 - **Nível:** PESADO — banco (coluna/função), RLS e permissão só do professor.
 - **O que já existe (levantamento de 2026-10-16 11:20):** horário por turma (`turma.horario`)

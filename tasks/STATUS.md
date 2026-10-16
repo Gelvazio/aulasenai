@@ -287,7 +287,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #200-c87b8754-5ef1-46a8-8987-1e689eba9a6a | Professor liga/desliga o bloqueio de horário da entrega de atividade | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
-| #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:21) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | 👀 Aguardando aprovação | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:21) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 
