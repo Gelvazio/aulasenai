@@ -248,6 +248,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #189-43d655f9-4571-4788-b5fa-e128297ed30f | Atividade de sala de 16-10-2026 (ITIC) em HTML com PDF, fora do sistema | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
 | #189.1 | Criar a página HTML da atividade com exportação em PDF (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
 | #189.2 | Aceite do usuário | 🟠 Alta | #189.1 | 👀 Aguardando o usuário | — | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
+| #190-63a0d7ac-5496-49bf-a67b-a53e6074225c | Botões de bloquear atividade com problema | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
+| #190.1 | Diagnosticar e corrigir os botões de bloquear atividade (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 ✅ Concluído—| [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 | #191-05ad7d1d-5b45-424f-b5d4-1a6d5d8406f0 | Atividade de sala 16-10 (ITIC) como 1 discursiva no banco, com correção por IA, ligada à Aula 04 | 🟠 Alta | — | 🔄 Em planejamento | — (não reservável) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
