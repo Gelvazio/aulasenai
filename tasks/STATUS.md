@@ -272,6 +272,14 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #204.2 | Aceite do usuário | 🟡 Média | #204.1 | 👀 Aguardando o usuário | — | [331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
 | #205-6808b7d3-2460-47de-8321-a28e1930ce2c | **Tirar a linha "50 questões · múltipla escolha · 90–120 minutos" e o botão "Conteúdo (.md)" dos cards** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #205.2 | Aceite do usuário | 🟡 Média | #205.1 | 👀 Aguardando o usuário | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
+| #206-e75bddc3-5b1c-4f0e-9a3d-7c2b8d41a6f9 | **Voltar a `aula_turma` (chaves da aula, matéria e turma; data e bloqueio da aula) pela turma do combo, padrão a favorita** | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | 👀 Aguardando o usuário | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.2 | SQL: recriar a `aula_turma` com as 3 chaves, data, bloqueio e RLS (PESADO) | 🟠 Alta | #206.1 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.3 | Rodar o SQL e recarregar as datas do calendário ITIC (PESADO, só Claude Code local) | 🟠 Alta | #206.2 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.4 | Combo "Turma:" abre na favorita e comanda data, bloqueio da aula e atividades (PESADO) | 🟠 Alta | #206.3 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.5 | "Editar aula": data e bloqueio da aula na turma do combo (MEDIO) | 🟠 Alta | #206.4 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.6 | Documentação em `docs/` (LEVE) | 🟠 Alta | #206.5 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.7 | Aceite do usuário | 🟠 Alta | #206.6 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -639,6 +647,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 330-bcdf4868 | Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06 (#203, pedida em 2026-10-16) | [ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | 331-23c1d3e3 | Tirar "Data da aula" dos cards de atividades (#204, pedida em 2026-10-16) | [ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
 | 332-6808b7d3 | Tirar a linha de resumo (questões · minutos) dos cards (#205, pedida em 2026-10-16) | [ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
+| 333-e75bddc3 | Voltar a `aula_turma` com data e bloqueio da aula pela turma do combo (#206, pedida em 2026-10-16) | [ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
