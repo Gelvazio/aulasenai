@@ -7,7 +7,15 @@ discursiva id 152 para o aluno que já finalizou.
 
 ### #199.1 — Diagnosticar e corrigir o botão
 
-**Próximo passo:** achar a página da atividade 152 e ver por que o botão não é criado.
+**Próximo passo:** 👀 o usuário diz se conferiu logado como **professor** ou como **aluno**
+(e, se como aluno, qual); com isso, corrigir ou ligar o botão também para o professor.
+
+- **Diagnóstico (2026-10-16 11:15):** a página da 152 tem `data-exportar-meu-gabarito="sim"`,
+  a atividade existe no banco com a mesma `pagina`, os 3 JS passam no `node --check` e nenhum
+  arquivo do botão cai no `.vercelignore`. Pelo código (`montarPainel` em
+  `assets/js/avaliacao-discursiva.js`), o botão é criado para **todo aluno logado** (desativado
+  até a entrega) e **nunca para o professor** — igual às objetivas (#196.1). Hipótese: a
+  conferência foi feita logado como professor.
 
 - **Nível:** PESADO — envolve a conferência do aluno no banco (entrega) e o gabarito do aluno.
 - **Critérios de aceitação:** aluno que finalizou a 152 vê o botão e exporta o PDF com as

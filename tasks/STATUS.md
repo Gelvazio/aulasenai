@@ -284,7 +284,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #198.1 | Mostrar o "Exportar PDF" só para o professor (PESADO) | 🟠 Alta | — | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #198.2 | Aceite do usuário | 🟠 Alta | #198.1 | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
-| #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:02) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:02) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 
 ## Escopo
