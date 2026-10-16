@@ -86,3 +86,15 @@ excluir) e o vínculo turma × professor vira o botão **Professores** na linha 
 **Próximo passo:** o professor testar a tela `turmas.html` e dar o aceite.
 
 - **Nível:** LEVE — conferência do usuário
+
+### #201.4 — Coluna Ações no lado direito
+
+**Pedido em:** 2026-10-16 12:56 · **Pedido:** "AQUI,http://127.0.0.1:5501/turmas.html,AS ACOES,DEVEM FICAR DO
+LADO DIREITO"
+
+**Próximo passo:** mover a coluna Ações para a última coluna da tabela.
+
+- **Nível:** MEDIO — JS de tela + HTML, 2 arquivos
+- **Descrição:** na consulta de turmas, a coluna Ações (Editar, Professores, Excluir) passa da
+  primeira para a última coluna.
+- **Entrega:** — · **Verificação:** —
