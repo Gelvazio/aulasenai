@@ -21,6 +21,8 @@ automática continua). O professor vê o Progresso da turma GLOBAL em toda ativi
 (assets/js/progresso-turma-global.js), sem campo na fonte.
 "- **Ocultar respostas após entrega:** sim" faz o aluno que já entregou não ver (nem carregar do
 banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
+"- **Exportar Meu Gabarito:** sim" põe o botão do aluno "📄 Exportar Meu Gabarito" (PDF só com as
+respostas dele, ativo depois da entrega; assets/js/minhas-respostas-discursiva.js).
 "- **Matéria no banco:** NOME" usa esse nome (materia.descricao) no seed quando a matéria do banco
 não tem o mesmo nome da UC do materia.json (padrão: a UC).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
@@ -64,12 +66,14 @@ CAMPO_TAMANHO_RESPOSTA = "Campo do tamanho da resposta"
 CAMPO_PROGRESSO_PROFESSOR = "Progresso para o professor"
 CAMPO_OCULTAR_RESPOSTAS = "Ocultar respostas após entrega"
 CAMPO_MATERIA_BANCO = "Matéria no banco"
+CAMPO_EXPORTAR_MEU_GABARITO = "Exportar Meu Gabarito"
 ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
                   CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
                   CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta",
                   CAMPO_PROGRESSO_PROFESSOR: "data-progresso-professor",
-                  CAMPO_OCULTAR_RESPOSTAS: "data-ocultar-respostas-entregue"}
+                  CAMPO_OCULTAR_RESPOSTAS: "data-ocultar-respostas-entregue",
+                  CAMPO_EXPORTAR_MEU_GABARITO: "data-exportar-meu-gabarito"}
 CAMPO_BOTAO_GRAVAR = "Botão gravar"
 HTML_BOTAO_GRAVAR = (
     '\n                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>')

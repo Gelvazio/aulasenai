@@ -3,6 +3,8 @@
 // <body data-exportar-meu-gabarito="sim"> e o aluno está logado). Monta os dados do PDF com o
 // texto que o aluno escreveu em cada tópico na última tentativa liberada e a nota
 // (notas_media_final; sem correção, "aguardando"). ⛔ Sem o padrão de resposta.
+// As respostas são lidas do banco na hora do clique (#196): depois da entrega a página não as
+// carrega (regra das práticas, #160), mas o PDF do aluno precisa delas.
 // Botão e PDF: assets/js/botao-minhas-respostas.js e assets/js/pdf-minhas-respostas.js.
 
 const BASE_SCRIPTS_MEU_GABARITO_DISCURSIVA =
@@ -75,13 +77,32 @@ function montarRespostasMeuGabaritoDiscursiva(respostas, chaveTopico) {
 }
 
 /**
- * Monta os dados do PDF a partir do que a página carregou do banco.
- * @param {{dados: Object, chaveTopico: Function}} contexto - Estado da página e a chave dos
- *     tópicos.
+ * Lê as respostas gravadas do aluno no banco; sem o leitor (ou se falhar), usa as da página.
+ * @param {{dados: Object, lerGravadas: Function}} contexto - Estado da página e o leitor das
+ *     respostas gravadas (repositório da página).
+ * @returns {Promise<Object<string, string>>} Mapa chave do tópico → texto.
+ */
+async function lerRespostasMeuGabaritoDiscursiva(contexto) {
+    const respostasDaPagina = contexto.dados.respostas || {};
+    if (typeof contexto.lerGravadas !== 'function') return respostasDaPagina;
+
+    try {
+        return await contexto.lerGravadas();
+    } catch (erro) {
+        console.warn('Respostas do Meu Gabarito:', erro.message);
+        return respostasDaPagina;
+    }
+}
+
+/**
+ * Monta os dados do PDF com as respostas gravadas no banco.
+ * @param {{dados: Object, chaveTopico: Function, lerGravadas: Function}} contexto - Estado da
+ *     página, a chave dos tópicos e o leitor das respostas gravadas.
  * @returns {Promise<Object>} Dados no formato de gerarPdfMeuGabarito.
  */
 async function montarDadosMeuGabaritoDiscursiva(contexto) {
     const { dados, chaveTopico } = contexto;
+    const respostas = await lerRespostasMeuGabaritoDiscursiva(contexto);
     const termos = window.TERMOS_TENTATIVA;
     const rotulo = termos ? termos.rotulo(dados.tentativa, dados.maximoTentativas) : '';
     const paginaDados = document.body.dataset;
@@ -94,14 +115,15 @@ async function montarDadosMeuGabaritoDiscursiva(contexto) {
         tentativa: rotulo.charAt(0).toUpperCase() + rotulo.slice(1),
         entregueEm: dados.entregueEm || '',
         nota: await lerNotaMeuGabaritoDiscursiva(),
-        respostas: montarRespostasMeuGabaritoDiscursiva(dados.respostas || {}, chaveTopico),
+        respostas: montarRespostasMeuGabaritoDiscursiva(respostas, chaveTopico),
     };
 }
 
 /**
  * Coloca o botão "Exportar Meu Gabarito" no painel de identificação.
- * @param {{dados: Object, chaveTopico: Function, destino: HTMLElement}} contexto - Estado da
- *     página, a chave dos tópicos e onde pôr o botão.
+ * @param {{dados: Object, chaveTopico: Function, lerGravadas: Function, destino: HTMLElement}}
+ *     contexto - Estado da página, a chave dos tópicos, o leitor das respostas gravadas e onde
+ *     pôr o botão.
  */
 async function iniciarMeuGabaritoDiscursiva(contexto) {
     if (typeof window.montarBotaoMeuGabarito !== 'function') {

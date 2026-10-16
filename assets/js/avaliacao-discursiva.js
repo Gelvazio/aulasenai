@@ -367,7 +367,8 @@ async function abrirMeuGabaritoDiscursiva(painel, dados) {
         }
         const { repositorio } = estadoDiscursivo;
         await window.iniciarMeuGabaritoDiscursiva({ dados, destino: painel,
-            chaveTopico: (item, topico) => repositorio.chaveTopico(item, topico) });
+            chaveTopico: (item, topico) => repositorio.chaveTopico(item, topico),
+            lerGravadas: () => repositorio.lerGravadas() });
     } catch (erro) {
         console.warn('Exportar Meu Gabarito:', erro.message);
     }

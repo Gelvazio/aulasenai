@@ -11,16 +11,34 @@ já existe nas objetivas de ITIC (#84, #180). As outras discursivas ficam na #19
 
 ### #196.1 — Botão "Exportar Meu Gabarito" na discursiva 152
 
-**Próximo passo:** ver como funciona o "Exportar Meu Gabarito" das objetivas (#84, #180) e a
-página da discursiva 152; ligar o botão só depois da entrega.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
 - **Critérios de aceitação:** botão **Exportar Meu Gabarito** só aparece para o aluno que já
   finalizou a atividade 152; exporta o gabarito dele; nada de resposta certa no HTML do site
   (`security-banco.md`).
+- **O que já existia:** o botão é global (#82): `<body data-exportar-meu-gabarito="sim">`,
+  desativado ("Disponível depois de entregar a atividade.") até a entrega, PDF só com as
+  respostas do próprio aluno e a nota, sem resposta certa nem padrão de resposta.
+- **Problema achado:** depois da entrega a página não carrega mais as respostas do aluno
+  (regra das práticas, #160), então o PDF sairia com todas as questões "(em branco)" — também
+  nas discursivas que já tinham o botão (ex.: id 81).
+- **Entrega:** página `ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html` com o botão ligado,
+  gerada de novo pela fonte (campo novo `- **Exportar Meu Gabarito:** sim`); gerador
+  `gerar_avaliacao_discursiva.py` com o campo (mapa `ATRIBUTOS_BODY`); `minhas-respostas-
+  discursiva.js` lê as respostas gravadas no banco na hora do clique (`lerGravadas` do
+  repositório, passado por `avaliacao-discursiva.js`); a tela continua sem mostrá-las.
+  Regra em `docs/regras/atividades.md` e linha em `docs/HISTORICO-REGRAS.md`.
+- **Verificação:** `node --check` nos 2 JS e `py_compile` do gerador; página gerada de novo
+  mudou só a linha do `<body>` e o seed da 152 ficou igual (sem diff); RLS de
+  `resposta_discursiva` deixa o aluno ler as próprias linhas (`aluno_id = auth.uid()`), o que
+  o PDF usa; o botão só aparece para o aluno (não para o professor). Sem navegador (regra do
+  projeto): o clique só o usuário confirma (#196.2).
 
 ### #196.2 — Aceite do usuário
 
-**Próximo passo:** 👀 depois da #196.1, o usuário confere o botão com um aluno que já entregou.
+**Próximo passo:** 👀 o usuário, logado como aluno que já entregou a atividade 152, clica em
+"📄 Exportar Meu Gabarito" e confere se o PDF traz as respostas dele (e, com um aluno que não
+entregou, se o botão fica desativado).
 
 - **Nível:** LEVE — conferência do usuário.

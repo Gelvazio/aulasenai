@@ -540,6 +540,12 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `avaliacao-discursiva.js`); CSS `assets/css/minhas-respostas.css`. Sem mudança no banco.
   Ligado em Testes de Front-End e em Introdução às TIC (23 páginas, #84, 2026-10-15); as demais
   matérias entram pelas tarefas #83 e #85 a #116.
+  **Discursivas depois da entrega (2026-10-16, #196):** como a página não carrega mais as
+  respostas de quem entregou (regra das práticas, #160), o PDF das práticas/discursivas lê as
+  respostas gravadas no banco **na hora do clique** (`minhas-respostas-discursiva.js`, leitor
+  `lerGravadas` do repositório); a tela continua sem mostrá-las. No gerador de discursivas, o
+  campo `- **Exportar Meu Gabarito:** sim` da fonte liga o botão. Ligado na Atividade de Sala
+  16/10 da ITIC (id 152); as demais discursivas entram pela #197.
   **No topo (2026-10-15, #180):** com `<body data-meu-gabarito-no-topo="sim">`, a objetiva põe
   o botão na `.export-bar`, ao lado do "📥 Exportar PDF (atividade completa)", em vez da folha
   de respostas (`respostas-atividade.js`). Ligado nas 15 objetivas de Introdução às TIC.

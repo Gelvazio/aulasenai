@@ -16,6 +16,7 @@
 - **Turma:** todas as turmas
 - **Bloquear colar:** sim
 - **Campo do tamanho da resposta:** sim
+- **Exportar Meu Gabarito:** sim
 - **Conteúdo-base:** `4-Comunicação-Digital-e-Colaboração-em-Nuvem.md` (Aula 4 da ITIC)
 
 **Como responder:** Você, como aluno consultor, vai orientar a equipe de um almoxarifado a se comunicar por e-mail e a trabalhar em nuvem com segurança. Leia o contexto de cada questão e escreva a resposta **no campo da questão**, com frases completas e com as suas palavras. Respostas copiadas da internet ou de colegas recebem nota zero.

@@ -13,11 +13,24 @@ outras atividades discursivas, além da id 152, do mesmo jeito que a #196 fizer.
 
 ### #197.1 — Exportar Meu Gabarito nas demais discursivas
 
-**Próximo passo:** depois da #196.1, listar as atividades discursivas (além da 152) e aplicar o
-mesmo botão em cada uma, seguindo a entrega da #196.1 (etapa 323-bf204d96).
+**Próximo passo:** dividir em subtarefas por matéria (cada uma com até 3 páginas pode ser
+LEVE) e ligar o botão nas páginas da lista abaixo.
 
-- **Nível:** PESADO — gabarito (o que o aluno pode ver) e mudança em várias atividades (rever
-  depois da #196.1: se o botão ficar num arquivo global, ligar nas outras páginas pode baixar).
+- **Nível:** PESADO — mudança em massa (33 páginas em 4 matérias); revisto em 2026-10-16 10:48
+  na entrega da #196.1. Dividida por matéria em pedaços de até 3 páginas, cada pedaço é LEVE
+  (só um atributo no `<body>`, sem lógica: o código do botão já é global).
+- **Como fazer (vem da #196.1):** em cada página discursiva (carrega
+  `assets/js/avaliacao-discursiva.js`) pôr `data-exportar-meu-gabarito="sim"` no `<body>`. Se a
+  página vem do gerador `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`,
+  pôr também `- **Exportar Meu Gabarito:** sim` no cabeçalho da fonte `.md` (senão a próxima
+  geração tira o botão). Nada de banco e nada de JS: o PDF já lê as respostas do banco depois
+  da entrega.
+- **Páginas sem o botão (levantamento de 2026-10-16 10:48):** Análise de Dados Aplicada à
+  Gestão (1), Introdução à Comunicação Oral e Escrita — Rio do Sul Mais Tech (2), Reforço de
+  Linguagens — Rio do Sul Mais Tech (10), Banco de Dados — Técnico em Informática para
+  Internet (20). Comando: `grep -rl "avaliacao-discursiva.js" --include=*.html MATERIAIS |
+  xargs grep -L 'data-exportar-meu-gabarito="sim"'`. Testes de Front-End e Introdução às TIC
+  já têm.
 - **Critérios de aceitação:** em cada discursiva, o botão só aparece para o aluno que já
   finalizou e exporta o gabarito dele; nada de resposta certa no HTML do site.
 
