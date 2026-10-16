@@ -31,7 +31,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s2 | #174 aguarda aceite ([301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md)) — sessão separada a pedido da frente local · main | ⏹️ Encerrada | 2026-10-15 14:15 |
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
-| local · main · s5 | #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 08:15 |
+| local · main · s5 | #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) em execução; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 🔄 Ativa | 2026-10-16 08:25 |
 
 ## 📌 Tarefas
 
@@ -242,6 +242,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⬜ Pendente | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #187-d7f180ea-6a88-4ea9-93fd-9377380ba12f | Datas das aulas das 2 turmas de ITIC pelo CALENDARIO AULAS ITIC.txt | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
 | #187.1 | Gravar as datas do calendário em `aula_turma` (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
+| #188-d5d991b9-ce60-4c8e-a642-479c623ebc3d | Data da aula pela turma: recarregar ao trocar a turma e editar em `aula_turma` | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
+| #188.1 | Ler e gravar a data da aula em `aula_turma` (índice e "Editar aula") (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s5) (desde 2026-10-16 08:25) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -591,6 +593,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 312-5df765a9 | Datas das aulas por turma na atividade de ITIC (#185, pedida em 2026-10-16) | [ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | 313-937e5036 | Bloqueio da aula por turma (#186, pedida em 2026-10-16) | [ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | 314-d7f180ea | Datas das aulas pelo calendário da ITIC (#187, pedida em 2026-10-16) | [ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
+| 315-d5d991b9 | Data da aula pela turma no índice e no Editar aula (#188, pedida em 2026-10-16) | [ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
