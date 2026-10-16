@@ -286,6 +286,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:02) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #200-c87b8754-5ef1-46a8-8987-1e689eba9a6a | Professor liga/desliga o bloqueio de horário da entrega de atividade | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -647,6 +651,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 324-25203735 | "Exportar Meu Gabarito" nas demais discursivas (#197, pedida em 2026-10-16) | [ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | 325-86c5c42e | Botão "Exportar PDF" só para o professor (#198, pedida em 2026-10-16) | [ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | 326-65a7038f | Bug: "Exportar Meu Gabarito" não aparece na 152 (#199, pedida em 2026-10-16) | [ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| 327-c87b8754 | ON/OFF do professor para o bloqueio de horário (#200, pedida em 2026-10-16) | [ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
