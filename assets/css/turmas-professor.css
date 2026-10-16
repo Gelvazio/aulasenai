@@ -4,7 +4,11 @@
     --tp-cinza: #4a5568;
     --tp-perigo: #b42318;
     --tp-fundo-edicao: #eef4fb;
+    --tp-largura-pagina: min(1600px, 96vw);
 }
+
+/* Página mais larga que o padrão .guia (900px), para a tabela de turmas caber (#201.5) */
+.guia.guia--larga { max-width: var(--tp-largura-pagina); }
 
 .tp-formulario {
     display: grid;

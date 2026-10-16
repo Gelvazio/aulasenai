@@ -105,9 +105,12 @@ LADO DIREITO"
 
 **Pedido em:** 2026-10-16 12:57 · **Pedido:** "DEIXE ISSO,MAIS LARGO," (com print da tela de turmas)
 
-**Próximo passo:** alargar o conteúdo da página `turmas.html`.
+**Próximo passo:** — (entregue; aceite junto com a #201.3).
 
 - **Nível:** LEVE — só CSS (modificador de largura), sem lógica
 - **Descrição:** a área da página (cabeçalho e consulta) fica mais larga, para a tabela caber
   sem quebrar tanto as colunas.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/css/turmas-professor.css` (token `--tp-largura-pagina` = até 1600px ou
+  96% da tela; modificador `.guia--larga`) e `turmas.html` (`<main class="guia guia--larga">`)
+  · **Verificação:** leitura do CSS (o `.guia` padrão tem 900px e continua igual nas outras
+  páginas). Sem navegador (2026-10-16 12:58).
