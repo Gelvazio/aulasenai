@@ -12,6 +12,7 @@
 - **Capacidade avaliada:** Empregar a comunicação escrita clara e assertiva no e-mail corporativo e utilizar os recursos da Web para armazenar, organizar e compartilhar informações em nuvem com segurança e ética.
 - **Correção:** as respostas ficam gravadas no banco e são conferidas com apoio de IA e pela análise do professor.
 - **Aula no banco:** 4
+- **Matéria no banco:** INTRODUCAO TIC
 - **Turma:** todas as turmas
 - **Bloquear colar:** sim
 - **Campo do tamanho da resposta:** sim

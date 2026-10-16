@@ -21,6 +21,8 @@ automática continua). O professor vê o Progresso da turma GLOBAL em toda ativi
 (assets/js/progresso-turma-global.js), sem campo na fonte.
 "- **Ocultar respostas após entrega:** sim" faz o aluno que já entregou não ver (nem carregar do
 banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
+"- **Matéria no banco:** NOME" usa esse nome (materia.descricao) no seed quando a matéria do banco
+não tem o mesmo nome da UC do materia.json (padrão: a UC).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -61,6 +63,7 @@ CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
 CAMPO_TAMANHO_RESPOSTA = "Campo do tamanho da resposta"
 CAMPO_PROGRESSO_PROFESSOR = "Progresso para o professor"
 CAMPO_OCULTAR_RESPOSTAS = "Ocultar respostas após entrega"
+CAMPO_MATERIA_BANCO = "Matéria no banco"
 ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
                   CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
@@ -680,7 +683,8 @@ def gerar_seed(pasta, html_gerado, meta, itens, gabarito):
     """
     dados = dados_materia.ler_materia(pasta)
     pagina = "/" + html_gerado.resolve().relative_to(RAIZ).as_posix()
-    contexto = {"materia": dados["uc"], "gabarito": gabarito}
+    materia_banco = meta.get(CAMPO_MATERIA_BANCO, "").strip() or dados["uc"]
+    contexto = {"materia": materia_banco, "gabarito": gabarito}
     nome = f"{date.today().isoformat()}-{html_gerado.stem.lower()}-seed-atividades.sql"
     saida = PASTA_SQL / nome
     saida.write_text(montar_sql(pagina, meta, itens, contexto), encoding="utf-8")

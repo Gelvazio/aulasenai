@@ -144,6 +144,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   caderno; a página continua com os campos) e `- **Máximo de caracteres:** N` (limite de cada
   resposta; padrão 3000). Primeira: discursiva de sexta da ITIC (id 81), 20 questões, PDF em 3
   páginas.
+- ✅ **`- **Matéria no banco:** NOME` (2026-10-16, #191):** opcional; o seed procura a aula pela
+  matéria com esse nome (`materia.descricao`) quando ele não é igual à UC do `materia.json`
+  (ex.: ITIC = `INTRODUCAO TIC`). Sem o campo, vale a UC.
 - ✅ Banco: `resposta_discursiva` (texto por aluno, tentativa, item e tópico) e `topico_discursivo`
   (enunciado, pontos, padrão de resposta; só o professor lê). `atividade_completa()` exige todos
   os tópicos gravados para entregar. SQL: `database/2026-10-01-respostas-discursivas.sql`.

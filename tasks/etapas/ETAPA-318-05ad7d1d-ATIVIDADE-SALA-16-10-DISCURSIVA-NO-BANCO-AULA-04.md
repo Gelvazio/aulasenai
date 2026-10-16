@@ -51,6 +51,9 @@ página avulsa sai.
 
 - 2026-10-16 09:38 — usuário: página avulsa sai; **1 atividade discursiva** com correção por IA;
   as objetivas viram discursivas.
+- 2026-10-16 09:55 — Claude Code (local · main · s6): campo opcional `Matéria no banco` no gerador
+  das discursivas, porque o nome da UC no `materia.json` não é o da matéria no banco (ajuste
+  mínimo para cumprir o escopo aprovado; o comportamento das outras fontes não muda).
 - 2026-10-16 09:43 — usuário aprovou o plano, **incluindo a exceção à regra da #25** ("Sim, aprovo o
   plano da #191, incluindo a exceção à regra da #25. Pode executar.").
 
@@ -74,13 +77,22 @@ página avulsa sai.
 
 ### #191.3 — Gerar a página e o seed
 
-**Próximo passo:** rodar o gerador na pasta ATIVIDADES da ITIC.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — gerador Python, 2 arquivos gerados.
+- **Entrega:** `ATIVIDADES/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html` e
+  `database/2026-10-16-atividade-sala-aula-16-10-2026-discursiva-seed-atividades.sql`. O seed
+  procurava a matéria pela UC do `materia.json` ("Introdução à Tecnologia da Informação e
+  Comunicação"), que no banco se chama `INTRODUCAO TIC` (id 25): o gerador ganhou o campo opcional
+  `- **Matéria no banco:**` (padrão continua a UC), usado na fonte; regra em
+  `docs/regras/atividades.md`.
+- **Verificação:** gerador: "20 questões, 20 tópicos, 10 pontos" e "20 tópicos (0 sem padrão)";
+  `py_compile` do gerador; a página não tem "Resposta esperada" nem critérios (gabarito só no
+  seed); o seed busca `m.descricao = 'INTRODUCAO TIC' and a.numero = 4` (aula id 24).
 
 ### #191.4 — Aplicar o seed, conferir md5 e registrar
 
-**Próximo passo:** depois da #191.3.
+**Próximo passo:** aplicar o seed pelo conector, conferir md5 dos tópicos e registrar.
 
 - **Nível:** PESADO — banco (só Claude Code local).
 
