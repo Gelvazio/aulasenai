@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #196 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) aguarda aceite; #197 criada livre para outras IAs; #195 ([322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md)) aguarda aceite; #193.4 ([320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md)) aguarda o usuário rodar o SQL; #194 criada sem reserva (aguarda o usuário); #192 e #191 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 10:48 |
+| local · main · s6 | #199.1 ([326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md)) em execução; #198 criada livre; #196, #195, #192 e #191 aguardam aceite; #193.4 aguarda o usuário rodar o SQL; #194 sem reserva | 🔄 Em execução | 2026-10-16 11:02 |
 
 ## 📌 Tarefas
 
@@ -283,6 +283,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #198-86c5c42e-b65b-46f0-aade-11f2de5b9145 | Botão "Exportar PDF" aparece só para o professor | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #198.1 | Mostrar o "Exportar PDF" só para o professor (PESADO) | 🟠 Alta | — | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #198.2 | Aceite do usuário | 🟠 Alta | #198.1 | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
+| #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:02) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -643,6 +646,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 323-bf204d96 | Botão "Exportar Meu Gabarito" na discursiva id 152 (#196, pedida em 2026-10-16) | [ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | 324-25203735 | "Exportar Meu Gabarito" nas demais discursivas (#197, pedida em 2026-10-16) | [ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | 325-86c5c42e | Botão "Exportar PDF" só para o professor (#198, pedida em 2026-10-16) | [ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
+| 326-65a7038f | Bug: "Exportar Meu Gabarito" não aparece na 152 (#199, pedida em 2026-10-16) | [ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
