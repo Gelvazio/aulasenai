@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-11 11:52)
+## Resumo (atualizado em 2026-10-16 09:49)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 3 | 66 | 0 | 69 |
+| 0 | 3 | 67 | 0 | 70 |
 
 ## Todos os seeds
 
@@ -83,7 +83,9 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 04:36 | Aplicado pelo conector (atividade id 150, aula id 126, 50 itens); falta conferir o md5 — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 05:07 | Parte 1 aplicada pelo conector (atividade id 151, aula id 126, bloqueada): 15 de 30 tópicos; falta a parte 2 — Etapa 137-13665a7e |
-| `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
+| `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
+| `2026-10-16-atividade-sala-aula-16-10-2026-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-16 09:49 | Aplicado pelo conector (atividade id 152, aula id 24 INTRODUCAO TIC, bloqueada, 20 tópicos, 10 pontos); md5 dos tópicos igual ao dos arquivos (21c1fa26...) |
+
 | `2026-10-16-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 06:50 | Tabela `aula_turma` criada e carregada pelo conector: 19 aulas × 2 turmas (135080 e 135081), datas das atividades; RLS com 4 políticas — Etapa 312-5df765a9 |
 | `2026-10-16-aula-turma-bloqueio.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 07:40 | Coluna `bloqueio` + `data_aula` opcional + gatilho que propaga a `atividade.bloqueio`; testado em transação revertida (aula 21, turma 135080: 2 atividades bloqueadas) — Etapa 313-937e5036 |
 | `2026-10-16-aula-turma-calendario-itic.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 08:15 | 20 datas do calendário gravadas em `aula_turma` (10 por turma, 135080 e 135081); conferido pelo retorno do `returning` — Etapa 314-d7f180ea |

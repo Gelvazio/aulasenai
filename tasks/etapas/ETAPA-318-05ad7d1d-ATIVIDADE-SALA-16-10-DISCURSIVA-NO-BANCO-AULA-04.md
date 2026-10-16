@@ -92,13 +92,18 @@ página avulsa sai.
 
 ### #191.4 — Aplicar o seed, conferir md5 e registrar
 
-**Próximo passo:** aplicar o seed pelo conector, conferir md5 dos tópicos e registrar.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (só Claude Code local).
+- **Entrega:** seed aplicado pelo conector: **atividade id 152** ("Atividade de Sala 16/10 —
+  Discursivas"), aula id 24 (Aula 04 da INTRODUCAO TIC), `ativo = false`, 20 tópicos, 10 pontos.
+  `database/SEEDS-APLICADOS.md`: CONCLUÍDO.
+- **Verificação:** md5 de item|enunciado|resposta|critérios dos 20 tópicos no banco
+  (`21c1fa264ed044cb6b169fc02ec4c886`) igual ao calculado da fonte + gabarito.
 
 ### #191.5 — Remover a página avulsa e atualizar o STATUS-ATIVIDADES
 
-**Próximo passo:** depois da #191.4.
+**Próximo passo:** apagar a página avulsa da #189 e incluir a linha no STATUS-ATIVIDADES.
 
 - **Nível:** LEVE — apagar arquivos da #189 e uma linha de Markdown.
 
