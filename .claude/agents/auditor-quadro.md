@@ -9,8 +9,9 @@ arquivos**; só leia e relate.
 
 Conferir:
 
-1. Toda tarefa de "📌 Tarefas" aponta para uma etapa que existe em `tasks/etapas/`, e toda etapa
-   tem linha em "🗂️ Etapas".
+1. Toda tarefa de "📌 Tarefas" (e do `tasks/task_complete.md`, onde ficam as ✅) aponta para uma
+   etapa que existe em `tasks/etapas/`, e toda etapa tem linha em "🗂️ Etapas". Linha ✅ no
+   `STATUS.md` é erro: deve estar no `task_complete.md`.
 2. O status da linha bate com os itens da etapa (ex.: linha ✅ com item ⬜/🔄 é erro; tarefa
    aguardando aceite = último item 👀).
 3. "Em uso por" preenchido só em tarefa em andamento; no máximo 1 reserva por frente

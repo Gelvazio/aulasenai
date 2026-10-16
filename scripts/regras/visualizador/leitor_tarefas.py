@@ -1,4 +1,4 @@
-"""Lê o quadro de tarefas (`tasks/STATUS.md` e `tasks/etapas/`) para o visualizador.
+"""Lê o quadro de tarefas (`tasks/STATUS.md`, `tasks/task_complete.md` e `tasks/etapas/`).
 
 Fonte única (`.claude/rules/tasks/quadro.md`): o `STATUS.md` é o índice (frentes e "📌 Tarefas",
 com o link da etapa de cada tarefa); pedido, itens e próximo passo vêm só da etapa. "Aguardando o
@@ -169,6 +169,21 @@ def ler_aguardando(pasta_etapas: Path) -> list:
     return sorted(itens, key=numero_da_etapa, reverse=True)
 
 
+def ler_concluidas(caminho: Path) -> list:
+    """Lê as linhas ✅ movidas para o `task_complete.md` (regra global C4).
+
+    Args:
+        caminho: Caminho do `tasks/task_complete.md`.
+
+    Returns:
+        Linhas da tabela do arquivo (a única), ou lista vazia se o arquivo não existir.
+    """
+    if not caminho.exists():
+        return []
+    texto = caminho.read_text(encoding="utf-8")
+    return ler_tabela(texto)
+
+
 def ler_tarefas(pasta_tasks: Path) -> dict:
     """Monta tarefas, frentes e pendências do usuário a partir do quadro.
 
@@ -184,8 +199,10 @@ def ler_tarefas(pasta_tasks: Path) -> dict:
         return {"tarefas": [], "frentes": [], "aguardando": []}
 
     texto = caminho_status.read_text(encoding="utf-8")
+    linhas_quadro = ler_tabela(ler_secao(texto, MARCA_TAREFAS))
+    linhas_quadro += ler_concluidas(pasta_tasks / "task_complete.md")
     tarefas = []
-    for linha in ler_tabela(ler_secao(texto, MARCA_TAREFAS)):
+    for linha in linhas_quadro:
         etapas = ler_etapas_do_link(linha.get(COLUNA_ETAPA, ""), pasta_etapas)
         tarefas.append({
             **linha,

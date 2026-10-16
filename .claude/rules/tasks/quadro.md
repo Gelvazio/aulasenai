@@ -20,7 +20,8 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 | Informação | Lugar único |
 |------------|-------------|
 | Pedido, objetivo, escopo, riscos, decisões | **Etapa** da mãe: `tasks/etapas/ETAPA-NNN-<uuid8>-ASSUNTO.md` |
-| Status, prioridade, dependências e reserva de cada subtarefa (e da mãe) | Linha própria em "📌 Tarefas" do `tasks/STATUS.md` |
+| Status, prioridade, dependências e reserva de cada subtarefa (e da mãe) **aberta ou em andamento** | Linha própria em "📌 Tarefas" do `tasks/STATUS.md` |
+| Linha de tarefa ou subtarefa **concluída (✅)** | Tabela de `tasks/task_complete.md` |
 | Nível, descrição, critérios, próximo passo, entrega e verificação de cada subtarefa | Seção da subtarefa na etapa da mãe |
 | Tarefa que cada sessão está fazendo | Linha da frente em "🧭 Frentes" do `tasks/STATUS.md` |
 | Decisões, riscos, pendências e lições do projeto | Seções do `tasks/STATUS.md` |
@@ -28,6 +29,10 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 
 - ⛔ Não copiar para outro lugar: sem `TASKS.md`, sem plano separado em `docs/`, sem lista de
   pendências do usuário montada à mão, sem cópia da fila em tabela de banco.
+- ⛔ **No `STATUS.md` só ficam tarefas abertas ou em andamento.** Linha (mãe ou subtarefa) que vira
+  ✅ é **recortada** do "📌 Tarefas" e colada no fim da tabela do `tasks/task_complete.md`, no
+  **mesmo commit** da entrega (move, não copia). Reabrir = mover a linha de volta (regra global C4,
+  2026-10-16).
 - O que o usuário precisa fazer = linhas e itens **👀** (filtrar; não copiar).
 - O que não está no quadro não aconteceu. Histórico nunca é apagado: só se acrescentam etapas.
 - Linguagem simples, que quem não é técnico entende.

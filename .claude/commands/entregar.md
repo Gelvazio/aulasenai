@@ -7,7 +7,8 @@ Encerre a tarefa reservada pela frente atual seguindo `.claude/rules/tasks/ciclo
 
 1. Etapa: todos os itens ✅ (ou ⛔ justificados); o último é o **aceite** (👀 até o usuário
    confirmar) e o **Próximo passo** atualizado.
-2. `tasks/STATUS.md`: status da tarefa, "Em uso por" = `—` e a linha da frente (só a sua).
+2. `tasks/STATUS.md`: "Em uso por" = `—` e a linha da frente (só a sua); a linha ✅ da tarefa
+   (e da mãe, se fechou) sai do `STATUS.md` e vai para o fim de `tasks/task_complete.md`.
 3. Pendências e lições → seções do `STATUS.md`, se houver.
 4. `git fetch --all --prune` e `git pull --rebase origin main`.
 5. `python scripts/regras/gerar_visualizador_regras.py` (`python3` na nuvem).

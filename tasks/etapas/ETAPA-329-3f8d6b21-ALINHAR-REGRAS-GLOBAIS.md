@@ -44,15 +44,12 @@
 
 ### 202.4 — ✅ movidas para `tasks/task_complete.md` (C4)
 
-**Próximo passo:** escrever o plano nesta etapa (tarefa grande: mudança em massa em um quadro de 700
-linhas, com 9 frentes ativas), mostrar ao usuário e esperar o "sim"; só então criar o
-`task_complete.md`, mover as linhas ✅ do `STATUS.md`, ajustar `quadro.md`, `ciclo-da-task.md`,
-`/entregar` e o gerador do visualizador (`scripts/regras/`) que lê o `STATUS.md`.
+**Próximo passo:** nenhum — concluída.
 
 - **Nível:** PESADO — mudança em massa no quadro e nos geradores, mais de 3 arquivos ligados · **Modelo:** só Claude Code Opus 5.5 ou superior, ou Fable
 - **Critérios de Aceitação:** `STATUS.md` só com tarefas abertas; o visualizador ainda lista tudo;
   ninguém perde reserva nem histórico durante a mudança (avisar as outras frentes por `RECADOS.md`).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit `feat(#202.4)` · **Verificação:** plano aprovado pelo usuário ("SIM"); `task_complete.md` criado com as 43 linhas ✅ (nenhuma perdida: o leitor do visualizador lê os dois arquivos e continua com 266 tarefas e as mesmas contagens por situação); `STATUS.md` ficou só com abertas; visualizador regenerado; `quadro.md`, `ciclo-da-task.md`, `/entregar` e `auditor-quadro` ajustados; recado às frentes em `RECADOS.md`. Feita por Claude Code (Sonnet 5.5) (local · main · s11), com IA_SEM_TRAVA=1 a pedido do usuário ("SIM"), 2026-10-16.
 
 ### 202.5 — Aceite do usuário
 

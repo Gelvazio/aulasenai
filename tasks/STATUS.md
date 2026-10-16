@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) em execução (Claude Code (Sonnet 5.5)) | 🔄 Ativa | 2026-10-16 15:45 |
+| local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) entregue (#202.1 a #202.4); aguarda aceite do usuário (#202.5) | 👀 Aguardando o usuário | 2026-10-16 15:05 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | #20 ([125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md)); etapas 137-b214e26b e 138-77338471 aguardam aceite | 🔄 Ativa | 2026-10-10 22:13 |
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
@@ -54,10 +54,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #11 | Duração dos vídeos da apostila de Reforço de Linguagens (local) | 🟠 Alta | — | ⬜ Pendente (local) | — | [67](etapas/ETAPA-067-VIDEOS-NA-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md) |
 | #12 | Duração dos vídeos da apostila de Fundamentos da Tecnologia (local) | 🟡 Média | — | ⬜ Pendente (local) | — | [154-58b81f3e](etapas/ETAPA-154-58b81f3e-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-FUNDAMENTOS-DA.md) |
 | #14 | Duração dos vídeos da apostila de Exploração de Carreiras (local) | 🟡 Média | — | ⬜ Pendente (local) | — | [155-e3d89d81](etapas/ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md) |
-| #15 | Apostila de ITIC versão 2 (até 40 páginas) — apostila única (V1 removida) | — | — | ✅ Concluído (aceite "15-ok") | — | [79](etapas/ETAPA-079-APOSTILA-DA-ITIC-VERSAO-2.md) |
 | #16 | Bloqueio da AULA (`aulas.ativo`) × ON/OFF da atividade em todos os índices | 🟠 Alta | — | 🔄 Em andamento (matéria a matéria) | — | [114](etapas/ETAPA-114-TESTES-DE-FRONT-END-BLOQUEIO-DA-AULA.md) |
 | #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 17.22, 17.30, 17.14 e decisões) | 🟡 Média | — | 👀 Aguardando aceites | — | [73](etapas/ETAPA-073-REVISAO-FINAL-DAS-REGRAS-PROBLEMAS-NOVOS-DESATUALIZADOS.md) · [70](etapas/ETAPA-070-REORGANIZAR-O-CLAUDE-MD-ESTRUTURA-E-MANUTENCAO.md) · [72](etapas/ETAPA-072-CORRIGIR-AS-CONTRADICOES-DO-CLAUDE-MD-UMA.md) |
-| #18 | Progresso da turma global em todas as atividades | 🟠 Alta | — | ✅ Concluído (aceite "18-ok") | — | [121](etapas/ETAPA-121-PROGRESSO-DA-TURMA-GLOBAL-EM-TODAS-AS.md) |
 | #19-91cbac65-87ca-45a0 | Análise contínua das matérias — ⛔ permanente | 🟠 Alta | — | 🔄 Permanente | — | [156-2221f1f9](etapas/ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md) |
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🟠 Alta | — | 🔄 Em execução | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados") | [125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md) |
 | #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças (etapa com UUID, reserva, frentes, `RECADOS.md`) | 🟠 Alta | — | 👀 Aguardando aceite | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) | [135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
@@ -122,7 +120,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #79-376adfe2-9eb6-4646 | Professor marca entregue: Versionamento e Colaboracao (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [206-376adfe2](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
 | #80-4fc4d9dd-d362-4b7c | Botão "📘 Apostila" no card da matéria (Testes de Front-End, índice do curso) | 🟡 Média | — | 👀 Aguardando aceite | — | [207-4fc4d9dd](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
 | #81-9cf63981-df1e-4f36 | Apostilas sem atividades ou perguntas (regra no gerador) + Testes de Front-End sem exercícios e vídeos | 🟠 Alta | — | ⬜ Pendente (liberada para outra IA; parte já feita nos commits e68a5c0, d3922b4 e e6f79b6) | — | [208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md) |
-| #82-70a67f33-08c9-45e6 | Botão "Exportar Meu Gabarito" (aluno, só após entregar): recurso global + Testes de Front-End | 🟠 Alta | — | ✅ Concluído (aceite) | — | [209-70a67f33](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md) |
 | #83-1bc21389-e01d-476d | Exportar Meu Gabarito: Banco de Dados (Técnico em Informática para Internet, 40 páginas) | 🟡 Média | #82 | ⬜ Pendente | — | [210-1bc21389](etapas/ETAPA-210-1bc21389-EXPORTAR-MEU-GABARITO-BANCO-DE-DADOS.md) |
 | #84-3810ae94-7fa5-4124 | Exportar Meu Gabarito: Introdução às TIC (Assistente de Operações Logísticas, 23 páginas) | 🟡 Média | #82 | 👀 Aguardando aceite | — | [211-3810ae94](etapas/ETAPA-211-3810ae94-EXPORTAR-MEU-GABARITO-INTRODUCAO-TIC.md) |
 | #85-8e527e6a-e392-417a | Exportar Meu Gabarito: Análise de Dados Aplicada à Gestão (Gestão e Controle de Materiais, 10 páginas) | 🟡 Média | #82 | ⬜ Pendente | — | [212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md) |
@@ -172,7 +169,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #129-5db69b64-150d-40d9 | Discursivas: "Suspeita de Cópia" pela IA (coluna no Progresso + alerta piscando na questão) | 🟡 Média | — | 👀 Aguardando aceite | — | [256-5db69b64](etapas/ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md) |
 | #130-bddd56f9-a423-4f34 | Correção pela IA agendada da atividade 81 (a cada 30 min) | 🟡 Média | — | 👀 Aguardando aceite | — | [257-bddd56f9](etapas/ETAPA-257-bddd56f9-CORRECAO-IA-AGENDADA-ATIVIDADE-81.md) |
 | #131-cfe4a327-86ac-423a | Suspeita de Cópia: mostrar o % e só 90% ou mais | 🟡 Média | #129 | 👀 Aguardando aceite | — | [258-cfe4a327](etapas/ETAPA-258-cfe4a327-SUSPEITA-COPIA-PERCENTUAL-90.md) |
-| #132-21d50277-6607-4cac | Apagar as suspeitas de cópia abaixo de 90% (SQL para o professor executar) | 🟡 Média | #131 | ✅ Concluída | — | [259-21d50277](etapas/ETAPA-259-21d50277-APAGAR-SUSPEITAS-ABAIXO-90.md) |
 | #133-71b03da7-fd6c-405b | Suspeita de Cópia: botão "Não é cópia" no aluno (sai da comparação na atividade) | 🟡 Média | #129 | 👀 Aguardando aceite | — | [260-71b03da7](etapas/ETAPA-260-71b03da7-ALUNO-NAO-E-COPIA.md) |
 | #134-12fffce8-af5a-48c9 | Progresso da Turma: botão "Confirmar Todas" do professor (discursivas) | 🟡 Média | — | 👀 Aguardando aceite | — | [261-12fffce8](etapas/ETAPA-261-12fffce8-CONFIRMAR-TODAS-PROFESSOR.md) |
 | #135-e70b4e44-5906-4396 | Progresso da Turma: filtro (combobox) por quantidade de questões respondidas | 🟡 Média | — | 👀 Aguardando aceite | — | [262-e70b4e44](etapas/ETAPA-262-e70b4e44-FILTRO-QUESTOES-RESPONDIDAS-PROGRESSO.md) |
@@ -202,7 +198,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #158-6b8ba470-d669-42f3-999b | ON/OFF "Mostrar Certas" também para o aluno | 🟡 Média | — | 👀 Aguardando aceite | — | [285-6b8ba470](etapas/ETAPA-285-6b8ba470-MOSTRAR-CERTAS-PARA-O-ALUNO.md) |
 | #159-c6fd402f-3037-4a53-9dc1 | Filtros Mostrar Certas / Meia Certas / Erradas combináveis, para professor e aluno, no localStorage | 🟠 Alta | — | 👀 Aguardando aceite | — | [286-c6fd402f](etapas/ETAPA-286-c6fd402f-FILTROS-CERTAS-MEIA-CERTAS-ERRADAS.md) |
 | #160-8c65539e-c505-44d3-8e5a | Práticas: depois de entregar, o aluno só revê as respostas depois do gabarito liberado (regra global) | 🟠 Alta | — | 👀 Aguardando aceite | — | [287-8c65539e](etapas/ETAPA-287-8c65539e-ALUNO-NAO-VE-RESPOSTAS-APOS-ENTREGAR.md) |
-| #161-eabd70e8-c369-4368-acc9 | Bug: aluno que já entregou ainda vê as respostas | 🔴 Máxima | — | ✅ Concluída (aceite do usuário) | — | [288-eabd70e8](etapas/ETAPA-288-eabd70e8-ALUNO-ENTREGOU-E-AINDA-VE-AS-RESPOSTAS.md) |
 | #162-71eb6c9b-0a10-4b3a-8837 | Bug: "Confirmar Todas" do aluno Adriel diz que não há questão para confirmar | 🟠 Alta | — | 👀 Aguardando aceite | — | [289-71eb6c9b](etapas/ETAPA-289-71eb6c9b-CONFIRMAR-TODAS-ADRIEL-SEM-QUESTAO.md) |
 | #163-aa83b55c-cc25-49ad-9ded | Bug: a nota do Adriel não aparece na atividade 81 | 🟠 Alta | — | 👀 Aguardando aceite | — | [290-aa83b55c](etapas/ETAPA-290-aa83b55c-NOTA-DO-ADRIEL-NAO-APARECE-ATIVIDADE-81.md) |
 | #164-b665765c-7549-418f-8c74 | Card "Finalizar a avaliação": sem botão e com alerta se já entregue ou corrigida | 🟠 Alta | — | 👀 Aguardando aceite | — | [291-b665765c](etapas/ETAPA-291-b665765c-CARD-ENTREGA-ALERTA-SE-ENTREGUE-OU-CORRIGIDA.md) |
@@ -232,87 +227,48 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #181.6 | Aceite do usuário | 🔴 Máxima | #181.5 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #182-784ccaeb-1fc0-4b37-88ef-7a1642792d84 | Sistema de níveis (LEVE/MEDIO/PESADO) e subtarefas com reserva própria, trazido do testes-de-frontend | 🟡 Média | — | 👀 Aguardando aceite | — | [309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md) |
 | #183-66fcd57a-6a72-4dbb-b1e6-9b87bb946622 | Calcular o banco de horas em `CONTROLE-HORARIOS.txt` | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
-| #183.1 | Preencher os cálculos e os motivos (LEVE) | 🟡 Média | — | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
-| #183.2 | Calcular os sábados 03-10, 10-10 e 16-10 (LEVE) | 🟡 Média | #183.1 | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
-| #183.3 | Calcular 22-09, 24-09 e o sábado 26-09 e rever os sábados (LEVE) | 🟡 Média | #183.2 | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | #184-85eb3106-14de-4016-8864-ad21ca69c5d3 | Página `index.html` do banco de horas: accordion por semana e "Lançado?" ON/OFF no `localStorage` | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.1 | Criar o `index.html` do banco de horas (MEDIO) | 🟡 Média | — | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.2 | Aceite do usuário | 🟡 Média | #184.1 | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.1 | Coluna `bloqueio` em `aula_turma` e regra no banco (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #187-d7f180ea-6a88-4ea9-93fd-9377380ba12f | Datas das aulas das 2 turmas de ITIC pelo CALENDARIO AULAS ITIC.txt | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
-| #187.1 | Gravar as datas do calendário em `aula_turma` (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
 | #188-d5d991b9-ce60-4c8e-a642-479c623ebc3d | Data da aula pela turma: recarregar ao trocar a turma e editar em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
-| #188.1 | Ler e gravar a data da aula em `aula_turma` (índice e "Editar aula") (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
-| #189-43d655f9-4571-4788-b5fa-e128297ed30f | Atividade de sala de 16-10-2026 (ITIC) em HTML com PDF, fora do sistema | 🟠 Alta | — | ✅ Substituída pela #191 | — (não reservável) | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
-| #189.1 | Criar a página HTML da atividade com exportação em PDF (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
-| #189.2 | Aceite do usuário | 🟠 Alta | #189.1 | ✅ Dispensado (#191) | — | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
 | #190-63a0d7ac-5496-49bf-a67b-a53e6074225c | Botões de bloquear atividade com problema | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
-| #190.1 | Diagnosticar e corrigir os botões de bloquear atividade (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 ✅ Concluído—| [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 | #191-05ad7d1d-5b45-424f-b5d4-1a6d5d8406f0 | Atividade de sala 16-10 (ITIC) como 1 discursiva no banco, com correção por IA, ligada à Aula 04 | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.2 | Fonte e gabarito em Markdown, 20 questões (PESADO) | 🟠 Alta | #191.1 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.3 | Gerar a página e o seed (MEDIO) | 🟠 Alta | #191.2 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.4 | Aplicar o seed, conferir md5 e registrar (PESADO, só Claude Code local) | 🟠 Alta | #191.3 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.5 | Remover a página avulsa e atualizar o STATUS-ATIVIDADES (LEVE) | 🟠 Alta | #191.4 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.6 | Aceite do usuário | 🟠 Alta | #191.5 | 👀 Aguardando o usuário | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #192-99a74b06-7a5d-4aa3-a7ec-19782c07ee2e | Botão de bloqueio de atividade não funciona (depois da #190) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
-| #192.1 | Diagnosticar e corrigir o botão de bloqueio de atividade (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
 | #192.2 | Aceite do usuário | 🟠 Alta | #192.1 | 👀 Aguardando o usuário | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
 | #193-c3289a94-14ea-4442-8df7-7410bc01d242 | Voltar como estava antes da tabela `aula_turma` (código e banco), mantendo o bloqueio de atividade | 🟠 Alta | — | 👀 Aguardando o usuário | — (não reservável) | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
-| #193.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
-| #193.2 | Voltar o código ao estado de antes da `aula_turma` (PESADO) | 🟠 Alta | #193.1 | ✅ Concluído | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
-| #193.3 | SQL que apaga a `aula_turma` do banco (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | ✅ Concluído | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #193.4 | Rodar o SQL no SQL Editor e conferir (PESADO) | 🟠 Alta | #193.3 | 👀 Aguardando o usuário | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #193.5 | Aceite do usuário | 🟠 Alta | #193.4 | ⬜ Pendente | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #194-0d27b30c-baf7-4966-b655-f64456f1f973 | Verificar a reversão da `aula_turma` e o ON/OFF de bloqueio de atividade (só leitura) | 🟠 Alta | #193.2 | ⬜ Pendente | — (não reservável) | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 | #194.1 | Verificar a reversão e o ON/OFF de bloqueio (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | ⬜ Pendente — aguardar o usuário mandar pegar | — | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 | #195-5d136360-e22c-49bd-a227-0451222f23f2 | Tarefa agendada manual "CORRECAO ATIVIDADE ID=152" (correção pela IA da discursiva 152) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
-| #195.1 | Criar a tarefa agendada manual (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
-| #195.2 | Rodar a primeira vez e conferir (PESADO, só Claude Code local) | 🟠 Alta | #195.1 | ✅ Concluído | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
 | #195.3 | Aceite do usuário | 🟠 Alta | #195.2 | 👀 Aguardando o usuário | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
 | #196-bf204d96-d111-4ab3-9d77-68ff53e6cdf8 | Botão "Exportar Meu Gabarito" na discursiva id 152, depois de o aluno finalizar | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
-| #196.1 | Botão "Exportar Meu Gabarito" na discursiva 152 (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #196.2 | Aceite do usuário | 🟠 Alta | #196.1 | 👀 Aguardando o usuário | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
-| #196.3 | Botão "Exportar Meu Gabarito" ainda não aparece na discursiva 152 (PESADO) | 🟠 Alta | #196.1 | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
-| #196.4 | "Exportar Meu Gabarito" ao lado do "Exportar PDF" na discursiva (PESADO) | 🟠 Alta | #196.3 | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
-| #196.5 | "Exportar Meu Gabarito" ao lado do "Ver Gabarito", renomeado para "Gabarito da Atividade-Respostas" (PESADO) | 🟠 Alta | #196.4 | ✅ Concluído | — |
 | #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) | 🟠 Alta | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) | 🟠 Alta | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.2 | Aceite do usuário | 🟠 Alta | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #198-86c5c42e-b65b-46f0-aade-11f2de5b9145 | Botão "Exportar PDF" aparece só para o professor | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
-| #198.1 | Mostrar o "Exportar PDF" só para o professor (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #198.2 | Aceite do usuário | 🟠 Alta | #198.1 | 👀 Aguardando o usuário | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #200-c87b8754-5ef1-46a8-8987-1e689eba9a6a | Professor liga/desliga o bloqueio de horário da entrega de atividade | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
-| #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
-| #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | 👀 Aguardando o usuário | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #201-d0739bde-aadc-4b89-84b0-16de29658ab2 | CRUD de turmas (consulta, modal de edição, criar, excluir) e botão Professores na linha | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
-| #201.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
-| #201.2 | Banco e tela do CRUD de turmas com o botão Professores (PESADO, só Claude Code local) | 🟠 Alta | #201.1 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #201.3 | Aceite do usuário | 🟠 Alta | #201.2 | 👀 Aguardando o usuário | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
-| #201.4 | Coluna Ações no lado direito da tabela de turmas (MEDIO) | 🟠 Alta | #201.2 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
-| #201.5 | Página de turmas mais larga (LEVE) | 🟠 Alta | #201.4 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s11) (desde 2026-10-16 15:00) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #203-bcdf4868-c19d-4a02-8f12-46a953a46f3c | **Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
-| #203.1 | Conferir a aula no banco e aprovar a mudança (PESADO) | 🟡 Média | — | ✅ Concluído | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
-| #203.2 | Gravar o rótulo AULA 06 no banco (PESADO, só Claude Code local) | 🟡 Média | #203.1 | ✅ Concluído | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #203.3 | Aceite do usuário | 🟡 Média | #203.2 | 👀 Aguardando o usuário | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 
 ## Escopo
