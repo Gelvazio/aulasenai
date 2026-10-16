@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #192 ([319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md)) em execução; #191 ([318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md)) aguarda aceite | 🔄 Ativa | 2026-10-16 09:57 |
+| local · main · s6 | #192 ([319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md)) aguarda aceite; #191 ([318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-16 10:03 |
 
 ## 📌 Tarefas
 
@@ -259,9 +259,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #191.4 | Aplicar o seed, conferir md5 e registrar (PESADO, só Claude Code local) | 🟠 Alta | #191.3 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.5 | Remover a página avulsa e atualizar o STATUS-ATIVIDADES (LEVE) | 🟠 Alta | #191.4 | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.6 | Aceite do usuário | 🟠 Alta | #191.5 | 👀 Aguardando o usuário | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #192-99a74b06-7a5d-4aa3-a7ec-19782c07ee2e | Botão de bloqueio de atividade não funciona (depois da #190) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
-| #192.1 | Diagnosticar e corrigir o botão de bloqueio de atividade (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 09:57) | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
-| #192.2 | Aceite do usuário | 🟠 Alta | #192.1 | ⬜ Pendente | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
+| #192-99a74b06-7a5d-4aa3-a7ec-19782c07ee2e | Botão de bloqueio de atividade não funciona (depois da #190) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
+| #192.1 | Diagnosticar e corrigir o botão de bloqueio de atividade (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
+| #192.2 | Aceite do usuário | 🟠 Alta | #192.1 | 👀 Aguardando o usuário | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
