@@ -45,15 +45,47 @@ entregou, se o botão fica desativado).
 
 ### #196.3 — Botão ainda não aparece na discursiva 152
 
-**Próximo passo:** 👀 o usuário dizer com qual login testou (professor, aluno que entregou ou
-aluno que não entregou); professor → decidir se o botão deve aparecer também para ele.
+**Próximo passo:** (livre para outra IA) achar por que `iniciarAvaliacaoDiscursiva` não
+termina na abertura da página da aluna Amanda Zarqueta de Oliveira e corrigir. Pedir ao usuário
+o console da abertura (Preserve log + Ctrl+F5, linhas amarelas/vermelhas) e o resultado de rodar
+`iniciarAvaliacaoDiscursiva()` à mão no console; ou usar o Claude in Chrome numa sessão nova
+(a página fica aberta logada como a Amanda no Chrome do usuário).
 
 - **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
 - **Pedido (2026-10-16 14:08):** "https://aulasenai.vercel.app/MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html, ainda n aparece o botao *Exportar Meu Gabarito*"
-- **Executor:** Claude Code (Opus 5.5) (local · main · s8)
+- **Executor:** Claude Code (Opus 5.5) (local · main · s8) até 2026-10-16 14:23 — liberada a pedido do usuário ("edite esta tarefa aqui com o que vc ja sabe e libera pra outra IA pegar")
 - **Diagnóstico (2026-10-16 14:20):** página publicada com `data-exportar-meu-gabarito="sim"`;
   `avaliacao-discursiva.js`, `minhas-respostas-discursiva.js`, `botao-minhas-respostas.js` e o
   CSS publicados iguais aos do repositório (só fim de linha muda), sem cache (`max-age=0`);
   atividade 152 no banco com a mesma `pagina` e ativa; sem nome repetido entre os scripts. O
   botão é montado no painel IDENTIFICAÇÃO para **todo aluno logado** (desativado até entregar)
   e **não aparece para o professor nem para quem não está logado** (regra da #82).
+- **Caso real (2026-10-16 14:23):** aluna **Amanda Zarqueta de Oliveira** (id
+  `8ca11317-b6af-4167-b65a-2b0737e1bccb`, turma 135080), atividade 152.
+- **Banco (conferido com o login dela, RLS simulado):** lê a atividade 152 (turma 135080 fora de
+  `bloqueio`), 1 entrega (tentativa 1, 2026-10-16 10:38 de Brasília), 20 respostas na tentativa
+  1, sem liberação de 2ª tentativa, gabarito não liberado. → O botão deveria aparecer **ativo**.
+- **Console do Chrome dela (rodado pelo usuário):** `data-exportar-meu-gabarito="sim"`, sem
+  `.meu-gabarito`, `iniciarMeuGabaritoDiscursiva` e `montarBotaoMeuGabarito` não carregados;
+  `estadoDiscursivo` existe mas `dados` = `null`; `main` visível; painel IDENTIFICAÇÃO parado em
+  "Carregando..."; `bloqueioDeAulaLigado()` = false; `getSession()` responde em 3 ms com a
+  sessão dela.
+- **Cada passo do `carregarDiscursiva` rodado à mão no console funciona:** atividade 406 ms,
+  identificação 187 ms, tentativa 80 ms (=1), entrega 92 ms, horário 78 ms (""), mínimo 63 ms
+  (20), gabaritoLiberado 51 ms (false); `criarRepositorioDiscursivo().carregar()` completo em
+  302 ms com `disponivel/logado` true e `ehProfessor` false.
+- **Conclusão até aqui:** o código do botão está certo; o que falha é a **inicialização na
+  abertura** (`iniciarAvaliacaoDiscursiva`, `assets/js/avaliacao-discursiva.js`): ela não chega a
+  gravar `estadoDiscursivo.dados` (o `catch` gravaria `{disponivel:false}`, então ela **ficou
+  parada** no `await repositorio.carregar()` ou nem rodou). Sem erro de sintaxe (`node --check`)
+  e sem nome repetido entre os scripts estáticos da página.
+- **Suspeita (não confirmada):** disputa da sessão do Supabase na abertura — o
+  `js/header-usuario.js` (no `<head>`) carrega o supabase-js e o `js/supabase.js` por conta
+  própria (linhas ~113-115) e chama `getSession()`; a página carrega os dois de novo no fim do
+  `<body>` (2ª carga do `js/supabase.js` redeclara `SUPABASE`/`clienteSupabase` e falha; 2ª
+  carga do CDN troca `window.supabase`). O `getSession()` do auth-js pode ficar esperando o
+  lock do token na abertura (refresh em andamento ou dois clientes `GoTrueClient` na mesma
+  chave). Conferir também `js/login.js` (linhas ~203 e ~281).
+- **Ferramentas:** nesta sessão o Claude in Chrome não carregou e o navegador embutido é
+  bloqueado pelo gancho do projeto (`testes-validacao.md`); o usuário autorizou investigar pelo
+  Chrome dele.
