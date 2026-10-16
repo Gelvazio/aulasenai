@@ -63,3 +63,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Cancelada pelo usuário | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #207 | Tarefa prática de avaliação por competências (Eleva SENAI) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [334-5a7c2e91](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
 | #207.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [334-5a7c2e91](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
+| #208 | Conectando a UC ao Mundo do Trabalho (Eleva SENAI) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
+| #208.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |

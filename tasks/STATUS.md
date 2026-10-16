@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s13 | #208.1 ([335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md)) em execução | 🔄 Ativa | 2026-10-16 18:04 |
+| local · main · s13 | #208 concluída (#208.1; [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:04 |
 | local · main · s12 | #206.4 ([333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md)) em execução | 🔄 Ativa | 2026-10-16 15:58 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -48,8 +48,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|
-| #208 | Conectando a UC ao Mundo do Trabalho (Eleva SENAI) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
-| #208.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s13) (desde 2026-10-16 18:04) | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | — | 👀 Aguardando liberação | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | — | 👀 Aguardando liberação | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
