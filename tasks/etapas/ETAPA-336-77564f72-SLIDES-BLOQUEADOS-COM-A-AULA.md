@@ -7,8 +7,7 @@ bloqueio vale pra aula, pras atividades e pro slide"
 para qualquer pessoa que tenha o endereço, mesmo com a aula bloqueada. Os slides passam a ser
 servidos pelo Supabase Storage privado, com a mesma regra da aula (por turma, #206).
 
-> ⚠️ **Tarefa grande** (banco, Storage e segurança): o plano abaixo espera a aprovação do usuário
-> (#209.1). Nada foi executado.
+> ⚠️ **Tarefa grande** (banco, Storage e segurança): plano aprovado em 2026-10-16 18:38 (#209.1).
 
 ### Escopo (proposta, para aprovação)
 
@@ -51,16 +50,18 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 ### Decisões
 
 - 2026-10-16 18:28 — Tarefa criada a pedido do usuário; plano aguarda aprovação.
+- 2026-10-16 18:38 — **Aprovação do plano:** o usuário respondeu "sim". Escopo aprovado como está acima. Registrado por Claude Code (Opus 5.5) (local · main · s14).
 
 ### #209.1 — Aprovação do plano pelo usuário
 
-**Próximo passo:** 👀 o usuário responde se aprova o plano acima.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — conferência do usuário.
+- **Entrega:** aprovação de 2026-10-16 18:38 registrada em Decisões. **Verificação:** resposta do usuário no chat.
 
 ### #209.2 — SQL: bucket `slides`, função e políticas do Storage
 
-**Próximo passo:** depende da #209.1.
+**Próximo passo:** escrever `database/2026-10-16-slides-storage.sql`, aplicar e simular os 4 perfis.
 
 - **Nível:** PESADO — banco, RLS e segurança; só o Claude Code local.
 - **Critérios de aceitação:** SQL idempotente em `database/`; aplicado e conferido por simulação
