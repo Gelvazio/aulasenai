@@ -124,33 +124,35 @@ function montarFormularioModalAula() {
 }
 
 /**
- * Monta a barra de botões do topo do modal (pedido de 2026-10-16, #214): Gerenciar atividades,
- * Nova atividade nesta aula e, encostado à direita e vermelho, Fechar (#216). O "Excluir aula"
- * saiu do modal a pedido do usuário (#219).
- * @returns {HTMLElement} Barra com os botões.
+ * Monta a barra do topo do modal: só o "✕ Fechar", vermelho e encostado à direita (#216). O
+ * "Excluir aula" saiu do modal a pedido do usuário (#219).
+ * @returns {HTMLElement} Barra com o botão.
  */
 function montarBarraModalAula() {
     const barra = criarElementoModalAula('div', 'crud-form__acoes aula-modal-barra');
-    barra.append(criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
-        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'),
-        criarBotaoModalAula('✕ Fechar', 'aula-modal-fechar', 'fechar'));
+    barra.append(criarBotaoModalAula('✕ Fechar', 'aula-modal-fechar', 'fechar'));
     return barra;
 }
 
 /**
- * Monta a linha logo abaixo da barra com Salvar e Cancelar, maiores e mais altos (#217).
- * O Salvar fica fora do formulário e o envia pelo atributo form; o Cancelar (verde) fecha sem
- * gravar.
- * @returns {HTMLElement} Linha com os dois botões.
+ * Monta a grade 2 × 2 de botões do mesmo tamanho, centralizada como uma tabela (#220):
+ * Gerenciar atividades e Nova atividade nesta aula em cima; Salvar (azul, envia o formulário
+ * pelo atributo form) e Cancelar (verde, fecha sem gravar) embaixo.
+ * @returns {HTMLElement} Grade com os quatro botões.
  */
-function montarLinhaSalvarModalAula() {
-    const linha = criarElementoModalAula('div', 'aula-modal-salvar');
-    const salvar = criarBotaoModalAula('💾 Salvar', 'crud-btn--principal aula-modal-salvar__botao',
-        'salvar');
+function montarGradeBotoesModalAula() {
+    const grade = criarElementoModalAula('div', 'aula-modal-grade');
+    const salvar = criarBotaoModalAula('💾 Salvar', 'crud-btn--principal', 'salvar');
     salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
-    linha.append(salvar, criarBotaoModalAula('↩ Cancelar',
-        'aula-modal-salvar__botao aula-modal-cancelar', 'cancelar'));
-    return linha;
+    const botoes = [
+        criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
+        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'),
+        salvar,
+        criarBotaoModalAula('↩ Cancelar', 'aula-modal-cancelar', 'cancelar'),
+    ];
+    botoes.forEach((botao) => botao.classList.add('aula-modal-grade__botao'));
+    grade.append(...botoes);
+    return grade;
 }
 
 /**
@@ -165,10 +167,10 @@ function montarModalAula() {
     const titulo = criarElementoModalAula('h2', '', 'Editar aula');
     const barra = montarBarraModalAula();
     const { formulario, info } = montarFormularioModalAula();
-    // A mensagem fica logo abaixo da barra, perto do Salvar.
+    // A mensagem fica logo abaixo da grade de botões, perto do Salvar.
     const mensagem = criarElementoModalAula('p', 'crud-mensagem');
     const lista = criarElementoModalAula('div', 'crud-lista');
-    caixa.append(titulo, barra, montarLinhaSalvarModalAula(), mensagem, formulario,
+    caixa.append(titulo, barra, montarGradeBotoesModalAula(), mensagem, formulario,
         criarElementoModalAula('h3', '', 'Atividades desta aula'), lista);
     fundo.append(caixa);
     fundo.hidden = true;

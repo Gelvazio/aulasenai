@@ -9,12 +9,19 @@ o ✕ Fechar vermelho fica sozinho à direita, em cima.
 
 ### #220.1 — Grade 2 × 2 dos botões
 
-**Próximo passo:** ajustar `assets/js/indice-aula-modal.js` e `assets/css/indice-aula-data.css`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — ordem dos botões e CSS, sem lógica nova.
+- **Entrega (2026-10-16 20:09, Opus 5.5, s14):** `indice-aula-modal.js`: a barra do topo ficou só com o ✕ Fechar
+  (à direita); nova `montarGradeBotoesModalAula` com Gerenciar atividades e Nova atividade nesta
+  aula em cima e Salvar e Cancelar embaixo (a `montarLinhaSalvarModalAula` saiu);
+  `indice-aula-data.css`: grade de 2 colunas de até 320 px (antes cada botão ocupava cerca de
+  464 px, metade da linha: ~30% menor), centralizada, 52 px de altura, 24 px entre as linhas.
+- **Verificação:** `node --check`; as classes e a função antigas não são usadas em `assets` nem
+  em `MATERIAIS`. Sem navegador: o teste na tela é o aceite.
 
 ### #220.2 — Aceite do usuário
 
-**Próximo passo:** depende da #220.1.
+**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere a grade de botões.
 
 - **Nível:** LEVE — conferência do usuário.

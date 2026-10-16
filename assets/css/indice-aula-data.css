@@ -11,6 +11,7 @@
     --aula-salvar-altura: 52px;
     --aula-salvar-fonte: 17px;
     --aula-espaco-linhas-botoes: 24px;
+    --aula-grade-botao-largura: 320px;
 }
 
 .aula-data-botao {
@@ -56,20 +57,21 @@
     .aula-modal-form .crud-campo:has(textarea) { grid-column: 1 / -1; }
 }
 
-/* Barra de botões no topo do "Editar aula" (#214): Salvar, Fechar, Excluir aula, Gerenciar
-   atividades e Nova atividade nesta aula. */
+/* Barra do topo do "Editar aula": só o "✕ Fechar", à direita (#214, #216, #219). */
 .aula-modal-barra { margin: 12px 0 0; }
 
-/* Linha abaixo da barra: "💾 Salvar" e "↩ Cancelar" (verde), maiores e mais altos (#217). */
-/* Espaço entre a barra de cima e esta linha (#218). */
-.aula-modal-salvar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: var(--aula-espaco-linhas-botoes) 0 12px;
+/* Grade 2 × 2 de botões do mesmo tamanho, centralizada como uma tabela (#220): Gerenciar
+   atividades e Nova atividade nesta aula em cima; Salvar e Cancelar (verde) embaixo. Largura
+   cerca de 30% menor que a do Salvar/Cancelar da #217; espaço entre as linhas da #218. */
+.aula-modal-grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, var(--aula-grade-botao-largura)));
+    justify-content: center;
+    column-gap: 12px;
+    row-gap: var(--aula-espaco-linhas-botoes);
+    margin: 12px 0;
 }
-.crud-btn.aula-modal-salvar__botao {
-    flex: 1 1 200px;
+.crud-btn.aula-modal-grade__botao {
     min-height: var(--aula-salvar-altura);
     font-size: var(--aula-salvar-fonte);
     border-radius: 10px;
