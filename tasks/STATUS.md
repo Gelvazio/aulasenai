@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s12 | #206.2 ([333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md)) entregue; #206.3 livre (aplicar o SQL no banco) | ⏹️ Encerrada | 2026-10-16 15:30 |
+| local · main · s12 | #206.3 ([333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md)) em execução | 🔄 Ativa | 2026-10-16 15:52 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | #20 ([125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md)); etapas 137-b214e26b e 138-77338471 aguardam aceite | 🔄 Ativa | 2026-10-10 22:13 |
@@ -274,7 +274,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #205-6808b7d3-2460-47de-8321-a28e1930ce2c | **Tirar a linha "50 questões · múltipla escolha · 90–120 minutos" e o botão "Conteúdo (.md)" dos cards** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #205.2 | Aceite do usuário | 🟡 Média | #205.1 | 👀 Aguardando o usuário | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #206-e75bddc3-5b1c-4f0e-9a3d-7c2b8d41a6f9 | **Voltar a `aula_turma` (chaves da aula, matéria e turma; data e bloqueio da aula) pela turma do combo, padrão a favorita** | 🟠 Alta | — | 🔄 Plano aprovado em 2026-10-16 15:20 | — (não reservável) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
-| #206.3 | Rodar o SQL e recarregar as datas do calendário ITIC (PESADO, só Claude Code local) | 🟠 Alta | #206.2 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.3 | Rodar o SQL e recarregar as datas do calendário ITIC (PESADO, só Claude Code local) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s12) (desde 2026-10-16 15:52; exceção de nível autorizada pelo usuário) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.4 | Combo "Turma:" abre na favorita e comanda data, bloqueio da aula e atividades (PESADO) | 🟠 Alta | #206.3 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.5 | "Editar aula": data e bloqueio da aula na turma do combo (MEDIO) | 🟠 Alta | #206.4 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.6 | Documentação em `docs/` (LEVE) | 🟠 Alta | #206.5 | ⬜ Pendente | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
