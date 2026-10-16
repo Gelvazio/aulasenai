@@ -51,7 +51,7 @@ página avulsa sai.
 
 - 2026-10-16 09:38 — usuário: página avulsa sai; **1 atividade discursiva** com correção por IA;
   as objetivas viram discursivas.
-- 2026-10-16 09:55 — Claude Code (local · main · s6): campo opcional `Matéria no banco` no gerador
+- 2026-10-16 09:46 — Claude Code (local · main · s6): campo opcional `Matéria no banco` no gerador
   das discursivas, porque o nome da UC no `materia.json` não é o da matéria no banco (ajuste
   mínimo para cumprir o escopo aprovado; o comportamento das outras fontes não muda).
 - 2026-10-16 09:43 — usuário aprovou o plano, **incluindo a exceção à regra da #25** ("Sim, aprovo o
@@ -103,12 +103,18 @@ página avulsa sai.
 
 ### #191.5 — Remover a página avulsa e atualizar o STATUS-ATIVIDADES
 
-**Próximo passo:** apagar a página avulsa da #189 e incluir a linha no STATUS-ATIVIDADES.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — apagar arquivos da #189 e uma linha de Markdown.
+- **Entrega:** apagados `ATIVIDADE-SALA-AULA-16-10-2026/ATIVIDADE-SALA-AULA-16-10-2026.html`,
+  `atividade-sala.css`, `atividade-sala.js`, `atividade-sala-pdf.js` e
+  `atividade-sala-rascunho.js` (fica só o Markdown da aula 4 na pasta); linha da id 152 em
+  `ATIVIDADES/STATUS-ATIVIDADES.md`.
+- **Verificação:** busca por `ATIVIDADE-SALA-AULA-16-10-2026.html` e `atividade-sala-pdf` não acha
+  referência em HTML, JS ou Python do projeto.
 
 ### #191.6 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário libera a atividade no card da Aula 04 e confere a página.
+**Próximo passo:** 👀 o usuário libera a "Atividade de Sala 16/10 — Discursivas" (id 152) no card da Aula 04 da ITIC, confere a página e a correção por IA em `correcao-discursiva.html`.
 
 - **Nível:** LEVE — conferência do usuário.

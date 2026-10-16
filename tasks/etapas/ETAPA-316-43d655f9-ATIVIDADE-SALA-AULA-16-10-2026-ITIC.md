@@ -26,6 +26,6 @@ de sala de 16-10-2026, que o aluno responde e exporta em PDF.
 
 ### #189.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre `ATIVIDADE-SALA-AULA-16-10-2026.html` (duplo clique), responde e exporta o PDF (precisa de internet para carregar o jsPDF).
+**Próximo passo:** — (dispensado: a pedido do usuário a página avulsa saiu e a atividade virou a discursiva id 152 da #191, etapa 318-05ad7d1d).
 
 - **Nível:** LEVE — conferência do usuário.
