@@ -311,7 +311,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #203-bcdf4868-c19d-4a02-8f12-46a953a46f3c | **Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06** | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
-| #203.1 | Conferir a aula no banco e aprovar a mudança (PESADO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s10) (desde 2026-10-16 14:57) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
+| #203.1 | Conferir a aula no banco e aprovar a mudança (PESADO) | 🟡 Média | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s10) (desde 2026-10-16 14:57) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #203.2 | Gravar o rótulo AULA 06 no banco (PESADO, só Claude Code local) | 🟡 Média | #203.1 | ⬜ Pendente | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #203.3 | Aceite do usuário | 🟡 Média | #203.2 | ⬜ Pendente | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 

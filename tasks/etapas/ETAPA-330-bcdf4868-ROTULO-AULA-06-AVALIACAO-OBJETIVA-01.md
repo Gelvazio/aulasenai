@@ -25,7 +25,15 @@
 
 ### #203.1 — Conferir a aula no banco e aprovar a mudança
 
-**Próximo passo:** consultar a aula ligada à atividade e mostrar ao usuário o antes/depois.
+**Próximo passo:** 👀 aguardando o "sim" do usuário para o `UPDATE` (#203.2).
+
+- **Achado (2026-10-16 15:00):** atividade **19** ("Avaliação Objetiva 01", página
+  `.../INTRODUCAO-TIC/ATIVIDADES/AVALIACAO-OBJETIVA-01.html`) → aula **69** (matéria 25,
+  `numero` 12, `rotulo_card` = **`AVALIAÇÃO 01`**, `nome_card`/`titulo` = "Aula 06 - Editor de
+  Textos: Formatação e Estruturação", data 2026-09-28; só essa atividade na aula). A aula 26
+  (`numero` 6) também tem `rotulo_card` = `AULA 06` — o índice desempata pelo nome do card.
+- **Mudança proposta:** `UPDATE aulas SET rotulo_card = 'AULA 06' WHERE id = 69;`
+  (volta: `... = 'AVALIAÇÃO 01'`).
 
 - **Nível:** PESADO — banco (consulta e `UPDATE` em produção)
 - **Descrição:** achar a atividade e a aula; registrar o valor atual de `rotulo_card`.
