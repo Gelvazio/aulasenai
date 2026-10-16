@@ -13,6 +13,7 @@
     --aula-cancelar-fundo: #2f855a;
     --aula-salvar-altura: 52px;
     --aula-salvar-fonte: 17px;
+    --aula-espaco-linhas-botoes: 24px;
 }
 
 .aula-data-botao {
@@ -60,10 +61,16 @@
 
 /* Barra de botões no topo do "Editar aula" (#214): Salvar, Fechar, Excluir aula, Gerenciar
    atividades e Nova atividade nesta aula. */
-.aula-modal-barra { margin: 8px 0 4px; }
+.aula-modal-barra { margin: 12px 0 0; }
 
 /* Linha abaixo da barra: "💾 Salvar" e "↩ Cancelar" (verde), maiores e mais altos (#217). */
-.aula-modal-salvar { display: flex; flex-wrap: wrap; gap: 12px; margin: 4px 0 8px; }
+/* Espaço entre a barra de cima e esta linha (#218). */
+.aula-modal-salvar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: var(--aula-espaco-linhas-botoes) 0 12px;
+}
 .crud-btn.aula-modal-salvar__botao {
     flex: 1 1 200px;
     min-height: var(--aula-salvar-altura);

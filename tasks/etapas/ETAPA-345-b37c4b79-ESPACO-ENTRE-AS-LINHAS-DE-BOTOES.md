@@ -6,12 +6,15 @@
 
 ### #218.1 — Espaço entre as linhas
 
-**Próximo passo:** ajustar `assets/css/indice-aula-data.css`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — CSS sem lógica, 1 arquivo.
+- **Entrega (2026-10-16 20:03, Opus 5.5, s14):** `assets/css/indice-aula-data.css`: 24 px entre a barra de cima e a
+  linha de Salvar/Cancelar (token `--aula-espaco-linhas-botoes`), 12 px depois dela; a barra tem 12 px
+  acima. **Verificação:** leitura do CSS; sem navegador: o teste na tela é o aceite.
 
 ### #218.2 — Aceite do usuário
 
-**Próximo passo:** depende da #218.1.
+**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere o espaço entre as linhas.
 
 - **Nível:** LEVE — conferência do usuário.
