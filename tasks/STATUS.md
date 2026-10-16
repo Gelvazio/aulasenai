@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #191 ([318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md)) plano aguarda aprovação; #189 ([316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md)) aguarda aceite | 🔄 Ativa | 2026-10-16 09:40 |
+| local · main · s6 | #191 ([318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md)) em execução (#191.2); #189 ([316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md)) aguarda aceite | 🔄 Ativa | 2026-10-16 09:40 |
 
 ## 📌 Tarefas
 
@@ -252,9 +252,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #190.1 | Diagnosticar e corrigir os botões de bloquear atividade (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 👀 Aguardando aceite | — (não reservável) | [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
 ✅ Concluído—| [317-63a0d7ac](etapas/ETAPA-317-63a0d7ac-BOTOES-DE-BLOQUEAR-ATIVIDADE-COM-PROBLEMA.md) |
-| #191-05ad7d1d-5b45-424f-b5d4-1a6d5d8406f0 | Atividade de sala 16-10 (ITIC) como 1 discursiva no banco, com correção por IA, ligada à Aula 04 | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | 👀 Aguardando aprovação | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 09:40) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
-| #191.2 | Fonte e gabarito em Markdown, 20 questões (PESADO) | 🟠 Alta | #191.1 | ⬜ Pendente | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
+| #191-05ad7d1d-5b45-424f-b5d4-1a6d5d8406f0 | Atividade de sala 16-10 (ITIC) como 1 discursiva no banco, com correção por IA, ligada à Aula 04 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
+| #191.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
+| #191.2 | Fonte e gabarito em Markdown, 20 questões (PESADO) | 🟠 Alta | #191.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 09:53) | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.3 | Gerar a página e o seed (MEDIO) | 🟠 Alta | #191.2 | ⬜ Pendente | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.4 | Aplicar o seed, conferir md5 e registrar (PESADO, só Claude Code local) | 🟠 Alta | #191.3 | ⬜ Pendente | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | #191.5 | Remover a página avulsa e atualizar o STATUS-ATIVIDADES (LEVE) | 🟠 Alta | #191.4 | ⬜ Pendente | — | [318-05ad7d1d](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |

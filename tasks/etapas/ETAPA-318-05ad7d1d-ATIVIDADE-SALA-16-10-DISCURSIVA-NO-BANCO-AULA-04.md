@@ -51,16 +51,18 @@ página avulsa sai.
 
 - 2026-10-16 09:38 — usuário: página avulsa sai; **1 atividade discursiva** com correção por IA;
   as objetivas viram discursivas.
+- 2026-10-16 09:52 — usuário aprovou o plano, **incluindo a exceção à regra da #25** ("Sim, aprovo o
+  plano da #191, incluindo a exceção à regra da #25. Pode executar.").
 
 ### #191.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** 👀 o usuário aprova (ou corrige) o plano acima (Escopo, Riscos e subtarefas).
+**Próximo passo:** — (plano aprovado em 2026-10-16 09:52).
 
 - **Nível:** PESADO — banco (atividade, tópicos, seed) e gabarito/padrão de resposta.
 
 ### #191.2 — Fonte e gabarito em Markdown (20 questões)
 
-**Próximo passo:** aguardando a aprovação do plano (#191.1).
+**Próximo passo:** escrever a fonte e o gabarito em `ATIVIDADES/CONTEUDO/`.
 
 - **Nível:** PESADO — padrão de resposta (gabarito) da correção por IA.
 
