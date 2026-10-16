@@ -51,6 +51,7 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 
 - 2026-10-16 18:28 — Tarefa criada a pedido do usuário; plano aguarda aprovação.
 - 2026-10-16 18:38 — **Aprovação do plano:** o usuário respondeu "sim". Escopo aprovado como está acima. Registrado por Claude Code (Opus 5.5) (local · main · s14).
+- 2026-10-16 18:41 — **Caminho dos PDFs (Opus 5.5):** a matéria 48 (Testes de Front-End) tem só 5 aulas no banco (ids 93, 94, 95, 124, 126) e há 10 PDFs; por isso cada PDF fica na pasta da **matéria** (`48/AULA-NN-SLIDES.pdf`) e o banco acha a aula pelo número NN do nome. Slide sem aula cadastrada fica liberado (não há aula para bloquear). Detalhe de forma, sem mudar o escopo aprovado.
 
 ### #209.1 — Aprovação do plano pelo usuário
 
@@ -61,15 +62,23 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 
 ### #209.2 — SQL: bucket `slides`, função e políticas do Storage
 
-**Próximo passo:** escrever `database/2026-10-16-slides-storage.sql`, aplicar e simular os 4 perfis.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco, RLS e segurança; só o Claude Code local.
 - **Critérios de aceitação:** SQL idempotente em `database/`; aplicado e conferido por simulação
   (4 perfis) em transação desfeita; registrado em `database/SEEDS-APLICADOS.md`.
+- **Entrega (2026-10-16 18:41):** `database/2026-10-16-slides-storage.sql` aplicado pelo conector: bucket `slides`
+  privado (só PDF, até 20 MB), função `slide_liberado_para_usuario(nome)` (security definer, sem
+  `anon`) e 4 políticas em `storage.objects` (leitura pela função; gravar/apagar só professor).
+  Seed **CONCLUÍDO** em `database/SEEDS-APLICADOS.md`.
+- **Verificação (banco real, transação desfeita com a aula 1 bloqueada na turma 135081):** aluno da
+  135081 → aula 1 bloqueada `false`, aula 2 `true`, aula 4 (`ativo = false`) `false`, aula 6
+  (não cadastrada) `true`; professor → `true` nas aulas 1 e 4; sem login → `false`; `anon` sem
+  execução; bucket não público; 4 políticas; depois da simulação, 0 linhas da aula 93 em `aula_turma`.
 
 ### #209.3 — Enviar os 10 PDFs ao bucket
 
-**Próximo passo:** depende da #209.2; a IA monta a lista "arquivo → pasta (id da aula)".
+**Próximo passo:** 👀 o usuário envia os 10 PDFs de `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/` para a pasta `48` do bucket `slides` (painel do Supabase → Storage → slides → criar pasta `48` → enviar), sem mudar os nomes; depois a IA confere por consulta.
 
 - **Nível:** LEVE — envio pelo painel do Supabase (👀 usuário) e conferência por consulta.
 
