@@ -654,7 +654,7 @@ function liberarLinksDosCardsIndice() {
 }
 
 /**
- * Carrega a data da aula nos cards e o botão "Editar aula" (professor).
+ * Carrega os dados da aula nos cards e o botão "Editar aula" (professor).
  */
 function carregarDataAulasIndice() {
     const estilo = criarElementoCrud('link');

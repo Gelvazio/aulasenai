@@ -1,5 +1,6 @@
-/* Botão "Editar aula" nos cards do ATIVIDADES/index.html
-   (assets/js/indice-aula-data.js). O modal usa os estilos de atividades-crud-modal.css. */
+/* Cards do ATIVIDADES/index.html (carregado só nos índices de matéria, pelo
+   atividades-crud-modal.js) e botão "Editar aula" (assets/js/indice-aula-data.js).
+   O modal usa os estilos de atividades-crud-modal.css. */
 :root {
     --aula-data-vazia: #a0aec0;
     --aula-data-botao-fundo: #eef0fd;
@@ -47,3 +48,8 @@
 }
 
 .aula-excluir-botao[hidden] { display: none; }
+
+/* Os cards de atividades não mostram a linha de resumo ("50 questões · múltipla escolha ·
+   90–120 minutos") nem o botão "Conteúdo (.md)" (pedido de 2026-10-16, #205). */
+.aula .meta,
+.aula .acoes a.btn[href$=".md"] { display: none; }
