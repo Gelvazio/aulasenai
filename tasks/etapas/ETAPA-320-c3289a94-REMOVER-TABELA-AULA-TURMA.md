@@ -103,10 +103,9 @@ continua valendo para a turma do combo do índice; a tabela, o gatilho e a funç
 
 ### #193.4 — Rodar o SQL no SQL Editor e conferir
 
-**Próximo passo:** 👀 o usuário abre o SQL Editor do Supabase, cola e roda o arquivo
-`database/2026-10-16-remover-aula-turma.sql` (a última consulta deve mostrar as duas colunas
-vazias); depois o Claude Code local confere no banco e marca CONCLUÍDO com
-`scripts/seeds/registrar_seed.py`.
+**Próximo passo:** ⛔ CANCELADA em 2026-10-16 a pedido do usuário. A tarefa #206 (etapa 333) recria
+a `aula_turma`; apagar a tabela agora quebraria a #206. O SQL `database/2026-10-16-remover-aula-turma.sql`
+não deve ser rodado.
 
 - **Nível:** PESADO — banco; a parte de rodar é do usuário (`security-banco.md`).
 
