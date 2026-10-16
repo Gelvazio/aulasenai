@@ -69,6 +69,10 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 - 2026-10-16 15:20 — **#206.2 não foi assumida por esta frente:** é nível PESADO (banco) e esta
   sessão é Sonnet 5.5; `niveis.md` reserva PESADO a Opus 5.5+ ou Fable. Aguarda o usuário decidir
   (abrir a sessão com Opus/Fable ou autorizar expressamente esta).
+- 2026-10-16 15:23 — **Exceção de nível autorizada pelo usuário:** "Autorizo expressamente esta
+  sessão (Sonnet 5.5) a assumir a #206.2, mesmo sendo PESADO." Vale só para a #206.2 e só para
+  esta sessão (`niveis.md`: a tabela é do usuário). Registrado por Claude Code (Sonnet 5.5)
+  (local · main · s12).
 
 ### #206.1 — Aprovação do plano pelo usuário
 
