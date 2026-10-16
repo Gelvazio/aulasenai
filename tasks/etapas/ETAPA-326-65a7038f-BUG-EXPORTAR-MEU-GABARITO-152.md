@@ -7,6 +7,8 @@ discursiva id 152 para o aluno que já finalizou.
 
 ### #199.1 — Diagnosticar e corrigir o botão
 
+- 2026-10-16 11:21 — reserva liberada a pedido do usuário (assumir a #200); quem pegar segue o próximo passo abaixo.
+
 **Próximo passo:** 👀 o usuário escolhe como seguir: simular a página no Node (jsdom na pasta
 temporária, sem navegador) ou mandar o aviso do console (F12) da página logado como aluno.
 
