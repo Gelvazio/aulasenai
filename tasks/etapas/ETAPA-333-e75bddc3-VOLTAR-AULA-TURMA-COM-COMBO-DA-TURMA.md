@@ -111,12 +111,20 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 
 ### #206.3 — Rodar o SQL e recarregar as datas do calendário ITIC
 
-**Próximo passo:** depende da #206.2; rodar pelo conector (só `create`/`insert`, sem apagar dados)
-e registrar em `database/SEEDS-APLICADOS.md`.
+**Próximo passo:** — (entregue; a #206.4 é a próxima).
 
 - **Nível:** PESADO — banco de produção, só o Claude Code local.
 - **Critérios de aceitação:** tabela com 38 linhas de data para as 2 turmas; conferência por
   consulta; seed registrado como CONCLUÍDO.
+- **Ajuste de escopo:** como a tabela já tinha as 38 datas (a #193 nunca rodou), **não** foi
+  preciso recarregar o calendário ITIC; só se aplicou o SQL da matéria.
+- **Entrega:** `database/2026-10-16-aula-turma-materia.sql` aplicado pelo conector em 2026-10-16
+  15:55; seed **CONCLUÍDO** em `database/SEEDS-APLICADOS.md`.
+- **Verificação (banco real):** 38 linhas, 0 sem matéria, 0 com matéria diferente da aula;
+  `materia_id` not null; FK `aula_turma_materia_id_fkey`, índice `aula_turma_turma_materia_idx`,
+  gatilhos de matéria e de bloqueio e 4 políticas de RLS presentes; `authenticated` não executa a
+  função do gatilho; teste em transação desfeita: gravar matéria errada (certa + 999) ficou com a
+  matéria da aula (25).
 
 ### #206.4 — Combo "Turma:" abre na turma favorita e comanda data, bloqueio da aula e atividades
 

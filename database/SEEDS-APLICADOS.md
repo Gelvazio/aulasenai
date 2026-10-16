@@ -5,7 +5,7 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 15:25)
+## Resumo (atualizado em 2026-10-16 15:54)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
@@ -90,7 +90,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-aula-turma-bloqueio.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 07:40 | Coluna `bloqueio` + `data_aula` opcional + gatilho que propaga a `atividade.bloqueio`; testado em transação revertida (aula 21, turma 135080: 2 atividades bloqueadas) — Etapa 313-937e5036 |
 | `2026-10-16-aula-turma-calendario-itic.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 08:15 | 20 datas do calendário gravadas em `aula_turma` (10 por turma, 135080 e 135081); conferido pelo retorno do `returning` — Etapa 314-d7f180ea |
 | `2026-10-16-remover-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **SUBSTITUÍDO** | 2026-10-16 15:25 | NUNCA aplicado e não será mais: o usuário desistiu da remoção (o erro era outro); a aula_turma continua no banco com 38 linhas (conferido 2026-10-16 15:30) — Etapa 333-e75bddc3 (#206) |
-| `2026-10-16-aula-turma-materia.sql` | Introdução às TIC (ITIC) | 0 | **PENDENTE** | — | Acrescenta `materia_id` (chave da matéria) à `aula_turma` que JÁ existe no banco (38 linhas): preenche, FK, gatilho que copia a matéria da aula e índice; sem apagar dados — Etapa 333-e75bddc3 (#206.2); aplicar na #206.3 |
+| `2026-10-16-aula-turma-materia.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 15:54 | Aplicado pelo conector: aula_turma com materia_id not null, FK para materia.id, gatilho da matéria da aula e índice; 38 linhas, 0 sem matéria, 0 diferentes da aula; gatilho testado em transação desfeita (matéria errada vira a da aula) — Etapa 333-e75bddc3 (#206.3) |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

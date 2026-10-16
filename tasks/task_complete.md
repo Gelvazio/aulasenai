@@ -57,3 +57,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #205.1 | Tirar a linha de resumo e o botão Conteúdo (.md) dos cards (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #206.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.2 | SQL: acrescentar a chave da matéria à `aula_turma` que já existe (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.3 | Aplicar o SQL da matéria na `aula_turma` e conferir (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
