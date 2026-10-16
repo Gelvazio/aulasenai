@@ -182,7 +182,7 @@ function criarCelulaComDetalheTp(texto, detalhe) {
 }
 
 /**
- * Monta a linha de uma turma: Ações | Turma | Curso | Turno / horário | Bloqueio | Professores.
+ * Monta a linha de uma turma: Turma | Curso | Turno / horário | Bloqueio | Professores | Ações.
  * @param {Object} turma - Linha da tabela turma.
  * @returns {HTMLTableRowElement} Linha.
  */
@@ -190,12 +190,13 @@ function criarLinhaTurmaTp(turma) {
   const linha = criarElementoTp("tr");
   const bloqueio = turma.bloquear_horario === false
     ? TEXTO_BLOQUEIO_DESLIGADO_TP : TEXTO_BLOQUEIO_LIGADO_TP;
-  linha.append(criarCelulaAcoesTp(turma),
+  linha.append(
     criarCelulaComDetalheTp(turma.codigo + " — " + (turma.nome || ""), montarUnidadeTurma(turma)),
     criarCelulaComDetalheTp(turma.curso?.nome_completo || "", turma.uc || ""),
     criarCelulaComDetalheTp(turma.turno || "", turma.horario || ""),
     criarElementoTp("td", "", bloqueio),
-    criarElementoTp("td", "", textoProfessoresTp(turma.codigo)));
+    criarElementoTp("td", "", textoProfessoresTp(turma.codigo)),
+    criarCelulaAcoesTp(turma));
   return linha;
 }
 

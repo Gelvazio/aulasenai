@@ -92,9 +92,11 @@ excluir) e o vínculo turma × professor vira o botão **Professores** na linha 
 **Pedido em:** 2026-10-16 12:56 · **Pedido:** "AQUI,http://127.0.0.1:5501/turmas.html,AS ACOES,DEVEM FICAR DO
 LADO DIREITO"
 
-**Próximo passo:** mover a coluna Ações para a última coluna da tabela.
+**Próximo passo:** — (entregue; aceite junto com a #201.3).
 
 - **Nível:** MEDIO — JS de tela + HTML, 2 arquivos
 - **Descrição:** na consulta de turmas, a coluna Ações (Editar, Professores, Excluir) passa da
   primeira para a última coluna.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `turmas.html` (cabeçalho) e `assets/js/turmas-professor-pagina.js`
+  (`criarLinhaTurmaTp`) · **Verificação:** `node --check` limpo; cabeçalho e células na mesma
+  ordem (Turma, Curso, Turno/horário, Bloquear horário, Professores, Ações). Sem navegador (2026-10-16 12:57).
