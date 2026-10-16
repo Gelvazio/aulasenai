@@ -301,6 +301,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #201.3 | Aceite do usuário | 🟠 Alta | #201.2 | 👀 Aguardando o usuário | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #201.4 | Coluna Ações no lado direito da tabela de turmas (MEDIO) | 🟠 Alta | #201.2 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #201.5 | Página de turmas mais larga (LEVE) | 🟠 Alta | #201.4 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
+| #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -314,6 +320,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 
 | Etapa | Assunto | Arquivo |
 |---|---|---|
+| 329-3f8d6b21 | Alinhar as regras do aulasenai às regras globais (#202, pedida em 2026-10-16) | [ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | 1 | Atualizar `ANALISE-GERACAO-AULAS.md` do Técnico em Informática para Internet (pedida em 2026-10-03) | [ETAPA-001-ATUALIZAR-ANALISE-GERACAO-AULAS-MD-DO-TECNICO.md](etapas/ETAPA-001-ATUALIZAR-ANALISE-GERACAO-AULAS-MD-DO-TECNICO.md) |
 | 2 | Apostila da ITIC (capítulos 02 a 10) e apostila de Testes de Frontend (pedida em 2026-10-03) | [ETAPA-002-APOSTILA-DA-ITIC-E-APOSTILA-DE-TESTES.md](etapas/ETAPA-002-APOSTILA-DA-ITIC-E-APOSTILA-DE-TESTES.md) |
 | 3 | Regra "conteúdo só pelos Markdowns, nunca de PDF" no `CLAUDE.md` (pedida em 2026-10-03 20:47) | [ETAPA-003-REGRA-CONTEUDO-SO-PELOS-MARKDOWNS-NUNCA-DE.md](etapas/ETAPA-003-REGRA-CONTEUDO-SO-PELOS-MARKDOWNS-NUNCA-DE.md) |
