@@ -77,6 +77,7 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
   2026-10-16-aula-turma-materia.sql no banco pelo conector, conferindo depois" (autoriza aplicar
   esse SQL em produção e estende a exceção de nível à #206.3). Registrado por Claude Code
   (Sonnet 5.5) (local · main · s12).
+- 2026-10-16 15:58 — **#206.4:** o usuário mandou assumir e disse "A exceção de nível vale para ela". Registrado por Claude Code (Sonnet 5.5) (local · main · s12).
 
 ### #206.1 — Aprovação do plano pelo usuário
 
