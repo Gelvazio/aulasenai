@@ -100,3 +100,14 @@ LADO DIREITO"
 - **Entrega:** `turmas.html` (cabeçalho) e `assets/js/turmas-professor-pagina.js`
   (`criarLinhaTurmaTp`) · **Verificação:** `node --check` limpo; cabeçalho e células na mesma
   ordem (Turma, Curso, Turno/horário, Bloquear horário, Professores, Ações). Sem navegador (2026-10-16 12:57).
+
+### #201.5 — Página de turmas mais larga
+
+**Pedido em:** 2026-10-16 12:57 · **Pedido:** "DEIXE ISSO,MAIS LARGO," (com print da tela de turmas)
+
+**Próximo passo:** alargar o conteúdo da página `turmas.html`.
+
+- **Nível:** LEVE — só CSS (modificador de largura), sem lógica
+- **Descrição:** a área da página (cabeçalho e consulta) fica mais larga, para a tabela caber
+  sem quebrar tanto as colunas.
+- **Entrega:** — · **Verificação:** —
