@@ -22,10 +22,17 @@ correção pela IA da discursiva id 152 (Atividade de Sala 16/10 da ITIC, #191),
 
 ### #195.1 — Criar a tarefa agendada manual
 
-**Próximo passo:** ler o roteiro de correção (`CORRECAO-PROVA-ADAG.md`, regras da discursiva e da
-suspeita de cópia) e o banco da atividade 152; escrever o prompt e criar a tarefa.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — a tarefa grava no banco (notas da IA).
+- **Entrega:** tarefa agendada `correcao-atividade-id-152` (título "CORRECAO ATIVIDADE ID=152",
+  Claude desktop, **só manual**, modo Auto), no modelo da `correcao-ia-atividade-81` (#130): Parte 1
+  = correção pela IA com as regras do `CORRECAO-PROVA-ADAG.md` (id 152, 20 questões de 1 tópico,
+  0,5 ponto cada, individual; em branco depois da entrega = 0); Parte 2 = suspeita de cópia
+  (`docs/regras/suspeita-copia-discursiva.md`). Grava só `nota_ia`, `comentario` e `nota_ia_em`;
+  sem commit, sem navegador, sem nomes de alunos.
+- **Verificação:** a ferramenta confirmou a criação ("Manual only"); banco lido antes: 20 tópicos
+  com resposta esperada e critérios, 0,5 ponto cada (total 10), mínimo 20 questões.
 
 ### #195.2 — Rodar a primeira vez e conferir
 
