@@ -1,5 +1,6 @@
 // Acesso ao Supabase para os cards de aula do ATIVIDADES/index.html (tabela aulas) e para o
-// modal "✏️ Editar aula" (CRUD da aula e lista das atividades dela).
+// modal "✏️ Editar aula" (CRUD da aula e lista das atividades dela) e para o "Gerenciar
+// atividades" (vincular/desvincular atividade.aula_id, #213).
 // Depende de: js/supabase.js (obterClienteSupabase, sbGet, sbPatch, sbDelete).
 
 const TABELA_AULAS_CARD = 'aulas';
@@ -10,6 +11,13 @@ const CAMPOS_AULA_CARD = 'id,numero,titulo,descricao,materia_id,curso_id,duracao
     'materia(descricao),curso(nome_completo)';
 const CAMPOS_ATIVIDADE_DA_AULA = 'id,nome_atividade,descricao,data_atividade,total_itens,' +
     'pagina,ativo,aula_id';
+// "Gerenciar atividades" (indice-aula-modal-vinculo.js, #213): atividade com a aula a que pertence.
+const CAMPOS_ATIVIDADE_SEM_AULA_VINCULO = 'id,nome_atividade,descricao,pagina,ativo,aula_id';
+const CAMPOS_AULA_VINCULO = '(numero,titulo,materia_id)';
+const CAMPOS_ATIVIDADE_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas' + CAMPOS_AULA_VINCULO;
+// "!inner": só as atividades cuja aula é da matéria pedida.
+const CAMPOS_ATIVIDADE_DA_MATERIA_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas!inner' +
+    CAMPOS_AULA_VINCULO;
 const RPC_EXCLUIR_AULA_CARD = 'excluir_aula';
 const RPC_ADMINISTRADOR_CARD = 'eh_professor_administrador';
 
@@ -78,6 +86,43 @@ async function buscarMateriaPeloNomeCard(nome, curso) {
 async function listarAtividadesDaAulaCard(idAula) {
     return sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_DA_AULA +
         '&aula_id=eq.' + encodeURIComponent(idAula) + '&order=id');
+}
+
+/**
+ * Busca uma atividade pelo id, com a aula a que ela pertence.
+ * @param {number} idAtividade - Id da atividade.
+ * @returns {Promise<Object|null>} Atividade, ou null se não existir (ou o usuário não a ler).
+ */
+async function buscarAtividadeVinculoCard(idAtividade) {
+    const [atividade] = await sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_VINCULO +
+        '&id=eq.' + encodeURIComponent(idAtividade));
+    return atividade || null;
+}
+
+/**
+ * Lista as atividades que podem ser vinculadas: as das aulas da matéria e as sem aula.
+ * @param {number} idMateria - Id da matéria da aula.
+ * @returns {Promise<Object[]>} Atividades, em ordem de id.
+ */
+async function listarAtividadesVinculaveisCard(idMateria) {
+    const [daMateria, semAula] = await Promise.all([
+        sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_DA_MATERIA_VINCULO +
+            '&aulas.materia_id=eq.' + encodeURIComponent(idMateria) + '&order=id'),
+        sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_SEM_AULA_VINCULO +
+            '&aula_id=is.null&order=id'),
+    ]);
+    return [...daMateria, ...semAula].sort((a, b) => a.id - b.id);
+}
+
+/**
+ * Liga a atividade a uma aula, ou desliga (sem aula), gravando atividade.aula_id.
+ * @param {number} idAtividade - Id da atividade.
+ * @param {number|null} idAula - Id da aula, ou null para desvincular.
+ * @returns {Promise<boolean>} true se o banco devolveu a linha alterada.
+ */
+async function definirAulaDaAtividadeCard(idAtividade, idAula) {
+    const linhas = await sbPatch(TABELA_ATIVIDADE_AULA, 'id', idAtividade, { aula_id: idAula });
+    return Array.isArray(linhas) && linhas.length > 0;
 }
 
 /**

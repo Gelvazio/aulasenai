@@ -20,7 +20,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s15 | #212.3 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) em execução; #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguarda o seu aceite | 🔄 Ativa | 2026-10-16 19:40 |
-| local · main · s14 | #213.1 ([340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md)) em execução; #210.3 aguarda o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 🔄 Ativa | 2026-10-16 19:47 |
+| local · main · s14 | #213.2 ([340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md)) e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 19:49 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -286,9 +286,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #212.2 | Banco: SQL do DELETE + aulas 70/71 excluídas (PESADO) | 🟠 Alta | — | 👀 Rodar o DELETE no SQL Editor | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | #212.3 | Cards, arquivos e links (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s15) (desde 2026-10-16 19:48) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | #212.4 | Aceite do usuário | 🟠 Alta | #212.2, #212.3 | ⬜ Pendente | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
-| #213-14f758bd-6294-4748-9fca-71d40d7bd11a | **Gerenciar atividades: vincular e desvincular atividades da aula** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
-| #213.1 | Modal "Gerenciar atividades" (vincular / desvincular) (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 19:47) | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
-| #213.2 | Aceite do usuário | 🟠 Alta | #213.1 | ⬜ Pendente | — | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
+| #213-14f758bd-6294-4748-9fca-71d40d7bd11a | **Gerenciar atividades: vincular e desvincular atividades da aula** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
+| #213.2 | Aceite do usuário | 🟠 Alta | #213.1 | 👀 Aguardando o usuário | — | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

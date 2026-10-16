@@ -625,6 +625,11 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     outras turmas do combo e libera só a escolhida. Sem combo (sem turmas), o botão grava
     `aulas.ativo`. Código: `assets/js/aula-turma-repositorio.js`, `indice-aula-bloqueio.js`,
     `indice-aula-modal-turma.js`;
+  - **"🔗 Gerenciar atividades" no "✏️ Editar aula"** (2026-10-16, tarefa #213): 2.º modal que vincula
+    (`atividade.aula_id` = a aula) e desvincula (`aula_id` vazio, a atividade não é apagada)
+    atividades que já existem no banco, pelo ID ou pela lista das outras aulas da matéria e das
+    sem aula; tirar uma atividade de outra aula pede confirmação. Os links dos cards são do HTML:
+    vincular não cria link no card. Código: `assets/js/indice-aula-modal-vinculo.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

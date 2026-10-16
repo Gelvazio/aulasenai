@@ -4,7 +4,8 @@
 // abre o cadastro com a aula já escolhida. O Professor Administrador também vê "🗑️ Excluir aula"
 // (exclusão lógica, aulas.excluido = 1). Só o professor abre o modal; o RLS garante no banco.
 // "Data da aula" e "Aula bloqueada nesta turma" valem para a turma do combo "Turma:" do índice
-// (aula_turma, tarefa #206) e ficam em assets/js/indice-aula-modal-turma.js.
+// (aula_turma, tarefa #206) e ficam em assets/js/indice-aula-modal-turma.js. "🔗 Gerenciar
+// atividades" abre o modal de vincular/desvincular (assets/js/indice-aula-modal-vinculo.js, #213).
 // Depende de: assets/js/indice-aula-repositorio.js, indice-aula-modal-turma.js e
 // assets/js/atividades-crud-modal.js (abrirEdicaoAtividadeCrud); estilos de
 // atividades-crud-modal.css e indice-aula-data.css.
@@ -140,8 +141,10 @@ function montarModalAula() {
     const { formulario, info, botaoExcluir } = montarFormularioModalAula();
     const mensagem = criarElementoModalAula('p', 'crud-mensagem');
     const cabecalhoLista = criarElementoModalAula('div', 'aula-modal-atividades__cabecalho');
-    cabecalhoLista.append(criarElementoModalAula('h3', '', 'Atividades desta aula'),
+    const botoesLista = criarElementoModalAula('div', 'aula-modal-atividades__botoes');
+    botoesLista.append(criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
         criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'));
+    cabecalhoLista.append(criarElementoModalAula('h3', '', 'Atividades desta aula'), botoesLista);
     const lista = criarElementoModalAula('div', 'crud-lista');
     caixa.append(titulo, formulario, mensagem, cabecalhoLista, lista);
     fundo.append(caixa);
@@ -361,6 +364,17 @@ function abrirCadastroAtividadeDaAula(idAtividade) {
 }
 
 /**
+ * Abre por cima o "🔗 Gerenciar atividades" (indice-aula-modal-vinculo.js) da aula em edição;
+ * ao fechar, se algo mudou, relê a lista de atividades da aula.
+ */
+function abrirGerenciarAtividadesDaAula() {
+    const aula = estadoModalAula.item?.aula;
+    if (!aula || typeof abrirModalVinculoAula !== 'function') return;
+
+    abrirModalVinculoAula(aula, carregarAtividadesModalAula);
+}
+
+/**
  * Trata os cliques do modal (fundo, fechar, excluir aula e botões das atividades).
  * @param {MouseEvent} evento - Clique.
  */
@@ -377,6 +391,7 @@ function aoClicarModalAula(evento) {
         'editar-atividade': () => abrirCadastroAtividadeDaAula(idAtividade),
         'excluir-atividade': () => aoExcluirAtividadeAula(idAtividade),
         'nova-atividade': () => abrirCadastroAtividadeDaAula(null),
+        'gerenciar-atividades': abrirGerenciarAtividadesDaAula,
     };
     acoes[botao.dataset.acao]?.();
 }

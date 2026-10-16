@@ -41,6 +41,13 @@
 /* Exclusão lógica da aula (só Professor Administrador): card escondido para todos. */
 .aula.aula--excluida { display: none; }
 
+.aula-modal-atividades__botoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* "🔗 Gerenciar atividades" (assets/js/indice-aula-modal-vinculo.js, #213): por cima do
+   "Editar aula". */
+.aula-vinculo-fundo { z-index: 1001; }
+.aula-vinculo-form { grid-template-columns: minmax(0, 220px) 1fr; align-items: end; }
+
 .aula-excluir-botao {
     background: var(--aula-excluir-fundo);
     border: 1px solid var(--aula-excluir-borda);
