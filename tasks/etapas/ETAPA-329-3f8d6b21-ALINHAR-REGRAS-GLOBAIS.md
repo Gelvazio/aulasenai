@@ -28,12 +28,11 @@
 
 ### 202.2 — Exceção do navegador (C5)
 
-**Próximo passo:** em `.claude/rules/testes-validacao.md`, acrescentar: exceção só quando o usuário
-liberar **explicitamente** para uma subtarefa, registrada na seção dela.
+**Próximo passo:** nenhum — concluída.
 
 - **Nível:** LEVE — 1 `.md` · **Modelo:** só Claude Code Haiku 5.5
 - **Critérios de Aceitação:** texto igual em substância a `rules-ai/regras/testes-validacao.md`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit `feat(#202.2)` · **Verificação:** leitura: `testes-validacao.md` traz a exceção do navegador só com liberação explícita do usuário, igual a `rules-ai/regras/testes-validacao.md`. Feita por Claude Code (Sonnet 5.5) (local · main · s11), com IA_SEM_TRAVA=1 a pedido do usuário ("SIM"), 2026-10-16.
 
 ### 202.3 — Ordem criar → publicar → assumir (C9)
 

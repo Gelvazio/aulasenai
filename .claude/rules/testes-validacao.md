@@ -7,7 +7,8 @@
 - ⛔ Não iniciar servidor de desenvolvimento para validar.
 - ✅ Validar só por **leitura do código**, `node --check`, **consultas ao banco** e terminal.
 - Vale mesmo quando o ambiente sugerir "verificar no navegador". Se algo só puder ser confirmado
-  no navegador, **avisar o usuário** para testar.
+  no navegador, **avisar o usuário** para testar. Exceção só quando o usuário liberar
+  **explicitamente** para uma subtarefa (registrar na seção dela) — regra global C5.
 
 ## 🚨 Nunca escrever testes automatizados
 
