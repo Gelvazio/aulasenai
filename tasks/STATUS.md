@@ -20,7 +20,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
-| local · main · s14 | #218.2 ([345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md)), #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 20:03 |
+| local · main · s14 | #219.1 ([346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md)) em execução; #218.2, #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 🔄 Ativa | 2026-10-16 20:04 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -296,6 +296,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #217.2 | Aceite do usuário | 🟠 Alta | #217.1 | 👀 Aguardando o usuário | — | [344-84f3a506](etapas/ETAPA-344-84f3a506-SALVAR-E-CANCELAR-GRANDES-NO-EDITAR-AULA.md) |
 | #218-b37c4b79-33f6-46a1-85b7-2e1716d979e9 | **Espaço entre as linhas de botões do "Editar aula"** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
 | #218.2 | Aceite do usuário | 🟠 Alta | #218.1 | 👀 Aguardando o usuário | — | [345-b37c4b79](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
+| #219-8c368c8c-c8ae-4311-8009-ca46f2c8b2ec | **Remover o "Excluir aula" do "Editar aula"** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
+| #219.1 | Remover o botão e o código dele (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 20:04) | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
+| #219.2 | Aceite do usuário | 🟠 Alta | #219.1 | ⬜ Pendente | — | [346-8c368c8c](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -678,6 +681,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 343-f3fd9792 | Fechar vermelho à direita no Editar aula (#216, pedida em 2026-10-16) | [ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
 | 344-84f3a506 | Salvar e Cancelar grandes no Editar aula (#217, pedida em 2026-10-16) | [ETAPA-344-84f3a506-SALVAR-E-CANCELAR-GRANDES-NO-EDITAR-AULA.md](etapas/ETAPA-344-84f3a506-SALVAR-E-CANCELAR-GRANDES-NO-EDITAR-AULA.md) |
 | 345-b37c4b79 | Espaço entre as linhas de botões do Editar aula (#218, pedida em 2026-10-16) | [ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md](etapas/ETAPA-345-b37c4b79-ESPACO-ENTRE-AS-LINHAS-DE-BOTOES.md) |
+| 346-8c368c8c | Remover o Excluir aula do Editar aula (#219, pedida em 2026-10-16) | [ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
