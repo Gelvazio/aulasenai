@@ -45,8 +45,15 @@ entregou, se o botão fica desativado).
 
 ### #196.3 — Botão ainda não aparece na discursiva 152
 
-**Próximo passo:** achar por que o botão não aparece na página publicada e corrigir.
+**Próximo passo:** 👀 o usuário dizer com qual login testou (professor, aluno que entregou ou
+aluno que não entregou); professor → decidir se o botão deve aparecer também para ele.
 
 - **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
 - **Pedido (2026-10-16 14:08):** "https://aulasenai.vercel.app/MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html, ainda n aparece o botao *Exportar Meu Gabarito*"
 - **Executor:** Claude Code (Opus 5.5) (local · main · s8)
+- **Diagnóstico (2026-10-16 14:20):** página publicada com `data-exportar-meu-gabarito="sim"`;
+  `avaliacao-discursiva.js`, `minhas-respostas-discursiva.js`, `botao-minhas-respostas.js` e o
+  CSS publicados iguais aos do repositório (só fim de linha muda), sem cache (`max-age=0`);
+  atividade 152 no banco com a mesma `pagina` e ativa; sem nome repetido entre os scripts. O
+  botão é montado no painel IDENTIFICAÇÃO para **todo aluno logado** (desativado até entregar)
+  e **não aparece para o professor nem para quem não está logado** (regra da #82).
