@@ -282,7 +282,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #210.3 | Aceite do usuário | 🟠 Alta | #210.2 | 👀 Aguardando o usuário | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #211-3c6cc913-7d2d-4eac-bbc3-88094817cc2d | **Vincular turmas às matérias (combo de turma só da matéria)** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.5 | Aceite do usuário | 🟠 Alta | #211.3, #211.4 | 👀 Aguardando o usuário | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
-| #212-12542c62-52d5-4af4-a177-a1bd2eed96d7 | **Excluir a atividade Trabalho em equipe — Manual v2 (ITIC)** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| #212-12542c62-52d5-4af4-a177-a1bd2eed96d7 | **Excluir as atividades Trabalho em equipe — Manual e Manual v2 (ITIC)** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | #212.1 | Levantamento e plano (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s15) (desde 2026-10-16 19:40) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 
 ## Escopo
