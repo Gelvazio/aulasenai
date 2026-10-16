@@ -19,8 +19,8 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s15 | #212.3 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) em execução; #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguarda o seu aceite | 🔄 Ativa | 2026-10-16 19:40 |
-| local · main · s14 | #215.2 ([342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md)), #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 19:56 |
+| local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
+| local · main · s14 | #216.1 ([343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md)) em execução; #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 🔄 Ativa | 2026-10-16 19:59 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -282,16 +282,17 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #210.3 | Aceite do usuário | 🟠 Alta | #210.2 | 👀 Aguardando o usuário | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #211-3c6cc913-7d2d-4eac-bbc3-88094817cc2d | **Vincular turmas às matérias (combo de turma só da matéria)** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.5 | Aceite do usuário | 🟠 Alta | #211.3, #211.4 | 👀 Aguardando o usuário | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
-| #212-12542c62-52d5-4af4-a177-a1bd2eed96d7 | **Excluir as atividades Trabalho em equipe — Manual e Manual v2 (ITIC)** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
-| #212.2 | Banco: SQL do DELETE + aulas 70/71 excluídas (PESADO) | 🟠 Alta | — | 👀 Rodar o DELETE no SQL Editor | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
-| #212.3 | Cards, arquivos e links (MEDIO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s15) (desde 2026-10-16 19:48) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
-| #212.4 | Aceite do usuário | 🟠 Alta | #212.2, #212.3 | ⬜ Pendente | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| #212-12542c62-52d5-4af4-a177-a1bd2eed96d7 | **Excluir as atividades Trabalho em equipe — Manual e Manual v2 (ITIC)** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| #212.4 | Aceite do usuário | 🟠 Alta | #212.2, #212.3 | 👀 Aguardando o usuário | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | #213-14f758bd-6294-4748-9fca-71d40d7bd11a | **Gerenciar atividades: vincular e desvincular atividades da aula** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
 | #213.2 | Aceite do usuário | 🟠 Alta | #213.1 | 👀 Aguardando o usuário | — | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
 | #214-084973bf-2bb6-4fcc-957d-4a2eb5b28023 | **Botões do "Editar aula" no topo do modal** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [341-084973bf](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |
 | #214.2 | Aceite do usuário | 🟠 Alta | #214.1 | 👀 Aguardando o usuário | — | [341-084973bf](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |
 | #215-50bf759c-296e-4d85-b6c8-e847615e12e2 | **"Editar aula" sem barra de rolagem na caixa** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
 | #215.2 | Aceite do usuário | 🟠 Alta | #215.1 | 👀 Aguardando o usuário | — | [342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
+| #216-f3fd9792-556c-48bc-9853-f3129d18157f | **"Fechar" vermelho e à direita no "Editar aula"** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
+| #216.1 | Fechar vermelho à direita (LEVE) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 19:59) | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
+| #216.2 | Aceite do usuário | 🟠 Alta | #216.1 | ⬜ Pendente | — | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -667,10 +668,11 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 336-77564f72 | Slides bloqueados junto com a aula (#209, pedida em 2026-10-16) | [ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | 337-be64cb29 | Bloqueio da aula ligado em todas as matérias (#210, pedida em 2026-10-16) | [ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | 338-3c6cc913 | Vincular turmas às matérias (#211, pedida em 2026-10-16) | [ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
-| 339-12542c62 | Excluir a atividade Trabalho em equipe — Manual v2 do ITIC (#212, pedida em 2026-10-16) | [ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| 339-12542c62 | Excluir as atividades Trabalho em equipe — Manual e Manual v2 do ITIC (#212, pedida em 2026-10-16) | [ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | 340-14f758bd | Gerenciar atividades da aula (#213, pedida em 2026-10-16) | [ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
 | 341-084973bf | Botões do Editar aula no topo (#214, pedida em 2026-10-16) | [ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |
 | 342-50bf759c | Editar aula sem rolagem na caixa (#215, pedida em 2026-10-16) | [ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
+| 343-f3fd9792 | Fechar vermelho à direita no Editar aula (#216, pedida em 2026-10-16) | [ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
