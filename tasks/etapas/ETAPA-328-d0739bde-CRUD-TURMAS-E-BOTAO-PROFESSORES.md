@@ -53,18 +53,19 @@ excluir) e o vínculo turma × professor vira o botão **Professores** na linha 
 
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-16 12:49 | Plano aprovado, inclusive o banco já aplicado ("Sim, eu aprovo o plano da #201 (etapa 328). Pode executar tudo, inclusive o banco já aplicado.") | Usuário (nesta sessão) | Aprovação exigida para tarefa grande |
 
 ### #201.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** aguardar o "sim" do usuário ao plano acima.
+**Próximo passo:** — (aprovado).
 
 - **Nível:** PESADO — banco/RLS e permissões de professor
 - **Descrição:** plano (escopo, riscos, subtarefas) e "sim" do usuário.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** plano nesta etapa · **Verificação:** aprovação em 2026-10-16 12:49 (Decisões)
 
 ### #201.2 — Banco e tela do CRUD de turmas com o botão Professores
 
-**Próximo passo:** depois da aprovação, aplicar o SQL e conferir.
+**Próximo passo:** banco aplicado e conferido; fazer a tela (`turmas.html` e JS).
 
 - **Nível:** PESADO — banco (RLS) e permissões do administrador
 - **Descrição:** escopo acima (SQL, tela, modal, botão Professores, docs).
