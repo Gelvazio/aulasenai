@@ -86,12 +86,19 @@ cadastrado pelo professor administrador em `turmas.html`.
 
 ### #211.4 — Combo "Turma:" filtrado pela matéria
 
-**Próximo passo:** filtrar `listarTurmasVisiveisFavorita` pela `turma_materia` da matéria da pasta.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de 1 arquivo (`assets/js/indice-turma-favorita.js`)
+- **Entrega:** `assets/js/indice-turma-favorita.js` — acha a matéria pela pasta
+  (`materia.descricao` ilike), lê a `turma_materia` e deixa no combo "Turma:" só as turmas dela
+  (sem vínculo ou matéria não achada = todas, D1); favorita fora da matéria → abre na 1ª turma.
+  Vale para o `ATIVIDADES/index.html` de todas as matérias.
+- **Verificação:** `node --check`; consulta no banco: `INTRODUCAO TIC` acha 1 matéria (id 25)
+  com as turmas 135080 e 135081 — o combo do índice ITIC fica só com essas duas.
 
 ### #211.5 — Aceite do usuário
 
-**Próximo passo:** usuário conferir `turmas.html` (botão Matérias) e o combo do índice ITIC.
+**Próximo passo:** usuário conferir `turmas.html` (botão 📚 Matérias) e o combo "Turma:" do
+`INTRODUCAO-TIC/ATIVIDADES/index.html` (só 135080 e 135081).
 
 - **Nível:** LEVE — conferência do usuário

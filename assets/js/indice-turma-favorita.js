@@ -3,6 +3,8 @@
 // Trocar a turma da lista dispara o evento 'turma-indice-alterada' (detail = código da turma), que
 // faz o indice-atividades-bloqueio.js remontar o ON/OFF das atividades para aquela turma (#190)
 // e o indice-aula-data.js reler o bloqueio da aula nela (#206). A lista abre na turma favorita.
+// A lista mostra só as turmas vinculadas à matéria da página na tabela turma_materia (cadastro
+// no botão 📚 Matérias de turmas.html, #211); matéria sem vínculo (ou não achada) = todas.
 // Carregado por assets/js/atividades-crud-modal.js, depois de assets/js/turma-favorita.js.
 // Depende de supabase-js, js/supabase.js e turma-favorita.js; usa popup.js se já estiver na página.
 
@@ -12,6 +14,9 @@ const PERFIL_PROFESSOR_FAVORITA = 'PROFESSOR';
 const RPC_ADMINISTRADOR_FAVORITA = 'eh_professor_administrador';
 const PREFIXO_OPCAO_FAVORITA = '⭐ ';
 const EVENTO_TURMA_ESCOLHIDA_INDICE = 'turma-indice-alterada';
+const PASTA_ATIVIDADES_FAVORITA = 'ATIVIDADES';
+const TABELA_MATERIA_FAVORITA = 'materia';
+const TABELA_TURMA_MATERIA_FAVORITA = 'turma_materia';
 
 /**
  * Devolve a sessão do professor logado.
@@ -53,6 +58,55 @@ async function listarTurmasVisiveisFavorita(cliente, usuario) {
     const { data: turmas, error: erroTurmas } = await consulta;
     if (erroTurmas) throw erroTurmas;
     return turmas || [];
+}
+
+/**
+ * Nome da matéria pela pasta do endereço (.../<MATERIA>/ATIVIDADES/index.html), com espaços no
+ * lugar dos hífens, como na coluna materia.descricao.
+ * @returns {string} Nome da matéria ou texto vazio.
+ */
+function lerNomeMateriaFavorita() {
+    const partes = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+    const posicao = partes.map((parte) => parte.toUpperCase())
+        .lastIndexOf(PASTA_ATIVIDADES_FAVORITA);
+    if (posicao < 1) return '';
+
+    return partes[posicao - 1].replace(/-/g, ' ');
+}
+
+/**
+ * Códigos das turmas vinculadas à matéria da página (tabela turma_materia).
+ * @param {Object} cliente - Cliente autenticado do Supabase.
+ * @returns {Promise<Set<string>|null>} Códigos, ou null se a matéria não for achada ou não
+ *   tiver turma vinculada (aí a lista mostra todas as turmas — decisão D1 da #211).
+ * @throws {Error} Erro do banco.
+ */
+async function buscarTurmasDaMateriaFavorita(cliente) {
+    const nome = lerNomeMateriaFavorita();
+    if (!nome) return null;
+
+    const { data: materias, error: erroMateria } = await cliente
+        .from(TABELA_MATERIA_FAVORITA).select('id').ilike('descricao', nome);
+    if (erroMateria) throw erroMateria;
+    if (materias?.length !== 1) return null;
+
+    const { data: vinculos, error: erroVinculos } = await cliente
+        .from(TABELA_TURMA_MATERIA_FAVORITA).select('turma_codigo')
+        .eq('materia_id', materias[0].id);
+    if (erroVinculos) throw erroVinculos;
+    if (!vinculos?.length) return null;
+    return new Set(vinculos.map((vinculo) => vinculo.turma_codigo));
+}
+
+/**
+ * Deixa só as turmas da matéria da página.
+ * @param {Object[]} turmas - Turmas visíveis ao professor.
+ * @param {Set<string>|null} codigosDaMateria - Turmas da matéria (null = sem filtro).
+ * @returns {Object[]} Turmas que ficam na lista.
+ */
+function filtrarTurmasDaMateriaFavorita(turmas, codigosDaMateria) {
+    if (!codigosDaMateria) return turmas;
+    return turmas.filter((turma) => codigosDaMateria.has(turma.codigo));
 }
 
 /**
@@ -126,7 +180,9 @@ function criarBarraFavorita(turmas, favorita) {
     const lista = document.createElement('select');
     lista.className = CLASSE_BARRA_FAVORITA + '__lista';
     turmas.forEach((turma) => lista.append(new Option('', turma.codigo)));
-    lista.value = favorita || turmas[0].codigo;
+    // A favorita pode não ser da matéria da página: aí a lista abre na primeira turma.
+    const favoritaNaLista = turmas.some((turma) => turma.codigo === favorita);
+    lista.value = favoritaNaLista ? favorita : turmas[0].codigo;
     rotulo.append(lista);
 
     const estado = { lista, turmas, favorita, botao: null };
@@ -149,7 +205,10 @@ async function iniciarTurmaFavoritaIndice() {
         const sessao = await obterSessaoProfessorFavorita();
         if (!sessao) return;
 
-        const turmas = await listarTurmasVisiveisFavorita(sessao.cliente, sessao.usuario);
+        const [visiveis, codigosDaMateria] = await Promise.all([
+            listarTurmasVisiveisFavorita(sessao.cliente, sessao.usuario),
+            buscarTurmasDaMateriaFavorita(sessao.cliente)]);
+        const turmas = filtrarTurmasDaMateriaFavorita(visiveis, codigosDaMateria);
         const referencia = SELETORES_ANTES_BARRA_FAVORITA
             .map((seletor) => document.querySelector(seletor)).find(Boolean);
         if (!turmas.length || !referencia) return;

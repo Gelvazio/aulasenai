@@ -79,3 +79,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #211.1 | Levantamento e plano (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.2 | Tabela `turma_materia` + RLS + vínculo ITIC (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.3 | Botão e modal "Matérias" em turmas.html (MEDIO) | 🟠 Alta | #211.2 | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
+| #211.4 | Combo "Turma:" filtrado pela matéria (MEDIO) | 🟠 Alta | #211.2 | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
