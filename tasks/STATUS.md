@@ -231,6 +231,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #184-85eb3106-14de-4016-8864-ad21ca69c5d3 | Página `index.html` do banco de horas: accordion por semana e "Lançado?" ON/OFF no `localStorage` | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.1 | Criar o `index.html` do banco de horas (MEDIO) | 🟡 Média | — | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.2 | Aceite do usuário | 🟡 Média | #184.1 | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
+| #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -577,6 +581,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 309-784ccaeb | Sistema de níveis de tarefa (#182, pedida em 2026-10-15) | [ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md) |
 | 310-66fcd57a | Calcular o banco de horas (#183, pedida em 2026-10-15) | [ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | 311-85eb3106 | Página do banco de horas (#184, pedida em 2026-10-15) | [ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
+| 312-5df765a9 | Datas das aulas por turma na atividade de ITIC (#185, pedida em 2026-10-16) | [ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
