@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #208 concluída (#208.1; [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:04 |
-| local · main · s14 | #206.4 a #206.6 entregues; #206.7 aguarda o seu aceite ([333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md)) | 👀 Aguardando o usuário | 2026-10-16 18:19 |
+| local · main · s14 | #206.7 aguarda o seu aceite; #209.1 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) aguarda a aprovação do plano | 👀 Aguardando o usuário | 2026-10-16 18:28 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -273,6 +273,13 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #205.2 | Aceite do usuário | 🟡 Média | #205.1 | 👀 Aguardando o usuário | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #206-e75bddc3-5b1c-4f0e-9a3d-7c2b8d41a6f9 | **Voltar a `aula_turma` (chaves da aula, matéria e turma; data e bloqueio da aula) pela turma do combo, padrão a favorita** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.7 | Aceite do usuário | 🟠 Alta | #206.6 | 👀 Aguardando o usuário | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #209-77564f72-9786-4bff-b0e7-13af8a43abe7 | **Slides bloqueados junto com a aula (também pelo endereço do PDF)** | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:28) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.2 | SQL: bucket `slides`, função e políticas do Storage (PESADO) | 🟠 Alta | #209.1 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.3 | Enviar os 10 PDFs ao bucket (LEVE) | 🟠 Alta | #209.2 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.4 | Links dos slides pelo link temporário e PDFs fora do site (PESADO) | 🟠 Alta | #209.3 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.5 | Documentação (LEVE) | 🟠 Alta | #209.4 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.6 | Aceite do usuário | 🟠 Alta | #209.5 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -644,6 +651,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 332-6808b7d3 | Tirar a linha de resumo (questões · minutos) dos cards (#205, pedida em 2026-10-16) | [ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | 333-e75bddc3 | Voltar a `aula_turma` com data e bloqueio da aula pela turma do combo (#206, pedida em 2026-10-16) | [ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
+| 336-77564f72 | Slides bloqueados junto com a aula (#209, pedida em 2026-10-16) | [ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
