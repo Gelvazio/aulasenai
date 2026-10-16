@@ -91,15 +91,22 @@ continua valendo para a turma do combo do índice; a tabela, o gatilho e a funç
 
 ### #193.3 — SQL que apaga a `aula_turma` do banco
 
-**Próximo passo:** depois da #193.2, escrever `database/2026-10-16-remover-aula-turma.sql`
-(idempotente) e registrar em `database/SEEDS-APLICADOS.md` como PENDENTE (depende do usuário).
+**Próximo passo:** — (entregue; rodar na #193.4).
 
 - **Nível:** PESADO — banco (apagar tabela, gatilho e função).
+- **Entrega:** `database/2026-10-16-remover-aula-turma.sql` (`drop table if exists` + `drop function
+  if exists`, sem `cascade`, com a conferência no fim) e a linha PENDENTE em
+  `database/SEEDS-APLICADOS.md`.
+- **Verificação:** catálogo do banco (só leitura, 2026-10-16 10:14): nada depende da tabela além
+  do próprio gatilho, das políticas e do índice (que saem com ela); a função só é usada pelo
+  gatilho; a tabela não está em publicação de tempo real.
 
 ### #193.4 — Rodar o SQL no SQL Editor e conferir
 
-**Próximo passo:** 👀 o usuário roda o SQL no SQL Editor do Supabase; depois o Claude Code local
-confere (tabela, gatilho e função não existem mais) e marca CONCLUÍDO.
+**Próximo passo:** 👀 o usuário abre o SQL Editor do Supabase, cola e roda o arquivo
+`database/2026-10-16-remover-aula-turma.sql` (a última consulta deve mostrar as duas colunas
+vazias); depois o Claude Code local confere no banco e marca CONCLUÍDO com
+`scripts/seeds/registrar_seed.py`.
 
 - **Nível:** PESADO — banco; a parte de rodar é do usuário (`security-banco.md`).
 

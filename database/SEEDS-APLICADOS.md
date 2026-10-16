@@ -89,6 +89,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 06:50 | Tabela `aula_turma` criada e carregada pelo conector: 19 aulas × 2 turmas (135080 e 135081), datas das atividades; RLS com 4 políticas — Etapa 312-5df765a9 |
 | `2026-10-16-aula-turma-bloqueio.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 07:40 | Coluna `bloqueio` + `data_aula` opcional + gatilho que propaga a `atividade.bloqueio`; testado em transação revertida (aula 21, turma 135080: 2 atividades bloqueadas) — Etapa 313-937e5036 |
 | `2026-10-16-aula-turma-calendario-itic.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 08:15 | 20 datas do calendário gravadas em `aula_turma` (10 por turma, 135080 e 135081); conferido pelo retorno do `returning` — Etapa 314-d7f180ea |
+| `2026-10-16-remover-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **PENDENTE** | — | Apaga a tabela `aula_turma`, o gatilho e a função dela (#193; desfaz os 3 SQLs acima); o usuário roda no SQL Editor (o conector bloqueia DROP TABLE) — Etapa 320-c3289a94 |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
