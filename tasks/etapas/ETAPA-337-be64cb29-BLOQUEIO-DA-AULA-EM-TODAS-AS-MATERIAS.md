@@ -10,6 +10,7 @@ com índice de atividades, hoje só em Testes de Front-End (`assets/js/indice-bl
 
 ### Decisões
 
+- 2026-10-16 18:54 — **Aprovação do plano da #210.2:** o usuário respondeu "sim, aprovado". Registrado por Claude Code (Opus 5.5) (local · main · s14).
 - 2026-10-16 18:49 — Tarefa criada a pedido do usuário.
 
 ### #210.1 — Verificar as matérias (só leitura)
@@ -49,7 +50,7 @@ com índice de atividades, hoje só em Testes de Front-End (`assets/js/indice-bl
   as páginas cujo endereço está exatamente em `atividade.pagina`.
 ### #210.2 — Ligar o bloqueio da aula em todas as matérias
 
-**Próximo passo:** depende da #210.1 e da aprovação do usuário.
+**Próximo passo:** executar os passos 1 a 4 do plano (configuração, SQL dos 26 pares, páginas, documentação).
 
 - **Nível:** PESADO — mudança em massa.
 
