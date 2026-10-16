@@ -52,8 +52,9 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
   aulas deve filtrar `excluido = 0`.
 - ✅ **Card com 100% dos dados da tabela `aulas`** (2026-10-06, pedido do usuário; plano
   `docs/card-dados-100-tabela-aulas.md`): o rótulo do card é `aulas.rotulo_card` (vazio =
-  "AULA NN" pelo `numero`), o nome é `aulas.nome_card` (vazio = `aulas.titulo`) e a data é
-  `aulas.data_planejada`. O texto escrito no HTML do índice só é usado para **achar** a aula quando
+  "AULA NN" pelo `numero`) e o nome é `aulas.nome_card` (vazio = `aulas.titulo`). A linha
+  "📅 Data da aula" **não aparece mais nos cards** (2026-10-16, #204); `aulas.data_planejada` fica
+  só no modal "Editar aula". O texto escrito no HTML do índice só é usado para **achar** a aula quando
   a atividade não pôde ser lida (ex.: bloqueada para o aluno), pelo rótulo; card sem aula no banco
   fica como está no HTML. Código: `assets/js/indice-aula-repositorio.js` (dados),
   `assets/js/indice-aula-data.js` (cards) e `assets/js/indice-aula-modal.js` (modal), carregados

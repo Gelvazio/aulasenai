@@ -7,15 +7,20 @@ deixam de mostrar a linha "📅 Data da aula: …".
 
 ### #204.1 — Tirar a linha "Data da aula" dos cards
 
-**Próximo passo:** ler `assets/js/indice-aula-data.js` e tirar a linha da data do card.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — JS com lógica, 1 a 3 arquivos
 - **Descrição:** a linha é criada por `assets/js/indice-aula-data.js`, que vale para todos os
   índices; tirar só a exibição (a data continua no banco e no modal "Editar aula").
 - **Critérios de aceitação:** nenhum card de atividade mostra "Data da aula".
+- **Entrega:** `assets/js/indice-aula-data.js` sem `renderizarDataNoCard`, `formatarDataAula` e os
+  textos da data; `assets/css/indice-aula-data.css` sem as classes `.aula-data*` da linha;
+  `docs/regras/usuarios-turmas-paginas-professor.md` atualizado. A data continua no banco e no
+  modal "Editar aula". **Verificação:** `node --check` ok; nenhum HTML ou gerador escreve "Data da
+  aula" no card (grep); confirmar na página (sem navegador aqui).
 
 ### #204.2 — Aceite do usuário
 
-**Próximo passo:** aguardando o #204.1.
+**Próximo passo:** 👀 o usuário recarrega um índice de atividades e confirma que a data sumiu.
 
 - **Nível:** LEVE — confirmação do usuário

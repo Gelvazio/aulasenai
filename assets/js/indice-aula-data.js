@@ -1,6 +1,6 @@
 // Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo
-// (aulas.rotulo_card ou "AULA NN"), nome (aulas.nome_card ou aulas.titulo) e "📅 Data da aula"
-// (aulas.data_planejada). Regra: cada card ligado a apenas 1 aula. A aula do card vem da
+// (aulas.rotulo_card ou "AULA NN") e nome (aulas.nome_card ou aulas.titulo). A data da aula não
+// aparece no card (pedido de 2026-10-16, #204); ela fica só no modal "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
@@ -18,8 +18,6 @@ const SELETOR_NOME_CARD_AULA = '.topo h2';
 // Começo do texto do link que não é letra nem número (emoji e "🔒 "): fica antes do nome do banco.
 const REGEX_PREFIXO_LINK_ATIVIDADE = /^[^\p{L}\p{N}]*/u;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
-const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
-const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
@@ -40,18 +38,6 @@ function criarElementoCardAula(tag, classe, texto) {
     if (classe) elemento.className = classe;
     if (texto) elemento.textContent = texto;
     return elemento;
-}
-
-/**
- * Converte a data do banco (AAAA-MM-DD) para DD/MM/AAAA, sem passar por fuso horário.
- * @param {string|null} dataIso - Data do banco.
- * @returns {string} Data formatada ou texto vazio.
- */
-function formatarDataAula(dataIso) {
-    if (!dataIso) return '';
-
-    const [ano, mes, dia] = dataIso.split('-');
-    return dia + '/' + mes + '/' + ano;
 }
 
 /**
@@ -168,27 +154,6 @@ function renderizarTextosNoCard(item) {
 }
 
 /**
- * Escreve a linha da data no card (cria a linha na primeira vez).
- * @param {{card: HTMLElement, aula: Object|null}} item - Card e a aula dele.
- */
-function renderizarDataNoCard(item) {
-    let linha = item.card.querySelector('.aula-data');
-    if (!linha) {
-        linha = criarElementoCardAula('p', 'aula-data');
-        const referencia = item.card.querySelector('.meta') || item.card.querySelector('.topo');
-        referencia?.after(linha);
-    }
-    const data = formatarDataAula(item.aula?.data_planejada);
-    const semData = !data;
-    linha.classList.toggle('aula-data--vazia', semData);
-    if (data) linha.textContent = '📅 Data da aula: ' + data;
-    if (semData && item.aula) linha.textContent = TEXTO_SEM_DATA_AULA;
-    if (!item.aula) linha.textContent = TEXTO_AULA_SEM_CADASTRO;
-
-    linha.hidden = semData && !estadoCardsAula.ehProfessor;
-}
-
-/**
  * Esconde do índice o card de aula excluída.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
@@ -209,13 +174,12 @@ function atualizarCardsDaAula(aula) {
 }
 
 /**
- * Desenha o card inteiro (textos, data e visibilidade) a partir da aula.
+ * Desenha o card inteiro (textos e visibilidade) a partir da aula.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
-    renderizarDataNoCard(item);
     if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
 }
 

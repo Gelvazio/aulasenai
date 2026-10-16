@@ -1,7 +1,6 @@
-/* Data da aula nos cards do ATIVIDADES/index.html e botão "Editar aula"
+/* Botão "Editar aula" nos cards do ATIVIDADES/index.html
    (assets/js/indice-aula-data.js). O modal usa os estilos de atividades-crud-modal.css. */
 :root {
-    --aula-data-texto: #1b7f3b;
     --aula-data-vazia: #a0aec0;
     --aula-data-botao-fundo: #eef0fd;
     --aula-data-botao-borda: #667eea;
@@ -9,10 +8,6 @@
     --aula-excluir-borda: #c53030;
     --aula-excluir-texto: #9b2c2c;
 }
-
-.aula-data { font-size: 14px; font-weight: 700; color: var(--aula-data-texto); }
-.aula-data--vazia { font-weight: 600; font-style: italic; color: var(--aula-data-vazia); }
-.aula-data[hidden] { display: none; }
 
 .aula-data-botao {
     background: var(--aula-data-botao-fundo);
