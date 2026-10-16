@@ -615,6 +615,16 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - **bloquear a aula (`aulas.ativo = false`) bloqueia todas as atividades dela** (trigger
     `aulas_bloqueio_propaga_atividades_trg`, 2026-10-09: grava `atividade.ativo = false`);
     desbloquear a aula não mexe nas atividades;
+  - **bloqueio da aula POR TURMA** (2026-10-16, tarefa #206; tabela `aula_turma` em
+    `docs/database.md`): o combo **"Turma:"** do índice abre na **turma favorita** e comanda o
+    botão "Aula liberada / Aula bloqueada", o "✏️ Editar aula" ("Data da aula" e "Aula bloqueada
+    nesta turma") e o ON/OFF das atividades; trocar a turma no combo relê tudo. Bloquear a aula
+    na turma põe a turma no `bloqueio` das atividades da aula (gatilho); liberar não mexe nelas.
+    O aluno perde a aula só se ela estiver bloqueada em todas as turmas dele. `aulas.ativo = false`
+    continua valendo para todas as turmas; liberar uma aula assim no índice mantém o bloqueio nas
+    outras turmas do combo e libera só a escolhida. Sem combo (sem turmas), o botão grava
+    `aulas.ativo`. Código: `assets/js/aula-turma-repositorio.js`, `indice-aula-bloqueio.js`,
+    `indice-aula-modal-turma.js`;
   - **slides da aula bloqueada fechados para o aluno** (2026-10-14, tarefa #31; matérias de
     `assets/js/indice-bloqueio-aula-config.js`): no índice, os links dos cards ficam travados
     (classe `indice--conferindo-aula`) até o `indice-aula-data.js` conferir o bloqueio; na página

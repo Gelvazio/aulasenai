@@ -130,26 +130,54 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 
 ### #206.4 — Combo "Turma:" abre na turma favorita e comanda data, bloqueio da aula e atividades
 
-**Próximo passo:** depende da #206.3; ler `indice-turma-favorita.js`, `indice-aula-data.js`,
-`indice-aula-bloqueio.js` e `indice-atividades-bloqueio.js`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mais de 3 arquivos ligados e segurança (quem vê a aula bloqueada).
 - **Critérios de aceitação:** combo sempre abre na favorita; trocar a turma remonta data, botão
   "Aula liberada/bloqueada" e ON/OFF das atividades; aluno sem acesso à aula bloqueada na turma
   dele; sem constante global repetida entre os scripts do índice.
+- **Entrega (2026-10-16 18:18, Claude Code (Opus 5.5) (local · main · s14)):** `assets/js/aula-turma-repositorio.js`
+  (novo: lê as linhas da turma, as aulas bloqueadas nas turmas e as turmas do aluno; grava a linha);
+  `indice-aula-bloqueio.js` (bloqueio = `aulas.ativo = false` **ou** `aula_turma.bloqueio` da
+  turma lida; o botão grava na turma do combo; sem turma, grava `aulas.ativo` como antes);
+  `indice-aula-data.js` (lê a turma ao desenhar e ouve `turma-indice-alterada` para redesenhar);
+  `atividades-crud-modal.js` (carrega o repositório); comentário em `indice-turma-favorita.js`.
+  O combo já abria na favorita (`lista.value = favorita`) e o ON/OFF das atividades já seguia o
+  combo (#190): não precisaram mudar.
+- **Decisão (Opus 5.5, 2026-10-16 18:18):** liberar no índice uma aula com `aulas.ativo = false` (hoje as aulas
+  124 e 126 de Testes de Front-End) grava `bloqueio = true` nas **outras** turmas do combo, faz
+  `ativo = true` e libera só a turma escolhida (sem isso, liberar uma turma liberaria todas).
+  Aluno: perde a aula só se ela estiver bloqueada em todas as turmas dele (igual ao RLS das
+  atividades).
+- **Verificação:** `node --check` nos 5 scripts; linhas novas até 100 caracteres; nenhuma
+  constante ou função nova repetida em `assets/js` e `js`; consultas de leitura ao banco
+  (colunas, gatilhos BEFORE/AFTER, 4 políticas, 0 linhas bloqueadas). Sem navegador: o teste na
+  tela é o aceite (#206.7).
 
 ### #206.5 — "Editar aula": data e bloqueio da aula na turma do combo
 
-**Próximo passo:** depende da #206.4; ler `indice-aula-modal.js` e `indice-aula-repositorio.js`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código com lógica em até 3 arquivos.
 - **Critérios de aceitação:** o modal lê e grava `aula_turma` da turma do combo.
+- **Entrega (2026-10-16 18:18, Opus 5.5, s14):** `assets/js/indice-aula-modal-turma.js` (novo): campos "Data da
+  aula (turma X)" e "Aula bloqueada nesta turma" (só nas matérias com o bloqueio da aula ligado e
+  quando o bloqueio já leu a mesma turma), lidos do banco ao abrir; sem turma, desabilitados. Salvar
+  grava primeiro a tabela `aulas` e depois só o que mudou na turma. `indice-aula-modal.js` usa o
+  novo arquivo e deixa de mostrar `aulas.data_planejada`; CSS do campo oculto em
+  `assets/css/indice-aula-data.css`.
+- **Verificação:** `node --check`; leitura do fluxo (a data gravada pelo modal é registrada no
+  estado do bloqueio para não duplicar a linha; sem linha lida, relê antes de criar).
 
 ### #206.6 — Documentação
 
-**Próximo passo:** depende da #206.5; atualizar `docs/database.md` e `docs/regras/atividades.md`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md`.
+- **Entrega (2026-10-16 18:18, Opus 5.5, s14):** `docs/database.md` (seção da `aula_turma` no lugar da
+  "removida (#193)", que nunca rodou), `docs/relatorio_verificacao_database.html` (mesma seção) e
+  `docs/regras/atividades.md` (bloqueio da aula por turma). **Verificação:** conferido com o
+  banco e com `database/SEEDS-APLICADOS.md`.
 
 ### #206.7 — Aceite do usuário
 

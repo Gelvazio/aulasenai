@@ -660,8 +660,9 @@ function carregarDataAulasIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
-    const scripts = ['js/indice-aula-repositorio.js', 'js/indice-aula-modal.js',
-        'js/indice-aula-bloqueio.js', 'js/indice-aula-data.js'].map((caminho) => {
+    const scripts = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
+        'js/indice-aula-modal-turma.js', 'js/indice-aula-modal.js', 'js/indice-aula-bloqueio.js',
+        'js/indice-aula-data.js'].map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;

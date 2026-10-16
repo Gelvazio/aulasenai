@@ -851,14 +851,35 @@ Este arquivo deve ser referenciado em:
 
 ---
 
-## 🗑️ Atualização 2026-10-16 — Tabela `aula_turma` removida (#193)
+## 📅 Atualização 2026-10-16 — Tabela `aula_turma`: data e bloqueio da aula por turma (#206)
 
-A tabela `aula_turma` (datas e bloqueio da aula por turma, criada pelas tarefas #185 a #187) foi
-desfeita a pedido do usuário: o sistema voltou ao estado de antes dela. Script:
-`database/2026-10-16-remover-aula-turma.sql` (apaga o gatilho
-`aula_turma_bloqueio_propaga_atividades_trg`, a função `aula_turma_bloqueio_propaga_atividades()`
-e a tabela). A "Data da aula" volta a ser `aulas.data_planejada`. O bloqueio de atividade por
-turma (`atividade.bloqueio`, `definir_bloqueio_turma`) não muda.
+A remoção pedida na #193 (`database/2026-10-16-remover-aula-turma.sql`) **nunca rodou** e ficou
+SUBSTITUÍDA: a tabela continua no banco e a #206 acrescentou a chave da matéria
+(`database/2026-10-16-aula-turma-materia.sql`, aplicado em 2026-10-16). Scripts anteriores:
+`2026-10-16-aula-turma.sql`, `2026-10-16-aula-turma-bloqueio.sql` e
+`2026-10-16-aula-turma-calendario-itic.sql`.
+
+| Coluna / objeto | Tipo | Descrição |
+|-----------------|------|-----------|
+| `id` | `bigint` (PK) | — |
+| `aula_id` | `bigint` → `aulas.id` | chave da aula; único junto com `turma_codigo` |
+| `materia_id` | `bigint not null` → `materia.id` | chave da matéria; o gatilho `aula_turma_materia_da_aula_trg` (BEFORE) copia sempre a da aula |
+| `turma_codigo` | `text` → `turma.codigo` | chave da turma |
+| `data_aula` | `date` (aceita vazio) | data da aula nessa turma (cada turma tem dias diferentes) |
+| `bloqueio` | `boolean default false` | `true` = aula bloqueada **nessa turma** |
+| `created_at`, `updated_at` | `timestamptz` | — |
+| `aula_turma_bloqueio_propaga_atividades_trg` | gatilho (AFTER) | bloquear a aula na turma põe a turma em `atividade.bloqueio` das atividades ativas da aula; liberar não mexe nelas |
+| RLS | 4 políticas | leitura para logado; insert/update/delete só com `eh_professor()` |
+
+- **Tela:** `ATIVIDADES/index.html`. O combo "Turma:" (abre na favorita) escolhe a turma; o botão
+  "Aula liberada / Aula bloqueada" e o "✏️ Editar aula" (campos "Data da aula" e "Aula bloqueada
+  nesta turma") leem e gravam a linha dessa turma. Código: `assets/js/aula-turma-repositorio.js`,
+  `indice-aula-bloqueio.js`, `indice-aula-modal-turma.js`.
+- **Aluno:** perde a aula só se ela estiver bloqueada em **todas** as turmas dele (`turmaaluno`),
+  como o RLS das atividades.
+- `aulas.ativo = false` continua bloqueando a aula para **todas** as turmas. Liberar no índice uma
+  aula assim deixa `aula_turma.bloqueio = true` nas outras turmas do combo e libera só a escolhida.
+- `aulas.data_planejada` não aparece mais no "Editar aula"; a data da aula é a da turma.
 
 ## 🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma (#200)
 

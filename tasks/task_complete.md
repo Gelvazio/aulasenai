@@ -65,3 +65,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #207.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [334-5a7c2e91](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
 | #208 | Conectando a UC ao Mundo do Trabalho (Eleva SENAI) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
 | #208.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
+| #206.4 | Combo "Turma:" abre na favorita e comanda data, bloqueio da aula e atividades (PESADO) | 🟠 Alta | #206.3 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.5 | "Editar aula": data e bloqueio da aula na turma do combo (MEDIO) | 🟠 Alta | #206.4 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #206.6 | Documentação em `docs/` (LEVE) | 🟠 Alta | #206.5 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |

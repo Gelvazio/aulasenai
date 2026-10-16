@@ -444,6 +444,38 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>📅 Atualização 2026-10-16 — tabela aula_turma (data e bloqueio da aula por turma, #206)</h2>
+    <div class="section">
+      <p>Scripts: <code>database/2026-10-16-aula-turma.sql</code>, <code>database/2026-10-16-aula-turma-bloqueio.sql</code> e <code>database/2026-10-16-aula-turma-materia.sql</code> (✅ aplicados; a remoção da #193 nunca rodou e foi SUBSTITUÍDA) · Tela: <code>ATIVIDADES/index.html</code> (combo "Turma:" e "✏️ Editar aula")</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>aula_turma</td>
+          <td>Tabela</td>
+          <td>Uma linha por aula × turma (única por aula_id + turma_codigo): aula_id → aulas.id, materia_id → materia.id (not null), turma_codigo → turma.codigo, data_aula (aceita vazio), bloqueio (padrão false = aula liberada na turma), created_at, updated_at</td>
+        </tr>
+        <tr>
+          <td>aula_turma_materia_da_aula_trg</td>
+          <td>Trigger (BEFORE)</td>
+          <td>Copia sempre a matéria da aula para materia_id (a matéria nunca diverge da aula)</td>
+        </tr>
+        <tr>
+          <td>aula_turma_bloqueio_propaga_atividades_trg</td>
+          <td>Trigger (AFTER)</td>
+          <td>Ao bloquear a aula na turma, põe a turma em atividade.bloqueio das atividades ativas da aula; liberar não mexe nas atividades</td>
+        </tr>
+        <tr>
+          <td>RLS</td>
+          <td>4 políticas</td>
+          <td>Leitura para logado; insert, update e delete só com eh_professor()</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>✍️ Atualização 2026-10-06 — correção das discursivas e notas da média final</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-notas-media-final-correcao-discursiva.sql</code> (✅ aplicado em 2026-10-06) · Telas: <code>correcao-discursiva.html</code> (menu CORREÇÃO) e <code>AVALIACAO-MEDIA-FINAL.html</code> (aluno)</p>

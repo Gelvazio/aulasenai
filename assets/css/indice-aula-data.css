@@ -48,6 +48,8 @@
 }
 
 .aula-excluir-botao[hidden] { display: none; }
+/* Campo "Aula bloqueada nesta turma" escondido nas matérias sem bloqueio da aula (#206). */
+.aula-modal-form .crud-campo[hidden] { display: none; }
 
 /* Os cards de atividades não mostram a linha de resumo ("50 questões · múltipla escolha ·
    90–120 minutos") nem o botão "Conteúdo (.md)" (pedido de 2026-10-16, #205). */

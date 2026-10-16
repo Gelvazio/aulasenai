@@ -3,8 +3,11 @@
 // (abre o CADASTRAR ATIVIDADES com a atividade) e "🗑️ Excluir". "➕ Nova atividade nesta aula"
 // abre o cadastro com a aula já escolhida. O Professor Administrador também vê "🗑️ Excluir aula"
 // (exclusão lógica, aulas.excluido = 1). Só o professor abre o modal; o RLS garante no banco.
-// Depende de: assets/js/indice-aula-repositorio.js e assets/js/atividades-crud-modal.js
-// (abrirEdicaoAtividadeCrud); estilos de atividades-crud-modal.css e indice-aula-data.css.
+// "Data da aula" e "Aula bloqueada nesta turma" valem para a turma do combo "Turma:" do índice
+// (aula_turma, tarefa #206) e ficam em assets/js/indice-aula-modal-turma.js.
+// Depende de: assets/js/indice-aula-repositorio.js, indice-aula-modal-turma.js e
+// assets/js/atividades-crud-modal.js (abrirEdicaoAtividadeCrud); estilos de
+// atividades-crud-modal.css e indice-aula-data.css.
 
 const URL_POPUP_AULA_MODAL = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 const MSG_AULA_GRAVADA = '✅ Aula gravada.';
@@ -25,7 +28,6 @@ const CAMPOS_MODAL_AULA = [
     { nome: 'titulo', rotulo: 'Título da aula', tipo: 'text', obrigatorio: true },
     { nome: 'rotulo_card', rotulo: 'Rótulo do card (vazio = "AULA NN")', tipo: 'text', maximo: 60 },
     { nome: 'nome_card', rotulo: 'Nome do card (vazio = título)', tipo: 'text', maximo: 200 },
-    { nome: 'data_planejada', rotulo: 'Data da aula', tipo: 'date' },
     { nome: 'duracao_minutos', rotulo: 'Duração (minutos)', tipo: 'number' },
     { nome: 'sequencia', rotulo: 'Sequência', tipo: 'number' },
     { nome: 'descricao', rotulo: 'Descrição', tipo: 'textarea' },
@@ -118,7 +120,10 @@ function montarFormularioModalAula() {
         'excluir-aula');
     acoes.append(criarBotaoModalAula('Salvar', 'crud-btn--principal', 'salvar'),
         criarBotaoModalAula('✕ Fechar', '', 'fechar'), botaoExcluir);
-    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), acoes);
+    const camposDaTurma = typeof criarCamposTurmaModalAula === 'function'
+        ? criarCamposTurmaModalAula() : [];
+    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), ...camposDaTurma,
+        acoes);
     return { formulario, info, botaoExcluir };
 }
 
@@ -171,6 +176,9 @@ function preencherFormularioModalAula(aula) {
     elementosModalAula.info.textContent = 'ID da aula: ' + aula.id + ' · Matéria: ' +
         (aula.materia?.descricao || aula.materia_id) + ' · Curso: ' +
         (aula.curso?.nome_completo || aula.curso_id);
+    if (typeof preencherCamposTurmaModalAula === 'function') {
+        preencherCamposTurmaModalAula(elementosModalAula.formulario, aula);
+    }
 }
 
 /**
@@ -213,7 +221,9 @@ async function aoSalvarModalAula(evento) {
 
     try {
         if (!await gravarAulaCard(aula.id, valores)) throw new Error('Nenhuma linha alterada');
-        estadoModalAula.contexto.aoGravar({ ...aula, ...valores });
+        const gravada = { ...aula, ...valores };
+        estadoModalAula.contexto.aoGravar(typeof gravarCamposTurmaModalAula === 'function'
+            ? await gravarCamposTurmaModalAula(elementosModalAula.formulario, gravada) : gravada);
         fecharModalAula();
         await garantirPopupModalAula();
         window.mostrarPopup?.(MSG_AULA_GRAVADA, { tipo: 'sucesso', titulo: 'Editar aula' });

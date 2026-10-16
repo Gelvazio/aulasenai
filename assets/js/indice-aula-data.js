@@ -6,10 +6,12 @@
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
-// "Aula liberada / Aula bloqueada" (aulas.ativo) fica antes de "Editar aula" e a aula bloqueada
-// bloqueia o card inteiro para os alunos (assets/js/indice-aula-bloqueio.js).
-// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, assets/js/indice-aula-modal.js,
-// assets/js/atividades-crud-repositorio.js e assets/js/atividades-crud-modal.js (obterCaminhoHtml).
+// "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
+// inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
+// combo "Turma:" (aula_turma, #206): trocar a turma no combo relê e redesenha os cards.
+// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, aula-turma-repositorio.js,
+// assets/js/indice-aula-modal.js, assets/js/atividades-crud-repositorio.js e
+// assets/js/atividades-crud-modal.js (obterCaminhoHtml).
 
 const SELETOR_CARD_AULA = 'article.aula';
 const SELETOR_LINK_PRINCIPAL_AULA = 'a.btn.principal';
@@ -23,6 +25,8 @@ const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
+// Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
+const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
 
 const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
 
@@ -319,10 +323,25 @@ async function desenharCardsDoIndice() {
     } catch (erro) {
         console.warn('Aulas dos cards indisponíveis:', erro.message);
     }
+    if (bloqueioDaAulaNoIndice()) await prepararBloqueioAulaTurma(estadoCardsAula.ehProfessor);
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
     itens.forEach(desenharCardAula);
     await renderizarNomesDasAtividades(itens);
 }
+
+/**
+ * Troca a turma do índice: relê o bloqueio das aulas nela e redesenha os cards.
+ * @param {string} turmaCodigo - Código da turma escolhida no combo.
+ */
+async function trocarTurmaDosCardsAula(turmaCodigo) {
+    if (!bloqueioDaAulaNoIndice()) return;
+
+    await carregarBloqueioAulaTurma({ turma: turmaCodigo || '' });
+    estadoCardsAula.cards.forEach(desenharCardAula);
+}
+
+document.addEventListener(EVENTO_TURMA_INDICE_CARDS_AULA,
+    (evento) => trocarTurmaDosCardsAula(evento.detail));
 
 iniciarCardsAula();
