@@ -31,7 +31,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s2 | #174 aguarda aceite ([301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md)) — sessão separada a pedido da frente local · main | ⏹️ Encerrada | 2026-10-15 14:15 |
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
-| local · main · s5 | #186 ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)) em execução; #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 🔄 Ativa | 2026-10-16 07:15 |
+| local · main · s5 | #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 07:45 |
 
 ## 📌 Tarefas
 
@@ -236,9 +236,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | 👀 Aguardando aceite | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.1 | Coluna `bloqueio` em `aula_turma` e regra no banco (PESADO, só Claude Code local) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s5) (desde 2026-10-16 07:15; ordem expressa do usuário) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⬜ Pendente | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186.1 | Coluna `bloqueio` em `aula_turma` e regra no banco (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | 👀 Aguardando aceite | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⬜ Pendente | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 
 ## Escopo

@@ -63,6 +63,11 @@ pela IA).
 - **Verificação:** `node --check` nos dois JS; linhas ≤ 100 caracteres; arquivo do painel com 956
   linhas. Tela não aberta no navegador (regra do projeto).
 
+**Esclarecimento (2026-10-16 07:55):** "lista todas as aulas, mas na aula listada, deve pegar a data
+da aula e a regra de bloqueio desta tabela, com base na turma selecionada" → o bloco lista TODAS as
+aulas da matéria; em cada uma, a Data da Aula e o bloqueio vêm de `aula_turma` para a turma do
+combo, e trocar a turma relê os valores.
+
 ### #185.3 — Aceite do usuário
 
 **Próximo passo:** 👀 o usuário confere a página.

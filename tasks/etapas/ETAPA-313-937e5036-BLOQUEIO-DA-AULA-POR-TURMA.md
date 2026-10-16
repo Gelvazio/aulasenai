@@ -21,18 +21,29 @@ da tabela `aula_turma` (criada na #185).
 
 ### #186.1 — Coluna `bloqueio` em `aula_turma` e regra no banco
 
-**Próximo passo:** ler como `aulas.ativo` é conferido (RLS, trigger, funções) e criar a coluna.
+**Próximo passo:** ✅ entregue — nada a fazer.
 
 - **Nível:** PESADO — banco (coluna, RLS, funções).
 - **Critérios de aceitação:** coluna aplicada; só o professor grava; aula bloqueada na turma não
   libera a atividade para o aluno daquela turma; `docs/database.md` atualizado.
+- **Decisão (2026-10-16):** o bloqueio por turma reaproveita o que já existe: um gatilho copia o
+  bloqueio da aula para `atividade.bloqueio` (código da turma), então o RLS
+  (`atividade_liberada_para_usuario`), os cards e o índice funcionam sem mudança. Liberar a aula
+  não mexe nas atividades (igual ao bloqueio global). `data_aula` virou opcional.
+- **Entrega:** `database/2026-10-16-aula-turma-bloqueio.sql` aplicado pelo conector;
+  `docs/database.md` e `database/SEEDS-APLICADOS.md` atualizados.
+- **Verificação:** teste em transação revertida: bloquear a aula 21 na turma 135080 pôs "135080" em
+  `bloqueio` das 2 atividades dela; depois do rollback, 0 linhas bloqueadas e 0 atividades alteradas.
 
 ### #186.2 — Botão de bloqueio por turma na tela
 
-**Próximo passo:** depois da #186.1.
+**Próximo passo:** 👀 o usuário confere na atividade (como professor).
 
 - **Nível:** MEDIO — tela com lógica (JS).
 - **Critérios de aceitação:** professor bloqueia/desbloqueia a aula da turma escolhida; `node --check`.
+- **Entrega:** botão 🔒/🔓 em cada aula da lista de datas (`assets/js/datas-aulas-turma.js`,
+  `assets/css/datas-aulas-turma.css`); grava `aula_turma.bloqueio` (cria a linha se não existir; a
+  linha sem data e sem bloqueio é removida). **Verificação:** `node --check`; linhas ≤ 100.
 
 ### #186.3 — Aceite do usuário
 

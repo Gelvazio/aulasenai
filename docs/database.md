@@ -861,7 +861,8 @@ dias de aula diferentes, então a data da aula fica numa tabela própria.
 | **id** | BIGINT | PK, identity |
 | aula_id | BIGINT | NOT NULL, → `aulas.id` (on delete cascade) |
 | turma_codigo | TEXT | NOT NULL, → `turma.codigo` (on update/delete cascade) |
-| data_aula | DATE | NOT NULL |
+| data_aula | DATE | Nullable (aula pode ser bloqueada sem data; desde #186) |
+| bloqueio | BOOLEAN | NOT NULL, default `false` — true = aula bloqueada para a turma (#186, `database/2026-10-16-aula-turma-bloqueio.sql`) |
 | created_at / updated_at | TIMESTAMPTZ | default `now()` |
 
 - Único: `(aula_id, turma_codigo)`. Índice `(turma_codigo, data_aula)`.
@@ -869,6 +870,10 @@ dias de aula diferentes, então a data da aula fica numa tabela própria.
   `anon` sem acesso.
 - **Seed inicial:** todas as aulas de ITIC (materia 25) × turmas 135080 e 135081, com a menor
   `atividade.data_atividade` da aula (ou `aulas.data_planejada`); aula sem data fica de fora.
+- **Bloqueio por turma (#186):** gatilho `aula_turma_bloqueio_propaga_atividades_trg` (security definer,
+  sem execução pela API): ao `bloqueio` virar `true`, põe o código da turma em `atividade.bloqueio`
+  das atividades ativas da aula (a regra e o RLS de `atividade_liberada_para_usuario` valem sem
+  mudança). Liberar a aula não mexe nas atividades (como no bloqueio global `aulas.ativo`).
 
 ## ✅ Checklist de Conformidade
 
