@@ -9,16 +9,23 @@ de sala de 16-10-2026, que o aluno responde e exporta em PDF.
 
 ### #189.1 — Criar a página HTML da atividade com exportação em PDF
 
-**Próximo passo:** ler os arquivos da pasta `ATIVIDADE-SALA-AULA-16-10-2026/` e montar a página.
+**Próximo passo:** — (entregue; aceite na #189.2).
 
 - **Nível:** MEDIO — página com lógica (JS de exportação em PDF), 1 a 3 arquivos, sem banco.
 - **Descrição:** página dentro da própria pasta da atividade, sem link no banco nem nos índices de
   atividades do sistema; sem gabarito na página.
 - **Critérios de aceitação:** abre por duplo clique; o aluno preenche e exporta o PDF; nada no banco.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** na pasta `ATIVIDADE-SALA-AULA-16-10-2026/`: `ATIVIDADE-SALA-AULA-16-10-2026.html`
+  (Aula 4 — 12 objetivas + 5 situações práticas, "você como aluno consultor", sem gabarito),
+  `atividade-sala.css`, `atividade-sala.js` (coleta e eventos), `atividade-sala-pdf.js` (PDF com
+  cabeçalho SENAI, respostas do aluno e "Página N de T") e `atividade-sala-rascunho.js` (respostas
+  guardadas no navegador). Fonte: `4-Comunicação-Digital-e-Colaboração-em-Nuvem.md` da pasta.
+  Sem banco e sem link em índices ou no `MENU-ATIVIDADES.js`.
+- **Verificação:** `node --check` nos 3 JS; linhas ≤ 100 (exceto a URL do CDN); busca confirmou
+  que nenhum outro arquivo aponta para a página. Sem navegador (regra do projeto).
 
 ### #189.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre a página e exporta o PDF.
+**Próximo passo:** 👀 o usuário abre `ATIVIDADE-SALA-AULA-16-10-2026.html` (duplo clique), responde e exporta o PDF (precisa de internet para carregar o jsPDF).
 
 - **Nível:** LEVE — conferência do usuário.
