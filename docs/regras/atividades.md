@@ -546,6 +546,9 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `lerGravadas` do repositório); a tela continua sem mostrá-las. No gerador de discursivas, o
   campo `- **Exportar Meu Gabarito:** sim` da fonte liga o botão. Ligado na Atividade de Sala
   16/10 da ITIC (id 152); as demais discursivas entram pela #197.
+  **Lugar na discursiva (2026-10-16, #196.4):** nas práticas/discursivas o botão fica na
+  `.export-bar`, ao lado do "📥 Exportar PDF" (`avaliacao-discursiva.js` espera a barra ser
+  montada); sem a barra, fica no painel IDENTIFICAÇÃO.
   **No topo (2026-10-15, #180):** com `<body data-meu-gabarito-no-topo="sim">`, a objetiva põe
   o botão na `.export-bar`, ao lado do "📥 Exportar PDF (atividade completa)", em vez da folha
   de respostas (`respostas-atividade.js`). Ligado nas 15 objetivas de Introdução às TIC.

@@ -104,11 +104,19 @@ que o painel IDENTIFICAÇÃO sai de "Carregando..." e o botão aparece.
 
 ### #196.4 — "Exportar Meu Gabarito" ao lado do "Exportar PDF"
 
-**Próximo passo:** achar onde o "📥 Exportar PDF" é montado na discursiva e colocar o
-"📄 Exportar Meu Gabarito" ao lado dele (hoje fica no painel IDENTIFICAÇÃO).
+**Próximo passo:** — (entregue; o usuário confere no aceite #196.2).
 
 - **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
 - **Pedido (2026-10-16 14:41):** "EXPORTAR MEU GABARITO DEVE FICAR AO LADO DE *EXPORTAR PDF*"
 - **Critérios de aceitação:** o botão do aluno aparece logo ao lado do "Exportar PDF", com as
   mesmas regras de antes (só aluno logado; desativado até entregar).
+- **Executor:** Claude Code (Opus 5.5) (local · main · s9) desde 2026-10-16 14:42.
+- **Entrega:** `assets/js/avaliacao-discursiva.js` guarda a montagem da barra do PDF
+  (`estadoDiscursivo.barraPdf`), espera por ela e põe o botão na `.export-bar` (sem a barra,
+  no painel); comentário em `minhas-respostas-discursiva.js`; regra em
+  `docs/regras/atividades.md` e linha em `docs/HISTORICO-REGRAS.md`. Vale para todas as
+  práticas/discursivas com o botão ligado. A `.export-bar` é flex com quebra: no celular os
+  botões ficam um embaixo do outro.
+- **Verificação:** `node --check` nos 2 JS; arquivo com 986 linhas (≤ 1000). Sem navegador: o
+  usuário confere no aceite #196.2.
 
