@@ -39,6 +39,7 @@ const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
+const ARQUIVO_REPOSITORIO_AULA_TURMA_PROGRESSO_GLOBAL = 'aula-turma-repositorio.js';
 const ARQUIVO_DATAS_AULAS_TURMA_PROGRESSO_GLOBAL = 'datas-aulas-turma.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
@@ -874,6 +875,7 @@ async function prepararComboTurmaGlobal(area) {
 async function prepararDatasAulasTurmaGlobal(combo) {
     try {
         if (typeof window.montarDatasAulasTurma !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_REPOSITORIO_AULA_TURMA_PROGRESSO_GLOBAL);
             await carregarScriptProgressoGlobal(ARQUIVO_DATAS_AULAS_TURMA_PROGRESSO_GLOBAL);
         }
         window.montarDatasAulasTurma(combo, estadoProgressoGlobal.atividadeId);

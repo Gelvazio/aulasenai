@@ -19,13 +19,19 @@ const MSG_ATIVIDADES_ERRO = '❌ Não foi possível carregar as atividades desta
 const MSG_EXCLUIR_ATIVIDADE = ' será EXCLUÍDA. O gabarito, as respostas e as entregas dos ' +
     'alunos dela também serão apagados. Continuar?';
 
+// A "Data da aula" não é coluna de aulas: é a data da aula NA TURMA escolhida no combo do índice
+// (aula_turma.data_aula); sem turma escolhida o campo fica desabilitado.
+const CAMPO_DATA_TURMA_MODAL_AULA = 'data_aula_turma';
+const ROTULO_DATA_MODAL_AULA = 'Data da aula';
+const TEXTO_SEM_TURMA_MODAL_AULA = ' (escolha uma turma no combo do índice)';
+
 // Campos editáveis da tabela aulas: para incluir um campo novo, basta acrescentar aqui.
 const CAMPOS_MODAL_AULA = [
     { nome: 'numero', rotulo: 'Número da aula', tipo: 'number', obrigatorio: true },
     { nome: 'titulo', rotulo: 'Título da aula', tipo: 'text', obrigatorio: true },
     { nome: 'rotulo_card', rotulo: 'Rótulo do card (vazio = "AULA NN")', tipo: 'text', maximo: 60 },
     { nome: 'nome_card', rotulo: 'Nome do card (vazio = título)', tipo: 'text', maximo: 200 },
-    { nome: 'data_planejada', rotulo: 'Data da aula', tipo: 'date' },
+    { nome: CAMPO_DATA_TURMA_MODAL_AULA, rotulo: 'Data da aula', tipo: 'date' },
     { nome: 'duracao_minutos', rotulo: 'Duração (minutos)', tipo: 'number' },
     { nome: 'sequencia', rotulo: 'Sequência', tipo: 'number' },
     { nome: 'descricao', rotulo: 'Descrição', tipo: 'textarea' },
@@ -158,12 +164,29 @@ function mostrarMensagemModalAula(texto, ehErro) {
 }
 
 /**
+ * Preenche o campo "Data da aula" com a data da turma escolhida (aula_turma) e o rotula com ela.
+ * @param {number} aulaId - Id da aula.
+ */
+function preencherDataDaTurmaModalAula(aulaId) {
+    const campo = elementosModalAula.formulario.elements[CAMPO_DATA_TURMA_MODAL_AULA];
+    const dataDaTurma = estadoModalAula.contexto.dataDaTurma;
+    const rotulo = campo.closest('label').querySelector('.crud-campo__rotulo');
+    campo.disabled = !dataDaTurma;
+    campo.value = dataDaTurma ? dataDaTurma.ler(aulaId) : '';
+    rotulo.textContent = dataDaTurma
+        ? ROTULO_DATA_MODAL_AULA + ' (turma ' + dataDaTurma.turma + ')'
+        : ROTULO_DATA_MODAL_AULA + TEXTO_SEM_TURMA_MODAL_AULA;
+}
+
+/**
  * Preenche o formulário com os dados da aula.
  * @param {Object} aula - Linha da tabela aulas.
  */
 function preencherFormularioModalAula(aula) {
     const campos = elementosModalAula.formulario.elements;
-    CAMPOS_MODAL_AULA.forEach(({ nome, tipo }) => {
+    const camposDaAula = CAMPOS_MODAL_AULA.filter(
+        ({ nome }) => nome !== CAMPO_DATA_TURMA_MODAL_AULA);
+    camposDaAula.forEach(({ nome, tipo }) => {
         const escrever = ESCRITORES_CAMPO_AULA[tipo];
         if (escrever) return escrever(campos[nome], aula[nome]);
         campos[nome].value = aula[nome] ?? '';
@@ -171,6 +194,7 @@ function preencherFormularioModalAula(aula) {
     elementosModalAula.info.textContent = 'ID da aula: ' + aula.id + ' · Matéria: ' +
         (aula.materia?.descricao || aula.materia_id) + ' · Curso: ' +
         (aula.curso?.nome_completo || aula.curso_id);
+    preencherDataDaTurmaModalAula(aula.id);
 }
 
 /**
@@ -211,9 +235,11 @@ async function aoSalvarModalAula(evento) {
     }
     if (faltamObrigatoriosAula(valores)) return mostrarMensagemModalAula(MSG_AULA_TITULO, true);
 
+    const { [CAMPO_DATA_TURMA_MODAL_AULA]: dataDaTurma, ...valoresAula } = valores;
     try {
-        if (!await gravarAulaCard(aula.id, valores)) throw new Error('Nenhuma linha alterada');
-        estadoModalAula.contexto.aoGravar({ ...aula, ...valores });
+        if (!await gravarAulaCard(aula.id, valoresAula)) throw new Error('Nenhuma linha alterada');
+        await estadoModalAula.contexto.dataDaTurma?.gravar(aula.id, dataDaTurma);
+        estadoModalAula.contexto.aoGravar({ ...aula, ...valoresAula });
         fecharModalAula();
         await garantirPopupModalAula();
         window.mostrarPopup?.(MSG_AULA_GRAVADA, { tipo: 'sucesso', titulo: 'Editar aula' });

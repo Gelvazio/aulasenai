@@ -8,8 +8,17 @@ recarregam ao trocar a turma, e o "✏️ Editar aula" lê e grava a data nessa 
 
 ### #188.1 — Ler e gravar a data da aula em `aula_turma` (índice e "Editar aula")
 
-**Próximo passo:** ler `docs/regras/atividades.md` e os módulos `indice-aula-*.js` e fazer a troca.
+**Próximo passo:** 👀 o usuário abre o índice de ATIVIDADES (como professor), troca a turma no combo e abre "✏️ Editar aula".
 
 - **Nível:** MEDIO — telas com lógica (JS), de 1 a 3 arquivos.
 - **Critérios de aceitação:** trocar a turma recarrega as datas; "Editar aula" mostra e grava a data
   da turma escolhida em `aula_turma`; `node --check`.
+- **Entrega:** `assets/js/aula-turma-repositorio.js` (novo, leitura/gravação de `aula_turma`);
+  `indice-turma-favorita.js` (evento `turma-indice-alterada`); `indice-aula-data.js` (data do card pela
+  turma, recarrega ao trocar); `indice-aula-modal.js` ("Data da aula" lida e gravada em `aula_turma`,
+  não mais em `aulas.data_planejada`); `atividades-crud-modal.js` (carrega o repositório);
+  `datas-aulas-turma.js` passou a usar o mesmo repositório; `docs/regras/atividades.md`.
+- **Verificação:** `node --check` em todos os JS alterados; sem navegador (regra do projeto).
+- **Limites:** o botão "Aula liberada/bloqueada" do card segue o bloqueio global (`aulas.ativo`); o
+  bloqueio por turma está na lista do Progresso da turma e no banco (#186). `falta-aluno-progresso.js`
+  ainda usa `aulas.data_planejada` como dia da atividade.

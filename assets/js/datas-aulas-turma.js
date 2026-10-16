@@ -6,10 +6,9 @@
 // grava aula_turma.bloqueio (tarefa #186): bloquear a aula na turma põe a turma no bloqueio das
 // atividades dela (gatilho do banco); liberar não mexe nas atividades.
 // "Todas as turmas" não tem datas: mostra um aviso. O RLS só deixa o professor gravar.
-// Depende de js/supabase.js (sbGet, sbPost, sbPatch, sbDelete). Estilo: css/datas-aulas-turma.css
+// Depende de js/supabase.js e assets/js/aula-turma-repositorio.js (lê e grava aula_turma). Estilo: css/datas-aulas-turma.css
 // Pedidos do usuário em 2026-10-16 (tarefas #185 e #186). Regra: docs/regras/atividades.md
 
-const TABELA_DATAS_AULAS_TURMA = 'aula_turma';
 const CLASSE_DATAS_AULAS_TURMA = 'datas-aulas-turma';
 const ARQUIVO_CSS_DATAS_AULAS_TURMA = '../css/datas-aulas-turma.css';
 const TEXTO_SEM_TURMA_DATAS_AULAS = 'Escolha uma turma para ver as datas das aulas.';
@@ -32,44 +31,6 @@ async function lerAulasDaMateriaDatasAulas(atividadeId) {
 
     return sbGet('aulas', 'select=id,numero,titulo&excluido=eq.0&materia_id=eq.' + materiaId +
         '&order=numero');
-}
-
-/**
- * Lê as linhas já cadastradas da turma (data e bloqueio de cada aula).
- * @param {string} turmaCodigo - Código da turma.
- * @returns {Promise<Map<number, {id: number, data_aula: ?string, bloqueio: boolean}>>} Linhas por
- *   id da aula.
- * @throws {Error} Se o banco recusar.
- */
-async function lerDatasDaTurmaDatasAulas(turmaCodigo) {
-    const linhas = await sbGet(TABELA_DATAS_AULAS_TURMA,
-        'select=id,aula_id,data_aula,bloqueio&turma_codigo=eq.' + encodeURIComponent(turmaCodigo));
-    return new Map(linhas.map((linha) => [linha.aula_id, linha]));
-}
-
-/**
- * Grava data e bloqueio de uma aula na turma: cria, atualiza ou remove a linha (sem data e sem
- * bloqueio ela não tem mais o que guardar).
- * @param {{aulaId: number, turmaCodigo: string, existente: ?{id: number}}} alvo - Aula e turma.
- * @param {{data_aula: ?string, bloqueio: boolean}} valores - Valores a guardar.
- * @returns {Promise<?{id: number}>} Linha gravada, ou null se foi removida (ou nem criada).
- * @throws {Error} Se o banco recusar.
- */
-async function gravarLinhaDatasAulas(alvo, valores) {
-    const { aulaId, turmaCodigo, existente } = alvo;
-    const estaVazia = !valores.data_aula && !valores.bloqueio;
-    if (estaVazia) {
-        if (existente) await sbDelete(TABELA_DATAS_AULAS_TURMA, 'id=eq.' + existente.id);
-        return null;
-    }
-    if (existente) {
-        const [atualizada] = await sbPatch(TABELA_DATAS_AULAS_TURMA, 'id', existente.id,
-            { ...valores, updated_at: new Date().toISOString() });
-        return atualizada;
-    }
-    const [criada] = await sbPost(TABELA_DATAS_AULAS_TURMA,
-        { aula_id: aulaId, turma_codigo: turmaCodigo, ...valores });
-    return criada;
 }
 
 /**
@@ -106,7 +67,7 @@ function criarLinhaDatasAulas({ aula, turmaCodigo, datas }) {
         const valores = { data_aula: campo.value || null,
             bloqueio: botao.getAttribute('aria-pressed') === 'true' };
         try {
-            const gravada = await gravarLinhaDatasAulas(
+            const gravada = await gravarLinhaAulaTurma(
                 { aulaId: aula.id, turmaCodigo, existente: datas.get(aula.id) }, valores);
             if (gravada) datas.set(aula.id, gravada); else datas.delete(aula.id);
             aviso.textContent = TEXTO_SALVO_DATAS_AULAS;
@@ -139,7 +100,7 @@ async function desenharDatasAulasTurma(bloco, turmaCodigo) {
     }
     try {
         const [aulas, datas] = await Promise.all([lerAulasDaMateriaDatasAulas(bloco.atividadeId),
-            lerDatasDaTurmaDatasAulas(turmaCodigo)]);
+            lerLinhasAulaTurma(turmaCodigo)]);
         bloco.aviso.textContent = aulas.length ? '' : TEXTO_SEM_AULAS_DATAS_AULAS;
         bloco.lista.append(...aulas.map((aula) => criarLinhaDatasAulas(
             { aula, turmaCodigo, datas })));

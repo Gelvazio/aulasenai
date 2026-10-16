@@ -618,6 +618,16 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   `data-href-bloqueado` e volta ao desbloquear); o interruptor e os botões do professor
   continuam clicáveis, por cima do véu (`assets/css/indice-atividades-bloquear.css`). Todo índice de atividades carrega esses arquivos
   (via `atividades-crud-modal.js`); índice novo, feito à mão ou gerado, também deve carregá-los.
+- ✅ **Data da aula por turma — REGRA GLOBAL** (2026-10-16, tarefas #185, #186 e #188): cada turma
+  tem dias de aula diferentes, então a data (e o bloqueio por turma) da aula fica na tabela
+  `aula_turma` (`aula_id`, `turma_codigo`, `data_aula`, `bloqueio`; `docs/database.md`). No índice,
+  o card mostra a data da turma escolhida no combo "Turma:" (aluno: a turma dele) e **recarrega ao
+  trocar a turma** (evento `turma-indice-alterada`, `indice-turma-favorita.js` →
+  `indice-aula-data.js`); sem turma, vale `aulas.data_planejada`. O "✏️ Editar aula" lê e grava a
+  "Data da aula" nessa tabela, para a turma do combo (`indice-aula-modal.js`). No Progresso da
+  turma, a lista abaixo do combo "Turma" (`datas-aulas-turma.js`) mostra e edita data e bloqueio
+  de todas as aulas da matéria. Acesso à tabela: `assets/js/aula-turma-repositorio.js`. O botão
+  "Aula liberada/bloqueada" do card continua sendo o global (`aulas.ativo`).
 - ✅ **Turma favorita no índice — REGRA GLOBAL** (2026-09-30, índice de atividades de **todas**
   as matérias): para o professor logado, abaixo do resumo do `ATIVIDADES/index.html` aparece a
   barra **"Turma: [lista] ☆ Marcar como turma favorita"** (a favorita tem ⭐ na lista). Grava
