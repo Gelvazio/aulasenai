@@ -1,5 +1,12 @@
 # 🤖 AGENTS.md — Regras do projeto Aulas SENAI
 
+<!-- rules-ai:global -->
+> 🌐 **Regras globais:** além das regras deste arquivo, valem as regras globais de
+> `C:ontesules-ai` (`regras/*.md`, entregues a cada IA pelo arquivo global dela). Em divergência,
+> a regra deste projeto prevalece, e o usuário decide o que fazer com cada divergência
+> (`rules-ai/CONFLITOS.md`). Ao finalizar uma tarefa: commit + push.
+
+
 > 📜 **Fonte única das regras para todas as IAs** (Claude, Gemini, Grok, Copilot, Devin,
 > Antigravity…). Arquivos de uma IA só (`CLAUDE.md`, `GEMINI.md`, `.cursorrules`…) apenas apontam
 > para cá. **"Salvar no `CLAUDE.md`" = salvar aqui** ou no arquivo do assunto em `.claude/rules/`.
