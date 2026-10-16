@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s13 | #208 concluída (#208.1; [335-8b3d4f27](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:04 |
+| local · main · s13 | #209.1 ([336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | 🔄 Ativa | 2026-10-16 18:31 |
 | local · main · s14 | #206.7 aguarda o seu aceite; #209.1 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) aguarda a aprovação do plano | 👀 Aguardando o usuário | 2026-10-16 18:28 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
@@ -49,6 +49,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|
+| #209 | Estratégia de ensino desafiadora de Banco de Dados (Eleva SENAI) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
+| #209.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s13) (desde 2026-10-16 18:31) | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | — | 👀 Aguardando liberação | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | — | 👀 Aguardando liberação | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
@@ -293,6 +295,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 
 | Etapa | Assunto | Arquivo |
 |---|---|---|
+| 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
 | 335-8b3d4f27 | Conectando a UC ao Mundo do Trabalho (#208, pedida em 2026-10-16 18:04) | [ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
 | 334-5a7c2e91 | Tarefa prática de avaliação por competências (#207, pedida em 2026-10-16 17:48) | [ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
 | 329-3f8d6b21 | Alinhar as regras do aulasenai às regras globais (#202, pedida em 2026-10-16) | [ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
