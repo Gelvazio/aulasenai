@@ -7,10 +7,71 @@ E ABRE MODAL PRA EDITAR TURMA, E PROFESSORES VINCULADOS NUM BOTAO DE NOME PROFES
 **Objetivo:** `turmas.html` vira um CRUD da tabela `turma` (consulta + criar, editar no modal,
 excluir) e o vínculo turma × professor vira o botão **Professores** na linha da turma.
 
+### Escopo
+
+- **Entra:**
+  - **Banco** (SQL idempotente `database/2026-10-16-turma-crud-administrador.sql`, aplicado pelo
+    conector): políticas `turma_insert_admin`, `turma_update_admin` e `turma_delete_admin` na
+    `turma`, todas com `eh_professor_administrador()`; o **excluir** só aceita turma **vazia**
+    (sem `turmaaluno`, sem `aluno.turma_codigo` e sem `equipe`), para não apagar alunos e equipes
+    em cascata (os vínculos de professor saem junto); revogar `TRUNCATE` da `turma` para
+    `authenticated` e `anon` e todos os privilégios de `anon` (hoje `anon` tem tudo). A leitura
+    continua como está (`turma_select`).
+  - **Tela `turmas.html`** (só Professor Administrador, como hoje): consulta das turmas (busca por
+    código, nome, unidade, curso ou professor) e botão **➕ Nova turma**; cada linha com as ações
+    **✏️ Editar**, **👥 Professores** e **🗑️ Excluir**; colunas Turma, Unidade, Curso,
+    Turno/horário, Bloquear horário e Professores (quantidade).
+  - **Modal da turma** (criar/editar): Código (só no cadastro), Nome, Turno, Horário (texto),
+    Hora início, Hora fim, UC, Unidade, Curso e o ON/OFF **Bloquear horário**.
+  - **Botão Professores**: o modal atual de vínculo vira a gestão dos professores da turma —
+    lista, vincular (só quem ainda não está) e desvincular. O modal "editar vínculo" (trocar a
+    turma) sai: trocar = desvincular e vincular.
+  - Arquivos: `turmas.html`, `assets/js/turmas-professor-repositorio.js`,
+    `assets/js/turmas-professor-pagina.js`, `assets/js/turmas-professor-modais.js`, novo
+    `assets/js/turmas-dados-modal.js`, `assets/css/turmas-professor.css`; `docs/database.md`,
+    `docs/relatorio_verificacao_database.html`, `docs/crud-turmas-administrador.md` e a regra em
+    `docs/regras/usuarios-turmas-paginas-professor.md`.
+- **Não entra:** líder da turma e favorito (têm telas próprias); turmas para professor comum
+  (a página continua só do administrador; os demais professores seguem vendo só as turmas deles
+  nas outras telas); mudar o código de uma turma existente.
+- **Critério de pronto:** a página lista e busca as turmas; criar, editar e excluir gravam no
+  banco; o botão Professores lista, vincula e desvincula; o banco recusa quem não é o
+  administrador e a exclusão de turma com alunos/equipes; docs atualizados; `node --check`
+  limpo; 1 commit + push; aceite do usuário.
+
+### Riscos
+
+- **Excluir turma apaga dados em cascata.** Plano B: a política só deixa excluir turma vazia;
+  com alunos, a tela avisa "tire os alunos antes" (o banco recusa).
+- **Outro professor gravar turma.** Plano B: as três políticas exigem
+  `eh_professor_administrador()`; conferido por simulação em transação desfeita.
+- **Revogar o `anon` quebrar alguma página pública.** Plano B: conferir antes no código se alguma
+  página lê `turma` sem login; se ler, manter só o `SELECT` do `anon` (a política já exige
+  `authenticated`, então hoje o `anon` não lê nada mesmo).
+
+### Decisões
+
+| Data | Decisão | Quem | Por quê |
+|------|---------|------|---------|
+
 ### #201.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** ler `turmas.html`, os JS dela e `docs/database.md`; escrever o plano aqui.
+**Próximo passo:** aguardar o "sim" do usuário ao plano acima.
 
 - **Nível:** PESADO — banco/RLS e permissões de professor
 - **Descrição:** plano (escopo, riscos, subtarefas) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
+
+### #201.2 — Banco e tela do CRUD de turmas com o botão Professores
+
+**Próximo passo:** depois da aprovação, aplicar o SQL e conferir.
+
+- **Nível:** PESADO — banco (RLS) e permissões do administrador
+- **Descrição:** escopo acima (SQL, tela, modal, botão Professores, docs).
+- **Entrega:** — · **Verificação:** —
+
+### #201.3 — Aceite do usuário
+
+**Próximo passo:** o professor testar a tela `turmas.html`.
+
+- **Nível:** LEVE — conferência do usuário
