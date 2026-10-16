@@ -10,9 +10,46 @@ EXCLUA DO CARD, DO BANCO E DA PASTA"
 **Objetivo:** tirar as 2 atividades (`TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` e
 `...-v2.html`) do índice ITIC, do banco e da pasta.
 
+### Levantamento (2026-10-16 19:50)
+
+| Página | `atividade` | Aula do card | Dados de aluno |
+|---|---|---|---|
+| `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` | id 58 | `aulas` 70 (nº 13, "Manual … (v1)"), só com esta atividade | nenhum (0 respostas, entregas, gabarito, tópicos, liberações, aberturas) |
+| `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html` | id 59 | `aulas` 71 (nº 14, "Manual … (versão simplificada)"), só com esta atividade | nenhum |
+
+Cards: 2 `<article>` no `INTRODUCAO-TIC/ATIVIDADES/index.html` ("TRABALHO EM EQUIPE v1" e "v2").
+Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-SIMPLES.html` e
+`brainstorming.html` (link "← Trabalho em equipe"); `STATUS_MATERIA.md` lista as 2 páginas.
+
+### Escopo
+
+- **Entra:**
+  1. Banco: apagar as linhas 58 e 59 da `atividade` (a cascata não leva nada: sem dados de aluno).
+     Por regra (`security-banco.md`), o `DELETE` vai num SQL em `database/` para você rodar no
+     SQL Editor; as aulas 70 e 71 ficam `excluido = 1` (o mesmo que o botão excluir aula faz),
+     pelo conector.
+  2. Cards: tirar os 2 `<article>` do índice ITIC (sem levar a sua mudança local na linha 148
+     "AVALIAÇÃO 01-AULA-06-DISCURSIVA", que continua fora do commit).
+  3. Pasta: apagar os 2 HTML; o link "← Trabalho em equipe" do `…-SIMPLES.html` e do
+     `brainstorming.html` passa a voltar para o índice (`../index.html`); tirar as 2 linhas do
+     `STATUS_MATERIA.md`.
+- **Não entra:** `Brainstorming-Em-Equipe.pdf`, `…-SIMPLES.html`, `brainstorming.html` e os `.md`
+  de planejamento ficam (só os links mudam); o seed antigo `database/2026-10-05-…sql` fica como
+  histórico.
+
+### Riscos
+
+- Alguém com a página aberta perde a atividade → sem dados gravados, nada se perde.
+- Plano B: o Git guarda os 2 HTML e o seed recria as atividades.
+
+### Subtarefas planejadas (depois da aprovação)
+
+- #212.2 — Banco: SQL do `DELETE` (você roda) + aulas 70/71 `excluido = 1` (PESADO)
+- #212.3 — Cards, arquivos e links (MEDIO)
+- #212.4 — Aceite do usuário
+
 ### #212.1 — Levantamento e plano (tarefa grande: apaga dados)
 
-**Próximo passo:** achar o card, a linha no banco (atividade, itens, respostas) e os arquivos;
-escrever o plano e pedir aprovação.
+**Próximo passo:** aguardar a aprovação do plano pelo usuário.
 
 - **Nível:** PESADO — apagar dados do banco
