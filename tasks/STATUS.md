@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s13 | #209.1 ([336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | 🔄 Ativa | 2026-10-16 18:31 |
+| local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s14 | #206.7 aguarda o seu aceite; #209.1 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) aguarda a aprovação do plano | 👀 Aguardando o usuário | 2026-10-16 18:28 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
@@ -49,8 +49,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|
-| #209 | Estratégia de ensino desafiadora de Banco de Dados (Eleva SENAI) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
-| #209.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s13) (desde 2026-10-16 18:31) | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | — | 👀 Aguardando liberação | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | — | 👀 Aguardando liberação | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
@@ -276,7 +274,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #206-e75bddc3-5b1c-4f0e-9a3d-7c2b8d41a6f9 | **Voltar a `aula_turma` (chaves da aula, matéria e turma; data e bloqueio da aula) pela turma do combo, padrão a favorita** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.7 | Aceite do usuário | 🟠 Alta | #206.6 | 👀 Aguardando o usuário | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #209-77564f72-9786-4bff-b0e7-13af8a43abe7 | **Slides bloqueados junto com a aula (também pelo endereço do PDF)** | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
-| #209.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:28) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.2 | SQL: bucket `slides`, função e políticas do Storage (PESADO) | 🟠 Alta | #209.1 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.3 | Enviar os 10 PDFs ao bucket (LEVE) | 🟠 Alta | #209.2 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.4 | Links dos slides pelo link temporário e PDFs fora do site (PESADO) | 🟠 Alta | #209.3 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |

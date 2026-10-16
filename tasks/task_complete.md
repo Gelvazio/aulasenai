@@ -68,3 +68,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #206.4 | Combo "Turma:" abre na favorita e comanda data, bloqueio da aula e atividades (PESADO) | 🟠 Alta | #206.3 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.5 | "Editar aula": data e bloqueio da aula na turma do combo (MEDIO) | 🟠 Alta | #206.4 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #206.6 | Documentação em `docs/` (LEVE) | 🟠 Alta | #206.5 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
+| #209 | Estratégia de ensino desafiadora de Banco de Dados (Eleva SENAI) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
+| #209.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
+| #209.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:28) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
