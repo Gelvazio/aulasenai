@@ -441,7 +441,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   aplicado) vê a prova com as respostas dele (a regra de ocultar as respostas após a entrega deixa
   de valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
   nota do professor (✅ Certa / 🟡 Meia certa / ❌ Errada / ⏳ aguardando) com a **observação da
-  IA** num balão grande, e o padrão de resposta (mesma caixa do "Ver Gabarito"). O aluno só lê
+  IA** num balão grande, e o padrão de resposta (mesma caixa do "Gabarito da Atividade-Respostas"). O aluno só lê
   as próprias correções confirmadas (RLS da `correcao_discursiva`).
   `assets/js/resultado-aluno-discursiva.js` + CSS.
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
@@ -516,12 +516,12 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
     `correcao-objetiva-aluno.js`, função `solicitar_gabarito`). Até 2026-10-15 o aluno também
     exportava o gabarito real por esse botão (antes da liberação via "Aguarde professor liberar
     os gabaritos" e o pedido ia para a tabela **`tentativaacessogabarito`**, que segue
-    recebendo os pedidos do "🔑 Ver Gabarito" das discursivas).
+    recebendo os pedidos do "🔑 Gabarito da Atividade-Respostas" das discursivas).
 - ✅ **Também nas DISCURSIVAS** (2026-10-06, pedido do usuário; 19 páginas): o "gabarito" é o
   padrão de resposta (`topico_discursivo.resposta_esperada`, só do professor). No painel da página
   (`assets/js/liberacao-respostas-discursiva.js`, carregado pelo `avaliacao-discursiva.js`):
   professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (encerra o
-  preenchimento da turma, 2026-10-15); aluno clica em **"🔑 Ver Gabarito"** — antes da liberação, "Aguarde professor
+  preenchimento da turma, 2026-10-15); aluno clica em **"🔑 Gabarito da Atividade-Respostas"** — antes da liberação, "Aguarde professor
   liberar os gabaritos" + registro em `tentativaacessogabarito`; depois, a resposta esperada de
   cada tópico aparece abaixo da resposta dele (função `solicitar_gabarito_discursivo`; SQL
   `database/2026-10-06-liberacao-respostas-discursiva.sql`, ✅ aplicado).
@@ -554,9 +554,10 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `lerGravadas` do repositório); a tela continua sem mostrá-las. No gerador de discursivas, o
   campo `- **Exportar Meu Gabarito:** sim` da fonte liga o botão. Ligado na Atividade de Sala
   16/10 da ITIC (id 152); as demais discursivas entram pela #197.
-  **Lugar na discursiva (2026-10-16, #196.4):** nas práticas/discursivas o botão fica na
-  `.export-bar`, ao lado do "📥 Exportar PDF" (`avaliacao-discursiva.js` espera a barra ser
-  montada); sem a barra, fica no painel IDENTIFICAÇÃO.
+  **Lugar na discursiva (2026-10-16, #196.5; substitui a #196.4):** nas práticas/discursivas o
+  botão fica no painel IDENTIFICAÇÃO, ao lado do **"🔑 Gabarito da Atividade-Respostas"** (antes
+  "Ver Gabarito"), no mesmo grupo (`liberacao-respostas-discursiva.js`; `avaliacao-discursiva.js`
+  espera o grupo ser montado); sem esse botão, fica no painel.
   **No topo (2026-10-15, #180):** com `<body data-meu-gabarito-no-topo="sim">`, a objetiva põe
   o botão na `.export-bar`, ao lado do "📥 Exportar PDF (atividade completa)", em vez da folha
   de respostas (`respostas-atividade.js`). Ligado nas 15 objetivas de Introdução às TIC.

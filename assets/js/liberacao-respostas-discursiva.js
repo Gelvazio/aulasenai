@@ -2,7 +2,8 @@
 //  • PROFESSOR: no painel de identificação, lista "Turma" + botão "🔓 Liberar gabaritos (turma X)"
 //    (liberacao-respostas-professor.js): libera mesmo com alunos sem entrega e encerra o
 //    preenchimento da turma (2026-10-15, #175).
-//  • ALUNO: botão "🔑 Ver Gabarito". Antes da liberação, aviso "Aguarde professor liberar os
+//  • ALUNO: botão "🔑 Gabarito da Atividade-Respostas" (antes "Ver Gabarito"; o "📄 Exportar Meu
+//    Gabarito" fica ao lado dele, no mesmo grupo — #196.5). Antes da liberação, aviso "Aguarde professor liberar os
 //    gabaritos" (o banco grava o pedido em tentativaacessogabarito); depois, o padrão de resposta
 //    de cada tópico aparece abaixo da resposta do aluno (função solicitar_gabarito_discursivo).
 // O padrão de resposta nunca fica na página antes da liberação. Plano:
@@ -12,6 +13,9 @@ const ROTA_SOLICITAR_GABARITO_DISCURSIVO = '/rest/v1/rpc/solicitar_gabarito_disc
 const MSG_AGUARDE_GABARITO_DISCURSIVO = 'Aguarde professor liberar os gabaritos';
 const CLASSE_LIBERACAO_DISCURSIVA = 'liberacao-discursiva';
 const CLASSE_RESPOSTA_ESPERADA = 'resposta-esperada';
+const CLASSE_GRUPO_GABARITO_ALUNO = CLASSE_LIBERACAO_DISCURSIVA + ' ' +
+    CLASSE_LIBERACAO_DISCURSIVA + '--aluno';
+const TEXTO_BOTAO_GABARITO_ALUNO = '🔑 Gabarito da Atividade-Respostas';
 const ARQUIVO_LIBERACAO_PROFESSOR = 'liberacao-respostas-professor.js';
 const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'unidade.js';
 const EVENTO_TURMA_LIBERACAO_DISCURSIVA = 'relatorio-professor:turma';
@@ -149,15 +153,19 @@ async function pedirGabaritoDiscursivo(atividadeId) {
 }
 
 /**
- * Aluno: botão "🔑 Ver Gabarito" no painel.
+ * Aluno: grupo com o botão "🔑 Gabarito da Atividade-Respostas" no painel (o "Exportar Meu
+ * Gabarito" entra no mesmo grupo, ao lado).
  * @param {HTMLElement} painel - Painel de identificação da página.
  * @param {number} atividadeId - Id da atividade.
  */
 function montarBotaoGabaritoAluno(painel, atividadeId) {
-    const botao = criarElementoDiscursivaLiberacao('button', 'btn-export', '🔑 Ver Gabarito');
+    const grupo = criarElementoDiscursivaLiberacao('div', CLASSE_GRUPO_GABARITO_ALUNO);
+    const botao = criarElementoDiscursivaLiberacao('button', 'btn-export',
+        TEXTO_BOTAO_GABARITO_ALUNO);
     botao.type = 'button';
     botao.addEventListener('click', () => pedirGabaritoDiscursivo(atividadeId));
-    painel.appendChild(botao);
+    grupo.appendChild(botao);
+    painel.appendChild(grupo);
 }
 
 /**

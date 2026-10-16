@@ -120,7 +120,8 @@ async function montarDadosMeuGabaritoDiscursiva(contexto) {
 }
 
 /**
- * Coloca o botão "Exportar Meu Gabarito" no destino (ao lado do "Exportar PDF", #196.4).
+ * Coloca o botão "Exportar Meu Gabarito" no destino (ao lado do "Gabarito da
+ * Atividade-Respostas", #196.5).
  * @param {{dados: Object, chaveTopico: Function, lerGravadas: Function, destino: HTMLElement}}
  *     contexto - Estado da página, a chave dos tópicos, o leitor das respostas gravadas e onde
  *     pôr o botão.

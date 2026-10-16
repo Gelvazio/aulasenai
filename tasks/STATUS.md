@@ -35,7 +35,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s6 | #200 ([327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md)) aguarda aceite; #199.1 livre (aguarda o usuário escolher simular ou mandar o console); #198 livre; #196, #195, #192 e #191 aguardam aceite; #193.4 aguarda o usuário rodar o SQL; #194 sem reserva | 👀 Aguardando o usuário | 2026-10-16 12:06 |
 | local · main · s7 | #201 ([328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-16 12:58 |
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
-| local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) aguarda aceite; #196.5 em execução | 🔄 Ativa | 2026-10-16 14:50 |
+| local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 
 ## 📌 Tarefas
 
@@ -282,7 +282,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #196.2 | Aceite do usuário | 🟠 Alta | #196.1 | 👀 Aguardando o usuário | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #196.3 | Botão "Exportar Meu Gabarito" ainda não aparece na discursiva 152 (PESADO) | 🟠 Alta | #196.1 | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #196.4 | "Exportar Meu Gabarito" ao lado do "Exportar PDF" na discursiva (PESADO) | 🟠 Alta | #196.3 | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
-| #196.5 | "Exportar Meu Gabarito" ao lado do "Ver Gabarito", renomeado para "Gabarito da Atividade-Respostas" (PESADO) | 🟠 Alta | #196.4 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s9) (desde 2026-10-16 14:50) |
+| #196.5 | "Exportar Meu Gabarito" ao lado do "Ver Gabarito", renomeado para "Gabarito da Atividade-Respostas" (PESADO) | 🟠 Alta | #196.4 | ✅ Concluído | — |
 | #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) | 🟠 Alta | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) | 🟠 Alta | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.2 | Aceite do usuário | 🟠 Alta | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |

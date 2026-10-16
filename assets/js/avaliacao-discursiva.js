@@ -37,7 +37,7 @@ const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
 const ARQUIVO_SUSPEITA_COPIA_DISCURSIVA = 'suspeita-copia-discursiva.js';
 const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'minhas-respostas-discursiva.js';
 const VALOR_ATIVO_MEU_GABARITO_DISCURSIVA = 'sim';
-const SELETOR_BARRA_PDF_DISCURSIVA = '.export-bar';
+const SELETOR_GRUPO_GABARITO_ALUNO = '.liberacao-discursiva--aluno';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -78,7 +78,6 @@ const estadoDiscursivo = {
     dados: null,
     gravacoes: new Map(),
     temporizadores: new Map(),
-    barraPdf: null,
 };
 
 /**
@@ -348,18 +347,20 @@ function montarPainel(dados) {
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
     if (dados.ehProfessor) abrirProgressoDaTurma(dados);
     if (!dados.ehProfessor) abrirMeuProgressoDiscursiva(dados);
-    if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados);
-    abrirLiberacaoRespostas(painel, dados);
+    const liberacao = abrirLiberacaoRespostas(painel, dados);
+    if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados, liberacao);
 }
 
 /**
- * Aluno: botão "Exportar Meu Gabarito" ao lado do "Exportar PDF" (#196.4) quando a página pede
- * (body data-exportar-meu-gabarito="sim"; assets/js/minhas-respostas-discursiva.js).
- * Sem a barra do PDF, fica no painel. Uma falha aqui não atrapalha a avaliação.
+ * Aluno: botão "Exportar Meu Gabarito" ao lado do "🔑 Gabarito da Atividade-Respostas" (#196.5)
+ * quando a página pede (body data-exportar-meu-gabarito="sim";
+ * assets/js/minhas-respostas-discursiva.js). Sem esse botão, fica no painel. Uma falha aqui não
+ * atrapalha a avaliação.
  * @param {HTMLElement} painel - Painel de identificação.
  * @param {Object} dados - Estado carregado do banco.
+ * @param {Promise<void>} liberacao - Montagem do botão do gabarito (abrirLiberacaoRespostas).
  */
-async function abrirMeuGabaritoDiscursiva(painel, dados) {
+async function abrirMeuGabaritoDiscursiva(painel, dados, liberacao) {
     const estaAtivo = document.body.dataset.exportarMeuGabarito ===
         VALOR_ATIVO_MEU_GABARITO_DISCURSIVA;
     if (!estaAtivo) return;
@@ -367,8 +368,8 @@ async function abrirMeuGabaritoDiscursiva(painel, dados) {
         if (typeof window.iniciarMeuGabaritoDiscursiva !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_MEU_GABARITO_DISCURSIVA);
         }
-        await estadoDiscursivo.barraPdf;
-        const destino = document.querySelector(SELETOR_BARRA_PDF_DISCURSIVA) || painel;
+        await liberacao;
+        const destino = painel.querySelector(SELETOR_GRUPO_GABARITO_ALUNO) || painel;
         const { repositorio } = estadoDiscursivo;
         await window.iniciarMeuGabaritoDiscursiva({ dados, destino,
             chaveTopico: (item, topico) => repositorio.chaveTopico(item, topico),
@@ -981,6 +982,4 @@ window.mostrarAlertaDeEntrega = mostrarAlertaDeEntrega;
 
 document.addEventListener('DOMContentLoaded', iniciarAvaliacaoDiscursiva);
 window.addEventListener('pageshow', recarregarSeVeioDoCache);
-document.addEventListener('DOMContentLoaded', () => {
-    estadoDiscursivo.barraPdf = abrirExportacaoPdfDiscursiva();
-});
+document.addEventListener('DOMContentLoaded', abrirExportacaoPdfDiscursiva);
