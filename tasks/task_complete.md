@@ -61,3 +61,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | ⛔ Cancelada pelo usuário | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⛔ Cancelada pelo usuário | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Cancelada pelo usuário | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #207 | Tarefa prática de avaliação por competências (Eleva SENAI) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [334-5a7c2e91](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
+| #207.1 | Gerar o .docx em GERADOR-AULAS/FORMACAO-ELEVA-SENAI (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [334-5a7c2e91](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
