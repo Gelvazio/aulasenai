@@ -10,8 +10,7 @@ POR PADRAO VIR SELECIONADO A TURMA FAVORITA. AGORA SO CRIE A TAREFA E PUBLIQUE N
 já resolvido) ligada à aula, à matéria e à turma, com data da aula e bloqueio da aula por turma, e
 ligar tudo à turma escolhida no combo "Turma:" do índice (padrão: a turma favorita).
 
-> ⚠️ **Só criada e publicada.** Nada foi executado: nem banco, nem código. Falta o plano ser
-> aprovado (#206.1) e a tarefa ser assumida por uma frente.
+> ✅ **Concluída** em 2026-10-16 18:39 com o aceite do usuário (#206.7).
 
 ### Escopo (proposta, para aprovação)
 
@@ -181,7 +180,7 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 
 ### #206.7 — Aceite do usuário
 
-**Próximo passo:** 👀 depois das entregas, o usuário abre o índice como professor, troca a turma no
-combo e confere data, bloqueio da aula e ON/OFF das atividades.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — conferência do usuário.
+- **Entrega:** aceite do usuário em 2026-10-16 18:39 ("206-aceita"). **Verificação:** resposta do usuário no chat.

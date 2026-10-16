@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s14 | #209.2 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) em execução; #206.7 aguarda o seu aceite | 🔄 Ativa | 2026-10-16 18:38 |
+| local · main · s14 | #209.2 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) em execução; #206 concluída (aceite em 2026-10-16 18:39) | 🔄 Ativa | 2026-10-16 18:39 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -271,8 +271,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #204.2 | Aceite do usuário | 🟡 Média | #204.1 | 👀 Aguardando o usuário | — | [331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
 | #205-6808b7d3-2460-47de-8321-a28e1930ce2c | **Tirar a linha "50 questões · múltipla escolha · 90–120 minutos" e o botão "Conteúdo (.md)" dos cards** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #205.2 | Aceite do usuário | 🟡 Média | #205.1 | 👀 Aguardando o usuário | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
-| #206-e75bddc3-5b1c-4f0e-9a3d-7c2b8d41a6f9 | **Voltar a `aula_turma` (chaves da aula, matéria e turma; data e bloqueio da aula) pela turma do combo, padrão a favorita** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
-| #206.7 | Aceite do usuário | 🟠 Alta | #206.6 | 👀 Aguardando o usuário | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #209-77564f72-9786-4bff-b0e7-13af8a43abe7 | **Slides bloqueados junto com a aula (também pelo endereço do PDF)** | 🟠 Alta | — | 🔄 Plano aprovado em 2026-10-16 18:38 | — (não reservável) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.2 | SQL: bucket `slides`, função e políticas do Storage (PESADO) | 🟠 Alta | #209.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:38) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.3 | Enviar os 10 PDFs ao bucket (LEVE) | 🟠 Alta | #209.2 | ⬜ Pendente | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
