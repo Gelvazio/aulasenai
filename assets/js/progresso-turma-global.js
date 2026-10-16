@@ -20,7 +20,6 @@
 // escolhido (filtro-aluno-progresso.js).
 // As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
 // e voltam ao abrir a página; sem escolha guardada, vale o padrão.
-// Abaixo do combo "Turma": as datas das aulas daquela turma, editáveis (datas-aulas-turma.js).
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
 // ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
@@ -39,8 +38,6 @@ const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
-const ARQUIVO_REPOSITORIO_AULA_TURMA_PROGRESSO_GLOBAL = 'aula-turma-repositorio.js';
-const ARQUIVO_DATAS_AULAS_TURMA_PROGRESSO_GLOBAL = 'datas-aulas-turma.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
@@ -861,26 +858,8 @@ async function prepararComboTurmaGlobal(area) {
             atividadeId: estadoProgressoGlobal.atividadeId,
             aoMudar: () => estadoProgressoGlobal.atualizarAgora?.() });
         area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')?.after(combo);
-        await prepararDatasAulasTurmaGlobal(combo);
     } catch (erro) {
         console.warn('Combo de turma do progresso:', erro.message);
-    }
-}
-
-/**
- * Põe abaixo do combo "Turma" a lista das datas das aulas da turma, editável pelo professor
- * (datas-aulas-turma.js). Uma falha aqui não derruba o painel.
- * @param {HTMLElement} combo - Rótulo com o combo "Turma".
- */
-async function prepararDatasAulasTurmaGlobal(combo) {
-    try {
-        if (typeof window.montarDatasAulasTurma !== 'function') {
-            await carregarScriptProgressoGlobal(ARQUIVO_REPOSITORIO_AULA_TURMA_PROGRESSO_GLOBAL);
-            await carregarScriptProgressoGlobal(ARQUIVO_DATAS_AULAS_TURMA_PROGRESSO_GLOBAL);
-        }
-        window.montarDatasAulasTurma(combo, estadoProgressoGlobal.atividadeId);
-    } catch (erro) {
-        console.warn('Datas das aulas da turma:', erro.message);
     }
 }
 

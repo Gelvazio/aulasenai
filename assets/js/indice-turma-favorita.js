@@ -1,7 +1,7 @@
 // Turma favorita no ATIVIDADES/index.html de todas as matérias (só professor logado): barra no
 // topo com a lista de turmas e o botão de marcar/desmarcar a favorita (grava turma.favorito).
 // Trocar a turma da lista dispara o evento 'turma-indice-alterada' (detail = código da turma), que
-// faz o indice-aula-data.js recarregar as datas das aulas daquela turma (tarefa #188).
+// faz o indice-atividades-bloqueio.js remontar o ON/OFF das atividades para aquela turma (#190).
 // Carregado por assets/js/atividades-crud-modal.js, depois de assets/js/turma-favorita.js.
 // Depende de supabase-js, js/supabase.js e turma-favorita.js; usa popup.js se já estiver na página.
 
@@ -102,7 +102,8 @@ async function alternarFavoritaIndice(estado) {
 }
 
 /**
- * Avisa o índice (datas das aulas por turma, indice-aula-data.js) qual turma está escolhida.
+ * Avisa o índice (ON/OFF de bloqueio das atividades, indice-atividades-bloqueio.js) qual turma
+ * está escolhida.
  * @param {string} turmaCodigo - Código da turma escolhida na lista.
  */
 function avisarTurmaEscolhidaIndice(turmaCodigo) {

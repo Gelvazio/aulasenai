@@ -851,29 +851,14 @@ Este arquivo deve ser referenciado em:
 
 ---
 
-## 📅 Atualização 2026-10-16 — Tabela `aula_turma` (datas das aulas por turma)
+## 🗑️ Atualização 2026-10-16 — Tabela `aula_turma` removida (#193)
 
-**Script:** `database/2026-10-16-aula-turma.sql` (aplicado em 2026-10-16, tarefa #185). Cada turma tem
-dias de aula diferentes, então a data da aula fica numa tabela própria.
-
-| Coluna | Tipo | Regra |
-|--------|------|-------|
-| **id** | BIGINT | PK, identity |
-| aula_id | BIGINT | NOT NULL, → `aulas.id` (on delete cascade) |
-| turma_codigo | TEXT | NOT NULL, → `turma.codigo` (on update/delete cascade) |
-| data_aula | DATE | Nullable (aula pode ser bloqueada sem data; desde #186) |
-| bloqueio | BOOLEAN | NOT NULL, default `false` — true = aula bloqueada para a turma (#186, `database/2026-10-16-aula-turma-bloqueio.sql`) |
-| created_at / updated_at | TIMESTAMPTZ | default `now()` |
-
-- Único: `(aula_id, turma_codigo)`. Índice `(turma_codigo, data_aula)`.
-- **RLS:** `aula_turma_select` (authenticated, `true`); insert/update/delete só `eh_professor()`.
-  `anon` sem acesso.
-- **Seed inicial:** todas as aulas de ITIC (materia 25) × turmas 135080 e 135081, com a menor
-  `atividade.data_atividade` da aula (ou `aulas.data_planejada`); aula sem data fica de fora.
-- **Bloqueio por turma (#186):** gatilho `aula_turma_bloqueio_propaga_atividades_trg` (security definer,
-  sem execução pela API): ao `bloqueio` virar `true`, põe o código da turma em `atividade.bloqueio`
-  das atividades ativas da aula (a regra e o RLS de `atividade_liberada_para_usuario` valem sem
-  mudança). Liberar a aula não mexe nas atividades (como no bloqueio global `aulas.ativo`).
+A tabela `aula_turma` (datas e bloqueio da aula por turma, criada pelas tarefas #185 a #187) foi
+desfeita a pedido do usuário: o sistema voltou ao estado de antes dela. Script:
+`database/2026-10-16-remover-aula-turma.sql` (apaga o gatilho
+`aula_turma_bloqueio_propaga_atividades_trg`, a função `aula_turma_bloqueio_propaga_atividades()`
+e a tabela). A "Data da aula" volta a ser `aulas.data_planejada`. O bloqueio de atividade por
+turma (`atividade.bloqueio`, `definir_bloqueio_turma`) não muda.
 
 ## ✅ Checklist de Conformidade
 

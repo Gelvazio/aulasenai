@@ -69,11 +69,25 @@ continua valendo para a turma do combo do índice; a tabela, o gatilho e a funç
 
 ### #193.2 — Voltar o código ao estado de antes da `aula_turma`
 
-**Próximo passo:** restaurar os 4 arquivos do `95bf1974`, apagar os 3 arquivos novos, ajustar os
-comentários do `indice-turma-favorita.js` e a documentação; `node --check` em tudo.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (índice, modal, progresso, bloqueio).
 - **Critérios de aceitação:** `grep aula_turma` sem resultado no código; ON/OFF da #190 intacto.
+- **Causa provável do "ainda não funcionou":** a #188 declarou a constante global
+  `EVENTO_TURMA_ESCOLHIDA_INDICE` em `indice-aula-data.js` **e** em `indice-turma-favorita.js`,
+  que são carregados na mesma página do índice. O segundo a carregar quebrava inteiro ("Identifier
+  has already been declared"): ou sumia o combo "Turma:" (e o ON/OFF ficava sem turma), ou sumiam
+  as datas e botões dos cards. Com a reversão a constante fica só no `indice-turma-favorita.js`.
+- **Entrega:** restaurados do `95bf1974` `progresso-turma-global.js`, `atividades-crud-modal.js`,
+  `indice-aula-data.js` e `indice-aula-modal.js`; apagados `datas-aulas-turma.js`,
+  `datas-aulas-turma.css` e `aula-turma-repositorio.js`; `indice-turma-favorita.js` só com
+  comentários novos (o aviso de troca de turma fica, para o ON/OFF da #190);
+  `docs/regras/atividades.md` e `docs/database.md` sem a `aula_turma`.
+- **Verificação:** `node --check` nos 6 JS do índice; `grep` sem nenhuma referência à
+  `aula_turma` no código; varredura das constantes globais dos scripts carregados no índice (nenhuma
+  repetida agora; antes, `EVENTO_TURMA_ESCOLHIDA_INDICE` repetida). A verificação completa
+  (reversão, ON/OFF de ponta a ponta e banco) ficou na tarefa #194, a pedido do usuário. Sem
+  navegador: o clique só o usuário confirma (#193.5).
 
 ### #193.3 — SQL que apaga a `aula_turma` do banco
 

@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #193.2 ([320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md)) em execução; #192 e #191 aguardam aceite | 🔄 Ativa | 2026-10-16 10:08 |
+| local · main · s6 | #193.3 ([320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md)) em execução; #194 criada sem reserva (aguarda o usuário); #192 e #191 aguardam aceite | 🔄 Ativa | 2026-10-16 10:12 |
 
 ## 📌 Tarefas
 
@@ -233,17 +233,17 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #184-85eb3106-14de-4016-8864-ad21ca69c5d3 | Página `index.html` do banco de horas: accordion por semana e "Lançado?" ON/OFF no `localStorage` | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.1 | Criar o `index.html` do banco de horas (MEDIO) | 🟡 Média | — | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.2 | Aceite do usuário | 🟡 Média | #184.1 | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
-| #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | 👀 Aguardando aceite | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⛔ Desfeita pela #193 | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #186-937e5036-ecab-4e20-ba35-202746be7010 | Bloqueio da aula por turma: coluna `bloqueio` em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
 | #186.1 | Coluna `bloqueio` em `aula_turma` e regra no banco (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | 👀 Aguardando aceite | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⬜ Pendente | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
-| #187-d7f180ea-6a88-4ea9-93fd-9377380ba12f | Datas das aulas das 2 turmas de ITIC pelo CALENDARIO AULAS ITIC.txt | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
+| #186.2 | Botão de bloqueio por turma na tela (MEDIO) | 🟠 Alta | #186.1 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #186.3 | Aceite do usuário | 🟠 Alta | #186.2 | ⛔ Desfeita pela #193 | — | [313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md) |
+| #187-d7f180ea-6a88-4ea9-93fd-9377380ba12f | Datas das aulas das 2 turmas de ITIC pelo CALENDARIO AULAS ITIC.txt | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
 | #187.1 | Gravar as datas do calendário em `aula_turma` (PESADO, só Claude Code local) | 🟠 Alta | — | ✅ Concluído | — | [314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md) |
-| #188-d5d991b9-ce60-4c8e-a642-479c623ebc3d | Data da aula pela turma: recarregar ao trocar a turma e editar em `aula_turma` | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
+| #188-d5d991b9-ce60-4c8e-a642-479c623ebc3d | Data da aula pela turma: recarregar ao trocar a turma e editar em `aula_turma` | 🟠 Alta | — | ⛔ Desfeita pela #193 | — (não reservável) | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
 | #188.1 | Ler e gravar a data da aula em `aula_turma` (índice e "Editar aula") (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md) |
 | #189-43d655f9-4571-4788-b5fa-e128297ed30f | Atividade de sala de 16-10-2026 (ITIC) em HTML com PDF, fora do sistema | 🟠 Alta | — | ✅ Substituída pela #191 | — (não reservável) | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
 | #189.1 | Criar a página HTML da atividade com exportação em PDF (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [316-43d655f9](etapas/ETAPA-316-43d655f9-ATIVIDADE-SALA-AULA-16-10-2026-ITIC.md) |
@@ -264,10 +264,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #192.2 | Aceite do usuário | 🟠 Alta | #192.1 | 👀 Aguardando o usuário | — | [319-99a74b06](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
 | #193-c3289a94-14ea-4442-8df7-7410bc01d242 | Voltar como estava antes da tabela `aula_turma` (código e banco), mantendo o bloqueio de atividade | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #193.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
-| #193.2 | Voltar o código ao estado de antes da `aula_turma` (PESADO) | 🟠 Alta | #193.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 10:08) | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
-| #193.3 | SQL que apaga a `aula_turma` do banco (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | ⬜ Pendente | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
+| #193.2 | Voltar o código ao estado de antes da `aula_turma` (PESADO) | 🟠 Alta | #193.1 | ✅ Concluído | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
+| #193.3 | SQL que apaga a `aula_turma` do banco (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 10:12) | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #193.4 | Rodar o SQL no SQL Editor e conferir (PESADO) | 🟠 Alta | #193.3 | ⬜ Pendente | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #193.5 | Aceite do usuário | 🟠 Alta | #193.4 | ⬜ Pendente | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
+| #194-0d27b30c-baf7-4966-b655-f64456f1f973 | Verificar a reversão da `aula_turma` e o ON/OFF de bloqueio de atividade (só leitura) | 🟠 Alta | #193.2 | ⬜ Pendente | — (não reservável) | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
+| #194.1 | Verificar a reversão e o ON/OFF de bloqueio (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | ⬜ Pendente — aguardar o usuário mandar pegar | — | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -623,6 +625,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 318-05ad7d1d | Atividade de sala 16-10 da ITIC como discursiva no banco, ligada à Aula 04 (#191, pedida em 2026-10-16) | [ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md](etapas/ETAPA-318-05ad7d1d-ATIVIDADE-SALA-16-10-DISCURSIVA-NO-BANCO-AULA-04.md) |
 | 319-99a74b06 | Botão de bloqueio de atividade não funciona (#192, pedida em 2026-10-16) | [ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md](etapas/ETAPA-319-99a74b06-BOTAO-DE-BLOQUEIO-DE-ATIVIDADE-NAO-FUNCIONA.md) |
 | 320-c3289a94 | Voltar como estava antes da tabela `aula_turma`, mantendo o bloqueio de atividade (#193, pedida em 2026-10-16) | [ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
+| 321-0d27b30c | Verificar a reversão da `aula_turma` e o ON/OFF de bloqueio (#194, pedida em 2026-10-16) | [ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
@@ -639,6 +642,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-16 10:05 | Tarefas #185 a #188 (tabela `aula_turma`: datas e bloqueio da aula por turma) **desfeitas**: o sistema volta ao estado de antes delas (commit `95bf1974`), mantendo o bloqueio de atividade por turma e a correção da #190 | Usuário (#193, "QUERO QUE VOLTE COMO ESTAVA ANTES DE CRIAR A TABELA AULA_TURMA") | O botão de bloqueio de atividade continuava sem funcionar |
 | 2026-10-15 19:02 | Sistema de níveis (LEVE/MEDIO/PESADO) e subtarefas com linha e reserva próprias (`.claude/rules/niveis.md`); tabela "quem pega o quê" é do usuário; tarefas antigas não são migradas | Gelvazio (#182, "sim, aprovado") | Modelos mais fracos fazem as tarefas simples e o forte fica com as difíceis |
 | 2026-10-14 20:50 | Tarefa #26 (regras no banco) cancelada: a cópia das regras em `regra_documento`/`regra_secao` não tem mais uso. As tabelas e `scripts/regras/sincronizar_regras.py` ficam como estão (apagar só com pedido) | Usuário (#165) | Nada lê as tabelas; o menu Regras usa o visualizador `.claude/rules/index.html`; a rotina agendada foi desativada (#29); o script lê a estrutura antiga do `CLAUDE.md`; a regra saiu na reorganização de 2026-10-13 (`a17ca06`) |
 | 2026-10-13 10:11 | Quadro com fonte única nos arquivos (sem `TASKS.md`; fila do banco deixa de ser fonte); plano de tarefa grande fica na própria etapa (sem `docs/`); regras de tarefas reutilizáveis em `.claude/rules/tasks/` | Usuário | Mesma informação anotada em 3 ou 4 lugares |

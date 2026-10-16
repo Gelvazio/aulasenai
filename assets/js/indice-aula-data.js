@@ -1,18 +1,15 @@
 // Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo
 // (aulas.rotulo_card ou "AULA NN"), nome (aulas.nome_card ou aulas.titulo) e "📅 Data da aula"
-// (aulas.data_planejada). Com turma escolhida no combo (ou a turma do aluno), a data vem de
-// aula_turma e recarrega ao trocar a turma (tarefa #188).
-// Regra: cada card ligado a apenas 1 aula. A aula do card vem da atividade do link principal;
-// se ela não vier (ex.: atividade bloqueada para o aluno), a aula é procurada na mesma matéria
-// pelo rótulo escrito no card. Sem aula no banco, o card fica como está no HTML.
-// Aula excluída (aulas.excluido = 1) esconde o card para todos.
+// (aulas.data_planejada). Regra: cada card ligado a apenas 1 aula. A aula do card vem da
+// atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
+// procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
+// está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
 // "Aula liberada / Aula bloqueada" (aulas.ativo) fica antes de "Editar aula" e a aula bloqueada
 // bloqueia o card inteiro para os alunos (assets/js/indice-aula-bloqueio.js).
-// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, aula-turma-repositorio.js,
-// assets/js/indice-aula-modal.js, assets/js/atividades-crud-repositorio.js e
-// assets/js/atividades-crud-modal.js (obterCaminhoHtml).
+// Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, assets/js/indice-aula-modal.js,
+// assets/js/atividades-crud-repositorio.js e assets/js/atividades-crud-modal.js (obterCaminhoHtml).
 
 const SELETOR_CARD_AULA = 'article.aula';
 const SELETOR_LINK_PRINCIPAL_AULA = 'a.btn.principal';
@@ -29,12 +26,7 @@ const DIGITOS_NUMERO_AULA = 2;
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 
-const EVENTO_TURMA_ESCOLHIDA_INDICE = 'turma-indice-alterada';
-
-// turma/linhasTurma: turma escolhida no combo do índice (aluno: a dele) e as linhas dela em
-// aula_turma; sem turma, a data vem de aulas.data_planejada.
-const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false,
-    turma: null, linhasTurma: null };
+const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -176,69 +168,6 @@ function renderizarTextosNoCard(item) {
 }
 
 /**
- * Data da aula do card: a da turma escolhida (aula_turma); sem turma, a data planejada da aula.
- * @param {{aula: Object|null}} item - Card e a aula dele.
- * @returns {string|null|undefined} Data AAAA-MM-DD, ou vazio se a turma não tem data.
- */
-function obterDataDoCardAula(item) {
-    const { turma, linhasTurma } = estadoCardsAula;
-    if (!turma || !linhasTurma) return item.aula?.data_planejada;
-
-    return linhasTurma.get(item.aula?.id)?.data_aula || null;
-}
-
-/**
- * Lê as linhas de aula_turma da turma e guarda no estado (uma falha volta à data planejada).
- * @param {string|null} turmaCodigo - Código da turma, ou null para nenhuma.
- */
-async function carregarLinhasDaTurmaNoIndice(turmaCodigo) {
-    estadoCardsAula.turma = turmaCodigo || null;
-    estadoCardsAula.linhasTurma = null;
-    if (!turmaCodigo || typeof lerLinhasAulaTurma !== 'function') return;
-
-    try {
-        estadoCardsAula.linhasTurma = await lerLinhasAulaTurma(turmaCodigo);
-    } catch (erro) {
-        console.warn('Datas da turma indisponíveis:', erro.message);
-    }
-}
-
-/**
- * Troca a turma do índice: recarrega as datas dela e redesenha a data de todos os cards.
- * @param {string} turmaCodigo - Código da turma escolhida no combo.
- */
-async function trocarTurmaDoIndice(turmaCodigo) {
-    await carregarLinhasDaTurmaNoIndice(turmaCodigo);
-    estadoCardsAula.cards.forEach(renderizarDataNoCard);
-}
-
-/**
- * Grava a data da aula na turma escolhida (aula_turma), sem mexer no bloqueio.
- * @param {number} aulaId - Id da aula.
- * @param {string|null} dataAula - Data AAAA-MM-DD, ou null para limpar.
- * @throws {Error} Se o banco recusar.
- */
-async function gravarDataDaAulaNaTurma(aulaId, dataAula) {
-    const { turma, linhasTurma } = estadoCardsAula;
-    const existente = linhasTurma.get(aulaId);
-    const gravada = await gravarLinhaAulaTurma({ aulaId, turmaCodigo: turma, existente },
-        { data_aula: dataAula, bloqueio: existente?.bloqueio === true });
-    if (gravada) linhasTurma.set(aulaId, gravada); else linhasTurma.delete(aulaId);
-}
-
-/**
- * Dados da turma para o modal "Editar aula" (vazio quando não há turma com datas lidas).
- * @returns {{turma: string, ler: Function, gravar: Function}|null} Turma e funções do modal.
- */
-function montarContextoTurmaDoModal() {
-    const { turma, linhasTurma } = estadoCardsAula;
-    if (!turma || !linhasTurma) return null;
-
-    return { turma, ler: (aulaId) => linhasTurma.get(aulaId)?.data_aula || '',
-        gravar: gravarDataDaAulaNaTurma };
-}
-
-/**
  * Escreve a linha da data no card (cria a linha na primeira vez).
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e a aula dele.
  */
@@ -249,7 +178,7 @@ function renderizarDataNoCard(item) {
         const referencia = item.card.querySelector('.meta') || item.card.querySelector('.topo');
         referencia?.after(linha);
     }
-    const data = formatarDataAula(obterDataDoCardAula(item));
+    const data = formatarDataAula(item.aula?.data_planejada);
     const semData = !data;
     linha.classList.toggle('aula-data--vazia', semData);
     if (data) linha.textContent = '📅 Data da aula: ' + data;
@@ -311,7 +240,6 @@ function adicionarBotaoEditarAula(item) {
     botao.addEventListener('click', () => abrirModalAulaCard(item, {
         cards: estadoCardsAula.cards,
         ehAdministrador: estadoCardsAula.ehAdministrador,
-        dataDaTurma: montarContextoTurmaDoModal(),
         aoGravar: atualizarCardsDaAula,
     }));
     if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
@@ -409,21 +337,6 @@ async function iniciarCardsAula() {
 }
 
 /**
- * Define a turma das datas: a do combo (professor, se a barra já existe) ou a do aluno.
- */
-async function definirTurmaInicialDoIndice() {
-    if (estadoCardsAula.turma) return;
-
-    const combo = document.querySelector('.barra-turma-favorita__lista');
-    try {
-        const turma = estadoCardsAula.ehProfessor ? combo?.value : await lerTurmaDoAlunoAulaTurma();
-        await carregarLinhasDaTurmaNoIndice(turma);
-    } catch (erro) {
-        console.warn('Turma do índice indisponível:', erro.message);
-    }
-}
-
-/**
  * Lê a aula de cada card, desenha os cards e, para o professor, o botão de edição.
  */
 async function desenharCardsDoIndice() {
@@ -443,13 +356,9 @@ async function desenharCardsDoIndice() {
         console.warn('Aulas dos cards indisponíveis:', erro.message);
     }
     estadoCardsAula.cards = itens;
-    await definirTurmaInicialDoIndice();
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
     itens.forEach(desenharCardAula);
     await renderizarNomesDasAtividades(itens);
 }
-
-document.addEventListener(EVENTO_TURMA_ESCOLHIDA_INDICE,
-    (evento) => trocarTurmaDoIndice(evento.detail));
 
 iniciarCardsAula();
