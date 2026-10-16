@@ -37,7 +37,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s7 | #201 ([328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-16 12:58 |
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
-| local · main · s10 | #204 ([331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md)) e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:12 |
+| local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)) em execução; #204 e #203 aguardam aceite | 🔄 Ativa | 2026-10-16 15:09 |
 
 ## 📌 Tarefas
 
@@ -270,6 +270,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #203.3 | Aceite do usuário | 🟡 Média | #203.2 | 👀 Aguardando o usuário | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | #204-23c1d3e3-d3bf-4014-ab26-2f656f6f3081 | **Tirar "Data da aula" de todos os cards de atividades** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
 | #204.2 | Aceite do usuário | 🟡 Média | #204.1 | 👀 Aguardando o usuário | — | [331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
+| #205-6808b7d3-2460-47de-8321-a28e1930ce2c | **Tirar a linha "50 questões · múltipla escolha · 90–120 minutos" dos cards** | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
+| #205.1 | Tirar a linha de resumo dos cards (MEDIO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s10) (desde 2026-10-16 15:09) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
+| #205.2 | Aceite do usuário | 🟡 Média | #205.1 | ⬜ Pendente | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -636,6 +639,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 328-d0739bde | CRUD de turmas e botão Professores (#201, pedida em 2026-10-16) | [ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | 330-bcdf4868 | Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06 (#203, pedida em 2026-10-16) | [ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | 331-23c1d3e3 | Tirar "Data da aula" dos cards de atividades (#204, pedida em 2026-10-16) | [ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
+| 332-6808b7d3 | Tirar a linha de resumo (questões · minutos) dos cards (#205, pedida em 2026-10-16) | [ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
