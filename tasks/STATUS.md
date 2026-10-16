@@ -37,6 +37,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s7 | #201 ([328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-16 12:58 |
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
+| local · main · s10 | #203 ([330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md)) em execução | 🔄 Ativa | 2026-10-16 14:57 |
 
 ## 📌 Tarefas
 
@@ -309,6 +310,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #203-bcdf4868-c19d-4a02-8f12-46a953a46f3c | **Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06** | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
+| #203.1 | Conferir a aula no banco e aprovar a mudança (PESADO) | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s10) (desde 2026-10-16 14:57) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
+| #203.2 | Gravar o rótulo AULA 06 no banco (PESADO, só Claude Code local) | 🟡 Média | #203.1 | ⬜ Pendente | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
+| #203.3 | Aceite do usuário | 🟡 Média | #203.2 | ⬜ Pendente | — | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -673,6 +678,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 326-65a7038f | Bug: "Exportar Meu Gabarito" não aparece na 152 (#199, pedida em 2026-10-16) | [ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | 327-c87b8754 | ON/OFF do professor para o bloqueio de horário (#200, pedida em 2026-10-16) | [ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | 328-d0739bde | CRUD de turmas e botão Professores (#201, pedida em 2026-10-16) | [ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
+| 330-bcdf4868 | Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06 (#203, pedida em 2026-10-16) | [ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
