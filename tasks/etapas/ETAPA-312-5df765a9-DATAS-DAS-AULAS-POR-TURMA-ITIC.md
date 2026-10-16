@@ -21,6 +21,9 @@ combo as datas das aulas daquela turma (cada turma tem dias diferentes), lidas d
 ### Decisões
 
 - 2026-10-16 — Datas ficam em tabela separada (aula × turma × data), pedido do usuário.
+- 2026-10-16 06:25 — Usuário: "execute a 185" → tomado como aprovação do escopo acima e como ordem
+  expressa para a Sonnet 5.5 (local) fazer a #185.1 PESADO (exceção ao `niveis.md`). Fonte das
+  datas: `CALENDARIO AULAS ITIC.txt` (turmas CEPLAS TARDE e MANHÃ).
 
 ### #185.1 — Tabela de datas por aula e turma, com RLS e seed (banco)
 

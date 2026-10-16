@@ -31,6 +31,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s2 | #174 aguarda aceite ([301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md)) — sessão separada a pedido da frente local · main | ⏹️ Encerrada | 2026-10-15 14:15 |
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
+| local · main · s5 | #185 ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) em execução | 🔄 Ativa | 2026-10-16 06:25 |
 
 ## 📌 Tarefas
 
@@ -232,7 +233,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #184.1 | Criar o `index.html` do banco de horas (MEDIO) | 🟡 Média | — | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #184.2 | Aceite do usuário | 🟡 Média | #184.1 | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | #185-5df765a9-ab93-4401-b298-091234690c99 | Datas das aulas por turma abaixo do combo de turma na atividade de ITIC (tabela aula × turma × data) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
-| #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
+| #185.1 | Tabela de datas por aula e turma, com RLS e seed (PESADO, só Claude Code local) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s5) (desde 2026-10-16 06:25; ordem expressa do usuário "execute a 185") | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.2 | Lista de datas abaixo do combo de turma (MEDIO) | 🟠 Alta | #185.1 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 | #185.3 | Aceite do usuário | 🟠 Alta | #185.2 | ⬜ Pendente | — | [312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md) |
 
