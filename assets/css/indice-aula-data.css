@@ -30,6 +30,29 @@
     resize: vertical;
 }
 
+/* "Editar aula" e "Gerenciar atividades" sem barra de rolagem dentro da caixa (#215): a caixa
+   cresce com o conteúdo e, se passar da tela, quem rola é o fundo escuro. */
+.aula-data-fundo,
+.aula-vinculo-fundo {
+    overflow-y: auto;
+    align-items: flex-start;
+}
+
+.aula-data-fundo .aula-modal-caixa,
+.aula-vinculo-fundo .aula-modal-caixa {
+    max-height: none;
+    overflow-y: visible;
+    margin: auto 0;
+}
+
+/* Tela larga: campos da aula em 3 colunas (modal mais baixo); textos longos na linha inteira. */
+@media (min-width: 901px) {
+    .aula-data-fundo .aula-modal-caixa { width: min(980px, 100%); }
+    .crud-form.aula-modal-form { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .aula-modal-form .aula-modal-info,
+    .aula-modal-form .crud-campo:has(textarea) { grid-column: 1 / -1; }
+}
+
 /* Barra de botões no topo do "Editar aula" (#214): Salvar, Fechar, Excluir aula, Gerenciar
    atividades e Nova atividade nesta aula. */
 .aula-modal-barra { margin: 8px 0 4px; }
@@ -40,7 +63,7 @@
 /* "🔗 Gerenciar atividades" (assets/js/indice-aula-modal-vinculo.js, #213): por cima do
    "Editar aula". */
 .aula-vinculo-fundo { z-index: 1001; }
-.aula-vinculo-form { grid-template-columns: minmax(0, 220px) 1fr; align-items: end; }
+.crud-form.aula-vinculo-form { grid-template-columns: minmax(0, 220px) 1fr; align-items: end; }
 
 .aula-excluir-botao {
     background: var(--aula-excluir-fundo);
