@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #200.2 ([327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md)) em execução; #199.1 liberada (aguarda o usuário escolher simular ou mandar o console); #198 livre; #196, #195, #192 e #191 aguardam aceite; #193.4 aguarda o usuário rodar o SQL; #194 sem reserva | 🔄 Em execução | 2026-10-16 11:24 |
+| local · main · s6 | #200 ([327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md)) aguarda aceite; #199.1 livre (aguarda o usuário escolher simular ou mandar o console); #198 livre; #196, #195, #192 e #191 aguardam aceite; #193.4 aguarda o usuário rodar o SQL; #194 sem reserva | 👀 Aguardando o usuário | 2026-10-16 12:06 |
 
 ## 📌 Tarefas
 
@@ -286,10 +286,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #199.2 | Aceite do usuário | 🟠 Alta | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
-| #200-c87b8754-5ef1-46a8-8987-1e689eba9a6a | Professor liga/desliga o bloqueio de horário da entrega de atividade | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200-c87b8754-5ef1-46a8-8987-1e689eba9a6a | Professor liga/desliga o bloqueio de horário da entrega de atividade | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 | #200.1 | Plano na etapa e aprovação do usuário (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
-| #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 11:24) | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
-| #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | ⬜ Pendente | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.2 | Executar o ON/OFF: banco e telas (PESADO, só Claude Code local) | 🟠 Alta | #200.1 | ✅ Concluído | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
+| #200.3 | Aceite do usuário | 🟠 Alta | #200.2 | 👀 Aguardando o usuário | — | [327-c87b8754](etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

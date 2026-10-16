@@ -860,6 +860,20 @@ desfeita a pedido do usuário: o sistema voltou ao estado de antes dela. Script:
 e a tabela). A "Data da aula" volta a ser `aulas.data_planejada`. O bloqueio de atividade por
 turma (`atividade.bloqueio`, `definir_bloqueio_turma`) não muda.
 
+## 🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma (#200)
+
+**Script:** `database/2026-10-16-turma-bloquear-horario.sql` (aplicado em 2026-10-16 pelo
+conector do Supabase). **Plano:** etapa `tasks/etapas/ETAPA-327-c87b8754-LIGA-DESLIGA-BLOQUEIO-HORARIO.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma.bloquear_horario` | `boolean not null default true` | ON (padrão, como antes): o aluno só grava e entrega dentro do horário da turma; OFF: o horário não bloqueia nada, nem nas avaliações |
+| `horario_da_turma_do_aluno()` | função (mudou) | turma com o bloqueio desligado conta como `dentro`; por ela seguem `dentro_do_horario_da_turma()`, `pode_responder_no_horario(id)` (RLS) e os avisos das páginas |
+| `definir_bloqueio_horario_turma(codigo, ligado)` | função (só professor da turma) | liga/desliga; recusa turma não vinculada; sem `anon` |
+
+Tela: botão **🔒 Bloquear horário: ON / 🔓 OFF** ao lado do horário da turma, no relatório do
+professor das atividades (`assets/js/turma-horario.js`).
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas

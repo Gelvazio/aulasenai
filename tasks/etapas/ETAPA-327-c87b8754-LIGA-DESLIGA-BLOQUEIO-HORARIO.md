@@ -50,12 +50,27 @@ não bloqueia nada.
 
 ### #200.2 — Executar o ON/OFF (banco + telas)
 
-**Próximo passo:** escrever `database/2026-10-16-turma-bloquear-horario.sql`, aplicar e conferir; depois o botão na tela do professor.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — SQL, RLS e funções do banco (só Claude Code local).
 - **Critérios de aceitação:** só o professor liga/desliga (garantido por RLS/função); ligado,
   o aluno fora do horário não grava nem entrega; desligado, grava e entrega a qualquer hora.
+- **Entrega (2026-10-16 12:06):** `database/2026-10-16-turma-bloquear-horario.sql` aplicado pelo conector
+  (coluna `turma.bloquear_horario` padrão `true`, `horario_da_turma_do_aluno()` com a turma
+  desligada contando como "dentro", função `definir_bloqueio_horario_turma`); botão
+  **🔒 Bloquear horário: ON / 🔓 OFF** ao lado do horário da turma no relatório do professor
+  (`assets/js/turma-horario.js`, `assets/js/respostas-atividade-professor.js`,
+  `assets/css/respostas-atividade.css`); `docs/database.md` e
+  `docs/relatorio_verificacao_database.html`.
+- **Verificação:** consulta depois do SQL — 7 turmas, todas ligadas (nada mudou para os
+  alunos); a função nova tem a regra `not t.bloquear_horario`; `definir_bloqueio_horario_turma`
+  executa para `authenticated` e não para `anon`; só ela e `definir_horario_turma` leem o
+  horário (RLS e avisos seguem pela mesma função). `node --check` nos 2 JS;
+  `respostas-atividade-professor.js` com 995 linhas. Sem navegador: o clique fica para o
+  aceite (#200.3).
 
 ### #200.3 — Aceite do usuário
 
-**Próximo passo:** 👀 depois da #200.2, o usuário confere ligado e desligado.
+**Próximo passo:** 👀 o usuário, como professor, abre uma atividade objetiva, escolhe a turma
+no relatório, clica em **🔒 Bloquear horário: ON** (vira OFF) e confere com um aluno fora do
+horário que ele grava e entrega; depois volta para ON.

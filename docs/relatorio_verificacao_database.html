@@ -954,6 +954,33 @@
       </table>
     </div>
 
+    <h2>🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-bloquear-horario.sql</code> (aplicado em 2026-10-16) · Tela: botão "Bloquear horário" ao lado do horário da turma (professor) · Tarefa #200</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma.bloquear_horario</td>
+          <td>boolean not null default true</td>
+          <td>ON: aluno só grava e entrega no horário da turma; OFF: o horário não bloqueia nada (nem nas avaliações)</td>
+        </tr>
+        <tr>
+          <td>horario_da_turma_do_aluno()</td>
+          <td>Função (security definer)</td>
+          <td>Turma com o bloqueio desligado conta como dentro do horário (RLS e avisos seguem por ela)</td>
+        </tr>
+        <tr>
+          <td>definir_bloqueio_horario_turma(text, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Só o professor da turma liga ou desliga; sem acesso para anon</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql</code> (aplicado em 2026-10-15) · Tela: botão "Liberar gabaritos" (professor) · Tarefa #175</p>

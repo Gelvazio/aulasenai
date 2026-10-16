@@ -431,7 +431,8 @@ function montarListaAlunosRelatorio(linhas, base) {
  */
 async function buscarDadosTurmas() {
     try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito,hora_inicio,hora_fim');
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome),' +
+            'uc,favorito,hora_inicio,hora_fim,bloquear_horario');
         return new Map(turmas.map((turma) => [turma.codigo, turma]));
     } catch (erro) {
         return new Map();
@@ -504,6 +505,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
             local: [dados.unidade?.nome, dados.turno].filter(Boolean).join(' ').toUpperCase(),
             favorita: Boolean(dados.favorito),
             inicio: formatarHoraTurma(dados.hora_inicio), fim: formatarHoraTurma(dados.hora_fim),
+            bloquearHorario: dados.bloquear_horario !== false,
             alunos: new Set(),
         };
         turma.alunos.add(linha.aluno_id);
@@ -844,8 +846,9 @@ function criarCampoHorarioRelatorio(rotulo) {
 }
 
 /**
- * Cria o bloco onde o professor define o horário (início e fim) da turma escolhida nas abas.
- * Fora desse horário o aluno da turma não grava alternativas nem entrega. Vazio = sem limite.
+ * Cria o bloco onde o professor define o horário (início e fim) da turma escolhida nas abas e o
+ * ON/OFF "Bloquear horário" (turma-horario.js). Ligado, fora do horário o aluno da turma não
+ * grava alternativas nem entrega; desligado ou horário vazio = sem limite.
  * @param {{codigo: string, inicio: string, fim: string}[]} turmas - Turmas do relatório.
  * @returns {HTMLElement} Bloco com os campos e o botão de salvar.
  */
@@ -868,9 +871,13 @@ function criarHorarioTurmaRelatorio(turmas) {
             await mostrarPopup(erro.message, { tipo: 'erro' });
         }
     });
-    bloco.append(inicio.etiqueta, fim.etiqueta, botao);
+    const bloqueio = criarBotaoBloqueioHorario({
+        obterTurma: () => turmas.find((item) => item.codigo === turmaEscolhidaRelatorio),
+        avisar: (texto, tipo) => mostrarPopup(texto, { tipo, titulo: 'Bloqueio de horário' }) });
+    bloco.append(inicio.etiqueta, fim.etiqueta, botao, bloqueio);
     bloco.atualizar = () => {
         const turma = turmas.find((item) => item.codigo === turmaEscolhidaRelatorio);
+        bloqueio.atualizar();
         inicio.campo.value = turma?.inicio || '';
         fim.campo.value = turma?.fim || '';
     };
