@@ -20,6 +20,12 @@ const CODIGO_ENTREGA_REPETIDA = 409;
 const MSG_ERRO_GRAVAR_TOPICO = 'Resposta NÃO gravada. Confira a internet e tente de novo.';
 const MSG_ERRO_ENTREGAR_DISCURSIVA = 'Não foi possível registrar a entrega. Confira se todos ' +
     'os tópicos estão gravados e tente de novo.';
+// Carga da abertura: uma chamada ao Supabase pendurada deixava a página parada em
+// "Carregando..." sem o botão "Exportar Meu Gabarito" (#196.3); a mesma carga, repetida, termina.
+const LIMITE_CARGA_DISCURSIVA_MS = 8000;
+const TENTATIVAS_CARGA_DISCURSIVA = 3;
+const MSG_CARGA_DEMORADA = 'A carga da avaliação passou de ' +
+    LIMITE_CARGA_DISCURSIVA_MS / 1000 + ' s';
 
 /**
  * Monta a chave de um tópico usada nos mapas de respostas (ex.: item 3, tópico 2 → "3-2").
@@ -243,6 +249,40 @@ async function carregarDiscursiva(sessao) {
 }
 
 /**
+ * Espera a promessa até o limite de tempo.
+ * @param {Promise<*>} promessa - Operação a esperar.
+ * @param {number} milissegundos - Tempo máximo.
+ * @returns {Promise<*>} Resultado da promessa.
+ * @throws {Error} Se passar do limite ou a promessa falhar.
+ */
+function esperarComLimiteDiscursiva(promessa, milissegundos) {
+    let temporizador = null;
+    const limite = new Promise((_, rejeitar) => {
+        temporizador = setTimeout(() => rejeitar(new Error(MSG_CARGA_DEMORADA)), milissegundos);
+    });
+    return Promise.race([promessa, limite]).finally(() => clearTimeout(temporizador));
+}
+
+/**
+ * Carrega os dados da página com limite de tempo, repetindo a carga se ela travar ou falhar
+ * (só leituras; a abertura repetida é ignorada pelo banco).
+ * @param {Object} sessao - Estado do repositório.
+ * @returns {Promise<Object>} Dados iniciais da página (ver carregarDiscursiva).
+ * @throws {Error} Se todas as tentativas falharem.
+ */
+async function carregarDiscursivaComLimite(sessao) {
+    for (let tentativa = 1; ; tentativa++) {
+        try {
+            const carga = carregarDiscursiva(sessao);
+            return await esperarComLimiteDiscursiva(carga, LIMITE_CARGA_DISCURSIVA_MS);
+        } catch (erro) {
+            if (tentativa >= TENTATIVAS_CARGA_DISCURSIVA) throw erro;
+            console.warn('Carga da avaliação repetida (' + tentativa + '):', erro.message);
+        }
+    }
+}
+
+/**
  * Grava (upsert) o texto de um tópico; texto vazio apaga a resposta do tópico.
  * @param {Object} sessao - Estado do repositório.
  * @param {{item: number, topico: number, texto: string}} resposta - Resposta do tópico.
@@ -291,7 +331,7 @@ async function entregarDiscursiva(sessao) {
 function criarRepositorioDiscursivo() {
     const sessao = { usuario: null, atividade: null, tentativa: 1 };
     return {
-        carregar: () => carregarDiscursiva(sessao),
+        carregar: () => carregarDiscursivaComLimite(sessao),
         gravarTopico: (resposta) => gravarTopicoDiscursivo(sessao, resposta),
         lerGravadas: () => lerRespostasDiscursivas(sessao),
         lerEntrega: () => lerEntregaDiscursiva(sessao),

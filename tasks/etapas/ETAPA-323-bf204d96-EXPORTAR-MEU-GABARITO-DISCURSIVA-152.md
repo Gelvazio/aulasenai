@@ -39,17 +39,14 @@ já existe nas objetivas de ITIC (#84, #180). As outras discursivas ficam na #19
 
 **Próximo passo:** 👀 o usuário, logado como aluno que já entregou a atividade 152, clica em
 "📄 Exportar Meu Gabarito" e confere se o PDF traz as respostas dele (e, com um aluno que não
-entregou, se o botão fica desativado).
+entregou, se o botão fica desativado). Depois da #196.3: conferir com a aluna Amanda (Ctrl+F5)
+que o painel IDENTIFICAÇÃO sai de "Carregando..." e o botão aparece.
 
 - **Nível:** LEVE — conferência do usuário.
 
 ### #196.3 — Botão ainda não aparece na discursiva 152
 
-**Próximo passo:** (livre para outra IA) achar por que `iniciarAvaliacaoDiscursiva` não
-termina na abertura da página da aluna Amanda Zarqueta de Oliveira e corrigir. Pedir ao usuário
-o console da abertura (Preserve log + Ctrl+F5, linhas amarelas/vermelhas) e o resultado de rodar
-`iniciarAvaliacaoDiscursiva()` à mão no console; ou usar o Claude in Chrome numa sessão nova
-(a página fica aberta logada como a Amanda no Chrome do usuário).
+**Próximo passo:** — (entregue; o usuário confere no aceite #196.2).
 
 - **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
 - **Pedido (2026-10-16 14:08):** "https://aulasenai.vercel.app/MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html, ainda n aparece o botao *Exportar Meu Gabarito*"
@@ -89,3 +86,18 @@ o console da abertura (Preserve log + Ctrl+F5, linhas amarelas/vermelhas) e o re
 - **Ferramentas:** nesta sessão o Claude in Chrome não carregou e o navegador embutido é
   bloqueado pelo gancho do projeto (`testes-validacao.md`); o usuário autorizou investigar pelo
   Chrome dele.
+- **Executor:** Claude Code (Opus 5.5) (local · main · s9) desde 2026-10-16 14:25.
+- **Revisão da suspeita (s9):** não há carga dupla do Supabase na abertura — o
+  `js/header-usuario.js` só roda no `DOMContentLoaded`, quando o supabase-js e o `js/supabase.js`
+  do fim do `<body>` já existem, então ele reaproveita o mesmo cliente. O CDN `supabase-js@2`
+  (2.118.0) não usa mais `navigator.locks` por padrão (coordenação sem trava).
+- **Correção:** a carga da abertura (`carregar` do repositório, `assets/js/respostas-discursivas-
+  banco.js`) passou a ter **limite de 8 s** e é **repetida até 3 vezes** se travar ou falhar
+  (`carregarDiscursivaComLimite` + `esperarComLimiteDiscursiva`). São só leituras; a abertura
+  repetida é ignorada pelo banco (`resolution=ignore-duplicates`). A carga feita de novo à mão
+  terminava em ~0,3 s, então a nova tentativa destrava o painel e o botão aparece; o console
+  mostra "Carga da avaliação repetida (N): …" quando isso acontece.
+- **Entrega:** commit desta subtarefa (`fix(discursiva): …`).
+- **Verificação:** `node --check assets/js/respostas-discursivas-banco.js` sem erro; leitura do
+  fluxo `iniciarAvaliacaoDiscursiva` → `carregar` → `montarPainel` → `abrirMeuGabaritoDiscursiva`.
+  Sem navegador (regra do projeto): o usuário confere com a Amanda no aceite (#196.2).
