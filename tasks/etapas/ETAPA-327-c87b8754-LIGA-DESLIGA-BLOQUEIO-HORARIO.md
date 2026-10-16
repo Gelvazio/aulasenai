@@ -31,13 +31,14 @@ não bloqueia nada.
 
 ### Decisões
 
+- 2026-10-16 11:24 — **Plano aprovado** pelo usuário: "Sim, aprovo o plano: ON/OFF por turma ao lado do
+  horário, valendo também para as avaliações."
 - 2026-10-16 11:20 — Tarefa criada **sem reserva**: a frente `local · main · s6` já está com a
   #199.1 (1 subtarefa por frente).
 
 ### #200.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** 👀 aguardando o "sim" do usuário ao plano (ON/OFF **por turma**, ao lado do
-horário, valendo também para as avaliações).
+**Próximo passo:** — (entregue: plano aprovado).
 
 - **Nível:** PESADO — banco (coluna/função), RLS e permissão só do professor.
 - **O que já existe (levantamento de 2026-10-16 11:20):** horário por turma (`turma.horario`)
@@ -49,7 +50,7 @@ horário, valendo também para as avaliações).
 
 ### #200.2 — Executar o ON/OFF (banco + telas)
 
-**Próximo passo:** depois da #200.1, dividir em subtarefas (SQL, tela do professor, páginas).
+**Próximo passo:** escrever `database/2026-10-16-turma-bloquear-horario.sql`, aplicar e conferir; depois o botão na tela do professor.
 
 - **Nível:** PESADO — SQL, RLS e funções do banco (só Claude Code local).
 - **Critérios de aceitação:** só o professor liga/desliga (garantido por RLS/função); ligado,
