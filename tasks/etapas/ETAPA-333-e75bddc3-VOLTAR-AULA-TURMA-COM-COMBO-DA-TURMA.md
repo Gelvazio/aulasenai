@@ -85,13 +85,25 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 
 ### #206.2 — SQL: recriar a `aula_turma` com as 3 chaves, data, bloqueio da aula e RLS
 
-**Próximo passo:** ler `database/2026-10-16-aula-turma.sql` e `...-bloqueio.sql`, conferir no banco
-se a tabela existe e escrever o SQL novo (idempotente) com `materia_id`.
+**Próximo passo:** — (entregue; aplicar na #206.3).
 
 - **Nível:** PESADO — banco (tabela, chaves, RLS, gatilho).
 - **Critérios de aceitação:** `aula_id`, `materia_id` e `turma_codigo` com chave estrangeira;
   `data_aula` aceita vazio; `bloqueio` padrão `false`; gatilho propaga o bloqueio às atividades;
   RLS + JWT (`security-banco.md`).
+- **Descoberta (consulta só de leitura, 2026-10-16 15:30):** a #193 **nunca foi aplicada**: a
+  `aula_turma` continua no banco com 38 linhas (2 turmas, 0 bloqueadas), colunas `aula_id`,
+  `turma_codigo`, `data_aula` (aceita vazio) e `bloqueio`, 4 chaves/restrições (PK, única, FK da
+  aula, FK da turma), o gatilho do bloqueio e as 4 políticas de RLS. Por isso **não se recria a
+  tabela**: só falta a chave da matéria.
+- **Entrega:** `database/2026-10-16-aula-turma-materia.sql` (idempotente, sem apagar dados):
+  coluna `materia_id` preenchida pela aula, `not null`, FK para `materia.id`, gatilho que copia
+  sempre a matéria da aula e índice `(turma_codigo, materia_id)`. Registrado como **PENDENTE** em
+  `database/SEEDS-APLICADOS.md`; o `2026-10-16-remover-aula-turma.sql` virou **SUBSTITUÍDO** (nunca
+  rodou e não vai rodar) e a #193.4 ficou obsoleta (recado para a frente s6 em `RECADOS.md`).
+- **Verificação:** consultas de leitura ao banco (existência, colunas, restrições, gatilho,
+  políticas, tipos de `materia.id`/`turma.codigo`/`aulas.materia_id`); SQL conferido por leitura.
+  Ainda **não executado** (é a #206.3).
 
 ### #206.3 — Rodar o SQL e recarregar as datas do calendário ITIC
 
