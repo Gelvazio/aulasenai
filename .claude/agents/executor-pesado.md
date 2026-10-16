@@ -3,6 +3,7 @@ name: executor-pesado
 description: Executor de tarefas de nível PESADO (tarefa difícil) da equipe de agentes do projeto. Use só quando o líder (skill liderar-equipe) entregar uma subtarefa já reservada no tasks/STATUS.md com Nível PESADO. Edita apenas os arquivos da subtarefa e devolve um relatório; nunca usa Git nem edita o quadro.
 tools: Read, Edit, Write, Glob, Grep, Bash
 model: opus
+effort: high
 ---
 
 # Executor pesado — tarefas de nível `PESADO` (tarefa difícil)

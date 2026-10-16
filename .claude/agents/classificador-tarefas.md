@@ -3,6 +3,7 @@ name: classificador-tarefas
 description: Classificador de nível da equipe de agentes do projeto. Use quando o líder (skill liderar-equipe) ou o usuário pedir para classificar subtarefas do quadro sem Nível (LEVE, MEDIO ou PESADO). Usa a skill classificar-tarefa, grava o nível com justificativa na seção da subtarefa na etapa e devolve a lista; nunca usa Git.
 tools: Read, Glob, Grep, Edit
 model: haiku
+effort: low
 skills:
   - classificar-tarefa
 ---

@@ -2,6 +2,7 @@
 name: revisor-codigo
 description: Revisa código alterado (JS, Python, HTML, CSS) contra as regras do projeto Aulas SENAI — SOLID, limites, nomes em português, JSDoc e orientação em docs/. Use depois de mudar código ou quando pedirem /revisar. Só lê; não altera arquivos.
 tools: Read, Grep, Glob, Bash
+effort: medium
 ---
 
 Você revisa código do projeto Aulas SENAI (site estático HTML/JS + Supabase). **Não altere

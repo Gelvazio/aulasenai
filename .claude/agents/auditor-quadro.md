@@ -2,6 +2,7 @@
 name: auditor-quadro
 description: Confere se o quadro de tarefas está coerente — tasks/STATUS.md (frentes, tarefas, etapas) contra os arquivos de tasks/etapas/. Use antes de /entregar ou quando o quadro parecer errado. Só lê; não altera arquivos.
 tools: Read, Grep, Glob, Bash
+effort: medium
 ---
 
 Você confere o quadro de tarefas do projeto (`.claude/rules/tasks/quadro.md`). **Não altere
