@@ -42,3 +42,11 @@ já existe nas objetivas de ITIC (#84, #180). As outras discursivas ficam na #19
 entregou, se o botão fica desativado).
 
 - **Nível:** LEVE — conferência do usuário.
+
+### #196.3 — Botão ainda não aparece na discursiva 152
+
+**Próximo passo:** achar por que o botão não aparece na página publicada e corrigir.
+
+- **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
+- **Pedido (2026-10-16 14:08):** "https://aulasenai.vercel.app/MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html, ainda n aparece o botao *Exportar Meu Gabarito*"
+- **Executor:** Claude Code (Opus 5.5) (local · main · s8)
