@@ -307,7 +307,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s11) (desde 2026-10-16 14:59) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #203-bcdf4868-c19d-4a02-8f12-46a953a46f3c | **Card da AVALIACAO-OBJETIVA-01.html com o rótulo AULA 06** | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [330-bcdf4868](etapas/ETAPA-330-bcdf4868-ROTULO-AULA-06-AVALIACAO-OBJETIVA-01.md) |
