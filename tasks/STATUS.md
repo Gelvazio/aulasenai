@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s14 | #210.1 ([337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md)) em execução; #209.7 aguarda o usuário apagar o bucket vazio | 🔄 Ativa | 2026-10-16 18:49 |
+| local · main · s14 | #210.2 ([337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md)) aguarda a aprovação do plano; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 18:51 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -277,9 +277,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #209.4 | Links dos slides pelo link temporário e PDFs fora do site (PESADO) | 🟠 Alta | #209.3 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.5 | Documentação (LEVE) | 🟠 Alta | #209.4 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.6 | Aceite do usuário | 🟠 Alta | #209.5 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
-| #210-be64cb29-48d8-4052-a6a1-5c9bd72d045e | **Bloqueio da aula ligado em todas as matérias** | 🟠 Alta | — | 🔄 Em verificação | — (não reservável) | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
-| #210.1 | Verificar as matérias (só leitura) (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:49) | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
-| #210.2 | Ligar o bloqueio da aula em todas as matérias (PESADO) | 🟠 Alta | #210.1 | ⬜ Pendente | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
+| #210-be64cb29-48d8-4052-a6a1-5c9bd72d045e | **Bloqueio da aula ligado em todas as matérias** | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
+| #210.2 | Ligar o bloqueio da aula em todas as matérias (PESADO) | 🟠 Alta | #210.1 | 👀 Plano aguardando aprovação | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #210.3 | Aceite do usuário | 🟠 Alta | #210.2 | ⬜ Pendente | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 
 ## Escopo
