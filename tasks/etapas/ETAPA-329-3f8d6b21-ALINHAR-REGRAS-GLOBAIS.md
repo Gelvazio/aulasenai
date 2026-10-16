@@ -36,12 +36,11 @@
 
 ### 202.3 — Ordem criar → publicar → assumir (C9)
 
-**Próximo passo:** em `.claude/rules/tasks/ciclo-da-task.md`, trocar a ordem de abertura pela de
-`rules-ai/regras/ciclo-da-task.md` ("Pedir confirmação só se for necessário").
+**Próximo passo:** nenhum — concluída.
 
 - **Nível:** LEVE — 1 `.md` · **Modelo:** só Claude Code Haiku 5.5
 - **Critérios de Aceitação:** a seção "Ordem de todo pedido" igual à do global.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit `feat(#202.3)` · **Verificação:** leitura: a seção "1. Abrir: criar → publicar → assumir → trabalhar" de `ciclo-da-task.md` ficou igual à do global (`rules-ai/regras/ciclo-da-task.md`). Feita por Claude Code (Sonnet 5.5) (local · main · s11), com IA_SEM_TRAVA=1 a pedido do usuário ("SIM"), 2026-10-16.
 
 ### 202.4 — ✅ movidas para `tasks/task_complete.md` (C4)
 

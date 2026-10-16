@@ -22,10 +22,11 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 15:05 | Aprovado o `UPDATE aulas SET rotulo_card = 'AULA 06' WHERE id = 69` | Usuário ("sim, pode gravar AULA 06 na aula 69") | Pedido da tarefa |
 
 ### #203.1 — Conferir a aula no banco e aprovar a mudança
 
-**Próximo passo:** 👀 aguardando o "sim" do usuário para o `UPDATE` (#203.2).
+**Próximo passo:** — (aprovado pelo usuário em 2026-10-16 15:05).
 
 - **Achado (2026-10-16 15:00):** atividade **19** ("Avaliação Objetiva 01", página
   `.../INTRODUCAO-TIC/ATIVIDADES/AVALIACAO-OBJETIVA-01.html`) → aula **69** (matéria 25,
@@ -41,14 +42,19 @@
 
 ### #203.2 — Gravar o rótulo AULA 06 no banco
 
-**Próximo passo:** aguardando o #203.1.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (`UPDATE` em produção)
 - **Descrição:** `UPDATE aulas SET rotulo_card = 'AULA 06'` na aula conferida.
 - **Critérios de aceitação:** consulta depois do `UPDATE` devolve `AULA 06`.
+- **Entrega:** `UPDATE` aplicado pelo conector do Supabase em 2026-10-16 15:05 (só a aula 69,
+  com a condição `rotulo_card = 'AVALIAÇÃO 01'`). **Verificação:** o `RETURNING` devolveu
+  `id 69 · rotulo_card AULA 06 · nome_card "Aula 06 - Editor de Textos: Formatação e
+  Estruturação"`. Na tela, o card passa a mostrar AULA 06 ao recarregar o índice (sem navegador
+  aqui: confirmar na página).
 
 ### #203.3 — Aceite do usuário
 
-**Próximo passo:** aguardando o #203.2.
+**Próximo passo:** 👀 o usuário recarrega o índice de atividades de ITIC e confirma o rótulo AULA 06.
 
 - **Nível:** LEVE — confirmação do usuário

@@ -8,17 +8,18 @@ Reutilizável em qualquer projeto. Onde fica cada informação: `quadro.md`.
 - ❌ Pergunta, explicação ou análise que não muda nada **não** vira TASK: só responder.
   Se a resposta levar a mudanças, a TASK nasce quando o usuário pedir.
 
-## 1. Abrir
+## 1. Abrir: criar → publicar → assumir → trabalhar
 
-**Todo pedido, nesta ordem:** **criar** a TASK → **publicar** no quadro (commit + push) →
-**assumir** (reserva, commit + push) → só então trabalhar. Vale para todas as IAs.
+Vale para todas as IAs (regra global C9, 2026-10-16).
 
 1. Sincronizar com o remoto (regras de git do projeto) e ler o `tasks/STATUS.md`.
-2. Criar a etapa (`quadro.md`), a linha da mãe e **no mínimo 1 subtarefa com nível** em
+2. **Criar:** a etapa (`quadro.md`), a linha da mãe e **no mínimo 1 subtarefa com nível** em
    "📌 Tarefas", e a linha em "🗂️ Etapas".
-3. Reservar a subtarefa que vai executar (`frentes-e-reserva.md`).
-4. **Pedir detalhes ao solicitante**, numa mensagem só: objetivo e resultado esperado, escopo
-   (entra / não entra), arquivos ou partes envolvidas, critério de pronto, prazo.
+3. **Publicar:** commit + push do quadro com a tarefa nova.
+4. **Assumir:** reservar a subtarefa que vai executar (`frentes-e-reserva.md`), commit + push.
+5. **Pedir confirmação só se for necessário:** se faltar detalhe crítico, perguntar numa mensagem
+   só: objetivo e resultado esperado, escopo (entra / não entra), arquivos ou partes envolvidas,
+   critério de pronto, prazo.
    - Não perguntar o que já está no pedido, no quadro ou no código.
    - Pedido completo → confirmar o entendimento em 1 frase e seguir.
    - ❌ Não assumir detalhe crítico em silêncio.
