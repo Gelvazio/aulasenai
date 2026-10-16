@@ -12,6 +12,7 @@
 
 const URL_POPUP_AULA_MODAL = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 const MSG_AULA_GRAVADA = '✅ Aula gravada.';
+const ID_FORMULARIO_MODAL_AULA = 'formulario-modal-aula';
 const MSG_AULA_ERRO = '❌ Não foi possível gravar. Confira o login de professor, o número da ' +
     'aula (não pode repetir na matéria) e o banco.';
 const MSG_AULA_TITULO = 'Informe o número e o título da aula.';
@@ -110,22 +111,36 @@ function criarCampoModalAula(definicao) {
 }
 
 /**
- * Monta o formulário da aula: informações fixas, campos editáveis e botões.
- * @returns {{formulario: HTMLFormElement, info: HTMLElement, botaoExcluir: HTMLElement}}
+ * Monta o formulário da aula: informações fixas e campos editáveis (os botões ficam na barra do
+ * topo, montarBarraModalAula).
+ * @returns {{formulario: HTMLFormElement, info: HTMLElement}}
  */
 function montarFormularioModalAula() {
     const formulario = criarElementoModalAula('form', 'crud-form aula-modal-form');
+    formulario.id = ID_FORMULARIO_MODAL_AULA;
     const info = criarElementoModalAula('p', 'aula-modal-info');
-    const acoes = criarElementoModalAula('div', 'crud-form__acoes');
-    const botaoExcluir = criarBotaoModalAula('🗑️ Excluir aula', 'aula-excluir-botao',
-        'excluir-aula');
-    acoes.append(criarBotaoModalAula('Salvar', 'crud-btn--principal', 'salvar'),
-        criarBotaoModalAula('✕ Fechar', '', 'fechar'), botaoExcluir);
     const camposDaTurma = typeof criarCamposTurmaModalAula === 'function'
         ? criarCamposTurmaModalAula() : [];
-    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), ...camposDaTurma,
-        acoes);
-    return { formulario, info, botaoExcluir };
+    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), ...camposDaTurma);
+    return { formulario, info };
+}
+
+/**
+ * Monta a barra de botões do topo do modal (pedido de 2026-10-16, #214), nesta ordem: Salvar,
+ * Fechar, Excluir aula (só administrador), Gerenciar atividades e Nova atividade nesta aula.
+ * O Salvar fica fora do formulário e o envia pelo atributo form.
+ * @returns {{barra: HTMLElement, botaoExcluir: HTMLElement}} Barra e o botão de excluir.
+ */
+function montarBarraModalAula() {
+    const barra = criarElementoModalAula('div', 'crud-form__acoes aula-modal-barra');
+    const salvar = criarBotaoModalAula('Salvar', 'crud-btn--principal', 'salvar');
+    salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
+    const botaoExcluir = criarBotaoModalAula('🗑️ Excluir aula', 'aula-excluir-botao',
+        'excluir-aula');
+    barra.append(salvar, criarBotaoModalAula('✕ Fechar', '', 'fechar'), botaoExcluir,
+        criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
+        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'));
+    return { barra, botaoExcluir };
 }
 
 /**
@@ -138,15 +153,13 @@ function montarModalAula() {
     caixa.setAttribute('role', 'dialog');
     caixa.setAttribute('aria-modal', 'true');
     const titulo = criarElementoModalAula('h2', '', 'Editar aula');
-    const { formulario, info, botaoExcluir } = montarFormularioModalAula();
+    const { barra, botaoExcluir } = montarBarraModalAula();
+    const { formulario, info } = montarFormularioModalAula();
+    // A mensagem fica logo abaixo da barra, perto do Salvar.
     const mensagem = criarElementoModalAula('p', 'crud-mensagem');
-    const cabecalhoLista = criarElementoModalAula('div', 'aula-modal-atividades__cabecalho');
-    const botoesLista = criarElementoModalAula('div', 'aula-modal-atividades__botoes');
-    botoesLista.append(criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
-        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'));
-    cabecalhoLista.append(criarElementoModalAula('h3', '', 'Atividades desta aula'), botoesLista);
     const lista = criarElementoModalAula('div', 'crud-lista');
-    caixa.append(titulo, formulario, mensagem, cabecalhoLista, lista);
+    caixa.append(titulo, barra, mensagem, formulario,
+        criarElementoModalAula('h3', '', 'Atividades desta aula'), lista);
     fundo.append(caixa);
     fundo.hidden = true;
     document.body.append(fundo);

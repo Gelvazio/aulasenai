@@ -82,3 +82,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #211.4 | Combo "Turma:" filtrado pela matéria (MEDIO) | 🟠 Alta | #211.2 | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #212.1 | Levantamento e plano (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
 | #213.1 | Modal "Gerenciar atividades" (vincular / desvincular) (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
+| #214.1 | Barra de botões no topo do "Editar aula" (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [341-084973bf](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |

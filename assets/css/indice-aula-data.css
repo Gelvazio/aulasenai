@@ -30,18 +30,12 @@
     resize: vertical;
 }
 
-.aula-modal-atividades__cabecalho {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
+/* Barra de botões no topo do "Editar aula" (#214): Salvar, Fechar, Excluir aula, Gerenciar
+   atividades e Nova atividade nesta aula. */
+.aula-modal-barra { margin: 8px 0 4px; }
 
 /* Exclusão lógica da aula (só Professor Administrador): card escondido para todos. */
 .aula.aula--excluida { display: none; }
-
-.aula-modal-atividades__botoes { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* "🔗 Gerenciar atividades" (assets/js/indice-aula-modal-vinculo.js, #213): por cima do
    "Editar aula". */
