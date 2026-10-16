@@ -281,6 +281,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #196.1 | Botão "Exportar Meu Gabarito" na discursiva 152 (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #196.2 | Aceite do usuário | 🟠 Alta | #196.1 | 👀 Aguardando o usuário | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #196.3 | Botão "Exportar Meu Gabarito" ainda não aparece na discursiva 152 (PESADO) | 🟠 Alta | #196.1 | ✅ Concluído | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
+| #196.4 | "Exportar Meu Gabarito" ao lado do "Exportar PDF" na discursiva (PESADO) | 🟠 Alta | #196.3 | ⬜ Pendente | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) | 🟠 Alta | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) | 🟠 Alta | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.2 | Aceite do usuário | 🟠 Alta | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |

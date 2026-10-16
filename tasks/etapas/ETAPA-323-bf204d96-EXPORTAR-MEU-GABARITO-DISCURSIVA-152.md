@@ -101,3 +101,14 @@ que o painel IDENTIFICAÇÃO sai de "Carregando..." e o botão aparece.
 - **Verificação:** `node --check assets/js/respostas-discursivas-banco.js` sem erro; leitura do
   fluxo `iniciarAvaliacaoDiscursiva` → `carregar` → `montarPainel` → `abrirMeuGabaritoDiscursiva`.
   Sem navegador (regra do projeto): o usuário confere com a Amanda no aceite (#196.2).
+
+### #196.4 — "Exportar Meu Gabarito" ao lado do "Exportar PDF"
+
+**Próximo passo:** achar onde o "📥 Exportar PDF" é montado na discursiva e colocar o
+"📄 Exportar Meu Gabarito" ao lado dele (hoje fica no painel IDENTIFICAÇÃO).
+
+- **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
+- **Pedido (2026-10-16 14:41):** "EXPORTAR MEU GABARITO DEVE FICAR AO LADO DE *EXPORTAR PDF*"
+- **Critérios de aceitação:** o botão do aluno aparece logo ao lado do "Exportar PDF", com as
+  mesmas regras de antes (só aluno logado; desativado até entregar).
+
