@@ -16,11 +16,12 @@ trabalham no mesmo repositório e só se falam pelos arquivos. Quadro: `quadro.m
 
 1. Sincronizar com o remoto; **só então** ler o `STATUS.md` (sem sincronizar, o quadro mente).
 2. Escolher uma **subtarefa** (nunca a linha da mãe) com **"Em uso por" = `—`**, **todas as
-   dependências ✅** e **nível até o máximo do seu modelo** (regra de níveis do projeto). Sem
-   nível → classificar antes. Tarefa antiga sem subtarefas: vale a linha dela.
+   dependências ✅** e **do seu modelo** (coluna Modelo; regra de níveis do projeto). ⛔ **Nunca**
+   de outro modelo, nem acima nem abaixo, sem exceção. Sem nível → classificar antes. Tarefa
+   antiga sem subtarefas: vale a linha dela.
 3. Entre as livres, a de **maior prioridade** (🔴 → 🟠 → 🟡 → 🟢); empate = ordem do quadro.
-   🟢 Baixa só com orientação explícita do usuário. Modelo forte só pega nível mais leve se não
-   houver nenhuma livre do seu nível.
+   🟢 Baixa só com orientação explícita do usuário. Sem subtarefa livre do seu modelo → não pega
+   nenhuma e avisa o usuário.
 4. Gravar `<IA (modelo)> (<frente>) (desde <data hora>)` em "Em uso por", fazer **commit + push
    imediatos** e só então começar o trabalho.
 5. Push da reserva recusado → sincronizar, **reler** o quadro; se outra frente pegou a mesma

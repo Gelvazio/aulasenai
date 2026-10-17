@@ -94,15 +94,22 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.3 — Regra do projeto
 
-**Próximo passo:** gravar a regra no `AGENTS.md` (regra 8), `niveis.md`,
-`tasks/frentes-e-reserva.md`, `tasks/ciclo-da-task.md`, `tasks/quadro.md` e nas skills
-`classificar-tarefa` e `liderar-equipe`; histórico.
+**Próximo passo:** — (entregue).
+
+- **Entrega:** `AGENTS.md` (regra 8: ⛔ nunca outro modelo); `.claude/rules/niveis.md`;
+  `tasks/frentes-e-reserva.md`; `tasks/ciclo-da-task.md`; `tasks/quadro.md` (coluna Modelo no
+  modelo do `STATUS.md` e linha `- **Modelo:**` no modelo da etapa); skill `classificar-tarefa`
+  (grava Nível + Modelo); skill `liderar-equipe` (o líder nunca faz a subtarefa no lugar do
+  executor — saiu o "ou assumir a correção"); `docs/HISTORICO-REGRAS.md`.
+- **Verificação:** leitura dos arquivos; tamanhos ≤ 5 KB (`quadro.md` 5080 bytes, era 5003).
 
 - **Nível:** LEVE — só `.md` (`AGENTS.md`, `niveis.md`, `tasks/`, skills), autorização da #247.
 
 ### #247.4 — Trava no Claude Code (hook)
 
-**Próximo passo:** esperar a #247.3.
+**Próximo passo:** função nova em `scripts/claude-hooks/regras-bloqueio.js`: no `git commit`, ler
+as linhas acrescentadas no `tasks/STATUS.md` staged e bloquear reserva cujo modelo em "Em uso
+por" não é o da coluna Modelo / do nível.
 
 - **Nível:** MEDIO — lógica em 1 a 2 arquivos JS (`regras-bloqueio.js`), autorização da #247.
 

@@ -1,8 +1,7 @@
 # 🗂️ Quadro de tarefas — fonte única
 
-Esta pasta (`.claude/rules/tasks/`) serve para **qualquer projeto**: não tem nada específico de um
-projeto. Para usar em outro, copie a pasta e crie `tasks/STATUS.md` e `tasks/etapas/` pelos
-modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frentes-e-reserva.md`.
+Esta pasta serve para **qualquer projeto**: copie-a e crie `tasks/STATUS.md` e `tasks/etapas/`
+pelos modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frentes-e-reserva.md`.
 
 ## Tarefa e subtarefa
 
@@ -11,7 +10,7 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
   projeto).
 - O trabalho e a reserva são sempre numa **subtarefa**; a mãe é `— (não reservável)` e fecha
   quando todas as subtarefas estiverem ✅. Cada subtarefa pode ser pega por **qualquer IA** do
-  nível, independente das outras da mesma mãe (respeitando dependências e reservas).
+  **seu modelo** (coluna Modelo), independente das outras (respeitando dependências e reservas).
 - **Tarefas criadas antes deste modelo** (linha única + tabela de itens na etapa) continuam como
   estão; podem ser divididas em subtarefas quando alguém for pegá-las.
 
@@ -31,8 +30,7 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
   pendências do usuário montada à mão, sem cópia da fila em tabela de banco.
 - ⛔ **No `STATUS.md` só ficam tarefas abertas ou em andamento.** Linha (mãe ou subtarefa) que vira
   ✅ é **recortada** do "📌 Tarefas" e colada no fim da tabela do `tasks/task_complete.md`, no
-  **mesmo commit** da entrega (move, não copia). Reabrir = mover a linha de volta (regra global C4,
-  2026-10-16).
+  **mesmo commit** da entrega (move, não copia). Reabrir = mover a linha de volta (C4).
 - O que o usuário precisa fazer = linhas e itens **👀** (filtrar; não copiar).
 - O que não está no quadro não aconteceu. Histórico nunca é apagado: só se acrescentam etapas.
 - Linguagem simples, que quem não é técnico entende.
@@ -54,7 +52,7 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 
 ## 📌 Tarefas            (mãe + uma linha por subtarefa logo abaixo)
-| Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
+| Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 
 ## Escopo do projeto
 ## 🗂️ Etapas            (uma linha por etapa, criada junto com ela; nunca apagar)
@@ -65,8 +63,9 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 
 - **Status** na linha: só o emoji e 1–3 palavras (`🔄 Em execução`); o detalhe fica na etapa.
   **Prioridade:** 🔴 Máxima · 🟠 Alta · 🟡 Média · 🟢 Baixa (do usuário; a subtarefa herda a da mãe).
-- **Em uso por:** `<IA (modelo)> (<frente>) (desde <data hora>)`, `—` (livre) ou
-  `— (não reservável)` na mãe.
+- **Modelo:** `<nível> · só <modelo>` (`LEVE · só Haiku`…); `Usuário` no aceite; `—` na mãe.
+  ⛔ Só esse modelo executa (regra de níveis).
+- **Em uso por:** `<IA (modelo)> (<frente>) (desde <data hora>)`, `—` ou `— (não reservável)`.
 - Seção sem conteúdo fica com a tabela vazia (não apagar o cabeçalho).
 
 ## Modelo da etapa (uma por tarefa-mãe)
@@ -85,6 +84,7 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 **Próximo passo:** <ação exata>
 
 - **Nível:** MEDIO — <sinal que decidiu>
+- **Modelo:** só Sonnet — nunca outro
 - **Descrição:** … · **Critérios de aceitação:** …
 - **Entrega:** <commit(s)> · **Verificação:** <como foi conferido>
 ```

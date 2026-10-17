@@ -44,6 +44,8 @@ Na dúvida, é grande. O projeto pode definir exceções (rotinas já autorizada
 
 ## 3. Executar
 
+- ⛔ **Nunca executar subtarefa que não é do seu modelo** (coluna Modelo; regra de níveis do
+  projeto), nem a pedido: o pedido fora do seu modelo vira subtarefa livre para o modelo certo.
 - **Uma subtarefa por vez por frente**; terminar (ou liberar) antes de reservar outra.
 - Atualizar **na hora**: 🔄 na linha ao reservar, ✅ ao entregar — nunca acumular.
 - **Próximo passo** da seção da subtarefa sempre atualizado: é a última coisa a escrever ao parar

@@ -39,7 +39,9 @@ liberada. Assim não há dois agentes nos mesmos arquivos nem no Git.
 6. **Conferir** o relatório e o diff: `git diff --name-only` só com os arquivos da lista (arquivo a
    mais → desfazer esse arquivo ou devolver ao executor); critérios atendidos.
 7. **Validar** pela `.claude/rules/testes-validacao.md` (`node --check`, JSON, Python — comando
-   `/validar`). Falhou → devolver ao executor com o erro (até 2 vezes) ou assumir a correção.
+   `/validar`). Falhou → devolver ao executor com o erro (até 2 vezes); depois, liberar a reserva
+   e avisar o usuário. ⛔ O líder **nunca** faz a subtarefa no lugar do executor (regra de níveis:
+   nunca executar tarefa que não é do seu modelo).
 8. **Entregar:** seção da subtarefa com entrega e verificação; linha ✅ e "Em uso por" = `—`;
    visualizador regenerado; **1 commit** `feat(<tema>): … (#N.x) por <frente do executor>` com os
    arquivos + quadro; push.

@@ -36,21 +36,25 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 
 - **Reserva com IA + modelo:** "Em uso por" = `<IA (modelo)> (<frente>) (desde <data hora>)`,
   ex.: `Claude Code (Sonnet 5.5) (local · main · s2)`, `Gemini CLI (Flash) (local · main)`. É
-  assim que se sabe o nível máximo de quem reservou.
-- Cada IA só pega subtarefa com nível **até o máximo da sua linha**. Modelo forte pega uma mais
-  leve **só se** não houver nenhuma livre do seu nível.
+  assim que se sabe o modelo de quem reservou.
+- ⛔ **NUNCA executar subtarefa que não é do seu modelo** (2026-10-16, #247; global C22): cada IA
+  só pega os níveis marcados na **sua** linha — Haiku **só** `LEVE`, Sonnet **só** `MEDIO`, Opus
+  5.5+/Fable **só** `PESADO`. Nem acima nem abaixo, **sem exceção** (nem com autorização). Sem
+  subtarefa livre do seu modelo → não pega nenhuma e avisa o usuário. A coluna **Modelo** do
+  quadro e a linha `- **Modelo:**` da etapa dizem qual é.
 - **Onde fica o nível:** 1º item da seção da subtarefa na etapa —
   `- **Nível:** MEDIO — motivo curto` (o sinal que decidiu).
 - **Quem classifica:** quem cria ou divide a subtarefa, pela skill
   `.claude/skills/classificar-tarefa/SKILL.md`. Subtarefa sem nível → classificar antes de pegar.
 - **Tarefa antiga** (antes da #182, com tabela de itens): quem for pegar grava
   `**Nível:** <nível> — motivo` no topo da etapa ou divide a tarefa em subtarefas.
-- Subtarefa maior que o nível → liberar a reserva, reclassificar ou dividir; ⛔ nunca baixar o
-  nível para caber na sua ferramenta.
+- Subtarefa de outro nível → liberar a reserva, reclassificar ou dividir; ⛔ nunca mudar o nível
+  para caber na sua ferramenta.
 
 ## Equipe de agentes do Claude Code
 
 Skill `.claude/skills/liderar-equipe/SKILL.md`: o líder (Opus 5.5+ ou Fable) reserva **uma
 subtarefa por vez**, delega ao agente do nível (`executor-leve` = Haiku, `executor-medio` =
 Sonnet, `executor-pesado` = Opus), confere, valida e commita. Só o líder usa Git e edita o
-quadro; o agente `classificador-tarefas` só grava a linha `- **Nível:**` nas etapas.
+quadro; o agente `classificador-tarefas` só grava a linha `- **Nível:**` nas etapas. Quem
+**executa** é o agente do nível (o líder nunca faz a subtarefa no lugar dele).

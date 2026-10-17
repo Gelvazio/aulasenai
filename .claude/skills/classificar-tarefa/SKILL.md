@@ -35,7 +35,11 @@ gravar**; reservar continua sendo pela `.claude/rules/tasks/frentes-e-reserva.md
 
 ```markdown
 - **Nível:** MEDIO — lógica em 1 arquivo de assets/js/, sem banco
+- **Modelo:** só Sonnet — nunca outro
 ```
+
+E a coluna **Modelo** da linha no `STATUS.md`: `LEVE · só Haiku`, `MEDIO · só Sonnet` ou
+`PESADO · só Opus 5.5+ ou Fable` (aceite = `Usuário`). ⛔ Só esse modelo executa.
 
 **Tarefa antiga** (tabela de itens): logo abaixo do **Objetivo** da etapa:
 

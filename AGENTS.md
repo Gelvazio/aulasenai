@@ -50,8 +50,9 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 8. **Várias IAs ao mesmo tempo:** 1 tarefa reservada por frente; banco só pelo Claude Code local
    ([`tasks/frentes-e-reserva.md`](.claude/rules/tasks/frentes-e-reserva.md),
    [`multiplas-ias.md`](.claude/rules/multiplas-ias.md)).
-   - **Nível de cada subtarefa** (2026-10-15, #182): `LEVE`, `MEDIO` ou `PESADO`; cada IA só pega
-     até o nível do seu modelo e se identifica como IA + modelo
+   - **Nível de cada subtarefa** (2026-10-15, #182): `LEVE`, `MEDIO` ou `PESADO`; cada IA se
+     identifica como IA + modelo. ⛔ **NUNCA executar tarefa que não é do seu modelo** (2026-10-16,
+     #247, C22): só o seu nível (coluna **Modelo**), nem acima nem abaixo, sem exceção
      ([`niveis.md`](.claude/rules/niveis.md)).
 9. **Mudou regra ou encerrou tarefa → regenerar o visualizador** `.claude/rules/index.html`.
 10. **Sem sugestões** (2026-10-08, "PARE DE SUGERIR"): responder só o pedido, sem oferecer opções,
