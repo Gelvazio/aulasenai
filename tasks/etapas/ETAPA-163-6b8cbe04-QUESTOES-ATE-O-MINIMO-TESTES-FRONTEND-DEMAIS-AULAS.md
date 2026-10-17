@@ -6,7 +6,7 @@
 **Objetivo:** depois do Cálculo Nota, a tela e o "Exportar PDF (atividade completa)" das
 atividades objetivas desta matéria mostram só as questões 1 até o mínimo, como na #33
 (etapa 160-d7ade403).
-**Próximo passo:** 36.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
+**Próximo passo:** 36.3 — 👀 aceite do usuário: abrir uma objetiva de Testes de Front-End como professor, aplicar o mínimo no Cálculo Nota e conferir a tela e o "Exportar PDF (atividade completa)"; depois como aluno.
 
 ### Páginas (4, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
@@ -19,6 +19,6 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 36.1 | Pôr `data-questoes-ate-minimo="sim"` no `<body>` de cada página da lista | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
-| 36.2 | Conferir que cada página usa `.aula-card.questao` em ordem (ITEM 01, 02...) e o botão `#btnExportarPDF`; fora do padrão → ajustar ou ⛔ com motivo | ⬜ Pendente | — | Leitura do HTML de cada página |
-| 36.3 | Aceite do usuário (testar como professor e aluno) | ⬜ Pendente | — | — |
+| 36.1 | Pôr `data-questoes-ate-minimo="sim"` no `<body>` de cada página da lista | ✅ Concluído | 2026-10-16 21:51 | Lista conferida de novo: além das 4, as aulas 06 a 10 (criadas na #22) — 9 páginas; busca: o atributo aparece 1 vez em cada uma das 10 objetivas (a 02 já tinha). `pipeline.py` põe o atributo nas próximas |
+| 36.2 | Conferir que cada página usa `.aula-card.questao` em ordem (ITEM 01, 02...) e o botão `#btnExportarPDF`; fora do padrão → ajustar ou ⛔ com motivo | ✅ Concluído | 2026-10-16 21:51 | Script de leitura: 50 `.aula-card.questao` com ITEM 01 a 50 em ordem e 1 `#btnExportarPDF` em cada página; `respostas-atividade-banco.js` em todas |
+| 36.3 | Aceite do usuário (testar como professor e aluno) | 👀 Aguardando o usuário | — | — |

@@ -435,8 +435,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     mínimo** e o "Exportar PDF (atividade completa)" leva só essas (total e gabarito também).
     Aluno: o mínimo dele; professor: muda na hora ao aplicar no Cálculo Nota e, ao abrir, usa o
     mínimo mais usado da atividade. `assets/js/questoes-ate-minimo.js` (+ `atividade.js` e
-    `.questao--fora-do-minimo` em `atividade.css`). Ligado em Testes de Front-End, Aula 02; as
-    demais matérias entram pela #34 (etapa 161-7aee2d7e).
+    `.questao--fora-do-minimo` em `atividade.css`). Ligado em Testes de Front-End, aulas 01 a 10
+    (Aula 02 pela #33; as demais pela #36, 2026-10-16); as demais matérias entram pela #34 (etapa
+    161-7aee2d7e).
 - ✅ **Prova corrigida para o aluno (2026-10-08, pedido do usuário):** aluno que entregou e com o
   gabarito liberado para a turma (`aluno_pode_ver_gabarito`, sem registrar pedido; execução
   liberada para `authenticated` em `database/2026-10-08-aluno-pode-ver-gabarito-execute.sql`,

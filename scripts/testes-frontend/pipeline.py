@@ -93,6 +93,10 @@ for pagina in (A / f"ATIVIDADES-AULA-{nn}-50-QUESTOES.html", A / f"ATIVIDADE-PRA
     html = pagina.read_text(encoding="utf-8")
     if "data-marcar-entregue" not in html:
         pagina.write_text(html.replace("<body ", f"<body {ATRIBUTOS_BODY}\n      ", 1), encoding="utf-8")
+q_html = A / f"ATIVIDADES-AULA-{nn}-50-QUESTOES.html"  # tela e PDF só até o mínimo (#33, #36)
+html = q_html.read_text(encoding="utf-8")
+if "data-questoes-ate-minimo" not in html:
+    q_html.write_text(html.replace("<body ", '<body data-questoes-ate-minimo="sim" ', 1), encoding="utf-8")
 
 # 5. índice da matéria e card do curso
 print(run("sh", str(AQUI / "indice_tf.sh")).strip())
