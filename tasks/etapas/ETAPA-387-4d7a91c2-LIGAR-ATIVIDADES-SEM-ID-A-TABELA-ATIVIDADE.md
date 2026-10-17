@@ -116,7 +116,7 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.6 — ID do banco em todos os botões de atividade do card
 
-**Próximo passo:** — (entregue em 2026-10-17 18:30; conferir na tela: aula 27 da ITIC).
+**Próximo passo:** — (entregue em 2026-10-17 18:17; conferir na tela: aula 27 da ITIC).
 
 - **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** `atividades-crud-modal.js` escuta
   `aula-bloqueio-alterado` (constante própria `EVENTO_CARDS_REFEITOS_CRUD`) e, só para professor
