@@ -174,9 +174,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) · `PESADO · effort high` | 🟠 Alta | — | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) · effort high | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
-| #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
-| #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
-| #199.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #199.1 | ⬜ Pendente | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b | Bug: "Exportar Meu Gabarito" não aparece na atividade id 152 | 🟠 Alta | — | — | ⛔ Cancelada pelo usuário (2026-10-17, já feita) | — (não reservável) | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199.1 | Diagnosticar e corrigir o botão (PESADO) | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⛔ Cancelada pelo usuário (2026-10-17, já feita) | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
+| #199.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #199.1 | ⛔ Cancelada pelo usuário (2026-10-17, já feita) | — | [326-65a7038f](etapas/ETAPA-326-65a7038f-BUG-EXPORTAR-MEU-GABARITO-152.md) |
 | #209-77564f72-9786-4bff-b0e7-13af8a43abe7 | **Slides bloqueados junto com a aula (também pelo endereço do PDF)** | 🟠 Alta | — | — | ⛔ Cancelada pelo usuário | — (não reservável) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.7 | Remover do Supabase o armazenamento `slides`, a função e as políticas (PESADO) | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⛔ Cancelada pelo usuário (2026-10-17) | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.3 | Enviar os 10 PDFs ao bucket (LEVE) | 🟠 Alta | LEVE · só Haiku | #209.2 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
@@ -1332,6 +1332,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-17 | Cancelada a #199 (bug do "Exportar Meu Gabarito" na 152) com 199.1 e 199.2: o usuário informou que já está feita | Gelvazio (pedido) | Pedido direto do usuário |
 | 2026-10-17 | Cancelados a pedido do usuário: #209.7 (apagar bucket `slides`) e #221 com #221.2, #221.3 e #221.4 (dois cards da Aula 06). Reservas liberadas pelo usuário | Gelvazio (pedido) | Pedido direto do usuário |
 | 2026-10-17 | Aceite de tudo o que estava pendente de aceite: #247.6 e #247 fechadas; planos #2 e #4 a #7 aprovados e liberados (⬜, ainda não feitos). Não fechadas por dependerem de ação, não de aceite: #199.1 (escolha), #209.7 (apagar bucket), #221 e #221.2 (autorização do `UPDATE` no banco) | Gelvazio (pedido "aceite tudo") | Pedido direto do usuário |
 | 2026-10-16 16:35 | Tarefa #186 (bloqueio da aula por turma na `aula_turma`) **cancelada** e tirada do quadro | Usuário ("cancela a 186 e remove do quadro") | O escopo dela já está na #206 |
