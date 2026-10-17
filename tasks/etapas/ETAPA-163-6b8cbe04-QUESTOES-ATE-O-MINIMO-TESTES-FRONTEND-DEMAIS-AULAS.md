@@ -1,6 +1,6 @@
 ## Etapa 163-6b8cbe04 — Questões até o mínimo: Testes de Front-End — demais aulas (Técnico em Informática para Internet)
 
-**Tarefa:** #36-6b8cbe04-258d-4a30 · **Pedido em:** 2026-10-14 09:45 · **Executor:** — (livre para qualquer IA)
+**Tarefa:** #36-6b8cbe04-258d-4a30 · **Pedido em:** 2026-10-14 09:45 · **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-04d42f6c-y5d6iz), desde 2026-10-16 21:49
 **Pedido:** "DEIXA AS DEMAIS MATERIAS EM TASKS PRA OUTRAS IA FAZER" (criada pela #34, etapa
 161-7aee2d7e)
 **Objetivo:** depois do Cálculo Nota, a tela e o "Exportar PDF (atividade completa)" das
