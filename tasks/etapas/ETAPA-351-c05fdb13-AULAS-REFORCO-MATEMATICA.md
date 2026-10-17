@@ -60,6 +60,8 @@
 
 ### #224.4 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário revisa as 16 aulas em `CONTEUDO/` e dá o aceite (ou pede ajustes).
+**Próximo passo:** — (concluída).
 
 - **Nível:** LEVE — aceite.
+- **Entrega:** aceite do usuário em 2026-10-16 21:37 ("Aceito as aulas de Reforço de Matemática") ·
+  **Verificação:** mensagem do usuário.
