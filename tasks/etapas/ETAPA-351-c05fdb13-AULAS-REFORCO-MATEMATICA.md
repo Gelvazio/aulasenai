@@ -49,11 +49,17 @@
 
 ### #224.3 — Status da matéria
 
-**Próximo passo:** criar `DOCUMENTACAO/PLANO-AULAS.md`, marcar a coluna "Aula em `CONTEUDO/`" e
-regerar o `STATUS_MATERIA.md`.
+**Próximo passo:** — (concluída).
 
 - **Nível:** LEVE — atualizar `STATUS-AULAS.md` e `STATUS_MATERIA.md`.
+- **Entrega:** `DOCUMENTACAO/PLANO-AULAS.md` (novo), coluna "Aula em `CONTEUDO/`" = ✅ nas 16 linhas
+  do `AULAS/STATUS-AULAS.md` e `STATUS_MATERIA.md` regerado (6 → 22 de 126 peças, ⬜ → 🔄) ·
+  **Verificação:** saída do `gerar_status_materia.py`; o script regrava o status de todas as
+  matérias e o `tasks/ORDEM-MATERIAS.md`, mas só o arquivo desta matéria foi commitado (os outros
+  são de outras frentes).
 
 ### #224.4 — Aceite do usuário
+
+**Próximo passo:** 👀 o usuário revisa as 16 aulas em `CONTEUDO/` e dá o aceite (ou pede ajustes).
 
 - **Nível:** LEVE — aceite.

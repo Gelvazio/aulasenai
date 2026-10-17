@@ -9,31 +9,31 @@ regra "1 aula a cada 4 h, arredondando para cima"). As horas dos módulos seguem
 pode fechar um módulo e abrir o seguinte.
 **Corrigido em:** 2026-10-10 16:22 — antes a tabela tinha só os 7 módulos da apostila em `AULAS/`
 (levantamento de 2026-10-03); eles ficaram como material de apoio na seção do fim.
-**`DOCUMENTACAO/PLANO-AULAS.md`:** ⬜ não existe (exigido pela regra da pasta AULAS antes de gerar novas aulas).
+**`DOCUMENTACAO/PLANO-AULAS.md`:** ✅ criado em 2026-10-16 (#224.3), resumo das aulas de `CONTEUDO/`.
 
 | Aula | Tema | Horas | Módulos da ementa | Aula em `CONTEUDO/` | Slides | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|---|---|
-| 01 | Operações Básicas e Cálculo Numérico (parte 1) | 4 | M1 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 02 | Operações Básicas e Cálculo Numérico (parte 2) | 4 | M1 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 03 | Operações Básicas e Cálculo Numérico (parte 3) + Frações, Decimais e Porcentagem (parte 1) | 4 | M1 (1 h) + M2 (3 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 04 | Frações, Decimais e Porcentagem (parte 2) | 4 | M2 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 05 | Frações, Decimais e Porcentagem (parte 3) + Proporcionalidade (parte 1) | 4 | M2 (2 h) + M3 (2 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 06 | Proporcionalidade (parte 2) | 4 | M3 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 07 | Proporcionalidade (parte 3) + Medidas e Grandezas (parte 1) | 4 | M3 (3 h) + M4 (1 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 08 | Medidas e Grandezas (parte 2) | 4 | M4 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 09 | Medidas e Grandezas (parte 3) | 4 | M4 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 10 | Raciocínio Lógico e Resolução de Problemas (parte 1) | 4 | M5 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 11 | Raciocínio Lógico e Resolução de Problemas (parte 2) | 4 | M5 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 12 | Raciocínio Lógico e Resolução de Problemas (parte 3) + Introdução à Álgebra (parte 1) | 4 | M5 (1 h) + M6 (3 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 13 | Introdução à Álgebra (parte 2) | 4 | M6 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 14 | Introdução à Álgebra (parte 3) + Tratamento da Informação (parte 1) | 4 | M6 (2 h) + M7 (2 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 15 | Tratamento da Informação (parte 2) | 4 | M7 (4 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 16 | Tratamento da Informação (parte 3) | 3 | M7 (3 h) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | Operações Básicas e Cálculo Numérico (parte 1) | 4 | M1 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 02 | Operações Básicas e Cálculo Numérico (parte 2) | 4 | M1 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 03 | Operações Básicas e Cálculo Numérico (parte 3) + Frações, Decimais e Porcentagem (parte 1) | 4 | M1 (1 h) + M2 (3 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 04 | Frações, Decimais e Porcentagem (parte 2) | 4 | M2 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 05 | Frações, Decimais e Porcentagem (parte 3) + Proporcionalidade (parte 1) | 4 | M2 (2 h) + M3 (2 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 06 | Proporcionalidade (parte 2) | 4 | M3 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 07 | Proporcionalidade (parte 3) + Medidas e Grandezas (parte 1) | 4 | M3 (3 h) + M4 (1 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 08 | Medidas e Grandezas (parte 2) | 4 | M4 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 09 | Medidas e Grandezas (parte 3) | 4 | M4 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 10 | Raciocínio Lógico e Resolução de Problemas (parte 1) | 4 | M5 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 11 | Raciocínio Lógico e Resolução de Problemas (parte 2) | 4 | M5 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 12 | Raciocínio Lógico e Resolução de Problemas (parte 3) + Introdução à Álgebra (parte 1) | 4 | M5 (1 h) + M6 (3 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 13 | Introdução à Álgebra (parte 2) | 4 | M6 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 14 | Introdução à Álgebra (parte 3) + Tratamento da Informação (parte 1) | 4 | M6 (2 h) + M7 (2 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 15 | Tratamento da Informação (parte 2) | 4 | M7 (4 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 16 | Tratamento da Informação (parte 3) | 3 | M7 (3 h) | ✅ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ## Observações
 
-- Nenhuma aula foi gerada ainda em `CONTEUDO/` (a pasta não existe); gerar uma por vez, completa,
-  atualizando esta tabela.
+- As 16 aulas foram escritas em `CONTEUDO/` em 2026-10-16 (#224.2). Slides, atividades e banco
+  continuam pendentes.
 - A atividade de raciocínio lógico (15/09) existe só em `.docx` (fora do índice, que lista só HTML).
 - "Banco" = atividade cadastrada na tabela `atividade` (liberada/bloqueada pelo professor no índice).
 
