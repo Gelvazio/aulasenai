@@ -1,7 +1,8 @@
 // Acesso ao Supabase do "📚 Gerenciar Aulas" do ATIVIDADES/index.html (tarefa #250): listar as
 // aulas da matéria da página (sem as excluídas), inserir, editar e excluir.
-// Excluir é lógico (aulas.excluido = 1) pela função excluir_aula do banco, que só aceita o
-// Professor Administrador; inserir e editar seguem o RLS da tabela aulas (só professor).
+// Excluir apaga a aula de verdade pela função excluir_aula do banco (#254), que só aceita o
+// Professor Administrador e recusa a aula com atividade vinculada; inserir e editar seguem o
+// RLS da tabela aulas (só professor).
 // Depende de: js/supabase.js (sbGet, sbPost, sbPatch, obterClienteSupabase).
 
 const TABELA_AULAS_GERENCIAR = 'aulas';
@@ -63,7 +64,7 @@ async function atualizarAulaGerenciar(idAula, valores) {
 }
 
 /**
- * Exclui a aula (exclusão lógica pela função excluir_aula, só Professor Administrador).
+ * Exclui a aula de vez (DELETE pela função excluir_aula, só Professor Administrador, #254).
  * @param {number} idAula - Id da aula.
  * @throws {Error} Se o banco recusar ou não achar a aula.
  */

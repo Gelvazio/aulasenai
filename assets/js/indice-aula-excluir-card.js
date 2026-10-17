@@ -1,9 +1,9 @@
 // Botão "🗑️ Excluir" dos cards de aula do ATIVIDADES/index.html (#253). Antes de excluir, lê as
 // atividades vinculadas à aula (atividade.aula_id): se houver alguma, a aula não é excluída e o
 // professor é levado ao "✏️ Editar aula", onde desvincula (🔗 Gerenciar atividades) ou exclui
-// cada atividade. Sem atividade vinculada, pede confirmação e exclui pela função excluir_aula do
-// banco (exclusão lógica, aulas.excluido = 1, só Professor Administrador — a mesma do "📚
-// Gerenciar Aulas", #250); o card some para todos.
+// cada atividade. Sem atividade vinculada, pede confirmação e apaga a aula de verdade no banco
+// pela função excluir_aula (DELETE, #254; só Professor Administrador, recusa aula com atividade —
+// a mesma do "📚 Gerenciar Aulas", #250); o card some para todos.
 // Depende de: assets/js/indice-aula-repositorio.js (listarAtividadesDaAulaCard),
 // assets/js/indice-aula-modal.js (abrirModalAulaCard, confirmarModalAula,
 // garantirPopupModalAula) e assets/js/indice-gerenciar-aulas-repositorio.js
@@ -20,11 +20,11 @@ const MSG_ATIVIDADES_ERRO_CARD = '❌ Não foi possível conferir as atividades 
 const MSG_TEM_ATIVIDADES_CARD = ' não pode ser excluída: ainda tem atividade vinculada.\n\n' +
     'Remova (🔗 Gerenciar atividades) ou exclua (🗑️ Excluir) cada atividade abaixo no ' +
     '"✏️ Editar aula" e depois exclua a aula:\n\n';
-const MSG_CONFIRMAR_EXCLUIR_CARD = ' será EXCLUÍDA no banco e o card some do índice para todos. ' +
-    'Continuar?';
+const MSG_CONFIRMAR_EXCLUIR_CARD = ' será EXCLUÍDA DEFINITIVAMENTE do banco (não tem volta) e ' +
+    'o card some do índice para todos. Continuar?';
 const MSG_EXCLUIR_ERRO_CARD = '❌ Não foi possível excluir a aula. Confira o login de Professor ' +
-    'Administrador e o banco.';
-const MSG_EXCLUIDA_CARD = '✅ Aula excluída.';
+    'Administrador e o banco. Banco: ';
+const MSG_EXCLUIDA_CARD = '✅ Aula excluída do banco.';
 
 /**
  * Nome da aula para as mensagens ("A aula AULA 03 — Título").
@@ -98,7 +98,7 @@ async function excluirAulaSemAtividadesCard(aula, aoGravar) {
     try {
         await excluirAulaGerenciar(aula.id);
     } catch (erro) {
-        return avisarExcluirCard(MSG_EXCLUIR_ERRO_CARD, 'erro');
+        return avisarExcluirCard(MSG_EXCLUIR_ERRO_CARD + erro.message, 'erro');
     }
     aoGravar({ ...aula, excluido: AULA_EXCLUIDA });
     await avisarExcluirCard(MSG_EXCLUIDA_CARD, 'sucesso');

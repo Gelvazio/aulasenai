@@ -637,8 +637,9 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     "Turma:" (sem a barra, numa barra própria abaixo do resumo). Modal 1 = aulas da matéria da
     página (sem as excluídas) com ✏️ Editar e 🗑️ Excluir e o "➕ Nova aula"; as ações abrem o
     modal 2, com os campos do "✏️ Editar aula" + **"Link dos slides"** (`aulas.conteudo.slides`,
-    só `http(s)` ou caminho). Excluir é **lógico** (`excluir_aula`, só o Professor
-    Administrador; para os outros o 🗑️ fica desligado). A **aula nova já aparece como card** na
+    só `http(s)` ou caminho). Excluir **apaga a aula do banco** (`excluir_aula`,
+    DELETE desde a #254; só o Professor Administrador, para os outros o 🗑️ fica desligado; o
+    banco recusa a aula com atividade vinculada e apaga junto as linhas dela em `aula_turma`). A **aula nova já aparece como card** na
     hora, mesmo sem página na pasta (card com borda tracejada, `indice-gerenciar-aulas-cards.js`),
     e recebe atividades pelo "✏️ Editar aula"; qualquer card com `conteudo.slides` mostra
     "📕 Slides". Fechar o modal 1 depois de mudar algo recarrega a página. Código:
@@ -648,8 +649,8 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     "✏️ Editar aula"): antes de excluir, lê as atividades vinculadas (`atividade.aula_id`). Com
     alguma vinculada, **não exclui**: lista as atividades e oferece abrir o "✏️ Editar aula" para
     desvinculá-las (🔗 Gerenciar atividades) ou excluí-las. Sem atividade, pede confirmação e
-    exclui pela mesma `excluir_aula` (lógica, só o Professor Administrador; os outros recebem o
-    aviso) e o card some. Código: `assets/js/indice-aula-excluir-card.js`;
+    apaga a aula do banco pela mesma `excluir_aula` (DELETE, #254; só o Professor
+    Administrador, os outros recebem o aviso) e o card some. Código: `assets/js/indice-aula-excluir-card.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

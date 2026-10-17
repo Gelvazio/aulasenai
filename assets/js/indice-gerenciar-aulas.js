@@ -2,7 +2,7 @@
 // começo da barra "Turma:" (indice-turma-favorita.js) e abre o modal 1 com as aulas da matéria
 // da página (número, título, ativa, visível), cada uma com ✏️ Editar e 🗑️ Excluir, e o
 // "➕ Nova aula". As ações abrem o modal 2 (indice-gerenciar-aulas-formulario.js). O 🗑️ só fica
-// ligado para o Professor Administrador (exclusão lógica). Ao fechar o modal 1 depois de uma
+// ligado para o Professor Administrador (apaga de verdade, #254). Ao fechar o modal 1 depois de uma
 // mudança, a página recarrega e os cards mostram as aulas como estão no banco (a aula nova já
 // aparece como card, indice-gerenciar-aulas-cards.js).
 // Depende de: atividades-crud-modal.js (usuarioEhProfessorCrud), indice-aula-modal.js,

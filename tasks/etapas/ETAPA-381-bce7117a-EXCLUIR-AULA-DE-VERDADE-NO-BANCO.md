@@ -56,13 +56,18 @@ linha da tabela `aulas` (DELETE), em vez de marcar `aulas.excluido = 1`.
 
 ### #254.3 — Telas: mensagens de exclusão definitiva
 
-**Próximo passo:** depois da #254.2.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — fluxo de exclusão de dados (mesma tarefa de banco).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** `indice-aula-excluir-card.js` e `indice-gerenciar-aulas-formulario.js`: textos
   "será EXCLUÍDA DEFINITIVAMENTE do banco (não tem volta)"; mensagem do banco sobre atividade
   vinculada mostrada ao professor; docs.
+- **Entrega (2026-10-17 11:56, Opus 5.5, s14):** `indice-aula-excluir-card.js` e
+  `indice-gerenciar-aulas-formulario.js`: confirmação "EXCLUÍDA DEFINITIVAMENTE do banco (não tem
+  volta)" e o erro mostra a mensagem do banco; comentários de `indice-gerenciar-aulas.js` e
+  `indice-gerenciar-aulas-repositorio.js`; `docs/regras/atividades.md`.
+- **Verificação:** `node --check` nos 4 `.js`; linhas novas ≤ 100 caracteres. Sem navegador.
 
 ### #254.4 — Apagar as aulas que já estão com `excluido = 1`
 

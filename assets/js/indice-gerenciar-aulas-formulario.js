@@ -2,7 +2,7 @@
 // Editar e Excluir. Usa os mesmos campos do "✏️ Editar aula" (CAMPOS_MODAL_AULA, leitores e
 // escritores de indice-aula-modal.js) e acrescenta "Link dos slides" (aulas.conteudo.slides).
 // Excluir mostra os dados só para leitura e pede confirmação; o banco só aceita o Professor
-// Administrador (exclusão lógica, excluir_aula).
+// Administrador e apaga a aula de verdade (excluir_aula, #254), recusando a que tem atividade.
 // Depende de: indice-aula-modal.js, indice-gerenciar-aulas-repositorio.js,
 // indice-gerenciar-aulas-cards.js (linkDeSlidesSeguro) e assets/js/popup.js.
 
@@ -24,9 +24,9 @@ const MSG_FORM_SLIDES_GERENCIAR = 'O link dos slides precisa começar com http:/
 const MSG_FORM_ERRO_GERENCIAR = '❌ Não foi possível gravar. Confira o login de professor, o ' +
     'número da aula (não pode repetir na matéria) e o banco.';
 const MSG_EXCLUIR_ERRO_GERENCIAR = '❌ Não foi possível excluir. Só o Professor Administrador ' +
-    'exclui aulas.';
-const MSG_CONFIRMAR_EXCLUIR_GERENCIAR = ' será EXCLUÍDA do índice (o card some para todos). ' +
-    'As atividades dela continuam no banco. Continuar?';
+    'exclui aulas, e só as sem atividade vinculada. Banco: ';
+const MSG_CONFIRMAR_EXCLUIR_GERENCIAR = ' será EXCLUÍDA DEFINITIVAMENTE do banco (não tem volta) ' +
+    'e o card some para todos. Continuar?';
 
 const estadoFormGerenciar = { modo: null, aula: null, contexto: null };
 let elementosFormGerenciar = null;
@@ -226,7 +226,7 @@ async function aoExcluirFormGerenciar() {
         fecharFormGerenciar();
         await contexto.aoMudar('✅ Aula excluída do índice.');
     } catch (erro) {
-        mostrarMensagemFormGerenciar(MSG_EXCLUIR_ERRO_GERENCIAR, true);
+        mostrarMensagemFormGerenciar(MSG_EXCLUIR_ERRO_GERENCIAR + erro.message, true);
     }
 }
 
