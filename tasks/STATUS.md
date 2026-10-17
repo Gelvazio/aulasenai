@@ -57,11 +57,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
-| #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | 👀 Plano aguardando aprovação | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
-| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | 👀 Aguardando liberação | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
-| #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | 👀 Aguardando liberação | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
-| #6 | Preencher `AVALIACOES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | 👀 Aguardando liberação | — | [152-5b8be7d5](etapas/ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md) |
-| #7 | Executar análise final | 🟢 Baixa | ⚠️ sem nível (classificar antes) | — | 👀 Aguardando liberação | — | [153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) |
+| #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
+| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
+| #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
+| #6 | Preencher `AVALIACOES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [152-5b8be7d5](etapas/ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md) |
+| #7 | Executar análise final | 🟢 Baixa | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) |
 | #11 | Duração dos vídeos da apostila de Reforço de Linguagens (local) · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente (local) | — | [67](etapas/ETAPA-067-VIDEOS-NA-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md) |
 | #12 | Duração dos vídeos da apostila de Fundamentos da Tecnologia (local) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente (local) | — | [154-58b81f3e](etapas/ETAPA-154-58b81f3e-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-FUNDAMENTOS-DA.md) |
 | #14 | Duração dos vídeos da apostila de Exploração de Carreiras (local) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente (local) | — | [155-e3d89d81](etapas/ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md) |
@@ -906,8 +906,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.5 | Avaliações objetivas 01 e 02, prática e média final · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.6 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
-| #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.6 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | Usuário | #247.5 | 👀 Aguardando aceite | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1334,6 +1332,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-17 | Aceite de tudo o que estava pendente de aceite: #247.6 e #247 fechadas; planos #2 e #4 a #7 aprovados e liberados (⬜, ainda não feitos). Não fechadas por dependerem de ação, não de aceite: #199.1 (escolha), #209.7 (apagar bucket), #221 e #221.2 (autorização do `UPDATE` no banco) | Gelvazio (pedido "aceite tudo") | Pedido direto do usuário |
 | 2026-10-16 16:35 | Tarefa #186 (bloqueio da aula por turma na `aula_turma`) **cancelada** e tirada do quadro | Usuário ("cancela a 186 e remove do quadro") | O escopo dela já está na #206 |
 | 2026-10-16 16:34 | Tarefa #16 (bloqueio da aula `aulas.ativo` × ON/OFF da atividade, matéria a matéria) **cancelada** | Usuário ("cancela a 16") | O bloqueio da aula por turma segue pela #206 |
 | 2026-10-16 10:05 | Tarefas #185 a #188 (tabela `aula_turma`: datas e bloqueio da aula por turma) **desfeitas**: o sistema volta ao estado de antes delas (commit `95bf1974`), mantendo o bloqueio de atividade por turma e a correção da #190 | Usuário (#193, "QUERO QUE VOLTE COMO ESTAVA ANTES DE CRIAR A TABELA AULA_TURMA") | O botão de bloqueio de atividade continuava sem funcionar |
