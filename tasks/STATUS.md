@@ -24,7 +24,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s14 | #220.2 ([347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md)), #219.2, #218.2, #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 20:09 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
-| nuvem · claude/festive-maxwell-25jnhl | #223.1 ([350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md)) — plano da apostila de Banco de Dados | 🔄 Ativa | 2026-10-16 21:18 |
+| nuvem · claude/festive-maxwell-25jnhl | #223.2 ([350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md)) — apostila de Banco de Dados, um capítulo por vez | 🔄 Ativa | 2026-10-16 21:23 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; a #20 voltou para a frente festive-maxwell em 2026-10-16 20:52 (pedido do usuário) | 🔄 Ativa | 2026-10-10 22:13 |
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
@@ -191,8 +191,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #221.3 | Trava no Gerenciar atividades e aviso no Editar aula (MEDIO) · effort medium | 🟠 Alta | #221.2 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #221.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #221.2, #221.3 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #223-c568f1ed-ed88-43d8-a369-b7be3af1a383 | Apostila de Banco de Dados (Técnico em Informática para Internet) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
-| #223.1 | Plano da apostila (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · festive-maxwell-25jnhl) (desde 2026-10-16 21:18) | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
-| #223.2 | Capítulos em Markdown, um por vez com validação · `MEDIO · effort medium` | 🟠 Alta | #223.1 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
+| #223.2 | Capítulos em Markdown, um por vez com validação · `MEDIO · effort medium` | 🟠 Alta | #223.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · festive-maxwell-25jnhl) (desde 2026-10-16 21:23) | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #223.3 | Markdown completo e HTML · `MEDIO · effort medium` | 🟠 Alta | #223.2 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #223.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #223.3 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #224-c05fdb13-e858-4067-adbf-ab5f10659f5b | Aulas de Reforço de Matemática e Raciocínio Lógico (Rio do Sul Mais Tech) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |

@@ -27,16 +27,21 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 21:23 | Plano aprovado ("Aprovo") | Usuário | Tarefa grande: plano na etapa + aprovação |
+| 2026-10-16 21:23 | "Faça 1 capítulo por vez com 1 push por capítulo" | Usuário | Cadência da escrita: um capítulo, um commit + push |
+| 2026-10-16 21:23 | Sem vídeos (modelo ITIC, `apostila_sem_videos_e_exercicios: true`) | Usuário | Na nuvem não dá para conferir links e durações |
 
 ### #223.1 — Plano da apostila (tarefa grande)
 
-**Próximo passo:** aprovação do plano pelo usuário.
+**Próximo passo:** — (entregue).
+
+- **Entrega:** plano nesta etapa (commit d500297) · **Verificação:** aprovado pelo usuário em 2026-10-16 21:23
 
 - **Nível:** MEDIO — leitura de regras e plano em `.md`.
 
 ### #223.2 — `materia.json` literal + introdução + capítulos em Markdown (com validação do usuário)
 
-**Próximo passo:** esperar a aprovação do plano.
+**Próximo passo:** completar o `materia.json` (literal da ementa) e escrever a `INTRODUCAO.md`.
 
 - **Nível:** MEDIO — conteúdo didático conferido com a ementa.
 
