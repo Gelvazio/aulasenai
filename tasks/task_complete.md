@@ -233,3 +233,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #244.9 | Regra: a IA não gera slides de aula · `LEVE · effort low` | 🟠 Alta | #244.1 | ✅ Concluído | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #244.2 | Status regenerados e menu das atividades · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ✅ Concluído | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #244.3 | Revisão da ementa · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ✅ Concluído | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #245.1 | Levantamento e plano (tarefa grande) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |

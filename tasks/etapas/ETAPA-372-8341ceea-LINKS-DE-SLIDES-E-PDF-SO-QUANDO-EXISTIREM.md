@@ -43,10 +43,11 @@ geradores ligando o link só com o arquivo presente, regra registrada e aceite d
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 22:27 | Plano da #245.1 **aprovado** ("sim, pode executar") | Usuário | — |
 
 ### #245.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** 👀 esperar o "sim" do usuário para o plano abaixo.
+**Próximo passo:** — (entregue; plano aprovado em 2026-10-16 22:27).
 
 - **Nível:** MEDIO — leitura de geradores e arquivos, plano em `.md`.
 - **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
@@ -80,7 +81,8 @@ conferir por `grep` que não sobra link para slide inexistente. Sem navegador.
 
 ### #245.2 — Geradores ligam o link só se o arquivo existir
 
-**Próximo passo:** esperar a #245.1 aprovada.
+**Próximo passo:** ajustar `gerar_index` do `gerar_atividades.py` e criar
+`scripts/slides/ligar_links_slides.py`.
 
 - **Nível:** MEDIO — código Python com lógica em 1 a 3 geradores.
 
