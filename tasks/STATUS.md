@@ -914,6 +914,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.5, #260.6 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #261-a9a852ed-fa9d-4f34-9f50-2ba06e49bd89 | Cards das aulas na ordem de `aulas.numero` | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
 | #261.1 | Ordenar os cards por `aulas.numero` no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
+| #262-9b1a87cc-64e6-4980-b09a-7703c0a0b791 | ID à esquerda e descrição à direita no botão da atividade | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
+| #262.1 | Botão da atividade com ID à esquerda e descrição à direita · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
+| #263-4ae42a94-cc1e-43be-ab1f-5e7100712383 | Card "AVALIAÇÃO 02" sem id de aula (ITIC) | 🟠 Alta | — | — | 👀 Aguardando o usuário | — (não reservável) | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
+| #263.1 | Decidir a aula do card (usuário) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -945,6 +949,8 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 386-009facc1 | Remover o `rotulo_card` de tudo (#259, pedida em 2026-10-17 12:34) | [ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md) |
 | 387-4d7a91c2 | Ligar as atividades sem ID à tabela `atividade` e à aula (#260, pedida em 2026-10-17 17:51) | [ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) |
 | 388-a9a852ed | Cards das aulas na ordem de `aulas.numero` (#261, pedida em 2026-10-17 18:20) | [ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) |
+| 389-9b1a87cc | ID à esquerda e descrição à direita no botão da atividade (#262, pedida em 2026-10-17 18:22) | [ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) |
+| 390-4ae42a94 | Card "AVALIAÇÃO 02" sem id de aula (#263, pedida em 2026-10-17 18:23) | [ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
