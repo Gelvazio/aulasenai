@@ -2,7 +2,7 @@
 
 **Tarefa:** #22-f79be83e-0418-43e8
 **Nível:** PESADO — gabarito das objetivas e padrão de resposta das práticas, mais de 3 arquivos ligados
-**Próximo passo:** 22.8 — Claude Code local: aplicar e conferir pelo md5 os seeds PENDENTE das aulas 06 a 10 (e terminar a aula 05: md5 da objetiva e parte 2 da prática); depois 22.9 (ementa) e 22.10 (análise). Aulas 04 e 06 a 10 ✅ sem banco.
+**Próximo passo:** 22.8 — Claude Code local: aplicar e conferir pelo md5 os seeds PENDENTE das aulas 06 a 10 (e terminar a aula 05: md5 da objetiva e parte 2 da prática); depois 22.11 (aceite do usuário). Itens 22.1, 22.3 a 22.7, 22.9 e 22.10 ✅.
 
 Pedido do usuário: "Continue testes de frontend". Plano: [docs/testes-frontend-aulas-04-a-10.md](../../docs/testes-frontend-aulas-04-a-10.md)
 — segue as decisões já aprovadas na Etapa 108 (D1: prática 10 questões × 3 tópicos 0,2 + 0,4 + 0,4;
@@ -19,8 +19,8 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 | 22.6 | Aula 09 — objetiva 50 questões + prática discursiva + seeds gerados (aplicar = 22.8, frente local) | ✅ Concluído (sem banco) | 2026-10-16 21:27 | Pipeline sem erro: 50 itens (A13 B13 C12 D12), 10 questões × 30 tópicos = 10 pontos, 0 tópico sem padrão; HTML sem gabarito; seeds PENDENTE em `database/SEEDS-APLICADOS.md` |
 | 22.7 | Aula 10 — objetiva 50 questões + prática discursiva + seeds gerados (aplicar = 22.8, frente local) | ✅ Concluído (sem banco) | 2026-10-16 21:30 | Pipeline sem erro: 50 itens (A13 B13 C12 D12), 10 questões × 30 tópicos = 10 pontos, 0 tópico sem padrão; HTML sem gabarito; seeds PENDENTE em `database/SEEDS-APLICADOS.md` |
 | 22.8 | Aplicar os seeds no Supabase (objetivas + práticas das aulas 04 a 10) e registrar em `database/SEEDS-APLICADOS.md` | ⬜ PENDENTE | — | Conferência pelo md5 (`scripts/seeds/`), uma aula por vez |
-| 22.9 | Ementa ajustada para 14.800–14.950 caracteres (hoje 14.955) | ⬜ Pendente | — | `scripts/analise-materias.py` sem pendência de ementa |
-| 22.10 | `scripts/analise-materias.py` e `tasks/ANALISE-MATERIAS-RELATORIO.json` | ⬜ Pendente | — | Testes de Front-End sem pendências |
+| 22.9 | Ementa ajustada para 14.800–14.950 caracteres (era 14.955) | ✅ Concluído | 2026-10-16 21:35 | 14.942 caracteres: item do checklist das objetivas marcado [x] (objetiva + prática nas 10 aulas) e data da última atualização; `scripts/analise-materias.py` sem pendência de ementa |
+| 22.10 | `scripts/analise-materias.py` e `tasks/ANALISE-MATERIAS-RELATORIO.json` | ✅ Concluído | 2026-10-16 21:35 | Testes de Front-End `completa: true`, `pendencias: []` (10 aulas, 10 objetivas, 10 práticas, 30 fontes). O script não confere o banco: os seeds das aulas 05 a 10 continuam no 22.8 |
 | 22.11 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ### Pedido e descrição (vindos do `TASKS.md` em 2026-10-13, sem alteração)
