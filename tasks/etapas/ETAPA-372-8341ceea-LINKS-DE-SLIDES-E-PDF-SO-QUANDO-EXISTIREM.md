@@ -46,10 +46,37 @@ geradores ligando o link só com o arquivo presente, regra registrada e aceite d
 
 ### #245.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** listar todos os lugares que citam slides/PDF de aula (geradores, `.md`,
-`materia.json`, páginas), dizer quais arquivos existem, escrever o plano nesta etapa e pedir o "sim".
+**Próximo passo:** 👀 esperar o "sim" do usuário para o plano abaixo.
 
 - **Nível:** MEDIO — leitura de geradores e arquivos, plano em `.md`.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+
+**Levantamento (2026-10-16 22:25):**
+
+| Onde | Situação |
+|---|---|
+| Slides que existem | Só Testes de Front-End (`AULAS/AULA-01..10-SLIDES.pdf`), Reforço de Linguagens (`AULAS-CHALKIE-AI/*.pdf`) e 1 PDF em Fundamentos da Tecnologia |
+| Páginas de atividade (objetiva, prática, discursiva) | ✅ Já certo: `gerar_atividades.py` e `gerar_avaliacao_discursiva.py` (`linha_slides`) só põem o link se o arquivo existir |
+| Índice `ATIVIDADES/index.html` (`gerar_indices.py`) | ✅ Já certo: botão "📕 Slides (PDF)" só se o arquivo existir |
+| Índice antigo do `gerar_atividades.py` (`gerar_index`) | ⚠️ Mostra botão apagado "Arquivo não encontrado" quando falta o arquivo → **esconder** |
+| Aulas `CONTEUDO/AULA-NN-*.md` | ⚠️ **Reforço de Matemática: 16 aulas com link clicável** `[AULA-NN-SLIDES.pdf](../AULAS/...)` para arquivo que não existe (aparece quebrado ao abrir o `.md`). Banco de Dados (20) e ITIC do Técnico (1): caminho só em texto, sem link. Testes de Front-End (10): arquivo existe |
+| Fontes das atividades (`- **Slides:** ../AULAS/...`) | ✅ Ficam: o gerador só liga o link se o arquivo existir — quando o professor puser o PDF, regerar a página liga o link |
+| Campo `slides` das aulas no `materia.json` (5 matérias) | ✅ Fica como **caminho esperado**: nenhum gerador lê esse campo para montar link |
+
+**Plano:**
+1. **#245.2 (MEDIO):** (a) `gerar_atividades.py`: o botão de slides do índice antigo some quando
+   o arquivo não existe (sem botão apagado); (b) script novo `scripts/slides/ligar_links_slides.py`
+   que, nas aulas de `CONTEUDO/`, põe o link `[📕 Slides](../AULAS/AULA-NN-SLIDES.pdf)` quando o
+   arquivo existe e deixa o texto "Slides: o professor publica em outro momento" quando não existe
+   (idempotente; rodar de novo depois que o professor publicar liga o link).
+2. **#245.3 (PESADO):** rodar o script em todas as matérias (muda as 16 aulas de Reforço de
+   Matemática, as 20 de Banco de Dados e a 01 da ITIC do Técnico; Testes de Front-End continua com
+   o link); registrar a regra "link de slide/PDF só quando o arquivo existir" em
+   `docs/regras/materias.md` (§3, item 10) e no histórico; recado às frentes que geram aulas.
+3. **#245.4:** aceite do usuário.
+
+**Verificação:** `python -m py_compile` e rodar o script duas vezes (a segunda sem mudança);
+conferir por `grep` que não sobra link para slide inexistente. Sem navegador.
 
 ### #245.2 — Geradores ligam o link só se o arquivo existir
 
