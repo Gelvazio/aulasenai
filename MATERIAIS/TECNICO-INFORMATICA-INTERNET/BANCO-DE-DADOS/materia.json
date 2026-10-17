@@ -5,6 +5,7 @@
   "docente": "Gelvazio Camargo",
   "autor_apostila": "Gelvazio Camargo",
   "versao_apostila": "1.0",
+  "apostila_sem_videos_e_exercicios": true,
   "modulo": "ESPECÍFICO II",
   "modalidade": "Presencial",
   "carga_horaria_uc": 80,
@@ -238,7 +239,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Compare PostgreSQL, MySQL, SQLite e MongoDB em características e requisitos, em tabela."
+      ],
       "situacao_problema": ""
     },
     {
@@ -273,7 +276,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Escreva o roteiro de instalação do PostgreSQL no Windows e no Linux, com a conferência no psql."
+      ],
       "situacao_problema": ""
     },
     {
@@ -383,7 +388,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "A partir do pedido de uma escola fictícia de cursos livres, liste as entidades, os atributos e os relacionamentos com cardinalidade."
+      ],
       "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
     },
     {
@@ -527,7 +534,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Mostre uma planilha de matrículas com repetição e normalize passo a passo até a 3FN, explicando cada anomalia."
+      ],
       "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
     },
     {
@@ -631,7 +640,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Crie o script DDL de alunos, cursos e matrículas com chaves primária e estrangeira, NOT NULL, UNIQUE e CHECK."
+      ],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
     {
@@ -730,7 +741,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Gere 15 consultas SQL em níveis crescentes (filtro, ordenação, junção, agrupamento, subconsulta) com o resultado esperado."
+      ],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
     {
@@ -763,7 +776,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Escreva um procedimento armazenado em PL/pgSQL que matricula um aluno só se houver vaga."
+      ],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
     {
@@ -796,7 +811,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Crie um trigger que grava em tabela de histórico toda alteração de nota, com usuário e data."
+      ],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
     {
@@ -831,7 +848,9 @@
         "CG10 Responsabilidade"
       ],
       "termos_glossario_ementa": [],
-      "ideias_ementa": [],
+      "ideias_ementa": [
+        "Monte papéis e GRANT/REVOKE com o mínimo de permissões para a aplicação, a secretaria e o professor."
+      ],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
     {
@@ -1073,7 +1092,7 @@
         "criterios": "Acertos; questões capacidade → contexto → comando"
       }
     ],
-    "nota_final": "60% contínua + 25% prática + 15% objetiva",
+    "nota_final": "**Nota final** = 60% contínua + 25% prática + 15% objetiva. **Aprovação:** nota final **≥ 7,0** e presença mínima de 75%. Cada capacidade recebe o parecer Desenvolvida / Em desenvolvimento / Não desenvolvida.",
     "aprovacao": "Nota final ≥ 7,0 e presença mínima de 75%",
     "rubrica": [
       {
@@ -1096,7 +1115,8 @@
         "nota": "0–4",
         "descricao": "Scripts que não rodam, modelo sem chaves ou sem relação com o pedido"
       }
-    ]
+    ],
+    "recuperacao": "(didático) refazer a avaliação não atingida com outro caso ou novo banco de questões, conforme o regimento da unidade SENAI."
   },
   "mapeamento_bncc": [
     "**CG2 Pensamento científico e crítico** — aulas 5 a 11: análise do pedido, hipótese de modelo e verificação de anomalias",
@@ -1128,13 +1148,13 @@
       "PostgreSQL (SGBD da UC)",
       "psql e pgAdmin ou DBeaver",
       "VS Code",
-      "ferramenta de DER (brModelo ou draw.io)",
-      "planilha para o cronograma"
+      "ferramenta de DER (brModelo ou draw.io) e planilha para o cronograma"
     ]
   },
   "acessibilidade": {
     "oficial": "Serão asseguradas as condições de acessibilidade, reconhecendo a especificidade e a peculiaridade do aluno com impedimentos de longo prazo, de natureza física, mental, intelectual e sensorial, levando-se em conta a(s) Norma(s) Regulamentadora(s) da ocupação, a Lei nº 13.146/2015, os Decretos nº 3298/2009 e 6949/2009, a LDB nº 9394/96 e a legislação específica em vigência da deficiência em questão.",
-    "didatico": "Zoom e alto contraste no cliente SQL, leitor de tela, scripts prontos para conferência, tempo estendido e duplas."
+    "didatico": "Zoom e alto contraste no cliente SQL, leitor de tela, scripts prontos para conferência, tempo estendido e duplas.",
+    "resumo_ementa": "asseguradas as condições de acessibilidade ao aluno com impedimentos de longo prazo (Lei nº 13.146/2015, LDB nº 9394/96)."
   },
   "glossario_ementa": [
     {
@@ -1206,5 +1226,11 @@
     "Integrar S1 e S2 na revisão do modelo em dupla e na justificativa das escolhas."
   ],
   "metricas": "80%+ dos estudantes com nota ≥ 7,0 · 100% entregam o banco do projeto integrador rodando.",
-  "referencias": []
+  "referencias": [],
+  "textos_ementa": [
+    {
+      "titulo": "Regra de bolso",
+      "texto": "Regra de bolso: se um dado precisa ser corrigido em mais de um lugar, o modelo ainda não está normalizado."
+    }
+  ]
 }
