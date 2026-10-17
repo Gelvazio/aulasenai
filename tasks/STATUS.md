@@ -30,6 +30,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
 | nuvem · ccr-04d42f6c-y5d6iz | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)) — aulas 06 a 10 (itens 22.3 a 22.7), sem banco; reserva passada pelo usuário em 2026-10-16 21:14 | 🔄 Ativa | 2026-10-16 21:14 |
+| nuvem · ccr-a6bf2a33-1m21a1 | #225.1 ([352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md)) — plano aguarda a aprovação do usuário | 👀 Aguardando o usuário | 2026-10-16 21:28 |
 | nuvem · ccr-a26b3c0e-1ljztf | #224.2 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) — 16 aulas de Reforço de Matemática | 🔄 Ativa | 2026-10-16 21:23 |
 | nuvem · relaxed-lovelace-sgtq7z | #167 aguarda aceite ([294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md)); #166 liberada (etapa 293); #168 criada ([295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md)), assumida depois do aceite da #167 | 👀 Aguardando o usuário | 2026-10-14 21:49 |
 | nuvem · lucid-cannon-whxrn1 | #169 ([296-eee19743](etapas/ETAPA-296-eee19743-CONFIRMAR-CORRECAO-SO-SE-NAO-CORRIGIDA.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 21:28 |
@@ -198,6 +199,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:23) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.3 | Status da matéria · `LEVE · effort low` | 🟠 Alta | #224.2 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #224.3 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #225-88c1272e-6fc9-4e83-ba82-0e57440fac54 | Uma tarefa por matéria do Técnico em Informática para Internet (aulas, objetivas e práticas) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #225.1 | Criar no quadro as 17 tarefas e as 663 subtarefas · `LEVE · effort low` | 🟠 Alta | — | 👀 Plano aguardando aprovação | Claude Code (Opus 5.5) (nuvem · ccr-a6bf2a33-1m21a1) (desde 2026-10-16 21:28) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #225.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #225.1 | ⬜ Pendente | — | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -586,6 +590,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 347-aa8b3abc | Grade de botões do Editar aula (#220, pedida em 2026-10-16) | [ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md) |
 | 348-c7244bf6 | Dois cards da Aula 06 editam a mesma aula (#221, pedida em 2026-10-16) | [ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | 351-c05fdb13 | Aulas de Reforço de Matemática e Raciocínio Lógico (#224, pedida em 2026-10-16) | [ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| 352-88c1272e | Uma tarefa por matéria do Técnico em Informática para Internet (#225, pedida em 2026-10-16) | [ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
