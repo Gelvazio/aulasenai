@@ -10,6 +10,8 @@
     --crud-suave: #4a5568;
     --crud-perigo: #b42318;
     --crud-ok: #1b7f3b;
+    --crud-desvincular-fundo: #fff1f0;
+    --crud-desvincular-borda: #f0a8a2;
 }
 
 .crud-botao-card { background: #fff7e6; border: 1px solid #f0c36d; cursor: pointer; }
@@ -37,6 +39,37 @@
 .acoes .btn.principal:has(+ .interruptor-atividade + .crud-editar-atividade) {
     flex: 1 1 calc(100% - var(--largura-onoff-atividade) - var(--crud-tamanho-editar) -
         2 * var(--crud-espaco-acoes));
+    min-width: 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* Botão "−" logo depois do ✏️ (só em atividade com aula): remove o vínculo com a aula.
+   Linha da atividade: link → ON/OFF → ✏️ → −. */
+.crud-desvincular-atividade {
+    flex: 0 0 var(--crud-tamanho-editar);
+    width: var(--crud-tamanho-editar);
+    height: var(--crud-tamanho-editar);
+    padding: 0;
+    align-self: center;
+    box-sizing: border-box;
+    background: var(--crud-desvincular-fundo);
+    border: 1px solid var(--crud-desvincular-borda);
+    border-radius: 50%;
+    color: var(--crud-perigo);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.acoes .btn.principal:has(+ .crud-editar-atividade + .crud-desvincular-atividade) {
+    flex: 1 1 calc(100% - 2 * var(--crud-tamanho-editar) - 2 * var(--crud-espaco-acoes));
+    min-width: 0;
+}
+
+.acoes .btn.principal:has(+ .interruptor-atividade + .crud-editar-atividade +
+    .crud-desvincular-atividade) {
+    flex: 1 1 calc(100% - var(--largura-onoff-atividade) - 2 * var(--crud-tamanho-editar) -
+        3 * var(--crud-espaco-acoes));
     min-width: 0;
     font-size: 12px;
     overflow-wrap: anywhere;

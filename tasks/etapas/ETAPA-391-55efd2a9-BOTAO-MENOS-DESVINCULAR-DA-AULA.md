@@ -9,7 +9,21 @@ confirmar, grava `atividade.aula_id = null` (a atividade não é apagada) e rede
 
 ### #264.1 — Botão "−" que desvincula a atividade da aula do card
 
-**Próximo passo:** espera a #262.1 (mesmos arquivos); depois, executor-medio.
+**Próximo passo:** — (entregue em 2026-10-17 18:35; conferir na tela).
+
+- **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** `atividades-crud-modal.js`:
+  `criarBotaoDesvincularAtividade`, `aoDesvincularAtividadeCrud` (modal "Confirma remoção do
+  vinculo da Atividade?"), `gravarDesvinculoCrud` (`definirAulaDaAtividadeCard(id, null)`) e
+  `refazerCardsAposDesvinculoCrud`; o "−" entra logo depois do ✏️ só em atividade com
+  `aula_id`. CSS: botão redondo do tamanho do ✏️, tokens novos no `:root` e largura do link
+  ajustada para link → ON/OFF → ✏️ → −. `indice-aula-atividades-vinculadas.js`: classe nova em
+  `SELETOR_CONTROLES_DO_BOTAO_VINCULADAS`.
+- **Verificação (líder):** diff lido nos 3 arquivos; `node --check` nos 2 JS; `confirmarPopup`,
+  `mostrarPopup` (tipos `erro`/`sucesso`), `garantirPopupCrud` e
+  `atualizarVinculadasDoIndiceCrud` existem; linha do cabeçalho com mais de 100 caracteres
+  devolvida e corrigida. Sem navegador.
+- **Limite (registrado):** botão escrito no HTML do card não some ao desvincular (o banco muda,
+  o link do HTML continua); só os 📝 vindos do banco saem do card.
 
 - **Nível:** MEDIO — JS/CSS de tela, 2 arquivos; o update usa a função já existente (RLS de
   professor já valida).

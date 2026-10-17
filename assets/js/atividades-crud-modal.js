@@ -4,8 +4,11 @@
 // pasta (os links dos cards do índice).
 // Ao lado de cada atividade cadastrada, o professor também vê o botão ✏️, que abre a edição
 // dela (nome, data, aula, ativa...) direto no formulário.
-// O ID e o ✏️ vêm sempre do banco: são refeitos a cada evento 'aula-bloqueio-alterado', quando os
-// botões 📝 das atividades vinculadas à aula são criados depois do carregamento.
+// Logo depois do ✏️ fica o botão "−" (só em atividade com aula): após confirmar, apenas remove o
+// vínculo com a aula (aula_id = null); a atividade não é apagada.
+// O ID, o ✏️ e o "−" vêm sempre do banco: são refeitos a cada evento
+// 'aula-bloqueio-alterado', quando os botões 📝 das atividades vinculadas à aula são criados
+// depois do carregamento.
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
 const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
@@ -28,6 +31,15 @@ const CLASSE_ID_CARD = 'crud-id-atividade';
 const CLASSE_EDITAR_CARD = 'crud-editar-atividade';
 const TEXTO_EDITAR_CARD = '✏️';
 const SELETOR_INTERRUPTOR_CARD = '.interruptor-atividade';
+const CLASSE_DESVINCULAR_CARD = 'crud-desvincular-atividade';
+const TEXTO_DESVINCULAR_CARD = '−';
+const TITULO_DESVINCULAR_CARD = 'Remover o vínculo desta atividade com a aula';
+const MSG_CONFIRMAR_DESVINCULO = 'Confirma remoção do vinculo da Atividade?';
+const TITULO_POPUP_DESVINCULO = 'Remover vínculo';
+const TEXTO_CONFIRMAR_DESVINCULO = '− Remover vínculo';
+const MSG_ERRO_DESVINCULO = '❌ Não foi possível remover o vínculo. ' +
+    'Confira o login de professor e o banco.';
+const MSG_DESVINCULO_FEITO = '✅ Vínculo removido.';
 const TITULO_EDITAR_CARD = 'Editar esta atividade no banco (nome, data, aula, ativa...)';
 // IDs menores que 10 com zero à esquerda (7 → 07); de 10 em diante, normal.
 const DIGITOS_ID_ATIVIDADE = 2;
@@ -548,7 +560,8 @@ function formatarIdAtividadeCrud(id) {
  * @param {Object[]} atividades - Atividades cadastradas das páginas do índice.
  */
 function mostrarIdNoCard(card, atividades) {
-    const seletorAntigos = '.' + CLASSE_ID_CARD + ', .' + CLASSE_EDITAR_CARD;
+    const seletorAntigos = '.' + CLASSE_ID_CARD + ', .' + CLASSE_EDITAR_CARD + ', .' +
+        CLASSE_DESVINCULAR_CARD;
     card.querySelectorAll(seletorAntigos).forEach((elemento) => elemento.remove());
     card.querySelectorAll('a.btn').forEach((link) => {
         const pagina = obterCaminhoHtml(lerHrefCrud(link));
@@ -558,7 +571,9 @@ function mostrarIdNoCard(card, atividades) {
         const etiqueta = criarElementoCrud('span', CLASSE_ID_CARD,
             'ID ' + formatarIdAtividadeCrud(atividade.id));
         link.prepend(etiqueta);
-        posicionarBotaoEditar(link, criarBotaoEditarAtividade(atividade));
+        const botaoEditar = criarBotaoEditarAtividade(atividade);
+        posicionarBotaoEditar(link, botaoEditar);
+        if (atividade.aula_id) botaoEditar.after(criarBotaoDesvincularAtividade(atividade));
     });
 }
 
@@ -588,6 +603,70 @@ function criarBotaoEditarAtividade(atividade) {
     botao.addEventListener('click', () => abrirEdicaoAtividadeCrud({ idAtividade: atividade.id,
         idAula: atividade.aula_id, pagina: atividade.pagina }));
     return botao;
+}
+
+/**
+ * Cria o botão "−" que fica logo depois do ✏️ e remove só o vínculo da atividade com a aula.
+ * @param {{id: number, aula_id: number}} atividade - Atividade cadastrada, com aula.
+ * @returns {HTMLButtonElement} Botão de desvincular.
+ */
+function criarBotaoDesvincularAtividade(atividade) {
+    const botao = criarElementoCrud('button', 'btn ' + CLASSE_DESVINCULAR_CARD,
+        TEXTO_DESVINCULAR_CARD);
+    botao.type = 'button';
+    botao.title = TITULO_DESVINCULAR_CARD;
+    botao.setAttribute('aria-label', TITULO_DESVINCULAR_CARD);
+    botao.addEventListener('click', () => aoDesvincularAtividadeCrud(atividade));
+    return botao;
+}
+
+/**
+ * Pede confirmação e remove o vínculo da atividade com a aula (só zera aula_id; não apaga).
+ * @param {{id: number}} atividade - Atividade cadastrada.
+ */
+async function aoDesvincularAtividadeCrud(atividade) {
+    await garantirPopupCrud();
+    const confirmou = await window.confirmarPopup?.(MSG_CONFIRMAR_DESVINCULO, {
+        tipo: 'pergunta',
+        titulo: TITULO_POPUP_DESVINCULO,
+        textoConfirmar: TEXTO_CONFIRMAR_DESVINCULO,
+    });
+    if (!confirmou) return;
+
+    const alterou = await gravarDesvinculoCrud(atividade.id);
+    if (!alterou) return window.mostrarPopup?.(MSG_ERRO_DESVINCULO, { tipo: 'erro' });
+
+    await refazerCardsAposDesvinculoCrud();
+    window.mostrarPopup?.(MSG_DESVINCULO_FEITO, { tipo: 'sucesso' });
+}
+
+/**
+ * Zera a aula da atividade no banco (função do indice-aula-repositorio.js).
+ * @param {number} idAtividade - Id da atividade.
+ * @returns {Promise<boolean>} true se o banco alterou a linha; falha ou função ausente = false.
+ */
+async function gravarDesvinculoCrud(idAtividade) {
+    if (typeof definirAulaDaAtividadeCard !== 'function') return false;
+
+    try {
+        return await definirAulaDaAtividadeCard(idAtividade, null);
+    } catch (erro) {
+        return false;
+    }
+}
+
+/**
+ * Atualiza a lista do banco e redesenha os botões e as etiquetas dos cards.
+ */
+async function refazerCardsAposDesvinculoCrud() {
+    try {
+        estadoCrud.atividades = await listarAtividadesCrud(estadoCrud.paginas);
+    } catch (erro) {
+        console.warn('Lista de atividades indisponível:', erro.message);
+    }
+    await atualizarVinculadasDoIndiceCrud();
+    document.querySelectorAll(SELETOR_CARD)
+        .forEach((card) => mostrarIdNoCard(card, estadoCrud.atividades));
 }
 
 /**

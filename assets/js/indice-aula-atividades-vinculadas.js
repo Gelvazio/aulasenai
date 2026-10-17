@@ -18,8 +18,9 @@
 const SELETOR_ACOES_VINCULADAS = '.acoes';
 const SELETOR_LINK_ACAO_VINCULADAS = 'a.btn';
 const SELETOR_LINKS_CARD_VINCULADAS = 'a';
-// ON/OFF e ✏️ que outros módulos põem logo depois do link de uma atividade.
-const SELETOR_CONTROLES_DO_BOTAO_VINCULADAS = '.interruptor-atividade, .crud-editar-atividade';
+// ON/OFF, ✏️ e "−" que outros módulos põem logo depois do link de uma atividade.
+const SELETOR_CONTROLES_DO_BOTAO_VINCULADAS =
+    '.interruptor-atividade, .crud-editar-atividade, .crud-desvincular-atividade';
 const ATRIBUTO_VINCULO_BANCO = 'data-vinculo-banco';
 const SELETOR_BOTAO_VINCULO_BANCO = 'a[' + ATRIBUTO_VINCULO_BANCO + ']';
 const ATRIBUTOS_HREF_CARD_VINCULADAS = ['href', 'data-href-bloqueado', 'data-href-aula-bloqueada'];

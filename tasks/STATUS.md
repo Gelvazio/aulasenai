@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s20 | líder: #260.4 (Haiku), #261.1 e #262.1 (Sonnet) com os executores; #264.1 depois da #262.1; #263 aguarda o usuário ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | 🔄 Ativa | 2026-10-17 18:26 |
+| local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
 | local · main · s18 | #251.2 entregue; #251.3 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) aguarda o seu "sim" ao escopo ampliado | 👀 Aguardando o usuário | 2026-10-17 10:55 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
@@ -910,8 +910,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
-| #264-55efd2a9-4c0a-4a5c-b9ad-5448279599ad | Botão "−" ao lado do ✏️: desvincular a atividade da aula | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
-| #264.1 | Botão "−" que desvincula a atividade da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #262.1 | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (local · main · s20-medio-b) (desde 2026-10-17 18:32) | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
