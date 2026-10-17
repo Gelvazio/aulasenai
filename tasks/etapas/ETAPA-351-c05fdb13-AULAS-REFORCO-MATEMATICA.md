@@ -40,13 +40,17 @@
 
 ### #224.2 — Aulas em `CONTEUDO/`
 
-**Próximo passo:** escrever a Aula 01 e seguir em sequência até a 16.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — conteúdo didático conferido com a ementa.
+- **Entrega:** 16 arquivos `CONTEUDO/AULA-01` a `AULA-16` (commit desta entrega) ·
+  **Verificação:** script conferiu as 9 seções + cabeçalho em cada aula, roteiro = 240 min
+  (180 min na Aula 16) e soma das horas = 63 h; contas dos exemplos refeitas uma a uma.
 
 ### #224.3 — Status da matéria
 
-**Próximo passo:** esperar a #224.2.
+**Próximo passo:** criar `DOCUMENTACAO/PLANO-AULAS.md`, marcar a coluna "Aula em `CONTEUDO/`" e
+regerar o `STATUS_MATERIA.md`.
 
 - **Nível:** LEVE — atualizar `STATUS-AULAS.md` e `STATUS_MATERIA.md`.
 
