@@ -39,16 +39,20 @@ linha da tabela `aulas` (DELETE), em vez de marcar `aulas.excluido = 1`.
 
 ### #254.2 — Função `excluir_aula` com DELETE de verdade
 
-**Próximo passo:** depois do "sim": consultar as chaves estrangeiras de `aulas` e escrever
-`database/2026-10-17-excluir-aula-definitivo.sql`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — função do banco que apaga dados.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** `create or replace function public.excluir_aula(p_aula bigint)`: só
   administrador; se houver `atividade.aula_id = p_aula`, erro "aula tem atividade vinculada";
   senão `delete from public.aulas where id = p_aula`.
-- **Verificação:** consulta à definição da função e teste com uma aula inexistente (retorna
-  false, nada apagado).
+- **Entrega (2026-10-17 11:53, Opus 5.5, s14):** `database/2026-10-17-excluir-aula-definitivo.sql`
+  aplicado pelo conector (migração `excluir_aula_definitivo`). Chaves que apontam para `aulas`
+  (consulta): `atividade_aula_id_fkey` (sem cascade) e `aula_turma_aula_id_fkey` (cascade) — nenhuma
+  outra.
+- **Verificação:** a definição no banco tem o `delete from public.aulas` e a trava da atividade
+  vinculada; `anon` sem execução, `authenticated` com; `select excluir_aula(-1)` sem login
+  recusou ("Somente o Professor Administrador…", 42501).
 
 ### #254.3 — Telas: mensagens de exclusão definitiva
 
