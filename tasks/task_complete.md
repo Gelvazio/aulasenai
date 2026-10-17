@@ -314,3 +314,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #265.2 | Camada `celular.css` carregada pelo header · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #265.1 | ✅ Concluído | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 | #265.3 | Ícones no header, no login e nos cards do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #265.2 | ✅ Concluído | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 | #7 | Executar análise final | 🟢 Baixa | LEVE · só Haiku | — | ✅ Concluído (2026-10-17 20:57) | — | [153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) | — |
+| #266-73421a16-fdf6-4016-8e42-5b40d3ace5a2 | **Ocultar aulas bloqueadas no login do aluno** | 🟠 Alta | — | — | ✅ Concluída | — (não reservável) | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |
+| #266.1 | Filtrar aulas bloqueadas na lista do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluída (2026-10-17 20:59) | — | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |

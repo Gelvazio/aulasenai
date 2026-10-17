@@ -20,9 +20,9 @@
 // Só o Professor Administrador vê a etiqueta "Id Aula: N" (aulas.id) acima de "AULA NN" (#255,
 // #257).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
-// "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
-// inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
-// combo "Turma:" (aula_turma, #206): trocar a turma no combo relê e redesenha os cards.
+// "Aula liberada / Aula bloqueada" fica antes de "Editar aula"; para o aluno, o card bloqueado é
+// ocultado da lista (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do combo
+// "Turma:" (aula_turma, #206): trocar a turma no combo relê e redesenha os cards.
 // Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, aula-turma-repositorio.js,
 // assets/js/indice-aula-atividades-vinculadas.js,
 // assets/js/indice-aula-modal.js, assets/js/atividades-crud-repositorio.js e

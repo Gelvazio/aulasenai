@@ -16,6 +16,7 @@
 // e com assets/js/aula-turma-repositorio.js.
 
 const CLASSE_CARD_BLOQUEADO_AULA_BLOQUEIO = 'bloqueada';
+const CLASSE_CARD_OCULTO_ALUNO_AULA_BLOQUEIO = 'aula--oculta-para-aluno';
 const SELETOR_COMBO_TURMA_AULA_BLOQUEIO = '.barra-turma-favorita__lista';
 const PREFIXO_TITULO_AULA_BLOQUEIO = 'Vale para a turma ';
 // turma: turma do combo (só o professor grava nela); linhas: linhas de aula_turma dessa turma;
@@ -191,14 +192,15 @@ function atualizarBotaoBloqueioAula(etiqueta, liberada) {
 }
 
 /**
- * Aplica ao card o estado de bloqueio da aula (professor e aluno: card inteiro sem acesso; o
- * professor mantém só o botão da aula para desbloquear).
+ * Aplica o bloqueio da aula: oculta o card para aluno e mantém no professor o botão de liberar.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  * @param {boolean} ehProfessor - true se o usuário logado é professor.
  */
 function aplicarBloqueioAulaNoCard(item, ehProfessor) {
     const bloqueada = aulaEstaBloqueada(item.aula);
     const botao = item.card.querySelector('.' + CLASSE_BOTAO_AULA_BLOQUEIO);
+    item.card.classList.toggle(CLASSE_CARD_OCULTO_ALUNO_AULA_BLOQUEIO,
+        !ehProfessor && bloqueada);
     if (botao) atualizarBotaoBloqueioAula(botao, !bloqueada);
     if (ehProfessor) {
         travarCardAulaProfessor(item.card, bloqueada);
