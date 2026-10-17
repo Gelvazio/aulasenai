@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s17 | #181.4 concluída; #166 ([293-089e5b09](etapas/ETAPA-293-089e5b09-NOTA-DA-IA-NAO-APARECE-PARA-O-ALUNO.md)) aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-17 00:55 |
+| local · main · s17 | #181.4 concluída; #166 ([293-089e5b09](etapas/ETAPA-293-089e5b09-NOTA-DA-IA-NAO-APARECE-PARA-O-ALUNO.md)) aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:31 |
 | nuvem · ccr-3274812b-0nj48o | #244, #245, #246 e #247 concluídas (aceite da #247 em 2026-10-16 23:32) | ⏹️ Encerrada | 2026-10-16 23:32 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |

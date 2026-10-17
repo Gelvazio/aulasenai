@@ -28,6 +28,6 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 | 36.2 | Conferir que cada página usa `.aula-card.questao` em ordem (ITEM 01, 02...) e o botão `#btnExportarPDF`; fora do padrão → ajustar ou ⛔ com motivo | ✅ Concluído | 2026-10-16 21:51 | Script de leitura: 50 `.aula-card.questao` com ITEM 01 a 50 em ordem e 1 `#btnExportarPDF` em cada página; `respostas-atividade-banco.js` em todas |
 | 36.3 | Aceite do usuário (testar como professor e aluno) | 👀 Aguardando o usuário | — | — |
 
-### Conferência #181.4 (2026-10-17 00:55, Claude Code (Opus 5.5) s17, só leitura)
+### Conferência #181.4 (2026-10-16 23:31, Claude Code (Opus 5.5) s17, só leitura)
 
 **Resultado: ✅ Feito no código** — `data-questoes-ate-minimo="sim"` presente em 10 páginas de `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND` (`grep -rl`). Falta só conferir na tela (item 36.3).

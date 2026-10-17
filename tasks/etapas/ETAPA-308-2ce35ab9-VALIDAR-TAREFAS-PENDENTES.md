@@ -88,7 +88,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 
 ### #181.3 — Conferir as tarefas de telas (HTML, CSS e JS)
 
-**Próximo passo:** ✅ Feito em 2026-10-17 00:20 (Sonnet 5.5); a #181.5 espera a #181.4.
+**Próximo passo:** ✅ Feito em 2026-10-16 23:28 (Sonnet 5.5); a #181.5 espera a #181.4.
 
 - **Nível:** MEDIO — ler e entender código de telas.
 - **Modelo:** só Sonnet — nunca outro (#247)
@@ -98,7 +98,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 
 ### #181.4 — Conferir as tarefas de banco e segurança
 
-**Próximo passo:** ✅ Feito em 2026-10-17 00:55 (Opus 5.5); a #181.5 pode começar.
+**Próximo passo:** ✅ Feito em 2026-10-16 23:31 (Opus 5.5); a #181.5 pode começar.
 
 - **Nível:** PESADO — banco, RLS e gabarito; só o Claude Code **local** (acesso ao banco).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)

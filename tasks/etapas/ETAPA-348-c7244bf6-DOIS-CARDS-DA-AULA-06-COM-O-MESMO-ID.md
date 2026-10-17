@@ -83,6 +83,6 @@ Formatação e Estruturação-old", um com a atividade ID 19 e outro com as ativ
 - **Nível:** LEVE — conferência do usuário.
 - **Modelo:** Usuário — nenhuma IA executa (#247)
 
-### Conferência #181.4 (2026-10-17 00:55, Claude Code (Opus 5.5) s17, só leitura)
+### Conferência #181.4 (2026-10-16 23:31, Claude Code (Opus 5.5) s17, só leitura)
 
 **Resultado: ❌ Não feito (#221.2)** — `atividade` 19 ainda está na aula 26 (consulta); o `UPDATE` para a aula 69 espera o "sim" do usuário.

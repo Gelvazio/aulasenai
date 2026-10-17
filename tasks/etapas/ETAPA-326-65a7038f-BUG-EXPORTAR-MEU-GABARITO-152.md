@@ -30,6 +30,6 @@ temporária, sem navegador) ou mandar o aviso do console (F12) da página logado
 
 - **Modelo:** Usuário — nenhuma IA executa (#247)
 
-### Conferência #181.4 (2026-10-17 00:55, Claude Code (Opus 5.5) s17, só leitura)
+### Conferência #181.4 (2026-10-16 23:31, Claude Code (Opus 5.5) s17, só leitura)
 
 **Resultado: ❌ Não feito** — a #199.1 está parada esperando o usuário escolher como seguir (simular no Node ou testar na tela). Nada foi corrigido ainda.

@@ -19,7 +19,7 @@
   dos botões velhos passou para depois da leitura, evitando botões duplicados.
 - **Verificação:** `node --check` OK; só confirmável no navegador (usuário).
 
-### Conferência #181.3 (2026-10-17 00:20, Claude Code (Sonnet 5.5) s17)
+### Conferência #181.3 (2026-10-16 23:28, Claude Code (Sonnet 5.5) s17)
 
 **Resultado: ✅ Feito no código** (falta só "conferir na tela", sem navegador).
 - `assets/js/indice-atividades-bloqueio.js:204-211` — `buscarFavoritaBloqueio` usa o combo "Turma:"

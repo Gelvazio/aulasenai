@@ -117,6 +117,6 @@ turma no combo e liga/desliga o ON/OFF de uma atividade.
 - **Nível:** LEVE — conferência do usuário.
 - **Modelo:** Usuário — nenhuma IA executa (#247)
 
-### Conferência #181.4 (2026-10-17 00:55, Claude Code (Opus 5.5) s17, só leitura)
+### Conferência #181.4 (2026-10-16 23:31, Claude Code (Opus 5.5) s17, só leitura)
 
 **Resultado: ⚠️ Substituída pela #206** — a reversão de código foi feita, mas a #193.4 (apagar a tabela) foi cancelada e a #206 (já aceita) recriou a `aula_turma`. Banco hoje: tabela `aula_turma` existe, 2 funções `*aula_turma*`, `definir_bloqueio_turma` existe; código usa a tabela em 5 JS (`aula-turma-repositorio.js`, `indice-aula-*.js`). O pedido "voltar como antes" não vale mais; o bloqueio de atividade segue funcionando. Sugestão: o usuário encerrar a #193 como substituída pela #206.
