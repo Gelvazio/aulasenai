@@ -26,7 +26,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
-| local · main · s14 | #220.2 ([347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md)), #219.2, #218.2, #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 20:09 |
+| local · main · s14 | #253.1 ([380-1fa4cc40](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md)) — botão Excluir no card da aula | 🔄 Ativa | 2026-10-17 11:50 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #223 ([350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md)) — apostila de Banco de Dados gerada; #223.4 aguarda o aceite do usuário | 👀 Aguardando o usuário | 2026-10-16 21:39 |
@@ -909,6 +909,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #253-1fa4cc40-d32b-405e-b1d0-7c223148e086 | Botão "Excluir" no card da aula (só sem atividade vinculada) | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [380-1fa4cc40](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md) | — |
+| #253.1 | Botão Excluir no card com a verificação das atividades vinculadas · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em progresso | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-17 11:50) | [380-1fa4cc40](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -931,6 +933,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 377-2680fc00 | Botão "Gerenciar Aulas": CRUD de aulas em modal (#250, pedida em 2026-10-17 10:05) | [ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) |
 | 378-780651a2 | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo (#251, pedida em 2026-10-17 10:30) | [ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) |
 | 379-ab9e36c5 | `RENDERIZACAO-DE-IA.md` ajustado para a IA (#252, pedida em 2026-10-17 10:58) | [ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md) |
+| 380-1fa4cc40 | Botão "Excluir" no card da aula (#253, pedida em 2026-10-17 11:45) | [ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
