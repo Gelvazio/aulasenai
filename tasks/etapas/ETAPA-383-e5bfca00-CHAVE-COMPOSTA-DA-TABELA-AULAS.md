@@ -31,18 +31,21 @@ aula.id,materia.id e curso.id"
 
 ### Decisões
 
-- (aguardando o "sim" do usuário ao plano)
+- **Cancelada pelo usuário** em 2026-10-17 12:09: "mantenha as 3 fks, e mantenha id sozinho por causa da
+  dependencia das tabelas atividade e aula_turma,nao vale a pena mexer nisso agora". O banco
+  fica como está: chave primária `(id)`, `UNIQUE (materia_id, numero)` e as chaves estrangeiras
+  sem mudança. Nada foi aplicado.
 
 ### #256.1 — Plano e aprovação
 
-**Próximo passo:** esperar o "sim" do usuário.
+**Próximo passo:** — (cancelada pelo usuário).
 
 - **Nível:** PESADO — mudança de chave no banco.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 
 ### #256.2 — Migração da chave composta
 
-**Próximo passo:** depois do "sim".
+**Próximo passo:** — (cancelada pelo usuário).
 
 - **Nível:** PESADO — schema do banco (chaves).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
