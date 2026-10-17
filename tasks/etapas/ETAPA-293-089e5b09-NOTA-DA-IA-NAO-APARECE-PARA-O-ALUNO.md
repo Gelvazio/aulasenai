@@ -3,7 +3,7 @@
 **Tarefa:** #166-089e5b09-40d6-421d-be9c · **Pedido em:** 2026-10-14 20:50 · **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-04d42f6c-y5d6iz), desde 2026-10-16 21:41 — itens 166.4 e 166.6 (sem banco); 166.5 fica com a frente local
 **Pedido:** "nota sugerida pela IA, nao deve aparecer para o aluno, me garanta isso"
 **Objetivo:** auditar tela, funções e banco e garantir que o aluno nunca recebe a `nota_ia`.
-**Próximo passo:** 166.5 — Claude Code local: conferir como aluno que a tabela `correcao_discursiva` não devolve nada e que a view `correcao_discursiva_aluno` não traz `nota_ia` (e que a prova corrigida do aluno volta a mostrar as notas); depois 166.7 (aceite).
+**Próximo passo:** 👀 166.7 — aceite do usuário. Conferir na tela (sem navegador pela IA): o aluno com gabarito liberado volta a ver as notas do professor na prova corrigida.
 
 **Modelo (#166):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Estado para quem assumir (liberada em 2026-10-14 20:56 por Claude Code, local · main)
@@ -41,7 +41,7 @@
 | 166.2 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-14 20:56 | usuário: "sim" |
 | 166.3 | SQL idempotente em `database/2026-10-14-correcao-discursiva-visao-do-aluno.sql` (view + política) aplicado no Supabase | ✅ Concluído | 2026-10-14 20:56 | consulta: colunas da view sem `nota_ia`; só `SELECT` para `authenticated`; política da tabela só de professor |
 | 166.4 | `resultado-aluno-discursiva.js` lê a view | ✅ Concluído | 2026-10-16 21:43 | `node --check` ok; constante `VIEW_CORRECAO_RESULTADO = 'correcao_discursiva_aluno'` no `lerResultadoDoAluno`; colunas lidas (`item, topico, nota_professor, comentario`) existem na view; o histórico (`correcao_discursiva_historico`) só guarda notas do professor (conferido no SQL do trigger) |
-| 166.5 | Conferir como aluno: sem `nota_ia` pela API | ⬜ Pendente | — | consulta ao banco |
+| 166.5 | Conferir como aluno: sem `nota_ia` pela API | ✅ Concluído | 2026-10-17 00:40 | Consulta como aluno `a8b8be40…` (role `authenticated` + JWT simulado, só leitura): tabela `correcao_discursiva` = 0 linhas; view `correcao_discursiva_aluno` = 20 linhas (só as dele, todas com nota do professor); colunas da view sem `nota_ia`; `anon` sem permissão, só `authenticated` com `SELECT` |
 | 166.6 | Docs, histórico e visualizador | ✅ Concluído | 2026-10-16 21:43 | `docs/database.md` e `docs/relatorio_verificacao_database.html` (view nova e política só do professor), `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md`; visualizador regenerado |
 | 166.7 | Aceite do usuário | ⬜ Pendente | — | — |
 
