@@ -30,7 +30,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
 | nuvem · ccr-04d42f6c-y5d6iz | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)): itens 22.3 a 22.7 (aulas 06 a 10) entregues sem banco; reserva liberada — seeds PENDENTE ficam com a frente local (22.8) | ⏹️ Encerrada | 2026-10-16 21:31 |
-| nuvem · ccr-a6bf2a33-1m21a1 | #225.1 ([352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md)) — plano aguarda a aprovação do usuário | 👀 Aguardando o usuário | 2026-10-16 21:28 |
+| nuvem · ccr-a6bf2a33-1m21a1 | #225.1 entregue: 17 tarefas (#226 a #242) e 697 subtarefas no quadro; #225.2 ([352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md)) aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 21:52 |
 | nuvem · ccr-a26b3c0e-1ljztf | #224.2 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) — 16 aulas de Reforço de Matemática | 🔄 Ativa | 2026-10-16 21:23 |
 | nuvem · relaxed-lovelace-sgtq7z | #167 aguarda aceite ([294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md)); #166 liberada (etapa 293); #168 criada ([295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md)), assumida depois do aceite da #167 | 👀 Aguardando o usuário | 2026-10-14 21:49 |
 | nuvem · lucid-cannon-whxrn1 | #169 ([296-eee19743](etapas/ETAPA-296-eee19743-CONFIRMAR-CORRECAO-SO-SE-NAO-CORRIGIDA.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 21:28 |
@@ -199,9 +199,722 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:23) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.3 | Status da matéria · `LEVE · effort low` | 🟠 Alta | #224.2 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #224.3 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
-| #225-88c1272e-6fc9-4e83-ba82-0e57440fac54 | Uma tarefa por matéria do Técnico em Informática para Internet (aulas, objetivas e práticas) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — (não reservável) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
-| #225.1 | Criar no quadro as 17 tarefas e as 663 subtarefas · `LEVE · effort low` | 🟠 Alta | — | 👀 Plano aguardando aprovação | Claude Code (Opus 5.5) (nuvem · ccr-a6bf2a33-1m21a1) (desde 2026-10-16 21:28) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
-| #225.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #225.1 | ⬜ Pendente | — | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #225-88c1272e-6fc9-4e83-ba82-0e57440fac54 | Uma tarefa por matéria do Técnico em Informática para Internet (aulas, objetivas e práticas) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #225.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #225.1 | 👀 Aguardando o usuário | — | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #226-cac80fd1-0dd4-4e3e-98e6-e656b7ba5820 | Introdução à Tecnologia da Informação e Comunicação — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.0 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.1 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.1 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.1 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.4 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.4 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.4 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.7 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.7 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.7 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.10 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.10 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.10 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.13 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.13 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.13 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.16 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.16 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.16 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.19 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.19 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.19 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.22 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.22 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.22 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.25 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.25 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #226.25 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #226.28 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #226.28 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #226.31 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #226.1 a #226.30 | ⬜ Pendente | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| #227-92ce2a45-04a4-457b-accc-8bd8c5e11fdd | Introdução ao Desenvolvimento de Projetos — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #227.0 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #227.1 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #227.1 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #227.1 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #227.4 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #227.4 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #227.4 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #227.7 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #227.7 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #227.10 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #227.1 a #227.9 | ⬜ Pendente | — | [354-92ce2a45](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| #228-19e1d161-6a86-4065-b960-3bd77f8d49bc | Introdução à Indústria 4.0 — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.0 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.1 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.1 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.1 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.4 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.4 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.4 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.7 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.7 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.7 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.10 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.10 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.10 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.13 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.13 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #228.13 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #228.16 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #228.16 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #228.19 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #228.1 a #228.18 | ⬜ Pendente | — | [355-19e1d161](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| #229-09720f0b-9e67-49d5-9eed-e56ded72a183 | Arquitetura de Hardware e Software — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.0 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.1 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.1 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.1 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.4 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.4 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.4 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.7 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.7 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.7 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.10 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.10 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.10 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.13 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.13 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #229.13 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #229.16 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #229.16 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #229.19 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #229.1 a #229.18 | ⬜ Pendente | — | [356-09720f0b](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| #230-faaf2827-b531-4d8d-899e-9a7f8a4b18d1 | Versionamento e Colaboração — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #230.0 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #230.1 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #230.1 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #230.1 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #230.4 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #230.4 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #230.4 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #230.7 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #230.7 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #230.7 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #230.10 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #230.10 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #230.10 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #230.13 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #230.13 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #230.16 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #230.1 a #230.15 | ⬜ Pendente | — | [357-faaf2827](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| #231-c5e72df0-8cde-4973-a194-4d7424bf3b85 | Lógica de Programação — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.0 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.1 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.1 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.1 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.4 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.4 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.4 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.7 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.7 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.7 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.10 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.10 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.10 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.13 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.13 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.13 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.16 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.16 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.16 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.19 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.19 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.19 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.22 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.22 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.22 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.25 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.25 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.25 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.28 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.28 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.28 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.31 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.31 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.31 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.34 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.34 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.34 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.37 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.37 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.37 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.40 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.40 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.40 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.43 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.43 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.43 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.46 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.46 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.46 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.49 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.49 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.49 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.52 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.52 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.52 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.55 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.55 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.58 | Aula 20 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.55 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.59 | Objetiva da aula 20 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.58 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.60 | Prática da aula 20 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.58 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.61 | Aula 21 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.58 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.62 | Objetiva da aula 21 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.61 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.63 | Prática da aula 21 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.61 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.64 | Aula 22 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.61 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.65 | Objetiva da aula 22 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.64 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.66 | Prática da aula 22 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.64 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.67 | Aula 23 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.64 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.68 | Objetiva da aula 23 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.67 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.69 | Prática da aula 23 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.67 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.70 | Aula 24 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.67 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.71 | Objetiva da aula 24 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.70 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.72 | Prática da aula 24 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.70 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.73 | Aula 25 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.70 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.74 | Objetiva da aula 25 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.73 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.75 | Prática da aula 25 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.73 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.76 | Aula 26 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.73 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.77 | Objetiva da aula 26 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.76 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.78 | Prática da aula 26 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.76 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.79 | Aula 27 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.76 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.80 | Objetiva da aula 27 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.79 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.81 | Prática da aula 27 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.79 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.82 | Aula 28 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.79 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.83 | Objetiva da aula 28 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.82 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.84 | Prática da aula 28 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.82 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.85 | Aula 29 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.82 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.86 | Objetiva da aula 29 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.85 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.87 | Prática da aula 29 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.85 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.88 | Aula 30 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.85 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.89 | Objetiva da aula 30 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.88 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.90 | Prática da aula 30 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.88 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.91 | Aula 31 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.88 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.92 | Objetiva da aula 31 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.91 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.93 | Prática da aula 31 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.91 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.94 | Aula 32 (4 h) · `PESADO · effort high` | 🟠 Alta | #231.91 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.95 | Objetiva da aula 32 — 50 questões · `PESADO · effort high` | 🟠 Alta | #231.94 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.96 | Prática da aula 32 — discursiva · `PESADO · effort high` | 🟠 Alta | #231.94 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #231.97 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #231.1 a #231.96 | ⬜ Pendente | — | [358-c5e72df0](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| #232-7bf607a8-c347-48a5-89f2-73cd2c4eee7d | Fundamentos de UI/UX — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.0 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.1 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.1 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.1 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.4 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.4 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.4 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.7 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.7 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.7 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.10 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.10 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.10 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.13 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.13 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.13 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.16 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.16 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.16 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.19 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.19 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.19 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.22 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.22 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.22 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.25 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.25 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.25 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.28 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.28 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.28 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.31 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.31 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.31 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.34 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.34 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.34 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.37 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.37 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.37 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.40 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.40 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.40 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.43 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.43 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.43 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.46 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.46 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.46 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.49 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.49 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.49 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.52 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.52 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #232.52 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #232.55 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #232.55 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #232.58 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #232.1 a #232.57 | ⬜ Pendente | — | [359-7bf607a8](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| #233-9a87fb48-d113-483a-97dd-19a92227cafe | Codificação para Front-End — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.0 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.1 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.1 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.1 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.4 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.4 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.4 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.7 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.7 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.7 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.10 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.10 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.10 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.13 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.13 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.13 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.16 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.16 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.16 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.19 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.19 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.19 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.22 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.22 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.22 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.25 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.25 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.25 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.28 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.28 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.28 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.31 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.31 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.31 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.34 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.34 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.34 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.37 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.37 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.37 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.40 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.40 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.40 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.43 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.43 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.43 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.46 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.46 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.46 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.49 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.49 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.49 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.52 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.52 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.52 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.55 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.55 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.58 | Aula 20 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.55 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.59 | Objetiva da aula 20 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.58 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.60 | Prática da aula 20 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.58 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.61 | Aula 21 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.58 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.62 | Objetiva da aula 21 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.61 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.63 | Prática da aula 21 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.61 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.64 | Aula 22 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.61 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.65 | Objetiva da aula 22 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.64 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.66 | Prática da aula 22 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.64 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.67 | Aula 23 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.64 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.68 | Objetiva da aula 23 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.67 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.69 | Prática da aula 23 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.67 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.70 | Aula 24 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.67 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.71 | Objetiva da aula 24 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.70 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.72 | Prática da aula 24 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.70 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.73 | Aula 25 (4 h) · `PESADO · effort high` | 🟠 Alta | #233.70 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.74 | Objetiva da aula 25 — 50 questões · `PESADO · effort high` | 🟠 Alta | #233.73 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.75 | Prática da aula 25 — discursiva · `PESADO · effort high` | 🟠 Alta | #233.73 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #233.76 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #233.1 a #233.75 | ⬜ Pendente | — | [360-9a87fb48](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| #234-fe44c33e-46ff-41cf-a5c8-715317ae1573 | Interação com APIs — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.0 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.1 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.1 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.1 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.4 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.4 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.4 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.7 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.7 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.7 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.10 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.10 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.10 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.13 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.13 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.13 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.16 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.16 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.16 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.19 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.19 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.19 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.22 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.22 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.22 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.25 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.25 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #234.25 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #234.28 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #234.28 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #234.31 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #234.1 a #234.30 | ⬜ Pendente | — | [361-fe44c33e](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| #235-234da5ec-decd-4b40-81a8-bd68c4994e06 | Projeto de Front-End — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.0 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.1 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.1 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.1 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.4 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.4 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.4 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.7 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.7 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.7 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.10 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.10 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.10 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.13 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.13 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.13 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.16 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.16 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.16 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.19 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.19 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.19 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.22 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.22 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.22 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.25 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.25 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.25 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.28 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.28 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.28 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.31 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.31 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.31 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.34 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.34 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.34 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.37 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.37 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.37 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.40 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.40 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.40 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.43 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.43 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.43 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.46 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.46 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.46 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.49 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.49 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.49 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.52 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.52 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.52 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.55 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.55 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.58 | Aula 20 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.55 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.59 | Objetiva da aula 20 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.58 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.60 | Prática da aula 20 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.58 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.61 | Aula 21 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.58 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.62 | Objetiva da aula 21 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.61 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.63 | Prática da aula 21 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.61 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.64 | Aula 22 (4 h) · `PESADO · effort high` | 🟠 Alta | #235.61 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.65 | Objetiva da aula 22 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.64 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.66 | Prática da aula 22 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.64 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.67 | Aula 23 (2 h) · `PESADO · effort high` | 🟠 Alta | #235.64 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.68 | Objetiva da aula 23 — 50 questões · `PESADO · effort high` | 🟠 Alta | #235.67 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.69 | Prática da aula 23 — discursiva · `PESADO · effort high` | 🟠 Alta | #235.67 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #235.70 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #235.1 a #235.69 | ⬜ Pendente | — | [362-234da5ec](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| #236-5c15c359-6b87-47c7-bdb1-221da5196c79 | Sustentabilidade nos Processos Industriais — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #236.0 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #236.1 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #236.1 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #236.1 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #236.4 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #236.4 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #236.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #236.1 a #236.6 | ⬜ Pendente | — | [363-5c15c359](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| #237-e4f6aa49-961e-4a2e-aac9-243662519b0e | Introdução à Qualidade e Produtividade — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #237.0 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #237.1 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #237.1 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #237.1 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #237.4 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #237.4 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #237.4 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #237.7 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #237.7 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #237.7 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #237.10 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #237.10 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #237.13 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #237.1 a #237.12 | ⬜ Pendente | — | [364-e4f6aa49](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| #238-986ab616-43e5-4399-bd9f-1ac4cc52b013 | Codificação para Back-End — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.0 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.1 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.1 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.1 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.4 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.4 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.4 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.7 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.7 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.7 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.10 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.10 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.10 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.13 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.13 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.13 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.16 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.16 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.16 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.19 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.19 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.19 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.22 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.22 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.22 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.25 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.25 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.25 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.28 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.28 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.28 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.31 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.31 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.31 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.34 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.34 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.34 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.37 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.37 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.37 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.40 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.40 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.40 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.43 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.43 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.43 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.46 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.46 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.46 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.49 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.49 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.49 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.52 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.52 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.52 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.55 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.55 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.58 | Aula 20 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.55 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.59 | Objetiva da aula 20 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.58 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.60 | Prática da aula 20 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.58 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.61 | Aula 21 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.58 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.62 | Objetiva da aula 21 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.61 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.63 | Prática da aula 21 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.61 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.64 | Aula 22 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.61 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.65 | Objetiva da aula 22 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.64 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.66 | Prática da aula 22 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.64 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.67 | Aula 23 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.64 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.68 | Objetiva da aula 23 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.67 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.69 | Prática da aula 23 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.67 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.70 | Aula 24 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.67 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.71 | Objetiva da aula 24 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.70 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.72 | Prática da aula 24 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.70 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.73 | Aula 25 (4 h) · `PESADO · effort high` | 🟠 Alta | #238.70 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.74 | Objetiva da aula 25 — 50 questões · `PESADO · effort high` | 🟠 Alta | #238.73 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.75 | Prática da aula 25 — discursiva · `PESADO · effort high` | 🟠 Alta | #238.73 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #238.76 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #238.1 a #238.75 | ⬜ Pendente | — | [365-986ab616](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| #239-7484e5c2-428b-4064-9dc0-29c790390191 | Desenvolvimento de APIs — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.0 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.1 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.1 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.1 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.4 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.4 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.4 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.7 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.7 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.7 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.10 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.10 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.10 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.13 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.13 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.13 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.16 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.16 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.16 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.19 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.19 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.19 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.22 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.22 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.22 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.25 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.25 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.25 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.28 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.28 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.28 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.31 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.31 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.31 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.34 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.34 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.34 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.37 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.37 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.37 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.40 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.40 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #239.40 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #239.43 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #239.43 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #239.46 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #239.1 a #239.45 | ⬜ Pendente | — | [366-7484e5c2](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| #240-761052db-5723-46f9-bbde-626cd490d944 | Testes de Back-End — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.0 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.1 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.1 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.1 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.4 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.4 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.4 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.7 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.7 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.7 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.10 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.10 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.10 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.13 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.13 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.13 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.16 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.16 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.16 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.19 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.19 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.19 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.22 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.22 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.22 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.25 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.25 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #240.25 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #240.28 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #240.28 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #240.31 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #240.1 a #240.30 | ⬜ Pendente | — | [367-761052db](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| #241-76850d93-3481-4326-b49f-20ce07927910 | Projeto de Back-End — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.0 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.1 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.1 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.1 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.4 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.4 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.4 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.7 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.7 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.10 | Aula 04 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.7 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.11 | Objetiva da aula 04 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.10 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.12 | Prática da aula 04 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.10 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.13 | Aula 05 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.10 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.14 | Objetiva da aula 05 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.13 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.15 | Prática da aula 05 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.13 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.16 | Aula 06 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.13 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.17 | Objetiva da aula 06 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.16 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.18 | Prática da aula 06 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.16 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.19 | Aula 07 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.16 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.20 | Objetiva da aula 07 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.19 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.21 | Prática da aula 07 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.19 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.22 | Aula 08 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.19 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.23 | Objetiva da aula 08 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.22 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.24 | Prática da aula 08 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.22 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.25 | Aula 09 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.22 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.26 | Objetiva da aula 09 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.25 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.27 | Prática da aula 09 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.25 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.28 | Aula 10 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.25 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.29 | Objetiva da aula 10 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.28 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.30 | Prática da aula 10 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.28 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.31 | Aula 11 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.28 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.32 | Objetiva da aula 11 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.31 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.33 | Prática da aula 11 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.31 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.34 | Aula 12 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.31 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.35 | Objetiva da aula 12 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.34 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.36 | Prática da aula 12 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.34 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.37 | Aula 13 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.34 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.38 | Objetiva da aula 13 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.37 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.39 | Prática da aula 13 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.37 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.40 | Aula 14 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.37 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.41 | Objetiva da aula 14 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.40 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.42 | Prática da aula 14 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.40 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.43 | Aula 15 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.40 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.44 | Objetiva da aula 15 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.43 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.45 | Prática da aula 15 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.43 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.46 | Aula 16 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.43 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.47 | Objetiva da aula 16 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.46 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.48 | Prática da aula 16 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.46 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.49 | Aula 17 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.46 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.50 | Objetiva da aula 17 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.49 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.51 | Prática da aula 17 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.49 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.52 | Aula 18 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.49 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.53 | Objetiva da aula 18 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.52 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.54 | Prática da aula 18 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.52 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.55 | Aula 19 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.52 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.56 | Objetiva da aula 19 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.55 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.57 | Prática da aula 19 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.55 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.58 | Aula 20 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.55 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.59 | Objetiva da aula 20 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.58 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.60 | Prática da aula 20 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.58 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.61 | Aula 21 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.58 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.62 | Objetiva da aula 21 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.61 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.63 | Prática da aula 21 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.61 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.64 | Aula 22 (4 h) · `PESADO · effort high` | 🟠 Alta | #241.61 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.65 | Objetiva da aula 22 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.64 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.66 | Prática da aula 22 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.64 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.67 | Aula 23 (2 h) · `PESADO · effort high` | 🟠 Alta | #241.64 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.68 | Objetiva da aula 23 — 50 questões · `PESADO · effort high` | 🟠 Alta | #241.67 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.69 | Prática da aula 23 — discursiva · `PESADO · effort high` | 🟠 Alta | #241.67 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #241.70 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #241.1 a #241.69 | ⬜ Pendente | — | [368-76850d93](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| #242-dc369cab-4fee-45cf-b043-43f577fcb2ea | Saúde e Segurança no Trabalho — aulas e atividades (Técnico em Informática para Internet) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.1 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | #242.0 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.2 | Objetiva da aula 01 — 50 questões · `PESADO · effort high` | 🟠 Alta | #242.1 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.3 | Prática da aula 01 — discursiva · `PESADO · effort high` | 🟠 Alta | #242.1 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.4 | Aula 02 (4 h) · `PESADO · effort high` | 🟠 Alta | #242.1 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.5 | Objetiva da aula 02 — 50 questões · `PESADO · effort high` | 🟠 Alta | #242.4 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.6 | Prática da aula 02 — discursiva · `PESADO · effort high` | 🟠 Alta | #242.4 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.7 | Aula 03 (4 h) · `PESADO · effort high` | 🟠 Alta | #242.4 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #242.7 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #242.7 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #242.10 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #242.1 a #242.9 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -591,6 +1304,23 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 348-c7244bf6 | Dois cards da Aula 06 editam a mesma aula (#221, pedida em 2026-10-16) | [ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | 351-c05fdb13 | Aulas de Reforço de Matemática e Raciocínio Lógico (#224, pedida em 2026-10-16) | [ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | 352-88c1272e | Uma tarefa por matéria do Técnico em Informática para Internet (#225, pedida em 2026-10-16) | [ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| 353-cac80fd1 | Introdução à Tecnologia da Informação e Comunicação — aulas e atividades (#226, pedida em 2026-10-16, criada pela #225) | [ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
+| 354-92ce2a45 | Introdução ao Desenvolvimento de Projetos — aulas e atividades (#227, pedida em 2026-10-16, criada pela #225) | [ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md](etapas/ETAPA-354-92ce2a45-AULAS-E-ATIVIDADES-INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS.md) |
+| 355-19e1d161 | Introdução à Indústria 4.0 — aulas e atividades (#228, pedida em 2026-10-16, criada pela #225) | [ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md](etapas/ETAPA-355-19e1d161-AULAS-E-ATIVIDADES-INTRODUCAO-A-INDUSTRIA-4-0.md) |
+| 356-09720f0b | Arquitetura de Hardware e Software — aulas e atividades (#229, pedida em 2026-10-16, criada pela #225) | [ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md](etapas/ETAPA-356-09720f0b-AULAS-E-ATIVIDADES-ARQUITETURA-DE-HARDWARE-E-SOFTWARE.md) |
+| 357-faaf2827 | Versionamento e Colaboração — aulas e atividades (#230, pedida em 2026-10-16, criada pela #225) | [ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md](etapas/ETAPA-357-faaf2827-AULAS-E-ATIVIDADES-VERSIONAMENTO-E-COLABORACAO.md) |
+| 358-c5e72df0 | Lógica de Programação — aulas e atividades (#231, pedida em 2026-10-16, criada pela #225) | [ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md](etapas/ETAPA-358-c5e72df0-AULAS-E-ATIVIDADES-LOGICA-DE-PROGRAMACAO.md) |
+| 359-7bf607a8 | Fundamentos de UI/UX — aulas e atividades (#232, pedida em 2026-10-16, criada pela #225) | [ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md](etapas/ETAPA-359-7bf607a8-AULAS-E-ATIVIDADES-FUNDAMENTOS-DE-UI-UX.md) |
+| 360-9a87fb48 | Codificação para Front-End — aulas e atividades (#233, pedida em 2026-10-16, criada pela #225) | [ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md](etapas/ETAPA-360-9a87fb48-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-FRONT-END.md) |
+| 361-fe44c33e | Interação com APIs — aulas e atividades (#234, pedida em 2026-10-16, criada pela #225) | [ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md](etapas/ETAPA-361-fe44c33e-AULAS-E-ATIVIDADES-INTERACAO-COM-APIS.md) |
+| 362-234da5ec | Projeto de Front-End — aulas e atividades (#235, pedida em 2026-10-16, criada pela #225) | [ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md](etapas/ETAPA-362-234da5ec-AULAS-E-ATIVIDADES-PROJETO-DE-FRONT-END.md) |
+| 363-5c15c359 | Sustentabilidade nos Processos Industriais — aulas e atividades (#236, pedida em 2026-10-16, criada pela #225) | [ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md](etapas/ETAPA-363-5c15c359-AULAS-E-ATIVIDADES-SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS.md) |
+| 364-e4f6aa49 | Introdução à Qualidade e Produtividade — aulas e atividades (#237, pedida em 2026-10-16, criada pela #225) | [ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md](etapas/ETAPA-364-e4f6aa49-AULAS-E-ATIVIDADES-INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE.md) |
+| 365-986ab616 | Codificação para Back-End — aulas e atividades (#238, pedida em 2026-10-16, criada pela #225) | [ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md](etapas/ETAPA-365-986ab616-AULAS-E-ATIVIDADES-CODIFICACAO-PARA-BACK-END.md) |
+| 366-7484e5c2 | Desenvolvimento de APIs — aulas e atividades (#239, pedida em 2026-10-16, criada pela #225) | [ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md](etapas/ETAPA-366-7484e5c2-AULAS-E-ATIVIDADES-DESENVOLVIMENTO-DE-APIS.md) |
+| 367-761052db | Testes de Back-End — aulas e atividades (#240, pedida em 2026-10-16, criada pela #225) | [ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
+| 368-76850d93 | Projeto de Back-End — aulas e atividades (#241, pedida em 2026-10-16, criada pela #225) | [ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
+| 369-dc369cab | Saúde e Segurança no Trabalho — aulas e atividades (#242, pedida em 2026-10-16, criada pela #225) | [ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

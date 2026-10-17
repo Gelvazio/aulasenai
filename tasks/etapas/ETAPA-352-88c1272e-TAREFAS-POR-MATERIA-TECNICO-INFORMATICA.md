@@ -67,17 +67,29 @@ para Internet, já dividido em pedaços pequenos que qualquer IA do nível pode 
 ### Decisões
 
 - 2026-10-16 21:26 — Aguardando a aprovação do plano pelo usuário.
+- 2026-10-16 21:50 — **Plano aprovado pelo usuário** ("sim, aprovado, com a subtarefa 0"), com os
+  pedidos acrescentados no caminho: Progresso da turma nas práticas, "📄 Exportar Meu Gabarito" em
+  toda atividade e aulas e atividades no banco.
+- 2026-10-16 21:50 — Claude: a subtarefa `Aula NN` passou de MEDIO para **PESADO**, porque agora
+  gera o seed da tabela `aulas` (regra `niveis.md`: banco = PESADO). Cada mãe ganhou a subtarefa
+  `#N.0` (ementa, `materia.json`, plano) e, no fim, o aceite do usuário (`ciclo-da-task.md`).
+- Numeração: mães #226 a #242 (etapas 353 a 369); por aula `NN`, `#N.(3·NN−2)` = aula,
+  `#N.(3·NN−1)` = objetiva, `#N.(3·NN)` = prática.
 
 ### #225.1 — Criar no quadro as 17 tarefas e as 663 subtarefas
 
-**Próximo passo:** aguardar o "sim" do usuário ao plano acima.
+**Próximo passo:** — (concluída).
 
 - **Nível:** LEVE — só `.md` do quadro (linhas e etapas), sem lógica.
 - **Descrição:** 17 etapas novas (uma por matéria) e as linhas no `STATUS.md`.
 - **Critérios de aceitação:** contagem da tabela do escopo bate com o quadro.
+- **Entrega:** 17 mães (#226 a #242), 697 subtarefas (17 × subtarefa 0 + 663 de aulas e
+  atividades + 17 aceites) e as etapas 353 a 369.
+- **Verificação:** contagem das linhas no `STATUS.md` por mãe = 1 + 3 × aulas + 2 (ex.: #226 ITIC,
+  10 aulas = 33 linhas); dependências conferidas na #231 (Lógica de Programação, 32 aulas).
 
 ### #225.2 — Aceite do usuário
 
-**Próximo passo:** esperar a #225.1.
+**Próximo passo:** 👀 o usuário confere as tarefas #226 a #242 no quadro.
 
 - **Nível:** LEVE — conferência do usuário.
