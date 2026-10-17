@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-17 18:12)
+## Resumo (atualizado em 2026-10-17 18:22)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 1 | 2 | 80 | 0 | 83 |
+| 1 | 2 | 81 | 0 | 84 |
 
 ## Todos os seeds
 
@@ -107,7 +107,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-17-testes-frontend-atividade-pratica-aula-09-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 161 aula 130, bloqueada, 30 tópicos; md5 igual ao do arquivo |
 | `2026-10-17-testes-frontend-objetiva-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 157 aula 131 (aulas 127–131 criadas antes, matéria 48), 50 gabaritos; md5 igual ao do arquivo |
 | `2026-10-17-testes-frontend-atividade-pratica-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 162 aula 131, bloqueada, 30 tópicos; md5 igual ao do arquivo |
-| `2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | — | Gerado pela #260.3 (objetivas das aulas 01 e 02, aulas 104 e 105); aplicar pela #260.5 |
+| `2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **CONCLUÍDO** | 2026-10-17 18:22 | Aplicado em 2026-10-17 pela #260.5 (s20) em 2 lotes: atividade 163 (aula 104) e 164 (aula 105), 50 gabaritos cada; md5 igual ao do arquivo; nenhuma aula nova na matéria |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

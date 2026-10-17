@@ -115,7 +115,12 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.5 — Grupo B: aplicar o seed da Comunicação Oral (só local)
 
-**Próximo passo:** aguarda a #260.3.
+**Próximo passo:** — (entregue em 2026-10-17 18:22).
+
+- **Entrega (Opus 5.5, s20):** 2 lotes do `dividir_seed.py`: atividade **163** (aula 104) e
+  **164** (aula 105), 50 gabaritos cada; seed **CONCLUÍDO** no `SEEDS-APLICADOS.md`.
+- **Verificação:** md5 dos 2 gabaritos igual ao `esperado.json`; a matéria continua com 9 aulas
+  (nenhuma aula nova).
 
 - **Nível:** PESADO — seed no banco de produção.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
