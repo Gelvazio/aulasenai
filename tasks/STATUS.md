@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s17 | #181.4 concluída; #166 ([293-089e5b09](etapas/ETAPA-293-089e5b09-NOTA-DA-IA-NAO-APARECE-PARA-O-ALUNO.md)) aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:31 |
+| local · main · s17 | #248.1 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) — plano do comando verify; #166 aguarda o seu aceite | 🔄 Ativa | 2026-10-16 23:40 |
 | nuvem · ccr-3274812b-0nj48o | #244, #245, #246 e #247 concluídas (aceite da #247 em 2026-10-16 23:32) | ⏹️ Encerrada | 2026-10-16 23:32 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
@@ -58,7 +58,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
 | #248-189bc6ee-2e3f-4b28-913a-d00f18254cfa | **Comando "verify" e coluna VERIFICADO no quadro** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
-| #248.1 | Plano e aprovação (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| #248.1 | Plano e aprovação (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s17) (desde 2026-10-16 23:40) | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
 | #248.2 | Regra, gatilho e comando `verify` (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #248.1 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
 | #248.3 | Coluna `Verificado` no quadro, modelos e visualizador (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #248.1 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
 | #248.4 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | Usuário | #248.3 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
