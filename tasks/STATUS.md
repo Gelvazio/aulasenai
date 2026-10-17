@@ -31,7 +31,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
 | nuvem · ccr-04d42f6c-y5d6iz | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)): itens 22.3 a 22.7, 22.9 e 22.10 entregues sem banco; reserva liberada — falta 22.8 (frente local) e o aceite | ⏹️ Encerrada | 2026-10-16 21:35 |
 | nuvem · ccr-a6bf2a33-1m21a1 | #226.0 entregue (ementa 2.0, `materia.json` e plano das 10 aulas da ITIC do Técnico; [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md)); #226.1 livre | ⏹️ Encerrada | 2026-10-16 21:37 |
-| nuvem · ccr-a26b3c0e-1ljztf | #224 concluída ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)), aceite do usuário | ⏹️ Encerrada | 2026-10-16 21:37 |
+| nuvem · ccr-a26b3c0e-1ljztf | #243.1 ([370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md)) — plano das atividades de Reforço de Matemática | 🔄 Ativa | 2026-10-16 21:39 |
 | nuvem · relaxed-lovelace-sgtq7z | #167 aguarda aceite ([294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md)); #166 liberada (etapa 293); #168 criada ([295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md)), assumida depois do aceite da #167 | 👀 Aguardando o usuário | 2026-10-14 21:49 |
 | nuvem · lucid-cannon-whxrn1 | #169 ([296-eee19743](etapas/ETAPA-296-eee19743-CONFIRMAR-CORRECAO-SO-SE-NAO-CORRIGIDA.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 21:28 |
 | nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f | #171 ([298-cb630440](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md)) em execução | 🔄 Ativa | 2026-10-14 23:31 |
@@ -907,6 +907,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #242.8 | Objetiva da aula 03 — 50 questões · `PESADO · effort high` | 🟠 Alta | #242.7 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 | #242.9 | Prática da aula 03 — discursiva · `PESADO · effort high` | 🟠 Alta | #242.7 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 | #242.10 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #242.1 a #242.9 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| #243-73eb24d3-8ffb-4e05-bb3a-5423a73208e3 | Atividades de Reforço de Matemática e Raciocínio Lógico (Rio do Sul Mais Tech) | 🟠 Alta | #224 | 🔄 Em execução | — (não reservável) | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.1 | Plano das atividades (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:39) | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.2 | Atividades das aulas (fontes, páginas e seeds) · `PESADO · effort high` | 🟠 Alta | #243.1 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.3 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.2 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.3 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1313,6 +1318,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 367-761052db | Testes de Back-End — aulas e atividades (#240, pedida em 2026-10-16, criada pela #225) | [ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md](etapas/ETAPA-367-761052db-AULAS-E-ATIVIDADES-TESTES-DE-BACK-END.md) |
 | 368-76850d93 | Projeto de Back-End — aulas e atividades (#241, pedida em 2026-10-16, criada pela #225) | [ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
 | 369-dc369cab | Saúde e Segurança no Trabalho — aulas e atividades (#242, pedida em 2026-10-16, criada pela #225) | [ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
+| 370-73eb24d3 | Atividades de Reforço de Matemática e Raciocínio Lógico (#243, pedida em 2026-10-16) | [ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
