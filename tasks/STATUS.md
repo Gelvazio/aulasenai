@@ -910,6 +910,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #265-0f3f183e-cb2c-47eb-824f-c453ec251e01 | Usabilidade no celular (textos maiores, ícones e layout fluido) | 🟠 Alta | — | — | 👀 Aguardando o usuário | — (não reservável) | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.1 | Levantamento das páginas e plano · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1338,6 +1340,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 368-76850d93 | Projeto de Back-End — aulas e atividades (#241, pedida em 2026-10-16, criada pela #225) | [ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md](etapas/ETAPA-368-76850d93-AULAS-E-ATIVIDADES-PROJETO-DE-BACK-END.md) |
 | 369-dc369cab | Saúde e Segurança no Trabalho — aulas e atividades (#242, pedida em 2026-10-16, criada pela #225) | [ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 | 370-73eb24d3 | Atividades de Reforço de Matemática e Raciocínio Lógico (#243, pedida em 2026-10-16) | [ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| 392-0f3f183e | Usabilidade no celular (#265, pedida em 2026-10-17) | [ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
