@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 — Qualidade, Performance, Acessibilidade e CI CD (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="09" data-tema="Qualidade, Performance, Acessibilidade e CI CD" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🚦 Aula 09: Qualidade, Performance, Acessibilidade e CI CD</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-09-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-09-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Integração Contínua</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é integração contínua (CI)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever todo o código sem testes e juntar no fim do projeto.</li>
+                        <li><span class="letra">B)</span>Publicar o site uma vez por ano, depois de testar à mão.</li>
+                        <li><span class="letra">C)</span>Rodar os testes só no computador do professor.</li>
+                        <li><span class="letra">D)</span>Juntar o código várias vezes por dia, com os testes rodando automaticamente a cada envio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Entrega Contínua</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é entrega contínua (CD)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Rodar os testes à mão antes de cada publicação.</li>
+                        <li><span class="letra">B)</span>Escrever os testes depois da publicação.</li>
+                        <li><span class="letra">C)</span>Publicar automaticamente o que passou pelo CI.</li>
+                        <li><span class="letra">D)</span>Apagar as versões antigas do site.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Vantagem do CI</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a principal vantagem do CI para a equipe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ninguém depende de lembrar de rodar os testes: o servidor roda sempre do mesmo jeito.</li>
+                        <li><span class="letra">B)</span>O código passa a ser publicado sem nenhuma verificação.</li>
+                        <li><span class="letra">C)</span>Os testes deixam de ser necessários.</li>
+                        <li><span class="letra">D)</span>Cada pessoa testa de um jeito diferente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Arquivo do Workflow</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica o arquivo do workflow do GitHub Actions visto na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>.github/workflows/ci.yml</li>
+                        <li><span class="letra">B)</span>package.json, na chave workflow</li>
+                        <li><span class="letra">C)</span>src/workflows/ci.js</li>
+                        <li><span class="letra">D)</span>.gitignore</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Chave on</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No workflow, para que serve a chave on?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Define quando o workflow roda: a cada push na main e a cada pull request.</li>
+                        <li><span class="letra">B)</span>Instala o Node no servidor.</li>
+                        <li><span class="letra">C)</span>Liga a cobertura de testes.</li>
+                        <li><span class="letra">D)</span>Define a máquina virtual usada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Chave jobs</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a chave jobs agrupa no workflow?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os nomes dos integrantes da equipe.</li>
+                        <li><span class="letra">B)</span>As dependências do package.json.</li>
+                        <li><span class="letra">C)</span>Os grupos de passos que o pipeline executa.</li>
+                        <li><span class="letra">D)</span>As branches protegidas do repositório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Chave runs-on</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que define runs-on: ubuntu-latest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A versão do Node instalada.</li>
+                        <li><span class="letra">B)</span>A branch que recebe o merge.</li>
+                        <li><span class="letra">C)</span>A máquina virtual Linux em que o job roda.</li>
+                        <li><span class="letra">D)</span>O navegador usado nos testes E2E.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">actions/checkout</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o passo actions/checkout no workflow?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Publica o site na internet.</li>
+                        <li><span class="letra">B)</span>Apaga os testes que falharam.</li>
+                        <li><span class="letra">C)</span>Aprova o pull request automaticamente.</li>
+                        <li><span class="letra">D)</span>Baixa o código do repositório para a máquina do job.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">setup-node com cache</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o passo setup-node com cache: npm?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instala o Node e reaproveita os pacotes entre execuções.</li>
+                        <li><span class="letra">B)</span>Apaga o package-lock.json a cada execução.</li>
+                        <li><span class="letra">C)</span>Instala o Cypress no computador do aluno.</li>
+                        <li><span class="letra">D)</span>Desliga o cache do navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">npm ci</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o pipeline usa npm ci e não npm install?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o npm ci instala exatamente o que está no package-lock.json.</li>
+                        <li><span class="letra">B)</span>Porque o npm ci atualiza todas as versões para a mais nova.</li>
+                        <li><span class="letra">C)</span>Porque o npm ci não instala nenhuma dependência.</li>
+                        <li><span class="letra">D)</span>Porque o npm install não funciona no Linux.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Cobertura no Pipeline</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o job falha quando a cobertura fica abaixo da meta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque os limites da aula 7 fazem o npm run test:coverage terminar com erro.</li>
+                        <li><span class="letra">B)</span>Porque o YAML não aceita números.</li>
+                        <li><span class="letra">C)</span>Porque o GitHub apaga os arquivos sem teste.</li>
+                        <li><span class="letra">D)</span>Porque o Node para de funcionar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Indentação do YAML</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a regra de indentação do YAML vista na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2 espaços por nível, nunca tab.</li>
+                        <li><span class="letra">B)</span>Sempre 1 tab por nível.</li>
+                        <li><span class="letra">C)</span>Qualquer quantidade, porque o YAML ignora espaços.</li>
+                        <li><span class="letra">D)</span>4 tabs por nível.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">needs: testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz needs: testes no job de E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instala o Cypress no job testes.</li>
+                        <li><span class="letra">B)</span>Faz o E2E rodar antes de todos os outros jobs.</li>
+                        <li><span class="letra">C)</span>Faz o E2E rodar só se o job testes passar.</li>
+                        <li><span class="letra">D)</span>Desliga o job testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Por Que E2E Depois</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é bom o E2E rodar só depois dos testes unitários e de integração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o E2E não encontra defeitos.</li>
+                        <li><span class="letra">B)</span>Porque o GitHub proíbe dois jobs no mesmo arquivo.</li>
+                        <li><span class="letra">C)</span>Porque o E2E apaga o resultado dos outros testes.</li>
+                        <li><span class="letra">D)</span>Porque o E2E é o mais lento, e não vale rodá-lo se os rápidos já falharam.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Action do Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na action do Cypress, para que servem start: npm run dev e wait-on?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Iniciam a aplicação e esperam o endereço responder antes dos testes.</li>
+                        <li><span class="letra">B)</span>Abrem o painel visual do Cypress no computador do aluno.</li>
+                        <li><span class="letra">C)</span>Instalam o Vitest e rodam a cobertura.</li>
+                        <li><span class="letra">D)</span>Publicam o site e encerram o workflow.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Proteção da Branch</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde se cria a regra que protege a branch main no GitHub?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No terminal, com npm run protect.</li>
+                        <li><span class="letra">B)</span>No README.md do projeto.</li>
+                        <li><span class="letra">C)</span>No arquivo package.json.</li>
+                        <li><span class="letra">D)</span>Em Settings → Branches, numa regra para a main.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Exigências da Proteção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais exigências da proteção da main foram vistas na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Status dos testes aprovado e pelo menos 1 revisão aprovada no pull request.</li>
+                        <li><span class="letra">B)</span>Somente que o autor seja o professor.</li>
+                        <li><span class="letra">C)</span>Que ninguém revise o pull request.</li>
+                        <li><span class="letra">D)</span>Que o pull request tenha mais de 100 arquivos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Pull Request Bloqueado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com a proteção ativa, o que acontece com um pull request com teste quebrado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O pull request é juntado e o teste é apagado.</li>
+                        <li><span class="letra">B)</span>O check fica vermelho e o pull request não pode ser juntado.</li>
+                        <li><span class="letra">C)</span>O check fica verde mesmo com o teste quebrado.</li>
+                        <li><span class="letra">D)</span>O GitHub corrige o teste sozinho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Garantia da Proteção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a proteção da branch garante para a main?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que ela só recebe código testado.</li>
+                        <li><span class="letra">B)</span>Que qualquer pessoa pode juntar qualquer código.</li>
+                        <li><span class="letra">C)</span>Que ela nunca recebe código novo.</li>
+                        <li><span class="letra">D)</span>Que os testes deixam de rodar nela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Acessibilidade e Usabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a acessibilidade faz parte da usabilidade (4.2)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque usabilidade é apenas a velocidade da página.</li>
+                        <li><span class="letra">B)</span>Porque leitores de tela não acessam sites.</li>
+                        <li><span class="letra">C)</span>Porque a tela precisa ser usável também por quem usa leitor de tela, teclado ou alto contraste.</li>
+                        <li><span class="letra">D)</span>Porque acessibilidade só trata das cores da marca.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">axe-core</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o axe-core confere automaticamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cobertura de código da suíte.</li>
+                        <li><span class="letra">B)</span>O tempo de carregamento da página.</li>
+                        <li><span class="letra">C)</span>Regras de acessibilidade (WCAG) da página.</li>
+                        <li><span class="letra">D)</span>A indentação do arquivo YAML.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Instalando o vitest-axe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o vitest-axe como dependência de desenvolvimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx axe install</li>
+                        <li><span class="letra">B)</span>npm install -D vitest-axe</li>
+                        <li><span class="letra">C)</span>npm init axe@latest</li>
+                        <li><span class="letra">D)</span>npm run axe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Teste com axe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação confere que o checkout não tem violações de acessibilidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(axe).toBeDefined();</li>
+                        <li><span class="letra">B)</span>expect(resultado.violations).toHaveLength(0);</li>
+                        <li><span class="letra">C)</span>expect(resultado.violations).toHaveLength(1);</li>
+                        <li><span class="letra">D)</span>expect(resultado).toBe(true);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Chamando o axe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o teste chama o axe sobre a tela montada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>const resultado = axe.run(&#x27;checkout.html&#x27;);</li>
+                        <li><span class="letra">B)</span>const resultado = await fetch(&#x27;/axe&#x27;);</li>
+                        <li><span class="letra">C)</span>const resultado = document.body.axe();</li>
+                        <li><span class="letra">D)</span>const resultado = await axe(document.body);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Campo sem Rótulo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção para um campo de CEP sem rótulo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o campo do formulário.</li>
+                        <li><span class="letra">B)</span>Trocar a cor de fundo do campo.</li>
+                        <li><span class="letra">C)</span>Aumentar o tamanho da fonte do campo.</li>
+                        <li><span class="letra">D)</span>&lt;label for=&quot;cep&quot;&gt;CEP&lt;/label&gt; ligado ao input com id=&quot;cep&quot;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Imagem sem Texto Alternativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção para uma imagem de produto sem texto alternativo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>class=&quot;imagem-produto&quot;</li>
+                        <li><span class="letra">B)</span>alt=&quot;&quot;</li>
+                        <li><span class="letra">C)</span>title=&quot;imagem&quot;</li>
+                        <li><span class="letra">D)</span>alt=&quot;Fone de ouvido sem fio preto&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Botão Só com Ícone</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção para um botão de lixeira que só tem um ícone?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>aria-label=&quot;Remover item&quot;</li>
+                        <li><span class="letra">B)</span>id=&quot;botao1&quot;</li>
+                        <li><span class="letra">C)</span>style=&quot;color: red&quot;</li>
+                        <li><span class="letra">D)</span>class=&quot;botao-lixeira&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Contraste Mínimo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a relação de contraste mínima citada na aula para o texto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2:1</li>
+                        <li><span class="letra">B)</span>1:1</li>
+                        <li><span class="letra">C)</span>4,5:1</li>
+                        <li><span class="letra">D)</span>10:1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Limite do axe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O axe dispensa o teste manual de acessibilidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sim: ele encontra todos os problemas de acessibilidade.</li>
+                        <li><span class="letra">B)</span>Não: ele encontra parte dos problemas; o resto exige teclado e leitor de tela.</li>
+                        <li><span class="letra">C)</span>Sim: o teste manual é proibido.</li>
+                        <li><span class="letra">D)</span>Não: o axe não encontra nenhum problema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Onde Fica o Lighthouse</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde se roda a auditoria do Lighthouse vista na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dentro do arquivo ci.yml.</li>
+                        <li><span class="letra">B)</span>No Chrome DevTools, na aba Lighthouse.</li>
+                        <li><span class="letra">C)</span>No Settings → Branches do GitHub.</li>
+                        <li><span class="letra">D)</span>No terminal, com npm ci.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Modo da Auditoria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em que modo a página deve ser auditada no Lighthouse, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Modo impressão.</li>
+                        <li><span class="letra">B)</span>Modo somente texto.</li>
+                        <li><span class="letra">C)</span>Modo desligado.</li>
+                        <li><span class="letra">D)</span>Modo mobile.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">LCP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que mede o LCP (Largest Contentful Paint)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tempo de resposta a cliques e toques.</li>
+                        <li><span class="letra">B)</span>Quanto a página pula enquanto carrega.</li>
+                        <li><span class="letra">C)</span>O tempo até o maior elemento da página aparecer.</li>
+                        <li><span class="letra">D)</span>A quantidade de testes da suíte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Valor Bom de LCP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual valor de LCP é considerado bom?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acima de 4 s.</li>
+                        <li><span class="letra">B)</span>Até 25 s.</li>
+                        <li><span class="letra">C)</span>Até 2,5 s.</li>
+                        <li><span class="letra">D)</span>Exatamente 0,1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">INP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que mede o INP (Interaction to Next Paint)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tempo até o maior elemento aparecer.</li>
+                        <li><span class="letra">B)</span>O tamanho das imagens da página.</li>
+                        <li><span class="letra">C)</span>O tempo de resposta a cliques e toques.</li>
+                        <li><span class="letra">D)</span>Quanto a página pula enquanto carrega.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Valor Bom de INP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual valor de INP é considerado bom?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Até 200 ms.</li>
+                        <li><span class="letra">B)</span>Acima de 2 s.</li>
+                        <li><span class="letra">C)</span>Exatamente 4,5:1.</li>
+                        <li><span class="letra">D)</span>Até 20 s.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">CLS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que mede o CLS (Cumulative Layout Shift)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cobertura de branches.</li>
+                        <li><span class="letra">B)</span>Quanto a página &quot;pula&quot; enquanto carrega.</li>
+                        <li><span class="letra">C)</span>O tempo de resposta a cliques.</li>
+                        <li><span class="letra">D)</span>O tempo até o maior elemento aparecer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Valor Bom de CLS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual valor de CLS é considerado bom?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exatamente 200.</li>
+                        <li><span class="letra">B)</span>Acima de 2,5.</li>
+                        <li><span class="letra">C)</span>Até 10.</li>
+                        <li><span class="letra">D)</span>Até 0,1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">LCP Alto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A vitrine tem LCP de 4,8 s por causa de uma imagem de 3 MB. Qual melhoria testar primeiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desligar o CI do repositório.</li>
+                        <li><span class="letra">B)</span>Otimizar a imagem, deixando-a menor e mais leve.</li>
+                        <li><span class="letra">C)</span>Acrescentar mais imagens grandes na vitrine.</li>
+                        <li><span class="letra">D)</span>Trocar o texto dos botões.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Página Que Pula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual melhoria ajuda o CLS quando a página pula ao carregar as fotos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Carregar todas as imagens ao mesmo tempo.</li>
+                        <li><span class="letra">B)</span>Definir largura e altura (width e height) das imagens.</li>
+                        <li><span class="letra">C)</span>Aumentar o tamanho dos arquivos das imagens.</li>
+                        <li><span class="letra">D)</span>Remover o texto alternativo das imagens.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Melhorando o INP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual melhoria típica ajuda o INP (resposta a cliques)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imagens maiores na vitrine.</li>
+                        <li><span class="letra">B)</span>Menos JavaScript na carga inicial.</li>
+                        <li><span class="letra">C)</span>Mais JavaScript na carga inicial.</li>
+                        <li><span class="letra">D)</span>Remover os rótulos dos campos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Fora da Tela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer com o conteúdo que fica fora da tela ao carregar a página?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Transformar o conteúdo em imagem de 3 MB.</li>
+                        <li><span class="letra">B)</span>Carregar tudo antes de mostrar a primeira tela.</li>
+                        <li><span class="letra">C)</span>Carregar sob demanda, quando o usuário rolar até ele.</li>
+                        <li><span class="letra">D)</span>Apagar todo o conteúdo de baixo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Pull Request como Encontro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o pull request é o ponto de encontro da equipe de testes (2.4)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ali o código é publicado sem revisão.</li>
+                        <li><span class="letra">B)</span>Porque ali os testes são apagados.</li>
+                        <li><span class="letra">C)</span>Porque ali cada um trabalha sozinho sem ver os outros.</li>
+                        <li><span class="letra">D)</span>Porque ali o CI mostra o resultado e os colegas revisam e comentam os testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Revisão no Pull Request</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica do pull request, o que faz o integrante que revisa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a branch sem ler.</li>
+                        <li><span class="letra">B)</span>Desliga a proteção da main.</li>
+                        <li><span class="letra">C)</span>Comenta onde está a falha.</li>
+                        <li><span class="letra">D)</span>Junta o pull request mesmo com o check vermelho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Liberando o Merge</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, quando o merge do pull request é liberado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando o professor sai da sala.</li>
+                        <li><span class="letra">B)</span>Quando o check fica vermelho.</li>
+                        <li><span class="letra">C)</span>Assim que o pull request é aberto.</li>
+                        <li><span class="letra">D)</span>Quando o check fica verde e um integrante aprova.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Defeito no Pull Request</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é melhor pegar o defeito no pull request do que na main?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a main não é usada por ninguém.</li>
+                        <li><span class="letra">B)</span>Porque é corrigido antes de chegar à loja publicada e aos clientes.</li>
+                        <li><span class="letra">C)</span>Porque na main o defeito some sozinho.</li>
+                        <li><span class="letra">D)</span>Porque no pull request ninguém vê o defeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Badge</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o badge no README.md mostra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O número de linhas do projeto.</li>
+                        <li><span class="letra">B)</span>O estado dos testes da main para qualquer pessoa.</li>
+                        <li><span class="letra">C)</span>A lista de todas as dependências.</li>
+                        <li><span class="letra">D)</span>A foto de quem escreveu os testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Endereço do Badge</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o final do endereço da imagem do badge do workflow ci.yml?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>/actions/workflows/ci.yml/badge.svg</li>
+                        <li><span class="letra">B)</span>/src/ci.js</li>
+                        <li><span class="letra">C)</span>/package.json/badge</li>
+                        <li><span class="letra">D)</span>/settings/branches/main.png</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">TESTING.md</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o TESTING.md documenta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As senhas do repositório.</li>
+                        <li><span class="letra">B)</span>Como rodar a suíte, a estratégia de testes e como contribuir com testes.</li>
+                        <li><span class="letra">C)</span>Somente a lista de clientes da loja.</li>
+                        <li><span class="letra">D)</span>O histórico de commits do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Integrante Novo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o TESTING.md ajuda um integrante novo da equipe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele passa a revisar sem ler o código.</li>
+                        <li><span class="letra">B)</span>Ele sabe sozinho rodar e escrever testes do mesmo jeito que os outros.</li>
+                        <li><span class="letra">C)</span>Ele não precisa mais rodar os testes.</li>
+                        <li><span class="letra">D)</span>Ele pode desligar o CI quando quiser.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Ordem de Impacto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No relatório, o axe apontou 7 campos sem rótulo e o Lighthouse mediu LCP de 4,8 s. Como apresentar as correções?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em ordem alfabética, sem evidências.</li>
+                        <li><span class="letra">B)</span>Só a mais fácil, escondendo as outras.</li>
+                        <li><span class="letra">C)</span>Nenhuma, porque os testes já existem.</li>
+                        <li><span class="letra">D)</span>Em ordem de impacto, com a evidência de cada problema.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 09: Qualidade, Performance, Acessibilidade e CI CD</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
