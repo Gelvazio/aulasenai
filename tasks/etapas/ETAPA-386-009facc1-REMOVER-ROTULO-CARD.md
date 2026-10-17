@@ -29,18 +29,18 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
 
 ### Decisões
 
-- (aguardando o "sim" do usuário ao plano)
+- **Plano aprovado** pelo usuário em 2026-10-17 12:38 ("SIM").
 
 ### #259.1 — Plano e aprovação
 
-**Próximo passo:** esperar o "sim" do usuário.
+**Próximo passo:** — (aprovado em 2026-10-17 12:38).
 
 - **Nível:** PESADO — apagar coluna do banco.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 
 ### #259.2 — Tirar o `rotulo_card` das consultas e do modal
 
-**Próximo passo:** depois do "sim": delegar ao `executor-medio`.
+**Próximo passo:** delegado ao `executor-medio`.
 
 - **Nível:** MEDIO — JS de tela, 3 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro
