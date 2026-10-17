@@ -127,7 +127,9 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.8 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere a #244.2, a #244.3 e a #244.9 (os 2 pontos da revisão já
-foram decididos em 2026-10-16 22:19).
+**Próximo passo:** — (entregue).
+
+- **Entrega:** aceite do usuário em 2026-10-16 22:41 ("244.8 ok"). **Verificação:** resposta do
+  usuário; tarefa #244 concluída (#244.4 a #244.7 canceladas por decisão do usuário).
 
 - **Nível:** LEVE — conferência do usuário.
