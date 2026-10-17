@@ -117,3 +117,7 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
   políticas e a função saíram. O `delete from storage.buckets` foi recusado pelo Supabase
   (`storage.protect_delete`: só pela API do Storage), então o bucket vazio fica para o painel.
 - **Verificação:** consulta: 0 políticas `slides_*`, 0 funções, bucket 1 (vazio, 0 arquivos).
+
+### Conferência #181.4 (2026-10-17 00:55, Claude Code (Opus 5.5) s17, só leitura)
+
+**Resultado: ⚠️ Parcial (#209.7)** — banco: 0 políticas `slides*`, 0 funções de slide; o bucket `slides` ainda existe (vazio, 0 arquivos). Falta o usuário apagar o bucket no painel.

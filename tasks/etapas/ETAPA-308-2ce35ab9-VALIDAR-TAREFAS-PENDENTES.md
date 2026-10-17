@@ -98,13 +98,13 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 
 ### #181.4 — Conferir as tarefas de banco e segurança
 
-**Próximo passo:** aguardando a #181.1.
+**Próximo passo:** ✅ Feito em 2026-10-17 00:55 (Opus 5.5); a #181.5 pode começar.
 
 - **Nível:** PESADO — banco, RLS e gabarito; só o Claude Code **local** (acesso ao banco).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `banco/segurança`: o banco (só consulta) e o código
   batem com o pedido? Mesmo resultado e prova da #181.2. ⛔ Nada de aplicar SQL.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** seção "Conferência #181.4" em cada etapa: #36 ✅ Feito no código · #193 ⚠️ substituída pela #206 · #199.1 ❌ não feito (espera o usuário) · #209.7 ⚠️ parcial (falta apagar o bucket vazio) · #221.2 ❌ não feito (espera o "sim"). · **Verificação:** consultas só de leitura no Supabase (catálogo, `storage`, `atividade` 19) e `grep` no código.
 
 ### #181.5 — Relatório final
 
