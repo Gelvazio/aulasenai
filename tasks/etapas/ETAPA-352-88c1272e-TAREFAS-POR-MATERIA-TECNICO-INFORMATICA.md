@@ -18,6 +18,11 @@ para Internet, já dividido em pedaços pequenos que qualquer IA do nível pode 
   critério de aceitação de cada subtarefa `Prática da aula NN` — a atividade abre pelo layout
   global (`avaliacao-discursiva.js`), que já traz o "Progresso da turma" com os filtros
   (`assets/js/progresso-turma-global.js`, `docs/regras/atividades.md`); sem cópia por matéria.
+- **"📄 Exportar Meu Gabarito" em toda atividade** (pedido em 2026-10-16 21:40, como na ITIC):
+  critério de aceitação de cada `Objetiva da aula NN` e `Prática da aula NN` — botão do aluno
+  ligado (`<body data-exportar-meu-gabarito="sim">` na objetiva; campo
+  `- **Exportar Meu Gabarito:** sim` na fonte da discursiva, botão no painel IDENTIFICAÇÃO ao lado
+  do "🔑 Gabarito da Atividade-Respostas"), regra `docs/regras/atividades.md` (#82, #196).
 - **Aulas por matéria** (1 aula a cada 4 h, arredondando para cima):
 
 | Matéria | CH | Aulas | Subtarefas |
