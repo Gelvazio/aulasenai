@@ -909,9 +909,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #242.10 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #242.1 a #242.9 | ⬜ Pendente | — | [369-dc369cab](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 | #243-73eb24d3-8ffb-4e05-bb3a-5423a73208e3 | Atividades de Reforço de Matemática e Raciocínio Lógico (Rio do Sul Mais Tech) | 🟠 Alta | #224 | 🔄 Em execução | — (não reservável) | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.1 | Plano das atividades (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:39) | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
-| #243.2 | Atividades das aulas (fontes, páginas e seeds) · `PESADO · effort high` | 🟠 Alta | #243.1 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
-| #243.3 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.2 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
-| #243.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.3 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.2 | `materia.json` e grupo no gerador de seeds · `MEDIO · effort medium` | 🟠 Alta | #243.1 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.3 | Atividades das aulas 01 a 08 (objetiva + prática + seeds) · `PESADO · effort high` | 🟠 Alta | #243.2 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.4 | Atividades das aulas 09 a 16 (objetiva + prática + seeds) · `PESADO · effort high` | 🟠 Alta | #243.3 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.5 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.6 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
