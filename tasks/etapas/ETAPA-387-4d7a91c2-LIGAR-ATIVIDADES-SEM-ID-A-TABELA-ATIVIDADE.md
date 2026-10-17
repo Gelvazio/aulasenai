@@ -160,7 +160,12 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.4 — Documentação
 
-**Próximo passo:** aguarda a #260.2 e a #260.5.
+**Próximo passo:** — (entregue em 2026-10-17 18:30; tarefa #260 concluída).
+
+- **Entrega (Haiku · executor-leve; líder Opus 5.5, s20):** subseção "🆔 Como a página acha o
+  id da atividade" em `docs/regras/atividades.md` + entrada no `docs/HISTORICO-REGRAS.md`;
+  `STATUS-ATIVIDADES.md` da Comunicação Oral (163/164) e de Testes de Front-End (153–162).
+- **Verificação (líder):** diff lido nos 4 arquivos; só `.md`.
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** só Haiku — nunca outro

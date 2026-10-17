@@ -8,13 +8,14 @@
 
 **Decisão do usuário (2026-10-08):** atividades de 50 questões só nas aulas 01 a 07; a aula 08 é a
 Avaliação Prática e a aula 09 a Avaliação Objetiva (30 questões).
-**Banco:** ainda não cadastrado — a matéria e as aulas não existem no Supabase; os seeds gerados em
-`database/` (fora do Git) só são aplicados a pedido do usuário.
+**Banco:** objetivas das aulas 01 e 02 já cadastradas (2026-10-17: atividades 163 e 164, aulas 104 e 105).
+As demais aulas ainda não existem no Supabase; os seeds gerados em `database/` (fora do Git) só são
+aplicados a pedido do usuário.
 
 | Aula | Tema | Objetiva (50) | Questões | Gabarito A/B/C/D | Prática (10) | Banco |
 |---|---|---|---|---|---|---|
-| 01 | Fundamentos da Comunicação no Mundo do Trabalho | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 🔄 prática no banco (atividade id 118, aula id 104, bloqueada; md5 conferido em 2026-10-09 21:19); objetiva ainda sem seed (não está no banco) |
-| 02 | Comunicação Interpessoal e Trabalho em Equipe | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 🔄 prática no banco (atividade id 119, aula id 105, bloqueada; md5 conferido em 2026-10-09 21:19); objetiva ainda sem seed (não está no banco) |
+| 01 | Fundamentos da Comunicação no Mundo do Trabalho | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 🔄 prática no banco (atividade id 118, aula id 104, bloqueada; md5 conferido em 2026-10-09 21:19); ✅ objetiva no banco (atividade id 163, aula id 104, 50 questões; seed `database/2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` CONCLUÍDO em 2026-10-17) |
+| 02 | Comunicação Interpessoal e Trabalho em Equipe | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 🔄 prática no banco (atividade id 119, aula id 105, bloqueada; md5 conferido em 2026-10-09 21:19); ✅ objetiva no banco (atividade id 164, aula id 105, 50 questões; seed `database/2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` CONCLUÍDO em 2026-10-17) |
 | 03 | Falar em Público e Apresentações | ⬜ | — | — | ⬜ | ⬜ |
 | 04 | Reuniões e Atendimento ao Cliente | ⬜ | — | — | ⬜ | ⬜ |
 | 05 | Redação Técnica: Clareza, Estrutura e Norma-Padrão | ⬜ | — | — | ⬜ | ⬜ |

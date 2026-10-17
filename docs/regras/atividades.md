@@ -695,6 +695,18 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   `assets/js/indice-turma-favorita.js` + `assets/css/indice-turma-favorita.css`, carregados por
   `atividades-crud-modal.js` junto com `assets/js/turma-favorita.js` (não repetir por matéria).
 
+### 🆔 Como a página acha o id da atividade (tarefa #260, 2026-10-17)
+
+- O HTML da atividade **não guarda id**. A página acha o id pela coluna `atividade.pagina`, que
+  tem o endereço da própria página (`location.pathname`). Quem faz isso são
+  `assets/js/respostas-atividade-banco.js` (folha de respostas) e
+  `assets/js/atividade-bloqueio-aula.js` (bloqueio da aula).
+- Página nova só fica ligada (id, aula e gabarito) **depois que o seed dela é aplicado** no banco.
+  Antes disso, a página não acha a atividade e a marcação fica bloqueada com aviso.
+- No índice, a etiqueta "ID NN" de cada botão (só professor) vem **sempre do banco**. Quando os
+  botões das atividades vinculadas à aula são refeitos, a etiqueta é refeita junto (evento
+  `aula-bloqueio-alterado`, em `assets/js/atividades-crud-modal.js`).
+
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 
 ⚠️ **Toda atividade prática de Excel (ou LibreOffice Calc) segue este padrão de detalhamento e
