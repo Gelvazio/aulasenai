@@ -194,6 +194,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #223.2 | Capítulos em Markdown, um por vez com validação · `MEDIO · effort medium` | 🟠 Alta | #223.1 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #223.3 | Markdown completo e HTML · `MEDIO · effort medium` | 🟠 Alta | #223.2 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #223.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #223.3 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
+| #224-c05fdb13-e858-4067-adbf-ab5f10659f5b | Aulas de Reforço de Matemática e Raciocínio Lógico (Rio do Sul Mais Tech) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #224.1 | Plano das aulas (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #224.3 | Status da matéria · `LEVE · effort low` | 🟠 Alta | #224.2 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #224.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #224.3 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -581,6 +586,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 346-8c368c8c | Remover o Excluir aula do Editar aula (#219, pedida em 2026-10-16) | [ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md](etapas/ETAPA-346-8c368c8c-REMOVER-EXCLUIR-AULA-DO-EDITAR-AULA.md) |
 | 347-aa8b3abc | Grade de botões do Editar aula (#220, pedida em 2026-10-16) | [ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md) |
 | 348-c7244bf6 | Dois cards da Aula 06 editam a mesma aula (#221, pedida em 2026-10-16) | [ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| 351-c05fdb13 | Aulas de Reforço de Matemática e Raciocínio Lógico (#224, pedida em 2026-10-16) | [ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
