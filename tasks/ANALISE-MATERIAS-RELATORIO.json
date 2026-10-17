@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-11 01:20:19",
+  "gerado_em": "2026-10-17 00:03:34",
   "padrao": "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -11,15 +11,16 @@
   ],
   "cursos": [
     "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
+    "CURSO-PROFESSOR-RAFAEL",
     "GESTAO_E_CONTROLE_MATERIAIS",
     "OPERADOR_PRODUCAO_INDUSTRIAL",
     "QUALIFICACAO-PROFISSIONAL",
     "RIO_DO_SUL_MAIS_TECH",
     "TECNICO-INFORMATICA-INTERNET"
   ],
-  "total_materias": 34,
+  "total_materias": 33,
   "completas": 2,
-  "incompletas": 32,
+  "incompletas": 31,
   "materias": [
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -37,7 +38,7 @@
       },
       "contagem": {
         "aulas_conteudo": 20,
-        "fontes_atividades": 60,
+        "fontes_atividades": 64,
         "atividades_50_questoes": 20,
         "atividades_praticas": 20,
         "apostila_html": 0
@@ -67,9 +68,9 @@
       },
       "contagem": {
         "aulas_conteudo": 10,
-        "fontes_atividades": 16,
-        "atividades_50_questoes": 3,
-        "atividades_praticas": 3,
+        "fontes_atividades": 20,
+        "atividades_50_questoes": 5,
+        "atividades_praticas": 5,
         "apostila_html": 1
       },
       "ementa": {
@@ -97,7 +98,7 @@
       },
       "contagem": {
         "aulas_conteudo": 12,
-        "fontes_atividades": 28,
+        "fontes_atividades": 34,
         "atividades_50_questoes": 10,
         "atividades_praticas": 6,
         "apostila_html": 1
@@ -156,7 +157,7 @@
       },
       "contagem": {
         "aulas_conteudo": 0,
-        "fontes_atividades": 20,
+        "fontes_atividades": 21,
         "atividades_50_questoes": 14,
         "atividades_praticas": 0,
         "apostila_html": 0
@@ -1091,40 +1092,6 @@
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "Testes de Sistemas-EXISTENTES",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
-      "completa": false,
-      "pecas": {
-        "ementa": true,
-        "materia_json": false,
-        "status_aulas": true,
-        "indice_atividades": true,
-        "status_atividades": true,
-        "status_apostila": true,
-        "status_materia": true
-      },
-      "contagem": {
-        "aulas_conteudo": 0,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
-        "apostila_html": 0
-      },
-      "ementa": {
-        "caracteres": 14800,
-        "dentro_da_faixa": true
-      },
-      "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ],
-      "ordem": 33
-    },
-    {
-      "curso": "TECNICO-INFORMATICA-INTERNET",
       "materia": "VERSIONAMENTO-E-COLABORACAO",
       "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/VERSIONAMENTO-E-COLABORACAO",
       "completa": false,
@@ -1156,13 +1123,15 @@
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4644)"
       ],
-      "ordem": 34
+      "ordem": 33
     }
   ],
   "pastas_ignoradas_sem_ementa_nem_materia_json": [
+    "MATERIAIS/CURSO-PROFESSOR-RAFAEL/MATERIA-XYZ",
     "MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/docs",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/docs",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/scripts",
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
     "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs"
   ]
 }

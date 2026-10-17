@@ -1,0 +1,305 @@
+{
+  "nota_minima": 70,
+  "grupos": [
+    {
+      "id": "atividades",
+      "peso": "60%",
+      "nota_subtotal": true,
+      "subtotal": "Subtotal — avaliação contínua: 40 atividades das aulas (1,5 ponto cada)",
+      "itens": [
+        {
+          "nome": "Atividade Aula 01",
+          "conteudo": "Banco de dados e SGBD: conceitos e usos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-01-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 01",
+          "conteudo": "Banco de dados e SGBD: conceitos e usos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-01.html"
+        },
+        {
+          "nome": "Atividade Aula 02",
+          "conteudo": "Gerenciadores: características, requisitos e níveis",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-02-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 02",
+          "conteudo": "Gerenciadores: características, requisitos e níveis",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-02.html"
+        },
+        {
+          "nome": "Atividade Aula 03",
+          "conteudo": "Preparação do ambiente: instalação do PostgreSQL",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-03-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 03",
+          "conteudo": "Preparação do ambiente: instalação do PostgreSQL",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-03.html"
+        },
+        {
+          "nome": "Atividade Aula 04",
+          "conteudo": "Configuração do SGBD e infraestrutura do sistema",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-04-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 04",
+          "conteudo": "Configuração do SGBD e infraestrutura do sistema",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-04.html"
+        },
+        {
+          "nome": "Atividade Aula 05",
+          "conteudo": "Demandas do cliente e escopo do projeto",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-05-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 05",
+          "conteudo": "Demandas do cliente e escopo do projeto",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-05.html"
+        },
+        {
+          "nome": "Atividade Aula 06",
+          "conteudo": "Entidades fortes, fracas e associativas",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-06-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 06",
+          "conteudo": "Entidades fortes, fracas e associativas",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-06.html"
+        },
+        {
+          "nome": "Atividade Aula 07",
+          "conteudo": "Atributos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-07-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 07",
+          "conteudo": "Atributos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-07.html"
+        },
+        {
+          "nome": "Atividade Aula 08",
+          "conteudo": "Relacionamentos 1:1, 1:N e N:N",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-08-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 08",
+          "conteudo": "Relacionamentos 1:1, 1:N e N:N",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-08.html"
+        },
+        {
+          "nome": "Atividade Aula 09",
+          "conteudo": "Diagrama entidade-relacionamento",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-09-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 09",
+          "conteudo": "Diagrama entidade-relacionamento",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-09.html"
+        },
+        {
+          "nome": "Atividade Aula 10",
+          "conteudo": "Normalização de dados (1FN, 2FN e 3FN)",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-10-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 10",
+          "conteudo": "Normalização de dados (1FN, 2FN e 3FN)",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-10.html"
+        },
+        {
+          "nome": "Atividade Aula 11",
+          "conteudo": "Padronização de dados, cronograma e fluxograma",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-11-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 11",
+          "conteudo": "Padronização de dados, cronograma e fluxograma",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-11.html"
+        },
+        {
+          "nome": "Atividade Aula 12",
+          "conteudo": "DDL: tabelas e campos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-12-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 12",
+          "conteudo": "DDL: tabelas e campos",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-12.html"
+        },
+        {
+          "nome": "Atividade Aula 13",
+          "conteudo": "DDL: relações, chaves e restrições",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-13-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 13",
+          "conteudo": "DDL: relações, chaves e restrições",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-13.html"
+        },
+        {
+          "nome": "Atividade Aula 14",
+          "conteudo": "DML: inserção, atualização e exclusão",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-14-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 14",
+          "conteudo": "DML: inserção, atualização e exclusão",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-14.html"
+        },
+        {
+          "nome": "Atividade Aula 15",
+          "conteudo": "DML: consultas com filtros e ordenação",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-15-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 15",
+          "conteudo": "DML: consultas com filtros e ordenação",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-15.html"
+        },
+        {
+          "nome": "Atividade Aula 16",
+          "conteudo": "Consultas com junções, agrupamentos e subconsultas",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-16-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 16",
+          "conteudo": "Consultas com junções, agrupamentos e subconsultas",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-16.html"
+        },
+        {
+          "nome": "Atividade Aula 17",
+          "conteudo": "Procedimentos armazenados",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-17-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 17",
+          "conteudo": "Procedimentos armazenados",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-17.html"
+        },
+        {
+          "nome": "Atividade Aula 18",
+          "conteudo": "Triggers (disparadores)",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-18-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 18",
+          "conteudo": "Triggers (disparadores)",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-18.html"
+        },
+        {
+          "nome": "Atividade Aula 19",
+          "conteudo": "Segurança da informação: pilares, acesso e auditoria",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-19-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 19",
+          "conteudo": "Segurança da informação: pilares, acesso e auditoria",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-19.html"
+        },
+        {
+          "nome": "Atividade Aula 20",
+          "conteudo": "Projeto integrador: banco documentado para o back-end",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADES-AULA-20-50-QUESTOES.html"
+        },
+        {
+          "nome": "Prática Aula 20",
+          "conteudo": "Projeto integrador: banco documentado para o back-end",
+          "pontos": 1.5,
+          "pagina": "ATIVIDADE-PRATICA-AULA-20.html"
+        }
+      ]
+    },
+    {
+      "id": "objetiva",
+      "subtotal": "Subtotal — 2 avaliações objetivas (7,5 pontos cada)",
+      "itens": [
+        {
+          "nome": "Avaliação Objetiva 01",
+          "conteudo": "Aulas 01 a 10 (aplicada na aula 11)",
+          "pontos": 7.5,
+          "peso": "7,5%",
+          "pagina": "AVALIACAO-OBJETIVA-01.html"
+        },
+        {
+          "nome": "Avaliação Objetiva 02",
+          "conteudo": "Aulas 11 a 20 (aplicada na aula 20)",
+          "pontos": 7.5,
+          "peso": "7,5%",
+          "pagina": "AVALIACAO-OBJETIVA-02.html"
+        }
+      ]
+    },
+    {
+      "id": "pratica",
+      "peso": "25%",
+      "pontos": 25,
+      "pagina": "AVALIACAO-PRATICA.html",
+      "subtotal": "Subtotal — 1 avaliação prática (banco completo de um caso fornecido)",
+      "itens": [
+        {
+          "nome": "Avaliação Prática — modelagem",
+          "conteudo": "Requisitos, DER e normalização (3FN)",
+          "pontos": 8
+        },
+        {
+          "nome": "Avaliação Prática — SQL",
+          "conteudo": "DDL com chaves, DML e as 10 consultas",
+          "pontos": 10
+        },
+        {
+          "nome": "Avaliação Prática — programação e segurança",
+          "conteudo": "Procedimento, trigger, permissões e entrega",
+          "pontos": 7
+        }
+      ]
+    }
+  ],
+  "regras": [
+    "Cada atividade e cada avaliação tem nota de 0 a 10, convertida para os pontos dela. Exemplo: nota 8 numa atividade de 1,5 ponto = 1,2 ponto.",
+    "Avaliação contínua (ementa: 60%): a objetiva de 50 questões e a atividade prática de cada uma das 20 aulas.",
+    "Nas avaliações objetivas vale a melhor nota entre a avaliação e as recuperações (recuperação: refazer a avaliação não atingida com outro caso ou novo banco de questões, conforme o regimento da unidade SENAI).",
+    "Atividade ou avaliação não feita vale 0 ponto.",
+    "**Peso no sistema (ementa):** avaliação contínua 60% (lançar a média das 40 atividades, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 7,5%, Avaliação Objetiva 02 7,5% e Avaliação Prática 25%. Nota final = soma de cada nota × peso.",
+    "**Aprovação: 70 pontos ou mais** (nota final ≥ 7,0) e presença mínima de 75%."
+  ]
+}
