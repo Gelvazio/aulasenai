@@ -40,8 +40,8 @@ const MENU_ADMINISTRADOR_HEADER = [
 ];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
-const TEXTO_HOME = "HOME";
-const TEXTO_SAIR = "SAIR";
+const TEXTO_HOME = "🏠 Início";
+const TEXTO_SAIR = "🚪 Sair";
 // Sem login (2026-10-09): card verde piscando, centralizado na barra, que leva ao login.
 const ROTA_CSS_ENTRAR_DESTAQUE = "../assets/css/header-entrar-destaque.css";
 const TEXTO_ENTRAR_DESTAQUE_TITULO = "VOCÊ NÃO ESTÁ LOGADO!";

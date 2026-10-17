@@ -53,6 +53,16 @@ EXTENSOES_NOVA_ABA = (".pdf", ".pptx")
 PASTA_APOSTILA = "APOSTILA"
 PADRAO_APOSTILA = "APOSTILA-*.html"
 TEXTO_BOTAO_APOSTILA = "📘 Apostila"
+# Ícone do card pelo tipo da atividade, achado no nome do arquivo (2026-10-17, #265.3).
+# A 1ª regra que casar vale (EXCEL e EQUIPE antes de QUESTOES); sem match usa o ícone padrão.
+ICONE_ATIVIDADE_PADRAO = "📝"
+ICONES_TIPO_ATIVIDADE = (
+    (re.compile(r"EXCEL", re.IGNORECASE), "📊"),
+    (re.compile(r"EQUIPE", re.IGNORECASE), "👥"),
+    (re.compile(r"APOSTILA", re.IGNORECASE), "📘"),
+    (re.compile(r"PRATICA|DISCURSIVA", re.IGNORECASE), "✍️"),
+    (re.compile(r"QUESTOES|OBJETIVA", re.IGNORECASE), "📝"),
+)
 
 escapar = html.escape
 
@@ -254,12 +264,27 @@ def gravar_indice(caminho, conteudo, forcar=False):
     return situacao
 
 
+def icone_do_tipo_atividade(nome_arquivo):
+    """Ícone do card conforme o tipo da atividade, lido do nome do arquivo.
+
+    Args:
+        nome_arquivo: Nome da página (ex.: "ATIVIDADE-PRATICA-AULA-03.html").
+
+    Returns:
+        Emoji do tipo (📝 objetiva, ✍️ prática/discursiva, 📊 Excel, 👥 equipe, 📘 apostila).
+    """
+    for padrao, icone in ICONES_TIPO_ATIVIDADE:
+        if padrao.search(nome_arquivo):
+            return icone
+    return ICONE_ATIVIDADE_PADRAO
+
+
 def card_atividade(atividade, pasta_indice, materia):
     """Card de um arquivo de atividade no índice da matéria."""
     tipo = EXTENSOES_ATIVIDADE[atividade.suffix.lower()]
     local = os.path.relpath(atividade.parent, materia).replace(os.sep, " / ")
     return montar_card({
-        "icone": tipo.split()[0],
+        "icone": icone_do_tipo_atividade(atividade.name),
         "rotulo": local,
         "arquivo": atividade.name,
         "titulo": nome_legivel(Path(atividade.stem)),
@@ -315,11 +340,19 @@ def botoes_slides_aula(numero, pasta_indice):
 
 
 def card_aula_agrupada(paginas, pasta_indice):
-    """Card de uma aula com várias páginas (um botão por página; discursivas por último)."""
+    """Card de uma aula com várias páginas (um botão por página; discursivas por último).
+
+    O ícone do card é o do tipo da 1ª página que não seja prática nem discursiva
+    (normalmente a objetiva); se todas forem, usa o da 1ª página.
+    """
     paginas = sorted(paginas, key=lambda p: ("DISCURSIVA" in p.name.upper(), p.name.lower()))
     numero = numero_aula_do_arquivo(paginas[0])
+    principal = next(
+        (p for p in paginas if not re.search(r"PRATICA|DISCURSIVA", p.name, re.IGNORECASE)),
+        paginas[0],
+    )
     return montar_card({
-        "icone": "📝",
+        "icone": icone_do_tipo_atividade(principal.name),
         "rotulo": f"AULA {numero}",
         "arquivo": paginas[0].name,
         "titulo": f"Atividades da Aula {numero}",

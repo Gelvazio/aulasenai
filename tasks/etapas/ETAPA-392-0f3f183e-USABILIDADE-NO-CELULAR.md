@@ -83,16 +83,28 @@
 
 ### #265.3 — Ícones no header, no login e nos cards do índice
 
-**Próximo passo:** ícones do plano (🏠 Início, 🔑 Entrar, 🚪 Sair, 👥 Equipes; login 🔑 ➡️ 🚪;
-cards 📝 ✍️ 📊 👥 📘) no `js/header-usuario.js`, `login.html` e
-`assets/gerador-indices/gerar_indices.py`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — `js/header-usuario.js`, `login.html` e `assets/gerador-indices/gerar_indices.py`.
 - **Modelo:** só Sonnet — nunca outro
+- **Executor:** Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (nuvem ·
+  ccr-3274812b-0nj48o).
+- **Entrega:** header "🏠 Início" e "🚪 Sair" (o "👥 EQUIPES" e o card "🔒 … 👉🔑" de entrar já
+  tinham ícone); login "🔑 Entrar", "➡️ Continuar", "🚪 Sair" (o `js/login.js` só desabilita o
+  botão, não troca o texto); `gerar_indices.py`: mapa `ICONES_TIPO_ATIVIDADE` (📊 Excel, 👥 equipe,
+  📘 apostila, ✍️ prática/discursiva, 📝 objetiva/padrão) e `icone_do_tipo_atividade()`; o card
+  agrupado por aula usa o ícone da objetiva (1ª página que não é prática/discursiva). Os cards
+  das páginas já publicadas só mudam quando a #265.5 regerar os índices.
+- **Verificação:** 3 revisores só leitura (funciona, regras de código, cobertura): 6 achados →
+  ícone do card agrupado corrigido e linha do `login.html` quebrada (≤ 100). O executor apagou
+  sem querer o `.pyc` rastreado no Git ao rodar `py_compile`; o líder restaurou com
+  `git checkout` desse arquivo (fica fora do commit). Líder: `node --check js/header-usuario.js`,
+  `ast.parse` do gerador (sem gravar `.pyc`), diff só nos 3 arquivos.
 
 ### #265.4 — Ícones e toque fácil nas páginas de atividade
 
-**Próximo passo:** esperar a #265.2.
+**Próximo passo:** ícones nos botões das atividades (📤 Enviar, 💾 Gravar, 📄 Exportar PDF,
+✅ Ver resultado) nos JS e nos modelos dos geradores; conferir o toque nas alternativas.
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (geradores, modelo da discursiva, JS e CSS das atividades).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
