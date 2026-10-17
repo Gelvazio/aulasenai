@@ -15,7 +15,15 @@ MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/index.htm
 
 ### #263.1 — Decidir a aula do card (usuário)
 
-**Próximo passo:** 👀 o usuário diz se cria uma aula própria (número e título) para o card.
+**Próximo passo:** — (entregue em 2026-10-17 18:33; conferir na tela).
+
+- **Decisão do usuário (2026-10-17 18:27):** "Voltar para a aula 10" — sem aula nova; a
+  atividade 20 volta para a aula 30 (AULA 10), onde estava no diagnóstico da #260. O card
+  "AVALIAÇÃO PRÁTICA" (atividade 36, aula 27) fica como está.
+- **Entrega (Opus 5.5, s20):** `update atividade set aula_id = 30 where id = 20 and
+  aula_id = 27` pelo conector; SQL com a volta em
+  `database/2026-10-17-avaliacao-objetiva-02-volta-para-aula-10-itic.sql`.
+- **Verificação:** o `update ... returning` devolveu `id 20, aula_id 30`.
 
 - **Nível:** PESADO — mudança no banco (aula nova e `atividade.aula_id`).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro

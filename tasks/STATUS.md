@@ -910,10 +910,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
-| #263-4ae42a94-cc1e-43be-ab1f-5e7100712383 | Card "AVALIAÇÃO 02" sem id de aula (ITIC) | 🟠 Alta | — | — | 👀 Aguardando o usuário | — (não reservável) | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
-| #263.1 | Decidir a aula do card (usuário) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
 | #264-55efd2a9-4c0a-4a5c-b9ad-5448279599ad | Botão "−" ao lado do ✏️: desvincular a atividade da aula | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
-| #264.1 | Botão "−" que desvincula a atividade da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #262.1 | ⬜ Pendente | — | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
+| #264.1 | Botão "−" que desvincula a atividade da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #262.1 | ⬜ Pendente (livre: #262.1 ✅) | — | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
