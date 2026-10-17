@@ -57,9 +57,15 @@ ligado à sua aula, e a página da atividade usa esse id.
 - **2026-10-17 18:05 (Opus 5.5, s20):** o HTML não guarda id, então a antiga #260.3 ("ligar as
   páginas ao id") virou o grupo da Comunicação Oral no gerador; nova #260.5 aplica esse seed.
 
+- **Plano aprovado** pelo usuário em 2026-10-17 18:01 ("sim").
+
 ### #260.1 — Diagnóstico e plano com aprovação
 
-**Próximo passo:** 👀 esperar o "sim" do usuário ao plano (resumo mostrado em 2026-10-17 18:05).
+**Próximo passo:** — (entregue; plano aprovado em 2026-10-17 18:01).
+
+- **Entrega:** diagnóstico e plano nesta etapa (commit `a9d052dc`).
+- **Verificação:** consultas de leitura ao banco (145 linhas com `pagina`) × 157 páginas do
+  disco; diferença conferida pela mesma codificação dos caminhos nos dois lados.
 
 - **Nível:** PESADO — banco (consulta) e plano de mudança em massa.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
