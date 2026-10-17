@@ -11,6 +11,8 @@ const CAMPOS_AULA_CARD = 'id,numero,titulo,descricao,materia_id,curso_id,duracao
     'materia(descricao),curso(nome_completo)';
 const CAMPOS_ATIVIDADE_DA_AULA = 'id,nome_atividade,descricao,data_atividade,total_itens,' +
     'pagina,ativo,aula_id';
+// Botões das atividades vinculadas nos cards (indice-aula-atividades-vinculadas.js, #249.1).
+const CAMPOS_ATIVIDADE_VINCULADA_CARD = 'id,nome_atividade,descricao,pagina,aula_id';
 // "Gerenciar atividades" (indice-aula-modal-vinculo.js, #213): atividade com a aula a que pertence.
 const CAMPOS_ATIVIDADE_SEM_AULA_VINCULO = 'id,nome_atividade,descricao,pagina,ativo,aula_id';
 const CAMPOS_AULA_VINCULO = '(numero,titulo,materia_id)';
@@ -84,6 +86,19 @@ async function buscarMateriaPeloNomeCard(nome, curso) {
 async function listarAtividadesDaAulaCard(idAula) {
     return sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_DA_AULA +
         '&aula_id=eq.' + encodeURIComponent(idAula) + '&order=id');
+}
+
+/**
+ * Lista, numa só consulta, as atividades ativas das aulas dos cards (botões vinculados, #249.1).
+ * @param {number[]} idsAulas - Ids das aulas.
+ * @returns {Promise<Object[]>} Atividades ativas (o que o RLS deixa o usuário ler), por id.
+ */
+async function buscarAtividadesDasAulasCard(idsAulas) {
+    if (!idsAulas.length) return [];
+
+    const lista = idsAulas.map((id) => encodeURIComponent(id)).join(',');
+    return sbGet(TABELA_ATIVIDADE_AULA, 'select=' + CAMPOS_ATIVIDADE_VINCULADA_CARD +
+        '&aula_id=in.(' + lista + ')&ativo=eq.true&order=id');
 }
 
 /**

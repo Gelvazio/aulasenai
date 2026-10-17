@@ -337,12 +337,25 @@ async function aoSalvarCrud(evento) {
 }
 
 /**
+ * Refaz os botões das atividades vinculadas nos cards (a aula ou o ativo da atividade mudou).
+ * @returns {Promise<void>}
+ */
+async function atualizarVinculadasDoIndiceCrud() {
+    if (typeof atualizarAtividadesVinculadasDoIndice !== 'function') return;
+
+    await atualizarAtividadesVinculadasDoIndice();
+    document.querySelectorAll(SELETOR_CARD)
+        .forEach((card) => mostrarIdNoCard(card, estadoCrud.atividades));
+}
+
+/**
  * Depois de salvar (modal já fechado): atualiza o nome das atividades nos cards e avisa.
  */
 async function avisarAtividadeSalvaCrud() {
     if (typeof atualizarNomesDasAtividadesDoIndice === 'function') {
         atualizarNomesDasAtividadesDoIndice();
     }
+    await atualizarVinculadasDoIndiceCrud();
     await garantirPopupCrud();
     if (typeof window.mostrarPopup === 'function') {
         window.mostrarPopup(MSG_ATIVIDADE_SALVA_CRUD, { tipo: 'sucesso' });
@@ -362,6 +375,7 @@ async function aoExcluirCrud(id) {
     try {
         await excluirAtividadeCrud(id);
         await recarregarListaCrud();
+        await atualizarVinculadasDoIndiceCrud();
         mostrarMensagemCrud('✅ Atividade excluída.');
     } catch (erro) {
         mostrarMensagemCrud(MSG_ERRO_CRUD, true);
@@ -663,7 +677,7 @@ function carregarDataAulasIndice() {
     const scripts = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
         'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
         'js/indice-aula-modal.js', 'js/indice-aula-bloqueio.js',
-        'js/indice-aula-data.js'].map((caminho) => {
+        'js/indice-aula-atividades-vinculadas.js', 'js/indice-aula-data.js'].map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;

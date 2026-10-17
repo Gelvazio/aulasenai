@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s18 | #249.1 ([376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md)) em execução | 🔄 Ativa | 2026-10-17 09:59 |
+| local · main · s18 | #249 ([376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md)) concluída | ⏹️ Encerrada | 2026-10-17 10:25 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
 | nuvem · ccr-3274812b-0nj48o | #250.1 ([377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md)) — plano aguarda o seu "sim" e Q1–Q2 | 👀 Aguardando o usuário | 2026-10-17 10:15 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
@@ -904,8 +904,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.5 | Avaliações objetivas 01 e 02, prática e média final · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
 | #243.6 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
-| #249-8285828e-f6f4-47da-ac64-453172249d65 | Atividade vinculada pelo banco aparecer no card da aula | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md) | — |
-| #249.1 | Card da aula mostra as atividades vinculadas pelo banco · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s18) (desde 2026-10-17 09:59) | [376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md) | — |
 | #250-2680fc00-427c-43ed-a301-a4ce4c83b4e0 | Botão "Gerenciar Aulas": CRUD de aulas em modal no índice | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #250.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguardando aprovação | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-17 10:06) | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #250.2 | Botão e modais do CRUD de aulas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
@@ -1373,6 +1371,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| #249: o card "AVALIAÇÃO 02" da ITIC aparece como "AULA 10" (o link fixo dele é da atividade 20, agora da aula 10); a atividade aparece nos dois cards | Identificação dos cards vem da #213; o mesmo caso da #221 foi cancelado pelo usuário em 2026-10-17 | Só se o usuário pedir |
 | #31: o PDF dos slides aberto pelo endereço direto continua acessível ao aluno | Arquivo estático do site; fechar exige servir os PDFs pelo Supabase Storage privado (tarefa grande, todas as matérias) | Quando o usuário pedir |
 | #29: prompt da rotina "Tarefa Aulas Senai" no claude.ai ainda fala da fila `tasks` do banco | A rotina está desligada e o prompt fica fora do repositório | Antes de ligar a rotina (item 140.6) |
 | #29: rotina de nuvem × "banco só pelo Claude Code local" (log em `agendamento_tarefa_logs` e cópia das regras da #26) | Decisão do usuário (`docs/regras/tarefas-agendadas.md` §3) | Antes de ligar a rotina |

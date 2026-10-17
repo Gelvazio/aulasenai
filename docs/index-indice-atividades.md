@@ -103,3 +103,14 @@ Adicionar `gerador-indices/` ao bloco de `assets/` da regra "CSS E JS GENÉRICOS
 - Verificação: 300 arquivos gerados, 0 links quebrados, 0 `<style>`/`<script>`/`style=""`.
 - `.md` ficou fora da lista de atividades (são fontes/planos do professor, não atividades do aluno).
 - Índice de Análise de Dados passou a listar a atividade prática de Excel de 29/09.
+
+## Atividades vinculadas à aula aparecem no card (#249.1)
+
+Além dos botões fixos do HTML, o card da aula mostra um botão "📝 nome" para cada atividade ativa
+com `atividade.aula_id` igual à aula do card, quando a página dela ainda não tem link no card
+(`assets/js/indice-aula-atividades-vinculadas.js`, uma consulta para todos os cards). Se dois cards
+forem identificados com a mesma aula, só recebe os botões o card cujo rótulo do HTML é o da aula
+(senão, o primeiro). Os botões são acrescentados antes do bloqueio da aula, levam
+`data-vinculo-banco` e são refeitos quando o "Gerenciar atividades" fecha com mudança, ao
+excluir atividade no "Editar aula" e ao salvar ou excluir no CADASTRAR ATIVIDADES. Para o aluno,
+só aparecem as atividades que o RLS deixa ele ler.

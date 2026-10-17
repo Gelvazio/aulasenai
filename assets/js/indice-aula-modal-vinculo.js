@@ -3,7 +3,9 @@
 // atividade.aula_id (vincular = id da aula; desvincular = vazio). Pelo campo "ID da atividade" ou
 // pela lista das atividades das outras aulas da matéria e das sem aula. Vincular uma atividade de
 // outra aula pede confirmação (ela sai da outra aula). Só o professor grava (RLS).
-// Os links dos cards do índice são do HTML: vincular não cria link novo no card.
+// Os links fixos dos cards são do HTML; a atividade vinculada ganha um botão no card da aula quando
+// a página dela ainda não tem link no card (indice-aula-atividades-vinculadas.js, #249.1); quem
+// abre o modal passa em aoFechar o que refaz o card.
 // Depende de: assets/js/indice-aula-repositorio.js; usa popup.js (confirmarPopup) se carregado.
 // Estilos: atividades-crud-modal.css e indice-aula-data.css.
 

@@ -15,7 +15,7 @@ o card da aula no índice de atividades da matéria passa a mostrar o botão des
 
 ### #249.1 — Card da aula mostra as atividades vinculadas pelo banco
 
-**Próximo passo:** executor-medio implementar; líder conferir e entregar.
+**Próximo passo:** — (entregue em 2026-10-17 10:25).
 
 - **Nível:** MEDIO — código JS com lógica em 1 a 3 arquivos, sem SQL, RLS ou segurança.
 - **Modelo:** só Sonnet — nunca outro (executa o `executor-medio`, líder Opus 5.5).
@@ -27,4 +27,21 @@ o card da aula no índice de atividades da matéria passa a mostrar o botão des
 - **Critérios de aceitação:** atividade 20 aparece no card da Aula 10 da ITIC; atividade que já tem
   link no card não fica repetida; atividade inativa não aparece; `node --check` passa nos arquivos
   alterados; regras de código (função ≤ 45 linhas, JSDoc, nomes em português).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit "feat(indice): atividade vinculada pelo banco aparece no card da aula (#249.1)".
+  Arquivo novo `assets/js/indice-aula-atividades-vinculadas.js`; alterados
+  `indice-aula-repositorio.js` (consulta única `buscarAtividadesDasAulasCard`), `indice-aula-data.js`
+  (acrescenta os botões antes do bloqueio da aula e remonta os ON/OFF), `atividades-crud-modal.js`
+  (carrega o script novo; refaz os botões ao salvar/excluir no CADASTRAR), `indice-aula-modal.js`
+  (refaz ao fechar o Gerenciar atividades e ao excluir no Editar aula), `indice-aula-modal-vinculo.js`
+  (cabeçalho) e `docs/index-indice-atividades.md`.
+- **Executor:** `executor-medio` (Sonnet 5.5), num fluxo com 3 revisões em paralelo (correção, regras
+  de código, segurança): 12 achados, 10 corrigidos; 2 não procedem (identificação dos cards vem da
+  #213; a queda para a chave anon sem sessão é do `supabase.js`, anterior). Líder: Opus 5.5.
+- **Verificação:** banco — atividade 20 com `aula_id = 30` (Aula 10, matéria 25); `node --check` nos
+  6 `.js`; linhas ≤ 100 caracteres e funções ≤ 15 linhas no arquivo novo (conferido pelo líder);
+  href só da mesma origem (`ehPaginaDoMesmoSite`), texto por `textContent` (sem XSS); consulta por
+  `sbGet` (JWT, sem service_role). **Conferir na tela:** abrir
+  `INTRODUCAO-TIC/ATIVIDADES/index.html` e ver "📝 Avaliação Objetiva 02" no card "AULA 10".
+- **Anotação:** o card "AVALIAÇÃO 02" também é identificado como a aula 10 (o link fixo dele é da
+  atividade 20) e aparece com o rótulo "AULA 10" — comportamento da #213, mesmo caso da #221
+  (cancelada pelo usuário em 2026-10-17). Registrado em Pendências do `STATUS.md`.

@@ -354,6 +354,7 @@ async function aoExcluirAtividadeAula(idAtividade) {
     try {
         await excluirAtividadeDaAulaCard(idAtividade);
         await carregarAtividadesModalAula();
+        await atualizarCardsDepoisDeMudarAtividades();
         mostrarMensagemModalAula('✅ Atividade excluída.');
     } catch (erro) {
         mostrarMensagemModalAula(MSG_AULA_ERRO, true);
@@ -378,7 +379,20 @@ function abrirGerenciarAtividadesDaAula() {
     const aula = estadoModalAula.item?.aula;
     if (!aula || typeof abrirModalVinculoAula !== 'function') return;
 
-    abrirModalVinculoAula(aula, carregarAtividadesModalAula);
+    abrirModalVinculoAula(aula, async () => {
+        await carregarAtividadesModalAula();
+        await atualizarCardsDepoisDeMudarAtividades();
+    });
+}
+
+/**
+ * Refaz os botões das atividades vinculadas nos cards do índice, se o módulo estiver carregado.
+ * @returns {Promise<void>}
+ */
+async function atualizarCardsDepoisDeMudarAtividades() {
+    if (typeof atualizarAtividadesVinculadasDoIndice !== 'function') return;
+
+    await atualizarAtividadesVinculadasDoIndice();
 }
 
 /**
