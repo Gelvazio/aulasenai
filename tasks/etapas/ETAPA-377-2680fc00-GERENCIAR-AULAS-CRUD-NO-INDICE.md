@@ -25,15 +25,53 @@ do índice das atividades.
 
 ### #250.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** achar a página da imagem, o editar aula e o excluir aula que já existem, as
-colunas e a RLS da `aulas`; escrever o plano nesta etapa e pedir o "sim".
+**Próximo passo:** 👀 esperar o "sim" e as respostas Q1–Q2 do usuário.
 
 - **Nível:** PESADO — permissões do professor (RLS/JWT) e várias partes ligadas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+
+**Levantamento (2026-10-17 10:15):**
+
+| Onde | O que tem |
+|---|---|
+| Barra da imagem | `assets/js/indice-turma-favorita.js` monta "Turma:" + "⭐ Turma favorita" em todo `ATIVIDADES/index.html`, só para o professor; é carregada pelo `atividades-crud-modal.js` (que já entra em todos os índices — nenhum HTML precisa ser regerado) |
+| "✏️ Editar aula" (por card) | `indice-aula-modal.js`: todos os campos de `aulas` (`CAMPOS_MODAL_AULA`), grava por `gravarAulaCard` (update); o "🗑️ Excluir aula" saiu dele na #219 |
+| Excluir aula no banco | **lógico**: `aulas.excluido = 1` pela função `excluir_aula(p_aula)`, só Professor Administrador (`database/2026-10-06-aulas-excluido.sql`); o card some do índice |
+| Inserir aula | a tela antiga `js/aulas.js` faz `sbPost("aulas")`; no repositório **não há** o SQL da política de insert de `aulas` — só dá para confirmar no banco (frente local) |
+| Matéria da página | `descobrirMateriaDoIndice` (`indice-aula-data.js`) e `listarAulasDaMateriaCard` (`indice-aula-repositorio.js`) |
+
+**Plano proposto:**
+1. **#250.2 (PESADO, nuvem):** arquivos novos, sem mexer nos da #249.1:
+   `assets/js/indice-gerenciar-aulas-repositorio.js` (listar as aulas da matéria sem as excluídas,
+   inserir, atualizar, excluir pela `excluir_aula`), `assets/js/indice-gerenciar-aulas.js` (botão
+   **📚 Gerenciar Aulas** no início da barra da turma, só professor; **modal 1** = lista com Nº,
+   título, ativa, visível e ações ✏️ Editar · 🗑️ Excluir + **➕ Nova aula**; **modal 2** = formulário
+   completo com os mesmos campos do "Editar aula", nos modos Inserir / Editar / Excluir (mostra os
+   dados e pede confirmação)), `assets/css/indice-gerenciar-aulas.css` (tokens); carregar os 2 JS
+   e o CSS pelo `atividades-crud-modal.js`; avisos por `popup.js`; documentação em `docs/regras/`.
+   Depois de gravar: a lista recarrega e os cards do índice são redesenhados.
+2. **#250.3 (PESADO, só Claude Code local):** conferir no banco a política de insert de `aulas`
+   para o professor; se faltar, criar (SQL idempotente) e testar inserir/excluir com professor e
+   administrador.
+
+**Perguntas (Q1–Q2):**
+- **Q1 Excluir:** lógico, como hoje (`excluido = 1`, só o Professor Administrador; os outros
+  professores veem o 🗑️ desligado), recomendado — ou apagar a linha de verdade (as atividades da
+  aula ficariam sem aula)?
+- **Q2 Aula nova:** entra no banco na hora, mas só ganha card no índice quando tiver atividade
+  com página nesta pasta (o índice é montado pelas páginas). Está certo assim?
 
 ### #250.2 — Botão e modais do CRUD de aulas
 
 **Próximo passo:** esperar a #250.1 aprovada.
 
 - **Nível:** PESADO — tela ligada a permissões do professor, mais de 3 arquivos.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+
+### #250.3 — Política de insert da `aulas` no banco (só local)
+
+**Próximo passo:** esperar a #250.1 aprovada.
+
+- **Nível:** PESADO — banco (RLS); só o Claude Code local (`multiplas-ias.md`).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
