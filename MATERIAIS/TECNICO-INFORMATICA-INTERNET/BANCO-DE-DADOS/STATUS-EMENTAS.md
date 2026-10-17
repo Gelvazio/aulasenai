@@ -47,14 +47,15 @@ contra as 20 aulas de `CONTEUDO/`.
 **Corrigido nesta revisão:** checklist da Seção XII da ementa (aulas, atividades e avaliações
 estavam ⬜, mas já existem) e a data de atualização — sem mudar o tamanho (14923 chars).
 
-**👀 Para o usuário decidir (não alterado):**
+**Decididos pelo usuário em 2026-10-16 22:19:**
 - A regra IX.5 da ementa ("empresas sempre fictícias"), a SA 1 e o prompt 1 ("escola fictícia de
   cursos livres") vêm de antes da regra **"Você como aluno consultor"** (2026-10-08,
   `.claude/rules/atividades-banco.md`), que proíbe empresa fictícia nas atividades. As
   atividades não foram mexidas; reescrever esses trechos muda o tamanho da ementa (sobram só 27
-  chars até 14.950) e o texto que a apostila usa.
+  chars até 14.950) e o texto que a apostila usa. → ✅ **Deixar assim** (decisão do usuário).
 - O `materia.json` aponta os slides para `AULAS/AULA-NN-SLIDES.pdf`: a IA não gera slides
-  (regra #244.9); o caminho fica para quando o professor gerar.
+  (regra #244.9); o caminho fica para quando o professor gerar. → Tarefa **#245** (ligar os
+  links de slides e PDF só quando o arquivo existir).
 
 ---
 

@@ -41,6 +41,7 @@ regra dos slides gravada e aceite do usuário.
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 22:19 | Ponto 1 da revisão da ementa: **deixar assim** a regra IX.5, a SA 1 e o prompt 1 ("empresas/escola fictícia"). Ponto 2: virou a tarefa **#245** (links de slides e PDF só quando o arquivo existir) | Usuário | Pedido do usuário |
 | 2026-10-16 22:05 | **Não gerar slides** (nem PDF nem PPTX), em nenhuma aula: o professor gera em outro momento. #244.4, #244.5 e #244.7 canceladas; #244.6 cancelada (sem Chromium). Plano aprovado sem essas partes | Usuário | Pedido do usuário |
 | 2026-10-16 21:58 | PDF da apostila: **não** libera o Chromium; o usuário gera pelo botão 📥 Exportar PDF (#244.6 sai do escopo) | Usuário | Regra do navegador mantida |
 | 2026-10-16 21:58 | Slides (PPTX + PDF) e PDFs vão para o Git com `git add -f` | Usuário | Mesmo padrão de Testes de Front-End |
@@ -126,7 +127,7 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.8 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere a #244.2, a #244.3 e a #244.9 e decide os 2 pontos do
-`STATUS-EMENTAS.md` (seção "Revisão da ementa").
+**Próximo passo:** 👀 o usuário confere a #244.2, a #244.3 e a #244.9 (os 2 pontos da revisão já
+foram decididos em 2026-10-16 22:19).
 
 - **Nível:** LEVE — conferência do usuário.

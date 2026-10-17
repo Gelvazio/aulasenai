@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · ccr-3274812b-0nj48o | #244.3 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) entregue — revisão da ementa; #244.8 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 22:20 |
+| nuvem · ccr-3274812b-0nj48o | #244.3 entregue; #245 criada ([372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md)); #244.8 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 22:19 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
@@ -916,6 +916,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #244-1e2ac8a5-32a3-4bfd-8f59-95ca4e0af187 | Banco de Dados: pendências finais (status, slides, PDF, menu, revisão da ementa) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #244.8 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #244.2, #244.3, #244.9 | 👀 Aguardando aceite | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #245-8341ceea-7ca4-4a05-976d-e2c73aabe47d | Links de slides e PDF só quando o arquivo existir (todas as matérias) | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #245.1 | Levantamento e plano (tarefa grande) · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #245.2 | Geradores ligam o link só se o arquivo existir · `MEDIO · effort medium` | 🟠 Alta | #245.1 | ⬜ Pendente | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #245.3 | Aplicar nos arquivos já gerados (todas as matérias) · `PESADO · effort high` | 🟠 Alta | #245.2 | ⬜ Pendente | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #245.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #245.3 | ⬜ Pendente | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -930,6 +935,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | Etapa | Assunto | Arquivo |
 |---|---|---|
 | 371-1e2ac8a5 | Banco de Dados: pendências finais (#244, pedida em 2026-10-16 21:46) | [ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| 372-8341ceea | Links de slides e PDF só quando o arquivo existir (#245, pedida em 2026-10-16 22:19, criada pela #244.3) | [ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
