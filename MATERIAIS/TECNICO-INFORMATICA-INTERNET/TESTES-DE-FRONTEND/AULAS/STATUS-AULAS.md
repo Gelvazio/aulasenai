@@ -19,7 +19,7 @@ cadastradas no banco). **Aulas encontradas:** 10 (slides `AULAS/AULA-NN-SLIDES.p
 | 07 | Métricas e Cobertura de Testes | ✅ `AULA-07-SLIDES.pdf` | ✅ `CONTEUDO/AULA-07-METRICAS-E-COBERTURA-DE-TESTES.md` | ⛔ | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-07.html` | ⬜ seeds gerados, não aplicados |
 | 08 | TDD e Debugging Moderno no Frontend | ✅ `AULA-08-SLIDES.pdf` | ✅ `CONTEUDO/AULA-08-TDD-E-DEBUGGING-NO-FRONT-END.md` | ⛔ | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-08.html` | ⬜ seeds gerados, não aplicados |
 | 09 | Qualidade, Performance, Acessibilidade e CI CD | ✅ `AULA-09-SLIDES.pdf` | ✅ `CONTEUDO/AULA-09-QUALIDADE-PERFORMANCE-ACESSIBILIDADE-E-CI-CD.md` | ⛔ | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-09.html` | ⬜ seeds gerados, não aplicados |
-| 10 | Projeto Prático Integrador Suíte de Testes | ✅ `AULA-10-SLIDES.pdf` | ✅ `CONTEUDO/AULA-10-PROJETO-INTEGRADOR-SUITE-DE-TESTES.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 10 | Projeto Prático Integrador Suíte de Testes | ✅ `AULA-10-SLIDES.pdf` | ✅ `CONTEUDO/AULA-10-PROJETO-INTEGRADOR-SUITE-DE-TESTES.md` | ⛔ | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-10.html` | ⬜ seeds gerados, não aplicados |
 
 ## Observações
 

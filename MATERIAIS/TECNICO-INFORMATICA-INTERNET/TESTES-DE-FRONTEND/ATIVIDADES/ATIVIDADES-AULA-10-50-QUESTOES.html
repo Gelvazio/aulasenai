@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 — Projeto Prático Integrador Suíte de Testes (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="10" data-tema="Projeto Prático Integrador Suíte de Testes" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🏁 Aula 10: Projeto Prático Integrador Suíte de Testes</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-10-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-10-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Reconhecer os requisitos da documentação de testes</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Reconhecer as etapas de planejamento de testes</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Aplicar testes definidos no Plano de Testes.</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Ordem do Processo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta das etapas do processo fundamental de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desenho, avaliação, planejamento, execução, monitoração.</li>
+                        <li><span class="letra">B)</span>Planejamento, desenho, execução, monitoração e controle, avaliação dos resultados.</li>
+                        <li><span class="letra">C)</span>Execução, planejamento, avaliação, desenho, monitoração.</li>
+                        <li><span class="letra">D)</span>Avaliação, execução, desenho, planejamento, monitoração.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Planejamento no Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No projeto integrador, o que é feito no planejamento (7.1)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Publicar a loja antes dos testes.</li>
+                        <li><span class="letra">B)</span>Escrever os testes E2E sem plano.</li>
+                        <li><span class="letra">C)</span>Calcular a nota final da UC.</li>
+                        <li><span class="letra">D)</span>Atualizar o plano e a matriz de rastreabilidade da SA 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Desenho dos Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No projeto integrador, o que é feito no desenho dos testes (7.2)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escolher os casos por risco: caminho feliz e bordas.</li>
+                        <li><span class="letra">B)</span>Desenhar o logotipo da loja.</li>
+                        <li><span class="letra">C)</span>Rodar a suíte três vezes.</li>
+                        <li><span class="letra">D)</span>Escrever o badge no README.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Execução no Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que compõe a execução dos testes (7.3) no projeto integrador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o cálculo da cobertura.</li>
+                        <li><span class="letra">B)</span>Somente testes manuais no navegador.</li>
+                        <li><span class="letra">C)</span>Somente a leitura do código pelo professor.</li>
+                        <li><span class="letra">D)</span>Unitários com Vitest, integração com Testing Library e MSW, e E2E.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Monitoração no Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é acompanhado na monitoração e controle (7.4) do projeto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome dos integrantes da dupla.</li>
+                        <li><span class="letra">B)</span>Cobertura, testes instáveis e checks do pipeline.</li>
+                        <li><span class="letra">C)</span>A cor dos botões da vitrine.</li>
+                        <li><span class="letra">D)</span>O número de seguidores da loja nas redes sociais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Avaliação no Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica registrada a avaliação dos resultados (7.5) do projeto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No arquivo .gitignore.</li>
+                        <li><span class="letra">B)</span>No TESTING.md, com resultado, fora do escopo e recomendação.</li>
+                        <li><span class="letra">C)</span>Em um comentário dentro do vitest.config.js.</li>
+                        <li><span class="letra">D)</span>Somente na memória da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Prioridade na Black Friday</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com só uma tarde para testar a loja, o que testar primeiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As cores do rodapé.</li>
+                        <li><span class="letra">B)</span>Nada, porque o prazo é curto demais.</li>
+                        <li><span class="letra">C)</span>A jornada vitrine → carrinho → checkout → confirmação, onde está o dinheiro.</li>
+                        <li><span class="letra">D)</span>A página &quot;Sobre nós&quot;, por ser a mais fácil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Segundo Alvo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois da jornada de compra, por que testar o cupom?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque é onde estão os defeitos mais comuns.</li>
+                        <li><span class="letra">B)</span>Porque ninguém usa cupom na Black Friday.</li>
+                        <li><span class="letra">C)</span>Porque não tem nenhuma regra de negócio.</li>
+                        <li><span class="letra">D)</span>Porque é a parte mais bonita da loja.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Fora do Escopo na Loja</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual parte da loja pode ficar fora do escopo, pelo baixo risco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O carrinho.</li>
+                        <li><span class="letra">B)</span>O cupom de desconto.</li>
+                        <li><span class="letra">C)</span>A página &quot;Sobre nós&quot;.</li>
+                        <li><span class="letra">D)</span>O checkout.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Caso de Borda</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destes é um caso de borda do cupom?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Compra sem nenhum cupom.</li>
+                        <li><span class="letra">B)</span>Página inicial carregando normalmente.</li>
+                        <li><span class="letra">C)</span>Total exatamente igual ao valor mínimo do cupom.</li>
+                        <li><span class="letra">D)</span>Total muito maior que o valor mínimo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Ferramenta dos Unitários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual ferramenta a suíte usa nos testes unitários?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>GitHub Actions.</li>
+                        <li><span class="letra">B)</span>Cypress.</li>
+                        <li><span class="letra">C)</span>Vitest.</li>
+                        <li><span class="letra">D)</span>Lighthouse.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Ferramentas da Integração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais ferramentas a suíte usa nos testes de integração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o editor de texto.</li>
+                        <li><span class="letra">B)</span>Somente o Lighthouse.</li>
+                        <li><span class="letra">C)</span>Somente o navegador real.</li>
+                        <li><span class="letra">D)</span>Testing Library e MSW, com o Vitest.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Ferramentas do E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais ferramentas são usadas nos testes E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cypress ou Playwright.</li>
+                        <li><span class="letra">B)</span>npm ci ou npm install.</li>
+                        <li><span class="letra">C)</span>MSW ou axe.</li>
+                        <li><span class="letra">D)</span>Lighthouse ou DevTools.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Exemplo de Unitário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destes é um bom exemplo de teste unitário na loja?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O carrinho mostrando os itens com a API simulada.</li>
+                        <li><span class="letra">B)</span>O fluxo completo de login e compra no navegador.</li>
+                        <li><span class="letra">C)</span>A página carregando no WebKit.</li>
+                        <li><span class="letra">D)</span>aplicarCupom nunca deixa o total negativo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Exemplo de Integração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destes é um bom exemplo de teste de integração na loja?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A função de frete devolve o valor certo.</li>
+                        <li><span class="letra">B)</span>O usuário compra no navegador real.</li>
+                        <li><span class="letra">C)</span>O carrinho mostra a mensagem de erro quando a API simulada responde 500.</li>
+                        <li><span class="letra">D)</span>O README tem o badge.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Pirâmide na Suíte</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Pela pirâmide de testes, qual camada deve ter mais testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A dos testes E2E.</li>
+                        <li><span class="letra">B)</span>Todas devem ter a mesma quantidade.</li>
+                        <li><span class="letra">C)</span>A dos testes unitários.</li>
+                        <li><span class="letra">D)</span>A dos testes manuais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Suíte Organizada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza uma suíte de testes organizada (6.3)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A estratégia aparece só pela estrutura das pastas.</li>
+                        <li><span class="letra">B)</span>Os testes ficam fora do repositório.</li>
+                        <li><span class="letra">C)</span>Todos os testes ficam num arquivo único.</li>
+                        <li><span class="letra">D)</span>Os testes ficam misturados com as imagens.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Pasta dos Unitários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na pasta tests/unitarios?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As imagens da vitrine.</li>
+                        <li><span class="letra">B)</span>As regras: descontos, frete e cupom.</li>
+                        <li><span class="letra">C)</span>Os fluxos completos no navegador.</li>
+                        <li><span class="letra">D)</span>O workflow do GitHub Actions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Pasta da Integração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na pasta tests/integracao?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os componentes, como carrinho e checkout, com a API simulada pelo MSW.</li>
+                        <li><span class="letra">B)</span>O arquivo TESTING.md.</li>
+                        <li><span class="letra">C)</span>As regras puras de cálculo.</li>
+                        <li><span class="letra">D)</span>Os fluxos E2E de compra.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Pasta e2e</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na pasta e2e?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A configuração da cobertura.</li>
+                        <li><span class="letra">B)</span>Os pacotes do node_modules.</li>
+                        <li><span class="letra">C)</span>Os fluxos: login, compra completa e cupom inválido.</li>
+                        <li><span class="letra">D)</span>As funções de desconto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Configuração da Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual arquivo ficam a cobertura e os limites mínimos da suíte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>vitest.config.js</li>
+                        <li><span class="letra">B)</span>.gitignore</li>
+                        <li><span class="letra">C)</span>README.md</li>
+                        <li><span class="letra">D)</span>TESTING.md</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Script test</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No package.json da suíte, o que o script &quot;test&quot;: &quot;vitest&quot; faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Roda o Vitest em modo observação.</li>
+                        <li><span class="letra">B)</span>Roda a suíte uma vez com cobertura.</li>
+                        <li><span class="letra">C)</span>Roda os testes E2E no Playwright.</li>
+                        <li><span class="letra">D)</span>Publica a loja na internet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Script test:run</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o script &quot;test:run&quot;: &quot;vitest run&quot; faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga os testes que falharam.</li>
+                        <li><span class="letra">B)</span>Abre o painel do Cypress.</li>
+                        <li><span class="letra">C)</span>Roda a suíte para sempre, observando os arquivos.</li>
+                        <li><span class="letra">D)</span>Roda a suíte uma vez e termina.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Script test:coverage</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o comando do script test:coverage?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>playwright test --coverage</li>
+                        <li><span class="letra">B)</span>vitest --watch</li>
+                        <li><span class="letra">C)</span>npm ci --coverage</li>
+                        <li><span class="letra">D)</span>vitest run --coverage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Script test:e2e</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando o script test:e2e executa quando a suíte usa Playwright?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>vitest --coverage</li>
+                        <li><span class="letra">B)</span>npm run dev</li>
+                        <li><span class="letra">C)</span>vitest run</li>
+                        <li><span class="letra">D)</span>playwright test</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Script no Pipeline</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o pipeline não deve usar o modo observação do Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o modo observação não termina, e o job nunca acabaria.</li>
+                        <li><span class="letra">B)</span>Porque o pipeline não tem Node instalado.</li>
+                        <li><span class="letra">C)</span>Porque o modo observação apaga a cobertura.</li>
+                        <li><span class="letra">D)</span>Porque o modo observação não roda nenhum teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Cobertura Mínima</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a cobertura mínima para aprovação na avaliação prática?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>10%</li>
+                        <li><span class="letra">B)</span>70%</li>
+                        <li><span class="letra">C)</span>100%</li>
+                        <li><span class="letra">D)</span>50%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Meta Excelente de Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a meta Excelente de cobertura na avaliação prática?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exatamente 100%.</li>
+                        <li><span class="letra">B)</span>80% ou mais.</li>
+                        <li><span class="letra">C)</span>40% ou mais.</li>
+                        <li><span class="letra">D)</span>60% ou mais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Mínimo de Unitários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o mínimo de casos de teste unitários para aprovação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1 caso.</li>
+                        <li><span class="letra">B)</span>50 casos.</li>
+                        <li><span class="letra">C)</span>5 casos.</li>
+                        <li><span class="letra">D)</span>Nenhum caso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Integração Excelente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a meta Excelente pede nos testes de integração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o carrinho sem API simulada.</li>
+                        <li><span class="letra">B)</span>Carrinho, carregamento e erro 500.</li>
+                        <li><span class="letra">C)</span>Somente a página &quot;Sobre nós&quot;.</li>
+                        <li><span class="letra">D)</span>Nenhum teste de integração.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Fluxos E2E Mínimos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os 3 fluxos E2E mínimos da avaliação prática?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Rodapé, cabeçalho e menu.</li>
+                        <li><span class="letra">B)</span>Login, compra completa e cupom inválido.</li>
+                        <li><span class="letra">C)</span>Cadastro de produto, estoque e relatório.</li>
+                        <li><span class="letra">D)</span>Sobre nós, contato e blog.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">E2E Estáveis</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a meta Excelente exige os 3 fluxos E2E estáveis em 3 execuções?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o Cypress só funciona na terceira vez.</li>
+                        <li><span class="letra">B)</span>Porque o professor precisa de três prints.</li>
+                        <li><span class="letra">C)</span>Porque cada execução aumenta a cobertura.</li>
+                        <li><span class="letra">D)</span>Porque passar uma vez pode esconder um teste instável.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Pipeline Excelente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a meta Excelente pede do pipeline?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que publique mesmo com teste falhando.</li>
+                        <li><span class="letra">B)</span>Que rode só uma vez por mês.</li>
+                        <li><span class="letra">C)</span>Que não rode os testes E2E.</li>
+                        <li><span class="letra">D)</span>Que bloqueie o merge e tenha badge.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Seções do TESTING.md</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são as seções do TESTING.md de 1 página?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como rodar, estratégia, fora do escopo, resultado e como contribuir.</li>
+                        <li><span class="letra">B)</span>Somente a lista de nomes da equipe.</li>
+                        <li><span class="letra">C)</span>Somente as senhas de acesso.</li>
+                        <li><span class="letra">D)</span>Somente o histórico de commits.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Como Rodar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais comandos entram na seção &quot;Como rodar&quot; do TESTING.md?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm run dev e mais nada.</li>
+                        <li><span class="letra">B)</span>git push --force e git reset.</li>
+                        <li><span class="letra">C)</span>npm ci, npm run test:coverage e npm run test:e2e.</li>
+                        <li><span class="letra">D)</span>npm publish e npm unpublish.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Estratégia</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a seção &quot;Estratégia&quot; do TESTING.md explica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O que cada camada testa e por quê, pela pirâmide.</li>
+                        <li><span class="letra">B)</span>Quanto custou o computador do laboratório.</li>
+                        <li><span class="letra">C)</span>Qual é a cor favorita da equipe.</li>
+                        <li><span class="letra">D)</span>Como fazer o deploy sem testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Resultado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a seção &quot;Resultado&quot; do TESTING.md registra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o link do site publicado.</li>
+                        <li><span class="letra">B)</span>Somente a data da entrega.</li>
+                        <li><span class="letra">C)</span>Cobertura final, testes por camada e testes instáveis encontrados.</li>
+                        <li><span class="letra">D)</span>Somente os elogios do code review.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Como Contribuir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a regra da seção &quot;Como contribuir&quot; do TESTING.md?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todo pull request pode entrar sem teste.</li>
+                        <li><span class="letra">B)</span>Todo pull request precisa de teste novo para o comportamento novo.</li>
+                        <li><span class="letra">C)</span>Os testes devem ser apagados a cada versão.</li>
+                        <li><span class="letra">D)</span>Somente o professor pode escrever testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Fora do Escopo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a seção &quot;Fora do escopo&quot; do TESTING.md registra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os testes que passaram.</li>
+                        <li><span class="letra">B)</span>A lista de ferramentas instaladas.</li>
+                        <li><span class="letra">C)</span>O que não foi testado e a justificativa pelo risco.</li>
+                        <li><span class="letra">D)</span>Os nomes dos clientes da loja.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Operadora de Cartão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a integração real com a operadora de cartão fica fora do escopo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque depende de serviço externo; o risco é tratado com o mock das respostas de recusa e aprovação.</li>
+                        <li><span class="letra">B)</span>Porque pagamentos nunca têm defeitos.</li>
+                        <li><span class="letra">C)</span>Porque o cartão não faz parte da compra.</li>
+                        <li><span class="letra">D)</span>Porque a operadora proíbe testes de qualquer tipo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Fora do Escopo × Esquecer</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre deixar algo fora do escopo e esquecer de testar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não há diferença: os dois são iguais.</li>
+                        <li><span class="letra">B)</span>Fora do escopo é uma decisão escrita e justificada; esquecer deixa o risco escondido.</li>
+                        <li><span class="letra">C)</span>Fora do escopo significa testar duas vezes.</li>
+                        <li><span class="letra">D)</span>Esquecer é melhor, porque economiza tempo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Evidência para a Black Friday</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que serve de evidência de que a loja pode ir para a Black Friday?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A opinião do dono da loja.</li>
+                        <li><span class="letra">B)</span>A quantidade de commits do dia.</li>
+                        <li><span class="letra">C)</span>O número de imagens da vitrine.</li>
+                        <li><span class="letra">D)</span>O pipeline verde, com a cobertura acima do mínimo e os fluxos E2E estáveis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Cartão de Revisão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais itens o cartão de revisão da feira das suítes pede?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente uma nota de 0 a 10.</li>
+                        <li><span class="letra">B)</span>2 pontos fortes, 1 risco e 1 sugestão.</li>
+                        <li><span class="letra">C)</span>Somente a lista de erros de português.</li>
+                        <li><span class="letra">D)</span>5 críticas e nenhum elogio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Risco no Code Review</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O pull request revisado tem um teste E2E com cy.wait(3000). Como registrar isso no cartão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como sugestão de aumentar para 10000.</li>
+                        <li><span class="letra">B)</span>Não registrar, porque é um detalhe.</li>
+                        <li><span class="letra">C)</span>Como ponto forte: deixa o teste mais seguro.</li>
+                        <li><span class="letra">D)</span>Como risco: a espera fixa pode deixar o teste instável.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Respondendo ao Code Review</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a dupla revisada deve responder a cada comentário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&quot;Aceito, porque...&quot; ou &quot;mantenho, porque...&quot;, com fato técnico.</li>
+                        <li><span class="letra">B)</span>Respondendo só aos elogios.</li>
+                        <li><span class="letra">C)</span>Apagando os comentários sem ler.</li>
+                        <li><span class="letra">D)</span>Pedindo para outra dupla responder.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Sugestão Não Aplicada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer com uma sugestão que a dupla decidiu não aplicar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Registrar no TESTING.md por que não aplicou.</li>
+                        <li><span class="letra">B)</span>Esconder a sugestão no código.</li>
+                        <li><span class="letra">C)</span>Fechar o pull request sem explicação.</li>
+                        <li><span class="letra">D)</span>Aplicar sem concordar, para evitar conversa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Pesos da Avaliação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os pesos da avaliação da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Contínua 33%, prática 33% e objetiva 34%.</li>
+                        <li><span class="letra">B)</span>Contínua 60%, prática 25% e objetiva 15%.</li>
+                        <li><span class="letra">C)</span>Contínua 15%, prática 25% e objetiva 60%.</li>
+                        <li><span class="letra">D)</span>Somente a objetiva, com 100%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Cálculo da Nota Final</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com contínua 8,0, prática 9,0 e objetiva 6,0, qual é a nota final?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>7,67</li>
+                        <li><span class="letra">B)</span>7,95</li>
+                        <li><span class="letra">C)</span>8,50</li>
+                        <li><span class="letra">D)</span>6,00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Aprovação na UC</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os critérios de aprovação na UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nota final ≥ 5,0 e qualquer presença.</li>
+                        <li><span class="letra">B)</span>Somente a nota da avaliação objetiva.</li>
+                        <li><span class="letra">C)</span>Nota final ≥ 7,0 e presença mínima de 75%.</li>
+                        <li><span class="letra">D)</span>Somente presença de 100%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Parecer por Capacidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Além da nota, o que cada capacidade recebe na avaliação da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um número de 0 a 100 sem explicação.</li>
+                        <li><span class="letra">B)</span>Uma medalha de ouro, prata ou bronze.</li>
+                        <li><span class="letra">C)</span>Nenhum registro.</li>
+                        <li><span class="letra">D)</span>O parecer Desenvolvida, Em desenvolvimento ou Não desenvolvida.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 10: Projeto Prático Integrador Suíte de Testes</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

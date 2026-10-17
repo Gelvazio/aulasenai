@@ -22,7 +22,7 @@
 | 07 | Métricas e Cobertura de Testes | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 08 | TDD e Debugging Moderno no Frontend | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 09 | Qualidade, Performance, Acessibilidade e CI CD | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 10 | Projeto Prático Integrador Suíte de Testes | ⬜ `ATIVIDADES-AULA-10-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 10 | Projeto Prático Integrador Suíte de Testes | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 
 ## Demais atividades da pasta (adicionais)
 
@@ -37,4 +37,4 @@
 | `ATIVIDADE-PRATICA-AULA-07.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
 | `ATIVIDADE-PRATICA-AULA-08.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
 | `ATIVIDADE-PRATICA-AULA-09.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md` | Roteiro da prática da aula 10 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-10-*.md`) | — |
+| `ATIVIDADE-PRATICA-AULA-10.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
