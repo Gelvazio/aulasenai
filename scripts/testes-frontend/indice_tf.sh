@@ -11,7 +11,7 @@ git ls-files --others --exclude-standard | grep 'index.html$' > $SP/novos-antes.
 python3 assets/gerador-indices/gerar_indices.py > /dev/null 2>&1
 cp $TF $SP/index-tf-novo.html
 git diff --name-only | grep 'index.html$' | while read f; do git checkout -q -- "$f"; done
-git ls-files --others --exclude-standard | grep 'index.html$' | grep -v -x -F -f $SP/novos-antes.txt | xargs -r rm
+git ls-files --others --exclude-standard | grep 'index.html$' | grep -v -x -F -f $SP/novos-antes.txt | tr '\n' '\0' | xargs -0 -r rm
 cp $SP/index-curso.html MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html
 cp $SP/index-tf-novo.html $TF
 python3 - $SP/index-tf-antes.html $TF <<'PY'
@@ -32,6 +32,6 @@ from pathlib import Path
 C = Path("MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html"); A = Path("MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES")
 n = len([p for p in A.glob("*.html") if p.name != "index.html"])
 s = C.read_text(encoding="utf-8")
-s, k = re.subn(r'(<h2>TESTES DE FRONTEND</h2>\s*</div>\s*</div>\s*<p class="meta">)\d+ arquivos de atividade', rf'\g<1>{n} arquivos de atividade', s)
+s, k = re.subn(r'(<h2>TESTES DE FRONTEND</h2>.*?<p class="meta">)\d+ arquivos de atividade', rf'\g<1>{n} arquivos de atividade', s, flags=re.S)
 assert k == 1; C.write_text(s, encoding="utf-8"); print("card do curso:", n)
 PY

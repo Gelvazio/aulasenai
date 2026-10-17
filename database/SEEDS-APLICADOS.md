@@ -96,6 +96,8 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-aula-turma-bloqueio-cards-fechados.sql` | Várias matérias | 0 | **CONCLUÍDO** | 2026-10-16 18:56 | Aplicado pelo conector (#210.2): 26 pares aula x turma com bloqueio = true (ITIC 16, Automacao 6, Analise de Dados 2, Comunicacao 2); md5 das 148 atividades igual antes e depois (89f9302b...); 38 datas mantidas |
 | `2026-10-10-banco-de-dados-avaliacoes-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 2 | **CONCLUÍDO** | 2026-10-10 22:36 | Aplicado pelo conector em 2 comandos: Avaliação Objetiva 01 (atividade id 147, aula 11 id 115) e 02 (id 148, aula 20 id 125), 50 itens cada, md5 igual ao do arquivo (2026-10-10 22:36) |
 | `2026-10-11-banco-de-dados-avaliacao-pratica-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-16 21:02 | Atividade id 149 (aula id 125): 60 tópicos (20 × 3), aplicada em partes pelo conector; md5 confere com o arquivo |
+| `2026-10-17-testes-frontend-objetiva-aula-06-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 22.8 |
+| `2026-10-17-testes-frontend-atividade-pratica-aula-06-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 22.8 |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

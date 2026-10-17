@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 — Testes End to End com Cypress e Playwright (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="06" data-tema="Testes End to End com Cypress e Playwright" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧭 Aula 06: Testes End to End com Cypress e Playwright</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-06-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-06-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Aplicar testes definidos no Plano de Testes.</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É um Teste E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza um teste end-to-end (E2E)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Testa uma única função isolada, sem tela, dentro do Node.</li>
+                        <li><span class="letra">B)</span>Monta um componente no DOM simulado (JSDOM) com a API sempre simulada.</li>
+                        <li><span class="letra">C)</span>Abre o navegador real, acessa a aplicação rodando e faz o caminho completo do usuário.</li>
+                        <li><span class="letra">D)</span>Confere apenas se o código segue as regras de formatação do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Ambiente do E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em que ambiente o teste E2E é executado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No navegador real, com a aplicação no ar.</li>
+                        <li><span class="letra">B)</span>No JSDOM, que simula o DOM dentro do Node.</li>
+                        <li><span class="letra">C)</span>Somente no Node, sem nenhuma página carregada.</li>
+                        <li><span class="letra">D)</span>No banco de dados de produção, sem a tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Velocidade do E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Comparado aos testes unitários e de integração, como é a velocidade de um teste E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Leva décimos de segundo, como o teste de integração.</li>
+                        <li><span class="letra">B)</span>Tem a mesma velocidade de um teste unitário.</li>
+                        <li><span class="letra">C)</span>É o mais rápido: cada teste leva milissegundos.</li>
+                        <li><span class="letra">D)</span>É o mais lento: cada teste leva segundos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Pirâmide de Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos testes E2E a suíte deve ter, pela pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Muitos, porque substituem todos os testes unitários.</li>
+                        <li><span class="letra">B)</span>Poucos, só para os fluxos críticos, como login e checkout.</li>
+                        <li><span class="letra">C)</span>Um para cada função do código, como os unitários.</li>
+                        <li><span class="letra">D)</span>Nenhum, porque o teste de integração já usa o navegador real.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Erro Que o E2E Encontra</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que tipo de erro o teste E2E é o mais indicado para encontrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Erro no caminho real do usuário, com todas as partes funcionando juntas.</li>
+                        <li><span class="letra">B)</span>Erro de cálculo dentro de uma função pura.</li>
+                        <li><span class="letra">C)</span>Erro de digitação no nome de uma variável interna.</li>
+                        <li><span class="letra">D)</span>Erro de indentação no arquivo de estilo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Validação no E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O E2E confirma que tela, rotas, API e banco de teste juntos permitem ao usuário completar a tarefa. Isso é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Revisão de código: um colega lê o diff.</li>
+                        <li><span class="letra">B)</span>Teste unitário: uma função testada isoladamente.</li>
+                        <li><span class="letra">C)</span>Verificação estática: leitura do código sem executar.</li>
+                        <li><span class="letra">D)</span>Validação: o sistema atende ao que o usuário precisa fazer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Instalando o Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o Cypress como dependência de desenvolvimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx cypress install-browser</li>
+                        <li><span class="letra">B)</span>npm init cypress@latest --global</li>
+                        <li><span class="letra">C)</span>npm run cypress</li>
+                        <li><span class="letra">D)</span>npm install -D cypress</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Instalando o Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando inicia um projeto com o Playwright?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm init playwright@latest</li>
+                        <li><span class="letra">B)</span>npm install -g playwright-cli</li>
+                        <li><span class="letra">C)</span>npx playwright open</li>
+                        <li><span class="letra">D)</span>npm run playwright:start</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Interface do Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando abre o painel visual do Cypress para escolher e acompanhar os testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx cypress test --ui</li>
+                        <li><span class="letra">B)</span>npm run cypress:headless</li>
+                        <li><span class="letra">C)</span>npx cypress run</li>
+                        <li><span class="letra">D)</span>npx cypress open</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Cypress Sem Interface</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando roda todos os testes do Cypress sem abrir o painel, como no CI?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx cypress run</li>
+                        <li><span class="letra">B)</span>npx cypress --ui</li>
+                        <li><span class="letra">C)</span>npx cypress open</li>
+                        <li><span class="letra">D)</span>npx cypress watch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Executando no Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando roda os testes do Playwright com a interface visual?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx playwright open</li>
+                        <li><span class="letra">B)</span>npx playwright run --panel</li>
+                        <li><span class="letra">C)</span>npx playwright test --ui</li>
+                        <li><span class="letra">D)</span>npx playwright watch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Navegadores do Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em quais motores de navegador o Playwright executa os testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente Chrome e Electron.</li>
+                        <li><span class="letra">B)</span>Somente Internet Explorer e Edge.</li>
+                        <li><span class="letra">C)</span>Somente no JSDOM.</li>
+                        <li><span class="letra">D)</span>Chromium, Firefox e WebKit (Safari).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Navegadores do Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em quais navegadores o Cypress executa os testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente no JSDOM, sem navegador.</li>
+                        <li><span class="letra">B)</span>Somente Safari.</li>
+                        <li><span class="letra">C)</span>Chromium, Firefox e WebKit (Safari).</li>
+                        <li><span class="letra">D)</span>Chrome, Edge, Firefox e Electron.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Estilo do Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como os testes do Cypress são escritos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com comandos encadeados, como cy.get().type().</li>
+                        <li><span class="letra">B)</span>Com expect do Vitest no Node.</li>
+                        <li><span class="letra">C)</span>Só com arquivos de texto sem código.</li>
+                        <li><span class="letra">D)</span>Com async e await em cada linha, como await page.click().</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Estilo do Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como os testes do Playwright são escritos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com async e await, como await page.getByRole().click().</li>
+                        <li><span class="letra">B)</span>Só com gravação de vídeo, sem código.</li>
+                        <li><span class="letra">C)</span>Com comandos encadeados, como cy.get().click().</li>
+                        <li><span class="letra">D)</span>Com consultas ao banco de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Destaque do Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um destaque do Cypress citado na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Painel visual com &quot;viagem no tempo&quot; pelos passos do teste.</li>
+                        <li><span class="letra">B)</span>Testes sem navegador, só no Node.</li>
+                        <li><span class="letra">C)</span>Geração automática de testes unitários.</li>
+                        <li><span class="letra">D)</span>Execução nativa no WebKit do Safari.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Destaque do Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um destaque do Playwright citado na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Funcionar apenas dentro do Electron.</li>
+                        <li><span class="letra">B)</span>Substituir o plano de testes.</li>
+                        <li><span class="letra">C)</span>Vários navegadores e abas, com trace detalhado da execução.</li>
+                        <li><span class="letra">D)</span>Dispensar a aplicação rodando para testar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Escolhendo a Ferramenta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A loja tem muitos clientes que compram pelo Safari do iPhone. Qual ferramenta é a mais indicada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Playwright, porque executa os testes no WebKit, o motor do Safari.</li>
+                        <li><span class="letra">B)</span>Nenhuma, porque Safari não pode ser testado.</li>
+                        <li><span class="letra">C)</span>Qualquer uma, porque o navegador não muda o resultado.</li>
+                        <li><span class="letra">D)</span>Cypress, porque roda no Electron.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Espera Automática</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que Cypress e Playwright não precisam de espera fixa antes de clicar em um botão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque clicam em qualquer lugar da página ao mesmo tempo.</li>
+                        <li><span class="letra">B)</span>Porque desligam as animações e a rede do navegador.</li>
+                        <li><span class="letra">C)</span>Porque esperam automaticamente o elemento aparecer e ficar clicável.</li>
+                        <li><span class="letra">D)</span>Porque a página sempre carrega em menos de 1 milissegundo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Endereço Base no Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica o endereço base da aplicação no Cypress, para usar cy.visit(&#x27;/login&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Na opção use.baseURL do playwright.config.js.</li>
+                        <li><span class="letra">B)</span>Na opção baseUrl do cypress.config.js.</li>
+                        <li><span class="letra">C)</span>No arquivo package.json, na chave main.</li>
+                        <li><span class="letra">D)</span>Em uma variável global dentro de cada teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Endereço Base no Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica o endereço base da aplicação no Playwright, para usar page.goto(&#x27;/login&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No arquivo .gitignore.</li>
+                        <li><span class="letra">B)</span>Em baseUrl do cypress.config.js.</li>
+                        <li><span class="letra">C)</span>No index.html da aplicação.</li>
+                        <li><span class="letra">D)</span>Em use.baseURL do playwright.config.js.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Aplicação Rodando</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Antes de executar os testes E2E, o que precisa estar no ar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o editor VS Code aberto.</li>
+                        <li><span class="letra">B)</span>Nada: o teste E2E dispensa a aplicação.</li>
+                        <li><span class="letra">C)</span>A aplicação, por exemplo com npm run dev em http://localhost:5173.</li>
+                        <li><span class="letra">D)</span>O servidor de produção da loja.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Seletor por Classe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cy.get(&#x27;.btn.btn-primary&#x27;) é um seletor ruim?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Classes são proibidas em HTML.</li>
+                        <li><span class="letra">B)</span>O Cypress não aceita seletores com ponto.</li>
+                        <li><span class="letra">C)</span>A classe de estilo muda com o layout e quebra o teste sem defeito real.</li>
+                        <li><span class="letra">D)</span>A classe deixa o teste mais rápido demais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Seletor por Papel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual seletor do Playwright encontra o botão Entrar pelo papel e pelo nome?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>page.getByClass(&#x27;entrar&#x27;)</li>
+                        <li><span class="letra">B)</span>page.getByRole(&#x27;button&#x27;, { name: &#x27;Entrar&#x27; })</li>
+                        <li><span class="letra">C)</span>page.locator(&#x27;div &gt; form &gt; button&#x27;)</li>
+                        <li><span class="letra">D)</span>page.locator(&#x27;.btn-primary&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Seletor por Rótulo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual seletor do Playwright encontra o campo de e-mail pelo rótulo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>page.locator(&#x27;input:nth-child(1)&#x27;)</li>
+                        <li><span class="letra">B)</span>page.locator(&#x27;form input&#x27;)</li>
+                        <li><span class="letra">C)</span>page.getByLabel(&#x27;E-mail&#x27;)</li>
+                        <li><span class="letra">D)</span>page.getByClass(&#x27;campo&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Atributo de Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o Cypress seleciona o botão pelo atributo de teste combinado com a equipe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>cy.get(&#x27;#root button:last-child&#x27;)</li>
+                        <li><span class="letra">B)</span>cy.get(&#x27;div &gt; div &gt; button&#x27;)</li>
+                        <li><span class="letra">C)</span>cy.get(&#x27;.botao-azul&#x27;)</li>
+                        <li><span class="letra">D)</span>cy.get(&#x27;[data-testid=&quot;botao-entrar&quot;]&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Quando Usar data-testid</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o data-testid é a escolha indicada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em elementos sem texto estável, combinando o atributo com a equipe de front-end.</li>
+                        <li><span class="letra">B)</span>Nunca, porque é um atributo proibido no HTML.</li>
+                        <li><span class="letra">C)</span>Somente nos elementos de estilo, no lugar das classes.</li>
+                        <li><span class="letra">D)</span>Em todos os elementos, mesmo nos que têm texto e rótulo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Ordem dos Seletores</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem de preferência dos seletores vista na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer ordem, porque todos são igualmente estáveis.</li>
+                        <li><span class="letra">B)</span>Papel e nome, depois rótulo do campo, depois atributo de teste.</li>
+                        <li><span class="letra">C)</span>Classe de estilo, depois estrutura, depois papel.</li>
+                        <li><span class="letra">D)</span>Estrutura do HTML, depois data-testid, depois classe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Caixa Preta no E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é escrever o teste E2E como caixa preta (3.1)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Testar só pelo que o usuário vê e faz, sem olhar o código interno.</li>
+                        <li><span class="letra">B)</span>Ler cada linha do código para escolher os testes.</li>
+                        <li><span class="letra">C)</span>Testar apenas as funções privadas do sistema.</li>
+                        <li><span class="letra">D)</span>Testar com a tela desligada e o navegador escondido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Visitar a Página</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando do Cypress acessa a página de login usando o endereço base?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>cy.request.page(&#x27;/login&#x27;)</li>
+                        <li><span class="letra">B)</span>cy.goto(&#x27;/login&#x27;)</li>
+                        <li><span class="letra">C)</span>cy.open(&#x27;/login&#x27;)</li>
+                        <li><span class="letra">D)</span>cy.visit(&#x27;/login&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Digitar no Campo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o Playwright preenche o campo Senha com 123456?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await page.type.Senha = &#x27;123456&#x27;;</li>
+                        <li><span class="letra">B)</span>page.getByLabel(&#x27;Senha&#x27;).digitar(&#x27;123456&#x27;);</li>
+                        <li><span class="letra">C)</span>cy.get(&#x27;Senha&#x27;).fill(&#x27;123456&#x27;);</li>
+                        <li><span class="letra">D)</span>await page.getByLabel(&#x27;Senha&#x27;).fill(&#x27;123456&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Verificar a URL no Cypress</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação do Cypress confere que o usuário chegou ao painel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(cy.url).toBe(&#x27;/dashboard&#x27;);</li>
+                        <li><span class="letra">B)</span>cy.should(&#x27;url&#x27;, &#x27;dashboard&#x27;).wait(2000);</li>
+                        <li><span class="letra">C)</span>cy.url().should(&#x27;include&#x27;, &#x27;/dashboard&#x27;);</li>
+                        <li><span class="letra">D)</span>cy.url() === &#x27;/dashboard&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Verificar a URL no Playwright</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação do Playwright confere que o usuário chegou ao painel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await page.should(&#x27;include&#x27;, &#x27;/dashboard&#x27;);</li>
+                        <li><span class="letra">B)</span>page.url === &#x27;/dashboard&#x27;;</li>
+                        <li><span class="letra">C)</span>expect(page.url).toBeTruthy();</li>
+                        <li><span class="letra">D)</span>await expect(page).toHaveURL(/dashboard/);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Mensagem Visível</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação do Playwright confere que a saudação aparece na tela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await expect(page.getByText(&#x27;Bem-vindo&#x27;)).toBeVisible();</li>
+                        <li><span class="letra">B)</span>await page.waitForTimeout(3000);</li>
+                        <li><span class="letra">C)</span>await page.getByText(&#x27;Bem-vindo&#x27;);</li>
+                        <li><span class="letra">D)</span>expect(&#x27;Bem-vindo&#x27;).toBeDefined();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Login com Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No caso de teste da senha errada, quais são as duas verificações esperadas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O navegador fecha e o teste termina sem verificar nada.</li>
+                        <li><span class="letra">B)</span>A rota muda para /dashboard e aparece &quot;Bem-vindo&quot;.</li>
+                        <li><span class="letra">C)</span>A mensagem &quot;Credenciais inválidas&quot; aparece e a rota continua /login.</li>
+                        <li><span class="letra">D)</span>O botão Entrar some e a página fica em branco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Por Que Conferir a Rota</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste da senha errada também confere que a rota continua /login?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o Cypress exige verificar a rota em todo teste.</li>
+                        <li><span class="letra">B)</span>Porque a tela pode mostrar o erro e mesmo assim deixar o usuário entrar.</li>
+                        <li><span class="letra">C)</span>Porque a mensagem de erro nunca aparece no navegador real.</li>
+                        <li><span class="letra">D)</span>Porque a rota deixa o teste mais rápido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Caso de Teste em E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como uma linha do caso de teste do plano (ação + verificação) vira teste E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A linha vira um teste unitário no Node.</li>
+                        <li><span class="letra">B)</span>As duas viram uma espera fixa de 2 segundos.</li>
+                        <li><span class="letra">C)</span>A ação vira um comentário e a verificação é ignorada.</li>
+                        <li><span class="letra">D)</span>A ação vira um passo do teste e a verificação vira um should ou um expect.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Verificação no Meio do Caminho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste do checkout precisa de verificações depois de cada etapa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o navegador fecha se não houver verificação.</li>
+                        <li><span class="letra">B)</span>Porque sem verificação o teste não pode ser executado.</li>
+                        <li><span class="letra">C)</span>Para a falha apontar a etapa exata, e não só &quot;algo deu errado em algum lugar&quot;.</li>
+                        <li><span class="letra">D)</span>Para o teste ficar mais longo e parecer mais completo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Contador do Carrinho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No checkout, depois de adicionar 1 produto na vitrine, qual verificação o plano pede?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O botão Confirmar fica habilitado.</li>
+                        <li><span class="letra">B)</span>O contador do carrinho mostra 1.</li>
+                        <li><span class="letra">C)</span>A mensagem de pedido confirmado aparece.</li>
+                        <li><span class="letra">D)</span>O subtotal mostra 2 × preço.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Botão Habilitado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação do Playwright confere que o botão Confirmar pode ser clicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await page.getByRole(&#x27;button&#x27;, { name: &#x27;Confirmar&#x27; }).wait(2000);</li>
+                        <li><span class="letra">B)</span>await expect(page.getByRole(&#x27;button&#x27;, { name: &#x27;Confirmar&#x27; })).toBeEnabled();</li>
+                        <li><span class="letra">C)</span>expect(&#x27;Confirmar&#x27;).toBe(true);</li>
+                        <li><span class="letra">D)</span>await page.locator(&#x27;.btn-confirmar&#x27;).exists();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Defeito Só no E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O botão Confirmar fica coberto por um banner de cookies só no WebKit. Por que só o E2E achou o defeito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o defeito estava no banco de dados.</li>
+                        <li><span class="letra">B)</span>Porque só ele desenha a tela inteira no navegador real, onde o banner cobre o botão.</li>
+                        <li><span class="letra">C)</span>Porque o JSDOM roda apenas no Safari.</li>
+                        <li><span class="letra">D)</span>Porque os testes unitários não sabem clicar em botões vermelhos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Usabilidade no E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é uma verificação de usabilidade (4.2) que cabe num teste E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A mensagem de erro aparece e diz ao usuário o que corrigir.</li>
+                        <li><span class="letra">B)</span>O nome das variáveis está em português.</li>
+                        <li><span class="letra">C)</span>A função de soma devolve o número certo.</li>
+                        <li><span class="letra">D)</span>O arquivo de estilo tem menos de 100 linhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Rótulo e Usabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Se getByLabel(&#x27;E-mail&#x27;) não encontra o campo, o que isso indica sobre a tela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste precisa de uma espera fixa maior.</li>
+                        <li><span class="letra">B)</span>O campo não tem rótulo, o que prejudica o usuário e o leitor de tela.</li>
+                        <li><span class="letra">C)</span>O teste está certo e o campo está perfeito.</li>
+                        <li><span class="letra">D)</span>O navegador real não aceita campos de e-mail.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Uso Só com Teclado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando do Playwright envia o formulário com a tecla Enter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>await page.mouse.click(&#x27;Enter&#x27;);</li>
+                        <li><span class="letra">B)</span>await page.keyboard.press(&#x27;Enter&#x27;);</li>
+                        <li><span class="letra">C)</span>cy.press(&#x27;Enter&#x27;).wait(1000);</li>
+                        <li><span class="letra">D)</span>await page.getByRole(&#x27;Enter&#x27;).fill();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Teste Intermitente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um teste intermitente (flaky)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um teste que nunca é executado no CI.</li>
+                        <li><span class="letra">B)</span>Um teste que passa ou falha sem que o código tenha mudado.</li>
+                        <li><span class="letra">C)</span>Um teste escrito em mais de uma ferramenta.</li>
+                        <li><span class="letra">D)</span>Um teste que sempre falha porque o código está errado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Espera Fixa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cy.wait(2000) deixa o teste instável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o Cypress não aceita números como parâmetro.</li>
+                        <li><span class="letra">B)</span>Porque a espera fixa apaga os dados do teste.</li>
+                        <li><span class="letra">C)</span>Na máquina lenta os dados demoram mais que 2 segundos e o teste verifica antes.</li>
+                        <li><span class="letra">D)</span>Porque 2 segundos é tempo demais em qualquer máquina.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Esperar a Requisição</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o Cypress espera a requisição da lista de produtos no lugar de um tempo fixo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>cy.wait(5000); em todos os testes da suíte.</li>
+                        <li><span class="letra">B)</span>cy.intercept(&#x27;GET&#x27;, &#x27;/api/produtos*&#x27;).as(&#x27;produtos&#x27;); e depois cy.wait(&#x27;@produtos&#x27;);</li>
+                        <li><span class="letra">C)</span>cy.get(&#x27;produtos&#x27;).sleep();</li>
+                        <li><span class="letra">D)</span>cy.reload() até a lista aparecer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Dados Compartilhados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um teste passa sozinho e falha quando roda com os outros da suíte. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O seletor por papel não funciona em suítes grandes.</li>
+                        <li><span class="letra">B)</span>A aplicação está rodando no endereço certo.</li>
+                        <li><span class="letra">C)</span>Dados compartilhados: um teste anterior deixou dados que mudam o resultado.</li>
+                        <li><span class="letra">D)</span>O navegador está desligado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Dependência de Ordem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O teste &quot;finaliza a compra&quot; só passa se o teste de login rodar antes. Como corrigir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fazer o login no próprio teste ou em beforeEach, deixando o teste independente.</li>
+                        <li><span class="letra">B)</span>Sempre rodar os testes na mesma ordem e nunca isolados.</li>
+                        <li><span class="letra">C)</span>Apagar o teste de login da suíte.</li>
+                        <li><span class="letra">D)</span>Colocar um cy.wait(10000) no começo do teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Rodar Três Vezes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer com um teste que muda de resultado ao rodar a suíte 3 vezes sem mudança no código?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o teste para a suíte ficar verde.</li>
+                        <li><span class="letra">B)</span>Tratar como flaky: achar a causa, corrigir e registrar, sem ignorar.</li>
+                        <li><span class="letra">C)</span>Rodar de novo até ele passar e entregar.</li>
+                        <li><span class="letra">D)</span>Ignorar, porque ele passou em pelo menos uma das vezes.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 06: Testes End to End com Cypress e Playwright</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
