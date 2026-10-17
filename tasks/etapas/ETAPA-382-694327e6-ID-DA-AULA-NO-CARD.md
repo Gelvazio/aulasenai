@@ -8,7 +8,7 @@ Aula:  que deve mostrar o id da aula no banco de dados"
 
 ### #255.1 — Etiqueta "Id Aula:" no card
 
-**Próximo passo:** delegar ao `executor-medio`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código de tela em JS e CSS, 2 a 3 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro
@@ -19,3 +19,9 @@ Aula:  que deve mostrar o id da aula no banco de dados"
   professor vê.
 - **Critérios de aceitação:** etiqueta acima do "AULA NN" em todos os cards com aula (também os
   do "📚 Gerenciar Aulas"); não duplica ao redesenhar; `node --check` passa.
+- **Entrega (2026-10-17 11:59, Sonnet · executor-medio; líder Opus 5.5, s14):** `indice-aula-data.js`: nova
+  `renderizarIdDaAulaNoCard`, chamada em `desenharCardAula` (cria um `div.aula-id-card` antes do
+  `.num`, uma vez por card, só professor e só card com aula); `indice-aula-data.css`: estilo com
+  tokens `--aula-id-card-cor` e `--aula-id-card-fonte`; `docs/regras/atividades.md`.
+- **Verificação (líder):** diff só nos 3 arquivos da lista; `node --check` passou; linhas novas
+  ≤ 100 caracteres. Sem navegador: conferir na tela.

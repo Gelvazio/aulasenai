@@ -14,6 +14,15 @@
     --aula-grade-botao-largura: 320px;
     --aula-excluir-card-cor: #c53030;
     --aula-excluir-card-fundo: #fff5f5;
+    --aula-id-card-cor: #5a6b85;
+    --aula-id-card-fonte: 12px;
+}
+
+/* Etiqueta "Id Aula: N" acima do rótulo "AULA NN" (assets/js/indice-aula-data.js, #255). */
+.aula-id-card {
+    font-size: var(--aula-id-card-fonte);
+    font-weight: 700;
+    color: var(--aula-id-card-cor);
 }
 
 .aula-data-botao {

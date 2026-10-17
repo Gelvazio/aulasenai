@@ -12,6 +12,7 @@
 // são acrescentadas antes do bloqueio da aula e refeitas quando o vínculo muda.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js), e
 // "🗑️ Excluir", que só exclui a aula sem atividade vinculada (indice-aula-excluir-card.js, #253).
+// O professor também vê a etiqueta "Id Aula: N" (aulas.id) acima do rótulo "AULA NN" (#255).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
 // "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
 // inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
@@ -28,6 +29,8 @@ const SELETOR_NOME_CARD_AULA = '.topo h2';
 // Começo do texto do link que não é letra nem número (emoji e "🔒 "): fica antes do nome do banco.
 const REGEX_PREFIXO_LINK_ATIVIDADE = /^[^\p{L}\p{N}]*/u;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
+const CLASSE_ID_AULA_CARD = 'aula-id-card';
+const TEXTO_ID_AULA_CARD = 'Id Aula: ';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
@@ -194,8 +197,27 @@ function atualizarCardsDaAula(aula) {
 function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
+    renderizarIdDaAulaNoCard(item);
     if (typeof desenharBotaoSlidesDoBanco === 'function') desenharBotaoSlidesDoBanco(item);
     if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
+}
+
+/**
+ * Mostra, só para o professor, a etiqueta "Id Aula: N" (aulas.id) acima do rótulo "AULA NN".
+ * Cria a etiqueta uma única vez por card; ao redesenhar, só atualiza o texto.
+ * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
+ */
+function renderizarIdDaAulaNoCard(item) {
+    if (!item.aula || !estadoCardsAula.ehProfessor) return;
+    const rotulo = item.card.querySelector(SELETOR_ROTULO_CARD_AULA);
+    if (!rotulo) return;
+    let etiqueta = item.card.querySelector(`.${CLASSE_ID_AULA_CARD}`);
+    if (!etiqueta) {
+        etiqueta = document.createElement('div');
+        etiqueta.className = CLASSE_ID_AULA_CARD;
+        rotulo.parentNode.insertBefore(etiqueta, rotulo);
+    }
+    etiqueta.textContent = `${TEXTO_ID_AULA_CARD}${item.aula.id}`;
 }
 
 /**

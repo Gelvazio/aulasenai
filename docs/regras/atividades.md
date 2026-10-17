@@ -651,6 +651,8 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     desvinculá-las (🔗 Gerenciar atividades) ou excluí-las. Sem atividade, pede confirmação e
     apaga a aula do banco pela mesma `excluir_aula` (DELETE, #254; só o Professor
     Administrador, os outros recebem o aviso) e o card some. Código: `assets/js/indice-aula-excluir-card.js`;
+  - **"Id Aula:" no card** (2026-10-17, tarefa #255; só professor): etiqueta acima do rótulo
+    "AULA NN" com o `aulas.id`. Código: `assets/js/indice-aula-data.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards
