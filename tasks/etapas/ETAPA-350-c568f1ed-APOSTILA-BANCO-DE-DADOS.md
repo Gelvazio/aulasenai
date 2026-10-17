@@ -41,7 +41,7 @@
 
 ### #223.2 — `materia.json` literal + introdução + capítulos em Markdown (com validação do usuário)
 
-**Próximo passo:** capítulo 15 (capítulos 01 a 14 escritos, sem avisos, conferência 100%).
+**Próximo passo:** capítulo 16 (capítulos 01 a 15 escritos, sem avisos, conferência 100%).
 
 - **Nível:** MEDIO — conteúdo didático conferido com a ementa.
 
