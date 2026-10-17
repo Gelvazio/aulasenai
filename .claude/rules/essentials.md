@@ -13,6 +13,7 @@ main` (comandos e proibições: `git-quick.md`).
 | Arquivo | Para quê |
 |---------|----------|
 | `CLAUDE.md` → `AGENTS.md` | Regras do projeto (precedência máxima) |
+| `rules-ai` (`regras/*.md`, `CONFLITOS.md`) | Regras globais — local `C:\fontes\rules-ai`, nuvem `Gelvazio/rules-ai` (regra 12 do `AGENTS.md`) |
 | `tasks/STATUS.md` | Quadro: frentes, tarefas e reservas (`tasks/quadro.md`) |
 | Etapa da tarefa da sua frente | Próximo passo — retomar de onde parou (`tasks/ciclo-da-task.md`) |
 | `tasks/RECADOS.md` | Recados de outras frentes para você ou `todas` |
@@ -24,6 +25,7 @@ main` (comandos e proibições: `git-quick.md`).
 ```
 ☐ Trouxe a main (fetch + pull --rebase)?
 ☐ Li o STATUS.md, a etapa da minha frente e os recados?
+☐ Li as regras do rules-ai (e confiro de novo antes de entregar)?
 ☐ Seeds em dia (ou exceção de seeds.md)?
 ☐ Li a orientação em docs/ do que vou mexer?
 ☐ Sei se a tarefa é pequena ou grande (tasks/ciclo-da-task.md)?

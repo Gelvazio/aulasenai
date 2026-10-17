@@ -60,5 +60,13 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 11. **A IA não gera slides de aula** (2026-10-16, #244.9): nem PDF nem PPTX, em nenhuma aula de
     nenhuma matéria — o professor gera os slides em outro momento
     ([`materias-global.md`](.claude/rules/materias-global.md)).
+12. **Sempre verificar as regras do `rules-ai`** (2026-10-16, #246): ao iniciar a sessão (antes
+    do primeiro pedido) e antes de entregar cada tarefa, ler as regras globais
+    (`regras/*.md` e `CONFLITOS.md`) e conferir se o trabalho as segue.
+    - **Local:** `C:\fontes\rules-ai` (`git pull --rebase` antes de ler).
+    - **Nuvem:** a pasta não existe; usar o repositório **`Gelvazio/rules-ai`** do GitHub (anexar
+      à sessão e clonar em `/home/user/rules-ai`), **só para leitura**.
+    - Divergência com este projeto → vale a regra do projeto e o usuário decide
+      (`CONFLITOS.md`); sem acesso ao `rules-ai` → avisar o usuário, não seguir em silêncio.
 
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).

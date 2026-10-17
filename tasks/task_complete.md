@@ -236,3 +236,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #245.1 | Levantamento e plano (tarefa grande) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245.2 | Geradores ligam o link só se o arquivo existir · `MEDIO · effort medium` | 🟠 Alta | #245.1 | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245.3 | Aplicar nos arquivos já gerados (todas as matérias) · `PESADO · effort high` | 🟠 Alta | #245.2 | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #246-0a15e96a-c79d-4a6d-87e0-75c459aa2d03 | Sempre verificar as regras do rules-ai (regra no AGENTS.md) | 🟡 Média | — | ✅ Concluído | — (não reservável) | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
+| #246.1 | Regra "verificar o rules-ai" no AGENTS.md · `LEVE · effort low` | 🟡 Média | — | ✅ Concluído | — | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
