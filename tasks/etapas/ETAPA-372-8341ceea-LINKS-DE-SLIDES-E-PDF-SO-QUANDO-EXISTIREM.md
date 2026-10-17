@@ -112,6 +112,9 @@ conferir por `grep` que não sobra link para slide inexistente. Sem navegador.
 
 ### #245.4 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere a #245.2 e a #245.3.
+**Próximo passo:** — (entregue).
+
+- **Entrega:** aceite do usuário em 2026-10-16 22:41 ("245.4 ok"). **Verificação:** resposta do
+  usuário; tarefa #245 concluída.
 
 - **Nível:** LEVE — conferência do usuário.
