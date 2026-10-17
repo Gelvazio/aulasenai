@@ -203,7 +203,9 @@
       "bncc": [
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "SGBD"
+      ],
       "ideias_ementa": [],
       "situacao_problema": ""
     },
@@ -387,7 +389,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Entidade"
+      ],
       "ideias_ementa": [
         "A partir do pedido de uma escola fictícia de cursos livres, liste as entidades, os atributos e os relacionamentos com cardinalidade."
       ],
@@ -423,7 +427,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Atributo"
+      ],
       "ideias_ementa": [],
       "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
     },
@@ -457,7 +463,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Cardinalidade"
+      ],
       "ideias_ementa": [],
       "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
     },
@@ -533,7 +541,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Normalização"
+      ],
       "ideias_ementa": [
         "Mostre uma planilha de matrículas com repetição e normalize passo a passo até a 3FN, explicando cada anomalia."
       ],
@@ -606,7 +616,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "DDL"
+      ],
       "ideias_ementa": [],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
@@ -639,7 +651,10 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Chave primária (PK)",
+        "Chave estrangeira (FK)"
+      ],
       "ideias_ementa": [
         "Crie o script DDL de alunos, cursos e matrículas com chaves primária e estrangeira, NOT NULL, UNIQUE e CHECK."
       ],
@@ -674,7 +689,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "DML"
+      ],
       "ideias_ementa": [],
       "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
     },
@@ -775,7 +792,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Procedimento armazenado"
+      ],
       "ideias_ementa": [
         "Escreva um procedimento armazenado em PL/pgSQL que matricula um aluno só se houver vaga."
       ],
@@ -810,7 +829,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Trigger"
+      ],
       "ideias_ementa": [
         "Crie um trigger que grava em tabela de histórico toda alteração de nota, com usuário e data."
       ],
@@ -847,7 +868,9 @@
         "CG5 Cultura digital",
         "CG10 Responsabilidade"
       ],
-      "termos_glossario_ementa": [],
+      "termos_glossario_ementa": [
+        "Auditoria"
+      ],
       "ideias_ementa": [
         "Monte papéis e GRANT/REVOKE com o mínimo de permissões para a aplicação, a secretaria e o professor."
       ],
