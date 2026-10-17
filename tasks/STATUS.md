@@ -914,6 +914,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #260.3 | Grupo B: Comunicação Oral no gerador de seeds · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #260.1 | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (local · main · s20) (desde 2026-10-17 18:19) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #260.5 | Grupo B: aplicar o seed da Comunicação Oral (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #260.3 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.5, #260.6 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #261-a9a852ed-fa9d-4f34-9f50-2ba06e49bd89 | Cards das aulas na ordem de `aulas.numero` | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
+| #261.1 | Ordenar os cards por `aulas.numero` no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -944,6 +946,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 385-2b180952 | Coluna `aulas.numero_aula` (#258, pedida em 2026-10-17 12:11) | [ETAPA-385-2b180952-COLUNA-NUMERO-AULA.md](etapas/ETAPA-385-2b180952-COLUNA-NUMERO-AULA.md) |
 | 386-009facc1 | Remover o `rotulo_card` de tudo (#259, pedida em 2026-10-17 12:34) | [ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md) |
 | 387-4d7a91c2 | Ligar as atividades sem ID à tabela `atividade` e à aula (#260, pedida em 2026-10-17 17:51) | [ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) |
+| 388-a9a852ed | Cards das aulas na ordem de `aulas.numero` (#261, pedida em 2026-10-17 18:20) | [ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
