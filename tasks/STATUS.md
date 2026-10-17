@@ -909,6 +909,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #260-4d7a91c2-8e35-4b60-a1f4-5c92d0b7e316 | Ligar as atividades sem ID à tabela `atividade` e à aula | 🟠 Alta | — | — | ⬜ Pendente (plano aguarda a #260.1) | — (não reservável) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.1 | Diagnóstico e plano com aprovação · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.2 | Criar os registros em `atividade` ligados à aula (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #260.1 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.3 | Ligar as páginas de atividade ao id · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #260.2 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.3 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -938,6 +943,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 384-5fc49d5f | "Id Aula:" do card só para o Professor Administrador (#257, pedida em 2026-10-17 12:10) | [ETAPA-384-5fc49d5f-ID-AULA-SO-PARA-ADMINISTRADOR.md](etapas/ETAPA-384-5fc49d5f-ID-AULA-SO-PARA-ADMINISTRADOR.md) |
 | 385-2b180952 | Coluna `aulas.numero_aula` (#258, pedida em 2026-10-17 12:11) | [ETAPA-385-2b180952-COLUNA-NUMERO-AULA.md](etapas/ETAPA-385-2b180952-COLUNA-NUMERO-AULA.md) |
 | 386-009facc1 | Remover o `rotulo_card` de tudo (#259, pedida em 2026-10-17 12:34) | [ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md) |
+| 387-4d7a91c2 | Ligar as atividades sem ID à tabela `atividade` e à aula (#260, pedida em 2026-10-17 17:51) | [ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
