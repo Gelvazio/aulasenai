@@ -3,13 +3,14 @@
 | STATUS-PERMISSAO-EMENTA | Curso |
 |---|---|
 | VERIFICAR | ASSISTENTE-DE-OPERACOES-LOGISTICAS |
+| IGNORAR | CURSO-PROFESSOR-RAFAEL |
 | VERIFICAR | GESTAO_E_CONTROLE_MATERIAIS |
 | VERIFICAR | OPERADOR_PRODUCAO_INDUSTRIAL |
 | VERIFICAR | QUALIFICACAO-PROFISSIONAL |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH |
 | VERIFICAR | TECNICO-INFORMATICA-INTERNET |
 
-**VERIFICAR:** 6 · **IGNORAR:** 0 (de 6 cursos)
+**VERIFICAR:** 6 · **IGNORAR:** 1 (de 7 cursos)
 
 > Vale para o curso inteiro. Curso em `IGNORAR` tem todas as ementas ignoradas (fora de
 > pendências, ajustes e geração). Padrão: `IGNORAR`. Troque à mão para
@@ -20,6 +21,7 @@
 | STATUS-PERMISSAO-MATERIA | Curso | Matéria |
 |---|---|---|
 | VERIFICAR | ASSISTENTE-DE-OPERACOES-LOGISTICAS | INTRODUCAO-TIC |
+| IGNORAR | CURSO-PROFESSOR-RAFAEL | MATERIA-XYZ |
 | VERIFICAR | GESTAO_E_CONTROLE_MATERIAIS | ANALISE_DADOS_APLICADA_GESTAO |
 | VERIFICAR | OPERADOR_PRODUCAO_INDUSTRIAL | FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO |
 | VERIFICAR | QUALIFICACAO-PROFISSIONAL | CANVAS-APRESENTACAO |
@@ -54,7 +56,7 @@
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | Testes de Sistemas-EXISTENTES |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | VERSIONAMENTO-E-COLABORACAO |
 
-**Matérias valendo (curso e matéria em VERIFICAR):** 16 de 34
+**Matérias valendo (curso e matéria em VERIFICAR):** 16 de 35
 
 > Vale por matéria, dentro do curso. A matéria só é processada quando o **curso** e a **matéria**
 > estão em `VERIFICAR`; matéria em `IGNORAR` fica fora de pendências, ajustes
@@ -65,7 +67,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-09 15:16:58
+**Última atualização:** 2026-10-17 00:37:21
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -79,12 +81,13 @@
 | Curso | Matérias | ✅ Conformes | ❌ Fora do tamanho | ⚠️ Genéricas | ⛔ Sem ementa |
 |---|---|---|---|---|---|
 | ASSISTENTE-DE-OPERACOES-LOGISTICAS | 1 | 1 | 0 | 0 | 0 |
+| CURSO-PROFESSOR-RAFAEL | 1 | 0 | 0 | 0 | 1 |
 | GESTAO_E_CONTROLE_MATERIAIS | 1 | 1 | 0 | 0 | 0 |
 | OPERADOR_PRODUCAO_INDUSTRIAL | 1 | 1 | 0 | 0 | 0 |
 | QUALIFICACAO-PROFISSIONAL | 3 | 1 | 0 | 2 | 0 |
 | RIO_DO_SUL_MAIS_TECH | 8 | 8 | 0 | 0 | 0 |
-| TECNICO-INFORMATICA-INTERNET | 20 | 1 | 18 | 1 | 0 |
-| **TOTAL** | **34** | **13** | **18** | **3** | **0** |
+| TECNICO-INFORMATICA-INTERNET | 20 | 2 | 17 | 0 | 1 |
+| **TOTAL** | **35** | **14** | **17** | **2** | **2** |
 
 ---
 
@@ -114,6 +117,12 @@
 | Matéria | Caracteres | Situação | Permissão |
 |---|---|---|---|
 | INTRODUCAO-TIC | 14.917 | ✅ Conforme | VERIFICAR |
+
+## 🎓 CURSO-PROFESSOR-RAFAEL
+
+| Matéria | Caracteres | Situação | Permissão |
+|---|---|---|---|
+| MATERIA-XYZ | — | ⛔ Sem ementa | IGNORAR |
 
 ## 🎓 GESTAO_E_CONTROLE_MATERIAIS
 
@@ -161,7 +170,7 @@
 | INTERACAO-COM-APIS | 4.454 | ❌ Fora do tamanho | IGNORAR |
 | INTRODUCAO-A-INDUSTRIA-4-0 | 3.463 | ❌ Fora do tamanho | IGNORAR |
 | INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE | 4.896 | ❌ Fora do tamanho | IGNORAR |
-| INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO | 7.179 | ❌ Fora do tamanho | IGNORAR |
+| INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO | 14.887 | ✅ Conforme | IGNORAR |
 | INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS | 3.993 | ❌ Fora do tamanho | IGNORAR |
 | LOGICA-DE-PROGRAMACAO | 5.913 | ❌ Fora do tamanho | IGNORAR |
 | PROJETO-DE-BACK-END | 9.889 | ❌ Fora do tamanho | IGNORAR |
@@ -170,7 +179,7 @@
 | SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS | 5.016 | ❌ Fora do tamanho | IGNORAR |
 | TESTES-DE-BACK-END | 4.427 | ❌ Fora do tamanho | IGNORAR |
 | TESTES-DE-FRONTEND | 14.955 | ❌ Fora do tamanho | VERIFICAR |
-| Testes de Sistemas-EXISTENTES | 14.800 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
+| Testes de Sistemas-EXISTENTES | — | ⛔ Sem ementa | IGNORAR |
 | VERSIONAMENTO-E-COLABORACAO | 4.644 | ❌ Fora do tamanho | IGNORAR |
 
 ---

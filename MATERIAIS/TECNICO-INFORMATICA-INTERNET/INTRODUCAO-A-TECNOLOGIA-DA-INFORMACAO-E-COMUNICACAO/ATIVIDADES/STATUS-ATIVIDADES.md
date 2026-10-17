@@ -12,16 +12,16 @@
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 02 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 03 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 04 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 05 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 06 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 07 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 08 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 09 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 10 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 01 | Elementos da comunicação e níveis de fala | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 02 | Comunicação em equipes: consenso e conflitos | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 03 | Hardware e sistema operacional | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 04 | Internet: navegadores, busca, downloads e direitos autorais | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 05 | Correio eletrônico e nuvem | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 06 | Segurança da informação | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 07 | Textos técnicos: relatório, ata, memorando e resumo | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 08 | Editor de textos | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 09 | Planilhas eletrônicas | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 10 | Editor de apresentações e apresentação final | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
 
 ## Atividade prática por aula (padrão da prova id 82)
 

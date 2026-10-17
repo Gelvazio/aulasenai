@@ -1,0 +1,976 @@
+{
+  "uc": "Introdução à Tecnologia da Informação e Comunicação",
+  "uc_curta": "Introdução à TIC",
+  "curso": "Técnico em Informática para Internet",
+  "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
+  "apostila_sem_videos_e_exercicios": true,
+  "modulo": "BÁSICO",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 40,
+  "fontes": [
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md (fonte da verdade: objetivo, capacidades, conhecimentos e recursos da UC Introdução à Tecnologia da Informação e Comunicação)",
+    "EMENTA-CHALKIE-AI.md v2.0 (sequência de aulas, indicadores, avaliação e parte didática)"
+  ],
+  "versao_ementa": "EMENTA-CHALKIE-AI.md v2.0 — completada a partir da ementa oficial (2026-10-16)",
+  "proveniencia": "Capacidades, conhecimentos, objetivo e recursos copiados literalmente da ementa do curso; a linha '2 - Desenvolver sistemas para internet…' da lista de capacidades é a função do módulo; o resto vem da ementa da matéria e é didático.",
+  "funcao": "● 2 - Desenvolver sistemas para internet, de acordo com metodologia e padrões de qualidade, usabilidade, interatividade, robustez, acessibilidade e segurança da informação.",
+  "justificativa": "Quem desenvolve sistemas para internet passa o dia se comunicando: lê pedidos e normas, escreve relatórios e atas, troca e-mails, organiza arquivos na nuvem, monta planilhas e apresenta resultados. A UC dá a base dessa rotina: comunicação clara em equipe, uso seguro do computador e da web, textos técnicos e software de escritório. Prepara para as UCs que pedem documentação e trabalho em equipe.",
+  "objetivo_geral": {
+    "texto": "Proporcionar o desenvolvimento de capacidades básicas e socioemocionais relativas à comunicação e ao uso de ferramentas de TIC na interpretação de normas e ou textos técnicos e uso seguro de recursos informatizados nos processos de comunicação no trabalho.",
+    "fonte": "oficial"
+  },
+  "capacidades": {
+    "C1": "Empregar os princípios, padrões e normas técnicas que estabelecem as condições e requisitos para uma comunicação oral e escrita clara, assertiva e eficaz, condizente com o ambiente de trabalho",
+    "C2": "Interpretar dados, informações técnicas e terminologias de textos técnicos relacionados aos processos industriais",
+    "C3": "Reconhecer características e aplicabilidade de hardware e software de sistemas informatizados utilizados na indústria",
+    "C4": "Utilizar recursos e funcionalidades da WEB nos processos de comunicação no trabalho, de busca, armazenamento e compartilhamento de informação",
+    "C5": "Aplicar os recursos e procedimentos de segurança da informação."
+  },
+  "capacidades_socioemocionais": {
+    "S1": "Comprometer-se com a prática permanente e intensiva da amabilidade nas relações profissionais, visando ao engajamento e à cooperação nas relações de trabalho.",
+    "S2": "Perceber que, em seu contexto de trabalho e âmbitos de convívio, existem diferentes hierarquias (instituídas ou natas), instâncias de decisão e níveis de autonomia em relação a ações, circunstâncias e propósitos.",
+    "S3": "Reconhecer a ocorrência de novos fatos, ideias e opiniões diferentes como oportunidades e possibilidades de mudanças positivas e inovadoras nas atividades de sua responsabilidade.",
+    "S4": "Analisar as complexidades e dificuldades existentes nos problemas, necessidades, ou oportunidades de melhoria em seu campo de trabalho."
+  },
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Comunicação em equipes de trabalho",
+      "conteudos": [
+        "1.1 Dinâmica do trabalho em equipe",
+        "1.2 Busca de consenso",
+        "1.3 Gestão de Conflitos"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Segurança da Informação",
+      "conteudos": [
+        "2.1 Definição dos pilares da Segurança da Informação",
+        "2.2 Reconhecer Leis vigentes a segurança da informação",
+        "2.3 Tipos de golpes na internet",
+        "2.4 Contas e Senhas",
+        "2.5 Navegação segura na internet",
+        "2.6 Backup",
+        "2.7 Códigos maliciosos (Malware)"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Internet (World Wide Web)",
+      "conteudos": [
+        "3.1 Políticas de uso",
+        "3.2 Navegadores",
+        "3.3 Sites de busca",
+        "3.4 Download e gravação de arquivos",
+        "3.5 Correio eletrônico",
+        "3.6 Direitos autorais (citação de fontes de consulta)",
+        "3.7 Armazenamento e compartilhamento em nuvem"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Software de escritório",
+      "conteudos": [
+        "4.1 Editor de Textos",
+        "4.1.1 Tipos",
+        "4.1.2 Formatação",
+        "4.1.3 Configuração de páginas",
+        "4.1.4 Importação de figuras e objetos",
+        "4.1.5 Inserção de tabelas e gráficos",
+        "4.1.6 Arquivamentos",
+        "4.1.7 Controles de exibição",
+        "4.1.8 Correção ortográfica e dicionário",
+        "4.1.9 Quebra de páginas",
+        "4.1.10 Recuos, tabulação, parágrafos, espaçamentos e margens",
+        "4.1.11 Marcadores e numeradores",
+        "4.1.12 Bordas e sombreamento",
+        "4.1.13 Colunas",
+        "4.1.14 Controle de alterações",
+        "4.1.15 Impressão",
+        "4.2 Editor de Planilhas Eletrônicas",
+        "4.2.1 Funções básicas e suas finalidades",
+        "4.2.2 Linhas, colunas e endereços de células",
+        "4.2.3 Formatação de células",
+        "4.2.4 Configuração de páginas",
+        "4.2.5 Inserção de fórmulas básicas",
+        "4.2.6 Classificação e filtro de dados",
+        "4.2.7 Gráficos, quadros e tabelas",
+        "4.2.8 Impressão",
+        "4.3 Editor de Apresentações",
+        "4.3.1 Funções básicas e suas finalidades",
+        "4.3.2 Tipos",
+        "4.3.3 Formatação",
+        "4.3.4 Configuração de páginas",
+        "4.3.5 Importação de figuras e objetos",
+        "4.3.6 Inserção de tabelas e gráficos",
+        "4.3.7 Arquivamentos",
+        "4.3.8 Controles de exibição",
+        "4.3.9 Criação de apresentações em slides e vídeos",
+        "4.3.10 Recursos multimídia de apoio a apresentações e vídeos"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Informática",
+      "conteudos": [
+        "5.1 Fundamentos de hardware",
+        "5.1.1 Identificação de componentes",
+        "5.1.2 Identificação de processadores e periféricos",
+        "5.2 Sistema Operacional",
+        "5.2.1 Tipos",
+        "5.2.2 Fundamentos e funções",
+        "5.2.3 Barra de ferramentas",
+        "5.2.4 Utilização de periféricos",
+        "5.2.5 Organização de arquivos (Pastas)",
+        "5.2.6 Pesquisa de arquivos e diretórios",
+        "5.2.7 Área de trabalho",
+        "5.2.8 Compactação de arquivos"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Textos Técnicos",
+      "conteudos": [
+        "6.1 Definição",
+        "6.2 Tipos e exemplos",
+        "6.3 Normas aplicáveis para redação (ex.: ABNT, ISO, IEEE, ANSI…)",
+        "6.4 Interpretação"
+      ]
+    },
+    {
+      "dominio": 7,
+      "titulo": "Comunicação",
+      "conteudos": [
+        "7.1 Identificação de textos técnicos",
+        "7.2 Relatórios",
+        "7.3 Atas",
+        "7.4 Memorandos",
+        "7.5 Resumos"
+      ]
+    },
+    {
+      "dominio": 8,
+      "titulo": "Níveis de Fala",
+      "conteudos": [
+        "8.1 Linguagem culta",
+        "8.2 Linguagem técnica",
+        "8.2.1 Jargão",
+        "8.2.2 Características"
+      ]
+    },
+    {
+      "dominio": 9,
+      "titulo": "Elementos da Comunicação",
+      "conteudos": [
+        "9.1 Emissor",
+        "9.2 Receptor",
+        "9.3 Mensagem",
+        "9.4 Canal",
+        "9.5 Ruído",
+        "9.6 Código",
+        "9.7 Feedback"
+      ]
+    }
+  ],
+  "capacidades_x_conhecimentos": {
+    "C1": [
+      1,
+      7,
+      8,
+      9
+    ],
+    "C2": [
+      6,
+      4
+    ],
+    "C3": [
+      5,
+      4
+    ],
+    "C4": [
+      3
+    ],
+    "C5": [
+      2
+    ],
+    "S1": [
+      1
+    ],
+    "S2": [
+      1
+    ],
+    "S3": [
+      1,
+      6
+    ],
+    "S4": [
+      1,
+      6
+    ]
+  },
+  "capacidades_x_conhecimentos_ementa": "C1 Comunicação oral e escrita → 1, 7, 8, 9 · C2 Textos técnicos e dados → 6, 4.2 · C3 Hardware e software → 5, 4 · C4 Web → 3 · C5 Segurança → 2 · S1/S2 → 1 · S3/S4 → 1, 6.",
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Elementos da comunicação e níveis de fala",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        9,
+        8
+      ],
+      "dominios_texto": "9 · 8",
+      "capacidades": [
+        "C1"
+      ],
+      "conteudos_oficiais": [
+        "9 Elementos da Comunicação",
+        "9.1 Emissor",
+        "9.2 Receptor",
+        "9.3 Mensagem",
+        "9.4 Canal",
+        "9.5 Ruído",
+        "9.6 Código",
+        "9.7 Feedback",
+        "8 Níveis de Fala",
+        "8.1 Linguagem culta",
+        "8.2 Linguagem técnica",
+        "8.2.1 Jargão",
+        "8.2.2 Características"
+      ],
+      "indicadores": [
+        "Identifica os 7 elementos da comunicação e os ruídos numa troca de mensagens de trabalho",
+        "Adequa o nível de fala (culto, técnico, jargão) ao público e ao canal"
+      ],
+      "indicadores_numeros": [
+        1,
+        2
+      ],
+      "atividade": "Mapa de uma mensagem com ruídos e correções",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md",
+      "slides": "AULAS/AULA-01-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação"
+      ],
+      "termos_glossario_ementa": [
+        "Emissor",
+        "Receptor",
+        "Ruído",
+        "Feedback",
+        "Jargão"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Comunicação em equipes: consenso e conflitos",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        1
+      ],
+      "dominios_texto": "1.1–1.3",
+      "capacidades": [
+        "C1"
+      ],
+      "conteudos_oficiais": [
+        "1 Comunicação em equipes de trabalho",
+        "1.1 Dinâmica do trabalho em equipe",
+        "1.2 Busca de consenso",
+        "1.3 Gestão de Conflitos"
+      ],
+      "indicadores": [
+        "Conduz a busca de consenso e propõe saída para um conflito de equipe com amabilidade",
+        "Acolhe ideias diferentes e analisa o problema antes de propor a solução"
+      ],
+      "indicadores_numeros": [
+        3,
+        13
+      ],
+      "atividade": "Acordo de convivência da equipe",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md",
+      "slides": "AULAS/AULA-02-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [
+        "Consenso"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Hardware e sistema operacional",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.1 · 5.2",
+      "capacidades": [
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "5 Informática",
+        "5.1 Fundamentos de hardware",
+        "5.1.1 Identificação de componentes",
+        "5.1.2 Identificação de processadores e periféricos",
+        "5.2 Sistema Operacional",
+        "5.2.1 Tipos",
+        "5.2.2 Fundamentos e funções",
+        "5.2.3 Barra de ferramentas",
+        "5.2.4 Utilização de periféricos",
+        "5.2.5 Organização de arquivos (Pastas)",
+        "5.2.6 Pesquisa de arquivos e diretórios",
+        "5.2.7 Área de trabalho",
+        "5.2.8 Compactação de arquivos"
+      ],
+      "indicadores": [
+        "Identifica componentes, processadores e periféricos e explica a função de cada um",
+        "Organiza, pesquisa e compacta arquivos e pastas no sistema operacional"
+      ],
+      "indicadores_numeros": [
+        4,
+        5
+      ],
+      "atividade": "Ficha do computador + pastas do projeto organizadas",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md",
+      "slides": "AULAS/AULA-03-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [
+        "Sistema operacional",
+        "Periférico"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Internet: navegadores, busca, downloads e direitos autorais",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.1–3.4 · 3.6",
+      "capacidades": [
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "3 Internet (World Wide Web)",
+        "3.1 Políticas de uso",
+        "3.2 Navegadores",
+        "3.3 Sites de busca",
+        "3.4 Download e gravação de arquivos",
+        "3.6 Direitos autorais (citação de fontes de consulta)"
+      ],
+      "indicadores": [
+        "Pesquisa na web com critérios de busca e confiabilidade e cita a fonte corretamente"
+      ],
+      "indicadores_numeros": [
+        6
+      ],
+      "atividade": "Pesquisa com fontes citadas",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md",
+      "slides": "AULAS/AULA-04-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Correio eletrônico e nuvem",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.5 · 3.7",
+      "capacidades": [
+        "C1",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "3 Internet (World Wide Web)",
+        "3.5 Correio eletrônico",
+        "3.7 Armazenamento e compartilhamento em nuvem"
+      ],
+      "indicadores": [
+        "Redige e-mail profissional e compartilha arquivos na nuvem com a permissão certa"
+      ],
+      "indicadores_numeros": [
+        7
+      ],
+      "atividade": "E-mail profissional + pasta compartilhada",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md",
+      "slides": "AULAS/AULA-05-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação",
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [
+        "Nuvem"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Segurança da informação",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        2
+      ],
+      "dominios_texto": "2.1–2.7",
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2 Segurança da Informação",
+        "2.1 Definição dos pilares da Segurança da Informação",
+        "2.2 Reconhecer Leis vigentes a segurança da informação",
+        "2.3 Tipos de golpes na internet",
+        "2.4 Contas e Senhas",
+        "2.5 Navegação segura na internet",
+        "2.6 Backup",
+        "2.7 Códigos maliciosos (Malware)"
+      ],
+      "indicadores": [
+        "Aplica os pilares e as leis de segurança da informação: senha forte, backup, golpes e malware"
+      ],
+      "indicadores_numeros": [
+        8
+      ],
+      "atividade": "Checklist de segurança do posto de trabalho",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md",
+      "slides": "AULAS/AULA-06-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Backup",
+        "Malware"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "Textos técnicos: relatório, ata, memorando e resumo",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        6,
+        7
+      ],
+      "dominios_texto": "6 · 7",
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "6 Textos Técnicos",
+        "6.1 Definição",
+        "6.2 Tipos e exemplos",
+        "6.3 Normas aplicáveis para redação (ex.: ABNT, ISO, IEEE, ANSI…)",
+        "6.4 Interpretação",
+        "7 Comunicação",
+        "7.1 Identificação de textos técnicos",
+        "7.2 Relatórios",
+        "7.3 Atas",
+        "7.4 Memorandos",
+        "7.5 Resumos"
+      ],
+      "indicadores": [
+        "Interpreta texto técnico e redige relatório, ata, memorando e resumo conforme a norma",
+        "Acolhe ideias diferentes e analisa o problema antes de propor a solução"
+      ],
+      "indicadores_numeros": [
+        9,
+        13
+      ],
+      "atividade": "Ata e relatório de uma reunião simulada",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md",
+      "slides": "AULAS/AULA-07-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação"
+      ],
+      "termos_glossario_ementa": [
+        "Ata"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório."
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "Editor de textos",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.1",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "4 Software de escritório",
+        "4.1 Editor de Textos",
+        "4.1.1 Tipos",
+        "4.1.2 Formatação",
+        "4.1.3 Configuração de páginas",
+        "4.1.4 Importação de figuras e objetos",
+        "4.1.5 Inserção de tabelas e gráficos",
+        "4.1.6 Arquivamentos",
+        "4.1.7 Controles de exibição",
+        "4.1.8 Correção ortográfica e dicionário",
+        "4.1.9 Quebra de páginas",
+        "4.1.10 Recuos, tabulação, parágrafos, espaçamentos e margens",
+        "4.1.11 Marcadores e numeradores",
+        "4.1.12 Bordas e sombreamento",
+        "4.1.13 Colunas",
+        "4.1.14 Controle de alterações",
+        "4.1.15 Impressão"
+      ],
+      "indicadores": [
+        "Formata documento no editor de textos com estilos, tabelas, colunas e controle de alterações"
+      ],
+      "indicadores_numeros": [
+        10
+      ],
+      "atividade": "Relatório técnico formatado",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md",
+      "slides": "AULAS/AULA-08-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Relatório e apresentação do diagnóstico (aulas 8–10). A mesma equipe pede o diagnóstico documentado. Você entrega o relatório no editor de textos, a planilha com os dados do levantamento e gráfico, e apresenta as recomendações em slides e num vídeo curto."
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Planilhas eletrônicas",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.2",
+      "capacidades": [
+        "C2",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "4 Software de escritório",
+        "4.2 Editor de Planilhas Eletrônicas",
+        "4.2.1 Funções básicas e suas finalidades",
+        "4.2.2 Linhas, colunas e endereços de células",
+        "4.2.3 Formatação de células",
+        "4.2.4 Configuração de páginas",
+        "4.2.5 Inserção de fórmulas básicas",
+        "4.2.6 Classificação e filtro de dados",
+        "4.2.7 Gráficos, quadros e tabelas",
+        "4.2.8 Impressão"
+      ],
+      "indicadores": [
+        "Organiza dados em planilha com fórmulas, filtros e gráfico e interpreta o resultado"
+      ],
+      "indicadores_numeros": [
+        11
+      ],
+      "atividade": "Planilha com fórmulas, filtro e gráfico",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md",
+      "slides": "AULAS/AULA-09-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Relatório e apresentação do diagnóstico (aulas 8–10). A mesma equipe pede o diagnóstico documentado. Você entrega o relatório no editor de textos, a planilha com os dados do levantamento e gráfico, e apresenta as recomendações em slides e num vídeo curto."
+    },
+    {
+      "numero": "10",
+      "aula": 10,
+      "tema": "Editor de apresentações e apresentação final",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.3",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "4 Software de escritório",
+        "4.3 Editor de Apresentações",
+        "4.3.1 Funções básicas e suas finalidades",
+        "4.3.2 Tipos",
+        "4.3.3 Formatação",
+        "4.3.4 Configuração de páginas",
+        "4.3.5 Importação de figuras e objetos",
+        "4.3.6 Inserção de tabelas e gráficos",
+        "4.3.7 Arquivamentos",
+        "4.3.8 Controles de exibição",
+        "4.3.9 Criação de apresentações em slides e vídeos",
+        "4.3.10 Recursos multimídia de apoio a apresentações e vídeos"
+      ],
+      "indicadores": [
+        "Monta e apresenta slides e vídeo curto com recursos multimídia",
+        "Acolhe ideias diferentes e analisa o problema antes de propor a solução"
+      ],
+      "indicadores_numeros": [
+        12,
+        13
+      ],
+      "atividade": "Apresentação em slides + vídeo curto",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md",
+      "slides": "AULAS/AULA-10-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação",
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Relatório e apresentação do diagnóstico (aulas 8–10). A mesma equipe pede o diagnóstico documentado. Você entrega o relatório no editor de textos, a planilha com os dados do levantamento e gráfico, e apresenta as recomendações em slides e num vídeo curto."
+    }
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Identifica os 7 elementos da comunicação e os ruídos numa troca de mensagens de trabalho",
+      "capacidades": [
+        "C1"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 2,
+      "indicador": "Adequa o nível de fala (culto, técnico, jargão) ao público e ao canal",
+      "capacidades": [
+        "C1"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 3,
+      "indicador": "Conduz a busca de consenso e propõe saída para um conflito de equipe com amabilidade",
+      "capacidades": [
+        "C1",
+        "S1",
+        "S2"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 4,
+      "indicador": "Identifica componentes, processadores e periféricos e explica a função de cada um",
+      "capacidades": [
+        "C3"
+      ],
+      "aulas": [
+        3
+      ]
+    },
+    {
+      "numero": 5,
+      "indicador": "Organiza, pesquisa e compacta arquivos e pastas no sistema operacional",
+      "capacidades": [
+        "C3"
+      ],
+      "aulas": [
+        3
+      ]
+    },
+    {
+      "numero": 6,
+      "indicador": "Pesquisa na web com critérios de busca e confiabilidade e cita a fonte corretamente",
+      "capacidades": [
+        "C4"
+      ],
+      "aulas": [
+        4
+      ]
+    },
+    {
+      "numero": 7,
+      "indicador": "Redige e-mail profissional e compartilha arquivos na nuvem com a permissão certa",
+      "capacidades": [
+        "C1",
+        "C4"
+      ],
+      "aulas": [
+        5
+      ]
+    },
+    {
+      "numero": 8,
+      "indicador": "Aplica os pilares e as leis de segurança da informação: senha forte, backup, golpes e malware",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        6
+      ]
+    },
+    {
+      "numero": 9,
+      "indicador": "Interpreta texto técnico e redige relatório, ata, memorando e resumo conforme a norma",
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
+      "aulas": [
+        7
+      ]
+    },
+    {
+      "numero": 10,
+      "indicador": "Formata documento no editor de textos com estilos, tabelas, colunas e controle de alterações",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aulas": [
+        8
+      ]
+    },
+    {
+      "numero": 11,
+      "indicador": "Organiza dados em planilha com fórmulas, filtros e gráfico e interpreta o resultado",
+      "capacidades": [
+        "C2",
+        "C3"
+      ],
+      "aulas": [
+        9
+      ]
+    },
+    {
+      "numero": 12,
+      "indicador": "Monta e apresenta slides e vídeo curto com recursos multimídia",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aulas": [
+        10
+      ]
+    },
+    {
+      "numero": 13,
+      "indicador": "Acolhe ideias diferentes e analisa o problema antes de propor a solução",
+      "capacidades": [
+        "S3",
+        "S4"
+      ],
+      "aulas": [
+        2,
+        7,
+        10
+      ]
+    }
+  ],
+  "situacoes_aprendizagem": [
+    "SA 1 — Kit de comunicação da equipe (aulas 1–7). Você, como aluno consultor, foi chamado para organizar a comunicação de uma pequena equipe de desenvolvimento web que perde prazos por mensagens confusas, arquivos espalhados e senhas fracas. Você mapeia os ruídos, propõe um acordo de equipe, organiza as pastas e a nuvem, escreve o checklist de segurança e registra a reunião em ata e relatório.",
+    "SA 2 — Relatório e apresentação do diagnóstico (aulas 8–10). A mesma equipe pede o diagnóstico documentado. Você entrega o relatório no editor de textos, a planilha com os dados do levantamento e gráfico, e apresenta as recomendações em slides e num vídeo curto."
+  ],
+  "dificuldades_comuns": [
+    "**Jargão com quem não é da área** → reescrever a mesma frase em linguagem culta.",
+    "**Copiar da web sem fonte** → citar autor, título, endereço e data de acesso.",
+    "**Senha repetida em tudo** → gerenciador de senhas e verificação em duas etapas.",
+    "**Fórmula com endereço errado** → conferir a célula e o resultado esperado antes de copiar."
+  ],
+  "regra_de_bolso": "antes de enviar, pergunte quem vai ler, por qual canal e o que precisa responder.",
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Atividades das aulas (objetivas e práticas)",
+        "momento": "Aulas 1–10",
+        "peso": "30%",
+        "criterios": "Correção, completude, clareza e prazo"
+      },
+      {
+        "instrumento": "Avaliação objetiva 01",
+        "momento": "Aula 5 (aulas 1–5)",
+        "peso": "20%",
+        "criterios": "Acertos; questões capacidade → contexto → comando"
+      },
+      {
+        "instrumento": "Avaliação objetiva 02",
+        "momento": "Aula 10 (aulas 6–10)",
+        "peso": "20%",
+        "criterios": "Acertos; questões capacidade → contexto → comando"
+      },
+      {
+        "instrumento": "Avaliação prática: kit de comunicação e diagnóstico (SA 1 e SA 2)",
+        "momento": "Aula 10",
+        "peso": "30%",
+        "criterios": "Textos conforme a norma, documento e planilha corretos, segurança aplicada, apresentação clara"
+      }
+    ],
+    "nota_final": "30% atividades + 20% objetiva 01 + 20% objetiva 02 + 30% prática",
+    "aprovacao": "nota final ≥ 7,0 e presença mínima de 75%; cada capacidade recebe o parecer Desenvolvida / Em desenvolvimento / Não desenvolvida.",
+    "recuperacao": "Refazer a avaliação não atingida com outra situação ou novo banco de questões, conforme o regimento da unidade SENAI.",
+    "rubrica_lista": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Textos claros e conforme a norma, arquivos seguros, planilha e slides corretos"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Entrega correta, com pequenas falhas de formatação, citação ou fórmula"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Cumpre o essencial com orientação; falta padrão ou cuidado com segurança"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Textos confusos, sem fonte, arquivos perdidos ou senha exposta"
+      }
+    ]
+  },
+  "mapeamento_bncc": [
+    "**CG4 Comunicação** — aulas 1, 2, 5, 7 e 10: elementos, níveis de fala, e-mail, textos técnicos e apresentação",
+    "**CG5 Cultura digital** — aulas 3 a 10: sistema operacional, web, nuvem, segurança e software de escritório",
+    "**CG9 Empatia e cooperação** — aula 2 e todas: consenso, conflitos e amabilidade",
+    "**CG10 Responsabilidade** — aulas 4 e 6: direitos autorais, LGPD e cuidado com dados"
+  ],
+  "recursos": {
+    "ambientes": [
+      "sala de aula",
+      "laboratório de informática",
+      "auditório",
+      "RV"
+    ],
+    "equipamentos": [
+      "Projetor multimídia",
+      "equipamentos de informática",
+      "quadro branco",
+      "lousa digital",
+      "RA",
+      "RV"
+    ],
+    "didaticos": [
+      "Estante virtual SENAI DN"
+    ],
+    "ferramentas_didatico": "sistema operacional, navegador, e-mail e nuvem institucionais e pacote de escritório (sem impor marca)."
+  },
+  "acessibilidade": {
+    "oficial": "Nas condições de infraestrutura, serão asseguradas as condições de acessibilidade instrumental e arquitetônica, reconhecendo a especificidade e a peculiaridade do aluno com deficiência, levando-se em conta a(s) Norma(s) Regulamentadora(s) da ocupação, NBR nº 9050, Lei nº 13.146/2015, a LDB nº 9394/96 e a legislação específica em vigência da deficiência em questão, quando for o caso",
+    "didatico": "zoom, leitor de tela, legendas e tempo estendido."
+  },
+  "glossario_ementa": [
+    {
+      "termo": "Emissor",
+      "definicao": "quem envia a mensagem"
+    },
+    {
+      "termo": "Receptor",
+      "definicao": "quem recebe a mensagem"
+    },
+    {
+      "termo": "Ruído",
+      "definicao": "o que atrapalha a mensagem"
+    },
+    {
+      "termo": "Feedback",
+      "definicao": "resposta do receptor ao emissor"
+    },
+    {
+      "termo": "Jargão",
+      "definicao": "termo próprio de um grupo profissional"
+    },
+    {
+      "termo": "Consenso",
+      "definicao": "acordo aceito por todos"
+    },
+    {
+      "termo": "Sistema operacional",
+      "definicao": "programa que controla o computador e os outros programas"
+    },
+    {
+      "termo": "Periférico",
+      "definicao": "equipamento ligado ao computador para entrada ou saída"
+    },
+    {
+      "termo": "Nuvem",
+      "definicao": "armazenamento em servidores acessados pela internet"
+    },
+    {
+      "termo": "Backup",
+      "definicao": "cópia de segurança dos dados"
+    },
+    {
+      "termo": "Malware",
+      "definicao": "programa feito para causar dano"
+    },
+    {
+      "termo": "Ata",
+      "definicao": "registro oficial do que foi dito e decidido numa reunião"
+    }
+  ],
+  "prompts_chalkie": [
+    "Mostre uma mensagem de trabalho com ruído e reescreva-a apontando emissor, receptor, mensagem, canal, ruído, código e feedback.",
+    "Reescreva o mesmo aviso técnico em linguagem culta, técnica e com jargão, dizendo para quem serve cada versão.",
+    "Monte uma pesquisa sobre acessibilidade na web com três fontes confiáveis citadas pela ABNT.",
+    "Liste golpes comuns na internet, como reconhecer cada um e o que fazer, com base na LGPD e no Marco Civil.",
+    "Escreva o modelo de uma ata e de um relatório técnico de reunião de equipe.",
+    "Crie uma planilha de chamados de suporte com SOMA, MÉDIA, CONT.SE, filtro e gráfico."
+  ],
+  "regras_ia": [
+    "Capacidades e conhecimentos **[oficial]** não podem ser alterados, ampliados nem reduzidos.",
+    "Carga horária é 40h em 10 aulas de 4h; não criar aulas nem pesos além das Seções IV e V.",
+    "A linha \"2 - Desenvolver sistemas para internet…\" da ementa do curso é a função do módulo, não capacidade.",
+    "Os 7 elementos da comunicação incluem o feedback (9.7).",
+    "Contexto: \"você, como aluno consultor\"; sem empresa fictícia e sem dados pessoais reais.",
+    "Sem marca de software imposta: ensinar a função (editor, planilha, apresentação).",
+    "Integrar S1 a S4 nas dinâmicas em equipe e nas justificativas das entregas."
+  ],
+  "metricas": "80%+ dos estudantes com nota ≥ 7,0 · 100% entregam o kit e a apresentação.",
+  "referencias": [],
+  "textos_ementa": [
+    {
+      "titulo": "Regra de bolso",
+      "texto": "Regra de bolso: antes de enviar, pergunte quem vai ler, por qual canal e o que precisa responder."
+    }
+  ]
+}

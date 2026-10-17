@@ -9,18 +9,18 @@
 
 | Aula | Tema | Aula em `CONTEUDO/` | Slides | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|
-| 01 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 02 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 03 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 04 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 05 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 06 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 07 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 08 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 09 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 10 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | Elementos da comunicação e níveis de fala | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 02 | Comunicação em equipes: consenso e conflitos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 03 | Hardware e sistema operacional | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 04 | Internet: navegadores, busca, downloads e direitos autorais | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 05 | Correio eletrônico e nuvem | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 06 | Segurança da informação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 07 | Textos técnicos: relatório, ata, memorando e resumo | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 08 | Editor de textos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 09 | Planilhas eletrônicas | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 10 | Editor de apresentações e apresentação final | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ## Observações
 
 - "Banco" = atividades cadastradas na tabela `atividade` (seed aplicado e conferido pelo md5; registro em `database/SEEDS-APLICADOS.md`).
-- Os temas "a definir" são preenchidos quando as aulas forem extraídas da ementa para `CONTEUDO/`, uma aula por vez.
+- Temas do plano de aulas do `materia.json` (#226.0, 2026-10-16); as aulas em `CONTEUDO/` são escritas uma por vez (#226.1 em diante).
