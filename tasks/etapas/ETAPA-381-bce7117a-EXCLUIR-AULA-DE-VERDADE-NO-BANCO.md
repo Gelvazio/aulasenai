@@ -71,7 +71,16 @@ linha da tabela `aulas` (DELETE), em vez de marcar `aulas.excluido = 1`.
 
 ### #254.4 — Apagar as aulas que já estão com `excluido = 1`
 
-**Próximo passo:** depois da #254.2: preparar o SQL (lista + DELETE só das sem atividade).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — apagar dados em massa (o professor roda no SQL Editor).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Entrega (2026-10-17 11:56, Opus 5.5, s14):** `database/2026-10-17-apagar-aulas-ja-excluidas.sql`; o
+  usuário mandou usar o conector do Supabase ("ja use o mcp do supabase pra fazer o que
+  precisar"), e o DELETE rodou por ele: apagadas as aulas **70** e **71** (matéria 25, "Manual de
+  Comunicação Técnica do CD", v1 e versão simplificada), sem atividade.
+- **Ficaram** com `excluido = 1`, porque cada uma tem 1 atividade vinculada: **41** (atividade 25,
+  "Atividade Excel 29/09") e **42** (atividade 26, "Atividade Excel 01/10"), da matéria 27.
+  Continuam escondidas no índice; para apagá-las, a atividade precisa sair antes.
+- **Verificação:** consulta depois do DELETE: 70 e 71 não existem mais; só 41 e 42 com
+  `excluido = 1`.
