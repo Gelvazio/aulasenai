@@ -9,7 +9,7 @@
 
 | Aula | Tema | Aula em `CONTEUDO/` | Slides | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|
-| 01 | Elementos da comunicação e níveis de fala | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | Elementos da comunicação e níveis de fala | ✅ `CONTEUDO/AULA-01-ELEMENTOS-DA-COMUNICACAO-E-NIVEIS-DE-FALA.md` | ⬜ | ⬜ | ⬜ | 🔄 seed da aula PENDENTE (`database/2026-10-16-itic-tecnico-aula-01-seed-atividades.sql`) |
 | 02 | Comunicação em equipes: consenso e conflitos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 03 | Hardware e sistema operacional | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 04 | Internet: navegadores, busca, downloads e direitos autorais | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

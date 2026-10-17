@@ -2,8 +2,8 @@
 
 **Ordem:** 25 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **⬜ NÃO INICIADA** — 7 de 84 peças (8%)  
-**Gerado em:** 2026-10-16 21:37:21 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Situação:** **🔄 PENDENTE** — 8 de 84 peças (10%)  
+**Gerado em:** 2026-10-16 21:43:03 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
@@ -31,7 +31,7 @@
 
 | Aula | Aula em CONTEUDO/ | Objetiva (página) | Objetiva (fonte) | Prática (página) | Prática (fonte) | Prática (padrão de resposta) | Banco (seeds) | Aula pronta |
 |---|---|---|---|---|---|---|---|---|
-| 01 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 02 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 03 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 04 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -42,15 +42,16 @@
 | 09 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 10 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-## 3. Todos os arquivos da pasta (8)
+## 3. Todos os arquivos da pasta (9)
 
 | Arquivo | Tamanho (bytes) | Status |
 |---|---|---|
 | `APOSTILA/STATUS-APOSTILA.md` | 993 | ✅ peça do padrão |
 | `ATIVIDADES/STATUS-ATIVIDADES.md` | 2895 | ✅ peça do padrão |
 | `ATIVIDADES/index.html` | 4727 | ✅ peça do padrão |
-| `AULAS/STATUS-AULAS.md` | 1772 | ✅ peça do padrão |
-| `DOCUMENTACAO/PLANO-AULAS.md` | 1398 | 📎 outro arquivo |
+| `AULAS/STATUS-AULAS.md` | 1924 | ✅ peça do padrão |
+| `CONTEUDO/AULA-01-ELEMENTOS-DA-COMUNICACAO-E-NIVEIS-DE-FALA.md` | 9644 | ✅ peça do padrão |
+| `DOCUMENTACAO/PLANO-AULAS.md` | 1459 | 📎 outro arquivo |
 | `EMENTA-CHALKIE-AI.md` | 15621 | ✅ peça do padrão |
 | `STATUS-EMENTAS.md` | 1434 | ✅ peça do padrão |
 | `materia.json` | 36056 | ✅ peça do padrão |

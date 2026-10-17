@@ -8,7 +8,7 @@
 
 | Aula | Tema | Horas | Conhecimentos | Capacidades | Arquivo |
 |---|---|---|---|---|---|
-| 01 | Elementos da comunicação e níveis de fala | 4 | 9 · 8 | C1 | ⬜ a escrever |
+| 01 | Elementos da comunicação e níveis de fala | 4 | 9 · 8 | C1 | [AULA-01](../CONTEUDO/AULA-01-ELEMENTOS-DA-COMUNICACAO-E-NIVEIS-DE-FALA.md) |
 | 02 | Comunicação em equipes: consenso e conflitos | 4 | 1.1–1.3 | C1 | ⬜ a escrever |
 | 03 | Hardware e sistema operacional | 4 | 5.1 · 5.2 | C3 | ⬜ a escrever |
 | 04 | Internet: navegadores, busca, downloads e direitos autorais | 4 | 3.1–3.4 · 3.6 | C4 | ⬜ a escrever |

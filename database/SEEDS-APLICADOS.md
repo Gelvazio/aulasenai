@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 21:02)
+## Resumo (atualizado em 2026-10-16 21:43)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 2 | 70 | 0 | 72 |
+| 11 | 2 | 70 | 0 | 83 |
 
 ## Todos os seeds
 
@@ -85,6 +85,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 05:07 | Parte 1 aplicada pelo conector (atividade id 151, aula id 126, bloqueada): 15 de 30 tópicos; falta a parte 2 — Etapa 137-13665a7e |
 | `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
 | `2026-10-16-atividade-sala-aula-16-10-2026-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-16 09:49 | Aplicado pelo conector (atividade id 152, aula id 24 INTRODUCAO TIC, bloqueada, 20 tópicos, 10 pontos); md5 dos tópicos igual ao dos arquivos (21c1fa26...) |
+| `2026-10-16-itic-tecnico-aula-01-seed-atividades.sql` | Introdução à TIC (TII) | 0 | **PENDENTE** | 2026-10-16 21:43 | Só a aula 01 na tabela aulas (matéria nova INTRODUÇÃO À TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO, separada da ITIC do AOPL); #226.1 |
 
 | `2026-10-16-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 06:50 | Tabela `aula_turma` criada e carregada pelo conector: 19 aulas × 2 turmas (135080 e 135081), datas das atividades; RLS com 4 políticas — Etapa 312-5df765a9 |
 | `2026-10-16-aula-turma-bloqueio.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 07:40 | Coluna `bloqueio` + `data_aula` opcional + gatilho que propaga a `atividade.bloqueio`; testado em transação revertida (aula 21, turma 135080: 2 atividades bloqueadas) — Etapa 313-937e5036 |
