@@ -1,0 +1,85 @@
+-- Tarefa #259.4 (2026-10-17): CÓPIA dos 77 valores de aulas.rotulo_card antes do
+-- `drop column` (database/2026-10-17-aulas-remover-rotulo-card.sql). Só para recuperar, se um dia
+-- for preciso: recria a coluna (com o CHECK de 1 a 60 caracteres) e devolve os valores.
+-- Não aplicar no ciclo normal.
+
+alter table public.aulas add column if not exists rotulo_card text
+  check (rotulo_card is null or char_length(rotulo_card) between 1 and 60);
+
+update public.aulas set rotulo_card = 'AULA 01' where id = 21;
+update public.aulas set rotulo_card = 'AULA 02' where id = 22;
+update public.aulas set rotulo_card = 'AULA 03' where id = 23;
+update public.aulas set rotulo_card = 'AULA 04' where id = 24;
+update public.aulas set rotulo_card = 'AULA 05' where id = 25;
+update public.aulas set rotulo_card = 'AULA 06' where id = 26;
+update public.aulas set rotulo_card = 'AULA 07' where id = 27;
+update public.aulas set rotulo_card = 'AULA 08' where id = 28;
+update public.aulas set rotulo_card = 'AULA 09' where id = 29;
+update public.aulas set rotulo_card = 'AULA 10' where id = 30;
+update public.aulas set rotulo_card = 'AULA 01' where id = 32;
+update public.aulas set rotulo_card = 'AULA 02' where id = 33;
+update public.aulas set rotulo_card = 'AULA 03' where id = 34;
+update public.aulas set rotulo_card = 'AULA 04' where id = 35;
+update public.aulas set rotulo_card = 'AULA 05' where id = 36;
+update public.aulas set rotulo_card = 'AULA 01' where id = 37;
+update public.aulas set rotulo_card = 'AULA 03' where id = 38;
+update public.aulas set rotulo_card = 'AULA 05' where id = 39;
+update public.aulas set rotulo_card = 'PROVA PRÁTICA 08/10' where id = 40;
+update public.aulas set rotulo_card = 'EXCEL 29/09' where id = 41;
+update public.aulas set rotulo_card = 'EXCEL 01/10' where id = 42;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 43;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 44;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 45;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 46;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 47;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 48;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 49;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 50;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 51;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 52;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 53;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 54;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 55;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 56;
+update public.aulas set rotulo_card = 'AULA 01' where id = 57;
+update public.aulas set rotulo_card = 'AULA 02' where id = 58;
+update public.aulas set rotulo_card = 'AULA 03' where id = 59;
+update public.aulas set rotulo_card = 'AULA 04' where id = 60;
+update public.aulas set rotulo_card = 'AULA 05' where id = 61;
+update public.aulas set rotulo_card = 'AULA 06' where id = 62;
+update public.aulas set rotulo_card = 'AULA 07' where id = 63;
+update public.aulas set rotulo_card = 'AULA 08' where id = 64;
+update public.aulas set rotulo_card = 'AULA 09' where id = 65;
+update public.aulas set rotulo_card = 'AULA 10' where id = 66;
+update public.aulas set rotulo_card = 'AULA 07' where id = 67;
+update public.aulas set rotulo_card = 'AVALIACAO OBJETIVA 02' where id = 68;
+update public.aulas set rotulo_card = 'AULA 06' where id = 69;
+update public.aulas set rotulo_card = 'ATIVIDADE INDIVIDUAL · AULAS 01 A 07' where id = 72;
+update public.aulas set rotulo_card = 'ATIVIDADE INDIVIDUAL · DISCURSIVAS · AULAS 01 A 07' where id = 73;
+update public.aulas set rotulo_card = 'AVALIAÇÃO 02' where id = 74;
+update public.aulas set rotulo_card = 'AVALIAÇÃO PRÁTICA' where id = 75;
+update public.aulas set rotulo_card = 'AULA 02' where id = 76;
+update public.aulas set rotulo_card = 'AULA 04' where id = 77;
+update public.aulas set rotulo_card = 'AVALIACAO OBJETIVA 01' where id = 78;
+update public.aulas set rotulo_card = 'AULA 06' where id = 79;
+update public.aulas set rotulo_card = 'ATIVIDADES' where id = 80;
+update public.aulas set rotulo_card = 'TRABALHO EM EQUIPE 02 · AULAS 01 A 07' where id = 81;
+update public.aulas set rotulo_card = 'ATIVIDADES INDIVIDUAIS · AULAS 01 A 07 · 09/10/2026' where id = 82;
+update public.aulas set rotulo_card = 'AULA 01' where id = 84;
+update public.aulas set rotulo_card = 'AULA 02' where id = 85;
+update public.aulas set rotulo_card = 'AULA 03' where id = 86;
+update public.aulas set rotulo_card = 'AULA 04' where id = 87;
+update public.aulas set rotulo_card = 'AULA 05' where id = 88;
+update public.aulas set rotulo_card = 'AULA 06' where id = 89;
+update public.aulas set rotulo_card = 'AULA 07' where id = 90;
+update public.aulas set rotulo_card = 'AULA 08' where id = 91;
+update public.aulas set rotulo_card = 'AULA 09' where id = 92;
+update public.aulas set rotulo_card = 'AULA 01' where id = 104;
+update public.aulas set rotulo_card = 'AULA 02' where id = 105;
+update public.aulas set rotulo_card = 'AULA 03' where id = 106;
+update public.aulas set rotulo_card = 'AULA 04' where id = 107;
+update public.aulas set rotulo_card = 'AULA 05' where id = 108;
+update public.aulas set rotulo_card = 'AULA 06' where id = 109;
+update public.aulas set rotulo_card = 'AULA 07' where id = 110;
+update public.aulas set rotulo_card = 'AULA 08' where id = 111;
+update public.aulas set rotulo_card = 'AULA 09' where id = 112;

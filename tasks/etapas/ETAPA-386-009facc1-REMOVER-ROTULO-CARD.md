@@ -79,14 +79,20 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
 
 ### #259.4 — Cópia dos valores e `drop column` no banco
 
-**Próximo passo:** aplicar `database/2026-10-17-aulas-remover-rotulo-card.sql` (cópia já pronta).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco, apagar coluna.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Entrega (2026-10-17 12:42, Opus 5.5, s14):** `database/2026-10-17-aulas-rotulo-card-copia.sql` (77
+  `update`, recria a coluna se preciso) e `database/2026-10-17-aulas-remover-rotulo-card.sql`
+  aplicado pelo conector (migração `aulas_remover_rotulo_card`), depois do push das telas.
+- **Verificação:** md5 das 77 linhas da cópia igual ao md5 gerado no banco antes do drop
+  (`038f7b22…`); depois do drop, a coluna não existe, 103 aulas e 145 atividades ligadas (sem
+  mudança).
 
 ### #259.5 — Documentação
 
-**Próximo passo:** depois da #259.4.
+**Próximo passo:** delegado ao `executor-leve`.
 
 - **Nível:** LEVE — só `.md`/comentários.
 - **Modelo:** só Haiku — nunca outro
