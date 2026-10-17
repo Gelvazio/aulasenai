@@ -14,6 +14,10 @@ para Internet, já dividido em pedaços pequenos que qualquer IA do nível pode 
   3 subtarefas: `Aula NN` (MEDIO), `Objetiva da aula NN — 50 questões` (PESADO: gabarito e seed)
   e `Prática da aula NN — discursiva` (PESADO: gabarito e seed). Cada objetiva e prática depende da
   aula dela; cada aula depende da anterior.
+- **Progresso da turma em toda prática/discursiva** (pedido em 2026-10-16 21:35, como na ITIC):
+  critério de aceitação de cada subtarefa `Prática da aula NN` — a atividade abre pelo layout
+  global (`avaliacao-discursiva.js`), que já traz o "Progresso da turma" com os filtros
+  (`assets/js/progresso-turma-global.js`, `docs/regras/atividades.md`); sem cópia por matéria.
 - **Aulas por matéria** (1 aula a cada 4 h, arredondando para cima):
 
 | Matéria | CH | Aulas | Subtarefas |
