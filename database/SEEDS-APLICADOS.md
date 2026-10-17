@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 20:51)
+## Resumo (atualizado em 2026-10-16 21:02)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 1 | 3 | 68 | 0 | 72 |
+| 0 | 2 | 70 | 0 | 72 |
 
 ## Todos os seeds
 
@@ -78,7 +78,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-09-testes-frontend-atividade-pratica-aula-02-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-03-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-objetivas-seed-atividades.sql` | Testes de Front-End (TII) | 3 | **CONCLUÍDO** | 2026-10-09 19:23 | 3 atividade(s) no banco com a mesma quantidade de itens do arquivo |
-| `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **APLICADO** | 2026-10-09 22:46 | Aplicado em partes pelo conector (atividade id 142, aula id 123, bloqueada): 29 de 30 tópicos. Falta o tópico 6c: o texto cita DELETE FROM parcela e o conector pede confirmação do usuário (comando voltou cancelado) |
+| `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-16 21:02 | Atividade id 142 (aula id 123): 30 de 30 tópicos; o 6c foi aplicado com DELETE partido no texto (dividir_seed.py), md5 confere com o arquivo |
 | `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 143 (aula id 124), 50 itens; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 04:36 | Aplicado pelo conector (atividade id 150, aula id 126, 50 itens); falta conferir o md5 — Etapa 137-13665a7e |
@@ -95,7 +95,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-remover-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:46 | Aplicado pelo conector (#209.7): 0 políticas slides_* e função slide_liberado_para_usuario removida; o bucket slides (vazio) só sai pelo painel (o Supabase recusa delete por SQL) |
 | `2026-10-16-aula-turma-bloqueio-cards-fechados.sql` | Várias matérias | 0 | **CONCLUÍDO** | 2026-10-16 18:56 | Aplicado pelo conector (#210.2): 26 pares aula x turma com bloqueio = true (ITIC 16, Automacao 6, Analise de Dados 2, Comunicacao 2); md5 das 148 atividades igual antes e depois (89f9302b...); 38 datas mantidas |
 | `2026-10-10-banco-de-dados-avaliacoes-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 2 | **CONCLUÍDO** | 2026-10-10 22:36 | Aplicado pelo conector em 2 comandos: Avaliação Objetiva 01 (atividade id 147, aula 11 id 115) e 02 (id 148, aula 20 id 125), 50 itens cada, md5 igual ao do arquivo (2026-10-10 22:36) |
-| `2026-10-11-banco-de-dados-avaliacao-pratica-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-10 22:37 | Avaliação Prática (20 questões × 3 tópicos, aula 20); gerado, ainda não aplicado |
+| `2026-10-11-banco-de-dados-avaliacao-pratica-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-16 21:02 | Atividade id 149 (aula id 125): 60 tópicos (20 × 3), aplicada em partes pelo conector; md5 confere com o arquivo |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
