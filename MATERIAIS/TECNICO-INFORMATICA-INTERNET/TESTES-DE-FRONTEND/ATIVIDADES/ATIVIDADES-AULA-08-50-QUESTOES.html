@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 — TDD e Debugging Moderno no Front-End (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="08" data-tema="TDD e Debugging Moderno no Front-End" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔁 Aula 08: TDD e Debugging Moderno no Front-End</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-08-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-08-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É TDD</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é TDD (Test-Driven Development)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever o teste antes do código, deixando o teste guiar o desenvolvimento.</li>
+                        <li><span class="letra">B)</span>Testar o sistema só no navegador, sem código de teste.</li>
+                        <li><span class="letra">C)</span>Escrever todos os testes no fim, depois que o código está pronto.</li>
+                        <li><span class="letra">D)</span>Escrever o código sem nenhum teste para ganhar tempo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Ordem do Ciclo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta do ciclo do TDD?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vermelho, refatorar e verde.</li>
+                        <li><span class="letra">B)</span>Verde, refatorar e vermelho.</li>
+                        <li><span class="letra">C)</span>Refatorar, vermelho e verde.</li>
+                        <li><span class="letra">D)</span>Vermelho, verde e refatorar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Fase Vermelha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que se faz na fase vermelha do TDD?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Melhora-se o nome das funções.</li>
+                        <li><span class="letra">B)</span>Escreve-se todo o código da funcionalidade.</li>
+                        <li><span class="letra">C)</span>Apaga-se o teste que falhou.</li>
+                        <li><span class="letra">D)</span>Escreve-se um teste que falha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Fim da Fase Vermelha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como saber que a fase vermelha terminou do jeito certo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O código fica com menos de 10 linhas.</li>
+                        <li><span class="letra">B)</span>O Vitest mostra a falha pelo motivo esperado.</li>
+                        <li><span class="letra">C)</span>O arquivo de teste é apagado.</li>
+                        <li><span class="letra">D)</span>Todos os testes ficam verdes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Fase Verde</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que se faz na fase verde do TDD?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escreve-se mais um teste que falha.</li>
+                        <li><span class="letra">B)</span>Remove-se o teste para a suíte passar.</li>
+                        <li><span class="letra">C)</span>Escreve-se o código mais completo possível de uma vez.</li>
+                        <li><span class="letra">D)</span>Escreve-se o mínimo de código para o teste passar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Fase Refatorar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que se faz na fase de refatorar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escreve-se um teste novo que falha.</li>
+                        <li><span class="letra">B)</span>Muda-se o comportamento da função sem rodar os testes.</li>
+                        <li><span class="letra">C)</span>Melhoram-se nomes, tira-se duplicação e extraem-se funções, mantendo tudo verde.</li>
+                        <li><span class="letra">D)</span>Apagam-se os testes que já passaram.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Fim da Refatoração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como saber que a refatoração terminou sem estragar nada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pelo menos um teste fica vermelho.</li>
+                        <li><span class="letra">B)</span>Todos os testes continuam verdes.</li>
+                        <li><span class="letra">C)</span>O código fica com mais linhas que antes.</li>
+                        <li><span class="letra">D)</span>A cobertura cai para zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Modo Observação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando roda o Vitest em modo observação, testando a cada arquivo salvo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx vitest</li>
+                        <li><span class="letra">B)</span>npx cypress open</li>
+                        <li><span class="letra">C)</span>npx vitest run --once</li>
+                        <li><span class="letra">D)</span>npm install vitest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Tamanho do Ciclo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual deve ser a duração de cada ciclo do TDD?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Curta, de minutos.</li>
+                        <li><span class="letra">B)</span>Longa, de semanas.</li>
+                        <li><span class="letra">C)</span>Um ciclo por semestre.</li>
+                        <li><span class="letra">D)</span>Um ciclo só para o projeto inteiro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Vantagem do TDD</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma vantagem do TDD vista na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O layout da página fica mais bonito.</li>
+                        <li><span class="letra">B)</span>O código já nasce testado.</li>
+                        <li><span class="letra">C)</span>Os testes deixam de ser necessários depois.</li>
+                        <li><span class="letra">D)</span>O código nunca precisa ser refatorado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Teste como Documentação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que se diz que, no TDD, o teste serve de documentação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o teste guarda a senha do sistema.</li>
+                        <li><span class="letra">B)</span>Porque o teste substitui o manual do usuário impresso.</li>
+                        <li><span class="letra">C)</span>Porque o teste descreve o comportamento esperado do código.</li>
+                        <li><span class="letra">D)</span>Porque o teste é escrito em português formal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Quando Não Usar TDD</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual tarefa o TDD não é indicado, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ajustar cores, espaçamentos e layout.</li>
+                        <li><span class="letra">B)</span>Calcular o desconto do carrinho.</li>
+                        <li><span class="letra">C)</span>Filtrar os produtos pelo texto digitado.</li>
+                        <li><span class="letra">D)</span>Validar o CPF do cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Conferindo o Layout</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como cores e espaçamentos são conferidos, já que não se usa TDD para eles?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não são conferidos de nenhuma forma.</li>
+                        <li><span class="letra">B)</span>Com it.only em todos os testes.</li>
+                        <li><span class="letra">C)</span>Visualmente e com testes de acessibilidade.</li>
+                        <li><span class="letra">D)</span>Somente com testes unitários do CPF.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Primeiro Teste do CPF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o primeiro teste do ciclo 1 do validador de CPF?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(validarCPF(&#x27;&#x27;)).toBe(false);</li>
+                        <li><span class="letra">B)</span>expect(validarCPF(&#x27;529.982.247-25&#x27;)).toBe(true);</li>
+                        <li><span class="letra">C)</span>expect(validarCPF(&#x27;&#x27;)).toBe(true);</li>
+                        <li><span class="letra">D)</span>expect(validarCPF).toBeUndefined();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Por Que o Primeiro Teste Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No ciclo 1, por que o teste do CPF vazio falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a função validarCPF ainda não existe.</li>
+                        <li><span class="letra">B)</span>Porque o CPF vazio é válido.</li>
+                        <li><span class="letra">C)</span>Porque o Vitest não aceita textos vazios.</li>
+                        <li><span class="letra">D)</span>Porque o teste está com o nome errado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Código Mínimo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o código mínimo que deixa verde o teste do CPF vazio?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A validação completa com os dois dígitos verificadores.</li>
+                        <li><span class="letra">B)</span>Nenhum código: o teste passa sozinho.</li>
+                        <li><span class="letra">C)</span>export function validarCPF() { return true; }</li>
+                        <li><span class="letra">D)</span>export function validarCPF() { return false; }</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">O return false Proposital</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o primeiro verde pode ser só return false?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o TDD proíbe escrever if.</li>
+                        <li><span class="letra">B)</span>Porque todo CPF é inválido.</li>
+                        <li><span class="letra">C)</span>Porque assim a função nunca mais precisa mudar.</li>
+                        <li><span class="letra">D)</span>Porque o próximo teste obriga o código a evoluir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Ciclo do Tamanho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste representa o ciclo do CPF com tamanho diferente de 11 dígitos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(validarCPF(&#x27;52998224725&#x27;)).toBe(true);</li>
+                        <li><span class="letra">B)</span>expect(validarCPF(&#x27;&#x27;)).toBe(true);</li>
+                        <li><span class="letra">C)</span>expect(validarCPF(11)).toBe(11);</li>
+                        <li><span class="letra">D)</span>expect(validarCPF(&#x27;5299822472&#x27;)).toBe(false);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Dígitos Iguais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste usa 111.111.111-11 no ciclo 3?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque é o CPF válido mais simples.</li>
+                        <li><span class="letra">B)</span>Porque CPF com todos os dígitos iguais deve ser recusado.</li>
+                        <li><span class="letra">C)</span>Porque tem menos de 11 dígitos.</li>
+                        <li><span class="letra">D)</span>Porque tem letras no meio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Dígito Verificador Correto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste do ciclo 4 confere um CPF com dígitos verificadores corretos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(validarCPF(&#x27;111.111.111-11&#x27;)).toBe(true);</li>
+                        <li><span class="letra">B)</span>expect(validarCPF(&#x27;529.982.247-25&#x27;)).toBe(true);</li>
+                        <li><span class="letra">C)</span>expect(validarCPF(&#x27;abc&#x27;)).toBe(true);</li>
+                        <li><span class="letra">D)</span>expect(validarCPF(&#x27;52998224726&#x27;)).toBe(true);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Dígito Verificador Errado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste confere que um CPF com dígito verificador errado é recusado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(validarCPF(&#x27;52998224726&#x27;)).toBe(true);</li>
+                        <li><span class="letra">B)</span>expect(validarCPF(&#x27;529.982.247-25&#x27;)).toBe(false);</li>
+                        <li><span class="letra">C)</span>expect(validarCPF(&#x27;52998224726&#x27;)).toBe(false);</li>
+                        <li><span class="letra">D)</span>expect(validarCPF()).toBe(true);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Limpando a Pontuação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a linha String(valor).replace(/[.-]/g, &#x27;&#x27;) faz no validarCPF?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tira os pontos e o traço, deixando só os números.</li>
+                        <li><span class="letra">B)</span>Apaga o CPF inteiro.</li>
+                        <li><span class="letra">C)</span>Troca todos os números por letras.</li>
+                        <li><span class="letra">D)</span>Acrescenta pontos e traço ao CPF.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Padrão de 11 Dígitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a constante PADRAO_ONZE_DIGITOS = /^\d{11}$/ confere?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que todos os dígitos são iguais.</li>
+                        <li><span class="letra">B)</span>Que o valor tem exatamente 11 dígitos e nada mais.</li>
+                        <li><span class="letra">C)</span>Que o CPF tem pontos e traço.</li>
+                        <li><span class="letra">D)</span>Que o valor tem pelo menos uma letra.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Teste Que Passa Direto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um teste novo passou direto para o verde, sem mudar o código. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste não testava nada novo, e o caso precisa ser revisto.</li>
+                        <li><span class="letra">B)</span>É preciso apagar todos os outros testes.</li>
+                        <li><span class="letra">C)</span>O Vitest está com defeito.</li>
+                        <li><span class="letra">D)</span>O código está perfeito e o ciclo pode ser pulado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Teste Estrutural</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o teste estrutural (caixa branca, 3.2)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste feito sem acesso ao código.</li>
+                        <li><span class="letra">B)</span>O teste que olha o código por dentro para exercitar cada caminho.</li>
+                        <li><span class="letra">C)</span>O teste que confere apenas as cores da página.</li>
+                        <li><span class="letra">D)</span>O teste que só usa o que o usuário vê na tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Próximo Teste pela Caixa Branca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de cada verde, como a caixa branca ajuda a escolher o próximo teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Repetindo o último teste com outro nome.</li>
+                        <li><span class="letra">B)</span>Escolhendo o teste com o nome mais curto.</li>
+                        <li><span class="letra">C)</span>Apagando os testes que já passaram.</li>
+                        <li><span class="letra">D)</span>Procurando um if cujo outro lado nenhum teste exercita.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Caminho do Dígito Zero</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual CPF válido passa pelo caminho do dígito 0 no primeiro dígito verificador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>52998224726</li>
+                        <li><span class="letra">B)</span>111.111.111-11</li>
+                        <li><span class="letra">C)</span>000</li>
+                        <li><span class="letra">D)</span>123.456.789-09</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Os Dois Caminhos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que testar 111.444.777-35 e 123.456.789-09?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque os dois são inválidos.</li>
+                        <li><span class="letra">B)</span>Porque os dois têm letras.</li>
+                        <li><span class="letra">C)</span>Porque são os CPFs mais curtos possíveis.</li>
+                        <li><span class="letra">D)</span>Porque cada um passa por um caminho diferente da condição resto &lt; 2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Filtro sem Texto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No TDD do filtro de produtos, qual é o primeiro comportamento testado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aparece a mensagem de nada encontrado.</li>
+                        <li><span class="letra">B)</span>Sem texto digitado, todos os produtos aparecem.</li>
+                        <li><span class="letra">C)</span>A busca ignora acentos.</li>
+                        <li><span class="letra">D)</span>Digitar mouse mostra só os mouses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Query da Lista</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual query encontra todos os produtos mostrados como itens de lista?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>document.querySelector(&#x27;.lista li:first-child&#x27;)</li>
+                        <li><span class="letra">B)</span>screen.getAllByRole(&#x27;listitem&#x27;)</li>
+                        <li><span class="letra">C)</span>screen.getByClass(&#x27;produto&#x27;)</li>
+                        <li><span class="letra">D)</span>screen.getByText(&#x27;listitem&#x27;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Maiúsculas e Acentos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comportamento do filtro é conferido digitando TECLADO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A busca mostra todos os produtos menos o teclado.</li>
+                        <li><span class="letra">B)</span>A busca ignora maiúsculas e acentos e encontra &quot;Teclado&quot;.</li>
+                        <li><span class="letra">C)</span>A busca só funciona com letras maiúsculas.</li>
+                        <li><span class="letra">D)</span>A busca apaga o texto digitado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Filtros Combinados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o ciclo &quot;categoria Periféricos + texto&quot; confere?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a lista fica sempre vazia.</li>
+                        <li><span class="letra">B)</span>Que o texto apaga a categoria escolhida.</li>
+                        <li><span class="letra">C)</span>Que a categoria desliga a busca por texto.</li>
+                        <li><span class="letra">D)</span>Que os dois filtros funcionam juntos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Nada Encontrado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação confere a mensagem quando nenhum produto combina com a busca?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(screen.getByText(&#x27;Nenhum produto encontrado&#x27;)).toBeInTheDocument();</li>
+                        <li><span class="letra">B)</span>expect(console.log).toBe(&#x27;nada&#x27;);</li>
+                        <li><span class="letra">C)</span>expect(screen.getAllByRole(&#x27;listitem&#x27;)).toHaveLength(10);</li>
+                        <li><span class="letra">D)</span>screen.debug(&#x27;Nenhum produto encontrado&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">TDD na Interface</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No TDD do componente, o que os testes conferem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A quantidade de linhas do arquivo CSS.</li>
+                        <li><span class="letra">B)</span>Os nomes das variáveis internas do componente.</li>
+                        <li><span class="letra">C)</span>O que o usuário vê na tela.</li>
+                        <li><span class="letra">D)</span>A ordem dos imports do arquivo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Lendo a Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o primeiro passo da depuração quando um teste falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Rodar a suíte 100 vezes seguidas.</li>
+                        <li><span class="letra">B)</span>Ler a mensagem: o esperado, o recebido e a linha do teste.</li>
+                        <li><span class="letra">C)</span>Apagar o teste que falhou.</li>
+                        <li><span class="letra">D)</span>Reescrever toda a função do zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Isolando o Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o it.only em um teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Roda aquele teste duas vezes.</li>
+                        <li><span class="letra">B)</span>Roda só aquele teste.</li>
+                        <li><span class="letra">C)</span>Apaga aquele teste da suíte.</li>
+                        <li><span class="letra">D)</span>Pula aquele teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Isolando o Grupo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o describe.only?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Renomeia o grupo de testes.</li>
+                        <li><span class="letra">B)</span>Roda todos os grupos menos aquele.</li>
+                        <li><span class="letra">C)</span>Roda só aquele grupo de testes.</li>
+                        <li><span class="letra">D)</span>Desliga o Vitest.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Breakpoint no VS Code</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como fazer o código parar na linha marcada com breakpoint durante os testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Abrir o JavaScript Debug Terminal e rodar npx vitest run nele.</li>
+                        <li><span class="letra">B)</span>Fechar o VS Code e abrir o navegador.</li>
+                        <li><span class="letra">C)</span>Colocar um it.only na linha do código.</li>
+                        <li><span class="letra">D)</span>Rodar npm install com a linha marcada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">O Que o Breakpoint Mostra</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o código para no breakpoint, o que ele mostra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O valor de cada variável naquele momento.</li>
+                        <li><span class="letra">B)</span>A lista de commits do projeto.</li>
+                        <li><span class="letra">C)</span>A cobertura de todos os arquivos.</li>
+                        <li><span class="letra">D)</span>O HTML final da página publicada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">screen.debug</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o screen.debug() num teste de componente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga o DOM do teste.</li>
+                        <li><span class="letra">B)</span>Imprime o HTML atual da tela do teste.</li>
+                        <li><span class="letra">C)</span>Roda só aquele teste.</li>
+                        <li><span class="letra">D)</span>Corrige automaticamente o teste que falhou.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Defeito do resto &lt;= 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função antiga usava resto &lt;= 2 no cálculo do dígito. Qual era o efeito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Recusava só CPFs com letras.</li>
+                        <li><span class="letra">B)</span>Aceitava todos os CPFs, mesmo os inválidos.</li>
+                        <li><span class="letra">C)</span>Recusava todo CPF cujo dígito deveria ser 9.</li>
+                        <li><span class="letra">D)</span>Não mudava nada no resultado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Corrigir e Confirmar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o último passo da depuração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tirar o .only, rodar a suíte inteira e registrar a causa.</li>
+                        <li><span class="letra">B)</span>Manter o .only para o teste ficar mais rápido.</li>
+                        <li><span class="letra">C)</span>Apagar a mensagem de erro do terminal.</li>
+                        <li><span class="letra">D)</span>Entregar sem rodar os outros testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">it.only no Repositório</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o it.only não pode ir para o repositório?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque só aquele teste rodaria e os outros seriam pulados sem ninguém perceber.</li>
+                        <li><span class="letra">B)</span>Porque ele apaga o arquivo de teste.</li>
+                        <li><span class="letra">C)</span>Porque ele deixa o teste mais lento.</li>
+                        <li><span class="letra">D)</span>Porque o Git não aceita a palavra only.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">console.log de Depuração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer com o console.log usado para depurar antes de entregar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Copiar para todos os outros arquivos.</li>
+                        <li><span class="letra">B)</span>Trocar por um alert na página.</li>
+                        <li><span class="letra">C)</span>Apagar, por responsabilidade com o código entregue (1.1).</li>
+                        <li><span class="letra">D)</span>Deixar, para ajudar o próximo programador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Code Review</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o code review de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever os testes depois de publicar o site.</li>
+                        <li><span class="letra">B)</span>Apagar os testes de outra dupla.</li>
+                        <li><span class="letra">C)</span>Outra pessoa ler os testes antes de juntar o código.</li>
+                        <li><span class="letra">D)</span>Rodar os testes só no computador do professor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Pergunta do Code Review</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é uma pergunta útil no code review de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste tem mais de 100 linhas?</li>
+                        <li><span class="letra">B)</span>Quantas horas a dupla dormiu?</li>
+                        <li><span class="letra">C)</span>O teste falharia se o código estivesse errado?</li>
+                        <li><span class="letra">D)</span>Qual é a cor favorita de quem escreveu o teste?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Testes Dependentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No code review, por que perguntar se o teste depende de outro teste ou de dado externo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque todo teste deve depender do anterior.</li>
+                        <li><span class="letra">B)</span>Porque testes dependentes rodam mais rápido.</li>
+                        <li><span class="letra">C)</span>Porque um teste dependente pode passar ou falhar por causa dos outros.</li>
+                        <li><span class="letra">D)</span>Porque o Vitest exige dados externos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Comentário Respeitoso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a melhor forma de reescrever o comentário &quot;esse teste está horrível&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&quot;Refaz tudo, está errado.&quot;</li>
+                        <li><span class="letra">B)</span>&quot;Você não sabe testar.&quot;</li>
+                        <li><span class="letra">C)</span>&quot;Não vou nem comentar.&quot;</li>
+                        <li><span class="letra">D)</span>&quot;Que tal testar também o CPF com dígito 0?&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Recebendo a Sugestão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como quem recebe uma sugestão no code review deve avaliá-la?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ignorando, porque sugestões não mudam o código.</li>
+                        <li><span class="letra">B)</span>Aceitando tudo sem pensar, para evitar discussão.</li>
+                        <li><span class="letra">C)</span>Pelo fato técnico, não pela pessoa, respondendo &quot;aceito, porque...&quot; ou &quot;não vou aplicar, porque...&quot;.</li>
+                        <li><span class="letra">D)</span>Recusando tudo, porque o código é seu.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Ideias Diferentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o code review respeitoso valoriza ideias diferentes (S1)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque só a opinião de quem escreveu o código vale.</li>
+                        <li><span class="letra">B)</span>Porque deixa o código mais longo.</li>
+                        <li><span class="letra">C)</span>Porque elimina a necessidade de testes.</li>
+                        <li><span class="letra">D)</span>Porque cada sugestão é avaliada pelo que melhora no código, e a equipe aprende com outros pontos de vista.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 08: TDD e Debugging Moderno no Front-End</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
