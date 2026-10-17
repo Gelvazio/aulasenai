@@ -26,7 +26,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
-| local · main · s14 | #253 ([380-1fa4cc40](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md)) concluída; #209.7 aguarda o usuário apagar o bucket vazio `slides` | 👀 Aguardando o usuário | 2026-10-17 11:48 |
+| local · main · s14 | #254.1 ([381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md)) — plano aguarda o seu "sim"; #209.7 aguarda o usuário apagar o bucket vazio `slides` | 👀 Aguardando o usuário | 2026-10-17 11:49 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #223 ([350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md)) — apostila de Banco de Dados gerada; #223.4 aguarda o aceite do usuário | 👀 Aguardando o usuário | 2026-10-16 21:39 |
@@ -909,6 +909,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #254-bce7117a-9628-4120-a2f8-600394587a02 | Excluir a aula de verdade no banco (sem exclusão lógica) | 🟠 Alta | — | — | 👀 Plano aguarda aprovação | — (não reservável) | [381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) | — |
+| #254.1 | Plano e aprovação (tarefa grande) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o "sim" | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-17 11:49) | [381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) | — |
+| #254.2 | Função `excluir_aula` com DELETE de verdade (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #254.1 | ⬜ Pendente | — | [381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) | — |
+| #254.3 | Telas: mensagens de exclusão definitiva · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #254.2 | ⬜ Pendente | — | [381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) | — |
+| #254.4 | SQL para apagar as aulas já com `excluido = 1` (o professor roda) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #254.2 | ⬜ Pendente | — | [381-bce7117a](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -932,6 +937,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 378-780651a2 | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo (#251, pedida em 2026-10-17 10:30) | [ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) |
 | 379-ab9e36c5 | `RENDERIZACAO-DE-IA.md` ajustado para a IA (#252, pedida em 2026-10-17 10:58) | [ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md) |
 | 380-1fa4cc40 | Botão "Excluir" no card da aula (#253, pedida em 2026-10-17 11:45) | [ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md](etapas/ETAPA-380-1fa4cc40-BOTAO-EXCLUIR-NO-CARD-DA-AULA.md) |
+| 381-bce7117a | Excluir a aula de verdade no banco (#254, pedida em 2026-10-17 11:49) | [ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md](etapas/ETAPA-381-bce7117a-EXCLUIR-AULA-DE-VERDADE-NO-BANCO.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
