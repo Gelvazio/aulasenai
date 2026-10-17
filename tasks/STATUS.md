@@ -57,6 +57,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
+| #248-189bc6ee-2e3f-4b28-913a-d00f18254cfa | **Comando "verify" e coluna VERIFICADO no quadro** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| #248.1 | Plano e aprovação (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| #248.2 | Regra, gatilho e comando `verify` (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #248.1 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| #248.3 | Coluna `Verificado` no quadro, modelos e visualizador (PESADO) · effort high | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #248.1 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| #248.4 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | Usuário | #248.3 | ⬜ Pendente | — | [375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
@@ -920,6 +925,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 372-8341ceea | Links de slides e PDF só quando o arquivo existir (#245, pedida em 2026-10-16 22:19, criada pela #244.3) | [ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | 373-0a15e96a | Sempre verificar as regras do rules-ai (#246, pedida em 2026-10-16 22:37) | [ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
 | 374-afb852cd | Nunca executar tarefa que não é do seu modelo (#247, pedida em 2026-10-16 22:48) | [ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| 375-189bc6ee | Comando "verify" e coluna VERIFICADO no quadro (#248, pedida em 2026-10-16 23:38) | [ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
