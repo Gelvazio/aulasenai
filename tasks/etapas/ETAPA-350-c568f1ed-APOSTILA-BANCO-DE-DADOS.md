@@ -41,13 +41,14 @@
 
 ### #223.2 — `materia.json` literal + introdução + capítulos em Markdown (com validação do usuário)
 
-**Próximo passo:** #223.3 — Markdown completo e HTML (20 capítulos escritos).
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — conteúdo didático conferido com a ementa.
+- **Entrega:** `materia.json` literal (commit 6ce20a2), introdução (ffe800c) e capítulos 01 a 20, um commit + push cada (5d262cd … 94d2da2) · **Verificação:** a cada capítulo, `gerar_apostila.py --markdown` sem avisos ⚠️ e conferência com a ementa 229/229 (100%); push conferido (HEAD = origin/main).
 
 ### #223.3 — Markdown completo e HTML
 
-**Próximo passo:** esperar a #223.2.
+**Próximo passo:** gerar o Markdown completo e o HTML.
 
 - **Nível:** MEDIO — gerador da apostila.
 
