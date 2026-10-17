@@ -42,3 +42,7 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 - **2026-10-16 — `scripts/testes-frontend/indice_tf.sh` corrigido:** o `rm` dos índices criados pelo gerador
   quebrava em pasta com espaço ("Testes de Sistemas-EXISTENTES") e a busca do card do curso não
   aceitava o botão da Apostila entre o título e a contagem.
+- **2026-10-16 21:50 — correção da entrega 22.3 a 22.7 (frente nuvem · ccr-04d42f6c-y5d6iz):** as 10 páginas das aulas
+  06 a 10 saíram sem `data-exportar-meu-gabarito="sim"` e `data-marcar-entregue="sim"` no `<body>` (as
+  aulas 01 a 05 os ganharam à mão; os geradores não põem). Atributos acrescentados e o `pipeline.py`
+  passa a pô-los (passo 4b). Achado ao começar a #36.

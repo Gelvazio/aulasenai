@@ -86,6 +86,14 @@ seed_obj = f"database/{hoje}-testes-frontend-objetiva-aula-{nn}-seed-atividades.
 print(run("python3", "scripts/gerar-seed-atividades.py", f"--so=TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADES-AULA-{nn}-50",
           f"--saida={seed_obj}").strip().splitlines()[-1])
 
+# 4b. atributos que as páginas das aulas 01 a 05 ganharam à mão (os geradores não põem):
+# "📄 Exportar Meu Gabarito" (#82) e o professor marcar entregue (#45)
+ATRIBUTOS_BODY = 'data-exportar-meu-gabarito="sim" data-marcar-entregue="sim"'
+for pagina in (A / f"ATIVIDADES-AULA-{nn}-50-QUESTOES.html", A / f"ATIVIDADE-PRATICA-AULA-{nn}.html"):
+    html = pagina.read_text(encoding="utf-8")
+    if "data-marcar-entregue" not in html:
+        pagina.write_text(html.replace("<body ", f"<body {ATRIBUTOS_BODY}\n      ", 1), encoding="utf-8")
+
 # 5. índice da matéria e card do curso
 print(run("sh", str(AQUI / "indice_tf.sh")).strip())
 
