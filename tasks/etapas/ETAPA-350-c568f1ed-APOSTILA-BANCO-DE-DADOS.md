@@ -48,10 +48,13 @@
 
 ### #223.3 — Markdown completo e HTML
 
-**Próximo passo:** gerar o Markdown completo e o HTML.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — gerador da apostila.
+- **Entrega:** `APOSTILA-BANCO-DE-DADOS.md` e `.html` (versão 1.0, gerados com `TZ=America/Sao_Paulo`), botão 📘 Apostila no card da matéria em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html`, `STATUS-APOSTILA.md` · **Verificação:** conferência 229/229 (100%), 0 avisos ⚠️ no HTML, guarda de sessão (`js/header-usuario.js`) no início do `<head>`, sem `<style>`/`onclick`, sem gabarito; `analise-materias.py`: Banco de Dados `completa: true`, sem pendências.
 
 ### #223.4 — Aceite do usuário
+
+**Próximo passo:** o usuário ler a apostila (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/APOSTILA/APOSTILA-BANCO-DE-DADOS.html`) e dar o aceite.
 
 - **Nível:** LEVE — aceite.

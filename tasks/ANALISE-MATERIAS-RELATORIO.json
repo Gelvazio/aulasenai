@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-17 00:35:12",
+  "gerado_em": "2026-10-17 00:38:39",
   "padrao": "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -19,14 +19,14 @@
     "TECNICO-INFORMATICA-INTERNET"
   ],
   "total_materias": 33,
-  "completas": 3,
-  "incompletas": 30,
+  "completas": 4,
+  "incompletas": 29,
   "materias": [
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
       "materia": "BANCO-DE-DADOS",
       "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS",
-      "completa": false,
+      "completa": true,
       "pecas": {
         "ementa": true,
         "materia_json": true,
@@ -41,15 +41,13 @@
         "fontes_atividades": 64,
         "atividades_50_questoes": 20,
         "atividades_praticas": 20,
-        "apostila_html": 0
+        "apostila_html": 1
       },
       "ementa": {
         "caracteres": 14923,
         "dentro_da_faixa": true
       },
-      "pendencias": [
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ],
+      "pendencias": [],
       "ordem": 1
     },
     {
