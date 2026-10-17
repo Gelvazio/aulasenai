@@ -1,0 +1,802 @@
+{
+  "uc": "Reforço Matemática e Raciocínio Lógico",
+  "uc_curta": "Reforço de Matemática",
+  "curso": "Rio do Sul Mais Tech",
+  "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
+  "modulo": "UC 8",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 63,
+  "horas_por_aula": 4,
+  "observacao_horas": "16 aulas: 15 de 4 h e a Aula 16 com 3 h (63 h). Vale a carga_horaria de cada aula.",
+  "fontes": [
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md (UC 8 — fonte da verdade)",
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO/EMENTA-CHALKIE-AI.md"
+  ],
+  "versao_ementa": "2.0",
+  "proveniencia": "Capacidades e conhecimentos da UC 8 na ementa do curso; conteúdos e critérios de cada módulo copiados do EMENTA-CHALKIE-AI.md da matéria; aulas lidas de CONTEUDO/ (tarefa #243.2, 2026-10-16).",
+  "objetivo_geral": {
+    "texto": "Fortalecer os conhecimentos matemáticos essenciais para a vida acadêmica, profissional e cotidiana, desenvolvendo o raciocínio lógico, a capacidade de resolução de problemas e a autonomia no uso de conceitos matemáticos."
+  },
+  "capacidades": {
+    "C1": "Organizar informações numéricas e simbólicas de forma clara e lógica",
+    "C2": "Desenvolver autonomia de estudo, utilizando estratégias para resolver problemas matemáticos",
+    "C3": "Aplicar pensamento crítico e lógico, analisando situações e identificando soluções possíveis",
+    "C4": "Trabalhar em grupo, colaborando na resolução de exercícios e desafios matemáticos",
+    "C5": "Comunicar raciocínios e resultados, justificando procedimentos e soluções encontradas",
+    "C6": "Persistir na resolução de problemas, desenvolvendo resiliência diante de desafios matemáticos"
+  },
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Operações Básicas e Cálculo Numérico",
+      "conteudos": [
+        "Adição, subtração, multiplicação, divisão com números inteiros, decimais e negativos",
+        "Ordem das operações (PEMDAS/BODMAS) e aplicação em expressões numéricas complexas",
+        "Cálculo mental eficiente e estimativas práticas em problemas do mundo real",
+        "Propriedades fundamentais: comutativa, associativa, distributiva, elemento neutro"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Frações, Decimais e Porcentagem",
+      "conteudos": [
+        "Representação de frações (próprias, impróprias, mistas) com visualizações múltiplas",
+        "Equivalência de frações e simplificação com máximo divisor comum",
+        "Conversões bidirecionais: frações ↔ decimais ↔ porcentagens com fluência",
+        "Operações com frações: adição, subtração, multiplicação, divisão",
+        "Porcentagem em contextos reais: descontos comerciais, juros, salários, impostos, investimentos pessoais"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Proporcionalidade",
+      "conteudos": [
+        "Razão e proporção fundamentais com exemplos práticos cotidianos",
+        "Regra de três simples e composta com aplicações múltiplas e variadas",
+        "Grandezas diretamente proporcionais e inversamente proporcionais com análise",
+        "Aplicações contextualizadas: velocidade, distância, tempo, produção, consumo, receitas culinárias",
+        "Escalas em mapas, modelos técnicos e representações arquitetônicas"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Medidas e Grandezas",
+      "conteudos": [
+        "Sistema métrico decimal completo com conversões fluidas e automatizadas",
+        "Conversão de unidades: comprimento, massa, capacidade, tempo com precisão",
+        "Área e perímetro de figuras planas: quadrados, retângulos, triângulos, círculos, polígonos",
+        "Aplicações práticas em construção civil, design gráfico, engenharia, paisagismo",
+        "Estimação de medidas e verificação de razoabilidade de resultados"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Raciocínio Lógico e Resolução de Problemas",
+      "conteudos": [
+        "Identificação de padrões numéricos, geométricos, simbólicos e sequenciais",
+        "Sequências: aritmética, geométrica, fibonacci, padrões mistos com análise profunda",
+        "Introdução à lógica proposicional: verdadeiro/falso, conectivos lógicos, negação",
+        "Estratégias de resolução: tentativa e erro sistematizado, decomposição, trabalho reverso, analogia",
+        "Puzzles, desafios lógicos, sudoku, jogos matemáticos educativos diversificados"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Introdução à Álgebra",
+      "conteudos": [
+        "Conceito de variável como número desconhecido ou genérico",
+        "Expressões algébricas simples e complexas com ordem de operações",
+        "Equações de primeiro grau: resolução e verificação de soluções",
+        "Inequações introdutórias com representação em reta numérica",
+        "Situações-problema através de equações e sistemas simples"
+      ]
+    },
+    {
+      "dominio": 7,
+      "titulo": "Tratamento da Informação",
+      "conteudos": [
+        "Leitura e interpretação de tabelas complexas e multidimensionais",
+        "Gráficos: barras, linhas, setor/pizza, pictogramas, histogramas, dispersão",
+        "Medidas de tendência central: média, moda, mediana com aplicações reais",
+        "Medidas de dispersão: amplitude, desvio padrão simples",
+        "Análise de dados: identificação de tendências, padrões e anomalias",
+        "Pensamento crítico sobre representações enganosas de dados"
+      ]
+    }
+  ],
+  "conteudos_programaticos": [
+    {
+      "modulo": "Módulo 1: Operações Básicas e Cálculo Numérico (9 horas)",
+      "itens": [
+        "Adição, subtração, multiplicação, divisão com números inteiros, decimais e negativos",
+        "Ordem das operações (PEMDAS/BODMAS) e aplicação em expressões numéricas complexas",
+        "Cálculo mental eficiente e estimativas práticas em problemas do mundo real",
+        "Propriedades fundamentais: comutativa, associativa, distributiva, elemento neutro"
+      ]
+    },
+    {
+      "modulo": "Módulo 2: Frações, Decimais e Porcentagem (9 horas)",
+      "itens": [
+        "Representação de frações (próprias, impróprias, mistas) com visualizações múltiplas",
+        "Equivalência de frações e simplificação com máximo divisor comum",
+        "Conversões bidirecionais: frações ↔ decimais ↔ porcentagens com fluência",
+        "Operações com frações: adição, subtração, multiplicação, divisão",
+        "Porcentagem em contextos reais: descontos comerciais, juros, salários, impostos, investimentos pessoais"
+      ]
+    },
+    {
+      "modulo": "Módulo 3: Proporcionalidade (9 horas)",
+      "itens": [
+        "Razão e proporção fundamentais com exemplos práticos cotidianos",
+        "Regra de três simples e composta com aplicações múltiplas e variadas",
+        "Grandezas diretamente proporcionais e inversamente proporcionais com análise",
+        "Aplicações contextualizadas: velocidade, distância, tempo, produção, consumo, receitas culinárias",
+        "Escalas em mapas, modelos técnicos e representações arquitetônicas"
+      ]
+    },
+    {
+      "modulo": "Módulo 4: Medidas e Grandezas (9 horas)",
+      "itens": [
+        "Sistema métrico decimal completo com conversões fluidas e automatizadas",
+        "Conversão de unidades: comprimento, massa, capacidade, tempo com precisão",
+        "Área e perímetro de figuras planas: quadrados, retângulos, triângulos, círculos, polígonos",
+        "Aplicações práticas em construção civil, design gráfico, engenharia, paisagismo",
+        "Estimação de medidas e verificação de razoabilidade de resultados"
+      ]
+    },
+    {
+      "modulo": "Módulo 5: Raciocínio Lógico e Resolução de Problemas (9 horas)",
+      "itens": [
+        "Identificação de padrões numéricos, geométricos, simbólicos e sequenciais",
+        "Sequências: aritmética, geométrica, fibonacci, padrões mistos com análise profunda",
+        "Introdução à lógica proposicional: verdadeiro/falso, conectivos lógicos, negação",
+        "Estratégias de resolução: tentativa e erro sistematizado, decomposição, trabalho reverso, analogia",
+        "Puzzles, desafios lógicos, sudoku, jogos matemáticos educativos diversificados"
+      ]
+    },
+    {
+      "modulo": "Módulo 6: Introdução à Álgebra (9 horas)",
+      "itens": [
+        "Conceito de variável como número desconhecido ou genérico",
+        "Expressões algébricas simples e complexas com ordem de operações",
+        "Equações de primeiro grau: resolução e verificação de soluções",
+        "Inequações introdutórias com representação em reta numérica",
+        "Situações-problema através de equações e sistemas simples"
+      ]
+    },
+    {
+      "modulo": "Módulo 7: Tratamento da Informação (9 horas)",
+      "itens": [
+        "Leitura e interpretação de tabelas complexas e multidimensionais",
+        "Gráficos: barras, linhas, setor/pizza, pictogramas, histogramas, dispersão",
+        "Medidas de tendência central: média, moda, mediana com aplicações reais",
+        "Medidas de dispersão: amplitude, desvio padrão simples",
+        "Análise de dados: identificação de tendências, padrões e anomalias",
+        "Pensamento crítico sobre representações enganosas de dados"
+      ]
+    }
+  ],
+  "indicadores_desempenho": [
+    {
+      "modulo": 1,
+      "indicadores": [
+        "Resolver 15+ operações de cada tipo com 85%+ acurácia comprovada",
+        "Demonstrar compreensão sólida da ordem das operações em expressões variadas",
+        "Aplicar conceitos em problemas contextualizados com segurança",
+        "Explicar raciocínios passo a passo com clareza e coerência"
+      ]
+    },
+    {
+      "modulo": 2,
+      "indicadores": [
+        "Converter entre frações, decimais e porcentagens com 85%+ precisão de cálculo",
+        "Resolver problemas envolvendo desconto e aumento com cálculos corretos",
+        "Aplicar porcentagem em situações financeiras realistas e contextualizadas",
+        "Demonstrar compreensão profunda de equivalência de representações numéricas"
+      ]
+    },
+    {
+      "modulo": 3,
+      "indicadores": [
+        "Identificar relações proporcionais em contextos variados com justificativa clara",
+        "Resolver regra de três simples e composta com 85%+ acurácia de cálculo",
+        "Distinguir corretamente entre proporcionalidade direta e inversa",
+        "Aplicar conceitos de escalas em problemas práticos e técnicos reais"
+      ]
+    },
+    {
+      "modulo": 4,
+      "indicadores": [
+        "Converter entre unidades com fluência, precisão e segurança demonstrada",
+        "Calcular área e perímetro de figuras diversas com 85%+ acurácia de cálculo",
+        "Estimar medidas com razoabilidade dentro de margem aceitável",
+        "Resolver problemas de medida em contextos profissionais e técnicos"
+      ]
+    },
+    {
+      "modulo": 5,
+      "indicadores": [
+        "Identificar padrões em sequências diversas com justificativa clara e bem fundamentada",
+        "Resolver puzzles lógicos de nível apropriado de forma independente e confiante",
+        "Descrever e explicar estratégia de resolução utilizada com detalhes e coerência",
+        "Validar respostas obtidas e verificar razoabilidade dos resultados"
+      ]
+    },
+    {
+      "modulo": 6,
+      "indicadores": [
+        "Resolver equações de 1º grau com 85%+ acurácia e verificação de resposta",
+        "Traduzir problemas textuais em equações apropriadas com clareza",
+        "Verificar soluções e validar razoabilidade com justificativas adequadas",
+        "Aplicar conceitos de variável em contextos novos e desafiadores"
+      ]
+    },
+    {
+      "modulo": 7,
+      "indicadores": [
+        "Ler e interpretar gráficos diversos com precisão e pensamento crítico",
+        "Calcular média, moda, mediana, amplitude corretamente",
+        "Resolver problemas estatísticos de complexidade crescente",
+        "Criar representação visual apropriada para dados específicos",
+        "Analisar criticamente apresentações de dados"
+      ]
+    }
+  ],
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Atividades das aulas (objetivas e práticas)",
+        "momento": "Aulas 01 a 16",
+        "peso": "30%",
+        "criterios": "Média das atividades das aulas"
+      },
+      {
+        "instrumento": "Avaliação Objetiva 01",
+        "momento": "Aulas 01 a 08",
+        "peso": "20%",
+        "criterios": "Módulos 1 a 4"
+      },
+      {
+        "instrumento": "Avaliação Objetiva 02",
+        "momento": "Aulas 09 a 16",
+        "peso": "20%",
+        "criterios": "Módulos 5 a 7"
+      },
+      {
+        "instrumento": "Avaliação Prática",
+        "momento": "Aula 16",
+        "peso": "30%",
+        "criterios": "Resolução de situações-problema dos 7 módulos"
+      }
+    ],
+    "aprovacao": "70 pontos (nota 7)",
+    "observacao": "A ementa não define pesos; vale o padrão de docs/regras/materias.md §6."
+  },
+  "referencias": [],
+  "aulas": [
+    {
+      "numero": 1,
+      "aula": "Aula 01",
+      "tema": "Operações com Inteiros, Decimais e Negativos",
+      "carga_horaria": 4,
+      "dominios": [
+        1
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "1 — Operações Básicas e Cálculo Numérico"
+      ],
+      "detalhamento_didatico": [
+        "Os números que usamos",
+        "Adição e subtração com negativos",
+        "Multiplicação e divisão: regra de sinais",
+        "Operações com decimais",
+        "Escolher a operação certa"
+      ],
+      "indicadores": [
+        "1.1 Resolve 15 ou mais operações de cada tipo com 85% ou mais de acertos.",
+        "1.3 Aplica as operações em problemas contextualizados com segurança.",
+        "1.4 Explica o raciocínio passo a passo com clareza e coerência."
+      ],
+      "atividade": "Você, como aluno consultor, precisa ajudar uma família a fechar o mês. Ganhos: salário de R$ 2.350,00 e bico de R$ 420,50. Gastos: aluguel R$ 950,00, mercado R$ 812,35, luz R$ 135,30, água R$ 78,90, internet R$ 99,90 e transporte R$ 260,00. **Entrega:** (1) total de ganhos; (2) total de gastos; (3)…",
+      "conteudo_aula": "CONTEUDO/AULA-01-OPERACOES-COM-INTEIROS-E-DECIMAIS.md",
+      "slides": "AULAS/AULA-01-SLIDES.pdf"
+    },
+    {
+      "numero": 2,
+      "aula": "Aula 02",
+      "tema": "Expressões Numéricas, Cálculo Mental e Estimativas",
+      "carga_horaria": 4,
+      "dominios": [
+        1
+      ],
+      "capacidades": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "1 — Operações Básicas e Cálculo Numérico"
+      ],
+      "detalhamento_didatico": [
+        "Por que existe uma ordem",
+        "A ordem das operações",
+        "Erros mais comuns",
+        "Cálculo mental: estratégias",
+        "Estimativa: o resultado faz sentido?"
+      ],
+      "indicadores": [
+        "1.2 Demonstra compreensão sólida da ordem das operações em expressões variadas.",
+        "1.3 Aplica as operações em problemas contextualizados com segurança.",
+        "1.4 Explica o raciocínio passo a passo com clareza e coerência."
+      ],
+      "atividade": "Você, como aluno consultor, vai organizar a festa de fim de ano da turma (30 alunos). Cada aluno come 3 fatias de pizza; cada pizza tem 8 fatias e custa R$ 42,00. Refrigerante: 1 garrafa de 2 L para cada 5 alunos, a R$ 8,50. Decoração: R$ 37,50. **Entrega:** (1) estime o custo total antes de…",
+      "conteudo_aula": "CONTEUDO/AULA-02-EXPRESSOES-NUMERICAS-E-CALCULO-MENTAL.md",
+      "slides": "AULAS/AULA-02-SLIDES.pdf"
+    },
+    {
+      "numero": 3,
+      "aula": "Aula 03",
+      "tema": "Propriedades das Operações e Introdução às Frações",
+      "carga_horaria": 4,
+      "dominios": [
+        1,
+        2
+      ],
+      "capacidades": [
+        "C1",
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "1 — Operações Básicas e Cálculo Numérico",
+        "2 — Frações, Decimais e Porcentagem"
+      ],
+      "detalhamento_didatico": [
+        "Propriedades das operações",
+        "O que é uma fração",
+        "Tipos de fração",
+        "Frações equivalentes",
+        "Simplificação com MDC",
+        "Comparar frações"
+      ],
+      "indicadores": [
+        "1.4 Explica o raciocínio passo a passo com clareza e coerência.",
+        "2.4 Demonstra compreensão profunda da equivalência de representações numéricas."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda uma confeitaria de bairro a padronizar as receitas. A receita de bolo usa 6/8 de xícara de açúcar, 12/16 de xícara de leite e 1 ½ xícara de farinha. **Entrega:** (1) simplifique as frações usando o MDC; (2) diga quais ingredientes usam a mesma quantidade; (3)…",
+      "conteudo_aula": "CONTEUDO/AULA-03-PROPRIEDADES-E-INTRODUCAO-AS-FRACOES.md",
+      "slides": "AULAS/AULA-03-SLIDES.pdf"
+    },
+    {
+      "numero": 4,
+      "aula": "Aula 04",
+      "tema": "Operações com Frações e Conversões entre Fração, Decimal e Porcentagem",
+      "carga_horaria": 4,
+      "dominios": [
+        2
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "2 — Frações, Decimais e Porcentagem"
+      ],
+      "detalhamento_didatico": [
+        "Somar e subtrair com o mesmo denominador",
+        "Somar e subtrair com denominadores diferentes",
+        "Multiplicar frações",
+        "Dividir frações",
+        "Fração, decimal e porcentagem: três jeitos de escrever o mesmo valor"
+      ],
+      "indicadores": [
+        "2.1 Converte entre frações, decimais e porcentagens com 85% ou mais de precisão.",
+        "2.4 Demonstra compreensão profunda da equivalência de representações numéricas."
+      ],
+      "atividade": "Você, como aluno consultor, vai dividir a mesada de R$ 120,00 de um estudante: 1/4 para lanche, 1/3 para transporte, 1/6 para lazer e o restante para poupança. **Entrega:** (1) que fração da mesada vai para a poupança? (some as frações com MMC); (2) quantos reais vão para cada parte; (3) escreva…",
+      "conteudo_aula": "CONTEUDO/AULA-04-OPERACOES-COM-FRACOES-E-CONVERSOES.md",
+      "slides": "AULAS/AULA-04-SLIDES.pdf"
+    },
+    {
+      "numero": 5,
+      "aula": "Aula 05",
+      "tema": "Porcentagem no Dia a Dia, Razão e Proporção",
+      "carga_horaria": 4,
+      "dominios": [
+        2,
+        3
+      ],
+      "capacidades": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2 — Frações, Decimais e Porcentagem",
+        "3 — Proporcionalidade"
+      ],
+      "detalhamento_didatico": [
+        "Porcentagem de um valor",
+        "Desconto e aumento com fator multiplicativo",
+        "Sucessivos não se somam",
+        "Juros simples, salário e impostos",
+        "Razão",
+        "Proporção e propriedade fundamental"
+      ],
+      "indicadores": [
+        "2.2 Resolve problemas envolvendo desconto e aumento com cálculos corretos.",
+        "2.3 Aplica porcentagem em situações financeiras realistas e contextualizadas.",
+        "3.1 Identifica relações proporcionais em contextos variados com justificativa clara."
+      ],
+      "atividade": "Você, como aluno consultor, vai ajudar uma estudante a comprar um notebook de R$ 2.400,00. Opção 1: à vista com 12% de desconto. Opção 2: em 10 parcelas sem juros. Opção 3: entrada de 20% e o restante financiado por 8 meses a juros simples de 1,5% ao mês. **Entrega:** (1) valor final de cada opção;…",
+      "conteudo_aula": "CONTEUDO/AULA-05-PORCENTAGEM-NO-DIA-A-DIA-E-RAZAO.md",
+      "slides": "AULAS/AULA-05-SLIDES.pdf"
+    },
+    {
+      "numero": 6,
+      "aula": "Aula 06",
+      "tema": "Grandezas Proporcionais e Regra de Três Simples",
+      "carga_horaria": 4,
+      "dominios": [
+        3
+      ],
+      "capacidades": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "3 — Proporcionalidade"
+      ],
+      "detalhamento_didatico": [
+        "Grandeza",
+        "Diretamente proporcionais",
+        "Inversamente proporcionais",
+        "Nem tudo é proporcional",
+        "Regra de três simples — passo a passo"
+      ],
+      "indicadores": [
+        "3.1 Identifica relações proporcionais em contextos variados com justificativa clara.",
+        "3.2 Resolve regra de três simples e composta com 85% ou mais de acertos (nesta aula: simples).",
+        "3.3 Distingue corretamente proporcionalidade direta e inversa."
+      ],
+      "atividade": "Você, como aluno consultor, vai planejar a excursão da turma até Blumenau (cerca de 90 km). O ônibus faz 4 km por litro de diesel, que custa R$ 6,20. A 60 km/h, a ida leva 1 h 30 min. **Entrega:** (1) litros de diesel para ida e volta; (2) custo do combustível; (3) quanto tempo levaria a ida a 75…",
+      "conteudo_aula": "CONTEUDO/AULA-06-GRANDEZAS-PROPORCIONAIS-E-REGRA-DE-TRES-SIMPLES.md",
+      "slides": "AULAS/AULA-06-SLIDES.pdf"
+    },
+    {
+      "numero": 7,
+      "aula": "Aula 07",
+      "tema": "Regra de Três Composta, Escalas e Sistema Métrico Decimal",
+      "carga_horaria": 4,
+      "dominios": [
+        3,
+        4
+      ],
+      "capacidades": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "3 — Proporcionalidade",
+        "4 — Medidas e Grandezas"
+      ],
+      "detalhamento_didatico": [
+        "Regra de três composta",
+        "Escala",
+        "Proporção em telas e imagens",
+        "Sistema métrico decimal"
+      ],
+      "indicadores": [
+        "3.2 Resolve regra de três simples e composta com 85% ou mais de acertos.",
+        "3.4 Aplica conceitos de escalas em problemas práticos e técnicos reais.",
+        "4.1 Converte entre unidades com fluência, precisão e segurança (nesta aula: introdução)."
+      ],
+      "atividade": "Você, como aluno consultor, vai ajudar a escola a planejar a impressão de cartazes. A planta da quadra está em escala 1 : 200 e mede 14 cm por 7,5 cm no papel. 3 impressoras imprimem 60 cartazes em 2 h. **Entrega:** (1) medidas reais da quadra em metros; (2) quanto tempo 2 impressoras levam para…",
+      "conteudo_aula": "CONTEUDO/AULA-07-REGRA-DE-TRES-COMPOSTA-ESCALAS-E-SISTEMA-METRICO.md",
+      "slides": "AULAS/AULA-07-SLIDES.pdf"
+    },
+    {
+      "numero": 8,
+      "aula": "Aula 08",
+      "tema": "Conversão de Unidades: Comprimento, Massa, Capacidade e Tempo",
+      "carga_horaria": 4,
+      "dominios": [
+        4
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "4 — Medidas e Grandezas"
+      ],
+      "detalhamento_didatico": [
+        "A tabela e a regra da vírgula",
+        "Massa e capacidade",
+        "Volume e capacidade",
+        "Tempo: base 60, não base 10",
+        "Estimar e conferir"
+      ],
+      "indicadores": [
+        "4.1 Converte entre unidades com fluência, precisão e segurança.",
+        "4.3 Estima medidas com razoabilidade dentro de margem aceitável.",
+        "4.4 Resolve problemas de medida em contextos profissionais e técnicos."
+      ],
+      "atividade": "Você, como aluno consultor, organiza a merenda de um evento para 120 pessoas. Cada pessoa toma 250 mL de suco e come 80 g de bolo. O suco vem em garrafas de 1,5 L e o bolo é vendido por kg. O evento vai das 13 h 40 min às 16 h 15 min. **Entrega:** (1) litros de suco e quantidade de garrafas; (2)…",
+      "conteudo_aula": "CONTEUDO/AULA-08-CONVERSAO-DE-UNIDADES-DE-MEDIDA.md",
+      "slides": "AULAS/AULA-08-SLIDES.pdf"
+    },
+    {
+      "numero": 9,
+      "aula": "Aula 09",
+      "tema": "Área e Perímetro de Figuras Planas",
+      "carga_horaria": 4,
+      "dominios": [
+        4
+      ],
+      "capacidades": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "4 — Medidas e Grandezas"
+      ],
+      "detalhamento_didatico": [
+        "Perímetro e área",
+        "Fórmulas",
+        "Figuras compostas",
+        "Unidades de área",
+        "Material de obra"
+      ],
+      "indicadores": [
+        "4.2 Calcula área e perímetro de figuras diversas com 85% ou mais de acertos.",
+        "4.3 Estima medidas com razoabilidade dentro de margem aceitável.",
+        "4.4 Resolve problemas de medida em contextos profissionais e técnicos."
+      ],
+      "atividade": "Você, como aluno consultor, vai planejar a horta da escola em um terreno retangular de 8 m × 5 m. Dentro dele haverá um canteiro circular de 1,5 m de raio para temperos; o resto vira canteiros de hortaliças. A horta será cercada com tela, deixando um portão de 1 m. **Entrega:** (1) metros de tela;…",
+      "conteudo_aula": "CONTEUDO/AULA-09-AREA-E-PERIMETRO-DE-FIGURAS-PLANAS.md",
+      "slides": "AULAS/AULA-09-SLIDES.pdf"
+    },
+    {
+      "numero": 10,
+      "aula": "Aula 10",
+      "tema": "Padrões e Sequências",
+      "carga_horaria": 4,
+      "dominios": [
+        5
+      ],
+      "capacidades": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "5 — Raciocínio Lógico e Resolução de Problemas"
+      ],
+      "detalhamento_didatico": [
+        "Padrão e regra de formação",
+        "Sequências que se repetem (ciclos)",
+        "Progressão aritmética (PA)",
+        "Progressão geométrica (PG)",
+        "Fibonacci",
+        "Padrões mistos e simbólicos"
+      ],
+      "indicadores": [
+        "5.1 Identifica padrões em sequências diversas com justificativa clara e bem fundamentada.",
+        "5.3 Descreve e explica a estratégia de resolução utilizada com detalhes e coerência.",
+        "5.4 Valida as respostas obtidas e verifica a razoabilidade dos resultados."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda o clube de leitura a montar uma meta: um aluno lê 10 páginas no 1º dia e, a cada dia, 5 páginas a mais que no dia anterior. Outro aluno lê 2 páginas no 1º dia e dobra a cada dia. **Entrega:** (1) tabela dos 7 primeiros dias de cada aluno; (2) a regra de cada…",
+      "conteudo_aula": "CONTEUDO/AULA-10-PADROES-E-SEQUENCIAS.md",
+      "slides": "AULAS/AULA-10-SLIDES.pdf"
+    },
+    {
+      "numero": 11,
+      "aula": "Aula 11",
+      "tema": "Lógica Proposicional e Estratégias de Resolução de Problemas",
+      "carga_horaria": 4,
+      "dominios": [
+        5
+      ],
+      "capacidades": [
+        "C2",
+        "C3",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "5 — Raciocínio Lógico e Resolução de Problemas"
+      ],
+      "detalhamento_didatico": [
+        "Proposição",
+        "Negação (não, ~)",
+        "Conectivos e tabela-verdade",
+        "Estratégias de resolução",
+        "Os 4 passos de Polya"
+      ],
+      "indicadores": [
+        "5.2 Resolve puzzles lógicos de nível apropriado de forma independente e confiante.",
+        "5.3 Descreve e explica a estratégia de resolução utilizada com detalhes e coerência.",
+        "5.4 Valida as respostas obtidas e verifica a razoabilidade dos resultados."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda a organizar a escala do laboratório. Regras: (a) Ana e Bruno não trabalham no mesmo dia; (b) se Carla trabalha na segunda, Davi trabalha na terça; (c) Bruno só pode na segunda ou na quarta; (d) cada um trabalha exatamente um dia, de segunda a quinta. **Entrega:**…",
+      "conteudo_aula": "CONTEUDO/AULA-11-LOGICA-PROPOSICIONAL-E-ESTRATEGIAS-DE-RESOLUCAO.md",
+      "slides": "AULAS/AULA-11-SLIDES.pdf"
+    },
+    {
+      "numero": 12,
+      "aula": "Aula 12",
+      "tema": "Desafios Lógicos, Variáveis e Expressões Algébricas",
+      "carga_horaria": 4,
+      "dominios": [
+        5,
+        6
+      ],
+      "capacidades": [
+        "C1",
+        "C4",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "5 — Raciocínio Lógico e Resolução de Problemas",
+        "6 — Introdução à Álgebra"
+      ],
+      "detalhamento_didatico": [
+        "Sudoku e desafios lógicos",
+        "Variável",
+        "Linguagem algébrica",
+        "Termos semelhantes",
+        "Valor numérico"
+      ],
+      "indicadores": [
+        "5.2 Resolve puzzles lógicos de nível apropriado de forma independente e confiante.",
+        "6.4 Aplica o conceito de variável em contextos novos e desafiadores."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda uma lanchonete a montar fórmulas de preço. O sanduíche custa R$ 14,00, o refrigerante, R$ 6,00 e a entrega, R$ 7,00 fixos por pedido. **Entrega:** (1) escreva a expressão do valor de um pedido com s sanduíches e r refrigerantes; (2) calcule o valor numérico para 3…",
+      "conteudo_aula": "CONTEUDO/AULA-12-DESAFIOS-LOGICOS-E-EXPRESSOES-ALGEBRICAS.md",
+      "slides": "AULAS/AULA-12-SLIDES.pdf"
+    },
+    {
+      "numero": 13,
+      "aula": "Aula 13",
+      "tema": "Equações do 1º Grau",
+      "carga_horaria": 4,
+      "dominios": [
+        6
+      ],
+      "capacidades": [
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "6 — Introdução à Álgebra"
+      ],
+      "detalhamento_didatico": [
+        "Equação = balança em equilíbrio",
+        "Incógnita nos dois lados",
+        "Com parênteses",
+        "Com frações",
+        "Do problema à equação",
+        "Erros comuns"
+      ],
+      "indicadores": [
+        "6.1 Resolve equações de 1º grau com 85% ou mais de acertos e verificação da resposta.",
+        "6.2 Traduz problemas textuais em equações apropriadas com clareza.",
+        "6.3 Verifica soluções e valida a razoabilidade com justificativas adequadas."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda a escola a escolher um plano de internet para o laboratório. Plano A: R$ 90,00 de taxa fixa + R$ 2,00 por GB extra. Plano B: R$ 50,00 fixos + R$ 6,00 por GB extra. **Entrega:** (1) escreva a expressão do custo de cada plano para g GB extras; (2) monte e resolva a…",
+      "conteudo_aula": "CONTEUDO/AULA-13-EQUACOES-DO-PRIMEIRO-GRAU.md",
+      "slides": "AULAS/AULA-13-SLIDES.pdf"
+    },
+    {
+      "numero": 14,
+      "aula": "Aula 14",
+      "tema": "Inequações, Sistemas Simples e Leitura de Tabelas",
+      "carga_horaria": 4,
+      "dominios": [
+        6,
+        7
+      ],
+      "capacidades": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "6 — Introdução à Álgebra",
+        "7 — Tratamento da Informação"
+      ],
+      "detalhamento_didatico": [
+        "Inequação",
+        "Reta numérica",
+        "Sistemas simples",
+        "Tabelas"
+      ],
+      "indicadores": [
+        "6.2 Traduz problemas textuais em equações apropriadas com clareza.",
+        "6.4 Aplica o conceito de variável em contextos novos e desafiadores.",
+        "7.1 Lê e interpreta gráficos e tabelas diversos com precisão e pensamento crítico."
+      ],
+      "atividade": "Você, como aluno consultor, organiza a venda de ingressos de um festival da escola. Estudante paga R$ 8,00 e visitante paga R$ 15,00. Foram vendidos 200 ingressos e arrecadados R$ 2.090,00. A meta é arrecadar **pelo menos** R$ 2.500,00 no próximo festival, vendendo só ingressos de visitante além…",
+      "conteudo_aula": "CONTEUDO/AULA-14-INEQUACOES-SISTEMAS-E-LEITURA-DE-TABELAS.md",
+      "slides": "AULAS/AULA-14-SLIDES.pdf"
+    },
+    {
+      "numero": 15,
+      "aula": "Aula 15",
+      "tema": "Gráficos e Medidas de Tendência Central",
+      "carga_horaria": 4,
+      "dominios": [
+        7
+      ],
+      "capacidades": [
+        "C1",
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "7 — Tratamento da Informação"
+      ],
+      "detalhamento_didatico": [
+        "Qual gráfico usar?",
+        "Construindo um gráfico de setores",
+        "Média aritmética",
+        "Moda",
+        "Mediana",
+        "Qual medida representa melhor?"
+      ],
+      "indicadores": [
+        "7.1 Lê e interpreta gráficos diversos com precisão e pensamento crítico.",
+        "7.2 Calcula média, moda, mediana e amplitude corretamente (nesta aula: média, moda e mediana).",
+        "7.4 Cria a representação visual apropriada para dados específicos."
+      ],
+      "atividade": "Você, como aluno consultor, ajuda a cantina a entender as vendas. Salgados vendidos de segunda a sexta: 48, 52, 47, 95, 50 (na quinta houve festa). Vendas por tipo na semana: pastel 120, coxinha 90, pão de queijo 60, esfiha 22. **Entrega:** (1) gráfico de linhas das vendas por dia; (2) gráfico de…",
+      "conteudo_aula": "CONTEUDO/AULA-15-GRAFICOS-E-MEDIDAS-DE-TENDENCIA-CENTRAL.md",
+      "slides": "AULAS/AULA-15-SLIDES.pdf"
+    },
+    {
+      "numero": 16,
+      "aula": "Aula 16",
+      "tema": "Dispersão e Análise Crítica de Dados",
+      "carga_horaria": 3,
+      "dominios": [
+        7
+      ],
+      "capacidades": [
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "7 — Tratamento da Informação"
+      ],
+      "detalhamento_didatico": [
+        "Por que a média não basta",
+        "Amplitude",
+        "Desvio padrão simples",
+        "Tendências, padrões e anomalias",
+        "Gráficos enganosos"
+      ],
+      "indicadores": [
+        "7.2 Calcula média, moda, mediana e amplitude corretamente.",
+        "7.3 Resolve problemas estatísticos de complexidade crescente.",
+        "7.5 Analisa criticamente apresentações de dados."
+      ],
+      "atividade": "Você, como aluno consultor, apresenta à direção da escola um relatório sobre o consumo de água no último semestre (m³ por mês): 42, 45, 44, 71, 46, 48. O m³ custa R$ 7,50. **Entrega:** 1. Gasto total do semestre em reais (Módulo 1) e o gasto do mês de 71 m³ como fração e porcentagem do total…",
+      "conteudo_aula": "CONTEUDO/AULA-16-DISPERSAO-E-ANALISE-CRITICA-DE-DADOS.md",
+      "slides": "AULAS/AULA-16-SLIDES.pdf"
+    }
+  ]
+}

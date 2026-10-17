@@ -224,3 +224,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #226.0 | Ementa, `materia.json` e plano das aulas · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md) |
 | #223.3 | Markdown completo e HTML · `MEDIO · effort medium` | 🟠 Alta | #223.2 | ✅ Concluído | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #243.1 | Plano das atividades (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #243.2 | `materia.json` e grupo no gerador de seeds · `MEDIO · effort medium` | 🟠 Alta | #243.1 | ✅ Concluído | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |

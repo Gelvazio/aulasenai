@@ -51,13 +51,17 @@
 
 ### #243.2 — `materia.json` e grupo no gerador de seeds
 
-**Próximo passo:** criar o `materia.json` a partir da ementa e das 16 aulas.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — dados da ementa em JSON e uma lista no script Python.
+- **Entrega:** `materia.json` (UC 8, C1–C6 da ementa do curso, 7 domínios com conteúdos e
+  critérios da ementa, avaliação com os pesos padrão, 16 aulas lidas de `CONTEUDO/`) e a lista
+  `ATIVIDADES_REFORCO_MATEMATICA` + grupo no `scripts/gerar-seed-atividades.py` (as entradas entram
+  uma por aula) · **Verificação:** JSON válido, soma das aulas = 63 h, `ast.parse` do script.
 
 ### #243.3 — Atividades das aulas 01 a 08 (objetiva + prática + seeds PENDENTE)
 
-**Próximo passo:** esperar a #243.2.
+**Próximo passo:** objetiva e prática da Aula 01.
 
 - **Nível:** PESADO — questões com gabarito.
 

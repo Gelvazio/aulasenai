@@ -254,6 +254,15 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/AVALIACAO-OBJETIVA-02-QUESTOES.md"),
 ]
 
+PASTA_REFORCO_MATEMATICA = (
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO/ATIVIDADES"
+)
+
+# Reforço Matemática e Raciocínio Lógico (tarefa #243): aulas de CONTEUDO/AULA-NN-*.md, sem
+# calendário (data provisória). Práticas e avaliação prática têm seed próprio (discursiva).
+ATIVIDADES_REFORCO_MATEMATICA = [
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
@@ -265,6 +274,8 @@ GRUPOS = [
     ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
     ("Técnico em Informática para Internet", "TESTES DE FRONTEND", ATIVIDADES_TESTES_FRONTEND),
     ("Técnico em Informática para Internet", "BANCO DE DADOS", ATIVIDADES_BANCO_DADOS),
+    ("Rio do Sul Mais Tech", "Reforço Matemática e Raciocínio Lógico",
+     ATIVIDADES_REFORCO_MATEMATICA),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)
