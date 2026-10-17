@@ -30,13 +30,8 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
 | nuvem · ccr-04d42f6c-y5d6iz | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)): itens 22.9 (ementa) e 22.10 (análise), pedidos pelo usuário em 2026-10-16 21:34; 22.3 a 22.7 já entregues | 🔄 Ativa | 2026-10-16 21:34 |
-<<<<<<< Updated upstream
 | nuvem · ccr-a6bf2a33-1m21a1 | #226.0 ([353-cac80fd1](etapas/ETAPA-353-cac80fd1-AULAS-E-ATIVIDADES-INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO.md)) — ementa, `materia.json` e plano das aulas da ITIC do Técnico | 🔄 Ativa | 2026-10-16 21:33 |
 | nuvem · ccr-a26b3c0e-1ljztf | #224.4 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) aguarda o seu aceite das 16 aulas de Reforço de Matemática | 👀 Aguardando o usuário | 2026-10-16 21:36 |
-=======
-| nuvem · ccr-a6bf2a33-1m21a1 | #225.1 entregue: 17 tarefas (#226 a #242) e 697 subtarefas no quadro; #225.2 ([352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md)) aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 21:52 |
-| nuvem · ccr-a26b3c0e-1ljztf | #224.4 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) aguarda o seu aceite das 16 aulas de Reforço de Matemática | 👀 Aguardando o usuário | 2026-10-16 21:36 |
->>>>>>> Stashed changes
 | nuvem · relaxed-lovelace-sgtq7z | #167 aguarda aceite ([294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md)); #166 liberada (etapa 293); #168 criada ([295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md)), assumida depois do aceite da #167 | 👀 Aguardando o usuário | 2026-10-14 21:49 |
 | nuvem · lucid-cannon-whxrn1 | #169 ([296-eee19743](etapas/ETAPA-296-eee19743-CONFIRMAR-CORRECAO-SO-SE-NAO-CORRIGIDA.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 21:28 |
 | nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f | #171 ([298-cb630440](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md)) em execução | 🔄 Ativa | 2026-10-14 23:31 |
