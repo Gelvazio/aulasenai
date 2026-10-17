@@ -18,7 +18,7 @@ distratores revisados para a resposta certa não se destacar pelo tamanho. Seed:
 `database/2026-10-07-fundamentos-tecnologia-seed-atividades.sql` (fora do Git), gerado com
 `scripts/gerar-seed-atividades.py --so=... --saida=...`; aplicado no Supabase em 2026-10-08 a pedido do usuário. Como a
 tabela `aulas` tem número único por matéria e as aulas antigas usam 1 a 5, as 9 aulas novas têm
-`numero` 6 a 14 e `rotulo_card` "AULA 01" a "AULA 09" (decisão do usuário).
+`numero` 6 a 14 e `rotulo_card` "AULA 01" a "AULA 09" (decisão do usuário) (coluna removida em 2026-10-17, #259; o card agora mostra "AULA NN" de `numero`).
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|

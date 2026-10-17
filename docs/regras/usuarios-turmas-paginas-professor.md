@@ -51,17 +51,19 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
 - ✅ Restaurar: voltar `excluido = 0` pelo SQL Editor (ainda sem tela). Código novo que liste
   aulas deve filtrar `excluido = 0`.
 - ✅ **Card com 100% dos dados da tabela `aulas`** (2026-10-06, pedido do usuário; plano
-  `docs/card-dados-100-tabela-aulas.md`): o rótulo do card é `aulas.rotulo_card` (vazio =
-  "AULA NN" pelo `numero`) e o nome é `aulas.nome_card` (vazio = `aulas.titulo`). A linha
+  `docs/card-dados-100-tabela-aulas.md`): o rótulo do card é sempre "AULA NN" de `numero` (a
+  coluna `rotulo_card` foi removida em 2026-10-17, #259) e o nome é `aulas.nome_card` (vazio =
+  `aulas.titulo`). A linha
   "📅 Data da aula" **não aparece mais nos cards** (2026-10-16, #204); `aulas.data_planejada` fica
   só no modal "Editar aula". O texto escrito no HTML do índice só é usado para **achar** a aula quando
   a atividade não pôde ser lida (ex.: bloqueada para o aluno), pelo rótulo; card sem aula no banco
   fica como está no HTML. Código: `assets/js/indice-aula-repositorio.js` (dados),
   `assets/js/indice-aula-data.js` (cards) e `assets/js/indice-aula-modal.js` (modal), carregados
-  pelo `atividades-crud-modal.js`. Colunas `rotulo_card` (até 60) e `nome_card` (até 200):
-  `database/2026-10-06-aulas-nome-card.sql` (✅ aplicado).
+  pelo `atividades-crud-modal.js`. Coluna `nome_card` (até 200):
+  `database/2026-10-06-aulas-nome-card.sql` (✅ aplicado). A `rotulo_card` foi removida em
+  2026-10-17 (#259).
 - ✅ **"✏️ Editar aula" = modal CRUD completo da aula** (todo professor): edita todos os campos da
-  `aulas` (número, título, rótulo, nome, data, duração, sequência, descrição, conteúdo JSON,
+  `aulas` (número, título, nome, data, duração, sequência, descrição, conteúdo JSON,
   ativa, visível aos alunos; id, matéria e curso só leitura) e **lista as atividades da aula**,
   cada uma com **✏️ Editar** (abre o CADASTRAR ATIVIDADES com a atividade,
   `abrirEdicaoAtividadeCrud`) e **🗑️ Excluir** (popup de confirmação; apaga a atividade e, em

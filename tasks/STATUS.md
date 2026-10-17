@@ -26,7 +26,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
-| local · main · s14 | #259.5 ([386-009facc1](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md)) — líder; executor-leve atualizando a documentação | 🔄 Ativa | 2026-10-17 12:38 |
+| local · main · s14 | #259 ([386-009facc1](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md)) concluída; #209.7 aguarda o usuário apagar o bucket vazio `slides` | 👀 Aguardando o usuário | 2026-10-17 12:44 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #223 ([350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md)) — apostila de Banco de Dados gerada; #223.4 aguarda o aceite do usuário | 👀 Aguardando o usuário | 2026-10-16 21:39 |
@@ -909,8 +909,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
-| #259-009facc1-b742-4bba-ab6a-7c58c2b54d6f | Remover o `rotulo_card` de tudo (card só com `aulas.numero`) | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [386-009facc1](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md) | — |
-| #259.5 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #259.4 | 🔄 Em progresso | Claude Code (Haiku · executor-leve) (local · main · s14) (desde 2026-10-17 12:42) | [386-009facc1](etapas/ETAPA-386-009facc1-REMOVER-ROTULO-CARD.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

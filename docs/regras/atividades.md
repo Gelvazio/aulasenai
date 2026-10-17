@@ -654,9 +654,9 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     `assets/js/indice-aula-excluir-card.js`;
   - **"Id Aula:" no card** (2026-10-17, tarefas #255 e #257; só o Professor Administrador):
     etiqueta acima do rótulo "AULA NN" com o `aulas.id`. Código: `assets/js/indice-aula-data.js`;
-  - **rótulo do card** (2026-10-17, tarefa #258): sempre "AULA NN" de `aulas.numero`;
-    `rotulo_card` não aparece mais no card (só ajuda a achar a aula pelo texto do HTML). Código:
-    `assets/js/indice-aula-data.js`;
+  - **rótulo do card** (2026-10-17, tarefa #258): sempre "AULA NN" de `aulas.numero`; a coluna
+    `rotulo_card` foi removida (#259). A aula do card sem atividade lida é achada pelo nome do
+    card e, se não bater, pelo "AULA NN". Código: `assets/js/indice-aula-data.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

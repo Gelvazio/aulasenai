@@ -89,6 +89,7 @@ DATA_PROVISORIA_FUNDAMENTOS = "2026-10-07"  # datas das 9 aulas da ementa ainda 
 # 9 aulas extraídas da ementa em CONTEUDO/ (8 × 4 h + 1 h), uma atividade de 50 questões cada.
 # Números 6 a 14 (1 a 5 são das aulas antigas; aulas_materia_id_numero_key); no banco o
 # rotulo_card delas é "AULA 01" a "AULA 09" (aplicado em 2026-10-08).
+# (coluna aulas.rotulo_card removida em 2026-10-17, #259.)
 ATIVIDADES_FUNDAMENTOS_EMENTA = [
     (6, "Tecnologia, Dispositivos Digitais e Cidadania Digital", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),

@@ -92,7 +92,7 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
 
 ### #259.5 — Documentação
 
-**Próximo passo:** delegado ao `executor-leve`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md`/comentários.
 - **Modelo:** só Haiku — nunca outro
@@ -101,3 +101,9 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
   `docs/regras/atividades.md`, `docs/regras/usuarios-turmas-paginas-professor.md`,
   `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/ATIVIDADES/STATUS-ATIVIDADES.md`,
   comentário de `scripts/gerar-seed-atividades.py`.
+- **Entrega (2026-10-17 12:44, Haiku · executor-leve; líder Opus 5.5, s14):** os 8 arquivos da lista; a linha
+  do `rotulo_card` saiu de `docs/database.md` e do relatório HTML; notas de remoção nos
+  históricos; "rótulo" saiu da lista de campos do "✏️ Editar aula" (devolvido ao executor pelo
+  líder).
+- **Verificação (líder):** `rotulo_card` só sobra em notas e histórico; `py_compile` do
+  `gerar-seed-atividades.py` passou (só comentário).

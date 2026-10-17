@@ -1,5 +1,7 @@
 # Rótulos "AULA NN" das aulas — para o usuário ajustar
 
+> Atualizado em 2026-10-17 (#259): a coluna `aulas.rotulo_card` foi removida; o rótulo do card é sempre "AULA NN" de `aulas.numero`. O texto abaixo é o histórico.
+
 - **Criado em:** 2026-10-06 (lido do banco, tabela `aulas`)
 - **Regra:** toda aula deve ter o rótulo do card no formato **`AULA NN`** (regra no `CLAUDE.md`).
 - **Como usar:** preencha a coluna **"Novo rótulo"** das linhas ⚠️ (ou de qualquer outra que

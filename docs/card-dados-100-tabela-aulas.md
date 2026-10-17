@@ -1,5 +1,7 @@
 # Card do índice com 100% dos dados da tabela `aulas`
 
+> Atualizado em 2026-10-17 (#259): a coluna `aulas.rotulo_card` foi removida; o rótulo do card é sempre "AULA NN" de `aulas.numero`. O texto abaixo é o histórico.
+
 - **Criado em:** 2026-10-06
 - **Pedido do usuário:** "ajuste o card pra buscar 100% dos dados da tabela aulas, sempre" e
   "cada card deve estar ligado apenas a 1 aula".
