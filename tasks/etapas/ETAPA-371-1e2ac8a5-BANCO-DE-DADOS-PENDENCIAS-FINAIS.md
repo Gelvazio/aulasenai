@@ -44,10 +44,14 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 21:58 | PDF da apostila: **não** libera o Chromium; o usuário gera pelo botão 📥 Exportar PDF (#244.6 sai do escopo) | Usuário | Regra do navegador mantida |
+| 2026-10-16 21:58 | Slides (PPTX + PDF) e PDFs vão para o Git com `git add -f` | Usuário | Mesmo padrão de Testes de Front-End |
+| 2026-10-16 21:58 | Depois da revisão da IA, marcar "Conteúdo foi revisado por professor" | Usuário | A revisão vale como a do professor |
+| 2026-10-16 21:58 | Plano **não aprovado** ainda: o usuário quer mudar algo (aguardando o quê) | Usuário | — |
 
 ### #244.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** esperar a aprovação do usuário.
+**Próximo passo:** perguntar ao usuário o que mudar no plano e pedir nova aprovação.
 
 - **Nível:** MEDIO — leitura de regras e plano em `.md`.
 
