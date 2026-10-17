@@ -54,17 +54,32 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
 
 ### #259.3 — Rótulo e busca da aula só por `numero` (e nome)
 
-**Próximo passo:** delegado ao `executor-medio`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — JS de tela, 2 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro
 - **Arquivos:** `assets/js/indice-aula-data.js` (`obterRotuloDaAula` = "AULA NN"; sai a
   `obterRotuloNumeroDaAula` repetida; `encontrarAulaPeloRotulo` cai para o nome) e
   `indice-aula-atividades-vinculadas.js` (dono do card pelo rótulo e, sem ele, pelo nome).
+- **Correção do líder antes da entrega (consulta ao banco):** em 33 aulas o "AULA NN" do HTML
+  do card não é o do `numero` (ex.: o card "AULA 03" da matéria 27 é a aula 38, de `numero` 2):
+  comparar pelo rótulo ligaria o card à aula errada. Por isso a ordem virou **nome primeiro**
+  (sem diferenciar maiúsculas: a aula 69 está em maiúsculas no banco) e só depois o rótulo; os
+  nomes não se repetem dentro da matéria (consulta).
+- **Entrega (2026-10-17 12:41, Sonnet · executor-medio; líder Opus 5.5, s14):** `indice-aula-data.js`:
+  `obterRotuloDaAula` = "AULA NN" (saiu a `obterRotuloNumeroDaAula`), nova
+  `normalizarNomeCardAula`, `encontrarAulaPeloNome` e `encontrarAulaPeloTextoDoCard` (nome →
+  rótulo); `indice-aula-atividades-vinculadas.js`: dono do card pelo nome, depois rótulo, depois
+  o primeiro.
+- **Verificação (líder):** `node --check` nos 2; `rotulo_card` zero em `assets/js`; das 41 aulas
+  cujo rótulo antigo não era o "AULA NN" do `numero`, 36 têm card no HTML com o mesmo nome; das 5
+  restantes, 4 não têm card no HTML (só do banco) e a 82 tem `h2` "ATIVIDADE SEXTA FEIRA" (no
+  banco, "ATIVIDADE SEXTA FEIRA 09/10/2026-CEPLAS TARDE"): só no caso do aluno sem a atividade
+  lida esse card não acha a aula e fica como no HTML.
 
 ### #259.4 — Cópia dos valores e `drop column` no banco
 
-**Próximo passo:** depois da #259.2 e da #259.3 publicadas.
+**Próximo passo:** aplicar `database/2026-10-17-aulas-remover-rotulo-card.sql` (cópia já pronta).
 
 - **Nível:** PESADO — banco, apagar coluna.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro

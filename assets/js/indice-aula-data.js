@@ -1,6 +1,7 @@
 // Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo e nome
 // (aulas.nome_card ou aulas.titulo). O rótulo do card é SEMPRE "AULA NN", de aulas.numero (pedido
-// de 2026-10-17, #258); o aulas.rotulo_card só ajuda a achar a aula pelo texto do HTML.
+// de 2026-10-17, #258). A aula do card sem atividade lida é procurada pelo nome do card e,
+// se não bater, pelo rótulo "AULA NN" (#259).
 // A data da aula não aparece no card (pedido de 2026-10-16, #204); ela fica só no modal
 // "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
@@ -38,6 +39,7 @@ const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
 const PREFIXO_ROTULO_AULA = 'AULA ';
+const IDIOMA_NOME_CARD_AULA = 'pt-BR';
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 // Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
@@ -62,22 +64,11 @@ function criarElementoCardAula(tag, classe, texto) {
 }
 
 /**
- * Rótulo usado só para achar a aula pelo texto do HTML: rotulo_card ou "AULA NN".
- * @param {Object} aula - Linha da tabela aulas.
- * @returns {string} Rótulo do card.
- */
-function obterRotuloDaAula(aula) {
-    if (aula.rotulo_card) return aula.rotulo_card;
-
-    return obterRotuloNumeroDaAula(aula);
-}
-
-/**
  * Rótulo do card sempre pela coluna aulas.numero: "AULA NN" (pedido de 2026-10-17, #258).
  * @param {Object} aula - Linha da tabela aulas.
  * @returns {string} Rótulo "AULA NN".
  */
-function obterRotuloNumeroDaAula(aula) {
+function obterRotuloDaAula(aula) {
     return PREFIXO_ROTULO_AULA + String(aula.numero ?? '').padStart(DIGITOS_NUMERO_AULA, '0');
 }
 
@@ -101,16 +92,44 @@ function lerTextoDoCard(card, seletor) {
 }
 
 /**
- * Procura, entre as aulas da matéria, a aula de um card pelo rótulo (e, se repetir, pelo nome).
+ * Deixa o nome pronto para comparar: sem espaços nas pontas e em maiúsculas.
+ * @param {string} [texto] - Nome da aula ou do card.
+ * @returns {string} Nome normalizado.
+ */
+function normalizarNomeCardAula(texto) {
+    return String(texto || '').trim().toLocaleUpperCase(IDIOMA_NOME_CARD_AULA);
+}
+
+/**
+ * Procura, entre as aulas da matéria, a aula de um card pelo nome escrito no HTML.
+ * @param {{nomeHtml: string}} item - Card com o nome do HTML.
+ * @param {Object[]} aulas - Aulas da matéria.
+ * @returns {Object|null} A aula, se exatamente uma tiver esse nome; senão null.
+ */
+function encontrarAulaPeloNome(item, aulas) {
+    const nomeDoCard = normalizarNomeCardAula(item.nomeHtml);
+    const mesmoNome = aulas.filter(
+        (aula) => normalizarNomeCardAula(obterNomeDaAula(aula)) === nomeDoCard);
+    return mesmoNome.length === 1 ? mesmoNome[0] : null;
+}
+
+/**
+ * Procura, entre as aulas da matéria, a aula de um card pelo nome; se o nome não achar uma só
+ * aula, pelo rótulo "AULA NN" (e, se o rótulo repetir, pelo nome).
  * @param {{rotuloHtml: string, nomeHtml: string}} item - Card com os textos do HTML.
  * @param {Object[]} aulas - Aulas da matéria.
  * @returns {Object|null} Aula encontrada ou null.
  */
-function encontrarAulaPeloRotulo(item, aulas) {
+function encontrarAulaPeloTextoDoCard(item, aulas) {
+    const peloNome = encontrarAulaPeloNome(item, aulas);
+    if (peloNome) return peloNome;
+
     const mesmoRotulo = aulas.filter((aula) => obterRotuloDaAula(aula) === item.rotuloHtml);
     if (mesmoRotulo.length === 1) return mesmoRotulo[0];
 
-    return mesmoRotulo.find((aula) => obterNomeDaAula(aula) === item.nomeHtml) || null;
+    const nomeDoCard = normalizarNomeCardAula(item.nomeHtml);
+    return mesmoRotulo.find(
+        (aula) => normalizarNomeCardAula(obterNomeDaAula(aula)) === nomeDoCard) || null;
 }
 
 /**
@@ -167,7 +186,7 @@ async function completarAulasPeloRotulo(itens) {
     if (!materia) return;
 
     const aulas = await listarAulasDaMateriaCard(materia);
-    faltando.forEach((item) => { item.aula = encontrarAulaPeloRotulo(item, aulas); });
+    faltando.forEach((item) => { item.aula = encontrarAulaPeloTextoDoCard(item, aulas); });
 }
 
 /**
@@ -179,7 +198,7 @@ function renderizarTextosNoCard(item) {
 
     const rotulo = item.card.querySelector(SELETOR_ROTULO_CARD_AULA);
     const nome = item.card.querySelector(SELETOR_NOME_CARD_AULA);
-    if (rotulo) rotulo.textContent = obterRotuloNumeroDaAula(item.aula);
+    if (rotulo) rotulo.textContent = obterRotuloDaAula(item.aula);
     if (nome) nome.textContent = obterNomeDaAula(item.aula);
 }
 

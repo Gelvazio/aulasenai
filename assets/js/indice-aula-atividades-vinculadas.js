@@ -4,13 +4,16 @@
 // link no card (comparação pelo caminho decodificado, em href, data-href-bloqueado e
 // data-href-aula-bloqueada). Uma só consulta traz as atividades de todos os cards.
 // Card dono da aula: se dois cards forem identificados com a mesma aula (ex.: o card "AVALIAÇÃO 02"
-// tem o link de uma atividade que agora é da aula 10), só o card cujo rótulo escrito no HTML é o
-// rótulo da aula (ex.: "AULA 10") recebe os botões; sem rótulo igual, o primeiro card da página.
+// tem o link de uma atividade que agora é da aula 10), só o card cujo nome escrito no HTML é o
+// nome da aula (sem diferenciar maiúsculas) recebe os botões; sem nome igual, o de rótulo
+// igual ao da aula (ex.: "AULA 10");
+// sem rótulo igual, o primeiro card da página.
 // Assim o mesmo botão nunca aparece em dois cards. Os botões levam data-vinculo-banco para serem
 // removidos e refeitos quando o vínculo muda. Quem chama redesenha o card depois (bloqueio da aula)
 // e remonta os ON/OFF das atividades (indice-aula-data.js).
 // Depende de: assets/js/indice-aula-repositorio.js, atividades-crud-modal.js (obterCaminhoHtml) e
-// indice-aula-data.js (obterRotuloDaAula).
+// indice-aula-data.js (obterRotuloDaAula, obterNomeDaAula e
+// normalizarNomeCardAula).
 
 const SELETOR_ACOES_VINCULADAS = '.acoes';
 const SELETOR_LINK_ACAO_VINCULADAS = 'a.btn';
@@ -42,12 +45,17 @@ function removerBotoesVinculadosDoBanco() {
 
 /**
  * Escolhe, entre os cards identificados com a mesma aula, o card dono dela.
- * @param {{rotuloHtml: string, aula: Object}[]} candidatos - Cards da mesma aula.
- * @returns {Object} Card dono: o de rótulo do HTML igual ao da aula, ou o primeiro.
+ * @param {{rotuloHtml: string, nomeHtml: string, aula: Object}[]} candidatos - Cards da aula.
+ * @returns {Object} Card dono: o de nome do HTML igual ao da aula; senão o de rótulo igual;
+ *     senão o primeiro.
  */
 function escolherCardDonoDaAula(candidatos) {
-    const rotuloDaAula = obterRotuloDaAula(candidatos[0].aula);
-    return candidatos.find((item) => item.rotuloHtml === rotuloDaAula) || candidatos[0];
+    const aula = candidatos[0].aula;
+    const rotuloDaAula = obterRotuloDaAula(aula);
+    const nomeDaAula = normalizarNomeCardAula(obterNomeDaAula(aula));
+    return candidatos.find((item) => normalizarNomeCardAula(item.nomeHtml) === nomeDaAula)
+        || candidatos.find((item) => item.rotuloHtml === rotuloDaAula)
+        || candidatos[0];
 }
 
 /**
