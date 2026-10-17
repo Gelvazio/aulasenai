@@ -27,6 +27,7 @@ Structure"). Vale para o Claude Code local e de nuvem; as outras IAs seguem as m
 | `/nova-materia <CURSO>/<MATERIA>` | Pastas e 5 status de `materias-global.md` |
 | `/documentar` | Atualiza a orientação em `docs/` dos arquivos alterados |
 | `/refatorar <arquivo>` | Aplica `codigo-limites-nomes.md` sem mudar o comportamento |
+| `/verify [tudo]` | Verificação do quadro: conflitos e entregas aplicadas; coluna Verificado (`tasks/verificacao.md`) |
 
 Subagentes: `revisor-codigo`, `auditor-seguranca`, `auditor-quadro`. Skills novas:
 `revisao-codigo`, `auditoria-seguranca` (a auditoria de tarefa é da #168).

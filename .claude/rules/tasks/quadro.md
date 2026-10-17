@@ -52,7 +52,7 @@ pelos modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 
 ## 📌 Tarefas            (mãe + uma linha por subtarefa logo abaixo)
-| Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
+| Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 
 ## Escopo do projeto
 ## 🗂️ Etapas            (uma linha por etapa, criada junto com ela; nunca apagar)
@@ -66,7 +66,8 @@ pelos modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `
 - **Modelo:** `<nível> · só <modelo>` (`LEVE · só Haiku`…); `—` na mãe.
   ⛔ Só esse modelo executa (regra de níveis).
 - **Em uso por:** `<IA (modelo)> (<frente>) (desde <data hora>)`, `—` ou `— (não reservável)`.
-- Seção sem conteúdo fica com a tabela vazia (não apagar o cabeçalho).
+- **Verificado:** `true` só depois do `verify` com prova (`verificacao.md`); senão `—`.
+- Seção sem conteúdo: tabela vazia (não apagar o cabeçalho).
 
 ## Modelo da etapa (uma por tarefa-mãe)
 

@@ -30,32 +30,34 @@ está mesmo aplicado) e marca `true` na nova coluna **VERIFICADO** das tarefas c
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 23:42 | Plano aprovado ("Sim"). As 3 perguntas ficaram sem resposta; valeu o padrão do plano: **só neste projeto** (regra em `.claude/rules/tasks/`, reutilizável), **só as linhas ainda não verificadas** (`verify tudo` confere todas), linhas não verificadas com **`—`** | Gelvazio | resposta "Sim" no chat |
+| 2026-10-16 23:42 | Sai a #248.4 (aceite): a regra de 2026-10-17 (sem aceite do usuário em tarefa grande) manda a IA finalizar | Claude Code (Opus 5.5) s17 | `docs/HISTORICO-REGRAS.md` |
+| 2026-10-16 23:43 | Coluna **Verificado** no fim da tabela (depois de Etapa): quem lê pela posição não quebra | Claude Code (Opus 5.5) s17 | menor risco |
 
 ### #248.1 — Plano e aprovação (tarefa grande)
 
-**Próximo passo:** 👀 usuário responder às perguntas do plano e dar o "sim".
+**Próximo passo:** — (entregue; plano aprovado em 2026-10-16 23:42).
 
 - **Nível:** PESADO — regra de todas as IAs e mudança em massa no quadro.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** plano nesta etapa · **Verificação:** "Sim" do usuário no chat.
 
 ### #248.2 — Regra, gatilho e comando `verify`
 
-**Próximo passo:** depende da #248.1.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — regra de fluxo para todas as IAs (arquitetura do quadro).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+- **Entrega:** `.claude/rules/tasks/verificacao.md` (nova), regra 14 do `AGENTS.md`, `.claude/commands/verify.md`, `INDEX.md`, `claude-code.md`, `docs/HISTORICO-REGRAS.md`. · **Verificação:** leitura; `verificacao.md` com 2,6 KB (≤ 5 KB).
 
 ### #248.3 — Coluna `Verificado` no quadro, modelos e visualizador
 
-**Próximo passo:** depende da #248.1.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mudança em massa no quadro e script do gerador.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+- **Entrega:** coluna `Verificado` (`—`) em 852 linhas do `tasks/STATUS.md` e 253 do `tasks/task_complete.md` (script idempotente na pasta da sessão); modelo em `tasks/quadro.md`. · **Verificação:** todas as linhas de "📌 Tarefas" com 9 colunas (`awk`); visualizador regenerado sem erro (o leitor acha as colunas pelo nome).
 
 ### #248.4 — Aceite do usuário
 
-**Próximo passo:** depende da #248.3; o usuário digita `verify` e confere o resultado.
-
-- **Nível:** LEVE — conferência do usuário.
-- **Modelo:** Usuário — nenhuma IA executa (#247)
+**Próximo passo:** ⛔ removida em 2026-10-16 23:42 (regra "sem aceite do usuário em tarefa grande").

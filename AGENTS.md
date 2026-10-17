@@ -73,5 +73,8 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 13. **Mensagem só com um ponto (`.`)** (2026-10-17, pedido do usuário): listar as tarefas
     pendentes do quadro (como em "Liste tarefas pendentes": contagens por status e prioridade, 
     🔴, 🔄, 👀 e grupos grandes), sem começar nenhuma tarefa nem alterar arquivos.
+14. **Mensagem `verify`** (2026-10-16, #248): verificação completa do quadro — conflitos e se o que
+    foi feito foi aplicado mesmo; só o que tem prova ganha `true` na coluna **Verificado**
+    ([`tasks/verificacao.md`](.claude/rules/tasks/verificacao.md)).
 
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).

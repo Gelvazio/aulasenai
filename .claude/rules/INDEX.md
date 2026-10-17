@@ -18,6 +18,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 | `tasks/quadro.md` | Fonte única: onde fica cada informação; modelos do `STATUS.md` e da etapa |
 | `tasks/ciclo-da-task.md` | O que vira TASK; abrir, pequena × grande (plano na etapa), executar, encerrar, retomar |
 | `tasks/frentes-e-reserva.md` | Várias sessões/IAs: frentes, reserva, prioridade, limites, conflitos |
+| `tasks/verificacao.md` | Mensagem `verify`: conflitos do quadro, entregas aplicadas e coluna Verificado |
 
 ## 🟠 Coordenar neste projeto
 
