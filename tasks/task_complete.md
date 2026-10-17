@@ -5,3 +5,5 @@
 | #224.1 | Plano das aulas (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #225.1 | Criar no quadro as 17 tarefas e as 663 subtarefas · `LEVE · effort low` | 🟠 Alta | — | ✅ Concluído | — | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
 | #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | ✅ Concluído | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #225-88c1272e-6fc9-4e83-ba82-0e57440fac54 | Uma tarefa por matéria do Técnico em Informática para Internet (aulas, objetivas e práticas) | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |
+| #225.2 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #225.1 | ✅ Concluído | — | [352-88c1272e](etapas/ETAPA-352-88c1272e-TAREFAS-POR-MATERIA-TECNICO-INFORMATICA.md) |

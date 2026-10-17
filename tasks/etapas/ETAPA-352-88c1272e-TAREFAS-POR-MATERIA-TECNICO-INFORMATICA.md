@@ -90,6 +90,8 @@ para Internet, já dividido em pedaços pequenos que qualquer IA do nível pode 
 
 ### #225.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere as tarefas #226 a #242 no quadro.
+**Próximo passo:** — (concluída).
+
+- **Entrega:** aceite do usuário em 2026-10-16 21:33 ("aceito").
 
 - **Nível:** LEVE — conferência do usuário.
