@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| local · main · s18 | #249.1 ([376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md)) em execução | 🔄 Ativa | 2026-10-17 09:59 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
 | nuvem · ccr-3274812b-0nj48o | #244, #245, #246 e #247 concluídas (aceite da #247 em 2026-10-16 23:32) | ⏹️ Encerrada | 2026-10-16 23:32 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
@@ -903,6 +904,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.5 | Avaliações objetivas 01 e 02, prática e média final · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
 | #243.6 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | Usuário | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) | — |
+| #249-8285828e-f6f4-47da-ac64-453172249d65 | Atividade vinculada pelo banco aparecer no card da aula | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md) | — |
+| #249.1 | Card da aula mostra as atividades vinculadas pelo banco · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s18) (desde 2026-10-17 09:59) | [376-8285828e](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -921,6 +924,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 373-0a15e96a | Sempre verificar as regras do rules-ai (#246, pedida em 2026-10-16 22:37) | [ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
 | 374-afb852cd | Nunca executar tarefa que não é do seu modelo (#247, pedida em 2026-10-16 22:48) | [ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | 375-189bc6ee | Comando "verify" e coluna VERIFICADO no quadro (#248, pedida em 2026-10-16 23:38) | [ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md) |
+| 376-8285828e | Atividade vinculada pelo banco aparecer no card da aula (#249, pedida em 2026-10-17 09:59) | [ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md](etapas/ETAPA-376-8285828e-ATIVIDADE-VINCULADA-APARECER-NO-CARD-DA-AULA.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
