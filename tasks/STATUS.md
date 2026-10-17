@@ -918,6 +918,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #244.8 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #244.2, #244.3, #244.9 | 👀 Aguardando aceite | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #245-8341ceea-7ca4-4a05-976d-e2c73aabe47d | Links de slides e PDF só quando o arquivo existir (todas as matérias) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #245.3 | 👀 Aguardando aceite | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #246-0a15e96a-c79d-4a6d-87e0-75c459aa2d03 | Sempre verificar as regras do rules-ai (regra no AGENTS.md) | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
+| #246.1 | Regra "verificar o rules-ai" no AGENTS.md · `LEVE · effort low` | 🟡 Média | — | ⬜ Pendente | — | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -933,6 +935,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 |---|---|---|
 | 371-1e2ac8a5 | Banco de Dados: pendências finais (#244, pedida em 2026-10-16 21:46) | [ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | 372-8341ceea | Links de slides e PDF só quando o arquivo existir (#245, pedida em 2026-10-16 22:19, criada pela #244.3) | [ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| 373-0a15e96a | Sempre verificar as regras do rules-ai (#246, pedida em 2026-10-16 22:37) | [ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
