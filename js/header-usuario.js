@@ -12,12 +12,16 @@
 // Em páginas de matéria (/MATERIAIS/<CURSO>/<MATÉRIA>/), o botão 👥 EQUIPES aparece só para o
 // professor e para o aluno líder (usuario.lider = 1), que cadastram e alteram as equipes.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
+// O header também carrega a camada do celular (assets/css/celular.css, #265) em toda página,
+// depois do CSS dela (letras maiores, toque fácil, uma coluna; só até 768 px).
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
 // então a mesma chamada serve para qualquer pasta do projeto.
 
 const ID_HEADER_USUARIO = "header-usuario";
 const URL_SUPABASE_CDN = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
 const ROTA_CSS_HEADER = "../assets/css/header-usuario.css";
+// Camada do celular (#265): entra depois do CSS da página para vencer na cascata (até 768 px).
+const ROTA_CSS_CELULAR = "../assets/css/celular.css";
 const ROTA_SUPABASE_JS = "supabase.js";
 const ROTA_LOGIN = "../login.html";
 const ROTA_HOME = "../index.html";
@@ -102,6 +106,16 @@ function incluirCssHeader(rota = ROTA_CSS_HEADER) {
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = url;
+  document.head.append(link);
+}
+
+/**
+ * Inclui a camada do celular (#265) e a deixa por último no <head>, depois do CSS da página
+ * e dos CSS do header (que podem ter entrado depois), para vencer na cascata.
+ */
+function incluirCssCelularPorUltimo() {
+  incluirCssHeader(ROTA_CSS_CELULAR);
+  const link = document.querySelector(`link[href="${resolverRotaHeader(ROTA_CSS_CELULAR)}"]`);
   document.head.append(link);
 }
 
@@ -490,18 +504,24 @@ async function confirmarSessaoHeader() {
  * libera a página e desenha o usuário logado ou o botão ENTRAR.
  */
 async function iniciarHeaderUsuario() {
+  // Antes do await: com internet lenta a página já nasce no tamanho do celular.
+  incluirCssCelularPorUltimo();
   const { cliente, usuario } = await confirmarSessaoHeader();
   if (paginaPrecisaLogin && !usuario) return redirecionarSemSessao();
 
   liberarPaginaHeader();
   aplicarVisibilidadePorPerfil(usuario);
   const destino = document.getElementById(ID_HEADER_USUARIO);
-  if (!destino) return;
+  if (!destino) {
+    incluirCssCelularPorUltimo();
+    return;
+  }
 
   // Sai do <body> para não herdar o padding/margem da página: a barra fica colada no topo.
   document.documentElement.insertBefore(destino, document.body);
   incluirCssHeader();
   desenharHeaderUsuario(destino, cliente, usuario);
+  incluirCssCelularPorUltimo();
 }
 
 const paginaPrecisaLogin = protegerPaginaHeader();

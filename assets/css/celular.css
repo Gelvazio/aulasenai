@@ -1,0 +1,173 @@
+/* Camada do celular (#265): letras maiores, botões fáceis de tocar, uma coluna e tabelas que
+   rolam de lado. Carregada por js/header-usuario.js em toda página, DEPOIS do CSS da página
+   (entra por último na cascata, por isso vence com o mesmo peso de seletor). O login.html
+   inclui esta folha direto, pois não passa pelo header.
+   Só vale na tela e até 768 px: no computador e na impressão nada muda. */
+
+:root {
+    --celular-fonte-base: 17px;
+    --celular-fonte-minima: 15px;
+    --celular-fonte-campo: 16px;
+    --celular-altura-toque: 48px;
+    --celular-margem-lateral: 16px;
+    --celular-largura-onoff-padrao: 72px;
+    --celular-espaco-summary: 12px;
+    --celular-altura-campo-texto: 110px;
+    --celular-espaco-folha: 12px;
+    --celular-espaco-voltar: 10px;
+    --celular-altura-linha-texto: 1.5;
+    --celular-altura-linha-titulo: 1.25;
+    --celular-altura-linha-subtitulo: 1.3;
+    --celular-fonte-h1: clamp(1.4rem, 6vw, 1.9rem);
+    --celular-fonte-h2: clamp(1.2rem, 5vw, 1.5rem);
+    --celular-fonte-h3: clamp(1.1rem, 4.4vw, 1.3rem);
+}
+
+@media screen and (max-width: 768px) {
+    /* Só no celular: o ✏️ e o − da atividade ganham o tamanho de toque. */
+    :root { --crud-tamanho-editar: var(--celular-altura-toque); }
+
+    /* Texto base e mínimo */
+    html { -webkit-text-size-adjust: 100%; font-size: var(--celular-fonte-base); }
+    body { font-size: var(--celular-fonte-base);
+         line-height: var(--celular-altura-linha-texto); }
+
+    /* Textos pequenos das páginas (11 a 14 px) sobem para 15 px. */
+    .meta, .num, .resumo, .content-label, .aula-modal-info, details,
+    .export-bar small, .export-bar label, .voltar, .menu-principal a, footer,
+    .faixa-materias__titulo, .faixa-materias__card, .faixa-materias__filtro,
+    .faixa-materias__onoff, .header-usuario__barra, .header-usuario__menu-link,
+    .header-entrar-destaque__acao, .login-campo, .login-cabecalho p,
+    .login-ajuda, .login-rodape, .login-mensagem, .login-conectado, .crud-campo,
+    .crud-linha__texto, .crud-mensagem, .crud-id-atividade,
+    .btn, .btn-export, .aula-badge, header p,
+    .identificacao-estudante__texto, .identificacao-estudante__rotulo,
+    .identificacao-estudante__aviso, .identificacao-estudante__tentativa,
+    .folha-respostas__instrucoes, .folha-respostas__contagem, .aviso-gravacao,
+    .questao-discursiva__aula, .topico-resposta__rotulo, .topico-resposta__pontos,
+    .topico-resposta__rodape, .topico-resposta__gravar, .painel-discursivo__texto,
+    .painel-discursivo__progresso-texto, .entrega-discursiva__texto,
+    .cabecalho__marca, .selo, .identificacao__campo, .questao-cartao__meta,
+    .passo__legenda, .tecla, .rodape, .tabela-equipe, .modelo-texto,
+    .alerta-equipe, .papel-texto, .botao-link, .status-badge, .botao, .btn-ementa,
+    .btn-plano, .questao-acertada, .conferencia-resposta, .correcao-objetiva,
+    .capa-apostila__voltar, .capa-apostila__identificacao,
+    .capa-apostila__identificacao dt, .capitulo__rotulo, .sumario__link--nivel-1,
+    .pagina-simples .lista-equipe, .pagina-simples .tabela-equipe,
+    .folha-respostas__tabela, .folha-respostas__cabecalho, .folha-respostas__titulo,
+    .folha-respostas__campo--inteiro, .resultado-atividade__detalhe,
+    .tabela--dados td, .tabela--dados th {
+        font-size: var(--celular-fonte-minima);
+    }
+    /* Textos corridos e alternativas ficam no tamanho base. */
+    .content-text, .aula-title, .alternativas li, .lista-equipe {
+        font-size: var(--celular-fonte-base);
+    }
+
+    /* Apostila: a página A4 de largura fixa passa a ocupar a tela; textos pequenos sobem.
+       A altura A4 fixa e o overflow:hidden caem aqui também (o apostila.css só até 600 px),
+       senão o texto maior some no fim da folha. */
+    body.apostila--paginada .pagina-senai {
+        width: 100%; font-size: var(--celular-fonte-base);
+        overflow: visible; margin: 0 0 var(--celular-espaco-folha);
+    }
+    body.apostila--paginada .pagina-a4,
+    body.apostila--paginada .pagina-senai__conteudo { height: auto; overflow: visible; }
+    /* Com o prefixo body.apostila--paginada para pesar tanto quanto o apostila.css. */
+    body.apostila--paginada .pagina-senai table,
+    body.apostila--paginada .pagina-senai pre,
+    body.apostila--paginada .sumario__link--nivel-3,
+    body.apostila--paginada .glossario__capitulo,
+    body.apostila--paginada .capitulo__capacidades,
+    body.apostila--paginada .caixa-video__detalhe,
+    body.apostila--paginada .pagina-senai__rodape, .apostila__dica,
+    .apostila__botao--pequeno {
+        font-size: var(--celular-fonte-minima);
+    }
+
+    /* Títulos que acompanham a largura da tela */
+    h1, header h1, .login-cabecalho h1 {
+        font-size: var(--celular-fonte-h1); line-height: var(--celular-altura-linha-titulo);
+    }
+    h2, .aula h2, .crud-caixa h2 {
+        font-size: var(--celular-fonte-h2); line-height: var(--celular-altura-linha-subtitulo);
+    }
+    h3, .crud-caixa h3 {
+        font-size: var(--celular-fonte-h3); line-height: var(--celular-altura-linha-subtitulo);
+    }
+
+    /* Alvos de toque: botões, links com cara de botão, alternativas e itens clicáveis */
+    button, a.btn, .btn, .crud-btn, .btn-export, .voltar, .menu-principal a,
+    .header-usuario__menu-link, .header-usuario__botao, .faixa-materias__filtro,
+    .faixa-materias__onoff, .faixa-materias__card, .login-botao, summary,
+    input[type="submit"], input[type="button"], .alternativas li,
+    .apostila__botao, .botao, .botao-link, .concluido, .capa-apostila__voltar {
+        min-height: var(--celular-altura-toque);
+    }
+    /* Entre 601 e 768 px o atividade.css deixa o .voltar absoluto e ele cobriria o título. */
+    header .voltar { position: static; margin-bottom: var(--celular-espaco-voltar); }
+    /* Links/botões em linha viram caixas com o texto no meio (o texto não encosta na borda). */
+    a.btn, .btn, .crud-btn, .btn-export, .header-usuario__menu-link, .header-usuario__botao,
+    .faixa-materias__filtro, .faixa-materias__onoff, .voltar, .menu-principal a,
+    .botao, .botao-link, .capa-apostila__voltar {
+        display: inline-flex; align-items: center; justify-content: center; text-align: center;
+    }
+    /* display acima não pode desfazer o atributo hidden. */
+    :is(a.btn, .btn, .crud-btn, .btn-export, .header-usuario__menu-link,
+        .header-usuario__botao, .faixa-materias__filtro, .faixa-materias__onoff,
+        .voltar, .menu-principal a, .botao, .botao-link, .capa-apostila__voltar)[hidden] {
+        display: none;
+    }
+    /* Sem display:flex aqui: o summary mantém o triângulo do details. */
+    summary { padding-block: var(--celular-espaco-summary); }
+    .close { min-width: var(--celular-altura-toque); }
+
+    /* Campos de 16 px: o iPhone não dá zoom ao tocar */
+    input, select, textarea,
+    .login-campo input, .folha-respostas__nome, .topico-resposta__campo,
+    .identificacao-estudante__campo,
+    .crud-campo input[type="text"], .crud-campo input[type="date"],
+    .crud-campo input[type="number"], .crud-campo select {
+        font-size: var(--celular-fonte-campo);
+        min-height: var(--celular-altura-toque);
+    }
+    /* .topico-resposta__campo é classe: sem listá-la, o min-height do grupo acima venceria. */
+    textarea, .topico-resposta__campo { min-height: var(--celular-altura-campo-texto); }
+    input[type="checkbox"], input[type="radio"] { min-height: 0; }
+
+    /* Conteúdo na largura da tela, com 16 px de margem lateral */
+    body:has(.container) { padding-inline: 0; }
+    .container { width: auto; max-width: none; margin-inline: var(--celular-margem-lateral); }
+
+    /* Grades e linhas de botões em uma coluna */
+    .grade, .aula-modal-grade, .folha-respostas__colunas, .folha-respostas__cabecalho,
+    .colunas-simples, .questoes, .identificacao { grid-template-columns: minmax(0, 1fr); }
+    .folha-respostas__campo--direita { grid-column: auto; }
+    .export-bar, .menu-principal, .faixa-materias__barra, .crud-form__acoes,
+    .folha-respostas__acoes {
+        flex-direction: column; align-items: stretch;
+    }
+    /* Índice: a lista da ementa perde a 2ª coluna também entre 601 e 768 px. */
+    details ol { columns: 1; }
+    /* .acoes fica em linhas (para o ON/OFF do professor ficar ao lado do botão da atividade):
+       cada botão ocupa a linha inteira; só o que tem ON/OFF ao lado divide a linha. */
+    .acoes .btn { flex: 1 1 100%; }
+    /* ✏️ e − da atividade do professor ficam na linha do link (pesa mais que .acoes .btn). */
+    .acoes .btn.crud-editar-atividade, .acoes .btn.crud-desvincular-atividade {
+        flex: 0 0 var(--crud-tamanho-editar);
+    }
+    .acoes .btn.principal:has(+ .interruptor-atividade) {
+        flex: 1 1 calc(100% - var(--largura-onoff-atividade, var(--celular-largura-onoff-padrao)));
+        font-size: var(--celular-fonte-minima);
+    }
+    .btn-export { width: 100%; }
+
+    /* Tabelas rolam de lado dentro da própria caixa; as que já cabem ou já têm caixa de
+       rolagem (Excel, folha de respostas) continuam como tabela. Mídia nunca passa da tela. */
+    table:not(.tabela, .folha-respostas__tabela) {
+        display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .tabela__rolagem table { display: table; }
+    img, video { max-width: 100%; height: auto; }
+    svg, iframe { max-width: 100%; }
+}

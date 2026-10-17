@@ -59,16 +59,33 @@
 
 ### #265.2 — Camada `celular.css` carregada pelo header
 
-**Próximo passo:** criar `assets/css/celular.css` (regras do plano, só em `@media (max-width: 768px)`) e
-fazer o `js/header-usuario.js` incluí-lo depois do carregamento da página (`DOMContentLoaded`),
-para vir por último na cascata.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — 1 CSS novo e 1 ajuste com lógica no `js/header-usuario.js`.
 - **Modelo:** só Sonnet — nunca outro
+- **Executor:** Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (nuvem ·
+  ccr-3274812b-0nj48o) — o líder só reservou, revisou e commitou.
+- **Entrega:** `assets/css/celular.css` (novo, 173 linhas): tudo dentro de
+  `@media screen and (max-width: 768px)` (não vale na impressão nem no computador; fora dele só
+  tokens no `:root`; sem `!important`): texto base 17 px e nada abaixo de 15 px, títulos com
+  `clamp()`, botões/links/alternativas com 48 px, campos com 16 px, conteúdo a 100% com margem de
+  16 px, grades e linhas de botões em uma coluna (menos a linha da atividade do professor:
+  link + ON/OFF + ✏️ + − continuam juntos), tabelas rolando de lado, imagens no limite da tela,
+  apostila sem cortar texto. `js/header-usuario.js`: `incluirCssCelularPorUltimo()` põe a folha
+  no fim do `<head>` em toda página (antes da sessão e de novo depois dos CSS do header).
+  **Ajuste aceito pelo líder:** `login.html` não carrega o header, então ganhou o
+  `<link>` do `celular.css` depois do `login.css`.
+- **Verificação:** 4 rodadas de revisão por 3 revisores só de leitura (cascata e computador
+  intacto, regras de código, cobertura das páginas do aluno): 17 → 14 → 10 → 0 achados; o
+  bloqueante da linha do professor no índice foi resolvido (seletor 0,3,0 contra 0,2,0).
+  Líder: `node --check js/header-usuario.js`; um único `@media`; linhas ≤ 100; `<link>` sem
+  duplicar (o `incluirCssHeader` não repete). ⚠️ Sem navegador: conferir no celular.
 
 ### #265.3 — Ícones no header, no login e nos cards do índice
 
-**Próximo passo:** esperar a #265.2.
+**Próximo passo:** ícones do plano (🏠 Início, 🔑 Entrar, 🚪 Sair, 👥 Equipes; login 🔑 ➡️ 🚪;
+cards 📝 ✍️ 📊 👥 📘) no `js/header-usuario.js`, `login.html` e
+`assets/gerador-indices/gerar_indices.py`.
 
 - **Nível:** MEDIO — `js/header-usuario.js`, `login.html` e `assets/gerador-indices/gerar_indices.py`.
 - **Modelo:** só Sonnet — nunca outro
