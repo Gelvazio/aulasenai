@@ -4,6 +4,10 @@
 **Pedido:** "gerar as atividades de Reforço de Matemática"
 **Objetivo:** gerar as atividades das 16 aulas da matéria (aceitas na #224), lidas das aulas em `CONTEUDO/`.
 
+> 🚫 **Sem slides (2026-10-16, #244.9, pedido do usuário):** a IA **não gera slides** de aula
+> (nem PDF nem PPTX) nesta tarefa — o professor gera em outro momento. Vale para todas as aulas
+> (`.claude/rules/materias-global.md`).
+
 ### Escopo
 
 - **Entra, por aula (01 a 16), uma aula por vez e completa** (regra "uma aula por vez" de

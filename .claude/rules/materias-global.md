@@ -30,6 +30,13 @@ Os nomes acima são os reais (inclusive `STATUS_MATERIA.md` com sublinhado).
   `docs/regras/materias.md` §3. O plano de cada aula (tema, domínios, capacidades…) fica só no
   `materia.json`.
 
+## Sem slides (2026-10-16, #244.9)
+
+- ⛔ A IA **não gera slides** de aula: nem `AULA-NN-SLIDES.pdf` nem `.pptx`. Vale para **todas as
+  aulas** de todas as matérias; o professor gera os slides em outro momento.
+- A aula pode citar o link dos slides (`docs/regras/materias.md`), mas o arquivo não é criado
+  pela IA.
+
 ## Fontes do conteúdo
 
 - ✅ `EMENTA-CHALKIE-AI.md` (principal) e os Markdowns da matéria; ementa da UC no curso vence a

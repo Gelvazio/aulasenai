@@ -4,6 +4,10 @@
 **Pedido:** "gerar as aulas de Reforço de Matemática"
 **Objetivo:** escrever as aulas da matéria Reforço de Matemática e Raciocínio Lógico em `CONTEUDO/` (1 aula = 4 h), que hoje não tem nenhuma.
 
+> 🚫 **Sem slides (2026-10-16, #244.9, pedido do usuário):** a IA **não gera slides** de aula
+> (nem PDF nem PPTX) nesta tarefa — o professor gera em outro momento. Vale para todas as aulas
+> (`.claude/rules/materias-global.md`).
+
 ### Escopo
 
 - **Entra:** 16 aulas em `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` (63 h = 15 aulas de 4 h + 1 aula de

@@ -4,6 +4,10 @@
 **Pedido:** "Faça 1 task pra cada matéria e 1 subtask pra cada aula da matéria e 1 subtask pra cada atividade objetiva e 1 pra cada atividade pratica, tipo discursiva, veja como esta na matéria ITIC padrao" (plano aprovado em 2026-10-16, com a subtarefa 0)
 **Objetivo:** escrever as 25 aulas de Codificação para Back-End (100 h) com a objetiva de 50 questões e a prática discursiva de cada uma, tudo cadastrado no banco, no padrão da ITIC.
 
+> 🚫 **Sem slides (2026-10-16, #244.9, pedido do usuário):** a IA **não gera slides** de aula
+> (nem PDF nem PPTX) nesta tarefa — o professor gera em outro momento. Vale para todas as aulas
+> (`.claude/rules/materias-global.md`).
+
 ### Escopo
 
 - **Pasta:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/CODIFICACAO-PARA-BACK-END/` · **Aulas:** 25 (1 aula = 4 h, arredondando para cima).

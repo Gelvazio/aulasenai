@@ -93,10 +93,16 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.9 — Regra: a IA não gera slides de aula
 
-**Próximo passo:** gravar a regra no `AGENTS.md`, em `materias-global.md`, no histórico, no
-`RECADOS.md` e anotar nas etapas das tarefas de aulas abertas.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md`.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o), assumida em 2026-10-16 22:04
+  a pedido do usuário (liberada da frente nuvem · ccr-790c3677-2mknbc).
+- **Entrega:** regra 11 do `AGENTS.md`; seção "Sem slides" em `.claude/rules/materias-global.md`;
+  linha no `docs/HISTORICO-REGRAS.md`; recado para `todas` no `tasks/RECADOS.md`; aviso no topo das
+  etapas 351-c05fdb13, 353 a 369, 370-73eb24d3, 137-13665a7e e 163-6b8cbe04.
+- **Verificação:** leitura dos arquivos alterados; `materias-global.md` com 2,2 KB (≤ 5 KB);
+  visualizador regenerado.
 
 ### #244.8 — Aceite do usuário
 

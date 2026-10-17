@@ -57,5 +57,8 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 10. **Sem sugestões** (2026-10-08, "PARE DE SUGERIR"): responder só o pedido, sem oferecer opções,
     "quer que eu…?" ou próximos passos; se o usuário afirma algo, aceitar sem conferir. Pedir os
     detalhes de uma TASK (regra 1) e relatar bloqueios continua valendo.
+11. **A IA não gera slides de aula** (2026-10-16, #244.9): nem PDF nem PPTX, em nenhuma aula de
+    nenhuma matéria — o professor gera os slides em outro momento
+    ([`materias-global.md`](.claude/rules/materias-global.md)).
 
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).

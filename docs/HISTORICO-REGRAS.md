@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-16 22:10 | **A IA não gera slides de aula (tarefa #244.9, pedido do usuário):** nem PDF nem PPTX, em todas as aulas de todas as matérias — o professor gera em outro momento. Regra 11 do `AGENTS.md`, seção "Sem slides" do `.claude/rules/materias-global.md`, recado para todas as frentes no `tasks/RECADOS.md` e aviso nas etapas das tarefas de aulas e atividades abertas (351, 353 a 370, 137-13665a7e e 163-6b8cbe04). |
 | 2026-10-16 12:54 | **Menu TURMAS vira CRUD da `turma` (tarefa #201, pedido do usuário):** consulta, ➕ Nova turma, ✏️ Editar no modal, 🗑️ Excluir (só turma vazia) e 👥 Professores (vínculos da `turmaprofessor`) na linha da turma; só o Professor Administrador grava (RLS). Regra nova em `docs/regras/usuarios-turmas-paginas-professor.md`; SQL `database/2026-10-16-turma-crud-administrador.sql`. |
 | 2026-10-16 15:05 | **Discursivas: "🔑 Ver Gabarito" passa a se chamar "🔑 Gabarito da Atividade-Respostas" e o "📄 Exportar Meu Gabarito" fica ao lado dele (#196.5, pedido do usuário; substitui a posição da #196.4)** (`docs/regras/atividades.md`). |
 | 2026-10-16 21:51 | **Tela e PDF só até o mínimo em todas as objetivas de Testes de Front-End (tarefa #36):** `data-questoes-ate-minimo="sim"` nas aulas 01 e 03 a 10 (a 02 já tinha, #33); o `scripts/testes-frontend/pipeline.py` passa a pôr o atributo nas próximas (`docs/regras/atividades.md`). |
