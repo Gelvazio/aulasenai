@@ -24,7 +24,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s14 | #220.2 ([347-aa8b3abc](etapas/ETAPA-347-aa8b3abc-GRADE-DE-BOTOES-DO-EDITAR-AULA.md)), #219.2, #218.2, #217.2, #216.2, #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 20:09 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
-| nuvem · claude/festive-maxwell-25jnhl | #20 ([125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md)) finalizada (seeds, avaliações e média final) — aguarda o aceite (20.7); #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-16 21:02 |
+| nuvem · claude/festive-maxwell-25jnhl | #222.1 ([349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md)) — registrando os aceites pendentes ("Aceito tudo") | 🔄 Ativa | 2026-10-16 21:08 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; a #20 voltou para a frente festive-maxwell em 2026-10-16 20:52 (pedido do usuário) | 🔄 Ativa | 2026-10-10 22:13 |
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
@@ -305,8 +305,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #221.2 | Voltar a atividade 19 para a aula 69 no banco (PESADO) | 🟠 Alta | #221.1 | 👀 Aguardando aprovação | Claude Code (Opus 5.5) (local · main · s16) (desde 2026-10-16 20:27) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #221.3 | Trava no Gerenciar atividades e aviso no Editar aula (MEDIO) · effort medium | 🟠 Alta | #221.2 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #221.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #221.2, #221.3 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
-| #222-9c22cde7-b8fd-43de-ba93-c91434d45c6a | Registrar os aceites pendentes do quadro ("Aceito tudo") | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
-| #222.1 | Marcar os aceites e mover as linhas para o `task_complete.md` · `LEVE · effort low` | 🟠 Alta | — | ⬜ Pendente | — | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
+| #222-9c22cde7-b8fd-43de-ba93-c91434d45c6a | Registrar os aceites pendentes do quadro ("Aceito tudo") | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
+| #222.1 | Marcar os aceites e mover as linhas para o `task_complete.md` · `LEVE · effort low` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · festive-maxwell-25jnhl) (desde 2026-10-16 21:08) | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
