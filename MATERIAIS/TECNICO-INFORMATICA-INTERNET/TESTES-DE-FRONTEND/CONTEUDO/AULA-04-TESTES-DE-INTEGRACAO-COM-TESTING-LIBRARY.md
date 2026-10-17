@@ -202,5 +202,5 @@ que falha, para a equipe usá-lo como prova da correção.
 
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
-(VS Code), Node.js e npm, kit multimídia, prints da dinâmica, slides `../AULAS/AULA-04-SLIDES.pdf`
+(VS Code), Node.js e npm, kit multimídia, prints da dinâmica, slides [📕 Slides da aula 04 (PDF)](../AULAS/AULA-04-SLIDES.pdf)
 (apresentação) e apostila da UC (capítulo 4).

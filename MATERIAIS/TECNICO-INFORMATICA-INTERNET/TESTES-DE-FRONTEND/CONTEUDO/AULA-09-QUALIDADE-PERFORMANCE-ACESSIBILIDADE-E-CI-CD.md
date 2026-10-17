@@ -186,4 +186,4 @@ impacto e o badge verde como prova de que a `main` está protegida.
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
 (VS Code), Node.js e npm, Git e conta no GitHub, navegador com DevTools, kit multimídia, slides
-`../AULAS/AULA-09-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 9).
+[📕 Slides da aula 09 (PDF)](../AULAS/AULA-09-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 9).

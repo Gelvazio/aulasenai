@@ -253,5 +253,5 @@ confiabilidade (4.3), com o passo a passo para reproduzir, e depois servem para 
 
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
-(VS Code), Node.js e npm, kit multimídia, cartões da dinâmica, slides `../AULAS/AULA-05-SLIDES.pdf`
+(VS Code), Node.js e npm, kit multimídia, cartões da dinâmica, slides [📕 Slides da aula 05 (PDF)](../AULAS/AULA-05-SLIDES.pdf)
 (apresentação) e apostila da UC (capítulo 5).

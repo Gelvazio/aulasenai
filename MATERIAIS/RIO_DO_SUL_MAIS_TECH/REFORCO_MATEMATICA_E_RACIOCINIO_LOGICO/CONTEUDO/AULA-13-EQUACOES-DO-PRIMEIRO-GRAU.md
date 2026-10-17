@@ -11,7 +11,7 @@
   procedimentos e soluções encontradas
 - **Estratégias:** balança em equilíbrio; representação visual das equações; problemas da vida
   real (idade, dinheiro, velocidade, economia); verificação rigorosa de cada solução
-- **Slides:** [AULA-13-SLIDES.pdf](../AULAS/AULA-13-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-13-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

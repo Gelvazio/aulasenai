@@ -12,7 +12,7 @@
   desafios matemáticos
 - **Estratégias:** medição de objetos reais (sala, objetos pessoais, prédio); estimar antes de
   medir; desafios de conversão em contextos profissionais (construção, cozinha, logística)
-- **Slides:** [AULA-08-SLIDES.pdf](../AULAS/AULA-08-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-08-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

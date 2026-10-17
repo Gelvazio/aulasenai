@@ -12,7 +12,7 @@
   encontradas
 - **Estratégias:** compra de materiais para construção ou reforma; profissões (arquiteto,
   engenheiro, designer, construtor); estimar antes de calcular; malha quadriculada
-- **Slides:** [AULA-09-SLIDES.pdf](../AULAS/AULA-09-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-09-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

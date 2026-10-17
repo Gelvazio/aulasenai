@@ -13,7 +13,7 @@
   encontradas
 - **Estratégias:** compras reais, promoções e liquidações; finanças pessoais (mesada, poupança,
   empréstimo); receitas culinárias para comparar razões
-- **Slides:** [AULA-05-SLIDES.pdf](../AULAS/AULA-05-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-05-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

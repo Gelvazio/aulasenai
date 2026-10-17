@@ -199,5 +199,5 @@ dados, não no número geral.
 
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
-(VS Code), Node.js e npm, kit multimídia, material da dinâmica, slides `../AULAS/AULA-07-SLIDES.pdf`
+(VS Code), Node.js e npm, kit multimídia, material da dinâmica, slides [📕 Slides da aula 07 (PDF)](../AULAS/AULA-07-SLIDES.pdf)
 (apresentação) e apostila da UC (capítulo 7).

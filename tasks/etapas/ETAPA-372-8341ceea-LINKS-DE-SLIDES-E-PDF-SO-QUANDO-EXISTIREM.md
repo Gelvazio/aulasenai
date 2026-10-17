@@ -97,13 +97,21 @@ conferir por `grep` que não sobra link para slide inexistente. Sem navegador.
 
 ### #245.3 — Aplicar nos arquivos já gerados (todas as matérias)
 
-**Próximo passo:** rodar `python3 scripts/slides/ligar_links_slides.py`, conferir por `grep`,
-registrar a regra em `docs/regras/materias.md` e no histórico, recado às frentes.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mudança em massa, mais de 3 arquivos ligados.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+- **Entrega:** script rodado em todas as matérias — 26 aulas alteradas (só a linha dos slides):
+  16 de Reforço de Matemática (link quebrado → caminho entre crases + "(o professor publica em
+  outro momento)") e 10 de Testes de Front-End (caminho → link, os PDFs existem). Banco de Dados
+  (20) e ITIC do Técnico (1) já estavam sem clique: não mudaram. Regra em
+  `docs/regras/materias.md` (§3, item 10) e `docs/regras/assets-e-geradores.md`; histórico;
+  recado para `todas`. Páginas HTML não precisaram regerar (os geradores já escondiam o link).
+- **Verificação:** 2ª rodada do script com 0 alterações; `grep` em todos os `.md` e `.html` de
+  `MATERIAIS/` por link/`href` para `*SLIDES*.pdf|pptx`: nenhum aponta para arquivo inexistente.
 
 ### #245.4 — Aceite do usuário
 
-**Próximo passo:** esperar a #245.3.
+**Próximo passo:** 👀 o usuário confere a #245.2 e a #245.3.
 
 - **Nível:** LEVE — conferência do usuário.

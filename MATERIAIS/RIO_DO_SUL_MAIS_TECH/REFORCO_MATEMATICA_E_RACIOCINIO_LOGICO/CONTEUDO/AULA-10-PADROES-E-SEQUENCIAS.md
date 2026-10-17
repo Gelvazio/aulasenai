@@ -13,7 +13,7 @@
 - **Estratégias:** sequências com dificuldade crescente em tipo e contexto; desafios visuais e
   espaciais; valorizar o processo de raciocínio e não só a resposta; dicas em etapas quando o aluno
   travar
-- **Slides:** [AULA-10-SLIDES.pdf](../AULAS/AULA-10-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-10-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

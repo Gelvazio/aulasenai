@@ -11,7 +11,7 @@
   desafios matemáticos
 - **Estratégias:** modelos de área e barras de chocolate; feedback instantâneo nas conversões;
   progressão frações simples → complexas → decimais → porcentagens; conexão entre os três formatos
-- **Slides:** [AULA-04-SLIDES.pdf](../AULAS/AULA-04-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-04-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

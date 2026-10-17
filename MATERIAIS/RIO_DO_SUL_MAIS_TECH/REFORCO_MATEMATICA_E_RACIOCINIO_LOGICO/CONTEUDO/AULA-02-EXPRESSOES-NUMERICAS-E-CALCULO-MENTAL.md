@@ -12,7 +12,7 @@
   encontradas
 - **Estratégias:** cálculo mental antes da calculadora; várias estratégias para o mesmo problema;
   desafios cronometrados com pontuação; visualização passo a passo das expressões
-- **Slides:** [AULA-02-SLIDES.pdf](../AULAS/AULA-02-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-02-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

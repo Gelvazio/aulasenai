@@ -12,7 +12,7 @@
   diante de desafios matemáticos
 - **Estratégias:** notícias com gráficos para análise crítica; detecção de manipulação visual de
   dados na mídia; dados reais ou simulados de clima, esportes e saúde
-- **Slides:** [AULA-16-SLIDES.pdf](../AULAS/AULA-16-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-16-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

@@ -182,4 +182,4 @@ passo exato da falha.
 ## Recursos
 Laboratório de informática, computador com acesso à internet, sistema operacional, IDE para
 desenvolvimento de testes (VS Code), Node.js e npm, navegadores, kit multimídia, fichas da dinâmica,
-slides `../AULAS/AULA-06-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 6).
+slides [📕 Slides da aula 06 (PDF)](../AULAS/AULA-06-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 6).

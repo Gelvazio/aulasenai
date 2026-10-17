@@ -144,6 +144,11 @@ C:\Python314\python.exe assets\gerador-atividades\gerar_atividades.py <pasta ATI
 A matéria precisa do `<MATERIA>/materia.json` (arquivo único: `uc`, `uc_curta`, `curso`, `docente`,
 `capacidades`...), lido por `assets/gerador-materia/materia.py`.
 
+**Links de slides e PDF só quando o arquivo existir** (2026-10-16, #245): `gerar_atividades.py`
+(instruções e card do índice), `gerar_avaliacao_discursiva.py` e `gerar_indices.py` só põem o link
+dos slides se o arquivo existir — publicou o PDF/PPTX, regerar a página liga o link. Nas aulas de
+`CONTEUDO/`: `python3 scripts/slides/ligar_links_slides.py [<pasta da matéria>]` (idempotente).
+
 - ✅ **Antes** de criar CSS ou JS, verificar se já existe algo em `assets/css/` ou `assets/js/` que resolva — e reutilizar.
 - ✅ HTML referencia os arquivos por **caminho relativo** até `assets/` (ex.: `../../../../assets/css/atividade.css`).
 - ❌ **Proibido** `<style>` e `<script>` com código embutido nos HTML, e atributos `onclick`/`onchange` etc. Eventos são ligados pelo `.js`.

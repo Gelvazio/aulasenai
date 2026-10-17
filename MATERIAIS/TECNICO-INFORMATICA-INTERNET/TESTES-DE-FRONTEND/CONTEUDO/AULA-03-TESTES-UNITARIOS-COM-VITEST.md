@@ -210,4 +210,4 @@ também. Com os testes no lugar, a correção pode ser feita sem medo de quebrar
 ## Recursos
 Laboratório de informática, computador com acesso à internet, sistema operacional, IDE para
 desenvolvimento de testes (VS Code), Node.js e npm, kit multimídia, slides
-`../AULAS/AULA-03-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 3).
+[📕 Slides da aula 03 (PDF)](../AULAS/AULA-03-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 3).

@@ -12,7 +12,7 @@
 - **Estratégias:** dados do mundo real (clima, esportes, redes sociais, saúde); criação de gráficos
   pelos alunos a partir de dados reais ou simulados; cálculo das medidas em contextos variados;
   conexão com carreiras (jornalismo, negócios, tecnologia, saúde, governo)
-- **Slides:** [AULA-15-SLIDES.pdf](../AULAS/AULA-15-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-15-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

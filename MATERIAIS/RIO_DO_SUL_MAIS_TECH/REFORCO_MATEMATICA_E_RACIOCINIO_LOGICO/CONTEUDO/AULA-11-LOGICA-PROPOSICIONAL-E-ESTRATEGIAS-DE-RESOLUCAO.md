@@ -12,7 +12,7 @@
   resiliência diante de desafios matemáticos
 - **Estratégias:** várias estratégias ensinadas de forma explícita e comparada; valorizar o
   processo e a criatividade; dicas em etapas quando o aluno travar; desafios lógicos variados
-- **Slides:** [AULA-11-SLIDES.pdf](../AULAS/AULA-11-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-11-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

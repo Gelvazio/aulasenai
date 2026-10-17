@@ -102,7 +102,10 @@ MATERIAIS/<CURSO>/<MATERIA>/
   7. **Dinâmica** (objetivo, materiais, passo a passo, fechamento);
   8. **Situação-problema e entrega da aula** (a SA da ementa);
   9. **Verificação da aprendizagem**;
-  10. **Recursos** (da ementa) e link dos slides `../AULAS/AULA-NN-SLIDES.pdf`.
+  10. **Recursos** (da ementa) e os slides `../AULAS/AULA-NN-SLIDES.pdf` — **link só quando o
+      arquivo existir** (2026-10-16, #245): sem o arquivo, o caminho fica entre crases, sem clique.
+      O professor publica os slides (a IA não gera — #244.9) e roda
+      `python3 scripts/slides/ligar_links_slides.py [<pasta da matéria>]` para ligar os links.
 - ✅ **`DOCUMENTACAO/PLANO-AULAS.md`**: tabela com todas as aulas (número, tema, horas,
   conhecimentos, capacidades e link para a aula em `CONTEUDO/` quando pronta).
 - ✅ Slides em `AULAS/` são **só apresentação** (o professor publica); nunca fonte de conteúdo.

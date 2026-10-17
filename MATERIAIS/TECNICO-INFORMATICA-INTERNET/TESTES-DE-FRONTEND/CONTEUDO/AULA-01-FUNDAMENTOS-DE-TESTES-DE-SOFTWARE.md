@@ -143,4 +143,4 @@ por 15 minutos. Use Esqueci minha senha para entrar agora.'".
 
 ## Recursos
 Laboratório de informática, kit multimídia (projetor), computador com acesso à internet, cartões da
-dinâmica, slides `../AULAS/AULA-01-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 1).
+dinâmica, slides [📕 Slides da aula 01 (PDF)](../AULAS/AULA-01-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 1).

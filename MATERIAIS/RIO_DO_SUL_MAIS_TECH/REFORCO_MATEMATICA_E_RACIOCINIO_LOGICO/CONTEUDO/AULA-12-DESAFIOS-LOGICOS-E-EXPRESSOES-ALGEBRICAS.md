@@ -13,7 +13,7 @@
   matemáticos
 - **Estratégias:** jogos com desafios progressivos; máquinas de função para o conceito de
   variável; representação visual das expressões; problemas da vida real (idade, dinheiro)
-- **Slides:** [AULA-12-SLIDES.pdf](../AULAS/AULA-12-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-12-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

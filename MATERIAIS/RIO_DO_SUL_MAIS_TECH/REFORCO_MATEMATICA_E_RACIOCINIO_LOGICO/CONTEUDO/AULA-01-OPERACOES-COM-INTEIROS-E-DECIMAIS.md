@@ -12,7 +12,7 @@
 - **Estratégias:** começar por operações simples e aumentar a dificuldade conforme os acertos;
   contextos do cotidiano (supermercado, salário, receitas, energia elétrica); cálculo mental antes
   da calculadora; desafios cronometrados
-- **Slides:** [AULA-01-SLIDES.pdf](../AULAS/AULA-01-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-01-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

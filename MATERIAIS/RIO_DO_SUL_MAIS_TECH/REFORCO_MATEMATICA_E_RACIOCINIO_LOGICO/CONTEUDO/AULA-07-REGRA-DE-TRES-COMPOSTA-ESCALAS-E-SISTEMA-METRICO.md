@@ -13,7 +13,7 @@
   exercícios e desafios matemáticos
 - **Estratégias:** mapas e navegação por GPS; modelos reduzidos; resolução de telas e proporção de
   imagens; medição de objetos reais da sala
-- **Slides:** [AULA-07-SLIDES.pdf](../AULAS/AULA-07-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-07-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

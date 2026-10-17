@@ -163,4 +163,4 @@ e deixa fora do escopo a página "Sobre nós", justificando no `TESTING.md`. O p
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
 (VS Code), Node.js e npm, Git e conta no GitHub, repositório-base da aplicação, prova objetiva, kit
-multimídia, slides `../AULAS/AULA-10-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 10).
+multimídia, slides [📕 Slides da aula 10 (PDF)](../AULAS/AULA-10-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 10).

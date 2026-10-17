@@ -191,4 +191,4 @@ comportamento novo.
 ## Recursos
 Laboratório de informática, computador com acesso à internet, IDE para desenvolvimento de testes
 (VS Code com depurador), Node.js e npm, kit multimídia, cartões do code review, slides
-`../AULAS/AULA-08-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 8).
+[📕 Slides da aula 08 (PDF)](../AULAS/AULA-08-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 8).

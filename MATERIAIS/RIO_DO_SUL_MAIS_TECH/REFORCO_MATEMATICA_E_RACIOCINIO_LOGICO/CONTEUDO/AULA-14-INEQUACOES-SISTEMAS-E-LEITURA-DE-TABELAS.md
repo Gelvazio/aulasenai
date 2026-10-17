@@ -13,7 +13,7 @@
   matemáticos
 - **Estratégias:** aumento gradual (uma variável → duas variáveis → inequações); reta numérica;
   dados do mundo real (clima, esportes, saúde); problemas de dinheiro e economia
-- **Slides:** [AULA-14-SLIDES.pdf](../AULAS/AULA-14-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-14-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

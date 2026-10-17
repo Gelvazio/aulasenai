@@ -153,4 +153,4 @@ usuário pode alterar a quantidade de cada item; o subtotal é atualizado; acima
 ## Recursos
 Laboratório de informática, kit multimídia, computador com acesso à internet, pacote de aplicativos
 de escritório (modelo do plano e planilha da matriz), fichas da dinâmica, slides
-`../AULAS/AULA-02-SLIDES.pdf` (apresentação) e apostila da UC (capítulo 2).
+[📕 Slides da aula 02 (PDF)](../AULAS/AULA-02-SLIDES.pdf) (apresentação) e apostila da UC (capítulo 2).

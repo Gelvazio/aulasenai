@@ -12,7 +12,7 @@
   C5 — Comunicar raciocínios e resultados, justificando procedimentos e soluções encontradas
 - **Estratégias:** exemplos visuais concretos (pizza, barra de chocolate, círculos e modelos de
   área); progressão de frações simples para complexas; feedback imediato
-- **Slides:** [AULA-03-SLIDES.pdf](../AULAS/AULA-03-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-03-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 

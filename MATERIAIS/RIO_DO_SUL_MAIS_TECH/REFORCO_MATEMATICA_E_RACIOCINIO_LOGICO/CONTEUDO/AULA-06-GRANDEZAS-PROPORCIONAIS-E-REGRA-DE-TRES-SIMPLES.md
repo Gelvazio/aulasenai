@@ -11,7 +11,7 @@
   encontradas
 - **Estratégias:** receitas para números diferentes de pessoas; velocidade em viagens; diagramas
   de setas para a regra de três; comparação explícita entre direta e inversa
-- **Slides:** [AULA-06-SLIDES.pdf](../AULAS/AULA-06-SLIDES.pdf)
+- **Slides:** `../AULAS/AULA-06-SLIDES.pdf` (o professor publica em outro momento)
 
 ## Indicadores
 
