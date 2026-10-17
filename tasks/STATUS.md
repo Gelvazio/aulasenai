@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Codex (GPT-6) | #266.1 ([393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md)) — filtrar aulas bloqueadas na lista do aluno | 🔄 Ativa | 2026-10-17 20:55 |
-| local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:59 |
+| local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
 | local · main · s18 | #251.2 entregue; #251.3 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) aguarda o seu "sim" ao escopo ampliado | 👀 Aguardando o usuário | 2026-10-17 10:55 |
