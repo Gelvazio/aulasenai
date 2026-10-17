@@ -225,3 +225,8 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #223.3 | Markdown completo e HTML · `MEDIO · effort medium` | 🟠 Alta | #223.2 | ✅ Concluído | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #243.1 | Plano das atividades (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.2 | `materia.json` e grupo no gerador de seeds · `MEDIO · effort medium` | 🟠 Alta | #243.1 | ✅ Concluído | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #244.1 | Levantamento e plano (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ✅ Concluído | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.4 | Gerador de slides + aulas 01 a 10 · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⛔ Cancelada (decisão do usuário) | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.5 | Slides das aulas 11 a 20 · `MEDIO · effort medium` | 🟠 Alta | #244.4 | ⛔ Cancelada (decisão do usuário) | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.6 | PDF da apostila · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⛔ Cancelada (decisão do usuário) | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.7 | Slides no Storage privado (só local) · `PESADO · effort high` | 🟠 Alta | #244.5 | ⛔ Cancelada (decisão do usuário) | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |

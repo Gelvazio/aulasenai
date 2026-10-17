@@ -5,7 +5,7 @@
 **Objetivo:** fechar o que falta na matéria Banco de Dados (Técnico em Informática para Internet): status em dia, slides das 20 aulas, PDF da apostila, menu das atividades e revisão da ementa.
 
 > ⚠️ **Tarefa grande** (várias partes, gerador novo de slides, exceção à regra do navegador):
-> plano abaixo aguarda a aprovação do usuário (#244.1).
+> plano aprovado em 2026-10-16 22:05 com a mudança do usuário: **sem slides e sem PDF da apostila**.
 
 ### Escopo (proposta, para aprovação)
 
@@ -19,18 +19,15 @@
 - **Revisão da ementa:** conferir `EMENTA-CHALKIE-AI.md` e `materia.json` contra a UC 16 da ementa
   do curso (capacidades, conhecimentos, carga horária) e contra as 20 aulas; registrar o resultado
   no `STATUS-EMENTAS.md`. O item "revisado por professor" só é marcado pelo usuário.
-- **Slides das 20 aulas:** gerador novo (Python + `python-pptx`, padrão visual da skill
-  `padrao-slides-senai`) que lê cada `CONTEUDO/AULA-NN-*.md` e gera `AULAS/AULA-NN-SLIDES.pptx`;
-  o PDF `AULAS/AULA-NN-SLIDES.pdf` sai pelo LibreOffice (sem navegador), no padrão de Testes de
-  Front-End. Slides são só apresentação (`docs/regras/materias.md`).
-- **PDF da apostila:** `APOSTILA/APOSTILA-BANCO-DE-DADOS.pdf` a partir do HTML (exige Chromium
-  headless — exceção à regra do navegador, só se o usuário liberar).
+- **Regra nova (#244.9):** a IA não gera slides de aula (nem PDF nem PPTX) — o professor gera em
+  outro momento; vale para todas as aulas. Gravada no `AGENTS.md`, em `materias-global.md`, no
+  `RECADOS.md` e anotada nas etapas de todas as tarefas de aulas abertas.
 
-**Não entra:** mudar aulas, atividades ou a apostila; subir os slides ao Storage privado `slides`
-(#209) e qualquer coisa no banco — fica para a frente local (#244.7, recado em `RECADOS.md`).
+**Não entra:** slides (PDF ou PPTX) e PDF da apostila (decisões de 2026-10-16); mudar aulas,
+atividades ou a apostila; qualquer coisa no banco.
 
 **Pronto quando:** status regenerados e coerentes, menu nas páginas, ementa revisada com relatório,
-20 slides (PPTX + PDF), PDF da apostila entregue e aceite do usuário.
+regra dos slides gravada e aceite do usuário.
 
 ### Riscos
 
@@ -44,6 +41,7 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 22:05 | **Não gerar slides** (nem PDF nem PPTX), em nenhuma aula: o professor gera em outro momento. #244.4, #244.5 e #244.7 canceladas; #244.6 cancelada (sem Chromium). Plano aprovado sem essas partes | Usuário | Pedido do usuário |
 | 2026-10-16 21:58 | PDF da apostila: **não** libera o Chromium; o usuário gera pelo botão 📥 Exportar PDF (#244.6 sai do escopo) | Usuário | Regra do navegador mantida |
 | 2026-10-16 21:58 | Slides (PPTX + PDF) e PDFs vão para o Git com `git add -f` | Usuário | Mesmo padrão de Testes de Front-End |
 | 2026-10-16 21:58 | Depois da revisão da IA, marcar "Conteúdo foi revisado por professor" | Usuário | A revisão vale como a do professor |
@@ -51,7 +49,9 @@
 
 ### #244.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** perguntar ao usuário o que mudar no plano e pedir nova aprovação.
+**Próximo passo:** —
+
+- **Entrega:** plano na etapa · **Verificação:** aprovado pelo usuário em 2026-10-16 22:05 (com a mudança dos slides).
 
 - **Nível:** MEDIO — leitura de regras e plano em `.md`.
 
@@ -69,30 +69,37 @@
 
 ### #244.4 — Gerador de slides + aulas 01 a 10
 
-**Próximo passo:** esperar a #244.1.
+**Próximo passo:** — ⛔ cancelada em 2026-10-16 22:05 (decisão do usuário: sem slides e sem PDF da apostila).
 
 - **Nível:** MEDIO — gerador Python novo (1 a 3 arquivos).
 
 ### #244.5 — Slides das aulas 11 a 20
 
-**Próximo passo:** esperar a #244.4.
+**Próximo passo:** — ⛔ cancelada em 2026-10-16 22:05 (decisão do usuário: sem slides e sem PDF da apostila).
 
 - **Nível:** MEDIO — rodar o gerador e conferir.
 
 ### #244.6 — PDF da apostila
 
-**Próximo passo:** esperar a #244.1 (exceção do navegador).
+**Próximo passo:** — ⛔ cancelada em 2026-10-16 22:05 (decisão do usuário: sem slides e sem PDF da apostila).
 
 - **Nível:** MEDIO — impressão headless do HTML gerado.
 
 ### #244.7 — Slides no Storage privado (só local)
 
-**Próximo passo:** esperar a #244.5.
+**Próximo passo:** — ⛔ cancelada em 2026-10-16 22:05 (decisão do usuário: sem slides e sem PDF da apostila).
 
 - **Nível:** PESADO — Storage e banco (só o Claude Code local).
 
+### #244.9 — Regra: a IA não gera slides de aula
+
+**Próximo passo:** gravar a regra no `AGENTS.md`, em `materias-global.md`, no histórico, no
+`RECADOS.md` e anotar nas etapas das tarefas de aulas abertas.
+
+- **Nível:** LEVE — só `.md`.
+
 ### #244.8 — Aceite do usuário
 
-**Próximo passo:** esperar a #244.2 a #244.6.
+**Próximo passo:** esperar a #244.2, a #244.3 e a #244.9.
 
 - **Nível:** LEVE — conferência do usuário.
