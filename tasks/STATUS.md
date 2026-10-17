@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · ccr-3274812b-0nj48o | #245.3 entregue ([372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md)); #245.4 e #244.8 aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 22:35 |
+| nuvem · ccr-3274812b-0nj48o | #246.1 ([373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md)) — regra do rules-ai; #245.4 e #244.8 aguardam o seu aceite | 🔄 Ativa | 2026-10-16 22:38 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
@@ -918,8 +918,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #244.8 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #244.2, #244.3, #244.9 | 👀 Aguardando aceite | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #245-8341ceea-7ca4-4a05-976d-e2c73aabe47d | Links de slides e PDF só quando o arquivo existir (todas as matérias) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #245.3 | 👀 Aguardando aceite | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
-| #246-0a15e96a-c79d-4a6d-87e0-75c459aa2d03 | Sempre verificar as regras do rules-ai (regra no AGENTS.md) | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
-| #246.1 | Regra "verificar o rules-ai" no AGENTS.md · `LEVE · effort low` | 🟡 Média | — | ⬜ Pendente | — | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
+| #246-0a15e96a-c79d-4a6d-87e0-75c459aa2d03 | Sempre verificar as regras do rules-ai (regra no AGENTS.md) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
+| #246.1 | Regra "verificar o rules-ai" no AGENTS.md · `LEVE · effort low` | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:38) | [373-0a15e96a](etapas/ETAPA-373-0a15e96a-SEMPRE-VERIFICAR-AS-REGRAS-DO-RULES-AI.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
