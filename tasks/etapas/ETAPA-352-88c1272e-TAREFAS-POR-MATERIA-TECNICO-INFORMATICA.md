@@ -23,6 +23,11 @@ para Internet, já dividido em pedaços pequenos que qualquer IA do nível pode 
   ligado (`<body data-exportar-meu-gabarito="sim">` na objetiva; campo
   `- **Exportar Meu Gabarito:** sim` na fonte da discursiva, botão no painel IDENTIFICAÇÃO ao lado
   do "🔑 Gabarito da Atividade-Respostas"), regra `docs/regras/atividades.md` (#82, #196).
+- **Tudo no banco** (pedido em 2026-10-16 21:45): cada `Aula NN` entra na tabela `aulas` e cada
+  objetiva e prática entra em `atividade` + `gabarito` (prática com os tópicos), ligadas à aula
+  (`curso → materia → aulas → atividade`). Cada subtarefa gera o seed em `database/` como
+  **PENDENTE** em `database/SEEDS-APLICADOS.md`; aplicar e conferir o md5 é do **Claude Code
+  local** (`multiplas-ias.md`, `seeds.md`). A subtarefa só fecha com o seed **CONCLUÍDO**.
 - **Aulas por matéria** (1 aula a cada 4 h, arredondando para cima):
 
 | Matéria | CH | Aulas | Subtarefas |
