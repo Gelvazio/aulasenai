@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-17 | **Mensagem só com um ponto (`.`) lista as pendentes (pedido do usuário):** nova regra 13 do `AGENTS.md`. Só listar; não começa tarefa nem altera arquivos. |
 | 2026-10-17 | **Sem aceite do usuário em tarefa grande (pedido do usuário):** a IA finaliza sempre. Saem a última subtarefa "aceite do usuário" e a regra de 👀 no fim de tarefa grande (`tasks/ciclo-da-task.md` §4 e `tasks/quadro.md`). A aprovação do **plano** antes de executar continua valendo. |
 | 2026-10-16 23:02 | **Coluna Modelo em todas as tarefas (tarefa #247.5):** `tasks/STATUS.md` e `tasks/task_complete.md` ganham a coluna **Modelo** depois de Prioridade (`LEVE · só Haiku`, `MEDIO · só Sonnet`, `PESADO · só Opus 5.5+ ou Fable`, `Usuário` no aceite, `—` na mãe, `⚠️ sem nível` nas antigas sem nível); cada subtarefa aberta tem `- **Modelo:**` na etapa (tarefas antigas: `**Modelo (#N):**` no topo). O visualizador mostra o Modelo. |
 | 2026-10-16 22:59 | **Trava do modelo no hook (tarefa #247.4):** o `PreToolUse` do Claude Code bloqueia o `git commit` quando o `tasks/STATUS.md` traz reserva nova de modelo que não é o do nível (Haiku só LEVE, Sonnet só MEDIO, Opus/Fable só PESADO; aceite é do usuário; sem nível ou sem modelo também bloqueia). Arquivo novo `scripts/claude-hooks/verificar-modelo.js`; regra em `regras-bloqueio.js`; tabela de hooks em `.claude/rules/claude-code.md`. |

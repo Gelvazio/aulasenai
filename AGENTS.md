@@ -70,4 +70,8 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
     - Divergência com este projeto → vale a regra do projeto e o usuário decide
       (`CONFLITOS.md`); sem acesso ao `rules-ai` → avisar o usuário, não seguir em silêncio.
 
+13. **Mensagem só com um ponto (`.`)** (2026-10-17, pedido do usuário): listar as tarefas
+    pendentes do quadro (como em "Liste tarefas pendentes": contagens por status e prioridade, 
+    🔴, 🔄, 👀 e grupos grandes), sem começar nenhuma tarefa nem alterar arquivos.
+
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).
