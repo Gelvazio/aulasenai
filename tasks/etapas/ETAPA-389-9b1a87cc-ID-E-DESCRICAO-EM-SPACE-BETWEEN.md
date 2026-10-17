@@ -8,7 +8,15 @@ e o nome/descrição da atividade à direita (`justify-content: space-between`).
 
 ### #262.1 — Botão da atividade com ID à esquerda e descrição à direita
 
-**Próximo passo:** executor-medio ajusta o CSS (e, se preciso, o elemento do texto).
+**Próximo passo:** — (entregue em 2026-10-17 18:32; conferir na tela).
+
+- **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** só CSS em
+  `assets/css/atividades-crud-modal.css`: `a.btn.principal:has(> .crud-id-atividade)` em
+  `display: flex; justify-content: space-between` (gap no token novo `--crud-espaco-id` do
+  `:root`); a etiqueta não encolhe. Botões sem etiqueta (aluno) não mudam; `:has` já é usado no
+  projeto.
+- **Verificação (líder):** diff lido; o líder pediu o token em `:root` no lugar do valor fixo e o
+  executor ajustou. Sem navegador.
 
 - **Nível:** MEDIO — tela (CSS e, se preciso, o JS que monta o botão), 1 a 2 arquivos.
 - **Modelo:** só Sonnet — nunca outro

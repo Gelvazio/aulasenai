@@ -3,6 +3,7 @@
     --crud-azul: #004384;
     --crud-tamanho-editar: 36px;
     --crud-espaco-acoes: 8px;
+    --crud-espaco-id: 10px;
     --crud-fundo: #ffffff;
     --crud-borda: #cbd5e0;
     --crud-texto: #1a202c;
@@ -144,4 +145,20 @@
     font-size: 11px;
     font-weight: 800;
     vertical-align: middle;
+}
+
+/* Botão com a etiqueta de ID (só professor): ID colado à esquerda e nome/descrição à direita
+   (space-between). O texto solto do link vira item flex anônimo e quebra a linha sem estourar. */
+a.btn.principal:has(> .crud-id-atividade) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--crud-espaco-id);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+a.btn.principal:has(> .crud-id-atividade) > .crud-id-atividade {
+    flex: 0 0 auto;
+    margin-right: 0;
 }
