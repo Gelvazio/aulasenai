@@ -56,7 +56,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 
 | Arquivo | Assunto |
 |---------|---------|
-| `graphify.md` | Graphify uma vez no início da conversa, analisando o relatório (regra global C11) |
+| `graphify.md` | Graphify: ler o relatório antes de criar e de executar tarefa; update no início da conversa e ao fim da tarefa (regra global C25) |
 | `claude-code.md` | Comandos, subagentes, skills e hooks do Claude Code (estrutura do infográfico, #170) |
 | `visualizador-regras.md` | `index.html` desta pasta: só visualizador; quando regenerar |
 
