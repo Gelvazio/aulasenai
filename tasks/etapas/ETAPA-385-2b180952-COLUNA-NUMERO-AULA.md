@@ -45,7 +45,7 @@ card"
 
 ### #258.2 — Rótulo do card sempre "AULA " + `numero`
 
-**Próximo passo:** delegar ao `executor-medio`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código de tela em JS, 1 a 2 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro
@@ -53,3 +53,9 @@ card"
   "AULA " + `numero` com 2 dígitos, sem usar o `rotulo_card`. `obterRotuloDaAula` não muda (é
   usada para achar a aula pelo rótulo do HTML e nas mensagens). `docs/regras/atividades.md`.
 - **Critérios de aceitação:** todo card com aula mostra "AULA NN" do `numero`; `node --check`.
+- **Entrega (2026-10-17 12:14, Sonnet · executor-medio; líder Opus 5.5, s14):** `indice-aula-data.js`: nova
+  `obterRotuloNumeroDaAula` (constante `PREFIXO_ROTULO_AULA`), usada no `.num` por
+  `renderizarTextosNoCard`; `obterRotuloDaAula` ficou só para achar a aula pelo HTML; cabeçalho
+  atualizado; `docs/regras/atividades.md`.
+- **Verificação (líder):** diff só nos 2 arquivos da lista; `node --check` passou; linhas novas
+  ≤ 100 caracteres. Sem navegador: conferir na tela.

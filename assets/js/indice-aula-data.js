@@ -1,6 +1,8 @@
-// Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo
-// (aulas.rotulo_card ou "AULA NN") e nome (aulas.nome_card ou aulas.titulo). A data da aula não
-// aparece no card (pedido de 2026-10-16, #204); ela fica só no modal "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
+// Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo e nome
+// (aulas.nome_card ou aulas.titulo). O rótulo do card é SEMPRE "AULA NN", de aulas.numero (pedido
+// de 2026-10-17, #258); o aulas.rotulo_card só ajuda a achar a aula pelo texto do HTML.
+// A data da aula não aparece no card (pedido de 2026-10-16, #204); ela fica só no modal
+// "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
@@ -35,6 +37,7 @@ const TEXTO_ID_AULA_CARD = 'Id Aula: ';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
+const PREFIXO_ROTULO_AULA = 'AULA ';
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 // Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
@@ -59,14 +62,23 @@ function criarElementoCardAula(tag, classe, texto) {
 }
 
 /**
- * Rótulo do card pela tabela aulas: rotulo_card ou "AULA NN".
+ * Rótulo usado só para achar a aula pelo texto do HTML: rotulo_card ou "AULA NN".
  * @param {Object} aula - Linha da tabela aulas.
  * @returns {string} Rótulo do card.
  */
 function obterRotuloDaAula(aula) {
     if (aula.rotulo_card) return aula.rotulo_card;
 
-    return 'AULA ' + String(aula.numero ?? '').padStart(DIGITOS_NUMERO_AULA, '0');
+    return obterRotuloNumeroDaAula(aula);
+}
+
+/**
+ * Rótulo do card sempre pela coluna aulas.numero: "AULA NN" (pedido de 2026-10-17, #258).
+ * @param {Object} aula - Linha da tabela aulas.
+ * @returns {string} Rótulo "AULA NN".
+ */
+function obterRotuloNumeroDaAula(aula) {
+    return PREFIXO_ROTULO_AULA + String(aula.numero ?? '').padStart(DIGITOS_NUMERO_AULA, '0');
 }
 
 /**
@@ -167,7 +179,7 @@ function renderizarTextosNoCard(item) {
 
     const rotulo = item.card.querySelector(SELETOR_ROTULO_CARD_AULA);
     const nome = item.card.querySelector(SELETOR_NOME_CARD_AULA);
-    if (rotulo) rotulo.textContent = obterRotuloDaAula(item.aula);
+    if (rotulo) rotulo.textContent = obterRotuloNumeroDaAula(item.aula);
     if (nome) nome.textContent = obterNomeDaAula(item.aula);
 }
 
