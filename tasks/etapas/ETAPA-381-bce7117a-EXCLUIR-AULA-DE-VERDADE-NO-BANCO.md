@@ -28,11 +28,11 @@ linha da tabela `aulas` (DELETE), em vez de marcar `aulas.excluido = 1`.
 
 ### Decisões
 
-- (aguardando o "sim" do usuário ao plano)
+- **Plano aprovado** pelo usuário em 2026-10-17 11:51 ("sim").
 
 ### #254.1 — Plano e aprovação
 
-**Próximo passo:** esperar o "sim" do usuário.
+**Próximo passo:** — (aprovado em 2026-10-17 11:51).
 
 - **Nível:** PESADO — banco e apagar dados.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
