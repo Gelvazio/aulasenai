@@ -1,6 +1,6 @@
 ## Etapa 293-089e5b09 — Garantir que a nota sugerida pela IA nunca aparece para o aluno
 
-**Tarefa:** #166-089e5b09-40d6-421d-be9c · **Pedido em:** 2026-10-14 20:50 · **Executor:** — (liberada em 2026-10-14 20:56 para outra IA assumir; ver "Estado para quem assumir")
+**Tarefa:** #166-089e5b09-40d6-421d-be9c · **Pedido em:** 2026-10-14 20:50 · **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-04d42f6c-y5d6iz), desde 2026-10-16 21:41 — itens 166.4 e 166.6 (sem banco); 166.5 fica com a frente local
 **Pedido:** "nota sugerida pela IA, nao deve aparecer para o aluno, me garanta isso"
 **Objetivo:** auditar tela, funções e banco e garantir que o aluno nunca recebe a `nota_ia`.
 **Próximo passo:** 166.4 — URGENTE: trocar a leitura do `resultado-aluno-discursiva.js` para a view `correcao_discursiva_aluno` (o banco já foi alterado).
