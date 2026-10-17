@@ -74,7 +74,15 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.2 — Grupo A: aplicar os 10 seeds de Testes de Front-End (só local)
 
-**Próximo passo:** aguarda a #260.1.
+**Próximo passo:** — (entregue em 2026-10-17 18:12).
+
+- **Entrega (Opus 5.5, s20):** aulas 6–10 da matéria 48 criadas (ids **127–131**, títulos e
+  datas dos seeds; `insert ... where not exists`), porque o lote do `dividir_seed.py` não cria aula
+  que falta; depois os 10 lotes: objetivas **153–157** (50 gabaritos cada) e práticas
+  **158–162** (bloqueadas, 30 tópicos cada), uma por aula 127→131. Os 10 seeds viraram
+  **CONCLUÍDO** no `SEEDS-APLICADOS.md` (fecha o item 22.8 da #22).
+- **Verificação:** `comparar_md5.py` → 10 de 10 batem; cada lote devolveu atividade, aula e
+  itens esperados.
 
 - **Nível:** PESADO — seeds no banco de produção (aulas 6–10, atividades e gabaritos).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
