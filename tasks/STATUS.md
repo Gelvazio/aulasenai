@@ -916,6 +916,13 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #244-1e2ac8a5-32a3-4bfd-8f59-95ca4e0af187 | Banco de Dados: pendências finais (status, slides, PDF, menu, revisão da ementa) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #244.1 | Levantamento e plano (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-790c3677-2mknbc) (desde 2026-10-16 21:48) | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.2 | Status regenerados e menu das atividades · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.3 | Revisão da ementa · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.4 | Gerador de slides + aulas 01 a 10 · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.5 | Slides das aulas 11 a 20 · `MEDIO · effort medium` | 🟠 Alta | #244.4 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.6 | PDF da apostila · `MEDIO · effort medium` | 🟠 Alta | #244.1 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.7 | Slides no Storage privado (só local) · `PESADO · effort high` | 🟠 Alta | #244.5 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.8 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #244.2 a #244.6 | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
