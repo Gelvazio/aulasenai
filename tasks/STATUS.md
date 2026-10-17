@@ -913,6 +913,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.4 | Atividades das aulas 09 a 16 (objetiva + prática + seeds) · `PESADO · effort high` | 🟠 Alta | #243.3 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.5 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.6 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #244-1e2ac8a5-32a3-4bfd-8f59-95ca4e0af187 | Banco de Dados: pendências finais (status, slides, PDF, menu, revisão da ementa) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
+| #244.1 | Levantamento e plano (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | ⬜ Pendente | — | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -926,6 +928,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 
 | Etapa | Assunto | Arquivo |
 |---|---|---|
+| 371-1e2ac8a5 | Banco de Dados: pendências finais (#244, pedida em 2026-10-16 21:46) | [ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
