@@ -1,6 +1,7 @@
 ## Etapa 137-13665a7e — Testes de Front-End: objetivas e práticas das aulas 04 a 10 (tarefa #22-f79be83e-0418-43e8, pedida em 2026-10-09 23:04:01)
 
 **Tarefa:** #22-f79be83e-0418-43e8
+**Nível:** PESADO — gabarito das objetivas e padrão de resposta das práticas, mais de 3 arquivos ligados
 **Próximo passo:** 22.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aula 04 ✅.
 
 Pedido do usuário: "Continue testes de frontend". Plano: [docs/testes-frontend-aulas-04-a-10.md](../../docs/testes-frontend-aulas-04-a-10.md)
@@ -31,3 +32,10 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 - [ ] Ementa em 14.800–14.950 caracteres.
 - [ ] Análise das matérias sem pendências em Testes de Front-End.
 - [ ] Aceite do usuário.
+
+### Decisões (continuação)
+
+- **2026-10-16 21:14 — reserva passada para a frente nuvem · ccr-04d42f6c-y5d6iz** a pedido do usuário
+  ("Fazer as atividades das aulas 06 a 10"), com a frente nuvem · claude/ola-zlzh8z parada desde
+  2026-10-10 16:21. Esta frente faz os itens 22.3 a 22.7 **sem banco**: gera páginas, fontes e seeds
+  (PENDENTE); aplicar os seeds (22.8) fica com o Claude Code local (`multiplas-ias.md`).
