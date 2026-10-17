@@ -83,19 +83,22 @@ do líder (link conferido) e as regras do projeto citam o modo "pastas por model
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-17 10:39 | Plano aprovado: "Sim, plano da #251 aprovado. Pode executar a #251.2 e a #251.3." | Gelvazio | resposta no chat |
+| 2026-10-17 10:39 | A #251.2 é feita pela própria frente (Opus 5.5, nível PESADO), com revisão por 3 lentes num fluxo; a #251.3 vai para o `executor-leve` (Haiku) | Claude Code (Opus 5.5) s18 | regra de níveis |
 
 
 ### #251.1 — Plano e aprovação (tarefa grande)
 
-**Próximo passo:** aguardar o "sim" do usuário ao plano acima.
+**Próximo passo:** — (plano aprovado em 2026-10-17 10:39).
 
 - **Nível:** PESADO — arquitetura de orquestração entre pastas e sessões.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commits `91bbb4ca` (criação) e `3a127307` (plano) · **Verificação:** aprovação do
+  usuário registrada nas Decisões.
 
 ### #251.2 — Criar a skill `gerenciador-de-tarefas`
 
-**Próximo passo:** aguardar o "sim" do plano (#251.1).
+**Próximo passo:** escrever `SKILL.md` e `modelo-de-brief.md` em `C:ontes\.claude\skills\gerenciador-de-tarefas`.
 
 - **Nível:** PESADO — arquitetura de orquestração entre pastas e sessões.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
