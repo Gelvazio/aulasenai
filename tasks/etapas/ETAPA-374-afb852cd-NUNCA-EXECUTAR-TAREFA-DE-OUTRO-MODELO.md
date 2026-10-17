@@ -146,8 +146,10 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.6 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere a #247.2 a #247.5 e roda `node scripts/sincronizar.mjs
---aplicar` no `C:\fontes\rules-ai` (MODELO-GLOBAL.2).
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — conferência do usuário.
 - **Modelo:** Usuário — nenhuma IA executa (#247)
+- **Entrega:** aceite do usuário em 2026-10-16 23:32 ("247.6 aceita"); tarefa #247 concluída. Fica
+  👀 só o `node scripts/sincronizar.mjs --aplicar` no `C:\fontes\rules-ai` (MODELO-GLOBAL.2 do
+  quadro do `rules-ai`). **Verificação:** resposta do usuário; linhas da #247 no `task_complete.md`.
