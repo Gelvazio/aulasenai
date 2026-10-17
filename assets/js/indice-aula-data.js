@@ -10,7 +10,8 @@
 // Atividades ativas vinculadas à aula no banco (atividade.aula_id) ganham um botão no card da aula
 // quando a página delas ainda não tem link no card (indice-aula-atividades-vinculadas.js, #249.1);
 // são acrescentadas antes do bloqueio da aula e refeitas quando o vínculo muda.
-// O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js).
+// O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js), e
+// "🗑️ Excluir", que só exclui a aula sem atividade vinculada (indice-aula-excluir-card.js, #253).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
 // "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
 // inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
@@ -206,21 +207,23 @@ function bloqueioDaAulaNoIndice() {
 }
 
 /**
- * Acrescenta o botão "Editar aula" ao card (só professor e aula cadastrada).
+ * Acrescenta os botões "Editar aula" e "Excluir" ao card (só professor e aula cadastrada).
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e a aula dele.
  */
 function adicionarBotaoEditarAula(item) {
     const acoes = item.card.querySelector('.acoes');
     if (!acoes || !item.aula) return;
 
+    const contexto = { cards: estadoCardsAula.cards, aoGravar: atualizarCardsDaAula };
     const botao = criarElementoCardAula('button', 'btn aula-data-botao', TEXTO_BOTAO_EDITAR_AULA);
     botao.type = 'button';
-    botao.addEventListener('click', () => abrirModalAulaCard(item, {
-        cards: estadoCardsAula.cards,
-        aoGravar: atualizarCardsDaAula,
-    }));
+    botao.addEventListener('click', () => abrirModalAulaCard(item, contexto));
     if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
     acoes.append(botao);
+    // "🗑️ Excluir" (#253): só exclui a aula sem atividade vinculada (indice-aula-excluir-card.js).
+    if (typeof criarBotaoExcluirAulaCard === 'function') {
+        acoes.append(criarBotaoExcluirAulaCard(item, contexto));
+    }
 }
 
 /**

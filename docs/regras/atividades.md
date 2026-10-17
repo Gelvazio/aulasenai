@@ -644,6 +644,12 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     "📕 Slides". Fechar o modal 1 depois de mudar algo recarrega a página. Código:
     `assets/js/indice-gerenciar-aulas*.js` e `assets/css/indice-gerenciar-aulas.css`, carregados
     pelo `atividades-crud-modal.js`;
+  - **"🗑️ Excluir" em cada card de aula** (2026-10-17, tarefa #253; só professor, depois do
+    "✏️ Editar aula"): antes de excluir, lê as atividades vinculadas (`atividade.aula_id`). Com
+    alguma vinculada, **não exclui**: lista as atividades e oferece abrir o "✏️ Editar aula" para
+    desvinculá-las (🔗 Gerenciar atividades) ou excluí-las. Sem atividade, pede confirmação e
+    exclui pela mesma `excluir_aula` (lógica, só o Professor Administrador; os outros recebem o
+    aviso) e o card some. Código: `assets/js/indice-aula-excluir-card.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

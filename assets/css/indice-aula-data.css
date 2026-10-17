@@ -12,6 +12,8 @@
     --aula-salvar-fonte: 17px;
     --aula-espaco-linhas-botoes: 24px;
     --aula-grade-botao-largura: 320px;
+    --aula-excluir-card-cor: #c53030;
+    --aula-excluir-card-fundo: #fff5f5;
 }
 
 .aula-data-botao {
@@ -21,6 +23,14 @@
 }
 
 .aula-data-caixa { width: min(420px, 100%); }
+
+/* "🗑️ Excluir" do card da aula (assets/js/indice-aula-excluir-card.js, #253). */
+.aula-excluir-card-botao {
+    background: var(--aula-excluir-card-fundo);
+    border: 1px solid var(--aula-excluir-card-cor);
+    color: var(--aula-excluir-card-cor);
+    cursor: pointer;
+}
 
 /* Modal CRUD da aula (assets/js/indice-aula-modal.js): campos da tabela aulas + atividades. */
 .aula-modal-caixa { width: min(760px, 100%); }

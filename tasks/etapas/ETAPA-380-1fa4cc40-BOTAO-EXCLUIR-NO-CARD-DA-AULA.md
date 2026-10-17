@@ -10,7 +10,7 @@ recusada e o professor é levado ao "✏️ Editar aula" para desvincular ou exc
 
 ### #253.1 — Botão Excluir no card com a verificação das atividades vinculadas
 
-**Próximo passo:** fazer o botão (arquivo novo `assets/js/indice-aula-excluir-card.js`).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — exclui dados da tabela `aulas` no banco (função `excluir_aula`, só Professor
   Administrador).
@@ -21,3 +21,14 @@ recusada e o professor é levado ao "✏️ Editar aula" para desvincular ou exc
 - **Critérios de aceitação:** botão em todo card com aula no banco (só professor); com atividade
   vinculada, não exclui e abre o "Editar aula"; sem atividade, pede confirmação, exclui e o card
   some.
+- **Entrega (2026-10-17 11:48, Opus 5.5, s14):** `assets/js/indice-aula-excluir-card.js` (novo):
+  confere se é Professor Administrador (`eh_professor_administrador`), lê as atividades da aula
+  (`listarAtividadesDaAulaCard`); com alguma, mostra a lista e o botão "✏️ Abrir Editar aula" e
+  não exclui; falha na leitura também não exclui; sem atividade, confirma e chama
+  `excluirAulaGerenciar` (`excluir_aula`), e o card some (`excluido = 1`).
+  `indice-aula-data.js`: botão depois do "✏️ Editar aula"; `atividades-crud-modal.js`: carrega o
+  arquivo novo depois do `indice-aula-modal.js`; `indice-aula-data.css`: botão vermelho (tokens
+  em `:root`); `docs/regras/atividades.md`.
+- **Verificação:** `node --check` nos 3 `.js`; linhas novas ≤ 100 caracteres e funções ≤ 45
+  linhas; banco sem mudança (usa a `excluir_aula` de `database/2026-10-06-aulas-excluido.sql`).
+  Sem navegador: o clique fica para conferir na tela.
