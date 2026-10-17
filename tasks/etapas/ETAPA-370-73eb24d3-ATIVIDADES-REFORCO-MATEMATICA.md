@@ -65,7 +65,7 @@
 
 ### #243.3 — Atividades das aulas 01 a 08 (objetiva + prática + seeds PENDENTE)
 
-**Próximo passo:** objetiva e prática da Aula 01.
+**Próximo passo:** objetiva e prática da Aula 01 (nenhuma aula feita; reserva liberada em 2026-10-17 18:54 pela frente nuvem · ccr-a26b3c0e-1ljztf para pegar a #265.1).
 
 - **Nível:** PESADO — questões com gabarito.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)

@@ -6,7 +6,7 @@
 
 ### Escopo
 
-- **Entra:** a definir no plano (#265.1), depois que o usuário disser quais páginas.
+- **Entra:** só as páginas que o **aluno** usa (resposta do usuário em 2026-10-17 18:54); lista exata no plano.
 
 ### Riscos
 
@@ -17,10 +17,12 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-17 18:54 | Escopo: só o que o aluno usa | Usuário (Gelvazio) | Resposta à pergunta de escopo |
+| 2026-10-17 18:54 | #243.3 liberada (nenhuma aula feita) para esta frente pegar a #265.1 | Claude Code (nuvem · ccr-a26b3c0e-1ljztf) | 1 subtarefa reservada por frente; o pedido novo veio depois |
 
 ### #265.1 — Levantamento das páginas e plano (tarefa grande)
 
-**Próximo passo:** 👀 o usuário diz quais páginas entram; depois, levantar o CSS atual e escrever o plano.
+**Próximo passo:** levantar as páginas do aluno e o CSS delas e escrever o plano.
 
 - **Nível:** PESADO — mudança em massa em várias páginas e folhas de estilo ligadas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
