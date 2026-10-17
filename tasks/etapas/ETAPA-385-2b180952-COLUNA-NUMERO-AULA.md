@@ -29,11 +29,27 @@ card"
 
 ### Decisões
 
-- (aguardando as respostas e o "sim" do usuário)
+- **2026-10-17 12:13 — usuário:** "ah,eu nao sabiam,deixe a coluna numero mesmo,deve ser ela a ser mostrada
+  no rotulo do card sempre". **Sem coluna nova e sem mudança no banco:** o rótulo do card passa
+  a ser sempre "AULA " + `aulas.numero` (2 dígitos), mesmo quando a aula tem `rotulo_card`
+  (26 aulas têm rótulo próprio, ex.: "ATIVIDADES", "AVALIAÇÃO 02", "EXCEL 29/09"). O
+  `rotulo_card` continua no banco e no modal e ainda serve para achar a aula de um card pelo
+  texto do HTML. Com isso a tarefa deixou de ser grande (só tela).
 
 ### #258.1 — Plano e aprovação
 
-**Próximo passo:** esperar as respostas às dúvidas e o "sim" do usuário.
+**Próximo passo:** — (respondido pelo usuário; a coluna nova não será criada).
 
 - **Nível:** PESADO — coluna nova no banco.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+
+### #258.2 — Rótulo do card sempre "AULA " + `numero`
+
+**Próximo passo:** delegar ao `executor-medio`.
+
+- **Nível:** MEDIO — código de tela em JS, 1 a 2 arquivos, sem banco.
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** `assets/js/indice-aula-data.js`, `renderizarTextosNoCard`: escrever no `.num`
+  "AULA " + `numero` com 2 dígitos, sem usar o `rotulo_card`. `obterRotuloDaAula` não muda (é
+  usada para achar a aula pelo rótulo do HTML e nas mensagens). `docs/regras/atividades.md`.
+- **Critérios de aceitação:** todo card com aula mostra "AULA NN" do `numero`; `node --check`.
