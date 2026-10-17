@@ -205,13 +205,13 @@ C1 Demandas do cliente → 6.1 · C2 Modelagem ER → 5.1–5.4 · C3 Normaliza�
 ## ✅ XII. CHECKLIST E MÉTRICAS
 
 - [x] Ementa oficial conciliada; 20 aulas × 4h; SGBD PostgreSQL
-- [ ] Aulas em Markdown `CONTEUDO/AULA-01..20-*.md`
-- [ ] Atividades de 50 questões e práticas por aula
-- [ ] Avaliações objetivas, prática e média final
+- [x] Aulas em Markdown `CONTEUDO/AULA-01..20-*.md`
+- [x] Atividades de 50 questões e práticas por aula
+- [x] Avaliações objetivas, prática e média final
 
 **Métricas:** 80%+ dos estudantes com nota ≥ 7,0 · 100% entregam o banco do projeto integrador rodando.
 
 ---
 
 **Status:** ✅ Específica, conciliada com a ementa oficial do curso  
-**Última atualização:** 2026-10-09
+**Última atualização:** 2026-10-16

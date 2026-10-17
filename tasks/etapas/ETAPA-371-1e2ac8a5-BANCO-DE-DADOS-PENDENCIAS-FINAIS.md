@@ -74,9 +74,18 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.3 — Revisão da ementa
 
-**Próximo passo:** esperar a #244.1.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — comparação de ementa × UC do curso × aulas, relatório em `.md`.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o), a pedido do usuário.
+- **Entrega:** seção "Revisão da ementa" no `STATUS-EMENTAS.md` (tudo conforme: C1–C14, S1–S2,
+  50 conhecimentos, 80 h, cobertura pelas 20 aulas); checklist da Seção XII do
+  `EMENTA-CHALKIE-AI.md` atualizado (14923 chars, dentro da faixa); "Conteúdo foi revisado por
+  professor" marcado (decisão do usuário de 21:58). 👀 Dois pontos para o usuário decidir, sem
+  alteração: "empresas fictícias" na regra IX.5, SA 1 e prompt 1 × regra "Você como aluno
+  consultor"; caminho dos slides no `materia.json`.
+- **Verificação:** script de conferência na pasta temporária da sessão (só leitura), contra a
+  ementa do curso e a transcrição do PDF oficial (págs. 79–82); contagem de caracteres da ementa.
 
 ### #244.4 — Gerador de slides + aulas 01 a 10
 
@@ -117,6 +126,7 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.8 — Aceite do usuário
 
-**Próximo passo:** esperar a #244.2, a #244.3 e a #244.9.
+**Próximo passo:** 👀 o usuário confere a #244.2, a #244.3 e a #244.9 e decide os 2 pontos do
+`STATUS-EMENTAS.md` (seção "Revisão da ementa").
 
 - **Nível:** LEVE — conferência do usuário.
