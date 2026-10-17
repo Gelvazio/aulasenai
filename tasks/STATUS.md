@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s20 | #260.3 entregue; #260.5 em execução; depois #260.4 e #261.1 ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | 🔄 Ativa | 2026-10-17 18:19 |
+| local · main · s20 | líder: #260.4 (Haiku), #261.1 e #262.1 (Sonnet) com os executores; #264.1 depois da #262.1; #263 aguarda o usuário ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | 🔄 Ativa | 2026-10-17 18:26 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
 | local · main · s18 | #251.2 entregue; #251.3 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) aguarda o seu "sim" ao escopo ampliado | 👀 Aguardando o usuário | 2026-10-17 10:55 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
@@ -911,13 +911,15 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #260-4d7a91c2-8e35-4b60-a1f4-5c92d0b7e316 | Ligar as atividades sem ID à tabela `atividade` e à aula | 🟠 Alta | — | — | 🔄 Em execução (plano aprovado 2026-10-17 18:01) | — (não reservável) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
-| #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.5, #260.6 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.5, #260.6 | 🔄 Em execução | Claude Code (Haiku · executor-leve) (local · main · s20-leve) (desde 2026-10-17 18:26) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #261-a9a852ed-fa9d-4f34-9f50-2ba06e49bd89 | Cards das aulas na ordem de `aulas.numero` | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
-| #261.1 | Ordenar os cards por `aulas.numero` no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
-| #262-9b1a87cc-64e6-4980-b09a-7703c0a0b791 | ID à esquerda e descrição à direita no botão da atividade | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
-| #262.1 | Botão da atividade com ID à esquerda e descrição à direita · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
+| #261.1 | Ordenar os cards por `aulas.numero` no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (local · main · s20-medio-a) (desde 2026-10-17 18:26) | [388-a9a852ed](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) | — |
+| #262-9b1a87cc-64e6-4980-b09a-7703c0a0b791 | ID à esquerda e descrição à direita no botão da atividade | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
+| #262.1 | Botão da atividade com ID à esquerda e descrição à direita · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (local · main · s20-medio-b) (desde 2026-10-17 18:26) | [389-9b1a87cc](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) | — |
 | #263-4ae42a94-cc1e-43be-ab1f-5e7100712383 | Card "AVALIAÇÃO 02" sem id de aula (ITIC) | 🟠 Alta | — | — | 👀 Aguardando o usuário | — (não reservável) | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
 | #263.1 | Decidir a aula do card (usuário) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [390-4ae42a94](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) | — |
+| #264-55efd2a9-4c0a-4a5c-b9ad-5448279599ad | Botão "−" ao lado do ✏️: desvincular a atividade da aula | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
+| #264.1 | Botão "−" que desvincula a atividade da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #262.1 | ⬜ Pendente | — | [391-55efd2a9](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -951,6 +953,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 388-a9a852ed | Cards das aulas na ordem de `aulas.numero` (#261, pedida em 2026-10-17 18:20) | [ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md](etapas/ETAPA-388-a9a852ed-CARDS-NA-ORDEM-DE-AULAS-NUMERO.md) |
 | 389-9b1a87cc | ID à esquerda e descrição à direita no botão da atividade (#262, pedida em 2026-10-17 18:22) | [ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md](etapas/ETAPA-389-9b1a87cc-ID-E-DESCRICAO-EM-SPACE-BETWEEN.md) |
 | 390-4ae42a94 | Card "AVALIAÇÃO 02" sem id de aula (#263, pedida em 2026-10-17 18:23) | [ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md](etapas/ETAPA-390-4ae42a94-CARD-AVALIACAO-02-SEM-ID-DE-AULA.md) |
+| 391-55efd2a9 | Botão "−" para desvincular a atividade da aula (#264, pedida em 2026-10-17 18:24) | [ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md](etapas/ETAPA-391-55efd2a9-BOTAO-MENOS-DESVINCULAR-DA-AULA.md) |
 | 350-c568f1ed | Apostila de Banco de Dados (#223, pedida em 2026-10-16 21:17) | [ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
