@@ -8,7 +8,15 @@
 
 ### #261.1 — Ordenar os cards por `aulas.numero` no índice
 
-**Próximo passo:** líder lê como os cards são montados e passa ao executor-medio.
+**Próximo passo:** — (entregue em 2026-10-17 18:31; conferir na tela).
+
+- **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** `assets/js/indice-aula-data.js`:
+  `ordenarCardsPeloNumeroDaAula(itens)` e `numeroParaOrdenarCard`, chamadas em
+  `desenharCardsDoIndice` depois dos cards só do banco; por contêiner, ordem crescente de
+  `aulas.numero`, estável; cards sem aula no fim. Os cards são movidos (não recriados) e a lista
+  `estadoCardsAula.cards` não muda de ordem (o card dono da aula continua o mesmo).
+- **Verificação (líder):** diff lido; `node --check` passou; troca por marcadores de comentário
+  confere com a permutação ordenada. Sem navegador.
 
 - **Nível:** MEDIO — JS de tela, 1 a 3 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro

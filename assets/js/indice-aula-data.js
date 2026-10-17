@@ -7,6 +7,8 @@
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
+// Os cards ficam na ordem crescente de aulas.numero (#261); sem aula vão para o fim, na ordem
+// do HTML, e a ordenação roda depois dos cards só do banco entrarem.
 // Aulas que só existem no banco (cadastradas no "📚 Gerenciar Aulas", #250) ganham card na hora,
 // pelo indice-gerenciar-aulas-cards.js, e entram no mesmo fluxo; o botão "📕 Slides" do card vem
 // de aulas.conteudo.slides.
@@ -41,6 +43,8 @@ const DIGITOS_NUMERO_AULA = 2;
 const PREFIXO_ROTULO_AULA = 'AULA ';
 const IDIOMA_NOME_CARD_AULA = 'pt-BR';
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
+// Card sem aula (ex.: "Avaliação — Média Final") vai para o fim ao ordenar por aulas.numero.
+const NUMERO_CARD_SEM_AULA = Infinity;
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 // Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
 const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
@@ -360,6 +364,43 @@ function lerCardsDoIndice() {
 }
 
 /**
+ * Número da aula do card para ordenar; card sem aula (ou sem número válido) vai para o fim.
+ * @param {{aula: Object|null}} item - Card e aula.
+ * @returns {number} aulas.numero ou Infinity.
+ */
+function numeroParaOrdenarCard(item) {
+    const numero = Number(item.aula?.numero);
+    return item.aula && Number.isFinite(numero) ? numero : NUMERO_CARD_SEM_AULA;
+}
+
+/**
+ * Reordena no DOM os cards de cada contêiner pelo aulas.numero crescente (pedido de 2026-10-17,
+ * #261). Estável: empate e cards sem aula seguem a ordem do HTML. Os cards são movidos (não
+ * recriados) para as posições que os cards do grupo já ocupavam, preservando os listeners.
+ * A lista `itens` não muda de ordem (o card dono da aula continua o mesmo).
+ * @param {Object[]} itens - Cards do índice e suas aulas.
+ */
+function ordenarCardsPeloNumeroDaAula(itens) {
+    const itemPorCard = new Map(itens.map((item) => [item.card, item]));
+    const conteineres = new Set(itens.map((item) => item.card.parentElement));
+    conteineres.forEach((conteiner) => {
+        if (!conteiner) return;
+        const doGrupo = [...conteiner.children].filter((filho) => itemPorCard.has(filho));
+        const ordenados = doGrupo
+            .map((card, posicao) => ({
+                card, posicao, numero: numeroParaOrdenarCard(itemPorCard.get(card)) }))
+            .sort((a, b) => (a.numero === b.numero ? a.posicao - b.posicao : a.numero - b.numero))
+            .map((entrada) => entrada.card);
+        const marcadores = doGrupo.map((card) => {
+            const marcador = document.createComment('');
+            card.before(marcador);
+            return marcador;
+        });
+        marcadores.forEach((marcador, i) => marcador.replaceWith(ordenados[i]));
+    });
+}
+
+/**
  * Inicia os cards e, no fim (mesmo com erro), destrava os links travados pelo
  * atividades-crud-modal.js enquanto o bloqueio da aula era conferido.
  */
@@ -392,6 +433,7 @@ async function desenharCardsDoIndice() {
         await acrescentarCardsDasAulasDoBanco(itens, estadoCardsAula.ehProfessor);
     }
     if (!itens.length) return;
+    ordenarCardsPeloNumeroDaAula(itens);
     if (bloqueioDaAulaNoIndice()) await prepararBloqueioAulaTurma(estadoCardsAula.ehProfessor);
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
