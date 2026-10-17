@@ -40,16 +40,21 @@ ela era usada, vale "AULA NN" de `aulas.numero`.
 
 ### #259.2 — Tirar o `rotulo_card` das consultas e do modal
 
-**Próximo passo:** delegado ao `executor-medio`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — JS de tela, 3 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro
 - **Arquivos:** `assets/js/indice-aula-repositorio.js`, `indice-gerenciar-aulas-repositorio.js`,
   `indice-aula-modal.js` (campo "Rótulo do card" sai de `CAMPOS_MODAL_AULA`).
+- **Entrega (2026-10-17 12:39, Sonnet · executor-medio; líder Opus 5.5, s14):** `rotulo_card` saiu de
+  `CAMPOS_AULA_CARD`, `CAMPOS_AULA_GERENCIAR` e `CAMPOS_MODAL_AULA` (o "📚 Gerenciar Aulas" usa os
+  mesmos campos do modal).
+- **Verificação (líder):** diff só nos 3 arquivos (3 linhas); `node --check` passou; `grep
+  rotulo_card` em `assets/js` só acha `indice-aula-data.js` (é a #259.3).
 
 ### #259.3 — Rótulo e busca da aula só por `numero` (e nome)
 
-**Próximo passo:** depois da #259.2.
+**Próximo passo:** delegado ao `executor-medio`.
 
 - **Nível:** MEDIO — JS de tela, 2 arquivos, sem banco.
 - **Modelo:** só Sonnet — nunca outro

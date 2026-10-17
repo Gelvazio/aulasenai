@@ -26,7 +26,6 @@ const MSG_EXCLUIR_ATIVIDADE = ' será EXCLUÍDA. O gabarito, as respostas e as e
 const CAMPOS_MODAL_AULA = [
     { nome: 'numero', rotulo: 'Número da aula', tipo: 'number', obrigatorio: true },
     { nome: 'titulo', rotulo: 'Título da aula', tipo: 'text', obrigatorio: true },
-    { nome: 'rotulo_card', rotulo: 'Rótulo do card (vazio = "AULA NN")', tipo: 'text', maximo: 60 },
     { nome: 'nome_card', rotulo: 'Nome do card (vazio = título)', tipo: 'text', maximo: 200 },
     { nome: 'duracao_minutos', rotulo: 'Duração (minutos)', tipo: 'number' },
     { nome: 'sequencia', rotulo: 'Sequência', tipo: 'number' },

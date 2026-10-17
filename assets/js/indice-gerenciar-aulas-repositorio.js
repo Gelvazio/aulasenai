@@ -8,7 +8,7 @@
 const TABELA_AULAS_GERENCIAR = 'aulas';
 const TABELA_MATERIA_GERENCIAR = 'materia';
 const CAMPOS_AULA_GERENCIAR = 'id,numero,titulo,descricao,materia_id,curso_id,duracao_minutos,' +
-    'data_planejada,sequencia,ativo,visivel_alunos,conteudo,rotulo_card,nome_card,excluido';
+    'data_planejada,sequencia,ativo,visivel_alunos,conteudo,nome_card,excluido';
 const AULA_NAO_EXCLUIDA_GERENCIAR = 0;
 const RPC_EXCLUIR_AULA_GERENCIAR = 'excluir_aula';
 const RPC_ADMINISTRADOR_GERENCIAR = 'eh_professor_administrador';
