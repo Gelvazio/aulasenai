@@ -63,7 +63,7 @@ pelos modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `
 
 - **Status** na linha: só o emoji e 1–3 palavras (`🔄 Em execução`); o detalhe fica na etapa.
   **Prioridade:** 🔴 Máxima · 🟠 Alta · 🟡 Média · 🟢 Baixa (do usuário; a subtarefa herda a da mãe).
-- **Modelo:** `<nível> · só <modelo>` (`LEVE · só Haiku`…); `Usuário` no aceite; `—` na mãe.
+- **Modelo:** `<nível> · só <modelo>` (`LEVE · só Haiku`…); `—` na mãe.
   ⛔ Só esse modelo executa (regra de níveis).
 - **Em uso por:** `<IA (modelo)> (<frente>) (desde <data hora>)`, `—` ou `— (não reservável)`.
 - Seção sem conteúdo fica com a tabela vazia (não apagar o cabeçalho).
@@ -91,6 +91,6 @@ pelos modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `
 
 - Arquivo da etapa: número sequencial da etapa + 8 caracteres de um UUID (evita número repetido).
 - Subtarefas numeradas pelo **número da tarefa** (`N.x`, ex.: `166.1`), pequenas (minutos ou
-  horas) e na ordem de execução; em tarefa grande, a última é o **aceite** do usuário.
+  horas) e na ordem de execução. Sem subtarefa de aceite do usuário: a IA finaliza sempre.
 - Tarefa com mais de uma etapa (ou duas tarefas com o mesmo número): a numeração segue entre
   as etapas (ex.: as duas #131: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª).
