@@ -116,7 +116,17 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.6 — ID do banco em todos os botões de atividade do card
 
-**Próximo passo:** executor-medio (Sonnet) faz o ajuste em `assets/js/atividades-crud-modal.js`.
+**Próximo passo:** — (entregue em 2026-10-17 18:30; conferir na tela: aula 27 da ITIC).
+
+- **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** `atividades-crud-modal.js` escuta
+  `aula-bloqueio-alterado` (constante própria `EVENTO_CARDS_REFEITOS_CRUD`) e, só para professor
+  (`crudProfessorAtivo`), coleta de novo as páginas e refaz as etiquetas pelo banco
+  (`atualizarIdsAposCardsRefeitos`); consulta mais recente vence (`consultaIdsCardsCrud`), sem
+  etiqueta duplicada.
+- **Verificação (líder):** diff só no arquivo da lista; `node --check` passou; 742 linhas; a
+  coleta e o registro do evento ficam sem `await` no meio (sem corrida com os botões do banco);
+  o evento é disparado depois dos botões e dos nomes (`indice-aula-data.js:399-402`), e
+  `renderizarNomesDasAtividades` preserva a etiqueta (`indice-aula-data.js:298`). Sem navegador.
 
 - **Nível:** MEDIO — JS de tela, 1 arquivo, sem banco.
 - **Modelo:** só Sonnet — nunca outro

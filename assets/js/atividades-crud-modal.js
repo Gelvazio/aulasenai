@@ -4,6 +4,8 @@
 // pasta (os links dos cards do índice).
 // Ao lado de cada atividade cadastrada, o professor também vê o botão ✏️, que abre a edição
 // dela (nome, data, aula, ativa...) direto no formulário.
+// O ID e o ✏️ vêm sempre do banco: são refeitos a cada evento 'aula-bloqueio-alterado', quando os
+// botões 📝 das atividades vinculadas à aula são criados depois do carregamento.
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
 const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
@@ -43,6 +45,11 @@ const CLASSE_MODAL_UNICA_CRUD = 'crud-caixa--unica';
 
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null, idUnica: null };
 let elementosCrud = null;
+// Evento do indice-aula-data.js disparado quando os botões dos cards são (re)feitos.
+const EVENTO_CARDS_REFEITOS_CRUD = 'aula-bloqueio-alterado';
+// Só vira true depois de confirmar o professor; consulta mais recente vence nas etiquetas.
+let crudProfessorAtivo = false;
+let consultaIdsCardsCrud = 0;
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -587,12 +594,26 @@ function criarBotaoEditarAtividade(atividade) {
  * Busca as atividades cadastradas e mostra o ID delas nos cards (falha não quebra o índice).
  */
 async function mostrarIdsNosCards() {
+    const numeroConsulta = ++consultaIdsCardsCrud;
     try {
         const atividades = await listarAtividadesCrud(estadoCrud.paginas);
+        if (numeroConsulta !== consultaIdsCardsCrud) return;
+
         document.querySelectorAll(SELETOR_CARD).forEach((card) => mostrarIdNoCard(card, atividades));
     } catch (erro) {
         console.warn('IDs das atividades indisponíveis:', erro.message);
     }
+}
+
+/**
+ * Refaz as páginas do índice e as etiquetas de ID quando os botões dos cards são refeitos
+ * (atividades vinculadas à aula pelo banco). O ID vem sempre do banco, nunca do HTML.
+ */
+async function atualizarIdsAposCardsRefeitos() {
+    if (!crudProfessorAtivo) return;
+
+    estadoCrud.paginas = coletarPaginasDoIndice();
+    await mostrarIdsNosCards();
 }
 
 /**
@@ -601,8 +622,10 @@ async function mostrarIdsNosCards() {
 async function iniciarCrudAtividades() {
     if (!await usuarioEhProfessorCrud()) return;
 
+    crudProfessorAtivo = true;
     estadoCrud.paginas = coletarPaginasDoIndice();
     document.querySelectorAll(SELETOR_CARD).forEach(adicionarBotaoCrudAoCard);
+    document.addEventListener(EVENTO_CARDS_REFEITOS_CRUD, atualizarIdsAposCardsRefeitos);
     await mostrarIdsNosCards();
 }
 
