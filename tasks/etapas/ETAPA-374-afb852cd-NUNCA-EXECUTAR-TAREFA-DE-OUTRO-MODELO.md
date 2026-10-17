@@ -81,15 +81,22 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.2 — Regra global no rules-ai
 
-**Próximo passo:** gravar "nunca executar subtarefa que não é do seu modelo" em
-`niveis-e-modelos.md`, `frentes-e-reserva.md`, `ciclo-da-task.md` e `quadro-de-tarefas.md`;
-decisão nova da C2 no `CONFLITOS.md`; push no `rules-ai`.
+**Próximo passo:** — (entregue).
+
+- **Entrega:** `rules-ai` commit `a48e13d` — `regras/niveis-e-modelos.md` (⛔ nunca outro modelo,
+  sem exceção; reserva do líder com o modelo do executor), `frentes-e-reserva.md`,
+  `ciclo-da-task.md`, `quadro-de-tarefas.md` (coluna Modelo obrigatória `<nível> · só <modelo>` e
+  linha `- **Modelo:**` no modelo da etapa); `CONFLITOS.md`: C2 → B e C22; tarefa global
+  MODELO-GLOBAL (etapa 004 do `rules-ai`), com o `sincronizar.mjs --aplicar` 👀 para o usuário.
+- **Verificação:** leitura dos 5 arquivos depois do push; `git log` do `rules-ai`.
 
 - **Nível:** LEVE — só `.md` (feita por esta sessão Opus por autorização do usuário, só na #247).
 
 ### #247.3 — Regra do projeto
 
-**Próximo passo:** esperar a #247.2.
+**Próximo passo:** gravar a regra no `AGENTS.md` (regra 8), `niveis.md`,
+`tasks/frentes-e-reserva.md`, `tasks/ciclo-da-task.md`, `tasks/quadro.md` e nas skills
+`classificar-tarefa` e `liderar-equipe`; histórico.
 
 - **Nível:** LEVE — só `.md` (`AGENTS.md`, `niveis.md`, `tasks/`, skills), autorização da #247.
 

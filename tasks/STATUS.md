@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · ccr-3274812b-0nj48o | #247.2 ([374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md)) — regra global no rules-ai | 🔄 Ativa | 2026-10-16 22:54 |
+| nuvem · ccr-3274812b-0nj48o | #247.3 ([374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md)) — regra do projeto | 🔄 Ativa | 2026-10-16 22:55 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
@@ -915,8 +915,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.6 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.2 | Regra global no rules-ai · `LEVE · effort low` | 🟡 Média | #247.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:54) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.3 | Regra do projeto · `LEVE · effort low` | 🟡 Média | #247.2 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.3 | Regra do projeto · `LEVE · effort low` | 🟡 Média | #247.2 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:55) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.4 | Trava no Claude Code (hook) · `MEDIO · effort medium` | 🟡 Média | #247.3 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.5 | Coluna Modelo e aviso em todas as tarefas · `PESADO · effort high` | 🟡 Média | #247.4 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.6 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | #247.5 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |

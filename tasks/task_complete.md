@@ -243,3 +243,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #245.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #245.3 | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245-8341ceea-7ca4-4a05-976d-e2c73aabe47d | Links de slides e PDF só quando o arquivo existir (todas as matérias) | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.2 | Regra global no rules-ai · `LEVE · effort low` | 🟡 Média | #247.1 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
