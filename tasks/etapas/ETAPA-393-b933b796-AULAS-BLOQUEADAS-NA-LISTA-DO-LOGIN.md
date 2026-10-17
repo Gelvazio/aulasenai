@@ -6,7 +6,7 @@
 
 ### #266.1 — Filtrar aulas bloqueadas na lista do aluno
 
-**Próximo passo:** publicar a tarefa e reservar a subtarefa antes de localizar o código.
+**Próximo passo:** ler as orientações de login e usuário; localizar e analisar como a lista do aluno é carregada.
 
 - **Nível:** MEDIO — lógica de exibição em até três arquivos; não altera autenticação nem permissões.
 - **Modelo:** só Codex — nunca outro
