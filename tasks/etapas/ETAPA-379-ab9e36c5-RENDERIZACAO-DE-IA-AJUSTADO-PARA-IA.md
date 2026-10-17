@@ -8,7 +8,7 @@ por ferramenta e quando usar (ou não) cada uma.
 
 ### #252.1 — Reorganizar o `RENDERIZACAO-DE-IA.md` como referência para a IA
 
-**Próximo passo:** executor-leve reescreve o arquivo; o líder confere e entrega.
+**Próximo passo:** — (entregue em 2026-10-17 11:05).
 
 - **Nível:** LEVE — só um arquivo `.md`, sem código, banco ou segurança.
 - **Modelo:** só Haiku — nunca outro (executa o `executor-leve`, líder Opus 5.5).
@@ -19,4 +19,10 @@ por ferramenta e quando usar (ou não) cada uma.
   recursos que não estejam no texto original (só o que é conhecimento geral e seguro).
 - **Critérios de aceitação:** as 8 ferramentas continuam no arquivo; estrutura acima presente;
   Markdown válido; sem empresa fictícia.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit "docs(tasks): RENDERIZACAO-DE-IA.md ajustado para a IA (#252.1)" — arquivo
+  reescrito com "Para que serve", "Como a IA deve usar", duas tabelas (Ferramenta · Linguagem ·
+  Para que serve · Quando usar · Quando não usar) e "Resumo rápido de escolha".
+- **Executor:** `executor-leve` (Haiku 5.5); líder Opus 5.5 encurtou uma linha do resumo (> 100).
+- **Verificação:** leitura do arquivo pelo líder: as 8 ferramentas presentes (CrewAI, LangChain,
+  AutoGen, Vercel AI SDK, Stable Diffusion/diffusers, Veras AI, Magnific AI, PromeAI); sem preços
+  nem versões inventados; Markdown válido.

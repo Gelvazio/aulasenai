@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s19 | #252.1 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) em execução | 🔄 Ativa | 2026-10-17 11:00 |
+| local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
 | local · main · s18 | #251.2 entregue; #251.3 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) aguarda o seu "sim" ao escopo ampliado | 👀 Aguardando o usuário | 2026-10-17 10:55 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
 | nuvem · ccr-3274812b-0nj48o | #250.2 entregue ([377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md)); #250.3 (banco) livre para a frente local | ⏹️ Encerrada | 2026-10-17 10:38 |
@@ -909,8 +909,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
-| #252-ab9e36c5-f79d-4cd3-98af-f87d748e95ad | `tasks/RENDERIZACAO-DE-IA.md` ajustado para a IA ler e usar | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md) | — |
-| #252.1 | Reorganizar o `RENDERIZACAO-DE-IA.md` como referência para a IA · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s19) (desde 2026-10-17 11:00) | [379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
