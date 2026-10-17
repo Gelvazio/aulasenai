@@ -107,15 +107,26 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.4 — Trava no Claude Code (hook)
 
-**Próximo passo:** função nova em `scripts/claude-hooks/regras-bloqueio.js`: no `git commit`, ler
-as linhas acrescentadas no `tasks/STATUS.md` staged e bloquear reserva cujo modelo em "Em uso
-por" não é o da coluna Modelo / do nível.
+**Próximo passo:** — (entregue).
+
+- **Entrega:** `scripts/claude-hooks/verificar-modelo.js` (novo): antes do `git commit`, compara o
+  `tasks/STATUS.md` em disco com o `HEAD` e confere cada reserva nova do Claude Code — nível pela
+  coluna Modelo ou pelo título; Haiku só LEVE, Sonnet só MEDIO, Opus/Fable só PESADO; aceite
+  (`Usuário`), sem nível ou sem modelo também bloqueiam; outras IAs (Gemini…) não passam por este
+  hook. Regra `bloquearReservaDeOutroModelo` em `regras-bloqueio.js` (erro do git = não bloqueia);
+  `.claude/rules/claude-code.md`; histórico.
+- **Verificação:** `node --check` nos 2 arquivos; linhas ≤ 100; repositório de teste na pasta
+  temporária da sessão: Opus em LEVE → bloqueia; Haiku em LEVE → passa; Haiku (executor) em MEDIO
+  → bloqueia; Fable em PESADO → passa; IA no aceite → bloqueia; Gemini → não confere; quadro
+  antigo sem coluna Modelo, Sonnet em PESADO → bloqueia; no aulasenai hoje → nada a bloquear.
 
 - **Nível:** MEDIO — lógica em 1 a 2 arquivos JS (`regras-bloqueio.js`), autorização da #247.
 
 ### #247.5 — Coluna Modelo e aviso em todas as tarefas
 
-**Próximo passo:** esperar a #247.4.
+**Próximo passo:** script na pasta temporária da sessão: coluna Modelo depois de Prioridade no
+`STATUS.md` e no `task_complete.md`; linha `- **Modelo:**` nas seções das subtarefas abertas;
+`aba-tasks.js` mostra o Modelo; recado para todas.
 
 - **Nível:** PESADO — mudança em massa no quadro e nas etapas, mais de 3 arquivos ligados.
 

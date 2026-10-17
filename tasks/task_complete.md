@@ -245,3 +245,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.2 | Regra global no rules-ai · `LEVE · effort low` | 🟡 Média | #247.1 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.3 | Regra do projeto · `LEVE · effort low` | 🟡 Média | #247.2 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.4 | Trava no Claude Code (hook) · `MEDIO · effort medium` | 🟡 Média | #247.3 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |

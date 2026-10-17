@@ -4,6 +4,7 @@
 
 const { normalizarCaminho } = require("./entrada-hook");
 const { procurarChavesNoCommit } = require("./verificar-chaves");
+const { procurarReservasForaDoModelo } = require("./verificar-modelo");
 
 const FERRAMENTAS_DE_ARQUIVO = ["Write", "Edit", "MultiEdit", "NotebookEdit"];
 const CAMINHO_VISUALIZADOR = ".claude/rules/index.html";
@@ -56,6 +57,17 @@ const REGRAS_BLOQUEIO = [
     const achados = procurarChavesNoCommit(comando);
     if (achados.length === 0) return null;
     return `⛔ Chave secreta no commit: ${achados.join(", ")}. Tire do commit (security-banco.md).`;
+  },
+  function bloquearReservaDeOutroModelo(entrada) {
+    if (!PADRAO_GIT_COMMIT.test(comandoDaEntrada(entrada))) return null;
+    let problemas = [];
+    try {
+      problemas = procurarReservasForaDoModelo();
+    } catch {
+      return null;
+    }
+    if (problemas.length === 0) return null;
+    return `⛔ Nunca executar tarefa que não é do seu modelo (niveis.md): ${problemas.join("; ")}.`;
   },
   function bloquearVisualizadorAMao(entrada) {
     if (!caminhoDaEntrada(entrada).endsWith(CAMINHO_VISUALIZADOR)) return null;

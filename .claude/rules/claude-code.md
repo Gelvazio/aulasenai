@@ -38,7 +38,7 @@ Equipe por nível (#182, `niveis.md`): skills `classificar-tarefa` e `liderar-eq
 | Evento | Script | Efeito |
 |--------|--------|--------|
 | SessionStart | `inicio-da-sessao.js` | Põe no contexto o checklist do `essentials.md` |
-| PreToolUse | `antes-da-ferramenta.js` | **Bloqueia:** `git add .`/`-A`; commit com chave (`service_role`, `sb_secret_`, `sk-`, chave privada — a anon pública passa); editar à mão `.claude/rules/index.html`; criar teste automatizado; navegador |
+| PreToolUse | `antes-da-ferramenta.js` | **Bloqueia:** `git add .`/`-A`; commit com chave (`service_role`, `sb_secret_`, `sk-`, chave privada — a anon pública passa); reserva no `tasks/STATUS.md` de modelo que não é o do nível (#247); editar à mão `.claude/rules/index.html`; criar teste automatizado; navegador |
 | PostToolUse | `depois-de-gravar.js` | `node --check` em todo `.js` gravado; erro volta para corrigir |
 
 - Teste de **bug** (exceção de `testes-validacao.md`): o caminho precisa ter `bug`
