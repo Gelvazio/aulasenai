@@ -912,6 +912,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #265-0f3f183e-cb2c-47eb-824f-c453ec251e01 | Usabilidade no celular (textos maiores, ícones e layout fluido) | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 | #265.1 | Levantamento das páginas e plano · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-17 18:54) | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.2 | Camada `celular.css` carregada pelo header · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #265.1 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.3 | Ícones no header, no login e nos cards do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #265.2 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.4 | Ícones e toque fácil nas páginas de atividade · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #265.2 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.5 | Gerar de novo as páginas do aluno · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #265.3, #265.4 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #265.6 | Orientação em `docs/` do header e da camada do celular · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #265.5 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
