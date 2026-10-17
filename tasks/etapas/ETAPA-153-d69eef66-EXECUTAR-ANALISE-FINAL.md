@@ -3,7 +3,9 @@
 **Tarefa:** #7 · **Pedido em:** — (antes de 2026-10-03) · **Executor:** —
 **Pedido:** Rodar `python analise-materias.py` para validar completude e gerar relatório final.
 **Objetivo:** Relatório final de completude das matérias.
-**Próximo passo:** 7.1 — liberação do usuário (ou decidir se a #19 já cobre esta tarefa)
+**Nível:** LEVE — só rodar a rotina de análise que já existe (`scripts/analise-materias.py`: só lê as matérias e grava o JSON) e registrar o relatório; sem código, sem banco. Mesma classificação da #181.2: `documentação/regra`.
+**Modelo:** LEVE · só Haiku (#247). Pela tabela do `.claude/rules/niveis.md`, DeepSeek Flash também pega LEVE — executada nesta sessão por DeepSeek (Flash) (local · main · s21).
+**Próximo passo:** 7.2 — liberada pelo usuário em 2026-10-17 (e de novo em 2026-10-17 20:50, "execute a tarefa 7"): rodar a análise e entregar o relatório final.
 
 > Etapa criada em 2026-10-13 na migração do quadro para fonte única (antes: bloco #7 do `TASKS.md`; texto do pedido sem alteração).
 
