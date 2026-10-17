@@ -1,0 +1,57 @@
+/* "📚 Gerenciar Aulas" do ATIVIDADES/index.html (tarefa #250): botão na barra "Turma:", modal 1
+   (lista das aulas) e modal 2 (formulário), e os cards das aulas que só existem no banco.
+   Os modais usam os estilos de atividades-crud-modal.css e indice-aula-data.css. */
+:root {
+    --gerenciar-aulas-botao: #004384;
+    --gerenciar-aulas-botao-texto: #ffffff;
+    --gerenciar-aulas-barra-fundo: #fffbea;
+    --gerenciar-aulas-barra-borda: #ffd700;
+    --gerenciar-aulas-card-borda: #667eea;
+}
+
+.gerenciar-aulas-botao {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    background: var(--gerenciar-aulas-botao);
+    color: var(--gerenciar-aulas-botao-texto);
+}
+
+/* Barra própria só quando o professor não tem a barra da turma (sem turma na matéria). */
+.barra-gerenciar-aulas {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background: var(--gerenciar-aulas-barra-fundo);
+    border-bottom: 2px solid var(--gerenciar-aulas-barra-borda);
+}
+
+/* Modais sem rolagem dentro da caixa (como o "Editar aula"); o modal 2 fica por cima do 1. */
+.gerenciar-aulas-fundo,
+.gerenciar-aulas-fundo--form {
+    overflow-y: auto;
+    align-items: flex-start;
+}
+.gerenciar-aulas-fundo .aula-modal-caixa,
+.gerenciar-aulas-fundo--form .aula-modal-caixa {
+    max-height: none;
+    overflow-y: visible;
+    margin: auto 0;
+}
+.gerenciar-aulas-fundo--form { z-index: 1002; }
+.gerenciar-aulas-botoes [hidden] { display: none; }
+
+@media (min-width: 901px) {
+    .gerenciar-aulas-fundo--form .aula-modal-caixa { width: min(980px, 100%); }
+}
+
+/* Card de aula que só existe no banco: borda tracejada para o professor reconhecer. */
+.aula.aula--do-banco { border: 2px dashed var(--gerenciar-aulas-card-borda); }
+
+/* Celular: botão na largura da tela, como os da barra da turma. */
+@media (max-width: 600px) {
+    .gerenciar-aulas-botao { width: 100%; padding: 11px 14px; }
+}

@@ -4,6 +4,9 @@
 // atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
+// Aulas que só existem no banco (cadastradas no "📚 Gerenciar Aulas", #250) ganham card na hora,
+// pelo indice-gerenciar-aulas-cards.js, e entram no mesmo fluxo; o botão "📕 Slides" do card vem
+// de aulas.conteudo.slides.
 // Atividades ativas vinculadas à aula no banco (atividade.aula_id) ganham um botão no card da aula
 // quando a página delas ainda não tem link no card (indice-aula-atividades-vinculadas.js, #249.1);
 // são acrescentadas antes do bloqueio da aula e refeitas quando o vínculo muda.
@@ -190,6 +193,7 @@ function atualizarCardsDaAula(aula) {
 function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
+    if (typeof desenharBotaoSlidesDoBanco === 'function') desenharBotaoSlidesDoBanco(item);
     if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
 }
 
@@ -314,17 +318,20 @@ async function iniciarCardsAula() {
  */
 async function desenharCardsDoIndice() {
     const itens = lerCardsDoIndice();
-    if (!itens.length) return;
-
     estadoCardsAula.ehProfessor = await verificarProfessorCardAula();
     try {
         const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
-        const aulas = await buscarAulasDasPaginasCard(paginas);
+        const aulas = paginas.length ? await buscarAulasDasPaginasCard(paginas) : new Map();
         itens.forEach((item) => { item.aula = encontrarAulaPelasPaginas(item, aulas); });
         await completarAulasPeloRotulo(itens);
     } catch (erro) {
         console.warn('Aulas dos cards indisponíveis:', erro.message);
     }
+    // Aulas só do banco (#250): o índice sem nenhum card do HTML também as mostra.
+    if (typeof acrescentarCardsDasAulasDoBanco === 'function') {
+        await acrescentarCardsDasAulasDoBanco(itens, estadoCardsAula.ehProfessor);
+    }
+    if (!itens.length) return;
     if (bloqueioDaAulaNoIndice()) await prepararBloqueioAulaTurma(estadoCardsAula.ehProfessor);
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);

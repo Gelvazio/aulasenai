@@ -66,16 +66,35 @@ do índice das atividades.
 
 ### #250.2 — Botão e modais do CRUD de aulas
 
-**Próximo passo:** repositório, botão na barra da turma, modal 1 (lista) e modal 2 (formulário
-Inserir/Editar/Excluir com "Link dos slides"), cards das aulas do banco sem página; carregar pelo
-`atividades-crud-modal.js`; documentação.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — tela ligada a permissões do professor, mais de 3 arquivos.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+- **Entrega:** arquivos novos `assets/js/indice-gerenciar-aulas-repositorio.js` (listar sem as
+  excluídas, inserir, editar, excluir pela `excluir_aula`, conferir administrador),
+  `indice-gerenciar-aulas.js` (botão "📚 Gerenciar Aulas" no começo da barra "Turma:", só
+  professor; modal 1 com a lista, ✏️ Editar, 🗑️ Excluir — desligado para quem não é
+  administrador — e ➕ Nova aula; fechar depois de mudar recarrega a página),
+  `indice-gerenciar-aulas-formulario.js` (modal 2: campos do "✏️ Editar aula" + "Link dos slides"
+  em `aulas.conteudo.slides`, modos Inserir/Editar/Excluir; aula nova nasce ativa e visível),
+  `indice-gerenciar-aulas-cards.js` (aula só do banco vira card na hora, com borda tracejada, e
+  entra no fluxo do "✏️ Editar aula", bloqueio e atividades vinculadas; botão "📕 Slides" em
+  qualquer card com link) e `assets/css/indice-gerenciar-aulas.css`. Alterados: `indice-aula-data.js`
+  (chama os cards do banco e desenha o botão dos slides; índice sem card do HTML também mostra as
+  aulas do banco) e `atividades-crud-modal.js` (carrega os arquivos novos na ordem certa).
+  Regra em `docs/regras/atividades.md` (índices); histórico.
+- **Verificação:** `node --check` nos 6 JS; linhas ≤ 100 e funções ≤ 45 nos arquivos novos;
+  leitura do fluxo (ordem de carga, eventos da barra da turma, RLS/JWT pelo `sbH` com o token do
+  usuário, `excluir_aula` devolve `boolean`). ⚠️ **Sem navegador:** conferir na tela (botão,
+  modais, card novo); inserir depende da política de insert da `aulas` (#250.3, frente local).
 
 ### #250.3 — Política de insert da `aulas` no banco (só local)
 
-**Próximo passo:** esperar a #250.1 aprovada.
+**Próximo passo:** Claude Code local: consultar as políticas de `aulas` (`pg_policies`); se não
+houver insert para o professor, criar SQL idempotente em `database/` (professor insere; aluno e
+anon não), aplicar e testar inserir pelo "📚 Gerenciar Aulas" com professor e excluir com o
+administrador; registrar em `docs/database.md`.
 
 - **Nível:** PESADO — banco (RLS); só o Claude Code local (`multiplas-ias.md`).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)

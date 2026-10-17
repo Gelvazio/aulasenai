@@ -668,16 +668,25 @@ function liberarLinksDosCardsIndice() {
 }
 
 /**
- * Carrega os dados da aula nos cards e o botão "Editar aula" (professor).
+ * Carrega os dados da aula nos cards, o botão "Editar aula" (professor) e o "📚 Gerenciar
+ * Aulas" (#250): os cards das aulas só do banco antes do indice-aula-data.js, que os chama; o
+ * botão e os modais depois, porque usam as funções do indice-aula-modal.js.
  */
 function carregarDataAulasIndice() {
-    const estilo = criarElementoCrud('link');
-    estilo.rel = 'stylesheet';
-    estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
-    const scripts = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
+    const folhas = ['css/indice-aula-data.css', 'css/indice-gerenciar-aulas.css'];
+    const estilos = folhas.map((caminho) => {
+        const estilo = criarElementoCrud('link');
+        estilo.rel = 'stylesheet';
+        estilo.href = BASE_ASSETS_CRUD + caminho;
+        return estilo;
+    });
+    const caminhos = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
         'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
         'js/indice-aula-modal.js', 'js/indice-aula-bloqueio.js',
-        'js/indice-aula-atividades-vinculadas.js', 'js/indice-aula-data.js'].map((caminho) => {
+        'js/indice-aula-atividades-vinculadas.js', 'js/indice-gerenciar-aulas-cards.js',
+        'js/indice-aula-data.js', 'js/indice-gerenciar-aulas-repositorio.js',
+        'js/indice-gerenciar-aulas-formulario.js', 'js/indice-gerenciar-aulas.js'];
+    const scripts = caminhos.map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;
@@ -685,7 +694,7 @@ function carregarDataAulasIndice() {
         script.addEventListener('error', liberarLinksDosCardsIndice);
         return script;
     });
-    document.head.append(estilo, ...scripts);
+    document.head.append(...estilos, ...scripts);
 }
 
 /**

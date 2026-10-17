@@ -633,6 +633,17 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     atividades que já existem no banco, pelo ID ou pela lista das outras aulas da matéria e das
     sem aula; tirar uma atividade de outra aula pede confirmação. Os links dos cards são do HTML:
     vincular não cria link no card. Código: `assets/js/indice-aula-modal-vinculo.js`;
+  - **"📚 Gerenciar Aulas"** (2026-10-17, tarefa #250; só professor): botão no começo da barra
+    "Turma:" (sem a barra, numa barra própria abaixo do resumo). Modal 1 = aulas da matéria da
+    página (sem as excluídas) com ✏️ Editar e 🗑️ Excluir e o "➕ Nova aula"; as ações abrem o
+    modal 2, com os campos do "✏️ Editar aula" + **"Link dos slides"** (`aulas.conteudo.slides`,
+    só `http(s)` ou caminho). Excluir é **lógico** (`excluir_aula`, só o Professor
+    Administrador; para os outros o 🗑️ fica desligado). A **aula nova já aparece como card** na
+    hora, mesmo sem página na pasta (card com borda tracejada, `indice-gerenciar-aulas-cards.js`),
+    e recebe atividades pelo "✏️ Editar aula"; qualquer card com `conteudo.slides` mostra
+    "📕 Slides". Fechar o modal 1 depois de mudar algo recarrega a página. Código:
+    `assets/js/indice-gerenciar-aulas*.js` e `assets/css/indice-gerenciar-aulas.css`, carregados
+    pelo `atividades-crud-modal.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards
