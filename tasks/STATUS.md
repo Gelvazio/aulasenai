@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s18 | #251.1 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) em execução | 🔄 Ativa | 2026-10-17 10:30 |
+| local · main · s18 | #251.1 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) — plano aguarda o seu "sim" | 👀 Aguardando o usuário | 2026-10-17 10:36 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
 | nuvem · ccr-3274812b-0nj48o | #250.2 ([377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md)) — botão e modais do Gerenciar Aulas | 🔄 Ativa | 2026-10-17 10:31 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
@@ -908,8 +908,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #250.2 | Botão e modais do CRUD de aulas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-17 10:31) | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #250.3 | Política de insert da `aulas` no banco (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #250.1 | ⬜ Pendente | — | [377-2680fc00](etapas/ETAPA-377-2680fc00-GERENCIAR-AULAS-CRUD-NO-INDICE.md) | — |
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
-| #251.1 | Plano e aprovação (tarefa grande) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s18) (desde 2026-10-17 10:30) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #251.1 | Plano e aprovação (tarefa grande) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguardando aprovação | Claude Code (Opus 5.5) (local · main · s18) (desde 2026-10-17 10:30) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.2 | Criar a skill `gerenciador-de-tarefas` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #251.1 | ⬜ Pendente | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
+| #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | ⬜ Pendente | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
