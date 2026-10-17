@@ -914,6 +914,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #243.5 | Avaliações objetivas 01 e 02, prática e média final · `PESADO · effort high` | 🟠 Alta | #243.4 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.6 | Aplicar os seeds no banco (só local) · `PESADO · effort high` | 🟠 Alta | #243.5 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | #243.7 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #243.6 | ⬜ Pendente | — | [370-73eb24d3](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
+| #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:49) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.2 | Executar o plano aprovado · `PESADO · effort high` | 🟡 Média | #247.1 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.3 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | #247.2 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1380,10 +1384,6 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | #29: skill `proxima-task` com `evals` e `test_output.md` no formato antigo | Não mexer em testes sem pedido | Só se o usuário pedir |
 | #29: cópia `~/.agents/skills/documentacao-padrao` sem a exceção do quadro | Fora do repositório; só é usada em projeto sem quadro | Se o usuário quiser |
 | #80: `gerar_indices.py` está atrás das páginas de índice (não põe `popup.js`, `faixa-materias-ensalado.js` nem `data-curso-id`; isso vem de `scripts/*/indice_*.sh`) — rodar o gerador apaga a faixa ENSALADO | Fora do pedido | Só se o usuário pedir |
-| #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:49) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.2 | Executar o plano aprovado · `PESADO · effort high` | 🟡 Média | #247.1 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.3 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | #247.2 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | Progresso da turma para o professor em **todas** as atividades (discursivas: ligar o campo; objetivas: módulo equivalente em `respostas-atividade.js`) | Começou só pela prova ADAG id 82 (pedido do usuário) | Quando o usuário pedir |
 | Nome "08-10-2026" da prova id 82 está **só no HTML**: regerar a página pelo `.md` volta para "06-10-2026" | Usuário pediu a correção apenas no HTML | Antes de regerar, trocar o `Rótulo da aula` no `.md` (se o usuário quiser) |
 | Ligar `Bloquear colar: sim` nas outras avaliações discursivas (e, opcional, registrar no banco as tentativas de colar) | Usuário sem tempo em 2026-10-08; começou só pela prova ADAG id 82 | Quando o usuário pedir (regra em `docs/regras/atividades.md`) |
