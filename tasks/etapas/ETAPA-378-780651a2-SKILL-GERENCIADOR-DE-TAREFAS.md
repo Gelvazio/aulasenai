@@ -98,16 +98,49 @@ do líder (link conferido) e as regras do projeto citam o modo "pastas por model
 
 ### #251.2 — Criar a skill `gerenciador-de-tarefas`
 
-**Próximo passo:** escrever `SKILL.md` e `modelo-de-brief.md` em `C:ontes\.claude\skills\gerenciador-de-tarefas`.
+**Próximo passo:** — (entregue em 2026-10-17 10:55).
 
 - **Nível:** PESADO — arquitetura de orquestração entre pastas e sessões.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `C:ontes\.claude\skills\gerenciador-de-tarefas\SKILL.md` (211 linhas) e
+  `modelo-de-brief.md` (95 linhas), **fora do Git** (`C:ontes` não é repositório); junção
+  `~/.claude/skills/gerenciador-de-tarefas` → essa pasta (link simbólico exige administrador). O
+  commit da entrega leva só o quadro.
+- **Revisão:** fluxo com 3 revisores em paralelo (regras do projeto, ferramentas, brief seguido por
+  modelo fraco): 42 achados, todos tratados na 2ª versão — seeds sem disparo impossível, pasta
+  ocupada por qualquer reserva da frente, status exatamente `⬜ Pendente`, Próximo passo que pede o
+  usuário fica de fora, líder retomado só quando todas as sessões param, pastas confiáveis,
+  conferência do modelo real, `{MODELO_COLUNA}`, dependências no `task_complete.md`, sequência de
+  rebase, trailer com dois `-m`, nomes de frente `local · main · <pasta>`, verify com visualizador.
+- **Verificação:** `claude -p` aberto em `C:ontesulas-senai-CLAUDE-OPUS-LIDER` respondeu "SIM"
+  e citou a descrição da skill (junção funciona); a skill também apareceu nesta sessão. As 4 pastas
+  ainda **não são confiáveis** no Claude Code (`~/.claude.json` sem `hasTrustDialogAccepted`): o
+  usuário abre cada uma uma vez e aceita.
+- **Anotação:** o commit `5f45f378` desta tarefa apagou por engano o `tasks/task_complete.md`
+  (script abriu o arquivo para gravação antes de ler); restaurado no `e2a7bb6f` (achado pela
+  revisão). Lição registrada no `STATUS.md`.
 
 ### #251.3 — Registrar o modo "pastas por modelo" nas regras do projeto
 
-**Próximo passo:** aguardar a #251.2.
+**Próximo passo:** aguardar o "sim" do usuário ao escopo ampliado (a revisão da #251.2 mostrou
+exceções de regra necessárias); depois delegar ao `executor-leve`.
 
 - **Nível:** LEVE — só `.md` de regra e o visualizador gerado.
 - **Modelo:** só Haiku — nunca outro (executa o `executor-leve`).
+- **Descrição (escopo ampliado em 2026-10-17 10:55, aguarda aprovação):**
+  - `niveis.md`: parágrafo "Pastas por modelo (skill gerenciador-de-tarefas)" — as 4 pastas e
+    frentes `local · main · lider|haiku|sonnet|opus`; o líder não reserva nem executa, só dispara e
+    faz o `verify`; cada pasta reserva, commita e edita o quadro da própria subtarefa (diferente do
+    `liderar-equipe`); banco só na pasta OPUS.
+  - `seeds.md`: as pastas HAIKU e SONNET são "frente sem banco" e não deixam recado (o líder manda
+    os seeds para a pasta OPUS).
+  - `tasks/verificacao.md`: a frente do líder `🧭 Líder (sem reserva)` não é conflito; o `verify`
+    do líder a cada entrega não abre TASK.
+  - `AGENTS.md`: nota na regra 1 (sessão trabalhadora não cria TASK, reserva a que recebeu; o
+    líder não abre TASK para o `verify`) e na regra 12 (nas pastas por modelo só o líder roda git
+    no `rules-ai`; as outras só leem).
+  - `claude-code.md` (skill `gerenciador-de-tarefas`, pessoal, fonte em `C:ontes\.claude\skills`),
+    `docs/HISTORICO-REGRAS.md` e visualizador regenerado.
+- **Critérios de aceitação:** cada arquivo de regra continua ≤ 5 KB; sem repetir regra (apontar
+  para `niveis.md`); visualizador regenerado.
 - **Entrega:** — · **Verificação:** —
