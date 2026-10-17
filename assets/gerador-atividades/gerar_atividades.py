@@ -342,6 +342,21 @@ def link(pasta, nome, rotulo, classe):
     return f'<a class="btn {classe}" href="{quote(nome)}">{rotulo}</a>'
 
 
+def link_slides(pasta, nome):
+    """Botão dos slides no card do índice, só quando o arquivo existe (tarefa #245).
+
+    Args:
+        pasta: Pasta ATIVIDADES (o caminho dos slides é relativo a ela).
+        nome: Valor do campo "Slides" da fonte.
+
+    Returns:
+        Trecho HTML do botão, ou "" se a fonte não indicar slides ou o arquivo não existir.
+    """
+    if not nome or not (pasta / nome).is_file():
+        return ""
+    return link(pasta, nome, rotulo_slides(nome), "")
+
+
 def linha_slides(pasta_pagina, nome):
     """Linha "Slides da aula" das instruções da atividade (vazia se não houver arquivo).
 
@@ -388,7 +403,7 @@ def gerar_index(pasta, aulas, dados):
             <div class="acoes">
                 {link(pasta, a["html"], "📝 Atividade", "principal")}
                 {link(pasta, a["conteudo"], "📚 Conteúdo (.md)", "")}
-                {link(pasta, a["pdf"], rotulo_slides(a["pdf"]), "")}
+                {link_slides(pasta, a["pdf"])}
             </div>
             <details>
                 <summary>Ver os {a["total"]} itens</summary>

@@ -81,14 +81,24 @@ conferir por `grep` que não sobra link para slide inexistente. Sem navegador.
 
 ### #245.2 — Geradores ligam o link só se o arquivo existir
 
-**Próximo passo:** ajustar `gerar_index` do `gerar_atividades.py` e criar
-`scripts/slides/ligar_links_slides.py`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código Python com lógica em 1 a 3 geradores.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+- **Entrega:** `gerar_atividades.py`: função `link_slides` — o card do índice antigo só mostra o
+  botão dos slides quando o arquivo existe (antes: botão apagado "Arquivo não encontrado").
+  Script novo `scripts/slides/ligar_links_slides.py`: nas aulas de `CONTEUDO/`, slide existente
+  (PDF ou PPTX) → link `[📕 Slides da aula NN (PDF)](../AULAS/...)`; link para slide inexistente →
+  caminho entre crases + "(o professor publica em outro momento)"; caminho que já estava entre
+  crases e sem arquivo fica como está (Banco de Dados e ITIC já estavam assim, sem clique).
+- **Verificação:** `py_compile` nos dois arquivos; linhas ≤ 100 no script novo; teste numa cópia
+  na pasta temporária da sessão: link quebrado → texto; slide PDF existente → link; `.pptx`
+  publicado depois → link para o `.pptx`; 2ª rodada sem mudança (idempotente).
 
 ### #245.3 — Aplicar nos arquivos já gerados (todas as matérias)
 
-**Próximo passo:** esperar a #245.2.
+**Próximo passo:** rodar `python3 scripts/slides/ligar_links_slides.py`, conferir por `grep`,
+registrar a regra em `docs/regras/materias.md` e no histórico, recado às frentes.
 
 - **Nível:** PESADO — mudança em massa, mais de 3 arquivos ligados.
 
