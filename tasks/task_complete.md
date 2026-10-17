@@ -247,3 +247,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #247.3 | Regra do projeto · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #247.2 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.4 | Trava no Claude Code (hook) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #247.3 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.5 | Coluna Modelo e aviso em todas as tarefas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #247.4 | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #181.1 | Listar as tarefas com aceite pendente e separar por tipo (LEVE) · effort low | 🔴 Máxima | LEVE · só Haiku | — | ✅ Concluído (aceite do usuário 2026-10-17) | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |

@@ -39,10 +39,11 @@ aceites sabendo o que está pronto e o que faltou.
 | 2026-10-15 | Prioridade 🔴 Máxima ("status urgente") | Gelvazio |
 | 2026-10-15 | Foco: só as tarefas com aceite pendente; conferir se o pedido foi feito | Gelvazio |
 | 2026-10-15 | Dividida em subtarefas por tipo, cada uma com nível (piloto da #182) | Gelvazio (aprovou o plano da #182) |
+| 2026-10-17 | Aceite da #181.1: critério e lista aprovados pelo usuário ("181.1 aceita") | Gelvazio |
 
 ### #181.1 — Listar as tarefas com aceite pendente e separar por tipo
 
-**Próximo passo:** 👀 usuário aprovar o critério e a lista abaixo; depois a #181.2 e a #181.3 podem começar.
+**Próximo passo:** ✅ Aceito pelo usuário em 2026-10-17 (ver Decisões). A #181.2 (Haiku) e a #181.3 (Sonnet) podem começar; a #181.4 (Claude Code local) também.
 
 - **Nível:** LEVE — só ler o quadro e as etapas e escrever a lista.
 - **Modelo:** só Haiku — nunca outro (#247)
