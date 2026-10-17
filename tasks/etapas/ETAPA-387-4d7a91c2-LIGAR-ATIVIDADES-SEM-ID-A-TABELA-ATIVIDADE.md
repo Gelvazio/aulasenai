@@ -114,6 +114,27 @@ ligado à sua aula, e a página da atividade usa esse id.
 - **Critérios de aceitação:** seed **CONCLUÍDO** (md5); as 2 páginas com id e `aula_id` 104/105;
   nenhuma aula nova na matéria 50.
 
+### #260.6 — ID do banco em todos os botões de atividade do card
+
+**Próximo passo:** executor-medio (Sonnet) faz o ajuste em `assets/js/atividades-crud-modal.js`.
+
+- **Nível:** MEDIO — JS de tela, 1 arquivo, sem banco.
+- **Modelo:** só Sonnet — nunca outro
+- **Pedido (2026-10-17 18:20):** "a aula id=27, lista atividades, que não mostram seu id" ·
+  "deve sempre vir do banco de dados, em todas as atividades".
+- **Causa (líder, leitura do código):** a etiqueta "ID NN" é posta por `mostrarIdsNosCards`
+  (`atividades-crud-modal.js:589`) só para as páginas de `estadoCrud.paginas`, coletadas **uma
+  vez** em `iniciarCrudAtividades` (linha 604). Os botões "📝" das atividades vinculadas pelo
+  banco (`indice-aula-atividades-vinculadas.js`; ex.: 80, 81, 84 e 36, hoje na aula 27) chegam
+  **depois** e nunca recebem a etiqueta nem o ✏️. Nenhum id está escrito no HTML.
+- **Descrição:** sempre que os botões vinculados forem (re)feitos — evento
+  `aula-bloqueio-alterado` (`EVENTO_BLOQUEIO_ALTERADO_CARDS_AULA`, disparado por
+  `indice-aula-data.js`) —, coletar de novo as páginas do índice e refazer as etiquetas pelo
+  banco (`listarAtividadesCrud`). Só para professor (como hoje).
+- **Critérios de aceitação:** todo `a.btn.principal` com atividade cadastrada mostra "ID NN" do
+  banco, inclusive os 📝 vinculados; sem etiqueta duplicada; `node --check` passa; função ≤ 45
+  linhas e JSDoc; arquivo ≤ 1000 linhas.
+
 ### #260.4 — Documentação
 
 **Próximo passo:** aguarda a #260.2 e a #260.5.
