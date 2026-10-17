@@ -58,6 +58,7 @@ Formatação e Estruturação-old", um com a atividade ID 19 e outro com as ativ
 **Próximo passo:** 👀 esperar o "sim" do usuário para o `UPDATE`.
 
 - **Nível:** PESADO — `UPDATE` no banco de produção.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** `UPDATE atividade SET aula_id = 69 WHERE id = 19 AND aula_id = 26 RETURNING
   id, aula_id;` (volta: `SET aula_id = 26 WHERE id = 19`).
 - **Critérios de aceitação:** consulta depois do `UPDATE` mostra a atividade 19 na aula 69 e as
@@ -69,6 +70,7 @@ Formatação e Estruturação-old", um com a atividade ID 19 e outro com as ativ
 `indice-aula-modal.js`.
 
 - **Nível:** MEDIO — código com lógica em 2 arquivos de `assets/js`, sem banco.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** o "Editar aula" passa os cards do índice ao "Gerenciar atividades"; vincular
   uma atividade que é link de outro card (com outra aula) é recusado com a explicação. Ao abrir o
   "Editar aula" de uma aula que também é a de outro card, aparece o aviso com o nome do outro card.
@@ -79,3 +81,4 @@ Formatação e Estruturação-old", um com a atividade ID 19 e outro com as ativ
 **Próximo passo:** 👀 o usuário edita um dos cards da Aula 06 e confere que o outro não muda.
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

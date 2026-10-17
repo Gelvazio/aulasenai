@@ -8,6 +8,7 @@ atividades objetivas desta matéria mostram só as questões 1 até o mínimo, c
 (etapa 160-d7ade403).
 **Próximo passo:** 38.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
+**Modelo (#38):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (15, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
 - `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html`

@@ -6,6 +6,7 @@
 as matérias de todos os cursos, inclusive as páginas que forem criadas depois (geradores).
 **Próximo passo:** 179.1 — conferir de novo a lista de páginas sem o botão (depois da #178).
 
+**Modelo (#179):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Como ligar (igual à #82 e à #84)
 
 - Pôr `data-exportar-meu-gabarito="sim"` como 1º atributo do `<body>` de cada página com folha

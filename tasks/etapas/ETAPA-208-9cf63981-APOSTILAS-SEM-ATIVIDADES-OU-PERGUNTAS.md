@@ -5,6 +5,7 @@
 **Objetivo:** nenhuma apostila tem atividades/perguntas (o gerador recusa); a de Testes de Front-End sai sem exercícios e sem vídeos (opção B) e sem as citações a eles na introdução.
 **Próximo passo:** 81.2 — gerador sem exercícios (nada do gerador foi alterado ainda).
 
+**Modelo (#81):** só Sonnet — nunca outro (#247)
 ### Estado para quem assumir (liberada em 2026-10-14 20:25 por Claude Code, local · main)
 
 **Já feito (não refazer):**

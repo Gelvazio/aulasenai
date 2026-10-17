@@ -45,6 +45,7 @@ aceites sabendo o que está pronto e o que faltou.
 **Próximo passo:** 👀 usuário aprovar o critério e a lista abaixo; depois a #181.2 e a #181.3 podem começar.
 
 - **Nível:** LEVE — só ler o quadro e as etapas e escrever a lista.
+- **Modelo:** só Haiku — nunca outro (#247)
 - **Descrição:** para cada tarefa 👀 (aceite, aceites ou liberação): número, título, pedido em
   1 linha e o **tipo**: `documentação/regra`, `tela` (HTML/CSS/JS) ou `banco/segurança`.
 - **Critérios de aceitação:** todas as 👀 listadas; tipo de cada uma; dúvida de tipo = o mais
@@ -79,6 +80,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 **Próximo passo:** aguardando a #181.1.
 
 - **Nível:** LEVE — só ler `.md` e comparar com o pedido.
+- **Modelo:** só Haiku — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `documentação/regra` da lista: o arquivo tem o que foi
   pedido? Anotar na etapa da tarefa: ✅ Feito, ⚠️ Parcial (o que falta) ou ❌ Não feito, com a prova.
 - **Entrega:** — · **Verificação:** —
@@ -88,6 +90,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 **Próximo passo:** aguardando a #181.1.
 
 - **Nível:** MEDIO — ler e entender código de telas.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `tela`: o código faz o que o pedido diz? Mesmo resultado
   e prova da #181.2; o que só dá para ver na tela vira "conferir na tela" (sem navegador).
 - **Entrega:** — · **Verificação:** —
@@ -97,6 +100,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 **Próximo passo:** aguardando a #181.1.
 
 - **Nível:** PESADO — banco, RLS e gabarito; só o Claude Code **local** (acesso ao banco).
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `banco/segurança`: o banco (só consulta) e o código
   batem com o pedido? Mesmo resultado e prova da #181.2. ⛔ Nada de aplicar SQL.
 - **Entrega:** — · **Verificação:** —
@@ -106,6 +110,7 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 **Próximo passo:** aguardando a #181.2, a #181.3 e a #181.4.
 
 - **Nível:** MEDIO — juntar e conferir os resultados das três conferências.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** nesta seção, três listas: **prontas para o aceite**, **parciais** (o que falta)
   e **não feitas**; o que faltar vira tarefa nova (com nível).
 - **Entrega:** — · **Verificação:** —
@@ -113,3 +118,5 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 ### #181.6 — Aceite do usuário
 
 **Próximo passo:** 👀 o usuário lê o relatório da #181.5.
+
+- **Modelo:** Usuário — nenhuma IA executa (#247)

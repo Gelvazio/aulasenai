@@ -8,6 +8,7 @@ como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
 **Próximo passo:** 52.1 — pôr `data-marcar-entregue="sim"` no `<body>` das páginas abaixo
 (confirmar antes o nome do atributo na etapa 172-0ef7953a).
 
+**Modelo (#52):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (20, objetivas e práticas, em 2026-10-14)
 
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/ATIVIDADE-DISCURSIVA-AULA-01.html`

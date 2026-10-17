@@ -1,6 +1,7 @@
 > Etapa movida do `tasks/STATUS.md` em 2026-10-09 (texto sem alteração; links relativos ajustados à pasta). Índice e estado geral: [../STATUS.md](../STATUS.md).
 
 ## Etapa 67 — Vídeos na apostila de Reforço de Linguagens + identificação (tarefa pequena, 2026-10-07)
+**Modelo (#11):** só Sonnet — nunca outro (#247)
 
 **Tarefa:** #11 (conferir a duração dos vídeos na máquina local)
 **Próximo passo:** 11.4 — conferir a duração dos 29 vídeos na máquina local (passos no fim desta etapa).

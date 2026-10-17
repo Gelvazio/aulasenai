@@ -8,6 +8,7 @@ como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
 **Próximo passo:** 50.1 — pôr `data-marcar-entregue="sim"` no `<body>` das páginas abaixo
 (confirmar antes o nome do atributo na etapa 172-0ef7953a).
 
+**Modelo (#50):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (14, objetivas e práticas, em 2026-10-14)
 
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`

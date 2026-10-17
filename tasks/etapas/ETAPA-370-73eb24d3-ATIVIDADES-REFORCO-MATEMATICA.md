@@ -68,25 +68,30 @@
 **Próximo passo:** objetiva e prática da Aula 01.
 
 - **Nível:** PESADO — questões com gabarito.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 ### #243.4 — Atividades das aulas 09 a 16 (objetiva + prática + seeds PENDENTE)
 
 **Próximo passo:** esperar a #243.3.
 
 - **Nível:** PESADO — questões com gabarito.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 ### #243.5 — Avaliações objetivas 01 e 02, avaliação prática e média final
 
 **Próximo passo:** esperar a #243.4.
 
 - **Nível:** PESADO — questões com gabarito.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 ### #243.6 — Aplicar os seeds no banco
 
 **Próximo passo:** esperar a #243.5.
 
 - **Nível:** PESADO — banco (só o Claude Code local).
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 ### #243.7 — Aceite do usuário
 
 - **Nível:** LEVE — aceite.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

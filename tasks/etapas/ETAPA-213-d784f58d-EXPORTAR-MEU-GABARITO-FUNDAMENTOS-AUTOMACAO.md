@@ -7,6 +7,7 @@ entregar) nas páginas desta matéria, como na #82 (etapa 209-70a67f33), que tra
 **Próximo passo:** 86.1 — conferir na etapa 209-70a67f33 o atributo que liga o botão e
 pôr nas páginas abaixo (incluir discursivas e avaliações se a #82 decidir que valem).
 
+**Modelo (#86):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (15, objetivas e práticas, em 2026-10-14)
 
 - `MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`

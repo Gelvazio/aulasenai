@@ -6,6 +6,7 @@
 páginas de atividade das matérias que já têm questões respondidas no banco e ainda não têm o botão.
 **Próximo passo:** 178.1 — conferir de novo as matérias com respostas no banco e a lista de páginas abaixo.
 
+**Modelo (#178):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Como ligar (igual à #82 e à #84)
 
 - Pôr `data-exportar-meu-gabarito="sim"` como 1º atributo do `<body>` de cada página com folha

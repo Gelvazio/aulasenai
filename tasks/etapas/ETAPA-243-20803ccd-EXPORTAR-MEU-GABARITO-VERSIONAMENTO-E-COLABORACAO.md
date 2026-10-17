@@ -7,6 +7,7 @@ entregar) nas páginas desta matéria, como na #82 (etapa 209-70a67f33), que tra
 **Próximo passo:** 116.1 — conferir na etapa 209-70a67f33 o atributo que liga o botão e
 pôr nas páginas abaixo (incluir discursivas e avaliações se a #82 decidir que valem).
 
+**Modelo (#116):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas
 
 Em 2026-10-14 a matéria (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/VERSIONAMENTO-E-COLABORACAO/`) ainda **não tem página de atividade** que o aluno responde e entrega. Quando as páginas forem criadas, elas já devem nascer com o atributo (ou recebê-lo nesta tarefa).

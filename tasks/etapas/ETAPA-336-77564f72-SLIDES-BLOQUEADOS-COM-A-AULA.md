@@ -81,12 +81,14 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 **Próximo passo:** 👀 o usuário envia os 10 PDFs de `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/` para a pasta `48` do bucket `slides` (painel do Supabase → Storage → slides → criar pasta `48` → enviar), sem mudar os nomes; depois a IA confere por consulta.
 
 - **Nível:** LEVE — envio pelo painel do Supabase (👀 usuário) e conferência por consulta.
+- **Modelo:** só Haiku — nunca outro (#247)
 
 ### #209.4 — Links dos slides pelo link temporário e PDFs fora do site
 
 **Próximo passo:** depende da #209.3.
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (índice, 10 páginas, geradores) e segurança.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Critérios de aceitação:** script único; nomes globais sem repetição; `node --check`;
   `.vercelignore` sem a exceção dos slides.
 
@@ -95,18 +97,21 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 **Próximo passo:** depende da #209.4.
 
 - **Nível:** LEVE — só documentação.
+- **Modelo:** só Haiku — nunca outro (#247)
 
 ### #209.6 — Aceite do usuário
 
 **Próximo passo:** depende da #209.5; o usuário testa como aluno com a aula bloqueada e liberada.
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)
 
 ### #209.7 — Remover o armazenamento `slides` do Supabase
 
 **Próximo passo:** 👀 o usuário apaga o bucket vazio no painel (Storage → slides → Delete bucket); depois a IA confere por consulta.
 
 - **Nível:** PESADO — banco e políticas do Storage.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Pedido (2026-10-16 18:44):** "remova esse armazenamento do supabase", depois de o usuário perguntar quem tinha pedido o armazenamento (a forma era proposta da IA). As subtarefas #209.3 a #209.6 ficam canceladas; os PDFs continuam no site como antes.
 - **Entrega (2026-10-16 18:46):** `database/2026-10-16-remover-slides-storage.sql` aplicado pelo conector: as 4
   políticas e a função saíram. O `delete from storage.buckets` foi recusado pelo Supabase

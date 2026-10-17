@@ -20,9 +20,12 @@ temporária, sem navegador) ou mandar o aviso do console (F12) da página logado
   conferência foi feita logado como professor.
 
 - **Nível:** PESADO — envolve a conferência do aluno no banco (entrega) e o gabarito do aluno.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Critérios de aceitação:** aluno que finalizou a 152 vê o botão e exporta o PDF com as
   próprias respostas; aluno que não finalizou não vê.
 
 ### #199.2 — Aceite do usuário
 
 **Próximo passo:** 👀 depois da #199.1, o usuário confere o botão na 152.
+
+- **Modelo:** Usuário — nenhuma IA executa (#247)

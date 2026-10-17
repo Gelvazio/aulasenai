@@ -17,6 +17,7 @@ botão ON/OFF de bloqueio de atividade por turma funciona de ponta a ponta.
 lendo (sem editar, sem navegador; no banco só `SELECT`).
 
 - **Nível:** PESADO — banco (consultas ao catálogo e às atividades), vários arquivos ligados.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:**
   1. **Reversão completa:** comparar com o commit `95bf1974` cada arquivo tocado por `b8e37ece`,
      `77167473`, `7877270b` e `1f56c8e6`; procurar no repositório (js, html, css, py, geradores)

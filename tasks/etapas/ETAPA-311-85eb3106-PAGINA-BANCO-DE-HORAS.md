@@ -14,6 +14,7 @@ como lançado, sem perder a marcação ao recarregar.
 do `.txt`; se o `.vercelignore` deve tirar a pasta do site) e depois criar a página.
 
 - **Nível:** MEDIO — tela com lógica (HTML, CSS e JS), de 1 a 3 arquivos.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** em `GERADOR-AULAS/BANCO-HORAS-GELVAZIO-CAMARGO/`, `index.html` com um accordion
   por semana (dias + sábado da semana); ao lado de cada dia, botão ON/OFF "Lançado?"; o estado de
   cada botão vai para o `localStorage` e volta ao recarregar.
@@ -25,3 +26,4 @@ do `.txt`; se o `.vercelignore` deve tirar a pasta do site) e depois criar a pá
 **Próximo passo:** 👀 o usuário abre a página e confere (sem navegador pela IA).
 
 - **Nível:** LEVE — só conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

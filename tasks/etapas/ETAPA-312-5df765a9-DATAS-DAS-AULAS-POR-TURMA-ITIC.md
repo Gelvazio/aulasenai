@@ -52,6 +52,7 @@ combo as datas das aulas daquela turma (cada turma tem dias diferentes), lidas d
 pela IA).
 
 - **Nível:** MEDIO — tela com lógica (JS), de 1 a 3 arquivos.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** no topo da atividade de ITIC, logo abaixo do combo de turma, listar as datas das
   aulas da turma escolhida (busca na tabela da #185.1, com JWT); muda ao trocar a turma.
 - **Critérios de aceitação:** lista muda com a turma; sem dado no HTML; `node --check` no JS.
@@ -73,3 +74,4 @@ combo, e trocar a turma relê os valores.
 **Próximo passo:** 👀 o usuário confere a página.
 
 - **Nível:** LEVE — só conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

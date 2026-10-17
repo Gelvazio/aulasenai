@@ -8,6 +8,7 @@ atividades objetivas desta matéria mostram só as questões 1 até o mínimo, c
 (etapa 160-d7ade403).
 **Próximo passo:** 39.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
+**Modelo (#39):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (9, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
 - `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html`

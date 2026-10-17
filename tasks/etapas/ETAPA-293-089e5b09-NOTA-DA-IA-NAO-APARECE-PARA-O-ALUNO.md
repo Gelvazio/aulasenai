@@ -5,6 +5,7 @@
 **Objetivo:** auditar tela, funções e banco e garantir que o aluno nunca recebe a `nota_ia`.
 **Próximo passo:** 166.5 — Claude Code local: conferir como aluno que a tabela `correcao_discursiva` não devolve nada e que a view `correcao_discursiva_aluno` não traz `nota_ia` (e que a prova corrigida do aluno volta a mostrar as notas); depois 166.7 (aceite).
 
+**Modelo (#166):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Estado para quem assumir (liberada em 2026-10-14 20:56 por Claude Code, local · main)
 
 > ⚠️ **URGENTE — a tela de resultado do aluno está sem dados até o item 166.4 ser feito.** O banco já foi alterado (a tabela `correcao_discursiva` deixou de ser legível pelo aluno), mas `assets/js/resultado-aluno-discursiva.js` ainda lê a tabela e recebe lista vazia: o aluno com gabarito liberado vê tudo como "aguardando correção", sem explicação nem histórico das notas. O professor não é afetado.

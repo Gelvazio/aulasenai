@@ -58,3 +58,4 @@
 **Próximo passo:** o usuário ler a apostila (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/APOSTILA/APOSTILA-BANCO-DE-DADOS.html`) e dar o aceite.
 
 - **Nível:** LEVE — aceite.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

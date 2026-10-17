@@ -8,6 +8,7 @@ atividades objetivas desta matéria mostram só as questões 1 até o mínimo, c
 (etapa 160-d7ade403).
 **Próximo passo:** 40.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
+**Modelo (#40):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (15, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
 - `MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`

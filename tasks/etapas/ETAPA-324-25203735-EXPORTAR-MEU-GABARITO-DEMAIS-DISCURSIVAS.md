@@ -17,6 +17,7 @@ outras atividades discursivas, além da id 152, do mesmo jeito que a #196 fizer.
 LEVE) e ligar o botão nas páginas da lista abaixo.
 
 - **Nível:** PESADO — mudança em massa (33 páginas em 4 matérias); revisto em 2026-10-16 10:48
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
   na entrega da #196.1. Dividida por matéria em pedaços de até 3 páginas, cada pedaço é LEVE
   (só um atributo no `<body>`, sem lógica: o código do botão já é global).
 - **Como fazer (vem da #196.1):** em cada página discursiva (carrega
@@ -39,3 +40,4 @@ LEVE) e ligar o botão nas páginas da lista abaixo.
 **Próximo passo:** 👀 depois da #197.1, o usuário confere o botão em outra discursiva.
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

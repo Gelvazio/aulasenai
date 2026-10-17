@@ -8,6 +8,7 @@ como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
 **Próximo passo:** 57.1 — conferir as páginas de atividade da matéria (`MATERIAIS/RIO_DO_SUL_MAIS_TECH/COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO/ATIVIDADES/`)
 e o nome do atributo na etapa 172-0ef7953a.
 
+**Modelo (#57):** só Sonnet — nunca outro (#247)
 ### Páginas
 
 Em 2026-10-14 a matéria (`MATERIAIS/RIO_DO_SUL_MAIS_TECH/COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO/`) ainda **não tem página de atividade** que o aluno responde e entrega. Quando as páginas forem criadas, elas já devem nascer com o atributo (ou recebê-lo nesta tarefa).

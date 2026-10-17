@@ -4,6 +4,7 @@
 **Pedido:** A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/` (9 capítulos) tem **28 vídeos com a duração `a conferir`**: a sessão em nuvem não acessa o YouTube e o usuário pediu para seguir e conferir depois, localmente.
 **Objetivo:** Duração conferida de todos os vídeos (ou vídeo trocado).
 **Próximo passo:** 14.1 — conferir cada vídeo de `APOSTILA/RASCUNHOS/VIDEOS-A-CONFERIR.md` pelos metadados (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador
+**Modelo (#14):** só Sonnet — nunca outro (#247)
 
 > Etapa criada em 2026-10-13 na migração do quadro para fonte única (antes: bloco #14 do `TASKS.md`; texto do pedido sem alteração).
 

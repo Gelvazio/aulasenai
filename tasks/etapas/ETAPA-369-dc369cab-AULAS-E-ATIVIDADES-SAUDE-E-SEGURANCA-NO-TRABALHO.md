@@ -21,6 +21,7 @@
 **Próximo passo:** começar (dependências ✅).
 
 - **Nível:** MEDIO — ementa e JSON de dados, sem banco.
+- **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** Completar a `EMENTA-CHALKIE-AI.md` (14.800–14.950 caracteres, conferida com a UC da `EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md`) e criar o `materia.json` com o plano das aulas (1 aula = 4 h: tema, domínios, capacidades, conteúdos, indicadores, situação-problema, atividade); `DOCUMENTACAO/PLANO-AULAS.md` e os 5 status (`materias-global.md`).
 
 ### #242.1 — Aula 01 (4 h)
@@ -28,6 +29,7 @@
 **Próximo passo:** esperar #242.0.
 
 - **Nível:** PESADO — gera seed SQL (banco).
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` com as partes de `docs/regras/materias.md` §3 (só conteúdo da ementa desta UC, "você, como aluno consultor"), linha no `AULAS/STATUS-AULAS.md` e seed da aula na tabela `aulas` (PENDENTE em `database/SEEDS-APLICADOS.md`; aplicar e conferir = Claude Code local). Fecha com o seed CONCLUÍDO.
 
 ### #242.2 — Objetiva da aula 01 — 50 questões
@@ -35,6 +37,7 @@
 **Próximo passo:** esperar #242.1.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** 50 questões objetivas da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md`, fora do site pelo `.vercelignore`), seed de `atividade` + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), botão "📄 Exportar Meu Gabarito" ligado e linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.3 — Prática da aula 01 — discursiva
@@ -42,6 +45,7 @@
 **Próximo passo:** esperar #242.1.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** Prática/discursiva da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` + `-GABARITO.md`, fora do site), seed de `atividade` + tópicos + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), "Progresso da turma" pelo layout global e `- **Exportar Meu Gabarito:** sim` na fonte; linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.4 — Aula 02 (4 h)
@@ -49,6 +53,7 @@
 **Próximo passo:** esperar #242.1.
 
 - **Nível:** PESADO — gera seed SQL (banco).
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` com as partes de `docs/regras/materias.md` §3 (só conteúdo da ementa desta UC, "você, como aluno consultor"), linha no `AULAS/STATUS-AULAS.md` e seed da aula na tabela `aulas` (PENDENTE em `database/SEEDS-APLICADOS.md`; aplicar e conferir = Claude Code local). Fecha com o seed CONCLUÍDO.
 
 ### #242.5 — Objetiva da aula 02 — 50 questões
@@ -56,6 +61,7 @@
 **Próximo passo:** esperar #242.4.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** 50 questões objetivas da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md`, fora do site pelo `.vercelignore`), seed de `atividade` + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), botão "📄 Exportar Meu Gabarito" ligado e linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.6 — Prática da aula 02 — discursiva
@@ -63,6 +69,7 @@
 **Próximo passo:** esperar #242.4.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** Prática/discursiva da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` + `-GABARITO.md`, fora do site), seed de `atividade` + tópicos + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), "Progresso da turma" pelo layout global e `- **Exportar Meu Gabarito:** sim` na fonte; linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.7 — Aula 03 (4 h)
@@ -70,6 +77,7 @@
 **Próximo passo:** esperar #242.4.
 
 - **Nível:** PESADO — gera seed SQL (banco).
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` com as partes de `docs/regras/materias.md` §3 (só conteúdo da ementa desta UC, "você, como aluno consultor"), linha no `AULAS/STATUS-AULAS.md` e seed da aula na tabela `aulas` (PENDENTE em `database/SEEDS-APLICADOS.md`; aplicar e conferir = Claude Code local). Fecha com o seed CONCLUÍDO.
 
 ### #242.8 — Objetiva da aula 03 — 50 questões
@@ -77,6 +85,7 @@
 **Próximo passo:** esperar #242.7.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** 50 questões objetivas da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md`, fora do site pelo `.vercelignore`), seed de `atividade` + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), botão "📄 Exportar Meu Gabarito" ligado e linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.9 — Prática da aula 03 — discursiva
@@ -84,6 +93,7 @@
 **Próximo passo:** esperar #242.7.
 
 - **Nível:** PESADO — gabarito e seed SQL.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
 - **Descrição:** Prática/discursiva da aula (padrão ITIC: `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` + `-GABARITO.md`, fora do site), seed de `atividade` + tópicos + `gabarito` ligado à aula (PENDENTE; aplicar = Claude Code local), "Progresso da turma" pelo layout global e `- **Exportar Meu Gabarito:** sim` na fonte; linha no `ATIVIDADES/STATUS-ATIVIDADES.md`. Fecha com o seed CONCLUÍDO.
 
 ### #242.10 — Aceite do usuário
@@ -91,4 +101,5 @@
 **Próximo passo:** esperar #242.1 a #242.9.
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)
 - **Descrição:** O usuário confere as aulas e as atividades da matéria no site.

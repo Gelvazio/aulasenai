@@ -10,6 +10,7 @@ function montarMarkdownTarefa(tarefa) {
     "| Campo | Valor |", "|---|---|",
     `| Status | ${tarefa["Status"] || "—"} |`,
     `| Prioridade | ${tarefa["Prioridade"] || "—"} |`,
+    `| Modelo | ${tarefa["Modelo"] || "—"} |`,
     `| Depende de | ${tarefa["Depende de"] || "—"} |`,
     `| Próximo passo (da etapa) | ${tarefa.proximo || "—"} |`,
     `| Em uso por | ${tarefa["Em uso por"] || "—"} |`,

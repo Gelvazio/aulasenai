@@ -6,6 +6,7 @@
 
 **Tarefa:** #22-f79be83e-0418-43e8
 **Nível:** PESADO — gabarito das objetivas e padrão de resposta das práticas, mais de 3 arquivos ligados
+**Modelo (#22):** só Opus 5.5+ ou Fable — nunca outro (#247)
 **Próximo passo:** 22.8 — Claude Code local: aplicar e conferir pelo md5 os seeds PENDENTE das aulas 06 a 10 (e terminar a aula 05: md5 da objetiva e parte 2 da prática); depois 22.11 (aceite do usuário). Itens 22.1, 22.3 a 22.7, 22.9 e 22.10 ✅.
 
 Pedido do usuário: "Continue testes de frontend". Plano: [docs/testes-frontend-aulas-04-a-10.md](../../docs/testes-frontend-aulas-04-a-10.md)

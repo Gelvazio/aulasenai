@@ -8,6 +8,7 @@ atividades objetivas desta matéria mostram só as questões 1 até o mínimo, c
 (etapa 160-d7ade403).
 **Próximo passo:** 37.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
+**Modelo (#37):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (20, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
 - `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`

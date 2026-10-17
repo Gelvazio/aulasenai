@@ -7,6 +7,7 @@
 atividades objetivas desta matéria mostram só as questões 1 até o mínimo, como na #33
 (etapa 160-d7ade403).
 **Próximo passo:** 36.3 — 👀 aceite do usuário: abrir uma objetiva de Testes de Front-End como professor, aplicar o mínimo no Cálculo Nota e conferir a tela e o "Exportar PDF (atividade completa)"; depois como aluno.
+**Modelo (#36):** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 > 🚫 **Sem slides (2026-10-16, #244.9, pedido do usuário):** a IA **não gera slides** de aula
 > (nem PDF nem PPTX) nesta tarefa — o professor gera em outro momento. Vale para todas as aulas

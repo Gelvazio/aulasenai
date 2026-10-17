@@ -8,6 +8,7 @@ atividades objetivas desta matéria mostram só as questões 1 até o mínimo, c
 (etapa 160-d7ade403).
 **Próximo passo:** 42.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
+**Modelo (#42):** só Sonnet — nunca outro (#247)
 ### Páginas (2, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`

@@ -8,6 +8,7 @@ como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
 **Próximo passo:** 70.1 — conferir as páginas de atividade da matéria (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO/ATIVIDADES/`)
 e o nome do atributo na etapa 172-0ef7953a.
 
+**Modelo (#70):** só Sonnet — nunca outro (#247)
 ### Páginas
 
 Em 2026-10-14 a matéria (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO/`) ainda **não tem página de atividade** que o aluno responde e entrega. Quando as páginas forem criadas, elas já devem nascer com o atributo (ou recebê-lo nesta tarefa).

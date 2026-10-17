@@ -4,6 +4,7 @@
 **Pedido:** A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/APOSTILA/` foi gerada **sem vídeos** (cada capítulo tem só a anotação "⏳ Vídeos pendentes"): o ambiente de nuvem bloqueia `www.youtube.com` e a duração não pôde ser conferida nos metadados (nada de duração inventada; máximo 15:00).
 **Objetivo:** Vídeos reais, com duração conferida, em todos os capítulos.
 **Próximo passo:** 12.1 — para cada capítulo (01 a 09), escolher de 1 a 4 vídeos em português, de canais educacionais
+**Modelo (#12):** só Sonnet — nunca outro (#247)
 
 > Etapa criada em 2026-10-13 na migração do quadro para fonte única (antes: bloco #12 do `TASKS.md`; texto do pedido sem alteração).
 

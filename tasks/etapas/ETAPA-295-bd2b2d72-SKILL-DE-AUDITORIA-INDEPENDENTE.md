@@ -5,6 +5,7 @@
 **Objetivo:** guardar como skill a auditoria independente usada no item 167.5 (auditores com focos diferentes + verificador cético), para repetir em outras mudanças, informando o modelo usado e as regras seguidas.
 **Próximo passo:** 168.3 — criar a skill, assim que a #167 terminar e esta frente assumir a #168 (1 reserva por frente).
 
+**Modelo (#168):** só Sonnet — nunca outro (#247)
 ### Detalhes do usuário (2026-10-14 21:18)
 - **Escopo:** qualquer mudança em massa (renumeração, migração, troca de texto em muitos arquivos…).
 - **Quando usar:** só quando o usuário pedir (`/auditoria-independente` ou pedido explícito de auditoria).

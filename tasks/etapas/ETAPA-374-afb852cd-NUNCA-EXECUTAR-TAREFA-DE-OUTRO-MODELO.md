@@ -124,14 +124,30 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.5 — Coluna Modelo e aviso em todas as tarefas
 
-**Próximo passo:** script na pasta temporária da sessão: coluna Modelo depois de Prioridade no
-`STATUS.md` e no `task_complete.md`; linha `- **Modelo:**` nas seções das subtarefas abertas;
-`aba-tasks.js` mostra o Modelo; recado para todas.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mudança em massa no quadro e nas etapas, mais de 3 arquivos ligados.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
+- **Entrega:** coluna **Modelo** (depois de Prioridade) nas 859 linhas abertas do `STATUS.md`
+  (727 PESADO · só Opus 5.5+ ou Fable, 54 MEDIO · só Sonnet, 3 LEVE · só Haiku, 29 Usuário, 31 mães
+  `—`, 15 antigas `⚠️ sem nível (classificar antes)`) e nas 239 do `task_complete.md` (sem nível =
+  `—`, é histórico); linha `- **Modelo:** só <modelo> — nunca outro (#247)` em 728 seções de
+  subtarefas abertas e `**Modelo (#N):**` no topo de 85 etapas de tarefas antigas (114 etapas no
+  total); `aba-tasks.js` mostra o Modelo; recado para todas. Corrigido no caminho: 2 pedaços soltos
+  da linha da #190 no `STATUS.md` (com caracteres de controle, vindos de commit antigo) e a Etapa
+  que faltava na #196.5 do `task_complete.md`. No rebase (a frente s17 mexeu no quadro junto),
+  o script rodou de novo sobre o quadro dela; a #181.1 ("Listar … com aceite pendente") tinha caído
+  como `Usuário` e foi corrigida para `LEVE · só Haiku` (aceite = só título que começa com "Aceite").
+- **Verificação:** script (pasta temporária da sessão) rodado 2 vezes — a 2ª sem nada a mudar
+  (813 "já tinha"); todas as linhas das 2 tabelas com 8 colunas; visualizador lê 1098 tarefas (igual
+  a antes); a trava do hook não acha reserva fora do modelo no quadro novo.
+- **👀 Fica para o usuário:** 14 tarefas antigas sem nível (#2, #4, #5, #6, #7, #16, #17, #19, #23,
+  #24, #26, #32, #154, #171) — ninguém pode pegá-las até alguém do modelo certo classificar.
 
 ### #247.6 — Aceite do usuário
 
-**Próximo passo:** esperar a #247.5.
+**Próximo passo:** 👀 o usuário confere a #247.2 a #247.5 e roda `node scripts/sincronizar.mjs
+--aplicar` no `C:\fontes\rules-ai` (MODELO-GLOBAL.2).
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

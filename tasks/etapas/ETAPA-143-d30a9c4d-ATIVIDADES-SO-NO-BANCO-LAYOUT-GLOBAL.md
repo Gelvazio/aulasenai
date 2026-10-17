@@ -1,4 +1,5 @@
 ## Etapa 143-d30a9c4d — Atividades só no banco, layout global e pasta da matéria sem HTML (pedida em 2026-10-11 06:01)
+**Modelo (#25):** só Opus 5.5+ ou Fable — nunca outro (#247)
 
 **Tarefa:** #25-b3e29764-940b-4a82
 **Próximo passo:** 25.2 — aceite do usuário da regra; depois 25.3 (#25.01 — levantamento).

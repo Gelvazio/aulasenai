@@ -115,3 +115,4 @@ não deve ser rodado.
 turma no combo e liga/desliga o ON/OFF de uma atividade.
 
 - **Nível:** LEVE — conferência do usuário.
+- **Modelo:** Usuário — nenhuma IA executa (#247)

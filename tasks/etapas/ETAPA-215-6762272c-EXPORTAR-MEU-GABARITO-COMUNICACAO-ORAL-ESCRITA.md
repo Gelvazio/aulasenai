@@ -7,6 +7,7 @@ entregar) nas páginas desta matéria, como na #82 (etapa 209-70a67f33), que tra
 **Próximo passo:** 88.1 — conferir na etapa 209-70a67f33 o atributo que liga o botão e
 pôr nas páginas abaixo (incluir discursivas e avaliações se a #82 decidir que valem).
 
+**Modelo (#88):** só Opus 5.5+ ou Fable — nunca outro (#247)
 ### Páginas (4, objetivas e práticas, em 2026-10-14)
 
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html`
