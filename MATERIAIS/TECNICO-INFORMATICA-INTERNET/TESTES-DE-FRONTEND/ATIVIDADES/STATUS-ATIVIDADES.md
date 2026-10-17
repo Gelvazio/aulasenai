@@ -19,7 +19,7 @@
 | 04 | Testes de Integração com DOM usando Testing Library | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ id 143 | ✅ Concluída |
 | 05 | Testes de Integração Avançados e Mock de APIs | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 06 | Testes End to End com Cypress e Playwright | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 07 | Métricas e Cobertura de Testes | ⬜ `ATIVIDADES-AULA-07-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 07 | Métricas e Cobertura de Testes | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 08 | TDD e Debugging Moderno no Frontend | ⬜ `ATIVIDADES-AULA-08-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 09 | Qualidade, Performance, Acessibilidade e CI CD | ⬜ `ATIVIDADES-AULA-09-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 10 | Projeto Prático Integrador Suíte de Testes | ⬜ `ATIVIDADES-AULA-10-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -34,7 +34,7 @@
 | `ATIVIDADE-PRATICA-AULA-04.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 144 (bloqueada; o professor libera no índice) |
 | `ATIVIDADE-PRATICA-AULA-05.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
 | `ATIVIDADE-PRATICA-AULA-06.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` | Roteiro da prática da aula 07 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-07-*.md`) | — |
+| `ATIVIDADE-PRATICA-AULA-07.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md` | Roteiro da prática da aula 08 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-08-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md` | Roteiro da prática da aula 09 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-09-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md` | Roteiro da prática da aula 10 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-10-*.md`) | — |

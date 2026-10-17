@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 07 — Métricas e Cobertura de Testes (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="07" data-tema="Métricas e Cobertura de Testes" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📊 Aula 07: Métricas e Cobertura de Testes</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-07-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-07-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Reconhecer as etapas de planejamento de testes</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Aplicar testes definidos no Plano de Testes.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Monitorar os Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é monitorar os testes (7.4)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar os testes que estão falhando.</li>
+                        <li><span class="letra">B)</span>Agir para mudar o plano quando algo foge do previsto.</li>
+                        <li><span class="letra">C)</span>Escrever os casos de teste antes do código.</li>
+                        <li><span class="letra">D)</span>Acompanhar o andamento dos testes comparando com o plano.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Controlar os Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é controlar os testes (7.4)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agir quando o andamento foge do previsto: replanejar, priorizar e corrigir.</li>
+                        <li><span class="letra">B)</span>Medir a velocidade da internet do laboratório.</li>
+                        <li><span class="letra">C)</span>Apenas observar o painel sem tomar nenhuma decisão.</li>
+                        <li><span class="letra">D)</span>Proibir a equipe de criar testes novos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Base das Decisões</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em que as decisões de controle dos testes devem se apoiar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No número de linhas do código do projeto.</li>
+                        <li><span class="letra">B)</span>Em métricas, e não na impressão da equipe.</li>
+                        <li><span class="letra">C)</span>No horário em que os testes foram executados.</li>
+                        <li><span class="letra">D)</span>Na opinião da pessoa mais experiente, sem dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Casos Executados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que mostra a métrica &quot;casos executados × planejados&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quantos defeitos são críticos.</li>
+                        <li><span class="letra">B)</span>Quanto do código a suíte executa.</li>
+                        <li><span class="letra">C)</span>O tempo que a suíte leva para rodar.</li>
+                        <li><span class="letra">D)</span>O andamento da execução do plano de testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Taxa de Aprovação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A taxa de aprovação caiu de 98% para 80%. Qual é a ação de controle indicada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar os testes que falharam para voltar a 98%.</li>
+                        <li><span class="letra">B)</span>Publicar mesmo assim, porque 80% é um bom número.</li>
+                        <li><span class="letra">C)</span>Bloquear a entrega e investigar o que quebrou.</li>
+                        <li><span class="letra">D)</span>Esperar a próxima semana para ver se melhora sozinha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Defeitos Críticos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Há 2 defeitos críticos abertos no pagamento. O que fazer com a publicação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Publicar e corrigir depois, se algum cliente reclamar.</li>
+                        <li><span class="letra">B)</span>Publicar só a tela de pagamento.</li>
+                        <li><span class="letra">C)</span>Não publicar até os defeitos serem corrigidos e testados.</li>
+                        <li><span class="letra">D)</span>Mudar a gravidade dos defeitos para baixa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Tempo de Execução</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O tempo da suíte passou de 2 para 9 minutos. Qual é a ação de controle citada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desligar a cobertura para sempre.</li>
+                        <li><span class="letra">B)</span>Separar os testes E2E por etapa do pipeline.</li>
+                        <li><span class="letra">C)</span>Rodar a suíte só uma vez por mês.</li>
+                        <li><span class="letra">D)</span>Apagar todos os testes E2E da suíte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Testes Instáveis no Painel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O painel mostra 3 testes flaky. O que a aula recomenda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar mais testes para compensar os instáveis.</li>
+                        <li><span class="letra">B)</span>Rodar de novo até passarem e seguir.</li>
+                        <li><span class="letra">C)</span>Corrigir os testes instáveis antes de criar testes novos.</li>
+                        <li><span class="letra">D)</span>Ignorar, porque às vezes eles passam.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Instalando a Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o provedor de cobertura v8 do Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npx vitest install coverage</li>
+                        <li><span class="letra">B)</span>npm install -D @vitest/coverage-v8</li>
+                        <li><span class="letra">C)</span>npm run coverage:v8</li>
+                        <li><span class="letra">D)</span>npm install -D coverage-jest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Script de Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando o script test:coverage executa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>vitest run --coverage</li>
+                        <li><span class="letra">B)</span>npx cypress run --coverage</li>
+                        <li><span class="letra">C)</span>node coverage.js</li>
+                        <li><span class="letra">D)</span>vitest --watch --no-coverage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Provedor da Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No vitest.config.js, qual opção escolhe o motor que mede a cobertura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>coverage.include com o valor &#x27;node&#x27;.</li>
+                        <li><span class="letra">B)</span>test.environment com o valor &#x27;v8&#x27;.</li>
+                        <li><span class="letra">C)</span>coverage.provider com o valor &#x27;v8&#x27;.</li>
+                        <li><span class="letra">D)</span>coverage.reporter com o valor &#x27;jsdom&#x27;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Relatórios da Cobertura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com reporter: [&#x27;text&#x27;, &#x27;html&#x27;], o que o npm run test:coverage produz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela no terminal e a página coverage/index.html.</li>
+                        <li><span class="letra">B)</span>Apenas um arquivo PDF para imprimir.</li>
+                        <li><span class="letra">C)</span>Apenas o arquivo package.json atualizado.</li>
+                        <li><span class="letra">D)</span>Um e-mail para a equipe com os resultados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Arquivos Medidos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve include: [&#x27;src/**/*.js&#x27;] no bloco coverage?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar os arquivos que não têm teste.</li>
+                        <li><span class="letra">B)</span>Para instalar as dependências da pasta src.</li>
+                        <li><span class="letra">C)</span>Para medir a cobertura só dos arquivos de código da pasta src.</li>
+                        <li><span class="letra">D)</span>Para incluir os testes no site publicado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Statements</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que pergunta a métrica statements responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quanto tempo a suíte levou?</li>
+                        <li><span class="letra">B)</span>Todas as funções foram chamadas?</li>
+                        <li><span class="letra">C)</span>Cada if foi testado nos dois lados?</li>
+                        <li><span class="letra">D)</span>Quantas instruções rodaram?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Branches</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que pergunta a métrica branches responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada if foi testado no lado verdadeiro e no falso?</li>
+                        <li><span class="letra">B)</span>Quantas linhas rodaram?</li>
+                        <li><span class="letra">C)</span>Quantos testes foram escritos?</li>
+                        <li><span class="letra">D)</span>Quantos arquivos existem no projeto?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Functions</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que pergunta a métrica functions responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada if foi testado nos dois lados?</li>
+                        <li><span class="letra">B)</span>Quantas funções têm mais de 45 linhas?</li>
+                        <li><span class="letra">C)</span>Quantas funções têm nome em português?</li>
+                        <li><span class="letra">D)</span>Todas as funções foram chamadas pelos testes?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Lines</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que pergunta a métrica lines responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quantas linhas do código rodaram nos testes?</li>
+                        <li><span class="letra">B)</span>Quantas linhas passam de 100 caracteres?</li>
+                        <li><span class="letra">C)</span>Quantas linhas estão comentadas?</li>
+                        <li><span class="letra">D)</span>Quantas linhas os testes têm?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Métrica Mais Exigente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual métrica de cobertura é a mais exigente, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Functions, porque conta só as funções.</li>
+                        <li><span class="letra">B)</span>Lines, porque conta todas as linhas.</li>
+                        <li><span class="letra">C)</span>Statements, porque ignora as condições.</li>
+                        <li><span class="letra">D)</span>Branches, porque mostra condições que a suíte nunca testou.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">100% de Linhas e 50% de Branches</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um módulo tem 100% de linhas e 50% de branches. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as linhas rodaram, mas metade dos lados das condições não foi testada.</li>
+                        <li><span class="letra">B)</span>O relatório está errado, porque as duas métricas são iguais.</li>
+                        <li><span class="letra">C)</span>O módulo está totalmente testado e sem defeitos.</li>
+                        <li><span class="letra">D)</span>Metade das linhas do módulo não rodou.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Linha em Vermelho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No relatório HTML da cobertura, o que significa uma linha em vermelho?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A linha não rodou em nenhum teste.</li>
+                        <li><span class="letra">B)</span>A linha foi apagada pelo Vitest.</li>
+                        <li><span class="letra">C)</span>A linha rodou mais de uma vez.</li>
+                        <li><span class="letra">D)</span>A linha tem um erro de sintaxe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Marcador I</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No relatório HTML, o que o marcador I ao lado de um if indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o caminho do if (lado verdadeiro) não foi testado.</li>
+                        <li><span class="letra">B)</span>Que a linha é importante e deve ser lida primeiro.</li>
+                        <li><span class="letra">C)</span>Que a função foi importada de outro arquivo.</li>
+                        <li><span class="letra">D)</span>Que o if foi testado nos dois lados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Marcador E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No relatório HTML, o que o marcador E indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o teste é end-to-end.</li>
+                        <li><span class="letra">B)</span>Que o caminho do else (lado falso) não foi testado.</li>
+                        <li><span class="letra">C)</span>Que a linha tem um erro de execução.</li>
+                        <li><span class="letra">D)</span>Que a linha foi executada com sucesso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Pontos Cegos do Cupom</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função aplicarCupom só tem testes &quot;sem cupom&quot; e &quot;cupom percentual válido&quot;. Qual caminho fica sem teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O cupom percentual válido.</li>
+                        <li><span class="letra">B)</span>Nenhum: dois testes cobrem tudo.</li>
+                        <li><span class="letra">C)</span>O cupom de valor fixo.</li>
+                        <li><span class="letra">D)</span>O caminho sem cupom.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Prioridade pelo Risco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Entre os pontos cegos de aplicarCupom, qual testar primeiro pelo risco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O caminho sem cupom, que já está testado.</li>
+                        <li><span class="letra">B)</span>O nome da função, para ver se está em português.</li>
+                        <li><span class="letra">C)</span>A formatação do código da função.</li>
+                        <li><span class="letra">D)</span>O cupom de valor fixo maior que o total, que poderia gerar pedido negativo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Papel do Math.max</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que aplicarCupom usa Math.max(total - cupom.valor, 0) no cupom de valor fixo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para arredondar o total para o número inteiro mais próximo.</li>
+                        <li><span class="letra">B)</span>Para o total nunca ficar negativo quando o cupom vale mais que a compra.</li>
+                        <li><span class="letra">C)</span>Para dobrar o valor do desconto.</li>
+                        <li><span class="letra">D)</span>Para escolher o maior cupom do cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Teste do Total Negativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual verificação confere que aplicarCupom(30, CUPOM_FIXO, HOJE) com cupom fixo de 50 não fica negativo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(aplicarCupom(30, CUPOM_FIXO, HOJE)).toBe(-20);</li>
+                        <li><span class="letra">B)</span>expect(aplicarCupom).toBeDefined();</li>
+                        <li><span class="letra">C)</span>aplicarCupom(30, CUPOM_FIXO, HOJE) === 0;</li>
+                        <li><span class="letra">D)</span>expect(aplicarCupom(30, CUPOM_FIXO, HOJE)).toBe(0);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Testando o Erro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como verificar que aplicarCupom lança &quot;Cupom expirado&quot; com um cupom vencido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(() =&gt; aplicarCupom(100, cupomVencido, HOJE)).toThrow(&#x27;Cupom expirado&#x27;);</li>
+                        <li><span class="letra">B)</span>try { aplicarCupom(100, cupomVencido, HOJE); } catch {}</li>
+                        <li><span class="letra">C)</span>expect(aplicarCupom).toThrow();</li>
+                        <li><span class="letra">D)</span>expect(aplicarCupom(100, cupomVencido, HOJE)).toBe(&#x27;Cupom expirado&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Cupom Vencido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como criar o cupom vencido a partir de CUPOM_FIXO sem repetir os outros campos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>const cupomVencido = CUPOM_FIXO.validade = &#x27;2026-10-01&#x27;;</li>
+                        <li><span class="letra">B)</span>const cupomVencido = delete CUPOM_FIXO.validade;</li>
+                        <li><span class="letra">C)</span>const cupomVencido = { ...CUPOM_FIXO, validade: &#x27;2026-10-01&#x27; };</li>
+                        <li><span class="letra">D)</span>const cupomVencido = new CUPOM_FIXO(&#x27;2026-10-01&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Data Fixa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste de validade do cupom usa HOJE = new Date(&#x27;2026-11-05&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a data deixa a cobertura em 100%.</li>
+                        <li><span class="letra">B)</span>Com a data real, o teste passaria hoje e falharia quando o cupom vencesse.</li>
+                        <li><span class="letra">C)</span>Para o teste rodar mais rápido.</li>
+                        <li><span class="letra">D)</span>Porque o Vitest não aceita new Date() sem valor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Constantes com Nome</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que os dados de teste ficam em constantes como CUPOM_FIXO e HOJE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o JavaScript proíbe objetos dentro do expect.</li>
+                        <li><span class="letra">B)</span>Para os testes ficarem claros e fáceis de manter, sem valores soltos repetidos.</li>
+                        <li><span class="letra">C)</span>Para aumentar o tempo de execução da suíte.</li>
+                        <li><span class="letra">D)</span>Para esconder os dados do professor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Avaliação dos Resultados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta a avaliação dos resultados (7.5) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quantas linhas tem o arquivo de configuração?</li>
+                        <li><span class="letra">B)</span>Os critérios de saída do plano foram atingidos?</li>
+                        <li><span class="letra">C)</span>Quantas pessoas escreveram os testes?</li>
+                        <li><span class="letra">D)</span>Qual ferramenta de teste é a mais famosa?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Critério de Saída</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas perguntas faz parte dos critérios de saída vistos na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qual é a cor do botão principal?</li>
+                        <li><span class="letra">B)</span>Quantos commits foram feitos hoje?</li>
+                        <li><span class="letra">C)</span>Qual navegador a equipe prefere?</li>
+                        <li><span class="letra">D)</span>Há defeito crítico aberto?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Relatório de Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o relatório da avaliação dos resultados deve trazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O que foi testado, o que ficou fora e por quê, defeitos, métricas e a recomendação.</li>
+                        <li><span class="letra">B)</span>Somente as fotos da equipe trabalhando.</li>
+                        <li><span class="letra">C)</span>Somente a lista de nomes dos testes.</li>
+                        <li><span class="letra">D)</span>Somente o percentual geral de cobertura.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Número Geral que Engana</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O relatório diz 92% de cobertura, mas o pagamento tem 31% de branches. O que recomendar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não publicar até cobrir os desvios do pagamento, com meta por módulo.</li>
+                        <li><span class="letra">B)</span>Ignorar o pagamento, porque é só um módulo.</li>
+                        <li><span class="letra">C)</span>Publicar, porque 92% está acima de qualquer meta.</li>
+                        <li><span class="letra">D)</span>Apagar os testes visuais para baixar o número geral.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Meta por Módulo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que propor meta por módulo (pagamento ≥ 90%) em vez de olhar só o número geral?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque todos os módulos têm o mesmo risco.</li>
+                        <li><span class="letra">B)</span>Porque o número geral nunca passa de 50%.</li>
+                        <li><span class="letra">C)</span>Porque os módulos de maior risco precisam de mais testes, e o geral esconde isso.</li>
+                        <li><span class="letra">D)</span>Porque o Vitest não calcula o número geral.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">O Que a Cobertura Mede</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a cobertura de código mede?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se o código está bem formatado.</li>
+                        <li><span class="letra">B)</span>Se todos os requisitos foram atendidos.</li>
+                        <li><span class="letra">C)</span>O que rodou durante os testes, não o que foi conferido.</li>
+                        <li><span class="letra">D)</span>Se cada teste tem um expect correto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Teste sem expect</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um teste chama aplicarCupom mas não tem nenhum expect. O que acontece com a cobertura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Vitest recusa a cobertura do arquivo inteiro.</li>
+                        <li><span class="letra">B)</span>A cobertura cai para 0%.</li>
+                        <li><span class="letra">C)</span>As linhas contam como cobertas, mas nada foi verificado.</li>
+                        <li><span class="letra">D)</span>O teste encontra todos os defeitos da função.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Requisito Esquecido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um requisito esquecido não aparece no relatório de cobertura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o Vitest apaga os requisitos sem teste.</li>
+                        <li><span class="letra">B)</span>Porque ele não tem código, e a cobertura só olha o código que existe.</li>
+                        <li><span class="letra">C)</span>Porque requisitos ficam na pasta coverage.</li>
+                        <li><span class="letra">D)</span>Porque o relatório só mostra requisitos aprovados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Cruzando com a Rastreabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com o que a cobertura deve ser cruzada para conferir se os requisitos foram testados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com a lista de dependências do package.json.</li>
+                        <li><span class="letra">B)</span>Com o histórico de commits da semana.</li>
+                        <li><span class="letra">C)</span>Com o arquivo .gitignore do projeto.</li>
+                        <li><span class="letra">D)</span>Com a matriz de rastreabilidade, que liga requisitos aos casos de teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Defeito no Valor-Limite</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função usa &lt;= no lugar de &lt; no valor mínimo, e a suíte tem 100% de cobertura. Que teste acha o defeito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um teste sem cupom.</li>
+                        <li><span class="letra">B)</span>Rodar a cobertura de novo.</li>
+                        <li><span class="letra">C)</span>Um teste com o total muito maior que o mínimo.</li>
+                        <li><span class="letra">D)</span>Um caso de borda com o total exatamente igual ao valor mínimo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Lição da Dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a conclusão da dinâmica &quot;100% e ainda com defeito&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Casos de borda são desnecessários com cobertura alta.</li>
+                        <li><span class="letra">B)</span>A cobertura diz onde não há teste; não diz se o teste é bom.</li>
+                        <li><span class="letra">C)</span>Com 100% de cobertura não existe defeito.</li>
+                        <li><span class="letra">D)</span>Cobertura alta substitui o plano de testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Suíte Manutenível</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma suíte de testes fácil de manter (4.5)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma suíte com todos os testes num arquivo só.</li>
+                        <li><span class="letra">B)</span>Uma suíte com o maior número possível de testes.</li>
+                        <li><span class="letra">C)</span>Uma suíte que ninguém precisa ler.</li>
+                        <li><span class="letra">D)</span>Uma suíte que a equipe entende e altera sem medo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Nome do Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de teste ajuda mais na manutenção da suíte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&#x27;teste 3&#x27;</li>
+                        <li><span class="letra">B)</span>&#x27;recusa cupom vencido&#x27;</li>
+                        <li><span class="letra">C)</span>&#x27;aaa&#x27;</li>
+                        <li><span class="letra">D)</span>&#x27;funciona&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Um Comportamento por Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cada teste deve conferir um comportamento só?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para a suíte ter mais arquivos.</li>
+                        <li><span class="letra">B)</span>Para o teste rodar mais devagar.</li>
+                        <li><span class="letra">C)</span>Para que, quando falhar, fique claro o que quebrou e só ele precise mudar.</li>
+                        <li><span class="letra">D)</span>Porque o Vitest aceita só um expect por arquivo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Teste pelo Comportamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Trocar o CSS da loja quebrou vários testes de tela. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os testes dependem de detalhes de estilo, e não do comportamento.</li>
+                        <li><span class="letra">B)</span>A cobertura subiu para 100%.</li>
+                        <li><span class="letra">C)</span>É preciso parar de mudar o CSS.</li>
+                        <li><span class="letra">D)</span>Os testes estão perfeitos e o CSS está errado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Testes Independentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Aplicar testes definidos no Plano de Testes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que testes independentes ajudam na manutenção?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque testes independentes não precisam de expect.</li>
+                        <li><span class="letra">B)</span>Porque só rodam na ordem em que foram escritos.</li>
+                        <li><span class="letra">C)</span>Um teste pode ser alterado ou rodado sozinho sem quebrar os outros.</li>
+                        <li><span class="letra">D)</span>Porque assim os testes compartilham os mesmos dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Metas Mínimas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção do bloco coverage define as metas mínimas de cobertura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>include</li>
+                        <li><span class="letra">B)</span>thresholds</li>
+                        <li><span class="letra">C)</span>reporter</li>
+                        <li><span class="letra">D)</span>environment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Configurando as Metas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual configuração define meta de 80% para as quatro métricas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>reporter: [&#x27;80&#x27;, &#x27;html&#x27;]</li>
+                        <li><span class="letra">B)</span>thresholds: { statements: 80, branches: 80, functions: 80, lines: 80 }</li>
+                        <li><span class="letra">C)</span>include: [&#x27;80%&#x27;]</li>
+                        <li><span class="letra">D)</span>environment: &#x27;jsdom-80&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Abaixo da Meta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com npm run test:coverage quando a cobertura fica abaixo dos thresholds?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O comando aumenta a cobertura sozinho.</li>
+                        <li><span class="letra">B)</span>Nada: a meta é só um comentário.</li>
+                        <li><span class="letra">C)</span>O comando apaga os testes que faltam.</li>
+                        <li><span class="letra">D)</span>O comando termina com erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Metas no Pipeline</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o comando com thresholds roda no pipeline do GitHub Actions, o que ele garante?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O merge é bloqueado se a cobertura cair abaixo da meta.</li>
+                        <li><span class="letra">B)</span>O site é publicado mesmo com a cobertura baixa.</li>
+                        <li><span class="letra">C)</span>A cobertura deixa de ser medida.</li>
+                        <li><span class="letra">D)</span>Os testes deixam de ser executados.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 07: Métricas e Cobertura de Testes</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

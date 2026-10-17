@@ -2,7 +2,7 @@
 
 **Tarefa:** #22-f79be83e-0418-43e8
 **Nível:** PESADO — gabarito das objetivas e padrão de resposta das práticas, mais de 3 arquivos ligados
-**Próximo passo:** 22.4 — aula 07 (frente nuvem · ccr-04d42f6c-y5d6iz); aulas 04 e 06 ✅; 22.2 (aula 05) só falta o banco (seeds APLICADO, conferir md5 e parte 2 da prática).
+**Próximo passo:** 22.5 — aula 08 (frente nuvem · ccr-04d42f6c-y5d6iz); aulas 04, 06 e 07 ✅; 22.2 (aula 05) só falta o banco (seeds APLICADO, conferir md5 e parte 2 da prática).
 
 Pedido do usuário: "Continue testes de frontend". Plano: [docs/testes-frontend-aulas-04-a-10.md](../../docs/testes-frontend-aulas-04-a-10.md)
 — segue as decisões já aprovadas na Etapa 108 (D1: prática 10 questões × 3 tópicos 0,2 + 0,4 + 0,4;
@@ -14,7 +14,7 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 | 22.1 | Aula 04 — objetiva 50 questões + prática discursiva + seeds aplicados e conferidos pelo md5 | ✅ Concluído | 2026-10-10 16:21 | Objetiva id 143 e prática id 144 (aula id 124); md5 do banco = arquivo; 50 itens e 30 tópicos (10 pontos) |
 | 22.2 | Aula 05 — idem | ⬜ Pendente | — | idem |
 | 22.3 | Aula 06 — objetiva 50 questões + prática discursiva + seeds gerados (aplicar = 22.8, frente local) | ✅ Concluído (sem banco) | 2026-10-16 21:19 | Pipeline sem erro: 50 itens (A13 B13 C12 D12), 10 questões × 30 tópicos = 10 pontos, 0 tópico sem padrão; HTML sem gabarito; seeds PENDENTE em `database/SEEDS-APLICADOS.md` |
-| 22.4 | Aula 07 — idem | ⬜ Pendente | — | idem |
+| 22.4 | Aula 07 — objetiva 50 questões + prática discursiva + seeds gerados (aplicar = 22.8, frente local) | ✅ Concluído (sem banco) | 2026-10-16 21:22 | Pipeline sem erro: 50 itens (A13 B13 C12 D12), 10 questões × 30 tópicos = 10 pontos, 0 tópico sem padrão; HTML sem gabarito; seeds PENDENTE em `database/SEEDS-APLICADOS.md` |
 | 22.5 | Aula 08 — idem | ⬜ Pendente | — | idem |
 | 22.6 | Aula 09 — idem | ⬜ Pendente | — | idem |
 | 22.7 | Aula 10 — idem | ⬜ Pendente | — | idem |
