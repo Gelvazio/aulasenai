@@ -12,7 +12,8 @@
 // são acrescentadas antes do bloqueio da aula e refeitas quando o vínculo muda.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js), e
 // "🗑️ Excluir", que só exclui a aula sem atividade vinculada (indice-aula-excluir-card.js, #253).
-// O professor também vê a etiqueta "Id Aula: N" (aulas.id) acima do rótulo "AULA NN" (#255).
+// Só o Professor Administrador vê a etiqueta "Id Aula: N" (aulas.id) acima de "AULA NN" (#255,
+// #257).
 // Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
 // "Aula liberada / Aula bloqueada" fica antes de "Editar aula" e a aula bloqueada bloqueia o card
 // inteiro para os alunos (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do
@@ -41,7 +42,7 @@ const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
 // Mesmo evento do botão da aula: faz o indice-atividades-bloqueio.js remontar os ON/OFF.
 const EVENTO_BLOQUEIO_ALTERADO_CARDS_AULA = 'aula-bloqueio-alterado';
 
-const estadoCardsAula = { cards: [], ehProfessor: false };
+const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -203,12 +204,13 @@ function desenharCardAula(item) {
 }
 
 /**
- * Mostra, só para o professor, a etiqueta "Id Aula: N" (aulas.id) acima do rótulo "AULA NN".
+ * Mostra, só para o Professor Administrador (#257), a etiqueta "Id Aula: N" (aulas.id)
+ * acima do rótulo "AULA NN".
  * Cria a etiqueta uma única vez por card; ao redesenhar, só atualiza o texto.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function renderizarIdDaAulaNoCard(item) {
-    if (!item.aula || !estadoCardsAula.ehProfessor) return;
+    if (!item.aula || !estadoCardsAula.ehAdministrador) return;
     const rotulo = item.card.querySelector(SELETOR_ROTULO_CARD_AULA);
     if (!rotulo) return;
     let etiqueta = item.card.querySelector(`.${CLASSE_ID_AULA_CARD}`);
@@ -344,6 +346,8 @@ async function iniciarCardsAula() {
 async function desenharCardsDoIndice() {
     const itens = lerCardsDoIndice();
     estadoCardsAula.ehProfessor = await verificarProfessorCardAula();
+    estadoCardsAula.ehAdministrador = estadoCardsAula.ehProfessor &&
+        await verificarAdministradorCard();
     try {
         const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
         const aulas = paginas.length ? await buscarAulasDasPaginasCard(paginas) : new Map();

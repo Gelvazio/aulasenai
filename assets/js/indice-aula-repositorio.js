@@ -1,7 +1,7 @@
 // Acesso ao Supabase para os cards de aula do ATIVIDADES/index.html (tabela aulas) e para o
 // modal "✏️ Editar aula" (CRUD da aula e lista das atividades dela) e para o "Gerenciar
 // atividades" (vincular/desvincular atividade.aula_id, #213).
-// Depende de: js/supabase.js (sbGet, sbPatch, sbDelete).
+// Depende de: js/supabase.js (obterClienteSupabase, sbGet, sbPatch, sbDelete).
 
 const TABELA_AULAS_CARD = 'aulas';
 const TABELA_ATIVIDADE_AULA = 'atividade';
@@ -18,6 +18,8 @@ const CAMPOS_ATIVIDADE_SEM_AULA_VINCULO = 'id,nome_atividade,descricao,pagina,at
 const CAMPOS_AULA_VINCULO = '(numero,titulo,materia_id)';
 const CAMPOS_ATIVIDADE_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas' + CAMPOS_AULA_VINCULO;
 // "!inner": só as atividades cuja aula é da matéria pedida.
+// Quem é Professor Administrador decide o banco (etiqueta "Id Aula:" do card, #257).
+const RPC_ADMINISTRADOR_CARD = 'eh_professor_administrador';
 const CAMPOS_ATIVIDADE_DA_MATERIA_VINCULO = CAMPOS_ATIVIDADE_SEM_AULA_VINCULO + ',aulas!inner' +
     CAMPOS_AULA_VINCULO;
 
@@ -136,6 +138,22 @@ async function listarAtividadesVinculaveisCard(idMateria) {
 async function definirAulaDaAtividadeCard(idAtividade, idAula) {
     const linhas = await sbPatch(TABELA_ATIVIDADE_AULA, 'id', idAtividade, { aula_id: idAula });
     return Array.isArray(linhas) && linhas.length > 0;
+}
+
+/**
+ * Diz se o usuário logado é Professor Administrador; falha na consulta = não é.
+ * @returns {Promise<boolean>} true se for administrador.
+ */
+async function verificarAdministradorCard() {
+    const cliente = obterClienteSupabase();
+    if (!cliente) return false;
+
+    try {
+        const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_CARD);
+        return !error && data === true;
+    } catch (erro) {
+        return false;
+    }
 }
 
 /**
