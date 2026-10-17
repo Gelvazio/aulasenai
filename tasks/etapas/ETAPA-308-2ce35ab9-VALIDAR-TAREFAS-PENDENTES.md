@@ -78,13 +78,13 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 
 ### #181.2 — Conferir as tarefas de documentação e regras
 
-**Próximo passo:** aguardando a #181.1.
+**Próximo passo:** ✅ Feito em 2026-10-16 23:27 (Haiku 5.5); a #181.5 espera a 181.3 e a 181.4.
 
 - **Nível:** LEVE — só ler `.md` e comparar com o pedido.
 - **Modelo:** só Haiku — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `documentação/regra` da lista: o arquivo tem o que foi
   pedido? Anotar na etapa da tarefa: ✅ Feito, ⚠️ Parcial (o que falta) ou ❌ Não feito, com a prova.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** resultados por tarefa anotados em cada etapa (seção "Conferência #181.2"): #2, #4, #5, #6, #7 ⚠️ Parcial · #223 ✅ Feito · #17 não conferida nesta rodada (já fechada). · **Verificação:** arquivos conferidos com `find`/`ls` no repositório sincronizado.
 
 ### #181.3 — Conferir as tarefas de telas (HTML, CSS e JS)
 

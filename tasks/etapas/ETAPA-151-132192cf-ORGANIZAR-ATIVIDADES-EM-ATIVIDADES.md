@@ -14,3 +14,7 @@ Atenção: a migração #25 muda onde ficam as atividades (`.claude/rules/ativid
 | 5.1 | Liberação do usuário e detalhes (escopo depois da migração #25) | 👀 Aguardando o usuário | — | — |
 | 5.2 | Organizar, uma disciplina por vez | ⬜ Pendente | — | — |
 | 5.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Conferência #181.2 (2026-10-16 23:27, por Claude Code (Haiku 5.5))
+
+- **⚠️ Parcial** — 34 pastas `ATIVIDADES/` existem; exercícios por tópico não conferidos. Depende da #25 (migração das atividades para o banco).

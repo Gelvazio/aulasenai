@@ -12,3 +12,7 @@
 | 6.1 | Liberação do usuário e detalhes | 👀 Aguardando o usuário | — | — |
 | 6.2 | Preencher, uma disciplina por vez | ⬜ Pendente | — | — |
 | 6.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Conferência #181.2 (2026-10-16 23:27, por Claude Code (Haiku 5.5))
+
+- **⚠️ Parcial** — Só 4 pastas `AVALIACOES/` no repositório; não cobre cada disciplina. Etapa aguarda liberação (6.1).

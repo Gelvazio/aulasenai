@@ -59,3 +59,7 @@
 
 - **Nível:** LEVE — aceite.
 - **Modelo:** Usuário — nenhuma IA executa (#247)
+
+## Conferência #181.2 (2026-10-16 23:27, por Claude Code (Haiku 5.5))
+
+- **✅ Feito** — `APOSTILA/APOSTILA-BANCO-DE-DADOS.md` e `.html` existem em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/`.

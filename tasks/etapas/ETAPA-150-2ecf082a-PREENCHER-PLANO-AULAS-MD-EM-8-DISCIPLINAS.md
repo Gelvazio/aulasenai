@@ -12,3 +12,7 @@
 | 4.1 | Liberação do usuário e detalhes (quais 8 disciplinas, formato do cronograma) | 👀 Aguardando o usuário | — | — |
 | 4.2 | Preencher os `PLANO-AULAS.md`, uma disciplina por vez | ⬜ Pendente | — | — |
 | 4.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Conferência #181.2 (2026-10-16 23:27, por Claude Code (Haiku 5.5))
+
+- **⚠️ Parcial** — 10 `PLANO-AULAS.md` existem (pedido: 8 disciplinas), de 20 a 322 linhas. Conteúdo (cronograma semanal) não conferido. Etapa aguarda liberação (4.1).
