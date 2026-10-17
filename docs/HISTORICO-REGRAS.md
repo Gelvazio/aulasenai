@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-16 22:10 | **Menu das atividades em Banco de Dados (tarefa #244.2):** `ATIVIDADES/MENU-ATIVIDADES.js` com só o item 👥 Equipes (papéis: líder e dupla) e as tags do menu nas 45 páginas de `ATIVIDADES/`; a matéria entra nas listas de `docs/regras/assets-e-geradores.md` e `docs/regras/usuarios-turmas-paginas-professor.md`. |
 | 2026-10-16 22:10 | **A IA não gera slides de aula (tarefa #244.9, pedido do usuário):** nem PDF nem PPTX, em todas as aulas de todas as matérias — o professor gera em outro momento. Regra 11 do `AGENTS.md`, seção "Sem slides" do `.claude/rules/materias-global.md`, recado para todas as frentes no `tasks/RECADOS.md` e aviso nas etapas das tarefas de aulas e atividades abertas (351, 353 a 370, 137-13665a7e e 163-6b8cbe04). |
 | 2026-10-16 12:54 | **Menu TURMAS vira CRUD da `turma` (tarefa #201, pedido do usuário):** consulta, ➕ Nova turma, ✏️ Editar no modal, 🗑️ Excluir (só turma vazia) e 👥 Professores (vínculos da `turmaprofessor`) na linha da turma; só o Professor Administrador grava (RLS). Regra nova em `docs/regras/usuarios-turmas-paginas-professor.md`; SQL `database/2026-10-16-turma-crud-administrador.sql`. |
 | 2026-10-16 15:05 | **Discursivas: "🔑 Ver Gabarito" passa a se chamar "🔑 Gabarito da Atividade-Respostas" e o "📄 Exportar Meu Gabarito" fica ao lado dele (#196.5, pedido do usuário; substitui a posição da #196.4)** (`docs/regras/atividades.md`). |

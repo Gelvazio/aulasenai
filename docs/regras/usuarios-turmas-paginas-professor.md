@@ -231,8 +231,8 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   pelo `atividade.pagina` no banco: matéria sem atividade cadastrada mostra "Não foi possível
   identificar a matéria".
 - ✅ **Menu das atividades = só 👥 Equipes** (2026-10-08, pedido do usuário): em **todas** as
-  matérias com `MENU-ATIVIDADES.js` (Introdução à TIC, Análise de Dados Aplicada à Gestão e
-  Reforço de Linguagens) o menu tem apenas o item 👥 Equipes; os demais itens (índice,
+  matérias com `MENU-ATIVIDADES.js` (Introdução à TIC, Análise de Dados Aplicada à Gestão,
+  Reforço de Linguagens e Banco de Dados) o menu tem apenas o item 👥 Equipes; os demais itens (índice,
   atividades, avaliações, Excel) saíram do menu — as páginas continuam publicadas. Matéria nova
   com menu segue o mesmo padrão.
 

@@ -2,8 +2,8 @@
 
 **Ordem:** 1 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **🔄 PENDENTE** — 146 de 154 peças (95%)  
-**Gerado em:** 2026-10-10 22:20:19 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Situação:** **✅ CONCLUÍDA** — 154 de 154 peças (100%)  
+**Gerado em:** 2026-10-16 22:06:20 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
@@ -19,13 +19,13 @@
 | Status das atividades | `ATIVIDADES/STATUS-ATIVIDADES.md` | ✅ |
 | Status da apostila | `APOSTILA/STATUS-APOSTILA.md` | ✅ |
 | Índice das atividades | `ATIVIDADES/index.html` | ✅ |
-| Menu das atividades | `ATIVIDADES/MENU-ATIVIDADES.js` | ⬜ |
-| Avaliação objetiva | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | ⬜ |
-| Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ⬜ |
-| Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ⬜ |
-| Média final (composição) | `ATIVIDADES/media-final.json` | ⬜ |
-| Apostila (HTML) | `APOSTILA/APOSTILA-*.html` | ⬜ |
-| Apostila (Markdown completo) | `APOSTILA/APOSTILA-*.md` | ⬜ |
+| Menu das atividades | `ATIVIDADES/MENU-ATIVIDADES.js` | ✅ |
+| Avaliação objetiva | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | ✅ |
+| Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ✅ |
+| Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ✅ |
+| Média final (composição) | `ATIVIDADES/media-final.json` | ✅ |
+| Apostila (HTML) | `APOSTILA/APOSTILA-BANCO-DE-DADOS.html` | ✅ |
+| Apostila (Markdown completo) | `APOSTILA/APOSTILA-BANCO-DE-DADOS.md` | ✅ |
 
 ## 2. Aulas (uma linha por aula do `AULAS/STATUS-AULAS.md`)
 
@@ -49,54 +49,81 @@
 | 16 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 17 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 18 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 19 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ |
+| 19 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 20 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-## 3. Todos os arquivos da pasta (128)
+## 3. Todos os arquivos da pasta (163)
 
 | Arquivo | Tamanho (bytes) | Status |
 |---|---|---|
-| `APOSTILA/STATUS-APOSTILA.md` | 882 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html` | 52397 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.html` | 51717 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.html` | 51180 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.html` | 51771 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-05.html` | 51319 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-06.html` | 51403 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.html` | 51083 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.html` | 51414 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-09.html` | 51220 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.html` | 50829 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-11.html` | 51403 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-12.html` | 50483 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-13.html` | 51016 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-14.html` | 50498 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-15.html` | 50322 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-16.html` | 50775 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-17.html` | 50796 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-18.html` | 51100 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-19.html` | 52646 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-20.html` | 54137 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html` | 69485 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html` | 68393 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-03-50-QUESTOES.html` | 67949 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-04-50-QUESTOES.html` | 69403 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-05-50-QUESTOES.html` | 67053 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-06-50-QUESTOES.html` | 67613 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-07-50-QUESTOES.html` | 67708 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-08-50-QUESTOES.html` | 68554 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-09-50-QUESTOES.html` | 67963 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-10-50-QUESTOES.html` | 69078 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-11-50-QUESTOES.html` | 66122 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-12-50-QUESTOES.html` | 65048 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-13-50-QUESTOES.html` | 66889 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-14-50-QUESTOES.html` | 66157 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-15-50-QUESTOES.html` | 66194 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-16-50-QUESTOES.html` | 66677 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-17-50-QUESTOES.html` | 68548 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-18-50-QUESTOES.html` | 66903 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-19-50-QUESTOES.html` | 68918 | ✅ peça do padrão |
-| `ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html` | 71861 | ✅ peça do padrão |
+| `APOSTILA/APOSTILA-BANCO-DE-DADOS.html` | 286285 | ✅ peça do padrão |
+| `APOSTILA/APOSTILA-BANCO-DE-DADOS.md` | 172110 | ✅ peça do padrão |
+| `APOSTILA/CONTEUDO/CAPITULO-01.md` | 5439 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-02.md` | 6633 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-03.md` | 5094 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-04.md` | 5374 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-05.md` | 5447 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-06.md` | 4876 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-07.md` | 4838 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-08.md` | 4317 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-09.md` | 4959 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-10.md` | 5012 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-11.md` | 5252 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-12.md` | 5151 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-13.md` | 5167 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-14.md` | 3913 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-15.md` | 4457 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-16.md` | 6371 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-17.md` | 5994 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-18.md` | 7102 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-19.md` | 9672 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/CAPITULO-20.md` | 10104 | 📎 outro arquivo |
+| `APOSTILA/CONTEUDO/INTRODUCAO.md` | 4250 | 📎 outro arquivo |
+| `APOSTILA/STATUS-APOSTILA.md` | 1173 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html` | 52732 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.html` | 52052 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.html` | 51515 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.html` | 52106 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-05.html` | 51654 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-06.html` | 51738 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.html` | 51418 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.html` | 51749 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-09.html` | 51555 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.html` | 51164 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-11.html` | 51738 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-12.html` | 50818 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-13.html` | 51351 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-14.html` | 50833 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-15.html` | 50657 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-16.html` | 51110 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-17.html` | 51131 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-18.html` | 51435 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-19.html` | 52981 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-20.html` | 54472 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html` | 69820 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html` | 68728 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-03-50-QUESTOES.html` | 68284 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-04-50-QUESTOES.html` | 69738 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-05-50-QUESTOES.html` | 67388 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-06-50-QUESTOES.html` | 67948 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-07-50-QUESTOES.html` | 68043 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-08-50-QUESTOES.html` | 68889 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-09-50-QUESTOES.html` | 68298 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-10-50-QUESTOES.html` | 69413 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-11-50-QUESTOES.html` | 66457 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-12-50-QUESTOES.html` | 65383 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-13-50-QUESTOES.html` | 67224 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-14-50-QUESTOES.html` | 66492 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-15-50-QUESTOES.html` | 66529 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-16-50-QUESTOES.html` | 67012 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-17-50-QUESTOES.html` | 68883 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-18-50-QUESTOES.html` | 67238 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-19-50-QUESTOES.html` | 69253 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html` | 72196 | ✅ peça do padrão |
+| `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | 23098 | ✅ peça do padrão |
+| `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | 88883 | ✅ peça do padrão |
+| `ATIVIDADES/AVALIACAO-OBJETIVA-02.html` | 84655 | 📎 outro arquivo |
+| `ATIVIDADES/AVALIACAO-PRATICA.html` | 104020 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01-GABARITO.md` | 15988 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` | 9762 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02-GABARITO.md` | 13394 | ✅ peça do padrão |
@@ -157,9 +184,17 @@
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-18-50-QUESTOES.md` | 18233 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-19-50-QUESTOES.md` | 19497 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-20-50-QUESTOES.md` | 22485 | ✅ peça do padrão |
-| `ATIVIDADES/STATUS-ATIVIDADES.md` | 9855 | ✅ peça do padrão |
-| `ATIVIDADES/index.html` | 18019 | ✅ peça do padrão |
-| `AULAS/STATUS-AULAS.md` | 7268 | ✅ peça do padrão |
+| `ATIVIDADES/CONTEUDO/AVALIACAO-OBJETIVA-01-QUESTOES.md` | 37278 | 📎 outro arquivo |
+| `ATIVIDADES/CONTEUDO/AVALIACAO-OBJETIVA-02-QUESTOES.md` | 33379 | 📎 outro arquivo |
+| `ATIVIDADES/CONTEUDO/AVALIACAO-PRATICA-GABARITO.md` | 46081 | 📎 outro arquivo |
+| `ATIVIDADES/CONTEUDO/AVALIACAO-PRATICA.md` | 21917 | 📎 outro arquivo |
+| `ATIVIDADES/MENU-ATIVIDADES.js` | 422 | ✅ peça do padrão |
+| `ATIVIDADES/STATUS-ATIVIDADES.md` | 10054 | ✅ peça do padrão |
+| `ATIVIDADES/index.html` | 20244 | ✅ peça do padrão |
+| `ATIVIDADES/media-final.json` | 10714 | ✅ peça do padrão |
+| `AULAS/STATUS-AULAS.md` | 7227 | ✅ peça do padrão |
+| `Apostila Banco Dados.pdf` | 3941632 | 📎 outro arquivo |
+| `Avaliação prática banco de dados.docx` | 339137 | 📎 outro arquivo |
 | `CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md` | 8825 | ✅ peça do padrão |
 | `CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md` | 8992 | ✅ peça do padrão |
 | `CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md` | 7819 | ✅ peça do padrão |
@@ -183,4 +218,4 @@
 | `DOCUMENTACAO/PLANO-AULAS.md` | 3416 | 📎 outro arquivo |
 | `EMENTA-CHALKIE-AI.md` | 15530 | ✅ peça do padrão |
 | `STATUS-EMENTAS.md` | 1250 | ✅ peça do padrão |
-| `materia.json` | 41893 | ✅ peça do padrão |
+| `materia.json` | 44071 | ✅ peça do padrão |

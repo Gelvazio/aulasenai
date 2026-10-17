@@ -57,9 +57,20 @@ regra dos slides gravada e aceite do usuário.
 
 ### #244.2 — Status regenerados e menu das atividades
 
-**Próximo passo:** esperar a #244.1.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — script gerador e um `.js` de dados + tags nas páginas.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o), a pedido do usuário.
+- **Entrega:** `STATUS_MATERIA.md` regenerado pelo `gerar_status_materia.py` (✅ CONCLUÍDA,
+  154/154; só o de Banco de Dados entrou no commit — os das outras matérias e o
+  `tasks/ORDEM-MATERIAS.md` ficaram de fora); coluna Slides do `AULAS/STATUS-AULAS.md` = ⛔
+  (professor, regra #244.9); PDF do `APOSTILA/STATUS-APOSTILA.md` = ⛔ (o professor exporta pelo
+  📥 Exportar PDF); `ATIVIDADES/MENU-ATIVIDADES.js` (só 👥 Equipes) e tags do menu nas 45 páginas
+  de `ATIVIDADES/` pelo `tags_menu.py`; listas de matérias com menu em `docs/regras/`.
+- **Verificação:** `node --check` no `MENU-ATIVIDADES.js`; `tags_menu.py` respondeu "menu aplicado"
+  nas 45 páginas; leitura dos status gerados. A barra do menu continua desligada para todas as
+  matérias (`MENU_ATIVIDADES_LIGADO = false` em `js/menu.js`) — sem navegador, não conferido na tela.
+- **Fora daqui:** a revisão da ementa no `STATUS-EMENTAS.md` é da #244.3.
 
 ### #244.3 — Revisão da ementa
 

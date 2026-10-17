@@ -123,7 +123,8 @@ assets/
   com links relativos a essa pasta. Nada de nomes fixos no `menu.js`.
 - ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/`,
   `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/` e
-  `RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/` (2026-10-07, com a apostila).
+  `RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/` (2026-10-07, com a apostila) e
+  `TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/` (2026-10-16, #244.2).
 - ✅ Página ou atividade nova numa dessas pastas: acrescentar o item no `MENU-ATIVIDADES.js`.
   Os geradores já incluem as tags quando o arquivo de dados existe.
 
