@@ -503,7 +503,12 @@
         <tr>
           <td>correcao_discursiva_select/insert/update</td>
           <td>Políticas RLS</td>
-          <td>Professor só alunos de professor_pode_ver_aluno; aluno lê só as próprias notas confirmadas; sem delete; anon sem acesso</td>
+          <td>Select só do professor (professor_pode_ver_aluno) desde a #166 (2026-10-14): o aluno não lê a tabela; insert/update só professor; sem delete; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>correcao_discursiva_aluno</td>
+          <td>View</td>
+          <td>O que o aluno pode ver da correção: chave da alternativa, nota_professor, comentario, justificativa_mudanca — sem nota_ia; só as linhas do próprio aluno (auth.uid()) com nota do professor; select só authenticated (#166, 2026-10-14)</td>
         </tr>
         <tr>
           <td>notas_media_final(p_paginas text[])</td>

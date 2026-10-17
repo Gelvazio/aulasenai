@@ -173,7 +173,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
     sugestão e **`nota_professor` é a que vale**; o trigger impede passar dos pontos do tópico.
-    RLS: professor só dos alunos das turmas dele; o aluno lê só as próprias notas confirmadas;
+    RLS: só o professor dos alunos das turmas dele lê a tabela; o aluno lê só as próprias notas
+    confirmadas pela view **`correcao_discursiva_aluno`**, que **não tem a `nota_ia`** (#166,
+    2026-10-14: a nota sugerida pela IA nunca chega ao aluno);
   - tela **`correcao-discursiva.html`** (menu **CORREÇÃO** no header, só Professor Administrador desde 2026-10-07):
     avaliação → turma → entrega; resposta do aluno, padrão de resposta e critérios por tópico.
     O botão "📋 Copiar prompt para a IA" monta o texto **sem o nome do aluno**; a resposta da
@@ -442,7 +444,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   de valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
   nota do professor (✅ Certa / 🟡 Meia certa / ❌ Errada / ⏳ aguardando) com a **observação da
   IA** num balão grande, e o padrão de resposta (mesma caixa do "Gabarito da Atividade-Respostas"). O aluno só lê
-  as próprias correções confirmadas (RLS da `correcao_discursiva`).
+  as próprias correções confirmadas, pela view `correcao_discursiva_aluno` (sem a `nota_ia`, #166).
   `assets/js/resultado-aluno-discursiva.js` + CSS.
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;

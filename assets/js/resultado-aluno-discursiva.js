@@ -5,7 +5,8 @@
 // (sem dizer que foi a IA) e, se o professor mudou a nota, a justificativa da mudança; o botão
 // "🕒 Histórico" abre a linha do tempo. Mostra também o padrão de resposta (tarefa #156) e o
 // ON/OFF "Mostrar Certas" (mostrar-certas-aluno-discursiva.js, tarefa #158).
-// Só lê o que o RLS deixa o aluno ver (as próprias notas confirmadas). Nada é gravado.
+// Só lê o que o aluno pode ver (as próprias notas confirmadas, pela view correcao_discursiva_aluno,
+// que não tem a nota_ia — tarefa #166). Nada é gravado.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js.
 // Regra: docs/regras/atividades.md
 
@@ -19,6 +20,9 @@ const SELETOR_PAINEL_RESULTADO = '#painel-discursivo';
 const TOLERANCIA_RESULTADO = 0.001;
 const PREFIXO_COMENTARIO_IA = /^\[IA\]\s*/;
 const TABELA_HISTORICO_RESULTADO = 'correcao_discursiva_historico';
+// View só com o que o aluno pode ver (sem a nota_ia): a tabela correcao_discursiva é só do
+// professor desde a tarefa #166 (database/2026-10-14-correcao-discursiva-visao-do-aluno.sql).
+const VIEW_CORRECAO_RESULTADO = 'correcao_discursiva_aluno';
 const MSG_CORRIGIDA_RESULTADO = 'Atividade Corrigida, veja sua nota no início!';
 const BASE_SCRIPTS_RESULTADO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const RESULTADOS_ALUNO = {
@@ -67,7 +71,7 @@ async function chamarFuncaoResultado(rota, corpo) {
 async function lerResultadoDoAluno(atividadeId) {
     const [notas, correcoes, gabarito, historico] = await Promise.all([
         chamarFuncaoResultado(ROTA_NOTA_RESULTADO, { p_paginas: [location.pathname] }),
-        sbGet('correcao_discursiva', 'select=item,topico,nota_professor,comentario' +
+        sbGet(VIEW_CORRECAO_RESULTADO, 'select=item,topico,nota_professor,comentario' +
             '&atividade_id=eq.' + atividadeId),
         chamarFuncaoResultado(ROTA_GABARITO_RESULTADO, { p_atividade: atividadeId }),
         sbGet(TABELA_HISTORICO_RESULTADO, 'select=item,topico,tipo,nota_anterior,nota_nova,' +
