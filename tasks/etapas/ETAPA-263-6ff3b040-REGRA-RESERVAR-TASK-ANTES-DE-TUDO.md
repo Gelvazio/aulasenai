@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 136.1 | Regra 1 do `AGENTS.md` + linha em `docs/HISTORICO-REGRAS.md` + visualizador regenerado | ✅ Concluído | 2026-10-14 15:38 | Leitura do `AGENTS.md` (sub-item da regra 1) e do histórico |
-| 136.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 136.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

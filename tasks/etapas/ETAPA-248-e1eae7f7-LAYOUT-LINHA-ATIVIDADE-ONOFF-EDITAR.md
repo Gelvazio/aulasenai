@@ -10,4 +10,4 @@ Causa: o ✏️ (#120) e o ON/OFF entram depois do link em ordem variável (depe
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 121.1 | `atividades-crud-modal.js`: ✏️ sempre depois do ON/OFF (`posicionarBotaoEditar`); `atividades-crud-modal.css`: ✏️ redondo de 36 px e link encolhendo para caber ON/OFF + ✏️ na mesma linha | ✅ Concluído | 2026-10-14 13:15 | `node --check` ok; leitura do CSS: regra com `:has(+ .interruptor-atividade + .crud-editar-atividade)` é mais específica que a do ON/OFF e vem depois |
-| 121.2 | Aceite do usuário (ver o card logado como professor) | 👀 Aguardando o usuário | — | — |
+| 121.2 | Aceite do usuário (ver o card logado como professor) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -12,4 +12,4 @@ Decisões (Claude, 2026-10-14 14:57): o botão só funciona para quem **entregou
 |------|-----------|--------|--------------|-------------|
 | 134.1 | `assets/js/confirmar-todas-professor.js` (lê tópicos, correção e suspeitas; bloqueia sem nota; pula suspeitas; confirma no popup; grava num upsert só de `nota_professor`); `progresso-turma-global.js` com botões extras do nome por tipo; estilo em `progresso-turma-global.css`; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 14:57 | `node --check` nos 2 JS; leitura: upsert só com a chave + `nota_professor` (mesmo caminho dos botões Certa/Meia/Errada, RLS de professor) |
 | 134.2 | Rotina `correcao-ia-atividade-81`: questão em branco depois da entrega recebe `nota_ia = 0` | ✅ Concluído | 2026-10-14 14:57 | `update_scheduled_task` confirmou o prompt |
-| 134.3 | Aceite do usuário (testar o botão logado como professor) | 👀 Aguardando o usuário | — | — |
+| 134.3 | Aceite do usuário (testar o botão logado como professor) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

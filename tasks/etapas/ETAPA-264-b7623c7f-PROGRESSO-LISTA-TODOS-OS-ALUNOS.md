@@ -13,4 +13,4 @@ Decisões (Claude, 2026-10-14 15:44): turmas = as de `turma.curso_id` igual ao c
 |------|-----------|--------|--------------|-------------|
 | 137.1 | Levantar de onde vem a lista dos alunos da turma (código + banco) | ✅ Concluído | 2026-10-14 15:44 | Consulta ao banco (contagens acima) + leitura do código |
 | 137.2 | Progresso da Turma com todos os alunos (`assets/js/alunos-da-turma-progresso.js` + `progresso-turma-global.js` + regra em `docs/regras/atividades.md`) | ✅ Concluído | 2026-10-14 15:44 | `node --check` nos 2 JS; banco: atividade 81 → curso 5 → turmas 135081 e 135080 → 68 alunos; falha na leitura não derruba o painel |
-| 137.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 137.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

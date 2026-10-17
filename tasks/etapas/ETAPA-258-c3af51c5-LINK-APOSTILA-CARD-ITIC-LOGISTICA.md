@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 131.3 | `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/index.html`: botão `📘 Apostila` → `INTRODUCAO-TIC/APOSTILA/APOSTILA-INTRODUCAO-TIC.html` no card da matéria | ✅ Concluído | 2026-10-14 14:25 | Arquivo de destino existe; mesmo padrão (`div.acoes` + `a.btn`) do índice de TII, CSS `indice-atividades.css` já cobre |
-| 131.4 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 131.4 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

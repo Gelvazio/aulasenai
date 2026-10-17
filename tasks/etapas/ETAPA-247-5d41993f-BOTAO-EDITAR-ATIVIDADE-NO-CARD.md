@@ -10,4 +10,4 @@ Sem mudança no banco: usa o formulário e a gravação que já existem ("CADAST
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 120.1 | `assets/js/atividades-crud-modal.js` (botão ✏️ depois de cada link com atividade no banco, só para professor) + estilo em `assets/css/atividades-crud-modal.css` | ✅ Concluído | 2026-10-14 13:12 | `node --check` ok; leitura: o botão nasce junto com a etiqueta "ID", que só aparece para professor; `CAMPOS_ATIVIDADE_CRUD` já traz `aula_id` |
-| 120.2 | Aceite do usuário (testar logado como professor) | 👀 Aguardando o usuário | — | — |
+| 120.2 | Aceite do usuário (testar logado como professor) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

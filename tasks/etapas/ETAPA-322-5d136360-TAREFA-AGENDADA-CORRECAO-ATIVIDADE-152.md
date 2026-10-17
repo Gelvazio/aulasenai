@@ -48,7 +48,7 @@ correção pela IA da discursiva id 152 (Atividade de Sala 16/10 da ITIC, #191),
 
 ### #195.3 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário roda de novo a "CORRECAO ATIVIDADE ID=152" (Scheduled →
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 Run now) quando quiser corrigir as respostas novas e confere as notas sugeridas pela IA em
 `correcao-discursiva.html`.
 

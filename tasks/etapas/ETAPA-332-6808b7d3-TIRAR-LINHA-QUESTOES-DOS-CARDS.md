@@ -26,6 +26,6 @@ botão "📚 Conteúdo (.md)".
 
 ### #205.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário recarrega um índice de atividades e confirma que a linha e o botão sumiram.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — confirmação do usuário

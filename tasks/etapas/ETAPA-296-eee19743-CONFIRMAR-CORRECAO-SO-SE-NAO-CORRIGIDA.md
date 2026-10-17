@@ -10,4 +10,4 @@
 | 169.1 | Botão em `finalizar-atividade-professor.js` (só carregado para o professor); "corrigida" = entregue e com `nota_professor` em todas as respondidas (mesma regra de `corrigidos-discursiva.js`) | ✅ Concluído | 2026-10-14 21:27 | leitura do código |
 | 169.2 | Professor: prova corrigida → só a mensagem "Prova Já Corrigida!" (também logo após confirmar); não corrigida → botão. Aluno sem mudança. JS + CSS + `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 21:28 | `node --check`; revisão do código (sem navegador) |
 | 169.3 | Depois de confirmar: relê os corrigidos e, com "Pendente Correcao" ligado, o aluno sai do combo (a prova dele fica na tela). `respostas-aluno-professor.js` (`window.atualizarPendenteCorrecao`) | ✅ Concluído | 2026-10-14 21:28 | `node --check`; revisão do código (sem navegador) |
-| 169.4 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 169.4 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

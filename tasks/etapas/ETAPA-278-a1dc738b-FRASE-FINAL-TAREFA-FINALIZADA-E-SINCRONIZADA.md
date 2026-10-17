@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 151.1 | Trocar a frase em `.claude/rules/tasks/ciclo-da-task.md`, no `CLAUDE.md` global (2 lugares) + `docs/HISTORICO-REGRAS.md` + visualizador | ✅ Concluído | 2026-10-14 19:22 | `grep`: frase nova em `ciclo-da-task.md` e `CLAUDE.md` global (2 lugares); antiga só no histórico |
-| 151.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 151.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

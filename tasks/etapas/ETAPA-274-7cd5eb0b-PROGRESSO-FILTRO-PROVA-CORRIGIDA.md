@@ -13,4 +13,4 @@ localStorage.
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 147.1 | ON/OFF "Prova Corrigida" (padrão: não corrigidas; lembrado no localStorage) depois do "RECUPERAÇÃO": `filtro-corrigida-progresso.js` + campo `provaCorrigida` em `progresso-turma-fontes.js` (lê `nota_professor` de `correcao_discursiva`) + regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 18:59 | `node --check` nos 3 JS; linhas ≤ 100; funções ≤ 45 linhas |
-| 147.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 147.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

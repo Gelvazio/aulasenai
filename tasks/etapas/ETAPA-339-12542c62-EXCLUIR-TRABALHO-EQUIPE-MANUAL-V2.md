@@ -96,6 +96,6 @@ Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNI
 
 ### #212.4 — Aceite do usuário
 
-**Próximo passo:** 👀 usuário conferir o índice ITIC sem os 2 cards.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário

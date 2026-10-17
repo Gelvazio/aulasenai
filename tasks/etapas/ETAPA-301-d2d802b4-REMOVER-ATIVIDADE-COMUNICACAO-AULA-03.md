@@ -12,4 +12,4 @@
 | 174.3 | Localizar de onde vêm os dois botões (HTML da página ou banco) | ✅ Concluído | 2026-10-15 14:15 | os dois são links escritos no HTML do card AULA 03 em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/index.html` (`ATIVIDADES-AULA-28-09-2026-25-QUESTOES.html` e `3-O Ciclo do Feedback na Comunicação.pptx`); a chave ON/OFF é posta pelo `assets/js/indice-atividades-bloqueio.js` ao lado de cada link de atividade; nenhum script ou gerador recria esses links |
 | 174.4 | Remover "Atividade Comunicação" e "Slide Comunicação" da Aula 03 | ✅ Concluído | 2026-10-15 14:15 | `git diff`: só as 2 linhas dos links saíram; sem os links, o ON/OFF também não aparece. A página da atividade, o `.pptx` e a atividade no banco ficaram como estavam (nada apagado); sem JS alterado; sem navegador (regra do projeto) |
 | 174.5 | Encerrar: quadro, visualizador, 1 commit + push na `main` | ✅ Concluído | 2026-10-15 14:15 | `git push` sem erro |
-| 174.6 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 174.6 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

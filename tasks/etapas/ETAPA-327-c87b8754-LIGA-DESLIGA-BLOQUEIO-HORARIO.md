@@ -71,6 +71,6 @@ não bloqueia nada.
 
 ### #200.3 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário, como professor, abre uma atividade objetiva, escolhe a turma
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 no relatório, clica em **🔒 Bloquear horário: ON** (vira OFF) e confere com um aluno fora do
 horário que ele grava e entrega; depois volta para ON.

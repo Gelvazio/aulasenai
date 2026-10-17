@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 118.1 | `git mv` dos 4 Markdowns de `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` para `ATIVIDADES/CONTEUDO/` (sem nome repetido) e remoção da pasta vazia | ✅ Concluído | 2026-10-14 13:01 | `ls` da pasta: só os 3 HTML. Gabarito e `*QUESTOES.md` continuam fora do site (`.vercelignore` vale para qualquer pasta) |
 | 118.2 | Caminhos atualizados em `scripts/gerar-seed-atividades.py`, `STATUS-ATIVIDADES.md` e `STATUS_MATERIA.md` (etapas e docs antigos ficam como histórico) | ✅ Concluído | 2026-10-14 13:01 | Busca: nenhum caminho antigo nesses arquivos |
-| 118.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 118.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 164.1 | Card = `section.entrega-discursiva` (botão `btnFinalizarDiscursiva`, já escondido após entregar); "corrigida" = `notas_media_final` com situação `NOTA`, só lida quando o gabarito está liberado (a nota do início só aparece nesse caso) | ✅ Concluído | 2026-10-14 20:45 | leitura de `avaliacao-discursiva.js` e `resultado-aluno-discursiva.js` |
 | 164.2 | Alerta no card: entregue → "Atividade já entregue! Aguarde a correção!"; corrigida (nota visível) → "Atividade Corrigida, veja sua nota no início!" (escrito com acento). Se corrigida mas o gabarito ainda não liberado, fica o aviso de aguardar, porque a nota ainda não aparece no início. `avaliacao-discursiva.js`, `resultado-aluno-discursiva.js`, CSS | ✅ Concluído | 2026-10-14 20:45 | `node --check`; revisão do código (sem navegador) |
-| 164.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 164.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

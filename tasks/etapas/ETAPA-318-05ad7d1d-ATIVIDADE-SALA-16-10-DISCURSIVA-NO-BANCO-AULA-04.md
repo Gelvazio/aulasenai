@@ -115,6 +115,6 @@ página avulsa sai.
 
 ### #191.6 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário libera a "Atividade de Sala 16/10 — Discursivas" (id 152) no card da Aula 04 da ITIC, confere a página e a correção por IA em `correcao-discursiva.html`.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

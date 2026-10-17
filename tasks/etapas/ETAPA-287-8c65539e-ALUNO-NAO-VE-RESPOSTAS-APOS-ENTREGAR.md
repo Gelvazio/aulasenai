@@ -10,4 +10,4 @@
 | 160.1 | Já existia, só em páginas com o campo "Ocultar respostas após entrega"; a regra pedida é para todas | ✅ Concluído | 2026-10-14 20:13 | leitura de `respostas-discursivas-banco.js` e `avaliacao-discursiva.js` |
 | 160.2 | Regra global: sem depender do campo, o aluno que entregou e sem gabarito liberado não tem as respostas lidas nem mostradas (`respostas-discursivas-banco.js`, `avaliacao-discursiva.js`). Escopo: avaliações discursivas; é regra de tela (o RLS não muda) | ✅ Concluído | 2026-10-14 20:13 | `node --check`; revisão do código (sem navegador) |
 | 160.3 | Regra global anotada em `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`, `.claude/rules/atividades-banco.md`, histórico e visualizador | ✅ Concluído | 2026-10-14 20:13 | arquivos atualizados |
-| 160.4 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 160.4 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

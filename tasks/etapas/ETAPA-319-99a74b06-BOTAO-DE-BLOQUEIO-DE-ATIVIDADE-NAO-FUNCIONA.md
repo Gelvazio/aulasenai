@@ -26,6 +26,6 @@ mesmo depois da correção da #190 (etapa 317-63a0d7ac).
 
 ### #192.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário, como professor, abre o índice de ATIVIDADES da ITIC, escolhe a turma no combo e liga o ON da "Atividade de Sala 16/10" na Aula 04 (e testa o ON/OFF de outra atividade); se o botão que falha for outro, dizer qual.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

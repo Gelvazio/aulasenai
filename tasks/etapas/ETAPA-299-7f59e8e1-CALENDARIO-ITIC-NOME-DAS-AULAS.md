@@ -11,4 +11,4 @@
 | 172.2 | Reservar a tarefa para a frente local · main (commit + push) | ✅ Concluído | 2026-10-15 12:59 | "Em uso por" preenchido no remoto |
 | 172.3 | Acrescentar o nome do conteúdo (maiúsculas) ao fim das aulas 01 a 10 do calendário | ✅ Concluído | 2026-10-15 13:00 | leitura do arquivo: aulas 01 a 10 das duas turmas (CEPLAS TARDE e CEPLAS MANHA, esta acrescentada pelo usuário durante a tarefa) com o título do cabeçalho de `CONTEUDO/N-*.md` em maiúsculas; CRLF e tabs mantidos; arquivo salvo em UTF-8 |
 | 172.4 | Encerrar: quadro, visualizador, 1 commit + push na `main` | ✅ Concluído | 2026-10-15 13:00 | `git push` sem erro |
-| 172.5 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 172.5 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -30,7 +30,7 @@ mínimo" (feito na #33, etapa 160-d7ade403) nas atividades objetivas de cada uma
 | 34.6 | Criar etapa + linha: Fundamentos da Tecnologia e Programação (Rio do Sul Mais Tech, 14 páginas) | ✅ Concluído | 2026-10-14 09:58 | #41 e etapa 168-a04e0049 no `STATUS.md` (14 páginas listadas) |
 | 34.7 | Criar etapa + linha: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | ✅ Concluído | 2026-10-14 09:58 | #42 e etapa 169-b4cc900a no `STATUS.md` (2 páginas listadas) |
 | 34.8 | Criar etapa + linha: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | ✅ Concluído | 2026-10-14 09:58 | #43 e etapa 170-25be3d4d no `STATUS.md` (10 páginas listadas) |
-| 34.9 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 34.9 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |
 
 Contagem de páginas: arquivos `.html` em `MATERIAIS/` que carregam
 `respostas-atividade-banco.js` (2026-10-14); conferir de novo ao criar cada tarefa.

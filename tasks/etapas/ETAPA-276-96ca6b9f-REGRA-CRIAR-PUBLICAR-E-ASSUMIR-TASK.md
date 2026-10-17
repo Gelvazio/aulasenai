@@ -10,4 +10,4 @@ assuma ela, salve esta regra no agents.md e nas regras de IA pra todas"
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 149.1 | Regra no `AGENTS.md` (regra 1) e em `.claude/rules/tasks/ciclo-da-task.md` (vale para todas as IAs) + `docs/HISTORICO-REGRAS.md` + visualizador | ✅ Concluído | 2026-10-14 20:20 | `grep` das regras; visualizador regenerado |
-| 149.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 149.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

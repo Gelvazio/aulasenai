@@ -11,4 +11,4 @@ so o que falta corrigir ao selecionar aluno"
 |------|-----------|--------|--------------|-------------|
 | 150.1 | Local e regra decididos sem perguntar (pedido claro, mesmo padrão do #148): ao lado de "Respostas dos alunos" da discursiva; "falta corrigir" = questão com algum tópico sem nota do professor | ✅ Concluído | 2026-10-14 19:24 | `mostrar-certas-discursiva.js` lido |
 | 150.2 | ON/OFF "Falta Corrigir?" (ligado ao abrir): só as questões não corrigidas do aluno escolhido; "Mostrar Certas" vale só com ele desligado. `mostrar-certas-discursiva.js` + CSS + `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:24 | `node --check` ok; revisão do código (sem navegador) |
-| 150.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 150.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

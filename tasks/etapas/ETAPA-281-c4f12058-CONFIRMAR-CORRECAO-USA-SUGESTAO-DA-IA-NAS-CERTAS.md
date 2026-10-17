@@ -10,4 +10,4 @@
 | 154.1 | Fluxo analisado: o "Finalizar" só calcula a nota (a média vem da `nota_professor`); gravar a nota da IA como `nota_professor` usa o mesmo upsert dos botões Certa/Meia/Errada (RLS e trigger já existentes) — sem mudança de banco | ✅ Concluído | 2026-10-14 19:55 | leitura de `finalizar-atividade-professor.js` e `confirmar-nota-professor-discursiva.js` |
 | 154.2 | Botão do professor renomeado para "Confirmar Correção" (aluno mantém "Finalizar") | ✅ Concluído | 2026-10-14 19:55 | `node --check`; `grep` do texto |
 | 154.3 | Regra: sem nota do professor + IA marcou certa → confirmada com a nota da IA (popup pede aceite; nota é definitiva); meia certa, errada ou sem nota da IA → o professor é obrigado a corrigir (bloqueia sem gravar nada). `finalizar-atividade-professor.js` + `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:55 | `node --check`; revisão do código (sem navegador) |
-| 154.4 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 154.4 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

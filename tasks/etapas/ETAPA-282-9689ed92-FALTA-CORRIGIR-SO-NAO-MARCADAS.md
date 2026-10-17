@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 155.1 | Corrigir o filtro: pergunta corrigida = todos os tópicos RESPONDIDOS com nota do professor (tópico em branco não conta); a lista atualiza ao o professor marcar | ✅ Concluído | 2026-10-14 20:05 | `node --check` nos 2 JS; revisão do código (sem navegador). Causa: o filtro contava todos os tópicos da pergunta (inclusive em branco) e não se refazia ao marcar |
-| 155.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 155.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

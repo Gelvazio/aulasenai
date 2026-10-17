@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 123.1 | `assets/css/atividades-crud-modal.css`: `box-sizing: border-box` no modal, `overflow-x: hidden`, campos com `width: 100%`/`min-width: 0`, formulário em 2 colunas (1 no celular), botões na linha inteira | ✅ Concluído | 2026-10-14 13:18 | Leitura do CSS (sem navegador, regra do projeto) |
-| 123.2 | Aceite do usuário (abrir o ✏️ e o CADASTRAR ATIVIDADES) | 👀 Aguardando o usuário | — | — |
+| 123.2 | Aceite do usuário (abrir o ✏️ e o CADASTRAR ATIVIDADES) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

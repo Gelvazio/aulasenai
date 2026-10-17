@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 128.1 | `assets/js/atividades-crud-modal.js` (carregado com `defer` em todos os índices): `abrirAtividadesEmNovaAba` põe `target="_blank"` e `rel="noopener"` nos links das atividades | ✅ Concluído | 2026-10-14 13:50 | `node --check` ok; o bloqueio só mexe no href, o target fica |
-| 128.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 128.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

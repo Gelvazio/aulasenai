@@ -21,4 +21,4 @@ PUBLIQUE"
 |------|-----------|--------|--------------|-------------|
 | 145.1 | Detalhes com o usuário | ✅ Concluído | 2026-10-14 18:47 | Respostas acima |
 | 145.2 | ON/OFF "RECUPERAÇÃO" depois do "Mostrar quem faltou" (`filtro-recuperacao-progresso.js`, pela nota final; lembrado no localStorage) + regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 18:48 | `node --check` nos 2 JS; linhas ≤ 100 |
-| 145.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 145.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

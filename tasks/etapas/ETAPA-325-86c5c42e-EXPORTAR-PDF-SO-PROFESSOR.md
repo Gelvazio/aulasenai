@@ -42,4 +42,4 @@ para o perfil PROFESSOR.
 
 ### #198.2 — Aceite do usuário
 
-**Próximo passo:** 👀 depois da #198.1, o usuário confere como aluno e como professor.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").

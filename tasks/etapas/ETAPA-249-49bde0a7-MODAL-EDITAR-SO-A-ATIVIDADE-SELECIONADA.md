@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 122.1 | `atividades-crud-modal.js`: modo de uma atividade só (`definirModoModalCrud`, `obterAtividadeUnicaCrud`; depois de salvar, o formulário continua com a atividade); `atividades-crud-modal.css`: classe `crud-caixa--unica` esconde lista, subtítulo e "Nova / limpar" | ✅ Concluído | 2026-10-14 13:17 | `node --check` ok; leitura: `abrirModalCrud(pagina)` (CADASTRAR) volta ao modo completo |
-| 122.2 | Aceite do usuário (testar o ✏️ logado como professor) | 👀 Aguardando o usuário | — | — |
+| 122.2 | Aceite do usuário (testar o ✏️ logado como professor) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 125.1 | `atividades-crud-modal.js`: `aoSalvarCrud` fecha o modal e chama `avisarAtividadeSalvaCrud` (popup + nomes); `indice-aula-data.js`: `atualizarNomesDasAtividadesDoIndice` | ✅ Concluído | 2026-10-14 13:21 | `node --check` nos 2 arquivos; erro ao salvar continua mostrando a mensagem dentro do modal (aberto) |
-| 125.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 125.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -98,7 +98,7 @@ cadastrado pelo professor administrador em `turmas.html`.
 
 ### #211.5 — Aceite do usuário
 
-**Próximo passo:** usuário conferir `turmas.html` (botão 📚 Matérias) e o combo "Turma:" do
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 `INTRODUCAO-TIC/ATIVIDADES/index.html` (só 135080 e 135081).
 
 - **Nível:** LEVE — conferência do usuário

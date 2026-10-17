@@ -11,4 +11,4 @@ de Introdução às TIC), deve listar apenas os alunos da turma favorita"
 |------|-----------|--------|--------------|-------------|
 | 139.1 | Levantar de onde vem a lista dos alunos (código + banco) | ✅ Concluído | 2026-10-14 16:12 | Banco: atividade 81 → curso 5 → turmas 135081 (favorita, 35 alunos) e 135080 (33); lista vem de `assets/js/alunos-da-turma-progresso.js` |
 | 139.2 | Combo "Turma" ao lado do título (abre na favorita; "Todas as turmas"); lista, resumo, Gráficos e Cálculo Nota só da turma escolhida (`alunos-da-turma-progresso.js`, `progresso-turma-global.js`, CSS, `docs/regras/atividades.md`) | ✅ Concluído | 2026-10-14 16:13 | `node --check` nos 2 JS; linhas ≤ 100; falha no combo não derruba o painel |
-| 139.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 139.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

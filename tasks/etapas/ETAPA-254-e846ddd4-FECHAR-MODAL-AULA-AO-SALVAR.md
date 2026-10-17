@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 127.1 | `assets/js/indice-aula-modal.js`: `aoSalvarModalAula` chama `fecharModalAula` e mostra o popup de sucesso | ✅ Concluído | 2026-10-14 13:45 | `node --check` ok; erro de gravação continua mostrando a mensagem no modal aberto |
-| 127.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 127.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

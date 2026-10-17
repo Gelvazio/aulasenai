@@ -83,7 +83,7 @@ excluir) e o vínculo turma × professor vira o botão **Professores** na linha 
 
 ### #201.3 — Aceite do usuário
 
-**Próximo passo:** o professor testar a tela `turmas.html` e dar o aceite.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário
 

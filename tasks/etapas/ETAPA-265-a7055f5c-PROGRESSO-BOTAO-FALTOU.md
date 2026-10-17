@@ -46,4 +46,4 @@
 | 138.3 | SQL `falta_aluno` + RLS aplicado e conferido | ✅ Concluído | 2026-10-14 16:10 | Aplicado pelo conector; policies select/insert/delete + RLS ligado, `anon` sem acesso; teste em transação desfeita: professor da turma grava e lê 1 falta, aluno não grava (0) |
 | 138.4 | Módulo `falta-aluno-progresso.js` + CSS + ligação no `progresso-turma-global.js` | ✅ Concluído | 2026-10-14 16:10 | `node --check` nos 2 JS; linhas ≤ 100; falha no módulo não derruba o painel |
 | 138.5 | Regras e `docs/database.md` atualizados | ✅ Concluído | 2026-10-14 16:10 | `docs/regras/atividades.md`, `docs/database.md` e relatório HTML |
-| 138.6 | Aceite do usuário (testar no navegador como professor) | 👀 Aguardando o usuário | — | — |
+| 138.6 | Aceite do usuário (testar no navegador como professor) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

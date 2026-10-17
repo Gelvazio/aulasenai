@@ -38,6 +38,6 @@ banco, pelo ID.
 
 ### #213.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre "✏️ Editar aula" num card, clica em "🔗 Gerenciar atividades", vincula uma atividade pelo ID e desvincula outra.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

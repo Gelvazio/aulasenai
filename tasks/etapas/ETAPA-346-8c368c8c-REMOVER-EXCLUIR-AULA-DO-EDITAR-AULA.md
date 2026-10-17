@@ -21,6 +21,6 @@
 
 ### #219.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere que não há mais "Excluir aula".
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

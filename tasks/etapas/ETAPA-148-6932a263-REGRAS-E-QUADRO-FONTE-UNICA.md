@@ -78,7 +78,7 @@ projeto (faixa ENSALADO, caminhos do `apostila.js`); plano em `docs/` × plano n
 | 29.10 | `CLAUDE.md` global (backup antes) | ✅ Concluído | 2026-10-13 10:37 | Backup em scratchpad; global 688 → 531 linhas: quadro com/sem tasks/, plano na etapa, push e worktree conforme o projeto, constantes/formatador, apostilas e ENSALADO só no projeto, log sem exemplo; CLAUDE-DOCS-BEFORE-EVERY-TASK.md com exceção; grep das contradições = 0 |
 | 29.11 | Conferência final | ✅ Concluído | 2026-10-13 10:39 | Nenhuma regra > 5 KB; grep sem referência antiga em regra viva; py_compile e node --check ok; linhas novas ≤ 100 caracteres; skill documentacao-padrao com a exceção do quadro; 7 pendências no STATUS.md |
 | 29.12 | Commit + push + quadro | ✅ Concluído | 2026-10-13 10:39 | 2 commits na `main`: `d55965a` (só as 36 exclusões: o `git add --pathspec-from-file` parou num arquivo já apagado) + o commit com o restante |
-| 29.13 | Aceite do usuário: conferir `.claude/rules/` (inclusive `tasks/`), o quadro novo (`tasks/STATUS.md` + etapas, sem `TASKS.md`), a fila desativada e o `CLAUDE.md` global | 👀 Aguardando o usuário | — | — |
+| 29.13 | Aceite do usuário: conferir `.claude/rules/` (inclusive `tasks/`), o quadro novo (`tasks/STATUS.md` + etapas, sem `TASKS.md`), a fila desativada e o `CLAUDE.md` global | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |
 
 ### Riscos
 

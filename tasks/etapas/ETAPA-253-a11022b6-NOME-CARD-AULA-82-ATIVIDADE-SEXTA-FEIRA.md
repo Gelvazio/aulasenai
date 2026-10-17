@@ -12,4 +12,4 @@ Valores antigos (para desfazer): `nome_card = 'Revisão da Apostila — Capítul
 |------|-----------|--------|--------------|-------------|
 | 126.1 | `update aulas set nome_card = 'ATIVIDADE SEXTA FEIRA' where id = 82` (conector do Supabase) | ✅ Concluído | 2026-10-14 13:41 | `returning`: id 82, nome_card = ATIVIDADE SEXTA FEIRA |
 | 126.2 | `update aulas set rotulo_card = 'ATIVIDADES INDIVIDUAIS · AULAS 01 A 07 · 09/10/2026' where id = 82` (o texto do HTML do card, #117) | ✅ Concluído | 2026-10-14 13:42 | `returning`: id 82 com o novo rotulo_card |
-| 126.3 | Aceite do usuário (recarregar o índice da ITIC) | 👀 Aguardando o usuário | — | — |
+| 126.3 | Aceite do usuário (recarregar o índice da ITIC) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

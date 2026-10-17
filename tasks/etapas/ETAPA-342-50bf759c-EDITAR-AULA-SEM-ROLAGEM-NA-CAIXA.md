@@ -21,6 +21,6 @@ Entendido como a caixa do modal (os cards do índice não têm limite de altura 
 
 ### #215.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere que a caixa não tem mais barra de rolagem.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

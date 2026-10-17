@@ -9,4 +9,4 @@ salve no localstorage, assim que abrir a pagina, busca no localstorage, se nao t
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 142.1 | Os 3 filtros gravam a escolha no localStorage e, ao abrir, usam a gravada (sem ela, o padrão: Todas · OFF · OFF): leitura/gravação no `progresso-turma-global.js` (chaves `progresso-turma:*`, protegidas por try/catch) injetada nos 3 módulos; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 16:34 | `node --check` nos 4 JS; linhas ≤ 100; só preferência de tela (sem dado de aluno nem gabarito) |
-| 142.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 142.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 163.1 | Banco: Adriel (atividade 81) entregou a tentativa 1 em 14/10 17:22; 20 respostas preenchidas; 20 correções com nota do professor (soma 9,50) e com nota da IA (soma 9,50); prova de 10 pontos e 20 questões → nota 9,50. A função `notas_media_final` calcula 9,50 para ele. O dado está certo; falta saber em qual tela a nota some | ✅ Concluído | 2026-10-14 20:43 | consultas SQL em `correcao_discursiva`, `entrega_atividade`, `resposta_discursiva` e leitura de `notas_media_final` |
 | 163.2 | Usuário indicou a página da atividade 81: no Progresso da turma a coluna de nota só mostrava a nota da IA ("a confirmar"), nunca a do professor. Agora a coluna "Nota final" mostra a nota confirmada pelo professor (🎓) quando a prova está corrigida, senão a da IA (🤖). `progresso-turma-fontes.js`, `progresso-turma-global.js` | ✅ Concluído | 2026-10-14 20:48 | `node --check`; revisão do código (sem navegador) |
-| 163.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 163.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

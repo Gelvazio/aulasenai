@@ -12,4 +12,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 158.1 | ON/OFF "Mostrar Certas" no quadro da nota do aluno (`mostrar-certas-aluno-discursiva.js`), ligado em `resultado-aluno-discursiva.js` e carregado por `avaliacao-discursiva.js`; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 20:08 | `node --check` nos 3 JS; revisão do código (sem navegador) |
-| 158.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 158.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

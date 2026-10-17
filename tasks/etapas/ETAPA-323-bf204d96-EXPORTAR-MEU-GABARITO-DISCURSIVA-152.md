@@ -37,7 +37,7 @@ já existe nas objetivas de ITIC (#84, #180). As outras discursivas ficam na #19
 
 ### #196.2 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário, logado como aluno que já entregou a atividade 152, clica em
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 "📄 Exportar Meu Gabarito" e confere se o PDF traz as respostas dele (e, com um aluno que não
 entregou, se o botão fica desativado). Depois da #196.3: conferir com a aluna Amanda (Ctrl+F5)
 que o painel IDENTIFICAÇÃO sai de "Carregando..." e o botão aparece.

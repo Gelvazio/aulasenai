@@ -9,4 +9,4 @@ ao lado de "Exportar PDF (atividade completa)")
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 35.1 | `assets/js/turma-exportacao.js`: lê `turma.favorito` e deixa a favorita escolhida (regra global de todas as atividades e avaliações) | ✅ Concluído | 2026-10-14 10:15 | `node --check` ok; coluna `turma.favorito` em `database/2026-09-30-turma-favorita.sql` |
-| 35.2 | Aceite do usuário (testar no navegador) | 👀 Aguardando o usuário | — | — |
+| 35.2 | Aceite do usuário (testar no navegador) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

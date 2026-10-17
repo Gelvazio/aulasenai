@@ -9,4 +9,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 157.1 | Aluno escolhido (por atividade) e os filtros Pendente Correcao, Falta Corrigir? e Mostrar Certas guardados no localStorage (`respostas-aluno:*`) e restaurados ao abrir: `respostas-aluno-professor.js` + `mostrar-certas-discursiva.js` + `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 20:01 | `node --check` nos 2 JS; revisão do código (sem navegador) |
-| 157.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 157.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

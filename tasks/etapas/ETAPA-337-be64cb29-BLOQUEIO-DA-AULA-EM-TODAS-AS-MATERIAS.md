@@ -66,6 +66,6 @@ com índice de atividades, hoje só em Testes de Front-End (`assets/js/indice-bl
 
 ### #210.3 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário abre como professor o índice de uma matéria (ex.: ITIC), confere o botão "Aula liberada / Aula bloqueada" em cada card e, como aluno, uma aula bloqueada.
+**Próximo passo:** — (aceite do usuário em 2026-10-16 21:08: "Aceito tudo").
 
 - **Nível:** LEVE — conferência do usuário.

@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 130.1 | Tarefa agendada `correcao-ia-atividade-81` (Claude desktop, `*/30 * * * *`, modo Auto): grava só `nota_ia`, `comentario` e `nota_ia_em` em `correcao_discursiva`; nunca `nota_professor`; sem commit; roda enquanto o app estiver aberto | ✅ Concluído | 2026-10-14 14:05 | Criação confirmada pela ferramenta (próxima execução em ~36 min) |
 | 130.2 | Rotina ganha a Parte 2 — Suspeita de Cópia (`docs/regras/suspeita-copia-discursiva.md`), pedida junto com a #129 | ✅ Concluído | 2026-10-14 14:20 | `update_scheduled_task` confirmou prompt e descrição |
-| 130.3 | Aceite do usuário / desligar quando não precisar mais | 👀 Aguardando o usuário | — | — |
+| 130.3 | Aceite do usuário / desligar quando não precisar mais | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

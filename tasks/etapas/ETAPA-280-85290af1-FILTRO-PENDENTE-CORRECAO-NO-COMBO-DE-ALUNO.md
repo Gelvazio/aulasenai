@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 153.1 | Combo em `respostas-aluno-professor.js`; "corrigido pelo professor" = mesma regra da Prova Corrigida (discursiva: entregue + nota do professor em todas as questões respondidas; objetiva: entregue) | ✅ Concluído | 2026-10-14 19:40 | código lido |
 | 153.2 | ON/OFF "Pendente Correcao" (desligado ao abrir) ao lado do combo: `respostas-aluno-professor.js` + CSS + `corrigidos-discursiva.js` + `avaliacao-discursiva.js` + regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:40 | `node --check` nos 3 JS; revisão do código (sem navegador) |
-| 153.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 153.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

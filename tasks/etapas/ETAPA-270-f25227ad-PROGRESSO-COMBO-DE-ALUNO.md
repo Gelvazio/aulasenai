@@ -10,4 +10,4 @@
 |------|-----------|--------|--------------|-------------|
 | 143.1 | Detalhes com o usuário | ✅ Concluído | 2026-10-14 16:46 | Respostas acima |
 | 143.2 | Combo "Aluno" ao lado do "Turma" (`filtro-aluno-progresso.js`, primeiro filtro da lista; lembrado no localStorage) + regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 16:46 | `node --check` nos 2 JS; linhas ≤ 100 |
-| 143.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 143.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

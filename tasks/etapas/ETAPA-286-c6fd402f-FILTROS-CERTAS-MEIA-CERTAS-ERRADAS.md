@@ -17,4 +17,4 @@
 | 159.2 | Professor: os 3 filtros em `mostrar-certas-discursiva.js` (combinam com "Falta Corrigir?"); carregamento único de scripts em `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-14 20:11 | `node --check`; revisão do código (sem navegador) |
 | 159.3 | Aluno: os 3 filtros em `mostrar-certas-aluno-discursiva.js` | ✅ Concluído | 2026-10-14 20:11 | `node --check`; revisão do código (sem navegador) |
 | 159.4 | Regra em `docs/regras/atividades.md`, histórico de regras e visualizador | ✅ Concluído | 2026-10-14 20:11 | `node --check`; revisão do código (sem navegador) |
-| 159.5 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 159.5 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

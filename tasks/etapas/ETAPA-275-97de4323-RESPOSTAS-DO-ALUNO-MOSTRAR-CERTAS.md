@@ -11,4 +11,4 @@ questões meia certa ou errada; ligando "Mostrar Certas", vê também as certas.
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 148.1 | ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos" (padrão desligado: só meia certa e errada; certa = nota cheia em todos os tópicos, nota do professor ou, sem ela, da IA; sem nota nunca some): `mostrar-certas-discursiva.js` + CSS, ligado em `avaliacao-discursiva.js`; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:09 | `node --check` nos 2 JS; linhas novas ≤ 100 |
-| 148.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 148.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

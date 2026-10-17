@@ -43,4 +43,4 @@ quantidade mínima, Gráficos e Cálculo Nota, nem quem entregou; o aluno vê **
 | 141.2 | Plano + aprovação | ✅ Concluído | 2026-10-14 16:27 | Usuário aprovou no chat ("sim") |
 | 141.3 | Módulo `progresso-do-aluno.js` (usa o CSS do painel) + ligação em `respostas-atividade.js` e `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-14 16:26 | `node --check` nos 3 JS; linhas novas ≤ 100; lê só `resposta_atividade`/`resposta_discursiva` do próprio aluno (sem `resumo_tentativas_atividade`) |
 | 141.4 | Regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 16:26 | Leitura |
-| 141.5 | Aceite do usuário (testar como aluno no navegador) | 👀 Aguardando o usuário | — | — |
+| 141.5 | Aceite do usuário (testar como aluno no navegador) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 152.1 | Certa = nota cheia do professor OU da IA; "Mostrar Certas" e "Falta Corrigir?" passam a valer juntos (um não anula o outro) | ✅ Concluído | 2026-10-14 19:25 | `node --check` ok; revisão do código (sem navegador) |
-| 152.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 152.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

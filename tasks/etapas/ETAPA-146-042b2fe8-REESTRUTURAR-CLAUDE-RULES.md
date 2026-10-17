@@ -15,4 +15,4 @@
 | 27.5 | Refazer INDEX, apontar AGENTS/CLAUDE, apagar substituídos | ✅ Concluído | 2026-10-13 09:49 | grep: nenhuma referência a arquivo apagado |
 | 27.6 | Commit + push + quadro | ✅ Concluído | 2026-10-13 09:49 | — |
 | 27.8 | Remover a regra de infográficos também do `CLAUDE.md` global (`~/.claude/CLAUDE.md`), a pedido do usuário | ✅ Concluído | 2026-10-13 09:50 | grep "infogr" = 0 no arquivo global; backup em %TEMP% |
-| 27.7 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 27.7 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

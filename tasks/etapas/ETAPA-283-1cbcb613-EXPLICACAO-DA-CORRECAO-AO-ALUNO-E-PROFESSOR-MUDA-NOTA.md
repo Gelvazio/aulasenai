@@ -38,4 +38,4 @@
 | 156.6 | Modal "Histórico" em linha do tempo + botão "🕒 Histórico" depois de "Errada" (professor; desabilitado sem eventos) e junto ao resultado (aluno; só com eventos): `historico-nota-discursiva.js` + `modal-nota-discursiva.css` | ✅ Concluído | 2026-10-14 19:56 | `node --check` |
 | 156.7 | Aluno: explicação abaixo da alternativa errada/meia certa (sem citar IA) + justificativa da mudança em `resultado-aluno-discursiva.js` + CSS (balão removido) | ✅ Concluído | 2026-10-14 19:56 | `node --check`; sem "IA" nos textos do aluno |
 | 156.8 | `docs/database.md`, `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, histórico de regras e visualizador | ✅ Concluído | 2026-10-14 19:56 | arquivos atualizados |
-| 156.9 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 156.9 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

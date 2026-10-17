@@ -17,8 +17,8 @@
 
 ### #222.1 — Marcar os aceites e mover as linhas para o `task_complete.md`
 
-**Próximo passo:** selecionar as linhas pelo script e mover.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só linhas do quadro e status em `.md`.
 - **Critérios de aceitação:** nenhuma linha aceita fica no `STATUS.md`; o `task_complete.md` recebe as linhas com "✅ Concluído (aceite do usuário 2026-10-16)"; visualizador regenerado.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit desta subtarefa · **Verificação:** 117 linhas (mães e subtarefas de aceite) saíram do `STATUS.md` e entraram no `task_complete.md` com "✅ Concluído (aceite do usuário 2026-10-16)"; 70 itens de aceite 👀 marcados ✅ nas tabelas de 93 etapas e o "Próximo passo" de 21 subtarefas de aceite atualizado; nenhuma dependência aberta (conferido pelo script). Continuam 👀: #2, #4 a #7, #17, #193, #199.1, #209.7, #221 e #221.2.

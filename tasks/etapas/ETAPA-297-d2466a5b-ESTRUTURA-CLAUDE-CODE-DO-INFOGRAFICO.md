@@ -66,4 +66,4 @@ conferidos rodando cada script com entrada de exemplo no terminal, visualizador 
 | 170.5 | `.claude/agents/` (3 subagentes) e `.claude/skills/` (2 skills) | ✅ Concluído | 2026-10-14 22:49 | leitura do cabeçalho (`name`, `description`, `tools` só de leitura) dos 3 subagentes e das 2 skills; `references/` só aponta para as regras |
 | 170.6 | `.gitignore` (`settings.local.json`) e `scripts/variaveis.example.js` (+ `.vercelignore`) | ✅ Concluído | 2026-10-14 22:49 | `git check-ignore`: `settings.local.json` e `variaveis.js` ignorados, `variaveis.example.js` não; modelo sem chave (vazio), pode ir ao site sem risco — `.vercelignore` sem mudança |
 | 170.7 | Regra `claude-code.md`, `INDEX.md`, histórico e visualizador | ✅ Concluído | 2026-10-14 23:04 | `claude-code.md` com 3 KB (≤ 5 KB); listado no `INDEX.md`; histórico com a linha; gerador sem erro (98 seções, regra aparece no `index.html`) |
-| 170.8 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 170.8 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

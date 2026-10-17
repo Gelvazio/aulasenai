@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 162.1 | Consulta ao banco: ADRIEL TORESANI STEFFENS, atividade 81, tem 20 correções, as **20 já com `nota_professor`** (0 só com IA, 0 sem nota) | ✅ Concluído | 2026-10-14 20:37 | consulta SQL em `correcao_discursiva` |
 | 162.2 | Não há o que corrigir: o aviso "Não há questão para confirmar: todas já têm a nota do professor…" está certo, a nota do Adriel já foi confirmada | ✅ Concluído | 2026-10-14 20:37 | resultado do item 162.1 |
-| 162.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 162.3 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

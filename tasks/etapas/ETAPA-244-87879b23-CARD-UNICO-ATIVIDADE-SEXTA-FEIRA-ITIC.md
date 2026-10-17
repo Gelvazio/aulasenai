@@ -9,4 +9,4 @@
 |------|-----------|--------|--------------|-------------|
 | 117.1 | `ATIVIDADES/index.html`: os cards "Revisão da Apostila — Capítulos 01 a 07" e "Comunicação Técnica no CD — Discursivas" viram o card "ATIVIDADE SEXTA FEIRA" (data 09/10/2026) com os 3 links (100 objetivas, discursivas e 40 objetivas) e as listas de itens | ✅ Concluído | 2026-10-14 12:55 | Busca no código: os 3 links só aparecem no novo card; nenhuma outra página/menu aponta para eles. O bloqueio por link (`indice-atividades-bloqueio.js`) já trata vários `a.btn.principal` por card |
 | 117.2 | `STATUS-ATIVIDADES.md`: id 80 de volta ao índice no card único | ✅ Concluído | 2026-10-14 12:55 | Leitura do arquivo |
-| 117.3 | Aceite do usuário (ver o card no site) | 👀 Aguardando o usuário | — | — |
+| 117.3 | Aceite do usuário (ver o card no site) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

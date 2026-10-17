@@ -17,4 +17,4 @@
 | 28.7 | Commit + push + quadro | ✅ Concluído | 2026-10-13 09:57 | — |
 | 28.6b | Menu **Regras** do site abre o visualizador em nova aba (pedido do usuário durante a tarefa); `regras-modal.js/.css` sem uso removidos | ✅ Concluído | 2026-10-13 09:57 | `node --check js/header-usuario.js`; grep: nenhuma outra página usa o modal |
 | 28.6c | Corrigir horas da Etapa 146/147 (Git Bash dava GMT) e a regra de data no `essentials.md` | ✅ Concluído | 2026-10-13 09:57 | `date` = relógio do Windows (Brasília) |
-| 28.8 | Aceite do usuário (abrir a página e conferir) | 👀 Aguardando o usuário | — | — |
+| 28.8 | Aceite do usuário (abrir a página e conferir) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

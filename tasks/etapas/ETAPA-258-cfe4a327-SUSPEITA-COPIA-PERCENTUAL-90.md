@@ -10,4 +10,4 @@ Banco conferido para o relato "buscando o próprio aluno": nenhuma das 109 suspe
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 131.1 | `assets/js/suspeita-copia-discursiva.js`: lê só `semelhanca >= 0.9`; etiqueta "⚠️ Q03 98% ≈ Nome", alerta "Parece com: Nome — 98% igual"; `docs/regras/suspeita-copia-discursiva.md`: candidatos e decisão com 90% ou mais (a rotina #130 segue o arquivo). As 34 linhas antigas abaixo de 90% ficam no banco, fora da tela (apagar exige pedido) | ✅ Concluído | 2026-10-14 14:31 | `node --check` ok; leitura do filtro e dos textos |
-| 131.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 131.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

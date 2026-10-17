@@ -36,4 +36,4 @@ COMPLETO, TAMBEM DEVE EXPORTAR APENAS DA QUESTAO 1 ATE A QUANTIDADE MINIMO. COME
 | 33.3 | `calculo-nota-progresso.js` avisa a página ao gravar o mínimo; `respostas-atividade.js` liga o módulo | ✅ Concluído | 2026-10-14 10:05 | `node --check` ok nos dois |
 | 33.4 | PDF completo (`atividade.js`): só as questões visíveis, total e gabarito até o mínimo | ✅ Concluído | 2026-10-14 10:05 | `node --check` ok; `coletarQuestoes` pula `.questao--fora-do-minimo` e `limitarPDFAoMinimo` corta total e gabarito |
 | 33.5 | Ligar a página da Aula 02 (`data-questoes-ate-minimo="sim"`) e registrar a regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 10:05 | Atributo no `<body>` da página; regra em `docs/regras/atividades.md` |
-| 33.6 | Aceite do usuário (testar no navegador como professor e aluno) | 👀 Aguardando o usuário | — | — |
+| 33.6 | Aceite do usuário (testar no navegador como professor e aluno) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

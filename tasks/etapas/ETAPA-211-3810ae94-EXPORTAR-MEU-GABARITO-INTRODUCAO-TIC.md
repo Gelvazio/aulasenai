@@ -38,4 +38,4 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 |------|-----------|--------|--------------|-------------|
 | 84.1 | Ligar o botão (atributo da #82) em cada página de atividade da matéria (sem página → ⛔ até existir) | ✅ Concluído | 2026-10-15 15:40 | lista conferida de novo: as mesmas 23 páginas (todas com `respostas-atividade.js` ou `avaliacao-discursiva.js`; ATIVIDADE-GRANDE e média final sem folha de respostas ficam de fora, como na #82); `data-exportar-meu-gabarito="sim"` como 1º atributo do `<body>`, igual às páginas da #82; diff: 23 arquivos com 1 linha trocada cada (só o `<body>`); `docs/regras/atividades.md` e `docs/HISTORICO-REGRAS.md` atualizados |
 | 84.2 | Encerrar: quadro, visualizador, 1 commit + push na `main` | ✅ Concluído | 2026-10-15 15:40 | `git push` sem erro |
-| 84.3 | Aceite do usuário (testar como aluno) | 👀 Aguardando o usuário | — | — |
+| 84.3 | Aceite do usuário (testar como aluno) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

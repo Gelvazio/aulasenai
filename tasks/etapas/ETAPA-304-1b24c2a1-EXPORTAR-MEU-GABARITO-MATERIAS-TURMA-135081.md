@@ -13,4 +13,4 @@
 | 177.4 | Ligar o botão (`data-exportar-meu-gabarito="sim"`) nas páginas que faltam | ✅ Concluído | 2026-10-15 15:46 | decisão do usuário (2026-10-15 15:46): "Só a turma 135081". Nenhuma página falta: as 23 da ITIC já têm o atributo (#84, commit fc2927f); nenhum arquivo alterado |
 | 177.5 | Atualizar `docs/regras/atividades.md`, o histórico e as tarefas por matéria (#83, #85 a #116) que esta cobrir | ✅ Concluído | 2026-10-15 15:46 | nada a atualizar: a regra já diz "Testes de Front-End e Introdução às TIC" (#84); as tarefas #83 e #85 a #116 continuam pendentes (fora do alcance escolhido) |
 | 177.6 | Encerrar: quadro, visualizador, 1 commit + push na `main` | ✅ Concluído | 2026-10-15 15:46 | `git push` sem erro |
-| 177.7 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 177.7 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

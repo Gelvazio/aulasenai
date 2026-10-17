@@ -11,4 +11,4 @@ ligado)
 |------|-----------|--------|--------------|-------------|
 | 146.1 | Revisão do código dos filtros e correções: (a) "Tarefa Entregue?" ligado mostrava todos → agora **só quem entregou** (desligado: só quem não entregou); (b) a contagem "N de T alunos" só contava o "Questões respondidas" → agora "Mostrando N de T alunos" embaixo dos filtros conta a lista com **todos** os filtros; "Mostrar quem faltou", "RECUPERAÇÃO" e "Aluno" conferidos sem defeito | ✅ Concluído | 2026-10-14 18:52 | `node --check` nos 3 JS; linhas ≤ 100; leitura da cadeia de filtros (`filtrosDaLista`) |
 | 146.3 | "ao marcar recuperacao, lista que nao pegou recuperacao" → RECUPERAÇÃO invertido: **ligado = quem pegou recuperação (nota final < 7)**, desligado = nota final ≥ 7 (`filtro-recuperacao-progresso.js`, regra em `docs/regras/atividades.md`) | ✅ Concluído | 2026-10-14 18:55 | `node --check`; linhas ≤ 100 |
-| 146.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
+| 146.2 | Aceite do usuário | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |

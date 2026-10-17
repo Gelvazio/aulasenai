@@ -8,4 +8,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 124.1 | `assets/js/indice-aula-repositorio.js`: `buscarNomesDasAtividadesCard`; `assets/js/indice-aula-data.js`: `renderizarNomesDasAtividades` + `escreverNomeNoLink`, chamado no fim de `desenharCardsDoIndice` | ✅ Concluído | 2026-10-14 13:20 | `node --check` nos 2 arquivos; regex do prefixo testado no node ("✍️ ", "🔒 📘 ", "📝 ") |
-| 124.2 | Aceite do usuário (recarregar o índice da ITIC) | 👀 Aguardando o usuário | — | — |
+| 124.2 | Aceite do usuário (recarregar o índice da ITIC) | ✅ Concluído (aceite do usuário: "Aceito tudo", 2026-10-16 21:08) | 2026-10-16 21:08 | — |
