@@ -42,15 +42,37 @@ aceites sabendo o que está pronto e o que faltou.
 
 ### #181.1 — Listar as tarefas com aceite pendente e separar por tipo
 
-**Próximo passo:** ler as linhas 👀 do `tasks/STATUS.md` e o **Pedido** de cada etapa; montar a
-lista nesta seção e pedir ao usuário a aprovação do critério de conferência.
+**Próximo passo:** 👀 usuário aprovar o critério e a lista abaixo; depois a #181.2 e a #181.3 podem começar.
 
 - **Nível:** LEVE — só ler o quadro e as etapas e escrever a lista.
 - **Descrição:** para cada tarefa 👀 (aceite, aceites ou liberação): número, título, pedido em
   1 linha e o **tipo**: `documentação/regra`, `tela` (HTML/CSS/JS) ou `banco/segurança`.
 - **Critérios de aceitação:** todas as 👀 listadas; tipo de cada uma; dúvida de tipo = o mais
   pesado; aprovação do critério registrada nas Decisões.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** lista nesta seção · **Verificação:** linhas 👀 contadas com `awk`/`grep` no `STATUS.md` sincronizado com a `main`.
+
+**Lista (2026-10-16 23:05, por Claude Code (Sonnet 5.5) s17):** 15 linhas com 👀 em "📌 Tarefas"
+(as demais frentes citadas em "🧭 Frentes" — #212.4, #211.5, #220.2, #219.2 a #213.2, #210.3 —
+já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
+
+| Tarefa | Pedido em 1 linha | Tipo | Observação |
+|---|---|---|---|
+| #2 | Apostilas só em Markdown, sem arquivos redundantes | documentação/regra | 👀 é aprovação do plano (nada feito ainda) |
+| #4 | Cronograma semanal/aula (`PLANO-AULAS.md`) em 8 disciplinas | documentação/regra | 👀 é liberação (não iniciada) |
+| #5 | Exercícios práticos por tópico em `ATIVIDADES/` | documentação/regra | 👀 é liberação (depende da #25) |
+| #6 | Provas e trabalhos em `AVALIACOES/` | documentação/regra | 👀 é liberação (não iniciada) |
+| #7 | Rodar `analise-materias.py` e gerar relatório final | documentação/regra | 👀 é liberação (a #19 pode cobrir) |
+| #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 17.22, 17.30, 17.14) | documentação/regra | aceites reais |
+| #223 / #223.4 | "Gere a apostila de banco de dados" | documentação/regra | aceite real |
+| #190 (etapa 317) | Botões de bloquear atividade com problema | tela | aceite real; linha do quadro está quebrada (linhas 175–176 do `STATUS.md`) |
+| #36 | Questões até o mínimo: Testes de Front-End, demais aulas | banco/segurança | 👀 aceite; `PESADO` |
+| #193 | Voltar como estava antes da `aula_turma` (código e banco) | banco/segurança | aceite real |
+| #199.1 | Botão Exportar Meu Gabarito não aparece na atividade 152 | banco/segurança | mexe com gabarito; `PESADO` |
+| #209.7 | Remover do Supabase o storage `slides` | banco/segurança | depende do usuário apagar o bucket |
+| #221 / #221.2 | Dois cards da Aula 06 com o mesmo id | banco/segurança | aguarda "sim" para o `UPDATE` |
+
+**Resumo por tipo:** documentação/regra 7 (para a #181.2), tela 1 (para a #181.3), banco/segurança
+5 (para a #181.4, só Claude Code local). Aprovação do critério pelo usuário: 👀 pendente.
 
 ### #181.2 — Conferir as tarefas de documentação e regras
 
