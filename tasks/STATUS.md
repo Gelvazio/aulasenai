@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| local · main · s20 | #260.1 ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) — diagnóstico e plano | 🔄 Ativa | 2026-10-17 17:53 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
 | local · main · s18 | #251.2 entregue; #251.3 ([378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md)) aguarda o seu "sim" ao escopo ampliado | 👀 Aguardando o usuário | 2026-10-17 10:55 |
 | local · main · s17 | #248 ([375-189bc6ee](etapas/ETAPA-375-189bc6ee-COMANDO-VERIFY-E-COLUNA-VERIFICADO.md)) concluída; #166 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:44 |
@@ -910,7 +911,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #251-780651a2-f3a5-451e-a5eb-2c5452b935fa | Skill "gerenciador-de-tarefas": líder dispara os agentes nas pastas por modelo | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #251.3 | Registrar o modo "pastas por modelo" nas regras · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #251.2 | 👀 Escopo ampliado aguarda aprovação | — | [378-780651a2](etapas/ETAPA-378-780651a2-SKILL-GERENCIADOR-DE-TAREFAS.md) | — |
 | #260-4d7a91c2-8e35-4b60-a1f4-5c92d0b7e316 | Ligar as atividades sem ID à tabela `atividade` e à aula | 🟠 Alta | — | — | ⬜ Pendente (plano aguarda a #260.1) | — (não reservável) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
-| #260.1 | Diagnóstico e plano com aprovação · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
+| #260.1 | Diagnóstico e plano com aprovação · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s20) (desde 2026-10-17 17:53) | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #260.2 | Criar os registros em `atividade` ligados à aula (só local) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #260.1 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #260.3 | Ligar as páginas de atividade ao id · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #260.2 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
 | #260.4 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #260.3 | ⬜ Pendente | — | [387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md) | — |
