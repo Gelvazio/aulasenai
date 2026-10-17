@@ -62,6 +62,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
+| #266-73421a16-fdf6-4016-8e42-5b40d3ace5a2 | Ocultar aulas bloqueadas no login do aluno | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |
+| #266.1 | Filtrar aulas bloqueadas na lista do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ⬜ Pendente | — | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
 | #6 | Preencher `AVALIACOES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [152-5b8be7d5](etapas/ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md) | — |
@@ -1344,6 +1346,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 369-dc369cab | Saúde e Segurança no Trabalho — aulas e atividades (#242, pedida em 2026-10-16, criada pela #225) | [ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md](etapas/ETAPA-369-dc369cab-AULAS-E-ATIVIDADES-SAUDE-E-SEGURANCA-NO-TRABALHO.md) |
 | 370-73eb24d3 | Atividades de Reforço de Matemática e Raciocínio Lógico (#243, pedida em 2026-10-16) | [ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | 392-0f3f183e | Usabilidade no celular (#265, pedida em 2026-10-17) | [ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) |
+| 393-b933b796 | Aulas bloqueadas na lista do login do aluno (#266, pedida em 2026-10-17 20:54) | [ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
