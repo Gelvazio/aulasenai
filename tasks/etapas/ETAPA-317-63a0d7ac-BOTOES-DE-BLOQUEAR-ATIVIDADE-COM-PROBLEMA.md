@@ -18,3 +18,15 @@
   (sem combo, a favorita); trocar o combo remonta os botões (evento `turma-indice-alterada`); a remoção
   dos botões velhos passou para depois da leitura, evitando botões duplicados.
 - **Verificação:** `node --check` OK; só confirmável no navegador (usuário).
+
+### Conferência #181.3 (2026-10-17 00:20, Claude Code (Sonnet 5.5) s17)
+
+**Resultado: ✅ Feito no código** (falta só "conferir na tela", sem navegador).
+- `assets/js/indice-atividades-bloqueio.js:204-211` — `buscarFavoritaBloqueio` usa o combo "Turma:"
+  (`.barra-turma-favorita__lista`) e só cai na favorita sem combo: é a correção pedida.
+- `:391-397` — ouve `turma-indice-alterada`, `turma-favorita-alterada` e a troca de aula e remonta os botões.
+- `:380-386` — remove os botões velhos só depois de ler o banco (sem duplicar).
+- `assets/js/indice-turma-favorita.js:165,181` — cria o combo e dispara `turma-indice-alterada`.
+- `node --check` OK; arquivo sem alteração desde o commit `0290b57e` (a reversão da #193 não o mexeu).
+- Conferir na tela: escolher a turma 135080, clicar no ON de uma atividade e ver se libera.
+

@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s17 | #181.3 ([308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md)) — conferir tarefas de telas | 🔄 Ativa | 2026-10-17 00:00 |
+| local · main · s17 | #181.3 ([308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md)) concluída | ⏹️ Encerrada | 2026-10-17 00:20 |
 | nuvem · ccr-3274812b-0nj48o | #247.5 entregue ([374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md)); #247.6 aguarda o seu aceite | 👀 Aguardando o usuário | 2026-10-16 23:02 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
@@ -156,7 +156,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #178-06fcbd1b-609f-4a6b-a51f-9252bb179ad9 | "📄 Exportar Meu Gabarito" nas matérias que já têm questões respondidas (Análise de Dados, Fundamentos da Tecnologia e Programação, Reforço de Linguagens; 44 páginas) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [305-06fcbd1b](etapas/ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md) |
 | #179-e7b513ce-ae56-41a4-bf20-43bf40b98435 | "📄 Exportar Meu Gabarito" em todas as matérias de todos os cursos (59 páginas restantes + geradores) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #178 | ⬜ Pendente | — | [306-e7b513ce](etapas/ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md) |
 | #181-2ce35ab9-f9b4-4e04-a831-fc611a9ccff7 | Validar as tarefas com aceite pendente: o que foi pedido foi efetivamente feito? · `MEDIO · effort medium` | 🔴 Máxima | — | — | ⬜ Pendente | — (não reservável) | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
-| #181.3 | Conferir as de telas — HTML, CSS e JS (MEDIO) · effort medium | 🔴 Máxima | MEDIO · só Sonnet | #181.1 | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s17) (desde 2026-10-17 00:00) | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #181.4 | Conferir as de banco e segurança (PESADO, só Claude Code local) · effort high | 🔴 Máxima | PESADO · só Opus 5.5+ ou Fable | #181.1 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #181.5 | Relatório final: prontas, parciais e não feitas (MEDIO) · effort medium | 🔴 Máxima | MEDIO · só Sonnet | #181.2, #181.3, #181.4 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #181.6 | Aceite do usuário · `LEVE · effort low` | 🔴 Máxima | Usuário | #181.5 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |

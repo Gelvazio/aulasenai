@@ -88,13 +88,13 @@ já não têm linha 👀 no quadro). Critério: dúvida de tipo = o mais pesado.
 
 ### #181.3 — Conferir as tarefas de telas (HTML, CSS e JS)
 
-**Próximo passo:** aguardando a #181.1.
+**Próximo passo:** ✅ Feito em 2026-10-17 00:20 (Sonnet 5.5); a #181.5 espera a #181.4.
 
 - **Nível:** MEDIO — ler e entender código de telas.
 - **Modelo:** só Sonnet — nunca outro (#247)
 - **Descrição:** para cada tarefa do tipo `tela`: o código faz o que o pedido diz? Mesmo resultado
   e prova da #181.2; o que só dá para ver na tela vira "conferir na tela" (sem navegador).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** só 1 tarefa do tipo tela: #190 ✅ Feito no código (seção "Conferência #181.3" na etapa 317); falta conferir na tela. · **Verificação:** leitura de `indice-atividades-bloqueio.js` e `indice-turma-favorita.js`, `node --check` OK.
 
 ### #181.4 — Conferir as tarefas de banco e segurança
 
