@@ -22,10 +22,12 @@ do índice das atividades.
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-17 10:30 | Plano aprovado. **Q1 = sim:** excluir é lógico (`excluido = 1`, só o Professor Administrador). **Q2 = não:** a aula nova entra no banco **e já aparece como card no índice** na hora, mesmo sem atividade; depois o professor põe atividade ou link de slide nela | Usuário | "1-sim, 2-nao, entra no banco e no card…" |
+| 2026-10-17 10:31 | Escopo da #250.2 cresce com a Q2: card das aulas do banco sem página no índice (com 🗂️ atividades e ✏️ editar) e campo **"Link dos slides"** no formulário (grava `aulas.conteudo.slides`, JSONB que já existe — sem mudar o banco); o card mostra "📕 Slides" quando o link existe | Claude Code (Opus 5.5) | Decorre da Q2 |
 
 ### #250.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** 👀 esperar o "sim" e as respostas Q1–Q2 do usuário.
+**Próximo passo:** — (entregue; plano aprovado em 2026-10-17 10:30).
 
 - **Nível:** PESADO — permissões do professor (RLS/JWT) e várias partes ligadas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
@@ -64,7 +66,9 @@ do índice das atividades.
 
 ### #250.2 — Botão e modais do CRUD de aulas
 
-**Próximo passo:** esperar a #250.1 aprovada.
+**Próximo passo:** repositório, botão na barra da turma, modal 1 (lista) e modal 2 (formulário
+Inserir/Editar/Excluir com "Link dos slides"), cards das aulas do banco sem página; carregar pelo
+`atividades-crud-modal.js`; documentação.
 
 - **Nível:** PESADO — tela ligada a permissões do professor, mais de 3 arquivos.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (#247)
