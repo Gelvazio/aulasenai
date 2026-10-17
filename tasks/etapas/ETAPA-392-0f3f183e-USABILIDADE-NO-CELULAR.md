@@ -45,19 +45,23 @@
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-17 18:57 | Plano aprovado ("Sim") | Usuário (Gelvazio) | Aprovação da tarefa grande |
 | 2026-10-17 18:54 | Escopo: só o que o aluno usa | Usuário (Gelvazio) | Resposta à pergunta de escopo |
 | 2026-10-17 18:54 | #243.3 liberada (nenhuma aula feita) para esta frente pegar a #265.1 | Claude Code (nuvem · ccr-a26b3c0e-1ljztf) | 1 subtarefa reservada por frente; o pedido novo veio depois |
 
 ### #265.1 — Levantamento das páginas e plano (tarefa grande)
 
-**Próximo passo:** aprovação do plano pelo usuário.
+**Próximo passo:** — (concluída).
 
 - **Nível:** PESADO — mudança em massa em várias páginas e folhas de estilo ligadas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Entrega:** plano nesta etapa · **Verificação:** aprovado pelo usuário em 2026-10-17 18:57.
 
 ### #265.2 — Camada `celular.css` carregada pelo header
 
-**Próximo passo:** esperar a aprovação do plano.
+**Próximo passo:** criar `assets/css/celular.css` (regras do plano, só em `@media (max-width: 768px)`) e
+fazer o `js/header-usuario.js` incluí-lo depois do carregamento da página (`DOMContentLoaded`),
+para vir por último na cascata.
 
 - **Nível:** MEDIO — 1 CSS novo e 1 ajuste com lógica no `js/header-usuario.js`.
 - **Modelo:** só Sonnet — nunca outro
