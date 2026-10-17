@@ -92,7 +92,15 @@ ligado à sua aula, e a página da atividade usa esse id.
 
 ### #260.3 — Grupo B: Comunicação Oral no gerador de seeds
 
-**Próximo passo:** aguarda a #260.1.
+**Próximo passo:** — (entregue em 2026-10-17 18:21).
+
+- **Entrega (Sonnet · executor-medio; líder Opus 5.5, s20):** `PASTA_COMUNICACAO_ORAL`,
+  `ATIVIDADES_COMUNICACAO_ORAL` (aulas 1 e 2, títulos das aulas 104/105) e o grupo em `GRUPOS`;
+  seed `database/2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` gerado
+  com `--so`; linha PENDENTE no `SEEDS-APLICADOS.md` posta pelo líder (o `registrar_seed.py` só
+  atualiza linha que já existe).
+- **Verificação (líder):** `py_compile` passou; diff só no gerador; o SQL acha curso "Rio do Sul
+  Mais Tech", matéria e aulas pelos nomes exatos do banco; 50 gabaritos em cada atividade.
 
 - **Nível:** MEDIO — gerador Python, 1 arquivo, sem banco.
 - **Modelo:** só Sonnet — nunca outro

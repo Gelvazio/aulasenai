@@ -264,6 +264,19 @@ PASTA_REFORCO_MATEMATICA = (
 ATIVIDADES_REFORCO_MATEMATICA = [
 ]
 
+PASTA_COMUNICACAO_ORAL = (
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES"
+)
+
+# Introdução à Comunicação Oral e Escrita (tarefa #260): objetivas das aulas 01 e 02; as fontes
+# .md ficam em ATIVIDADES/CONTEUDO/. Títulos idênticos aos das aulas já existentes no banco.
+ATIVIDADES_COMUNICACAO_ORAL = [
+    (1, "Fundamentos da Comunicação no Mundo do Trabalho", "2026-10-09",
+     f"{PASTA_COMUNICACAO_ORAL}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Comunicação Interpessoal e Trabalho em Equipe", "2026-10-09",
+     f"{PASTA_COMUNICACAO_ORAL}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
@@ -277,6 +290,9 @@ GRUPOS = [
     ("Técnico em Informática para Internet", "BANCO DE DADOS", ATIVIDADES_BANCO_DADOS),
     ("Rio do Sul Mais Tech", "Reforço Matemática e Raciocínio Lógico",
      ATIVIDADES_REFORCO_MATEMATICA),
+    ("Rio do Sul Mais Tech",
+     "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho",
+     ATIVIDADES_COMUNICACAO_ORAL),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)

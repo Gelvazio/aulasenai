@@ -107,6 +107,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-17-testes-frontend-atividade-pratica-aula-09-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 161 aula 130, bloqueada, 30 tópicos; md5 igual ao do arquivo |
 | `2026-10-17-testes-frontend-objetiva-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 157 aula 131 (aulas 127–131 criadas antes, matéria 48), 50 gabaritos; md5 igual ao do arquivo |
 | `2026-10-17-testes-frontend-atividade-pratica-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 162 aula 131, bloqueada, 30 tópicos; md5 igual ao do arquivo |
+| `2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | — | Gerado pela #260.3 (objetivas das aulas 01 e 02, aulas 104 e 105); aplicar pela #260.5 |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
