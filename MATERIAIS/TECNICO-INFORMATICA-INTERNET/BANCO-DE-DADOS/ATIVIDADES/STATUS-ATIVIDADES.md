@@ -55,14 +55,14 @@
 | 16 | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 136, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 17 | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 138, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 18 | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 140, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
-| 19 | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | 🔄 APLICADO (atividade id 142, bloqueada; 29 de 30 tópicos — falta o 6c, que precisa da confirmação do usuário no conector) | 🔄 falta 1 tópico no banco |
+| 19 | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 142, bloqueada; 30 tópicos, md5 conferido em 2026-10-16 21:02) | ✅ Concluída |
 | 20 | ✅ `ATIVIDADE-PRATICA-AULA-20.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 146, bloqueada; 30 tópicos, md5 conferido em 2026-10-10 22:13) | ✅ Concluída |
 
 ## Avaliações (modelo da ITIC)
 
 | Página | Tipo | Status |
 |---|---|---|
-| `AVALIACAO-OBJETIVA-01.html` | Objetiva (aulas 01–11) | ⬜ Pendente |
-| `AVALIACAO-OBJETIVA-02.html` | Objetiva (aulas 12–20) | ⬜ Pendente |
-| `AVALIACAO-PRATICA.html` | Prática (20 questões × 3 tópicos) | ⬜ Pendente |
-| `AVALIACAO-MEDIA-FINAL.html` | Média final (`media-final.json`) | ⬜ Pendente |
+| `AVALIACAO-OBJETIVA-01.html` | Objetiva (aulas 01–10) | ✅ no banco (atividade id 147; md5 conferido) |
+| `AVALIACAO-OBJETIVA-02.html` | Objetiva (aulas 11–20) | ✅ no banco (atividade id 148; md5 conferido) |
+| `AVALIACAO-PRATICA.html` | Prática (20 questões × 3 tópicos) | ✅ no banco (atividade id 149, aula id 125; 60 tópicos, md5 conferido em 2026-10-16 21:02) |
+| `AVALIACAO-MEDIA-FINAL.html` | Média final (`media-final.json`: 60% contínua + 15% objetivas + 25% prática) | ✅ Gerada em 2026-10-16 21:02 (gerador `gerar_avaliacao_media_final.py`) |
