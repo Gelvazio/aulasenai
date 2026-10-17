@@ -29,10 +29,12 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
+| 2026-10-16 22:53 | Plano aprovado com as respostas: **Q1 = sim** (cada modelo só o seu nível exato; troca a C2); **Q2 = sim** (acabam as exceções de nível autorizadas); **Q3 = coluna Modelo** igual ao global; **Q4 = esta sessão (Opus 5.5) só para criar esta regra (#247), e nada mais** | Usuário | Pedido do usuário |
+| 2026-10-16 22:53 | Subtarefas redivididas pelo plano: #247.2 regra global, #247.3 regra do projeto, #247.4 trava, #247.5 todas as tarefas (inclui a coluna no `task_complete.md`, para as linhas poderem ser movidas), #247.6 aceite | Claude Code (Opus 5.5) | Plano aprovado |
 
 ### #247.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** 👀 esperar o "sim" e as respostas Q1 a Q4 do usuário.
+**Próximo passo:** — (entregue; plano aprovado em 2026-10-16 22:53).
 
 - **Nível:** PESADO — regra de todas as IAs (arquitetura), dois repositórios, mudança em massa.
 - **Descrição:** levantamento dos lugares a mudar e plano com subtarefas, níveis e verificação.
@@ -77,14 +79,34 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
   ser feitas por Haiku e Sonnet. Esta sessão (Opus) fica só com as PESADO (#247.5) e deixa as
   outras livres, ou você autoriza esta sessão só para esta tarefa?
 
-### #247.2 — Executar o plano aprovado
+### #247.2 — Regra global no rules-ai
 
-**Próximo passo:** esperar a #247.1 aprovada (pode ser dividida no plano).
+**Próximo passo:** gravar "nunca executar subtarefa que não é do seu modelo" em
+`niveis-e-modelos.md`, `frentes-e-reserva.md`, `ciclo-da-task.md` e `quadro-de-tarefas.md`;
+decisão nova da C2 no `CONFLITOS.md`; push no `rules-ai`.
 
-- **Nível:** PESADO — mudança em massa, mais de 3 arquivos ligados.
+- **Nível:** LEVE — só `.md` (feita por esta sessão Opus por autorização do usuário, só na #247).
 
-### #247.3 — Aceite do usuário
+### #247.3 — Regra do projeto
 
 **Próximo passo:** esperar a #247.2.
+
+- **Nível:** LEVE — só `.md` (`AGENTS.md`, `niveis.md`, `tasks/`, skills), autorização da #247.
+
+### #247.4 — Trava no Claude Code (hook)
+
+**Próximo passo:** esperar a #247.3.
+
+- **Nível:** MEDIO — lógica em 1 a 2 arquivos JS (`regras-bloqueio.js`), autorização da #247.
+
+### #247.5 — Coluna Modelo e aviso em todas as tarefas
+
+**Próximo passo:** esperar a #247.4.
+
+- **Nível:** PESADO — mudança em massa no quadro e nas etapas, mais de 3 arquivos ligados.
+
+### #247.6 — Aceite do usuário
+
+**Próximo passo:** esperar a #247.5.
 
 - **Nível:** LEVE — conferência do usuário.

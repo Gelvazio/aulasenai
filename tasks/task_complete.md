@@ -242,3 +242,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #244-1e2ac8a5-32a3-4bfd-8f59-95ca4e0af187 | Banco de Dados: pendências finais (status, slides, PDF, menu, revisão da ementa) | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md) |
 | #245.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #245.3 | ✅ Concluído | — | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
 | #245-8341ceea-7ca4-4a05-976d-e2c73aabe47d | Links de slides e PDF só quando o arquivo existir (todas as matérias) | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [372-8341ceea](etapas/ETAPA-372-8341ceea-LINKS-DE-SLIDES-E-PDF-SO-QUANDO-EXISTIREM.md) |
+| #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | ✅ Concluído | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
