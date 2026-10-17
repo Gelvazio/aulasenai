@@ -305,6 +305,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #221.2 | Voltar a atividade 19 para a aula 69 no banco (PESADO) | 🟠 Alta | #221.1 | 👀 Aguardando aprovação | Claude Code (Opus 5.5) (local · main · s16) (desde 2026-10-16 20:27) | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #221.3 | Trava no Gerenciar atividades e aviso no Editar aula (MEDIO) · effort medium | 🟠 Alta | #221.2 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
 | #221.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #221.2, #221.3 | ⬜ Pendente | — | [348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md) |
+| #222-9c22cde7-b8fd-43de-ba93-c91434d45c6a | Registrar os aceites pendentes do quadro ("Aceito tudo") | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
+| #222.1 | Marcar os aceites e mover as linhas para o `task_complete.md` · `LEVE · effort low` | 🟠 Alta | — | ⬜ Pendente | — | [349-9c22cde7](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -318,6 +320,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 
 | Etapa | Assunto | Arquivo |
 |---|---|---|
+| 349-9c22cde7 | Registrar os aceites pendentes do quadro (#222, pedida em 2026-10-16 21:07) | [ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md](etapas/ETAPA-349-9c22cde7-REGISTRAR-ACEITES-PENDENTES.md) |
 | 336-c41e9a05 | Estratégia de ensino desafiadora de Banco de Dados (#209, pedida em 2026-10-16 18:31) | [ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md) |
 | 335-8b3d4f27 | Conectando a UC ao Mundo do Trabalho (#208, pedida em 2026-10-16 18:04) | [ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md](etapas/ETAPA-335-8b3d4f27-CONECTANDO-A-UC-AO-MUNDO-DO-TRABALHO.md) |
 | 334-5a7c2e91 | Tarefa prática de avaliação por competências (#207, pedida em 2026-10-16 17:48) | [ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md](etapas/ETAPA-334-5a7c2e91-TAREFA-PRATICA-AVALIACAO-POR-COMPETENCIAS.md) |
