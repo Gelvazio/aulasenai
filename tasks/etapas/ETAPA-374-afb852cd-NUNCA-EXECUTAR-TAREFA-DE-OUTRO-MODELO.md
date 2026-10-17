@@ -32,12 +32,50 @@ que gera tarefas (modelos do quadro, skills `classificar-tarefa`/`liderar-equipe
 
 ### #247.1 — Levantamento e plano (tarefa grande)
 
-**Próximo passo:** achar o "gerador de task global" e tudo que cria ou lista tarefas, escrever o
-plano nesta etapa e pedir o "sim" do usuário.
+**Próximo passo:** 👀 esperar o "sim" e as respostas Q1 a Q4 do usuário.
 
 - **Nível:** PESADO — regra de todas as IAs (arquitetura), dois repositórios, mudança em massa.
 - **Descrição:** levantamento dos lugares a mudar e plano com subtarefas, níveis e verificação.
 - **Critérios de aceitação:** plano aprovado pelo usuário.
+- **Executor:** Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o).
+
+**Levantamento (2026-10-16 22:52):**
+
+| Onde | O que é | Situação hoje |
+|---|---|---|
+| `rules-ai/regras/niveis-e-modelos.md` e `frentes-e-reserva.md` | Regra global | "Pega até o máximo do seu modelo; modelo forte desce se não houver do seu nível" (C2 = A) |
+| `rules-ai/regras/quadro-de-tarefas.md` | **Gerador global de tarefas** (modelos do `STATUS.md`, do `task_complete.md` e da etapa) | Já tem a coluna **Modelo** (`LEVE · Haiku`); não diz "nunca outro modelo" |
+| `rules-ai/scripts/sincronizar.mjs` | Entrega as regras a cada IA (`~/.claude/CLAUDE.md`, Gemini, Codex…) | Não precisa mudar; depois da regra, o usuário roda `--aplicar` na máquina dele |
+| `aulasenai`: `AGENTS.md` (regra 8), `.claude/rules/niveis.md`, `tasks/frentes-e-reserva.md`, `tasks/quadro.md` | Regras do projeto | Iguais à C2 = A; o quadro **não tem** a coluna Modelo |
+| Skills `classificar-tarefa` e `liderar-equipe`; agentes `executor-*` | O que cria e distribui subtarefas | O líder já delega ao executor do nível |
+| `scripts/claude-hooks/regras-bloqueio.js` | Travas do Claude Code | Não trava reserva de nível errado |
+| Leitores do `STATUS.md`: `leitor_tarefas.py`, `aba-tasks.js`, `fechar_banco.py`, `criar_status_faltantes.py` | Leem as colunas | Precisam aceitar a coluna nova |
+| Quadro | ~728 subtarefas abertas; 843 seções com nível nas etapas | Modelo não gravado em nenhuma |
+
+**Plano proposto:**
+1. **#247.2 Regra global** (`rules-ai`): "⛔ nunca executar subtarefa que não é do seu modelo" em
+   `niveis-e-modelos.md`, `frentes-e-reserva.md` e `ciclo-da-task.md`; no `quadro-de-tarefas.md`,
+   coluna Modelo obrigatória e linha `- **Modelo:**` no modelo da etapa; nova decisão da C2 no
+   `CONFLITOS.md`; push no `rules-ai`.
+2. **#247.3 Regra do projeto**: `AGENTS.md` (regra 8), `niveis.md`, `tasks/frentes-e-reserva.md`,
+   `tasks/quadro.md`, skills `classificar-tarefa` e `liderar-equipe`; histórico.
+3. **#247.4 Trava**: regra nova no `regras-bloqueio.js` — no `git commit`, se o `STATUS.md` traz
+   reserva nova cujo modelo em "Em uso por" não é o do nível, bloqueia.
+4. **#247.5 Todas as tarefas**: script idempotente que põe a coluna **Modelo** em todas as linhas
+   abertas do `STATUS.md` (`LEVE · Haiku`, `MEDIO · Sonnet`, `PESADO · Opus 5.5+/Fable`; mãe = `—`;
+   aceite = `Usuário`) e a linha `- **Modelo:** só <modelo> — nunca outro` em cada seção de
+   subtarefa aberta das etapas; ajustar os 4 leitores; recado para todas as frentes.
+5. **#247.6 Aceite** do usuário.
+
+**Perguntas (Q1–Q4):**
+- **Q1:** "Seu modelo" = **só o nível exato** (Opus só PESADO, Sonnet só MEDIO, Haiku só LEVE)? Isso
+  troca a C2 (hoje: até o máximo, e o forte desce se não houver do seu nível).
+- **Q2:** As exceções que você autoriza (como a #206: Sonnet em PESADO) acabam também?
+- **Q3:** O modelo vai numa **coluna Modelo** no quadro, igual ao global (recomendado), ou só no
+  título, como o `effort`?
+- **Q4:** Com Q1 = sim, as subtarefas LEVE e MEDIO desta tarefa (texto das regras, hook) só podem
+  ser feitas por Haiku e Sonnet. Esta sessão (Opus) fica só com as PESADO (#247.5) e deixa as
+  outras livres, ou você autoriza esta sessão só para esta tarefa?
 
 ### #247.2 — Executar o plano aprovado
 
