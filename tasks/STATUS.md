@@ -30,7 +30,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
 | nuvem · ccr-04d42f6c-y5d6iz | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)) — aulas 06 a 10 (itens 22.3 a 22.7), sem banco; reserva passada pelo usuário em 2026-10-16 21:14 | 🔄 Ativa | 2026-10-16 21:14 |
-| nuvem · ccr-a26b3c0e-1ljztf | #224.1 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) — plano das aulas de Reforço de Matemática | 🔄 Ativa | 2026-10-16 21:22 |
+| nuvem · ccr-a26b3c0e-1ljztf | #224.2 ([351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md)) — 16 aulas de Reforço de Matemática | 🔄 Ativa | 2026-10-16 21:23 |
 | nuvem · relaxed-lovelace-sgtq7z | #167 aguarda aceite ([294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md)); #166 liberada (etapa 293); #168 criada ([295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md)), assumida depois do aceite da #167 | 👀 Aguardando o usuário | 2026-10-14 21:49 |
 | nuvem · lucid-cannon-whxrn1 | #169 ([296-eee19743](etapas/ETAPA-296-eee19743-CONFIRMAR-CORRECAO-SO-SE-NAO-CORRIGIDA.md)) aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 21:28 |
 | nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f | #171 ([298-cb630440](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md)) em execução | 🔄 Ativa | 2026-10-14 23:31 |
@@ -195,8 +195,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #223.3 | Markdown completo e HTML · `MEDIO · effort medium` | 🟠 Alta | #223.2 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #223.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #223.3 | ⬜ Pendente | — | [350-c568f1ed](etapas/ETAPA-350-c568f1ed-APOSTILA-BANCO-DE-DADOS.md) |
 | #224-c05fdb13-e858-4067-adbf-ab5f10659f5b | Aulas de Reforço de Matemática e Raciocínio Lógico (Rio do Sul Mais Tech) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
-| #224.1 | Plano das aulas (aprovação do usuário) · `MEDIO · effort medium` | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:22) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
-| #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
+| #224.2 | Aulas em `CONTEUDO/` · `MEDIO · effort medium` | 🟠 Alta | #224.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-a26b3c0e-1ljztf) (desde 2026-10-16 21:23) | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.3 | Status da matéria · `LEVE · effort low` | 🟠 Alta | #224.2 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 | #224.4 | Aceite do usuário · `LEVE · effort low` | 🟠 Alta | #224.3 | ⬜ Pendente | — | [351-c05fdb13](etapas/ETAPA-351-c05fdb13-AULAS-REFORCO-MATEMATICA.md) |
 

@@ -33,13 +33,14 @@
 
 ### #224.1 — Plano das aulas (tarefa grande)
 
-**Próximo passo:** aprovação do plano pelo usuário.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — leitura da ementa e plano em `.md` de várias aulas.
+- **Entrega:** plano nesta etapa · **Verificação:** aprovado pelo usuário em 2026-10-16 21:23.
 
 ### #224.2 — Aulas em `CONTEUDO/`
 
-**Próximo passo:** esperar a aprovação do plano.
+**Próximo passo:** escrever a Aula 01 e seguir em sequência até a 16.
 
 - **Nível:** MEDIO — conteúdo didático conferido com a ementa.
 
