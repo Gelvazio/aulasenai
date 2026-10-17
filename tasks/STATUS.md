@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · ccr-3274812b-0nj48o | #244 e #245 concluídas (aceites em 22:41); #246 concluída | ⏹️ Encerrada | 2026-10-16 22:41 |
+| nuvem · ccr-3274812b-0nj48o | #247.1 ([374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md)) — levantamento e plano | 🔄 Ativa | 2026-10-16 22:49 |
 | nuvem · ccr-790c3677-2mknbc | #244.9 ([371-1e2ac8a5](etapas/ETAPA-371-1e2ac8a5-BANCO-DE-DADOS-PENDENCIAS-FINAIS.md)) — regra dos slides; depois #244.2 e #244.3 | 🔄 Ativa | 2026-10-16 22:06 |
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s16 | #221.1 entregue (diagnóstico); #221.2 ([348-c7244bf6](etapas/ETAPA-348-c7244bf6-DOIS-CARDS-DA-AULA-06-COM-O-MESMO-ID.md)) aguarda o seu "sim" para o `UPDATE` no banco | 👀 Aguardando o usuário | 2026-10-16 20:27 |
@@ -1380,8 +1380,8 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | #29: skill `proxima-task` com `evals` e `test_output.md` no formato antigo | Não mexer em testes sem pedido | Só se o usuário pedir |
 | #29: cópia `~/.agents/skills/documentacao-padrao` sem a exceção do quadro | Fora do repositório; só é usada em projeto sem quadro | Se o usuário quiser |
 | #80: `gerar_indices.py` está atrás das páginas de índice (não põe `popup.js`, `faixa-materias-ensalado.js` nem `data-curso-id`; isso vem de `scripts/*/indice_*.sh`) — rodar o gerador apaga a faixa ENSALADO | Fora do pedido | Só se o usuário pedir |
-| #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
-| #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247-afb852cd-5ce3-4200-8dd1-0f36f02b3533 | Nunca executar tarefa que não é do seu modelo (regra, todas as tarefas e gerador) | 🟡 Média | — | 🔄 Em execução | — (não reservável) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
+| #247.1 | Levantamento e plano (tarefa grande) · `PESADO · effort high` | 🟡 Média | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-16 22:49) | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.2 | Executar o plano aprovado · `PESADO · effort high` | 🟡 Média | #247.1 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | #247.3 | Aceite do usuário · `LEVE · effort low` | 🟡 Média | #247.2 | ⬜ Pendente | — | [374-afb852cd](etapas/ETAPA-374-afb852cd-NUNCA-EXECUTAR-TAREFA-DE-OUTRO-MODELO.md) |
 | Progresso da turma para o professor em **todas** as atividades (discursivas: ligar o campo; objetivas: módulo equivalente em `respostas-atividade.js`) | Começou só pela prova ADAG id 82 (pedido do usuário) | Quando o usuário pedir |
