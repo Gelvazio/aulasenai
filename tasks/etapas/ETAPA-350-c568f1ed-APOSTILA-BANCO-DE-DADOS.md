@@ -4,17 +4,37 @@
 **Pedido:** "Gere a apostila de banco de dados"
 **Objetivo:** gerar a apostila da matéria Banco de Dados (`APOSTILA/`), última pendência da matéria na análise contínua (#19), seguindo `.claude/rules/apostilas.md` e `docs/regras/apostilas.md`.
 
-### Escopo · ### Riscos · ### Decisões
+### Escopo
 
-(plano a escrever na #223.1)
+- **Entra:** `APOSTILA/CONTEUDO/INTRODUCAO.md` + 20 `CAPITULO-NN.md` (1 por aula de 4 h, teoria + resumo + glossário, **sem exercícios**), escritos a partir de `CONTEUDO/AULA-NN-*.md` e do `EMENTA-CHALKIE-AI.md`; completar o `materia.json` com o texto literal da ementa que falta; `APOSTILA-BANCO-DE-DADOS.md` (Markdown completo) com conferência **100%**; `APOSTILA-BANCO-DE-DADOS.html` pelo gerador; `STATUS-APOSTILA.md` e análise contínua (#19).
+- **Não entra:** PDF (só se o usuário pedir); atividades ou perguntas na apostila; conteúdo de outra UC; nada no banco.
+- **Pronto quando:** `gerar_apostila.py --conferir` = 100%, HTML gerado sem avisos ⚠️, `analise-materias.py` sem pendência em Banco de Dados e aceite do usuário.
+- **Premissas:** modelo de formato = ITIC (apostila sem vídeos e exercícios, `apostila_sem_videos_e_exercicios: true`), autor Gelvazio Camargo, versão 1.0 (já no `materia.json`); exemplos com "você, como aluno consultor", sem empresa fictícia; nenhuma marca de software imposta além do que a ementa declara.
+
+### Conferência inicial (2026-10-16 21:25, Markdown só com as partes iniciais)
+
+203/229 (88%). Faltam: regra de bolso (1), avaliação — recuperação e nota final (2), recursos — ferramenta de DER (1), acessibilidade (1) → corrigir no `materia.json` copiando da ementa; ideias/prompts das aulas (9) → `ideias_ementa` das aulas no `materia.json`; glossário oficial (12) → entra pelos capítulos.
+
+### Riscos
+
+| Risco | Plano B |
+|---|---|
+| Conferência não chega a 100% por formato novo da ementa | Ampliar `conferir_ementa.py` sem texto fixo de matéria e avisar |
+| 20 capítulos longos demais para validar um por vez | Validar em blocos, se o usuário decidir |
+| Vídeos do YouTube não verificáveis na nuvem | Apostila sem vídeos (modelo ITIC) |
+
+### Decisões
+
+| Data | Decisão | Quem | Por quê |
+|---|---|---|---|
 
 ### #223.1 — Plano da apostila (tarefa grande)
 
-**Próximo passo:** ler as regras da apostila e o modelo, escrever o plano nesta etapa e pedir aprovação.
+**Próximo passo:** aprovação do plano pelo usuário.
 
 - **Nível:** MEDIO — leitura de regras e plano em `.md`.
 
-### #223.2 — Capítulos em Markdown (um por vez, com validação do usuário)
+### #223.2 — `materia.json` literal + introdução + capítulos em Markdown (com validação do usuário)
 
 **Próximo passo:** esperar a aprovação do plano.
 
