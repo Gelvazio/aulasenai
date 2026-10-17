@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-17 00:38:39",
+  "gerado_em": "2026-10-17 20:54:09",
   "padrao": "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -499,7 +499,7 @@
       "completa": false,
       "pecas": {
         "ementa": true,
-        "materia_json": false,
+        "materia_json": true,
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
@@ -518,7 +518,6 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar materia.json (copiado da ementa)",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
@@ -812,7 +811,7 @@
       "completa": false,
       "pecas": {
         "ementa": true,
-        "materia_json": false,
+        "materia_json": true,
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
@@ -820,23 +819,20 @@
         "status_materia": true
       },
       "contagem": {
-        "aulas_conteudo": 0,
+        "aulas_conteudo": 1,
         "fontes_atividades": 0,
         "atividades_50_questoes": 0,
         "atividades_praticas": 0,
         "apostila_html": 0
       },
       "ementa": {
-        "caracteres": 7179,
-        "dentro_da_faixa": false
+        "caracteres": 14887,
+        "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
-        "Ajustar a ementa para 14800–14950 caracteres (hoje 7179)"
+        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
       ],
       "ordem": 25
     },
@@ -1124,9 +1120,13 @@
   "pastas_ignoradas_sem_ementa_nem_materia_json": [
     "MATERIAIS/CURSO-PROFESSOR-RAFAEL/MATERIA-XYZ",
     "MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/docs",
+    "MATERIAIS/QUALIFICACAO-PROFISSIONAL/.claude",
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/.claude",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/docs",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/scripts",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs"
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/.claude",
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs",
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/graphify-out",
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES"
   ]
 }
