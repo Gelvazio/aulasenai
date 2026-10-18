@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| local · main · Qoder | #267 criada ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) — análise de viabilidade do PWA na pasta `pwa/`; as 3 subtarefas são `PESADO` | 👀 Aguardando o usuário | 2026-10-17 21:01 |
 | local · main · Codex (GPT-6) | #266 concluída ([393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md)) | ⏹️ Encerrada | 2026-10-17 20:59 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
@@ -915,6 +916,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #265.4 | Ícones e toque fácil nas páginas de atividade · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #265.2 | 🔄 Em execução | Claude Code (Opus 5.5 · executor-pesado; líder Opus 5.5) (nuvem · ccr-3274812b-0nj48o) (desde 2026-10-17 19:46) | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 | #265.5 | Gerar de novo as páginas do aluno · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #265.3, #265.4 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
 | #265.6 | Orientação em `docs/` do header e da camada do celular · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #265.5 | ⬜ Pendente | — | [392-0f3f183e](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) | — |
+| #267-efe592c3-23bc-4360-afa7-33605f9e6dd3 | Análise de viabilidade de uma versão PWA na pasta `pwa/` | 🟡 Média | — | — | 👀 Plano aguarda o "sim" | — (não reservável) | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1345,6 +1350,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 370-73eb24d3 | Atividades de Reforço de Matemática e Raciocínio Lógico (#243, pedida em 2026-10-16) | [ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md](etapas/ETAPA-370-73eb24d3-ATIVIDADES-REFORCO-MATEMATICA.md) |
 | 392-0f3f183e | Usabilidade no celular (#265, pedida em 2026-10-17) | [ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) |
 | 393-b933b796 | Aulas bloqueadas na lista do login do aluno (#266, pedida em 2026-10-17 20:54) | [ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) |
+| 394-efe592c3 | Análise de viabilidade de uma versão PWA na pasta `pwa/` (#267, pedida em 2026-10-17 21:01) | [ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
