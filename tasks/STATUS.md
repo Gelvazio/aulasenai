@@ -921,6 +921,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| **#274** | **Visual dos cards de aula** | **🟠 Alta** | **—** | **—** | **⬜ Pendente** | **— (não reservável)** | **[401-1db3efe7](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md)** | **—** |
+| #274.1 | Ajustar o visual dos cards de aula · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [401-1db3efe7](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md) | — |
 
 
 ## Escopo
@@ -1359,6 +1361,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 398-ce75ff03 | Diagnosticar duplicação do card da aula 27 (#271, pedida em 2026-10-17 21:30) | [ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) |
 | 399-86dad173 | Cards de aula somente do banco (#272, pedida em 2026-10-17 21:55) | [ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) |
 | 400-312b7090 | Atividade desvinculada continua no card da aula (#273, pedida em 2026-10-17 22:13) | [ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md) |
+| 401-1db3efe7 | Visual dos cards de aula (#274, pedida em 2026-10-17 22:27) | [ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
