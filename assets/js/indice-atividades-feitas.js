@@ -22,6 +22,10 @@ const FILTRO_SIM_FEITAS = 'sim';
 const FILTRO_NAO_FEITAS = 'nao';
 const LIMITE_RESPOSTAS_FEITAS = 5000;
 const CLASSE_BARRA_FEITAS = 'filtro-feitas';
+// A sessão do Supabase pode demorar a ficar pronta na abertura da página: o perfil é tentado de
+// novo algumas vezes antes de desistir (senão a cor não seria aplicada).
+const TENTATIVAS_PERFIL_FEITAS = 10;
+const ESPERA_PERFIL_FEITAS = 300;
 // Disparado pelo indice-aula-data.js quando a grade só do banco fica pronta (#272): os cards são
 // novos, então a marca e as cores são refeitas neles.
 const EVENTO_CARDS_MONTADOS_FEITAS = 'cards-aula-montados';
@@ -37,6 +41,19 @@ async function obterPerfilFeitas() {
     const { data } = await cliente.auth.getSession();
     const usuario = data?.session?.user;
     return usuario ? (usuario.app_metadata?.perfil || 'ALUNO') : null;
+}
+
+/**
+ * Descobre o perfil do usuário logado, esperando a sessão ficar pronta na abertura da página.
+ * @returns {Promise<string|null>} Perfil (ALUNO/PROFESSOR) ou null se não há login.
+ */
+async function aguardarPerfilFeitas() {
+    for (let tentativa = 0; tentativa < TENTATIVAS_PERFIL_FEITAS; tentativa += 1) {
+        const perfil = await obterPerfilFeitas();
+        if (perfil) return perfil;
+        await new Promise((resolver) => setTimeout(resolver, ESPERA_PERFIL_FEITAS));
+    }
+    return null;
 }
 
 /**
@@ -81,7 +98,8 @@ async function buscarEstadosFeitas(paginas) {
     const [respostas, entregas] = await Promise.all([
         sbGet('resposta_atividade', 'select=atividade_id&' + filtro +
             '&limit=' + LIMITE_RESPOSTAS_FEITAS),
-        sbGet('entrega_atividade', 'select=atividade_id&' + filtro),
+        // Se a leitura das entregas falhar, a cor ainda sai pelo que foi respondido.
+        sbGet('entrega_atividade', 'select=atividade_id&' + filtro).catch(() => []),
     ]);
     const paginaPorId = new Map(atividades.map((atividade) => [atividade.id, atividade.pagina]));
     const paginasDe = (linhas) => new Set(
@@ -165,7 +183,7 @@ function montarFiltroFeitas() {
  */
 async function iniciarMarcacaoFeitas() {
     try {
-        if (await obterPerfilFeitas() !== 'ALUNO') return;
+        if (await aguardarPerfilFeitas() !== 'ALUNO') return;
 
         const cards = [...document.querySelectorAll(SELETOR_CARD_FEITAS)];
         const caminhos = cards.map((card) =>
@@ -182,4 +200,6 @@ async function iniciarMarcacaoFeitas() {
 }
 
 document.addEventListener(EVENTO_CARDS_MONTADOS_FEITAS, iniciarMarcacaoFeitas);
+// Rede de segurança: se o evento da grade chegar antes deste módulo, o fim do carregamento pinta.
+window.addEventListener('load', () => iniciarMarcacaoFeitas());
 iniciarMarcacaoFeitas();

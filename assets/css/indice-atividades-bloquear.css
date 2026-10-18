@@ -79,12 +79,14 @@
 /* Aula bloqueada: nem o professor acessa nada do card (links, slides, ON/OFF das atividades,
    cadastrar, editar); só o botão da aula fica acima do véu e clicável, para desbloquear. */
 .aula.aula--oculta-para-aluno { display: none; }
-/* Aluno: atividade bloqueada continua na lista do card, apagada e com 🔒, mas não abre (#281).
-   O link fica sem href (indice-atividades-bloqueio.js) e o RLS continua barrando o acesso. */
-.aula a.btn.atividade--bloqueada-para-aluno { opacity: 0.55; cursor: not-allowed; }
-.aula a.btn.atividade--bloqueada-para-aluno::before { content: '🔒 '; }
-.aula a.btn.principal.atividade--bloqueada-para-aluno:hover {
-    background: #f7941d; border-color: #f7941d;
+/* Aluno: atividade bloqueada continua na lista do card, levemente apagada e com o cadeado POR CIMA
+   do botão (#281 e #284). O link fica sem href (indice-atividades-bloqueio.js) e o RLS continua
+   barrando o acesso. */
+.aula a.btn.atividade--bloqueada-para-aluno { position: relative; cursor: not-allowed; }
+.aula a.btn.atividade--bloqueada-para-aluno::after {
+    content: '🔒'; position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; background: rgba(255, 255, 255, 0.6); border-radius: inherit;
+    font-size: 20px; line-height: 1; pointer-events: none;
 }
 .aula.aula--bloqueada-professor { cursor: not-allowed; }
 .aula.aula--bloqueada-professor * { pointer-events: none; }

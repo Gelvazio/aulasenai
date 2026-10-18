@@ -8,22 +8,29 @@
 .filtro-feitas select { margin-left: 6px; padding: 4px 8px; border-radius: 6px; }
 article.aula[hidden] { display: none; }
 
-/* Cor do botão de cada atividade pelo andamento do aluno (#283, 2026-10-18):
-   entregue = fundo verde claro; algo pendente = o amarelo de hoje (sem regra nova); não fez nada =
-   fundo vermelho fraco piscando. As classes vêm do indice-atividades-feitas.js (só aluno logado). */
-.btn.principal.atividade--feita { background: #d9f7e6; border-color: #34a853; color: #0b6b3a; }
-.btn.principal.atividade--feita:hover { background: #c3f0d8; border-color: #34a853; }
-.btn.principal.atividade--nao-feita {
+/* Cor do botão de cada atividade pelo andamento do aluno (#283, 2026-10-18; seletor reforçado na
+   #284 para vencer as regras do botão): entregue = fundo verde claro; algo pendente = o amarelo de
+   hoje (sem regra nova); não fez nada = fundo vermelho fraco piscando. As classes vêm do
+   indice-atividades-feitas.js (só aluno logado). */
+article.aula a.btn.principal.atividade--feita {
+  background: #d9f7e6; border-color: #34a853; color: #0b6b3a;
+}
+article.aula a.btn.principal.atividade--feita:hover {
+  background: #c3f0d8; border-color: #34a853;
+}
+article.aula a.btn.principal.atividade--nao-feita {
   background: #fde2e1; border-color: #f3a7a2; color: #a11212;
   animation: piscar-atividade-nao-feita 1.6s ease-in-out infinite;
 }
-.btn.principal.atividade--nao-feita:hover { background: #fbd5d3; border-color: #f3a7a2; }
+article.aula a.btn.principal.atividade--nao-feita:hover {
+  background: #fbd5d3; border-color: #f3a7a2;
+}
 @keyframes piscar-atividade-nao-feita {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.55; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn.principal.atividade--nao-feita { animation: none; }
+  article.aula a.btn.principal.atividade--nao-feita { animation: none; }
 }
 
 @media (max-width: 600px) {
