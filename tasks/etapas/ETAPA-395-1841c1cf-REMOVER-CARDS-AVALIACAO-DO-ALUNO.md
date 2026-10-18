@@ -6,7 +6,7 @@
 
 ### #268.1 — Ocultar os três cards de avaliação para o aluno
 
-**Próximo passo:** publicar e reservar a subtarefa; depois identificar a fonte editável da página e a regra de perfil.
+**Próximo passo:** ler a orientação para páginas/geradores e localizar o código que oculta ou mostra cards conforme o perfil.
 
 - **Nível:** MEDIO — ajuste de exibição com lógica em até três arquivos, sem alterar autenticação ou permissões.
 - **Modelo:** só Codex — nunca outro
