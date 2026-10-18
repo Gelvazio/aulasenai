@@ -73,6 +73,9 @@
 /* Aula bloqueada: nem o professor acessa nada do card (links, slides, ON/OFF das atividades,
    cadastrar, editar); só o botão da aula fica acima do véu e clicável, para desbloquear. */
 .aula.aula--oculta-para-aluno { display: none; }
+/* Aluno: atividade bloqueada some da lista; card com todas as atividades bloqueadas também. */
+.aula a.btn.atividade--oculta-para-aluno { display: none; }
+.aula.aula--atividades-ocultas-para-aluno { display: none; }
 .aula.aula--bloqueada-professor { cursor: not-allowed; }
 .aula.aula--bloqueada-professor * { pointer-events: none; }
 .aula.aula--bloqueada-professor .interruptor-aula,

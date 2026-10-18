@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · Qoder | #269.1 ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)) — ocultar do aluno as atividades bloqueadas; #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 🔄 Ativa | 2026-10-17 21:17 |
+| local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
 | local · main · Codex (GPT-6) | #268 concluída ([395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md)) | ⏹️ Encerrada | 2026-10-17 21:30 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
@@ -920,8 +920,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
-| #269-ebeae4e7-14d5-452e-bee4-fb59e0c989fd | Atividades bloqueadas não aparecem para o aluno | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) | — |
-| #269.1 | Ocultar do aluno as atividades bloqueadas no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Qoder | — | 🔄 Em execução | Qoder (local · main) (desde 2026-10-17 21:17) | [396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

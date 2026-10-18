@@ -10,8 +10,7 @@ com cadeado "🔒" e o aviso "Atividade Bloqueada!"); a parte das aulas bloquead
 
 ### #269.1 — Ocultar do aluno as atividades bloqueadas no índice
 
-**Próximo passo:** reservar e trocar, no `assets/js/indice-atividades-bloqueio.js`, o cadeado do
-aluno por ocultar o link (e o card inteiro, quando todas as atividades dele estão bloqueadas).
+**Próximo passo:** — (concluída; o teste no aparelho/navegador é do usuário).
 
 - **Nível:** MEDIO — lógica de exibição em 2 arquivos (JS + CSS); não muda login, papéis, RLS nem
   banco (a RLS já não entrega ao aluno a atividade bloqueada).
@@ -23,4 +22,17 @@ aluno por ocultar o link (e o card inteiro, quando todas as atividades dele est�
   `aula--oculta-para-aluno` da #266). O professor continua vendo tudo, com o ON/OFF.
 - **Critérios de aceitação:** aluno não vê atividade bloqueada nem card com todas bloqueadas;
   atividades liberadas continuam aparecendo; professor sem mudança; nada de banco, login ou RLS.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/indice-atividades-bloqueio.js` — `ocultarLinkAluno()` (guarda o endereço
+  em `data-href-bloqueado`, tira o `href` e aplica `atividade--oculta-para-aluno`) e
+  `ocultarAtividadesBloqueadasAluno()` (oculta os links bloqueados e, se todos estiverem bloqueados
+  e a matéria não usar o bloqueio da aula, aplica `aula--atividades-ocultas-para-aluno` ao card);
+  saíram o cadeado "🔒", o aviso "Atividade Bloqueada!" e o card travado do aluno, que só serviam
+  a esse caminho. `assets/css/indice-atividades-bloquear.css` — as duas classes com
+  `display: none`. Classes próprias, separadas da `aula--oculta-para-aluno` da #266, para o
+  `indice-aula-bloqueio.js` não desfazer a ocultação ao ligar/desligar a dele.
+- **Verificação:** `node --check` no JS; `git diff --check`; nenhuma linha nova > 100; busca sem
+  referência órfã às funções e constantes removidas; nenhum outro script usa o "🔒" nem a classe
+  `off` do aluno; o CSS é carregado para todos os perfis (`carregarMarcacaoFeitas()` em
+  `atividades-crud-modal.js`); a regra nova (peso 0,3,1) vence o `a.btn` do `celular.css` (0,1,1).
+  Professor: caminho intocado (`montarInterruptoresBloquear`). ⚠️ Sem navegador (regra do
+  projeto): conferir com um login de aluno.
