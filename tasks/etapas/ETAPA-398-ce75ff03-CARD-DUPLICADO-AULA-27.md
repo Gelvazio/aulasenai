@@ -5,7 +5,7 @@
 **Objetivo:** diagnosticar a duplicidade e garantir uma representação da aula 27 com cada atividade vinculada aparecendo uma vez.
 
 ### #271.1 — Diagnosticar e corrigir a duplicação de aula/atividade na interface
-**Próximo passo:** reservar a subtarefa e rastrear a montagem dos cards e a consulta dos vínculos da aula 27.
+**Próximo passo:** ler o relatório do grafo e rastrear a montagem dos cards e a consulta dos vínculos da aula 27.
 - **Nível:** MEDIO — diagnóstico e possível correção localizada de interface; sem alteração de banco.
 - **Modelo:** só Codex — nunca outro
 - **Descrição:** localizar por que a aula ID 27 aparece em dois cards e por que atividade ID 36 aparece em ambos; corrigir a camada da interface se a duplicidade vier dela.

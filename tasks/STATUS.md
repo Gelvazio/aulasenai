@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
-| local · main · Codex (GPT-6) | #270 concluída ([397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md)) | ⏹️ Encerrada | 2026-10-17 21:31 |
+| local · main · Codex (GPT-6) | #271.1 ([398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md)) — diagnosticar card duplicado da aula 27 | 🔄 Ativa | 2026-10-17 21:31 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
@@ -921,8 +921,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 
-| #271-ce75ff03-8cb7-4cba-95bc-3027c1dcfe4b | Diagnosticar duplicação do card da aula 27 | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
-| #271.1 | Diagnosticar e corrigir duplicação de aula/atividade na interface · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ⬜ Pendente | — | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
+| #271-ce75ff03-8cb7-4cba-95bc-3027c1dcfe4b | Diagnosticar duplicação do card da aula 27 | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
+| #271.1 | Diagnosticar e corrigir duplicação de aula/atividade na interface · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | 🔄 Em execução | Codex (GPT-6) (local · main) (desde 2026-10-17 21:31) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
