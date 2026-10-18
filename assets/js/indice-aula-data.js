@@ -1,17 +1,13 @@
 // Cards de aula do ATIVIDADES/index.html com 100% dos dados da tabela aulas: rótulo e nome
 // (aulas.nome_card ou aulas.titulo). O rótulo do card é SEMPRE "AULA NN", de aulas.numero (pedido
-// de 2026-10-17, #258). A aula do card sem atividade lida é procurada pelo nome do card e,
-// se não bater, pelo rótulo "AULA NN" (#259).
+// de 2026-10-17, #258).
 // A data da aula não aparece no card (pedido de 2026-10-16, #204); ela fica só no modal
-// "Editar aula". Regra: cada card ligado a apenas 1 aula. A aula do card vem da
-// atividade do link principal; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é
-// procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
-// está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
-// Os cards ficam na ordem crescente de aulas.numero (#261); sem aula vão para o fim, na ordem
-// do HTML, e a ordenação roda depois dos cards só do banco entrarem.
-// Aulas que só existem no banco (cadastradas no "📚 Gerenciar Aulas", #250) ganham card na hora,
-// pelo indice-gerenciar-aulas-cards.js, e entram no mesmo fluxo; o botão "📕 Slides" do card vem
-// de aulas.conteudo.slides.
+// "Editar aula". A lista de cards vem SÓ da tabela aulas (regra 15 do AGENTS.md, #272): um card
+// por aula da matéria, na ordem de aulas.numero, montado pelo indice-aula-grade-banco.js; os
+// artigos do HTML só dão os links de conteúdo da aula a que se ligam (atividade do link
+// principal ou, sem ela, nome/rótulo escrito no artigo, #259) e nunca viram card. Banco com erro:
+// mensagem, sem plano B pelos HTMLs. Aula excluída (aulas.excluido = 1) não tem card.
+// O botão "📕 Slides" do card vem de aulas.conteudo.slides.
 // Atividades ativas vinculadas à aula no banco (atividade.aula_id) ganham um botão no card da aula
 // quando a página delas ainda não tem link no card (indice-aula-atividades-vinculadas.js, #249.1);
 // são acrescentadas antes do bloqueio da aula e refeitas quando o vínculo muda.
@@ -24,7 +20,7 @@
 // ocultado da lista (assets/js/indice-aula-bloqueio.js). O bloqueio vale para a turma do combo
 // "Turma:" (aula_turma, #206): trocar a turma no combo relê e redesenha os cards.
 // Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, aula-turma-repositorio.js,
-// assets/js/indice-aula-atividades-vinculadas.js,
+// assets/js/indice-aula-atividades-vinculadas.js, assets/js/indice-aula-grade-banco.js,
 // assets/js/indice-aula-modal.js, assets/js/atividades-crud-repositorio.js e
 // assets/js/atividades-crud-modal.js (obterCaminhoHtml).
 
@@ -43,13 +39,14 @@ const DIGITOS_NUMERO_AULA = 2;
 const PREFIXO_ROTULO_AULA = 'AULA ';
 const IDIOMA_NOME_CARD_AULA = 'pt-BR';
 const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
-// Card sem aula (ex.: "Avaliação — Média Final") vai para o fim ao ordenar por aulas.numero.
-const NUMERO_CARD_SEM_AULA = Infinity;
 const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 // Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
 const EVENTO_TURMA_INDICE_CARDS_AULA = 'turma-indice-alterada';
 // Mesmo evento do botão da aula: faz o indice-atividades-bloqueio.js remontar os ON/OFF.
 const EVENTO_BLOQUEIO_ALTERADO_CARDS_AULA = 'aula-bloqueio-alterado';
+// Disparado quando a grade do banco fica pronta (ou falha): o bloqueio do aluno e o "Fez
+// Atividade?" refazem o trabalho nos cards novos.
+const EVENTO_CARDS_AULA_MONTADOS = 'cards-aula-montados';
 
 const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
 
@@ -150,13 +147,29 @@ function lerNomeMateriaDaPasta() {
 }
 
 /**
- * Id da matéria do índice: pela aula de um card já encontrada ou, se nenhuma veio (o aluno não
- * lê atividades bloqueadas), pelo nome da pasta e pelo curso da faixa de matérias.
- * @param {Object[]} itens - Cards e aulas.
+ * Matéria que mais aparece nas aulas já encontradas dos artigos (uma atividade ligada a aula de
+ * outra matéria não muda a matéria do índice).
+ * @param {Object[]} itens - Artigos e aulas.
+ * @returns {number|null} Id da matéria ou null se nenhuma aula foi encontrada.
+ */
+function materiaMaisFrequenteDosItens(itens) {
+    const contagem = new Map();
+    itens.forEach((item) => {
+        const materia = item.aula?.materia_id;
+        if (materia) contagem.set(materia, (contagem.get(materia) || 0) + 1);
+    });
+    const [maisFrequente] = [...contagem.entries()].sort((a, b) => b[1] - a[1]);
+    return maisFrequente ? maisFrequente[0] : null;
+}
+
+/**
+ * Id da matéria do índice: pelas aulas dos artigos já encontradas ou, se nenhuma veio (o aluno
+ * não lê atividades bloqueadas), pelo nome da pasta e pelo curso da faixa de matérias.
+ * @param {Object[]} itens - Artigos e aulas.
  * @returns {Promise<number|null>} Id da matéria ou null.
  */
 async function descobrirMateriaDoIndice(itens) {
-    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
+    const materia = materiaMaisFrequenteDosItens(itens);
     if (materia) return materia;
 
     const nome = lerNomeMateriaDaPasta();
@@ -179,22 +192,7 @@ function encontrarAulaPelasPaginas(item, aulas) {
 }
 
 /**
- * Completa os cards sem aula (atividade não lida) buscando a aula na mesma matéria.
- * @param {Object[]} itens - Cards e aulas.
- */
-async function completarAulasPeloRotulo(itens) {
-    const faltando = itens.filter((item) => !item.aula);
-    if (!faltando.length) return;
-
-    const materia = await descobrirMateriaDoIndice(itens);
-    if (!materia) return;
-
-    const aulas = await listarAulasDaMateriaCard(materia);
-    faltando.forEach((item) => { item.aula = encontrarAulaPeloTextoDoCard(item, aulas); });
-}
-
-/**
- * Escreve no card o rótulo e o nome da tabela aulas (sem aula, mantém o HTML).
+ * Escreve no card o rótulo e o nome da tabela aulas.
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function renderizarTextosNoCard(item) {
@@ -351,7 +349,8 @@ function lerPaginasPrincipaisDoCard(card) {
 }
 
 /**
- * Monta a lista de cards com os textos do HTML (usados só para achar a aula).
+ * Lê os artigos do HTML (só fonte de links; nunca viram card) com os textos usados para achar
+ * a aula de cada um.
  * @returns {Object[]} Itens { card, paginas, pagina, rotuloHtml, nomeHtml, aula }.
  */
 function lerCardsDoIndice() {
@@ -364,84 +363,38 @@ function lerCardsDoIndice() {
 }
 
 /**
- * Número da aula do card para ordenar; card sem aula (ou sem número válido) vai para o fim.
- * @param {{aula: Object|null}} item - Card e aula.
- * @returns {number} aulas.numero ou Infinity.
- */
-function numeroParaOrdenarCard(item) {
-    const numero = Number(item.aula?.numero);
-    return item.aula && Number.isFinite(numero) ? numero : NUMERO_CARD_SEM_AULA;
-}
-
-/**
- * Reordena no DOM os cards de cada contêiner pelo aulas.numero crescente (pedido de 2026-10-17,
- * #261). Estável: empate e cards sem aula seguem a ordem do HTML. Os cards são movidos (não
- * recriados) para as posições que os cards do grupo já ocupavam, preservando os listeners.
- * A lista `itens` não muda de ordem (o card dono da aula continua o mesmo).
- * @param {Object[]} itens - Cards do índice e suas aulas.
- */
-function ordenarCardsPeloNumeroDaAula(itens) {
-    const itemPorCard = new Map(itens.map((item) => [item.card, item]));
-    const conteineres = new Set(itens.map((item) => item.card.parentElement));
-    conteineres.forEach((conteiner) => {
-        if (!conteiner) return;
-        const doGrupo = [...conteiner.children].filter((filho) => itemPorCard.has(filho));
-        const ordenados = doGrupo
-            .map((card, posicao) => ({
-                card, posicao, numero: numeroParaOrdenarCard(itemPorCard.get(card)) }))
-            .sort((a, b) => (a.numero === b.numero ? a.posicao - b.posicao : a.numero - b.numero))
-            .map((entrada) => entrada.card);
-        const marcadores = doGrupo.map((card) => {
-            const marcador = document.createComment('');
-            card.before(marcador);
-            return marcador;
-        });
-        marcadores.forEach((marcador, i) => marcador.replaceWith(ordenados[i]));
-    });
-}
-
-/**
  * Inicia os cards e, no fim (mesmo com erro), destrava os links travados pelo
- * atividades-crud-modal.js enquanto o bloqueio da aula era conferido.
+ * atividades-crud-modal.js enquanto o bloqueio da aula era conferido e avisa os outros módulos
+ * que a grade do banco está pronta.
  */
 async function iniciarCardsAula() {
     try {
         await desenharCardsDoIndice();
     } finally {
         if (typeof liberarLinksDosCardsIndice === 'function') liberarLinksDosCardsIndice();
+        document.dispatchEvent(new CustomEvent(EVENTO_CARDS_AULA_MONTADOS));
     }
 }
 
 /**
- * Lê a aula de cada card, desenha os cards e, para o professor, o botão de edição.
+ * Monta a grade só com as aulas do banco, desenha os cards e, para o professor, o botão de
+ * edição. Os ON/OFF e os IDs das atividades são sempre remontados, porque os cards são novos.
  */
 async function desenharCardsDoIndice() {
-    const itens = lerCardsDoIndice();
+    const artigos = lerCardsDoIndice();
     estadoCardsAula.ehProfessor = await verificarProfessorCardAula();
     estadoCardsAula.ehAdministrador = estadoCardsAula.ehProfessor &&
         await verificarAdministradorCard();
-    try {
-        const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
-        const aulas = paginas.length ? await buscarAulasDasPaginasCard(paginas) : new Map();
-        itens.forEach((item) => { item.aula = encontrarAulaPelasPaginas(item, aulas); });
-        await completarAulasPeloRotulo(itens);
-    } catch (erro) {
-        console.warn('Aulas dos cards indisponíveis:', erro.message);
-    }
-    // Aulas só do banco (#250): o índice sem nenhum card do HTML também as mostra.
-    if (typeof acrescentarCardsDasAulasDoBanco === 'function') {
-        await acrescentarCardsDasAulasDoBanco(itens, estadoCardsAula.ehProfessor);
-    }
+    const itens = await montarGradeSoDoBanco(artigos, estadoCardsAula.ehProfessor);
     if (!itens.length) return;
-    ordenarCardsPeloNumeroDaAula(itens);
     if (bloqueioDaAulaNoIndice()) await prepararBloqueioAulaTurma(estadoCardsAula.ehProfessor);
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
     // Antes do desenho: o bloqueio da aula então já alcança os botões vindos do banco.
-    const total = await acrescentarAtividadesVinculadasNosCards(itens);
+    await acrescentarAtividadesVinculadasNosCards(itens);
     itens.forEach(desenharCardAula);
     await renderizarNomesDasAtividades(itens);
-    if (total) avisarRemontagemDosInterruptores();
+    avisarRemontagemDosInterruptores();
 }
 
 /**

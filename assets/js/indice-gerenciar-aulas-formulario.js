@@ -4,7 +4,7 @@
 // Excluir mostra os dados só para leitura e pede confirmação; o banco só aceita o Professor
 // Administrador e apaga a aula de verdade (excluir_aula, #254), recusando a que tem atividade.
 // Depende de: indice-aula-modal.js, indice-gerenciar-aulas-repositorio.js,
-// indice-gerenciar-aulas-cards.js (linkDeSlidesSeguro) e assets/js/popup.js.
+// indice-aula-grade-banco.js (linkDeSlidesSeguro) e assets/js/popup.js.
 
 const ID_FORMULARIO_GERENCIAR_AULA = 'formulario-gerenciar-aula';
 const CAMPO_SLIDES_GERENCIAR = { nome: 'link_slides', rotulo: 'Link dos slides (http… ou caminho)',

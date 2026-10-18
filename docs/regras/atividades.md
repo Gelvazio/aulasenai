@@ -640,7 +640,7 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     só `http(s)` ou caminho). Excluir **apaga a aula do banco** (`excluir_aula`,
     DELETE desde a #254; só o Professor Administrador, para os outros o 🗑️ fica desligado; o
     banco recusa a aula com atividade vinculada e apaga junto as linhas dela em `aula_turma`). A **aula nova já aparece como card** na
-    hora, mesmo sem página na pasta (card com borda tracejada, `indice-gerenciar-aulas-cards.js`),
+    hora, mesmo sem página na pasta (todo card vem da tabela `aulas`, `indice-aula-grade-banco.js`),
     e recebe atividades pelo "✏️ Editar aula"; qualquer card com `conteudo.slides` mostra
     "📕 Slides". Fechar o modal 1 depois de mudar algo recarrega a página. Código:
     `assets/js/indice-gerenciar-aulas*.js` e `assets/css/indice-gerenciar-aulas.css`, carregados
@@ -657,6 +657,18 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - **rótulo do card** (2026-10-17, tarefa #258): sempre "AULA NN" de `aulas.numero`; a coluna
     `rotulo_card` foi removida (#259). A aula do card sem atividade lida é achada pelo nome do
     card e, se não bater, pelo "AULA NN". Código: `assets/js/indice-aula-data.js`;
+  - **cards de aula SÓ da tabela `aulas`** (2026-10-17, tarefa #272; regra 15 do `AGENTS.md` e
+    `.claude/rules/materias-global.md`): a grade tem **um card por registro** de `aulas` da
+    matéria (sem os excluídos; `visivel_alunos = false` só para o professor), na ordem de
+    `aulas.numero` (empate: `aulas.id`). Os `<article class="aula">` do HTML **nunca viram card**
+    (o CSS os esconde com a classe `indice--grade-do-banco`): são só a fonte dos links de
+    conteúdo da aula a que se ligam (atividade do link principal → `aula_id`; sem ela, nome ou
+    rótulo do artigo). Vários artigos da mesma aula entram no mesmo card, sem link repetido;
+    artigo sem aula da matéria sai da página; `data-somente-professor` só dá links ao professor
+    e artigo `hidden` não dá links. Banco com erro ou matéria não achada: aviso na grade, **sem
+    plano B pelos HTMLs**. Ao terminar, o evento `cards-aula-montados` refaz o bloqueio do aluno
+    e o "Fez Atividade?" nos cards novos. Código: `assets/js/indice-aula-grade-banco.js` e
+    `assets/js/indice-aula-data.js`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

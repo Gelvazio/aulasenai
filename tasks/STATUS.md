@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
-| local · main · Claude Code (Opus 5.5) | #272 ([399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)) assumida a pedido do usuário; #272.1 entregue, #272.2 em execução | 🔄 Em execução | 2026-10-17 22:02 |
+| local · main · Claude Code (Opus 5.5) | #272 concluída ([399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)) | ⏹️ Encerrada | 2026-10-17 22:10 |
 | local · main · Codex (GPT-6) | #272 passada ao Claude Code (Opus 5.5) por ordem do usuário | ⏹️ Encerrada | 2026-10-17 21:58 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
@@ -921,8 +921,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
-| **#272** | **Cards de aula somente do banco** | **🟠 Alta** | **—** | **—** | **🔄 Em execução** | **— (não reservável)** | **[399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)** | **—** |
-| #272.2 | Fazer a lista do aluno ser carregada exclusivamente de `AULAS` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #272.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main) (desde 2026-10-17 22:02) | [399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) | — |
 
 
 ## Escopo
@@ -1409,6 +1407,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| Artigos do HTML sem aula na tabela `aulas` (ex.: "Avaliação Prática" e "Média Final" do ITIC) deixaram de aparecer nos índices (#272) | Regra 15: só a tabela `aulas` cria card; para voltarem, cadastrar como aula no banco e ligar a atividade pelo `aula_id` | Quando o professor quiser |
 | #249: o card "AVALIAÇÃO 02" da ITIC aparece como "AULA 10" (o link fixo dele é da atividade 20, agora da aula 10); a atividade aparece nos dois cards | Identificação dos cards vem da #213; o mesmo caso da #221 foi cancelado pelo usuário em 2026-10-17 | Só se o usuário pedir |
 | #31: o PDF dos slides aberto pelo endereço direto continua acessível ao aluno | Arquivo estático do site; fechar exige servir os PDFs pelo Supabase Storage privado (tarefa grande, todas as matérias) | Quando o usuário pedir |
 | #29: prompt da rotina "Tarefa Aulas Senai" no claude.ai ainda fala da fila `tasks` do banco | A rotina está desligada e o prompt fica fora do repositório | Antes de ligar a rotina (item 140.6) |

@@ -14,6 +14,10 @@ const FILTRO_TODAS_FEITAS = 'todas';
 const FILTRO_SIM_FEITAS = 'sim';
 const FILTRO_NAO_FEITAS = 'nao';
 const LIMITE_RESPOSTAS_FEITAS = 5000;
+const CLASSE_BARRA_FEITAS = 'filtro-feitas';
+// Disparado pelo indice-aula-data.js quando a grade só do banco fica pronta (#272): os cards são
+// novos, então a marca é refeita neles.
+const EVENTO_CARDS_MONTADOS_FEITAS = 'cards-aula-montados';
 
 /**
  * Descobre o perfil do usuário logado.
@@ -68,11 +72,12 @@ async function buscarPaginasFeitas(paginas) {
  * @param {boolean} fez - Se o aluno já respondeu ao menos 1 vez.
  */
 function marcarCardFeitas(card, fez) {
+    card.querySelector('.' + CLASSE_MARCA_FEITAS)?.remove();
     card.dataset.fez = fez ? FILTRO_SIM_FEITAS : FILTRO_NAO_FEITAS;
     const marca = document.createElement('p');
     marca.className = CLASSE_MARCA_FEITAS + ' ' + CLASSE_MARCA_FEITAS + (fez ? '--sim' : '--nao');
     marca.textContent = 'Fez Atividade? ' + (fez ? '✅ Sim' : '❌ Não');
-    const meta = card.querySelector('.meta');
+    const meta = card.querySelector('.meta') || card.querySelector('.topo');
     if (meta) meta.after(marca);
     else card.prepend(marca);
 }
@@ -92,10 +97,11 @@ function aplicarFiltroFeitas(valor) {
  */
 function montarFiltroFeitas() {
     const grade = document.querySelector('.grade');
-    if (!grade) return;
+    const jaTemBarra = Boolean(document.querySelector('.' + CLASSE_BARRA_FEITAS));
+    if (!grade || jaTemBarra) return;
 
     const barra = document.createElement('div');
-    barra.className = 'filtro-feitas';
+    barra.className = CLASSE_BARRA_FEITAS;
     const rotulo = document.createElement('label');
     rotulo.textContent = 'Fez Atividade? ';
     const lista = document.createElement('select');
@@ -125,4 +131,5 @@ async function iniciarMarcacaoFeitas() {
     }
 }
 
+document.addEventListener(EVENTO_CARDS_MONTADOS_FEITAS, iniciarMarcacaoFeitas);
 iniciarMarcacaoFeitas();

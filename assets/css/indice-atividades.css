@@ -136,3 +136,7 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 /* Enquanto o bloqueio da aula é conferido (assets/js/indice-aula-data.js), nenhum link do card
    abre: sem isso, o aluno abria os slides da aula bloqueada antes de o card ser bloqueado. */
 .indice--conferindo-aula .aula a { pointer-events: none; opacity: 0.6; }
+/* Cards de aula só da tabela aulas (regra 15 do AGENTS.md, #272): o artigo escrito no HTML nunca
+   aparece como card; a grade mostra só os cards montados pelo indice-aula-grade-banco.js. */
+.indice--grade-do-banco .grade > article.aula:not([data-aula-id]) { display: none; }
+.grade-aviso { grid-column: 1 / -1; margin: 0; padding: 16px; border-radius: 8px; background: #fffbea; border: 2px solid var(--gold); font-weight: 600; text-align: center; }

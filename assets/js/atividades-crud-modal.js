@@ -49,6 +49,13 @@ const LOG_ALTERNATIVAS_LIGADO = false;
 // Links dos cards travados até o indice-aula-data.js conferir o bloqueio da aula (sem isso, o
 // aluno abria os slides da aula bloqueada enquanto a página consultava o banco).
 const CLASSE_INDICE_CONFERINDO_AULA = 'indice--conferindo-aula';
+// Artigos do HTML nunca aparecem como card: a grade vem só da tabela aulas
+// (indice-aula-grade-banco.js, #272; o CSS esconde article.aula sem data-aula-id).
+const CLASSE_INDICE_GRADE_DO_BANCO = 'indice--grade-do-banco';
+// Guarda, antes de qualquer módulo mexer, quais artigos o HTML já traz escondidos (hidden): o
+// conteúdo deles não entra no card da aula (indice-aula-grade-banco.js).
+const SELETOR_ARTIGO_OCULTO_NO_HTML = 'article.aula[hidden]';
+const ATRIBUTO_OCULTO_NO_HTML = 'data-oculto-no-html';
 
 const TITULO_MODAL_COMPLETO_CRUD = 'Atividades cadastradas';
 const TITULO_MODAL_UNICA_CRUD = '✏️ Editar atividade ID ';
@@ -714,7 +721,9 @@ async function iniciarCrudAtividades() {
 function carregarMarcacaoFeitas() {
     if (!BASE_ASSETS_CRUD) return;
 
-    document.body.classList.add(CLASSE_INDICE_CONFERINDO_AULA);
+    document.querySelectorAll(SELETOR_ARTIGO_OCULTO_NO_HTML)
+        .forEach((artigo) => artigo.setAttribute(ATRIBUTO_OCULTO_NO_HTML, ''));
+    document.body.classList.add(CLASSE_INDICE_CONFERINDO_AULA, CLASSE_INDICE_GRADE_DO_BANCO);
 
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
@@ -786,7 +795,7 @@ function carregarDataAulasIndice() {
         'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
         'js/indice-aula-modal.js', 'js/indice-aula-excluir-card.js',
         'js/indice-aula-bloqueio.js', 'js/indice-aula-atividades-vinculadas.js',
-        'js/indice-gerenciar-aulas-cards.js', 'js/indice-aula-data.js',
+        'js/indice-aula-grade-banco.js', 'js/indice-aula-data.js',
         'js/indice-gerenciar-aulas-repositorio.js', 'js/indice-gerenciar-aulas-formulario.js',
         'js/indice-gerenciar-aulas.js'];
     const scripts = caminhos.map((caminho) => {

@@ -32,10 +32,11 @@
 - **Verificação:** o líder leu o diff dos 4 arquivos; `materias-global.md` com 3150 bytes (≤ 5 KB); gerador saiu com código 0.
 
 ### #272.2 — Fazer a lista do aluno ser carregada exclusivamente de `AULAS`
-**Próximo passo:** localizar os renderizadores do índice e do login do aluno; consultar o repositório de aulas e renderizar um card por registro, associando conteúdo pelo ID.
+**Próximo passo:** — (entregue).
 - **Nível:** PESADO — mudança arquitetural da origem da lista e possível alcance entre várias páginas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** retirar os HTMLs como fonte de criação, escolha, deduplicação ou fallback de cards; manter o registro do banco como autoridade e adaptar a correção provisória da #271.
 - **Critérios de Aceitação:** todas as listas de cards cobertas usam somente `AULAS`; duplicidade de artigos não duplica card; falha no banco mostra erro sem fallback HTML; atividades se ligam ao card via `aula_id`; nenhum dado ou schema do banco é alterado.
-- **Entrega:** — · **Verificação:** inspeção do fluxo, `node --check` nos JS alterados e `git diff --check`; sem navegador.
-
+- **Executor:** Claude Code (Opus 5.5) (local · main).
+- **Entrega:** `assets/js/indice-aula-grade-banco.js` (substitui o `indice-gerenciar-aulas-cards.js`) monta a grade com um card por registro de `aulas` da matéria (ordem `numero`, depois `id`; sem excluídas; `visivel_alunos = false` só para professor). Os artigos do HTML só dão links à aula a que se ligam (atividade → `aula_id`; sem ela, nome/rótulo); vários artigos da mesma aula entram no mesmo card, sem link repetido; artigo sem aula da matéria sai; erro no banco mostra aviso, sem plano B. `indice-aula-data.js` usa a grade nova, perdeu a ordenação pelo HTML e escolhe a matéria pela mais frequente; `indice-aula-atividades-vinculadas.js` perdeu o "card dono" e a ocultação da #271; CSS esconde `article.aula` sem `data-aula-id` (`indice--grade-do-banco`); evento `cards-aula-montados` refaz o bloqueio do aluno e o "Fez Atividade?". A lista de aulas em `js/aulas.js` já vinha só do banco. Documentado em `docs/regras/atividades.md`.
+- **Verificação:** leitura do fluxo completo (artigos → banco → cards → bloqueio, CRUD, vinculadas, feitas); `node --check` nos 8 JS alterados; `git diff --check` limpo nos arquivos da tarefa; sem banco alterado e sem navegador. Conferir na tela: índice ITIC (aula 27 em um card só).

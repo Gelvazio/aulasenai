@@ -6,7 +6,6 @@
     --gerenciar-aulas-botao-texto: #ffffff;
     --gerenciar-aulas-barra-fundo: #fffbea;
     --gerenciar-aulas-barra-borda: #ffd700;
-    --gerenciar-aulas-card-borda: #667eea;
 }
 
 .gerenciar-aulas-botao {
@@ -47,9 +46,6 @@
 @media (min-width: 901px) {
     .gerenciar-aulas-fundo--form .aula-modal-caixa { width: min(980px, 100%); }
 }
-
-/* Card de aula que só existe no banco: borda tracejada para o professor reconhecer. */
-.aula.aula--do-banco { border: 2px dashed var(--gerenciar-aulas-card-borda); }
 
 /* Celular: botão na largura da tela, como os da barra da turma. */
 @media (max-width: 600px) {

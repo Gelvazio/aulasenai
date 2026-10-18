@@ -36,6 +36,9 @@ const SELETOR_COMBO_TURMA_BLOQUEIO = '.barra-turma-favorita__lista';
 // Disparado pelo botão da aula (indice-aula-bloqueio.js): o trigger do banco bloqueia as
 // atividades da aula bloqueada.
 const EVENTO_AULA_ALTERADA_BLOQUEIO = 'aula-bloqueio-alterado';
+// Disparado pelo indice-aula-data.js quando a grade só do banco fica pronta (#272): os cards são
+// novos, então o aluno tem as atividades bloqueadas ocultadas de novo.
+const EVENTO_CARDS_MONTADOS_BLOQUEIO = 'cards-aula-montados';
 const SELETOR_INTERRUPTOR_ATIVIDADE = '.interruptor-atividade';
 // Card de aula bloqueada (indice-aula-bloqueio.js): os botões das atividades nascem travados.
 const CLASSE_AULA_TRAVADA_BLOQUEIO = 'aula--bloqueada-professor';
@@ -383,6 +386,8 @@ async function iniciarBloqueioAtividades() {
             await montarInterruptoresBloquear();
             return;
         }
+        document.addEventListener(EVENTO_CARDS_MONTADOS_BLOQUEIO, () => aplicarBloqueioAluno()
+            .catch((erro) => console.warn('Bloqueio de atividades indisponível:', erro.message)));
         await aplicarBloqueioAluno();
     } catch (erro) {
         console.warn('Bloqueio de atividades indisponível:', erro.message);

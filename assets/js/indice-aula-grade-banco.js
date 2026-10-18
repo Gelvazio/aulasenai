@@ -1,20 +1,42 @@
-// Cards das aulas do banco no ATIVIDADES/index.html (tarefa #250): a aula cadastrada no
-// "📚 Gerenciar Aulas" aparece como card na hora, mesmo sem página de atividade nesta pasta.
-// O indice-aula-data.js chama acrescentarCardsDasAulasDoBanco() depois de achar a aula de cada
-// card do HTML; os cards novos entram no mesmo fluxo (✏️ Editar aula, bloqueio da aula e botões
-// das atividades vinculadas, #249.1). O link dos slides fica em aulas.conteudo.slides e vira o
-// botão "📕 Slides" em qualquer card da aula.
-// Depende de: assets/js/indice-aula-repositorio.js (listarAulasDaMateriaCard) e
-// assets/js/indice-aula-data.js (descobrirMateriaDoIndice, obterRotuloDaAula, obterNomeDaAula).
+// Grade de cards do ATIVIDADES/index.html montada SÓ pela tabela aulas (regra 15 do AGENTS.md,
+// tarefa #272): um card por registro da matéria, na ordem de aulas.numero (empate: aulas.id).
+// Os artigos escritos no HTML nunca viram card nem escolhem, duplicam ou ocultam card: são só a
+// fonte dos links de conteúdo de uma aula já cadastrada. O artigo se liga à aula pela atividade
+// do link principal (atividade.pagina → atividade.aula_id) ou, se ela não for lida (o aluno não
+// lê atividade bloqueada), pelo nome ou rótulo escrito nele. Todos os artigos ligados à mesma
+// aula entram no mesmo card, sem link repetido; artigo sem aula da matéria sai da página.
+// Aula excluída (aulas.excluido = 1) não tem card; visivel_alunos = false, só para o professor.
+// Banco fora do ar ou matéria não encontrada: mensagem de erro, sem plano B pelos HTMLs. Até a
+// grade ficar pronta, os artigos do HTML ficam escondidos (indice-atividades.css).
+// O link dos slides fica em aulas.conteudo.slides e vira o botão "📕 Slides" (#250).
+// Depende de: indice-aula-repositorio.js (buscarAulasDasPaginasCard, listarAulasDaMateriaCard),
+// atividades-crud-modal.js (obterCaminhoHtml, lerHrefCrud) e indice-aula-data.js
+// (descobrirMateriaDoIndice, encontrarAulaPelasPaginas, encontrarAulaPeloTextoDoCard,
+// obterRotuloDaAula, obterNomeDaAula).
 
 const SELETOR_GRADE_CARDS_BANCO = 'section.grade';
-const CLASSE_CARD_BANCO = 'aula aula--do-banco';
+const SELETOR_ACOES_GRADE_BANCO = '.acoes';
+const SELETOR_LINK_GRADE_BANCO = 'a';
+// Botões que outros módulos põem logo depois do link de uma atividade (ON/OFF, ✏️ e "−").
+const SELETOR_CONTROLES_LINK_GRADE_BANCO =
+    '.interruptor-atividade, .crud-editar-atividade, .crud-desvincular-atividade';
+// "CADASTRAR ATIVIDADES" (atividades-crud-modal.js): um só por card.
+const SELETOR_BOTAO_CADASTRAR_GRADE_BANCO = '.crud-botao-card';
+const SELETOR_DETALHES_GRADE_BANCO = ':scope > details';
+const ATRIBUTO_SOMENTE_PROFESSOR_GRADE = 'data-somente-professor';
+// Marcado pelo atividades-crud-modal.js ao carregar: o artigo já vinha com hidden no HTML.
+const ATRIBUTO_OCULTO_NO_HTML_GRADE = 'data-oculto-no-html';
+const CLASSE_CARD_BANCO = 'aula';
+const CLASSE_AVISO_GRADE_BANCO = 'grade-aviso';
 const ICONE_CARD_BANCO = '📘';
-const TEXTO_META_CARD_BANCO = 'Aula cadastrada no banco · as atividades entram pelo ✏️ Editar aula';
 const TEXTO_BOTAO_SLIDES_BANCO = '📕 Slides';
 const ATRIBUTO_SLIDES_BANCO = 'data-slides-aula';
 const AULA_EXCLUIDA_CARDS_BANCO = 1;
 const PROTOCOLOS_SLIDES_BANCO = ['http:', 'https:'];
+const MSG_ERRO_GRADE_BANCO =
+    'Não foi possível carregar as aulas do banco de dados. Recarregue a página.';
+const MSG_SEM_AULAS_GRADE_BANCO = 'Nenhuma aula cadastrada no banco para esta matéria.';
+const MSG_SEM_MATERIA_GRADE_BANCO = 'Matéria do índice não encontrada no banco';
 
 /**
  * Diz se o link dos slides pode virar botão: endereço http(s) ou caminho relativo.
@@ -36,7 +58,7 @@ function linkDeSlidesSeguro(link) {
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function desenharBotaoSlidesDoBanco(item) {
-    const acoes = item.card.querySelector('.acoes');
+    const acoes = item.card.querySelector(SELETOR_ACOES_GRADE_BANCO);
     if (!acoes) return;
 
     acoes.querySelector('[' + ATRIBUTO_SLIDES_BANCO + ']')?.remove();
@@ -54,9 +76,9 @@ function desenharBotaoSlidesDoBanco(item) {
 }
 
 /**
- * Monta o card de uma aula que só existe no banco.
+ * Monta o card de uma aula da tabela aulas.
  * @param {Object} aula - Linha da tabela aulas.
- * @returns {HTMLElement} Card no mesmo formato dos cards do HTML.
+ * @returns {HTMLElement} Card (article.aula com data-aula-id).
  */
 function criarCardDaAulaDoBanco(aula) {
     const card = document.createElement('article');
@@ -75,63 +97,197 @@ function criarCardDaAulaDoBanco(aula) {
     nome.textContent = obterNomeDaAula(aula);
     textos.append(rotulo, nome);
     topo.append(icone, textos);
-    const meta = document.createElement('p');
-    meta.className = 'meta';
-    meta.textContent = TEXTO_META_CARD_BANCO;
     const acoes = document.createElement('div');
     acoes.className = 'acoes';
-    card.append(topo, meta, acoes);
+    card.append(topo, acoes);
     return card;
 }
 
 /**
- * Coloca o card na grade antes do primeiro card de aula com número maior.
- * @param {HTMLElement} grade - Grade dos cards.
- * @param {HTMLElement} card - Card novo.
- * @param {Object[]} itens - Cards já no índice (com a aula de cada um).
- * @param {number} numero - Número da aula do card novo.
- */
-function inserirCardNaOrdem(grade, card, itens, numero) {
-    const depois = itens.find((item) => Number(item.aula?.numero) > Number(numero));
-    if (depois?.card.parentElement === grade) return grade.insertBefore(card, depois.card);
-    grade.append(card);
-}
-
-/**
- * Diz se a aula do banco ganha card: não excluída, sem card no índice e, para o aluno, visível.
+ * Diz se a aula ganha card: não excluída e, para o aluno, visível.
  * @param {Object} aula - Linha da tabela aulas.
- * @param {Set<number>} comCard - Ids das aulas que já têm card.
  * @param {boolean} ehProfessor - true se o usuário é professor.
- * @returns {boolean} true se precisa de card novo.
+ * @returns {boolean} true se a aula aparece na grade.
  */
-function aulaPrecisaDeCard(aula, comCard, ehProfessor) {
-    if (aula.excluido === AULA_EXCLUIDA_CARDS_BANCO || comCard.has(aula.id)) return false;
+function aulaTemCardNaGrade(aula, ehProfessor) {
+    if (aula.excluido === AULA_EXCLUIDA_CARDS_BANCO) return false;
     return ehProfessor || aula.visivel_alunos !== false;
 }
 
 /**
- * Acrescenta ao índice (e à lista de itens) os cards das aulas que só existem no banco. Falha de
- * rede não quebra o índice. O botão dos slides é desenhado pelo desenharCardAula de cada card.
- * @param {Object[]} itens - Cards do índice (o array recebe os cards novos).
- * @param {boolean} ehProfessor - true se o usuário é professor.
- * @returns {Promise<void>}
+ * Ordena as aulas por aulas.numero crescente; empate (ou sem número) por aulas.id.
+ * @param {Object[]} aulas - Aulas da matéria.
+ * @returns {Object[]} Nova lista ordenada.
  */
-async function acrescentarCardsDasAulasDoBanco(itens, ehProfessor) {
-    const grade = document.querySelector(SELETOR_GRADE_CARDS_BANCO);
-    try {
-        const materia = await descobrirMateriaDoIndice(itens);
-        if (!materia || !grade) return;
+function ordenarAulasDaGrade(aulas) {
+    const numero = (aula) => {
+        const valor = Number(aula.numero);
+        return Number.isFinite(valor) ? valor : Infinity;
+    };
+    return [...aulas].sort((a, b) => numero(a) - numero(b) || a.id - b.id);
+}
 
-        const comCard = new Set(itens.map((item) => item.aula?.id).filter(Boolean));
-        const aulas = await listarAulasDaMateriaCard(materia);
-        aulas.filter((aula) => aulaPrecisaDeCard(aula, comCard, ehProfessor))
-            .sort((a, b) => Number(a.numero) - Number(b.numero))
-            .forEach((aula) => {
-                const card = criarCardDaAulaDoBanco(aula);
-                inserirCardNaOrdem(grade, card, itens, aula.numero);
-                itens.push({ card, paginas: [], pagina: null, rotuloHtml: '', nomeHtml: '', aula });
-            });
-    } catch (erro) {
-        console.warn('Aulas do banco sem card indisponíveis:', erro.message);
+/**
+ * Diz se o conteúdo do artigo pode entrar no card: o "só professor" só para o professor; o
+ * artigo escondido no HTML (hidden, pedido do professor) não entra.
+ * @param {HTMLElement} artigo - Artigo do HTML.
+ * @param {boolean} ehProfessor - true se o usuário é professor.
+ * @returns {boolean} true se os links do artigo podem ir para o card.
+ */
+function artigoPodeDarConteudo(artigo, ehProfessor) {
+    if (artigo.hasAttribute(ATRIBUTO_SOMENTE_PROFESSOR_GRADE)) return ehProfessor;
+    return !artigo.hasAttribute(ATRIBUTO_OCULTO_NO_HTML_GRADE);
+}
+
+/**
+ * Chave de um link para não repetir no card: a página .html (também a do link desativado pelo
+ * bloqueio) ou, para outros arquivos (.md, .pdf), o href.
+ * @param {HTMLAnchorElement} link - Link do card.
+ * @returns {string|null} Chave do link ou null sem endereço.
+ */
+function chaveDoLinkGrade(link) {
+    return obterCaminhoHtml(lerHrefCrud(link)) || link.getAttribute('href') || null;
+}
+
+/**
+ * Chaves dos links que o card já tem.
+ * @param {HTMLElement} card - Card da aula.
+ * @returns {Set<string>} Chaves dos links.
+ */
+function lerCaminhosDoCardGrade(card) {
+    const links = [...card.querySelectorAll(SELETOR_LINK_GRADE_BANCO)];
+    return new Set(links.map(chaveDoLinkGrade).filter(Boolean));
+}
+
+/**
+ * Diz se o elemento do div.acoes do artigo deve ficar fora do card: link de página que o card já
+ * tem (e os controles dele) ou um segundo "CADASTRAR ATIVIDADES".
+ * @param {HTMLElement} elemento - Filho do div.acoes do artigo.
+ * @param {{acoes: HTMLElement, caminhos: Set<string>, pulandoLink: boolean}} estado
+ * @returns {boolean} true se o elemento não vai para o card.
+ */
+function elementoRepetidoNoCard(elemento, estado) {
+    if (elemento.matches(SELETOR_CONTROLES_LINK_GRADE_BANCO)) return estado.pulandoLink;
+    estado.pulandoLink = false;
+    if (elemento.matches(SELETOR_BOTAO_CADASTRAR_GRADE_BANCO)) {
+        return Boolean(estado.acoes.querySelector(SELETOR_BOTAO_CADASTRAR_GRADE_BANCO));
     }
+    if (!elemento.matches(SELETOR_LINK_GRADE_BANCO)) return false;
+
+    const caminho = chaveDoLinkGrade(elemento);
+    if (!caminho) return false;
+    estado.pulandoLink = estado.caminhos.has(caminho);
+    estado.caminhos.add(caminho);
+    return estado.pulandoLink;
+}
+
+/**
+ * Leva para o card os links do artigo (sem página repetida) e os detalhes (details).
+ * Os elementos são movidos, não copiados: o estado e os eventos postos por outros módulos
+ * (bloqueio, ✏️, ID) continuam valendo.
+ * @param {HTMLElement} artigo - Artigo do HTML ligado à aula.
+ * @param {HTMLElement} card - Card da aula.
+ */
+function moverConteudoDoArtigo(artigo, card) {
+    const acoes = card.querySelector(SELETOR_ACOES_GRADE_BANCO);
+    const origem = artigo.querySelector(SELETOR_ACOES_GRADE_BANCO);
+    if (acoes && origem) {
+        const estado = { acoes, caminhos: lerCaminhosDoCardGrade(card), pulandoLink: false };
+        [...origem.children].forEach((elemento) => {
+            if (!elementoRepetidoNoCard(elemento, estado)) acoes.append(elemento);
+        });
+    }
+    card.append(...artigo.querySelectorAll(SELETOR_DETALHES_GRADE_BANCO));
+}
+
+/**
+ * Liga cada artigo do HTML a uma aula da lista do banco: pela atividade do link principal e,
+ * se ela não foi lida, pelo nome ou rótulo escrito no artigo.
+ * @param {Object[]} artigos - Itens { card, paginas, rotuloHtml, nomeHtml, aula } do HTML.
+ * @param {Map<string, Object>} aulasDasPaginas - Aula de cada página lida.
+ * @param {Object[]} aulas - Aulas da matéria.
+ */
+function ligarArtigosAsAulas(artigos, aulasDasPaginas, aulas) {
+    const porId = new Map(aulas.map((aula) => [aula.id, aula]));
+    artigos.forEach((artigo) => {
+        const daPagina = encontrarAulaPelasPaginas(artigo, aulasDasPaginas);
+        artigo.aula = (daPagina && porId.get(daPagina.id)) ||
+            encontrarAulaPeloTextoDoCard(artigo, aulas);
+    });
+}
+
+/**
+ * Cria os cards das aulas (um por registro) e põe neles o conteúdo dos artigos de cada aula.
+ * @param {{aulas: Object[], artigos: Object[], ehProfessor: boolean}} dados
+ * @returns {Object[]} Itens { card, paginas, pagina, rotuloHtml, nomeHtml, aula }, na ordem.
+ */
+function criarCardsDaGrade({ aulas, artigos, ehProfessor }) {
+    const visiveis = ordenarAulasDaGrade(aulas)
+        .filter((aula) => aulaTemCardNaGrade(aula, ehProfessor));
+    return visiveis.map((aula) => {
+        const card = criarCardDaAulaDoBanco(aula);
+        artigos.filter((artigo) => artigo.aula?.id === aula.id)
+            .filter((artigo) => artigoPodeDarConteudo(artigo.card, ehProfessor))
+            .forEach((artigo) => moverConteudoDoArtigo(artigo.card, card));
+        const paginas = lerPaginasPrincipaisDoCard(card);
+        return { card, paginas, pagina: paginas[0] || null, rotuloHtml: '', nomeHtml: '', aula };
+    });
+}
+
+/**
+ * Mostra um aviso no lugar dos cards (erro do banco ou matéria sem aulas).
+ * @param {HTMLElement} grade - Grade dos cards.
+ * @param {string} texto - Mensagem.
+ */
+function mostrarAvisoDaGrade(grade, texto) {
+    const aviso = document.createElement('p');
+    aviso.className = CLASSE_AVISO_GRADE_BANCO;
+    aviso.textContent = texto;
+    grade.append(aviso);
+}
+
+/**
+ * Lê no banco a matéria, as aulas dela e a aula das páginas dos artigos.
+ * @param {Object[]} artigos - Itens dos artigos do HTML.
+ * @returns {Promise<{aulas: Object[], aulasDasPaginas: Map<string, Object>}>} Dados do banco.
+ * @throws {Error} Se a matéria não for encontrada ou a consulta falhar.
+ */
+async function lerAulasDaGrade(artigos) {
+    const paginas = [...new Set(artigos.flatMap((artigo) => artigo.paginas))];
+    const aulasDasPaginas = paginas.length ? await buscarAulasDasPaginasCard(paginas) : new Map();
+    artigos.forEach((artigo) => {
+        artigo.aula = encontrarAulaPelasPaginas(artigo, aulasDasPaginas);
+    });
+    const materia = await descobrirMateriaDoIndice(artigos);
+    if (!materia) throw new Error(MSG_SEM_MATERIA_GRADE_BANCO);
+
+    const aulas = await listarAulasDaMateriaCard(materia);
+    return { aulas, aulasDasPaginas };
+}
+
+/**
+ * Troca os artigos do HTML pelos cards das aulas do banco. Com erro, a grade fica só com a
+ * mensagem (sem plano B pelos HTMLs).
+ * @param {Object[]} artigos - Itens dos artigos do HTML (lerCardsDoIndice).
+ * @param {boolean} ehProfessor - true se o usuário é professor.
+ * @returns {Promise<Object[]>} Itens dos cards montados (vazio com erro ou sem aulas).
+ */
+async function montarGradeSoDoBanco(artigos, ehProfessor) {
+    const grade = document.querySelector(SELETOR_GRADE_CARDS_BANCO);
+    if (!grade) return [];
+
+    let itens = [];
+    let aviso = MSG_SEM_AULAS_GRADE_BANCO;
+    try {
+        const { aulas, aulasDasPaginas } = await lerAulasDaGrade(artigos);
+        ligarArtigosAsAulas(artigos, aulasDasPaginas, aulas);
+        itens = criarCardsDaGrade({ aulas, artigos, ehProfessor });
+    } catch (erro) {
+        console.warn('Aulas do banco indisponíveis:', erro.message);
+        aviso = MSG_ERRO_GRADE_BANCO;
+    }
+    artigos.forEach((artigo) => artigo.card.remove());
+    grade.append(...itens.map((item) => item.card));
+    if (!itens.length) mostrarAvisoDaGrade(grade, aviso);
+    return itens;
 }
