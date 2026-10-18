@@ -920,6 +920,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #268-1841c1cf-d821-47b9-8b52-905bac4d8c9c | Ocultar três avaliações da lista do aluno | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) | — |
+| #268.1 | Ocultar os três cards de avaliação para o aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ⬜ Pendente | — | [395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1351,6 +1353,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 392-0f3f183e | Usabilidade no celular (#265, pedida em 2026-10-17) | [ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md](etapas/ETAPA-392-0f3f183e-USABILIDADE-NO-CELULAR.md) |
 | 393-b933b796 | Aulas bloqueadas na lista do login do aluno (#266, pedida em 2026-10-17 20:54) | [ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) |
 | 394-efe592c3 | Análise de viabilidade de uma versão PWA na pasta `pwa/` (#267, pedida em 2026-10-17 21:01) | [ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) |
+| 395-1841c1cf | Ocultar três avaliações da lista do aluno (#268, pedida em 2026-10-17 21:14) | [ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
