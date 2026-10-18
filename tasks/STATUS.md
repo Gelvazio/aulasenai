@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s17 | #286.1 ([415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md)) — executor-medio (Sonnet) | 🔄 Ativa | 2026-10-18 20:20 |
+| local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
 | local · main · Claude Code (Opus 5.5) | #274 concluída ([401-1db3efe7](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md)) | ⏹️ Encerrada | 2026-10-17 22:30 |
 | local · main · Codex (GPT-6) | #272 passada ao Claude Code (Opus 5.5) por ordem do usuário | ⏹️ Encerrada | 2026-10-17 21:58 |
@@ -1297,8 +1297,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #286-ac221821-78bd-4c83-987d-e17b984d9bbc | **Cores do botão em todas as atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #286.1 | Conferir e aplicar as 3 cores em todas as atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s17) (desde 2026-10-18 20:20) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #287-510f8b12-3ec8-4dfb-a269-9b6e0af2ff40 | **Haiku confere, faz commit e push de toda entrega** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
-| #287.1 | Plano e aprovação · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s17) (desde 2026-10-18 20:10) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
-| #287.2 | Regra global no `rules-ai` e sincronização · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #287.1 | ⬜ Pendente | — | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
+| #287.2 | Regra global no `rules-ai` e sincronização · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #287.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s17) (desde 2026-10-18 20:15) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
 | #287.3 | Regras, agente e skill do `aulasenai` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #287.2 | ⬜ Pendente | — | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
