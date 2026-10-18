@@ -16,6 +16,7 @@
 
 // Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
 const SELETOR_CARD_BLOQUEIO = 'article.aula:not([data-sem-bloqueio])';
+const SELETOR_CARD_SOMENTE_PROFESSOR = 'article[data-somente-professor]';
 const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
 const SELETOR_LINK_ATIVIDADE_BLOQUEIO = 'a.btn';
 const CLASSE_CARD_BLOQUEADO = 'bloqueada';
@@ -419,6 +420,9 @@ async function aplicarBloqueioAluno() {
 async function iniciarBloqueioAtividades() {
     try {
         if (await usuarioEhProfessorBloqueio()) {
+            document.querySelectorAll(SELETOR_CARD_SOMENTE_PROFESSOR).forEach((card) => {
+                card.hidden = false;
+            });
             ouvirTrocaFavoritaBloqueio();
             await montarInterruptoresBloquear();
             return;

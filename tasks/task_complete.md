@@ -316,3 +316,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #7 | Executar análise final | 🟢 Baixa | LEVE · só Haiku | — | ✅ Concluído (2026-10-17 20:57) | — | [153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) | — |
 | #266-73421a16-fdf6-4016-8e42-5b40d3ace5a2 | **Ocultar aulas bloqueadas no login do aluno** | 🟠 Alta | — | — | ✅ Concluída | — (não reservável) | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |
 | #266.1 | Filtrar aulas bloqueadas na lista do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluída (2026-10-17 20:59) | — | [393-b933b796](etapas/ETAPA-393-b933b796-AULAS-BLOQUEADAS-NA-LISTA-DO-LOGIN.md) | — |
+
+| #268-1841c1cf-d821-47b9-8b52-905bac4d8c9c | Ocultar três avaliações da lista do aluno | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) | — |
+| #268.1 | Ocultar os três cards de avaliação para o aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) | — |
