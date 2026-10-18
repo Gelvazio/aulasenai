@@ -1293,6 +1293,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
+| #285-37264b88-63df-44e8-a800-9f28364b05fa | **Atividade liberada mostrando "Aula Bloqueada!" ao aluno (ITIC AOPL, atividade id 2)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [414-f64948db](etapas/ETAPA-414-f64948db-ATIVIDADE-LIBERADA-COM-AULA-BLOQUEADA.md) | — |
+| #285.1 | Corrigir a checagem de bloqueio na página da atividade · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | ⬜ Pendente | — | [414-f64948db](etapas/ETAPA-414-f64948db-ATIVIDADE-LIBERADA-COM-AULA-BLOQUEADA.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
@@ -1748,6 +1750,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 411-505ededa | Regra explícita do commit + push na `main` ao finalizar tarefa (#282, pedida em 2026-10-18 19:39) | [ETAPA-411-505ededa-REGRA-COMMIT-PUSH-NA-MAIN.md](etapas/ETAPA-411-505ededa-REGRA-COMMIT-PUSH-NA-MAIN.md) |
 | 412-cca9f896 | Cores nos botões das atividades (feita / pendente / não feita; #283, pedida em 2026-10-18 19:38) | [ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md) |
 | 413-346d89f1 | Corrigir as cores das atividades e o cadeado da atividade bloqueada (#284, pedida em 2026-10-18 19:54) | [ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md](etapas/ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md) |
+| 414-f64948db | Atividade liberada mostrando "Aula Bloqueada!" ao aluno (#285, pedida em 2026-10-18 19:58) | [ETAPA-414-f64948db-ATIVIDADE-LIBERADA-COM-AULA-BLOQUEADA.md](etapas/ETAPA-414-f64948db-ATIVIDADE-LIBERADA-COM-AULA-BLOQUEADA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
