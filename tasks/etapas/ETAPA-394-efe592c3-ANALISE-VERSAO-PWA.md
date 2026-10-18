@@ -75,11 +75,12 @@ resumo da recomendação registrado aqui na etapa.
 |---|---|---|---|
 | 2026-10-17 21:01 | Tarefa criada como análise (sem código) e com plano nesta etapa | Qoder (local · main) | Pedido do usuário; tarefa grande cria estrutura nova e toca em login e segurança |
 | 2026-10-17 21:01 | Nível das 3 subtarefas: `PESADO` | Qoder (local · main) | Laya Server fora do ar; decidido pelos sinais (arquitetura, login/JWT, mais de 3 arquivos ligados) |
+| 2026-10-17 23:09 | Plano aprovado ("Crie 1 versão só pra aluno na pasta pwa, seguindo o plano"): documento em `pwa/ANALISE-PWA.md`; a versão a implantar é **só do aluno** (tarefa #275, que depende desta) | Usuário (Gelvazio) | Aprovação da tarefa grande |
 
 ### #267.1 — Inventário do site e dos requisitos de PWA
 
-**Próximo passo:** depois do "sim" do usuário ao plano — levantar quantas páginas existem, o que é
-gerado, o que fala com o Supabase na hora e onde o site está hospedado (com HTTPS?).
+**Próximo passo:** levantar quantas páginas existem, o que é gerado, o que fala com o Supabase na
+hora e onde o site está hospedado (com HTTPS?), com foco nas páginas do aluno.
 
 - **Nível:** PESADO — arquitetura, login/JWT e mais de 3 arquivos ligados (Laya fora do ar; sinais da
   tabela de níveis).
