@@ -27,9 +27,12 @@ aluno); nada muda para professor e visitante.
 
 **Próximo passo:** ler o módulo das "feitas" e o CSS e aplicar o estado por link.
 
+**Próximo passo:** — (entregue em 2026-10-18 19:43).
+
 - **Nível:** MEDIO — tela: 1 JS + 1 CSS e a regra em `docs/`; só leitura das tabelas do aluno
   (RLS existente), sem mudar banco.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Executor:** DeepSeek Harness (deepseek-flash) (local · main)
 - **Descrição:** (1) `indice-atividades-feitas.js`: novo `buscarEstadosFeitas` que devolve, por
   página de atividade, se o aluno **entregou** (`entrega_atividade`) e se **respondeu algo**
   (`resposta_atividade`, consulta que já existia); para cada link `a.btn.principal` do card, põe a
@@ -43,7 +46,22 @@ aluno); nada muda para professor e visitante.
 - **Critérios de aceitação:** cada botão do aluno com a cor certa; verde só quando entregue;
   vermelho piscando só quando não fez nada; cores refeitas no evento `cards-aula-montados`;
   professor e visitante sem cor; `node --check` no JS.
-- **Verificação:** `node --check`; leitura do CSS e da regra; conferir que as consultas usam as
-  tabelas e colunas certas (`atividade.id,pagina`, `resposta_atividade.atividade_id`,
-  `entrega_atividade.atividade_id`) e que o RLS não muda; sem banco e sem navegador.
-- **Entrega:** — · **Anotação:** —
+- **Entrega:** `assets/js/indice-atividades-feitas.js` — `buscarPaginasFeitas` virou
+  `buscarEstadosFeitas` (consulta `atividade.id,pagina`; `resposta_atividade.atividade_id` com o
+  mesmo limite; `entrega_atividade.atividade_id` nova leitura, em paralelo) e devolve as páginas
+  cadastradas, as entregues e as respondidas; `obterPaginaDoLinkFeitas` lê o `href` ou o
+  `data-href-bloqueado` (#281); `marcarLinksDoCard` põe `atividade--feita` / `atividade--pendente` /
+  `atividade--nao-feita` só nas páginas cadastradas; `iniciarMarcacaoFeitas` usa tudo isso e a marca
+  "Fez Atividade?" continua igual. `assets/css/indice-atividades-feitas.css` — verde claro
+  (`#d9f7e6`, borda `#34a853`, texto `#0b6b3a`), amarelo atual sem regra nova e vermelho fraco
+  (`#fde2e1`, borda `#f3a7a2`, texto `#a11212`) com `@keyframes piscar-atividade-nao-feita`
+  (opacidade 1 → 0,55) e o desligamento em `prefers-reduced-motion`. `docs/regras/atividades.md` —
+  bullet novo das cores e correção do bullet "visual do card de aula" (o "📕 Slides" agora fica na
+  linha de baixo, e as ações em colunas, conforme a #279).
+- **Verificação:** `node --check assets/js/indice-atividades-feitas.js` OK; busca sem
+  `buscarPaginasFeitas` sobrando; classes novas presentes no JS e no CSS; conferidas as colunas das
+  consultas (`atividade.id,pagina`, `resposta_atividade.atividade_id`,
+  `entrega_atividade.atividade_id`) e que nenhuma tabela, RLS ou função do banco muda; `git diff
+  --check` limpo nos arquivos da tarefa; sem banco e sem navegador (conferir na tela é do usuário).
+- **Anotação:** "feita por completo" foi lido como **entregue** (`entrega_atividade`), que é o
+  "Finalizar" da atividade no site; "algo pendente" = tem resposta gravada e ainda não entregou.

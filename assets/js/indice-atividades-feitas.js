@@ -1,22 +1,29 @@
-// Coluna "Fez Atividade? (Sim/Não)" em cada card do ATIVIDADES/index.html, com filtro.
+// Coluna "Fez Atividade? (Sim/Não)" em cada card do ATIVIDADES/index.html, com filtro, e as cores
+// de cada botão de atividade pelo andamento do aluno (#283): entregue = verde claro; começou e não
+// entregou = amarelo (o de hoje); não fez nada = vermelho fraco piscando (CSS).
 // Para o aluno logado: "Sim" se ele já respondeu pelo menos 1 vez (qualquer alternativa gravada
-// no banco); "Não" caso contrário. Só JavaScript: lê as tabelas atividade e resposta_atividade
-// (o RLS devolve ao aluno apenas as próprias respostas). Professor e visitante não veem a coluna.
-// Cards informativos (data-sem-bloqueio, ex.: composição da nota) não recebem a marca nem
-// somem no filtro. Carregado por assets/js/atividades-crud-modal.js, que já está em todo
-// índice de atividades.
+// no banco); "Não" caso contrário. Só JavaScript: lê as tabelas atividade, resposta_atividade e
+// entrega_atividade (o RLS devolve ao aluno apenas as próprias respostas/entregas). Professor e
+// visitante não veem a coluna nem as cores. Cards informativos (data-sem-bloqueio, ex.: composição
+// da nota) não recebem a marca nem somem no filtro.
+// Carregado por assets/js/atividades-crud-modal.js, que já está em todo índice de atividades.
 // Depende de: supabase-js e js/supabase.js (obterClienteSupabase, sbGet).
 
 const SELETOR_CARD_FEITAS = 'article.aula:not([data-sem-bloqueio])';
 const SELETOR_LINK_FEITAS = 'a.btn.principal';
 const CLASSE_MARCA_FEITAS = 'marca-feita';
+const CLASSE_ATIVIDADE_FEITA = 'atividade--feita';
+const CLASSE_ATIVIDADE_PENDENTE = 'atividade--pendente';
+const CLASSE_ATIVIDADE_NAO_FEITA = 'atividade--nao-feita';
+// Guardado pelo indice-atividades-bloqueio.js quando o aluno não pode abrir a atividade (#281).
+const ATRIBUTO_HREF_GUARDADO_FEITAS = 'data-href-bloqueado';
 const FILTRO_TODAS_FEITAS = 'todas';
 const FILTRO_SIM_FEITAS = 'sim';
 const FILTRO_NAO_FEITAS = 'nao';
 const LIMITE_RESPOSTAS_FEITAS = 5000;
 const CLASSE_BARRA_FEITAS = 'filtro-feitas';
 // Disparado pelo indice-aula-data.js quando a grade só do banco fica pronta (#272): os cards são
-// novos, então a marca é refeita neles.
+// novos, então a marca e as cores são refeitas neles.
 const EVENTO_CARDS_MONTADOS_FEITAS = 'cards-aula-montados';
 
 /**
@@ -45,25 +52,65 @@ function obterCaminhoFeitas(href) {
 }
 
 /**
- * Descobre quais páginas de atividade o aluno já respondeu ao menos uma vez.
- * @param {string[]} paginas - Caminhos das atividades do índice.
- * @returns {Promise<Set<string>>} Caminhos das atividades já respondidas.
+ * Caminho da página de um link de atividade, mesmo quando o bloqueio já tirou o href (#281).
+ * @param {HTMLAnchorElement} link - Link da atividade.
+ * @returns {string|null} Caminho da página ou null.
  */
-async function buscarPaginasFeitas(paginas) {
-    if (!paginas.length) return new Set();
+function obterPaginaDoLinkFeitas(link) {
+    return obterCaminhoFeitas(link.getAttribute('href') ||
+        link.getAttribute(ATRIBUTO_HREF_GUARDADO_FEITAS));
+}
+
+/**
+ * Descobre, por página de atividade, se o aluno já entregou e se já respondeu algo.
+ * @param {string[]} paginas - Caminhos das atividades do índice.
+ * @returns {Promise<{paginas: Set<string>, entregues: Set<string>, respondidas: Set<string>}>}
+ *     Páginas cadastradas no banco, entregues e com resposta.
+ */
+async function buscarEstadosFeitas(paginas) {
+    const vazio = { paginas: new Set(), entregues: new Set(), respondidas: new Set() };
+    if (!paginas.length) return vazio;
 
     const valores = paginas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
     const atividades = await sbGet('atividade',
         'select=id,pagina&pagina=in.(' + encodeURIComponent(valores) + ')');
     const ids = atividades.map((atividade) => atividade.id);
-    if (!ids.length) return new Set();
+    if (!ids.length) return vazio;
 
-    const respostas = await sbGet('resposta_atividade',
-        'select=atividade_id&atividade_id=in.(' + ids.join(',') + ')&limit=' +
-        LIMITE_RESPOSTAS_FEITAS);
-    const idsFeitos = new Set(respostas.map((resposta) => resposta.atividade_id));
-    return new Set(atividades.filter((atividade) => idsFeitos.has(atividade.id))
-        .map((atividade) => atividade.pagina));
+    const filtro = 'atividade_id=in.(' + ids.join(',') + ')';
+    const [respostas, entregas] = await Promise.all([
+        sbGet('resposta_atividade', 'select=atividade_id&' + filtro +
+            '&limit=' + LIMITE_RESPOSTAS_FEITAS),
+        sbGet('entrega_atividade', 'select=atividade_id&' + filtro),
+    ]);
+    const paginaPorId = new Map(atividades.map((atividade) => [atividade.id, atividade.pagina]));
+    const paginasDe = (linhas) => new Set(
+        linhas.map((linha) => paginaPorId.get(linha.atividade_id)).filter(Boolean));
+    return {
+        paginas: new Set(atividades.map((atividade) => atividade.pagina)),
+        entregues: paginasDe(entregas),
+        respondidas: paginasDe(respostas),
+    };
+}
+
+/**
+ * Pinta cada botão de atividade do card pelo andamento do aluno (#283): entregue (verde claro),
+ * começou e não entregou (amarelo de hoje) ou não fez nada (vermelho fraco piscando). Só pinta
+ * páginas cadastradas no banco; os demais links do card ficam como estão.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {{paginas: Set<string>, entregues: Set<string>, respondidas: Set<string>}} estados
+ */
+function marcarLinksDoCard(card, estados) {
+    card.querySelectorAll(SELETOR_LINK_FEITAS).forEach((link) => {
+        const pagina = obterPaginaDoLinkFeitas(link);
+        if (!pagina || !estados.paginas.has(pagina)) return;
+        const classe = estados.entregues.has(pagina) ? CLASSE_ATIVIDADE_FEITA :
+            estados.respondidas.has(pagina) ? CLASSE_ATIVIDADE_PENDENTE :
+                CLASSE_ATIVIDADE_NAO_FEITA;
+        link.classList.remove(CLASSE_ATIVIDADE_FEITA, CLASSE_ATIVIDADE_PENDENTE,
+            CLASSE_ATIVIDADE_NAO_FEITA);
+        link.classList.add(classe);
+    });
 }
 
 /**
@@ -122,9 +169,12 @@ async function iniciarMarcacaoFeitas() {
 
         const cards = [...document.querySelectorAll(SELETOR_CARD_FEITAS)];
         const caminhos = cards.map((card) =>
-            obterCaminhoFeitas(card.querySelector(SELETOR_LINK_FEITAS)?.getAttribute('href')));
-        const feitas = await buscarPaginasFeitas([...new Set(caminhos.filter(Boolean))]);
-        cards.forEach((card, indice) => marcarCardFeitas(card, feitas.has(caminhos[indice])));
+            obterPaginaDoLinkFeitas(card.querySelector(SELETOR_LINK_FEITAS)));
+        const estados = await buscarEstadosFeitas([...new Set(caminhos.filter(Boolean))]);
+        cards.forEach((card, indice) => {
+            marcarCardFeitas(card, estados.respondidas.has(caminhos[indice]));
+            marcarLinksDoCard(card, estados);
+        });
         montarFiltroFeitas();
     } catch (erro) {
         console.warn('Marcação "Fez Atividade?" indisponível:', erro.message);
