@@ -1,7 +1,7 @@
 /* Modal "CADASTRAR ATIVIDADES" do ATIVIDADES/index.html (assets/js/atividades-crud-modal.js). */
 :root {
     --crud-azul: #004384;
-    --crud-tamanho-editar: 36px;
+    /* Mesma altura do botão da atividade e do ON/OFF (indice-atividades.css, #274). */
     --crud-espaco-acoes: 8px;
     --crud-espaco-id: 10px;
     --crud-fundo: #ffffff;
@@ -10,8 +10,12 @@
     --crud-suave: #4a5568;
     --crud-perigo: #b42318;
     --crud-ok: #1b7f3b;
-    --crud-desvincular-fundo: #fff1f0;
-    --crud-desvincular-borda: #f0a8a2;
+    /* "−" em vermelho vivo, com mais destaque (#274). */
+    --crud-desvincular-fundo: #e5132a;
+    --crud-desvincular-borda: #a50d1d;
+    --crud-desvincular-texto: #ffffff;
+    --crud-desvincular-brilho: rgba(229, 19, 42, 0.35);
+    --crud-desvincular-fonte: 22px;
 }
 
 .crud-botao-card { background: #fff7e6; border: 1px solid #f0c36d; cursor: pointer; }
@@ -41,7 +45,6 @@
         2 * var(--crud-espaco-acoes));
     min-width: 0;
     font-size: 12px;
-    overflow-wrap: anywhere;
 }
 
 /* Botão "−" logo depois do ✏️ (só em atividade com aula): remove o vínculo com a aula.
@@ -54,12 +57,17 @@
     align-self: center;
     box-sizing: border-box;
     background: var(--crud-desvincular-fundo);
-    border: 1px solid var(--crud-desvincular-borda);
+    border: 2px solid var(--crud-desvincular-borda);
     border-radius: 50%;
-    color: var(--crud-perigo);
-    font-weight: 700;
+    color: var(--crud-desvincular-texto);
+    font-size: var(--crud-desvincular-fonte);
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 0 0 3px var(--crud-desvincular-brilho);
     cursor: pointer;
 }
+
+.crud-desvincular-atividade:hover { filter: brightness(1.1); }
 
 .acoes .btn.principal:has(+ .crud-editar-atividade + .crud-desvincular-atividade) {
     flex: 1 1 calc(100% - 2 * var(--crud-tamanho-editar) - 2 * var(--crud-espaco-acoes));
@@ -72,7 +80,6 @@
         3 * var(--crud-espaco-acoes));
     min-width: 0;
     font-size: 12px;
-    overflow-wrap: anywhere;
 }
 
 .crud-fundo {
@@ -188,7 +195,6 @@ a.btn.principal:has(> .crud-id-atividade) {
     justify-content: space-between;
     gap: var(--crud-espaco-id);
     text-align: right;
-    overflow-wrap: anywhere;
 }
 
 a.btn.principal:has(> .crud-id-atividade) > .crud-id-atividade {

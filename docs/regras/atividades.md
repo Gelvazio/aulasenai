@@ -669,6 +669,7 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     plano B pelos HTMLs**. Ao terminar, o evento `cards-aula-montados` refaz o bloqueio do aluno
     e o "Fez Atividade?" nos cards novos. Código: `assets/js/indice-aula-grade-banco.js` e
     `assets/js/indice-aula-data.js`;
+  - **visual do card de aula** (2026-10-17, tarefa #274): cards mais largos (`--largura-minima-card-aula`, 460 px); nome da atividade numa linha só, com "…" e o nome inteiro na dica (`span.nome-atividade-card`); botão da atividade, ON/OFF, ✏️ e "−" com a mesma altura (`--altura-controle-atividade`); "−" em vermelho vivo; "📕 Slides" em cima, à direita do "AULA NN"; "Aula liberada / Aula bloqueada" com 100% da largura do card. CSS: `indice-atividades.css`, `atividades-crud-modal.css`, `indice-atividades-bloquear.css`;
   - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
     de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
     `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards

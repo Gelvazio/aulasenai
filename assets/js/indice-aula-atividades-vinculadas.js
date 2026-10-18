@@ -21,6 +21,7 @@ const SELETOR_BOTAO_VINCULO_BANCO = 'a[' + ATRIBUTO_VINCULO_BANCO + ']';
 const ATRIBUTOS_HREF_CARD_VINCULADAS = ['href', 'data-href-bloqueado', 'data-href-aula-bloqueada'];
 const PROTOCOLOS_PERMITIDOS_VINCULADAS = ['http:', 'https:', 'file:'];
 const PREFIXO_TEXTO_VINCULADAS = '📝 ';
+const CLASSE_NOME_VINCULADAS = 'nome-atividade-card';
 const ALVO_NOVA_ABA_VINCULADAS = '_blank';
 const REL_NOVA_ABA_VINCULADAS = 'noopener';
 
@@ -93,8 +94,13 @@ function criarBotaoAtividadeVinculada(atividade) {
     botao.target = ALVO_NOVA_ABA_VINCULADAS;
     botao.rel = REL_NOVA_ABA_VINCULADAS;
     botao.setAttribute(ATRIBUTO_VINCULO_BANCO, String(atividade.id));
-    botao.textContent = PREFIXO_TEXTO_VINCULADAS +
-        (atividade.nome_atividade || atividade.descricao || '');
+    const nome = atividade.nome_atividade || atividade.descricao || '';
+    // Nome numa linha só, com "…" se não couber (indice-atividades.css, #274).
+    const texto = document.createElement('span');
+    texto.className = CLASSE_NOME_VINCULADAS;
+    texto.textContent = PREFIXO_TEXTO_VINCULADAS + nome;
+    botao.title = nome;
+    botao.append(texto);
     return botao;
 }
 

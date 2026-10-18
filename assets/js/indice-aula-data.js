@@ -31,6 +31,8 @@ const SELETOR_NOME_CARD_AULA = '.topo h2';
 // Começo do texto do link que não é letra nem número (emoji e "🔒 "): fica antes do nome do banco.
 const REGEX_PREFIXO_LINK_ATIVIDADE = /^[^\p{L}\p{N}]*/u;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
+// Nome da atividade dentro do link: uma linha só (indice-atividades.css, #274).
+const CLASSE_NOME_ATIVIDADE_LINK = 'nome-atividade-card';
 const CLASSE_ID_AULA_CARD = 'aula-id-card';
 const TEXTO_ID_AULA_CARD = 'Id Aula: ';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
@@ -297,18 +299,25 @@ async function verificarProfessorCardAula() {
 
 /**
  * Troca o texto do link da atividade pelo nome do banco, mantendo o emoji do começo e os
- * elementos de dentro do link (ex.: etiqueta "ID NN" do professor).
+ * elementos de dentro do link (ex.: etiqueta "ID NN" do professor). O nome fica num span que não
+ * quebra a linha e termina em "…" se não couber (#274); o nome inteiro vai no title.
  * @param {HTMLAnchorElement} link - Link principal da atividade.
  * @param {string} nome - atividade.nome_atividade.
  */
 function escreverNomeNoLink(link, nome) {
+    const existente = link.querySelector('.' + CLASSE_NOME_ATIVIDADE_LINK);
     const textos = [...link.childNodes].filter((no) => no.nodeType === Node.TEXT_NODE);
-    if (!textos.length) return;
+    if (!existente && !textos.length) return;
 
-    const prefixo = textos.map((no) => no.textContent).join('').trimStart()
-        .match(REGEX_PREFIXO_LINK_ATIVIDADE)[0];
-    textos[0].textContent = ' ' + prefixo + nome;
-    textos.slice(1).forEach((no) => no.remove());
+    const atual = existente ? existente.textContent : textos.map((no) => no.textContent).join('');
+    const prefixo = atual.trimStart().match(REGEX_PREFIXO_LINK_ATIVIDADE)[0];
+    const span = existente || criarElementoCardAula('span', CLASSE_NOME_ATIVIDADE_LINK);
+    span.textContent = prefixo + nome;
+    link.title = nome;
+    if (existente) return;
+
+    textos.forEach((no) => no.remove());
+    link.append(span);
 }
 
 /**

@@ -1,20 +1,24 @@
 /* Botão ON/OFF ao lado de cada atividade do índice (perfil professor):
-   ON (verde) = liberada; OFF (vermelho) = bloqueada para a turma favorita. */
+   ON (verde) = liberada; OFF (vermelho) = bloqueada para a turma favorita.
+   Altura igual à do botão da atividade, do ✏️ e do − (--altura-controle-atividade, #274). */
 .interruptor-atividade {
   display: inline-flex; flex: 0 0 auto; align-items: center; vertical-align: middle;
   cursor: pointer; margin: 0 6px 0 2px;
 }
 .interruptor-atividade input { position: absolute; opacity: 0; pointer-events: none; }
 .interruptor-atividade__chave {
-  position: relative; width: 52px; height: 24px; border-radius: 24px; background: #c53030;
+  position: relative; width: 64px; height: var(--altura-controle-atividade, 36px);
+  border-radius: var(--altura-controle-atividade, 36px); background: #c53030;
   transition: background 0.2s;
 }
 .interruptor-atividade__chave::after {
-  content: 'OFF'; position: absolute; right: 6px; top: 6px; font-size: 10px; font-weight: 700;
-  color: #fff;
+  content: 'OFF'; position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+  font-size: 11px; font-weight: 700; color: #fff;
 }
 .interruptor-atividade__chave::before {
-  content: ''; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px;
+  content: ''; position: absolute; left: 3px; top: 3px;
+  width: calc(var(--altura-controle-atividade, 36px) - 6px);
+  height: calc(var(--altura-controle-atividade, 36px) - 6px);
   border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
 }
 .interruptor-atividade input:checked + .interruptor-atividade__chave { background: #2f855a; }
@@ -42,7 +46,9 @@
 
 /* Botão ON/OFF da AULA (antes de "Editar aula"), nas matérias com o bloqueio da aula ligado:
    ON (verde) = aula liberada; OFF (vermelho) = aula bloqueada (card inteiro para os alunos). */
+/* Ocupa 100% da largura do card (#274). */
 .interruptor-aula {
+  flex: 1 1 100%; box-sizing: border-box; justify-content: center;
   display: inline-flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px;
   border: 1px solid #cbd5e0; border-radius: 10px; background: #f7fafc; font-size: 13px;
   font-weight: 700; color: #2d3748;
