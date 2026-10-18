@@ -1295,6 +1295,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
+| **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
+| RL-87FD6C11-JEV.1 | Skill `classificar-tarefa`: consultar o Jev primeiro (fallback Laya/sinais e `JEV_MODO=off`) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
 
 
 ## Escopo
@@ -1739,6 +1741,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 404-627c95d8 | Fundamentos de UI/UX completa: 19 aulas, objetivas de 50, discursivas de 20, respostas prováveis, seeds e análise do JEV-AI (#276, pedida em 2026-10-18 16:56) | [ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) |
 | 405-875934f9 | BANCO-DADOS-TASK: completar Banco de Dados (discursivas de 20, respostas prováveis, JEV-AI e auditoria; #277, pedida em 2026-10-18 17:05) | [ETAPA-405-875934f9-BANCO-DADOS-TASK.md](etapas/ETAPA-405-875934f9-BANCO-DADOS-TASK.md) |
 | 406-19ffa793 | TESTES-DE-FRONTEND-TASK: completar Testes de Front-End (discursivas de 20, respostas prováveis, avaliações, seeds e JEV-AI; #278, pedida em 2026-10-18 18:55) | [ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) |
+| 407-aa5426fe | Ajustar o projeto à regra jev.md (RL-87FD6C11, pedida em 2026-10-18 19:20) | [ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
