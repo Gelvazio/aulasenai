@@ -5,7 +5,7 @@
 **Objetivo:** remover esses dois cards da lista sem apagar as páginas das avaliações nem o card prático.
 
 ### #270.1 — Remover os cards objetivos do índice
-**Próximo passo:** reservar a subtarefa e remover somente os dois artigos correspondentes do índice.
+**Próximo passo:** analisar o relatório do grafo e remover somente os dois artigos correspondentes do índice.
 - **Nível:** MEDIO — edição pontual de HTML existente.
 - **Modelo:** só Codex — nunca outro
 - **Descrição:** remover os artigos das avaliações objetivas do `ATIVIDADES/index.html` da Introdução à TIC.
