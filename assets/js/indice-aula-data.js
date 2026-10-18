@@ -422,14 +422,16 @@ function avisarRemontagemDosInterruptores() {
 
 /**
  * Refaz os botões das atividades vinculadas depois que o banco mudou (Gerenciar atividades,
- * Editar aula ou Cadastrar atividades): remove os acrescentados, lê de novo e reaplica o bloqueio
- * da aula. Não faz nada antes do primeiro desenho dos cards. Falha não é propagada.
+ * Editar aula, Cadastrar atividades ou "−"): tira de cada card as atividades que não são mais da
+ * aula dele (#273), remove os acrescentados, lê de novo e reaplica o bloqueio da aula. Não faz
+ * nada antes do primeiro desenho dos cards. Falha não é propagada.
  * @returns {Promise<void>}
  */
 async function atualizarAtividadesVinculadasDoIndice() {
     if (!estadoCardsAula.cards.length) return;
 
     try {
+        await retirarAtividadesDeOutraAulaDosCards(estadoCardsAula.cards);
         await acrescentarAtividadesVinculadasNosCards(estadoCardsAula.cards);
         estadoCardsAula.cards.forEach(desenharCardAula);
         avisarRemontagemDosInterruptores();

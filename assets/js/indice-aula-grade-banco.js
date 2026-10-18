@@ -5,11 +5,14 @@
 // do link principal (atividade.pagina → atividade.aula_id) ou, se ela não for lida (o aluno não
 // lê atividade bloqueada), pelo nome ou rótulo escrito nele. Todos os artigos ligados à mesma
 // aula entram no mesmo card, sem link repetido; artigo sem aula da matéria sai da página.
+// Link de página de atividade só fica no card se o atividade.aula_id for a aula do card (#273):
+// a atividade desvinculada ou ligada a outra aula sai, também na hora em que o vínculo muda.
 // Aula excluída (aulas.excluido = 1) não tem card; visivel_alunos = false, só para o professor.
 // Banco fora do ar ou matéria não encontrada: mensagem de erro, sem plano B pelos HTMLs. Até a
 // grade ficar pronta, os artigos do HTML ficam escondidos (indice-atividades.css).
 // O link dos slides fica em aulas.conteudo.slides e vira o botão "📕 Slides" (#250).
-// Depende de: indice-aula-repositorio.js (buscarAulasDasPaginasCard, listarAulasDaMateriaCard),
+// Depende de: indice-aula-repositorio.js (buscarAulasDasPaginasCard, listarAulasDaMateriaCard,
+// buscarVinculosDasPaginasCard),
 // atividades-crud-modal.js (obterCaminhoHtml, lerHrefCrud) e indice-aula-data.js
 // (descobrirMateriaDoIndice, encontrarAulaPelasPaginas, encontrarAulaPeloTextoDoCard,
 // obterRotuloDaAula, obterNomeDaAula).
@@ -160,13 +163,25 @@ function lerCaminhosDoCardGrade(card) {
 }
 
 /**
+ * Diz se o link é de uma atividade cadastrada que, no banco, não é desta aula (aula_id de outra
+ * aula ou vazio, #273): a atividade só aparece no card pelo aula_id.
+ * @param {string} caminho - Chave do link (chaveDoLinkGrade).
+ * @param {{aulaId: number, vinculos: Map<string, number|null>}} estado
+ * @returns {boolean} true se o link é de atividade de outra aula.
+ */
+function linkDeAtividadeDeOutraAula(caminho, estado) {
+    return estado.vinculos.has(caminho) && estado.vinculos.get(caminho) !== estado.aulaId;
+}
+
+/**
  * Diz se o elemento do div.acoes do artigo deve ficar fora do card: link de página que o card já
- * tem (e os controles dele) ou um segundo "CADASTRAR ATIVIDADES".
+ * tem, link de atividade de outra aula (e os controles deles) ou um segundo "CADASTRAR ATIVIDADES".
  * @param {HTMLElement} elemento - Filho do div.acoes do artigo.
- * @param {{acoes: HTMLElement, caminhos: Set<string>, pulandoLink: boolean}} estado
+ * @param {{acoes: HTMLElement, caminhos: Set<string>, pulandoLink: boolean, aulaId: number,
+ *     vinculos: Map<string, number|null>}} estado
  * @returns {boolean} true se o elemento não vai para o card.
  */
-function elementoRepetidoNoCard(elemento, estado) {
+function elementoForaDoCard(elemento, estado) {
     if (elemento.matches(SELETOR_CONTROLES_LINK_GRADE_BANCO)) return estado.pulandoLink;
     estado.pulandoLink = false;
     if (elemento.matches(SELETOR_BOTAO_CADASTRAR_GRADE_BANCO)) {
@@ -176,28 +191,76 @@ function elementoRepetidoNoCard(elemento, estado) {
 
     const caminho = chaveDoLinkGrade(elemento);
     if (!caminho) return false;
-    estado.pulandoLink = estado.caminhos.has(caminho);
+    estado.pulandoLink = estado.caminhos.has(caminho) ||
+        linkDeAtividadeDeOutraAula(caminho, estado);
     estado.caminhos.add(caminho);
     return estado.pulandoLink;
 }
 
 /**
- * Leva para o card os links do artigo (sem página repetida) e os detalhes (details).
- * Os elementos são movidos, não copiados: o estado e os eventos postos por outros módulos
- * (bloqueio, ✏️, ID) continuam valendo.
+ * Leva para o card os links do artigo (sem página repetida nem atividade de outra aula) e os
+ * detalhes (details). Os elementos são movidos, não copiados: o estado e os eventos postos por
+ * outros módulos (bloqueio, ✏️, ID) continuam valendo.
  * @param {HTMLElement} artigo - Artigo do HTML ligado à aula.
- * @param {HTMLElement} card - Card da aula.
+ * @param {{card: HTMLElement, aula: Object}} destino - Card e aula.
+ * @param {Map<string, number|null>} vinculos - aula_id de cada página de atividade.
  */
-function moverConteudoDoArtigo(artigo, card) {
-    const acoes = card.querySelector(SELETOR_ACOES_GRADE_BANCO);
+function moverConteudoDoArtigo(artigo, destino, vinculos) {
+    const acoes = destino.card.querySelector(SELETOR_ACOES_GRADE_BANCO);
     const origem = artigo.querySelector(SELETOR_ACOES_GRADE_BANCO);
     if (acoes && origem) {
-        const estado = { acoes, caminhos: lerCaminhosDoCardGrade(card), pulandoLink: false };
+        const estado = { acoes, caminhos: lerCaminhosDoCardGrade(destino.card),
+            pulandoLink: false, aulaId: destino.aula.id, vinculos };
         [...origem.children].forEach((elemento) => {
-            if (!elementoRepetidoNoCard(elemento, estado)) acoes.append(elemento);
+            if (!elementoForaDoCard(elemento, estado)) acoes.append(elemento);
         });
     }
-    card.append(...artigo.querySelectorAll(SELETOR_DETALHES_GRADE_BANCO));
+    destino.card.append(...artigo.querySelectorAll(SELETOR_DETALHES_GRADE_BANCO));
+}
+
+/**
+ * Remove o link e os controles que vêm logo depois dele (ON/OFF, ✏️ e "−").
+ * @param {HTMLAnchorElement} link - Link do card.
+ */
+function removerLinkComControles(link) {
+    let irmao = link.nextElementSibling;
+    while (irmao?.matches(SELETOR_CONTROLES_LINK_GRADE_BANCO)) {
+        const proximo = irmao.nextElementSibling;
+        irmao.remove();
+        irmao = proximo;
+    }
+    link.remove();
+}
+
+/**
+ * Caminhos de todas as páginas .html dos links dos elementos (para ler o aula_id delas).
+ * @param {HTMLElement[]} elementos - Artigos do HTML ou cards.
+ * @returns {string[]} Caminhos sem repetição.
+ */
+function lerPaginasDosLinks(elementos) {
+    const links = elementos.flatMap((elemento) =>
+        [...elemento.querySelectorAll(SELETOR_LINK_GRADE_BANCO)]);
+    const caminhos = links.map((link) => obterCaminhoHtml(lerHrefCrud(link)));
+    return [...new Set(caminhos.filter(Boolean))];
+}
+
+/**
+ * Depois de o vínculo mudar no banco ("−", ✏️ Editar ou 🔗 Gerenciar atividades, #273), tira de
+ * cada card os links de atividades que não são mais da aula dele. Quem chama refaz depois os
+ * botões das atividades vinculadas (que põem a atividade no card da aula nova).
+ * @param {{card: HTMLElement, aula: Object}[]} itens - Cards da grade.
+ * @returns {Promise<void>}
+ * @throws {Error} Se a consulta ao banco falhar.
+ */
+async function retirarAtividadesDeOutraAulaDosCards(itens) {
+    const vinculos = await buscarVinculosDasPaginasCard(
+        lerPaginasDosLinks(itens.map((item) => item.card)));
+    itens.forEach((item) => {
+        const estado = { aulaId: item.aula.id, vinculos };
+        [...item.card.querySelectorAll(SELETOR_ACOES_GRADE_BANCO + ' ' + SELETOR_LINK_GRADE_BANCO)]
+            .filter((link) => linkDeAtividadeDeOutraAula(chaveDoLinkGrade(link), estado))
+            .forEach(removerLinkComControles);
+    });
 }
 
 /**
@@ -218,17 +281,18 @@ function ligarArtigosAsAulas(artigos, aulasDasPaginas, aulas) {
 
 /**
  * Cria os cards das aulas (um por registro) e põe neles o conteúdo dos artigos de cada aula.
- * @param {{aulas: Object[], artigos: Object[], ehProfessor: boolean}} dados
+ * @param {{aulas: Object[], artigos: Object[], vinculos: Map<string, number|null>,
+ *     ehProfessor: boolean}} dados
  * @returns {Object[]} Itens { card, paginas, pagina, rotuloHtml, nomeHtml, aula }, na ordem.
  */
-function criarCardsDaGrade({ aulas, artigos, ehProfessor }) {
+function criarCardsDaGrade({ aulas, artigos, vinculos, ehProfessor }) {
     const visiveis = ordenarAulasDaGrade(aulas)
         .filter((aula) => aulaTemCardNaGrade(aula, ehProfessor));
     return visiveis.map((aula) => {
         const card = criarCardDaAulaDoBanco(aula);
         artigos.filter((artigo) => artigo.aula?.id === aula.id)
             .filter((artigo) => artigoPodeDarConteudo(artigo.card, ehProfessor))
-            .forEach((artigo) => moverConteudoDoArtigo(artigo.card, card));
+            .forEach((artigo) => moverConteudoDoArtigo(artigo.card, { card, aula }, vinculos));
         const paginas = lerPaginasPrincipaisDoCard(card);
         return { card, paginas, pagina: paginas[0] || null, rotuloHtml: '', nomeHtml: '', aula };
     });
@@ -247,14 +311,19 @@ function mostrarAvisoDaGrade(grade, texto) {
 }
 
 /**
- * Lê no banco a matéria, as aulas dela e a aula das páginas dos artigos.
+ * Lê no banco a matéria, as aulas dela, a aula das páginas dos artigos e o aula_id de cada
+ * página de atividade dos links.
  * @param {Object[]} artigos - Itens dos artigos do HTML.
- * @returns {Promise<{aulas: Object[], aulasDasPaginas: Map<string, Object>}>} Dados do banco.
+ * @returns {Promise<{aulas: Object[], aulasDasPaginas: Map<string, Object>,
+ *     vinculos: Map<string, number|null>}>} Dados do banco.
  * @throws {Error} Se a matéria não for encontrada ou a consulta falhar.
  */
 async function lerAulasDaGrade(artigos) {
     const paginas = [...new Set(artigos.flatMap((artigo) => artigo.paginas))];
-    const aulasDasPaginas = paginas.length ? await buscarAulasDasPaginasCard(paginas) : new Map();
+    const [aulasDasPaginas, vinculos] = await Promise.all([
+        paginas.length ? buscarAulasDasPaginasCard(paginas) : new Map(),
+        buscarVinculosDasPaginasCard(lerPaginasDosLinks(artigos.map((artigo) => artigo.card))),
+    ]);
     artigos.forEach((artigo) => {
         artigo.aula = encontrarAulaPelasPaginas(artigo, aulasDasPaginas);
     });
@@ -262,7 +331,7 @@ async function lerAulasDaGrade(artigos) {
     if (!materia) throw new Error(MSG_SEM_MATERIA_GRADE_BANCO);
 
     const aulas = await listarAulasDaMateriaCard(materia);
-    return { aulas, aulasDasPaginas };
+    return { aulas, aulasDasPaginas, vinculos };
 }
 
 /**
@@ -279,9 +348,9 @@ async function montarGradeSoDoBanco(artigos, ehProfessor) {
     let itens = [];
     let aviso = MSG_SEM_AULAS_GRADE_BANCO;
     try {
-        const { aulas, aulasDasPaginas } = await lerAulasDaGrade(artigos);
+        const { aulas, aulasDasPaginas, vinculos } = await lerAulasDaGrade(artigos);
         ligarArtigosAsAulas(artigos, aulasDasPaginas, aulas);
-        itens = criarCardsDaGrade({ aulas, artigos, ehProfessor });
+        itens = criarCardsDaGrade({ aulas, artigos, vinculos, ehProfessor });
     } catch (erro) {
         console.warn('Aulas do banco indisponíveis:', erro.message);
         aviso = MSG_ERRO_GRADE_BANCO;

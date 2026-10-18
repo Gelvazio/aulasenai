@@ -41,6 +41,23 @@ async function buscarAulasDasPaginasCard(paginas) {
 }
 
 /**
+ * Lê a aula a que cada página de atividade está ligada (atividade.aula_id; vazio = sem aula).
+ * Página que não é atividade (ou que o RLS não deixa ler) não entra no mapa.
+ * @param {string[]} paginas - Caminhos (pathname) das páginas.
+ * @returns {Promise<Map<string, number|null>>} aula_id de cada página de atividade.
+ */
+async function buscarVinculosDasPaginasCard(paginas) {
+    const mapa = new Map();
+    if (!paginas.length) return mapa;
+
+    const valores = paginas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
+    const filtro = 'pagina=in.(' + encodeURIComponent(valores) + ')';
+    const linhas = await sbGet(TABELA_ATIVIDADE_AULA, 'select=pagina,aula_id&' + filtro);
+    linhas.forEach((linha) => mapa.set(linha.pagina, linha.aula_id ?? null));
+    return mapa;
+}
+
+/**
  * Lê o nome (atividade.nome_atividade) das atividades das páginas dos cards.
  * @param {string[]} paginas - Caminhos (pathname) das páginas de atividade.
  * @returns {Promise<Map<string, string>>} Nome da atividade de cada página (só as com nome).

@@ -663,7 +663,7 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     `aulas.numero` (empate: `aulas.id`). Os `<article class="aula">` do HTML **nunca viram card**
     (o CSS os esconde com a classe `indice--grade-do-banco`): são só a fonte dos links de
     conteúdo da aula a que se ligam (atividade do link principal → `aula_id`; sem ela, nome ou
-    rótulo do artigo). Vários artigos da mesma aula entram no mesmo card, sem link repetido;
+    rótulo do artigo). Link de página de atividade só fica no card se o `atividade.aula_id` for a aula do card (#273): desvincular ("−"), editar ou gerenciar tira o link na hora. Vários artigos da mesma aula entram no mesmo card, sem link repetido;
     artigo sem aula da matéria sai da página; `data-somente-professor` só dá links ao professor
     e artigo `hidden` não dá links. Banco com erro ou matéria não achada: aviso na grade, **sem
     plano B pelos HTMLs**. Ao terminar, o evento `cards-aula-montados` refaz o bloqueio do aluno
