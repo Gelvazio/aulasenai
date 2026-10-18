@@ -17,6 +17,10 @@ const CLASSE_AVISO_PAGINA_BLOQUEIO = 'aula-card';
 const TITULO_AVISO_PAGINA_BLOQUEIO = '🔒 Aula Bloqueada!';
 const TEXTO_AVISO_PAGINA_BLOQUEIO = 'Esta aula ou atividade está bloqueada pelo professor. ' +
     'Volte ao índice e aguarde a liberação.';
+// atividade.pagina é gravada a partir de /MATERIAIS/ e com .html; o endereço aberto pode vir em
+// minúsculas, sem .html ou com uma pasta antes (servidor local), e a comparação exata falhava (#285).
+const PASTA_RAIZ_PAGINA_BLOQUEIO = '/materiais/';
+const EXTENSAO_PAGINA_BLOQUEIO = '.html';
 
 /**
  * Diz se o bloqueio da aula vale nesta página (matéria listada na configuração).
@@ -48,13 +52,28 @@ function esconderConteudoDaPagina(esconder) {
 }
 
 /**
+ * Caminho desta página no formato de atividade.pagina: a partir de /MATERIAIS/ e com .html.
+ * @returns {string} Caminho normalizado (maiúsculas e minúsculas ficam para o ilike).
+ */
+function obterCaminhoDaPaginaBloqueio() {
+    const caminho = decodeURIComponent(location.pathname);
+    const inicio = caminho.toLowerCase().indexOf(PASTA_RAIZ_PAGINA_BLOQUEIO);
+    const relativo = inicio >= 0 ? caminho.slice(inicio) : caminho;
+    const temExtensao = relativo.toLowerCase().endsWith(EXTENSAO_PAGINA_BLOQUEIO);
+    if (temExtensao) return relativo;
+
+    return relativo + EXTENSAO_PAGINA_BLOQUEIO;
+}
+
+/**
  * Diz se o usuário logado consegue ler a atividade desta página (RLS do banco).
  * @returns {Promise<boolean>} true se a atividade veio do banco.
  * @throws {Error} Se a consulta falhar.
  */
 async function atividadeDaPaginaLiberada() {
-    const pagina = decodeURIComponent(location.pathname);
-    const filtro = 'pagina=eq.' + encodeURIComponent(pagina);
+    // ilike sem curinga = igual sem diferenciar maiúsculas; o "_" escapado não vira curinga.
+    const pagina = obterCaminhoDaPaginaBloqueio().replace(/_/g, '\\_');
+    const filtro = 'pagina=ilike.' + encodeURIComponent(pagina);
     const linhas = await sbGet(TABELA_ATIVIDADE_PAGINA_BLOQUEIO, 'select=id&' + filtro);
     return linhas.length > 0;
 }

@@ -21,10 +21,7 @@ ou a atividade está mesmo bloqueada para as turmas dele.
 
 ### #285.1 — Corrigir a checagem de bloqueio na página da atividade
 
-**Próximo passo:** **PESADO de banco — fazer no Claude Code local (Opus 5.5+/Fable)**: consultar no
-Supabase a linha `atividade` id 2 e a aula dela (`ativo`, `bloqueio`, `aula_id`, `aulas.ativo`,
-`aula_turma.bloqueio`, `turmaaluno`/`turma` do aluno) e corrigir o que estiver bloqueando; só depois
-ajustar o JS, se for o caso.
+**Próximo passo:** — (entregue em 2026-10-18 20:12).
 
 - **Nível:** PESADO — o diagnóstico depende de **consulta ao banco** (RLS de `atividade`, `aula`,
   `aula_turma`, `turmaaluno`), que só o Claude Code local faz.
@@ -48,5 +45,17 @@ ajustar o JS, se for o caso.
   falha nele.
 - **Verificação:** consultas de leitura no Supabase antes e depois; conferir o caminho
   `atividade.pagina` × `location.pathname`; sem navegador.
-- **Entrega:** — · **Anotação:** criada e classificada por DeepSeek Harness (deepseek-flash); **não
+- **Diagnóstico (2026-10-18 20:12, Claude Code (Opus 5.5) s17, consultas só de leitura):** nenhuma das 5 causas
+  de banco — atividade 2 `ativo = true`, `bloqueio = []`, aula 21 `ativo = true`, `aula_turma` 135080 e
+  135081 com `bloqueio = false`; RLS `atividade_select` simulado como aluno da 135081 devolve a linha.
+  A causa é o **caminho**: a página comparava `location.pathname` com `pagina=eq.` (exato, com
+  maiúsculas). Aberta em minúsculas, sem `.html` ou com uma pasta antes de `/MATERIAIS/` (servidor
+  local), a consulta voltava vazia e o aviso aparecia.
+- **Entrega:** `assets/js/atividade-bloqueio-aula.js` — `obterCaminhoDaPaginaBloqueio` corta o
+  endereço a partir de `/MATERIAIS/` e põe `.html` quando falta; a consulta passou a `ilike` (igual sem
+  diferenciar maiúsculas, `_` escapado). O RLS continua decidindo; banco não mudou.
+- **Verificação:** `node --check` OK; normalização conferida no Node com 3 endereços; no banco, como
+  aluno, `ilike` com o caminho em minúsculas e no original devolve 1 linha cada. Conferir na tela
+  (sem navegador pela IA): aluno abre a atividade 2 liberada e responde.
+- **Anotação:** criada e classificada por DeepSeek Harness (deepseek-flash); **não
   reservada nem executada** — banco é só do Claude Code local (`seeds.md`, `multiplas-ias.md`).
