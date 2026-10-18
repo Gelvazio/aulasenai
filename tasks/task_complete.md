@@ -324,3 +324,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 
 | #270-1916e419-19bb-4e37-b407-c6e215c11b5e | Remover os dois cards objetivos do índice ITIC | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | true |
 | #270.1 | Remover os cards objetivos do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | true |
+
+| #271-ce75ff03-8cb7-4cba-95bc-3027c1dcfe4b | Diagnosticar duplicação do card da aula 27 | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | true |
+| #271.1 | Diagnosticar e corrigir duplicação de aula/atividade na interface · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | true |

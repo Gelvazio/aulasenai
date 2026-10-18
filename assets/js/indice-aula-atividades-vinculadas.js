@@ -22,6 +22,7 @@ const SELETOR_LINKS_CARD_VINCULADAS = 'a';
 const SELETOR_CONTROLES_DO_BOTAO_VINCULADAS =
     '.interruptor-atividade, .crud-editar-atividade, .crud-desvincular-atividade';
 const ATRIBUTO_VINCULO_BANCO = 'data-vinculo-banco';
+const ATRIBUTO_CARD_OCULTO_DUPLICADO = 'data-card-oculto-duplicado';
 const SELETOR_BOTAO_VINCULO_BANCO = 'a[' + ATRIBUTO_VINCULO_BANCO + ']';
 const ATRIBUTOS_HREF_CARD_VINCULADAS = ['href', 'data-href-bloqueado', 'data-href-aula-bloqueada'];
 const PROTOCOLOS_PERMITIDOS_VINCULADAS = ['http:', 'https:', 'file:'];
@@ -73,6 +74,50 @@ function mapearCardsDonosDasAulas(itens) {
     const donos = new Map();
     porAula.forEach((candidatos, idAula) => donos.set(idAula, escolherCardDonoDaAula(candidatos)));
     return donos;
+}
+
+/**
+ * Restaura os cards que este módulo ocultou antes de recalcular os vínculos.
+ * @param {Object[]} itens - Cards do índice.
+ */
+function restaurarCardsDuplicados(itens) {
+    itens.forEach((item) => {
+        const ocultoAntes = item.card.getAttribute(ATRIBUTO_CARD_OCULTO_DUPLICADO);
+        if (ocultoAntes === null) return;
+        item.card.hidden = ocultoAntes === 'true';
+        item.card.removeAttribute(ATRIBUTO_CARD_OCULTO_DUPLICADO);
+    });
+}
+
+/**
+ * Confere se o card repetido contém só um link já presente no card dono.
+ * @param {{card: HTMLElement}} repetido - Card redundante.
+ * @param {{card: HTMLElement}} dono - Card escolhido para a aula.
+ * @returns {boolean} true quando ocultar o card não remove conteúdo exclusivo.
+ */
+function atividadeRepetidaNoCardDono(repetido, dono) {
+    const acoes = repetido.card.querySelector('.acoes');
+    const links = [...(acoes?.querySelectorAll('a') || [])];
+    if (links.length !== 1 || !links[0].matches('a.btn.principal')) return false;
+
+    const caminho = obterCaminhoHtml(lerHrefCrud(links[0]));
+    return Boolean(caminho && lerCaminhosDoCardVinculadas(dono.card).has(caminho));
+}
+
+/**
+ * Oculta cards redundantes da mesma aula se seu único link já estiver no card dono.
+ * @param {Object[]} itens - Cards do índice.
+ * @param {Map<number, Object>} donos - Card escolhido para cada aula.
+ */
+function ocultarCardsDuplicados(itens, donos) {
+    itens.forEach((item) => {
+        const dono = donos.get(item.aula?.id);
+        if (!dono || dono.card === item.card || item.card.hidden) return;
+        if (!atividadeRepetidaNoCardDono(item, dono)) return;
+
+        item.card.setAttribute(ATRIBUTO_CARD_OCULTO_DUPLICADO, String(item.card.hidden));
+        item.card.hidden = true;
+    });
 }
 
 /**
@@ -170,6 +215,7 @@ function inserirBotoesNoCard(card, botoes) {
  * @returns {Promise<number>} Quantidade de botões acrescentados.
  */
 async function renderizarAtividadesVinculadas(itens) {
+    restaurarCardsDuplicados(itens);
     removerBotoesVinculadosDoBanco();
     const donos = mapearCardsDonosDasAulas(itens);
     if (!donos.size) return 0;
@@ -182,5 +228,6 @@ async function renderizarAtividadesVinculadas(itens) {
         inserirBotoesNoCard(item.card, botoes);
         total += botoes.length;
     });
+    ocultarCardsDuplicados(itens, donos);
     return total;
 }

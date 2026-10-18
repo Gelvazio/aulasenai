@@ -10,4 +10,5 @@
 - **Modelo:** só Codex — nunca outro
 - **Descrição:** localizar por que a aula ID 27 aparece em dois cards e por que atividade ID 36 aparece em ambos; corrigir a camada da interface se a duplicidade vier dela.
 - **Critérios de Aceitação:** determinar a origem; se for interface, apresentar a aula uma vez e cada atividade distinta uma vez; não alterar registros do banco. Se exigir correção de dados, documentar a evidência e pedir aprovação/nível apropriado antes de mudar o banco.
-- **Entrega:** pendente · **Verificação:** leitura do fluxo, checagem estática e `git diff --check`; sem navegador.
+- **Entrega:** a interface oculta o artigo redundante quando a mesma aula aparece em mais de um card e o único link desse artigo já consta no card dono.
+- **Verificação:** análise do fluxo confirmou a causa (o módulo escolhia o card dono, mas mantinha o outro artigo); `node --check assets/js/indice-aula-atividades-vinculadas.js` e `git diff --check` passaram. Sem alteração do banco e sem navegador.
