@@ -920,6 +920,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #270-1916e419-19bb-4e37-b407-c6e215c11b5e | Remover os dois cards objetivos do índice ITIC | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | — |
+| #270.1 | Remover os cards objetivos do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ⬜ Pendente | — | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1353,6 +1355,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 394-efe592c3 | Análise de viabilidade de uma versão PWA na pasta `pwa/` (#267, pedida em 2026-10-17 21:01) | [ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) |
 | 395-1841c1cf | Ocultar três avaliações da lista do aluno (#268, pedida em 2026-10-17 21:14) | [ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) |
 | 396-ebeae4e7 | Atividades bloqueadas não aparecem para o aluno (#269, pedida em 2026-10-17 21:17) | [ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) |
+| 397-1916e419 | Remover os dois cards objetivos do índice ITIC (#270, pedida em 2026-10-17 21:29) | [ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
