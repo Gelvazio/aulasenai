@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
-| local · main · Claude Code (Opus 5.5) | #272 concluída ([399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)) | ⏹️ Encerrada | 2026-10-17 22:10 |
+| local · main · Claude Code (Opus 5.5) | #273 ([400-312b7090](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md)) | 🔄 Em execução | 2026-10-17 22:14 |
 | local · main · Codex (GPT-6) | #272 passada ao Claude Code (Opus 5.5) por ordem do usuário | ⏹️ Encerrada | 2026-10-17 21:58 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
@@ -921,8 +921,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
-| **#273** | **Atividade desvinculada continua no card da aula** | **🟠 Alta** | **—** | **—** | **⬜ Pendente** | **— (não reservável)** | **[400-312b7090](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md)** | **—** |
-| #273.1 | Diagnosticar e corrigir a atividade desvinculada que continua no card · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [400-312b7090](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md) | — |
+| **#273** | **Atividade desvinculada continua no card da aula** | **🟠 Alta** | **—** | **—** | **🔄 Em execução** | **— (não reservável)** | **[400-312b7090](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md)** | **—** |
+| #273.1 | Diagnosticar e corrigir a atividade desvinculada que continua no card · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main) (desde 2026-10-17 22:14) | [400-312b7090](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md) | — |
 
 
 ## Escopo
