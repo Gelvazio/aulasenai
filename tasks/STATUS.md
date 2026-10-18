@@ -19,7 +19,8 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
-| local · main · Codex (GPT-6) | #271 concluída ([398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md)) | ⏹️ Encerrada | 2026-10-17 21:35 |
+| local · main · Claude Code (Opus 5.5) | #272 ([399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)) assumida a pedido do usuário; #272.1 com o executor-leve | 🔄 Em execução | 2026-10-17 21:58 |
+| local · main · Codex (GPT-6) | #272 passada ao Claude Code (Opus 5.5) por ordem do usuário | ⏹️ Encerrada | 2026-10-17 21:58 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
@@ -920,6 +921,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| **#272** | **Cards de aula somente do banco** | **🟠 Alta** | **—** | **—** | **🔄 Em execução** | **— (não reservável)** | **[399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md)** | **—** |
+| #272.1 | Registrar a regra global da fonte única de cards · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main) (desde 2026-10-17 21:58) | [399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) | — |
+| #272.2 | Fazer a lista do aluno ser carregada exclusivamente de `AULAS` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #272.1 | ⬜ Pendente | — | [399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) | — |
 
 
 ## Escopo
@@ -1356,6 +1360,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 396-ebeae4e7 | Atividades bloqueadas não aparecem para o aluno (#269, pedida em 2026-10-17 21:17) | [ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) |
 | 397-1916e419 | Remover os dois cards objetivos do índice ITIC (#270, pedida em 2026-10-17 21:29) | [ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) |
 | 398-ce75ff03 | Diagnosticar duplicação do card da aula 27 (#271, pedida em 2026-10-17 21:30) | [ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) |
+| 399-86dad173 | Cards de aula somente do banco (#272, pedida em 2026-10-17 21:55) | [ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

@@ -1,0 +1,39 @@
+## Etapa 399-86dad173 — #272: Cards de aula somente do banco
+
+**Tarefa:** #272 · **Pedido em:** 2026-10-17 21:55 · **Criada por:** Codex (GPT-6) (local · main)
+**Pedido:** “O banco de dados sempre deve ser a única fonte da lista de cards de aulas, sempre deve vir da tabela `AULAS`; adicione esta regra de forma global neste projeto `aulasenai`.”
+**Objetivo:** registrar e aplicar a regra de que somente os registros da tabela `AULAS` determinam os cards exibidos.
+
+### Escopo
+- **Entra:** regra global no projeto; refatorar a lista para carregar aulas da tabela `AULAS`; associar conteúdo e atividades existentes ao card pelo ID da aula; retirar geração/seleção de cards com base em artigos HTML, inclusive a correção provisória da #271.
+- **Não entra:** alterar registros ou schema do banco; remover HTMLs de conteúdo; mudar regras de bloqueio de atividades.
+- **Critério de pronto:** cada card corresponde a um registro da tabela `AULAS`; fontes HTML não criam, duplicam, selecionam nem ocultam cards; a regra fica documentada e no visualizador.
+- **Premissas:** quando o banco falhar, não usar HTML como fallback para montar cards; informar o erro de carregamento. HTMLs podem continuar como conteúdo/link associados a uma aula cadastrada.
+
+### Riscos
+- Índices atuais podem depender de metadados existentes apenas nos artigos HTML. Mitigação: manter esses artigos somente como conteúdo associado à aula do banco; mapear incompatibilidades antes de removê-los da composição dos cards.
+- Falha ou indisponibilidade do banco pode deixar a lista vazia. Plano B: estado explícito de erro/carregamento, sem recorrer a uma lista de cards derivada dos HTMLs.
+
+### Decisões
+- A tabela `AULAS` é a fonte única de existência e identidade dos cards, em todas as matérias e páginas de lista. A associação de atividades usa `aula_id` do banco.
+- O plano aguarda aprovação explícita antes da execução, conforme `.claude/rules/tasks/ciclo-da-task.md`.
+- **Plano aprovado** pelo usuário em 2026-10-17 21:58 (“SIM, ASSUMA TUDO E FAÇA POR AQUI AGORA”).
+  A tarefa passa da frente Codex (GPT-6) para `Claude Code (Opus 5.5) (local · main)`, por ordem
+  do usuário; #272.1 é delegada ao `executor-leve` (Haiku) e #272.2 fica com o Opus.
+
+### #272.1 — Registrar a regra global da fonte única de cards
+**Próximo passo:** após aprovação do plano, acrescentar a regra na orientação global de matérias, no índice e no histórico; regenerar o visualizador.
+- **Nível:** LEVE — alteração de documentação e visualizador gerado.
+- **Modelo:** só Haiku — nunca outro
+- **Descrição:** deixar inequívoco que a tabela `AULAS` define todos os cards, sem origem ou fallback por arquivo HTML.
+- **Critérios de Aceitação:** a regra está em um lugar de referência do projeto, listada no índice e registrada no histórico; visualizador regenerado.
+- **Entrega:** — · **Verificação:** —
+
+### #272.2 — Fazer a lista do aluno ser carregada exclusivamente de `AULAS`
+**Próximo passo:** após aprovação do plano e conclusão de #272.1, localizar os renderizadores do índice e do login do aluno; consultar o repositório de aulas e renderizar um card por registro, associando conteúdo pelo ID.
+- **Nível:** PESADO — mudança arquitetural da origem da lista e possível alcance entre várias páginas.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Descrição:** retirar os HTMLs como fonte de criação, escolha, deduplicação ou fallback de cards; manter o registro do banco como autoridade e adaptar a correção provisória da #271.
+- **Critérios de Aceitação:** todas as listas de cards cobertas usam somente `AULAS`; duplicidade de artigos não duplica card; falha no banco mostra erro sem fallback HTML; atividades se ligam ao card via `aula_id`; nenhum dado ou schema do banco é alterado.
+- **Entrega:** — · **Verificação:** inspeção do fluxo, `node --check` nos JS alterados e `git diff --check`; sem navegador.
+
