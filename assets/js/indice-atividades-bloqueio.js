@@ -1,9 +1,9 @@
 // Bloqueio de atividades no ATIVIDADES/index.html, POR TURMA: atividade.bloqueio guarda os
 // códigos das turmas bloqueadas (fora da lista = liberada) e atividade.ativo = false bloqueia
 // para todas. O RLS só mostra ao aluno as atividades liberadas para alguma turma dele; aqui, a
-// atividade que o aluno não consegue ler some da lista (e o card inteiro some quando todas as
-// atividades dele estão bloqueadas). Só age em pastas gerenciadas pelo banco (pelo menos uma
-// atividade ativa).
+// atividade que o aluno não consegue ler aparece marcada com 🔒 e apagada, mas NÃO abre (o link
+// fica sem href, guardado em data-href-bloqueado) e o card nunca some por causa do bloqueio
+// (2026-10-18, #281). Só age em pastas gerenciadas pelo banco (pelo menos uma atividade ativa).
 // Para o professor, CADA atividade do card ganha, logo depois do link, o botão ON/OFF
 // (ON = liberada, OFF = bloqueada) que vale SÓ para a turma escolhida no combo
 // "Turma:" do índice (sem combo, a favorita) (função definir_bloqueio_turma; as outras turmas
@@ -20,12 +20,12 @@ const SELETOR_CARD_SOMENTE_PROFESSOR = 'article[data-somente-professor]';
 const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
 const SELETOR_LINK_ATIVIDADE_BLOQUEIO = 'a.btn';
 // Classes próprias (não as do bloqueio da aula): o indice-aula-bloqueio.js liga e desliga a dele.
-const CLASSE_LINK_OCULTO_ALUNO = 'atividade--oculta-para-aluno';
-const CLASSE_CARD_OCULTO_ALUNO_ATIVIDADES = 'aula--atividades-ocultas-para-aluno';
+const CLASSE_LINK_BLOQUEADO_ALUNO = 'atividade--bloqueada-para-aluno';
 const CLASSE_TEMA_BLOQUEADO_PROFESSOR = 'bloqueada-professor';
 const CLASSE_LINK_BLOQUEADO_PROFESSOR = 'link-bloqueado-professor';
 const TEXTO_INTERRUPTOR_LIGADO = 'Liberada para a turma ';
 const TEXTO_INTERRUPTOR_DESLIGADO = 'Bloqueada para a turma ';
+const TEXTO_ATIVIDADE_BLOQUEADA_ALUNO = 'Atividade bloqueada pelo professor';
 const TEXTO_SEM_FAVORITA = '(marque a turma favorita)';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
 const ROTA_DEFINIR_BLOQUEIO_TURMA = '/rest/v1/rpc/definir_bloqueio_turma';
@@ -37,7 +37,7 @@ const SELETOR_COMBO_TURMA_BLOQUEIO = '.barra-turma-favorita__lista';
 // atividades da aula bloqueada.
 const EVENTO_AULA_ALTERADA_BLOQUEIO = 'aula-bloqueio-alterado';
 // Disparado pelo indice-aula-data.js quando a grade só do banco fica pronta (#272): os cards são
-// novos, então o aluno tem as atividades bloqueadas ocultadas de novo.
+// novos, então o aluno tem as atividades bloqueadas marcadas de novo (#281).
 const EVENTO_CARDS_MONTADOS_BLOQUEIO = 'cards-aula-montados';
 const SELETOR_INTERRUPTOR_ATIVIDADE = '.interruptor-atividade';
 // Card de aula bloqueada (indice-aula-bloqueio.js): os botões das atividades nascem travados.
@@ -110,16 +110,19 @@ async function buscarPaginasAtivasBloqueio(paginas) {
 }
 
 /**
- * Aluno: oculta o link de uma atividade bloqueada (sem href, nem clique, nem teclado abrem).
+ * Aluno: marca o link de uma atividade bloqueada. Ele continua na lista, com 🔒 e apagado (CSS),
+ * mas não abre: sem href, fora da ordem do teclado e sem clique. O RLS continua barrando o acesso.
  * @param {HTMLAnchorElement} link - Link da atividade bloqueada.
  */
-function ocultarLinkAluno(link) {
+function marcarLinkBloqueadoAluno(link) {
     // Guarda o endereço: o indice-aula-data.js ainda precisa dele para achar a aula do card.
     const endereco = link.getAttribute('href');
     if (endereco) link.setAttribute(ATRIBUTO_HREF_GUARDADO, endereco);
     link.removeAttribute('href');
     link.setAttribute('tabindex', '-1');
-    link.classList.add(CLASSE_LINK_OCULTO_ALUNO);
+    link.setAttribute('aria-disabled', 'true');
+    link.title = TEXTO_ATIVIDADE_BLOQUEADA_ALUNO;
+    link.classList.add(CLASSE_LINK_BLOQUEADO_ALUNO);
 }
 
 /**
@@ -132,19 +135,15 @@ function atividadesBloqueiamCard() {
 }
 
 /**
- * Aluno: oculta as atividades do card que ele não consegue ler; se todas estiverem
- * bloqueadas, oculta o card inteiro (exceto nas matérias com o bloqueio da aula).
+ * Aluno: marca as atividades do card que ele não consegue ler, com 🔒 e sem abrir. O card continua
+ * visível, mesmo quando todas as atividades dele estão bloqueadas (#281).
  * @param {HTMLElement} card - Card do índice.
  * @param {Set<string>} ativas - Páginas liberadas para o aluno.
  */
-function ocultarAtividadesBloqueadasAluno(card, ativas) {
-    const links = [...card.querySelectorAll(SELETOR_LINK_BLOQUEIO)].filter(caminhoDoLink);
-    const bloqueados = links.filter((link) => !ativas.has(caminhoDoLink(link)));
-    if (!bloqueados.length) return;
-
-    bloqueados.forEach(ocultarLinkAluno);
-    const todasBloqueadas = bloqueados.length === links.length && atividadesBloqueiamCard();
-    card.classList.toggle(CLASSE_CARD_OCULTO_ALUNO_ATIVIDADES, todasBloqueadas);
+function marcarAtividadesBloqueadasAluno(card, ativas) {
+    [...card.querySelectorAll(SELETOR_LINK_BLOQUEIO)]
+        .filter((link) => caminhoDoLink(link) && !ativas.has(caminhoDoLink(link)))
+        .forEach(marcarLinkBloqueadoAluno);
 }
 
 /**
@@ -358,7 +357,7 @@ function ouvirTrocaFavoritaBloqueio() {
 }
 
 /**
- * Aluno e visitante: oculta as atividades que não estão liberadas para ele.
+ * Aluno e visitante: marca as atividades que não estão liberadas para ele (🔒, sem abrir).
  */
 async function aplicarBloqueioAluno() {
     const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
@@ -370,7 +369,7 @@ async function aplicarBloqueioAluno() {
     const ativas = await buscarPaginasAtivasBloqueio(unicos);
     if (!ativas.size) return;
 
-    cards.forEach((card) => ocultarAtividadesBloqueadasAluno(card, ativas));
+    cards.forEach((card) => marcarAtividadesBloqueadasAluno(card, ativas));
 }
 
 /**

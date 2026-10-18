@@ -19,10 +19,11 @@ apagada e **não abre** (o link continua sem `href` e o RLS do banco não muda).
 
 ### #281.1 — Mostrar as atividades bloqueadas ao aluno em vez de esconder
 
-**Próximo passo:** trocar o "ocultar" por "marcar como bloqueada" no JS e no CSS e atualizar a regra.
+**Próximo passo:** — (entregue em 2026-10-18 19:36).
 
 - **Nível:** MEDIO — tela: 1 JS + 1 CSS e a regra em `docs/`; sem banco e sem mexer em RLS/JWT.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Executor:** DeepSeek Harness (deepseek-flash) (local · main)
 - **Descrição:** (1) `assets/js/indice-atividades-bloqueio.js`: `ocultarLinkAluno` vira
   "marcar como bloqueada" — continua guardando o `href` em `data-href-bloqueado`, tira o `href` e o
   `tabindex`, mas põe a classe nova `atividade--bloqueada-para-aluno` (não some mais); o card não
@@ -35,7 +36,25 @@ apagada e **não abre** (o link continua sem `href` e o RLS do banco não muda).
 - **Critérios de aceitação:** o aluno vê todas as atividades do card; as bloqueadas com 🔒, apagadas
   e sem abrir (sem `href`); o card não some quando todas as atividades estão bloqueadas; o professor
   não muda; `node --check` no JS.
-- **Verificação:** `node --check`; busca pela classe antiga no repositório; leitura do CSS e da
-  regra atualizados; conferir que o `data-href-bloqueado` continua guardado (o `indice-aula-data.js`
-  usa o endereço para achar a aula do card); sem banco e sem navegador.
-- **Entrega:** — · **Anotação:** —
+- **Entrega:** `assets/js/indice-atividades-bloqueio.js` — `ocultarLinkAluno` virou
+  `marcarLinkBloqueadoAluno` (guarda `data-href-bloqueado`, tira `href`/`tabindex`, põe
+  `aria-disabled`, `title` "Atividade bloqueada pelo professor" e a classe
+  `atividade--bloqueada-para-aluno`); `ocultarAtividadesBloqueadasAluno` virou
+  `marcarAtividadesBloqueadasAluno` e não mexe mais no card (saiu `CLASSE_CARD_OCULTO_ALUNO_ATIVIDADES`);
+  a constante `CLASSE_LINK_OCULTO_ALUNO` virou `CLASSE_LINK_BLOQUEADO_ALUNO` e entrou
+  `TEXTO_ATIVIDADE_BLOQUEADA_ALUNO`; comentários do topo, do evento `cards-aula-montados` e de
+  `aplicarBloqueioAluno` atualizados. `assets/css/indice-atividades-bloquear.css` — saíram as duas
+  regras de `display: none` (atividade e card) e entraram o visual da atividade bloqueada do aluno
+  (`opacity: 0.55`, `cursor: not-allowed`, 🔒 via `::before` e hover sem escurecer).
+  `docs/regras/atividades.md` — a regra do ON/OFF por atividade diz que o aluno vê todas as
+  atividades, as bloqueadas com 🔒 e sem abrir, e que o card não some por isso.
+- **Verificação:** `node --check assets/js/indice-atividades-bloqueio.js` OK; busca em
+  `assets/js/*.js` e `assets/css/*.css` sem nenhuma ocorrência de
+  `atividade--oculta-para-aluno`, `aula--atividades-ocultas-para-aluno`, `ocultarLinkAluno` e
+  `ocultarAtividadesBloqueadasAluno`; `data-href-bloqueado` continua guardado (o
+  `indice-aula-data.js` usa o endereço para achar a aula do card); `atividadesBloqueiamCard()`
+  continua usado pelo fluxo do professor; `git diff --check` limpo nos arquivos da tarefa; sem banco
+  e sem navegador (conferir na tela é do usuário).
+- **Anotação:** quando o aluno não consegue ler **nenhuma** atividade (`ativas` vazio), o código
+  segue saindo cedo (`if (!ativas.size) return;`) — é a proteção para pastas não gerenciadas pelo
+  banco e ficou como estava; nesse caso as atividades continuam vindo do HTML, como antes.

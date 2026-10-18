@@ -79,9 +79,13 @@
 /* Aula bloqueada: nem o professor acessa nada do card (links, slides, ON/OFF das atividades,
    cadastrar, editar); só o botão da aula fica acima do véu e clicável, para desbloquear. */
 .aula.aula--oculta-para-aluno { display: none; }
-/* Aluno: atividade bloqueada some da lista; card com todas as atividades bloqueadas também. */
-.aula a.btn.atividade--oculta-para-aluno { display: none; }
-.aula.aula--atividades-ocultas-para-aluno { display: none; }
+/* Aluno: atividade bloqueada continua na lista do card, apagada e com 🔒, mas não abre (#281).
+   O link fica sem href (indice-atividades-bloqueio.js) e o RLS continua barrando o acesso. */
+.aula a.btn.atividade--bloqueada-para-aluno { opacity: 0.55; cursor: not-allowed; }
+.aula a.btn.atividade--bloqueada-para-aluno::before { content: '🔒 '; }
+.aula a.btn.principal.atividade--bloqueada-para-aluno:hover {
+    background: #f7941d; border-color: #f7941d;
+}
 .aula.aula--bloqueada-professor { cursor: not-allowed; }
 .aula.aula--bloqueada-professor * { pointer-events: none; }
 .aula.aula--bloqueada-professor .interruptor-aula,

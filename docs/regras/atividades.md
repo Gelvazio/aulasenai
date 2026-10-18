@@ -592,9 +592,10 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   atividade** cadastrada no banco (ON verde = liberada; OFF vermelho = bloqueada para a turma
   favorita; a dica do botão mostra a turma). Um card com várias atividades (ex.: objetiva +
   prática da mesma aula) tem um botão por atividade, e cada uma é bloqueada sozinha. O card só
-  fica escurecido quando **todas** as atividades dele estão OFF. O aluno vê a atividade bloqueada
-  com 🔒 no nome e "Atividade Bloqueada!" ao clicar; o card inteiro só trava quando todas
-  estão bloqueadas. Código único: `assets/js/indice-atividades-bloqueio.js` +
+  fica escurecido quando **todas** as atividades dele estão OFF. O aluno vê **todas** as atividades
+  do card, inclusive as bloqueadas: as bloqueadas aparecem com 🔒 no nome, apagadas e **sem abrir**
+  (o link fica sem `href` e o RLS continua barrando o acesso; 2026-10-18, #281); o card não some
+  quando todas estão bloqueadas. Código único: `assets/js/indice-atividades-bloqueio.js` +
   `assets/css/indice-atividades-bloquear.css` (carregados pelo `atividades-crud-modal.js` em
   todos os índices; não repetir por matéria nem por página). **Largura (2026-10-09):** os botões de
   atividade do card têm a mesma largura e o ON/OFF fica sempre ao lado (texto do botão menor e
