@@ -921,6 +921,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 
+| #271-ce75ff03-8cb7-4cba-95bc-3027c1dcfe4b | Diagnosticar duplicação do card da aula 27 | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
+| #271.1 | Diagnosticar e corrigir duplicação de aula/atividade na interface · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ⬜ Pendente | — | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | — |
+
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
 - **Não entra:** histórico anterior (está no Git e em `docs/`).
@@ -1354,6 +1357,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 395-1841c1cf | Ocultar três avaliações da lista do aluno (#268, pedida em 2026-10-17 21:14) | [ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) |
 | 396-ebeae4e7 | Atividades bloqueadas não aparecem para o aluno (#269, pedida em 2026-10-17 21:17) | [ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) |
 | 397-1916e419 | Remover os dois cards objetivos do índice ITIC (#270, pedida em 2026-10-17 21:29) | [ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) |
+| 398-ce75ff03 | Diagnosticar duplicação do card da aula 27 (#271, pedida em 2026-10-17 21:30) | [ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
