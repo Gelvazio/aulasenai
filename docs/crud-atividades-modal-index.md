@@ -5,6 +5,10 @@
 **Tempo decorrido:** —
 **Status geral:** ✅ Concluído (pendente: usuário rodar o SQL no Supabase)
 
+> ⚠️ **Atualização 2026-10-18 (#280):** o botão "🗂️ CADASTRAR ATIVIDADES" de cada card foi
+> removido a pedido do usuário. O modal continua o mesmo e abre pelo ✏️ de cada atividade e pelo
+> "➕ Nova atividade nesta aula" do modal da aula (`indice-aula-modal.js`).
+
 ---
 
 ## 🎯 Objetivo

@@ -56,7 +56,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
-| local · main · DeepSeek Harness (deepseek-flash) | #280.1 ([409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md)) — remover o botão CADASTRAR ATIVIDADES dos cards | 🔄 Ativa | 2026-10-18 19:32 |
+| local · main · DeepSeek Harness (deepseek-flash) | #280 ([409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md)) concluída — botão CADASTRAR ATIVIDADES removido dos cards | ⏹️ Encerrada | 2026-10-18 19:33 |
 
 ## 📌 Tarefas
 
@@ -1293,8 +1293,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
-| #280-ff28f69e-2d01-4f64-95db-6cd479bcf6c1 | **Remover o botão "CADASTRAR ATIVIDADES" dos cards do índice** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md) | — |
-| #280.1 | Tirar o botão dos cards e limpar o que sobrou · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | 🔄 Em execução | DeepSeek Harness (deepseek-flash) (local · main) (desde 2026-10-18 19:32) | [409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |

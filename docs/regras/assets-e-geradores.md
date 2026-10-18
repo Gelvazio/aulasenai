@@ -46,9 +46,10 @@ assets/
 │                        (login só para responder; sem banco, bloqueia); painel-professor.js +
 │                        css/painel-professor.css — painel-professor.html da raiz;
 │                        atividades-crud-repositorio.js + atividades-crud-modal.js + css/
-│                        atividades-crud-modal.css — botão CADASTRAR ATIVIDADES em cada card do
-│                        ATIVIDADES/index.html (só professor logado): modal com CRUD da tabela
-│                        `atividade`; link = páginas HTML da própria pasta; SQL em
+│                        atividades-crud-modal.css — modal CADASTRAR ATIVIDADES do
+│                        ATIVIDADES/index.html (só professor logado), aberto pelo ✏️ de cada
+│                        atividade e pelo "➕ Nova atividade nesta aula" do modal da aula: CRUD da
+│                        tabela `atividade`; link = páginas HTML da própria pasta; SQL em
 │                        database/2026-09-29-atividade-crud-professor.sql; o gerador-indices
 │                        inclui as tags, índices feitos à mão recebem as tags manualmente;
 │                        turmas-professor-repositorio.js + turmas-professor-pagina.js + css/

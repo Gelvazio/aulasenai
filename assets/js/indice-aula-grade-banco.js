@@ -24,8 +24,6 @@ const SELETOR_LINK_GRADE_BANCO = 'a';
 // Botões que outros módulos põem logo depois do link de uma atividade (ON/OFF, ✏️ e "−").
 const SELETOR_CONTROLES_LINK_GRADE_BANCO =
     '.interruptor-atividade, .crud-editar-atividade, .crud-desvincular-atividade';
-// "CADASTRAR ATIVIDADES" (atividades-crud-modal.js): um só por card.
-const SELETOR_BOTAO_CADASTRAR_GRADE_BANCO = '.crud-botao-card';
 const SELETOR_DETALHES_GRADE_BANCO = ':scope > details';
 const ATRIBUTO_SOMENTE_PROFESSOR_GRADE = 'data-somente-professor';
 // Marcado pelo atividades-crud-modal.js ao carregar: o artigo já vinha com hidden no HTML.
@@ -177,18 +175,15 @@ function linkDeAtividadeDeOutraAula(caminho, estado) {
 
 /**
  * Diz se o elemento do div.acoes do artigo deve ficar fora do card: link de página que o card já
- * tem, link de atividade de outra aula (e os controles deles) ou um segundo "CADASTRAR ATIVIDADES".
+ * tem ou link de atividade de outra aula (e os controles deles).
  * @param {HTMLElement} elemento - Filho do div.acoes do artigo.
- * @param {{acoes: HTMLElement, caminhos: Set<string>, pulandoLink: boolean, aulaId: number,
+ * @param {{caminhos: Set<string>, pulandoLink: boolean, aulaId: number,
  *     vinculos: Map<string, number|null>}} estado
  * @returns {boolean} true se o elemento não vai para o card.
  */
 function elementoForaDoCard(elemento, estado) {
     if (elemento.matches(SELETOR_CONTROLES_LINK_GRADE_BANCO)) return estado.pulandoLink;
     estado.pulandoLink = false;
-    if (elemento.matches(SELETOR_BOTAO_CADASTRAR_GRADE_BANCO)) {
-        return Boolean(estado.acoes.querySelector(SELETOR_BOTAO_CADASTRAR_GRADE_BANCO));
-    }
     if (!elemento.matches(SELETOR_LINK_GRADE_BANCO)) return false;
 
     const caminho = chaveDoLinkGrade(elemento);
@@ -211,7 +206,7 @@ function moverConteudoDoArtigo(artigo, destino, vinculos) {
     const acoes = destino.card.querySelector(SELETOR_ACOES_GRADE_BANCO);
     const origem = artigo.querySelector(SELETOR_ACOES_GRADE_BANCO);
     if (acoes && origem) {
-        const estado = { acoes, caminhos: lerCaminhosDoCardGrade(destino.card),
+        const estado = { caminhos: lerCaminhosDoCardGrade(destino.card),
             pulandoLink: false, aulaId: destino.aula.id, vinculos };
         [...origem.children].forEach((elemento) => {
             if (!elementoForaDoCard(elemento, estado)) acoes.append(elemento);

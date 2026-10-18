@@ -1,6 +1,7 @@
-// Botão "CADASTRAR ATIVIDADES" em cada card do ATIVIDADES/index.html: abre um modal com a lista
-// das atividades cadastradas no banco e o CRUD (cadastrar, editar, excluir).
-// Só o professor logado vê o botão. O link da atividade é escolhido entre as páginas HTML desta
+// Modal "CADASTRAR ATIVIDADES" do ATIVIDADES/index.html: a lista das atividades cadastradas no
+// banco e o CRUD (cadastrar, editar, excluir). Abre pelo ✏️ de cada atividade e pelo
+// "➕ Nova atividade nesta aula" do modal da aula; o botão em cada card saiu em 2026-10-18 (#280).
+// Só o professor logado vê os botões. O link da atividade é escolhido entre as páginas HTML desta
 // pasta (os links dos cards do índice).
 // Ao lado de cada atividade cadastrada, o professor também vê o botão ✏️, que abre a edição
 // dela (nome, data, aula, ativa...) direto no formulário.
@@ -11,10 +12,8 @@
 // depois do carregamento.
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
-const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
 const SELETOR_CARD = 'article.aula';
 const SELETOR_LINK_ATIVIDADE = 'a.btn.principal';
-const SELETOR_ACOES = '.acoes';
 const ALVO_NOVA_ABA_CRUD = '_blank';
 const REL_NOVA_ABA_CRUD = 'noopener';
 const MSG_SEM_ATIVIDADES_CRUD = 'Nenhuma atividade cadastrada para as páginas desta pasta.';
@@ -537,22 +536,6 @@ async function abrirModalCrud(paginaDoCard, idUnica = null) {
 }
 
 /**
- * Acrescenta o botão CADASTRAR ATIVIDADES a um card.
- * @param {HTMLElement} card - Card do índice.
- */
-function adicionarBotaoCrudAoCard(card) {
-    const link = card.querySelector(SELETOR_LINK_ATIVIDADE);
-    const acoes = card.querySelector(SELETOR_ACOES);
-    if (!link || !acoes) return;
-
-    const botao = criarElementoCrud('button', 'btn crud-botao-card', TEXTO_BOTAO_CRUD);
-    botao.type = 'button';
-    const pagina = obterCaminhoHtml(lerHrefCrud(link));
-    botao.addEventListener('click', () => abrirModalCrud(pagina));
-    acoes.append(botao);
-}
-
-/**
  * Formata o ID da atividade com dois dígitos (7 → "07"; 99 e 100 ficam como estão).
  * @param {number} id - Id da atividade.
  * @returns {string} ID formatado.
@@ -710,7 +693,6 @@ async function iniciarCrudAtividades() {
 
     crudProfessorAtivo = true;
     estadoCrud.paginas = coletarPaginasDoIndice();
-    document.querySelectorAll(SELETOR_CARD).forEach(adicionarBotaoCrudAoCard);
     document.addEventListener(EVENTO_CARDS_REFEITOS_CRUD, atualizarIdsAposCardsRefeitos);
     await mostrarIdsNosCards();
 }

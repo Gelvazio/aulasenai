@@ -69,7 +69,7 @@ header p { opacity: 0.95; }
         display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto;
         align-items: center;
     }
-    /* Botões do card (CADASTRAR ATIVIDADES, ON/OFF da aula, Editar e Excluir): linha inteira. */
+    /* Botões do card (ON/OFF da aula, Editar e Excluir): linha inteira. */
     .acoes > * { grid-column: 1 / -1; }
     .acoes > a.btn.principal { grid-column: 1; }
     .acoes > .interruptor-atividade { grid-column: 2; justify-self: center; margin: 0; }
