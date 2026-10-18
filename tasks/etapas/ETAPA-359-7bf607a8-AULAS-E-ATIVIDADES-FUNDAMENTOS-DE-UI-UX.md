@@ -4,6 +4,11 @@
 **Pedido:** "Faça 1 task pra cada matéria e 1 subtask pra cada aula da matéria e 1 subtask pra cada atividade objetiva e 1 pra cada atividade pratica, tipo discursiva, veja como esta na matéria ITIC padrao" (plano aprovado em 2026-10-16, com a subtarefa 0)
 **Objetivo:** escrever as 19 aulas de Fundamentos de UI/UX (76 h) com a objetiva de 50 questões e a prática discursiva de cada uma, tudo cadastrado no banco, no padrão da ITIC.
 
+> ⛔ **Substituída pela #276 (2026-10-18):** o usuário pediu um plano novo e mais detalhado, com
+> 166 subtarefas, discursiva de 20 questões, respostas prováveis por discursiva e análise do JEV-AI
+> ([ETAPA-404-627c95d8](ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md)). A #232 e as subtarefas
+> #232.0 a #232.58 ficaram ⛔ no `tasks/STATUS.md` (Decisão D1 da etapa nova).
+
 > 🚫 **Sem slides (2026-10-16, #244.9, pedido do usuário):** a IA **não gera slides** de aula
 > (nem PDF nem PPTX) nesta tarefa — o professor gera em outro momento. Vale para todas as aulas
 > (`.claude/rules/materias-global.md`).
