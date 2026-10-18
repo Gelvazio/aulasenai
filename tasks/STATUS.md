@@ -56,7 +56,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
-| local · main · DeepSeek Harness (deepseek-flash) | #282 ([411-505ededa](etapas/ETAPA-411-505ededa-REGRA-COMMIT-PUSH-NA-MAIN.md)) concluída — regra do commit + push na main anotada | ⏹️ Encerrada | 2026-10-18 19:41 |
+| local · main · DeepSeek Harness (deepseek-flash) | #283.1 ([412-cca9f896](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md)) — cores nos botões das atividades | 🔄 Ativa | 2026-10-18 19:42 |
 
 ## 📌 Tarefas
 
@@ -1294,7 +1294,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #283-3efe4473-0e91-4d2f-a900-8bfc35f4c6c6 | **Cores nos botões das atividades (feita / pendente / não feita)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [412-cca9f896](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md) | — |
-| #283.1 | Estado por atividade e as 3 cores no botão · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | ⬜ Pendente | — | [412-cca9f896](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md) | — |
+| #283.1 | Estado por atividade e as 3 cores no botão · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | 🔄 Em execução | DeepSeek Harness (deepseek-flash) (local · main) (desde 2026-10-18 19:42) | [412-cca9f896](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
