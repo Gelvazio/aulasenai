@@ -1293,7 +1293,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
-| **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
+| #284-119b8267-e85a-4a82-9a2c-42f08c087fff | **Corrigir as cores das atividades e o cadeado da atividade bloqueada** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [413-346d89f1](etapas/ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md) | — |
+| #284.1 | Cores visíveis e cadeado sobre a atividade bloqueada · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | ⬜ Pendente | — | [413-346d89f1](etapas/ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
@@ -1748,6 +1749,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 410-f3c66658 | Mostrar aos alunos as atividades bloqueadas (#281, pedida em 2026-10-18 19:34) | [ETAPA-410-f3c66658-MOSTRAR-ATIVIDADES-BLOQUEADAS-AO-ALUNO.md](etapas/ETAPA-410-f3c66658-MOSTRAR-ATIVIDADES-BLOQUEADAS-AO-ALUNO.md) |
 | 411-505ededa | Regra explícita do commit + push na `main` ao finalizar tarefa (#282, pedida em 2026-10-18 19:39) | [ETAPA-411-505ededa-REGRA-COMMIT-PUSH-NA-MAIN.md](etapas/ETAPA-411-505ededa-REGRA-COMMIT-PUSH-NA-MAIN.md) |
 | 412-cca9f896 | Cores nos botões das atividades (feita / pendente / não feita; #283, pedida em 2026-10-18 19:38) | [ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md](etapas/ETAPA-412-cca9f896-CORES-NOS-BOTOES-DAS-ATIVIDADES.md) |
+| 413-346d89f1 | Corrigir as cores das atividades e o cadeado da atividade bloqueada (#284, pedida em 2026-10-18 19:54) | [ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md](etapas/ETAPA-413-346d89f1-CORRIGIR-CORES-E-CADEADO-DAS-ATIVIDADES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
