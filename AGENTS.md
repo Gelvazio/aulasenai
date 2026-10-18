@@ -42,6 +42,10 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
    ([`tasks/quadro.md`](.claude/rules/tasks/quadro.md)). O que não está no quadro não aconteceu.
 4. **Fim de tarefa = 1 commit + push**, sempre na **`main`**, local e nuvem
    ([`git-quick.md`](.claude/rules/git-quick.md)).
+   - **Sempre, ao finalizar qualquer tarefa** (2026-10-18, pedido do usuário): fazer **commit e push
+     direto na `main`** na hora da entrega — de qualquer IA, tarefa grande ou pequena —, sem
+     esperar pedido, sem pedir autorização e sem deixar para depois. Nunca em branch paralela;
+     `--force` proibido.
 5. **Seeds em dia** antes de tarefa nova, com as exceções de [`seeds.md`](.claude/rules/seeds.md).
 6. **Sem navegador e sem testes automatizados**
    ([`testes-validacao.md`](.claude/rules/testes-validacao.md)).

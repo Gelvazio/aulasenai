@@ -20,6 +20,9 @@
 
 - Usuário diz "só commit, sem push" → respeitar.
 - Executar os comandos de git **direto, sem perguntar**.
+- ✅ **Toda tarefa termina com commit + push direto na `main`** (2026-10-18, pedido do usuário,
+  `AGENTS.md` regra 4): na hora da entrega, de qualquer IA, grande ou pequena — sem esperar o
+  usuário pedir, sem pedir autorização e sem deixar para depois.
 
 ## Fluxo
 
