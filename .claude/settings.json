@@ -29,6 +29,16 @@
             "timeout": 30
           }
         ]
+      },
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/rules-local/sessao.mjs\"",
+            "timeout": 30
+          }
+        ]
       }
     ],
     "PreToolUse": [
