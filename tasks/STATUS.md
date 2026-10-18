@@ -1293,6 +1293,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
+| #280-ff28f69e-2d01-4f64-95db-6cd479bcf6c1 | **Remover o botão "CADASTRAR ATIVIDADES" dos cards do índice** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md) | — |
+| #280.1 | Tirar o botão dos cards e limpar o que sobrou · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | ⬜ Pendente | — | [409-d10d6f43](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
@@ -1743,6 +1745,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 406-19ffa793 | TESTES-DE-FRONTEND-TASK: completar Testes de Front-End (discursivas de 20, respostas prováveis, avaliações, seeds e JEV-AI; #278, pedida em 2026-10-18 18:55) | [ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) |
 | 407-aa5426fe | Ajustar o projeto à regra jev.md (RL-87FD6C11, pedida em 2026-10-18 19:20) | [ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) |
 | 408-aee78315 | Cards de aula do índice: Slides na linha de baixo e ações em coluna (#279, pedida em 2026-10-18 19:20) | [ETAPA-408-aee78315-CARDS-SLIDES-NA-LINHA-DE-BAIXO.md](etapas/ETAPA-408-aee78315-CARDS-SLIDES-NA-LINHA-DE-BAIXO.md) |
+| 409-d10d6f43 | Remover o botão "CADASTRAR ATIVIDADES" dos cards do índice (#280, pedida em 2026-10-18 19:31) | [ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md](etapas/ETAPA-409-d10d6f43-REMOVER-BOTAO-CADASTRAR-ATIVIDADES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
