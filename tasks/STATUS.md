@@ -921,6 +921,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
+| #275-c7e27893-0d94-47f2-9665-50a69cf4d450 | Versão PWA só do aluno na pasta `pwa/` | 🟡 Média | — | #267 | ⬜ Pendente | — (não reservável) | [402-c7e27893](etapas/ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md) | — |
+| #275.1 | Plano de implantação com o máximo de subtarefas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.3 | ⬜ Pendente | — | [402-c7e27893](etapas/ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md) | — |
 
 
 ## Escopo
@@ -1360,6 +1362,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 399-86dad173 | Cards de aula somente do banco (#272, pedida em 2026-10-17 21:55) | [ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) |
 | 400-312b7090 | Atividade desvinculada continua no card da aula (#273, pedida em 2026-10-17 22:13) | [ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md](etapas/ETAPA-400-312b7090-DESVINCULAR-ATIVIDADE-CONTINUA-NO-CARD.md) |
 | 401-1db3efe7 | Visual dos cards de aula (#274, pedida em 2026-10-17 22:27) | [ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md) |
+| 402-c7e27893 | Versão PWA só do aluno na pasta `pwa/` (#275, pedida em 2026-10-17) | [ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md](etapas/ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
