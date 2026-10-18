@@ -321,3 +321,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #268.1 | Ocultar os três cards de avaliação para o aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [395-1841c1cf](etapas/ETAPA-395-1841c1cf-REMOVER-CARDS-AVALIACAO-DO-ALUNO.md) | — |
 | #269-ebeae4e7-14d5-452e-bee4-fb59e0c989fd | Atividades bloqueadas não aparecem para o aluno | 🟠 Alta | — | — | ✅ Concluída | — (não reservável) | [396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) | — |
 | #269.1 | Ocultar do aluno as atividades bloqueadas no índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Qoder | — | ✅ Concluída (2026-10-17 21:25) | — | [396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md) | — |
+
+| #270-1916e419-19bb-4e37-b407-c6e215c11b5e | Remover os dois cards objetivos do índice ITIC | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | true |
+| #270.1 | Remover os cards objetivos do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | true |

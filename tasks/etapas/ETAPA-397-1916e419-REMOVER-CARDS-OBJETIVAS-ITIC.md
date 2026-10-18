@@ -5,9 +5,10 @@
 **Objetivo:** remover esses dois cards da lista sem apagar as páginas das avaliações nem o card prático.
 
 ### #270.1 — Remover os cards objetivos do índice
-**Próximo passo:** analisar o relatório do grafo e remover somente os dois artigos correspondentes do índice.
+**Próximo passo:** entrega concluída; os dois cards objetivos foram retirados do índice.
 - **Nível:** MEDIO — edição pontual de HTML existente.
 - **Modelo:** só Codex — nunca outro
 - **Descrição:** remover os artigos das avaliações objetivas do `ATIVIDADES/index.html` da Introdução à TIC.
 - **Critérios de Aceitação:** os dois cards não constam no índice; o card prático e os arquivos HTML das avaliações continuam intactos.
-- **Entrega:** pendente · **Verificação:** conferir contagem e links no HTML; `git diff --check`; sem navegador.
+- **Entrega:** removidos os dois artigos objetivos do índice de atividades.
+- **Verificação:** busca estática confirmou ausência dos dois títulos e links no índice, presença do card prático e existência dos dois HTMLs de avaliação; `git diff --check` passou. Sem navegador.

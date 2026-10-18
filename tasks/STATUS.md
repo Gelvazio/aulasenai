@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
-| local · main · Codex (GPT-6) | #270.1 ([397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md)) — remover dois cards objetivos | 🔄 Ativa | 2026-10-17 21:30 |
+| local · main · Codex (GPT-6) | #270 concluída ([397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md)) | ⏹️ Encerrada | 2026-10-17 21:31 |
 | local · main · s21 | #7 ([153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md)) concluída — relatório final das matérias (4 completas, 29 incompletas) | ⏹️ Encerrada | 2026-10-17 20:57 |
 | local · main · s20 | #260 a #264 concluídas ([387-4d7a91c2](etapas/ETAPA-387-4d7a91c2-LIGAR-ATIVIDADES-SEM-ID-A-TABELA-ATIVIDADE.md)) | ⏹️ Encerrada | 2026-10-17 18:35 |
 | local · main · s19 | #252 ([379-ab9e36c5](etapas/ETAPA-379-ab9e36c5-RENDERIZACAO-DE-IA-AJUSTADO-PARA-IA.md)) concluída | ⏹️ Encerrada | 2026-10-17 11:05 |
@@ -920,8 +920,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #267.1 | Inventário do site e dos requisitos de PWA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguarda o "sim" | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.2 | Cenários de PWA, riscos de segurança e esforço · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.1 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
 | #267.3 | Documento `pwa/ANALISE-PWA.md` com recomendação e plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.2 | ⬜ Pendente | — | [394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md) | — |
-| #270-1916e419-19bb-4e37-b407-c6e215c11b5e | Remover os dois cards objetivos do índice ITIC | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | — |
-| #270.1 | Remover os cards objetivos do índice · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | 🔄 Em execução | Codex (GPT-6) (local · main) (desde 2026-10-17 21:30) | [397-1916e419](etapas/ETAPA-397-1916e419-REMOVER-CARDS-OBJETIVAS-ITIC.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
