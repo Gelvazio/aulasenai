@@ -1302,6 +1302,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #287.3 | Regras, agente e skill do `aulasenai` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #287.2 | ⬜ Pendente | — | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
 | #288-c45b1fd7-ee09-43e5-9d1d-10dbfbc6fd11 | **Mostrar o id da atividade ao aluno** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) | — |
 | #288.1 | Id da atividade nos botões de atividade do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s22) (desde 2026-10-18 20:21) | [417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) | — |
+| #289-f418dc85-5962-40ba-86eb-aae0f4c83ec2 | **Botão ON/OFF ao lado de "Progresso da turma"** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [418-f418dc85](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md) | — |
+| #289.1 | Botão ON/OFF do "Progresso da turma" com estado no localStorage · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [418-f418dc85](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
@@ -1761,6 +1763,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 415-ac221821 | Cores do botão em todas as atividades (#286, pedida em 2026-10-18 20:02) | [ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) |
 | 416-510f8b12 | Haiku confere, faz commit e push de toda entrega (#287, pedida em 2026-10-18 20:10) | [ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) |
 | 417-c45b1fd7 | Mostrar o id da atividade ao aluno (#288, pedida em 2026-10-18 20:19) | [ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) |
+| 418-f418dc85 | Botão ON/OFF ao lado de "Progresso da turma" (#289, pedida em 2026-10-18 20:24) | [ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
