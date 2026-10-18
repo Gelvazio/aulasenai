@@ -47,7 +47,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 
 | Arquivo | Assunto |
 |---------|---------|
-| `materias-global.md` | Estrutura de pasta, 1 aula = 4 h, fontes do conteúdo, hierarquia, critério de pronto |
+| `materias-global.md` | Estrutura de pasta, 1 aula = 4 h, fontes do conteúdo, hierarquia, critério de pronto, cards de aula só da tabela `aulas` |
 | `apostilas.md` | `materia.json`, fluxo da apostila, identificação, PDF |
 | `atividades-banco.md` | Alvo da migração #25, tamanho padrão, "você como aluno consultor" |
 | `faixa-materias-ensalado.md` | Botões SOMENTE ENSALADO / VER TODAS e ON/OFF |
@@ -76,4 +76,4 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 
 ---
 
-Última atualização: 2026-10-14 (estrutura do Claude Code, tarefa #170)
+Última atualização: 2026-10-17 (cards de aula só do banco, tarefa #272)

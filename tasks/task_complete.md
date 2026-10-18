@@ -327,3 +327,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 
 | #271-ce75ff03-8cb7-4cba-95bc-3027c1dcfe4b | Diagnosticar duplicação do card da aula 27 | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | true |
 | #271.1 | Diagnosticar e corrigir duplicação de aula/atividade na interface · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Codex | — | ✅ Concluído | — | [398-ce75ff03](etapas/ETAPA-398-ce75ff03-CARD-DUPLICADO-AULA-27.md) | true |
+| #272.1 | Registrar a regra global da fonte única de cards · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ✅ Concluído | — | [399-86dad173](etapas/ETAPA-399-86dad173-CARDS-DE-AULA-SOMENTE-DO-BANCO.md) | — |

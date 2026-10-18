@@ -52,6 +52,20 @@ Os nomes acima são os reais (inclusive `STATUS_MATERIA.md` com sublinhado).
 curso → materia → aulas → atividade → resposta
 ```
 
+## Cards de aula só da tabela `aulas` (2026-10-17, #272)
+
+- ⛔ A lista de cards de aulas (em toda matéria e toda página que lista aulas: índice de
+  atividades, área do aluno, professor) vem **só** da tabela `aulas` do banco: 1 registro = 1
+  card, na ordem do banco.
+- ⛔ Arquivos HTML, Markdown ou JSON (artigos do índice, `CONTEUDO/`, `materia.json`) nunca
+  criam, duplicam, escolhem, deduplicam nem ocultam cards; nada de "escolher" um card pela
+  fonte.
+- ✅ Arquivos de conteúdo só entram como link ou conteúdo de uma aula já cadastrada, ligados
+  pelo id da aula; atividades se ligam ao card pelo `aula_id`.
+- ⛔ Banco fora do ar ou com erro: mostrar a mensagem de erro de carregamento; nunca montar a
+  lista pelos HTMLs como plano B.
+- Aula que não está na tabela `aulas` não aparece; para aparecer, cadastrar no banco.
+
 ## Critério de pronto
 
 ✅ Aulas em `CONTEUDO/` · ✅ Atividades no banco · ✅ Apostila (Markdown 100% + HTML) ·

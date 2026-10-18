@@ -76,5 +76,8 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 14. **Mensagem `verify`** (2026-10-16, #248): verificação completa do quadro — conflitos e se o que
     foi feito foi aplicado mesmo; só o que tem prova ganha `true` na coluna **Verificado**
     ([`tasks/verificacao.md`](.claude/rules/tasks/verificacao.md)).
+15. **Cards de aula só da tabela `aulas`** (2026-10-17, #272, pedido do usuário): a lista de
+    cards de aulas vem só do banco; arquivos nunca criam, escolhem nem ocultam cards, sem plano B
+    por HTML ([`materias-global.md`](.claude/rules/materias-global.md)).
 
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).

@@ -22,15 +22,17 @@
   do usuário; #272.1 é delegada ao `executor-leve` (Haiku) e #272.2 fica com o Opus.
 
 ### #272.1 — Registrar a regra global da fonte única de cards
-**Próximo passo:** após aprovação do plano, acrescentar a regra na orientação global de matérias, no índice e no histórico; regenerar o visualizador.
+**Próximo passo:** — (entregue).
 - **Nível:** LEVE — alteração de documentação e visualizador gerado.
 - **Modelo:** só Haiku — nunca outro
 - **Descrição:** deixar inequívoco que a tabela `AULAS` define todos os cards, sem origem ou fallback por arquivo HTML.
 - **Critérios de Aceitação:** a regra está em um lugar de referência do projeto, listada no índice e registrada no histórico; visualizador regenerado.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main).
+- **Entrega:** seção "Cards de aula só da tabela `aulas`" em `.claude/rules/materias-global.md`; regra 15 do `AGENTS.md`; assunto no `INDEX.md`; linha em `docs/HISTORICO-REGRAS.md`; visualizador regenerado.
+- **Verificação:** o líder leu o diff dos 4 arquivos; `materias-global.md` com 3150 bytes (≤ 5 KB); gerador saiu com código 0.
 
 ### #272.2 — Fazer a lista do aluno ser carregada exclusivamente de `AULAS`
-**Próximo passo:** após aprovação do plano e conclusão de #272.1, localizar os renderizadores do índice e do login do aluno; consultar o repositório de aulas e renderizar um card por registro, associando conteúdo pelo ID.
+**Próximo passo:** localizar os renderizadores do índice e do login do aluno; consultar o repositório de aulas e renderizar um card por registro, associando conteúdo pelo ID.
 - **Nível:** PESADO — mudança arquitetural da origem da lista e possível alcance entre várias páginas.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** retirar os HTMLs como fonte de criação, escolha, deduplicação ou fallback de cards; manter o registro do banco como autoridade e adaptar a correção provisória da #271.
