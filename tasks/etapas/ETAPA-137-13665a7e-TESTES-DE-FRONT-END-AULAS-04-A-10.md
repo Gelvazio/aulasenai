@@ -5,6 +5,12 @@
 > (`.claude/rules/materias-global.md`).
 
 **Tarefa:** #22-f79be83e-0418-43e8
+
+> ⛔ **Substituída pela #278 (2026-10-18):** o usuário pediu a matéria inteira no padrão novo
+> ([ETAPA-406-19ffa793](ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md)). O que faltava do item 22.8
+> (seeds pendentes da aula 05 e das aulas 06 a 10) e o aceite estão cobertos pelas subtarefas
+> #278.2 e de seed de cada aula; a linha da #22 ficou ⛔ no `tasks/STATUS.md` (Decisão D1 da etapa nova).
+
 **Nível:** PESADO — gabarito das objetivas e padrão de resposta das práticas, mais de 3 arquivos ligados
 **Modelo (#22):** só Opus 5.5+ ou Fable — nunca outro (#247)
 **Próximo passo:** 22.8 — Claude Code local: aplicar e conferir pelo md5 os seeds PENDENTE das aulas 06 a 10 (e terminar a aula 05: md5 da objetiva e parte 2 da prática); depois 22.11 (aceite do usuário). Itens 22.1, 22.3 a 22.7, 22.9 e 22.10 ✅.
