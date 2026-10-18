@@ -32,16 +32,31 @@ tabela), com os ícones todos do mesmo tamanho.
 
 ### #279.1 — Slides na linha de baixo e ações em coluna no card de aula
 
-**Próximo passo:** localizar o que monta o card (JS da grade) e o CSS de cada botão e aplicar os 3 pontos.
+**Próximo passo:** — (entregue em 2026-10-18 19:26).
 
-- **Nível:** MEDIO — tela (CSS do card e o JS que monta o card), até 3 arquivos; sem banco.
+- **Nível:** MEDIO — tela (CSS do card e o JS que monta o card), 2 arquivos; sem banco.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Executor:** DeepSeek Harness (deepseek-flash) (local · main)
 - **Descrição:** (1) pôr o "📕 Slides (PDF)" numa linha própria abaixo das atividades; (2) alinhar
   ON/OFF, ✏️ e ⊖ em colunas fixas, iguais em todas as linhas; (3) dar a todos os ícones de ação a
   mesma altura e largura.
 - **Critérios de aceitação:** os 3 pontos visíveis no card de todas as matérias; ON/OFF, ✏️ e ⊖ na
   mesma posição horizontal em todas as atividades do card; Slides abaixo das atividades; ícones do
   mesmo tamanho; celular continua em uma coluna; nada de banco.
-- **Verificação:** leitura dos arquivos alterados (CSS/JS), `node --check` nos JS tocados e
-  `git diff --check`; conferir que a ordem de carregamento do CSS do card não mudou.
-- **Entrega:** — · **Anotação:** —
+- **Entrega:** `assets/js/indice-aula-grade-banco.js` — `desenharBotaoSlidesDoBanco()` põe o botão
+  "📕 Slides" **depois do `div.acoes`** (linha própria abaixo das atividades) e não mais no `.topo`;
+  a constante `SELETOR_TOPO_GRADE_BANCO` saiu (não era usada em outro ponto).
+  `assets/css/indice-atividades.css` — (a) `--crud-tamanho-editar: var(--altura-controle-atividade)`
+  no `:root` (o ✏️ e o − ficavam sem tamanho no computador, porque a variável só existia no
+  `celular.css`; agora são círculos de 36 × 36, a mesma altura do ON/OFF); (b) `.aula >
+  .btn[data-slides-aula]` com `align-self: flex-start` (linha de baixo); (c) em `@media (min-width:
+  769px)`, `.acoes` vira grid `minmax(0, 1fr) auto auto auto`: coluna 1 = botão da atividade, coluna
+  2 = ON/OFF, coluna 3 = ✏️, coluna 4 = −, todas alinhadas entre as atividades; botões do card
+  (CADASTRAR ATIVIDADES, ON/OFF da aula, Editar, Excluir) ocupam a linha inteira (`grid-column: 1 /
+  -1`). No celular/tablet (até 768 px) continua o flex em uma coluna.
+- **Verificação:** `node --check assets/js/indice-aula-grade-banco.js` OK; `git diff --check` sem
+  erro nos 2 arquivos; conferência das classes do card nos geradores (`indice-atividades-bloqueio.js`
+  → `.interruptor-atividade`, `atividades-crud-modal.js` → `.crud-editar-atividade` e
+  `.crud-desvincular-atividade`, `indice-aula-data.js` → `.interruptor-aula`, `.aula-data-botao`) —
+  todas cobertas pelo grid; `celular.css` continua trocando `--crud-tamanho-editar` para o toque
+  grande em ≤768 px; sem banco e sem navegador (conferir na tela é do usuário).

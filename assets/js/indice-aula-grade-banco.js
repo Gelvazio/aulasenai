@@ -19,7 +19,6 @@
 
 const SELETOR_GRADE_CARDS_BANCO = 'section.grade';
 const SELETOR_ACOES_GRADE_BANCO = '.acoes';
-const SELETOR_TOPO_GRADE_BANCO = '.topo';
 const CLASSE_TEXTOS_TOPO_GRADE_BANCO = 'topo__textos';
 const SELETOR_LINK_GRADE_BANCO = 'a';
 // Botões que outros módulos põem logo depois do link de uma atividade (ON/OFF, ✏️ e "−").
@@ -59,14 +58,12 @@ function linkDeSlidesSeguro(link) {
 }
 
 /**
- * Põe (ou tira) o botão "📕 Slides" do card conforme aulas.conteudo.slides: em cima, à direita
- * do "AULA NN" (no topo do card, #274).
+ * Põe (ou tira) o botão "📕 Slides" do card conforme aulas.conteudo.slides: numa linha própria,
+ * logo abaixo das atividades do card (#279).
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  */
 function desenharBotaoSlidesDoBanco(item) {
-    const topo = item.card.querySelector(SELETOR_TOPO_GRADE_BANCO);
-    if (!topo) return;
-
+    const acoes = item.card.querySelector(SELETOR_ACOES_GRADE_BANCO);
     item.card.querySelector('[' + ATRIBUTO_SLIDES_BANCO + ']')?.remove();
     const link = item.aula?.conteudo?.slides;
     if (!linkDeSlidesSeguro(link)) return;
@@ -78,7 +75,8 @@ function desenharBotaoSlidesDoBanco(item) {
     botao.rel = 'noopener';
     botao.textContent = TEXTO_BOTAO_SLIDES_BANCO;
     botao.setAttribute(ATRIBUTO_SLIDES_BANCO, '');
-    topo.append(botao);
+    if (acoes) acoes.after(botao);
+    else item.card.append(botao);
 }
 
 /**
