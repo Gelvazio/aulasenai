@@ -493,14 +493,31 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.21 — Conferir os casos de pendência
 
-**Próximo passo:** montar a lista de casos (turma sem pendente; 1 aluno; vários; entregue com nota baixa; atividade bloqueada) e conferir card a card.
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.31).
 
 - **Nível:** MEDIO — conferência com lógica.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** registrar na etapa a tabela caso × resultado.
 - **Critérios de aceitação:** todos os casos conferidos e anotados.
 - **Verificação:** leitura da tabela + conferência no índice.
-- **Entrega:** —
+- **Entrega:** conferência por leitura do SQL (`database/2026-10-19-atividades-pendentes-turma.sql`) e do JS (`assets/js/indice-atividades-pendentes.js`) contra a regra da #293.4, com os números reais do banco (JWT do professor). Nenhum arquivo alterado. Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s28).
+
+| # | Caso | Esperado (#293.4) | Obtido | Prova |
+|---|---|---|---|---|
+| 1 | Turma sem pendente | card **verde** | 133933: aulas 67, 78 e 79 verdes | JS `estadoDoCardPendentes`; SQL `pendentes = nao_fizeram + nota_baixa` |
+| 2 | 1+ aluno pendente | `pendentes > 0` → **vermelho** | ativ. 6 (135081): 2 = função antiga `alunos_sem_entrega_turma` | SQL `contagens`; JS `atividadePendentePendentes` |
+| 3 | Vários pendentes | soma `nao_fizeram + nota_baixa` | ativ. 9: 30 (antiga = 30); ativ. 6 com mínima 9,7: 2 + 13 = 15 | SQL `contagens`; JS `agruparAtividadesPorAulaPendentes` |
+| 4 | Entregue com nota baixa | conta se nota < mínima | ativ. 6: mínima 7 → 0; 9,7 → 13; 99 (inválida → 7) → 0 | SQL nota objetiva e `round(nota,2) < nota_minima`; JS `normalizarNotaMinimaPendentes` |
+| 5 | Atividade bloqueada | não alerta e não deixa verde | 135081: 63 bloqueadas com 0; aulas 28, 29, 30, 41 sem cor | SQL `bloqueada` (ativo, `bloqueio ? turma`, aula inativa/excluída, `aula_turma.bloqueio`); JS l.106 e l.139 |
+| 6 | Aluno com falta | não conta (R15) | ativ. 81: 7 × 8 da antiga = 1 falta | SQL `faltou` (`coalesce(data_atividade, data_planejada)`) |
+| 7 | Discursiva aguardando correção | não conta; só `nota_professor` (#166) | por leitura (sem caso real) | SQL `aguardando` e soma só de `nota_professor` |
+| 8 | Nova tentativa liberada | volta a "não fez" | por leitura (sem caso real) | SQL `tentativa_atual_do_aluno` × `max(entrega.tentativa)` |
+| 9 | Sem questão | ignorada | 135081: 2, ignoradas | SQL `objetiva or discursiva`; JS `!temQuestao` |
+| 10 | Só professor | aluno/visitante 0 linhas | ver #293.8 | SQL `permissao`, `revoke`/`grant` |
+| 11 | Sem turma / erro | sem alerta, sem quebrar | por leitura | JS `recalcularPendentesDoIndicePendentes` (limpa no `catch`) |
+
+  Observações (sem correção): o cálculo por aluno no JS (`alunoPendentePendentes`) só roda se a fonte vier sem `pendentes` — hoje não é usado; card só com atividades sem questão e liberadas fica verde; aula sem linha na fonte fica sem cor.
+- **Verificação:** leitura de cada trecho citado + números do banco batidos com a função antiga `alunos_sem_entrega_turma`; casos 7, 8 e 11 só por leitura. Sem navegador.
 
 ### #293.22 — Conferir a troca de turma no combo
 
