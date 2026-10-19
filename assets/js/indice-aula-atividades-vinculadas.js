@@ -1,8 +1,9 @@
 // Atividades vinculadas à aula no banco (atividade.aula_id) aparecem como botão no card da aula do
 // ATIVIDADES/index.html (#249.1). Os botões do HTML continuam como estão; aqui só se acrescenta,
 // no div.acoes do card, um "📝 <nome>" para cada atividade ativa da aula cuja página ainda não tem
-// link no card (comparação pelo caminho decodificado, em href, data-href-bloqueado e
-// data-href-aula-bloqueada). Uma só consulta traz as atividades de todos os cards.
+// link no card (comparação pelo caminho a partir de /MATERIAIS/, decodificado e sem diferenciar
+// maiúsculas, em href, data-href-bloqueado e data-href-aula-bloqueada; #290). Uma só consulta
+// traz as atividades de todos os cards.
 // Cada aula tem um único card, montado pela tabela aulas (indice-aula-grade-banco.js, #272): os
 // botões vão no card da própria aula, sem escolher card pelo HTML.
 // Os botões levam data-vinculo-banco para serem
@@ -50,15 +51,26 @@ function mapearCardsPorAula(itens) {
 }
 
 /**
+ * Chave de comparação de uma página: caminho a partir de /MATERIAIS/, sem diferenciar
+ * maiúsculas de minúsculas.
+ * @param {string} endereco - Href do link ou atividade.pagina.
+ * @returns {string|null} Caminho em minúsculas ou null se não for página HTML.
+ */
+function chaveDoCaminhoVinculadas(endereco) {
+    const caminho = obterCaminhoHtml(endereco);
+    return caminho ? caminho.toLowerCase() : null;
+}
+
+/**
  * Caminhos das páginas que o card já tem em algum link (inclusive link desativado pelo bloqueio).
  * @param {HTMLElement} card - Card do índice.
- * @returns {Set<string>} Caminhos das páginas.
+ * @returns {Set<string>} Caminhos das páginas, em minúsculas.
  */
 function lerCaminhosDoCardVinculadas(card) {
     const caminhos = new Set();
     card.querySelectorAll(SELETOR_LINKS_CARD_VINCULADAS).forEach((link) => {
         ATRIBUTOS_HREF_CARD_VINCULADAS.forEach((atributo) => {
-            const caminho = obterCaminhoHtml(link.getAttribute(atributo));
+            const caminho = chaveDoCaminhoVinculadas(link.getAttribute(atributo));
             if (caminho) caminhos.add(caminho);
         });
     });
@@ -114,7 +126,7 @@ function criarBotoesQueFaltamNoCard(card, atividades) {
     const existentes = lerCaminhosDoCardVinculadas(card);
     const botoes = [];
     atividades.forEach((atividade) => {
-        const caminho = obterCaminhoHtml(atividade.pagina);
+        const caminho = chaveDoCaminhoVinculadas(atividade.pagina);
         const jaTemNoCard = !caminho || existentes.has(caminho);
         if (jaTemNoCard || !ehPaginaDoMesmoSite(atividade.pagina)) return;
 

@@ -13,6 +13,8 @@
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
 const SELETOR_CARD = 'article.aula';
+// atividade.pagina é gravada a partir de /MATERIAIS/; o servidor local põe uma pasta antes.
+const PASTA_RAIZ_CAMINHO_CRUD = '/materiais/';
 const SELETOR_LINK_ATIVIDADE = 'a.btn.principal';
 const ALVO_NOVA_ABA_CRUD = '_blank';
 const REL_NOVA_ABA_CRUD = 'noopener';
@@ -84,7 +86,9 @@ function criarElementoCrud(tag, classe, texto) {
 }
 
 /**
- * Converte o href de um link em caminho (pathname) decodificado, se for uma página HTML.
+ * Converte o href de um link em caminho decodificado, se for uma página HTML. O caminho começa
+ * em /MATERIAIS/ (como atividade.pagina no banco), ignorando a pasta que o servidor local
+ * põe antes (ex.: /aulasenai/MATERIAIS/... vira /MATERIAIS/...), igual à #285.
  * @param {string} href - Valor do atributo href.
  * @returns {string|null} Caminho da página ou null se não for HTML.
  */
@@ -92,7 +96,10 @@ function obterCaminhoHtml(href) {
     if (!href) return null;
 
     const caminho = decodeURIComponent(new URL(href, location.href).pathname);
-    return caminho.toLowerCase().endsWith('.html') ? caminho : null;
+    if (!caminho.toLowerCase().endsWith('.html')) return null;
+
+    const posicaoRaiz = caminho.toLowerCase().indexOf(PASTA_RAIZ_CAMINHO_CRUD);
+    return posicaoRaiz >= 0 ? caminho.slice(posicaoRaiz) : caminho;
 }
 
 /**
