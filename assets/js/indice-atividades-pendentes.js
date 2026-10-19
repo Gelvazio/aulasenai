@@ -104,6 +104,7 @@ function alunoPendentePendentes(aluno, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES
  */
 function atividadePendentePendentes(atividade, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
     if (!atividade || atividade.bloqueada || !atividade.temQuestao) return false;
+    if (typeof atividade.pendentes === 'number') return atividade.pendentes > 0;
     return (atividade.alunos || []).some((aluno) => alunoPendentePendentes(aluno, notaMinima));
 }
 
@@ -132,8 +133,106 @@ const ESTADO_CARD_CONCLUIDO = 'concluido';
 function estadoDoCardPendentes(atividades, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
     const lista = atividades || [];
     if (!lista.length) return '';
-    const temPendente = lista.some((atividade) => atividadePendentePendentes(atividade, notaMinima));
+    const temPendente = lista.some((atividade) =>
+        atividadePendentePendentes(atividade, notaMinima));
     if (temPendente) return ESTADO_CARD_PENDENTE;
     const temBloqueada = lista.some((atividade) => Boolean(atividade.bloqueada));
     return temBloqueada ? '' : ESTADO_CARD_CONCLUIDO;
 }
+
+// Cards do índice e classes do alerta.
+const SELETOR_CARD_PENDENTES = 'article.aula[data-aula-id]';
+const CLASSE_CARD_PENDENTE = 'card-atividade-pendente';
+const CLASSE_CARD_CONCLUIDA = 'card-atividade-concluida';
+const EVENTO_CARDS_MONTADOS_PENDENTES = 'cards-aula-montados';
+// Fonte da #293.5: uma linha por atividade da turma.
+const ROTA_PENDENTES_TURMA = 'atividades_pendentes_turma';
+const LIMITE_PENDENTES_TURMA = 5000;
+
+/**
+ * Lê da fonte (view/RPC da #293.5) as atividades da turma com a contagem de pendentes.
+ * @param {string} turma - Código da turma escolhida.
+ * @returns {Promise<Object[]>} Linhas da fonte.
+ */
+async function buscarAtividadesDaTurmaPendentes(turma) {
+    const filtro = 'select=aula_id,atividade_id,tem_questao,bloqueada,pendentes' +
+        '&turma_codigo=eq.' + encodeURIComponent(turma) + '&limit=' + LIMITE_PENDENTES_TURMA;
+    const linhas = await sbGet(ROTA_PENDENTES_TURMA, filtro);
+    return Array.isArray(linhas) ? linhas : [];
+}
+
+/**
+ * Agrupa as linhas da fonte por aula (id do card).
+ * @param {Object[]} linhas - Linhas da fonte de dados.
+ * @returns {Map<number, Object[]>} Atividades por aula.
+ */
+function agruparAtividadesPorAulaPendentes(linhas) {
+    const porAula = new Map();
+    (linhas || []).forEach((linha) => {
+        const aulaId = Number(linha.aula_id);
+        if (!Number.isFinite(aulaId)) return;
+        if (!porAula.has(aulaId)) porAula.set(aulaId, []);
+        porAula.get(aulaId).push({
+            atividadeId: linha.atividade_id,
+            temQuestao: linha.tem_questao !== false,
+            bloqueada: Boolean(linha.bloqueada),
+            pendentes: Number(linha.pendentes) || 0,
+        });
+    });
+    return porAula;
+}
+
+/**
+ * Tira o alerta do card.
+ * @param {HTMLElement} card - Card da aula.
+ */
+function limparEstadoDoCardPendentes(card) {
+    card.classList.remove(CLASSE_CARD_PENDENTE, CLASSE_CARD_CONCLUIDA);
+}
+
+/**
+ * Aplica o estado do card (classe do vermelho ou do verde).
+ * @param {HTMLElement} card - Card da aula.
+ * @param {string} estado - 'pendente', 'concluido' ou '' (sem cor).
+ */
+function aplicarEstadoNoCardPendentes(card, estado) {
+    limparEstadoDoCardPendentes(card);
+    if (estado === ESTADO_CARD_PENDENTE) card.classList.add(CLASSE_CARD_PENDENTE);
+    if (estado === ESTADO_CARD_CONCLUIDO) card.classList.add(CLASSE_CARD_CONCLUIDA);
+}
+
+/**
+ * Refaz o alerta nos cards com a turma do combo e os dados da fonte.
+ */
+async function recalcularPendentesDoIndicePendentes() {
+    const cards = [...document.querySelectorAll(SELETOR_CARD_PENDENTES)];
+    if (!cards.length) return;
+    const turma = obterTurmaPendentes();
+    if (!turma) {
+        cards.forEach((card) => limparEstadoDoCardPendentes(card));
+        return;
+    }
+    try {
+        const notaMinima = await carregarNotaMinimaPendentes();
+        const linhas = await buscarAtividadesDaTurmaPendentes(turma);
+        const porAula = agruparAtividadesPorAulaPendentes(linhas);
+        cards.forEach((card) => {
+            const atividades = porAula.get(Number(card.dataset.aulaId)) || [];
+            aplicarEstadoNoCardPendentes(card, estadoDoCardPendentes(atividades, notaMinima));
+        });
+    } catch (erro) {
+        console.warn('Alerta de atividades pendentes indisponível:', erro.message);
+        cards.forEach((card) => limparEstadoDoCardPendentes(card));
+    }
+}
+
+/**
+ * Liga o alerta: recalcula quando a turma muda e quando a grade de cards é remontada.
+ */
+function iniciarPendentesNoIndicePendentes() {
+    document.addEventListener(EVENTO_CARDS_MONTADOS_PENDENTES,
+        recalcularPendentesDoIndicePendentes);
+    ouvirTrocaDeTurmaPendentes(recalcularPendentesDoIndicePendentes);
+}
+
+iniciarPendentesNoIndicePendentes();

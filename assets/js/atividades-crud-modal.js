@@ -720,6 +720,7 @@ async function iniciarCrudAtividades() {
     estadoCrud.paginas = coletarPaginasDoIndice();
     document.addEventListener(EVENTO_CARDS_REFEITOS_CRUD, atualizarIdsAposCardsRefeitos);
     await mostrarIdsNosCards();
+    carregarAlertaPendentes();
 }
 
 /**
@@ -761,6 +762,20 @@ function carregarIdsDoAlunoIndice() {
     const script = criarElementoCrud('script');
     script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-id-aluno.js';
     document.head.append(script);
+}
+
+/**
+ * Carrega o alerta de atividade pendente nos cards (#293): só para o professor.
+ */
+function carregarAlertaPendentes() {
+    if (!BASE_ASSETS_CRUD) return;
+
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-pendentes.css';
+    const script = criarElementoCrud('script');
+    script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-pendentes.js';
+    document.head.append(estilo, script);
 }
 
 /**

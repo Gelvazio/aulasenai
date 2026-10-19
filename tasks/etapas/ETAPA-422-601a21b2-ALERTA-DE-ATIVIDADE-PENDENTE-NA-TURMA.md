@@ -328,14 +328,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.13 — Recalcular ao remontar os cards
 
-**Próximo passo:** escutar `cards-aula-montados` e reaplicar o alerta nos cards recriados.
+**Próximo passo:** — (entregue em 2026-10-19 14:26; a próxima é a #293.17).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** mesma abordagem usada pelo bloqueio/"Fez Atividade?".
 - **Critérios de aceitação:** gerenciar/editar aula e voltar aplica o alerta.
 - **Verificação:** fluxo manual (R6).
-- **Entrega:** —
+- **Entrega:** módulo ligado ao índice: `buscarAtividadesDaTurmaPendentes` (fonte = view/RPC `atividades_pendentes_turma`, colunas `turma_codigo`, `aula_id`, `atividade_id`, `tem_questao`, `bloqueada`, `pendentes` — contrato para a #293.5), `agruparAtividadesPorAulaPendentes`, `limparEstadoDoCardPendentes`, `aplicarEstadoNoCardPendentes`, `recalcularPendentesDoIndicePendentes` (turma vazia → limpa, R9; falha da consulta → limpa e só avisa no console, R10) e `iniciarPendentesNoIndicePendentes` (escuta `cards-aula-montados` e a troca de turma, R5/R6). Carga em `atividades-crud-modal.js` por `carregarAlertaPendentes()`, chamada **só no caminho do professor** (`iniciarCrudAtividades`, R7/I1 por construção).
+- **Verificação:** `node --check` OK nos dois arquivos; leitura dos eventos e do caminho de carga (só professor).
 
 ### #293.14 — CSS do alerta: fundo vermelho claro piscando
 
