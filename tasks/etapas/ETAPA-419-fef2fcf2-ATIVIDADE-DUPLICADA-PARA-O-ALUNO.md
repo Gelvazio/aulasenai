@@ -14,6 +14,7 @@ sem quebrar a visão do professor (regra 15 do `AGENTS.md`: cards e atividades v
 |---|---|---|---|
 | 2026-10-19 06:18 | Claude Code (Opus 5.5, líder s24) | Correção de bug pequena (tela, JS) com 1 subtarefa `MEDIO`; se a causa estiver no banco (linhas repetidas na tabela `atividade`), reclassificar para `PESADO` antes de mexer | Sem chave do Jev e Laya fora do ar: decidido pelos sinais (código com lógica em 1 a 3 arquivos, sem banco) |
 | 2026-10-19 06:24 | Claude Code (Opus 5.5, líder s24) | Causa no JS, não no banco (continua `MEDIO`): corrigir em 2 arquivos — `obterCaminhoHtml` (`atividades-crud-modal.js`) passa a cortar o caminho a partir de `/MATERIAIS/`, como a #285.1 fez na página da atividade, e o módulo das atividades vinculadas compara os caminhos sem diferenciar maiúsculas | `obterCaminhoHtml` é a chave de todos os módulos do índice (grade, vinculadas, nomes, ID/✏️ do professor): corrigindo nela, o professor também passa a achar as atividades com o site numa pasta; `indice-atividades-feitas.js` fica com a s22 (#286.1/#288.1 reservadas) e recebe recado |
+| 2026-10-19 07:33 | Claude Code (Opus 5.5, líder s24) | #290 reaberta a pedido do usuário ("teclado travado, continue na correcao", repassado pela s23) com 2 subtarefas da mesma causa: #290.2 (`MEDIO`) — cadeado do aluno (`indice-atividades-bloqueio.js`) e "🧾 LOG" do professor (`indice-log-alternativas.js`) passam a usar a `obterCaminhoHtml`; #290.3 (`MEDIO`, ⛔) — cores e "Fez Atividade?" (`indice-atividades-feitas.js`) | Os 3 módulos têm a própria função de caminho, sem o corte em `/MATERIAIS/`; o `indice-atividades-feitas.js` está reservado pela s22 (#286.1/#288.1, 🔄 desde 2026-10-18 20:20/20:21, sem commit nem mudança no disco) e só o usuário libera reserva de outra frente |
 
 ### Diagnóstico (2026-10-19 06:24, líder s24; consultas só de leitura)
 
@@ -74,3 +75,38 @@ sem quebrar a visão do professor (regra 15 do `AGENTS.md`: cards e atividades v
   `/MATERIAIS/`: com o site numa pasta, as cores e o cadeado não aparecem. Não causam duplicata; o
   primeiro está com a s22 (#286.1/#288.1, recado em `tasks/RECADOS.md`), o segundo ficou em
   Pendências do `STATUS.md`.
+
+### #290.2 — Cadeado do aluno e LOG do professor pelo caminho a partir de /MATERIAIS/
+
+**Próximo passo:** executor-medio troca as funções de caminho dos 2 módulos pela `obterCaminhoHtml`
+e o líder confere.
+
+- **Nível:** MEDIO — código com lógica em 2 arquivos JS, sem banco nem RLS (mesmo padrão da #290.1)
+- **Modelo:** só Sonnet — nunca outro (#247); executor-medio, líder Opus 5.5 (s24)
+- **Effort:** medium
+- **Descrição:** `obterCaminhoBloqueio` (`assets/js/indice-atividades-bloqueio.js`) e
+  `caminhoDoLinkLog` (`assets/js/indice-log-alternativas.js`) devolvem o pathname do endereço
+  aberto; com o site numa pasta antes de `/MATERIAIS/` não acham a atividade no banco (o 🔒 da
+  atividade bloqueada não aparece ao aluno; o ON/OFF e o "🧾 LOG" do professor não aparecem).
+  Passam a usar a `obterCaminhoHtml` (`atividades-crud-modal.js`, que carrega os dois módulos).
+- **Critérios de aceitação:** os 2 módulos com o mesmo caminho do banco; endereço já em
+  `/MATERIAIS/…` sem mudança; `node --check` OK; nada de banco.
+- **Entrega:** — · **Verificação:** —
+
+### #290.3 — Cores e "Fez Atividade?" pelo caminho a partir de /MATERIAIS/
+
+**Próximo passo:** ⛔ esperar a s22 entregar ou liberar a #286.1/#288.1 (ou o usuário liberar a
+reserva); depois trocar a `obterCaminhoFeitas` do `indice-atividades-feitas.js` pela
+`obterCaminhoHtml`.
+
+- **Nível:** MEDIO — código com lógica em 1 arquivo JS, sem banco
+- **Modelo:** só Sonnet — nunca outro (#247)
+- **Effort:** medium
+- **Descrição:** no print do usuário, todos os botões laranja e "❌ Não": a `obterCaminhoFeitas`
+  não corta em `/MATERIAIS/` e a consulta `pagina=in.(…)` volta vazia com o site numa pasta.
+- **Bloqueio:** o arquivo está reservado pela frente s22 (#286.1 e #288.1). **Destrava:** a s22
+  entregar ou liberar as duas, ou o usuário liberar a reserva. Recado já deixado à s22 em
+  `tasks/RECADOS.md` (2026-10-19 06:27).
+- **Critérios de aceitação:** cores e "Fez Atividade?" corretos com o site numa pasta; `node --check`
+  OK; nada de banco.
+- **Entrega:** — · **Verificação:** —
