@@ -637,14 +637,26 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.31 — Conferir os casos do verde e do vermelho
 
-**Próximo passo:** conferir e anotar na etapa: turma toda entregue com nota ≥ mínima (verde); 1 pendente (vermelho, sem verde); entregue com nota baixa (vermelho); atividade bloqueada (nenhuma cor); "Todas as turmas" (nenhuma cor).
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.26).
 
 - **Nível:** MEDIO — conferência com lógica.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** tabela caso × resultado.
 - **Critérios de aceitação:** I6 e I7 conferidos.
 - **Verificação:** conferência manual no índice.
-- **Entrega:** —
+- **Entrega:** conferência por leitura dos casos de verde e vermelho (I6 e I7) no SQL (já com a #293.33) e no JS. Nenhum arquivo alterado. Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s28).
+
+| # | Caso | Esperado | Obtido | Prova |
+|---|---|---|---|---|
+| a | Turma toda entregue com nota ≥ mínima | verde | 133933: aulas 67, 78, 79 verdes | SQL `pendentes = nao_fizeram + nota_baixa`; JS `estadoDoCardPendentes` |
+| b | 1 aluno pendente | vermelho, nunca verde | ativ. 6 (135081): 2; 133933: 72 vermelhos | JS: o pendente é testado antes do verde |
+| c | Entregue com nota baixa | vermelho | ativ. 6: mínima 9,7 → 13; mínima 7 → 0 | SQL `round(nota,2) < nota_minima` |
+| d | Atividade bloqueada | nenhuma cor | aulas 28, 29, 30, 41 sem cor; 63/154 bloqueadas com 0 | SQL `bloqueada` fora de `pares`; JS l.106 e l.139-140 |
+| e | Sem turma | nenhuma cor, sem consulta | combo sem opção "todas"; `''` limpa | JS `recalcularPendentesDoIndicePendentes` (retorna antes do `fetch`; `catch` limpa) |
+| f | Turma sem aluno | nenhuma cor | 0 linhas (banco) | SQL `permissao` com `exists turmaaluno` |
+| I6 | Verde só com zero pendentes | lista não vazia, sem pendente, sem bloqueada | só 3 verdes (133933); outras 6 turmas 0 | ordem do `estadoDoCardPendentes` |
+| I7 | Vermelho e verde nunca juntos | no máximo 1 classe | 72 + 3 + 18 = 93 cards na 133933, um estado cada | `limparEstadoDoCardPendentes` antes de aplicar uma classe |
+- **Verificação:** leitura do SQL e do JS contra a #293.4, I6 e I7, com os números reais do banco (mínima 7, todas as turmas). A aparência (piscar, verde fixo) só na tela.
 
 ### #293.32 — Conferir como aluno/visitante: verde não aparece
 
