@@ -741,6 +741,30 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   botões das atividades vinculadas à aula são refeitos, a etiqueta é refeita junto (evento
   `aula-bloqueio-alterado`, em `assets/js/atividades-crud-modal.js`).
 
+### 🚨 Alerta de atividade pendente nos cards — só professor (tarefa #293, 2026-10-19)
+
+- ✅ **Só o professor vê.** No índice de atividades, com a turma escolhida no combo "Turma:",
+  o card inteiro da aula fica com **fundo vermelho claro piscando** (≈1 s) quando ≥ 1 aluno da
+  turma tem atividade pendente. Fica com **fundo verde claro fixo** quando nenhuma atividade do
+  card está pendente e nenhuma está bloqueada. Os dois nunca aparecem juntos. Com
+  `prefers-reduced-motion`, o vermelho não pisca.
+- **Pendente** = aluno da turma, sem falta no dia da atividade ("Faltou?" não conta), atividade
+  com questão e não bloqueada para a turma, e na tentativa atual: (a) não entregou, ou (b)
+  entregou com nota abaixo da nota mínima da matéria (`materia.json` → `avaliacao.nota_minima`;
+  padrão 7,0).
+- Discursiva com a correção do professor incompleta não conta (fica "aguardando correção"). A nota
+  discursiva usa só a nota do professor, nunca a nota da IA.
+- **Sem cor:** atividade ou aula bloqueada/inativa, sem turma escolhida, turma sem aluno ou falha
+  da consulta (sem erro na tela).
+- Trocar a turma no combo ou remontar os cards recalcula na hora.
+- Arquivos: `assets/js/indice-atividades-pendentes.js` (regra e cards),
+  `assets/css/indice-atividades-pendentes.css` (vermelho/verde e aviso para leitor de tela),
+  carga só no caminho do professor em `assets/js/atividades-crud-modal.js`
+  (`carregarAlertaPendentes`), e a função do banco `atividades_pendentes_turma(p_turma,
+  p_nota_minima)` em `database/2026-10-19-atividades-pendentes-turma.sql`: 1 chamada por turma,
+  só contagens, só para o professor da turma (aluno e visitante recebem 0 linhas).
+- Detalhes e conferências: etapa 422 em `tasks/etapas/` (`ETAPA-422-601a21b2`).
+
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 
 ⚠️ **Toda atividade prática de Excel (ou LibreOffice Calc) segue este padrão de detalhamento e

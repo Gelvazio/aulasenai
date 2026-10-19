@@ -579,14 +579,15 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.26 — Documentar em `docs/regras/atividades.md`
 
-**Próximo passo:** acrescentar um item ✅ com o alerta vermelho **e o estado verde**, a regra de pendente, a turma e a nota mínima.
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.27).
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** LEVE · só Haiku/Flash/deepseek-flash — nunca outro
 - **Descrição:** apontar os arquivos de código criados.
 - **Critérios de aceitação:** texto coerente com o implementado.
 - **Verificação:** leitura do trecho.
-- **Entrega:** —
+- **Entrega:** `docs/regras/atividades.md`: subseção "🚨 Alerta de atividade pendente nos cards — só professor (tarefa #293, 2026-10-19)" (linha 744), entre a "🆔 Como a página acha o id da atividade (#260)" e a "📗 PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL": quem vê, vermelho/verde, regra de pendente, nota mínima, casos sem cor e os arquivos (JS, CSS, carga, RPC). Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s28).
+- **Verificação:** `grep -n "Alerta de atividade pendente"` → linha 744; linhas ≤ 100 caracteres; `git diff --stat` = só esse arquivo (+24); texto conferido pelo líder contra a #293.4 e a RPC.
 
 ### #293.27 — Fechamento: quadro, visualizador e commit + push
 
