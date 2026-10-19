@@ -1,7 +1,7 @@
 ## Etapa 423-7a481d71 — #294: Ferramentas Digitais Aplicadas: aulas e atividades
 
 **Tarefa:** #294-7a481d71-5f61-4cba-aa35-4af2f2585df6 · **Pedido em:** 2026-10-19 12:50 · **Criada por:** Claude Code (Sonnet 5.5) (local · main)
-**Pedido:** "crie a tarefa para criar as atividades e aulas da materia *Ferramentas Digitais Aplicadas*, aqui C:ontesulasenai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\Ferramentas-Digitais-Aplicadas"
+**Pedido:** "crie a tarefa para criar as atividades e aulas da materia *Ferramentas Digitais Aplicadas*, aqui C:\fontes\aulasenai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\Ferramentas-Digitais-Aplicadas"
 **Objetivo:** escrever as 15 aulas (60 h ÷ 4 h) de Ferramentas Digitais Aplicadas, cada uma com objetiva (50 questões) e prática discursiva, tudo cadastrado no banco, no padrão da ITIC.
 
 > 🚫 **Sem slides** (`materias-global.md`) · ✅ **"Você como aluno consultor"**, sem empresa fictícia.
