@@ -24,3 +24,8 @@
         animation: none;
     }
 }
+
+/* Card com todas as atividades concluidas na turma escolhida: verde claro fixo (R11). */
+.card-atividade-concluida {
+    background-color: #d9f2d9;
+}

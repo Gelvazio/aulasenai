@@ -507,14 +507,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.29 — CSS do fundo verde claro
 
-**Próximo passo:** acrescentar a classe do verde e a variável de cor verde clara no mesmo CSS de #293.14, com fundo **fixo** (sem animação).
+**Próximo passo:** — (entregue em 2026-10-19 14:20; a próxima é a #293.13).
 
 - **Nível:** MEDIO — CSS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** contraste legível; só `background`/`box-shadow`, sem `margin`/`padding`.
 - **Critérios de aceitação:** card fica verde claro, sem piscar (R11).
 - **Verificação:** inspeção do CSS e do card.
-- **Entrega:** —
+- **Entrega:** classe `.card-atividade-concluida` (`background-color: #d9f2d9`, sem animação) no mesmo `assets/css/indice-atividades-pendentes.css`; só `background-color`, sem mexer em tamanho/margem (I3).
+- **Verificação:** leitura do CSS.
 
 ### #293.30 — Aplicar/remover o verde ao trocar de turma e ao remontar os cards
 
