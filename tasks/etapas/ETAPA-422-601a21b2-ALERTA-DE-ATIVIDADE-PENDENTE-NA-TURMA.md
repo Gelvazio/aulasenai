@@ -533,14 +533,25 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.23 — Conferir como aluno e visitante: alerta não aparece
 
-**Próximo passo:** com login de aluno (de uma turma com pendentes) e sem login, abrir o índice e conferir que nenhum card recebe a classe.
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.32).
 
 - **Nível:** PESADO — segurança (I1).
 - **Modelo:** PESADO · só Opus 5.5+/Fable/DeepSeek/deepseek-v4-pro — nunca outro
 - **Descrição:** conferir também que a consulta não devolve dados de outros alunos.
 - **Critérios de aceitação:** nenhuma classe/cor de alerta e nenhum dado de aluno.
 - **Verificação:** conferência com os dois perfis.
-- **Entrega:** —
+- **Entrega:** conferência por leitura (sem navegador) + consultas da #293.8 (JWT simulado, `rollback`). Nenhum arquivo alterado. Claude Code (Opus 5.5 · executor-pesado; líder Opus 5.5) (local · main · s28).
+
+| Perfil | Carrega o JS/CSS? | Consulta devolve | Classe no card | Prova |
+|---|---|---|---|---|
+| Visitante (sem login) | Não (`usuarioEhProfessorCrud()` = false; `iniciarCrudAtividades()` sai antes) | `permission denied for function` | nenhuma | `atividades-crud-repositorio.js:15-21`; `atividades-crud-modal.js:716-723`; `revoke` no SQL |
+| Aluno da turma (135081) | Não (`perfil = ALUNO`) | 0 linhas | nenhuma | `eh_professor()` falso → `permissao` falsa |
+| Aluno que injeta o JS pelo console | só se injetar à mão | 0 linhas (mesmo com `perfil = PROFESSOR` forjado: `professor_tem_turma` exige vínculo) | nenhuma (`estadoDoCardPendentes([])` = `''`) | `indice-atividades-pendentes.js:133-135, 219-224` |
+| Professor sem vínculo | Sim | 0 linhas | nenhuma | `professor_tem_turma` |
+| Professor com vínculo (122552) | Sim | 154 linhas, só contagens | vermelho/verde | SQL `returns table` |
+
+  Busca no repositório (sem `node_modules`, `graphify-out`, `.git`): os nomes do alerta só aparecem nos 4 arquivos dele; nenhuma página de `MATERIAIS/`, outro módulo ou gerador carrega o JS/CSS ou põe a classe. As 86 páginas que incluem `atividades-crud-modal.js` passam pela mesma porta do professor. I5: a RPC não devolve `aluno_id`, nome, nota, resposta nem gabarito; o módulo não grava em `localStorage`/`sessionStorage`/`window`; o aviso oculto é texto fixo.
+- **Verificação:** busca pelos nomes do alerta + leitura dos trechos citados + consultas da #293.8. Na tela (aluno e sem login), fica para o usuário confirmar, se quiser.
 
 ### #293.24 — Conferir o visual do alerta
 
