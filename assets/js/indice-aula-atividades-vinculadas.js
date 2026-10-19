@@ -1,15 +1,16 @@
 // Atividades vinculadas à aula no banco (atividade.aula_id) aparecem como botão no card da aula do
 // ATIVIDADES/index.html (#249.1). Os botões do HTML continuam como estão; aqui só se acrescenta,
 // no div.acoes do card, um "📝 <nome>" para cada atividade ativa da aula cuja página ainda não tem
-// link no card (comparação pelo caminho a partir de /MATERIAIS/, decodificado e sem diferenciar
-// maiúsculas, em href, data-href-bloqueado e data-href-aula-bloqueada; #290). Uma só consulta
-// traz as atividades de todos os cards.
+// link no card (comparação pela chave pasta/arquivo em minúsculas, obterChaveDaPagina, em href,
+// data-href-bloqueado e data-href-aula-bloqueada; #290, #290.4). Uma só consulta traz as
+// atividades de todos os cards.
 // Cada aula tem um único card, montado pela tabela aulas (indice-aula-grade-banco.js, #272): os
 // botões vão no card da própria aula, sem escolher card pelo HTML.
 // Os botões levam data-vinculo-banco para serem
 // removidos e refeitos quando o vínculo muda. Quem chama redesenha o card depois (bloqueio da aula)
 // e remonta os ON/OFF das atividades (indice-aula-data.js).
-// Depende de: assets/js/indice-aula-repositorio.js e atividades-crud-modal.js (obterCaminhoHtml).
+// Depende de: assets/js/indice-aula-repositorio.js e atividades-crud-modal.js
+// (obterChaveDaPagina).
 
 const SELETOR_ACOES_VINCULADAS = '.acoes';
 const SELETOR_LINK_ACAO_VINCULADAS = 'a.btn';
@@ -51,14 +52,14 @@ function mapearCardsPorAula(itens) {
 }
 
 /**
- * Chave de comparação de uma página: caminho a partir de /MATERIAIS/, sem diferenciar
- * maiúsculas de minúsculas.
+ * Chave de comparação de uma página: pasta/arquivo em minúsculas (obterChaveDaPagina), para o
+ * botão do banco não repetir o link do HTML mesmo quando o prefixo, a caixa ou a codificação do
+ * endereço difere de atividade.pagina (#290.4).
  * @param {string} endereco - Href do link ou atividade.pagina.
- * @returns {string|null} Caminho em minúsculas ou null se não for página HTML.
+ * @returns {string|null} Chave da página ou null se não for página HTML.
  */
 function chaveDoCaminhoVinculadas(endereco) {
-    const caminho = obterCaminhoHtml(endereco);
-    return caminho ? caminho.toLowerCase() : null;
+    return obterChaveDaPagina(endereco);
 }
 
 /**

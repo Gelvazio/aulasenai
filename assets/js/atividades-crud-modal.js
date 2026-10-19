@@ -15,6 +15,8 @@
 const SELETOR_CARD = 'article.aula';
 // atividade.pagina é gravada a partir de /MATERIAIS/; o servidor local põe uma pasta antes.
 const PASTA_RAIZ_CAMINHO_CRUD = '/materiais/';
+// Quantos segmentos finais (pasta/arquivo) formam a chave de comparação de uma página (#290.4).
+const SEGMENTOS_CHAVE_PAGINA_CRUD = 2;
 const SELETOR_LINK_ATIVIDADE = 'a.btn.principal';
 const ALVO_NOVA_ABA_CRUD = '_blank';
 const REL_NOVA_ABA_CRUD = 'noopener';
@@ -100,6 +102,22 @@ function obterCaminhoHtml(href) {
 
     const posicaoRaiz = caminho.toLowerCase().indexOf(PASTA_RAIZ_CAMINHO_CRUD);
     return posicaoRaiz >= 0 ? caminho.slice(posicaoRaiz) : caminho;
+}
+
+/**
+ * Chave para comparar a página de um link com atividade.pagina sem depender da pasta que o
+ * servidor põe antes, da caixa das letras nem da codificação: os dois últimos segmentos
+ * (pasta/arquivo), em minúsculas. Serve só para comparar (nunca para consultar o banco, que
+ * exige o caminho de obterCaminhoHtml).
+ * @param {string} endereco - Href do link ou atividade.pagina.
+ * @returns {string|null} Chave da página ou null se não for página HTML.
+ */
+function obterChaveDaPagina(endereco) {
+    const caminho = obterCaminhoHtml(endereco);
+    if (!caminho) return null;
+
+    const segmentos = caminho.toLowerCase().split('/').filter(Boolean);
+    return segmentos.slice(-SEGMENTOS_CHAVE_PAGINA_CRUD).join('/');
 }
 
 /**
@@ -733,6 +751,16 @@ function carregarMarcacaoFeitas() {
     carregarTurmaFavoritaIndice();
     carregarDataAulasIndice();
     carregarLogAlternativasIndice();
+    carregarIdsDoAlunoIndice();
+}
+
+/**
+ * Carrega a etiqueta "ID NN" das atividades para o aluno logado (#288, #290.4).
+ */
+function carregarIdsDoAlunoIndice() {
+    const script = criarElementoCrud('script');
+    script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-id-aluno.js';
+    document.head.append(script);
 }
 
 /**
