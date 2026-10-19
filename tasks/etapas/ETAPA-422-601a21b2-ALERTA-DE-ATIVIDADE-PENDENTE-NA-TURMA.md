@@ -434,14 +434,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.22 — Conferir a troca de turma no combo
 
-**Próximo passo:** trocar entre todas as turmas do professor e conferir que os cards mudam só quando devem (I4/R5).
+**Próximo passo:** — (entregue em 2026-10-19 14:38; a próxima é a #293.24).
 
 - **Nível:** MEDIO — conferência.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** inclui "Todas as turmas" e turma favorita.
 - **Critérios de aceitação:** resultados anotados.
 - **Verificação:** conferência manual.
-- **Entrega:** —
+- **Entrega:** conferência por leitura: `ouvirTrocaDeTurmaPendentes` escuta a delegação do `change` no combo e os eventos `turma-indice-alterada`/`turma-favorita-alterada`; cada troca chama `recalcularPendentesDoIndicePendentes`, que relê a turma atual (`obterTurmaPendentes`) e reconstrói o estado do zero (sem cache) — "Todas as turmas"/sem turma limpa as classes (R5/R9/I4).
+- **Verificação:** leitura dos dois trechos (sem navegador, `.claude/rules/testes-validacao.md`).
 
 ### #293.23 — Conferir como aluno e visitante: alerta não aparece
 
@@ -456,25 +457,27 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.24 — Conferir o visual do alerta
 
-**Próximo passo:** conferir piscar suave, cor, legibilidade e `prefers-reduced-motion`; comparar layout com e sem alerta.
+**Próximo passo:** — (entregue em 2026-10-19 14:38; a próxima é a #293.25).
 
 - **Nível:** MEDIO — conferência visual/CSS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** anotar o resultado e ajustar o CSS se preciso.
 - **Critérios de aceitação:** sem deslocamento de layout (I3); reduced motion sem animação.
 - **Verificação:** leitura mesmo (sem navegador automatizado).
-- **Entrega:** —
+- **Entrega:** conferência por leitura do CSS: vermelho `#ffd9d9` pisca em ≈1 s e verde `#d9f2d9` fica fixo; as regras usam só `background-color` (`margin`/`padding`/`transform` intocados → I3); `prefers-reduced-motion: reduce` desliga a animação; o aviso acessível é absoluto (1 px) e não mexe no layout.
+- **Verificação:** leitura de `assets/css/indice-atividades-pendentes.css`.
 
 ### #293.25 — Conferir que o aluno não perdeu nada
 
-**Próximo passo:** conferir cores do andamento, cadeado da bloqueada e "Fez Atividade?" do aluno continuam iguais.
+**Próximo passo:** — (entregue em 2026-10-19 14:38; a próxima é a #293.26, bloqueada).
 
 - **Nível:** MEDIO — conferência.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** comparar com o comportamento anterior.
 - **Critérios de aceitação:** nada do aluno mudou.
 - **Verificação:** conferência manual.
-- **Entrega:** —
+- **Entrega:** conferência por leitura: o módulo é carregado **só no caminho do professor** (`iniciarCrudAtividades`), não mexe em `atividade--feita`/`atividade--pendente`/`atividade--nao-feita`, `marca-feita`, `bloqueada-professor`, `data-href-bloqueado`, `interruptor-atividade` nem no "Fez Atividade?"; só acrescenta/remove `card-atividade-pendente`, `card-atividade-concluida` e o span oculto no `article.aula`.
+- **Verificação:** leitura de `atividades-crud-modal.js` (carga) e do módulo (classes usadas).
 
 ### #293.26 — Documentar em `docs/regras/atividades.md`
 
@@ -524,14 +527,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.30 — Aplicar/remover o verde ao trocar de turma e ao remontar os cards
 
-**Próximo passo:** no mesmo módulo de aplicação (#293.13), alternar **vermelho × verde × nenhum** a cada troca de turma e a cada `cards-aula-montados`.
+**Próximo passo:** — (entregue em 2026-10-19 14:38; a próxima é a #293.31, bloqueada pela #293.21).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** remover a classe anterior antes de aplicar a nova (R12).
 - **Critérios de aceitação:** troca de turma e remontagem refletem o estado certo; nunca os dois juntos.
 - **Verificação:** conferência manual (#293.31).
-- **Entrega:** —
+- **Entrega:** `aplicarEstadoNoCardPendentes` chama `limparEstadoDoCardPendentes` antes (tira as duas classes e o aviso) e `recalcularPendentesDoIndicePendentes` roda na troca de turma e em `cards-aula-montados` — alterna vermelho × verde × nenhum; nunca os dois juntos (R12).
+- **Verificação:** leitura do fluxo de aplicação/limpeza.
 
 ### #293.31 — Conferir os casos do verde e do vermelho
 
