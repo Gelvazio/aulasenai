@@ -1,7 +1,7 @@
 // Alerta de atividade pendente no índice de atividades (#293) — só professor.
-// Base do módulo: nota mínima da matéria e comparação com a nota do aluno (#293.11); leitura da
-// turma do combo "Turma:" e refiltro ao trocar (#293.12).
-// A carga no índice e o uso nos cards entram na #293.10/#293.13 (evento cards-aula-montados).
+// Base do módulo: nota mínima da matéria × nota do aluno (#293.11), leitura da turma do combo
+// "Turma:" com refiltro (#293.12) e a regra de "pendente" (#293.10).
+// A carga no índice e o uso nos cards entram na #293.13 (evento cards-aula-montados).
 // Só lê o materia.json da matéria; nenhum dado de aluno e nenhuma consulta ao banco aqui.
 // Depende de: fetch do navegador; combo "Turma:" do indice-turma-favorita.js.
 
@@ -77,4 +77,43 @@ function ouvirTrocaDeTurmaPendentes(aoMudar) {
     document.addEventListener(EVENTO_TURMA_INDICE_PENDENTES, avisar);
     document.addEventListener(EVENTO_FAVORITA_ALTERADA_PENDENTES, avisar);
     avisar();
+}
+// Contrato dos dados que a fonte da #293.5 entrega, por atividade da aula:
+// { atividadeId, temQuestao, bloqueada, alunos: [{ alunoId, faltou, entregou,
+//   aguardandoCorrecao, nota }] }.
+
+/**
+ * Diz se o aluno conta como pendente numa atividade (regra fechada na #293.4).
+ * Falta (R15), atividade sem questão e entrega aguardando correção não contam.
+ * @param {{faltou: boolean, entregou: boolean, aguardandoCorrecao: boolean, nota: *}} aluno
+ * @param {number} [notaMinima] - Nota mínima da matéria.
+ * @returns {boolean} true se o aluno está pendente.
+ */
+function alunoPendentePendentes(aluno, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
+    if (!aluno || aluno.faltou) return false;
+    if (!aluno.entregou) return true;
+    if (aluno.aguardandoCorrecao) return false;
+    return notaAbaixoDoMinimoPendentes(aluno.nota, notaMinima);
+}
+
+/**
+ * Diz se a atividade tem pelo menos 1 aluno pendente na turma escolhida.
+ * @param {{bloqueada: boolean, temQuestao: boolean, alunos: Object[]}} atividade
+ * @param {number} [notaMinima] - Nota mínima da matéria.
+ * @returns {boolean} true se a atividade está pendente.
+ */
+function atividadePendentePendentes(atividade, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
+    if (!atividade || atividade.bloqueada || !atividade.temQuestao) return false;
+    return (atividade.alunos || []).some((aluno) => alunoPendentePendentes(aluno, notaMinima));
+}
+
+/**
+ * Diz se o card (lista de atividades da aula) tem pendência na turma escolhida.
+ * @param {Object[]} atividades - Atividades da aula vindas da fonte de dados.
+ * @param {number} [notaMinima] - Nota mínima da matéria.
+ * @returns {boolean} true se o card fica vermelho.
+ */
+function cardPendentePendentes(atividades, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
+    const lista = atividades || [];
+    return lista.some((atividade) => atividadePendentePendentes(atividade, notaMinima));
 }

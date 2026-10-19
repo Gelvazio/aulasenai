@@ -292,14 +292,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.10 — Regra "pendente" no JavaScript
 
-**Próximo passo:** criar o módulo que transforma (entregas, notas, bloqueios) em um conjunto de atividades pendentes por turma, seguindo a regra de #293.4.
+**Próximo passo:** — (entregue em 2026-10-19 14:09; a próxima é a #293.14).
 
 - **Nível:** MEDIO — lógica em 1 arquivo JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** arquivo novo (ex.: `assets/js/indice-atividades-pendentes.js`), funções puras e JSDoc.
 - **Critérios de aceitação:** regra (a)/(b) coberta; sem consulta por card.
 - **Verificação:** leitura + conferência dos casos.
-- **Entrega:** —
+- **Entrega:** funções puras em `assets/js/indice-atividades-pendentes.js`: `alunoPendentePendentes` (falta → não; não entregou → sim; aguardando correção → não; senão nota < mínima), `atividadePendentePendentes` (bloqueada/sem questão → não; senão algum aluno pendente) e `cardPendentePendentes` (alguma atividade pendente). Contrato da fonte de dados documentado no arquivo (`atividadeId`, `temQuestao`, `bloqueada`, `alunos[]`), para a #293.5 implementar.
+- **Verificação:** `node --check` OK; leitura das 3 funções contra a regra da #293.4.
 
 ### #293.11 — Nota mínima da matéria e comparação com a nota do aluno
 
