@@ -45,6 +45,8 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 | 2026-10-19 10:45 | "Turma selecionada em cima" = combo **"Turma:"** do índice (aula/bloqueio desde #206) | DeepSeek Harness (deepseek-flash) | é o seletor de turma da página |
 | 2026-10-19 10:45 | Piscar suave de ≈1 s; com `prefers-reduced-motion: reduce`, sem animação (fundo fixo) | DeepSeek Harness (deepseek-flash) | acessibilidade |
 | 2026-10-19 11:08 | **Estado verde claro**: card com **todas as atividades concluídas** pela turma (zero pendentes, nenhuma bloqueada), fundo **fixo** (sem piscar), também **só professor** | Usuário ("fundo claro verde") + DeepSeek Harness | complemento do vermelho; mesma turma do combo |
+| 2026-10-19 12:39 | Respostas do usuário: **Q1** = o vermelho pisca no **card inteiro**; **Q2** = aluno **"Faltou?"** NÃO conta como pendente; **Q3** = verde confirmado (card inteiro, todas concluídas, nota ≥ mínima, sem bloqueada, fixo, só professor) | Usuário | destrava a spec; C34 |
+| 2026-10-19 12:39 | O gate `node spec/verificar-spec.mjs` **não existe** neste repositório → a spec é conferida por leitura, sem instalar script | DeepSeek Harness (deepseek-flash) | o projeto é sem teste automatizado novo |
 
 ### Requisitos (EARS)
 
@@ -64,6 +66,7 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 | R12 | O SISTEMA DEVE manter **vermelho e verde mutuamente exclusivos**: nunca os dois no mesmo card. | conferir card a card (leitura) |
 | R13 | ENQUANTO o usuário logado **não** for professor, o **verde** também NÃO DEVE aparecer. | login de aluno e de visitante (leitura) |
 | R14 | SE alguma atividade do card estiver **bloqueada** para a turma (ou a aula bloqueada/inativa), ENTÃO o card NÃO DEVE ficar verde. | atividade bloqueada ON/OFF (leitura) |
+| R15 | SE o aluno estiver marcado como **"Faltou?"** no dia da atividade, ENTÃO ele NÃO DEVE contar como pendente (nem impedir o verde). | conferir aluno com falta (leitura) |
 
 ### Invariantes
 
@@ -82,23 +85,24 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 | # | Pergunta | Quem responde | Situação |
 |---|---|---|---|
-| Q1 | O fundo piscando cobre **o card inteiro da aula** ou só o **botão/bloco da atividade** dentro do card? | Usuário | 👀 aguardando |
-| Q2 | Aluno marcado como **"Faltou?"** no dia conta como pendente para o alerta (ou fica de fora)? | Usuário | 👀 aguardando |
-| Q3 | O verde vale só para o **card inteiro**, só quando **todas** as atividades dele estiverem concluídas (entregues e com nota ≥ mínima) e nenhuma bloqueada — **fixo, sem piscar**, também só professor. Confirma? | Usuário | 👀 aguardando |
+| Q1 | O fundo piscando cobre **o card inteiro da aula** ou só o **botão/bloco da atividade** dentro do card? | Usuário | ✅ fechada em 2026-10-19 12:39: **card inteiro** |
+| Q2 | Aluno marcado como **"Faltou?"** no dia conta como pendente para o alerta (ou fica de fora)? | Usuário | ✅ fechada em 2026-10-19 12:39: **não conta** (R15) |
+| Q3 | O verde vale só para o **card inteiro**, só quando **todas** as atividades dele estiverem concluídas (entregues e com nota ≥ mínima) e nenhuma bloqueada — **fixo, sem piscar**, também só professor. Confirma? | Usuário | ✅ fechada em 2026-10-19 12:39: **sim** |
 
-> ⛔ Execução bloqueada enquanto Q1, Q2 e Q3 estiverem 👀 (C34) e enquanto o usuário não aprovar o plano.
+> ✅ Perguntas fechadas em 2026-10-19 12:39. Falta só o **"sim" ao plano** para reservar a primeira
+> subtarefa; o gate `spec/verificar-spec.mjs` não existe neste repositório (conferência por leitura).
 
 ---
 
-### #293.1 — Fechar as perguntas abertas da spec e passar o gate
+### #293.1 — Fechar as perguntas abertas da spec e conferir a spec pela leitura
 
-**Próximo passo:** com as respostas de Q1/Q2, gravar as Decisões, rodar `node spec/verificar-spec.mjs tasks/etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md` e registrar a saída.
+**Próximo passo:** revisar R1–R15 e I1–I8 com as respostas de Q1–Q3 (o gate `spec/verificar-spec.mjs` não existe neste repositório) e registrar a conferência.
 
 - **Nível:** MEDIO — texto técnico e ajuste de requisitos, sem banco.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
-- **Descrição:** fechar Q1 e Q2 nas Decisões, conferir se R1–R10 e I1–I5 continuam coerentes e rolar o gate da spec.
-- **Critérios de aceitação:** nenhuma pergunta 👀; gate sai com código 0.
-- **Verificação:** comando do gate no texto acima.
+- **Descrição:** conferir que Q1–Q3 estão fechadas (nenhum 👀), que R1–R15/I1–I8 continuam coerentes e que a regra de falta (R15) entrou.
+- **Critérios de aceitação:** nenhuma pergunta 👀; requisitos e invariantes sem ⬜; etapa coerente.
+- **Verificação:** leitura das seções Requisitos/Invariantes/Perguntas abertas + `git diff` só na etapa.
 - **Entrega:** —
 
 ### #293.2 — Levantamento técnico do índice e dos dados que a página já carrega
@@ -239,7 +243,7 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 - **Nível:** MEDIO — CSS com animação.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
-- **Descrição:** vermelho claro legível no tema do projeto; animação de ≈1 s; sem mover layout.
+- **Descrição:** vermelho claro legível no tema do projeto; pinta o **card inteiro** da aula (Q1); animação de ≈1 s; sem mover layout.
 - **Critérios de aceitação:** classe aplicada pinta o card e pisca (R8).
 - **Verificação:** inspeção do CSS e do card.
 - **Entrega:** —
