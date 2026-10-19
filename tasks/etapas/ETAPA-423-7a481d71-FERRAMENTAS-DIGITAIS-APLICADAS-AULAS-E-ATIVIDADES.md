@@ -5,7 +5,7 @@
 **Objetivo:** escrever as 15 aulas (60 h ÷ 4 h) de Ferramentas Digitais Aplicadas, cada uma com objetiva (50 questões) e prática discursiva, tudo cadastrado no banco, no padrão da ITIC.
 
 > 🚫 **Sem slides** (`materias-global.md`) · ✅ **"Você como aluno consultor"**, sem empresa fictícia.
-> 👀 **Tarefa grande (banco + mudança em massa): aguarda o "sim" do usuário a este plano antes de qualquer subtarefa.**
+> ✅ Tarefa grande: plano aprovado em 2026-10-19 13:00.
 
 ### Escopo
 
@@ -22,11 +22,11 @@
 
 ### Decisões
 
-- (aguardando) aprovação do plano pelo usuário.
+- 2026-10-19 13:00 — plano aprovado pelo usuário ("Sim, aprovo o plano da #294"), registrado por Claude Code (Sonnet 5.5) (local · main · s27).
 
 ### #294.1 — Pasta, ementa, `materia.json` e plano de 15 aulas
 
-**Próximo passo:** ⏹ esperar o "sim" do usuário ao plano desta etapa.
+**Próximo passo:** criar a pasta, a ementa, o `materia.json` e os 5 `STATUS-*.md`.
 
 - **Nível:** MEDIO — JSON e Markdown de dados, sem banco.
 - **Modelo:** só Sonnet — nunca outro
