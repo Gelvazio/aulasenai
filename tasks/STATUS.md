@@ -62,7 +62,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
-| local · main · DeepSeek Harness (deepseek-flash) | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293.1 e #293.2 entregues; #293.3 (PESADO/banco) é só Claude Code local | ⏹️ Encerrada | 2026-10-19 12:58 |
+| local · main · DeepSeek Harness (deepseek-flash) | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293.1, #293.2, #293.11 e #293.12 entregues; #293.3 (PESADO/banco) é só Claude Code local | ⏹️ Encerrada | 2026-10-19 13:10 |
 
 ## 📌 Tarefas
 
