@@ -495,14 +495,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.28 — Regra "todas concluídas" (estado verde)
 
-**Próximo passo:** no módulo de #293.10, calcular por card se **todas** as atividades dele estão concluídas pela turma (zero pendentes) e devolver o estado verde.
+**Próximo passo:** — (entregue em 2026-10-19 14:18; a próxima é a #293.29).
 
 - **Nível:** MEDIO — lógica em 1 arquivo JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** reaproveita a regra de pendente de #293.10; verde só com zero pendentes e nenhuma atividade bloqueada (R11/R14).
 - **Critérios de aceitação:** nenhum card verde com pendente; card com atividade bloqueada não fica verde.
 - **Verificação:** leitura + conferência dos casos (#293.31).
-- **Entrega:** —
+- **Entrega:** `estadoDoCardPendentes(atividades, notaMinima)` no módulo, com as constantes `ESTADO_CARD_PENDENTE` e `ESTADO_CARD_CONCLUIDO`: card vazio → '' (sem cor); alguma atividade pendente → `pendente`; senão, alguma atividade bloqueada → '' (R14); senão → `concluido` (verde). Vermelho e verde ficam mutuamente exclusivos (R12).
+- **Verificação:** `node --check` OK; leitura das 3 saídas contra R11/R12/R14.
 
 ### #293.29 — CSS do fundo verde claro
 
