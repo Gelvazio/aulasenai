@@ -24,10 +24,32 @@ Fonte das regras do quadro: `AGENTS.md` → `.claude/rules/tasks/`. Esta skill s
 1. **A regra mais restritiva vence:** basta um sinal de `PESADO`
    ("1 arquivo, mas é SQL" = `PESADO`).
 2. **Na dúvida, sobe o nível** (`LEVE` → `MEDIO` → `PESADO`).
-3. **Pergunte ao Laya** (abaixo) quando ele estiver no ar. Se a confiança (`answer_confidence`)
-   ficar **abaixo de 0,7**, ou o Laya estiver fora, decida pelos sinais da tabela — e, se você
-   não for Claude Code com Opus 5.5+ ou Fable nem DeepSeek (`PESADO`, C35), aplique o passo 2.
-4. Se o Laya e os sinais discordarem, **vale o nível mais alto** dos dois.
+3. **Pergunte ao Jev** (abaixo; só local) e depois **ao Laya** (abaixo), quando ele estiver no
+   ar. Se a confiança (`answer_confidence`) ficar **abaixo de 0,7**, ou o Laya estiver fora,
+   decida pelos sinais da tabela — e, se você não for Claude Code com Opus 5.5+ ou Fable nem
+   DeepSeek (`PESADO`, C35), aplique o passo 2.
+4. Se o Jev, o Laya e os sinais discordarem, **vale o nível mais alto** entre eles.
+
+### Pergunta ao Jev (conselheiro, só local)
+
+Antes do Laya, rode o Jev, **só na máquina local** (regra `rules-local/regras/jev.md`):
+
+```bash
+node C:/fontes/rules-ai/scripts/jev.mjs classificar --id <TAREFA> --quadro tasks/STATUS.md --json
+```
+
+Rode na raiz do projeto. Sem `--quadro tasks/STATUS.md` ele leria o quadro errado.
+
+- O Jev **só sugere**: o nível vem com a `confianca`. Ele não rebaixa nível (sinal de `PESADO`
+  eleva, nunca diminui), não reserva, não escolhe modelo nem `effort` (quem define é a matriz
+  desta skill e a C21) e não escreve no quadro.
+- Registre a confiança do Jev junto do nível na justificativa. `confianca` abaixo de 0,60 →
+  decisão humana: o Jev não decide sozinho; pergunte ao usuário.
+- Sem `TYPESAFE_API_KEY`, com `JEV_MODO=off` (rollback) ou falha do Jev (rede, 401, 429, 529,
+  timeout, código de saída 2): siga o fluxo Laya/sinais abaixo, sem mudar nada dele.
+- A chave `TYPESAFE_API_KEY` nunca vai para log, saída ou arquivo versionado. O texto passa pelo
+  `redigir.mjs` antes do envio, e o estado enviado é cego (sem `Nível:`, `Modelo:`, `Effort:`
+  atuais).
 
 ### Pergunta ao Laya Server
 
@@ -96,11 +118,12 @@ Na **seção da subtarefa** dentro da etapa (`tasks/etapas/…`), como primeiro 
 prioridade fica na linha do `STATUS.md`):
 
 ```markdown
-- **Nível:** MEDIO — código com lógica em 1 arquivo de `worker/`, sem chave (Laya 0,82)
+- **Nível:** MEDIO — código com lógica em 1 arquivo de `worker/`, sem chave (Laya 0,82; Jev 0,78)
 ```
 
-A justificativa é curta: o sinal que decidiu e, se usou o Laya, a confiança. Gravar o nível segue o
-ciclo normal (commit com o quadro; `docs(board): …` se for só classificar).
+A justificativa é curta: o sinal que decidiu e, se usou o Laya ou o Jev, a confiança de cada
+um. Gravar o nível segue o ciclo normal (commit com o quadro; `docs(board): …` se for só
+classificar).
 
 ## Proibido
 

@@ -17,8 +17,7 @@ conhecem o Laya/sinais, então precisam do passo novo.
 
 ### RL-87FD6C11-JEV.1 — Skill `classificar-tarefa`: consultar o Jev primeiro
 
-**Próximo passo:** ler `rules-local/regras/jev.md` (versão `2026-10-18-87fd6c11`) e pôr a consulta ao
-Jev antes do Laya nas duas cópias da skill, com fallback, rollback e aviso de confiança.
+**Próximo passo:** — (concluída em 2026-10-19 12:52)
 
 - **Nível:** LEVE — só `.md` (as duas cópias da skill), sem lógica nem banco.
 - **Modelo:** só Haiku — nunca outro
@@ -30,4 +29,10 @@ Jev antes do Laya nas duas cópias da skill, com fallback, rollback e aviso de c
   para log nem para arquivo versionado, e o texto passa pelo `redigir.mjs` antes do envio.
 - **Critérios de aceitação:** as duas cópias com o passo do Jev, o fallback Laya/sinais e o rollback
   `JEV_MODO=off`; nenhum outro arquivo do projeto muda; commit + push na `main`.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s26)
+- **Entrega:** commit `feat(skills): classificar-tarefa consulta o Jev primeiro` (seção "Pergunta ao Jev"
+  antes do Laya, ordem de decisão com o Jev, exemplo com a confiança) · **Verificação:** líder leu
+  as duas cópias (`diff` = iguais), comando conferido com o uso do `jev.mjs` (`--id`, `--quadro`,
+  `--json`), fluxo Laya/sinais e matriz intactos, linhas novas ≤ 100 caracteres.
+- **Anotação:** a cópia `.agents/skills/` está fora do Git neste projeto (pasta `.agents/` não
+  versionada); só a cópia `.claude/skills/` vai no commit.
