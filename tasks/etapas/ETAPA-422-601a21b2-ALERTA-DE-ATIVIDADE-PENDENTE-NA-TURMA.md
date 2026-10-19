@@ -313,14 +313,26 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.8 — RLS/segurança da agregação: aluno não lê
 
-**Próximo passo:** conferir como aluno que a view/função não devolve linha e que nada de outro aluno aparece.
+**Próximo passo:** — (entregue em 2026-10-19 14:50; a próxima é a #293.9).
 
 - **Nível:** PESADO — segurança/RLS.
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** política de leitura só para professor da turma; administrador como já é no projeto.
 - **Critérios de aceitação:** aluno e visitante sem acesso (I5).
 - **Verificação:** consulta com o login do aluno.
-- **Entrega:** —
+- **Entrega:** a segurança fica na própria função (não há view nem tabela nova para RLS):
+  `security definer` + filtro `eh_professor() and professor_tem_turma(p_turma)` + `revoke` de
+  `public`/`anon` (privilégios: só `authenticated`, `postgres`, `service_role`). Devolve só
+  contagens por atividade (sem `aluno_id`, nome, nota, resposta ou gabarito) — I5.
+- **Verificação (2026-10-19, transações com `rollback`, JWT simulado):**
+
+| Perfil | Turma | Linhas |
+|---|---|---|
+| Aluno da turma (`perfil = ALUNO`) | 135081 | **0** ✅ |
+| Mesmo usuário com `perfil = PROFESSOR` no JWT (o `app_metadata` só o servidor grava) | 135081 | **0** ✅ (não é professor da turma) |
+| Professor sem vínculo com a turma | 135081 | **0** ✅ |
+| Professor com vínculo (`turmaprofessor`) | 122552 | 154 ✅ |
+| Visitante (`anon`) | 135081 | `permission denied for function` ✅ |
 
 ### #293.9 — Conferir o desempenho da agregação na turma maior
 
