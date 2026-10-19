@@ -288,14 +288,28 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.7 — Aplicar o SQL no Supabase e conferir o resultado
 
-**Próximo passo:** rodar o SQL no banco e conferir com uma turma conhecida os pendentes.
+**Próximo passo:** — (entregue em 2026-10-19 14:45; as próximas são a #293.8 e a #293.9).
 
 - **Nível:** PESADO — banco de produção (só Claude Code local).
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** aplicar e registrar a conferência (ids de atividade × turma × qtd).
 - **Critérios de aceitação:** consulta confere com a lista de alunos da turma.
 - **Verificação:** consulta de leitura depois de aplicar.
-- **Entrega:** —
+- **Entrega:** função aplicada no Supabase em 2026-10-19 (migração `atividades_pendentes_turma_293`,
+  mesmo conteúdo de `database/2026-10-19-atividades-pendentes-turma.sql`). Conferência com o JWT do
+  professor administrador simulado (`set local role authenticated` + `request.jwt.claims`, em
+  transação desfeita com `rollback`), turma `135081`:
+
+| Conferência | Resultado |
+|---|---|
+| Linhas devolvidas | 154 (uma por atividade com aula), 93 aulas |
+| Bloqueadas / sem questão | 63 / 2 |
+| `nao_fizeram` × `alunos_sem_entrega_turma` (função já existente) | iguais nas atividades 2, 3, 5, 6, 7, 8, 9, 10 e 19; na 81 = 7 × 8 — a diferença é 1 aluno com **falta** no dia (R15) ✅ |
+| Nota objetiva da atividade 6 (33 entregas): 2 × 10,0 · 18 × 9,8 · 11 × 9,6 · 2 × 9,4 | mínima 7 → `nota_baixa = 0` ✅; mínima 9,7 → `nota_baixa = 13` (11 + 2) ✅ |
+| Nota mínima inválida (99) | usa 7,0 → `nota_baixa = 0` na atividade 6 ✅ |
+| Discursiva | 1 atividade com `nota_baixa > 0` com mínima 9,7 (caminho da `nota_professor` ativo) ✅ |
+
+- **Verificação:** consultas de leitura acima depois de aplicar; nada gravado além da função.
 
 ### #293.8 — RLS/segurança da agregação: aluno não lê
 
