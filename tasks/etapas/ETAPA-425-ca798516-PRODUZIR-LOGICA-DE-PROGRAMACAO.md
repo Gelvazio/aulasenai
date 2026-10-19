@@ -28,6 +28,8 @@ do padrão: `materia.json`, aulas em `CONTEUDO/`, atividades no banco, apostila 
 ### Decisões
 - 2026-10-19 — Claude Code (Haiku 5.5): tarefa grande (banco, várias partes, mudança em massa) →
   plano nesta etapa e aguarda o "sim" do usuário. Nenhuma subtarefa é executada antes disso.
+- 2026-10-19 14:37 — Gelvazio (usuário): "Sim, aprovo o plano da #296." Plano aprovado como está,
+  com a leitura de "a aula" = matéria inteira. Próximo passo: #296.1 (PESADO, só Opus 5.5+/Fable).
 
 ### #296.1 — Expandir a ementa ao padrão e criar o `materia.json`
 
