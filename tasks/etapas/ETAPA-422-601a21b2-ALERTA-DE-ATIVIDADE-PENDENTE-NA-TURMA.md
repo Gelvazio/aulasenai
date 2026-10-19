@@ -96,14 +96,14 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 ### #293.1 — Fechar as perguntas abertas da spec e conferir a spec pela leitura
 
-**Próximo passo:** revisar R1–R15 e I1–I8 com as respostas de Q1–Q3 (o gate `spec/verificar-spec.mjs` não existe neste repositório) e registrar a conferência.
+**Próximo passo:** — (entregue em 2026-10-19 12:52; a próxima é a #293.2).
 
 - **Nível:** MEDIO — texto técnico e ajuste de requisitos, sem banco.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** conferir que Q1–Q3 estão fechadas (nenhum 👀), que R1–R15/I1–I8 continuam coerentes e que a regra de falta (R15) entrou.
 - **Critérios de aceitação:** nenhuma pergunta 👀; requisitos e invariantes sem ⬜; etapa coerente.
 - **Verificação:** leitura das seções Requisitos/Invariantes/Perguntas abertas + `git diff` só na etapa.
-- **Entrega:** —
+- **Entrega:** Q1 = card inteiro, Q2 = falta não conta (R15), Q3 = verde confirmado; R1–R15 e I1–I8 conferidos por leitura; o gate `spec/verificar-spec.mjs` não existe no repositório (nada a rodar).
 
 ### #293.2 — Levantamento técnico do índice e dos dados que a página já carrega
 
