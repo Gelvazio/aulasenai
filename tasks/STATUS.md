@@ -1374,6 +1374,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #297.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2, #297.3 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #297.4 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| **#298** | **Ideias de atividades do Mundo SENAI para 10 alunos do CEPLAS (`IDEIAS-MUNDO-SENAI.md`)** | 🟡 Média | — | — | 🔄 Em progresso (pedido do professor, 2026-10-19 19:58) | — | [427-65d015e2](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) | — |
+| #298.1 | Escrever `IDEIAS-MUNDO-SENAI.md` na pasta do curso · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [427-65d015e2](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) | — |
 
 
 ## Escopo
@@ -1838,6 +1840,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 424-56988cb2 | Remover o Laya e deixar só o Jev (#295, pedida em 2026-10-19 13:01) | [ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md](etapas/ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md) |
 | 425-ca798516 | Produzir por completo a matéria LOGICA-DE-PROGRAMACAO (#296, pedida em 2026-10-19) | [ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) |
 | 426-6a90fb45 | Produzir por completo a matéria Fundamentos dos Processos de Produção (#297, pedida em 2026-10-19) | [ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) |
+| 427-65d015e2 | Ideias de atividades do Mundo SENAI para 10 alunos do CEPLAS (#298, pedida em 2026-10-19) | [ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
