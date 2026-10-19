@@ -15,6 +15,7 @@ sem quebrar a visão do professor (regra 15 do `AGENTS.md`: cards e atividades v
 | 2026-10-19 06:18 | Claude Code (Opus 5.5, líder s24) | Correção de bug pequena (tela, JS) com 1 subtarefa `MEDIO`; se a causa estiver no banco (linhas repetidas na tabela `atividade`), reclassificar para `PESADO` antes de mexer | Sem chave do Jev e Laya fora do ar: decidido pelos sinais (código com lógica em 1 a 3 arquivos, sem banco) |
 | 2026-10-19 06:24 | Claude Code (Opus 5.5, líder s24) | Causa no JS, não no banco (continua `MEDIO`): corrigir em 2 arquivos — `obterCaminhoHtml` (`atividades-crud-modal.js`) passa a cortar o caminho a partir de `/MATERIAIS/`, como a #285.1 fez na página da atividade, e o módulo das atividades vinculadas compara os caminhos sem diferenciar maiúsculas | `obterCaminhoHtml` é a chave de todos os módulos do índice (grade, vinculadas, nomes, ID/✏️ do professor): corrigindo nela, o professor também passa a achar as atividades com o site numa pasta; `indice-atividades-feitas.js` fica com a s22 (#286.1/#288.1 reservadas) e recebe recado |
 | 2026-10-19 07:33 | Claude Code (Opus 5.5, líder s24) | #290 reaberta a pedido do usuário ("teclado travado, continue na correcao", repassado pela s23) com 2 subtarefas da mesma causa: #290.2 (`MEDIO`) — cadeado do aluno (`indice-atividades-bloqueio.js`) e "🧾 LOG" do professor (`indice-log-alternativas.js`) passam a usar a `obterCaminhoHtml`; #290.3 (`MEDIO`, ⛔) — cores e "Fez Atividade?" (`indice-atividades-feitas.js`) | Os 3 módulos têm a própria função de caminho, sem o corte em `/MATERIAIS/`; o `indice-atividades-feitas.js` está reservado pela s22 (#286.1/#288.1, 🔄 desde 2026-10-18 20:20/20:21, sem commit nem mudança no disco) e só o usuário libera reserva de outra frente |
+| 2026-10-19 07:54 | Claude Code (Sonnet 5.5, s25) | #290 reaberta com a #290.4 (`MEDIO`) a pedido do usuário: "corrija agora o erro da atividade duplicada no usuario do aluno" e "e ja mostre o id da atividade tambem" | Tarefa nova da mesma mãe (C26). O trecho do id é o da #288.1, reservada pela s22 (🔄 desde 2026-10-18 20:21) com mudanças **sem commit** em `indice-atividades-feitas.js` e `.css` (191 linhas): ali só se mexe somando ao que já está no disco, e só com a reserva da s22 liberada pelo usuário |
 
 ### Diagnóstico (2026-10-19 06:24, líder s24; consultas só de leitura)
 
@@ -119,4 +120,25 @@ reserva); depois trocar a `obterCaminhoFeitas` do `indice-atividades-feitas.js` 
   `tasks/RECADOS.md` (2026-10-19 06:27).
 - **Critérios de aceitação:** cores e "Fez Atividade?" corretos com o site numa pasta; `node --check`
   OK; nada de banco.
+- **Entrega:** — · **Verificação:** —
+
+### #290.4 — Atividade duplicada ainda aparecendo ao aluno e id da atividade no botão
+
+**Próximo passo:** achar por que o aluno ainda vê a mesma atividade repetida depois da #290.1 e da
+#290.2 (ler o código do índice na visão do aluno, sem navegador), registrar a causa aqui e corrigir;
+depois mostrar o id da atividade no botão do aluno (trecho da #288.1).
+
+- **Nível:** MEDIO — código com lógica em 1 a 3 arquivos JS, sem banco nem RLS (só leitura que o aluno
+  já faz); se a causa estiver no banco, reclassificar para `PESADO` antes de mexer
+- **Modelo:** só Sonnet — nunca outro (#247); Claude Code (Sonnet 5.5), frente s25
+- **Effort:** medium
+- **Pedido:** "corrija agora o erro da atividade duplicada no usuario do aluno" e, em seguida,
+  "e ja mostre o id da atividade tambem"
+- **Descrição:** o aluno continua vendo a mesma atividade mais de uma vez no card da aula; achar a
+  causa que sobrou (a #290.1 e a #290.2 só cobriram o caminho em pasta), corrigir e mostrar o id da
+  atividade (`atividade.id` do banco) em cada botão de atividade do aluno.
+- **Critérios de aceitação:** cada atividade aparece uma vez só no card do aluno; o botão do aluno
+  mostra o id da atividade; professor igual ao de hoje (sem id repetido); `node --check` OK; nada de
+  banco; as mudanças sem commit da s22 em `indice-atividades-feitas.js`/`.css` não são perdidas nem
+  commitadas por esta subtarefa sem a reserva dela liberada pelo usuário.
 - **Entrega:** — · **Verificação:** —
