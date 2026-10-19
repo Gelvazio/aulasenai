@@ -591,14 +591,15 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.27 — Fechamento: quadro, visualizador e commit + push
 
-**Próximo passo:** mover as linhas ✅ para `tasks/task_complete.md`, regenerar o visualizador e fazer 1 commit + push na `main`.
+**Próximo passo:** — (entregue em 2026-10-19; tarefa #293 concluída).
 
 - **Nível:** LEVE — quadro/documentação.
 - **Modelo:** LEVE · só Haiku/Flash/deepseek-flash — nunca outro
 - **Descrição:** conferir que todas as subtarefas fecharam e que a mãe fecha junto.
 - **Critérios de aceitação:** quadro sem pendências da #293; commit + push na `main`.
 - **Verificação:** `git log -1` e quadro.
-- **Entrega:** —
+- **Entrega:** fechamento da #293: #293.1 a #293.26 e #293.28 a #293.33 conferidas como ✅ no `tasks/task_complete.md` (32 linhas, sem falta nem repetição) e com Entrega em todas as seções; visualizador regenerado (`scripts/regras/gerar_visualizador_regras.py`). Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s28). O líder moveu a #293.27 e a mãe para o `task_complete.md` e fez o commit + push.
+- **Verificação:** leitura do `STATUS.md` (nenhuma linha #293 aberta depois do fechamento), do `task_complete.md` e da etapa; gerador sem erro.
 
 ### #293.28 — Regra "todas concluídas" (estado verde)
 
