@@ -628,3 +628,15 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 - **Critérios de aceitação:** nenhuma classe/cor de estado e nenhum dado de aluno.
 - **Verificação:** conferência com os dois perfis.
 - **Entrega:** —
+
+### #293.33 — Turma sem aluno: nenhum card verde
+
+**Próximo passo:** na RPC, devolver 0 linhas quando a turma não tem aluno em `turmaaluno`; reaplicar e conferir.
+
+- **Nível:** PESADO — SQL de produção (função da #293.6).
+- **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Effort:** high
+- **Descrição:** criada pelo líder na #293.16 (C26): turma vazia daria "zero pendentes" e pintaria todos os cards de verde, o que é falso.
+- **Critérios de aceitação:** turma vazia → 0 linhas → nenhum card com cor; turma com aluno igual a antes.
+- **Verificação:** consulta com uma turma vazia e com a 135081.
+- **Entrega:** —
