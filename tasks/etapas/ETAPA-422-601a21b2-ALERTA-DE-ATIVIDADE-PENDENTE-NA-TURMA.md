@@ -336,14 +336,20 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.9 — Conferir o desempenho da agregação na turma maior
 
-**Próximo passo:** medir o tempo/linhas da consulta na turma com mais alunos e registrar; se ruim, propor ajuste (índice/cache).
+**Próximo passo:** — (entregue em 2026-10-19 14:52; a próxima é a #293.16).
 
 - **Nível:** PESADO — consulta ao banco.
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** uma consulta por turma (não por card), com o resultado registrado na etapa.
 - **Critérios de aceitação:** tempo aceitável registrado; sem N+1 por card.
 - **Verificação:** medição e anotação.
-- **Entrega:** —
+- **Entrega:** medição na turma maior (`135081`, 35 alunos × 154 atividades), com o JWT do professor
+  simulado: `explain (analyze, buffers)` → **175 ms**, 154 linhas, 48.193 buffers em cache (nenhuma
+  leitura de disco). É **1 chamada por turma** (ao abrir o índice, ao trocar a turma e ao remontar os
+  cards), nunca por card — sem N+1. Tempo aceitável; nenhum índice novo necessário (as buscas usam
+  `entrega_atividade_pkey`, `liberacao_atividade_pkey` e `turmaaluno_turma_aluno_uk`, #293.3).
+  Se crescer muito: filtrar pela matéria da página (parâmetro novo) — fica como pendência opcional.
+- **Verificação:** `explain analyze` registrado acima (2026-10-19 14:52).
 
 ### #293.10 — Regra "pendente" no JavaScript
 
