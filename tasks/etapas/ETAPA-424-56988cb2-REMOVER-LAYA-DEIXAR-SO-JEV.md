@@ -18,9 +18,10 @@ e arquivos gerados): só nas duas cópias da skill —
   `TYPESAFE_API_KEY`, `JEV_MODO=off` ou falha) a skill usa **só os sinais** da própria skill
   (tabela de níveis), e na dúvida sobe o nível; nunca libera em silêncio. O rollback continua
   `JEV_MODO=off`.
-- A regra global `rules-local/regras/jev.md` ainda cita o Laya como reserva; neste projeto vale o
-  pedido do usuário (regra do projeto prevalece). Mudar a regra global é com o `rules-ai`, fora
-  desta tarefa.
+- 2026-10-19 13:08 — Gelvazio: "A REGRA LOCAL DEVE SER 1 ESPELHO DA REGRA GLOBAL". A regra
+  `jev.md` muda na fonte (`rules-ai`, tarefa **JEV-SEM-LAYA**, etapa 028-8fe0b340, decisão C42) e
+  chega a `rules-local/` pela sincronização (nunca editar `rules-local/` à mão). Esta tarefa só
+  ajusta a skill do projeto, no mesmo sentido.
 
 ### #295.1 — Skill `classificar-tarefa`: tirar o Laya e deixar só o Jev
 
