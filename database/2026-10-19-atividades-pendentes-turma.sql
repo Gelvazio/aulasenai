@@ -7,7 +7,7 @@
 -- questão e não bloqueada, e na tentativa atual: (a) não entregou, ou (b) entregou com nota
 -- abaixo da mínima. Discursiva com correção do professor incompleta = aguardando correção (não
 -- conta). Nota discursiva só com nota_professor, nunca nota_ia (#166).
--- Acesso: só professor da turma (ou administrador); aluno e visitante recebem 0 linhas.
+-- Acesso: só professor da turma (ou administrador); aluno, visitante e turma sem aluno → 0 linhas.
 -- Idempotente: create or replace + grants.
 
 create or replace function public.atividades_pendentes_turma(
@@ -31,7 +31,10 @@ set search_path to 'public'
 as $function$
   with
   permissao as (
-    select public.eh_professor() and public.professor_tem_turma(p_turma) as pode
+    -- Turma sem aluno não tem o que concluir: 0 linhas, para nenhum card ficar verde (#293.33).
+    select public.eh_professor() and public.professor_tem_turma(p_turma)
+           and exists (select 1 from public.turmaaluno ta where ta.turma_codigo = p_turma)
+             as pode
   ),
   parametros as (
     -- Nota mínima do materia.json; fora de (0, 10] vale a padrão 7,0 (#293.11).

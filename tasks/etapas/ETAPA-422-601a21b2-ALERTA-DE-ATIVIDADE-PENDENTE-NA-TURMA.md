@@ -648,7 +648,7 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.33 — Turma sem aluno: nenhum card verde
 
-**Próximo passo:** na RPC, devolver 0 linhas quando a turma não tem aluno em `turmaaluno`; reaplicar e conferir.
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.23).
 
 - **Nível:** PESADO — SQL de produção (função da #293.6).
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
@@ -656,4 +656,10 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 - **Descrição:** criada pelo líder na #293.16 (C26): turma vazia daria "zero pendentes" e pintaria todos os cards de verde, o que é falso.
 - **Critérios de aceitação:** turma vazia → 0 linhas → nenhum card com cor; turma com aluno igual a antes.
 - **Verificação:** consulta com uma turma vazia e com a 135081.
-- **Entrega:** —
+- **Entrega:** na RPC, a condição `permissao` exige também que a turma tenha pelo menos 1 aluno em
+  `turmaaluno`; sem aluno, 0 linhas → `estadoDoCardPendentes([])` = `''` → nenhum card verde.
+  Arquivo `database/2026-10-19-atividades-pendentes-turma.sql` atualizado e reaplicado no Supabase
+  (migração `atividades_pendentes_turma_293_33_turma_vazia`, `create or replace` + mesmos grants).
+  Decisão do usuário: executar (2026-10-19).
+- **Verificação:** JWT do professor administrador simulado, com `rollback`: turma sem aluno → **0**
+  linhas; turma 135081 → 154 linhas (como antes). Hoje nenhuma turma real está vazia.
