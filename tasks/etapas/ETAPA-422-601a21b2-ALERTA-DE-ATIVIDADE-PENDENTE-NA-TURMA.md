@@ -222,14 +222,15 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 ### #293.11 — Nota mínima da matéria e comparação com a nota do aluno
 
-**Próximo passo:** ler `avaliacao.nota_minima` do `materia.json` da página e comparar com a nota da atividade do aluno; sem nota = pendente.
+**Próximo passo:** — (entregue em 2026-10-19 13:03; o uso nos cards entra na #293.10).
 
 - **Nível:** MEDIO — lógica em JS/config.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** usar a mesma nota já exibida ao professor (professor > IA quando houver).
 - **Critérios de aceitação:** 7,0 do ITIC conferido como exemplo.
 - **Verificação:** leitura/conferência com um aluno conhecido.
-- **Entrega:** —
+- **Entrega:** `assets/js/indice-atividades-pendentes.js` com `carregarNotaMinimaPendentes` (lê `../materia.json` → `avaliacao.nota_minima`), `normalizarNotaMinimaPendentes` (válida entre 0 e 10; inválida → 7,0) e `notaAbaixoDoMinimoPendentes` (sem nota conta como abaixo do mínimo). Conferido: ITIC tem `7.0`; TESTES-DE-FRONTEND não tem o campo numérico (só "nota final ≥ 7,0" no texto) → usa 7,0; falha de leitura → 7,0 sem quebrar a página. A carga no índice e o uso ficam para a #293.10/#293.13.
+- **Verificação:** `node --check assets/js/indice-atividades-pendentes.js` OK; leitura dos dois `materia.json` (7.0 e fallback).
 
 ### #293.12 — Ler a turma do combo "Turma:" e refiltrar ao trocar
 
