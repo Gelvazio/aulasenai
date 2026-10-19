@@ -21,6 +21,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
 | local · main · s22 | Sessão lateral aberta pela s17: #286.1 ([415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md), reservada pela s17) e #288.1 ([417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md)) com o executor-medio | 🔄 Ativa | 2026-10-18 20:21 |
 | local · main · s23 | #289 concluída ([418-f418dc85](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md)) — botão ON/OFF "Mostrar quadro" no Progresso da turma | ⏹️ Encerrada | 2026-10-19 06:13 |
+| local · main · s24 | Sessão lateral aberta pela s23: #290 ([419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md)) — atividade duplicada para o aluno | 🔄 Ativa | 2026-10-19 06:18 |
 | local · main · Qoder | #269 concluída ([396-ebeae4e7](etapas/ETAPA-396-ebeae4e7-ATIVIDADES-BLOQUEADAS-OCULTAS-PARA-ALUNO.md)); #267 ([394-efe592c3](etapas/ETAPA-394-efe592c3-ANALISE-VERSAO-PWA.md)) aguarda o "sim" ao plano | 👀 Aguardando o usuário | 2026-10-17 21:25 |
 | local · main · Claude Code (Opus 5.5) | #274 concluída ([401-1db3efe7](etapas/ETAPA-401-1db3efe7-VISUAL-DOS-CARDS-DE-AULA.md)) | ⏹️ Encerrada | 2026-10-17 22:30 |
 | local · main · Codex (GPT-6) | #272 passada ao Claude Code (Opus 5.5) por ordem do usuário | ⏹️ Encerrada | 2026-10-17 21:58 |
@@ -1303,6 +1304,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #287.3 | Regras, agente e skill do `aulasenai` · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #287.2 | ⬜ Pendente | — | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
 | #288-c45b1fd7-ee09-43e5-9d1d-10dbfbc6fd11 | **Mostrar o id da atividade ao aluno** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) | — |
 | #288.1 | Id da atividade nos botões de atividade do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s22) (desde 2026-10-18 20:21) | [417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) | — |
+| #290-fef2fcf2-dd34-4028-8ebc-5fecef4e7308 | **Atividade duplicada para o aluno no índice de atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md) | — |
+| #290.1 | Achar a causa da duplicata e mostrar cada atividade uma vez só · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md) | — |
 | **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a matriz de níveis de `.claude/rules/niveis.md` (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [403-cd13692b](etapas/ETAPA-403-cd13692b-AJUSTAR-NIVEIS-E-MODELOS.md) | — |
 | **RL-87FD6C11-JEV** | **Ajustar o projeto à regra jev.md (rules-local 2026-10-18-87fd6c11)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [407-aa5426fe](etapas/ETAPA-407-aa5426fe-AJUSTAR-REGRAS-LOCAL-JEV.md) | — |
@@ -1763,6 +1766,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 416-510f8b12 | Haiku confere, faz commit e push de toda entrega (#287, pedida em 2026-10-18 20:10) | [ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) |
 | 417-c45b1fd7 | Mostrar o id da atividade ao aluno (#288, pedida em 2026-10-18 20:19) | [ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md) |
 | 418-f418dc85 | Botão ON/OFF ao lado de "Progresso da turma" (#289, pedida em 2026-10-18 20:24) | [ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md) |
+| 419-fef2fcf2 | Atividade duplicada para o aluno no índice de atividades (#290, pedida em 2026-10-19 06:18) | [ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
