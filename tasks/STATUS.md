@@ -1298,6 +1298,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
+| #292-db2efb10-a078-4a1e-b1ff-87abb6d0c7d1 | **Aluno Erick Rafael Rodrigues na turma 135080 (AI AOPL 2026/2 M1)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) | — |
+| #292.1 | Acrescentar o aluno na turma 135080 · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | — | ⬜ Pendente | — | [421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) | — |
 | #286-ac221821-78bd-4c83-987d-e17b984d9bbc | **Cores do botão em todas as atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #286.1 | Conferir e aplicar as 3 cores em todas as atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s17) (desde 2026-10-18 20:20) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #287-510f8b12-3ec8-4dfb-a269-9b6e0af2ff40 | **Haiku confere, faz commit e push de toda entrega** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
@@ -1769,6 +1771,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 418-f418dc85 | Botão ON/OFF ao lado de "Progresso da turma" (#289, pedida em 2026-10-18 20:24) | [ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md) |
 | 419-fef2fcf2 | Atividade duplicada para o aluno no índice de atividades (#290, pedida em 2026-10-19 06:18) | [ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md) |
 | 420-d8c364a6 | Script: voltar a atividade 152 para "em andamento" (aluna Amanda Zarqueta de Oliveira; #291, pedida em 2026-10-19 08:15) | [ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md) |
+| 421-86fc1120 | Aluno Erick Rafael Rodrigues na turma 135080 (AI AOPL 2026/2 M1; #292, pedida em 2026-10-19 09:03) | [ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
