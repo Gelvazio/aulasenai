@@ -18,6 +18,7 @@
 
 ### Decisões
 - 2026-10-19 19:58 · pedido do professor (usuário): formato Markdown, nome `IDEIAS-MUNDO-SENAI.md`, 10 alunos do CEPLAS. A IA segue a leitura acima sem perguntar, por ser pedido completo.
+- 2026-10-19 20:25 · o professor moveu o arquivo para a pasta `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/` (projeto próprio). O caminho da etapa foi atualizado para esse novo local, a pedido do professor.
 
 ### 298.1 — Escrever IDEIAS-MUNDO-SENAI.md na pasta do curso
 **Próximo passo:** criar o arquivo, conferir a acentuação e fazer o commit + push.
@@ -25,7 +26,7 @@
 - **Modelo:** só Haiku — nunca outro.
 - **Effort:** low.
 - **Descrição:** 10 ideias para os 10 alunos, uma por aluno, com a UC do programa em cada uma.
-- **Critérios de Aceitação:** arquivo na pasta `MATERIAIS/RIO_DO_SUL_MAIS_TECH/`; 10 ideias numeradas; cada ideia com UC, formato, tempo, materiais, passos, entrega e critério; sem empresa fictícia; sem dado pessoal de aluno; português com acentuação.
+- **Critérios de Aceitação:** arquivo na pasta `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/`; 10 ideias numeradas; cada ideia com UC, formato, tempo, materiais, passos, entrega e critério; sem empresa fictícia; sem dado pessoal de aluno; português com acentuação.
 - **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/IDEIAS-MUNDO-SENAI.md` com 10 ideias, uma por aluno, cada uma com UC, formato, tempo, materiais, passos, entrega e critério. ✅ Concluída em 2026-10-19 20:12 (commit no push desta tarefa).
 - **Verificação:** leitura do arquivo: 10 seções "Ideia" e a tabela-resumo com 10 linhas; acentuação conferida; nenhum nome de empresa fictícia; nenhum dado pessoal de aluno.
 - **Anotação:** —
