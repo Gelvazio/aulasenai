@@ -61,7 +61,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
-| local · main · DeepSeek Harness (deepseek-flash) | #291 ([420-d8c364a6](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md)) concluída — script da entrega da atividade 152 (aluna Amanda) | ⏹️ Encerrada | 2026-10-19 08:19 |
+| local · main · DeepSeek Harness (deepseek-flash) | #292.1 ([421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md)) — aluno Erick Rafael Rodrigues na turma 135080 | 🔄 Ativa | 2026-10-19 09:05 |
 
 ## 📌 Tarefas
 
@@ -1299,7 +1299,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #292-db2efb10-a078-4a1e-b1ff-87abb6d0c7d1 | **Aluno Erick Rafael Rodrigues na turma 135080 (AI AOPL 2026/2 M1)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) | — |
-| #292.1 | Acrescentar o aluno na turma 135080 · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | — | ⬜ Pendente | — | [421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) | — |
+| #292.1 | Acrescentar o aluno na turma 135080 · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | — | 🔄 Em execução | DeepSeek Harness (deepseek-flash) (local · main) (desde 2026-10-19 09:05) | [421-86fc1120](etapas/ETAPA-421-86fc1120-ALUNO-ERICK-TURMA-135080.md) | — |
 | #286-ac221821-78bd-4c83-987d-e17b984d9bbc | **Cores do botão em todas as atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #286.1 | Conferir e aplicar as 3 cores em todas as atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s17) (desde 2026-10-18 20:20) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #287-510f8b12-3ec8-4dfb-a269-9b6e0af2ff40 | **Haiku confere, faz commit e push de toda entrega** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |
