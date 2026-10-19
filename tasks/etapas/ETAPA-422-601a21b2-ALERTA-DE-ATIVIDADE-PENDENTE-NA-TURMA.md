@@ -351,14 +351,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.15 — Movimento reduzido: sem piscar
 
-**Próximo passo:** acrescentar `@media (prefers-reduced-motion: reduce)` deixando o fundo fixo.
+**Próximo passo:** — (entregue em 2026-10-19 14:16; a próxima é a #293.28).
 
 - **Nível:** MEDIO — CSS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** mesma cor, sem keyframes.
 - **Critérios de aceitação:** com a preferência ligada, não pisca (R8).
 - **Verificação:** leitura do CSS.
-- **Entrega:** —
+- **Entrega:** `@media (prefers-reduced-motion: reduce) { .card-atividade-pendente { animation: none; } }` no fim de `assets/css/indice-atividades-pendentes.css` — fundo fixo `#ffd9d9` quando a pessoa pediu para reduzir movimento.
+- **Verificação:** leitura do trecho novo do CSS.
 
 ### #293.16 — Só professor: aplicar a classe apenas ao papel professor
 

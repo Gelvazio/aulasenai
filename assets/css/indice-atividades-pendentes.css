@@ -17,3 +17,10 @@
         background-color: #fff0f0;
     }
 }
+
+/* Com "reduzir movimento" ligado, o alerta fica com fundo fixo (sem piscar) - R8. */
+@media (prefers-reduced-motion: reduce) {
+    .card-atividade-pendente {
+        animation: none;
+    }
+}
