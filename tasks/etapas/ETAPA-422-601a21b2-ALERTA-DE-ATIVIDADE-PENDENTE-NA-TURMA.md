@@ -425,14 +425,23 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.16 — Só professor: aplicar a classe apenas ao papel professor
 
-**Próximo passo:** usar o papel do usuário (já lido pelo header) para aplicar o alerta só ao professor da turma.
+**Próximo passo:** — (entregue em 2026-10-19 14:58; a próxima é a #293.33).
 
 - **Nível:** PESADO — permissão/papel (segurança).
 - **Modelo:** PESADO · só Opus 5.5+/Fable/DeepSeek/deepseek-v4-pro — nunca outro
 - **Descrição:** aluno/visitante sem classe e sem consulta (I1).
 - **Critérios de aceitação:** conferido com login de aluno.
 - **Verificação:** leitura + conferência com aluno.
-- **Entrega:** —
+- **Entrega:** só professor garantido em **duas camadas**, sem precisar de código novo:
+  1. **Cliente:** `carregarAlertaPendentes()` (`assets/js/atividades-crud-modal.js`) só é chamada
+     por `iniciarCrudAtividades()`, que sai antes se `usuarioEhProfessorCrud()` for falso
+     (`app_metadata.perfil === 'PROFESSOR'` da sessão — o `app_metadata` só o servidor grava).
+     Aluno e visitante não carregam o JS nem o CSS do alerta e não fazem a consulta (I1).
+  2. **Banco:** a RPC devolve 0 linhas para quem não é professor da turma e nega o `anon` (#293.8);
+     com 0 linhas, `estadoDoCardPendentes([])` = `''` → nenhum card fica vermelho **nem verde** (I8).
+- **Verificação:** leitura de `atividades-crud-modal.js` (linhas 716–724 e 770–780) e de
+  `atividades-crud-repositorio.js` (`usuarioEhProfessorCrud`, linhas 15–21); consultas da #293.8.
+  Achado no caminho: turma **sem aluno** deixaria todos os cards verdes → nova subtarefa #293.33.
 
 ### #293.17 — Não alertar atividade bloqueada nem card todo bloqueado
 
