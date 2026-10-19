@@ -1,0 +1,19 @@
+/* Alerta de atividade pendente no card do índice de atividades (#293) — só professor.
+   O módulo assets/js/indice-atividades-pendentes.js põe a classe no article.aula.
+   Fundo vermelho claro piscando; sem mexer em tamanho, margem ou posição do card. */
+
+.card-atividade-pendente {
+    background-color: #ffd9d9;
+    animation: atividade-pendente-piscar 1s ease-in-out infinite;
+}
+
+@keyframes atividade-pendente-piscar {
+    0%,
+    100% {
+        background-color: #ffd9d9;
+    }
+
+    50% {
+        background-color: #fff0f0;
+    }
+}

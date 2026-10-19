@@ -339,14 +339,15 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.14 — CSS do alerta: fundo vermelho claro piscando
 
-**Próximo passo:** criar `assets/css/indice-atividades-pendentes.css` (ou acrescentar no CSS do índice) com a classe e os keyframes.
+**Próximo passo:** — (entregue em 2026-10-19 14:14; a próxima é a #293.15).
 
 - **Nível:** MEDIO — CSS com animação.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** vermelho claro legível no tema do projeto; pinta o **card inteiro** da aula (Q1); animação de ≈1 s; sem mover layout.
 - **Critérios de aceitação:** classe aplicada pinta o card e pisca (R8).
 - **Verificação:** inspeção do CSS e do card.
-- **Entrega:** —
+- **Entrega:** `assets/css/indice-atividades-pendentes.css` com a classe `.card-atividade-pendente` (fundo `#ffd9d9`) e os keyframes `atividade-pendente-piscar` (≈1 s, alterna `#ffd9d9` ↔ `#fff0f0`); só `background-color`, sem `margin`/`padding`/`transform` (I3).
+- **Verificação:** leitura do CSS; a classe será aplicada pela #293.13.
 
 ### #293.15 — Movimento reduzido: sem piscar
 
