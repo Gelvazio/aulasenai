@@ -267,14 +267,24 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.6 — Escrever o SQL (view/função) da agregação, se a decisão for nova
 
-**Próximo passo:** arquivo em `database/` com a view/função, comentários e RLS; sem dados de aluno no arquivo.
+**Próximo passo:** — (entregue em 2026-10-19 14:35; a próxima é a #293.7).
 
 - **Nível:** PESADO — SQL em `database/`.
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** devolver `atividade_id`, `turma`, `qtd_pendentes`, `qtd_nao_fizeram`, `qtd_nota_baixa`.
 - **Critérios de aceitação:** SQL revisado; `git diff` só com o arquivo novo.
 - **Verificação:** leitura do SQL e conferência das colunas.
-- **Entrega:** —
+- **Entrega:** `database/2026-10-19-atividades-pendentes-turma.sql` — função
+  `public.atividades_pendentes_turma(p_turma text, p_nota_minima numeric default 7)`, `language sql`,
+  `stable security definer`, `search_path = public`; permissão `eh_professor() and
+  professor_tem_turma(p_turma)` em todas as linhas (aluno/visitante → 0 linhas); devolve
+  `turma_codigo`, `aula_id`, `atividade_id`, `tem_questao`, `bloqueada`, `pendentes`, `nao_fizeram`,
+  `nota_baixa`; `revoke` de `public`/`anon` e `grant execute` a `authenticated`. Sem dado de aluno no
+  arquivo. **Ajuste do líder (decidido na #293.5):** `buscarAtividadesDaTurmaPendentes(turma,
+  notaMinima)` em `assets/js/indice-atividades-pendentes.js` chama a RPC por `POST` com `sbH()`.
+- **Verificação:** leitura do SQL contra a regra da #293.4 (falta, tentativa atual, entrega, nota
+  objetiva e discursiva só com `nota_professor`, aguardando correção) e `node --check
+  assets/js/indice-atividades-pendentes.js` OK. A execução no banco é a #293.7.
 
 ### #293.7 — Aplicar o SQL no Supabase e conferir o resultado
 

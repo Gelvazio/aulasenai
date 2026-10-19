@@ -2,8 +2,8 @@
 // Base do módulo: nota mínima da matéria × nota do aluno (#293.11), leitura da turma do combo
 // "Turma:" com refiltro (#293.12) e a regra de "pendente" (#293.10).
 // A carga no índice e o uso nos cards entram na #293.13 (evento cards-aula-montados).
-// Só lê o materia.json da matéria; nenhum dado de aluno e nenhuma consulta ao banco aqui.
-// Depende de: fetch do navegador; combo "Turma:" do indice-turma-favorita.js.
+// Lê o materia.json da matéria e a RPC atividades_pendentes_turma (só contagens, #293.6).
+// Depende de: js/supabase.js (SUPABASE, sbH); combo "Turma:" do indice-turma-favorita.js.
 
 const ARQUIVO_MATERIA_PENDENTES = '../materia.json';
 const NOTA_MINIMA_PADRAO_PENDENTES = 7;
@@ -148,19 +148,25 @@ const CLASSE_AVISO_OCULTO_PENDENTES = 'aviso-pendente-oculto';
 const TEXTO_AVISO_PENDENTE = 'Há aluno com atividade pendente nesta turma.';
 const TEXTO_AVISO_CONCLUIDA = 'Todas as atividades desta aula estão concluídas na turma.';
 const EVENTO_CARDS_MONTADOS_PENDENTES = 'cards-aula-montados';
-// Fonte da #293.5: uma linha por atividade da turma.
-const ROTA_PENDENTES_TURMA = 'atividades_pendentes_turma';
-const LIMITE_PENDENTES_TURMA = 5000;
+// Fonte da #293.5: RPC do banco, uma linha por atividade da turma (só professor; só contagens).
+const ROTA_PENDENTES_TURMA = '/rest/v1/rpc/atividades_pendentes_turma';
 
 /**
- * Lê da fonte (view/RPC da #293.5) as atividades da turma com a contagem de pendentes.
+ * Lê da RPC atividades_pendentes_turma (#293.5) as atividades da turma com os pendentes.
+ * Uma chamada por turma, com o JWT do professor (sbH); a nota mínima vai do materia.json.
  * @param {string} turma - Código da turma escolhida.
+ * @param {number} notaMinima - Nota mínima da matéria.
  * @returns {Promise<Object[]>} Linhas da fonte.
+ * @throws {Error} Se o banco recusar (tratado em recalcularPendentesDoIndicePendentes).
  */
-async function buscarAtividadesDaTurmaPendentes(turma) {
-    const filtro = 'select=aula_id,atividade_id,tem_questao,bloqueada,pendentes' +
-        '&turma_codigo=eq.' + encodeURIComponent(turma) + '&limit=' + LIMITE_PENDENTES_TURMA;
-    const linhas = await sbGet(ROTA_PENDENTES_TURMA, filtro);
+async function buscarAtividadesDaTurmaPendentes(turma, notaMinima) {
+    const resposta = await fetch(SUPABASE.URL + ROTA_PENDENTES_TURMA, {
+        method: 'POST',
+        headers: await sbH(),
+        body: JSON.stringify({ p_turma: turma, p_nota_minima: notaMinima }),
+    });
+    const linhas = await resposta.json().catch(() => null);
+    if (!resposta.ok) throw new Error(linhas?.message || 'erro ' + resposta.status);
     return Array.isArray(linhas) ? linhas : [];
 }
 
@@ -235,7 +241,7 @@ async function recalcularPendentesDoIndicePendentes() {
     }
     try {
         const notaMinima = await carregarNotaMinimaPendentes();
-        const linhas = await buscarAtividadesDaTurmaPendentes(turma);
+        const linhas = await buscarAtividadesDaTurmaPendentes(turma, notaMinima);
         const porAula = agruparAtividadesPorAulaPendentes(linhas);
         cards.forEach((card) => {
             const atividades = porAula.get(Number(card.dataset.aulaId)) || [];
