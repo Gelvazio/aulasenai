@@ -234,14 +234,15 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 ### #293.12 — Ler a turma do combo "Turma:" e refiltrar ao trocar
 
-**Próximo passo:** ligar a regra à turma atual do combo e escutar a troca (sem recarregar a página).
+**Próximo passo:** — (entregue em 2026-10-19 13:08; o uso nos cards entra na #293.10/#293.13).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** usar o mesmo estado da turma favorita/bloqueio já existente.
 - **Critérios de aceitação:** troca de turma atualiza os cards.
 - **Verificação:** troca manual no combo (R5).
-- **Entrega:** —
+- **Entrega:** `assets/js/indice-atividades-pendentes.js` com `obterTurmaPendentes` (lê `.barra-turma-favorita__lista`, devolve '' sem turma) e `ouvirTrocaDeTurmaPendentes(aoMudar)` (delegação do `change` no combo + eventos `turma-indice-alterada` e `turma-favorita-alterada`; chama uma vez ao ligar). Conferido com `indice-turma-favorita.js` (seletor e evento `turma-indice-alterada`, linha 16) e `indice-atividades-bloqueio.js` (evento `turma-favorita-alterada`).
+- **Verificação:** `node --check assets/js/indice-atividades-pendentes.js` OK; leitura dos eventos/seletor nos módulos citados.
 
 ### #293.13 — Recalcular ao remontar os cards
 
