@@ -107,14 +107,30 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 ### #293.2 — Levantamento técnico do índice e dos dados que a página já carrega
 
-**Próximo passo:** mapear, com arquivo e linha, onde o índice monta os cards (`indice-aula-grade-banco.js`), onde aplica o bloqueio (`indice-atividades-bloqueio.js`), onde lê as cores do aluno (`indice-atividades-feitas.js`) e onde fica o combo "Turma:" (`indice-aula-modal-turma.js`/`aula-turma-repositorio.js`); anotar na etapa.
+**Próximo passo:** — (entregue em 2026-10-19 12:56; a próxima é a #293.3, PESADO/banco).
 
 - **Nível:** MEDIO — leitura de código JS com lógica, sem alterar.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** listar os pontos de extensão (evento `cards-aula-montados`, papel do usuário, turma atual) e o que já está disponível no cliente.
 - **Critérios de aceitação:** etapa com os arquivos/linhas e o desenho de onde o alerta entra.
 - **Verificação:** conferir os caminhos citados no repositório.
-- **Entrega:** —
+- **Entrega:** mapa abaixo (leitura em 2026-10-19 12:56).
+
+**Onde o alerta entra (mapa do levantamento):**
+
+| Ponto | Arquivo (linhas) | Como o alerta usa |
+|---|---|---|
+| Cards | `assets/js/indice-aula-grade-banco.js` (85–107, 341–358) | `article.aula[data-aula-id]`, com os links `a.btn.principal` dentro de `.acoes` |
+| Remontagem da grade | `assets/js/indice-aula-data.js` (51, 389–425) | escutar `cards-aula-montados` e reaplicar (mesmo padrão do "Fez Atividade?") |
+| Papel do usuário | `assets/js/atividades-crud-modal.js` (`usuarioEhProfessorCrud`, ~717) e `assets/js/indice-atividades-feitas.js` (37–57) | aplicar a classe só com professor; aluno/visitante nunca |
+| Administrador | `assets/js/indice-aula-data.js` (53) | `estadoCardsAula.ehAdministrador` também é professor |
+| Turma escolhida | `assets/js/indice-turma-favorita.js` (16, 174–203) | ler `select.barra-turma-favorita__lista` (código da turma) e escutar `turma-indice-alterada` / `turma-favorita-alterada` |
+| Bloqueio | `assets/js/indice-atividades-bloqueio.js` (`estaBloqueadaParaTurma` 170, `buscarFavoritaBloqueio` 156, eventos 36/40/43) | mesma decisão de bloqueio do índice (R2/R14) |
+| Dados por aluno/atividade (professor) | `assets/js/progresso-turma-fontes.js` (`lerAlunosObjetiva` 184, `lerAlunosDiscursiva` 318, `lerMinimosDosAlunos` 75) + `assets/js/alunos-da-turma-progresso.js` | fonte provável de entrega/nota por aluno (a performance é decidida em #293.5/#293.9) |
+| Faltas | `assets/js/falta-aluno-progresso.js` | R15: aluno com falta não conta como pendente |
+| Nota mínima | `materia.json` → `avaliacao.nota_minima` (ex.: 7,0) + `assets/js/calculo-nota-progresso.js` | comparar a nota do aluno com a mínima da matéria |
+| Carga de módulos | `assets/js/atividades-crud-modal.js` (~737–744) | injetar `indice-atividades-pendentes.js`/`.css` junto do `indice-atividades-feitas.js` |
+| Nome proposto | `assets/js/indice-atividades-pendentes.js` + `assets/css/indice-atividades-pendentes.css` | classes `atividade-pendente-card` (vermelho) e `atividade-concluida-card` (verde) no `article.aula` |
 
 ### #293.3 — Levantamento no banco: entrega, nota, bloqueio e turma do aluno
 
