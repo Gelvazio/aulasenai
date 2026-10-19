@@ -29,3 +29,15 @@
 .card-atividade-concluida {
     background-color: #d9f2d9;
 }
+
+/* Aviso para leitor de tela: fica no DOM, invisivel na tela e sem mexer no layout (I3). */
+.aviso-pendente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}

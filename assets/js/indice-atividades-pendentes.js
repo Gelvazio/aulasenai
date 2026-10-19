@@ -144,6 +144,9 @@ function estadoDoCardPendentes(atividades, notaMinima = NOTA_MINIMA_PADRAO_PENDE
 const SELETOR_CARD_PENDENTES = 'article.aula[data-aula-id]';
 const CLASSE_CARD_PENDENTE = 'card-atividade-pendente';
 const CLASSE_CARD_CONCLUIDA = 'card-atividade-concluida';
+const CLASSE_AVISO_OCULTO_PENDENTES = 'aviso-pendente-oculto';
+const TEXTO_AVISO_PENDENTE = 'Há aluno com atividade pendente nesta turma.';
+const TEXTO_AVISO_CONCLUIDA = 'Todas as atividades desta aula estão concluídas na turma.';
 const EVENTO_CARDS_MONTADOS_PENDENTES = 'cards-aula-montados';
 // Fonte da #293.5: uma linha por atividade da turma.
 const ROTA_PENDENTES_TURMA = 'atividades_pendentes_turma';
@@ -188,17 +191,35 @@ function agruparAtividadesPorAulaPendentes(linhas) {
  */
 function limparEstadoDoCardPendentes(card) {
     card.classList.remove(CLASSE_CARD_PENDENTE, CLASSE_CARD_CONCLUIDA);
+    card.querySelector('.' + CLASSE_AVISO_OCULTO_PENDENTES)?.remove();
 }
 
 /**
- * Aplica o estado do card (classe do vermelho ou do verde).
+ * Texto do aviso para leitor de tela conforme o estado do card.
+ * @param {string} estado - 'pendente', 'concluido' ou '' (sem cor).
+ * @returns {string} Texto do aviso ('' sem cor).
+ */
+function avisoDoEstadoPendentes(estado) {
+    if (estado === ESTADO_CARD_PENDENTE) return TEXTO_AVISO_PENDENTE;
+    if (estado === ESTADO_CARD_CONCLUIDO) return TEXTO_AVISO_CONCLUIDA;
+    return '';
+}
+
+/**
+ * Aplica o estado do card (classe do vermelho/verde) e o aviso para leitor de tela.
  * @param {HTMLElement} card - Card da aula.
  * @param {string} estado - 'pendente', 'concluido' ou '' (sem cor).
  */
 function aplicarEstadoNoCardPendentes(card, estado) {
     limparEstadoDoCardPendentes(card);
+    const aviso = avisoDoEstadoPendentes(estado);
+    if (!aviso) return;
     if (estado === ESTADO_CARD_PENDENTE) card.classList.add(CLASSE_CARD_PENDENTE);
     if (estado === ESTADO_CARD_CONCLUIDO) card.classList.add(CLASSE_CARD_CONCLUIDA);
+    const texto = document.createElement('span');
+    texto.className = CLASSE_AVISO_OCULTO_PENDENTES;
+    texto.textContent = aviso;
+    card.append(texto);
 }
 
 /**

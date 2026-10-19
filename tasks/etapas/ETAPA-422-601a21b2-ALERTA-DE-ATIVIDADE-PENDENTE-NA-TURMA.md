@@ -375,47 +375,51 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.17 — Não alertar atividade bloqueada nem card todo bloqueado
 
-**Próximo passo:** reaproveitar a mesma decisão de bloqueio do índice e garantir alerta desligado quando a atividade está bloqueada para a turma.
+**Próximo passo:** — (entregue em 2026-10-19 14:32; a próxima é a #293.18).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** vale também para aula bloqueada/inativa (R2).
 - **Critérios de aceitação:** ON/OFF de bloqueio reflete no alerta.
 - **Verificação:** teste manual com bloqueio (R2).
-- **Entrega:** —
+- **Entrega:** a fonte da #293.5 devolve `bloqueada` por atividade; `atividadePendentePendentes` ignora atividade bloqueada e `estadoDoCardPendentes` não fica verde com nenhuma atividade bloqueada (R2/R14).
+- **Verificação:** leitura das funções no módulo.
 
 ### #293.18 — Sem turma escolhida: nenhum alerta
 
-**Próximo passo:** tratar ausência de turma (professor sem turma, "Todas as turmas") sem erro e sem alerta.
+**Próximo passo:** — (entregue em 2026-10-19 14:32; a próxima é a #293.19).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** mesma regra para lista vazia.
 - **Critérios de aceitação:** perfil sem turma não vê alerta (R9).
 - **Verificação:** conferência com perfil sem turma.
-- **Entrega:** —
+- **Entrega:** `recalcularPendentesDoIndicePendentes` sem turma escolhida (ou sem cards) limpa as classes de todos os cards e não consulta a fonte (R9).
+- **Verificação:** leitura do trecho.
 
 ### #293.19 — Falha da consulta: sem alerta e sem erro na tela
 
-**Próximo passo:** tratar rejeição/timeout da consulta e registrar só no console.
+**Próximo passo:** — (entregue em 2026-10-19 14:32; a próxima é a #293.20).
 
 - **Nível:** MEDIO — lógica em JS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** índice continua funcionando (R10).
 - **Critérios de aceitação:** com a consulta falhando, nada de alerta nem de erro visível.
 - **Verificação:** simulação de falha.
-- **Entrega:** —
+- **Entrega:** a consulta à fonte fica dentro de `try/catch`: na falha, todas as classes do alerta são limpas e só há `console.warn`, sem erro na tela (R10).
+- **Verificação:** leitura do trecho de `recalcularPendentesDoIndicePendentes`.
 
 ### #293.20 — Acessibilidade do alerta
 
-**Próximo passo:** acrescentar ao card um texto/dica (title/aria-label) dizendo que há aluno pendente, sem expor nome de aluno.
+**Próximo passo:** — (entregue em 2026-10-19 14:32; a próxima é a #293.22).
 
 - **Nível:** MEDIO — HTML/JS acessibilidade.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** leitor de tela anuncia o alerta; cor não é o único sinal.
 - **Critérios de aceitação:** dica presente no card com alerta e ausente sem alerta.
 - **Verificação:** leitura do DOM.
-- **Entrega:** —
+- **Entrega:** `aplicarEstadoNoCardPendentes` acrescenta ao card um `<span class="aviso-pendente-oculto">` com "Há aluno com atividade pendente nesta turma." (vermelho) ou "Todas as atividades desta aula estão concluídas na turma." (verde); `limparEstadoDoCardPendentes` remove o span. CSS `.aviso-pendente-oculto` deixa o texto fora da tela (clip) sem mexer no layout (I3) e sem nome de aluno.
+- **Verificação:** leitura do JS e do CSS do aviso.
 
 ### #293.21 — Conferir os casos de pendência
 
