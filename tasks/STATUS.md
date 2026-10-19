@@ -63,7 +63,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
 | local · main · DeepSeek Harness (deepseek-flash) | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — 19 subtarefas entregues (a #293.3 é da s28); faltam 5 PESADO de banco (#293.5–.9), 3 PESADO de código/segurança (#293.16, #293.23, #293.32) e 4 bloqueadas por elas (#293.21, #293.26, #293.27, #293.31) | ⏹️ Encerrada | 2026-10-19 14:40 |
-| local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293.32 entregue | ⏹️ Encerrada | 2026-10-19 14:38 |
+| local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293.31 em execução | 🔄 Ativa | 2026-10-19 14:38 |
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 
 ## 📌 Tarefas
@@ -1315,7 +1315,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #293-601a21b2-a51e-4942-ba44-8579b0b5f7d2 | **Alerta vermelho claro no card com aluno pendente e fundo verde quando todas concluídas (só professor)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) | — |
 | #293.26 | Documentar em `docs/regras/atividades.md` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #293.25, #293.31, #293.32 | ⬜ Pendente | — | [422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) | — |
 | #293.27 | Fechamento: quadro, visualizador e commit + push · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #293.21 a #293.26, #293.28 a #293.33 | ⬜ Pendente | — | [422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) | — |
-| #293.31 | Conferir os casos do verde e do vermelho · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #293.21, #293.29, #293.30 | ⬜ Pendente | — | [422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) | — |
+| #293.31 | Conferir os casos do verde e do vermelho · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #293.21, #293.29, #293.30 | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s28) (desde 2026-10-19 14:38) | [422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) | — |
 | #294-7a481d71-5f61-4cba-aa35-4af2f2585df6 | **Aulas e atividades de Ferramentas Digitais Aplicadas (Assistente de Operações Logísticas, 60 h = 15 aulas)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) | — |
 | #294.1 | Pasta, ementa, `materia.json` e plano de 15 aulas · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s27) (desde 2026-10-19 13:00) | [423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) | — |
 | #294.2 | Aula 01 (4 h) · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #294.1 | ⬜ Pendente | — | [423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) | — |
@@ -1372,6 +1372,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #296.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #296.2 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
 | #296.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #296.2, #296.3 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
 | #296.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #296.4 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #297-6a90fb45-ba93-48a8-b64b-a9595d3e9782 | **Produzir por completo a matéria Fundamentos dos Processos de Produção (aulas, atividades e apostila)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado no pedido, 2026-10-19 14:38) | — (não reservável) | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| #297.1 | Criar a ementa da matéria e o `materia.json` · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| #297.2 | Gerar as 20 aulas em `CONTEUDO/`, uma por vez · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.1 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| #297.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| #297.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2, #297.3 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| #297.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #297.4 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 
 
 ## Escopo
@@ -1835,6 +1841,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 423-7a481d71 | Ferramentas Digitais Aplicadas: aulas e atividades (#294, pedida em 2026-10-19 12:50) | [ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) |
 | 424-56988cb2 | Remover o Laya e deixar só o Jev (#295, pedida em 2026-10-19 13:01) | [ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md](etapas/ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md) |
 | 425-ca798516 | Produzir por completo a matéria LOGICA-DE-PROGRAMACAO (#296, pedida em 2026-10-19) | [ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) |
+| 426-6a90fb45 | Produzir por completo a matéria Fundamentos dos Processos de Produção (#297, pedida em 2026-10-19) | [ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
