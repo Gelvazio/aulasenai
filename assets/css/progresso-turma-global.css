@@ -46,6 +46,11 @@
     gap: 8px;
 }
 
+/* "Mostrar quadro" desligado: só a linha do título fica; o resto da seção some. */
+.progresso-turma--recolhido > :not(.progresso-turma__cabecalho) {
+    display: none;
+}
+
 .progresso-turma__botoes-cabecalho {
     display: flex;
     flex-wrap: wrap;

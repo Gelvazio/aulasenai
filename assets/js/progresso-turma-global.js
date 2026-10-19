@@ -24,9 +24,13 @@
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
 // ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
 // vale para o dia da atividade).
+// ON/OFF "Mostrar quadro" ao lado do título (desligado por padrão: esconde o quadro abaixo do
+// título; escolha por atividade no localStorage; mostrar-quadro-progresso.js).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
+// Modificador do 'Mostrar quadro' desligado (mostrar-quadro-progresso.js).
+const CLASSE_RECOLHIDO_PROGRESSO_GLOBAL = CLASSE_PROGRESSO_GLOBAL + '--recolhido';
 const INTERVALO_PROGRESSO_GLOBAL_MS = 5000;
 const CHAVE_ORDEM_ALFABETICA_GLOBAL = 'nome';
 const ARQUIVO_FONTES_PROGRESSO_GLOBAL = 'progresso-turma-fontes.js';
@@ -43,6 +47,7 @@ const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
 const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
+const ARQUIVO_MOSTRAR_QUADRO_PROGRESSO_GLOBAL = 'mostrar-quadro-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
 // de aluno nem gabarito).
 const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
@@ -864,6 +869,27 @@ async function prepararComboTurmaGlobal(area) {
 }
 
 /**
+ * Põe o ON/OFF "Mostrar quadro" ao lado do título (desligado por padrão: esconde o quadro).
+ * Uma falha aqui não derruba o painel e o quadro fica visível.
+ * @param {HTMLElement} area - Área do painel (com o título).
+ */
+async function prepararInterruptorQuadroGlobal(area) {
+    try {
+        if (typeof window.criarInterruptorQuadroProgresso !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_MOSTRAR_QUADRO_PROGRESSO_GLOBAL);
+        }
+        const interruptor = window.criarInterruptorQuadroProgresso({ area,
+            atividadeId: estadoProgressoGlobal.atividadeId,
+            preferencias: preferenciasProgressoGlobal });
+        area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')
+            ?.after(interruptor.elemento);
+    } catch (erro) {
+        console.warn('Mostrar quadro do progresso:', erro.message);
+        area.classList.remove(CLASSE_RECOLHIDO_PROGRESSO_GLOBAL);
+    }
+}
+
+/**
  * Lê as faltas do dia da atividade (uma falha mantém as últimas lidas).
  */
 async function atualizarFaltasGlobal() {
@@ -911,6 +937,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     area.appendChild(tela.contagem);
     await prepararFiltroAlunoGlobal(area, redesenhar);
     await prepararComboTurmaGlobal(area);
+    await prepararInterruptorQuadroGlobal(area);
     area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);

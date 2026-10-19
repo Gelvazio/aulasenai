@@ -307,6 +307,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
     guardada, o padrão (Todas · desligado · desligado).
+  - **ON/OFF "Mostrar quadro" (2026-10-18, #289):** logo ao lado do título "Progresso da
+    turma", em toda atividade. Padrão **desligado** em todas as turmas e atividades: esconde o
+    quadro abaixo do título (a linha do título continua); ligado mostra. A escolha fica no
+    localStorage **por atividade** (`progresso-turma:mostrar-quadro:<id>`). Código:
+    `assets/js/mostrar-quadro-progresso.js`.
   - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
     falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
     ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (esconde quem faltou). Dia =
