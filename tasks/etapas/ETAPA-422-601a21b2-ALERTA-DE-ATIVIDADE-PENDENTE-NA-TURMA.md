@@ -648,14 +648,30 @@ no mesmo padrão de `liberacao-respostas-professor.js`.
 
 ### #293.32 — Conferir como aluno/visitante: verde não aparece
 
-**Próximo passo:** com login de aluno e sem login, conferir que nenhum card fica verde nem vermelho.
+**Próximo passo:** — (entregue em 2026-10-19; a próxima é a #293.31).
 
 - **Nível:** PESADO — segurança (I8).
 - **Modelo:** PESADO · só Opus 5.5+/Fable/DeepSeek/deepseek-v4-pro — nunca outro
 - **Descrição:** conferir também que a consulta não devolve dados de outros alunos (R13).
 - **Critérios de aceitação:** nenhuma classe/cor de estado e nenhum dado de aluno.
 - **Verificação:** conferência com os dois perfis.
-- **Entrega:** —
+- **Entrega:** conferência por leitura (sem navegador) + consultas da #293.8 e da #293.33. Nenhum arquivo alterado. Claude Code (Opus 5.5 · executor-pesado; líder Opus 5.5) (local · main · s28).
+
+| Perfil / caso | Carrega o JS/CSS? | RPC devolve | Estado | Verde? | Prova |
+|---|---|---|---|---|---|
+| Visitante | Não | `permission denied` | não roda | **Não** | `atividades-crud-modal.js:716-723`; `revoke` no SQL |
+| Aluno | Não | 0 linhas | não roda | **Não** | `atividades-crud-repositorio.js:15-21` |
+| Aluno que injeta o JS / perfil forjado | só à mão | 0 linhas | `''` | **Não** | `indice-atividades-pendentes.js:134` |
+| Professor sem vínculo | Sim | 0 linhas | `''` | **Não** | `professor_tem_turma` |
+| Turma sem aluno (#293.33) | Sim | 0 linhas | `''` | **Não** | `exists turmaaluno` em `permissao` |
+| Professor com vínculo | Sim | contagens | `pendente` / `concluido` / `''` | só com `concluido` | `indice-atividades-pendentes.js:131-141` |
+
+  1. Só `aplicarEstadoNoCardPendentes` põe `card-atividade-concluida`, e só com o estado `concluido`; nenhum outro arquivo usa a classe.
+  2. 0 linhas → `estadoDoCardPendentes([])` = `''` → sem classe nem aviso.
+  3. CSS: o verde (`#d9f2d9`) só vem do seletor `.card-atividade-concluida`; sem seletor por papel; o CSS nem carrega para aluno/visitante.
+  4. Vermelho e verde nunca juntos (R12/I7): `limparEstadoDoCardPendentes` tira as duas classes antes de aplicar uma só.
+  Observação: os **botões** verdes/vermelhos que o aluno já vê (#283, `indice-atividades-feitas.css`) são outra coisa, no botão e não no card.
+- **Verificação:** busca por `atividade-concluida`, `CLASSE_CARD_CONCLUIDA`, `ESTADO_CARD_CONCLUIDO` (só os 2 arquivos do alerta) + leitura dos trechos citados + consultas da #293.8/#293.33.
 
 ### #293.33 — Turma sem aluno: nenhum card verde
 
