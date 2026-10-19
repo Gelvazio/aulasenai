@@ -48,6 +48,7 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 | 2026-10-19 12:39 | Respostas do usuário: **Q1** = o vermelho pisca no **card inteiro**; **Q2** = aluno **"Faltou?"** NÃO conta como pendente; **Q3** = verde confirmado (card inteiro, todas concluídas, nota ≥ mínima, sem bloqueada, fixo, só professor) | Usuário | destrava a spec; C34 |
 | 2026-10-19 13:18 | Usuário pediu "pegue a tarefa 293.3" (vale como "sim" ao plano para seguir com as subtarefas) | Usuário + Claude Code (Opus 5.5) (local · main · s28) | a #293.3 é só leitura no banco |
 | 2026-10-19 12:39 | O gate `node spec/verificar-spec.mjs` **não existe** neste repositório → a spec é conferida por leitura, sem instalar script | DeepSeek Harness (deepseek-flash) | o projeto é sem teste automatizado novo |
+| 2026-10-19 13:55 | Regra da #293.4: `na_chamada` **não** exclui o aluno; atividade sem questão é ignorada nos dois estados; discursiva **aguardando correção** não é pendente; entrega marcada pelo professor conta; vale a tentativa atual; nota mínima da matéria (padrão 7,0) | DeepSeek Harness (deepseek-flash) | casos de borda levantados na #293.3 |
 
 ### Requisitos (EARS)
 
@@ -175,14 +176,64 @@ por turma basta (insumo da #293.5/#293.9).
 
 ### #293.4 — Definir na etapa a regra exata de "atividade pendente"
 
-**Próximo passo:** escrever a regra final (a) não fez e (b) nota < mínimo, com os casos de borda (sem nota, recuperação, falta, 3 tentativas).
+**Próximo passo:** — (entregue em 2026-10-19 13:55; a próxima é a #293.5, PESADO).
 
 - **Nível:** MEDIO — texto de regra com lógica, sem banco.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
 - **Descrição:** regra única para todas as matérias, citando as fontes de #293.3.
 - **Critérios de aceitação:** cada caso de borda fechado e coerente com R1–R4.
 - **Verificação:** leitura da seção e conferência com as fontes.
-- **Entrega:** —
+- **Entrega:** regra abaixo (fontes da #293.3), com as decisões de borda registradas em Decisões.
+
+**Regra única — "atividade pendente" (R1–R4 e R15), por atividade × turma do combo:**
+
+`pendente(aluno, atividade, turma)` é **verdadeiro** quando **todas** estas condições valem:
+
+1. o aluno é da turma escolhida (`turmaaluno.turma_codigo = turma`) — **independentemente de
+   `na_chamada`** (o campo marca só a chamada oficial, e o aluno pode fazer atividade). Aluno em
+   2 turmas: hoje não existe; a conta é sempre pela turma do combo;
+2. o aluno **não** tem falta no dia da atividade (`falta_aluno` em `atividade.data_atividade`,
+   senão `aulas.data_planejada`) — R15;
+3. a atividade **tem questão**: existe `gabarito` (objetiva) ou `topico_discursivo` (discursiva);
+   atividade sem questão (4 hoje) é ignorada no vermelho e no verde;
+4. a atividade **não está bloqueada** para a turma: `atividade.ativo = true`, `atividade.bloqueio`
+   não contém a turma (inclui o que o trigger de `aula_turma.bloqueio` propaga), e a aula está com
+   `ativo = true` e `excluido = 0` — R2/R14;
+5. e, na **tentativa atual** (`tentativa_atual_do_aluno(aluno, atividade)` — liberação mais recente,
+   senão 1):
+   - (a) **não entregou**: `coalesce(max(entrega_atividade.tentativa), 0) < tentativa atual`
+     (entrega marcada pelo professor conta como entregue); **ou**
+   - (b) **entregou com nota abaixo da mínima**: nota da tentativa `< avaliacao.nota_minima` do
+     `materia.json` (padrão 7,0 quando o campo não existe — #293.11), com a nota calculada como no
+     progresso:
+     - objetiva: acertos (`resposta_atividade.letra = gabarito.letra`) ÷
+       `minimo_questoes_para_entregar(atividade, aluno)` × 10, teto 10;
+     - discursiva: soma de `correcao_discursiva.nota_professor` ÷ soma de `topico_discursivo.pontos`
+       × 10, ajustada pelo mínimo — **só a nota do professor**, nunca `nota_ia` (#166).
+
+**Não é pendente:** aluno com falta (2) · atividade bloqueada/inativa (4) · atividade sem questão (3)
+· **discursiva aguardando correção** (nota do professor incompleta: o aluno já entregou, não é
+pendência do aluno e não impede o verde).
+
+**Dois estados do card (R11/R12/R14):**
+- **vermelho:** ≥ 1 aluno pendente em qualquer atividade do card;
+- **verde:** nenhuma atividade pendente **e** nenhuma atividade do card bloqueada/inativa;
+- **sem cor:** o resto (inclui card com atividade bloqueada, mesmo sem pendente);
+- atividade desvinculada da aula não entra (a grade só mostra as atividades da aula, #273).
+
+**Casos de borda fechados:** falta (2) · liberação de nova tentativa → volta a "não fez" até entregar
+· entrega marcada pelo professor = entregue · vale sempre a tentativa atual · sem nota (discursiva não
+corrigida) = aguardando correção, não pendente · matéria sem `nota_minima` = 7,0 · aluno de teste
+também é aluno da turma e conta (se incomodar, o professor o retira da turma; fora do escopo).
+
+**Pseudo-código para a #293.5:**
+
+```
+pendente = alunoDaTurma E naoTemFalta E temQuestao E naoBloqueada E
+           ( naoEntregouNaTentativaAtual OU (entregou E nota < notaMinima) )
+aguardandoCorrecao = entregou E discursiva E notaDoProfessorIncompleta
+pendente = pendente E NAO aguardandoCorrecao
+```
 
 ### #293.5 — Decidir a agregação por turma: consulta existente × view/função nova
 
