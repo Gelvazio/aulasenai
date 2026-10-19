@@ -6,19 +6,23 @@
 com **fundo vermelho claro piscando** quando, na **turma escolhida no combo "Turma:" do topo**, pelo
 menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o aluno **não fez**; ou
 (b) atividade **liberada** e o aluno **entregou com nota abaixo da nota mínima** da matéria.
+E, no mesmo índice e na mesma turma, o card da atividade com **todas as atividades concluídas**
+(ninguém pendente) mostra **fundo verde claro fixo** (sem piscar), também só para o professor.
 
 ### Escopo
 
 - **Entra:** regra de "pendente" (não fez × nota abaixo do mínimo) por atividade e por turma; fonte de
   dados (consulta já existente × view/função nova); filtro pela turma do combo "Turma:"; atualização ao
   trocar de turma e ao remontar os cards; CSS do alerta (vermelho claro piscando, respeitando
-  `prefers-reduced-motion`); aplicar **só para o professor**; conferências e documentação.
+  `prefers-reduced-motion`); **estado verde claro** (todas as atividades do card concluídas na turma,
+  fundo fixo) com CSS próprio; aplicar **só para o professor**; conferências e documentação.
 - **Não entra:** mudar cores/bloqueio/"Fez Atividade?" do aluno; mudar a nota do aluno; criar painel
   novo ou página nova; mandar e-mail/notificação; mexer no gabarito; gerar slides; teste automatizado
   de navegador.
-- **Pronto quando:** o professor vê o alerta nos cards certos, na turma certa, e o aluno/visitante
-  nunca vê; trocar a turma no combo atualiza na hora; atividade bloqueada nunca liga o alerta; e o
-  resto do índice continua igual.
+- **Pronto quando:** o professor vê o alerta nos cards certos, na turma certa, e o **fundo verde** nos
+  cards sem nenhum pendente; o aluno/visitante nunca vê nenhum dos dois estados; trocar a turma no
+  combo atualiza na hora; atividade bloqueada nunca liga o vermelho nem o verde; e o resto do índice
+  continua igual.
 
 ### Riscos e plano B
 
@@ -29,6 +33,7 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 | Piscar incomodar/atrapalhar leitura | Média | Médio | animação suave (≈1 s), `prefers-reduced-motion` → fundo fixo |
 | Regra "não fez" divergir do que o aluno/professor já veem | Média | Médio | usar a mesma definição de entrega já usada no progresso (#293.3/#293.4) |
 | Card piscando mudar o layout | Baixa | Baixo | só `background`/`box-shadow`, sem `margin`/`padding` |
+| Vermelho e verde no mesmo card | Baixa | Médio | estados mutuamente exclusivos: verde só com **zero** pendentes (R12) |
 
 ### Decisões
 
@@ -39,6 +44,7 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 | 2026-10-19 10:45 | Nota mínima: a da matéria (`materia.json` → `avaliacao.nota_minima`; ex.: 7,0) | DeepSeek Harness (deepseek-flash) | fonte única já existente |
 | 2026-10-19 10:45 | "Turma selecionada em cima" = combo **"Turma:"** do índice (aula/bloqueio desde #206) | DeepSeek Harness (deepseek-flash) | é o seletor de turma da página |
 | 2026-10-19 10:45 | Piscar suave de ≈1 s; com `prefers-reduced-motion: reduce`, sem animação (fundo fixo) | DeepSeek Harness (deepseek-flash) | acessibilidade |
+| 2026-10-19 11:08 | **Estado verde claro**: card com **todas as atividades concluídas** pela turma (zero pendentes, nenhuma bloqueada), fundo **fixo** (sem piscar), também **só professor** | Usuário ("fundo claro verde") + DeepSeek Harness | complemento do vermelho; mesma turma do combo |
 
 ### Requisitos (EARS)
 
@@ -54,6 +60,10 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 | R8 | O SISTEMA DEVE usar fundo vermelho claro com animação de ≈1 s, e **sem animação** quando `prefers-reduced-motion: reduce`. | inspeção do CSS e do card (leitura) |
 | R9 | SE não houver turma escolhida (ou o professor não tiver turma), ENTÃO o alerta NÃO DEVE aparecer. | perfil sem turma (leitura) |
 | R10 | SE a consulta falhar, O SISTEMA DEVE continuar mostrando o índice sem alerta e sem erro na tela. | simular falha de rede (leitura do console) |
+| R11 | QUANDO não houver **nenhum** aluno pendente na turma escolhida para as atividades do card, e nenhuma atividade do card estiver bloqueada, O SISTEMA DEVE aplicar **fundo verde claro** ao card. | conferir turma sem pendentes (leitura) |
+| R12 | O SISTEMA DEVE manter **vermelho e verde mutuamente exclusivos**: nunca os dois no mesmo card. | conferir card a card (leitura) |
+| R13 | ENQUANTO o usuário logado **não** for professor, o **verde** também NÃO DEVE aparecer. | login de aluno e de visitante (leitura) |
+| R14 | SE alguma atividade do card estiver **bloqueada** para a turma (ou a aula bloqueada/inativa), ENTÃO o card NÃO DEVE ficar verde. | atividade bloqueada ON/OFF (leitura) |
 
 ### Invariantes
 
@@ -64,6 +74,9 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 | I3 | O alerta não altera tamanho/posição do card (domínio: todos os cards). | comparar layout com e sem alerta (#293.24) |
 | I4 | O alerta vale só para a turma escolhida; aluno de outra turma não conta (domínio: todas as turmas do professor). | trocar a turma e conferir (#293.22) |
 | I5 | Nenhuma resposta/gabarito/nota de aluno é exposta ao aluno pela consulta nova (domínio: papel aluno). | consulta com login de aluno (#293.8/#293.23) |
+| I6 | Verde só com **zero** pendentes na turma (domínio: todos os cards/turmas). | R11 conferido (#293.31) |
+| I7 | Vermelho e verde nunca juntos; sem turma escolhida, nenhum dos dois (domínio: todos os cards). | R12/R9 conferidos (#293.31) |
+| I8 | Aluno e visitante não recebem nem o vermelho nem o verde (domínio: usuário que não é professor). | R13 conferido (#293.32) |
 
 ### Perguntas abertas
 
@@ -71,8 +84,9 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 |---|---|---|---|
 | Q1 | O fundo piscando cobre **o card inteiro da aula** ou só o **botão/bloco da atividade** dentro do card? | Usuário | 👀 aguardando |
 | Q2 | Aluno marcado como **"Faltou?"** no dia conta como pendente para o alerta (ou fica de fora)? | Usuário | 👀 aguardando |
+| Q3 | O verde vale só para o **card inteiro**, só quando **todas** as atividades dele estiverem concluídas (entregues e com nota ≥ mínima) e nenhuma bloqueada — **fixo, sem piscar**, também só professor. Confirma? | Usuário | 👀 aguardando |
 
-> ⛔ Execução bloqueada enquanto Q1 e Q2 estiverem 👀 (C34) e enquanto o usuário não aprovar o plano.
+> ⛔ Execução bloqueada enquanto Q1, Q2 e Q3 estiverem 👀 (C34) e enquanto o usuário não aprovar o plano.
 
 ---
 
@@ -353,7 +367,7 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 
 ### #293.26 — Documentar em `docs/regras/atividades.md`
 
-**Próximo passo:** acrescentar um item ✅ com o alerta, a regra de pendente, a turma e a nota mínima.
+**Próximo passo:** acrescentar um item ✅ com o alerta vermelho **e o estado verde**, a regra de pendente, a turma e a nota mínima.
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** LEVE · só Haiku/Flash/deepseek-flash — nunca outro
@@ -371,4 +385,59 @@ menos 1 aluno tem a atividade **pendente**: (a) atividade **não bloqueada** e o
 - **Descrição:** conferir que todas as subtarefas fecharam e que a mãe fecha junto.
 - **Critérios de aceitação:** quadro sem pendências da #293; commit + push na `main`.
 - **Verificação:** `git log -1` e quadro.
+- **Entrega:** —
+
+### #293.28 — Regra "todas concluídas" (estado verde)
+
+**Próximo passo:** no módulo de #293.10, calcular por card se **todas** as atividades dele estão concluídas pela turma (zero pendentes) e devolver o estado verde.
+
+- **Nível:** MEDIO — lógica em 1 arquivo JS.
+- **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Descrição:** reaproveita a regra de pendente de #293.10; verde só com zero pendentes e nenhuma atividade bloqueada (R11/R14).
+- **Critérios de aceitação:** nenhum card verde com pendente; card com atividade bloqueada não fica verde.
+- **Verificação:** leitura + conferência dos casos (#293.31).
+- **Entrega:** —
+
+### #293.29 — CSS do fundo verde claro
+
+**Próximo passo:** acrescentar a classe do verde e a variável de cor verde clara no mesmo CSS de #293.14, com fundo **fixo** (sem animação).
+
+- **Nível:** MEDIO — CSS.
+- **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Descrição:** contraste legível; só `background`/`box-shadow`, sem `margin`/`padding`.
+- **Critérios de aceitação:** card fica verde claro, sem piscar (R11).
+- **Verificação:** inspeção do CSS e do card.
+- **Entrega:** —
+
+### #293.30 — Aplicar/remover o verde ao trocar de turma e ao remontar os cards
+
+**Próximo passo:** no mesmo módulo de aplicação (#293.13), alternar **vermelho × verde × nenhum** a cada troca de turma e a cada `cards-aula-montados`.
+
+- **Nível:** MEDIO — lógica em JS.
+- **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Descrição:** remover a classe anterior antes de aplicar a nova (R12).
+- **Critérios de aceitação:** troca de turma e remontagem refletem o estado certo; nunca os dois juntos.
+- **Verificação:** conferência manual (#293.31).
+- **Entrega:** —
+
+### #293.31 — Conferir os casos do verde e do vermelho
+
+**Próximo passo:** conferir e anotar na etapa: turma toda entregue com nota ≥ mínima (verde); 1 pendente (vermelho, sem verde); entregue com nota baixa (vermelho); atividade bloqueada (nenhuma cor); "Todas as turmas" (nenhuma cor).
+
+- **Nível:** MEDIO — conferência com lógica.
+- **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Descrição:** tabela caso × resultado.
+- **Critérios de aceitação:** I6 e I7 conferidos.
+- **Verificação:** conferência manual no índice.
+- **Entrega:** —
+
+### #293.32 — Conferir como aluno/visitante: verde não aparece
+
+**Próximo passo:** com login de aluno e sem login, conferir que nenhum card fica verde nem vermelho.
+
+- **Nível:** PESADO — segurança (I8).
+- **Modelo:** PESADO · só Opus 5.5+/Fable/DeepSeek/deepseek-v4-pro — nunca outro
+- **Descrição:** conferir também que a consulta não devolve dados de outros alunos (R13).
+- **Critérios de aceitação:** nenhuma classe/cor de estado e nenhum dado de aluno.
+- **Verificação:** conferência com os dois perfis.
 - **Entrega:** —
