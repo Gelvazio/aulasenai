@@ -78,8 +78,7 @@ sem quebrar a visão do professor (regra 15 do `AGENTS.md`: cards e atividades v
 
 ### #290.2 — Cadeado do aluno e LOG do professor pelo caminho a partir de /MATERIAIS/
 
-**Próximo passo:** executor-medio troca as funções de caminho dos 2 módulos pela `obterCaminhoHtml`
-e o líder confere.
+**Próximo passo:** nenhum — entregue em 2026-10-19 07:45 (falta só o professor conferir na tela).
 
 - **Nível:** MEDIO — código com lógica em 2 arquivos JS, sem banco nem RLS (mesmo padrão da #290.1)
 - **Modelo:** só Sonnet — nunca outro (#247); executor-medio, líder Opus 5.5 (s24)
@@ -91,7 +90,18 @@ e o líder confere.
   Passam a usar a `obterCaminhoHtml` (`atividades-crud-modal.js`, que carrega os dois módulos).
 - **Critérios de aceitação:** os 2 módulos com o mesmo caminho do banco; endereço já em
   `/MATERIAIS/…` sem mudança; `node --check` OK; nada de banco.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit `fix(indice): cadeado do aluno e LOG do professor pelo caminho a partir de
+  /MATERIAIS/ (#290.2)` (2026-10-19 07:45), feito pelo executor-medio (Sonnet), conferido pelo líder:
+  - `assets/js/indice-atividades-bloqueio.js` — saiu a `obterCaminhoBloqueio`; `caminhoDoLink` usa a
+    `obterCaminhoHtml` (o 🔒 do aluno e o ON/OFF do professor acham a atividade com o site numa pasta).
+  - `assets/js/indice-log-alternativas.js` — `caminhoDoLinkLog` lê `href`/`data-href-bloqueado` e
+    devolve `obterCaminhoHtml(endereco)` ("🧾 LOG" do professor).
+- **Verificação:** `node --check` OK nos dois; `wc -l` 388 e 294 (< 1000); linhas novas ≤ 100
+  caracteres; `grep` sem `obterCaminhoBloqueio` em `assets/` e `js/` e sem cálculo próprio de
+  `pathname` nos dois arquivos; leitura: os dois módulos são carregados pelo
+  `atividades-crud-modal.js` depois de ele definir a `obterCaminhoHtml` (que devolve `null` sem
+  endereço). Nada de banco. **Conferir na tela** (sem navegador por regra): aluno vê o 🔒 na
+  atividade bloqueada; professor vê o ON/OFF e o "🧾 LOG" de cada atividade.
 
 ### #290.3 — Cores e "Fez Atividade?" pelo caminho a partir de /MATERIAIS/
 

@@ -4,7 +4,9 @@
 // pelo gatilho do banco: MARCOU, TROCOU, APAGOU). Só leitura; o RLS limita aos alunos do professor.
 // Com a atividade bloqueada, o LOG também fica bloqueado (sem clique).
 // Carregado pelo assets/js/atividades-crud-modal.js. Depende de js/supabase.js (sbGet,
-// obterClienteSupabase) e do popup (assets/js/popup.js), quando disponível.
+// obterClienteSupabase), de assets/js/atividades-crud-modal.js (obterCaminhoHtml: atividade.pagina
+// começa em /MATERIAIS/ e o servidor local põe uma pasta antes; #290) e do popup
+// (assets/js/popup.js), quando disponível.
 
 const SELETOR_CARD_LOG = 'article.aula';
 const SELETOR_LINK_LOG = 'a.btn.principal';
@@ -47,16 +49,14 @@ async function usuarioEhProfessorLog() {
 }
 
 /**
- * Converte o link do card no caminho da página (pathname), mesmo com o card bloqueado.
+ * Converte o link do card no caminho da página, mesmo com o card bloqueado. O caminho vem de
+ * obterCaminhoHtml (a partir de /MATERIAIS/, como atividade.pagina; #290).
  * @param {HTMLAnchorElement} link - Link principal do card.
  * @returns {string|null} Caminho da página .html ou null.
  */
 function caminhoDoLinkLog(link) {
     const endereco = link.getAttribute('href') || link.getAttribute(ATRIBUTO_HREF_GUARDADO_LOG);
-    if (!endereco) return null;
-
-    const caminho = decodeURIComponent(new URL(endereco, location.href).pathname);
-    return caminho.toLowerCase().endsWith('.html') ? caminho : null;
+    return obterCaminhoHtml(endereco);
 }
 
 /**

@@ -12,7 +12,9 @@
 // Nas matérias com o bloqueio da AULA ligado (assets/js/indice-bloqueio-aula-config.js), o ON/OFF
 // das atividades NUNCA bloqueia o card inteiro: só o botão da aula faz isso
 // (assets/js/indice-aula-bloqueio.js).
-// Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
+// Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js, js/supabase.js e de
+// assets/js/atividades-crud-modal.js (obterCaminhoHtml: o caminho começa em /MATERIAIS/ como
+// atividade.pagina, mesmo com o servidor local numa pasta; #290).
 
 // Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
 const SELETOR_CARD_BLOQUEIO = 'article.aula:not([data-sem-bloqueio])';
@@ -48,24 +50,14 @@ const MSG_SEM_FAVORITA_BLOQUEIO = 'Escolha a turma na barra "Turma" do índice: 
 const URL_POPUP_BLOQUEIO = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 
 /**
- * Converte o href de um link em caminho (pathname) decodificado, se for página HTML.
- * @param {string} href - Valor do atributo href.
- * @returns {string|null} Caminho da página ou null.
- */
-function obterCaminhoBloqueio(href) {
-    if (!href) return null;
-
-    const caminho = decodeURIComponent(new URL(href, location.href).pathname);
-    return caminho.toLowerCase().endsWith('.html') ? caminho : null;
-}
-
-/**
  * Caminho da página de um link, mesmo quando o href está guardado (link desativado).
+ * Usa obterCaminhoHtml (atividades-crud-modal.js): atividade.pagina começa em /MATERIAIS/ e o
+ * servidor local põe uma pasta antes (#290).
  * @param {HTMLAnchorElement} link - Link do card.
- * @returns {string|null} Caminho da página ou null.
+ * @returns {string|null} Caminho da página (a partir de /MATERIAIS/) ou null.
  */
 function caminhoDoLink(link) {
-    return obterCaminhoBloqueio(link.getAttribute('href') ||
+    return obterCaminhoHtml(link.getAttribute('href') ||
         link.getAttribute(ATRIBUTO_HREF_GUARDADO));
 }
 
