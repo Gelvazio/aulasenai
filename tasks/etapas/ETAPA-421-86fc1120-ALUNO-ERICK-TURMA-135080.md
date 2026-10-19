@@ -22,17 +22,23 @@ o usuário dele no banco pela página `scripts/criarUsuariosBancoDados.html`.
 
 ### #292.1 — Acrescentar o aluno na turma 135080
 
-**Próximo passo:** revisar a entrada criada e o usuário cria o acesso pela página.
+**Próximo passo:** — (entregue em 2026-10-19 09:06). **O usuário cria o acesso pela página.**
 
 - **Nível:** LEVE — só uma entrada de dados no `.js` da lista, sem lógica.
 - **Modelo:** LEVE · só Haiku/Flash/deepseek-flash — nunca outro
+- **Executor:** DeepSeek Harness (deepseek-flash) (local · main)
 - **Descrição:** em `scripts/LISTAPRESENCA.js`, na turma `codigo: "135080"` (UC "Introdução a
   Tecnologia da Informação e Comunicação"), acrescentar como **último aluno** (número 35):
   `nome: "Erick Rafael Rodrigues"`, `email: "erick.rodrigues@senai.local"`, `senha` inicial de 6
   caracteres, `naChamada: false` (entra fora da chamada oficial, como os alunos incluídos depois).
 - **Critérios de aceitação:** o aluno aparece na lista da turma 135080 com e-mail único (sem
   repetir e-mail já existente) e senha inicial; o arquivo continua válido; mais nada muda.
-- **Verificação:** `node --check scripts/LISTAPRESENCA.js`; busca por `erick` no arquivo (1
-  ocorrência, e nenhum e-mail repetido); conferir que a turma 135080 é a única ocorrência do código
-  no arquivo.
-- **Entrega:** — · **Anotação:** —
+- **Entrega:** `scripts/LISTAPRESENCA.js` — entrada nova depois de "Aluno Senai (usuário de teste do
+  professor)" (número 34), na turma `135080`: `{"numero": 35, "nome": "Erick Rafael Rodrigues",
+  "email": "erick.rodrigues@senai.local", "senha": "GrScYp", "naChamada": false}`. Nenhuma outra
+  turma/aluno mudou.
+- **Verificação:** `node --check scripts/LISTAPRESENCA.js` OK; `erick` aparece 1 vez (nome e e-mail,
+  linhas 378–379) e o e-mail `erick.rodrigues@senai.local` não repete; o código `135080` aparece uma
+  só vez no arquivo (UC "Introdução a Tecnologia da Informação e Comunicação").
+- **Anotação:** o aluno entra com `naChamada: false` (fora da chamada oficial), como os demais
+  incluídos depois; a página `criarUsuariosBancoDados.html` lê a lista por `LISTAPRESENCA.js`.

@@ -372,6 +372,13 @@ window.LISTAS_PRESENCA = [
             "email": "aluno.senai@senai.local",
             "senha": "jFtmV6",
             "naChamada": false
+          },
+          {
+            "numero": 35,
+            "nome": "Erick Rafael Rodrigues",
+            "email": "erick.rodrigues@senai.local",
+            "senha": "GrScYp",
+            "naChamada": false
           }
         ]
       },
