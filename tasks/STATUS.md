@@ -61,7 +61,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s8 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) liberada para outra IA com o diagnóstico na etapa | ⏹️ Encerrada | 2026-10-16 14:23 |
 | local · main · s9 | #196.3 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) e #196.4 entregues; #198 ([325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md)) e #196.5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 14:58 |
 | local · main · s10 | #205 ([332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md)), #204 e #203 aguardam aceite | 👀 Aguardando o usuário | 2026-10-16 15:15 |
-| local · main · DeepSeek Harness (deepseek-flash) | #291.1 ([420-d8c364a6](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md)) — script da entrega da atividade 152 (aluna Amanda) | 🔄 Ativa | 2026-10-19 08:18 |
+| local · main · DeepSeek Harness (deepseek-flash) | #291 ([420-d8c364a6](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md)) concluída — script da entrega da atividade 152 (aluna Amanda) | ⏹️ Encerrada | 2026-10-19 08:19 |
 
 ## 📌 Tarefas
 
@@ -1298,8 +1298,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #278.71 | Análise completa do JEV-AI + revisão dos modelos de cada subtarefa · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | #278.3 a #278.66 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.72 | Conferência final da matéria · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #278.67, #278.69, #278.70, #278.71 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
 | #278.73 | Fechamento: status, visualizador e quadro · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku/Flash/deepseek-flash | #278.72 | ⬜ Pendente | — | [406-19ffa793](etapas/ETAPA-406-19ffa793-TESTES-DE-FRONTEND-TASK.md) | — |
-| #291-e967140c-0ef0-4955-bd7e-9434cf91a36e | **Script: voltar a atividade 152 para "em andamento" (aluna Amanda Zarqueta de Oliveira)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [420-d8c364a6](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md) | — |
-| #291.1 | Criar o script SQL da entrega da aluna na atividade 152 · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking | — | 🔄 Em execução | DeepSeek Harness (deepseek-flash) (local · main) (desde 2026-10-19 08:18) | [420-d8c364a6](etapas/ETAPA-420-d8c364a6-SCRIPT-ENTREGA-ATIVIDADE-152-AMANDA.md) | — |
 | #286-ac221821-78bd-4c83-987d-e17b984d9bbc | **Cores do botão em todas as atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #286.1 | Conferir e aplicar as 3 cores em todas as atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s17) (desde 2026-10-18 20:20) | [415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #287-510f8b12-3ec8-4dfb-a269-9b6e0af2ff40 | **Haiku confere, faz commit e push de toda entrega** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md) | — |

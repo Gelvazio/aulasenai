@@ -22,10 +22,11 @@ aluna **Amanda Zarqueta de Oliveira** na **atividade 152**, deixando a atividade
 
 ### #291.1 — Criar o script SQL da entrega da aluna na atividade 152
 
-**Próximo passo:** revisar o script com o usuário e ele executa no SQL Editor do Supabase.
+**Próximo passo:** — (entregue em 2026-10-19 08:19). **O usuário executa no SQL Editor do Supabase.**
 
 - **Nível:** MEDIO — a IA só escreve o `.sql`; **o banco é o usuário quem altera**; sem schema/RLS.
 - **Modelo:** MEDIO · só Sonnet/Pro/DeepSeek/deepseek-flash thinking — nunca outro
+- **Executor:** DeepSeek Harness (deepseek-flash) (local · main)
 - **Descrição:** criar `database/2026-10-19-atividade-152-amanda-entrega-em-andamento.sql` com:
   (1) conferência da aluna em `public.aluno` (id, nome, e-mail, turma) pelo nome
   "Amanda Zarqueta de Oliveira"; (2) conferência das linhas de `public.entrega_atividade` dela na
@@ -34,8 +35,16 @@ aluna **Amanda Zarqueta de Oliveira** na **atividade 152**, deixando a atividade
   ficam e que é preciso revisar os `SELECT` antes do `DELETE`.
 - **Critérios de aceitação:** script idempotente (rodar de novo não quebra), limitado à aluna e à
   atividade 152, com o "antes" e o "depois"; nenhum outro dado do banco é tocado; commit + push.
-- **Verificação:** revisão do SQL (tabelas e colunas existentes: `aluno(id, nome, email,
-  turma_codigo)`; `entrega_atividade(aluno_id, atividade_id, tentativa, entregue_em, entregue_por)`,
-  PK `(aluno_id, atividade_id, tentativa)`); conferência de que o `DELETE` usa o mesmo filtro dos
-  `SELECT`; sem navegador e sem executar nada.
-- **Entrega:** — · **Anotação:** —
+- **Entrega:** `database/2026-10-19-atividade-152-amanda-entrega-em-andamento.sql` — cabeçalho com o
+  que faz e o que não faz e o passo a passo; `SELECT` 1 (aluna por nome/e-mail/turma), `SELECT` 2
+  (entregas da aluna na atividade 152, com tentativa, `entregue_em` e `entregue_por`), `DELETE` com
+  o mesmo filtro (só `entrega_atividade`, aluna + atividade 152), `SELECT` 3 (`count(*)` = 0) e um
+  bloco **comentado** opcional para apagar também as respostas (`resposta_atividade`). Não altera
+  schema, RLS, trigger, `liberacao_atividade`, respostas nem notas.
+- **Verificação:** conferidas as tabelas/colunas no SQL do projeto (`aluno`: id, nome, email,
+  turma_codigo; `entrega_atividade`: aluno_id, atividade_id, tentativa, entregue_em, entregue_por,
+  PK `(aluno_id, atividade_id, tentativa)`); o `DELETE` usa o mesmo filtro do `SELECT` 2; nenhuma
+  linha é executada nesta sessão (sem banco, sem navegador).
+- **Anotação:** se a atividade 152 for discursiva e já tiver correção/nota lançada, o script **não**
+  mexe nela — ele só tira a entrega, que é o que mostra "entregue"; se o usuário quiser zerar tudo,
+  o bloco comentado apaga também as respostas.
