@@ -1374,6 +1374,15 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #297.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2, #297.3 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #297.4 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
+| **#299** | **Páginas futuristas das 10 ideias do Mundo SENAI (logo SENAI no centro, alunos como avatares 3D)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado pelo professor 2026-10-19 20:31) | — (não reservável) | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.1 | Extrair `ideias.json` das 10 ideias (texto exato) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.2 | Tema CSS futurista (tokens, grade, botões, cards) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.1 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.3 | index.html com logo central e rede de nós · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.2 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.4 | Cena 3D do avatar (Three.js) e rede de nós · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable/DeepSeek V4 Pro | #299.2 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.5 | Gerador das 10 páginas `ideia-NN.html` a partir do JSON · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable/DeepSeek V4 Pro | #299.1, #299.2, #299.4 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.6 | Navegação e responsividade (celular e projetor) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.5 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.7 | Conferência por leitura e `node --check` (sem navegador) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.1 a #299.6 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.8 | Fechamento: quadro, commit e push por subtarefa · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.7 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 
 
 ## Escopo
@@ -1839,6 +1848,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 425-ca798516 | Produzir por completo a matéria LOGICA-DE-PROGRAMACAO (#296, pedida em 2026-10-19) | [ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) |
 | 426-6a90fb45 | Produzir por completo a matéria Fundamentos dos Processos de Produção (#297, pedida em 2026-10-19) | [ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) |
 | 427-65d015e2 | Ideias de atividades do Mundo SENAI para 10 alunos do CEPLAS (#298, pedida em 2026-10-19) | [ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) |
+| 428-df862f7a | Páginas futuristas das 10 ideias do Mundo SENAI (#299, pedida em 2026-10-19) | [ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
