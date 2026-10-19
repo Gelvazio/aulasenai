@@ -46,6 +46,7 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 | 2026-10-19 10:45 | Piscar suave de ≈1 s; com `prefers-reduced-motion: reduce`, sem animação (fundo fixo) | DeepSeek Harness (deepseek-flash) | acessibilidade |
 | 2026-10-19 11:08 | **Estado verde claro**: card com **todas as atividades concluídas** pela turma (zero pendentes, nenhuma bloqueada), fundo **fixo** (sem piscar), também **só professor** | Usuário ("fundo claro verde") + DeepSeek Harness | complemento do vermelho; mesma turma do combo |
 | 2026-10-19 12:39 | Respostas do usuário: **Q1** = o vermelho pisca no **card inteiro**; **Q2** = aluno **"Faltou?"** NÃO conta como pendente; **Q3** = verde confirmado (card inteiro, todas concluídas, nota ≥ mínima, sem bloqueada, fixo, só professor) | Usuário | destrava a spec; C34 |
+| 2026-10-19 13:18 | Usuário pediu "pegue a tarefa 293.3" (vale como "sim" ao plano para seguir com as subtarefas) | Usuário + Claude Code (Opus 5.5) (local · main · s28) | a #293.3 é só leitura no banco |
 | 2026-10-19 12:39 | O gate `node spec/verificar-spec.mjs` **não existe** neste repositório → a spec é conferida por leitura, sem instalar script | DeepSeek Harness (deepseek-flash) | o projeto é sem teste automatizado novo |
 
 ### Requisitos (EARS)
@@ -134,14 +135,43 @@ E, no mesmo índice e na mesma turma, o card da atividade com **todas as ativida
 
 ### #293.3 — Levantamento no banco: entrega, nota, bloqueio e turma do aluno
 
-**Próximo passo:** com o Supabase, identificar as tabelas/views que dizem (1) aluno entregou a atividade, (2) nota da atividade, (3) bloqueio da atividade por turma, (4) turma do aluno; anotar nomes e colunas.
+**Próximo passo:** — (entregue em 2026-10-19 13:35; as próximas são a #293.4 (MEDIO) e a #293.5 (PESADO)).
 
 - **Nível:** PESADO — consulta ao banco e leitura de RLS.
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** mapear `resposta_*`/entrega, `atividade.bloqueio`, `turma`, `turmaprofessor`, `correcao_discursiva`/notas e a função de nota já usada pelo progresso.
 - **Critérios de aceitação:** etapa com as fontes e as colunas certas para a regra.
-- **Verificação:** consulta de leitura devolve as colunas citadas.
-- **Entrega:** —
+- **Verificação:** consultas só de leitura no Supabase (`information_schema.columns`, `pg_proc`,
+  `pg_policies`, contagens e um `explain analyze`) em 2026-10-19 13:20–13:35; todas as colunas e
+  funções abaixo existem. Nada foi gravado no banco.
+- **Entrega:** mapa abaixo (Claude Code (Opus 5.5) (local · main · s28)).
+
+**Fontes no banco (levantamento de 2026-10-19):**
+
+| O que a regra precisa | Tabela / função | Colunas e como ler |
+|---|---|---|
+| Turma do aluno | `turmaaluno` | `turma_codigo`, `aluno_id` (nenhum aluno em 2 turmas hoje). `aluno.na_chamada = false` em 24 alunos: decidir na #293.4 se ficam fora |
+| Tentativa atual | `liberacao_atividade` + `tentativa_atual_do_aluno(p_aluno, p_atividade)` | `max(tentativa)` liberada, senão 1 (`max_tentativas` = 3 em todas) |
+| Entregou? | `entrega_atividade` | `aluno_id`, `atividade_id`, `tentativa`, `entregue_em`, `entregue_por` (professor pode marcar: `professor_marcar_entregue`). **Não fez** = `coalesce(max(entrega.tentativa),0) < tentativa atual` — mesma regra de `alunos_sem_entrega_turma(p_atividade, p_turma)` (já existe, conta por atividade, `security definer` com `eh_professor()` + `professor_tem_turma`) |
+| Tipo da atividade | `gabarito` × `topico_discursivo` | objetiva = existe `gabarito` (101); discursiva = existe `topico_discursivo` (53); 4 sem questão (decidir na #293.4) |
+| Nota objetiva | `resposta_atividade` × `gabarito` | acertos (`r.letra = g.letra`) na tentativa entregue ÷ `minimo_questoes_para_entregar(atividade, aluno)` × 10, teto 10 — fórmula de `notas_media_final` (que só lê o `auth.uid()`; para o professor é preciso nova função/consulta, #293.5). `resumo_tentativas_atividade(p_atividade)` já dá `acertos`/`total`/`entregue_em` por aluno e tentativa (só professor) |
+| Nota discursiva | `correcao_discursiva` × `topico_discursivo` × `resposta_discursiva` | soma `nota_professor` ÷ soma `pontos` × 10 (ajustada pelo mínimo); **só `nota_professor`**, nunca `nota_ia` (#166). Sem todas as notas do professor = "aguardando correção" (decidir na #293.4 se conta como pendente) |
+| Nota mínima | `materia.json` → `avaliacao.nota_minima` | não está no banco (`materia` não tem coluna de nota mínima) |
+| Bloqueio por turma | `atividade.bloqueio` (jsonb, lista de códigos de turma **bloqueados**) + `atividade.ativo` | bloqueada para a turma = `bloqueio ? turma_codigo`; `aula_turma.bloqueio = true` propaga para `atividade.bloqueio` (trigger `aula_turma_bloqueio_propaga_atividades`); aula `aulas.ativo = false` ou `excluido = 1` também conta como fora. 48 atividades inativas |
+| Falta | `falta_aluno` | `aluno_id`, `data`; dia da atividade = `atividade.data_atividade`, senão `aulas.data_planejada` (mesma regra de `assets/js/falta-aluno-progresso.js`) |
+| Turmas do professor | `turmaprofessor` + `professor_tem_turma(p_turma)` | administrador vê todas |
+
+**RLS (leitura):** `entrega_atividade`, `liberacao_atividade`, `resposta_atividade`,
+`resposta_discursiva` e `falta_aluno` = próprio aluno **ou** `professor_pode_ver_aluno`;
+`gabarito`, `topico_discursivo` e `correcao_discursiva` = só professor; `turmaaluno` = próprio aluno
+ou professor da turma; `atividade` = ativa e liberada, ou professor. Uma função nova de agregação
+deve ser `security definer` com `eh_professor()` + `professor_tem_turma(p_turma)` no início (padrão
+de `alunos_sem_entrega_turma`), para o aluno nunca ler a nota dos colegas (I5).
+
+**Tamanho:** maior turma = `135081` (35 alunos). A contagem "não fez" de todas as atividades
+ativas e não bloqueadas da turma (96 atividades × 35 alunos = 3.360 pares) rodou em **15 ms**
+(`explain analyze`, índices `entrega_atividade_pkey` e `liberacao_atividade_pkey`): uma consulta
+por turma basta (insumo da #293.5/#293.9).
 
 ### #293.4 — Definir na etapa a regra exata de "atividade pendente"
 
