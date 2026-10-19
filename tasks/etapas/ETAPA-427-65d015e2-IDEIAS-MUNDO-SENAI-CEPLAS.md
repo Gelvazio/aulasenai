@@ -26,6 +26,6 @@
 - **Effort:** low.
 - **Descrição:** 10 ideias para os 10 alunos, uma por aluno, com a UC do programa em cada uma.
 - **Critérios de Aceitação:** arquivo na pasta `MATERIAIS/RIO_DO_SUL_MAIS_TECH/`; 10 ideias numeradas; cada ideia com UC, formato, tempo, materiais, passos, entrega e critério; sem empresa fictícia; sem dado pessoal de aluno; português com acentuação.
-- **Entrega:** a definir no commit.
-- **Verificação:** leitura do arquivo; conferência de que as 10 ideias existem e de que o arquivo é o único alterado nesta tarefa.
+- **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/IDEIAS-MUNDO-SENAI.md` com 10 ideias, uma por aluno, cada uma com UC, formato, tempo, materiais, passos, entrega e critério. ✅ Concluída em 2026-10-19 20:12 (commit no push desta tarefa).
+- **Verificação:** leitura do arquivo: 10 seções "Ideia" e a tabela-resumo com 10 linhas; acentuação conferida; nenhum nome de empresa fictícia; nenhum dado pessoal de aluno.
 - **Anotação:** —

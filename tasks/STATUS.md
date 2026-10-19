@@ -1374,8 +1374,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #297.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #297.2, #297.3 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
 | #297.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #297.4 | ⬜ Pendente | — | [426-6a90fb45](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) | — |
-| **#298** | **Ideias de atividades do Mundo SENAI para 10 alunos do CEPLAS (`IDEIAS-MUNDO-SENAI.md`)** | 🟡 Média | — | — | 🔄 Em progresso (pedido do professor, 2026-10-19 19:58) | — | [427-65d015e2](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) | — |
-| #298.1 | Escrever `IDEIAS-MUNDO-SENAI.md` na pasta do curso · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main) (desde 2026-10-19 20:05) | [427-65d015e2](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) | — |
 
 
 ## Escopo
