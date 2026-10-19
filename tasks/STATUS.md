@@ -1368,6 +1368,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #294.47 | Fechamento: `STATUS-*.md`, apostila (Markdown), quadro, visualizador e commit + push · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #294.44 | ⬜ Pendente | — | [423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) | — |
 | #295-56988cb2-c3ed-4996-8cd1-7402822c17e7 | **Remover o Laya da skill classificar-tarefa e deixar só o Jev** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [424-56988cb2](etapas/ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md) | — |
 | #295.1 | Skill `classificar-tarefa`: tirar o Laya, só Jev + sinais · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [424-56988cb2](etapas/ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md) | — |
+| #296-ca798516-1e7f-44ae-8644-b50420589885 | **Produzir por completo a matéria LOGICA-DE-PROGRAMACAO (aulas, atividades e apostila)** | 🟡 Média | — | — | 👀 Aguardando o sim ao plano | — (não reservável) | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #296.1 | Expandir a ementa ao padrão e criar o `materia.json` · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #296.2 | Gerar as 32 aulas em `CONTEUDO/`, uma por vez · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #296.1 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #296.3 | Atividades no banco (objetiva e prática) por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #296.2 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #296.4 | Apostila em Markdown completo e HTML · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #296.2, #296.3 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
+| #296.5 | Fechamento: status da matéria, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #296.4 | ⬜ Pendente | — | [425-ca798516](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) | — |
 
 
 ## Escopo
@@ -1830,6 +1836,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 422-601a21b2 | Alerta de atividade pendente nos cards do índice, só professor (#293, pedida em 2026-10-19 10:45) | [ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md) |
 | 423-7a481d71 | Ferramentas Digitais Aplicadas: aulas e atividades (#294, pedida em 2026-10-19 12:50) | [ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md) |
 | 424-56988cb2 | Remover o Laya e deixar só o Jev (#295, pedida em 2026-10-19 13:01) | [ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md](etapas/ETAPA-424-56988cb2-REMOVER-LAYA-DEIXAR-SO-JEV.md) |
+| 425-ca798516 | Produzir por completo a matéria LOGICA-DE-PROGRAMACAO (#296, pedida em 2026-10-19) | [ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md](etapas/ETAPA-425-ca798516-PRODUZIR-LOGICA-DE-PROGRAMACAO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
