@@ -237,14 +237,33 @@ pendente = pendente E NAO aguardandoCorrecao
 
 ### #293.5 — Decidir a agregação por turma: consulta existente × view/função nova
 
-**Próximo passo:** comparar as alternativas (reaproveitar consultas do progresso × criar view `atividades_pendentes_turma` × RPC) e registrar a escolha na etapa com custo e RLS.
+**Próximo passo:** — (entregue em 2026-10-19 14:25; a próxima é a #293.6).
 
 - **Nível:** PESADO — decisão de arquitetura/dados.
 - **Modelo:** PESADO · só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** uma linha por atividade com (id, turma, qtd pendentes) e a regra de permissão.
 - **Critérios de aceitação:** decisão registrada; se for view nova, o SQL descrito.
 - **Verificação:** leitura da Decisão + conferência das fontes.
-- **Entrega:** —
+- **Entrega:** decisão registrada (Claude Code (Opus 5.5) (local · main · s28), 2026-10-19 14:25).
+
+| Alternativa | Custo | Segurança | Decisão |
+|---|---|---|---|
+| Reaproveitar as consultas do progresso no cliente (`progresso-turma-fontes.js`) | 1 consulta por atividade × card (N+1) e baixa respostas/gabarito para o navegador | gabarito e respostas de todos os alunos iriam para o cliente | ❌ |
+| View `atividades_pendentes_turma` | 1 consulta, mas a view não recebe a **nota mínima** (fica no `materia.json`) e herdaria a RLS de cada tabela (gabarito só professor: ok, mas mais difícil de travar por turma) | depende de `security_invoker` e das políticas de 6 tabelas | ❌ |
+| **RPC `atividades_pendentes_turma(p_turma text, p_nota_minima numeric)`** | **1 chamada por turma** (não por card); ≈ 100 linhas (uma por atividade); medição base de 15 ms na turma maior (#293.3) | `security definer`, `search_path = public`, começa com `eh_professor()` **e** `professor_tem_turma(p_turma)` — aluno/visitante recebem 0 linhas (I5); devolve só **contagens**, nunca nome, nota ou resposta | ✅ |
+
+**Saída da RPC** (uma linha por atividade com `aula_id`): `turma_codigo`, `aula_id`,
+`atividade_id`, `tem_questao`, `bloqueada`, `pendentes`, `nao_fizeram`, `nota_baixa`.
+A regra é a da #293.4 (falta, tentativa atual, entrega, nota objetiva/discursiva só com
+`nota_professor`, aguardando correção não conta). Nota mínima: o cliente manda a do
+`materia.json` (0 < nota ≤ 10; fora disso a função usa 7,0). `grant execute` só para
+`authenticated` (revogado de `public`/`anon`).
+**Ajuste no JS** (vai junto da #293.6): `buscarAtividadesDaTurmaPendentes` deixa de usar `sbGet`
+na rota da view e passa a chamar `POST /rest/v1/rpc/atividades_pendentes_turma` com `sbH()` (JWT),
+no mesmo padrão de `liberacao-respostas-professor.js`.
+- **Verificação:** leitura da regra da #293.4 e das fontes da #293.3; contrato conferido com as
+  colunas que `agruparAtividadesPorAulaPendentes` já lê (`aula_id`, `atividade_id`, `tem_questao`,
+  `bloqueada`, `pendentes`).
 
 ### #293.6 — Escrever o SQL (view/função) da agregação, se a decisão for nova
 
