@@ -91,10 +91,13 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 
 ### #310.3 — Documentação
 
-**Próximo passo:** executor-leve atualiza a documentação (junto com a #307.7).
+**Próximo passo:** — (concluída em 2026-10-20 15:50)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
 - **Effort:** low
 - **Descrição:** `docs/database.md` e `docs/equipes-sala-de-aula.md`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `docs/database.md` (seção "Equipe × atividade e Confirmar Respostas"),
+  `docs/relatorio_verificacao_database.html`, `docs/equipes-sala-de-aula.md`,
+  `docs/regras/atividades.md` (executor-leve, conferida pelo líder s31) · **Verificação:** leitura do
+  diff dos 4 arquivos.

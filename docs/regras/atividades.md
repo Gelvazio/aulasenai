@@ -920,3 +920,11 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
 - ✅ O seed das objetivas roda **antes** do das discursivas (ele cria a aula no banco). O
   `STATUS-ATIVIDADES.md` da matéria controla as duas páginas (20 + 5) de cada aula.
 - ❌ Não aplicar esta regra a outras matérias, nem às matérias semelhantes, sem pedido do usuário.
+
+## 👥 Atividade em equipe
+
+Atividade feita em dupla ou em grupo é ligada à equipe pelo modal 👥 Equipes (só o professor
+liga). O líder da equipe (👑) confirma as respostas dele, e elas passam a valer para os
+integrantes (com cópia de segurança do que for apagado); a entrega dos integrantes não é apagada.
+Regras, tabelas e telas: `docs/equipes-sala-de-aula.md` (seção de 2026-10-20) e
+`docs/database.md`.

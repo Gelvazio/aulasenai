@@ -635,6 +635,48 @@
       <p>A descrição antiga da tabela (colunas data, descricao, materia_id...) não existia no banco e foi substituída.</p>
     </div>
 
+    <h2>🤝 Atualização 2026-10-20 — equipe × atividade e Confirmar Respostas</h2>
+    <div class="section">
+      <p>Scripts: <code>database/2026-10-20-equipe-atividade.sql</code> e <code>database/2026-10-20-confirmar-respostas-equipe.sql</code> (aplicados em 2026-10-20)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>equipe_atividade</td>
+          <td>Tabela</td>
+          <td>equipe_id → equipe (cascade), atividade_id → atividade (cascade), respondente_id, criado_em, criado_por; UNIQUE (equipe_id, atividade_id)</td>
+        </tr>
+        <tr>
+          <td>RLS equipe_atividade</td>
+          <td>Políticas</td>
+          <td>Professor da turma grava e lê; aluno líder da turma e membro da equipe só leem; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>equipe_atividade_turma / aluno_da_equipe</td>
+          <td>Função</td>
+          <td>security definer, só authenticated: turma da equipe e se o aluno logado é membro</td>
+        </tr>
+        <tr>
+          <td>backup_clone_equipe</td>
+          <td>Tabela</td>
+          <td>Cópia (jsonb) das respostas apagadas pelo Confirmar Respostas; RLS sem políticas, sem acesso pela API</td>
+        </tr>
+        <tr>
+          <td>clonar_respostas_equipe(p_atividade, p_equipe)</td>
+          <td>Função</td>
+          <td>security definer: o líder da própria equipe ou o professor da turma sobrescreve as respostas dos integrantes (com backup); entrega dos integrantes nunca apagada; erro 42501 sem permissão e P0001 se o líder não tem respostas</td>
+        </tr>
+        <tr>
+          <td>atividades_da_minha_equipe(p_materia)</td>
+          <td>Função</td>
+          <td>security definer: atividades ligadas às equipes da matéria em que o aluno logado é membro, com a marca de líder</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>👥 Atualização 2026-10-05 — equipes por turma + matéria</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-05-equipes-turma-materia.sql</code> (✅ aplicado em 2026-10-05) · Tela: modal 👥 Equipes do menu das atividades</p>

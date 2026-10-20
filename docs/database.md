@@ -623,6 +623,71 @@ Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das 
 
 ---
 
+## 🤝 Atualização 2026-10-20 — Equipe × atividade e Confirmar Respostas (#307, #310)
+
+SQL: `database/2026-10-20-equipe-atividade.sql` (tabela, RLS e funções auxiliares) e
+`database/2026-10-20-confirmar-respostas-equipe.sql` (cópia de segurança e confirmação), ambos
+aplicados no Supabase em 2026-10-20. O `database/2026-10-20-clonar-respostas-equipe.sql` foi
+substituído pelo segundo. Etapas: `tasks/etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md`
+e `ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md`. Plano e telas:
+`docs/equipes-sala-de-aula.md`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `equipe_atividade` | `id` (identity), `equipe_id` → `equipe.id` (cascade), `atividade_id` → `atividade.id` (cascade), `respondente_id` (uuid, aluno cujas respostas valem para a equipe; preenchido pela confirmação), `criado_em`, `criado_por` (default `auth.uid()`); **UNIQUE (`equipe_id`, `atividade_id`)** (`equipe_atividade_unica`); índice `equipe_atividade_atividade_idx` |
+| RLS `equipe_atividade` | ligado. **Professor da turma** (`professor_tem_turma(equipe_atividade_turma(equipe_id))`): select, insert, update e delete. **Aluno líder da turma** (`aluno_lider_da_turma`): só select. **Membro da equipe** (`aluno_da_equipe`): só select, das linhas da própria equipe. `anon` sem acesso |
+| `equipe_atividade_turma(p_equipe)` | função auxiliar (`security definer`, só `authenticated`): devolve a turma da equipe, para as políticas não dependerem do RLS de `equipe` |
+| `aluno_da_equipe(p_equipe)` | função auxiliar (`security definer`, só `authenticated`): verdadeiro se `auth.uid()` é membro da equipe |
+| `backup_clone_equipe` | cópia de cada linha de resposta apagada pela confirmação. Colunas: `id`, `executado_em`, `executado_por`, `equipe_id`, `atividade_id`, `aluno_id`, `tabela` (`resposta_discursiva` ou `resposta_atividade`), `linha` (jsonb = `to_jsonb` da linha original). RLS ligado **sem políticas**; `anon` e `authenticated` sem acesso pela API (só funções `security definer` e o SQL Editor leem ou gravam) |
+| `total_respostas_aluno(p_aluno, p_atividade)` | função interna (`security definer`): soma as respostas discursivas e objetivas do aluno na atividade. Sem execução para `authenticated` |
+| `sobrescrever_respostas_membro(p_equipe, p_atividade, p_lider, p_membro)` | função interna (`security definer`): copia para o backup, apaga e recria as respostas do membro a partir das do líder; copia a entrega do líder só se o membro não tem entrega. Sem execução para `authenticated` |
+| `clonar_respostas_equipe(p_atividade, p_equipe DEFAULT NULL)` | `security definer`, só `authenticated`. Retorna `equipe_id`, `respondente_id`, `alunos_clonados` (uma linha por equipe permitida). Ver regras abaixo |
+| `atividades_da_minha_equipe(p_materia)` | `security definer`, só `authenticated`: atividades ligadas às equipes da matéria em que o aluno logado é membro; retorna `equipe_id`, `atividade_id`, `nome_atividade`, `eu_lider` |
+
+### `clonar_respostas_equipe` — regras
+
+- **Quem pode:** o **líder** da equipe (`equipe_membro.lider`), só na própria equipe ligada à
+  atividade; ou o **professor da turma** (`professor_tem_turma`), em todas as equipes ligadas
+  (ou só na de `p_equipe`). Equipes de quem não é nem líder nem professor são puladas.
+- **Respondente:** quem chama, se for o líder; para o professor, o líder marcado da equipe e,
+  sem líder marcado, `escolher_respondente_equipe`. Fica gravado em `equipe_atividade.respondente_id`.
+- **O que sobrescreve:** para cada integrante diferente do respondente, as linhas de
+  `resposta_discursiva` e `resposta_atividade` da atividade vão para `backup_clone_equipe`, são
+  apagadas e recriadas com as do respondente (tentativa, item, tópico, texto, letra). Depois disso,
+  o integrante fica com as mesmas linhas do líder.
+- **Entrega nunca apagada:** a entrega (`entrega_atividade`) de quem já tem entrega fica como está;
+  quem não tem entrega recebe a do respondente (`ON CONFLICT DO NOTHING`).
+- **Líder sem respostas:** erro `P0001` ("O líder ainda não tem respostas nesta atividade.") e nada
+  é alterado. Para o professor, essa equipe é pulada (`alunos_clonados` = 0).
+- **Sem permissão:** erro `42501` ("Sem permissão: só o líder da equipe ou o professor da turma
+  confirmam.") quando não há nenhuma equipe permitida. Nada é alterado.
+- Gravações feitas depois da confirmação **não** são copiadas: para valer, confirmar de novo.
+- A versão da #307.2 (`clonar_respostas_equipe(BIGINT)`, que nunca sobrescrevia) foi substituída
+  (`DROP FUNCTION` no SQL de 2026-10-20).
+
+### Restaurar respostas apagadas (`backup_clone_equipe`)
+
+Não há tela para isso: a restauração é feita por SQL no SQL Editor, pelo professor.
+
+1. Ver o backup da equipe e da atividade:
+   `SELECT id, executado_em, aluno_id, tabela, linha FROM public.backup_clone_equipe
+   WHERE equipe_id = ? AND atividade_id = ? ORDER BY id;`
+2. Apagar as respostas atuais do aluno na atividade (a confirmação as recriou):
+   `DELETE FROM public.resposta_discursiva WHERE aluno_id = ? AND atividade_id = ?;` e o mesmo em
+   `resposta_atividade`.
+3. Reinserir cada linha a partir do jsonb (a linha inteira, por isso não depende da lista de colunas):
+   ```sql
+   INSERT INTO public.resposta_discursiva
+   SELECT (jsonb_populate_record(NULL::public.resposta_discursiva, b.linha)).*
+   FROM public.backup_clone_equipe b
+   WHERE b.id = 0 AND b.tabela = 'resposta_discursiva';
+   ```
+   Trocar `resposta_discursiva` por `resposta_atividade` (e `b.id = 0` pelos ids do passo 1).
+4. A entrega não vai para o backup (nunca é apagada). Se a confirmação entregou por um integrante
+   que não tinha entrega, desfazer à mão em `entrega_atividade`, se for o caso.
+
+---
+
 ## ✍️ Atualização 2026-10-06 — Correção das discursivas e notas da média final do aluno
 
 SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplicado no Supabase em

@@ -127,11 +127,14 @@ respostas e cada aluno exporta a própria).
 
 ### #307.7 — Documentação
 
-**Próximo passo:** depois da #307.6.
+**Próximo passo:** — (concluída em 2026-10-20 15:50)
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** só Haiku — nunca outro
 - **Effort:** low
 - **Descrição:** `docs/database.md` (+ `relatorio_verificacao_database.html`), `docs/equipes-sala-de-aula.md` e `docs/regras/atividades.md`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `docs/database.md` (seção "Equipe × atividade e Confirmar Respostas"),
+  `docs/relatorio_verificacao_database.html`, `docs/equipes-sala-de-aula.md`,
+  `docs/regras/atividades.md` (executor-leve, conferida pelo líder s31) · **Verificação:** leitura do
+  diff dos 4 arquivos.
 
