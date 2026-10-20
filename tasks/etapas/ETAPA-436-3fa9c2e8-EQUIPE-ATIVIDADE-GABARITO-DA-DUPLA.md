@@ -69,7 +69,7 @@ respostas e cada aluno exporta a própria).
 - **Effort:** high
 - **Descrição:** função `security definer`, chamada pelo professor da turma, que copia as respostas e a entrega do líder da equipe ligada à atividade para cada membro que ainda não tem entrega própria (idempotente; nunca sobrescreve quem respondeu sozinho); a nota sai das respostas, como hoje.
 - **Situação da 82 (consulta 14:33):** em cada equipe só um membro tem respostas (o outro tem 0);
-  4 entregaram (EQUIPES 01, 02, 06, 08, 13 com 59–60 respostas). O clone não sobrescreve ninguém.
+  entregaram os respondentes das EQUIPES 01, 02, 06, 08 e 13 (59–60 respostas). O clone não sobrescreve ninguém.
 - **Entrega:** — · **Verificação:** —
 
 ### #307.3 — Função: respostas da equipe para o colega exportar
