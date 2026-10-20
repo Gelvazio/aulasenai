@@ -37,14 +37,14 @@
 - Nenhuma pergunta aberta (todas respondidas no modo plano).
 
 ### 299.1 — Extrair ideias.json das 10 ideias (texto exato)
-**Próximo passo:** ler o `IDEIAS-MUNDO-SENAI.md` e gerar `ideias.json` sem alterar o texto.
+**Próximo passo:** — (concluída em 2026-10-20 10:59).
 - **Nível:** MEDIO — código/dados com lógica simples, 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
 - **Effort:** medium.
 - **Descrição:** `ideias.json` com 10 objetos (id, título, UC, formato, tempo, materiais, situação, passos, entrega, critério).
 - **Critérios de Aceitação:** 10 itens; texto idêntico ao .md; `python -m json.tool` passa.
-- **Entrega:** —
-- **Verificação:** `python -m json.tool ideias.json`; contagem de itens = 10.
+- **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/ideias.json` (programa, turma, 10 ideias com id, título, UC, formato, tempo, materiais, situação, 4 passos, entrega e critério, mais as 3 observações ao professor).
+- **Verificação:** `python -m json.tool ideias.json` passou; 10 itens; cada campo e cada passo foi achado no `.md` (comparação com espaços normalizados), 0 divergências.
 - **Anotação:** —
 
 ### 299.2 — Tema CSS futurista (tokens, grade, botões, cards)

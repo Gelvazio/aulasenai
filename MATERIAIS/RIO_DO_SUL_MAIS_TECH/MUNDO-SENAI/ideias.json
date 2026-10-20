@@ -1,0 +1,211 @@
+{
+  "programa": "Rio do Sul Mais Tech - SENAI",
+  "turma": "10 alunos do CEPLAS (polo Ceplas, turno matutino ou vespertino)",
+  "ideias": [
+    {
+      "id": 1,
+      "titulo": "Mapa das carreiras do Mundo SENAI",
+      "uc": {
+        "numero": 6,
+        "nome": "Exploração de Carreiras Industriais e Tecnológicas"
+      },
+      "formato": "individual",
+      "tempo": "2 aulas",
+      "materiais": "computador ou celular, planilha (Excel ou Google Sheets), página do Mundo SENAI.",
+      "situacao": "Você, como aluno consultor, foi chamado para ajudar colegas a escolher uma área profissional a partir dos cursos apresentados no Mundo SENAI.",
+      "passos": [
+        "Abra a página do Mundo SENAI e liste 5 cursos ou áreas que aparecem.",
+        "Para cada área, anote: nome, o que a pessoa faz no dia a dia, o tipo de ambiente de trabalho e uma habilidade que ela precisa ter.",
+        "Monte uma tabela com essas 4 colunas.",
+        "Escolha a área que você mais gostou e escreva 5 linhas explicando o porquê."
+      ],
+      "entrega": "tabela preenchida e um parágrafo de justificativa.",
+      "criterio": "5 áreas com as 4 informações; justificativa com pelo menos uma razão ligada a você."
+    },
+    {
+      "id": 2,
+      "titulo": "Números do evento em gráfico",
+      "uc": {
+        "numero": 8,
+        "nome": "Reforço de Matemática e Raciocínio Lógico"
+      },
+      "formato": "individual",
+      "tempo": "2 aulas",
+      "materiais": "página do Mundo SENAI, planilha com gráficos.",
+      "situacao": "Você, como aluno consultor, precisa mostrar à direção da escola o que o Mundo SENAI oferece, com números e gráficos simples.",
+      "passos": [
+        "Conte quantas atividades, cursos ou áreas aparecem em uma página do evento.",
+        "Agrupe os itens por tipo (por exemplo, indústria, tecnologia, serviços).",
+        "Calcule a porcentagem de cada grupo em relação ao total.",
+        "Faça um gráfico de barras ou de pizza e escreva 3 frases com o que o gráfico mostra."
+      ],
+      "entrega": "tabela de contagem, cálculo das porcentagens e gráfico.",
+      "criterio": "contagem conferida duas vezes; porcentagens somam 100%; gráfico com título e legenda."
+    },
+    {
+      "id": 3,
+      "titulo": "Roteiro de visita personalizado",
+      "uc": {
+        "numero": 5,
+        "nome": "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho"
+      },
+      "formato": "individual",
+      "tempo": "1 aula",
+      "materiais": "folha ou documento de texto.",
+      "situacao": "Você, como aluno consultor, vai orientar um colega do 9° ano que quer visitar o Mundo SENAI pela primeira vez.",
+      "passos": [
+        "Pergunte (ou imagine) 3 interesses do colega, como jogos, robôs ou construção.",
+        "Escolha 4 atrações ou áreas que combinam com esses interesses.",
+        "Escreva o roteiro em ordem de visita, com horário sugerido e um motivo para cada parada.",
+        "Revise o texto: frases curtas, sem gírias e sem erros de acentuação."
+      ],
+      "entrega": "roteiro de 1 página.",
+      "criterio": "4 paradas, cada uma com motivo; texto revisado."
+    },
+    {
+      "id": 4,
+      "titulo": "Suporte para crachá em impressão 3D",
+      "uc": {
+        "numero": 4,
+        "nome": "Oficinas de Impressão 3D e Robótica"
+      },
+      "formato": "individual",
+      "tempo": "3 aulas",
+      "materiais": "computador, Tinkercad (gratuito), impressora 3D da oficina.",
+      "situacao": "Você, como aluno consultor, deve projetar um suporte para crachá que a equipe da escola possa imprimir durante o evento.",
+      "passos": [
+        "Abra o Tinkercad e crie um bloco base de 60 mm × 40 mm × 3 mm.",
+        "Adicione um furo de 4 mm para prender o cordão.",
+        "Adicione um encaixe ou suporte para o crachá (uma aba de 10 mm de altura).",
+        "Exporte o arquivo `.stl` e, com o professor, faça a impressão."
+      ],
+      "entrega": "arquivo `.stl` e foto da peça impressa.",
+      "criterio": "medidas registradas; peça impressa sem partes soltas."
+    },
+    {
+      "id": 5,
+      "titulo": "Painel de sinalização com LEDs",
+      "uc": {
+        "numero": 3,
+        "nome": "Noções de Eletricidade e Circuitos Básicos"
+      },
+      "formato": "dupla",
+      "tempo": "3 aulas",
+      "materiais": "kit de eletrônica básica (LEDs, resistores, protoboard, bateria de 9 V ou fonte de 5 V), fita adesiva.",
+      "situacao": "Você e um colega, como alunos consultores, precisam sinalizar a entrada de um espaço do evento com um painel de LEDs.",
+      "passos": [
+        "Desenhe o esquema com 3 LEDs ligados em série com resistor.",
+        "Monte o circuito na protoboard e teste com a fonte.",
+        "Calcule o resistor para o LED usado e confira com o professor.",
+        "Monte o painel com as 3 luzes e escreva em uma folha como ele funciona."
+      ],
+      "entrega": "esquema desenhado, circuito funcionando e cálculo do resistor.",
+      "criterio": "todos os LEDs acendem; cálculo correto e conferido."
+    },
+    {
+      "id": 6,
+      "titulo": "Investigando uma página da web",
+      "uc": {
+        "numero": 2,
+        "nome": "Fundamentos da Tecnologia e Programação"
+      },
+      "formato": "individual",
+      "tempo": "2 aulas",
+      "materiais": "navegador de computador, página do Mundo SENAI.",
+      "situacao": "Você, como aluno consultor, precisa explicar a colegas como uma página da web é construída, para que eles entendam o que um programa faz quando lê um site.",
+      "passos": [
+        "Abra a página do Mundo SENAI no navegador.",
+        "Pressione F12 (ou clique com o botão direito e escolha \"Inspecionar\") para ver o HTML.",
+        "Encontre 3 títulos (`h1`, `h2`) e um link. Anote o que cada um contém.",
+        "Escreva uma explicação de 5 linhas: o que é HTML, o que é uma \"tag\" e como um programa acharia esses títulos."
+      ],
+      "entrega": "tabela com 3 títulos (texto, tipo da tag) e a explicação.",
+      "criterio": "os 3 títulos foram achados no HTML; explicação com os termos corretos."
+    },
+    {
+      "id": 7,
+      "titulo": "Apresentação de 3 minutos sobre uma profissão",
+      "uc": {
+        "numero": 5,
+        "nome": "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho"
+      },
+      "formato": "individual",
+      "tempo": "2 aulas",
+      "materiais": "cartão com 5 tópicos, cronômetro.",
+      "situacao": "Você, como aluno consultor, vai apresentar uma profissão para a turma em 3 minutos, como se estivesse em uma conversa no evento.",
+      "passos": [
+        "Escolha uma profissão do Mundo SENAI.",
+        "Prepare 5 tópicos: o que a pessoa faz, onde trabalha, quais ferramentas usa, quanto estudo exige e por que você recomenda.",
+        "Ensaie em casa, cronometrando. Evite ler o texto inteiro.",
+        "Apresente para a turma."
+      ],
+      "entrega": "apresentação oral de 3 minutos e cartão com os tópicos.",
+      "criterio": "5 tópicos cobertos; tempo entre 2 min 30 s e 3 min 30 s."
+    },
+    {
+      "id": 8,
+      "titulo": "Plano pessoal de carreira",
+      "uc": {
+        "numero": 1,
+        "nome": "Competências Socioemocionais e Empreendedorismo"
+      },
+      "formato": "individual",
+      "tempo": "2 aulas",
+      "materiais": "folha ou documento de texto.",
+      "situacao": "Você, como aluno consultor, vai orientar a si mesmo a montar um plano de carreira para os próximos 2 anos.",
+      "passos": [
+        "Escreva 3 interesses e 3 pontos fortes que você percebe em si.",
+        "Escolha uma área do Mundo SENAI que combine com eles.",
+        "Defina 3 metas (SMART): específica, mensurável, alcançável, relevante e com prazo.",
+        "Escreva uma ação para cada meta que você pode fazer nesta semana."
+      ],
+      "entrega": "plano de 1 página.",
+      "criterio": "3 metas com prazo; 3 ações da semana."
+    },
+    {
+      "id": 9,
+      "titulo": "Ideia de solução para a escola",
+      "uc": {
+        "numero": 1,
+        "nome": "Competências Socioemocionais e Empreendedorismo"
+      },
+      "formato": "dupla",
+      "tempo": "3 aulas",
+      "materiais": "cartolina ou documento, post-its.",
+      "situacao": "Você e um colega, como alunos consultores, devem propor uma solução para um problema real da escola, inspirada no que viram no Mundo SENAI.",
+      "passos": [
+        "Listem 3 problemas da escola (por exemplo, fila na cantina ou falta de informação sobre atividades).",
+        "Escolham um problema e descrevam quem sofre com ele.",
+        "Proponham uma solução simples, com custo estimado e quem faria.",
+        "Apresentem em 2 minutos para a turma."
+      ],
+      "entrega": "cartaz ou documento com o problema, a solução e o custo estimado.",
+      "criterio": "problema real e específico; solução com pelo menos uma etapa de execução."
+    },
+    {
+      "id": 10,
+      "titulo": "Checklist de uso responsável de dados da web",
+      "uc": {
+        "numero": 2,
+        "nome": "Fundamentos da Tecnologia e Programação"
+      },
+      "formato": "individual",
+      "tempo": "1 aula",
+      "materiais": "navegador, página do Mundo SENAI.",
+      "situacao": "Você, como aluno consultor, deve dizer se é correto e seguro usar dados que estão na internet em um trabalho de escola.",
+      "passos": [
+        "Abra a página do Mundo SENAI e procure o aviso de privacidade ou os termos de uso.",
+        "Veja se a página mostra dados pessoais (nome, telefone, e-mail, fotos de pessoas).",
+        "Responda: posso copiar esses dados? Preciso pedir permissão? Tenho que citar a fonte?",
+        "Escreva um checklist de 5 itens para um colega seguir antes de usar dados da internet."
+      ],
+      "entrega": "checklist de 5 itens com a resposta às 3 perguntas.",
+      "criterio": "5 itens claros; citação de dados pessoais e de fonte."
+    }
+  ],
+  "observacoes_professor": [
+    "**Dados pessoais:** a LGPD (Lei 13.709/2018) se aplica. Não peça aos alunos que coletem dados de pessoas identificáveis.",
+    "**Redes sociais:** Instagram e Facebook têm regras próprias de uso. Prefira páginas públicas institucionais para as atividades.",
+    "**Sem empresa fictícia:** os enunciados usam o papel \"Você como aluno consultor\"."
+  ]
+}

@@ -1,3 +1,4 @@
 
 | #303.1 | Descobrir por que o card não mostra a atividade e ligar o link · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
 | **#303** | **Link da atividade no card da matéria Noções de Eletricidade** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
+| #299.1 | Extrair `ideias.json` das 10 ideias (texto exato) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído (2026-10-20 10:59) | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
