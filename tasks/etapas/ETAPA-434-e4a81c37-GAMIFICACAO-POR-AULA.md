@@ -8,7 +8,7 @@ nome *AULA-01*, *AULA-02*, *AULA-03*, *AULA-04*, *AULA-05*, ETC"
 `MATERIAIS/<CURSO>/<MATERIA>/GAMIFICACAO/AULA-NN/` (uma pasta por aula), para receber jogos como o
 "Liga ou Desliga?" (#302).
 
-### Escopo (proposto — confirmar nas perguntas abertas)
+### Escopo (aprovado)
 
 - **Entra:**
   - Pasta `GAMIFICACAO/` na matéria com uma subpasta `AULA-NN` por aula cadastrada na tabela `aulas`
@@ -36,22 +36,21 @@ nome *AULA-01*, *AULA-02*, *AULA-03*, *AULA-04*, *AULA-05*, ETC"
 
 ### Perguntas abertas
 
-- ⬜ 1. **Escopo:** todas as matérias de todos os cursos, só as ensaladas, ou só uma matéria (qual)?
-- ⬜ 2. **Nome da pasta:** `GAMIFICACAO` em maiúsculas (padrão do projeto: `ATIVIDADES`, `CONTEUDO`)
-  ou `gamificacao` em minúsculas, como no pedido?
-- ⬜ 3. **Conteúdo de cada `AULA-NN`:** só a página de entrada ("em breve"/lista de jogos) ou já um
-  jogo por aula?
-- ⬜ 4. **Nota:** a atividade de gamificação conta nota (como o jogo da #302) ou é só um link?
-- ⬜ 5. Aprovação do plano (tarefa grande: banco + mudança em massa).
+- ✅ 1. Escopo → **todas as matérias** (professor, 2026-10-20 13:37).
+- ✅ 2. Pasta → **`GAMIFICACAO/AULA-NN`** (maiúsculas).
+- ✅ 3. Conteúdo → **página de entrada** que lista os jogos da aula; cada jogo novo é tarefa própria (como a #302).
+- ✅ 4. Nota → **conta nota, vinda de cada jogo**: cada jogo é atividade do banco com gabarito; a entrada é só link.
+- ✅ 5. Aprovação do plano → **"Sim, aprovo"** (professor, 2026-10-20 13:37).
 
 ### Decisões
 
 | Quando | O quê | Quem |
 |---|---|---|
+| 2026-10-20 13:37 | Respostas 1 a 5 (escolhas na tela) e plano aprovado; a nota sai de cada jogo, a atividade de entrada não tem gabarito nem entra na média | Professor |
 
 ### #305.1 — Definir como o banco marca a atividade de gamificação
 
-**Próximo passo:** aguardar as perguntas abertas e o "sim" do plano.
+**Próximo passo:** ver como `atividade` e as telas distinguem tipos hoje (alinhar com a #306.1).
 
 - **Nível:** PESADO — banco (possível coluna nova em `atividade`).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
