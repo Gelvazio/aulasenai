@@ -30,6 +30,9 @@
 
 ### Decisões
 - 2026-10-20 — Claude Code (Haiku 5.5): tarefa grande (vários geradores, mudança global, regra nova) → plano nesta etapa e aguarda o "sim" do usuário. Nenhuma subtarefa é executada antes disso.
+- 2026-10-20 — Gelvazio (usuário): "Sim, aprovo o plano da #300." Plano aprovado como está, com a
+  premissa de "situação de aprendizagem" = bloco de contextualização e desafio do modelo SENAI.
+  Próximo passo: #300.1 (PESADO, só Opus 5.5+/Fable).
 
 ### #300.1 — Ler o modelo SENAI e escrever a regra "padrão de provas SENAI"
 
