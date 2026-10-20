@@ -435,3 +435,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #315.1 | `netlify.toml` com `pretty_urls = false` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ✅ Concluído | — | [444-58ebb5da](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) | — |
 | **#316** | **Card da aula só com links de atividades vinculadas no banco** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) | — |
 | #316.1 | Grade: manter só links de atividades com `aula_id` da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) | — |
+| #314.1 | Medir o antes (base de comparação) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
