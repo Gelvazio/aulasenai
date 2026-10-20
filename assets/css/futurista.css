@@ -1,0 +1,604 @@
+/*
+ * Tema futurista (cyberpunk) do Mundo SENAI — tarefa #299.2.
+ * Segue rules-ai/prompts/VISUAL-FUTURISTA.md: fundo escuro, neon ciano/magenta/violeta,
+ * cartões holográficos, redes de nós, telemetria e tipografia digital.
+ *
+ * Uso: as páginas de MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/ carregam este arquivo e as
+ * fontes Orbitron e Share Tech Mono do Google Fonts (<link> no HTML). Sem as fontes, valem as
+ * alternativas do sistema. Cores só via tokens de :root; classes com prefixo "fut-".
+ */
+
+:root {
+  /* Cores (componentes RGB separados para variar a transparência sem repetir cor) */
+  --fut-fundo-rgb: 5, 3, 13;
+  --fut-painel-rgb: 18, 10, 46;
+  --fut-ciano-rgb: 0, 229, 255;
+  --fut-magenta-rgb: 255, 43, 214;
+  --fut-violeta-rgb: 122, 60, 255;
+  --fut-cor-fundo: rgb(var(--fut-fundo-rgb));
+  --fut-cor-texto: #e8f1ff;
+  --fut-cor-texto-suave: #a9b6d6;
+  --fut-cor-ciano: rgb(var(--fut-ciano-rgb));
+  --fut-cor-magenta: rgb(var(--fut-magenta-rgb));
+  --fut-cor-violeta: rgb(var(--fut-violeta-rgb));
+  --fut-cor-painel: rgba(var(--fut-painel-rgb), 0.62);
+  --fut-cor-borda: rgba(var(--fut-ciano-rgb), 0.35);
+  --fut-cor-grade: rgba(var(--fut-ciano-rgb), 0.06);
+
+  /* Brilhos (neon só em destaques; o texto corrido fica claro sobre o fundo escuro) */
+  --fut-brilho-ciano: 0 0 14px rgba(var(--fut-ciano-rgb), 0.55);
+  --fut-brilho-magenta: 0 0 14px rgba(var(--fut-magenta-rgb), 0.55);
+  --fut-brilho-violeta: 0 0 24px rgba(var(--fut-violeta-rgb), 0.45);
+
+  /* Tipografia */
+  --fut-fonte-titulo: "Orbitron", "Segoe UI", system-ui, sans-serif;
+  --fut-fonte-dados: "Share Tech Mono", ui-monospace, Consolas, monospace;
+  --fut-fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fut-tamanho-base: 1rem;
+  --fut-altura-linha: 1.6;
+
+  /* Medidas */
+  --fut-espaco-1: 0.25rem;
+  --fut-espaco-2: 0.5rem;
+  --fut-espaco-3: 1rem;
+  --fut-espaco-4: 1.5rem;
+  --fut-espaco-5: 2.5rem;
+  --fut-raio: 14px;
+  --fut-largura-max: 1200px;
+  --fut-largura-cartao-min: 240px;
+  --fut-tamanho-grade: 40px;
+  --fut-desfoque: 10px;
+  --fut-largura-logo: min(46vw, 280px);
+  --fut-altura-hero: 60vh;
+  --fut-altura-barra: 10px;
+  --fut-largura-varredura: 30%;
+
+  /* Movimento */
+  --fut-duracao-pulso: 3s;
+  --fut-duracao-fluxo: 12s;
+  --fut-duracao-varredura: 2.4s;
+  --fut-duracao-transicao: 0.25s;
+
+  /* Pontos de quebra usados nos @media abaixo: celular até 720px, projetor a partir de 1600px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--fut-cor-texto);
+  font-family: var(--fut-fonte-texto);
+  font-size: var(--fut-tamanho-base);
+  line-height: var(--fut-altura-linha);
+  background-color: var(--fut-cor-fundo);
+  background-image:
+    radial-gradient(60% 50% at 15% 0%, rgba(var(--fut-violeta-rgb), 0.28), transparent 70%),
+    radial-gradient(50% 45% at 90% 20%, rgba(var(--fut-magenta-rgb), 0.18), transparent 70%),
+    radial-gradient(60% 50% at 50% 100%, rgba(var(--fut-ciano-rgb), 0.14), transparent 70%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Efeito de grade: pseudo-elemento fixo com linhas finas atrás de todo o conteúdo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--fut-cor-grade) 1px, transparent 1px),
+    linear-gradient(90deg, var(--fut-cor-grade) 1px, transparent 1px);
+  background-size: var(--fut-tamanho-grade) var(--fut-tamanho-grade);
+}
+
+img,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+a {
+  color: var(--fut-cor-ciano);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fut-fonte-titulo);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 var(--fut-espaco-3);
+}
+
+/* ---------- Estrutura da página ---------- */
+
+.fut-pagina {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--fut-largura-max);
+  margin: 0 auto;
+  padding: var(--fut-espaco-4) var(--fut-espaco-3) var(--fut-espaco-5);
+}
+
+.fut-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--fut-espaco-3);
+  margin-bottom: var(--fut-espaco-4);
+}
+
+.fut-rodape {
+  margin-top: var(--fut-espaco-5);
+  color: var(--fut-cor-texto-suave);
+  font-family: var(--fut-fonte-dados);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---------- Hero com a logo no centro ---------- */
+
+.fut-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: var(--fut-altura-hero);
+  padding: var(--fut-espaco-4) var(--fut-espaco-3);
+  text-align: center;
+}
+
+.fut-hero__conteudo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--fut-espaco-3);
+}
+
+.fut-hero__logo {
+  width: var(--fut-largura-logo);
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(var(--fut-ciano-rgb), 0.6));
+  animation: fut-pulso var(--fut-duracao-pulso) ease-in-out infinite;
+}
+
+.fut-hero__titulo {
+  margin: 0;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  text-shadow: var(--fut-brilho-ciano);
+}
+
+.fut-hero__subtitulo {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--fut-cor-texto-suave);
+}
+
+/* ---------- Rede de nós (SVG atrás do hero) ---------- */
+
+.fut-rede {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.fut-rede__linha {
+  stroke: var(--fut-cor-ciano);
+  stroke-width: 1;
+  stroke-dasharray: 6 8;
+  fill: none;
+  animation: fut-fluxo var(--fut-duracao-fluxo) linear infinite;
+}
+
+.fut-rede__no {
+  fill: var(--fut-cor-magenta);
+  filter: drop-shadow(var(--fut-brilho-magenta));
+  animation: fut-pulso var(--fut-duracao-pulso) ease-in-out infinite;
+}
+
+.fut-rede__no--ciano {
+  fill: var(--fut-cor-ciano);
+  filter: drop-shadow(var(--fut-brilho-ciano));
+}
+
+/* ---------- Grade e cartões holográficos ---------- */
+
+.fut-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--fut-largura-cartao-min), 1fr));
+  gap: var(--fut-espaco-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fut-cartao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fut-espaco-2);
+  padding: var(--fut-espaco-4);
+  color: inherit;
+  text-decoration: none;
+  background: var(--fut-cor-painel);
+  border: 1px solid var(--fut-cor-borda);
+  border-radius: var(--fut-raio);
+  backdrop-filter: blur(var(--fut-desfoque));
+  -webkit-backdrop-filter: blur(var(--fut-desfoque));
+  box-shadow: var(--fut-brilho-violeta);
+  transition: transform var(--fut-duracao-transicao), border-color var(--fut-duracao-transicao),
+    box-shadow var(--fut-duracao-transicao);
+}
+
+.fut-cartao:hover,
+.fut-cartao:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--fut-cor-magenta);
+  box-shadow: var(--fut-brilho-magenta);
+}
+
+.fut-cartao--estatico:hover {
+  transform: none;
+}
+
+.fut-cartao__numero {
+  font-family: var(--fut-fonte-dados);
+  font-size: 0.9rem;
+  color: var(--fut-cor-magenta);
+  text-shadow: var(--fut-brilho-magenta);
+}
+
+.fut-cartao__titulo {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.fut-etiqueta {
+  align-self: flex-start;
+  padding: var(--fut-espaco-1) var(--fut-espaco-2);
+  font-family: var(--fut-fonte-dados);
+  font-size: 0.8rem;
+  color: var(--fut-cor-ciano);
+  border: 1px solid var(--fut-cor-borda);
+  border-radius: 999px;
+}
+
+/* ---------- Botões ---------- */
+
+.fut-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fut-espaco-2);
+  min-height: 44px; /* alvo de toque confortável no celular */
+  padding: var(--fut-espaco-2) var(--fut-espaco-4);
+  font-family: var(--fut-fonte-titulo);
+  font-size: 0.9rem;
+  color: var(--fut-cor-texto);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--fut-cor-ciano);
+  border-radius: var(--fut-raio);
+  box-shadow: var(--fut-brilho-ciano);
+  transition: background var(--fut-duracao-transicao), transform var(--fut-duracao-transicao);
+}
+
+.fut-botao:hover {
+  background: rgba(var(--fut-ciano-rgb), 0.18);
+}
+
+.fut-botao--primario {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--fut-violeta-rgb), 0.55),
+    rgba(var(--fut-ciano-rgb), 0.45)
+  );
+}
+
+.fut-botao[disabled],
+.fut-botao[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Foco visível em tudo que se pode acionar */
+.fut-botao:focus-visible,
+.fut-cartao:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--fut-cor-magenta);
+  outline-offset: 3px;
+}
+
+/* ---------- Telemetria e medidores ---------- */
+
+.fut-telemetria {
+  position: relative;
+  height: var(--fut-altura-barra);
+  overflow: hidden;
+  background: rgba(var(--fut-ciano-rgb), 0.12);
+  border-radius: 999px;
+}
+
+.fut-telemetria::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fut-largura-varredura);
+  background: linear-gradient(90deg, transparent, var(--fut-cor-ciano), transparent);
+  animation: fut-varredura var(--fut-duracao-varredura) ease-in-out infinite;
+}
+
+.fut-progresso {
+  width: 100%;
+  height: var(--fut-altura-barra);
+  border: 0;
+  border-radius: 999px;
+  background: rgba(var(--fut-ciano-rgb), 0.12);
+  accent-color: var(--fut-cor-ciano);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.fut-progresso::-webkit-progress-bar {
+  background: rgba(var(--fut-ciano-rgb), 0.12);
+  border-radius: 999px;
+}
+
+.fut-progresso::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--fut-cor-violeta), var(--fut-cor-ciano));
+  border-radius: 999px;
+}
+
+.fut-progresso::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--fut-cor-violeta), var(--fut-cor-ciano));
+  border-radius: 999px;
+}
+
+/* ---------- Avatar 3D (palco) e plano B em SVG ---------- */
+
+.fut-avatar {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--fut-cor-painel);
+  border: 1px solid var(--fut-cor-borda);
+  border-radius: var(--fut-raio);
+  box-shadow: var(--fut-brilho-violeta);
+}
+
+.fut-avatar__tela {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Silhueta mostrada quando o navegador não tem WebGL ou a cena está desligada */
+.fut-avatar__fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  fill: var(--fut-cor-ciano);
+  stroke: var(--fut-cor-ciano);
+  filter: drop-shadow(var(--fut-brilho-ciano));
+}
+
+.fut-avatar--sem-3d .fut-avatar__tela {
+  display: none;
+}
+
+.fut-avatar--sem-3d .fut-avatar__fallback {
+  display: block;
+}
+
+.fut-avatar__rotulo {
+  position: absolute;
+  inset: auto 0 var(--fut-espaco-3) 0;
+  text-align: center;
+  font-family: var(--fut-fonte-dados);
+  color: var(--fut-cor-magenta);
+  text-shadow: var(--fut-brilho-magenta);
+}
+
+/* ---------- Seções do conteúdo de cada ideia ---------- */
+
+.fut-secao {
+  margin-bottom: var(--fut-espaco-4);
+  padding: var(--fut-espaco-4);
+  background: var(--fut-cor-painel);
+  border: 1px solid var(--fut-cor-borda);
+  border-radius: var(--fut-raio);
+  backdrop-filter: blur(var(--fut-desfoque));
+  -webkit-backdrop-filter: blur(var(--fut-desfoque));
+}
+
+.fut-secao__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--fut-espaco-2);
+  font-size: 1.1rem;
+  color: var(--fut-cor-ciano);
+}
+
+.fut-secao__titulo::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background: var(--fut-cor-magenta);
+  box-shadow: var(--fut-brilho-magenta);
+  border-radius: 50%;
+}
+
+.fut-passos {
+  counter-reset: fut-passo;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fut-passos > li {
+  counter-increment: fut-passo;
+  position: relative;
+  margin-bottom: var(--fut-espaco-3);
+  padding-left: 3rem;
+}
+
+.fut-passos > li::before {
+  content: counter(fut-passo);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-family: var(--fut-fonte-dados);
+  color: var(--fut-cor-texto);
+  border: 1px solid var(--fut-cor-magenta);
+  border-radius: 50%;
+  box-shadow: var(--fut-brilho-magenta);
+}
+
+.fut-dados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--fut-espaco-3);
+  margin: 0;
+}
+
+.fut-dados dt {
+  font-family: var(--fut-fonte-dados);
+  font-size: 0.8rem;
+  color: var(--fut-cor-texto-suave);
+  text-transform: uppercase;
+}
+
+.fut-dados dd {
+  margin: 0;
+}
+
+.fut-dica {
+  border-color: rgba(var(--fut-magenta-rgb), 0.5);
+}
+
+/* ---------- Navegação entre as ideias ---------- */
+
+.fut-navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--fut-espaco-2);
+  margin-top: var(--fut-espaco-4);
+}
+
+/* ---------- Animações ---------- */
+
+@keyframes fut-pulso {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes fut-fluxo {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+@keyframes fut-varredura {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+/* ---------- Celular: uma coluna até 720px, sem rolagem horizontal ---------- */
+
+@media (max-width: 720px) {
+  .fut-pagina {
+    padding: var(--fut-espaco-3) var(--fut-espaco-3) var(--fut-espaco-4);
+  }
+
+  .fut-hero {
+    min-height: auto;
+    padding: var(--fut-espaco-4) 0;
+  }
+
+  .fut-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .fut-cabecalho,
+  .fut-navegacao {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fut-botao {
+    width: 100%;
+  }
+
+  .fut-secao {
+    padding: var(--fut-espaco-3);
+  }
+}
+
+/* ---------- Projetor: texto maior a partir de 1600px ---------- */
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 125%;
+  }
+
+  .fut-pagina {
+    max-width: 1500px;
+  }
+}
+
+/* ---------- Acessibilidade: sem movimento para quem pede ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+
+  .fut-cartao:hover,
+  .fut-cartao:focus-visible {
+    transform: none;
+  }
+}

@@ -48,14 +48,14 @@
 - **Anotação:** —
 
 ### 299.2 — Tema CSS futurista (tokens, grade, botões, cards)
-**Próximo passo:** criar `assets/css/futurista.css` seguindo `rules-ai/prompts/VISUAL-FUTURISTA.md`.
+**Próximo passo:** — (concluída em 2026-10-20 11:02).
 - **Nível:** MEDIO — CSS com lógica de temas, 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
 - **Effort:** medium.
 - **Descrição:** tokens em `:root`, grade holográfica, cards, botões, `prefers-reduced-motion`.
 - **Critérios de Aceitação:** cores só via tokens; animações desligáveis; contraste de texto legível.
-- **Entrega:** —
-- **Verificação:** leitura do arquivo; conferência dos tokens usados.
+- **Entrega:** `assets/css/futurista.css` (tokens em `:root`, grade holográfica, hero com logo, rede de nós, cartões, botões, telemetria, palco do avatar com plano B SVG, seções, navegação, celular até 720px, projetor a partir de 1600px, `prefers-reduced-motion`).
+- **Verificação:** leitura do arquivo: 76 `{` e 76 `}`; 0 `!important`; 0 cor fora de `:root`; todo token usado está definido; nenhuma linha acima de 100 caracteres; foco visível magenta e alvo de toque de 44px.
 - **Anotação:** —
 
 ### 299.3 — index.html com logo central e rede de nós
