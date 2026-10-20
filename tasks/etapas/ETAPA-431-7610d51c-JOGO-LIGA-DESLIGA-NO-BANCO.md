@@ -70,17 +70,18 @@ relatórios e na média final.
 
 ### #302.1 — Seed da atividade e do gabarito no banco
 
-**Próximo passo:** depois da #302.0 (atividade na aula 01 da matéria nova).
+**Próximo passo:** ✅ entregue (atividade 165); seguir para a #302.2.
 
 - **Nível:** MEDIO — banco e gabarito. (reclassificada de PESADO a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
-- **Descrição:** gerar `database/2026-10-20-jogo-liga-desliga-seed-atividade.sql` (idempotente) com a
+- **Descrição:** gerar `database/2026-10-20-jogo-liga-desliga-seed-atividades.sql` (idempotente) com a
   atividade e as 12 linhas de gabarito tiradas do `safe` atual do jogo; aplicar, conferir e
   registrar em `SEEDS-APLICADOS.md`.
 - **Critérios de aceitação:** consulta mostra 1 atividade com a página certa e 12 itens no gabarito
   batendo com o jogo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-20-jogo-liga-desliga-seed-atividades.sql` aplicado pelo conector em 2026-10-20 10:20 (s30); registrado como CONCLUÍDO em `SEEDS-APLICADOS.md`.
+- **Verificação:** consulta: atividade id 165, aula 134, `total_itens` 12, 12 linhas de gabarito, letras `ABAABABAAABB` = `safe` do jogo (V,F,V,V,F,V,F,V,V,V,F,F).
 
 ### #302.2 — Página do jogo no fluxo padrão, sem respostas no código
 
