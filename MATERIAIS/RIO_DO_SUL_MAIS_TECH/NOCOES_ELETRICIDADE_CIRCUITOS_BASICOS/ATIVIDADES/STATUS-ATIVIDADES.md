@@ -27,4 +27,4 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| — | Nenhuma | — |
+| `jogo_liga_ou_desliga_seguranca_eletrica.html` (aula 01, 12 situações; visual em `jogo_liga_ou_desliga_seguranca_eletrica.css`) | Jogo objetivo A/B (LIGAR / DESLIGAR) no fluxo padrão | ✅ atividade id 165 (aula 134), 12 gabaritos; #302 |
