@@ -67,7 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
-| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #307.1 e #307.4 concluídas; #307.2 aplicar o clone (autorizado pelo professor) e #307.6 | 🔄 Ativa | 2026-10-20 14:45 |
+| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #307.1 e #307.4 concluídas; #307.6 aguarda o professor rodar o SQL da 82 | ⏹️ Encerrada | 2026-10-20 14:52 |
 
 ## 📌 Tarefas
 
@@ -1397,7 +1397,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #306.4 | Link da SA nos cards das aulas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #306.3 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | #306.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #306.4 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | **#307** | **Equipe × atividade: dupla responde junto, nota e gabarito da dupla** | 🟠 Alta | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
-| #307.6 | Aplicar na atividade 82 (Prova Prática 01) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.2, #307.4 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s31) (desde 2026-10-20 14:48) | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.6 | Aplicar na atividade 82 (Prova Prática 01) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.2, #307.4 | 👀 Rodar SQL | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |

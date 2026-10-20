@@ -113,7 +113,7 @@ respostas e cada aluno exporta a própria).
 
 ### #307.6 — Aplicar na atividade 82 (Prova Prática 01)
 
-**Próximo passo:** depois da #307.2.
+**Próximo passo:** 👀 o professor roda `database/2026-10-20-aplicar-equipes-atividade-82.sql` inteiro no SQL Editor (pelo conector foi bloqueado pelo classificador do Claude Code em 2026-10-20 14:50); depois a IA confere por consulta: 15 ligações na 82 e membros clonados com o mesmo número de respostas do respondente.
 
 - **Nível:** PESADO — banco (dados de produção).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
