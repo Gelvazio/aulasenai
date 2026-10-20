@@ -171,7 +171,7 @@ ORDER BY ordem;
 | Campo | Tipo | Restrição | Padrão | Uso |
 |-------|------|-----------|--------|-----|
 | **id** | BIGINT | PK, Sequence | `nextval('aulas_id_seq')` | Identificador único |
-| numero | INTEGER | CHECK (> 0) | — | Número sequencial da aula |
+| numero | INTEGER | CHECK (> 0); único por matéria só entre as não excluídas (`aulas_materia_id_numero_ativas_key`) | — | Número sequencial da aula |
 | **titulo** | TEXT | NOT NULL | — | Título da aula (obrigatório) |
 | descricao | TEXT | Nullable | NULL | Descrição detalhada |
 | **materia_id** | BIGINT | FK | — | Referência à matéria (obrigatório) |
@@ -199,6 +199,12 @@ exige `eh_professor_administrador()`; `anon` sem execução). O trigger
 `aulas_excluido_so_administrador_trg` recusa mudanças em `excluido` feitas pela API por quem não
 é administrador (a política de update de `aulas` aceita qualquer professor). Restaurar: voltar
 `excluido = 0` pelo SQL Editor. Nenhuma linha é apagada.
+
+**Número único só entre as não excluídas (2026-10-20, #308.2,
+`database/2026-10-20-aulas-numero-unico-so-nao-excluidas.sql`):** a antiga
+`UNIQUE (materia_id, numero)` virou o índice único parcial `aulas_materia_id_numero_ativas_key`
+(`WHERE excluido = 0`). Uma aula excluída não impede criar outra com o mesmo número; para
+restaurar a excluída, o número dela não pode estar em uso por uma aula ativa da matéria.
 
 **Bloqueio da aula bloqueia as atividades (2026-10-09, `database/2026-10-09-trigger-bloqueio-aula-atividades.sql`):**
 o trigger `aulas_bloqueio_propaga_atividades_trg` (AFTER UPDATE OF ativo, só quando `ativo` passa a
