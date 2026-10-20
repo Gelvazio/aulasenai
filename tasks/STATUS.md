@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| local · main · s33 | #315.1 ([444-58ebb5da](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md)) — `netlify.toml` com `pretty_urls = false` (executor-leve) | 🔄 Ativa | 2026-10-20 16:22 |
 | local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
 | local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
 | local · main · s22 | Sessão lateral aberta pela s17: #286.1 ([415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md), reservada pela s17) e #288.1 ([417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md)) com o executor-medio | 🔄 Ativa | 2026-10-18 20:21 |
@@ -1421,7 +1422,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #314.7 | Versão fixa do `supabase-js` (203 páginas + 3 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.8 | Medir o depois e documentar · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #314.2, #314.3, #314.4, #314.6, #314.7 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | **#315** | **Netlify sem "Pretty URLs" (links das páginas como no Git)** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [444-58ebb5da](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) | — |
-| #315.1 | `netlify.toml` com `pretty_urls = false` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ⬜ Pendente | — | [444-58ebb5da](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) | — |
+| #315.1 | `netlify.toml` com `pretty_urls = false` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s33) (desde 2026-10-20 16:22) | [444-58ebb5da](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) | — |
 
 
 ## Escopo
