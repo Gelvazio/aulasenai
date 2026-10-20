@@ -213,6 +213,20 @@ h3 {
   animation: fut-pulso var(--fut-duracao-pulso) ease-in-out infinite;
 }
 
+/* Rede de nós em 3D (canvas do cena-3d.js) por cima da rede SVG; some sem WebGL */
+.fut-rede-3d {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fut-rede-3d[hidden] {
+  display: none;
+}
+
 .fut-rede__no--ciano {
   fill: var(--fut-cor-ciano);
   filter: drop-shadow(var(--fut-brilho-ciano));

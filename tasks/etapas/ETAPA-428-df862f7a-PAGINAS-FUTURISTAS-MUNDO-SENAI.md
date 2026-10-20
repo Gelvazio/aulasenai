@@ -70,14 +70,14 @@
 - **Anotação:** —
 
 ### 299.4 — Cena 3D do avatar (Three.js) e rede de nós
-**Próximo passo:** criar `assets/js/cena-3d.js` com avatar 3D por página e fallback SVG.
+**Próximo passo:** — (concluída em 2026-10-20 11:06).
 - **Nível:** MEDIO — reclassificada pelo usuário em 2026-10-20 10:47 (antes PESADO: biblioteca 3D, WebGL, fallback).
 - **Modelo:** só Sonnet — nunca outro.
 - **Effort:** high.
 - **Descrição:** avatar 3D girando (cor de destaque da ideia); rede de nós em 3D no hero; Three.js de cdnjs em versão fixa; fallback SVG sem WebGL.
 - **Critérios de Aceitação:** sem WebGL → SVG; cena desligável com `prefers-reduced-motion`; versão do Three.js fixa.
-- **Entrega:** —
-- **Verificação:** `node --check assets/js/cena-3d.js`; leitura do fallback.
+- **Entrega:** `assets/js/cena-3d.js` (avatar holográfico girando por aluno, rede de nós 3D, Three.js r128 do cdnjs a ser carregado pelo HTML, plano B com silhueta SVG, pausa fora da tela e com a aba oculta, `?3d=0` para projetor fraco); classes `fut-rede-3d` acrescentadas ao `futurista.css`.
+- **Verificação:** `node --check` passou; 22 funções, a maior com 19 linhas, todas com JSDoc, até 3 parâmetros, 0 `var`, nenhuma linha acima de 100 caracteres; execução simulada em Node nos 5 cenários (com 3D, sem WebGL, movimento reduzido, sem Three.js, `?3d=0`): o plano B entra em todos os 4 últimos. O desenho real na tela fica para o professor conferir no navegador (sem navegador aqui).
 - **Anotação:** —
 
 ### 299.5 — Gerador das 10 páginas ideia-NN.html

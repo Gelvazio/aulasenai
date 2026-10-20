@@ -4,3 +4,4 @@
 | #299.1 | Extrair `ideias.json` das 10 ideias (texto exato) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído (2026-10-20 10:59) | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.2 | Tema CSS futurista (tokens, grade, botões, cards) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.1 | ✅ Concluído (2026-10-20 11:02) | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.3 | index.html com logo central e rede de nós · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.2 | ✅ Concluído (2026-10-20 11:04) | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.4 | Cena 3D do avatar (Three.js) e rede de nós · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.2 | ✅ Concluído (2026-10-20 11:06) | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
