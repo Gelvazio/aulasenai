@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s32 | #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
+| local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
 | local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
 | local · main · s22 | Sessão lateral aberta pela s17: #286.1 ([415-ac221821](etapas/ETAPA-415-ac221821-CORES-DO-BOTAO-EM-TODAS-AS-ATIVIDADES.md), reservada pela s17) e #288.1 ([417-c45b1fd7](etapas/ETAPA-417-c45b1fd7-ID-DA-ATIVIDADE-PARA-O-ALUNO.md)) com o executor-medio | 🔄 Ativa | 2026-10-18 20:21 |
 | local · main · s23 | #289 concluída ([418-f418dc85](etapas/ETAPA-418-f418dc85-BOTAO-ON-OFF-PROGRESSO-DA-TURMA.md)) — botão ON/OFF "Mostrar quadro" no Progresso da turma | ⏹️ Encerrada | 2026-10-19 06:13 |
@@ -1411,6 +1411,15 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | **#313** | **Botão de equipe para os alunos em todos os índices de atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
 | #313.1 | Incluir o botão "👥 Minha equipe" nos demais 32 índices de atividades · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #312.1 | ⬜ Pendente | — | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
+| **#314** | **Desempenho das páginas de atividade e cache do site** | 🟡 Média | — | — | 👀 Aguardando o plano | — (não reservável) | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.1 | Medir o antes (base de comparação) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.2 | Cabeçalhos de cache no `vercel.json` · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.3 | Objetiva: scripts e consultas em paralelo (`respostas-atividade.js`) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.4 | Discursiva: módulos em paralelo (`avaliacao-discursiva.js`) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.5 | jsPDF só quando for exportar (código, 4 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.6 | Tirar o jsPDF do `<head>` das 102 páginas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.5 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.7 | Versão fixa do `supabase-js` (203 páginas + 3 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.8 | Medir o depois e documentar · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #314.2, #314.3, #314.4, #314.6, #314.7 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 
 
 ## Escopo
@@ -1891,6 +1900,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 440-8d3b6f20 | Botão "Confirmar Respostas" verde, destacado e maior (#311, pedida em 2026-10-20 16:05) | [ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) |
 | 441-2f6a9d13 | Botão de equipe para os alunos no índice de Análise de Dados (#312, pedida em 2026-10-20 16:20) | [ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md](etapas/ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md) |
 | 442-9b4e7c58 | Botão de equipe para os alunos em todos os índices de atividades (#313, pedida em 2026-10-20 16:20) | [ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) |
+| 443-cf21e3c9 | Desempenho das páginas de atividade e cache do site (#314, pedida em 2026-10-20 16:40) | [ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
