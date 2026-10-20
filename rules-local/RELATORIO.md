@@ -2,18 +2,19 @@
 
 <!-- gerado por rules-local/sessao.mjs; não editar -->
 
-- **Versão anterior:** 2026-10-18-988f933e
-- **Versão nova:** 2026-10-18-87fd6c11
-- **Gerado em:** 2026-10-18 19:20 (Brasília)
+- **Versão anterior:** 2026-10-18-87fd6c11
+- **Versão nova:** 2026-10-20-58881388
+- **Gerado em:** 2026-10-20 07:32 (Brasília)
 - **Motivo:** versão diferente
-- **Totais:** 1 mudado · 1 adicionado · 0 removido · 19 igual
+- **Totais:** 3 mudado · 0 adicionado · 0 removido · 18 igual
 
 ## Itens
 
 | Situação | Arquivo | Código anterior | Código novo |
 |---|---|---|---|
-| mudado | INDEX.md | 35390dba8eea289e | b3b986a4445b2497 |
-| adicionado | jev.md | — | b90c43279598fde8 |
+| mudado | INDEX.md | b3b986a4445b2497 | 75c72606d2c8c7a6 |
+| mudado | jev.md | b90c43279598fde8 | 23f4adc018284d92 |
+| mudado | rules-local.md | 0b93e56531bf080b | 39d036270b2def36 |
 
 ## Restaurados
 
