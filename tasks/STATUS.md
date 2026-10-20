@@ -1395,6 +1395,14 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #306.3 | Seed: 1 atividade de SA por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #306.2 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | #306.4 | Link da SA nos cards das aulas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #306.3 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | #306.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #306.4 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| **#307** | **Equipe × atividade: dupla responde junto, nota e gabarito da dupla** | 🟠 Alta | — | — | 👀 Aguardando respostas e sim do plano | — (não reservável) | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.1 | Tabela equipe_atividade com RLS · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.2 | Função: nota de quem entregou para os membros da equipe · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.1 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.3 | Função: respostas da equipe para o colega exportar · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.1 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.4 | Modal de equipes: ligar a equipe às atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #307.1 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.5 | Exportar o gabarito da dupla · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #307.3 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.6 | Aplicar na atividade 82 (Prova Prática 01) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.2 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
@@ -1881,6 +1889,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 433-5c7e2a96 | Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa (#304, pedida em 2026-10-20 10:40) | [ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) |
 | 434-e4a81c37 | Atividade de gamificação em cada aula, pasta GAMIFICACAO/AULA-NN (#305, pedida em 2026-10-20 13:18) | [ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) |
 | 435-71f0b3d5 | Atividade "Situação de Aprendizagem" em cada aula (#306, pedida em 2026-10-20 13:31) | [ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) |
+| 436-3fa9c2e8 | Equipe × atividade: dupla responde junto, nota e gabarito da dupla (#307, pedida em 2026-10-20 13:46) | [ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
