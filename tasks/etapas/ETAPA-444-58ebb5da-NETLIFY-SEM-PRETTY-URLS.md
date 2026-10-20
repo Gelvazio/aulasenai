@@ -20,7 +20,7 @@ Netlify) → "faça a task pelo repo".
 
 ### #315.1 — `netlify.toml` com `pretty_urls = false`
 
-**Próximo passo:** criar `netlify.toml` na raiz com `[build.processing.html] pretty_urls = false`.
+**Próximo passo:** — (concluída em 2026-10-20 16:27; executor-leve, conferida pelo líder s33)
 
 - **Nível:** LEVE — configuração simples sem lógica, 1 arquivo
 - **Modelo:** só Haiku — nunca outro
@@ -30,3 +30,7 @@ Netlify) → "faça a task pelo repo".
 - **Critérios de aceitação:** o arquivo existe, é TOML válido e só tem a configuração do
   `pretty_urls`; depois do push, o deploy do Netlify publica o `index.html` de Atividades com os
   links iguais aos do Git (conferir com `curl`).
+- **Entrega:** `44172c28` (`netlify.toml`). · **Verificação:** `tomllib` lê `{build: {processing: {html: {pretty_urls: False}}}}`; depois do push, `curl` no `index.html` de
+  Atividades no Netlify: 0 links `/materiais/` reescritos e 14 links terminados em `.html` (ex.:
+  `ATIVIDADES-6-...-50-QUESTOES.html`), iguais ao Git. A tela (card da aula 06 com só a ID 32)
+  só o navegador confirma.
