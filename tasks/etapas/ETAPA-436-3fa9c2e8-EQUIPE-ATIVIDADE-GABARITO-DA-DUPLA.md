@@ -123,7 +123,7 @@ respostas e cada aluno exporta a própria).
   **Verificação:** consulta de 2026-10-20 15:05: 14 equipes com respondente ligado à 82 (a EQUIPE 15
   não tem membros); em cada equipe de 2, líder 👑 e colega com o mesmo número de respostas e a
   mesma entrega (ex.: EQUIPE 01 60/60, entregues); EQUIPE 11 com 41 × 43 porque os alunos seguem
-  respondendo depois do clone (o clone não replica gravações novas — ver #309 se aprovada).
+  respondendo depois do clone (o clone não replica gravações novas; a replicação automática foi pedida e ainda não virou tarefa).
 
 ### #307.7 — Documentação
 

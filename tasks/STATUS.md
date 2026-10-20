@@ -67,7 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
-| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #307.6 concluída; resta #307.7 (Haiku) | ⏹️ Encerrada | 2026-10-20 15:05 |
+| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #309.1 visual da lista de atividades (executor-medio) | 🔄 Ativa | 2026-10-20 15:07 |
 
 ## 📌 Tarefas
 
@@ -1398,6 +1398,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #306.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #306.4 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | **#307** | **Equipe × atividade: dupla responde junto, nota e gabarito da dupla** | 🟠 Alta | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| **#309** | **Melhorar a visualização da lista de atividades da equipe** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [438-5e91c0a7](etapas/ETAPA-438-5e91c0a7-VISUAL-LISTA-ATIVIDADES-DA-EQUIPE.md) | — |
+| #309.1 | Lista de atividades da equipe em grade, com as ligadas em destaque · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s31) (desde 2026-10-20 15:07) | [438-5e91c0a7](etapas/ETAPA-438-5e91c0a7-VISUAL-LISTA-ATIVIDADES-DA-EQUIPE.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
@@ -1886,6 +1888,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 435-71f0b3d5 | Atividade "Situação de Aprendizagem" em cada aula (#306, pedida em 2026-10-20 13:31) | [ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) |
 | 436-3fa9c2e8 | Equipe × atividade: dupla responde junto, nota e gabarito da dupla (#307, pedida em 2026-10-20 13:46) | [ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) |
 | 437-b7d2e914 | Reativar as aulas 5 e 6 de Análise de Dados (#308, pedida em 2026-10-20 14:05) | [ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md](etapas/ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md) |
+| 438-5e91c0a7 | Melhorar a visualização da lista de atividades da equipe (#309, pedida em 2026-10-20 15:06) | [ETAPA-438-5e91c0a7-VISUAL-LISTA-ATIVIDADES-DA-EQUIPE.md](etapas/ETAPA-438-5e91c0a7-VISUAL-LISTA-ATIVIDADES-DA-EQUIPE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
