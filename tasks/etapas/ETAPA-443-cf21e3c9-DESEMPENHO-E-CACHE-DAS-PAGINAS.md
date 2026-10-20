@@ -105,7 +105,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.2 — Cabeçalhos de cache no `vercel.json`
 
-**Próximo passo:** reservada por Grok Bot · 314.2 (nuvem · main) em 2026-10-20 20:40; criar `vercel.json` só com `headers`.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — configuração nova do site inteiro, com regra por tipo de arquivo
 - **Modelo:** só Sonnet — nunca outro
@@ -116,7 +116,9 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
   `.vercelignore` continua valendo.
 - **Critérios de aceitação:** JSON válido (`node -e "JSON.parse(...)"`); depois do deploy,
   `curl -sI` mostra os cabeçalhos novos.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Grok Bot · 314.2 (nuvem · main), a pedido do usuário ("Faça 314", subtarefas em paralelo), em 2026-10-20 20:41.
+- **Entrega:** commit "#314.2" na `main` (este): `vercel.json` novo, só com `headers` (sem rotas nem build): `.js`/`.mjs`/`.css`/fontes/imagens → `public, max-age=300, stale-while-revalidate=86400`; `.pdf` → `public, max-age=3600`; `.html` e `/` → `public, max-age=0, must-revalidate`. Nada de `immutable`. `.vercelignore` não foi alterado (continua valendo: ele decide o que sobe; o `vercel.json` só muda cabeçalhos).
+- **Verificação:** `node -e "JSON.parse(...)"` → válido (4 regras). Conferência dos cabeçalhos com `curl -sI` depois do deploy fica na #314.8 (medição do depois). Sem navegador e sem testes.
 
 ### #314.3 — Objetiva: scripts e consultas em paralelo (`respostas-atividade.js`)
 
