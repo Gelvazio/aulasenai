@@ -140,7 +140,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.4 — Discursiva: módulos em paralelo (`avaliacao-discursiva.js`)
 
-**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — lógica de carregamento em 1 arquivo JS
 - **Modelo:** só Sonnet — nunca outro
@@ -149,7 +149,9 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
   módulos; baixar em paralelo os independentes, mantendo a ordem de execução onde um depende do
   outro (ex.: meu gabarito espera `liberacao`). Mesmo cuidado de não baixar duas vezes.
 - **Critérios de aceitação:** `node --check`; tabela "módulo → depende de" nesta seção.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Grok Bot · 314.3/314.4 (nuvem · main), a pedido do usuário ("Faça 314", subtarefas em paralelo), em 2026-10-20 20:53.
+- **Entrega:** commit "#314.4" na `main` (este), só `assets/js/avaliacao-discursiva.js`. Das 19 chamadas `await carregarModuloDiscursiva`, as que já rodavam em paralelo (painel, progresso, PDF, combo do professor) ficaram como estavam; as que estavam **em fila** passaram a **baixar juntas e executar em ordem**: nova `preBaixarModuloDiscursiva` (`<link rel=preload as=script>`, uma vez por arquivo, `Set` `preBaixadosDiscursiva`) e `carregarEmOrdemDiscursiva(arquivos)` (pré-baixa todos e executa um por vez com o mesmo `carregarModuloDiscursiva`, que já guardava a promessa de cada arquivo — nada baixa duas vezes). Aplicado em: `carregarModaisDaNota` (3 modais; agora aceita `{ antes, depois }`), `abrirResultadoDoAluno` (resultado → 3 modais → categorias → mostrar-certas-aluno: antes 6 idas e voltas em fila, agora 1 rodada de download), `mostrarConfirmacaoDoProfessor` (3 modais → confirmar), `prepararMostrarCertas` e `mostrarCertasDasRespostas` (categorias → mostrar-certas); `abrirRespostasDoAluno` (professor) já pré-baixa `corrigidos`, `categorias` e `mostrar-certas` enquanto o combo carrega. Ordem de execução igual à de antes (não dá para saber pela leitura se um script usa o anterior ao executar, então nada passou a executar fora de ordem). Arquivo ficou com 1000 linhas (limite). Tabela módulo → depende de (ordem de execução mantida onde há dependência): `liberacao-respostas-discursiva.js` → — · `minhas-respostas-discursiva.js` → espera a montagem da liberação (o script já baixava em paralelo; inalterado) · `respostas-aluno-professor.js`, `progresso-turma-global.js`, `progresso-do-aluno.js`, `exportar-pdf-discursiva.js` → — (já disparados sem `await` em `montarPainel`/`DOMContentLoaded`; inalterados) · `categorias-pergunta-discursiva.js` → — · `mostrar-certas-discursiva.js` e `mostrar-certas-aluno-discursiva.js` → executam depois de `categorias-pergunta` · `modal-nota-discursiva.js` → `historico-nota-discursiva.js` → `justificativa-mudanca-nota.js` (em ordem) · `confirmar-nota-professor-discursiva.js` → depois dos 3 modais · `resultado-aluno-discursiva.js` → antes dos modais (ordem antiga) · `nota-ia-respostas`, `finalizar-atividade-professor`, `suspeita-copia-discursiva`, `corrigidos-discursiva` → — (já em `Promise.all` no `aoMostrarAluno`).
+- **Verificação:** `node --check assets/js/avaliacao-discursiva.js` → ok; linhas novas ≤ 100 caracteres; arquivo = 1000 linhas. Leitura: cada `window.*` só é usado depois do `await` do script dele. Sem navegador e sem testes (regra 6). **Tela:** o usuário testa a discursiva como aluno (resultado corrigido, meu gabarito) e professor (combo de alunos, Mostrar Certas, Certa/Meia/Errada).
 
 ### #314.5 — jsPDF só quando for exportar (código)
 

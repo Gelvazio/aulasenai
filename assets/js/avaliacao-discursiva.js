@@ -27,6 +27,7 @@ const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
 const ARQUIVO_CATEGORIAS_PERGUNTA = 'categorias-pergunta-discursiva.js';
 const scriptsCarregadosDiscursiva = new Map();
+const preBaixadosDiscursiva = new Set();
 const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS_ALUNO = 'mostrar-certas-aluno-discursiva.js';
 const ARQUIVOS_MODAIS_NOTA = ['modal-nota-discursiva.js', 'historico-nota-discursiva.js',
@@ -399,6 +400,8 @@ function converterRespostasDiscursivas(linhas) {
  * @param {Object} dados - Estado carregado do banco.
  */
 async function abrirRespostasDoAluno(painel, dados) {
+    [ARQUIVO_CORRIGIDOS, ARQUIVO_CATEGORIAS_PERGUNTA, ARQUIVO_MOSTRAR_CERTAS]
+        .forEach(preBaixarModuloDiscursiva);
     try {
         if (typeof window.montarRespostasDoAluno !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_RESPOSTAS_ALUNO);
@@ -471,12 +474,9 @@ async function abrirResultadoDoAluno(dados) {
     const podeVerResultado = !dados.ehProfessor && dados.entregueEm && dados.gabaritoLiberado;
     if (!podeVerResultado) return;
     try {
-        if (typeof window.mostrarResultadoDoAluno !== 'function') {
-            await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
-        }
-        await carregarModaisDaNota();
-        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
-        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS_ALUNO);
+        const faltaResultado = typeof window.mostrarResultadoDoAluno !== 'function';
+        await carregarModaisDaNota({ antes: faltaResultado ? [ARQUIVO_RESULTADO_ALUNO] : [],
+            depois: [ARQUIVO_CATEGORIAS_PERGUNTA, ARQUIVO_MOSTRAR_CERTAS_ALUNO] });
         await window.mostrarResultadoDoAluno(dados.atividadeId);
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
@@ -545,8 +545,7 @@ async function lerCorrigidosDaDiscursiva(atividadeId) {
  */
 async function prepararMostrarCertas(painel) {
     try {
-        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
-        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        await carregarEmOrdemDiscursiva([ARQUIVO_CATEGORIAS_PERGUNTA, ARQUIVO_MOSTRAR_CERTAS]);
         window.ligarMostrarCertas(painel);
     } catch (erro) {
         console.warn('Mostrar Certas:', erro.message);
@@ -561,8 +560,7 @@ async function prepararMostrarCertas(painel) {
  */
 async function mostrarCertasDasRespostas(aluno, atividadeId) {
     try {
-        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
-        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        await carregarEmOrdemDiscursiva([ARQUIVO_CATEGORIAS_PERGUNTA, ARQUIVO_MOSTRAR_CERTAS]);
         await window.mostrarCertasDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Mostrar Certas:', erro.message);
@@ -614,10 +612,8 @@ async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
  */
 async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
     try {
-        await carregarModaisDaNota();
-        if (typeof window.mostrarConfirmacaoProfessor !== 'function') {
-            await carregarModuloDiscursiva(ARQUIVO_CONFIRMAR_PROFESSOR);
-        }
+        const faltaConfirmar = typeof window.mostrarConfirmacaoProfessor !== 'function';
+        await carregarModaisDaNota({ depois: faltaConfirmar ? [ARQUIVO_CONFIRMAR_PROFESSOR] : [] });
         await window.mostrarConfirmacaoProfessor(aluno, atividadeId);
     } catch (erro) {
         console.warn('Confirmação do professor:', erro.message);
@@ -626,11 +622,30 @@ async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
 
 /**
  * Carrega (uma vez) o modal, o histórico e a justificativa de mudança da nota, em ordem.
- * @returns {Promise<void>} Resolve quando os três scripts carregaram.
+ * @param {Object} [extras] - { antes, depois }: scripts antes e depois dos três, baixados juntos.
+ * @returns {Promise<void>} Resolve quando os scripts carregaram.
  */
-async function carregarModaisDaNota() {
-    if (typeof window.pedirJustificativaMudanca === 'function') return;
-    for (const arquivo of ARQUIVOS_MODAIS_NOTA) {
+async function carregarModaisDaNota({ antes = [], depois = [] } = {}) {
+    const temModais = typeof window.pedirJustificativaMudanca === 'function';
+    const modais = temModais ? [] : ARQUIVOS_MODAIS_NOTA;
+    await carregarEmOrdemDiscursiva([...antes, ...modais, ...depois]);
+}
+
+/** Baixa um script sem executar (preload), uma vez por arquivo (#314.4). @param {string} arquivo */
+function preBaixarModuloDiscursiva(arquivo) {
+    if (scriptsCarregadosDiscursiva.has(arquivo) || preBaixadosDiscursiva.has(arquivo)) return;
+    preBaixadosDiscursiva.add(arquivo);
+    document.head.appendChild(Object.assign(document.createElement('link'),
+        { rel: 'preload', as: 'script', href: BASE_SCRIPTS_DISCURSIVA + arquivo }));
+}
+
+/**
+ * Baixa os scripts juntos e executa um por vez, na ordem (um pode depender do outro).
+ * @param {string[]} arquivos - Na ordem de execução. @returns {Promise<void>} @throws {Error}
+ */
+async function carregarEmOrdemDiscursiva(arquivos) {
+    arquivos.forEach(preBaixarModuloDiscursiva);
+    for (const arquivo of arquivos) {
         await carregarModuloDiscursiva(arquivo);
     }
 }
