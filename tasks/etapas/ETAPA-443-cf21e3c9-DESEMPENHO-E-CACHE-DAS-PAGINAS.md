@@ -53,10 +53,11 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 | Quando | Quem | O quê |
 |---|---|---|
 | 2026-10-20 16:40 | Claude Code (Opus 5.5) (s32) | Tarefa grande (várias partes, mudança em massa): fica 👀 até o "sim" do usuário ao plano |
+| 2026-10-20 20:25 | Usuário (Gelvazio), pelo Grok Bot | **"sim" ao plano**: mensagem "Faça 314". Executado pelo Grok Bot (principal) (nuvem · main) a pedido explícito do usuário. Pela regra de níveis (`niveis.md`, linha Grok: LEVE/MEDIO sim, PESADO ⛔ "sem exceção, nem com autorização"), o Grok Bot faz #314.1–#314.4 e deixa #314.5–#314.7 (PESADO) livres para Opus 5.5+/Fable; #314.8 espera as dependências |
 
 ### #314.1 — Medir o antes (base de comparação)
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** LEVE — só comandos de leitura (`curl`) e texto na etapa
 - **Modelo:** só Haiku — nunca outro
@@ -69,7 +70,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.2 — Cabeçalhos de cache no `vercel.json`
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** MEDIO — configuração nova do site inteiro, com regra por tipo de arquivo
 - **Modelo:** só Sonnet — nunca outro
@@ -84,7 +85,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.3 — Objetiva: scripts e consultas em paralelo (`respostas-atividade.js`)
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** MEDIO — lógica de carregamento em 1 arquivo JS
 - **Modelo:** só Sonnet — nunca outro
@@ -100,7 +101,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.4 — Discursiva: módulos em paralelo (`avaliacao-discursiva.js`)
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** MEDIO — lógica de carregamento em 1 arquivo JS
 - **Modelo:** só Sonnet — nunca outro
@@ -113,7 +114,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.5 — jsPDF só quando for exportar (código)
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** PESADO — 4 arquivos JS ligados (`atividade.js`, `exportar-pdf-discursiva.js`,
   `pdf-minhas-respostas.js`, `tabela-notas-professor.js`)
@@ -129,7 +130,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.6 — Tirar o jsPDF do `<head>` das 102 páginas
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** PESADO — mudança em massa (102 páginas)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -144,7 +145,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.7 — Versão fixa do `supabase-js`
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** PESADO — mudança em massa (203 páginas + 3 JS)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -159,7 +160,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.8 — Medir o depois e documentar
 
-**Próximo passo:** aguardar o "sim" ao plano.
+**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
 
 - **Nível:** LEVE — medição com `curl` e texto em `.md`
 - **Modelo:** só Haiku — nunca outro
