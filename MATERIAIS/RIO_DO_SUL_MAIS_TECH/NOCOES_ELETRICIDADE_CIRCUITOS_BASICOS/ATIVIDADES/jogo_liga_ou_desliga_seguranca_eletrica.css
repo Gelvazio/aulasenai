@@ -1,0 +1,41 @@
+/* Visual do jogo "Liga ou Desliga?" sobre o layout padrão das atividades objetivas. */
+:root {
+    --jogo-azul-escuro: #062647;
+    --jogo-azul: #1266a5;
+    --jogo-amarelo: #ffcf35;
+    --jogo-verde: #138849;
+    --jogo-verde-claro: #4cf09b;
+    --jogo-vermelho: #c9252d;
+    --jogo-vermelho-claro: #ff5c5c;
+}
+
+.jogo-cabecalho {
+    background: linear-gradient(110deg, var(--jogo-azul-escuro), var(--jogo-azul));
+    border-bottom: 6px solid var(--jogo-amarelo);
+    color: #fff;
+}
+
+.jogo-cabecalho h1 {
+    font-weight: 900;
+}
+
+.jogo-cabecalho p {
+    color: #ffdf60;
+    font-weight: bold;
+}
+
+.jogo-liga {
+    color: var(--jogo-verde-claro);
+}
+
+.jogo-desliga {
+    color: var(--jogo-vermelho-claro);
+}
+
+.alternativa-liga .letra {
+    color: var(--jogo-verde);
+}
+
+.alternativa-desliga .letra {
+    color: var(--jogo-vermelho);
+}

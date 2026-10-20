@@ -85,7 +85,7 @@ relatórios e na média final.
 
 ### #302.2 — Página do jogo no fluxo padrão, sem respostas no código
 
-**Próximo passo:** depois da #302.1.
+**Próximo passo:** ✅ entregue; seguir para a #302.3.
 
 - **Nível:** MEDIO — tira o gabarito da página (segurança) e liga ao banco. (reclassificada de PESADO a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro
@@ -95,11 +95,12 @@ relatórios e na média final.
   remover o JavaScript próprio de pontuação e o `safe`/explicações.
 - **Critérios de aceitação:** `grep` não acha `safe`/explicações; os scripts padrão estão ligados;
   12 questões com 2 alternativas.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `jogo_liga_ou_desliga_seguranca_eletrica.html` reescrito no padrão (body com `data-*`, header/login, scripts `respostas-atividade*.js`) e `jogo_liga_ou_desliga_seguranca_eletrica.css` novo com o visual do jogo, em 2026-10-20 10:45 (s30). Mantidos: título, cores, ícones e texto das 12 situações. Saíram: campos de identificação digitados, JavaScript próprio de pontuação, `safe` e explicações.
+- **Verificação:** `grep` no HTML: 0 ocorrências de `safe`/`why`/`<style`/`style=`; 12 `.aula-card.questao`, cada uma com 2 alternativas (A LIGAR, B DESLIGAR / NÃO USAR); 2 scripts `respostas-atividade*.js` ligados. Sem JS novo (nada para `node --check`). Conferir na tela: o professor entrega uma tentativa de teste (a IA não abre navegador).
 
 ### #302.3 — STATUS-ATIVIDADES.md da matéria
 
-**Próximo passo:** depois da #302.2.
+**Próximo passo:** incluir a atividade 165 em "Demais atividades da pasta" do STATUS-ATIVIDADES.md.
 
 - **Nível:** MEDIO — só `.md`. (reclassificada de LEVE a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga ou Desliga? Segurança Elétrica em Casa (12 Situações)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="jogo_liga_ou_desliga_seguranca_eletrica.css">
+</head>
+<body data-aula="01" data-tema="Segurança em Eletricidade e Grandezas Elétricas Básicas" data-total="12"
+      data-uc="Noções de Eletricidade e Circuitos Básicos" data-uc-curta="Noções de Eletricidade"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header class="jogo-cabecalho">
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1><span class="jogo-liga">LIGA</span> OU <span class="jogo-desliga">DESLIGA?</span></h1>
+            <p>Desafio de segurança elétrica em casa — 12 situações</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 12 situações.</small>
+        </div>
+
+        <div class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">🎮 Como jogar</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Formato:</strong> escolha A ou B em cada situação da casa<br>
+                        <strong>Total de situações:</strong> 12<br>
+                        <strong>Pontuação:</strong> 1 ponto por situação correta (total: 12 pontos)<br>
+                        <strong>A) LIGAR:</strong> o equipamento está íntegro e o uso é seguro.<br>
+                        <strong>B) DESLIGAR / NÃO USAR:</strong> há risco de choque, curto-circuito ou incêndio.
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 DICA DE SEGURANÇA</div>
+                    <div class="content-text">Água, fios danificados, tomadas sobrecarregadas e aparelhos usados com as mãos molhadas podem causar choque ou incêndio. Na dúvida, não toque: afaste-se e avise um adulto.</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">💡 Lâmpada em bom estado</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Lâmpada instalada corretamente, sem fios expostos e com as mãos secas. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">🔌 Carregador danificado</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O cabo do carregador está rachado e deixa fios internos à mostra. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">👕 Ferro de passar</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ferro em bom estado, usado por um adulto em local seco e estável. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">📺 Televisão</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">TV em bom estado, ligada a uma tomada adequada e sem sinais de dano. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">🚿 Chuveiro elétrico</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você quer mudar a temperatura do chuveiro enquanto está tomando banho. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">💨 Secador de cabelo</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O secador será usado com as mãos secas, longe da pia e da água. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">⚠️ Tomada com fios danificados</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tomada está quebrada e há fios expostos na parede. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">🍲 Micro-ondas</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Micro-ondas em bom estado, sobre superfície firme e com ventilação. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">🧊 Geladeira</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Geladeira em bom estado, conectada corretamente e longe de água acumulada. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">🌀 Ventilador com grade</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ventilador em bom estado, com grade de proteção firme e cabo intacto. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">🔌 Extensão sobrecarregada</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Vários aparelhos de alta potência estão conectados a uma única extensão. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">📱 Celular ou cabo molhado</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O celular ou o cabo está molhado, mas você quer conectá-lo à tomada. O que você deve fazer nesta situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li class="alternativa-liga"><span class="letra">A)</span>LIGAR — é seguro usar.</li>
+                        <li class="alternativa-desliga"><span class="letra">B)</span>DESLIGAR / NÃO USAR — há risco.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Noções de Eletricidade e Circuitos Básicos — Aula 01: Segurança em Eletricidade e Grandezas Elétricas Básicas</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>12 Situações • Liga ou Desliga?</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
