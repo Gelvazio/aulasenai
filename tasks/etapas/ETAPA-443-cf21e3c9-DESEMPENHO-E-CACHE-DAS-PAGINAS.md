@@ -105,7 +105,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.2 — Cabeçalhos de cache no `vercel.json`
 
-**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
+**Próximo passo:** reservada por Grok Bot · 314.2 (nuvem · main) em 2026-10-20 20:40; criar `vercel.json` só com `headers`.
 
 - **Nível:** MEDIO — configuração nova do site inteiro, com regra por tipo de arquivo
 - **Modelo:** só Sonnet — nunca outro

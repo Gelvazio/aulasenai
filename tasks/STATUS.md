@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Grok Bot · 314.2 (nuvem · main) | #314.2 cabeçalhos de cache no `vercel.json` ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | 🔄 Ativa | 2026-10-20 20:40 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída; aguarda #314.2–#314.7 para fazer a #314.8 ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | 🔄 Ativa | 2026-10-20 20:29 |
 | local · main · s33 | #315 e #316 concluídas ([445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md)) — card da aula só com atividades vinculadas no banco | ⏹️ Encerrada | 2026-10-20 16:32 |
 | local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
@@ -1414,7 +1415,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | **#313** | **Botão de equipe para os alunos em todos os índices de atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
 | #313.1 | Incluir o botão "👥 Minha equipe" nos demais 32 índices de atividades · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #312.1 | ⬜ Pendente | — | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
 | **#314** | **Desempenho das páginas de atividade e cache do site** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
-| #314.2 | Cabeçalhos de cache no `vercel.json` · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #314.2 | Cabeçalhos de cache no `vercel.json` · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | 🔄 Em execução | Grok Bot · 314.2 (nuvem · main) (desde 2026-10-20 20:40) | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.3 | Objetiva: scripts e consultas em paralelo (`respostas-atividade.js`) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.4 | Discursiva: módulos em paralelo (`avaliacao-discursiva.js`) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #314.1 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.5 | jsPDF só quando for exportar (código, 4 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
