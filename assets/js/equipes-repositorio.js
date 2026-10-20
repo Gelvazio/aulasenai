@@ -17,7 +17,9 @@ const COLUNAS_ATIVIDADE_EQUIPES = 'id, nome_atividade, aulas!inner(materia_id)';
 const CONFLITO_EQUIPE_ATIVIDADE = 'equipe_id,atividade_id';
 const RPC_ADMINISTRADOR_EQUIPES = 'eh_professor_administrador';
 const RPC_MINHAS_EQUIPES = 'minhas_equipes';
-const RPC_ALUNOS_TURMA_LIDER = 'alunos_da_turma_lider';
+const RPC_ATIVIDADES_MINHA_EQUIPE = 'atividades_da_minha_equipe';
+const RPC_CLONAR_RESPOSTAS_EQUIPE = 'clonar_respostas_equipe';
+const RPC_ALUNOS_TURMA_LIDER ='alunos_da_turma_lider';
 const VALOR_ALUNO_LIDER = 1;
 const PERFIL_PROFESSOR_EQUIPES = 'PROFESSOR';
 const COLUNAS_TURMA_EQUIPES = 'codigo, nome, turno, unidade:unidade_id(nome)';
@@ -158,6 +160,30 @@ function criarLeiturasContextoEquipes(cliente) {
     async listarMinhasEquipes(materiaId) {
       return dadosOuErroEquipes(await cliente.rpc(RPC_MINHAS_EQUIPES,
         { p_materia_id: materiaId }));
+    },
+
+    /**
+     * Atividades ligadas às equipes do aluno logado na matéria (atividades_da_minha_equipe).
+     * @param {number} materiaId - Id da matéria.
+     * @returns {Promise<{equipe_id: number, atividade_id: number, nome_atividade: string,
+     *   eu_lider: boolean}[]>} Linhas equipe × atividade.
+     */
+    async listarAtividadesDaMinhaEquipe(materiaId) {
+      return dadosOuErroEquipes(await cliente.rpc(RPC_ATIVIDADES_MINHA_EQUIPE,
+        { p_materia: materiaId }));
+    },
+
+    /**
+     * Sobrescreve as respostas dos integrantes com as do líder (clonar_respostas_equipe).
+     * @param {number} atividadeId - Id da atividade.
+     * @param {number} equipeId - Id da equipe.
+     * @returns {Promise<{equipe_id: number, respondente_id: string,
+     *   alunos_clonados: number}[]>} Resultado por equipe.
+     * @throws {Error} Erro do banco (42501 sem permissão; P0001 líder sem respostas).
+     */
+    async confirmarRespostasEquipe(atividadeId, equipeId) {
+      return dadosOuErroEquipes(await cliente.rpc(RPC_CLONAR_RESPOSTAS_EQUIPE,
+        { p_atividade: atividadeId, p_equipe: equipeId }));
     },
   };
 }

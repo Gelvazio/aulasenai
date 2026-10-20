@@ -14,6 +14,91 @@ const MSG_ESCOLHA_ATIVIDADE = 'Escolha a atividade que será ligada às equipes.
 const MSG_SEM_ATIVIDADES = 'Esta matéria ainda não tem atividades cadastradas.';
 const MSG_SEM_EQUIPES_ATIVIDADE = 'Cadastre ao menos uma equipe antes de ligar atividades.';
 const MSG_LIGADAS_TODAS = 'Atividade ligada a todas as equipes da turma.';
+const ROTULO_CONFIRMAR_RESPOSTAS = '✅ Confirmar Respostas';
+const TITULO_ATIVIDADES_ALUNO = 'Atividades da equipe';
+const TEXTO_LIDER_CONFIRMA = 'O líder confirma as respostas da equipe.';
+const MSG_CONFIRMAR_RESPOSTAS = 'As respostas do líder vão SUBSTITUIR as respostas de todos os ' +
+  'integrantes da equipe nesta atividade. Continuar?';
+const TITULO_CONFIRMAR_RESPOSTAS = 'Confirmar Respostas da equipe';
+const CODIGO_SEM_PERMISSAO_EQUIPES = '42501';
+const MSG_SEM_PERMISSAO_CONFIRMAR = 'Só o líder da equipe ou o professor pode confirmar as ' +
+  'respostas.';
+
+/**
+ * Carrega as atividades ligadas às equipes do aluno (vazio se a leitura falhar).
+ * @returns {Promise<Object[]>} Linhas equipe × atividade.
+ */
+async function carregarAtividadesDoAluno() {
+  try {
+    return await estadoEquipes.repositorio.listarAtividadesDaMinhaEquipe(
+      estadoEquipes.materia.id);
+  } catch (erro) {
+    return [];
+  }
+}
+
+/**
+ * Cria a seção "Atividades da equipe" do card do aluno.
+ * @param {number} equipeId - Id da equipe do card.
+ * @returns {HTMLElement|null} Seção, ou null se a equipe não tem atividade ligada.
+ */
+function criarSecaoAtividadesDoAluno(equipeId) {
+  const atividades = estadoEquipes.atividadesMinhaEquipe
+    .filter((linha) => linha.equipe_id === equipeId);
+  if (!atividades.length) return null;
+
+  const secao = criarElementoEquipes('section', 'equipes-atividades-aluno');
+  const lista = criarElementoEquipes('ul', 'equipes-atividades-aluno__lista');
+  atividades.forEach((linha) => {
+    const item = criarElementoEquipes('li', 'equipes-atividades-aluno__item');
+    item.append(criarElementoEquipes('span', 'equipes-atividades__nome',
+      linha.nome_atividade || 'Atividade ' + linha.atividade_id));
+    if (linha.eu_lider) {
+      item.append(criarBotaoConfirmarRespostas(equipeId, linha.atividade_id));
+    }
+    lista.append(item);
+  });
+  secao.append(criarElementoEquipes('h4', '', TITULO_ATIVIDADES_ALUNO), lista);
+  const souLider = atividades.some((linha) => linha.eu_lider);
+  if (!souLider) secao.append(criarElementoEquipes('small', '', TEXTO_LIDER_CONFIRMA));
+  return secao;
+}
+
+/**
+ * Traduz o erro da confirmação de respostas.
+ * @param {Object} erro - Erro do supabase-js.
+ * @returns {string} Mensagem para o usuário.
+ */
+function traduzirErroConfirmarRespostas(erro) {
+  if (erro?.code === CODIGO_SEM_PERMISSAO_EQUIPES) return MSG_SEM_PERMISSAO_CONFIRMAR;
+  return erro?.message || String(erro);
+}
+
+/**
+ * Confirma as respostas do líder para a equipe (após o popup) e avisa o resultado.
+ * @param {number} atividadeId - Id da atividade (data-id do botão).
+ * @param {HTMLButtonElement} botao - Botão clicado (desabilitado durante a chamada).
+ * @returns {Promise<void>}
+ */
+async function confirmarRespostasDaEquipe(atividadeId, botao) {
+  const equipeId = Number(botao.dataset.equipeId);
+  const confirmou = await confirmarPopup(MSG_CONFIRMAR_RESPOSTAS,
+    { tipo: 'aviso', titulo: TITULO_CONFIRMAR_RESPOSTAS, textoConfirmar: 'Continuar' });
+  if (!confirmou) return;
+
+  botao.disabled = true;
+  try {
+    const resultado = await estadoEquipes.repositorio.confirmarRespostasEquipe(
+      atividadeId, equipeId);
+    const total = (resultado || []).reduce((soma, linha) => soma + linha.alunos_clonados, 0);
+    await mostrarPopup('Respostas confirmadas para ' + total + ' integrante(s).',
+      { tipo: 'sucesso' });
+  } catch (erro) {
+    await mostrarPopup(traduzirErroConfirmarRespostas(erro), { tipo: 'erro' });
+  } finally {
+    botao.disabled = false;
+  }
+}
 
 /**
  * Diz se o usuário pode ligar equipes a atividades (só o professor; o RLS confirma no banco).
@@ -132,6 +217,43 @@ function criarCaixaAtividadeEquipe(dados) {
 }
 
 /**
+ * Cria o botão "Confirmar Respostas" de uma atividade ligada a uma equipe.
+ * @param {number} equipeId - Id da equipe.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {HTMLButtonElement} Botão (data-id = atividade, data-equipe-id = equipe).
+ */
+function criarBotaoConfirmarRespostas(equipeId, atividadeId) {
+  const botao = criarBotaoEquipes({ texto: ROTULO_CONFIRMAR_RESPOSTAS,
+    acao: 'confirmar-respostas', id: atividadeId, classe: 'equipes-btn--confirmar' });
+  botao.dataset.equipeId = String(equipeId);
+  return botao;
+}
+
+/**
+ * Cria a célula do professor: caixa da atividade + botão de confirmar (só se estiver ligada).
+ * @param {{equipeId: number, atividade: Object, marcada: boolean}} dados - Dados da célula.
+ * @returns {HTMLDivElement} Célula da grade.
+ */
+function criarCelulaAtividadeProfessor(dados) {
+  const celula = criarElementoEquipes('div', 'equipes-atividades__celula');
+  const botao = criarBotaoConfirmarRespostas(dados.equipeId, dados.atividade.id);
+  botao.hidden = !dados.marcada;
+  celula.append(criarCaixaAtividadeEquipe(dados), botao);
+  return celula;
+}
+
+/**
+ * Mostra ou esconde o botão de confirmar conforme a caixa da atividade está marcada.
+ * @param {HTMLInputElement} caixa - Caixa de seleção da atividade.
+ * @returns {void}
+ */
+function alternarBotaoConfirmarDaCaixa(caixa) {
+  const botao = caixa.closest('.equipes-atividades__celula')
+    ?.querySelector('button[data-acao="confirmar-respostas"]');
+  if (botao) botao.hidden = !caixa.checked;
+}
+
+/**
  * Atividades da matéria com as ligadas à equipe primeiro (demais na ordem atual).
  * @param {Set<number>} ligadas - Ids das atividades ligadas.
  * @returns {Object[]} Atividades ordenadas.
@@ -158,7 +280,7 @@ function criarLinhaAtividadesEquipe(equipeId) {
   const ligadas = atividadesDaEquipe(equipeId);
   const grade = criarElementoEquipes('div', 'equipes-atividades__grade');
   ordenarAtividadesLigadasPrimeiro(ligadas).forEach((atividade) => grade.append(
-    criarCaixaAtividadeEquipe({ equipeId, atividade, marcada: ligadas.has(atividade.id) })));
+    criarCelulaAtividadeProfessor({ equipeId, atividade, marcada: ligadas.has(atividade.id) })));
   celula.append(criarElementoEquipes('div', 'equipes-atividades__titulo', TITULO_ATIVIDADES),
     grade);
   return linha;
@@ -208,6 +330,7 @@ async function tratarMudancaAtividadesEquipes(evento) {
   const repositorio = estadoEquipes.repositorio;
   const item = caixa.closest('.equipes-atividades__item');
   item?.classList.toggle(CLASSE_ITEM_LIGADO, caixa.checked);
+  alternarBotaoConfirmarDaCaixa(caixa);
   try {
     if (caixa.checked) await repositorio.ligarEquipesAtividade([equipeId], atividadeId);
     else await repositorio.desligarEquipeAtividade(equipeId, atividadeId);
@@ -215,6 +338,7 @@ async function tratarMudancaAtividadesEquipes(evento) {
   } catch (erro) {
     caixa.checked = !caixa.checked;
     item?.classList.toggle(CLASSE_ITEM_LIGADO, caixa.checked);
+    alternarBotaoConfirmarDaCaixa(caixa);
     await mostrarPopup(traduzirErroEquipes(erro), { tipo: 'erro' });
   }
 }

@@ -263,3 +263,22 @@
   border-color: var(--equipes-azul);
   font-weight: 600;
 }
+
+/* Confirmar Respostas do líder (equipes-atividades.js) */
+.equipes-atividades__celula { display: flex; flex-direction: column; gap: 6px; }
+.equipes-atividades__celula .equipes-atividades__item { flex: 1; }
+.equipes-btn--confirmar { align-self: flex-start; }
+.equipes-atividades-aluno { margin-top: 12px; }
+.equipes-atividades-aluno__lista { list-style: none; margin: 6px 0; padding: 0; }
+.equipes-atividades-aluno__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  background: var(--equipes-destaque);
+  border: 1px solid var(--equipes-azul);
+  border-radius: var(--equipes-raio);
+}
+.equipes-btn--confirmar[hidden] { display: none; }

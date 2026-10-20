@@ -23,6 +23,7 @@ const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
   turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false, materias: [],
   editandoEquipeId: null, editandoMembroId: null, atividades: [], ligacoes: [],
+  atividadesMinhaEquipe: [],
 };
 let elementosEquipes = null;
 
@@ -483,6 +484,8 @@ function criarCardMinhaEquipe(linhas) {
     lista.appendChild(item);
   });
   card.append(lista);
+  const secaoAtividades = criarSecaoAtividadesDoAluno(linhas[0].equipe_id);
+  if (secaoAtividades) card.append(secaoAtividades);
   return card;
 }
 
@@ -496,6 +499,7 @@ async function iniciarModoAluno() {
     mostrarMensagemEquipes(MSG_SEM_EQUIPE_ALUNO);
     return;
   }
+  estadoEquipes.atividadesMinhaEquipe = await carregarAtividadesDoAluno();
   const grupos = [...agruparPorEquipe(linhas).values()];
   elementosEquipes.lista.replaceChildren(...grupos.map(criarCardMinhaEquipe));
 }
@@ -762,6 +766,7 @@ const ACOES_CLIQUE_EQUIPES = {
   'confirmar-integrante': confirmarIntegrante,
   'abrir-atividades-equipe': abrirAtividadesEquipe,
   'ligar-todas-atividade': ligarTodasEquipesAtividade,
+  'confirmar-respostas': confirmarRespostasDaEquipe,
 };
 
 /**
@@ -777,7 +782,7 @@ function tratarCliqueEquipes(evento) {
   const acao = botao && ACOES_CLIQUE_EQUIPES[botao.dataset.acao];
   if (!acao) return;
 
-  acao(Number(botao.dataset.id));
+  acao(Number(botao.dataset.id), botao);
 }
 
 /**

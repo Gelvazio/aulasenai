@@ -75,17 +75,23 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 
 ### #310.2 — Tela do aluno: atividades da equipe e botão "Confirmar Respostas"
 
-**Próximo passo:** depois da #310.1.
+**Próximo passo:** — (concluída em 2026-10-20 15:40; executor-medio, conferida pelo líder s31)
 
 - **Nível:** MEDIO — tela em até 3 arquivos (`equipes-modal.js`, `equipes-repositorio.js`, CSS)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
 - **Descrição:** R5; confirmação por popup antes de chamar; mensagem de sucesso/erro.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `equipes-repositorio.js` (`listarAtividadesDaMinhaEquipe`, `confirmarRespostasEquipe`),
+  `equipes-atividades.js` (seção "Atividades da equipe" no card do aluno, botão "✅ Confirmar
+  Respostas" só com `eu_lider`; no painel do professor, botão ao lado de cada atividade ligada,
+  aparece/some ao marcar), `equipes-modal.js`, `equipes-modal.css`; confirmação por popup antes de
+  chamar · **Verificação:** `node --check` nos 3 JS; leitura do diff (RPC com `p_atividade`/
+  `p_equipe`; popup carregado pelo `menu-acao-equipes.js`). **Conferir na tela:** aluno líder e
+  professor.
 
 ### #310.3 — Documentação
 
-**Próximo passo:** depois da #310.2.
+**Próximo passo:** executor-leve atualiza a documentação (junto com a #307.7).
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
