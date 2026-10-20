@@ -62,12 +62,14 @@ respostas e cada aluno exporta a própria).
 
 ### #307.2 — Função: clonar as respostas do líder para os membros da equipe
 
-**Próximo passo:** depois da #307.1.
+**Próximo passo:** 👀 aplicar `database/2026-10-20-clonar-respostas-equipe.sql` no banco (a aplicação pelo conector foi bloqueada pelo classificador do Claude Code em 2026-10-20 14:36): o professor roda no SQL Editor ou libera o `apply_migration`; depois conferir com `select proname from pg_proc where proname = 'clonar_respostas_equipe'`.
 
 - **Nível:** PESADO — banco (respostas, entrega e nota).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
 - **Descrição:** função `security definer`, chamada pelo professor da turma, que copia as respostas e a entrega do líder da equipe ligada à atividade para cada membro que ainda não tem entrega própria (idempotente; nunca sobrescreve quem respondeu sozinho); a nota sai das respostas, como hoje.
+- **Situação da 82 (consulta 14:33):** em cada equipe só um membro tem respostas (o outro tem 0);
+  4 entregaram (EQUIPES 01, 02, 06, 08, 13 com 59–60 respostas). O clone não sobrescreve ninguém.
 - **Entrega:** — · **Verificação:** —
 
 ### #307.3 — Função: respostas da equipe para o colega exportar
