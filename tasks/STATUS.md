@@ -1383,6 +1383,19 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #299.6 | Navegação e responsividade (celular e projetor) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.5 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.7 | Conferência por leitura e `node --check` (sem navegador) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.1 a #299.6 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.8 | Fechamento: quadro, commit e push por subtarefa · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.7 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | 👀 Aguardando o sim ao plano | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.3 | Gerador de atividades objetivas: uma capacidade por item e 4 alternativas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.4 | Template da atividade objetiva · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #300.3 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.5 | Gerador da prova objetiva (`.docx`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1, #300.3 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.6 | Gerador da avaliação discursiva · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.7 | Template da atividade discursiva · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #300.6 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.8 | Gerador da prova prática (`.docx`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.9 | Validação global "≥ 1 situação por aula" no `materia.py` e no `materia.json` · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.2 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.10 | Auditoria: situação de aprendizagem em todas as matérias de todos os cursos · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.9 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
+| #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 
 
 ## Escopo
@@ -1849,6 +1862,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 426-6a90fb45 | Produzir por completo a matéria Fundamentos dos Processos de Produção (#297, pedida em 2026-10-19) | [ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md](etapas/ETAPA-426-6a90fb45-PRODUZIR-FUNDAMENTOS-PROCESSOS-PRODUCAO.md) |
 | 427-65d015e2 | Ideias de atividades do Mundo SENAI para 10 alunos do CEPLAS (#298, pedida em 2026-10-19) | [ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md](etapas/ETAPA-427-65d015e2-IDEIAS-MUNDO-SENAI-CEPLAS.md) |
 | 428-df862f7a | Páginas futuristas das 10 ideias do Mundo SENAI (#299, pedida em 2026-10-19) | [ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) |
+| 429-1e308670 | Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula (#300, pedida em 2026-10-20) | [ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
