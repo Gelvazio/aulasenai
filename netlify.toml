@@ -1,0 +1,5 @@
+# Desliga as Pretty URLs do Netlify: ele reescreve os links dos HTMLs para minusculas
+# e sem ".html", e o indice de atividades liga a atividade a aula pelo link que termina
+# em ".html" (ver tasks #315).
+[build.processing.html]
+  pretty_urls = false
