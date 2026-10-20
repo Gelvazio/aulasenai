@@ -67,7 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
-| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #310.1 banco do Confirmar Respostas | 🔄 Ativa | 2026-10-20 15:21 |
+| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #310.2 tela do Confirmar Respostas (executor-medio) | 🔄 Ativa | 2026-10-20 15:31 |
 
 ## 📌 Tarefas
 
@@ -1399,8 +1399,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | **#307** | **Equipe × atividade: dupla responde junto, nota e gabarito da dupla** | 🟠 Alta | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | **#310** | **"Confirmar Respostas" do líder da equipe (sobrescreve os integrantes)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
-| #310.1 | Banco: confirmar respostas pelo líder, sobrescrevendo, com cópia do apagado · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s31) (desde 2026-10-20 15:21) | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
-| #310.2 | Tela do aluno: atividades da equipe e botão "Confirmar Respostas" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #310.1, #309.1 | ⬜ Pendente | — | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
+| #310.2 | Tela do aluno: atividades da equipe e botão "Confirmar Respostas" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #310.1, #309.1 | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s31) (desde 2026-10-20 15:31) | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
 | #310.3 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #310.2 | ⬜ Pendente | — | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |

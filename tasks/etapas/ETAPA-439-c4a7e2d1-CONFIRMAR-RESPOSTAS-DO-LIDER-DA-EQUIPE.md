@@ -60,13 +60,18 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 
 ### #310.1 — Banco: confirmar respostas pelo líder, sobrescrevendo, com cópia do apagado
 
-**Próximo passo:** escrever o SQL em `database/2026-10-20-confirmar-respostas-equipe.sql` e aplicar.
+**Próximo passo:** — (concluída em 2026-10-20 15:30 pela s31)
 
 - **Nível:** PESADO — banco + segurança (função security definer, apaga dados)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
 - **Descrição:** R1–R4 + `atividades_da_minha_equipe(p_materia)`; SQL idempotente em `database/`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-20-confirmar-respostas-equipe.sql`: `backup_clone_equipe` (RLS, sem
+  acesso pela API), `total_respostas_aluno`, `sobrescrever_respostas_membro`,
+  `clonar_respostas_equipe(p_atividade, p_equipe DEFAULT NULL)` (substitui a da #307.2) e
+  `atividades_da_minha_equipe(p_materia)` · **Verificação:** migração aplicada; `pg_proc`: `anon`
+  sem execução em todas, `authenticated` só nas 2 públicas; R2 testado em bloco com rollback
+  (claims de aluno não líder da turma 133933 → erro 42501). R1/R3/I1 conferir na 1ª confirmação real.
 
 ### #310.2 — Tela do aluno: atividades da equipe e botão "Confirmar Respostas"
 
