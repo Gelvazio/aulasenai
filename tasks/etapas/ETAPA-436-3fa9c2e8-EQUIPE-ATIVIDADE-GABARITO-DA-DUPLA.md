@@ -48,13 +48,17 @@ respostas e cada aluno exporta a própria).
 
 ### #307.1 — Tabela equipe_atividade com RLS
 
-**Próximo passo:** conferir onde a prova prática grava respostas e entrega; depois criar a tabela.
+**Próximo passo:** — (concluída em 2026-10-20 14:20 pela s31)
 
 - **Nível:** PESADO — banco (tabela, RLS, trigger).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
 - **Descrição:** conferir antes onde a prova prática grava respostas e entrega (a `resposta_atividade` não tem linhas da 82); criar `public.equipe_atividade` (`equipe_id`, `atividade_id`, `respondente_id`, `criado_em`, `criado_por`, única por equipe + atividade) com o RLS das equipes (professor da turma grava; aluno lê só a da própria equipe); SQL idempotente em `database/`.
-- **Entrega:** — · **Verificação:** —
+- **Achado:** a prova prática grava em `resposta_discursiva` (item/tópico/texto) + `entrega_atividade`;
+  na 82 há 14 alunos com respostas e só 4 entregas — muitos membros têm respostas próprias sem entregar.
+- **Entrega:** `database/2026-10-20-equipe-atividade.sql` (tabela, índice, funções
+  `equipe_atividade_turma` e `aluno_da_equipe`, 6 políticas) · **Verificação:** migração aplicada;
+  consulta: `relrowsecurity = true`, 6 políticas em `pg_policies`, `anon` sem SELECT.
 
 ### #307.2 — Função: clonar as respostas do líder para os membros da equipe
 
