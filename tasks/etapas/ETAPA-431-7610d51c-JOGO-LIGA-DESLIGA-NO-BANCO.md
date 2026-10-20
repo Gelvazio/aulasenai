@@ -43,7 +43,7 @@ relatórios e na média final.
   MATERIAIS\RIO_DO_SUL_MAIS_TECH\NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS". A matéria não existe no
   banco: entra a #302.0 (cadastrar a matéria no curso 6 com as 9 aulas) e a atividade vai na
   **aula 01 — Segurança em Eletricidade e Grandezas Elétricas Básicas**.
-- ⬜ 2. Aprovação do plano com a #302.0 (tarefa grande: banco + gabarito).
+- ✅ 2. Aprovação do plano com a #302.0 → professor, 2026-10-20 09:48: "faça a tarefa 302".
 
 ### Decisões
 
@@ -55,7 +55,7 @@ relatórios e na média final.
 
 ### #302.0 — Cadastrar a matéria Noções de Eletricidade e as 9 aulas
 
-**Próximo passo:** aguardar o "sim" do plano.
+**Próximo passo:** gerar o seed da matéria (modelo comunicacao-oral-escrita), aplicar e conferir.
 
 - **Nível:** MEDIO — banco. (reclassificada de PESADO a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro
