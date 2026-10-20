@@ -8,6 +8,8 @@
 
 const CLASSE_LISTA_ATIVIDADES = 'equipes-tabela__atividades';
 const CLASSE_CAIXA_ATIVIDADE = 'equipes-atividades__caixa';
+const CLASSE_ITEM_LIGADO = 'equipes-atividades__item--ligada';
+const TITULO_ATIVIDADES = 'Atividades desta equipe — marque as que ela faz junto';
 const MSG_ESCOLHA_ATIVIDADE = 'Escolha a atividade que será ligada às equipes.';
 const MSG_SEM_ATIVIDADES = 'Esta matéria ainda não tem atividades cadastradas.';
 const MSG_SEM_EQUIPES_ATIVIDADE = 'Cadastre ao menos uma equipe antes de ligar atividades.';
@@ -123,8 +125,21 @@ function criarCaixaAtividadeEquipe(dados) {
   caixa.dataset.equipeId = String(dados.equipeId);
   caixa.dataset.atividadeId = String(dados.atividade.id);
   const rotulo = criarElementoEquipes('label', 'equipes-atividades__item');
-  rotulo.append(caixa, ' ' + nomeDaAtividadeEquipes(dados.atividade));
+  rotulo.classList.toggle(CLASSE_ITEM_LIGADO, dados.marcada);
+  rotulo.append(caixa, criarElementoEquipes('span', 'equipes-atividades__nome',
+    nomeDaAtividadeEquipes(dados.atividade)));
   return rotulo;
+}
+
+/**
+ * Atividades da matéria com as ligadas à equipe primeiro (demais na ordem atual).
+ * @param {Set<number>} ligadas - Ids das atividades ligadas.
+ * @returns {Object[]} Atividades ordenadas.
+ */
+function ordenarAtividadesLigadasPrimeiro(ligadas) {
+  const estaLigada = (atividade) => ligadas.has(atividade.id);
+  return estadoEquipes.atividades.filter(estaLigada).concat(
+    estadoEquipes.atividades.filter((atividade) => !estaLigada(atividade)));
 }
 
 /**
@@ -141,8 +156,11 @@ function criarLinhaAtividadesEquipe(equipeId) {
     return linha;
   }
   const ligadas = atividadesDaEquipe(equipeId);
-  estadoEquipes.atividades.forEach((atividade) => celula.append(criarCaixaAtividadeEquipe(
-    { equipeId, atividade, marcada: ligadas.has(atividade.id) })));
+  const grade = criarElementoEquipes('div', 'equipes-atividades__grade');
+  ordenarAtividadesLigadasPrimeiro(ligadas).forEach((atividade) => grade.append(
+    criarCaixaAtividadeEquipe({ equipeId, atividade, marcada: ligadas.has(atividade.id) })));
+  celula.append(criarElementoEquipes('div', 'equipes-atividades__titulo', TITULO_ATIVIDADES),
+    grade);
   return linha;
 }
 
@@ -188,12 +206,15 @@ async function tratarMudancaAtividadesEquipes(evento) {
   const equipeId = Number(caixa.dataset.equipeId);
   const atividadeId = Number(caixa.dataset.atividadeId);
   const repositorio = estadoEquipes.repositorio;
+  const item = caixa.closest('.equipes-atividades__item');
+  item?.classList.toggle(CLASSE_ITEM_LIGADO, caixa.checked);
   try {
     if (caixa.checked) await repositorio.ligarEquipesAtividade([equipeId], atividadeId);
     else await repositorio.desligarEquipeAtividade(equipeId, atividadeId);
     atualizarEstadoLigacao({ equipeId, atividadeId, ligar: caixa.checked });
   } catch (erro) {
     caixa.checked = !caixa.checked;
+    item?.classList.toggle(CLASSE_ITEM_LIGADO, caixa.checked);
     await mostrarPopup(traduzirErroEquipes(erro), { tipo: 'erro' });
   }
 }

@@ -239,5 +239,27 @@
 
 /* Atividades das equipes (equipes-atividades.js) */
 .equipes-barra--atividades { margin: 0 0 12px; max-width: none; }
-.equipes-tabela__atividades td { background: #f5f8fc; }
-.equipes-atividades__item { display: inline-flex; align-items: center; gap: 4px; margin: 2px 14px 2px 0; }
+.equipes-tabela__atividades td { background: #f5f8fc; padding-left: 24px; }
+.equipes-atividades__titulo { color: var(--equipes-azul); font-weight: 600; margin-bottom: 8px; }
+.equipes-atividades__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+.equipes-atividades__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--equipes-fundo);
+  border: 1px solid var(--equipes-borda);
+  border-radius: var(--equipes-raio);
+  color: var(--equipes-texto);
+  cursor: pointer;
+}
+.equipes-atividades__nome { min-width: 0; overflow-wrap: anywhere; }
+.equipes-atividades__item--ligada {
+  background: var(--equipes-destaque);
+  border-color: var(--equipes-azul);
+  font-weight: 600;
+}

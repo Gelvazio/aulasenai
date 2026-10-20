@@ -8,7 +8,7 @@ legível: em grade, com as ligadas destacadas.
 
 ### #309.1 — Lista de atividades da equipe em grade, com as ligadas em destaque
 
-**Próximo passo:** executor-medio aplica no `equipes-atividades.js` e no `equipes-modal.css`.
+**Próximo passo:** — (concluída em 2026-10-20 15:15; executor-medio, conferida pelo líder s31)
 
 - **Nível:** MEDIO — tela (JS + CSS), até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -19,4 +19,8 @@ legível: em grade, com as ligadas destacadas.
   integrantes; sem estilo inline.
 - **Critérios de aceitação:** `node --check` ok; só CSS por classes/tokens; marcar/desmarcar segue
   gravando como antes.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/equipes-atividades.js` (título, grade, ligadas primeiro, classe
+  `equipes-atividades__item--ligada` alternada no clique e revertida em erro) e
+  `assets/css/equipes-modal.css` (grade `auto-fill minmax(260px, 1fr)`, cartões, destaque com os
+  tokens `--equipes-destaque`/`--equipes-azul`, recuo 24px) · **Verificação:** `node --check`;
+  leitura do CSS (tokens existem no `:root` do arquivo). **Conferir na tela** pelo professor.
