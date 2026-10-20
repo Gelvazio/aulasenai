@@ -67,6 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
+| local · main · s31 | #308 ([437-b7d2e914](etapas/ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md)) — #308.1 reativar aulas 41 e 42 | 🔄 Ativa | 2026-10-20 14:05 |
 
 ## 📌 Tarefas
 
@@ -1401,6 +1402,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #307.4 | Modal de equipes: ligar a equipe às atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #307.1 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #307.6 | Aplicar na atividade 82 (Prova Prática 01) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #307.2, #307.4 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ⬜ Pendente | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
+| **#308** | **Reativar as aulas 5 e 6 de Análise de Dados (ids 41 e 42)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [437-b7d2e914](etapas/ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md) | — |
+| #308.1 | UPDATE aulas.excluido = 0 nos ids 41 e 42 · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s31) (desde 2026-10-20 14:05) | [437-b7d2e914](etapas/ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
@@ -1888,6 +1891,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 434-e4a81c37 | Atividade de gamificação em cada aula, pasta GAMIFICACAO/AULA-NN (#305, pedida em 2026-10-20 13:18) | [ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) |
 | 435-71f0b3d5 | Atividade "Situação de Aprendizagem" em cada aula (#306, pedida em 2026-10-20 13:31) | [ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) |
 | 436-3fa9c2e8 | Equipe × atividade: dupla responde junto, nota e gabarito da dupla (#307, pedida em 2026-10-20 13:46) | [ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) |
+| 437-b7d2e914 | Reativar as aulas 5 e 6 de Análise de Dados (#308, pedida em 2026-10-20 14:05) | [ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md](etapas/ETAPA-437-b7d2e914-REATIVAR-AULAS-5-E-6-ANALISE-DADOS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
