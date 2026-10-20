@@ -41,6 +41,8 @@ const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
 const VALOR_ATIVO_MEU_GABARITO = 'sim';
 const SELETOR_MEU_GABARITO_PADRAO = '.folha-respostas';
 const SELETOR_MEU_GABARITO_TOPO = '.export-bar';
+// Promessa de cada script já pedido: o mesmo arquivo nunca é baixado duas vezes (#314.3).
+const scriptsCarregados = new Map();
 
 /**
  * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
@@ -203,18 +205,25 @@ function mostrarAvisoGravacao(texto, ehErro) {
 }
 
 /**
- * Carrega um script da pasta assets/js e espera terminar.
+ * Carrega um script da pasta assets/js e espera terminar, uma única vez por arquivo: pedidos
+ * repetidos recebem a mesma promessa. Se falhar, o próximo pedido tenta de novo.
  * @param {string} nome - Nome do arquivo (ex.: "popup.js").
  * @returns {Promise<void>} Resolve quando o script carregou.
  */
 function carregarScript(nome) {
-    return new Promise((resolver, rejeitar) => {
+    if (scriptsCarregados.has(nome)) return scriptsCarregados.get(nome);
+    const promessa = new Promise((resolver, rejeitar) => {
         const script = document.createElement('script');
         script.src = RAIZ_SCRIPTS + nome;
-        script.onload = resolver;
-        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + nome));
+        script.onload = () => resolver();
+        script.onerror = () => {
+            scriptsCarregados.delete(nome);
+            rejeitar(new Error('Não foi possível carregar ' + nome));
+        };
         document.head.appendChild(script);
     });
+    scriptsCarregados.set(nome, promessa);
+    return promessa;
 }
 
 /**
@@ -803,9 +812,29 @@ async function abrirMeuProgressoObjetiva(atividadeId) {
 async function abrirRecursosDoAluno(estado, carregado) {
     const ehAlunoLogado = Boolean(carregado.logado && !carregado.ehProfessor);
     if (!ehAlunoLogado) return;
-    await abrirMeuProgressoObjetiva(carregado.atividadeId);
-    await abrirCorrecaoDoAluno(estado, carregado);
-    await abrirMeuGabaritoObjetiva(estado, carregado);
+    // Os três são independentes (cada um mexe num lugar da página e trata os próprios erros):
+    // baixam e consultam o banco ao mesmo tempo (#314.3).
+    await Promise.allSettled([
+        abrirMeuProgressoObjetiva(carregado.atividadeId),
+        abrirCorrecaoDoAluno(estado, carregado),
+        abrirMeuGabaritoObjetiva(estado, carregado),
+    ]);
+}
+
+/**
+ * Professor: começa a baixar juntos os scripts do professor que não dependem de outro. A montagem
+ * continua em ordem (os blocos entram no mesmo ponto da página); falhas são tratadas lá (#314.3).
+ */
+function preCarregarScriptsDoProfessor() {
+    const independentes = [];
+    if (typeof window.montarProgressoDaTurma !== 'function') {
+        independentes.push(ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA);
+    }
+    if (typeof window.montarRespostasDoAluno !== 'function') {
+        independentes.push('respostas-aluno-professor.js');
+    }
+    independentes.push('turma-favorita.js');
+    independentes.forEach((nome) => carregarScript(nome).catch(() => {}));
 }
 
 /**
@@ -815,8 +844,7 @@ async function iniciarRespostasAtividade() {
     const secao = document.querySelector('.content-section');
     if (!secao) return;
 
-    await garantirPopup();
-    await garantirTermosTentativa();
+    await Promise.all([garantirPopup(), garantirTermosTentativa()]);
     const { provedor, carregado } = await escolherProvedor();
     const estado = {
         provedor,
@@ -842,6 +870,7 @@ async function iniciarRespostasAtividade() {
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
     await abrirRecursosDoAluno(estado, carregado);
     if (carregado.ehProfessor) {
+        preCarregarScriptsDoProfessor();
         await abrirProgressoDaTurmaObjetiva(carregado.atividadeId);
         await abrirRespostasDoAlunoProfessor(estado, identificacao, carregado.atividadeId);
         await abrirRelatorioProfessor(secao, carregado.atividadeId, carregado.maximoTentativas);

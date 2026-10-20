@@ -122,7 +122,7 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
 
 ### #314.3 — Objetiva: scripts e consultas em paralelo (`respostas-atividade.js`)
 
-**Próximo passo:** plano aprovado (2026-10-20 20:25); pegar quando as dependências estiverem ✅.
+**Próximo passo:** — (concluída).
 
 - **Nível:** MEDIO — lógica de carregamento em 1 arquivo JS
 - **Modelo:** só Sonnet — nunca outro
@@ -134,7 +134,9 @@ Total baixado é pequeno (~200 KB compactados): o problema é **latência somada
   Manter limites (função ≤ 45 linhas, JSDoc, nomes em português).
 - **Critérios de aceitação:** `node --check`; leitura confirma que nenhuma função usa outra
   antes de o script dela terminar; comportamento igual para aluno, professor e visitante.
-- **Entrega:** — · **Verificação:** — (tela: avisar o usuário para testar como aluno e professor)
+- **Executor:** Grok Bot · 314.3/314.4 (nuvem · main), a pedido do usuário ("Faça 314", subtarefas em paralelo), em 2026-10-20 20:46.
+- **Entrega:** commit "#314.3" na `main` (este), só `assets/js/respostas-atividade.js`: (1) `carregarScript` guarda a promessa de cada arquivo num `Map` (`scriptsCarregados`) — o mesmo script nunca baixa duas vezes; se falhar, sai do mapa e o próximo pedido tenta de novo; (2) `popup.js` e `termos-tentativa.js` com `Promise.all` (antes um depois do outro); (3) `abrirRecursosDoAluno` roda meu progresso, correção e meu gabarito com `Promise.allSettled` (cada um mexe num lugar diferente da página — `cabecalho.after`, cards das questões, botão no destino — e já trata os próprios erros); (4) professor: `preCarregarScriptsDoProfessor()` começa a baixar juntos `progresso-turma-global.js`, `respostas-aluno-professor.js` e `turma-favorita.js`; a **montagem** do professor continua em ordem, porque o combo de alunos e o relatório entram no mesmo ponto (logo depois da identificação) e a ordem na tela não pode mudar. Mantida a ordem `turma-favorita.js` → `turma-horario.js` → `marcar-entregue-professor.js` → `respostas-atividade-professor.js` (podem depender um do outro ao executar). `escolherProvedor` continua depois do popup/termos (o provedor usa `mostrarPopup`).
+- **Verificação:** `node --check assets/js/respostas-atividade.js` → ok. Leitura: nenhuma função usa `window.*` de outro script antes de o `await` dele terminar; `termosTentativa()` só é usado depois do `Promise.all`. Sem navegador e sem testes (regra 6). **Tela:** o usuário testa como aluno (meu progresso, correção, Exportar Meu Gabarito), professor (progresso da turma, combo de alunos, relatório) e visitante.
 
 ### #314.4 — Discursiva: módulos em paralelo (`avaliacao-discursiva.js`)
 
