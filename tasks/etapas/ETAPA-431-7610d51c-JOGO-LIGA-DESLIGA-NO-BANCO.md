@@ -55,7 +55,7 @@ relatórios e na média final.
 
 ### #302.0 — Cadastrar a matéria Noções de Eletricidade e as 9 aulas
 
-**Próximo passo:** gerar o seed da matéria (modelo comunicacao-oral-escrita), aplicar e conferir.
+**Próximo passo:** ✅ entregue (matéria 51, aula 01 = id 134); seguir para a #302.1.
 
 - **Nível:** MEDIO — banco. (reclassificada de PESADO a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro
@@ -65,7 +65,8 @@ relatórios e na média final.
   Circuitos Básicos" no curso 6 (Rio do Sul Mais Tech), vínculo `cursomateria` e as 9 aulas de
   `ATIVIDADES/STATUS-ATIVIDADES.md` (4 h cada); registrar em `SEEDS-APLICADOS.md`.
 - **Critérios de aceitação:** consulta mostra a matéria no curso 6 com 9 aulas; nada duplicado.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-20-materia-nocoes-eletricidade-aulas.sql` aplicado pelo conector em 2026-10-20 10:05 (s30); a coluna `aulas.rotulo_card` do seed modelo não existe mais e foi retirada. O `registrar_seed.py` só aceita `*-seed-atividades.sql`; como o seed-modelo da Comunicação Oral, este não entra no registro.
+- **Verificação:** consulta: matéria id 51 no curso 6, 1 vínculo em `cursomateria`, 9 aulas (números 1 a 9), 1 só matéria com esse nome; aula 01 = id 134.
 
 ### #302.1 — Seed da atividade e do gabarito no banco
 
