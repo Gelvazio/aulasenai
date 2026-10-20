@@ -232,3 +232,4 @@ Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entr
 | 2026-10-09 19:53:42 | 0 | 0 | Nada pendente nesta rodada (consulta 4.1 sem linhas) |
 | 2026-10-09 20:54:03 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |
 | 2026-10-14 07:54 | 0 | 0 | Nenhuma alternativa pendente (nuvem) |
+| 2026-10-20 19:43 | 2 | 13 | 1 alternativa parcial + 12 em branco após a entrega (nota 0); 44 suspeitas de cópia gravadas (textos ≥ 90% iguais entre 3 ou mais alunos); item 6.1 sem suspeita (texto igual ao de referência) |
