@@ -59,14 +59,14 @@
 - **Anotação:** —
 
 ### 299.3 — index.html com logo central e rede de nós
-**Próximo passo:** criar `index.html` com hero, logo no centro e grade das 10 ideias.
+**Próximo passo:** — (concluída em 2026-10-20 11:04).
 - **Nível:** MEDIO — HTML/SVG com lógica de grade, 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
 - **Effort:** medium.
 - **Descrição:** hero com `assets/img/logo-sesi-senai.png` no centro; rede de nós SVG em volta; grade com 10 cards.
 - **Critérios de Aceitação:** logo referenciada por caminho relativo existente; 10 cards com link para `ideia-NN.html`.
-- **Entrega:** —
-- **Verificação:** leitura do HTML; existência do arquivo da logo.
+- **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/index.html` (hero com a logo `logo-sesi-senai.png` no centro, rede de nós em SVG, 10 cartões "Aluno 01" a "Aluno 10" com link para `ideia-NN.html`); classe `fut-cartao__meta` acrescentada ao `futurista.css`.
+- **Verificação:** leitura do HTML: logo e CSS existem nos caminhos relativos (`../../../assets/...`); 10 links `ideia-NN.html`; 0 `style=`/`onclick`; tags balanceadas; só a URL das fontes passa de 100 caracteres.
 - **Anotação:** —
 
 ### 299.4 — Cena 3D do avatar (Three.js) e rede de nós

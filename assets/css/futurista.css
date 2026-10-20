@@ -270,6 +270,12 @@ h3 {
   font-size: 1.1rem;
 }
 
+.fut-cartao__meta {
+  color: var(--fut-cor-texto-suave);
+  font-family: var(--fut-fonte-dados);
+  font-size: 0.85rem;
+}
+
 .fut-etiqueta {
   align-self: flex-start;
   padding: var(--fut-espaco-1) var(--fut-espaco-2);
