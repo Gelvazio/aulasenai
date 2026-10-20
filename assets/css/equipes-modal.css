@@ -236,3 +236,8 @@
   .equipes-exportacao h2 { font-size: 15px; margin: 12px 0 4px; }
   .equipes-exportacao__equipe { break-inside: avoid; }
 }
+
+/* Atividades das equipes (equipes-atividades.js) */
+.equipes-barra--atividades { margin: 0 0 12px; max-width: none; }
+.equipes-tabela__atividades td { background: #f5f8fc; }
+.equipes-atividades__item { display: inline-flex; align-items: center; gap: 4px; margin: 2px 14px 2px 0; }

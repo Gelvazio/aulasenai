@@ -82,13 +82,19 @@ respostas e cada aluno exporta a própria).
 
 ### #307.4 — Modal de equipes: ligar a equipe às atividades
 
-**Próximo passo:** depois da #307.1.
+**Próximo passo:** — (concluída em 2026-10-20 14:30; executor-medio, conferida pelo líder s31)
 
 - **Nível:** MEDIO — tela em até 3 arquivos (`equipes-modal.js`, `equipes-repositorio.js`, `equipes-tabela.js`).
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
 - **Descrição:** no modal de equipes, campo para marcar as atividades da matéria em que a equipe trabalha junta (e ligar todas as equipes da turma de uma vez).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/equipes-atividades.js` (novo), `equipes-repositorio.js`
+  (`criarCrudEquipeAtividade`), `equipes-modal.js`, `equipes-tabela.js`, `menu-acao-equipes.js`
+  (carga), `assets/css/equipes-modal.css`. Professor: barra "Atividade + 🔗 Ligar TODAS as equipes
+  da turma" e botão "📎 Atividades (n)" por equipe (marcar liga, desmarcar desliga); aluno líder e
+  aluno não veem. · **Verificação:** `node --check` nos 5 JS; leitura do diff; FK
+  `atividade_aula_id_fkey` confirma o embed `aulas!inner(materia_id)`. **Conferir na tela** (sem
+  navegador pela regra): abrir o modal de equipes da turma 133933 e ligar uma atividade.
 
 ### #307.5 — Exportar o gabarito da dupla
 

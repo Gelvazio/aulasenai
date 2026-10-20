@@ -81,6 +81,7 @@ function criarLinhaGrupoEquipe(equipe, membros) {
       classe: 'equipes-btn--link' }),
     criarBotaoIconeEquipes({ icone: '✏️', titulo: 'Editar equipe', acao: 'editar-equipe',
       id: equipe.id })];
+  if (podeLigarAtividadesEquipes()) botoes.unshift(criarBotaoAtividadesEquipe(equipe.id));
   // O aluno líder cadastra e altera, mas não exclui equipe (só o professor).
   if (!estadoEquipes.ehLider) botoes.push(criarBotaoIconeEquipes({ icone: '🗑️',
     titulo: 'Excluir equipe', acao: 'excluir-equipe', id: equipe.id }));

@@ -12,6 +12,9 @@ const TABELA_TURMAALUNO_EQUIPES = 'turmaaluno';
 const TABELA_USUARIO_EQUIPES = 'usuario';
 const TABELA_ATIVIDADE_EQUIPES = 'atividade';
 const TABELA_MATERIA_EQUIPES = 'materia';
+const TABELA_EQUIPE_ATIVIDADE = 'equipe_atividade';
+const COLUNAS_ATIVIDADE_EQUIPES = 'id, nome_atividade, aulas!inner(materia_id)';
+const CONFLITO_EQUIPE_ATIVIDADE = 'equipe_id,atividade_id';
 const RPC_ADMINISTRADOR_EQUIPES = 'eh_professor_administrador';
 const RPC_MINHAS_EQUIPES = 'minhas_equipes';
 const RPC_ALUNOS_TURMA_LIDER = 'alunos_da_turma_lider';
@@ -225,10 +228,64 @@ function criarCrudEquipes(cliente) {
 }
 
 /**
+ * Cria as funções que ligam equipes às atividades (tabela equipe_atividade).
+ * @param {Object} cliente - Cliente do Supabase (supabase-js).
+ * @returns {Object} Funções de leitura e gravação das ligações.
+ */
+function criarCrudEquipeAtividade(cliente) {
+  return {
+    /**
+     * @param {number} materiaId - Id da matéria.
+     * @returns {Promise<{id: number, nome_atividade: string}[]>} Atividades pelo nome.
+     */
+    async listarAtividadesDaMateria(materiaId) {
+      return dadosOuErroEquipes(await cliente.from(TABELA_ATIVIDADE_EQUIPES)
+        .select(COLUNAS_ATIVIDADE_EQUIPES).eq('aulas.materia_id', materiaId)
+        .order('nome_atividade'));
+    },
+
+    /**
+     * @param {number[]} equipeIds - Ids das equipes.
+     * @returns {Promise<Object[]>} Ligações equipe x atividade.
+     */
+    async listarLigacoesAtividade(equipeIds) {
+      if (!equipeIds.length) return [];
+      return dadosOuErroEquipes(await cliente.from(TABELA_EQUIPE_ATIVIDADE)
+        .select('id, equipe_id, atividade_id, respondente_id').in('equipe_id', equipeIds));
+    },
+
+    /**
+     * Liga equipes a uma atividade; as que já estão ligadas são ignoradas.
+     * @param {number[]} equipeIds - Ids das equipes.
+     * @param {number} atividadeId - Id da atividade.
+     */
+    async ligarEquipesAtividade(equipeIds, atividadeId) {
+      const linhas = equipeIds.map((equipeId) => (
+        { equipe_id: equipeId, atividade_id: atividadeId }));
+      dadosOuErroEquipes(await cliente.from(TABELA_EQUIPE_ATIVIDADE)
+        .upsert(linhas, { onConflict: CONFLITO_EQUIPE_ATIVIDADE, ignoreDuplicates: true }));
+    },
+
+    /**
+     * @param {number} equipeId - Id da equipe.
+     * @param {number} atividadeId - Id da atividade.
+     */
+    async desligarEquipeAtividade(equipeId, atividadeId) {
+      dadosOuErroEquipes(await cliente.from(TABELA_EQUIPE_ATIVIDADE).delete()
+        .eq('equipe_id', equipeId).eq('atividade_id', atividadeId));
+    },
+  };
+}
+
+/**
  * Cria o repositório das equipes, com o cliente do Supabase injetado.
  * @param {Object} cliente - Cliente do Supabase (supabase-js).
  * @returns {Object} Funções de leitura do contexto + CRUD.
  */
 function criarRepositorioEquipes(cliente) {
-  return { ...criarLeiturasContextoEquipes(cliente), ...criarCrudEquipes(cliente) };
+  return {
+    ...criarLeiturasContextoEquipes(cliente),
+    ...criarCrudEquipes(cliente),
+    ...criarCrudEquipeAtividade(cliente),
+  };
 }

@@ -22,7 +22,7 @@ const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
 const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
   turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false, materias: [],
-  editandoEquipeId: null, editandoMembroId: null,
+  editandoEquipeId: null, editandoMembroId: null, atividades: [], ligacoes: [],
 };
 let elementosEquipes = null;
 
@@ -381,7 +381,9 @@ function renderizarTurmaEquipes() {
   const totalSemEquipe = alunosSemEquipe().length;
   elementosEquipes.resumo.textContent = estadoEquipes.equipes.length + ' equipe(s) · ' +
     estadoEquipes.alunos.length + ' aluno(s) na turma · ' + totalSemEquipe + ' sem equipe';
-  elementosEquipes.lista.replaceChildren(criarTabelaEquipes());
+  const barraAtividades = criarBarraAtividadesEquipes();
+  elementosEquipes.lista.replaceChildren(...(barraAtividades ? [barraAtividades] : []),
+    criarTabelaEquipes());
   renderizarSemEquipe();
   atualizarSelectsMembro();
 }
@@ -409,6 +411,7 @@ async function carregarTurmaEquipes() {
     : await repositorio.listarAlunosDaTurma(turmaCodigo);
   estadoEquipes.equipes = await repositorio.listarEquipes(filtro);
   estadoEquipes.membros = await repositorio.listarMembros(estadoEquipes.equipes.map((e) => e.id));
+  await carregarAtividadesEquipes();
   renderizarTurmaEquipes();
 }
 
@@ -757,6 +760,8 @@ const ACOES_CLIQUE_EQUIPES = {
   'abrir-integrante': abrirSeletorIntegrante,
   'cancelar-integrante': cancelarSeletorIntegrante,
   'confirmar-integrante': confirmarIntegrante,
+  'abrir-atividades-equipe': abrirAtividadesEquipe,
+  'ligar-todas-atividade': ligarTodasEquipesAtividade,
 };
 
 /**
@@ -781,6 +786,7 @@ function tratarCliqueEquipes(evento) {
  */
 function ligarEventosEquipes() {
   elementosEquipes.fundo.addEventListener('click', tratarCliqueEquipes);
+  elementosEquipes.fundo.addEventListener('change', tratarMudancaAtividadesEquipes);
   elementosEquipes.formularioEquipe.addEventListener('submit', (evento) => {
     evento.preventDefault();
     salvarEquipe();
