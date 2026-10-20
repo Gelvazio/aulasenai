@@ -1380,7 +1380,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #299.1 | Extrair `ideias.json` das 10 ideias (texto exato) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.2 | Tema CSS futurista (tokens, grade, botões, cards) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.1 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.3 | index.html com logo central e rede de nós · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.2 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
-| #299.4 | Cena 3D do avatar (Three.js) e rede de nós · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable/DeepSeek V4 Pro | #299.2 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
+| #299.4 | Cena 3D do avatar (Three.js) e rede de nós · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.2 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.5 | Gerador das 10 páginas `ideia-NN.html` a partir do JSON · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable/DeepSeek V4 Pro | #299.1, #299.2, #299.4 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.6 | Navegação e responsividade (celular e projetor) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.5 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.7 | Conferência por leitura e `node --check` (sem navegador) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.1 a #299.6 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
@@ -1886,6 +1886,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-20 10:47 | #299.4 (cena 3D do avatar) reclassificada de PESADO para MEDIO · só Sonnet | Gelvazio (pedido direto) | Decisão do usuário |
 | 2026-10-18 18:55 | A #22 (etapa 137) fica ⛔ **substituída pela #278** (TESTES-DE-FRONTEND-TASK): o que faltava dela (seeds da aula 05, banco e aceite) está na tarefa nova, que faz a matéria inteira no padrão novo | Pedido do usuário nesta data | Mesmo assunto; evitar dois planos abertos |
 | 2026-10-18 16:56 | A #232 (etapa 359) e as 59 subtarefas dela ficam ⛔ **substituídas pela #276** (plano novo, detalhado, com respostas prováveis por discursiva e análise do JEV-AI) | Pedido do usuário | Mesmo assunto; dois planos abertos confundiriam o quadro |
 | 2026-10-17 | Cancelada a #199 (bug do "Exportar Meu Gabarito" na 152) com 199.1 e 199.2: o usuário informou que já está feita | Gelvazio (pedido) | Pedido direto do usuário |

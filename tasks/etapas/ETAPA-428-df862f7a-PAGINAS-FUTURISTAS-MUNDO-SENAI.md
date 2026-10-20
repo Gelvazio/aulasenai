@@ -17,6 +17,7 @@
 - Ideias com dados de menores: sem nomes reais; avatares sem fotos.
 
 ### Decisões
+- 2026-10-20 10:47 · #299.4 reclassificada de PESADO para MEDIO (só Sonnet), a pedido do usuário.
 - 2026-10-19 20:31 · professor aprovou o plano (modo plano). Respostas: avatares (sem fotos), logo `logo-sesi-senai.png`, uma página por ideia, Three.js via cdnjs, uso em projeto e celular, HTML liberado em MATERIAIS (é apresentação), só "Aluno 01" a "Aluno 10", detalhe completo, avatar 3D girando, conferência pelo professor no navegador.
 
 ### Requisitos
@@ -70,8 +71,8 @@
 
 ### 299.4 — Cena 3D do avatar (Three.js) e rede de nós
 **Próximo passo:** criar `assets/js/cena-3d.js` com avatar 3D por página e fallback SVG.
-- **Nível:** PESADO — biblioteca 3D, WebGL, fallback, mais de 3 arquivos ligados.
-- **Modelo:** só Opus 5.5+ / Fable / DeepSeek V4 Pro — nunca outro.
+- **Nível:** MEDIO — reclassificada pelo usuário em 2026-10-20 10:47 (antes PESADO: biblioteca 3D, WebGL, fallback).
+- **Modelo:** só Sonnet — nunca outro.
 - **Effort:** high.
 - **Descrição:** avatar 3D girando (cor de destaque da ideia); rede de nós em 3D no hero; Three.js de cdnjs em versão fixa; fallback SVG sem WebGL.
 - **Critérios de Aceitação:** sem WebGL → SVG; cena desligável com `prefers-reduced-motion`; versão do Three.js fixa.
