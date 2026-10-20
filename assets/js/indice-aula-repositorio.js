@@ -41,19 +41,23 @@ async function buscarAulasDasPaginasCard(paginas) {
 }
 
 /**
- * Lê a aula a que cada página de atividade está ligada (atividade.aula_id; vazio = sem aula).
- * Página que não é atividade (ou que o RLS não deixa ler) não entra no mapa.
- * @param {string[]} paginas - Caminhos (pathname) das páginas.
- * @returns {Promise<Map<string, number|null>>} aula_id de cada página de atividade.
+ * Lê as atividades ligadas às aulas pedidas (atividade.aula_id), pela chave da página
+ * (obterChaveDaPagina: pasta/arquivo em minúsculas, sem depender do prefixo do endereço).
+ * Atividade sem vínculo, de outra aula ou que o RLS não deixa ler não entra no mapa.
+ * @param {number[]} idsAulas - Ids das aulas da matéria.
+ * @returns {Promise<Map<string, number>>} aula_id de cada chave de página.
  */
-async function buscarVinculosDasPaginasCard(paginas) {
+async function buscarVinculosDasAulasCard(idsAulas) {
     const mapa = new Map();
-    if (!paginas.length) return mapa;
+    if (!idsAulas.length) return mapa;
 
-    const valores = paginas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
-    const filtro = 'pagina=in.(' + encodeURIComponent(valores) + ')';
-    const linhas = await sbGet(TABELA_ATIVIDADE_AULA, 'select=pagina,aula_id&' + filtro);
-    linhas.forEach((linha) => mapa.set(linha.pagina, linha.aula_id ?? null));
+    const lista = idsAulas.map((id) => encodeURIComponent(id)).join(',');
+    const linhas = await sbGet(TABELA_ATIVIDADE_AULA,
+        'select=pagina,aula_id&aula_id=in.(' + lista + ')');
+    linhas.forEach((linha) => {
+        const chave = obterChaveDaPagina(linha.pagina);
+        if (chave) mapa.set(chave, linha.aula_id);
+    });
     return mapa;
 }
 
