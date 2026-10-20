@@ -29,7 +29,7 @@ com "Aluno anotou?" = Sim.
 
 ### #301.1 — Cadastrar a aluna e gravar "Aluno anotou?" no banco
 
-**Próximo passo:** acrescentar a aluna no `LISTAPRESENCA.js` e rodar o script da turma.
+**Próximo passo:** — (entregue em 2026-10-20 09:34).
 
 - **Nível:** PESADO — grava no banco e cria usuário no Auth.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -37,4 +37,15 @@ com "Aluno anotou?" = Sim.
 - **Descrição:** ver Escopo.
 - **Critérios de aceitação:** consulta no banco mostra a aluna no Auth, em `aluno`/`turmaaluno` da
   turma e com `senha_informada = true`; nenhum outro aluno muda de valor.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Opus 5.5) (local · main · s29)
+- **Entrega:** `scripts/LISTAPRESENCA.js` — aluna nova na turma `QA LBTSN 2026/1 M2`
+  (`{"numero": 13, "nome": "Mery Palacio", "email": "mery.palacio@senai.local", "naChamada": false}`);
+  `criar-usuarios-supabase-auth.js --executar` com lista temporária só da aluna (os outros 13
+  usuários não foram tocados): `criado mery.palacio@senai.local`, 1 linha em `aluno` e o vínculo em
+  `turmaaluno`; linha em `usuario` (perfil ALUNO, `login_usuario` mery.palacio) com
+  `senha_informada = true`.
+- **Verificação:** `node --check scripts/LISTAPRESENCA.js` OK; consulta da turma no banco:
+  Mery Palacio (13) com perfil ALUNO no Auth e "Aluno anotou?" = Sim; os 12 alunos da imagem
+  iguais à imagem (Lohan Cruz = Não, demais = Sim).
+- **Anotação:** a turma tem também 2 contas antigas repetidas, "Carlos Daniel" e "Luis Fernando"
+  (número 5 e 4, "Aluno anotou?" = Não), fora do escopo; ficaram em Pendências do `STATUS.md`.

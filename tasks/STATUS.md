@@ -65,7 +65,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · DeepSeek Harness (deepseek-flash) | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — 19 subtarefas entregues (a #293.3 é da s28); faltam 5 PESADO de banco (#293.5–.9), 3 PESADO de código/segurança (#293.16, #293.23, #293.32) e 4 bloqueadas por elas (#293.21, #293.26, #293.27, #293.31) | ⏹️ Encerrada | 2026-10-19 14:40 |
 | local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293 concluída (todas as subtarefas) | ⏹️ Encerrada | 2026-10-19 14:44 |
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
-| local · main · s29 | #301.1 ([430-2896e502](etapas/ETAPA-430-2896e502-ALUNA-MERY-TURMA-QA-M2.md)) | 🔄 Ativa | 2026-10-20 09:31 |
+| local · main · s29 | #301 concluída ([430-2896e502](etapas/ETAPA-430-2896e502-ALUNA-MERY-TURMA-QA-M2.md)) | ⏹️ Encerrada | 2026-10-20 09:34 |
 
 ## 📌 Tarefas
 
@@ -1397,8 +1397,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.10 | Auditoria: situação de aprendizagem em todas as matérias de todos os cursos · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.9 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
-| **#301** | **Aluna Mery Palacio na turma QA LBTSN 2026/1 M2 e "Aluno anotou?" no banco** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [430-2896e502](etapas/ETAPA-430-2896e502-ALUNA-MERY-TURMA-QA-M2.md) | — |
-| #301.1 | Cadastrar a aluna e gravar "Aluno anotou?" no banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s29) (desde 2026-10-20 09:31) | [430-2896e502](etapas/ETAPA-430-2896e502-ALUNA-MERY-TURMA-QA-M2.md) | — |
 
 
 ## Escopo
@@ -1937,6 +1935,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | Destino da pasta `Testes de Sistemas-EXISTENTES` (não é UC do curso) | Decisão do usuário | Quando o usuário decidir |
 | Renomear `BANCO_DE_DADOS` e `TESTES-DE-FRONTEND` para o padrão | Só a pedido do usuário | Quando o usuário pedir |
 | Professor conferir o conteúdo dos vídeos das duas apostilas (coluna "Vídeos conferidos pelo professor") | Só o professor valida o conteúdo | Na validação das apostilas |
+| #301: a turma QA LBTSN 2026/1 M2 tem 2 contas antigas repetidas no banco, "Carlos Daniel" (nº 5) e "Luis Fernando" (nº 4), além das contas certas | Fora do escopo da #301; apagar exige pedido do professor | Quando o professor decidir |
 
 ## Lições aprendidas
 | Data | O que aconteceu | Lição / nova regra |

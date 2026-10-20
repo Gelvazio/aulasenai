@@ -117,6 +117,13 @@ window.LISTAS_PRESENCA = [
             "email": "bianca.pamela@senai.local",
             "senha": "UnBDt9",
             "naChamada": true
+          },
+          {
+            "numero": 13,
+            "nome": "Mery Palacio",
+            "email": "mery.palacio@senai.local",
+            "senha": "JxEKyE",
+            "naChamada": false
           }
         ]
       }
