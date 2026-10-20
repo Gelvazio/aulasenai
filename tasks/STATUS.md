@@ -66,7 +66,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293 concluída (todas as subtarefas) | ⏹️ Encerrada | 2026-10-19 14:44 |
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
-| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304 criada (PESADO, aguarda sim e sessão Opus/Fable) | ⏹️ Encerrada | 2026-10-20 10:40 |
+| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 
 ## 📌 Tarefas
 
@@ -1385,8 +1385,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #299.6 | Navegação e responsividade (celular e projetor) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.5 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.7 | Conferência por leitura e `node --check` (sem navegador) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.1 a #299.6 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.8 | Fechamento: quadro, commit e push por subtarefa · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.7 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
-| **#304** | **Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa** | 🟠 Alta | — | — | 👀 Aguardando sim do plano | — (não reservável) | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
-| #304.1 | Mostrar RESPOSTA CERTA / RESPOSTA ERRADA ao professor depois de gravar · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
+| **#304** | **Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
+| #304.1 | Mostrar RESPOSTA CERTA / RESPOSTA ERRADA ao professor depois de gravar · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s30) (desde 2026-10-20 10:50) | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |

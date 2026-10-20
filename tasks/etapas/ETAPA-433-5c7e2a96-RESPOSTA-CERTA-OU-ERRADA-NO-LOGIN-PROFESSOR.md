@@ -28,20 +28,23 @@ gravada: questão N = X" (hoje em `assets/js/respostas-atividade.js`, linha ~330
 
 ### Perguntas abertas
 
-- ⬜ 1. Aprovação do plano (tarefa grande: toca o gabarito, segurança).
+- ✅ 1. Aprovação do plano → professor, 2026-10-20 10:50: "EXECUTE A TAREFA 304, MAS ANTES DELEGUE ELA AO SONNET".
 
 ### Decisões
 
 - 10:40 — Classificada PESADO pelos sinais (gabarito/segurança e arquivo compartilhado por todas as
   atividades); não é do Sonnet. Claude Code (Sonnet 5.5), sem reserva.
+- 2026-10-20 10:50 — #304.1 reclassificada para MEDIO · só Sonnet por ordem explícita do professor
+  ("delegue ela ao Sonnet"), contra os sinais (gabarito = PESADO). Decisão do usuário. Executa o
+  `executor-medio` (Sonnet); o líder (Opus 5.5) confere a segurança do gabarito antes do commit.
 
 ### #304.1 — Mostrar RESPOSTA CERTA / RESPOSTA ERRADA ao professor depois de gravar
 
-**Próximo passo:** aguardar o "sim" do plano e uma sessão Opus 5.5+ ou Fable.
+**Próximo passo:** executor-medio implementa; líder confere e commita.
 
-- **Nível:** PESADO — gabarito e segurança em arquivo usado por todas as atividades.
-- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
-- **Effort:** high
+- **Nível:** MEDIO — gabarito e segurança em arquivo usado por todas as atividades (reclassificada de PESADO a pedido do professor).
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
 - **Descrição:** ver Escopo.
 - **Critérios de aceitação:** ver "Pronto quando".
 - **Entrega:** — · **Verificação:** —
