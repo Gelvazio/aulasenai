@@ -1398,10 +1398,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | **#302** | **Jogo "Liga ou Desliga?" como atividade do banco, com nota gravada** | 🟠 Alta | — | — | 👀 Aguardando sim do plano | — (não reservável) | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| #302.0 | Cadastrar a matéria Noções de Eletricidade e as 9 aulas · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| #302.1 | Seed da atividade e do gabarito no banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #302.0 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| #302.2 | Página do jogo no fluxo padrão, sem respostas no código · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #302.1 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| #302.3 | STATUS-ATIVIDADES.md da matéria · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #302.2 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
+| #302.0 | Cadastrar a matéria Noções de Eletricidade e as 9 aulas · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 👀 Aguardando o usuário | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
+| #302.1 | Seed da atividade e do gabarito no banco · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #302.0 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
+| #302.2 | Página do jogo no fluxo padrão, sem respostas no código · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #302.1 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
+| #302.3 | STATUS-ATIVIDADES.md da matéria · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #302.2 | ⬜ Pendente | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
 
 
 ## Escopo

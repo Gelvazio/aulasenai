@@ -49,14 +49,17 @@ relatórios e na média final.
 
 - 2026-10-20 09:39 — Nota pelo fluxo atual (respostas por item + gabarito no banco), sem tabela
   nova: é o "como já é feito hoje" do pedido. Claude Code (Opus 5.5).
+- 2026-10-20 09:47 — Nível de todas as subtarefas (#302.0 a #302.3) mudado para MEDIO · só Sonnet, por
+  ordem explícita do professor ("mude o nivel da tarefa 302 pra sonnet"), contra os sinais da
+  classificação (banco e gabarito = PESADO). Decisão do usuário. Claude Code (Opus 5.5).
 
 ### #302.0 — Cadastrar a matéria Noções de Eletricidade e as 9 aulas
 
 **Próximo passo:** aguardar o "sim" do plano.
 
-- **Nível:** PESADO — banco.
-- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
-- **Effort:** high
+- **Nível:** MEDIO — banco. (reclassificada de PESADO a pedido do professor)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
 - **Descrição:** seed idempotente `database/2026-10-20-materia-nocoes-eletricidade-aulas.sql` no padrão
   de `2026-10-09-materia-comunicacao-oral-escrita-aulas.sql`: matéria "Noções de Eletricidade e
   Circuitos Básicos" no curso 6 (Rio do Sul Mais Tech), vínculo `cursomateria` e as 9 aulas de
@@ -68,9 +71,9 @@ relatórios e na média final.
 
 **Próximo passo:** depois da #302.0 (atividade na aula 01 da matéria nova).
 
-- **Nível:** PESADO — banco e gabarito.
-- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
-- **Effort:** high
+- **Nível:** MEDIO — banco e gabarito. (reclassificada de PESADO a pedido do professor)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
 - **Descrição:** gerar `database/2026-10-20-jogo-liga-desliga-seed-atividade.sql` (idempotente) com a
   atividade e as 12 linhas de gabarito tiradas do `safe` atual do jogo; aplicar, conferir e
   registrar em `SEEDS-APLICADOS.md`.
@@ -82,9 +85,9 @@ relatórios e na média final.
 
 **Próximo passo:** depois da #302.1.
 
-- **Nível:** PESADO — tira o gabarito da página (segurança) e liga ao banco.
-- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
-- **Effort:** high
+- **Nível:** MEDIO — tira o gabarito da página (segurança) e liga ao banco. (reclassificada de PESADO a pedido do professor)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
 - **Descrição:** reescrever o HTML com o `<body data-...>` e os scripts das atividades objetivas,
   as 12 situações como `.questao` com A) LIGAR e B) DESLIGAR / NÃO USAR; CSS do jogo mantido;
   remover o JavaScript próprio de pontuação e o `safe`/explicações.
@@ -96,8 +99,8 @@ relatórios e na média final.
 
 **Próximo passo:** depois da #302.2.
 
-- **Nível:** LEVE — só `.md`.
-- **Modelo:** só Haiku — nunca outro
-- **Effort:** low
+- **Nível:** MEDIO — só `.md`. (reclassificada de LEVE a pedido do professor)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
 - **Descrição:** incluir a atividade em "Demais atividades da pasta" com o id do banco.
 - **Entrega:** — · **Verificação:** —
