@@ -18,7 +18,7 @@ as atividades ligadas e, para o líder 👑, o "✅ Confirmar Respostas" da #310
 
 ### #312.1 — Botão "👥 Minha equipe" no índice de atividades de Análise de Dados
 
-**Próximo passo:** executor-medio cria o script reutilizável e inclui a tag no índice da matéria.
+**Próximo passo:** — (concluída em 2026-10-20 16:30; executor-medio, conferida pelo líder s31)
 
 - **Nível:** MEDIO — JS + HTML, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -29,4 +29,9 @@ as atividades ligadas e, para o líder 👑, o "✅ Confirmar Respostas" da #310
   tag `<script>` no `ATIVIDADES/index.html` desta matéria; CSS por classe.
 - **Critérios de aceitação:** `node --check`; aluno comum vê o botão; professor/aluno líder não
   ganham botão duplicado; a #313 só precisa repetir a tag nas demais páginas.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/botao-equipes-materia.js` (novo, IIFE, reutilizável: pasta da matéria pelo
+  `location.pathname`, caminhos pelo `currentScript`), `assets/css/botao-equipes-materia.css` (novo,
+  injetado pelo script) e a tag `<script … defer>` no `ATIVIDADES/index.html` da matéria ·
+  **Verificação:** `node --check`; leitura: sem login, professor ou aluno líder da turma → não
+  mostra; aluno comum → "👥 Minha equipe" abaixo do `<h1>`, abre o modal (visão do aluno, com o
+  "✅ Confirmar Respostas" para o líder 👑). **Conferir na tela** logado como aluno.

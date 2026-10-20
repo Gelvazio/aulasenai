@@ -67,7 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
-| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312.1 botão de equipe dos alunos (executor-medio) | 🔄 Ativa | 2026-10-20 16:21 |
+| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 
 ## 📌 Tarefas
 
@@ -1409,8 +1409,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.10 | Auditoria: situação de aprendizagem em todas as matérias de todos os cursos · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.9 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
-| **#312** | **Botão de equipe para os alunos no índice de Análise de Dados** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [441-2f6a9d13](etapas/ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md) | — |
-| #312.1 | Botão "👥 Minha equipe" no índice de atividades de Análise de Dados · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s31) (desde 2026-10-20 16:21) | [441-2f6a9d13](etapas/ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md) | — |
 | **#313** | **Botão de equipe para os alunos em todos os índices de atividades** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
 | #313.1 | Incluir o botão "👥 Minha equipe" nos demais 32 índices de atividades · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #312.1 | ⬜ Pendente | — | [442-9b4e7c58](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) | — |
 

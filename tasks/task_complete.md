@@ -428,3 +428,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #310.3 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #310.2 | ✅ Concluído | — | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
 | **#311** | **Botão "Confirmar Respostas" verde, destacado e maior** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |
 | #311.1 | CSS do botão Confirmar Respostas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ✅ Concluído | — | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |
+| **#312** | **Botão de equipe para os alunos no índice de Análise de Dados** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [441-2f6a9d13](etapas/ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md) | — |
+| #312.1 | Botão "👥 Minha equipe" no índice de atividades de Análise de Dados · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [441-2f6a9d13](etapas/ETAPA-441-2f6a9d13-BOTAO-EQUIPE-ALUNOS-ANALISE-DADOS.md) | — |
