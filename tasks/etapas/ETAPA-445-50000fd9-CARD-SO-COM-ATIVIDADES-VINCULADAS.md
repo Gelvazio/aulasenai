@@ -20,7 +20,7 @@ banco, de atividade sem vínculo (`aula_id` vazio) ou de outra aula não aparece
 
 ### #316.1 — Grade: manter só links de atividades com `aula_id` da aula do card
 
-**Próximo passo:** executor-medio implementar conforme a descrição.
+**Próximo passo:** — (concluída em 2026-10-20 16:32; executor-medio, conferida pelo líder s33)
 
 - **Nível:** MEDIO — lógica JS em 2 arquivos, sem banco novo (só leitura já permitida pelo RLS)
 - **Modelo:** só Sonnet — nunca outro
@@ -38,3 +38,9 @@ banco, de atividade sem vínculo (`aula_id` vazio) ou de outra aula não aparece
 - **Critérios de aceitação:** `node --check` nos 2 arquivos; funções ≤ 45 linhas, linhas ≤ 100;
   na leitura, um link sem atividade, com `aula_id` vazio ou de outra aula nunca fica no card; a
   comparação não depende da caixa das letras nem da pasta antes de `/MATERIAIS/`.
+- **Entrega:** `245fd4d2`. `buscarVinculosDasPaginasCard` saiu e entrou `buscarVinculosDasAulasCard`
+  (lê `atividade` por `aula_id=in.(...)`, mapa pela `obterChaveDaPagina`); `linkForaDaAulaDoCard`
+  tira do card todo link sem atividade, com `aula_id` vazio ou de outra aula (na montagem e em
+  `retirarAtividadesDeOutraAulaDosCards`). · **Verificação:** `node --check` nos 2 arquivos; nenhuma
+  linha > 100; grep sem uso restante da função removida; diff revisado pelo líder. No banco, aula
+  06 (id 42) só tem a atividade 32 → o card dela fica só com a 32. A tela só o navegador confirma.
