@@ -66,7 +66,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293 concluída (todas as subtarefas) | ⏹️ Encerrada | 2026-10-19 14:44 |
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
-| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #303.1 link da atividade no card da matéria | 🔄 Ativa | 2026-10-20 10:12 |
+| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #303 concluída (link da atividade no card) | ⏹️ Encerrada | 2026-10-20 10:30 |
 
 ## 📌 Tarefas
 
@@ -1385,8 +1385,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #299.6 | Navegação e responsividade (celular e projetor) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #299.5 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.7 | Conferência por leitura e `node --check` (sem navegador) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.1 a #299.6 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | #299.8 | Fechamento: quadro, commit e push por subtarefa · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.7 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
-| **#303** | **Link da atividade no card da matéria Noções de Eletricidade** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
-| #303.1 | Descobrir por que o card não mostra a atividade e ligar o link · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s30) (desde 2026-10-20 10:12) | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |

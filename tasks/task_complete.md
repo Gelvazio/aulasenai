@@ -1,3 +1,3 @@
 
-| #302.3 | STATUS-ATIVIDADES.md da matéria · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| **#302** | **Jogo "Liga ou Desliga?" como atividade do banco, com nota gravada** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
+| #303.1 | Descobrir por que o card não mostra a atividade e ligar o link · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
+| **#303** | **Link da atividade no card da matéria Noções de Eletricidade** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [432-9b3d4f21](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) | — |
