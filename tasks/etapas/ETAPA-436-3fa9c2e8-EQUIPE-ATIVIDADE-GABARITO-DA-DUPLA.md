@@ -113,13 +113,17 @@ respostas e cada aluno exporta a própria).
 
 ### #307.6 — Aplicar na atividade 82 (Prova Prática 01)
 
-**Próximo passo:** 👀 o professor roda `database/2026-10-20-aplicar-equipes-atividade-82.sql` inteiro no SQL Editor (pelo conector foi bloqueado pelo classificador do Claude Code em 2026-10-20 14:50); depois a IA confere por consulta: 15 ligações na 82 e membros clonados com o mesmo número de respostas do respondente.
+**Próximo passo:** — (concluída em 2026-10-20 15:05: o professor rodou o SQL no SQL Editor; conferida pela s31)
 
 - **Nível:** PESADO — banco (dados de produção).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
 - **Descrição:** ligar as 15 equipes da turma 133933 (matéria 27) à atividade 82; marcar como líder quem entregou (EQUIPES 01, 06, 08 e 13 hoje); rodar o clone e conferir por consulta (respostas e nota iguais às do líder).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-20-aplicar-equipes-atividade-82.sql`, rodado pelo professor ·
+  **Verificação:** consulta de 2026-10-20 15:05: 14 equipes com respondente ligado à 82 (a EQUIPE 15
+  não tem membros); em cada equipe de 2, líder 👑 e colega com o mesmo número de respostas e a
+  mesma entrega (ex.: EQUIPE 01 60/60, entregues); EQUIPE 11 com 41 × 43 porque os alunos seguem
+  respondendo depois do clone (o clone não replica gravações novas — ver #309 se aprovada).
 
 ### #307.7 — Documentação
 
