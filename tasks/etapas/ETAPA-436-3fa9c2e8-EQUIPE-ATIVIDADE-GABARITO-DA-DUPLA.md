@@ -3,19 +3,20 @@
 **Tarefa:** #307 · **Pedido em:** 2026-10-20 13:46 · **Criada por:** Claude Code (Opus 5.5) (local · main · s30)
 **Pedido:** a atividade 82 (`/MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/PROVA-PRATICA-01.html`)
 foi feita em dupla; "falta 1 forma de vincular na equipe o id da atividade" — "crie esta tarefa então".
-**Objetivo:** ligar equipes a atividades (tabela `equipe_atividade`), para a equipe responder numa conta
-só, o colega receber a mesma nota e os dois exportarem o gabarito da dupla.
+**Objetivo:** ligar equipes a atividades (tabela `equipe_atividade`) e **clonar as respostas do líder
+da equipe para os demais integrantes**; daí em diante tudo segue o fluxo de hoje (nota calculada das
+respostas e cada aluno exporta a própria).
 
 ### Escopo
 
-- **Entra:** tabela `equipe_atividade` + RLS; função de cópia da nota; função de leitura das respostas
-  da própria equipe; modal de equipes com as atividades; exportação com os nomes da dupla; aplicar na
-  atividade 82; documentação.
-- **Não entra:** mudar a regra "1 equipe por aluno por turma + matéria"; equipes de outras matérias
-  além da ligação manual pelo professor.
-- **Pronto quando:** consulta mostra as equipes da turma 133933 ligadas à 82 com o respondente; os
-  colegas sem entrega têm a mesma nota do respondente; o aluno só lê respostas da própria equipe
-  (conferido por leitura do RLS/função); o professor confere a exportação na tela.
+- **Entra:** tabela `equipe_atividade` + RLS; função que clona as respostas (e a entrega) do líder para
+  os demais membros; modal de equipes com as atividades; aplicar na atividade 82 (todas as equipes da
+  turma); documentação.
+- **Não entra:** mudar a regra "1 equipe por aluno por turma + matéria"; exportação nova (cada aluno
+  exporta a própria, como hoje); o aluno ler respostas de outro aluno.
+- **Pronto quando:** consulta mostra as 15 equipes da turma 133933 ligadas à 82; cada membro sem
+  entrega tem as mesmas respostas e a mesma nota do líder; o professor confere na tela a exportação
+  de um aluno que recebeu o clone.
 
 ### Situação em 2026-10-20 (consulta)
 
@@ -32,18 +33,22 @@ só, o colega receber a mesma nota e os dois exportarem o gabarito da dupla.
 
 ### Perguntas abertas
 
-- ⬜ 1. A nota vai para o colega **automaticamente** (na entrega) ou só quando o **professor** mandar copiar?
-- ⬜ 2. Na 82, ligar **todas** as equipes da turma ou só as 4 que entregaram?
-- ⬜ 3. Aprovação do plano (tarefa grande: banco, nota e segurança).
+- ✅ 1. → professor, 2026-10-20 13:48: "as respostas do lider da equipe devem ser clonadas para os demais
+  integrantes, e o resto ja funciona hoje, cada aluno exporta sua propria nota".
+- ✅ 2. → **todas** as equipes da turma.
+- ✅ 3. → **"Sim, aprovo"** (professor, 2026-10-20 13:48).
 
 ### Decisões
 
 | Quando | O quê | Quem |
 |---|---|---|
+| 2026-10-20 13:48 | Clonar as **respostas do líder** para os demais membros (não só a nota); a nota e a exportação seguem o fluxo de hoje | Professor |
+| 2026-10-20 13:48 | #307.3 (leitura das respostas do colega) e #307.5 (exportação da dupla) **canceladas**: o clone torna as duas desnecessárias | Professor |
+| 2026-10-20 13:48 | Na 82 nenhuma equipe tem líder marcado: o líder passa a ser quem entregou (`equipe_membro.lider = true`) | Claude Code (Opus 5.5) |
 
 ### #307.1 — Tabela equipe_atividade com RLS
 
-**Próximo passo:** aguardar o sim do plano.
+**Próximo passo:** conferir onde a prova prática grava respostas e entrega; depois criar a tabela.
 
 - **Nível:** PESADO — banco (tabela, RLS, trigger).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -51,19 +56,19 @@ só, o colega receber a mesma nota e os dois exportarem o gabarito da dupla.
 - **Descrição:** conferir antes onde a prova prática grava respostas e entrega (a `resposta_atividade` não tem linhas da 82); criar `public.equipe_atividade` (`equipe_id`, `atividade_id`, `respondente_id`, `criado_em`, `criado_por`, única por equipe + atividade) com o RLS das equipes (professor da turma grava; aluno lê só a da própria equipe); SQL idempotente em `database/`.
 - **Entrega:** — · **Verificação:** —
 
-### #307.2 — Função: nota de quem entregou para os membros da equipe
+### #307.2 — Função: clonar as respostas do líder para os membros da equipe
 
 **Próximo passo:** depois da #307.1.
 
-- **Nível:** PESADO — banco e nota.
+- **Nível:** PESADO — banco (respostas, entrega e nota).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
-- **Descrição:** função `security definer` que, para uma atividade ligada a equipes, grava para cada membro sem entrega a mesma nota/entrega do respondente; idempotente; só o professor da turma chama.
+- **Descrição:** função `security definer`, chamada pelo professor da turma, que copia as respostas e a entrega do líder da equipe ligada à atividade para cada membro que ainda não tem entrega própria (idempotente; nunca sobrescreve quem respondeu sozinho); a nota sai das respostas, como hoje.
 - **Entrega:** — · **Verificação:** —
 
 ### #307.3 — Função: respostas da equipe para o colega exportar
 
-**Próximo passo:** depois da #307.1.
+**Próximo passo:** ⛔ cancelada em 2026-10-20 13:48 (decisão do professor: o clone das respostas torna desnecessária).
 
 - **Nível:** PESADO — segurança (aluno lê resposta de outro aluno).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -83,7 +88,7 @@ só, o colega receber a mesma nota e os dois exportarem o gabarito da dupla.
 
 ### #307.5 — Exportar o gabarito da dupla
 
-**Próximo passo:** depois da #307.3.
+**Próximo passo:** ⛔ cancelada em 2026-10-20 13:48 (decisão do professor: o clone das respostas torna desnecessária).
 
 - **Nível:** MEDIO — tela/exportação em até 3 arquivos.
 - **Modelo:** só Sonnet — nunca outro
@@ -98,7 +103,7 @@ só, o colega receber a mesma nota e os dois exportarem o gabarito da dupla.
 - **Nível:** PESADO — banco (dados de produção).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Effort:** high
-- **Descrição:** ligar as equipes da turma 133933 (matéria 27) à atividade 82, respondente = quem entregou (EQUIPES 01, 06, 08 e 13 hoje), e rodar a cópia de nota; conferir por consulta.
+- **Descrição:** ligar as 15 equipes da turma 133933 (matéria 27) à atividade 82; marcar como líder quem entregou (EQUIPES 01, 06, 08 e 13 hoje); rodar o clone e conferir por consulta (respostas e nota iguais às do líder).
 - **Entrega:** — · **Verificação:** —
 
 ### #307.7 — Documentação
