@@ -426,3 +426,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #307.7 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #307.6 | ✅ Concluído | — | [436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md) | — |
 | **#310** | **"Confirmar Respostas" do líder da equipe (sobrescreve os integrantes)** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
 | #310.3 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #310.2 | ✅ Concluído | — | [439-c4a7e2d1](etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE.md) | — |
+| **#311** | **Botão "Confirmar Respostas" verde, destacado e maior** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |
+| #311.1 | CSS do botão Confirmar Respostas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ✅ Concluído | — | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |

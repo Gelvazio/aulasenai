@@ -8,6 +8,8 @@
   --equipes-suave: #4a5568;
   --equipes-perigo: #b42318;
   --equipes-destaque: #fff7e6;
+  --equipes-verde: #1e8e3e;
+  --equipes-verde-escuro: #166c2f;
   --equipes-raio: 10px;
   --equipes-camada: 1100;
 }
@@ -267,7 +269,34 @@
 /* Confirmar Respostas do líder (equipes-atividades.js) */
 .equipes-atividades__celula { display: flex; flex-direction: column; gap: 6px; }
 .equipes-atividades__celula .equipes-atividades__item { flex: 1; }
-.equipes-btn--confirmar { align-self: flex-start; }
+/* Seletor composto (.equipes-btn.equipes-btn--confirmar) vence a especificidade de .equipes-btn */
+.equipes-btn.equipes-btn--confirmar {
+  align-self: flex-start;
+  margin-top: 8px;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid var(--equipes-verde);
+  border-radius: var(--equipes-raio);
+  background: var(--equipes-verde);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(30, 142, 62, 0.35);
+  cursor: pointer;
+}
+.equipes-btn.equipes-btn--confirmar:hover,
+.equipes-btn.equipes-btn--confirmar:focus-visible {
+  border-color: var(--equipes-verde-escuro);
+  background: var(--equipes-verde-escuro);
+}
+.equipes-btn.equipes-btn--confirmar:focus-visible {
+  outline: 2px solid var(--equipes-verde-escuro);
+  outline-offset: 2px;
+}
+.equipes-btn.equipes-btn--confirmar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
 .equipes-atividades-aluno { margin-top: 12px; }
 .equipes-atividades-aluno__lista { list-style: none; margin: 6px 0; padding: 0; }
 .equipes-atividades-aluno__item {

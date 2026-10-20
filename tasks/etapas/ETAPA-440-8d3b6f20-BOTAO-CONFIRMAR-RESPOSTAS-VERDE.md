@@ -6,7 +6,7 @@
 
 ### #311.1 — CSS do `.equipes-btn--confirmar`
 
-**Próximo passo:** executor-leve altera `assets/css/equipes-modal.css`.
+**Próximo passo:** — (concluída em 2026-10-20 16:10; executor-leve, conferida pelo líder s31)
 
 - **Nível:** LEVE — só CSS, sem lógica
 - **Modelo:** só Haiku — nunca outro
@@ -14,4 +14,7 @@
 - **Descrição:** token `--equipes-verde` (e hover mais escuro) no `:root`; botão com fundo verde,
   texto branco em negrito, padding maior (altura ~40px), fonte maior, sombra leve, hover/foco;
   `[hidden]` continua escondendo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/css/equipes-modal.css` (tokens `--equipes-verde`/`--equipes-verde-escuro`;
+  `.equipes-btn.equipes-btn--confirmar` verde, branco, negrito 15px, min-height 42px, sombra; hover,
+  foco e disabled) · **Verificação:** leitura do diff; `[hidden]` continua escondendo (a regra nova
+  não define `display`). **Conferir na tela.**

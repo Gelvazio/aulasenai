@@ -67,7 +67,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
-| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #311.1 botão verde (executor-leve) | 🔄 Ativa | 2026-10-20 16:05 |
+| local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #311 concluída | ⏹️ Encerrada | 2026-10-20 16:10 |
 
 ## 📌 Tarefas
 
@@ -1409,8 +1409,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.10 | Auditoria: situação de aprendizagem em todas as matérias de todos os cursos · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.9 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
-| **#311** | **Botão "Confirmar Respostas" verde, destacado e maior** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |
-| #311.1 | CSS do botão Confirmar Respostas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s31) (desde 2026-10-20 16:05) | [440-8d3b6f20](etapas/ETAPA-440-8d3b6f20-BOTAO-CONFIRMAR-RESPOSTAS-VERDE.md) | — |
 
 
 ## Escopo
