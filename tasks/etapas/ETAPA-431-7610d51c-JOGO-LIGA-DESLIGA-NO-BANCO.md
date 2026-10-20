@@ -39,18 +39,34 @@ relatórios e na média final.
 
 ### Perguntas abertas
 
-- ⬜ 1. Em qual aula a atividade entra? (sugerida: aula 33 "Cidadania Digital e Segurança Online"
-  da matéria 26, ou cadastrar a matéria Noções de Eletricidade).
-- ⬜ 2. Aprovação do plano (tarefa grande: banco + gabarito).
+- ✅ 1. Em qual aula a atividade entra? → professor, 2026-10-20 09:44: "a materia é
+  MATERIAIS\RIO_DO_SUL_MAIS_TECH\NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS". A matéria não existe no
+  banco: entra a #302.0 (cadastrar a matéria no curso 6 com as 9 aulas) e a atividade vai na
+  **aula 01 — Segurança em Eletricidade e Grandezas Elétricas Básicas**.
+- ⬜ 2. Aprovação do plano com a #302.0 (tarefa grande: banco + gabarito).
 
 ### Decisões
 
 - 2026-10-20 09:39 — Nota pelo fluxo atual (respostas por item + gabarito no banco), sem tabela
   nova: é o "como já é feito hoje" do pedido. Claude Code (Opus 5.5).
 
+### #302.0 — Cadastrar a matéria Noções de Eletricidade e as 9 aulas
+
+**Próximo passo:** aguardar o "sim" do plano.
+
+- **Nível:** PESADO — banco.
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Effort:** high
+- **Descrição:** seed idempotente `database/2026-10-20-materia-nocoes-eletricidade-aulas.sql` no padrão
+  de `2026-10-09-materia-comunicacao-oral-escrita-aulas.sql`: matéria "Noções de Eletricidade e
+  Circuitos Básicos" no curso 6 (Rio do Sul Mais Tech), vínculo `cursomateria` e as 9 aulas de
+  `ATIVIDADES/STATUS-ATIVIDADES.md` (4 h cada); registrar em `SEEDS-APLICADOS.md`.
+- **Critérios de aceitação:** consulta mostra a matéria no curso 6 com 9 aulas; nada duplicado.
+- **Entrega:** — · **Verificação:** —
+
 ### #302.1 — Seed da atividade e do gabarito no banco
 
-**Próximo passo:** aguardar a aula (pergunta 1) e o "sim" do plano.
+**Próximo passo:** depois da #302.0 (atividade na aula 01 da matéria nova).
 
 - **Nível:** PESADO — banco e gabarito.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
