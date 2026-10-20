@@ -1383,6 +1383,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #299.8 | Fechamento: quadro, commit e push por subtarefa · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #299.7 | ⬜ Pendente | — | [428-df862f7a](etapas/ETAPA-428-df862f7a-PAGINAS-FUTURISTAS-MUNDO-SENAI.md) | — |
 | **#304** | **Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
 | #304.1 | Mostrar RESPOSTA CERTA / RESPOSTA ERRADA ao professor depois de gravar · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s30) (desde 2026-10-20 10:50) | [433-5c7e2a96](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) | — |
+| **#305** | **Atividade de gamificação em cada aula (pasta GAMIFICACAO/AULA-NN)** | 🟡 Média | — | — | 👀 Aguardando respostas e sim do plano | — (não reservável) | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| #305.1 | Definir como o banco marca a atividade de gamificação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| #305.2 | Gerador das pastas GAMIFICACAO/AULA-NN · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #305.1 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| #305.3 | Seed: 1 atividade de gamificação por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #305.2 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| #305.4 | Link de gamificação nos cards das aulas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #305.3 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| #305.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #305.4 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
@@ -1867,6 +1873,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 431-7610d51c | Jogo "Liga ou Desliga?" como atividade do banco, com nota gravada (#302, pedida em 2026-10-20 09:38) | [ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) |
 | 432-9b3d4f21 | Link da atividade no card da matéria Noções de Eletricidade (#303, pedida em 2026-10-20 10:12) | [ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) |
 | 433-5c7e2a96 | Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa (#304, pedida em 2026-10-20 10:40) | [ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) |
+| 434-e4a81c37 | Atividade de gamificação em cada aula, pasta GAMIFICACAO/AULA-NN (#305, pedida em 2026-10-20 13:18) | [ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
