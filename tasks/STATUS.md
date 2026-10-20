@@ -1421,6 +1421,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #314.6 | Tirar o jsPDF do `<head>` das 102 páginas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.5 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.7 | Versão fixa do `supabase-js` (203 páginas + 3 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.8 | Medir o depois e documentar · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #314.2, #314.3, #314.4, #314.6, #314.7 | 👀 Aguardando o plano | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| **#316** | **Card da aula só com links de atividades vinculadas no banco** | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) | — |
+| #316.1 | Grade: manter só links de atividades com `aula_id` da aula do card · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) | — |
 
 
 ## Escopo
@@ -1903,6 +1905,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 442-9b4e7c58 | Botão de equipe para os alunos em todos os índices de atividades (#313, pedida em 2026-10-20 16:20) | [ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md](etapas/ETAPA-442-9b4e7c58-BOTAO-EQUIPE-ALUNOS-TODAS-MATERIAS.md) |
 | 443-cf21e3c9 | Desempenho das páginas de atividade e cache do site (#314, pedida em 2026-10-20 16:40) | [ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) |
 | 444-58ebb5da | Netlify sem "Pretty URLs" (#315, pedida em 2026-10-20 16:20) | [ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) |
+| 445-50000fd9 | Card da aula só com links de atividades vinculadas no banco (#316, pedida em 2026-10-20 16:24) | [ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
