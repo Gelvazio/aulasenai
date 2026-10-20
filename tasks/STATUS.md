@@ -65,8 +65,8 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · DeepSeek Harness (deepseek-flash) | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — 19 subtarefas entregues (a #293.3 é da s28); faltam 5 PESADO de banco (#293.5–.9), 3 PESADO de código/segurança (#293.16, #293.23, #293.32) e 4 bloqueadas por elas (#293.21, #293.26, #293.27, #293.31) | ⏹️ Encerrada | 2026-10-19 14:40 |
 | local · main · s28 | #293 ([422-601a21b2](etapas/ETAPA-422-601a21b2-ALERTA-DE-ATIVIDADE-PENDENTE-NA-TURMA.md)) — #293 concluída (todas as subtarefas) | ⏹️ Encerrada | 2026-10-19 14:44 |
 | local · main · s27 | #294.1 ([423-7a481d71](etapas/ETAPA-423-7a481d71-FERRAMENTAS-DIGITAIS-APLICADAS-AULAS-E-ATIVIDADES.md)) — pasta, ementa e materia.json de Ferramentas Digitais Aplicadas | 🔄 Ativa | 2026-10-19 13:00 |
-| local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aguardando o sim do professor | 👀 Aguardando o usuário | 2026-10-20 09:40 |
-| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302.3 STATUS-ATIVIDADES.md da matéria (#302.0 a #302.2 entregues) | 🔄 Ativa | 2026-10-20 10:45 |
+| local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
+| local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — concluída (#302.0 a #302.3) | ⏹️ Encerrada | 2026-10-20 10:55 |
 
 ## 📌 Tarefas
 
@@ -1398,8 +1398,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #300.10 | Auditoria: situação de aprendizagem em todas as matérias de todos os cursos · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.9 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.11 | Documentar em `docs/regras/atividades.md` e `docs/regras/materias.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.5, #300.8 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.12 | Fechamento: índice de regras, visualizador, quadro e commit + push · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #300.10, #300.11 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
-| **#302** | **Jogo "Liga ou Desliga?" como atividade do banco, com nota gravada** | 🟠 Alta | — | — | 👀 Aguardando sim do plano | — (não reservável) | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
-| #302.3 | STATUS-ATIVIDADES.md da matéria · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s30) (desde 2026-10-20 10:45) | [431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md) | — |
 
 
 ## Escopo

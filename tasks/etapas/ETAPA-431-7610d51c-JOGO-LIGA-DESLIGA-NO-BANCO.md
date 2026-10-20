@@ -100,10 +100,11 @@ relatórios e na média final.
 
 ### #302.3 — STATUS-ATIVIDADES.md da matéria
 
-**Próximo passo:** incluir a atividade 165 em "Demais atividades da pasta" do STATUS-ATIVIDADES.md.
+**Próximo passo:** ✅ entregue; #302 concluída. Falta só o professor conferir na tela uma entrega de teste.
 
 - **Nível:** MEDIO — só `.md`. (reclassificada de LEVE a pedido do professor)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
 - **Descrição:** incluir a atividade em "Demais atividades da pasta" com o id do banco.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** linha do jogo em "Demais atividades da pasta" do `STATUS-ATIVIDADES.md` (commit `cb3001b7`), 2026-10-20 10:55 (s30).
+- **Verificação:** leitura do arquivo: linha com a página, o tipo e o id 165 (aula 134).
