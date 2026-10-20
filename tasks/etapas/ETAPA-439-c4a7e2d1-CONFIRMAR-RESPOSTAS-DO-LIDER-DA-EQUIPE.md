@@ -29,7 +29,7 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 | R2 | SE quem chama não for professor da turma nem líder de equipe ligada a `a`, ENTÃO O SISTEMA DEVE recusar com erro 42501 sem alterar nada | chamada com claims de aluno não líder (rollback) |
 | R3 | QUANDO o professor da turma chamar, O SISTEMA DEVE fazer o R1 em todas as equipes ligadas a `a` das turmas dele, com o líder (👑) como respondente | consulta |
 | R4 | O SISTEMA DEVE guardar em `backup_clone_equipe` cada linha de resposta/entrega apagada (jsonb, quem, quando) | consulta na tabela |
-| R5 | ONDE o usuário for aluno, a tela de equipes DEVE mostrar as atividades ligadas à equipe e o botão "Confirmar Respostas" só ao líder da equipe | leitura do código (+ conferir na tela pelo professor) |
+| R5 | ONDE o usuário for aluno, a tela de equipes DEVE mostrar as atividades ligadas à equipe e o botão "Confirmar Respostas" só ao líder da equipe; ONDE for o professor, o botão aparece ao lado de cada atividade ligada de cada equipe | leitura do código (+ conferir na tela pelo professor) |
 
 ### Invariantes
 
@@ -40,8 +40,8 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 
 ### Perguntas abertas
 
-- ⬜ 1. O professor também vê o botão "Confirmar Respostas" na visão dele (por equipe), ou só o líder?
-- ⬜ 2. Se o líder **não entregou**, a entrega dos colegas é apagada (espelho total do líder) ou fica?
+- ✅ 1. → professor, 2026-10-20 15:20: "sim, o professor tambem deve ver e poder confirmar" (botão por equipe na visão do professor).
+- ✅ 2. → "fica como esta": a entrega dos colegas nunca é apagada; se o líder entregou, quem não tem entrega recebe a dele.
 
 ### Riscos
 
@@ -55,10 +55,12 @@ ligada à equipe e elas passam a ser as respostas de todos os integrantes (sobre
 | Quando | O quê | Quem |
 |---|---|---|
 | 2026-10-20 15:08 | Muda a regra "nunca sobrescrever" da #307.2: a confirmação do líder sobrescreve os integrantes | Professor |
+| 2026-10-20 15:20 | **Plano aprovado** ("3-sim"); professor também confirma (por equipe); entrega dos colegas fica como está | Professor |
+| 2026-10-20 15:20 | Função ganha 2º parâmetro opcional `p_equipe` (botão por equipe); `clonar_respostas_equipe(ID)` continua valendo para todas as equipes permitidas | Claude Code (Opus 5.5) |
 
 ### #310.1 — Banco: confirmar respostas pelo líder, sobrescrevendo, com cópia do apagado
 
-**Próximo passo:** aguardar o "sim" do professor e as respostas 1 e 2.
+**Próximo passo:** escrever o SQL em `database/2026-10-20-confirmar-respostas-equipe.sql` e aplicar.
 
 - **Nível:** PESADO — banco + segurança (função security definer, apaga dados)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
