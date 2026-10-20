@@ -1389,6 +1389,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #305.3 | Seed: 1 atividade de gamificação por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #305.2 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
 | #305.4 | Link de gamificação nos cards das aulas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #305.3 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
 | #305.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #305.4 | ⬜ Pendente | — | [434-e4a81c37](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) | — |
+| **#306** | **Atividade "Situação de Aprendizagem" em cada aula (modelo GERADOR-AULAS/GAMIFICACAO-AULAS)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| #306.1 | Definir como o banco marca a atividade de SA · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| #306.2 | Gerador das páginas de SA por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #306.1 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| #306.3 | Seed: 1 atividade de SA por aula · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #306.2 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| #306.4 | Link da SA nos cards das aulas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #306.3 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
+| #306.5 | Regras e documentação · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #306.4 | ⬜ Pendente | — | [435-71f0b3d5](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) | — |
 | #300-1e308670-9b51-451c-9f3d-19bc7c51c879 | **Padrão de provas SENAI nos geradores globais e situação de aprendizagem em toda aula** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-20) | — (não reservável) | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.1 | Ler o modelo SENAI e escrever a regra "padrão de provas SENAI" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
 | #300.2 | Regra "situação de aprendizagem em toda aula" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #300.1 | ⬜ Pendente | — | [429-1e308670](etapas/ETAPA-429-1e308670-PADRAO-PROVAS-SENAI-NOS-GERADORES.md) | — |
@@ -1874,6 +1880,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 432-9b3d4f21 | Link da atividade no card da matéria Noções de Eletricidade (#303, pedida em 2026-10-20 10:12) | [ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md](etapas/ETAPA-432-9b3d4f21-LINK-ATIVIDADE-NO-CARD-DA-MATERIA.md) |
 | 433-5c7e2a96 | Aviso RESPOSTA CERTA / ERRADA para o professor ao marcar alternativa (#304, pedida em 2026-10-20 10:40) | [ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md](etapas/ETAPA-433-5c7e2a96-RESPOSTA-CERTA-OU-ERRADA-NO-LOGIN-PROFESSOR.md) |
 | 434-e4a81c37 | Atividade de gamificação em cada aula, pasta GAMIFICACAO/AULA-NN (#305, pedida em 2026-10-20 13:18) | [ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md](etapas/ETAPA-434-e4a81c37-GAMIFICACAO-POR-AULA.md) |
+| 435-71f0b3d5 | Atividade "Situação de Aprendizagem" em cada aula (#306, pedida em 2026-10-20 13:31) | [ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md](etapas/ETAPA-435-71f0b3d5-SITUACAO-DE-APRENDIZAGEM-POR-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

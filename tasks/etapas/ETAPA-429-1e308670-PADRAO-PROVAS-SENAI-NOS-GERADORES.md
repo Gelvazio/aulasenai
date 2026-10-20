@@ -153,3 +153,5 @@
 - **Effort:** low
 - **Critérios de aceitação:** INDEX e HISTORICO atualizados; visualizador regerado; mãe ✅ movida para `task_complete.md`.
 - **Entrega:** — · **Verificação:** —
+
+> **2026-10-20 13:31 — decisão do professor:** a parte "situação de aprendizagem em toda aula" desta tarefa passa para a **#306** (etapa 435-71f0b3d5), com o modelo de `GERADOR-AULAS/GAMIFICACAO-AULAS`. Rever as subtarefas da #300 que tratam disso antes de executá-las.
