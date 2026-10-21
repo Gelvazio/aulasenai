@@ -33,17 +33,19 @@
 
 | Quando | Decisão | Quem |
 |---|---|---|
-| 2026-10-21 | Plano aguardando aprovação (banco: frente local ou exceção desta sessão) | — |
+| 2026-10-21 10:25 | Plano aprovado ("sim, abra exceção e faça tudo agora") | Usuário |
+| 2026-10-21 10:25 | **Exceção** à regra "banco só pelo Claude Code local": esta sessão de nuvem faz a #319.2 pelo conector do Supabase | Usuário |
+| 2026-10-21 10:25 | Equipe: o líder (Opus) faz a #319.2; #319.3 e #319.4 vão para o `executor-medio` (Sonnet) e a #319.5 para o `executor-leve` (Haiku) | Líder |
 
 ### #319.1 — Levantar o funcionamento atual e escrever o plano (para aprovação)
 
-**Próximo passo:** aprovação do plano pelo usuário.
+**Próximo passo:** — (entregue: plano aprovado).
 
 - **Nível:** PESADO — banco (coluna/função da nota), regra de nota e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** plano com escopo, arquivos, banco, riscos e verificação.
 - **Critérios de aceitação:** plano escrito nesta etapa e mostrado ao usuário.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:25 — plano nesta etapa · **Verificação:** aprovado pelo usuário em 2026-10-21 10:25
 
 ### #319.2 — Banco: tabela `questoes_nota_aluno`, função `questoes_para_nota` e Média Final
 
