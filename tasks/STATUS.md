@@ -74,7 +74,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
-| nuvem · clever-edison-o722i5 | #324 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) criada e publicada | ⏹️ Encerrada | 2026-10-21 12:49 |
+| nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
 
 ## 📌 Tarefas
 
@@ -1434,7 +1434,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #321.4 | Página da atividade: mostrar o prazo e avisar/bloquear depois dele · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #321.5 | Documentação do prazo da atividade · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #321.3, #321.4 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #324-e41c087e-cd62-4347-8a4f-26e1b7254a7f | Atividade ligada às turmas (aula × atividade × matéria × turma); excluir só na turma atual | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
-| #324.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus · executor-pesado) (nuvem · clever-edison-o722i5) (desde 2026-10-21 12:54) | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.2 | Banco: tabela do vínculo, RLS, carga inicial e "excluir na turma" · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #324.1 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.3 | Card e modal da aula: só as atividades da turma do combo; excluir só nela · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
