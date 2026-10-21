@@ -1441,7 +1441,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.5 | Documentação do vínculo atividade × turma · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #324.3, #324.4 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
-| #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | 🔄 Em execução | Claude Code (Haiku · executor-leve) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:56) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 
 
 ## Escopo
