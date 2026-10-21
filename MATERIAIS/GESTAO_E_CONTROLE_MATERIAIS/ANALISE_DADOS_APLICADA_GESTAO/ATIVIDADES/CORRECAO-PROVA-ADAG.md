@@ -235,3 +235,4 @@ Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entr
 | 2026-10-20 19:43 | 2 | 13 | 1 alternativa parcial + 12 em branco após a entrega (nota 0); 44 suspeitas de cópia gravadas (textos ≥ 90% iguais entre 3 ou mais alunos); item 6.1 sem suspeita (texto igual ao de referência) |
 | 2026-10-20 20:08 | 0 | 0 | Nada pendente (4.1 vazia, nenhuma em branco após a entrega); 0 suspeitas novas (5 candidatos do item 6.1, contas com os dados do enunciado; demais pares só entre duplas) |
 | 2026-10-20 21:08 | 0 | 0 | Nada pendente (4.1 vazia, nenhuma em branco após a entrega); 0 suspeitas novas (pares fora da dupla só no item 6.1, já avaliados; demais só entre duplas) |
+| 2026-10-20 22:08 | 0 | 0 | Nada pendente (4.1 vazia, nenhuma em branco após a entrega, nenhuma resposta mudada); 0 suspeitas novas (pares fora da dupla só no item 6.1, já avaliados) |
