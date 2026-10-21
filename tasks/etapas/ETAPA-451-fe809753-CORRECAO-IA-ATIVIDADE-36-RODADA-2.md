@@ -13,10 +13,19 @@
 
 ### #322.1 — Corrigir as alternativas sem nota da IA (313 de 8 alunos no início)
 
-**Próximo passo:** 3 agentes (10 questões cada) corrigem e gravam; o líder confere.
+**Próximo passo:** — (entregue). Respostas que chegarem depois ficam para uma nova rodada.
 
 - **Nível:** PESADO — banco (gravação em `correcao_discursiva`) e gabarito
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro (exceção do usuário para esta sessão)
 - **Critérios de aceitação:** nenhuma alternativa da atividade 36 com resposta e sem `nota_ia_em`;
   nenhuma linha já corrigida foi alterada; nenhuma com `nota_professor` mexida.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 11:12 — 316 alternativas gravadas por 3 agentes (Opus) em paralelo: 1–10: 98 ·
+  11–20: 122 · 21–30: 96. Só `nota_ia`, `comentario` e `nota_ia_em`; upsert com guarda
+  `nota_ia_em is null` (nada já corrigido foi mexido).
+- **Verificação:** consulta do líder: `correcao_discursiva` da atividade 36 com 1.733 linhas
+  (1.417 da #318 + 316); 0 com `nota_professor`, 0 sem `[IA]`, 0 > 300 caracteres, toda nota é
+  pontos/metade/0. Ficaram **20 alternativas sem nota**, todas de **3 alunos que ainda não
+  entregaram** e seguiam respondendo durante a rodada (respostas salvas depois da leitura).
+- **Para o professor conferir:** dois alunos com textos idênticos em quase tudo (aviso em todas),
+  respostas coladas na alternativa errada (Errada), textos com restos de resposta de IA (aviso
+  "⚠️ Texto com cara de copiado de IA/internet — conferir.").
