@@ -18,5 +18,7 @@
   entra na exclusão (o `.claude/rules/index.html` é aberto pelo menu Regras do site).
 - **Critérios de aceitação:** `vercel.json` válido (JSON); `headers` sem mudança.
 - **Executor:** Claude Code (Sonnet · executor-medio) (local · main · s35), líder Opus 5.5
-- **Entrega:** —
-- **Verificação:** —
+- **Entrega:** `vercel.json` com `ignoreCommand` (chave de topo, `headers` sem mudança) —
+  2026-10-21 19:15
+- **Verificação:** `json.load` ok; `git diff vercel.json` = só a linha do `ignoreCommand`.
+  O cancelamento do deploy só se confirma no próximo push só de `tasks/` (painel da Vercel).

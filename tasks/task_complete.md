@@ -483,3 +483,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #335.1 | Página live.html que se atualiza sozinha · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
 | **#336-a0943514-62d9-4297-926b-309e2601cd9e** | **Tela AO VIVO sem bloqueadas e pendentes** | 🟡 Média | — | — | ✅ Concluído | — | [465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) | — |
 | #336.1 | Tirar bloqueadas e pendentes da live.html · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) | — |
+| **#337-310c16b7-99d9-4ebc-8daf-0f1a4e485414** | **Vercel sem deploy quando só o quadro muda** | 🟡 Média | — | — | ✅ Concluído | — (não reservável) | [466-310c16b7](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md) | — |
+| #337.1 | `ignoreCommand` no `vercel.json` · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [466-310c16b7](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md) | — |
