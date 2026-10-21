@@ -9,8 +9,12 @@ https://gelvazio.github.io/reservas-senai/, repositório `Gelvazio/reservas-sena
 ### #328.1 — Levantar com o usuário os ajustes do app de carros e escrever o plano
 
 **Próximo passo:** pedir ao usuário a lista dos ajustes do app de carros (o pedido não diz
-quais); anexar o repositório `Gelvazio/reservas-senai` à sessão, ler o código e escrever aqui as
-subtarefas de cada ajuste, com nível.
+quais) e escrever aqui as subtarefas de cada ajuste, com nível.
+
+- **Levantamento (2026-10-21):** o app de carros é o `Gelvazio/reservas-senai` (público): um
+  `index.html` só (com `reservas.html` igual), que lê as planilhas de reservas de veículos
+  ("CARROS DE …") e de salas, mais `sw.js` (cache) e `manifest.json`. Para enviar mudanças, a
+  sessão precisa do repositório anexado com permissão de push.
 
 - **Nível:** PESADO — escopo ainda indefinido, outro repositório (pode ter login/banco); na dúvida sobe
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro

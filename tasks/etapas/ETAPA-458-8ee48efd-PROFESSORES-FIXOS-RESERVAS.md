@@ -10,9 +10,18 @@ favoritos, começando com a professora **Graziela Marconcini Semann Ferreira**.
 
 ### #329.1 — Lista de professores fixos com Graziela Marconcini Semann Ferreira
 
-**Próximo passo:** anexar o repositório `Gelvazio/reservas-senai` à sessão, achar onde ficam os
-favoritos dos professores e criar a lista de professores fixos (separada dos favoritos), com
-"Graziela Marconcini Semann Ferreira".
+**Próximo passo:** no `Gelvazio/reservas-senai`, criar em `index.html` (e no `reservas.html`, que
+é cópia idêntica) uma constante com a lista de professores fixos (começando por "Graziela
+Marconcini Semann Ferreira") e somá-la aos nomes do combo `#fav` em `setData`, sem repetir nome;
+subir a versão do cache no `sw.js`.
+
+- **Levantamento (2026-10-21, Claude Code Opus 5.5, nuvem · fervent-newton-aqfqsr):** o repositório
+  existe e é público (`index.html`, `reservas.html` igual ao `index.html`, `sw.js`,
+  `manifest.json`; último commit `6b2ca88`). O combo "⭐ Professor favorito" (`#fav`) é montado
+  em `setData` só com os nomes que aparecem nas planilhas de carros e salas (`names`); o favorito
+  escolhido fica no `localStorage` (`reservas_fav`). A Graziela aparece nas planilhas só como
+  "GRAZIELA" (em observações de carona), sem o nome completo. Para enviar mudanças, a sessão
+  precisa do repositório anexado com permissão de push.
 
 - **Nível:** MEDIO — código de tela (JS/HTML) em outro repositório, até 3 arquivos (reclassificar se tiver banco/login)
 - **Modelo:** só Sonnet — nunca outro
