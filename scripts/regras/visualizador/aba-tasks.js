@@ -16,7 +16,7 @@ function montarMarkdownTarefa(tarefa) {
     `| Em uso por | ${tarefa["Em uso por"] || "—"} |`,
   ].join("\n");
   const partes = ["## Situação no quadro", resumo];
-  tarefa.etapas.forEach((etapa) => partes.push("---", etapa.texto));
+  tarefa.etapas.forEach((nome) => partes.push("---", DADOS.tasks.etapas[nome].texto));
   if (!tarefa.etapas.length) partes.push("*Sem etapa ligada a esta tarefa.*");
   return partes.join("\n\n");
 }
@@ -30,7 +30,7 @@ function abrirTarefa(tarefa) {
   abrirModal({
     titulo: `${tarefa["Tarefa"]} — ${tarefa["Título"]}`,
     etiquetas: [criarEtiqueta(tarefa.situacao, classe),
-      ...tarefa.etapas.map((etapa) => criarEtiqueta(etapa.arquivo.replace(/\.md$/, "")))],
+      ...tarefa.etapas.map((nome) => criarEtiqueta(nome.replace(/\.md$/, "")))],
     markdown: montarMarkdownTarefa(tarefa),
   });
 }

@@ -9,7 +9,7 @@ que abre mostrando só os últimos 3 dias.
 
 ### #334.1 — Cada etapa uma vez só no visualizador
 
-**Próximo passo:** executor-medio altera o leitor e a aba TASKS e regenera.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — código com lógica em 2 arquivos (Python + JS), sem banco
 - **Modelo:** só Sonnet — nunca outro
@@ -19,10 +19,17 @@ que abre mostrando só os últimos 3 dias.
   dicionário.
 - **Critérios de aceitação:** `index.html` regenerado com menos de 10 MB; mesmas tarefas, frentes
   e aguardando (contagens do gerador iguais); `node --check` e `py_compile` ok.
+- **Executor:** Claude Code (Sonnet · executor-medio) (local · main · s34), líder Opus 5.5
+- **Entrega:** `leitor_tarefas.py` (nova `ler_etapa` com cache; `ler_tarefas` devolve `etapas`
+  {arquivo → texto, proximo}; tarefa/frente guardam só os nomes) e `aba-tasks.js` (busca em
+  `DADOS.tasks.etapas`) — 2026-10-21 19:07
+- **Verificação:** `index.html` de 96,6 MB → 3,2 MB; contagens iguais (111 seções, 1838 tarefas,
+  59 frentes, 62 aguardando); `py_compile` e `node --check` ok; diff conferido pelo líder.
+  Conferir na tela (usuário) o modal da tarefa com o texto da etapa.
 
 ### #334.2 — Filtro por data na aba TASKS (abre nos últimos 3 dias)
 
-**Próximo passo:** depois da #334.1, executor-medio cria o filtro.
+**Próximo passo:** executor-medio cria o filtro (leitor + aba TASKS).
 
 - **Nível:** MEDIO — tela com lógica (JS) + campo de data no leitor, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro

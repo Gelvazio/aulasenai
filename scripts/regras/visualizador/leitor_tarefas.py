@@ -105,26 +105,45 @@ def classificar_situacao(status: str) -> str:
     return SITUACAO_PADRAO
 
 
-def ler_etapas_do_link(celula: str, pasta_etapas: Path) -> list:
+def ler_etapa(nome: str, pasta_etapas: Path, cache: dict):
+    """Lê um arquivo de etapa uma única vez, guardando o resultado no cache.
+
+    Args:
+        nome: Nome do arquivo da etapa.
+        pasta_etapas: Pasta `tasks/etapas/`.
+        cache: Dicionário `{arquivo: {"texto", "proximo"}}` compartilhado.
+
+    Returns:
+        `{"texto", "proximo"}` da etapa, ou None se o arquivo não existir.
+    """
+    if nome in cache:
+        return cache[nome]
+    caminho = pasta_etapas / nome
+    if not caminho.exists():
+        return None
+    texto = caminho.read_text(encoding="utf-8").strip()
+    achou_proximo = PADRAO_PROXIMO.search(texto)
+    cache[nome] = {"texto": texto,
+                   "proximo": achou_proximo.group(1).strip() if achou_proximo else ""}
+    return cache[nome]
+
+
+def ler_etapas_do_link(celula: str, pasta_etapas: Path, cache: dict) -> list:
     """Lê as etapas apontadas pelos links `[...](etapas/ARQUIVO.md)` de uma célula.
 
     Args:
         celula: Texto da coluna Etapa (ou "Tarefa (etapa)" das frentes).
         pasta_etapas: Pasta `tasks/etapas/`.
+        cache: Dicionário de etapas já lidas (preenchido aqui).
 
     Returns:
-        Lista de `{"arquivo", "texto", "proximo"}`, sem arquivos inexistentes.
+        Lista com o nome dos arquivos de etapa que existem.
     """
-    etapas = []
+    nomes = []
     for nome in PADRAO_LINK_ETAPA.findall(celula):
-        caminho = pasta_etapas / nome
-        if not caminho.exists():
-            continue
-        texto = caminho.read_text(encoding="utf-8").strip()
-        achou_proximo = PADRAO_PROXIMO.search(texto)
-        etapas.append({"arquivo": nome, "texto": texto,
-                       "proximo": achou_proximo.group(1).strip() if achou_proximo else ""})
-    return etapas
+        if ler_etapa(nome, pasta_etapas, cache) is not None:
+            nomes.append(nome)
+    return nomes
 
 
 def ler_itens_aguardando(caminho: Path) -> list:
@@ -191,27 +210,30 @@ def ler_tarefas(pasta_tasks: Path) -> dict:
         pasta_tasks: Pasta `tasks/` do projeto.
 
     Returns:
-        `{"tarefas": [...], "frentes": [...], "aguardando": [...]}`.
+        `{"tarefas": [...], "frentes": [...], "aguardando": [...], "etapas": {...}}`; cada
+        tarefa guarda só os nomes das etapas, e o texto fica uma vez em `etapas`.
     """
     caminho_status = pasta_tasks / "STATUS.md"
     pasta_etapas = pasta_tasks / "etapas"
     if not caminho_status.exists():
-        return {"tarefas": [], "frentes": [], "aguardando": []}
+        return {"tarefas": [], "frentes": [], "aguardando": [], "etapas": {}}
 
+    cache = {}
     texto = caminho_status.read_text(encoding="utf-8")
     linhas_quadro = ler_tabela(ler_secao(texto, MARCA_TAREFAS))
     linhas_quadro += ler_concluidas(pasta_tasks / "task_complete.md")
     tarefas = []
     for linha in linhas_quadro:
-        etapas = ler_etapas_do_link(linha.get(COLUNA_ETAPA, ""), pasta_etapas)
+        nomes = ler_etapas_do_link(linha.get(COLUNA_ETAPA, ""), pasta_etapas, cache)
         tarefas.append({
             **linha,
             "situacao": classificar_situacao(linha.get("Status", "")),
-            "etapas": etapas,
-            "proximo": etapas[0]["proximo"] if etapas else "",
+            "etapas": nomes,
+            "proximo": cache[nomes[0]]["proximo"] if nomes else "",
         })
     frentes = []
     for linha in ler_tabela(ler_secao(texto, MARCA_FRENTES)):
-        etapas = ler_etapas_do_link(linha.get(COLUNA_ETAPA_FRENTE, ""), pasta_etapas)
-        frentes.append({**linha, "proximo": etapas[0]["proximo"] if etapas else ""})
-    return {"tarefas": tarefas, "frentes": frentes, "aguardando": ler_aguardando(pasta_etapas)}
+        nomes = ler_etapas_do_link(linha.get(COLUNA_ETAPA_FRENTE, ""), pasta_etapas, cache)
+        frentes.append({**linha, "proximo": cache[nomes[0]]["proximo"] if nomes else ""})
+    return {"tarefas": tarefas, "frentes": frentes, "etapas": cache,
+            "aguardando": ler_aguardando(pasta_etapas)}
