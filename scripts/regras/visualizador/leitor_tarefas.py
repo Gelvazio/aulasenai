@@ -24,7 +24,8 @@ SITUACAO_PADRAO = "Pendente"
 
 PADRAO_LINK_ETAPA = re.compile(r"\]\(etapas/([^)]+\.md)\)")
 PADRAO_PROXIMO = re.compile(r"^\*\*Próximo passo:\*\*\s*(.+)$", re.MULTILINE)
-PADRAO_NUMERO_ETAPA = re.compile(r"^ETAPA-0*(\d+(?:-[0-9a-f]{8})?)-")
+PADRAO_DATA_PEDIDO = re.compile(r"\*\*Pedido em:\*\*\s*(\d{4}-\d{2}-\d{2})")
+PADRAO_NUMERO_ETAPA =re.compile(r"^ETAPA-0*(\d+(?:-[0-9a-f]{8})?)-")
 PADRAO_CODIGO_ITEM = re.compile(r"^\d{1,3}\.\d+[a-z]?$")
 
 
@@ -111,10 +112,10 @@ def ler_etapa(nome: str, pasta_etapas: Path, cache: dict):
     Args:
         nome: Nome do arquivo da etapa.
         pasta_etapas: Pasta `tasks/etapas/`.
-        cache: Dicionário `{arquivo: {"texto", "proximo"}}` compartilhado.
+        cache: Dicionário `{arquivo: {"texto", "proximo", "data"}}` compartilhado.
 
     Returns:
-        `{"texto", "proximo"}` da etapa, ou None se o arquivo não existir.
+        `{"texto", "proximo", "data"}` da etapa, ou None se o arquivo não existir.
     """
     if nome in cache:
         return cache[nome]
@@ -123,9 +124,27 @@ def ler_etapa(nome: str, pasta_etapas: Path, cache: dict):
         return None
     texto = caminho.read_text(encoding="utf-8").strip()
     achou_proximo = PADRAO_PROXIMO.search(texto)
+    achou_data = PADRAO_DATA_PEDIDO.search(texto)
     cache[nome] = {"texto": texto,
-                   "proximo": achou_proximo.group(1).strip() if achou_proximo else ""}
+                   "proximo": achou_proximo.group(1).strip() if achou_proximo else "",
+                   "data": achou_data.group(1) if achou_data else ""}
     return cache[nome]
+
+
+def obter_data_das_etapas(nomes: list, cache: dict) -> str:
+    """Devolve a data da primeira etapa ligada que tenha data de pedido.
+
+    Args:
+        nomes: Nomes das etapas ligadas à tarefa.
+        cache: Dicionário de etapas já lidas.
+
+    Returns:
+        Data `AAAA-MM-DD` ou "" se nenhuma etapa tiver data.
+    """
+    for nome in nomes:
+        if cache[nome]["data"]:
+            return cache[nome]["data"]
+    return ""
 
 
 def ler_etapas_do_link(celula: str, pasta_etapas: Path, cache: dict) -> list:
@@ -230,6 +249,7 @@ def ler_tarefas(pasta_tasks: Path) -> dict:
             "situacao": classificar_situacao(linha.get("Status", "")),
             "etapas": nomes,
             "proximo": cache[nomes[0]]["proximo"] if nomes else "",
+            "data": obter_data_das_etapas(nomes, cache),
         })
     frentes = []
     for linha in ler_tabela(ler_secao(texto, MARCA_FRENTES)):

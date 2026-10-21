@@ -29,7 +29,7 @@ que abre mostrando só os últimos 3 dias.
 
 ### #334.2 — Filtro por data na aba TASKS (abre nos últimos 3 dias)
 
-**Próximo passo:** executor-medio cria o filtro (leitor + aba TASKS).
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — tela com lógica (JS) + campo de data no leitor, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -39,10 +39,16 @@ que abre mostrando só os últimos 3 dias.
   limpo.
 - **Critérios de aceitação:** abre só com tarefas pedidas nos últimos 3 dias; mudar as datas
   refiltra; limpar mostra todas; `node --check` ok; conferir na tela (usuário).
+- **Executor:** Claude Code (Sonnet · executor-medio) (local · main · s34), líder Opus 5.5
+- **Entrega:** `leitor_tarefas.py` (`PADRAO_DATA_PEDIDO`, `data` em cada etapa e tarefa) e
+  `aba-tasks.js` (De/Até + "Ver tudo", `DIAS_FILTRO_INICIAL = 3`, classes `filtro-datas*`;
+  estilo no `estilo.css` pela #334.3) — 2026-10-21 19:15
+- **Verificação:** `py_compile` e `node --check` ok; gerador sem erro, contagens iguais; 1818 de
+  1838 tarefas com data, 655 nos últimos 3 dias. Conferir na tela (usuário).
 
 ### #334.3 — Visual futurista no visualizador
 
-**Próximo passo:** executor-medio (agente 2) aplica o visual, em paralelo à #334.1.
+**Próximo passo:** — (concluída)
 
 - **Decisão (2026-10-21 19:05, usuário "chame varios agentes"):** sem dependência da #334.2 — arquivos
   diferentes (`estilo.css`, `modelo.html`); roda em paralelo; o líder regenera o HTML no fim.
@@ -57,3 +63,10 @@ que abre mostrando só os últimos 3 dias.
 - **Critérios de aceitação:** regras de acessibilidade do prompt (`prefers-reduced-motion`,
   contraste, `:focus-visible` magenta, 1 coluna até 720 px); cores só por tokens; regenerado;
   conferir na tela (usuário).
+- **Executor:** Claude Code (Sonnet · executor-medio, agente 2) (local · main · s34), líder Opus 5.5
+- **Entrega:** `estilo.css` reescrito (tokens neon, vidro com `backdrop-filter`, grade, varredura,
+  Orbitron/Share Tech Mono, estilo do filtro de datas) e `modelo.html` (links do Google Fonts) —
+  2026-10-21 19:18
+- **Verificação:** sem `!important`; nenhuma linha > 100; `prefers-reduced-motion`,
+  `:focus-visible` magenta e 1 coluna até 720 px presentes; classes antigas mantidas (grep nos
+  JS). Conferir na tela (usuário); sem internet as fontes caem no fallback.

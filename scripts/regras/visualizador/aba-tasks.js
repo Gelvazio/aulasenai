@@ -1,5 +1,79 @@
 // Aba TASKS: tarefas do tasks/STATUS.md (com a etapa de cada uma), frentes e itens 👀 das etapas.
 
+const DIAS_FILTRO_INICIAL = 3;
+const MILISSEGUNDOS_POR_DIA = 24 * 60 * 60 * 1000;
+const periodoTasks = { de: "", ate: "" };
+
+/**
+ * Formata uma data local como AAAA-MM-DD.
+ * @param {Date} data - Data a formatar.
+ * @returns {string} Data no formato do input type=date.
+ */
+function formatarDataLocal(data) {
+  const mes = String(data.getMonth() + 1).padStart(2, "0");
+  const dia = String(data.getDate()).padStart(2, "0");
+  return `${data.getFullYear()}-${mes}-${dia}`;
+}
+
+/**
+ * Diz se a tarefa cai no período De/Até (vazio nos dois = tudo, inclusive sem data).
+ * @param {Object} tarefa - Tarefa com o campo `data` (AAAA-MM-DD ou "").
+ * @returns {boolean} true se a tarefa deve aparecer.
+ */
+function estaNoPeriodo(tarefa) {
+  if (!periodoTasks.de && !periodoTasks.ate) return true;
+  if (!tarefa.data) return false;
+  const depoisDoInicio = !periodoTasks.de || tarefa.data >= periodoTasks.de;
+  const antesDoFim = !periodoTasks.ate || tarefa.data <= periodoTasks.ate;
+  return depoisDoInicio && antesDoFim;
+}
+
+/**
+ * Cria um campo de data rotulado do filtro.
+ * @param {string} rotulo - Texto do rótulo (ex.: "De").
+ * @param {string} chave - Chave em `periodoTasks` ("de" ou "ate").
+ * @returns {{campo: HTMLLabelElement, entrada: HTMLInputElement}} Rótulo e input.
+ */
+function criarCampoData(rotulo, chave) {
+  const campo = criarElemento("label", "filtro-datas__campo", rotulo + " ");
+  const entrada = criarElemento("input", "filtro-datas__entrada");
+  entrada.type = "date";
+  entrada.value = periodoTasks[chave];
+  entrada.addEventListener("input", () => {
+    periodoTasks[chave] = entrada.value;
+    desenharResumoTarefas();
+    desenharTarefas();
+  });
+  campo.append(entrada);
+  return { campo, entrada };
+}
+
+/**
+ * Cria o filtro de datas (De, Até e "Ver tudo") ao lado dos chips de situação.
+ * @returns {HTMLDivElement} Container `filtro-datas`.
+ */
+function criarFiltroDatas() {
+  const hoje = new Date();
+  periodoTasks.ate = formatarDataLocal(hoje);
+  periodoTasks.de = formatarDataLocal(
+    new Date(hoje.getTime() - DIAS_FILTRO_INICIAL * MILISSEGUNDOS_POR_DIA));
+  const de = criarCampoData("De", "de");
+  const ate = criarCampoData("Até", "ate");
+  const botao = criarElemento("button", "filtro-datas__botao", "Ver tudo");
+  botao.type = "button";
+  botao.addEventListener("click", () => {
+    periodoTasks.de = "";
+    periodoTasks.ate = "";
+    de.entrada.value = "";
+    ate.entrada.value = "";
+    desenharResumoTarefas();
+    desenharTarefas();
+  });
+  const container = criarElemento("div", "filtro-datas");
+  container.append(de.campo, ate.campo, botao);
+  return container;
+}
+
 /**
  * Monta o Markdown completo de uma tarefa para o modal.
  * @param {Object} tarefa - Linha da tabela de tarefas com as etapas e o próximo passo.
@@ -59,7 +133,8 @@ function criarCartaoTarefa(tarefa) {
  */
 function desenharResumoTarefas() {
   const itens = ORDEM_SITUACOES.map((situacao) => {
-    const total = DADOS.tasks.tarefas.filter((tarefa) => tarefa.situacao === situacao).length;
+    const total = DADOS.tasks.tarefas
+      .filter((tarefa) => tarefa.situacao === situacao && estaNoPeriodo(tarefa)).length;
     const item = criarElemento("div", "resumo__item situacao--" + paraClasse(situacao));
     item.append(criarElemento("span", "resumo__numero", String(total)),
       criarElemento("span", "resumo__rotulo", situacao));
@@ -74,12 +149,14 @@ function desenharResumoTarefas() {
 function desenharTarefas() {
   const visiveis = DADOS.tasks.tarefas.filter((tarefa) => {
     const situacaoCombina = estadoFiltros.situacao === TODOS || tarefa.situacao === estadoFiltros.situacao;
-    return situacaoCombina && combinaBusca(tarefa, estadoFiltros.buscaTasks);
+    return situacaoCombina && estaNoPeriodo(tarefa)
+      && combinaBusca(tarefa, estadoFiltros.buscaTasks);
   });
+  const totalNoPeriodo = DADOS.tasks.tarefas.filter(estaNoPeriodo).length;
   const ordenadas = [...visiveis].sort((a, b) =>
     ORDEM_SITUACOES.indexOf(a.situacao) - ORDEM_SITUACOES.indexOf(b.situacao));
   document.getElementById("contagem-tasks").textContent =
-    `${visiveis.length} de ${DADOS.tasks.tarefas.length} tarefas`;
+    `${visiveis.length} de ${totalNoPeriodo} tarefas`;
   const destino = document.getElementById("lista-tasks");
   if (!ordenadas.length) {
     destino.replaceChildren(criarElemento("p", "vazio", "Nenhuma tarefa encontrada."));
@@ -129,6 +206,7 @@ function desenharAguardando() {
  */
 function iniciarAbaTasks() {
   criarChips({ idDestino: "filtro-situacoes", opcoes: ORDEM_SITUACOES, chave: "situacao" }, desenharTarefas);
+  document.getElementById("filtro-situacoes").after(criarFiltroDatas());
   document.getElementById("busca-tasks").addEventListener("input", (evento) => {
     estadoFiltros.buscaTasks = evento.target.value.trim();
     desenharTarefas();
