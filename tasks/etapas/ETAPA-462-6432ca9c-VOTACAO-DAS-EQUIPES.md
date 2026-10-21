@@ -94,7 +94,7 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.4 — Tela do aluno: card "Votar na Equipe X" (1 a 10)
 
-**Próximo passo:** livre para Sonnet: ler a entrega da #333.2 (funções) e fazer o módulo.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -102,11 +102,16 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 - **Critérios de aceitação:** card só com votação aberta e para quem pode votar; 1 clique =
   voto; "✅ Voto registrado"; erro do banco vira mensagem simples; `node --check` ok; conferir
   na tela (usuário).
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `assets/js/votacao-equipes-aluno.js` (novo), classes do card do aluno no fim de
+  `assets/css/votacao-equipes.css` e 1 `<script>` na `ATIVIDADE-PESQUISA-INTERNET.html` — 2026-10-21 16:00
+- **Verificação:** `node --check` ok; linhas ≤ 100; diff conferido pelo líder; `atividade.pagina`
+  da 166 = caminho da página (consulta ao banco). Conferir na tela (usuário): professor abre, o
+  card aparece para o aluno em até 5 s, voto e "✅ Voto registrado".
 
 ### #333.5 — Documentação da votação das equipes
 
-**Próximo passo:** esperar a #333.3 e a #333.4.
+**Próximo passo:** documentar a votação em `docs/regras/atividades.md` e `docs/equipes-sala-de-aula.md`.
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro

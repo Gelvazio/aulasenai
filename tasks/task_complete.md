@@ -471,3 +471,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #333.1 | Plano e aprovação do usuário · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 | #333.2 | Banco: tabelas da votação, RLS e regra de voto · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #333.1 | ✅ Concluído | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 | #333.3 | Tela do professor: abrir/fechar a votação e ver as médias · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ✅ Concluído | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.4 | Tela do aluno: card "Votar na Equipe X" (1 a 10) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ✅ Concluído | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
