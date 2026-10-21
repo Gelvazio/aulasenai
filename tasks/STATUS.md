@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #339 criada e publicada (livre para outra IA) | ⏹️ Encerrada | 2026-10-21 19:26 |
+| nuvem · dreamy-faraday-7x7tud | #340 criada e publicada (livre para outra IA) | ⏹️ Encerrada | 2026-10-21 20:44 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
 | nuvem · elegant-planck-ul8ac1 | #333 concluída ([462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md)) — votação das equipes (banco, professor, aluno, docs) | ⏹️ Encerrada | 2026-10-21 16:01 |
 
@@ -1502,6 +1502,22 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #339.43 | Leitura em voz alta do enunciado (liga/desliga) · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.7 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.21 | Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe (escolha por aula) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable (banco: só local) | #339.2 a #339.4, #339.6 a #339.20, #339.22 a #339.43 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.21 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #340-e55e8932-3a82-4261-8c6f-83eeaddb5c88 | Jogos em sala de aula (12 tipos além do pergunta-resposta) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.2 | Banco: base comum dos jogos (partidas, conteúdo, pontuação, conferência do acerto) · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #340.1 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.3 | Jogo "Simulador de cenário (aluno consultor)" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.4 | Jogo "Escape room digital" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.5 | Jogo "Linha de produção" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.6 | Jogo "Ordenar o processo (cartas arrastáveis)" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.7 | Jogo "Ligar os pares" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.8 | Jogo "Classificar em caixas" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.9 | Jogo "Detetive do erro" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.10 | Jogo "Caça ao QR Code na sala" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.11 | Jogo "Bingo de conceitos" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.12 | Jogo "Leilão de respostas" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.13 | Jogo "Batalha naval do conteúdo" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.14 | Jogo "Pitch relâmpago" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2, #339.9 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #340.15 | Documentação dos jogos · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #340.3 a #340.14 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2007,6 +2023,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 466-310c16b7 | Vercel sem deploy quando só o quadro muda (#337, pedida em 2026-10-21) | [ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md) |
 | 467-f9e4ac55 | Testar o deploy ignorado na Vercel (#338, pedida em 2026-10-21) | [ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) |
 | 468-27daa2f0 | Botão "Sortear perguntas" por equipe (#339, pedida em 2026-10-21) | [ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) |
+| 469-e55e8932 | Jogos em sala de aula (#340, pedida em 2026-10-21) | [ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
