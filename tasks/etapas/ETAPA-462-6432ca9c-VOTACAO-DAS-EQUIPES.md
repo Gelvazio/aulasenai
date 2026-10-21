@@ -39,15 +39,16 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 | Quando | Decisão | Quem |
 |---|---|---|
+| 2026-10-21 15:38 | Plano aprovado: escopo acima, versão simples | Usuário ("EXECUTE A 333 AGORA") |
 
 ### #333.1 — Plano e aprovação do usuário
 
-**Próximo passo:** 👀 esperar o "sim" do usuário ao escopo acima; registrar em Decisões.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — banco, RLS e regra de quem vota
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** escopo desta etapa aprovado pelo usuário (registrado em Decisões).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** plano nesta etapa, aprovado em 2026-10-21 15:38 · **Verificação:** aprovação registrada em Decisões
 
 ### #333.2 — Banco: tabelas da votação, RLS e regra de voto
 
