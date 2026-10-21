@@ -25,6 +25,9 @@ banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
 respostas dele, ativo depois da entrega; assets/js/minhas-respostas-discursiva.js).
 "- **Matéria no banco:** NOME" usa esse nome (materia.descricao) no seed quando a matéria do banco
 não tem o mesmo nome da UC do materia.json (padrão: a UC).
+"- **Mínimo de caracteres por resposta:** 350" (inteiro positivo) impede a entrega enquanto houver
+resposta com menos caracteres e mostra o aviso vivo "Faltam X" (data-minimo-caracteres no <body>;
+assets/js/minimo-caracteres-discursiva.js). Sem o campo, nada é emitido.
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -59,6 +62,7 @@ CAMPO_PONTOS_POR_QUESTAO = "Pontos por questão"
 CAMPO_PAGINA = "Página"
 CAMPO_AVISO = "Aviso"
 CAMPO_MAXIMO_CARACTERES = "Máximo de caracteres"
+CAMPO_MINIMO_CARACTERES = "Mínimo de caracteres por resposta"
 CAMPO_PDF_COMPACTO = "PDF compacto"
 CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
 CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
@@ -520,6 +524,27 @@ def ler_maximo_caracteres(meta):
     return int(valor)
 
 
+def ler_minimo_caracteres(meta):
+    """Lê o mínimo de caracteres de cada resposta (campo opcional da fonte).
+
+    Args:
+        meta: Metadados da fonte.
+
+    Returns:
+        Mínimo informado na fonte ou 0 quando o campo não existe.
+
+    Raises:
+        SystemExit: Se o valor não for um número inteiro positivo.
+    """
+    valor = meta.get(CAMPO_MINIMO_CARACTERES, "").strip()
+    if not valor:
+        return 0
+    if not valor.isdigit() or int(valor) <= 0:
+        raise SystemExit(
+            f'❌ "{CAMPO_MINIMO_CARACTERES}" inválido: {valor} (use um número inteiro)')
+    return int(valor)
+
+
 def atributos_body(meta):
     """Atributos opcionais do <body> (PDF exportado e bloqueio de colar; campos "... : sim").
 
@@ -531,6 +556,10 @@ def atributos_body(meta):
     """
     ligados = [atributo for campo, atributo in ATRIBUTOS_BODY.items()
                if meta.get(campo, "").strip().lower() == VALOR_SIM]
+    minimo = ler_minimo_caracteres(meta)
+    if minimo:
+        return "".join(f' {atributo}="{VALOR_SIM}"' for atributo in ligados) + (
+            f' data-minimo-caracteres="{minimo}"')
     return "".join(f' {atributo}="{VALOR_SIM}"' for atributo in ligados)
 
 

@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | #326.3 concluída; líder da #326.4 com o executor-medio ([455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md)) | 🔄 Ativa | 2026-10-21 13:28 |
+| nuvem · elegant-planck-ul8ac1 | #326.3, #326.4 e #326.6 concluídas ([455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md)); falta a #326.5 (banco, só local) | ⏹️ Encerrada | 2026-10-21 13:33 |
 
 ## 📌 Tarefas
 
@@ -1443,8 +1443,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
-| #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
-| #326.4 | Trava "mínimo de 5 linhas por resposta" no Entregar · `MEDIO` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:28) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
+| #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | 🔄 Falta o banco (#326.5) | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 | #326.5 | Banco: aplicar o seed e ligar às equipes da 135081 (só local) · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #326.3, #326.4 | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 
 

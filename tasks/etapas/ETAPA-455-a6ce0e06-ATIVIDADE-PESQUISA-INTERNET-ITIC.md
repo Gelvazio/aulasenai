@@ -110,7 +110,7 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
 
 ### #326.4 — Trava "mínimo de 5 linhas (350 caracteres) por resposta" no Entregar
 
-**Próximo passo:** executor-medio implementa; o líder confere, valida e commita.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — código com lógica (JS + gerador), até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro (executor-medio, liderado pelo Opus 5.5 desta frente)
@@ -124,6 +124,15 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
 - **Critérios de aceitação:** sem o campo na fonte, nada muda nas outras discursivas; com o
   campo, entregar com qualquer resposta curta é recusado; `node --check` e `py_compile` passam;
   página PESQUISA INTERNET regerada com o atributo.
+- **Entrega:** gerador (`CAMPO_MINIMO_CARACTERES`, `ler_minimo_caracteres`, atributo no `<body>`
+  só com o campo, docstring), template com o script novo, `assets/js/minimo-caracteres-discursiva.js`
+  (aviso vivo "Faltam X caracteres" em cada campo, atualizado ao digitar e ao carregar as
+  respostas; clique no Entregar interceptado na captura com popup das questões curtas); página
+  e seed regerados (`data-minimo-caracteres="350"`). Pelo executor-medio.
+- **Verificação:** `node --check` e `py_compile` passam; o líder leu o JS (só liga com o atributo,
+  captura no `document` roda antes do botão, evento `discursiva:campos-preenchidos` existe no
+  `avaliacao-discursiva.js`, `popup.js` carregado antes no template); sem o campo, o gerador não
+  emite o atributo. ⚠️ Conferir na tela: o popup e o aviso (sem navegador nesta sessão).
 
 ### #326.6 — Documentação da trava de caracteres mínimos
 
