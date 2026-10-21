@@ -454,3 +454,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #323.1 | Corrigir as alternativas sem nota da IA · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | ✅ Concluído | — | [452-c290819b](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) | — |
 | #323-c290819b-3eb5-42ff-a0d5-d6ac8a2ea7c5 | Correção pela IA da atividade 36: 3ª rodada | 🟠 Alta | — | — | ✅ Concluído | — | [452-c290819b](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) | — |
 | #325.1 | Levantamento e plano: cores dos cards para o aluno · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #326.1 | Fonte, página e seed da atividade · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ✅ Concluído | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |

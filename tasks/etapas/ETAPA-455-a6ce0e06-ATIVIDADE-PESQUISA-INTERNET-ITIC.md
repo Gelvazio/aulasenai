@@ -16,7 +16,7 @@ CEPLAS TARDE 135081) respondidas por pesquisa na internet, além dos slides.
 
 ### #326.1 — Fonte, página e seed da atividade
 
-**Próximo passo:** escrever a fonte `.md`, gerar o HTML e o seed, registrar o seed PENDENTE.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — gabarito e seed de banco
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -24,6 +24,15 @@ CEPLAS TARDE 135081) respondidas por pesquisa na internet, além dos slides.
   página `ATIVIDADE-PESQUISA-INTERNET.html` pelo gerador, seed em `database/` pelo
   `scripts/gerar-seed-atividades.py`, linha PENDENTE no `database/SEEDS-APLICADOS.md`, recado para a frente local.
 - **Critérios de aceitação:** 10 questões, gabarito só na fonte e no seed (fora do site), seed idempotente.
+- **Entrega:** fonte `ATIVIDADES/CONTEUDO/ATIVIDADE-PESQUISA-INTERNET-QUESTOES.md` (gabarito
+  BDACBCDACB), página `ATIVIDADES/ATIVIDADE-PESQUISA-INTERNET.html` (gerador, com folha de
+  respostas, sem gabarito), linha nova em `scripts/gerar-seed-atividades.py` (aula 10,
+  2026-10-21), seed `database/2026-10-21-itic-pesquisa-internet-seed-atividades.sql`
+  (`nome_atividade` = "PESQUISA INTERNET", 10 gabaritos) registrado PENDENTE; recado para a
+  frente local; linha no `STATUS-ATIVIDADES.md`.
+- **Verificação:** gerador e seed rodaram sem erro (10 itens); `grep` confirmou que o HTML não
+  tem `gabarito-dados` nem "Gabarito:"; `.vercelignore` tira `*QUESTOES.md` e
+  `*-seed-atividades.sql` do site; `py_compile` do script do seed. Sem navegador.
 
 ### #326.2 — Aplicar o seed no banco
 

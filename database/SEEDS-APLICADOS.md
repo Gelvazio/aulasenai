@@ -109,6 +109,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-17-testes-frontend-atividade-pratica-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 162 aula 131, bloqueada, 30 tópicos; md5 igual ao do arquivo |
 | `2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **CONCLUÍDO** | 2026-10-17 18:22 | Aplicado em 2026-10-17 pela #260.5 (s20) em 2 lotes: atividade 163 (aula 104) e 164 (aula 105), 50 gabaritos cada; md5 igual ao do arquivo; nenhuma aula nova na matéria |
 | `2026-10-20-jogo-liga-desliga-seed-atividades.sql` | Noções de Eletricidade (RSL) | 1 | **CONCLUÍDO** | 2026-10-20 09:51 | Aplicado em 2026-10-20 pela #302.1 (s30) com o conector: atividade 165 (aula 134, página do jogo), 12 gabaritos (letras ABAABABAAABB, iguais ao `safe` do jogo); consulta conferida |
+| `2026-10-21-itic-pesquisa-internet-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **PENDENTE** | — | Gerado em 2026-10-21 pela #326.1 (nuvem · elegant-planck-ul8ac1): atividade "PESQUISA INTERNET" (10 questões, aula 10), página `ATIVIDADE-PESQUISA-INTERNET.html`; aplicar pela frente local (#326.2) |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
