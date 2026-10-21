@@ -147,3 +147,13 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
   depois do "Campo do tamanho da resposta"), pelo executor-leve.
 - **Verificação:** leitura do trecho pelo líder (linhas ≤ 100, estilo do arquivo); só esse
   arquivo mudou.
+
+### #326.5 — Aplicar o seed e ligar às equipes da 135081
+
+**Próximo passo:** aplicar o seed pelo conector do Supabase, conferir e ligar às equipes.
+
+- **Nível:** PESADO — banco
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Decisão (2026-10-21 13:32, usuário: "APLIQUE O SEED AQUI"):** exceção à regra "banco só pelo
+  Claude Code local" (`multiplas-ias.md`): esta frente de nuvem aplica o seed pelo conector do
+  Supabase, só nesta subtarefa.
