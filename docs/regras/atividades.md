@@ -755,12 +755,12 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   botões das atividades vinculadas à aula são refeitos, a etiqueta é refeita junto (evento
   `aula-bloqueio-alterado`, em `assets/js/atividades-crud-modal.js`).
 
-### 🚨 Alerta de atividade pendente nos cards — só professor (tarefa #293, 2026-10-19)
+### 🚨 Alerta de atividade pendente nos cards — professor e aluno (tarefas #293 e #325)
 
-- ✅ **Só o professor vê.** No índice de atividades, com a turma escolhida no combo "Turma:",
-  o card inteiro da aula fica com **fundo vermelho claro piscando** (≈1 s) quando ≥ 1 aluno da
-  turma tem atividade pendente. Fica com **fundo verde claro fixo** quando nenhuma atividade do
-  card está pendente e nenhuma está bloqueada. Os dois nunca aparecem juntos. Com
+- ✅ **Turma inteira: só o professor vê.** No índice de atividades, com a turma escolhida no combo
+  "Turma:", o card inteiro da aula fica com **fundo vermelho claro piscando** (≈1 s) quando ≥ 1
+  aluno da turma tem atividade pendente. Fica com **fundo verde claro fixo** quando nenhuma
+  atividade do card está pendente e nenhuma está bloqueada. Os dois nunca aparecem juntos. Com
   `prefers-reduced-motion`, o vermelho não pisca.
 - **Pendente** = aluno da turma, sem falta no dia da atividade ("Faltou?" não conta), atividade
   com questão e não bloqueada para a turma, e na tentativa atual: (a) não entregou, ou (b)
@@ -778,6 +778,21 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   p_nota_minima)` em `database/2026-10-19-atividades-pendentes-turma.sql`: 1 chamada por turma,
   só contagens, só para o professor da turma (aluno e visitante recebem 0 linhas).
 - Detalhes e conferências: etapa 422 em `tasks/etapas/` (`ETAPA-422-601a21b2`).
+
+**Para o aluno (#325, 2026-10-21):** o card inteiro é pintado só com os dados do próprio aluno
+logado (RLS), nunca com a situação dos colegas.
+
+- ✅ **Verde claro fixo** (`card-atividade-concluida`): o aluno entregou todas as atividades
+  cadastradas no banco daquele card. Basta ter entregado; a nota não importa.
+- ✅ **Vermelho claro piscando** (`card-atividade-pendente`): falta entregar alguma atividade.
+- ✅ **Sem cor:** o card não tem atividade cadastrada. Atividade bloqueada para o aluno não entra
+  (o RLS não a devolve).
+- ✅ Aviso escondido para leitor de tela: "Você tem atividade pendente nesta aula." ou "Você
+  entregou todas as atividades desta aula."
+- Arquivos: `assets/js/indice-atividades-feitas.js` (pinta o card do aluno),
+  `assets/css/indice-atividades-pendentes.css` (carregado também para o aluno por
+  `carregarMarcacaoFeitas` em `assets/js/atividades-crud-modal.js`). O script do professor
+  (`indice-atividades-pendentes.js`) continua só do professor.
 
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 

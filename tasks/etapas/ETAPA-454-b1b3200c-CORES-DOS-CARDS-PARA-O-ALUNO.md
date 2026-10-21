@@ -65,9 +65,13 @@ verde = feito) que o professor vê, para saber o que falta entregar.
 
 ### #325.3 — Documentação das cores dos cards para o aluno
 
-**Próximo passo:** livre para Haiku: em `docs/regras/atividades.md`, acrescentar à seção do
-alerta de pendentes (#293) que o aluno também vê o card colorido com os dados dele (#325).
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Haiku · executor-leve) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `docs/regras/atividades.md`, seção "Alerta de atividade pendente nos cards —
+  professor e aluno": bloco "Para o aluno (#325)" com as cores, a regra (entregou = verde) e os
+  arquivos — 2026-10-21 13:57
+- **Verificação:** diff conferido pelo líder (só a seção do alerta; texto bate com o código da
+  #325.2).
