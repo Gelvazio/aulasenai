@@ -1,0 +1,92 @@
+/* Votação das equipes (#333.3, 2026-10-21): bloco do professor (abrir/fechar a votação e ver
+   as médias). Também será usado pelo aluno na #333.4. Bloco BEM: .votacao-equipes. */
+
+:root {
+    --votacao-cor-fundo: #f4f8fd;
+    --votacao-cor-borda: #c9d6e6;
+    --votacao-cor-texto: #1f2d3d;
+    --votacao-cor-suave: #5b6b7d;
+    --votacao-cor-aberta: #1b8a3a;
+    --votacao-cor-botao: #1f5fa8;
+    --votacao-cor-botao-texto: #ffffff;
+    --votacao-cor-erro: #b3261e;
+    --votacao-raio: 8px;
+    --votacao-espaco: 0.75rem;
+}
+
+.votacao-equipes {
+    margin: 1rem 0;
+    padding: var(--votacao-espaco);
+    background: var(--votacao-cor-fundo);
+    border: 1px solid var(--votacao-cor-borda);
+    border-radius: var(--votacao-raio);
+    color: var(--votacao-cor-texto);
+}
+
+.votacao-equipes__titulo {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+}
+
+.votacao-equipes__ajuda {
+    margin: 0 0 var(--votacao-espaco);
+    font-size: 0.9rem;
+    color: var(--votacao-cor-suave);
+}
+
+.votacao-equipes__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.votacao-equipes__linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 0.5rem var(--votacao-espaco);
+    background: #fff;
+    border: 1px solid var(--votacao-cor-borda);
+    border-radius: var(--votacao-raio);
+}
+
+.votacao-equipes__nome {
+    flex: 1 1 12rem;
+    font-weight: 600;
+}
+
+.votacao-equipes__turma {
+    font-weight: 400;
+    color: var(--votacao-cor-suave);
+}
+
+.votacao-equipes__situacao--aberta {
+    font-weight: 600;
+    color: var(--votacao-cor-aberta);
+}
+
+.votacao-equipes__botao {
+    padding: 0.4rem 0.9rem;
+    border: 0;
+    border-radius: var(--votacao-raio);
+    background: var(--votacao-cor-botao);
+    color: var(--votacao-cor-botao-texto);
+    font: inherit;
+    cursor: pointer;
+}
+
+.votacao-equipes__botao:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.votacao-equipes__erro {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--votacao-cor-erro);
+}

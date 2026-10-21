@@ -77,7 +77,7 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.3 — Tela do professor: abrir/fechar a votação e ver as médias
 
-**Próximo passo:** livre para Sonnet: ler a entrega da #333.2 (funções) e fazer o módulo.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -85,7 +85,12 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
   `ATIVIDADE-PESQUISA-INTERNET.html`.
 - **Critérios de aceitação:** linha por equipe da turma do combo com Abrir/Fechar, votos e
   média (5 s); `node --check` ok; conferir na tela (usuário).
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `assets/js/votacao-equipes-professor.js` e `assets/css/votacao-equipes.css` (novos)
+  e link + script na `ATIVIDADE-PESQUISA-INTERNET.html` — 2026-10-21 15:58
+- **Verificação:** `node --check` ok; linhas ≤ 100; diff conferido pelo líder (só os 3 arquivos;
+  usa só `votacoes_equipes_professor` e `abrir_votacao_equipe`). Conferir na tela (usuário, como
+  professor): bloco depois do progresso, Abrir/Fechar, votos e média a cada 5 s.
 
 ### #333.4 — Tela do aluno: card "Votar na Equipe X" (1 a 10)
 
