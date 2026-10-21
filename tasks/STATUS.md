@@ -1463,7 +1463,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #339.2 | Banco: tabela do sorteio por equipe e função de sortear sem repetir · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #339.1 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.3 | Professor: botão "Sortear perguntas" + modal · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.2 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.4 | Aluno: ver as perguntas sorteadas da própria equipe · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.2 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
-| #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.3, #339.4 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.6 | Contador de 2 minutos na tela de todos depois do sorteio · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.2 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.7 | 1 minuto por pergunta, com o número da pergunta piscando · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.6 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.8 | Banco: quem responde cada pergunta e votos de 1 a 10 · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #339.1 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.9 | Votação: habilitar quem está respondendo; os outros alunos dão nota de 1 a 10 · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.7, #339.8 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.10 | Visual futurista nas telas do sorteio, contadores e votação · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.3 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.3, #339.4, #339.6, #339.7, #339.9, #339.10 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
