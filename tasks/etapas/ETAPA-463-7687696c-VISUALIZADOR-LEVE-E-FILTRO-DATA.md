@@ -35,7 +35,10 @@ que abre mostrando só os últimos 3 dias.
 
 ### #334.3 — Visual futurista no visualizador
 
-**Próximo passo:** depois da #334.2, executor-medio aplica o visual.
+**Próximo passo:** executor-medio (agente 2) aplica o visual, em paralelo à #334.1.
+
+- **Decisão (2026-10-21 19:05, usuário "chame varios agentes"):** sem dependência da #334.2 — arquivos
+  diferentes (`estilo.css`, `modelo.html`); roda em paralelo; o líder regenera o HTML no fim.
 
 - **Pedido:** "E ADICIONE VISUAL FUTURISTA COM:" + `C:\fontes\rules-ai\prompts\VISUAL-FUTURISTA.md`
 - **Nível:** MEDIO — CSS da página toda (tokens, animações, acessibilidade), até 3 arquivos
