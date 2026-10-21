@@ -1427,7 +1427,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #319-5601f0dd-d00a-42de-af88-ff8d648479e1 | Campo "Quantidade Questão Considerar" por aluno (nota) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.1 | Levantar o funcionamento atual e escrever o plano (para aprovação) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-21 10:15) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.1 | Levantar o funcionamento atual e escrever o plano (para aprovação) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 👀 Plano aguardando aprovação | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-21 10:15) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.2 | Banco: tabela `questoes_nota_aluno`, função `questoes_para_nota` e Média Final · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #319.1 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.3 | Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.4 | Páginas do aluno: nota pela função nova · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.5 | Documentação da Quantidade Questão Considerar · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #319.3, #319.4 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 
 
 ## Escopo
