@@ -1439,6 +1439,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #324.3 | Card e modal da aula: só as atividades da turma do combo; excluir só nela · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.5 | Documentação do vínculo atividade × turma · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #324.3, #324.4 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #325.1 | Levantamento e plano: cores dos cards para o aluno · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 
 
 ## Escopo
@@ -1930,6 +1934,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 451-fe809753 | Correção pela IA da atividade 36, 2ª rodada (#322, pedida em 2026-10-21) | [ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md](etapas/ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md) |
 | 452-c290819b | Correção pela IA da atividade 36, 3ª rodada (#323, pedida em 2026-10-21) | [ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) |
 | 453-e41c087e | Atividade ligada às turmas; excluir só na turma atual (#324, pedida em 2026-10-21) | [ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) |
+| 454-b1b3200c | Cores de alerta e verde dos cards também para o aluno (#325, pedida em 2026-10-21) | [ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
