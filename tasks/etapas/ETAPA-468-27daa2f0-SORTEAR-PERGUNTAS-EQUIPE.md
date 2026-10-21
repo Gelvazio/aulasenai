@@ -40,6 +40,7 @@
 | 2026-10-21 19:32 | Acrescentadas as subtarefas #339.6 a #339.10: contador de 2 min, 1 min por pergunta com número piscando, banco de "quem responde" e votos, votação 1–10 sem a equipe, visual futurista | Usuário |
 | 2026-10-21 19:35 | Enunciado da pergunta da vez ao lado do cronômetro (#339.7); todas as 10 sugestões de gamificação viram as subtarefas #339.11 a #339.20 | Usuário |
 | 2026-10-21 20:26 | Etapa final #339.21: a atividade gamificada vira **modelo global** para toda atividade discursiva ou prática; em cada aula o professor escolhe usar ou não e se é **com equipe ou sem equipe** | Usuário |
+| 2026-10-21 20:31 | Modo **sem equipe** e escolhas da #339.21 (respostas uma a uma): sorteia **aluno + 1 pergunta**; **sem** os 2 min de preparo (vai direto ao 1 min); votam **todos menos quem responde**; aluno já sorteado só volta **depois que todos forem**; só **presentes** (sem "Faltou?"); votos na nota = **o professor decide** por aula/atividade; liga/desliga e com/sem equipe **na página da atividade e no modal da aula**; a escolha vale para **todas as turmas** | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -250,8 +251,10 @@
   tipo discursiva ou prática**, de qualquer matéria, sem copiar código por atividade (regra de
   layout global de `atividades-banco.md`). Em cada aula/atividade o professor **escolhe**:
   usar ou não a atividade gamificada, e **com equipe** (sorteio por equipe, como na #339) ou
-  **sem equipe** (individual; como fica o sorteio e a votação no modo individual é decidido no
-  plano #339.1). Pedido em 2026-10-21 20:26: "Essa etapa final deve servir como template para todas as outras
+  **sem equipe** (individual: sorteia um aluno presente + 1 pergunta, sem preparo, 1 min para
+  responder, votam todos menos ele, ninguém repete até todos irem). O professor também escolhe se
+  a média dos votos conta na nota. As escolhas ficam na página da atividade e no modal da aula e
+  valem para todas as turmas (ver Decisões). Pedido em 2026-10-21 20:26: "Essa etapa final deve servir como template para todas as outras
   tarefas que tiver pergunta do tipo discursiva ou prática. Dessa forma, nas aulas eu posso
   escolher fazer equipe ou não para pegar e passar essa atividade gamificada na aula."
 - **Critérios de aceitação:** ligar/desligar e "com/sem equipe" por aula/atividade, só professor
