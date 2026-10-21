@@ -48,18 +48,23 @@ quadro) mostra só o progresso do líder da equipe escolhida; "Todas" lista todo
 
 ### #330.2 — Combo "Equipe" acima do quadro de progresso
 
-**Próximo passo:** criar `filtro-equipe-progresso.js` conforme o plano e incluí-lo na página.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos (reclassificar na #330.1 se precisar de banco)
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** só nesta atividade; combo com "Todas" + as equipes da aula ligadas
   à atividade; equipe escolhida → quadro só com a linha do líder; "Todas" → todos;
   `node --check` ok; conferir na tela (usuário).
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `assets/js/filtro-equipe-progresso.js` (novo) e 1 `<script>` na
+  `ATIVIDADE-PESQUISA-INTERNET.html` — 2026-10-21 14:39
+- **Verificação:** `node --check` ok; linhas ≤ 100; diff conferido pelo líder (só os 2 arquivos;
+  `progresso-turma-global.js` sem mudança; só leitura com JWT). Conferir na tela (usuário, como
+  professor): combo "Equipe" com as equipes e o líder, troca de turma e lista só com o líder.
 
 ### #330.3 — Documentação do combo "Equipe" no progresso
 
-**Próximo passo:** esperar a #330.2.
+**Próximo passo:** documentar o combo "Equipe" em `docs/regras/atividades.md` e `docs/progresso-global-atividades.md`.
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
