@@ -36,8 +36,8 @@
 
 ### #318.1 — Corrigir pela IA as alternativas pendentes da atividade 36 (banco)
 
-**Próximo passo:** rodar a consulta de pendentes (seção 4.1 do
-`CORRECAO-PROVA-ADAG.md` com 36) e dividir os alunos em lotes para os agentes.
+**Próximo passo:** — (entregue). Respostas novas ou alteradas depois da entrega ficam
+pendentes para uma nova rodada.
 
 - **Nível:** PESADO — banco (leitura e gravação em `correcao_discursiva`) e gabarito
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro
@@ -45,4 +45,14 @@
   de agentes por lote de alunos.
 - **Critérios de aceitação:** a consulta de pendentes da atividade 36 volta vazia; nenhuma linha
   com `nota_professor` foi alterada; todo `comentario` gravado começa com `[IA]`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 09:43 — 1.417 alternativas de 25 alunos com `nota_ia`, `comentario` e
+  `nota_ia_em` em `correcao_discursiva`: 1.109 Certa, 227 Meia certa, 81 Errada; 492 com o aviso
+  "⚠️ Texto igual ao de outro(s) aluno(s) — conferir." Equipe: 6 agentes (Opus) em paralelo, 5
+  questões cada (1–5: 250 · 6–10: 239 · 11–15: 230 · 16–20: 226 · 21–25: 248 · 26–30: 224).
+  Os agentes foram `general-purpose` (os `executor-*` não têm o conector do Supabase).
+- **Verificação:** consulta do líder no banco: pendentes = 0; 1.417 linhas = soma dos agentes;
+  0 com `nota_professor`; 0 sem `[IA]`; 0 comentários > 300 caracteres; toda nota é pontos,
+  metade ou 0 e bate com o resultado do comentário; 0 linhas sem resposta.
+- **Para o professor conferir na tela CORREÇÃO:** respostas escritas no campo de outra questão
+  (ficaram Errada), um aluno que respondeu as questões 21–30 com textos de outro assunto, textos
+  com cara de cópia de IA ou da internet (com aviso), fórmulas sem "=" na questão 23 (Meia certa).
