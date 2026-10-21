@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #322 entregue | ⏹️ Encerrada | 2026-10-21 11:12 |
+| nuvem · dreamy-faraday-7x7tud | #323.1 ([452-c290819b](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md)) | 🔄 Ativa | 2026-10-21 11:18 |
 
 ## 📌 Tarefas
 
@@ -1432,6 +1432,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #321.3 | Cadastro: campo "Data e hora máxima" no modal de atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #321.4 | Página da atividade: mostrar o prazo e avisar/bloquear depois dele · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #321.5 | Documentação do prazo da atividade · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #321.3, #321.4 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #323-c290819b-3eb5-42ff-a0d5-d6ac8a2ea7c5 | Correção pela IA da atividade 36: 3ª rodada | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [452-c290819b](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) | — |
+| #323.1 | Corrigir as alternativas sem nota da IA · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-21 11:18; exceção do usuário para banco) | [452-c290819b](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) | — |
 
 
 ## Escopo
@@ -1921,6 +1923,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 449-1ded6f66 | Botão "Confirmar" no campo "Quantidade Questão Considerar" (#320, pedida em 2026-10-21) | [ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) |
 | 450-fecaa982 | Data e hora máxima da atividade (#321, pedida em 2026-10-21) | [ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) |
 | 451-fe809753 | Correção pela IA da atividade 36, 2ª rodada (#322, pedida em 2026-10-21) | [ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md](etapas/ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md) |
+| 452-c290819b | Correção pela IA da atividade 36, 3ª rodada (#323, pedida em 2026-10-21) | [ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
