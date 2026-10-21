@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AO VIVO — Quadro de tarefas — Aulas SENAI</title>
+  <!-- ARQUIVO GERADO por scripts/regras/gerar_visualizador_regras.py — não editar à mão.
+       Só visualizador do quadro ao vivo; não é página do projeto. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap">
+  <style>/* Visualizador de regras e tarefas — tema futurista (neon sobre fundo escuro).
+   Componentes usam só os tokens do :root. Referência: rules-ai/prompts/VISUAL-FUTURISTA.md */
+:root {
+  --cor-fundo: #05030d;
+  --cor-superficie: rgba(20, 14, 42, 0.72);
+  --cor-superficie-alta: rgba(36, 24, 72, 0.85);
+  --cor-borda: rgba(139, 92, 246, 0.35);
+  --cor-texto: #eef2ff;
+  --cor-texto-suave: #b4b9d6;
+  --cor-neon-ciano: #22d3ee;
+  --cor-neon-magenta: #ff2bd6;
+  --cor-neon-violeta: #8b5cf6;
+  --cor-destaque: #ffd166;
+  --cor-primaria: var(--cor-neon-ciano);
+  --cor-obrigatoria: var(--cor-neon-ciano);
+  --cor-proibicao: #ff5c7a;
+  --cor-fluxo: #3df5a8;
+  --cor-referencia: #b794ff;
+  --cor-concluida: #3df5a8;
+  --cor-andamento: var(--cor-neon-ciano);
+  --cor-aguardando: var(--cor-destaque);
+  --cor-cancelada: #ff5c7a;
+  --cor-pendente: #b4b9d6;
+  --cor-codigo: #fde68a;
+  --cor-vidro-escuro: rgba(5, 3, 13, 0.7);
+  --cor-cortina: rgba(5, 3, 13, 0.82);
+  --cor-linha-grade: rgba(139, 92, 246, 0.07);
+  --brilho-ciano: 0 0 14px rgba(34, 211, 238, 0.35);
+  --brilho-magenta: 0 0 14px rgba(255, 43, 214, 0.4);
+  --raio: 12px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.5), var(--brilho-ciano);
+  --tamanho-grade: 40px;
+  --desfoque: blur(10px);
+  --fonte: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fonte-titulo: "Orbitron", "Segoe UI", system-ui, sans-serif;
+  --fonte-dados: "Share Tech Mono", "Cascadia Code", Consolas, monospace;
+  --fonte-codigo: var(--fonte-dados);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; color: var(--cor-texto); font-family: var(--fonte); overflow-x: hidden;
+  background-color: var(--cor-fundo);
+  background-image:
+    radial-gradient(ellipse at 15% 0%, rgba(139, 92, 246, 0.28), transparent 55%),
+    radial-gradient(ellipse at 90% 15%, rgba(255, 43, 214, 0.18), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(34, 211, 238, 0.12), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Grade fina fixa atrás de todo o conteúdo. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(var(--cor-linha-grade) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cor-linha-grade) 1px, transparent 1px);
+  background-size: var(--tamanho-grade) var(--tamanho-grade);
+}
+
+/* Barra de varredura discreta no topo da página. */
+body::after {
+  content: ""; position: fixed; top: 0; left: 0; z-index: 5; width: 30%; height: 2px;
+  pointer-events: none; opacity: 0.8;
+  background: linear-gradient(
+    90deg, transparent, var(--cor-neon-ciano),
+    var(--cor-neon-magenta), transparent);
+  box-shadow: var(--brilho-ciano);
+  animation: varredura 5s linear infinite;
+}
+
+@keyframes varredura {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(340%); }
+}
+
+.topo {
+  position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center; justify-content: space-between; padding: 16px 24px;
+  background: var(--cor-vidro-escuro); backdrop-filter: var(--desfoque);
+  border-bottom: 1px solid var(--cor-neon-violeta); box-shadow: var(--brilho-magenta);
+}
+.topo__titulo {
+  margin: 0; font-family: var(--fonte-titulo); font-size: 1.5rem; letter-spacing: 0.06em;
+  color: var(--cor-texto); text-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+}
+.topo__subtitulo { margin: 4px 0 0; color: var(--cor-texto-suave); font-size: 0.9rem; }
+.topo__subtitulo strong { color: var(--cor-destaque); font-family: var(--fonte-dados); }
+
+.abas { display: flex; gap: 8px; }
+.abas__botao {
+  padding: 10px 22px; border: 1px solid var(--cor-neon-violeta); border-radius: 999px;
+  cursor: pointer; background: transparent; color: var(--cor-texto);
+  font-family: var(--fonte-titulo); font-weight: 700; letter-spacing: 0.08em;
+}
+.abas__botao:hover { box-shadow: var(--brilho-magenta); }
+.abas__botao--ativa {
+  background: var(--cor-neon-ciano); border-color: var(--cor-neon-ciano);
+  color: var(--cor-fundo); box-shadow: var(--brilho-ciano);
+}
+.abas__botao--ao-vivo {
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+}
+.abas__botao--ao-vivo::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--cor-neon-magenta); box-shadow: var(--brilho-magenta);
+  animation: pulsar-ao-vivo 1.4s infinite;
+}
+@keyframes pulsar-ao-vivo {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.conteudo { max-width: 1280px; margin: 0 auto; padding: 20px 16px 60px; }
+
+.filtros { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.filtros__busca {
+  width: 100%; padding: 12px 14px; border-radius: var(--raio); border: 1px solid var(--cor-borda);
+  background: var(--cor-vidro-escuro); color: var(--cor-texto); font-size: 1rem;
+  font-family: var(--fonte-dados); backdrop-filter: var(--desfoque);
+}
+.filtros__busca:focus { border-color: var(--cor-neon-ciano); box-shadow: var(--brilho-ciano); }
+.filtros__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--cor-borda); cursor: pointer;
+  background: var(--cor-superficie); color: var(--cor-texto-suave); font-size: 0.85rem;
+  font-family: var(--fonte-dados);
+}
+.chip:hover { border-color: var(--cor-neon-ciano); color: var(--cor-texto); }
+.chip--ativo {
+  background: var(--cor-superficie-alta); color: var(--cor-texto);
+  border-color: var(--cor-neon-magenta); box-shadow: var(--brilho-magenta);
+}
+
+.filtro-datas { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.filtro-datas__campo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-dados);
+  font-size: 0.85rem;
+}
+.filtro-datas__entrada {
+  padding: 8px 10px;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-vidro-escuro);
+  color: var(--cor-texto);
+  font-family: var(--fonte-dados);
+  font-size: 0.9rem;
+  color-scheme: dark;
+}
+.filtro-datas__entrada:focus {
+  border-color: var(--cor-neon-ciano);
+  box-shadow: var(--brilho-ciano);
+}
+.filtro-datas__botao {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--cor-borda);
+  cursor: pointer;
+  background: var(--cor-superficie);
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-dados);
+  font-size: 0.85rem;
+}
+.filtro-datas__botao:hover { border-color: var(--cor-neon-ciano); color: var(--cor-texto); }
+
+.contagem {
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  margin: 4px 0 12px;
+  font-family: var(--fonte-dados);
+}
+
+.grupo { margin-bottom: 28px; }
+.grupo__titulo {
+  font-family: var(--fonte-titulo); font-size: 1.1rem; margin: 24px 0 10px;
+  letter-spacing: 0.05em;
+  color: var(--cor-neon-ciano);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
+}
+.grupo__arquivo { margin: 14px 0 8px; color: var(--cor-texto-suave); font-size: 0.9rem; }
+.grupo__arquivo code { color: var(--cor-primaria); font-family: var(--fonte-dados); }
+
+.grade { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+.cartao {
+  display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; text-align: left;
+  border-radius: var(--raio); border: 1px solid var(--cor-borda);
+  border-left: 5px solid var(--cor-tipo, var(--cor-primaria));
+  background: var(--cor-superficie); backdrop-filter: var(--desfoque);
+  color: var(--cor-texto); cursor: pointer; font: inherit;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+.cartao:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+  border-color: var(--cor-neon-ciano);
+}
+.cartao:focus-visible { transform: translateY(-2px); box-shadow: var(--sombra); }
+.cartao__titulo { font-weight: 700; font-size: 1rem; }
+.cartao__texto {
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-family: var(--fonte-dados);
+}
+.cartao__rodape { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+
+.etiqueta {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--fonte-dados); border: 1px solid var(--cor-etiqueta, var(--cor-borda));
+  background: var(--cor-vidro-escuro); color: var(--cor-etiqueta, var(--cor-texto));
+}
+.tipo--obrigatoria { --cor-tipo: var(--cor-obrigatoria); --cor-etiqueta: var(--cor-obrigatoria); }
+.tipo--proibicao { --cor-tipo: var(--cor-proibicao); --cor-etiqueta: var(--cor-proibicao); }
+.tipo--fluxo { --cor-tipo: var(--cor-fluxo); --cor-etiqueta: var(--cor-fluxo); }
+.tipo--referencia { --cor-tipo: var(--cor-referencia); --cor-etiqueta: var(--cor-referencia); }
+.situacao--concluida { --cor-tipo: var(--cor-concluida); --cor-etiqueta: var(--cor-concluida); }
+.situacao--em-andamento { --cor-tipo: var(--cor-andamento); --cor-etiqueta: var(--cor-andamento); }
+.situacao--aguardando { --cor-tipo: var(--cor-aguardando); --cor-etiqueta: var(--cor-aguardando); }
+.situacao--canceladabloqueada {
+  --cor-tipo: var(--cor-cancelada);
+  --cor-etiqueta: var(--cor-cancelada);
+}
+.situacao--pendente { --cor-tipo: var(--cor-pendente); --cor-etiqueta: var(--cor-pendente); }
+
+.resumo { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.resumo__item {
+  padding: 12px; border-radius: var(--raio); background: var(--cor-superficie);
+  backdrop-filter: var(--desfoque); border: 1px solid var(--cor-borda);
+  border-top: 4px solid var(--cor-tipo); text-align: center; box-shadow: var(--brilho-ciano);
+}
+.resumo__numero {
+  display: block; font-family: var(--fonte-titulo); font-size: 1.8rem; font-weight: 800;
+  color: var(--cor-tipo); text-shadow: 0 0 10px var(--cor-tipo);
+}
+.resumo__rotulo {
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+  font-family: var(--fonte-dados);
+}
+
+.modal {
+  width: min(920px, 94vw); max-height: 88vh; padding: 0; border: 1px solid var(--cor-neon-violeta);
+  border-radius: var(--raio); background: var(--cor-fundo); color: var(--cor-texto);
+  box-shadow: var(--sombra), var(--brilho-magenta);
+}
+.modal::backdrop { background: var(--cor-cortina); backdrop-filter: var(--desfoque); }
+.modal__topo {
+  position: sticky; top: 0; display: flex; justify-content: space-between; gap: 12px;
+  padding: 16px 20px; background: var(--cor-superficie-alta); backdrop-filter: var(--desfoque);
+  border-bottom: 1px solid var(--cor-neon-violeta);
+}
+.modal__etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+.modal__titulo { margin: 0; font-family: var(--fonte-titulo); font-size: 1.2rem; }
+.modal__fechar {
+  align-self: flex-start; border: none; background: transparent; color: var(--cor-texto);
+  font-size: 1.4rem; cursor: pointer;
+}
+.modal__fechar:hover { color: var(--cor-neon-magenta); }
+.modal__corpo { padding: 8px 22px 24px; }
+
+.markdown { line-height: 1.55; overflow-wrap: anywhere; }
+.markdown h3, .markdown h4 {
+  color: var(--cor-destaque);
+  margin: 18px 0 8px;
+  font-family: var(--fonte-titulo);
+}
+.markdown h2 {
+  color: var(--cor-neon-ciano);
+  margin: 22px 0 8px;
+  font-size: 1.1rem;
+  font-family: var(--fonte-titulo);
+}
+.markdown code {
+  font-family: var(--fonte-codigo); background: var(--cor-vidro-escuro); padding: 1px 5px;
+  border-radius: 4px; color: var(--cor-codigo);
+}
+.markdown pre {
+  background: var(--cor-vidro-escuro); padding: 12px; border-radius: 8px; overflow-x: auto;
+  border: 1px solid var(--cor-borda);
+}
+.markdown pre code { padding: 0; background: none; color: var(--cor-texto); }
+.markdown blockquote {
+  margin: 10px 0; padding: 8px 14px; border-left: 4px solid var(--cor-neon-magenta);
+  background: var(--cor-vidro-escuro);
+}
+.markdown hr { border: none; border-top: 1px solid var(--cor-borda); margin: 18px 0; }
+.markdown a { color: var(--cor-primaria); }
+
+.tabela-rolagem { overflow-x: auto; max-width: 100%; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 0.88rem;
+  font-family: var(--fonte-dados);
+}
+th, td {
+  border: 1px solid var(--cor-borda);
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--cor-superficie-alta); color: var(--cor-neon-ciano); }
+
+.vazio { color: var(--cor-texto-suave); font-style: italic; }
+
+/* Foco visível para teclado em qualquer controle. */
+:focus-visible { outline: 2px solid var(--cor-neon-magenta); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .topo { padding: 12px 16px; }
+  .topo__titulo { font-size: 1.15rem; }
+  .abas { width: 100%; }
+  .abas__botao { flex: 1; padding: 10px 12px; }
+  .grade, .resumo { grid-template-columns: 1fr; }
+  .modal__corpo { padding: 8px 14px 18px; }
+}
+
+/* Tela AO VIVO (live.html) */
+.ao-vivo__secao { margin-bottom: 28px; }
+.ao-vivo__aviso {
+  margin: 0 0 16px; padding: 10px 14px;
+  border: 1px solid var(--cor-neon-magenta); border-radius: var(--raio);
+  background: var(--cor-superficie); color: var(--cor-texto);
+  box-shadow: var(--brilho-magenta);
+}
+.ao-vivo__aviso[hidden] { display: none; }
+.ao-vivo__novo { animation: destacar-novo 3s ease-out 1; }
+@keyframes destacar-novo {
+  0% { background: var(--cor-superficie-alta); box-shadow: inset 0 0 0 1px var(--cor-neon-ciano); }
+  100% { background: transparent; box-shadow: inset 0 0 0 1px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; width: 100%; opacity: 0.5; }
+  .cartao { transition: none; }
+  .cartao:hover, .cartao:focus-visible { transform: none; }
+  .abas__botao--ao-vivo::before { animation: none; }
+  .ao-vivo__novo { animation: none; background: var(--cor-superficie-alta); }
+}
+</style>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo__titulos">
+      <h1 class="topo__titulo">🔴 AO VIVO — Quadro de tarefas</h1>
+      <p class="topo__subtitulo">
+        Aulas SENAI · <strong id="ao-vivo-atualizado">Carregando...</strong>
+        · próxima leitura em <strong id="ao-vivo-contagem">--</strong>
+      </p>
+    </div>
+  </header>
+
+  <main class="conteudo ao-vivo">
+    <p class="ao-vivo__aviso" id="ao-vivo-aviso" role="alert" hidden></p>
+
+    <section class="ao-vivo__secao" aria-label="Resumo">
+      <div class="resumo" id="ao-vivo-resumo"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">🧭 Frentes ativas</h2>
+      <div class="grade" id="ao-vivo-frentes"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">🔄 Em execução</h2>
+      <div class="tabela-rolagem" id="ao-vivo-execucao"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">👀 Aguardando o usuário</h2>
+      <div class="tabela-rolagem" id="ao-vivo-aguardando"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">⛔ Bloqueadas</h2>
+      <div class="tabela-rolagem" id="ao-vivo-bloqueadas"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">✅ Últimas concluídas</h2>
+      <div class="tabela-rolagem" id="ao-vivo-concluidas"></div>
+    </section>
+  </main>
+
+  <script>/* Tela AO VIVO: lê tasks/STATUS.md e tasks/task_complete.md do GitHub a cada minuto. */
+const URL_STATUS = 'https://raw.githubusercontent.com/Gelvazio/aulasenai/main/tasks/STATUS.md';
+const URL_CONCLUIDAS =
+  'https://raw.githubusercontent.com/Gelvazio/aulasenai/main/tasks/task_complete.md';
+const INTERVALO_ATUALIZACAO_MS = 60000;
+const INTERVALO_RELOGIO_MS = 1000;
+const QUANTIDADE_ULTIMAS_CONCLUIDAS = 15;
+const MARCA_TAREFAS = '📌 Tarefas';
+const MARCA_FRENTES = '🧭 Frentes';
+const MARCA_CONCLUIDAS = '✅ Concluídas';
+const EMOJI_EXECUCAO = '🔄';
+const EMOJI_AGUARDANDO = '👀';
+const EMOJI_BLOQUEADA = '⛔';
+const EMOJI_PENDENTE = '⬜';
+const SITUACAO_FRENTE_ATIVA = '🔄 Ativa';
+const COLUNAS_EXECUCAO = ['Tarefa', 'Título', 'Modelo', 'Em uso por'];
+const COLUNAS_ESPERA = ['Tarefa', 'Título', 'Status'];
+const COLUNAS_CONCLUIDAS = ['Tarefa', 'Título', 'Status'];
+const MSG_FALHA_LEITURA = 'Falha ao ler o quadro; mostrando a última leitura. Detalhe: ';
+const MSG_SEM_LINHAS = 'Nenhuma.';
+const RESUMO_ITENS = [
+  { emoji: EMOJI_EXECUCAO, rotulo: 'Em execução' },
+  { emoji: EMOJI_AGUARDANDO, rotulo: 'Aguardando' },
+  { emoji: EMOJI_BLOQUEADA, rotulo: 'Bloqueadas' },
+  { emoji: EMOJI_PENDENTE, rotulo: 'Pendentes' },
+];
+
+const estado = { anterior: null, proximaLeitura: 0 };
+
+/**
+ * Obtém um elemento da página pelo id.
+ * @param {string} id - Id do elemento.
+ * @returns {HTMLElement} Elemento encontrado.
+ */
+function obterElemento(id) {
+  return document.getElementById(id);
+}
+
+/**
+ * Separa as células de uma linha de tabela Markdown, respeitando `\|` e crases.
+ * @param {string} linha - Linha da tabela.
+ * @returns {string[]} Células sem espaços nas pontas.
+ */
+function dividirCelulas(linha) {
+  const celulas = [];
+  let atual = '';
+  let dentroCrase = false;
+  const corpo = linha.trim().replace(/^\|/, '');
+  for (let i = 0; i < corpo.length; i++) {
+    const caractere = corpo[i];
+    const escapado = caractere === '\\' && corpo[i + 1] === '|';
+    if (escapado) { atual += '|'; i++; continue; }
+    if (caractere === '`') dentroCrase = !dentroCrase;
+    if (caractere === '|' && !dentroCrase) { celulas.push(atual.trim()); atual = ''; continue; }
+    atual += caractere;
+  }
+  if (atual.trim() !== '') celulas.push(atual.trim());
+  return celulas;
+}
+
+/**
+ * Limpa a marcação Markdown de uma célula (negrito, crase, links).
+ * @param {string} texto - Texto da célula.
+ * @returns {string} Texto simples.
+ */
+function limparMarcacao(texto) {
+  return texto.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\*\*|`/g, '');
+}
+
+/**
+ * Extrai o texto de uma seção `## ` cujo título contém a marca.
+ * @param {string} texto - Markdown completo.
+ * @param {string} marca - Trecho do título da seção.
+ * @returns {string[]} Linhas da seção (sem o título).
+ */
+function lerSecao(texto, marca) {
+  const linhas = texto.split('\n');
+  const inicio = linhas.findIndex((l) => l.startsWith('## ') && l.includes(marca));
+  if (inicio < 0) return [];
+  const fim = linhas.findIndex((l, i) => i > inicio && l.startsWith('## '));
+  return linhas.slice(inicio + 1, fim < 0 ? linhas.length : fim);
+}
+
+/**
+ * Converte as linhas de tabela Markdown em objetos {coluna: valor}.
+ * @param {string[]} linhas - Linhas da seção.
+ * @returns {Object[]} Registros da tabela.
+ */
+function lerTabela(linhas) {
+  const tabela = linhas.filter((l) => l.trim().startsWith('|'));
+  if (tabela.length < 2) return [];
+  const cabecalho = dividirCelulas(tabela[0]);
+  return tabela.slice(2).map((linha) => {
+    const celulas = dividirCelulas(linha).map(limparMarcacao);
+    const registro = {};
+    cabecalho.forEach((nome, i) => { registro[nome] = celulas[i] || ''; });
+    return registro;
+  });
+}
+
+/**
+ * Filtra as linhas cuja coluna Status contém o emoji.
+ * @param {Object[]} linhas - Registros do quadro.
+ * @param {string} emoji - Emoji de situação.
+ * @returns {Object[]} Linhas filtradas.
+ */
+function filtrarPorStatus(linhas, emoji) {
+  return linhas.filter((linha) => (linha.Status || '').includes(emoji));
+}
+
+/**
+ * Cria um elemento com classe e texto.
+ * @param {string} etiqueta - Nome da tag.
+ * @param {string} classe - Classe CSS (pode ser vazia).
+ * @param {string} texto - Texto (via textContent).
+ * @returns {HTMLElement} Elemento criado.
+ */
+function criarNo(etiqueta, classe, texto) {
+  const no = document.createElement(etiqueta);
+  if (classe) no.className = classe;
+  if (texto) no.textContent = texto;
+  return no;
+}
+
+/**
+ * Monta uma tabela com as colunas pedidas; destaca linhas novas ou alteradas.
+ * @param {Object[]} linhas - Registros a mostrar.
+ * @param {string[]} colunas - Nomes das colunas.
+ * @param {Set<string>} novos - Tarefas novas ou com status alterado.
+ * @returns {HTMLElement} Tabela ou parágrafo vazio.
+ */
+function montarTabela(linhas, colunas, novos) {
+  if (linhas.length === 0) return criarNo('p', 'vazio', MSG_SEM_LINHAS);
+  const tabela = document.createElement('table');
+  const cabecalho = tabela.createTHead().insertRow();
+  colunas.forEach((nome) => cabecalho.appendChild(criarNo('th', '', nome)));
+  const corpo = tabela.createTBody();
+  linhas.forEach((linha) => {
+    const tr = corpo.insertRow();
+    if (novos.has(linha.Tarefa)) tr.className = 'ao-vivo__novo';
+    colunas.forEach((nome) => tr.appendChild(criarNo('td', '', linha[nome] || '')));
+  });
+  return tabela;
+}
+
+/**
+ * Substitui o conteúdo de um contêiner por um novo nó.
+ * @param {string} id - Id do contêiner.
+ * @param {Node} no - Novo conteúdo.
+ * @returns {void}
+ */
+function trocarConteudo(id, no) {
+  obterElemento(id).replaceChildren(no);
+}
+
+/**
+ * Desenha o resumo com a contagem de cada situação.
+ * @param {Object[]} tarefas - Linhas de "📌 Tarefas".
+ * @returns {void}
+ */
+function desenharResumo(tarefas) {
+  const itens = RESUMO_ITENS.map(({ emoji, rotulo }) => {
+    const item = criarNo('div', 'resumo__item', '');
+    const quantidade = filtrarPorStatus(tarefas, emoji).length;
+    item.append(criarNo('div', 'resumo__numero', `${emoji} ${quantidade}`));
+    item.append(criarNo('div', 'resumo__rotulo', rotulo));
+    return item;
+  });
+  obterElemento('ao-vivo-resumo').replaceChildren(...itens);
+}
+
+/**
+ * Desenha os cartões das frentes com situação ativa.
+ * @param {Object[]} frentes - Linhas de "🧭 Frentes".
+ * @returns {void}
+ */
+function desenharFrentes(frentes) {
+  const ativas = frentes.filter((f) => (f['Situação'] || '').includes(SITUACAO_FRENTE_ATIVA));
+  if (ativas.length === 0) {
+    trocarConteudo('ao-vivo-frentes', criarNo('p', 'vazio', MSG_SEM_LINHAS));
+    return;
+  }
+  const cartoes = ativas.map((frente) => {
+    const cartao = criarNo('article', 'cartao situacao--em-andamento', '');
+    cartao.append(criarNo('div', 'cartao__titulo', frente.Frente || ''));
+    cartao.append(criarNo('div', 'cartao__texto', frente['Tarefa (etapa)'] || ''));
+    const rodape = criarNo('div', 'cartao__rodape', '');
+    rodape.append(criarNo('span', 'etiqueta', frente['Situação']));
+    rodape.append(criarNo('span', 'etiqueta', frente['Atualizado em'] || ''));
+    cartao.append(rodape);
+    return cartao;
+  });
+  obterElemento('ao-vivo-frentes').replaceChildren(...cartoes);
+}
+
+/**
+ * Descobre as tarefas novas ou com status alterado desde a leitura anterior.
+ * @param {Object[]} tarefas - Linhas atuais de "📌 Tarefas".
+ * @returns {Set<string>} Ids das tarefas destacadas.
+ */
+function calcularNovos(tarefas) {
+  const novos = new Set();
+  if (!estado.anterior) return novos;
+  tarefas.forEach((tarefa) => {
+    const statusAntes = estado.anterior.get(tarefa.Tarefa);
+    if (statusAntes !== tarefa.Status) novos.add(tarefa.Tarefa);
+  });
+  return novos;
+}
+
+/**
+ * Guarda o status de cada tarefa para comparar na próxima leitura.
+ * @param {Object[]} tarefas - Linhas atuais de "📌 Tarefas".
+ * @returns {void}
+ */
+function guardarAnterior(tarefas) {
+  estado.anterior = new Map(tarefas.map((t) => [t.Tarefa, t.Status]));
+}
+
+/**
+ * Desenha as últimas linhas concluídas (fim da tabela do task_complete.md).
+ * @param {string} texto - Markdown de task_complete.md.
+ * @returns {void}
+ */
+function desenharConcluidas(texto) {
+  const linhas = lerTabela(lerSecao(texto, MARCA_CONCLUIDAS));
+  const ultimas = linhas.slice(-QUANTIDADE_ULTIMAS_CONCLUIDAS).reverse();
+  trocarConteudo('ao-vivo-concluidas', montarTabela(ultimas, COLUNAS_CONCLUIDAS, new Set()));
+}
+
+/**
+ * Desenha toda a tela a partir do texto dos dois arquivos.
+ * @param {{status: string, concluidas: string}} textos - Conteúdo lido.
+ * @returns {void}
+ */
+function desenharTela({ status, concluidas }) {
+  const tarefas = lerTabela(lerSecao(status, MARCA_TAREFAS));
+  const frentes = lerTabela(lerSecao(status, MARCA_FRENTES));
+  const novos = calcularNovos(tarefas);
+  desenharResumo(tarefas);
+  desenharFrentes(frentes);
+  const tabela = (emoji, colunas) => montarTabela(filtrarPorStatus(tarefas, emoji), colunas, novos);
+  trocarConteudo('ao-vivo-execucao', tabela(EMOJI_EXECUCAO, COLUNAS_EXECUCAO));
+  trocarConteudo('ao-vivo-aguardando', tabela(EMOJI_AGUARDANDO, COLUNAS_ESPERA));
+  trocarConteudo('ao-vivo-bloqueadas', tabela(EMOJI_BLOQUEADA, COLUNAS_ESPERA));
+  desenharConcluidas(concluidas);
+  guardarAnterior(tarefas);
+}
+
+/**
+ * Baixa um arquivo de texto sem usar cache.
+ * @param {string} url - Endereço do arquivo.
+ * @returns {Promise<string>} Conteúdo do arquivo.
+ * @throws {Error} Se a resposta não for bem-sucedida.
+ */
+async function baixarTexto(url) {
+  const resposta = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
+  if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+  return resposta.text();
+}
+
+/**
+ * Mostra ou esconde o aviso de falha.
+ * @param {string} mensagem - Texto do aviso (vazio esconde).
+ * @returns {void}
+ */
+function mostrarAviso(mensagem) {
+  const aviso = obterElemento('ao-vivo-aviso');
+  aviso.textContent = mensagem;
+  aviso.hidden = mensagem === '';
+}
+
+/**
+ * Lê os dois arquivos, redesenha a tela e agenda a próxima leitura.
+ * @returns {Promise<void>}
+ */
+async function atualizar() {
+  estado.proximaLeitura = Date.now() + INTERVALO_ATUALIZACAO_MS;
+  try {
+    const [status, concluidas] = await Promise.all([
+      baixarTexto(URL_STATUS),
+      baixarTexto(URL_CONCLUIDAS),
+    ]);
+    desenharTela({ status, concluidas });
+    mostrarAviso('');
+    obterElemento('ao-vivo-atualizado').textContent =
+      `Atualizado às ${new Date().toLocaleTimeString('pt-BR')}`;
+  } catch (erro) {
+    mostrarAviso(MSG_FALHA_LEITURA + erro.message);
+  }
+}
+
+/**
+ * Atualiza a contagem regressiva até a próxima leitura.
+ * @returns {void}
+ */
+function atualizarRelogio() {
+  const restante = Math.max(0, Math.ceil((estado.proximaLeitura - Date.now()) / 1000));
+  obterElemento('ao-vivo-contagem').textContent = `${restante}s`;
+}
+
+/**
+ * Inicia a primeira leitura e os temporizadores.
+ * @returns {void}
+ */
+function iniciar() {
+  atualizar();
+  setInterval(atualizar, INTERVALO_ATUALIZACAO_MS);
+  setInterval(atualizarRelogio, INTERVALO_RELOGIO_MS);
+}
+
+iniciar();
+</script>
+</body>
+</html>

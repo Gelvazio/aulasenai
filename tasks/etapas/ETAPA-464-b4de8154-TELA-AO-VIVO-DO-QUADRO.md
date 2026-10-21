@@ -16,7 +16,7 @@ publicado no GitHub e se atualiza sozinho.
 
 ### #335.1 — Página live.html que se atualiza sozinha
 
-**Próximo passo:** executor-medio cria `live-modelo.html` + `live.js` e o gerador grava `live.html`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — tela com lógica (JS) + gerador, 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -28,6 +28,14 @@ publicado no GitHub e se atualiza sozinho.
   leitura anterior.
 - **Critérios de aceitação:** `live.html` gerado; `node --check` e `py_compile` ok; contagens
   conferidas contra o `STATUS.md`; conferir na tela (usuário).
+- **Executor:** Claude Code (Sonnet · executor-medio) (local · main · s34), líder Opus 5.5
+- **Entrega:** `live-modelo.html` e `live.js` (novos), `gerar_visualizador_regras.py`
+  (`montar_html_live`, grava `.claude/rules/live.html`) e bloco "Tela AO VIVO" no `estilo.css`
+  (`ao-vivo__secao`, `__aviso`, `__novo`) — 2026-10-21 19:04
+- **Verificação:** `node --check` e `py_compile` ok; gerador sem erro (111 seções, 1841 tarefas,
+  59 frentes, 62 aguardando + live.html); parser em node sobre o `STATUS.md` local = grep
+  (🔄 21, 👀 3, ⛔ 88, ⬜ 1260); sem `innerHTML`; GitHub raw responde
+  `Access-Control-Allow-Origin: *`. Conferir na tela (usuário).
 
 ### #335.2 — Botão AO VIVO no menu do visualizador
 

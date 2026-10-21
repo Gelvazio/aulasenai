@@ -479,3 +479,5 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #334.2 | Filtro por data na aba TASKS (abre nos últimos 3 dias) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #334.1 | ✅ Concluído | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #334.3 | Visual futurista no visualizador · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #335.2 | Botão AO VIVO no menu do visualizador · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | — | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
+| **#335-b4de8154-2af7-4357-a5bc-3319de3387e3** | **Tela AO VIVO do quadro de tarefas** | 🟡 Média | — | — | ✅ Concluído | — | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
+| #335.1 | Página live.html que se atualiza sozinha · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |

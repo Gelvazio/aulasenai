@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AO VIVO — Quadro de tarefas — Aulas SENAI</title>
+  <!-- ARQUIVO GERADO por scripts/regras/gerar_visualizador_regras.py — não editar à mão.
+       Só visualizador do quadro ao vivo; não é página do projeto. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap">
+  <style>/*__ESTILO__*/</style>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo__titulos">
+      <h1 class="topo__titulo">🔴 AO VIVO — Quadro de tarefas</h1>
+      <p class="topo__subtitulo">
+        Aulas SENAI · <strong id="ao-vivo-atualizado">Carregando...</strong>
+        · próxima leitura em <strong id="ao-vivo-contagem">--</strong>
+      </p>
+    </div>
+  </header>
+
+  <main class="conteudo ao-vivo">
+    <p class="ao-vivo__aviso" id="ao-vivo-aviso" role="alert" hidden></p>
+
+    <section class="ao-vivo__secao" aria-label="Resumo">
+      <div class="resumo" id="ao-vivo-resumo"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">🧭 Frentes ativas</h2>
+      <div class="grade" id="ao-vivo-frentes"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">🔄 Em execução</h2>
+      <div class="tabela-rolagem" id="ao-vivo-execucao"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">👀 Aguardando o usuário</h2>
+      <div class="tabela-rolagem" id="ao-vivo-aguardando"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">⛔ Bloqueadas</h2>
+      <div class="tabela-rolagem" id="ao-vivo-bloqueadas"></div>
+    </section>
+
+    <section class="ao-vivo__secao">
+      <h2 class="grupo__titulo">✅ Últimas concluídas</h2>
+      <div class="tabela-rolagem" id="ao-vivo-concluidas"></div>
+    </section>
+  </main>
+
+  <script>/*__SCRIPT__*/</script>
+</body>
+</html>

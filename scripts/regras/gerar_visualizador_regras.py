@@ -27,6 +27,8 @@ PASTA_REGRAS = RAIZ_PROJETO / ".claude" / "rules"
 PASTA_TASKS = RAIZ_PROJETO / "tasks"
 PASTA_MODELO = PASTA_SCRIPT / "visualizador"
 ARQUIVO_SAIDA = PASTA_REGRAS / "index.html"
+ARQUIVO_SAIDA_LIVE = PASTA_REGRAS / "live.html"
+ARQUIVOS_SCRIPT_LIVE = ["live.js"]
 ARQUIVOS_SCRIPT = ["markdown.js", "app.js", "aba-regras.js", "aba-tasks.js", "inicio.js"]
 FUSO_BRASILIA = ZoneInfo("America/Sao_Paulo")
 FORMATO_DATA = "%Y-%m-%d %H:%M:%S"
@@ -91,6 +93,18 @@ def montar_html(dados: dict) -> str:
     return html
 
 
+def montar_html_live() -> str:
+    """Preenche o modelo da tela AO VIVO com o CSS e o JavaScript (sem dados embutidos).
+
+    Returns:
+        HTML completo e autocontido da tela AO VIVO.
+    """
+    script = "\n\n".join(ler_modelo(nome) for nome in ARQUIVOS_SCRIPT_LIVE)
+    html = ler_modelo("live-modelo.html")
+    html = html.replace("/*__ESTILO__*/", ler_modelo("estilo.css"), 1)
+    return html.replace("/*__SCRIPT__*/", script, 1)
+
+
 def main() -> int:
     """Gera o `index.html` e mostra um resumo.
 
@@ -99,10 +113,12 @@ def main() -> int:
     """
     dados = montar_dados()
     ARQUIVO_SAIDA.write_text(montar_html(dados), encoding="utf-8", newline="\n")
+    ARQUIVO_SAIDA_LIVE.write_text(montar_html_live(), encoding="utf-8", newline="\n")
     tarefas = dados["tasks"]
     print(f"Gerado {ARQUIVO_SAIDA.relative_to(RAIZ_PROJETO)} em {dados['geradoEm']}: "
           f"{len(dados['regras'])} seções de regras, {len(tarefas['tarefas'])} tarefas, "
-          f"{len(tarefas['frentes'])} frentes, {len(tarefas['aguardando'])} aguardando.")
+          f"{len(tarefas['frentes'])} frentes, {len(tarefas['aguardando'])} aguardando. "
+          f"Gerado também {ARQUIVO_SAIDA_LIVE.relative_to(RAIZ_PROJETO)}.")
     return 0
 
 
