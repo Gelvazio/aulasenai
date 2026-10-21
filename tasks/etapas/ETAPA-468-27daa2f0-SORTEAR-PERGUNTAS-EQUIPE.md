@@ -47,6 +47,7 @@
 | 2026-10-21 20:26 | Etapa final #339.21: a atividade gamificada vira **modelo global** para toda atividade discursiva ou prática; em cada aula o professor escolhe usar ou não e se é **com equipe ou sem equipe** | Usuário |
 | 2026-10-21 20:31 | Modo **sem equipe** e escolhas da #339.21 (respostas uma a uma): sorteia **aluno + 1 pergunta**; **sem** os 2 min de preparo (vai direto ao 1 min); votam **todos menos quem responde**; aluno já sorteado só volta **depois que todos forem**; só **presentes** (sem "Faltou?"); votos na nota = **o professor decide** por aula/atividade; liga/desliga e com/sem equipe **na página da atividade e no modal da aula**; a escolha vale para **todas as turmas** | Usuário |
 | 2026-10-21 20:36 | Acrescentadas #339.22 a #339.31 (5 ideias com Three.js e 5 tipos de jogo; a ideia de "missões da semana" ficou de fora) e os cuidados de 3D/jogos no Escopo | Usuário |
+| 2026-10-21 20:39 | Acrescentadas #339.32 a #339.43 (aposta, reações, pergunta da plateia, nome/brasão, combo, capitão, cartas do professor, modo projetor, resumo em PDF, antiabuso, fila de votos, leitura em voz alta) | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -55,7 +56,7 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, modelo global #339.21, telas,
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, extras #339.32–#339.43, modelo global #339.21, telas,
   verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
@@ -346,9 +347,129 @@
 - **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
 - **Entrega:** — · **Verificação:** —
 
+### #339.32 — Aposta de confiança: a turma aposta se a média vai passar de 7
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (apostas e pontos de "olheiro") + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** antes de a resposta começar, os alunos apostam se o aluno vai tirar média acima de 7; quem acerta ganha pontos de olheiro.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.33 — Reação ao vivo com emojis durante a resposta
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (reações compartilhadas entre telas) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** botões 👏 🔥 🤔 durante a resposta; as reações aparecem flutuando na tela do professor (e no modo projetor).
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.34 — Pergunta da plateia: aluno de fora da equipe faz 1 pergunta extra de 30 s
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela com lógica (sorteio entre presentes de fora da equipe + tempo)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** depois da resposta, um aluno presente de fora da equipe é sorteado para fazer uma pergunta extra de 30 segundos.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.35 — Nome, cor e brasão da equipe
+
+**Próximo passo:** esperar a #339.2.
+
+- **Nível:** PESADO — banco (campos da equipe, RLS) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** cada equipe escolhe nome, cor e ícone, mostrados no placar, na arena e no pódio.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.36 — Combo de equipe: todos com média ≥ 8 → ×1,5 no placar da rodada
+
+**Próximo passo:** esperar a #339.11.
+
+- **Nível:** MEDIO — tela com lógica (cálculo no placar)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** se todos os membros da equipe tiverem média ≥ 8 na rodada, a pontuação da rodada vale ×1,5.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.37 — Ajuda do capitão: 15 s para completar a resposta de um colega, 1 vez por rodada
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (capitão da equipe e uso único) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** a equipe tem um capitão que, uma vez por rodada, completa por 15 segundos a resposta de um colega.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.38 — Cartas do professor: tempo extra +30 s, pergunta em dobro, troca de pergunta
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (cartas usadas e efeitos) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** o professor ativa cartas na hora; o efeito vale para todos (tempo, pontuação ou troca sem repetir).
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.39 — Modo projetor: tela limpa em tela cheia para o datashow
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela (layout dedicado)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** só cronômetro, enunciado, número piscando e placar, em tela cheia e letras grandes.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.40 — Resumo da aula exportável em PDF SENAI
+
+**Próximo passo:** esperar a #339.12.
+
+- **Nível:** MEDIO — tela + exportação (padrão PDF SENAI do projeto)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** no fim: perguntas sorteadas, quem respondeu, médias, medalhas e tempo usado; exporta em PDF no padrão SENAI.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; PDF sem gabarito.
+- **Entrega:** — · **Verificação:** —
+
+### #339.41 — Antiabuso na votação: avisar o professor de votos sempre 1 ou sempre 10
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (consulta de padrões de voto, só professor) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** detecta e avisa o professor sobre alunos que votam sempre 1 ou sempre 10, sem bloquear o voto.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.42 — Fila de votos sem internet: guarda e envia quando voltar, dentro do tempo
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (fila no navegador; o banco recusa fora do prazo)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** se a internet do aluno cair, o voto fica guardado e é enviado quando voltar, se ainda estiver no tempo da votação.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; sem dado sensível guardado no navegador.
+- **Entrega:** — · **Verificação:** —
+
+### #339.43 — Leitura em voz alta do enunciado (liga/desliga)
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela (fala do navegador)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** botão para ler o enunciado da pergunta em voz alta pelo navegador; preferência lembrada no navegador.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
 ### #339.21 — Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe
 
-**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.31.
+**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.43.
 
 - **Nível:** PESADO — arquitetura (recurso global para todas as matérias), banco (escolha por aula/atividade) e mais de 3 arquivos
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (parte de banco: só Claude Code local)
