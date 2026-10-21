@@ -5,6 +5,10 @@
     --questoes-nota-texto-suave: #4a5568;
     --questoes-nota-borda: #cbd5e0;
     --questoes-nota-raio: 4px;
+    --questoes-nota-confirmar: #2f855a;
+    --questoes-nota-confirmar-fundo: #f0fff4;
+    --questoes-nota-confirmar-texto: #276749;
+    --questoes-nota-alterado: #d69e2e;
 }
 
 .questoes-nota {
@@ -22,4 +26,26 @@
     border-radius: var(--questoes-nota-raio);
     font: inherit;
     font-size: 12px;
+}
+
+.questoes-nota__campo[data-alterado="sim"] {
+    border-color: var(--questoes-nota-alterado);
+}
+
+.questoes-nota__linha {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.questoes-nota__confirmar {
+    padding: 2px 8px;
+    border: 1px solid var(--questoes-nota-confirmar);
+    border-radius: var(--questoes-nota-raio);
+    background: var(--questoes-nota-confirmar-fundo);
+    color: var(--questoes-nota-confirmar-texto);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
 }

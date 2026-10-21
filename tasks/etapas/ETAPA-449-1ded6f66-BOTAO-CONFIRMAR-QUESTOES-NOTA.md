@@ -6,7 +6,7 @@
 
 ### #320.1 — Botão "Confirmar" + modal de confirmação antes de gravar
 
-**Próximo passo:** executor-medio fazer a mudança em `assets/js/questoes-nota-aluno-progresso.js`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — tela com lógica (JS + CSS), até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -15,4 +15,9 @@
   Não → volta o valor gravado. O campo não grava mais sozinho; a atualização automática da lista
   espera enquanto há valor digitado e ainda não confirmado.
 - **Critérios de aceitação:** `node --check` ok; linhas ≤ 100; conferir na tela.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:58 — executor-medio (Sonnet): `assets/js/questoes-nota-aluno-progresso.js` (botão
+  "Confirmar" ao lado do campo, Enter = Confirmar, modal Sim/Não pelo `confirmarPopup`; Sim grava,
+  Não volta o valor; marca `data-alterado`), `assets/js/progresso-turma-global.js` (a atualização de
+  5 s espera com valor não confirmado ou popup aberto) e `assets/css/questoes-nota-aluno-progresso.css`.
+- **Verificação:** `node --check` nos 2 `.js`; diff revisado pelo líder; `progresso-turma-global.js`
+  com 1000 linhas. Conferir na tela: digitar → Confirmar → Sim grava; Não volta o valor.

@@ -4,13 +4,17 @@
 // de Questões, como antes; o mínimo para ENTREGAR não muda. Grava na tabela questoes_nota_aluno
 // (upsert por atividade e aluno; campo vazio apaga a linha). O cliente Supabase já envia o JWT do
 // usuário logado; o RLS só deixa o professor gravar alunos das turmas dele.
-// Salva ao sair do campo (change) ou com Enter. Depende de js/supabase.js e assets/js/popup.js.
+// Grava só depois do botão "Confirmar" (ou Enter no campo) + "Sim" no modal.
+// Depende de js/supabase.js e assets/js/popup.js.
 // Pedido do usuário em 2026-10-21 (tarefa #319).
 
 const TABELA_QUESTOES_NOTA = 'questoes_nota_aluno';
 const CHAVE_QUESTOES_NOTA = 'atividade_id,aluno_id';
 const CLASSE_QUESTOES_NOTA = 'questoes-nota';
 const ROTULO_QUESTOES_NOTA = 'Quantidade Questão Considerar';
+const TEXTO_BOTAO_QUESTOES_NOTA = 'Confirmar';
+const MENSAGEM_CONFIRMAR_QUESTOES_NOTA =
+    'Deseja alterar a quantidade de questões a considerar para este aluno?';
 const TITULO_ERRO_QUESTOES_NOTA = 'Quantidade Questão Considerar';
 const BASE_SCRIPTS_QUESTOES_NOTA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const ARQUIVO_CSS_QUESTOES_NOTA = '../css/questoes-nota-aluno-progresso.css';
@@ -70,31 +74,65 @@ function lerQuantidadeDigitada(campo, totalQuestoes) {
 }
 
 /**
- * Grava (ou apaga) o que está no campo; erro volta o valor anterior e avisa no popup.
+ * Devolve o valor gravado do aluno como texto do campo.
+ * @param {Object} aluno - Aluno (questoesNotaDoAluno).
+ * @returns {string} Quantidade gravada, ou vazio.
+ */
+function obterValorGravado(aluno) {
+    return aluno.questoesNotaDoAluno ? String(aluno.questoesNotaDoAluno) : '';
+}
+
+/**
+ * Volta o campo para o valor gravado e tira a marca de alterado.
+ * @param {HTMLInputElement} campo - Campo da quantidade.
+ * @param {string} gravado - Valor gravado.
+ */
+function restaurarCampoQuestoesNota(campo, gravado) {
+    campo.value = gravado;
+    delete campo.dataset.alterado;
+}
+
+/**
+ * Grava (ou apaga) a quantidade do aluno e redesenha o painel.
+ * @param {Object} dados - atividadeId, aluno, aoMudar.
+ * @param {number|null} quantidade - Quantidade; null apaga a linha.
+ */
+async function gravarEscolhaQuestoesNota(dados, quantidade) {
+    const ids = { atividadeId: dados.atividadeId, alunoId: dados.aluno.alunoId };
+    if (quantidade === null) await apagarQuestoesNotaDoAluno(ids);
+    if (quantidade !== null) await gravarQuestoesNotaDoAluno(ids, quantidade);
+    await dados.aoMudar();
+}
+
+/**
+ * Valida o campo, pergunta no modal e, se o professor disser Sim, grava para este aluno.
+ * Erro ou "Não" voltam o valor gravado.
  * @param {Object} dados - atividadeId, aluno, aoMudar.
  * @param {HTMLInputElement} campo - Campo da quantidade.
  */
-async function salvarQuestoesNotaDoCampo(dados, campo) {
+async function confirmarQuestoesNotaDoCampo(dados, campo) {
     const { aluno } = dados;
-    const anterior = aluno.questoesNotaDoAluno ? String(aluno.questoesNotaDoAluno) : '';
+    const gravado = obterValorGravado(aluno);
     const quantidade = lerQuantidadeDigitada(campo, aluno.totalQuestoes);
     if (quantidade === undefined) {
-        campo.value = anterior;
+        restaurarCampoQuestoesNota(campo, gravado);
         await mostrarPopup('Informe um número inteiro de 1 a ' + aluno.totalQuestoes +
             ', ou deixe vazio para usar a Quantidade Mínima.',
         { tipo: 'aviso', titulo: TITULO_ERRO_QUESTOES_NOTA });
         return;
     }
-    if (String(quantidade ?? '') === anterior) return;
+    if (String(quantidade ?? '') === gravado) return restaurarCampoQuestoesNota(campo, gravado);
+
+    const confirmou = await confirmarPopup(MENSAGEM_CONFIRMAR_QUESTOES_NOTA, {
+        titulo: TITULO_ERRO_QUESTOES_NOTA, textoConfirmar: 'Sim', textoCancelar: 'Não' });
+    if (!confirmou) return restaurarCampoQuestoesNota(campo, gravado);
 
     campo.disabled = true;
     try {
-        const ids = { atividadeId: dados.atividadeId, alunoId: aluno.alunoId };
-        if (quantidade === null) await apagarQuestoesNotaDoAluno(ids);
-        if (quantidade !== null) await gravarQuestoesNotaDoAluno(ids, quantidade);
-        await dados.aoMudar();
+        await gravarEscolhaQuestoesNota(dados, quantidade);
+        delete campo.dataset.alterado;
     } catch (erro) {
-        campo.value = anterior;
+        restaurarCampoQuestoesNota(campo, gravado);
         await mostrarPopup('Não foi possível gravar a quantidade: ' + erro.message,
             { tipo: 'erro', titulo: TITULO_ERRO_QUESTOES_NOTA });
     } finally {
@@ -103,27 +141,38 @@ async function salvarQuestoesNotaDoCampo(dados, campo) {
 }
 
 /**
- * Cria o campo "Quantidade Questão Considerar" de um aluno.
+ * Cria o campo "Quantidade Questão Considerar" de um aluno, com o botão "Confirmar" ao lado.
  * @param {{atividadeId: number, aluno: Object, aoMudar: Function}} dados - Atividade, aluno
  *     (alunoId, nome, minimo, totalQuestoes, questoesNotaDoAluno) e redesenho do painel.
- * @returns {HTMLElement} Rótulo com o campo.
+ * @returns {HTMLElement} Rótulo com o campo e o botão.
  */
 function criarCampoQuestoesNota(dados) {
     const { aluno } = dados;
-    const rotulo = criarElementoQuestoesNota('label', CLASSE_QUESTOES_NOTA, ROTULO_QUESTOES_NOTA);
+    const gravado = obterValorGravado(aluno);
+    const rotulo = criarElementoQuestoesNota('div', CLASSE_QUESTOES_NOTA, ROTULO_QUESTOES_NOTA);
+    const linha = criarElementoQuestoesNota('div', CLASSE_QUESTOES_NOTA + '__linha');
     const campo = criarElementoQuestoesNota('input', CLASSE_QUESTOES_NOTA + '__campo');
+    const botao = criarElementoQuestoesNota('button', CLASSE_QUESTOES_NOTA + '__confirmar',
+        TEXTO_BOTAO_QUESTOES_NOTA);
     Object.assign(campo, { type: 'number', min: '1', max: String(aluno.totalQuestoes),
-        step: '1', value: aluno.questoesNotaDoAluno ? String(aluno.questoesNotaDoAluno) : '',
-        placeholder: String(aluno.minimo) });
+        step: '1', value: gravado, placeholder: String(aluno.minimo) });
+    botao.type = 'button';
     rotulo.title = 'Quantas questões contam para a nota de ' + aluno.nome + ' (1 a ' +
         aluno.totalQuestoes + '). Vazio: usa a Quantidade Mínima (' + aluno.minimo + ').';
-    campo.addEventListener('change', () => salvarQuestoesNotaDoCampo(dados, campo));
-    campo.addEventListener('keydown', (evento) => {
-        if (evento.key === 'Enter') campo.blur();
+    campo.addEventListener('input', () => {
+        if (campo.value !== gravado) campo.dataset.alterado = 'sim';
+        if (campo.value === gravado) delete campo.dataset.alterado;
     });
-    rotulo.appendChild(campo);
+    const confirmar = () => confirmarQuestoesNotaDoCampo(dados, campo);
+    botao.addEventListener('click', confirmar);
+    campo.addEventListener('keydown', (evento) => {
+        if (evento.key === 'Enter') confirmar();
+    });
+    linha.append(campo, botao);
+    rotulo.appendChild(linha);
     return rotulo;
 }
+
 
 (function incluirEstiloQuestoesNota() {
     if (!BASE_SCRIPTS_QUESTOES_NOTA) return;

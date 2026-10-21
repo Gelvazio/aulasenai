@@ -45,6 +45,8 @@ const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_QUESTOES_NOTA_PROGRESSO_GLOBAL = 'questoes-nota-aluno-progresso.js';
 const SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL = '.questoes-nota__campo';
+const SELETOR_PENDENTE_QUESTOES_NOTA_GLOBAL =
+    '.questoes-nota__campo[data-alterado="sim"], .popup__fundo';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
@@ -563,12 +565,13 @@ async function prepararBotoesNomeGlobal(tipo) {
 }
 
 /**
- * Diz se o professor está digitando no campo "Quantidade Questão Considerar" (a atualização
- * automática espera, para o redesenho não apagar o número ainda não gravado).
- * @returns {boolean} true se o foco está no campo.
+ * Diz se o campo "Quantidade Questão Considerar" está em uso (foco, valor não confirmado ou
+ * popup aberto): a atualização automática espera, para não apagar o número antes de confirmar.
+ * @returns {boolean} true se deve esperar.
  */
 function estaDigitandoQuestoesNotaGlobal() {
-    return Boolean(document.activeElement?.matches(SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL));
+    const estaComFoco = document.activeElement?.matches(SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL);
+    return Boolean(estaComFoco || document.querySelector(SELETOR_PENDENTE_QUESTOES_NOTA_GLOBAL));
 }
 
 /**
