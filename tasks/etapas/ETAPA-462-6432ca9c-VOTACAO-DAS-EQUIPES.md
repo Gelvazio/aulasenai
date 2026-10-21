@@ -53,18 +53,31 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.2 — Banco: tabelas da votação, RLS e regra de voto
 
-**Próximo passo:** escrever o SQL em `database/2026-10-21-votacao-equipes.sql`, aplicar pelo conector e conferir por consulta.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — SQL, RLS e aplicação em produção
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro (banco só local; exceção do usuário em 2026-10-21 15:39 para esta sessão de nuvem)
 - **Critérios de aceitação:** SQL idempotente em `database/`, aplicado e registrado; testes por
   consulta: aluno não vota na própria equipe, não vota 2 vezes, não vota com a votação fechada,
   não lê voto de colega; professor lê a média; `docs/database.md` atualizado.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-21-votacao-equipes.sql` (md5 `073966bd6082032c899fc660389f337b`),
+  aplicado pelo conector (migração `votacao_equipes_333`) em 2026-10-21 15:56; `docs/database.md` e
+  `docs/relatorio_verificacao_database.html` atualizados.
+- **Desenho:** tabelas `votacao_equipe` e `voto_equipe` com RLS ligado **sem políticas** e sem
+  privilégio para `anon`/`authenticated`; tudo pelas funções `security definer`
+  `abrir_votacao_equipe(p_atividade, p_equipe, p_aberta)`, `votacoes_equipes_professor(p_atividade)`,
+  `votacoes_abertas_aluno(p_atividade)` (`votacao_id`, `equipe_id`, `equipe_nome`, `ja_votei`) e
+  `votar_equipe(p_votacao, p_nota)`.
+- **Verificação:** consultas ao banco: RLS ligado, 0 políticas, `authenticated`/`anon` sem
+  `select` nas tabelas, funções `security definer` só para `authenticated`. Teste simulado numa
+  transação desfeita (atividade 166, EQUIPE 02, turma 135081): aluno não abre (42501); aluno
+  não lê a tabela; professor abre; aluno de fora vê e vota 8; 2º voto recusado; `ja_votei` = 1;
+  membro não vê nem vota na própria equipe; aluno não vê o resultado; professor vê 1 voto,
+  média 8,0; votação fechada recusa voto. Depois: 0 votações e 0 votos gravados.
 
 ### #333.3 — Tela do professor: abrir/fechar a votação e ver as médias
 
-**Próximo passo:** esperar a #333.2.
+**Próximo passo:** livre para Sonnet: ler a entrega da #333.2 (funções) e fazer o módulo.
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -76,7 +89,7 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.4 — Tela do aluno: card "Votar na Equipe X" (1 a 10)
 
-**Próximo passo:** esperar a #333.2.
+**Próximo passo:** livre para Sonnet: ler a entrega da #333.2 (funções) e fazer o módulo.
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos
 - **Modelo:** só Sonnet — nunca outro

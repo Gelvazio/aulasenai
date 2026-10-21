@@ -688,6 +688,25 @@ Não há tela para isso: a restauração é feita por SQL no SQL Editor, pelo pr
 
 ---
 
+## 🗳️ Atualização 2026-10-21 — Votação das equipes (#333)
+
+SQL: `database/2026-10-21-votacao-equipes.sql` (aplicado no Supabase em 2026-10-21 pela sessão de
+nuvem, exceção do usuário; conferido por consulta). Etapa: `tasks/etapas/ETAPA-462-6432ca9c`.
+Na apresentação em sala, o professor abre a votação de uma equipe ligada à atividade e os alunos
+da turma dão nota de 1 a 10.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `votacao_equipe` | `id`, `atividade_id` → `atividade` (cascade), `equipe_id` → `equipe` (cascade), `aberta`, `aberta_em`, `fechada_em`, `criado_em`, `criado_por`; **UNIQUE (`atividade_id`, `equipe_id`)** |
+| `voto_equipe` | `id`, `votacao_id` → `votacao_equipe` (cascade), `aluno_id`, `nota` (1 a 10, check), `criado_em`; **UNIQUE (`votacao_id`, `aluno_id`)** = 1 voto por aluno, sem trocar |
+| RLS | ligado nas duas **sem políticas** e sem privilégio para `anon`/`authenticated`: acesso só pelas funções abaixo |
+| `abrir_votacao_equipe(p_atividade, p_equipe, p_aberta)` | `security definer`: só o **professor da turma** da equipe abre (true) ou fecha (false); equipe precisa estar em `equipe_atividade` |
+| `votacoes_equipes_professor(p_atividade)` | `security definer`: equipes ligadas à atividade das turmas do professor, com `aberta`, `votos` e `media` (aluno recebe 0 linhas) |
+| `votacoes_abertas_aluno(p_atividade)` | `security definer`: votações **abertas** em que o aluno logado pode votar (turma dele em `turmaaluno`, fora da própria equipe), com `ja_votei`; sem votos nem média |
+| `votar_equipe(p_votacao, p_nota)` | `security definer`: grava o voto; recusa nota fora de 1–10 e votação fechada (`22023`), aluno de outra turma e a própria equipe (`42501`) e o segundo voto (`23505`) |
+
+---
+
 ## ✍️ Atualização 2026-10-06 — Correção das discursivas e notas da média final do aluno
 
 SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplicado no Supabase em

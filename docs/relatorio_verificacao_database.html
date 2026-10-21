@@ -679,6 +679,21 @@
           <td>Função</td>
           <td>security definer: atividades ligadas às equipes da matéria em que o aluno logado é membro, com a marca de líder</td>
         </tr>
+        <tr>
+          <td>votacao_equipe / voto_equipe</td>
+          <td>Tabela</td>
+          <td>Votação das equipes (#333, database/2026-10-21-votacao-equipes.sql): uma votação por atividade + equipe; 1 voto (1 a 10) por aluno; RLS sem políticas, acesso só pelas funções</td>
+        </tr>
+        <tr>
+          <td>abrir_votacao_equipe / votacoes_equipes_professor</td>
+          <td>Função</td>
+          <td>security definer: o professor da turma abre/fecha e vê votos e média</td>
+        </tr>
+        <tr>
+          <td>votacoes_abertas_aluno / votar_equipe</td>
+          <td>Função</td>
+          <td>security definer: o aluno da turma vê as votações abertas (fora da própria equipe) e vota uma vez; sem ver votos nem média</td>
+        </tr>
       </table>
     </div>
 
