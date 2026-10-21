@@ -42,14 +42,23 @@ CEPLAS TARDE 135081) respondidas por pesquisa na internet, além dos slides.
 - **Modelo:** só Opus 5.5+ ou Fable, **só Claude Code local** — nunca outro
 - **Descrição:** ciclo de seeds (`seeds.md`), autorização permanente.
 
-## Mudança de 2026-10-21 13:40 — vira discursiva em equipe (30 questões, mínimo de 5 linhas)
+## Mudança de 2026-10-21 13:22 — vira discursiva em equipe (30 questões, mínimo de 5 linhas)
 
 **Pedido:** "SOMENTE O ALUNO LIDER DEVE RESPONDER NA EQUIPE, E ESTA ETAPA É DO TIPO DISCURSIVA, OS
 DEMAIS ALUNOS DEVEM FAZER A PESQUISA E SUGERIR AS RESPOSTAS, AUMENTE PRA NO MINIMO 30 QUESTOES
 DISCURSIVAS E TODAS PESQUISAVEIS NA INETERNET E COBRE NELAS *MINIMO DE 5 LINHAS NAS RESPOSTAS*,
 NAO DEIXE ENTREGAR SE NAO TIVER ISSO"
 
-Tarefa grande (banco + código + várias partes): plano abaixo, aguardando o "sim" do usuário.
+Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pelo usuário em
+2026-10-21 13:24.
+
+### Decisões da mudança
+
+| Quando | Decisão | Quem |
+|---|---|---|
+| 2026-10-21 13:24 | Plano aprovado ("Sim, aprovo") | Usuário |
+| 2026-10-21 13:24 | 5 linhas = **350 caracteres** por resposta (70 por linha, mesma medida do campo do tamanho), iguais no PC e no celular | Usuário |
+| 2026-10-21 13:24 | "Só o líder responde" = recurso de equipe que já existe (atividade ligada às equipes; o líder 👑 responde e confirma; sem bloqueio novo para os integrantes) | Usuário |
 
 ### Escopo (plano proposto)
 
