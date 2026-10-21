@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | #326.5 ([455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md)) — aplicar o seed pelo conector (exceção pedida pelo usuário) | 🔄 Ativa | 2026-10-21 13:32 |
+| nuvem · elegant-planck-ul8ac1 | #326 concluída ([455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md)) — PESQUISA INTERNET no banco (id 166, Aula 10) | ⏹️ Encerrada | 2026-10-21 13:36 |
 
 ## 📌 Tarefas
 
@@ -1443,8 +1443,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
-| #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | 🔄 Falta o banco (#326.5) | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
-| #326.5 | Banco: aplicar o seed e ligar às equipes da 135081 (só local) · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #326.3, #326.4 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:32) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 
 
 ## Escopo
@@ -1990,6 +1988,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| #326: ligar a atividade 166 (PESQUISA INTERNET) às equipes da turma 135081 e liberar | A turma ainda não tem equipes no banco; o professor cria as equipes e o líder no modal 👥 Equipes | Antes da aula da atividade |
 | #85: as páginas `ATIVIDADE-EXCEL-29-09-2026.html` e `ATIVIDADE-EXCEL-01-10-2026.html` de Análise de Dados não têm o "📄 Exportar Meu Gabarito" | Usam `assets/js/atividade-pratica-excel.js`, que não tem o recurso (exige adaptador novo) ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) | Quando o usuário pedir |
 | #290: `indice-atividades-bloqueio.js` (`obterCaminhoBloqueio`) compara o caminho sem cortar em `/MATERIAIS/`: com o site aberto numa pasta (servidor local), o 🔒 da atividade bloqueada não aparece ao aluno (o RLS e a página da atividade continuam barrando) | Fora do bug da duplicata; trocar pela `obterCaminhoHtml`, que já corta ([419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md)) | ✅ Feita na #290.2 (2026-10-19 07:45) |
 | Artigos do HTML sem aula na tabela `aulas` (ex.: "Avaliação Prática" e "Média Final" do ITIC) deixaram de aparecer nos índices (#272) | Regra 15: só a tabela `aulas` cria card; para voltarem, cadastrar como aula no banco e ligar a atividade pelo `aula_id` | Quando o professor quiser |

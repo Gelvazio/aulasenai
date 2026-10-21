@@ -150,10 +150,19 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
 
 ### #326.5 — Aplicar o seed e ligar às equipes da 135081
 
-**Próximo passo:** aplicar o seed pelo conector do Supabase, conferir e ligar às equipes.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Decisão (2026-10-21 13:32, usuário: "APLIQUE O SEED AQUI"):** exceção à regra "banco só pelo
   Claude Code local" (`multiplas-ias.md`): esta frente de nuvem aplica o seed pelo conector do
   Supabase, só nesta subtarefa.
+- **Entrega:** seed `2026-10-21-atividade-pesquisa-internet-seed-atividades.sql` aplicado em 1 lote
+  (`scripts/seeds/dividir_seed.py`): atividade **166** na aula 30 (Aula 10 da INTRODUCAO TIC),
+  30 tópicos, `ativo = false`; registrado CONCLUÍDO no `database/SEEDS-APLICADOS.md`.
+- **Verificação:** `comparar_md5.py` → 1 de 1 batem (md5 cd83917b…); consulta antes mostrou a aula
+  30 e nenhuma atividade com a página.
+- **Equipes:** a turma 135081 **não tem equipes cadastradas** no banco (consulta em `equipe`
+  vazia), então não houve o que ligar. 👀 O professor cria as equipes e o líder no modal 👥
+  Equipes e liga a atividade 166 a elas ("Ligar TODAS as equipes da turma a uma atividade"); depois
+  libera a atividade no índice.

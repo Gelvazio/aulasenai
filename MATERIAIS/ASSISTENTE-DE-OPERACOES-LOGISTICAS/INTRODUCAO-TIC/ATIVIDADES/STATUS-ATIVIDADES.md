@@ -38,7 +38,7 @@
 | `ATIVIDADE-PRATICA-AULA-04.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.html` | 20 questões discursivas da Aula 04 (atividade de sala de 16/10/2026: as 12 objetivas da página avulsa da #189 reescritas como discursivas + as situações práticas; correção com IA + professor) — fonte e padrão de resposta em `CONTEUDO/` | ✅ id 152 (aula 24) — 20 tópicos, 10 pontos; nasce bloqueada (#191) |
 | `ATIVIDADE-PRATICA-AULA-05.html` | discursiva/prática/composição | ✅ bloqueada |
-| `ATIVIDADE-PESQUISA-INTERNET.html` | "PESQUISA INTERNET": 30 questões discursivas em equipe (3 por aula, 01 a 10), todas respondidas por pesquisa na internet; só o líder 👑 responde; mínimo de 350 caracteres (5 linhas) por resposta — fonte e padrão de resposta em `CONTEUDO/` (#326) | ⬜ seed PENDENTE (aula 10; nasce bloqueada; aplicar pela frente local) |
+| `ATIVIDADE-PESQUISA-INTERNET.html` | "PESQUISA INTERNET": 30 questões discursivas em equipe (3 por aula, 01 a 10), todas respondidas por pesquisa na internet; só o líder 👑 responde; mínimo de 350 caracteres (5 linhas) por resposta — fonte e padrão de resposta em `CONTEUDO/` (#326) | ✅ id 166 (aula 10, id 30) — 30 tópicos; nasce bloqueada; ligar às equipes da 135081 quando forem criadas |
 | `ATIVIDADE-PRATICA-AULA-06.html` | discursiva/prática/composição | ✅ no banco (id 102, nasce bloqueada; seed aplicado e conferido em 2026-10-09 19:30) |
 | `AVALIACAO-MEDIA-FINAL.html` | discursiva/prática/composição | ⬜ sem cadastro |
 | `AVALIACAO-OBJETIVA-01.html` | 50 questões objetivas | ✅ bloqueada |
