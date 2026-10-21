@@ -79,12 +79,19 @@
 
 ### #319.4 — Páginas do aluno (objetiva e discursiva): nota pela função nova
 
-**Próximo passo:** esperar a #319.2.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — `respostas-atividade.js` e `avaliacao-discursiva.js`
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** nota mostrada ao aluno igual à do Progresso; `node --check` ok.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:33 — executor-medio (Sonnet): `respostas-atividade-banco.js` (RPC
+  `questoes_para_nota`), `respostas-atividade.js` (nota da objetiva pela quantidade; entrega, "faltam N"
+  e "só até o mínimo" seguem o mínimo), `respostas-atividade-professor.js` (relatório lê
+  `questoes_nota_aluno`), `finalizar-atividade-professor.js` (nota lançada da discursiva pela RPC
+  nova). `avaliacao-discursiva.js` e `respostas-discursivas-banco.js` usam o mínimo só para entregar
+  (sem mudança).
+- **Verificação:** `node --check` nos 4 arquivos; diff revisado pelo líder (linha > 100 corrigida).
+  Conferir na tela: aluno com quantidade definida → nota "sobre N questões".
 
 ### #319.5 — Documentação (`docs/regras/atividades.md`, `docs/database.md`)
 

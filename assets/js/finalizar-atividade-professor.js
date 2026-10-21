@@ -4,8 +4,9 @@
 // (botões Certa / Meia certa / Errada). A alternativa ainda sem nota do professor que a IA marcou
 // como CERTA (nota da IA cheia) é confirmada com a nota da IA; as demais (meia certa, errada ou
 // sem nota da IA) o professor é obrigado a corrigir (tarefa #154). Então lança a nota:
-// soma das notas confirmadas ÷ pontos da prova × 10 × (total de questões ÷ mínimo do aluno),
-// no máximo 10 — a mesma conta da função notas_media_final, que leva a nota à média final.
+// soma das notas confirmadas ÷ pontos da prova × 10 × (total de questões ÷ quantidade para a nota
+// do aluno: questoes_para_nota, senão o mínimo), no máximo 10 — a mesma conta da função
+// notas_media_final, que leva a nota à média final.
 // As notas confirmadas já são definitivas (trigger correcao_discursiva_validar).
 // Prova já corrigida (entregue e com a nota do professor em todas as respondidas, mesma regra de
 // assets/js/corrigidos-discursiva.js): no lugar do botão, só a mensagem "Prova Já Corrigida!"
@@ -17,7 +18,7 @@
 const CLASSE_FINALIZAR = 'finalizar-atividade';
 const SELETOR_DESTINO_FINALIZAR = '.content-section';
 const SELETOR_ENTREGA_FINALIZAR = '.entrega-discursiva';
-const ROTA_MINIMO_FINALIZAR = '/rest/v1/rpc/minimo_questoes_para_entregar';
+const ROTA_QUESTOES_NOTA_FINALIZAR = '/rest/v1/rpc/questoes_para_nota';
 const NOTA_MAXIMA_FINALIZAR = 10;
 const TITULO_POPUP_CONFIRMAR_CORRECAO = 'Confirmar Correção';
 const TEXTO_BOTAO_CONFIRMAR_CORRECAO = '✅ Confirmar Correção';
@@ -34,14 +35,15 @@ function limparFinalizarAtividade() {
 }
 
 /**
- * Lê o mínimo de questões do aluno (função do banco).
+ * Lê a quantidade de questões que conta para a nota do aluno (função questoes_para_nota: a
+ * definida pelo professor, senão o mínimo para entregar).
  * @param {number} atividadeId - Id da atividade.
  * @param {string} alunoId - Id do aluno.
- * @returns {Promise<number>} Mínimo de questões.
+ * @returns {Promise<number>} Quantidade de questões para a nota.
  * @throws {Error} Se o banco recusar.
  */
-async function lerMinimoParaFinalizar(atividadeId, alunoId) {
-    const resposta = await fetch(SUPABASE.URL + ROTA_MINIMO_FINALIZAR, {
+async function lerQuestoesNotaParaFinalizar(atividadeId, alunoId) {
+    const resposta = await fetch(SUPABASE.URL + ROTA_QUESTOES_NOTA_FINALIZAR, {
         method: 'POST', headers: await sbH(),
         body: JSON.stringify({ p_atividade: atividadeId, p_aluno: alunoId }),
     });
@@ -53,19 +55,19 @@ async function lerMinimoParaFinalizar(atividadeId, alunoId) {
  * Lê do banco tudo o que a nota do aluno precisa.
  * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<Object>} topicos, respostas, correcoes, entregue e minimo.
+ * @returns {Promise<Object>} topicos, respostas, correcoes, entregue e questoesNota.
  */
 async function lerDadosParaFinalizar(aluno, atividadeId) {
     const filtro = 'atividade_id=eq.' + atividadeId;
     const doAluno = filtro + '&aluno_id=eq.' + aluno.alunoId + '&tentativa=eq.' + aluno.tentativa;
-    const [topicos, respostas, correcoes, entregas, minimo] = await Promise.all([
+    const [topicos, respostas, correcoes, entregas, questoesNota] = await Promise.all([
         sbGet('topico_discursivo', 'select=item,topico,pontos&' + filtro),
         sbGet('resposta_discursiva', 'select=item,topico,texto&' + doAluno),
         sbGet('correcao_discursiva', 'select=item,topico,nota_ia,nota_professor&' + doAluno),
         sbGet('entrega_atividade', 'select=entregue_em&' + doAluno),
-        lerMinimoParaFinalizar(atividadeId, aluno.alunoId),
+        lerQuestoesNotaParaFinalizar(atividadeId, aluno.alunoId),
     ]);
-    return { topicos, respostas, correcoes, entregue: entregas.length > 0, minimo };
+    return { topicos, respostas, correcoes, entregue: entregas.length > 0, questoesNota };
 }
 
 /**
@@ -114,7 +116,8 @@ async function confirmarCertasDaIa(certas, contexto) {
 /**
  * Calcula a nota do aluno a partir das notas confirmadas pelo professor.
  * @param {Object} dados - Resultado de lerDadosParaFinalizar.
- * @returns {Object} nota, pendentes, certas, meias, erradas, emBranco, minimo, totalQuestoes.
+ * @returns {Object} nota, pendentes, certas, meias, erradas, emBranco, questoesNota,
+ *     totalQuestoes.
  */
 function calcularNotaDoAluno(dados) {
     const chave = (linha) => linha.item + '|' + linha.topico;
@@ -137,8 +140,10 @@ function calcularNotaDoAluno(dados) {
     const totalPontos = [...pontos.values()].reduce((soma, valor) => soma + valor, 0);
     const totalQuestoes = new Set(dados.topicos.map((linha) => linha.item)).size;
     const nota = Math.min(NOTA_MAXIMA_FINALIZAR,
-        contagem.soma / totalPontos * NOTA_MAXIMA_FINALIZAR * totalQuestoes / dados.minimo);
-    return { ...contagem, nota, totalQuestoes, minimo: dados.minimo,
+        contagem.soma / totalPontos * NOTA_MAXIMA_FINALIZAR * totalQuestoes /
+            dados.questoesNota);
+    return { ...contagem, nota, totalQuestoes,
+        questoesNota: dados.questoesNota,
         emBranco: dados.topicos.length - respondidas.size, respondidas: respondidas.size };
 }
 
@@ -172,8 +177,8 @@ function motivoParaNaoFinalizar(dados, resultado) {
  * @param {HTMLElement} situacao - Texto embaixo do botão.
  */
 async function mostrarNotaLancada(resultado, situacao) {
-    const texto = '🎓 Nota lançada: ' + formatarNotaFinalizar(resultado.nota) + ' (sobre o ' +
-        'mínimo de ' + resultado.minimo + ' de ' + resultado.totalQuestoes + ' questões, ' +
+    const texto = '🎓 Nota lançada: ' + formatarNotaFinalizar(resultado.nota) + ' (sobre ' +
+        resultado.questoesNota + ' de ' + resultado.totalQuestoes + ' questões, ' +
         'máximo 10). Alternativas: ' + resultado.certas + ' certa(s), ' + resultado.meias +
         ' meia(s) certa(s), ' + resultado.erradas + ' errada(s); ' + resultado.emBranco +
         ' em branco (não contam).';

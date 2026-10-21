@@ -2,7 +2,8 @@
 // lista os alunos que responderam, com tentativa, nota e data/hora, e o botão de liberar nova
 // tentativa ao lado de cada aluno. Depende de respostas-atividade.js (criarElemento, popup,
 // calcularNota, formatarNota...) e do provedor do banco (enviarAoBanco). O limite de tentativas
-// vem do banco (atividade.max_tentativas) e chega por parâmetro.
+// vem do banco (atividade.max_tentativas) e chega por parâmetro. A nota de cada linha usa a
+// quantidade para a nota (questoes_nota_aluno, senão o mínimo); só a nota, não a entrega.
 // Os dados vêm da função resumo_tentativas_atividade (só o professor chama; o gabarito não sai do
 // banco). Plano: docs/regra-3-tentativas-atividade.md.
 
@@ -75,24 +76,29 @@ async function acrescentarAberturas(linhas, atividadeId) {
 }
 
 /**
- * Acrescenta a cada linha o mínimo de questões do aluno (o dele, senão o da atividade, senão
- * todas; no máximo o total), para a nota valer sobre o mínimo (máximo 10), como no banco.
- * Sem conseguir ler, a linha fica sem mínimo e a nota continua sobre o total.
+ * Acrescenta a cada linha a quantidade de questões que conta para a NOTA do aluno (a definida
+ * pelo professor em questoes_nota_aluno, senão o mínimo dele, senão o da atividade, senão todas;
+ * no máximo o total), como a função questoes_para_nota do banco. Sem conseguir ler, a linha fica
+ * sem quantidade e a nota continua sobre o total.
  * @param {Object[]} linhas - Linhas do resumo.
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<Object[]>} Linhas com minimo.
+ * @returns {Promise<Object[]>} Linhas com questoesNota.
  */
-async function acrescentarMinimos(linhas, atividadeId) {
+async function acrescentarQuestoesNota(linhas, atividadeId) {
     try {
-        const [minimos, atividades] = await Promise.all([
-            sbGet('minimo_questoes_aluno', 'select=aluno_id,minimo&atividade_id=eq.' + atividadeId),
+        const filtro = 'atividade_id=eq.' + atividadeId;
+        const [minimos, atividades, definidas] = await Promise.all([
+            sbGet('minimo_questoes_aluno', 'select=aluno_id,minimo&' + filtro),
             sbGet('atividade', 'select=minimo_questoes_entrega&id=eq.' + atividadeId),
+            sbGet('questoes_nota_aluno', 'select=aluno_id,quantidade&' + filtro),
         ]);
-        const porAluno = new Map(minimos.map((linha) => [linha.aluno_id, linha.minimo]));
+        const minimoPorAluno = new Map(minimos.map((linha) => [linha.aluno_id, linha.minimo]));
+        const notaPorAluno = new Map(definidas.map((linha) => [linha.aluno_id, linha.quantidade]));
         const padrao = atividades[0]?.minimo_questoes_entrega || null;
         return linhas.map((linha) => {
-            const minimo = porAluno.get(linha.aluno_id) || padrao || linha.total;
-            return { ...linha, minimo: Math.min(minimo, linha.total) };
+            const quantidade = notaPorAluno.get(linha.aluno_id) ||
+                minimoPorAluno.get(linha.aluno_id) || padrao || linha.total;
+            return { ...linha, questoesNota: Math.min(quantidade, linha.total) };
         });
     } catch (erro) {
         return linhas;
@@ -236,7 +242,7 @@ function acrescentarEntregaProfessor(celula, contexto) {
 function montarLinhaRelatorio(contexto) {
     const { linha, maximo } = contexto;
     const nota = calcularNota({ acertos: linha.acertos, total: linha.total,
-        minimo: linha.minimo });
+        questoesNota: linha.questoesNota });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
     tr.append(
@@ -261,7 +267,7 @@ function montarLinhaRelatorio(contexto) {
 function calcularNotaFinalAluno(tentativas) {
     const notas = tentativas.filter((linha) => linha.entregue_em)
         .map((linha) => calcularNota({ acertos: linha.acertos, total: linha.total,
-            minimo: linha.minimo }));
+            questoesNota: linha.questoesNota }));
     return notas.length ? Math.max(...notas) : null;
 }
 
@@ -964,7 +970,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
         const dadosTurmas = await buscarDadosTurmas();
-        const tentativas = await acrescentarMinimos(await buscarResumoTentativas(atividadeId),
+        const tentativas = await acrescentarQuestoesNota(await buscarResumoTentativas(atividadeId),
             atividadeId);
         const linhas = await acrescentarAlunosSemResposta(
             await acrescentarAberturas(tentativas, atividadeId), atividadeId, dadosTurmas);

@@ -2,6 +2,8 @@
 // Ler a atividade é livre; o login (Supabase Auth) só é pedido ao marcar uma alternativa.
 // Respostas: tabela resposta_atividade (upsert por aluno/atividade/tentativa/item).
 // Entrega: tabela entrega_atividade (uma por tentativa).
+// Mínimo para ENTREGAR: minimo_questoes_para_entregar. Quantidade para a NOTA (#319):
+// questoes_para_nota (quantidade do aluno, senão o mínimo).
 // Tentativas: o limite vem do banco (atividade.max_tentativas); nova tentativa só o professor libera
 // (tabela liberacao_atividade). Plano: docs/regra-3-tentativas-atividade.md.
 // O gabarito NUNCA vem para a página do aluno (tabela gabarito só é lida pelo professor).
@@ -13,6 +15,7 @@ const ROTA_RESPOSTAS =
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
 const ROTA_MINIMO_OBJETIVA = '/rest/v1/rpc/minimo_questoes_para_entregar';
+const ROTA_QUESTOES_NOTA = '/rest/v1/rpc/questoes_para_nota';
 const PERFIL_PROFESSOR_PAGINA = 'PROFESSOR';
 const MSG_PROFESSOR_NAO_ASSINA = 'O professor não assina atividades: só os alunos respondem. ' +
     'Aqui você acompanha as respostas e ';
@@ -109,6 +112,28 @@ async function lerMinimoQuestoesObjetiva(sessao) {
         return estaValido ? minimo : total;
     } catch (erro) {
         return total;
+    }
+}
+
+/**
+ * Lê a quantidade de questões que conta para a NOTA do aluno (função questoes_para_nota: a
+ * quantidade definida pelo professor, senão o mínimo para entregar). Só a nota usa este valor;
+ * a entrega continua com o mínimo. Falha ou valor fora de 1 ao total vale como o mínimo.
+ * @param {Object} sessao - Sessão do provedor (atividade e usuário).
+ * @param {number} minimo - Mínimo para entregar (plano B).
+ * @returns {Promise<number>} Quantidade de questões para a nota.
+ */
+async function lerQuestoesParaNotaObjetiva(sessao, minimo) {
+    const total = Number(sessao.atividade.total_itens || 0);
+    try {
+        const corpo = { p_atividade: sessao.atividade.id, p_aluno: sessao.usuario.id };
+        const resposta = await enviarAoBanco(ROTA_QUESTOES_NOTA, corpo, 'return=representation');
+        if (!resposta.ok) return minimo;
+        const quantidade = Number(await resposta.json());
+        const estaValido = Number.isInteger(quantidade) && quantidade >= 1 && quantidade <= total;
+        return estaValido ? quantidade : minimo;
+    } catch (erro) {
+        return minimo;
     }
 }
 
@@ -257,10 +282,12 @@ async function carregarDoBanco(sessao) {
         sessao.ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_PAGINA;
         sessao.maximoTentativas = sessao.atividade.max_tentativas;
         sessao.minimoQuestoes = await lerMinimoQuestoesObjetiva(sessao);
+        const questoesNota = await lerQuestoesParaNotaObjetiva(sessao, sessao.minimoQuestoes);
         return {
             disponivel: true, logado: true, ...identificacao, ...doAluno, resultado,
             ehProfessor: sessao.ehProfessor, atividadeId: sessao.atividade.id,
             maximoTentativas: sessao.maximoTentativas, minimoQuestoes: sessao.minimoQuestoes,
+            questoesNota,
         };
     } catch (erro) {
         console.warn('Banco indisponível:', erro.message);

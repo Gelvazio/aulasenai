@@ -3,6 +3,7 @@
 // REGRA: as alternativas são salvas SOMENTE no banco (Supabase) — nada de localStorage.
 // Quem grava é o provedor do banco (assets/js/respostas-atividade-banco.js): ler é livre e o
 // login só é pedido ao marcar. Sem banco disponível, a marcação fica bloqueada com aviso.
+// Nota = acertos sobre estado.questoesNota; entrega (bloqueio, faltam N) usa estado.minimo.
 // Dados da página: data-uc, data-uc-curta, data-docente, data-total, data-turma (opcional).
 
 const RAIZ_SCRIPTS = document.currentScript
@@ -99,9 +100,9 @@ function montarMensagemEntrega(estado, resultado) {
     const { tentativa, maximoTentativas } = estado;
     const orientacao = tentativa >= maximoTentativas
         ? montarMsgUltimaTentativa(maximoTentativas) : termosTentativa().pedirNova;
-    const linhaNota = resultado
-        ? ['Sua nota: ' + formatarNota(calcularNota({ ...resultado, minimo: estado.minimo })) +
-            '.', ''] : [];
+    const nota = resultado
+        ? calcularNota({ ...resultado, questoesNota: estado.questoesNota }) : 0;
+    const linhaNota = resultado ? ['Sua nota: ' + formatarNota(nota) + '.', ''] : [];
     return ['Atividade entregue!',
         'Suas respostas foram gravadas (' +
             termosTentativa().rotulo(tentativa, maximoTentativas) + ').',
@@ -127,14 +128,15 @@ function montarMensagemConfirmarEntrega(estado) {
 }
 
 /**
- * Calcula a nota (0 a 10) pelos acertos sobre o mínimo de questões do aluno (sem mínimo, sobre
- * o total); a nota máxima é sempre 10. A comparação com o 7 usa o valor exato.
- * @param {{acertos: number, total: number, minimo: number}} resultado - Acertos, total de itens
- *     e mínimo de questões do aluno (opcional).
+ * Calcula a nota (0 a 10) pelos acertos sobre a quantidade de questões que conta para a nota
+ * do aluno (questoes_para_nota; sem ela, sobre o total); a nota máxima é sempre 10. A
+ * comparação com o 7 usa o valor exato.
+ * @param {{acertos: number, total: number, questoesNota: number}} resultado - Acertos, total de
+ *     itens e quantidade de questões para a nota (opcional).
  * @returns {number} Nota exata (sem arredondar), no máximo 10.
  */
 function calcularNota(resultado) {
-    const divisor = resultado.minimo || resultado.total;
+    const divisor = resultado.questoesNota || resultado.total;
     return Math.min(NOTA_MAXIMA, (resultado.acertos / divisor) * NOTA_MAXIMA);
 }
 
@@ -145,6 +147,15 @@ function calcularNota(resultado) {
  */
 function temMinimoMenorQueTotal(estado) {
     return estado.minimo < estado.itens.length;
+}
+
+/**
+ * Indica se a nota é calculada sobre menos questões que o total da atividade.
+ * @param {Object} estado - Estado da página (questoesNota e itens).
+ * @returns {boolean} true se a quantidade para a nota é menor que o total.
+ */
+function temNotaSobreMenosQuestoes(estado) {
+    return estado.questoesNota < estado.itens.length;
 }
 
 /**
@@ -165,10 +176,10 @@ function mostrarResultadoNoInicio(estado, resultado) {
     if (!resultado) return;
     const secao = document.querySelector('.content-section');
     secao.querySelector('.' + CLASSE_RESULTADO)?.remove();
-    const nota = calcularNota({ ...resultado, minimo: estado.minimo });
+    const nota = calcularNota({ ...resultado, questoesNota: estado.questoesNota });
     const atingiu = nota >= NOTA_MINIMA_APROVACAO;
-    const sobreMinimo = temMinimoMenorQueTotal(estado)
-        ? ' Nota sobre o mínimo de ' + estado.minimo + ' questões (máximo 10).' : '';
+    const sobreMinimo = temNotaSobreMenosQuestoes(estado)
+        ? ' Nota sobre ' + estado.questoesNota + ' questões (máximo 10).' : '';
     const bloco = criarElemento('div', 'aula-card ' + CLASSE_RESULTADO + ' ' + (atingiu
         ? CLASSE_RESULTADO_APROVADO : CLASSE_RESULTADO_REPROVADO));
     bloco.setAttribute('role', 'status');
@@ -740,13 +751,13 @@ async function abrirCorrecaoDoAluno(estado, carregado) {
 
 /**
  * Descreve a nota da tentativa entregue para o PDF (ex.: "8,0 (40 acertos em 50 questões)").
- * @param {Object} estado - Estado da página (minimo).
+ * @param {Object} estado - Estado da página (questoesNota).
  * @param {{acertos: number, total: number}|null} resultado - Resultado da tentativa.
  * @returns {string} Nota descrita (vazia sem resultado).
  */
 function descreverNotaObjetiva(estado, resultado) {
     if (!resultado) return '';
-    const nota = calcularNota({ ...resultado, minimo: estado.minimo });
+    const nota = calcularNota({ ...resultado, questoesNota: estado.questoesNota });
     return formatarNota(nota) + ' (' + resultado.acertos + ' acertos em ' + resultado.total +
         ' questões)';
 }
@@ -857,6 +868,8 @@ async function iniciarRespostasAtividade() {
         entregue: Boolean(carregado.entregueEm),
     };
     estado.minimo = Math.min(carregado.minimoQuestoes || estado.itens.length, estado.itens.length);
+    // Nota: questoes_para_nota (quantidade do aluno); entrega: estado.minimo. Falha = mínimo.
+    estado.questoesNota = Math.min(carregado.questoesNota || estado.minimo, estado.itens.length);
     estado.atualizarFolha = () => atualizarFolha(estado);
 
     const identificacao = provedor.montarIdentificacao();
