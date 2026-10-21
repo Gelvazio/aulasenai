@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #318 entregue | ⏹️ Encerrada | 2026-10-21 09:43 |
+| nuvem · dreamy-faraday-7x7tud | #319.1 ([448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | 🔄 Ativa | 2026-10-21 09:43 |
 
 ## 📌 Tarefas
 
@@ -1970,7 +1970,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | #249: o card "AVALIAÇÃO 02" da ITIC aparece como "AULA 10" (o link fixo dele é da atividade 20, agora da aula 10); a atividade aparece nos dois cards | Identificação dos cards vem da #213; o mesmo caso da #221 foi cancelado pelo usuário em 2026-10-17 | Só se o usuário pedir |
 | #31: o PDF dos slides aberto pelo endereço direto continua acessível ao aluno | Arquivo estático do site; fechar exige servir os PDFs pelo Supabase Storage privado (tarefa grande, todas as matérias) | Quando o usuário pedir |
 | #319-5601f0dd-d00a-42de-af88-ff8d648479e1 | Campo "Quantidade Questão Considerar" por aluno (nota) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.1 | Levantar o funcionamento atual e escrever o plano (para aprovação) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.1 | Levantar o funcionamento atual e escrever o plano (para aprovação) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-21 10:15) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 | #29: prompt da rotina "Tarefa Aulas Senai" no claude.ai ainda fala da fila `tasks` do banco | A rotina está desligada e o prompt fica fora do repositório | Antes de ligar a rotina (item 140.6) |
 | #29: rotina de nuvem × "banco só pelo Claude Code local" (log em `agendamento_tarefa_logs` e cópia das regras da #26) | Decisão do usuário (`docs/regras/tarefas-agendadas.md` §3) | Antes de ligar a rotina |
 | #29: a #26 (regras no banco) é uma cópia das regras — decidir se continua com a fonte única nos arquivos | Tarefa reservada por outra frente | Quando o usuário decidir |
