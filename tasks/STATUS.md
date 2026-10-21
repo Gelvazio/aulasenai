@@ -1440,7 +1440,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #324.3 | Card e modal da aula: só as atividades da turma do combo; excluir só nela · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.5 | Documentação do vínculo atividade × turma · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #324.3, #324.4 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
-
+| #327-51c88f54-bb47-4189-a7ab-18f95ac15103 | "Exportar Meu Gabarito" com o nome dos integrantes da equipe (atividade em equipe) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [456-51c88f54](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) | — |
+| #327.1 | Levantamento e plano: integrantes da equipe no "Exportar Meu Gabarito" · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [456-51c88f54](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) | — |
+| #327.2 | Nomes dos integrantes no arquivo do "Exportar Meu Gabarito" · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #327.1 | ⬜ Pendente | — | [456-51c88f54](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) | — |
+| #327.3 | Documentação dos integrantes no "Exportar Meu Gabarito" · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #327.2 | ⬜ Pendente | — | [456-51c88f54](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1933,6 +1936,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 453-e41c087e | Atividade ligada às turmas; excluir só na turma atual (#324, pedida em 2026-10-21) | [ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) |
 | 454-b1b3200c | Cores de alerta e verde dos cards também para o aluno (#325, pedida em 2026-10-21) | [ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) |
 | 455-a6ce0e06 | Atividade objetiva "PESQUISA INTERNET" da ITIC (#326, pedida em 2026-10-21) | [ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) |
+| 456-51c88f54 | "Exportar Meu Gabarito" com os integrantes da equipe (#327, pedida em 2026-10-21) | [ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
