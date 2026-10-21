@@ -166,3 +166,13 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
   vazia), então não houve o que ligar. 👀 O professor cria as equipes e o líder no modal 👥
   Equipes e liga a atividade 166 a elas ("Ligar TODAS as equipes da turma a uma atividade"); depois
   libera a atividade no índice.
+
+#### Correção 2026-10-21 13:45 — atividade 166 não aparecia no card da Aula 10
+
+- **Causa:** o seed do gerador de discursivas grava `ativo = false` ("nasce bloqueada"), mas o
+  card lê só `ativo = eq.true` (`assets/js/indice-aula-repositorio.js`); o bloqueio por turma hoje
+  é a coluna `bloqueio` (botão ON/OFF).
+- **Feito (conector, pedido do usuário "NÃO ESTÁ APARECENDO AQUI AINDA"):** `update atividade set
+  ativo = true, bloqueio = <o mesmo da atividade 20>, data_atividade = '2026-10-21' where id =
+  166` → aparece no card, bloqueada (OFF) em todas as turmas, inclusive a 135081.
+- **Pendência:** o gerador de discursivas continua gravando `ativo = false` nos seeds novos.

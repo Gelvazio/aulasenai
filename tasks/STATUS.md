@@ -1988,6 +1988,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| Gerador de discursivas (`gerar_avaliacao_discursiva.py`) grava `ativo = false` no seed, e a atividade some do card da aula (o card lê só `ativo = true`; o bloqueio por turma é a coluna `bloqueio`) | Visto na #326 (atividade 166, corrigida à mão no banco) | Quando o usuário pedir |
 | #326: ligar a atividade 166 (PESQUISA INTERNET) às equipes da turma 135081 e liberar | A turma ainda não tem equipes no banco; o professor cria as equipes e o líder no modal 👥 Equipes | Antes da aula da atividade |
 | #85: as páginas `ATIVIDADE-EXCEL-29-09-2026.html` e `ATIVIDADE-EXCEL-01-10-2026.html` de Análise de Dados não têm o "📄 Exportar Meu Gabarito" | Usam `assets/js/atividade-pratica-excel.js`, que não tem o recurso (exige adaptador novo) ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) | Quando o usuário pedir |
 | #290: `indice-atividades-bloqueio.js` (`obterCaminhoBloqueio`) compara o caminho sem cortar em `/MATERIAIS/`: com o site aberto numa pasta (servidor local), o 🔒 da atividade bloqueada não aparece ao aluno (o RLS e a página da atividade continuam barrando) | Fora do bug da duplicata; trocar pela `obterCaminhoHtml`, que já corta ([419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md)) | ✅ Feita na #290.2 (2026-10-19 07:45) |
