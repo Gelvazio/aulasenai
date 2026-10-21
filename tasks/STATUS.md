@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #319.2 ([448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | 🔄 Ativa | 2026-10-21 09:43 |
+| nuvem · dreamy-faraday-7x7tud | #319.3 e #319.4 (executores Sonnet) ([448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | 🔄 Ativa | 2026-10-21 09:43 |
 
 ## 📌 Tarefas
 
@@ -1427,9 +1427,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #319-5601f0dd-d00a-42de-af88-ff8d648479e1 | Campo "Quantidade Questão Considerar" por aluno (nota) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.2 | Banco: tabela `questoes_nota_aluno`, função `questoes_para_nota` e Média Final · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #319.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-21 10:25; exceção do usuário para banco) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.3 | Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.4 | Páginas do aluno: nota pela função nova · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.3 | Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | 🔄 Em execução | Claude Code (Sonnet) (nuvem · dreamy-faraday-7x7tud · executor-medio-1) (desde 2026-10-21 10:30) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.4 | Páginas do aluno: nota pela função nova · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #319.2 | 🔄 Em execução | Claude Code (Sonnet) (nuvem · dreamy-faraday-7x7tud · executor-medio-2) (desde 2026-10-21 10:30) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 | #319.5 | Documentação da Quantidade Questão Considerar · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #319.3, #319.4 | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 
 

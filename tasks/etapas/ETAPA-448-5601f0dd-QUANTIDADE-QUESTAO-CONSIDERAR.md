@@ -49,13 +49,23 @@
 
 ### #319.2 — Banco: tabela `questoes_nota_aluno`, função `questoes_para_nota` e Média Final
 
-**Próximo passo:** esperar a aprovação do plano.
+**Próximo passo:** — (entregue). 👀 Revogar o acesso do `anon` no SQL Editor (abaixo).
 
 - **Nível:** PESADO — banco (tabela, RLS, função, seed)
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro
 - **Critérios de aceitação:** seed idempotente CONCLUÍDO (md5); RLS conferida; função devolve o
   mínimo quando não há quantidade.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:30 — `database/2026-10-21-questoes-nota-aluno.sql` aplicado pelo conector (tabela
+  `questoes_nota_aluno` com RLS e 4 políticas, função `questoes_para_nota`, `notas_media_final`
+  usando a função nova). Não é seed de atividade: não entra no `SEEDS-APLICADOS.md`.
+- **Verificação:** consulta no banco: RLS ligada; políticas SELECT/INSERT/UPDATE/DELETE criadas;
+  `notas_media_final` só chama `questoes_para_nota`; sem quantidade, `questoes_para_nota` =
+  `minimo_questoes_para_entregar` em todas as entregas (nota igual à de antes).
+- **👀 Falta (usuário, no SQL Editor):** o conector trava (pede confirmação e estoura o tempo) em
+  `revoke`/`drop`, então estas duas linhas do arquivo não rodaram — rodar no SQL Editor:
+  `revoke all on public.questoes_nota_aluno from anon;` e
+  `revoke all on function public.questoes_para_nota(bigint, uuid) from anon, public;`
+  Sem elas, o `anon` não lê nada da tabela (as políticas são só de `authenticated`).
 
 ### #319.3 — Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade
 
