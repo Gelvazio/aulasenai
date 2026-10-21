@@ -6,10 +6,14 @@
 
 ### #323.1 — Corrigir as alternativas sem nota da IA
 
-**Próximo passo:** 1 agente corrige as questões 22, 25 a 30; o líder confere.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (gravação em `correcao_discursiva`) e gabarito
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro (exceção do usuário para esta sessão)
 - **Critérios de aceitação:** nenhuma alternativa da atividade 36 com resposta e sem `nota_ia_em`
   (exceto respostas salvas depois da rodada); nada já corrigido alterado.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 11:19 — 22 alternativas de 3 alunos gravadas por 1 agente (Opus): 19 Certa,
+  3 Meia certa, 0 Errada; 4 com aviso de texto igual.
+- **Verificação:** consulta do líder: 0 alternativas da atividade 36 sem nota da IA;
+  `correcao_discursiva` com 1.755 linhas (1.417 + 316 + 22); 0 com `nota_professor`, 0 sem
+  `[IA]`, 0 > 300 caracteres, toda nota é pontos/metade/0.
