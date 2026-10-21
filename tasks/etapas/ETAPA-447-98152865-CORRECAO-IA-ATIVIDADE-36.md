@@ -30,6 +30,9 @@
 - 2026-10-21 09:25 — Execução em equipe (pedido do usuário): o líder (Opus 5.5+/Fable) busca a
   lista de pendentes, divide por `aluno_id` em lotes e dispara vários `executor-pesado` em
   paralelo; cada agente devolve as notas do seu lote e o líder grava no banco e confere.
+- 2026-10-21 09:35 — **Exceção à regra "banco só pelo Claude Code local"** (`multiplas-ias.md`),
+  só para a #318.1: o usuário autorizou esta sessão de nuvem a usar o conector do Supabase
+  ("abra 1 excessao e faca a tarefa 318 agora").
 
 ### #318.1 — Corrigir pela IA as alternativas pendentes da atividade 36 (banco)
 
