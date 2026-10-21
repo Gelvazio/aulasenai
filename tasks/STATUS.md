@@ -21,7 +21,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
-| local · main · s34 | #334 concluída ([463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md)) — visualizador leve (3 MB), filtro por data (3 dias) e visual futurista | ⏹️ Encerrada | 2026-10-21 19:20 |
+| local · main · s34 | #335.1 e #335.2 ([464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md)) — tela AO VIVO (executores médio e leve em paralelo) | 🔄 Ativa | 2026-10-21 18:58 |
 | local · main · s33 | #315 e #316 concluídas ([445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md)) — card da aula só com atividades vinculadas no banco | ⏹️ Encerrada | 2026-10-20 16:32 |
 | local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
 | local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
@@ -1455,6 +1455,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
+| **#335-b4de8154-2af7-4357-a5bc-3319de3387e3** | **Tela AO VIVO do quadro de tarefas** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
+| #335.1 | Página live.html que se atualiza sozinha · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s34) (desde 2026-10-21 18:58) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
+| #335.2 | Botão AO VIVO no menu do visualizador · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s34 · agente 2) (desde 2026-10-21 18:58) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1955,6 +1958,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 461-260986a7 | Accordeon na equipe do modal de equipes (#332, pedida em 2026-10-21) | [ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) |
 | 462-6432ca9c | Votação das equipes, nota de 1 a 10 da turma (#333, pedida em 2026-10-21) | [ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) |
 | 463-7687696c | Visualizador de tarefas mais leve e com filtro por data (#334, pedida em 2026-10-21) | [ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) |
+| 464-b4de8154 | Tela AO VIVO do quadro de tarefas (#335, pedida em 2026-10-21) | [ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
