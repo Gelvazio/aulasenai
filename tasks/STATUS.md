@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | #325.1 concluída ([454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md)) — plano das cores dos cards para o aluno; #325.2 livre para Sonnet | ⏹️ Encerrada | 2026-10-21 13:03 |
+| nuvem · elegant-planck-ul8ac1 | #326.1 ([455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md)) — atividade PESQUISA INTERNET da ITIC | 🔄 Ativa | 2026-10-21 13:19 |
 
 ## 📌 Tarefas
 
@@ -1444,7 +1444,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
-| #326.1 | Fonte, página e seed da atividade · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
+| #326.1 | Fonte, página e seed da atividade · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:19) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 | #326.2 | Aplicar o seed no banco (só local) · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #326.1 | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 
 
