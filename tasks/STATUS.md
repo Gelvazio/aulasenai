@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | #325.1 ([454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md)) em execução — levantamento das cores dos cards para o aluno | 🔄 Ativa | 2026-10-21 12:58 |
+| nuvem · elegant-planck-ul8ac1 | #325.1 concluída ([454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md)) — plano das cores dos cards para o aluno; #325.2 livre para Sonnet | ⏹️ Encerrada | 2026-10-21 13:03 |
 
 ## 📌 Tarefas
 
@@ -1441,7 +1441,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #324.5 | Documentação do vínculo atividade × turma · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #324.3, #324.4 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 | #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
-| #325.1 | Levantamento e plano: cores dos cards para o aluno · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 12:58) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 

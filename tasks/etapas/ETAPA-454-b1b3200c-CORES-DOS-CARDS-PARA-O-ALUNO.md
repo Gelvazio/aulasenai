@@ -28,23 +28,30 @@ verde = feito) que o professor vê, para saber o que falta entregar.
 - Arquivos (#325.2): `indice-atividades-feitas.js` e `atividades-crud-modal.js` (carregar o
   CSS das cores também para o aluno); `indice-atividades-pendentes.js` não muda (continua do
   professor).
-- **Em aberto (👀 usuário):** para o aluno, entregue com nota abaixo da mínima conta como
-  pendente (como no professor) ou entregue já basta para ficar verde?
+- Nota abaixo da mínima **não** conta para o aluno: entregou = verde (decisão de 13:03).
+
+### Decisões
+
+| Quando | Decisão | Quem |
+|---|---|---|
+| 2026-10-21 13:03 | Para o aluno, basta ter entregado para a atividade contar como feita (card verde); nota abaixo da mínima não deixa o card vermelho | Usuário ("BASTA TER ENTREGADO PARA FICAR VERDE") |
 
 ### #325.1 — Levantamento e plano: cores dos cards para o aluno
 
-**Próximo passo:** 👀 esperar a resposta do usuário sobre a nota abaixo da mínima; gravar em
-Decisões e entregar a #325.1 (levantamento e plano já escritos acima).
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — o que o aluno vê e os dados dele (RLS, entregas por aluno), na dúvida sobe
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** levantamento (arquivos, regra das cores, dados usados) e plano
   das próximas subtarefas nesta etapa; o aluno vê só a situação **dele**, nunca a de outros.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** levantamento, plano e decisão nesta etapa (commits `f1b002f` e o da entrega) · **Verificação:** arquivos lidos (`indice-atividades-pendentes.js`, `indice-atividades-feitas.js`, `atividades-crud-modal.js`, RPC `atividades_pendentes_turma`); plano sem banco
 
 ### #325.2 — Mostrar as cores de situação nos cards para o aluno
 
-**Próximo passo:** esperar a #325.1.
+**Próximo passo:** livre para Sonnet: no `indice-atividades-feitas.js`, depois de pintar os
+botões, marcar o card com `card-atividade-concluida` se todas as atividades do banco no card
+foram entregues, senão `card-atividade-pendente`; no `atividades-crud-modal.js`, carregar
+`css/indice-atividades-pendentes.css` também para o aluno (sem o script do professor).
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos (reclassificar na #325.1 se precisar de banco)
 - **Modelo:** só Sonnet — nunca outro
