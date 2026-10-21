@@ -107,3 +107,20 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
   (0 sem padrão)"; `grep` sem resposta esperada no HTML; `git check-ignore` não se aplica (Git),
   `.vercelignore` tira `*gabarito*` e `*-seed-atividades.sql` do site; `py_compile` do script do
   seed. Sem navegador.
+
+### #326.4 — Trava "mínimo de 5 linhas (350 caracteres) por resposta" no Entregar
+
+**Próximo passo:** executor-medio implementa; o líder confere, valida e commita.
+
+- **Nível:** MEDIO — código com lógica (JS + gerador), até 3 arquivos
+- **Modelo:** só Sonnet — nunca outro (executor-medio, liderado pelo Opus 5.5 desta frente)
+- **Descrição:** campo opcional da fonte `- **Mínimo de caracteres por resposta:** N` → o
+  gerador de discursivas põe `data-minimo-caracteres="N"` no `<body>` e inclui o módulo novo
+  `assets/js/minimo-caracteres-discursiva.js`, que (só com o atributo) mostra em cada campo
+  quantos caracteres faltam e **bloqueia o Entregar** (clique interceptado antes do fluxo normal)
+  enquanto houver resposta com menos de N caracteres (sem contar espaços nas pontas), com popup
+  listando as questões que faltam. Sem banco. `avaliacao-discursiva.js` já tem 1000 linhas: não
+  crescer.
+- **Critérios de aceitação:** sem o campo na fonte, nada muda nas outras discursivas; com o
+  campo, entregar com qualquer resposta curta é recusado; `node --check` e `py_compile` passam;
+  página PESQUISA INTERNET regerada com o atributo.
