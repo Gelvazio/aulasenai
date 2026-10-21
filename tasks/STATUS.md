@@ -1420,6 +1420,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #314.6 | Tirar o jsPDF do `<head>` das 102 páginas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.5 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.7 | Versão fixa do `supabase-js` (203 páginas + 3 JS) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #314.1 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
 | #314.8 | Medir o depois e documentar · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #314.2, #314.3, #314.4, #314.6, #314.7 | ⬜ Pendente | — | [443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) | — |
+| #317-159d25bf-90c3-4db9-829c-fe8df4a23b79 | Configurar no rules-ai a ferramenta de IA freellmapi (github.com/Gelvazio/freellmapi) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #317.1 | Levantar o que é o freellmapi e como ele se configura · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #317.2 | Plano da configuração no rules-ai, para aprovação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #317.1 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 
 
 ## Escopo
@@ -1903,6 +1908,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 443-cf21e3c9 | Desempenho das páginas de atividade e cache do site (#314, pedida em 2026-10-20 16:40) | [ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md) |
 | 444-58ebb5da | Netlify sem "Pretty URLs" (#315, pedida em 2026-10-20 16:20) | [ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) |
 | 445-50000fd9 | Card da aula só com links de atividades vinculadas no banco (#316, pedida em 2026-10-20 16:24) | [ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) |
+| 446-159d25bf | Configurar no rules-ai a ferramenta de IA freellmapi (#317, pedida em 2026-10-20) | [ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
