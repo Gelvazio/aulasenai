@@ -1455,7 +1455,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #333-6432ca9c-7a14-4b48-825c-517526fde7fd | Votação das equipes: a turma dá nota de 1 a 10 para cada equipe que apresenta (simples) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
-| #333.2 | Banco: tabelas da votação, RLS e regra de voto · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #333.1 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.2 | Banco: tabelas da votação, RLS e regra de voto · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #333.1 | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 15:39; exceção do usuário) | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 | #333.3 | Tela do professor: abrir/fechar a votação e ver as médias · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 | #333.4 | Tela do aluno: card "Votar na Equipe X" (1 a 10) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 | #333.5 | Documentação da votação das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #333.3, #333.4 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
@@ -1973,6 +1973,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-21 15:39 | Exceção à regra "banco só local": a sessão `nuvem · elegant-planck-ul8ac1` aplica o banco da #333.2 pelo conector do Supabase (só essa subtarefa) | Usuário (pergunta respondida) | Votação das equipes para uso rápido em sala |
 | 2026-10-20 10:47 | #299.4 (cena 3D do avatar) reclassificada de PESADO para MEDIO · só Sonnet | Gelvazio (pedido direto) | Decisão do usuário |
 | 2026-10-18 18:55 | A #22 (etapa 137) fica ⛔ **substituída pela #278** (TESTES-DE-FRONTEND-TASK): o que faltava dela (seeds da aula 05, banco e aceite) está na tarefa nova, que faz a matéria inteira no padrão novo | Pedido do usuário nesta data | Mesmo assunto; evitar dois planos abertos |
 | 2026-10-18 16:56 | A #232 (etapa 359) e as 59 subtarefas dela ficam ⛔ **substituídas pela #276** (plano novo, detalhado, com respostas prováveis por discursiva e análise do JEV-AI) | Pedido do usuário | Mesmo assunto; dois planos abertos confundiriam o quadro |

@@ -40,6 +40,7 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 | Quando | Decisão | Quem |
 |---|---|---|
 | 2026-10-21 15:38 | Plano aprovado: escopo acima, versão simples | Usuário ("EXECUTE A 333 AGORA") |
+| 2026-10-21 15:39 | Exceção à regra "banco só pelo Claude Code local" (`multiplas-ias.md`) **só para a #333.2**: esta sessão de nuvem aplica e confere o SQL pelo conector do Supabase | Usuário (resposta à pergunta "Aplicar daqui (exceção)") |
 
 ### #333.1 — Plano e aprovação do usuário
 
@@ -52,10 +53,10 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.2 — Banco: tabelas da votação, RLS e regra de voto
 
-**Próximo passo:** esperar a #333.1.
+**Próximo passo:** escrever o SQL em `database/2026-10-21-votacao-equipes.sql`, aplicar pelo conector e conferir por consulta.
 
 - **Nível:** PESADO — SQL, RLS e aplicação em produção
-- **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro (banco só local)
+- **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro (banco só local; exceção do usuário em 2026-10-21 15:39 para esta sessão de nuvem)
 - **Critérios de aceitação:** SQL idempotente em `database/`, aplicado e registrado; testes por
   consulta: aluno não vota na própria equipe, não vota 2 vezes, não vota com a votação fechada,
   não lê voto de colega; professor lê a média; `docs/database.md` atualizado.
