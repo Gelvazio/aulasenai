@@ -38,6 +38,7 @@
 |---|---|---|
 | 2026-10-21 19:26 | Toda atividade com "Abrir votação"; uma equipe por vez; quantidade editável; sem repetir nem entre equipes; gravar no banco | Usuário |
 | 2026-10-21 19:32 | Acrescentadas as subtarefas #339.6 a #339.10: contador de 2 min, 1 min por pergunta com número piscando, banco de "quem responde" e votos, votação 1–10 sem a equipe, visual futurista | Usuário |
+| 2026-10-21 19:35 | Enunciado da pergunta da vez ao lado do cronômetro (#339.7); todas as 10 sugestões de gamificação viram as subtarefas #339.11 a #339.20 | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -46,7 +47,8 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, telas, verificação) e "sim" do usuário.
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, telas,
+  verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
 ### #339.2 — Banco: tabela do sorteio por equipe e função de sortear sem repetir
@@ -96,7 +98,10 @@
 - **Modelo:** só Sonnet — nunca outro
 - **Descrição:** ao terminar os 2 minutos, começa sozinho 1 minuto para cada pergunta sorteada,
   na ordem; a pergunta da vez aparece com o número piscando; o aluno dela responde falando.
-- **Critérios de aceitação:** troca de pergunta automática; piscar desligado com
+  **Junto do cronômetro aparece o enunciado da pergunta** que o aluno sorteado está respondendo
+  (pedido em 2026-10-21 19:35), na tela de todos; ⛔ nunca a resposta esperada nem os critérios (gabarito).
+- **Critérios de aceitação:** troca de pergunta automática; enunciado da pergunta da vez visível
+  ao lado do cronômetro, sem gabarito; piscar desligado com
   `prefers-reduced-motion`; `node --check` ok.
 - **Entrega:** — · **Verificação:** —
 
@@ -133,9 +138,109 @@
 - **Critérios de aceitação:** sem `style` inline; contraste legível; conferir na tela.
 - **Entrega:** — · **Verificação:** —
 
+### #339.11 — Placar ao vivo das equipes
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (ranking pela média dos votos)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** ranking das equipes pela média dos votos, na tela de todos, atualizando a cada resposta.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.12 — Medalhas: melhor resposta da rodada, resposta relâmpago e equipe completa
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (cálculo a partir dos votos e tempos gravados)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** "Melhor resposta da rodada" (maior média), "Resposta relâmpago" (encerrou bem antes do minuto, se o tempo for gravado) e "Equipe completa" (todos responderam).
+- **Critérios de aceitação:** conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.13 — Roleta animada no sorteio
+
+**Próximo passo:** esperar a #339.3.
+
+- **Nível:** MEDIO — tela com animação
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** os números giram antes de parar nas perguntas sorteadas (desligado com `prefers-reduced-motion`).
+- **Critérios de aceitação:** conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.14 — Pergunta bônus (vale em dobro)
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (marca de bônus no sorteio) e regra de pontuação
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** uma das perguntas sorteadas vale em dobro no placar e aparece com destaque especial.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.15 — "Passa a vez": a equipe troca 1 pergunta por outra sorteada na hora
+
+**Próximo passo:** esperar a #339.2.
+
+- **Nível:** PESADO — banco (função de troca sem repetir, 1 vez por equipe)
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** uma vez por equipe, troca uma pergunta por outra sorteada, respeitando o "sem repetir".
+- **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.16 — Votação às cegas (média só depois que todos votam)
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco/RLS (esconder votos e média até o fim da votação)
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** ninguém vê a média nem os votos dos outros até a votação daquela resposta terminar.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.17 — Comentário rápido no voto vira selo do aluno ("Clara", "Completa", "Criativa")
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (coluna no voto) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** além da nota, o votante toca num elogio; os elogios viram selos do aluno que respondeu.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.18 — Pódio final: 3 melhores equipes e 3 melhores alunos
+
+**Próximo passo:** esperar a #339.11.
+
+- **Nível:** MEDIO — tela com animação a partir do placar
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** no fim da atividade, pódio animado com as 3 melhores equipes e os 3 melhores alunos.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.19 — Som de alerta nos últimos 10 segundos (pode desligar)
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela (áudio + preferência do usuário)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** bip nos últimos 10 segundos de cada contador, com botão para desligar (preferência guardada no navegador).
+- **Critérios de aceitação:** conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.20 — Histórico de desempenho: média dos votos do aluno nas atividades
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (consulta entre atividades com RLS) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** cada aluno vê a própria média de votos ao longo das atividades; o professor vê a da turma.
+- **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
 ### #339.5 — Documentação (`docs/regras/atividades.md`, `docs/database.md`)
 
-**Próximo passo:** esperar a #339.3, #339.4, #339.6, #339.7, #339.9 e #339.10.
+**Próximo passo:** esperar todas as outras subtarefas da #339.
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
