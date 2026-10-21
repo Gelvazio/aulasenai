@@ -1478,7 +1478,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #339.18 | Pódio final: 3 melhores equipes e 3 melhores alunos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.11 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.19 | Som de alerta nos últimos 10 segundos (pode desligar) · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.7 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 | #339.20 | Histórico de desempenho: média dos votos do aluno nas atividades · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #339.8 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
-| #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.3, #339.4, #339.6, #339.7, #339.9 a #339.20 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.21 | Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe (escolha por aula) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable (banco: só local) | #339.2 a #339.4, #339.6 a #339.20 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.21 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

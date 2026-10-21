@@ -39,6 +39,7 @@
 | 2026-10-21 19:26 | Toda atividade com "Abrir votação"; uma equipe por vez; quantidade editável; sem repetir nem entre equipes; gravar no banco | Usuário |
 | 2026-10-21 19:32 | Acrescentadas as subtarefas #339.6 a #339.10: contador de 2 min, 1 min por pergunta com número piscando, banco de "quem responde" e votos, votação 1–10 sem a equipe, visual futurista | Usuário |
 | 2026-10-21 19:35 | Enunciado da pergunta da vez ao lado do cronômetro (#339.7); todas as 10 sugestões de gamificação viram as subtarefas #339.11 a #339.20 | Usuário |
+| 2026-10-21 20:26 | Etapa final #339.21: a atividade gamificada vira **modelo global** para toda atividade discursiva ou prática; em cada aula o professor escolhe usar ou não e se é **com equipe ou sem equipe** | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -47,7 +48,7 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, telas,
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, modelo global #339.21, telas,
   verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
@@ -236,6 +237,26 @@
 - **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
 - **Descrição:** cada aluno vê a própria média de votos ao longo das atividades; o professor vê a da turma.
 - **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.21 — Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe
+
+**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20.
+
+- **Nível:** PESADO — arquitetura (recurso global para todas as matérias), banco (escolha por aula/atividade) e mais de 3 arquivos
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro (parte de banco: só Claude Code local)
+- **Descrição:** tudo o que a #339 criou (sorteio, contadores, pergunta na tela, votação 1–10,
+  gamificação e visual futurista) vira um **modelo único** que funciona em **toda atividade do
+  tipo discursiva ou prática**, de qualquer matéria, sem copiar código por atividade (regra de
+  layout global de `atividades-banco.md`). Em cada aula/atividade o professor **escolhe**:
+  usar ou não a atividade gamificada, e **com equipe** (sorteio por equipe, como na #339) ou
+  **sem equipe** (individual; como fica o sorteio e a votação no modo individual é decidido no
+  plano #339.1). Pedido em 2026-10-21 20:26: "Essa etapa final deve servir como template para todas as outras
+  tarefas que tiver pergunta do tipo discursiva ou prática. Dessa forma, nas aulas eu posso
+  escolher fazer equipe ou não para pegar e passar essa atividade gamificada na aula."
+- **Critérios de aceitação:** ligar/desligar e "com/sem equipe" por aula/atividade, só professor
+  (RLS); funciona em pelo menos uma discursiva e uma prática de matérias diferentes; nenhuma
+  página nova por atividade; `node --check` ok; SQL idempotente aplicado e conferido.
 - **Entrega:** — · **Verificação:** —
 
 ### #339.5 — Documentação (`docs/regras/atividades.md`, `docs/database.md`)
