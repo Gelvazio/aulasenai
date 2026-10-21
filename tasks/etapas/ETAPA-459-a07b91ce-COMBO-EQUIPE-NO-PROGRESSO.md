@@ -64,8 +64,11 @@ quadro) mostra só o progresso do líder da equipe escolhida; "Todas" lista todo
 
 ### #330.3 — Documentação do combo "Equipe" no progresso
 
-**Próximo passo:** documentar o combo "Equipe" em `docs/regras/atividades.md` e `docs/progresso-global-atividades.md`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Haiku · executor-leve) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `docs/regras/atividades.md`, item "Combo \"Equipe\" (2026-10-21, #330)" no
+  Progresso da turma — 2026-10-21 14:39
+- **Verificação:** diff conferido pelo líder (só o item novo; texto bate com o código da #330.2).

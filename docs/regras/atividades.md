@@ -255,6 +255,14 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     Cálculo Nota seguem com a turma inteira). A escolha fica no localStorage (`progresso-turma:
     aluno`); aluno guardado fora da turma escolhida vale como "Todos os alunos". Código:
     `assets/js/filtro-aluno-progresso.js`.
+  - **Combo "Equipe" (2026-10-21, #330):** só em atividade com equipes ligadas
+    (`equipe_atividade`) e, por enquanto, só na `ATIVIDADE-PESQUISA-INTERNET.html` da ITIC (a #331
+    leva para as demais). Opções: "Todas" (lista todos, padrão) e as equipes da turma do combo
+    "Turma" ("Equipe — líder: Fulano"). Escolhida uma equipe, a lista mostra só a linha do líder
+    (membro com `lider = 1`; sem líder marcado, o respondente da equipe). Só leitura, nada é
+    gravado nem guardado no navegador; sem equipe ligada, o combo não aparece. Código:
+    `assets/js/filtro-equipe-progresso.js` (incluído pela página; não mexe no
+    `progresso-turma-global.js`).
   - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
     **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
     desligado (padrão), **7 ou mais** (invertido em 2026-10-14, #146). Aluno sem nota final continua na lista. Lembrado no localStorage
