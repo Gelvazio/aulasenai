@@ -1426,6 +1426,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.2 | Plano da configuração no rules-ai, para aprovação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #317.1 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #320-1ded6f66-de9c-475d-a80c-840485bade1b | Botão "Confirmar" no campo "Quantidade Questão Considerar" | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) | — |
+| #320.1 | Botão "Confirmar" + modal de confirmação antes de gravar · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) | — |
 
 
 ## Escopo
@@ -1912,6 +1914,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 446-159d25bf | Configurar no rules-ai a ferramenta de IA freellmapi (#317, pedida em 2026-10-20) | [ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) |
 | 447-98152865 | Correção pela IA da atividade 36 (#318, pedida em 2026-10-21) | [ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) |
 | 448-5601f0dd | Campo "Quantidade Questão Considerar" por aluno (#319, pedida em 2026-10-21) | [ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
+| 449-1ded6f66 | Botão "Confirmar" no campo "Quantidade Questão Considerar" (#320, pedida em 2026-10-21) | [ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
