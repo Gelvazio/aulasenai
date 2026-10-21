@@ -1448,6 +1448,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #328.1 | Levantar com o usuário os ajustes do app de carros e escrever o plano · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [457-331f3814](etapas/ETAPA-457-331f3814-AJUSTES-APP-DE-CARROS.md) | — |
 | #329-8ee48efd-79d7-480a-95c3-036a13459f8f | Lista de professores fixos além dos favoritos, com Graziela Marconcini Semann Ferreira (reservas SENAI) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [458-8ee48efd](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) | — |
 | #329.1 | Lista de professores fixos com Graziela Marconcini Semann Ferreira · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [458-8ee48efd](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) | — |
+| #330-a07b91ce-511c-4647-8347-5ff04aae37f2 | Combo "Equipe" no quadro de progresso da PESQUISA INTERNET (ITIC): só o líder da equipe; "Todas" = todos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
+| #330.1 | Levantamento e plano: equipes da aula e quadro de progresso · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
+| #330.2 | Combo "Equipe" acima do quadro de progresso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #330.1 | ⬜ Pendente | — | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
+| #330.3 | Documentação do combo "Equipe" no progresso · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #330.2 | ⬜ Pendente | — | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1943,6 +1947,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 456-51c88f54 | "Exportar Meu Gabarito" com os integrantes da equipe (#327, pedida em 2026-10-21) | [ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md](etapas/ETAPA-456-51c88f54-GABARITO-COM-INTEGRANTES-DA-EQUIPE.md) |
 | 457-331f3814 | Ajustes no app de carros (#328, pedida em 2026-10-21) | [ETAPA-457-331f3814-AJUSTES-APP-DE-CARROS.md](etapas/ETAPA-457-331f3814-AJUSTES-APP-DE-CARROS.md) |
 | 458-8ee48efd | Lista de professores fixos (#329, pedida em 2026-10-21) | [ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) |
+| 459-a07b91ce | Combo "Equipe" no quadro de progresso da PESQUISA INTERNET (#330, pedida em 2026-10-21) | [ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
