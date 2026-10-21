@@ -1451,6 +1451,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #331-4f858e55-94bc-4d7a-91c9-4d22962a12aa | Combo "Equipe" no progresso de todas as atividades com equipes | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [460-4f858e55](etapas/ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #331.1 | Carregar o combo "Equipe" em todas as atividades · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [460-4f858e55](etapas/ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md) | — |
 | #331.2 | Documentação: combo "Equipe" em todas as atividades · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #331.1 | ⬜ Pendente | — | [460-4f858e55](etapas/ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md) | — |
+| #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
+| #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
+| #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1948,6 +1951,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 458-8ee48efd | Lista de professores fixos (#329, pedida em 2026-10-21) | [ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) |
 | 459-a07b91ce | Combo "Equipe" no quadro de progresso da PESQUISA INTERNET (#330, pedida em 2026-10-21) | [ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) |
 | 460-4f858e55 | Combo "Equipe" no progresso de todas as atividades com equipes (#331, pedida em 2026-10-21) | [ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md](etapas/ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md) |
+| 461-260986a7 | Accordeon na equipe do modal de equipes (#332, pedida em 2026-10-21) | [ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
