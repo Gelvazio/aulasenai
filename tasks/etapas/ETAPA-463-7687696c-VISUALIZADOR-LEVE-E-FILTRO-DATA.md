@@ -32,3 +32,18 @@ que abre mostrando só os últimos 3 dias.
   limpo.
 - **Critérios de aceitação:** abre só com tarefas pedidas nos últimos 3 dias; mudar as datas
   refiltra; limpar mostra todas; `node --check` ok; conferir na tela (usuário).
+
+### #334.3 — Visual futurista no visualizador
+
+**Próximo passo:** depois da #334.2, executor-medio aplica o visual.
+
+- **Pedido:** "E ADICIONE VISUAL FUTURISTA COM:" + `C:\fontes\rules-ai\prompts\VISUAL-FUTURISTA.md`
+- **Nível:** MEDIO — CSS da página toda (tokens, animações, acessibilidade), até 3 arquivos
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** aplicar em `scripts/regras/visualizador/estilo.css` (e `modelo.html` só para as
+  fontes Orbitron e Share Tech Mono) a tabela "Como aplicar em código" do prompt: fundo escuro
+  `#05030d` com gradientes violeta/magenta, neon ciano/magenta/violeta em tokens `:root`, cartões
+  semitransparentes com `backdrop-filter` e borda neon, grade fina fixa, barra de varredura.
+- **Critérios de aceitação:** regras de acessibilidade do prompt (`prefers-reduced-motion`,
+  contraste, `:focus-visible` magenta, 1 coluna até 720 px); cores só por tokens; regenerado;
+  conferir na tela (usuário).

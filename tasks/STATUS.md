@@ -1455,9 +1455,10 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
-| **#334-7687696c-c42c-4f2a-919e-e381c59a1089** | **Visualizador de tarefas mais leve e com filtro por data** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
+| **#334-7687696c-c42c-4f2a-919e-e381c59a1089** | **Visualizador de tarefas mais leve, com filtro por data e visual futurista** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #334.1 | Cada etapa uma vez só no visualizador · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s34) (desde 2026-10-21 18:55) | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #334.2 | Filtro por data na aba TASKS (abre nos últimos 3 dias) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #334.1 | ⬜ Pendente | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
+| #334.3 | Visual futurista no visualizador · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #334.2 | ⬜ Pendente | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
