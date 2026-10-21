@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | Líder: #330.1 em execução ([459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md)); depois #330.2 (executor-medio) e #330.3 (executor-leve) | 🔄 Ativa | 2026-10-21 14:36 |
+| nuvem · elegant-planck-ul8ac1 | Líder: #330.1 concluída; #330.2 com o executor-medio ([459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md)); depois #330.2 (executor-medio) e #330.3 (executor-leve) | 🔄 Ativa | 2026-10-21 14:36 |
 
 ## 📌 Tarefas
 
@@ -1449,8 +1449,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #329-8ee48efd-79d7-480a-95c3-036a13459f8f | Lista de professores fixos além dos favoritos, com Graziela Marconcini Semann Ferreira (reservas SENAI) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [458-8ee48efd](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) | — |
 | #329.1 | Lista de professores fixos com Graziela Marconcini Semann Ferreira · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [458-8ee48efd](etapas/ETAPA-458-8ee48efd-PROFESSORES-FIXOS-RESERVAS.md) | — |
 | #330-a07b91ce-511c-4647-8347-5ff04aae37f2 | Combo "Equipe" no quadro de progresso da PESQUISA INTERNET (ITIC): só o líder da equipe; "Todas" = todos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
-| #330.1 | Levantamento e plano: equipes da aula e quadro de progresso · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 14:36) | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
-| #330.2 | Combo "Equipe" acima do quadro de progresso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #330.1 | ⬜ Pendente | — | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
+| #330.2 | Combo "Equipe" acima do quadro de progresso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #330.1 | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 14:37) | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
 | #330.3 | Documentação do combo "Equipe" no progresso · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #330.2 | ⬜ Pendente | — | [459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) | — |
 
 ## Escopo

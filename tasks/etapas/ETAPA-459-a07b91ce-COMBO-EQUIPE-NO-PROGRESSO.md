@@ -10,20 +10,45 @@ TODOS AS ATIVIDADES QUE HOUVER EQUIPES" — página
 **Objetivo:** no quadro de progresso dessa atividade em equipe, um combo "Equipe" (acima do
 quadro) mostra só o progresso do líder da equipe escolhida; "Todas" lista todos, como hoje.
 
+### Situação de hoje (levantada em 2026-10-21 14:37)
+
+- O quadro é o **Progresso da turma GLOBAL** (`assets/js/progresso-turma-global.js`, só professor),
+  aberto pela `avaliacao-discursiva.js`. Os combos "Aluno" e "Turma" são módulos à parte
+  (`filtro-aluno-progresso.js`, `alunos-da-turma-progresso.js`); cada filtro entra em
+  `estadoProgressoGlobal.filtrosDaLista` (`{ filtrar(alunos) }`) e o redesenho é
+  `estadoProgressoGlobal.atualizarAgora()`.
+- `progresso-turma-global.js` já tem **1000 linhas** (limite): não recebe código novo.
+- Equipes: `equipe` (turma + matéria), `equipe_membro` (`aluno_id`, `lider` 1 = líder, 1 por
+  equipe) e `equipe_atividade` (`equipe_id`, `atividade_id`, `respondente_id`). RLS: o
+  **professor da turma** lê as três (`docs/database.md`). `aluno_id` = id do aluno no quadro.
+
+### Plano (#330.2, sem banco)
+
+- Módulo novo `assets/js/filtro-equipe-progresso.js`, incluído **só** na
+  `ATIVIDADE-PESQUISA-INTERNET.html` (a #331 leva para todas). Espera o painel
+  `.progresso-turma` existir (só o professor o recebe; sem painel, não faz nada).
+- Lê as equipes ligadas à atividade (`equipe_atividade` da atividade → `equipe` → líder em
+  `equipe_membro` com `lider = 1`; sem líder marcado, usa o `respondente_id`), com o JWT (sbGet).
+- Combo **"Equipe:"** no alto do painel, ao lado dos outros combos: "Todas" (padrão, lista
+  todos) + uma opção por equipe ("Equipe X — líder Fulano"), só das equipes da turma do combo
+  "Turma" (todas, se "Todas as turmas"). Equipe escolhida → só a linha do líder.
+- Entra como filtro em `estadoProgressoGlobal.filtrosDaLista` e redesenha com
+  `atualizarAgora()`. Nada é gravado. Sem equipe ligada à atividade → o combo não aparece.
+- Arquivos: `assets/js/filtro-equipe-progresso.js` (novo) e a página da atividade (1 `<script>`).
+
 ### #330.1 — Levantamento e plano: equipes da aula e quadro de progresso
 
-**Próximo passo:** achar o quadro de progresso da página, como as equipes da aula/atividade e o
-líder são lidos (`assets/js/equipes-*.js`, RLS) e escrever o plano nesta etapa.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — dados das equipes de vários alunos e RLS; na dúvida sobe
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** levantamento (arquivos, dados das equipes e do líder) e plano da
   #330.2 nesta etapa; banco, se precisar, vira subtarefa do Claude Code local.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** levantamento e plano acima · **Verificação:** leitura de `progresso-turma-global.js`, `filtro-aluno-progresso.js`, `alunos-da-turma-progresso.js`, `equipes-repositorio.js` e `docs/database.md` (RLS das equipes); sem banco
 
 ### #330.2 — Combo "Equipe" acima do quadro de progresso
 
-**Próximo passo:** esperar a #330.1.
+**Próximo passo:** criar `filtro-equipe-progresso.js` conforme o plano e incluí-lo na página.
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos (reclassificar na #330.1 se precisar de banco)
 - **Modelo:** só Sonnet — nunca outro
