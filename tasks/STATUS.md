@@ -1443,6 +1443,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #325-b1b3200c-21ab-4b2c-84c6-b8d8db0da7e5 | Cores de alerta e verde dos cards também para o aluno (saber o que está pendente) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.2 | Mostrar as cores de situação nos cards para o aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #325.1 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
 | #325.3 | Documentação das cores dos cards para o aluno · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #325.2 | ⬜ Pendente | — | [454-b1b3200c](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) | — |
+| #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
+| #326.1 | Fonte, página e seed da atividade · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | — | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
+| #326.2 | Aplicar o seed no banco (só local) · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #326.1 | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 
 
 ## Escopo
@@ -1935,6 +1938,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 452-c290819b | Correção pela IA da atividade 36, 3ª rodada (#323, pedida em 2026-10-21) | [ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) |
 | 453-e41c087e | Atividade ligada às turmas; excluir só na turma atual (#324, pedida em 2026-10-21) | [ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) |
 | 454-b1b3200c | Cores de alerta e verde dos cards também para o aluno (#325, pedida em 2026-10-21) | [ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md](etapas/ETAPA-454-b1b3200c-CORES-DOS-CARDS-PARA-O-ALUNO.md) |
+| 455-a6ce0e06 | Atividade objetiva "PESQUISA INTERNET" da ITIC (#326, pedida em 2026-10-21) | [ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
