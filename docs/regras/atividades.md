@@ -204,6 +204,14 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (padrão de resposta × 1,5 de folga ÷ 70 caracteres por linha; mínimo 5, máximo 16 linhas) e
   **cresce enquanto o aluno digita** (`assets/js/campo-tamanho-discursiva.js`). 1º uso: Prova
   Prática ADAG (id 82); nas outras discursivas, ligar junto com o bloqueio de colar.
+- ✅ **Mínimo de caracteres por resposta (2026-10-21, tarefa #326, pedido do usuário):** campo
+  opcional `- **Mínimo de caracteres por resposta:** N` na fonte `.md` da discursiva → o gerador
+  põe `data-minimo-caracteres="N"` no `<body>` e o `assets/js/minimo-caracteres-discursiva.js`
+  (incluído em toda página gerada, só age com o atributo) mostra em cada campo quantos caracteres
+  faltam e **bloqueia o Entregar** enquanto alguma resposta tiver menos de N caracteres, com popup
+  listando as questões curtas. Medida do usuário: **5 linhas = 350 caracteres** (70 por linha,
+  igual no PC e no celular). 1º uso: PESQUISA INTERNET da ITIC
+  (`ATIVIDADE-PESQUISA-INTERNET.html`, 30 discursivas em equipe, só o líder 👑 responde).
 - ✅ **Botão "💾 Gravar" em cada tópico (2026-10-08, pedido do usuário):** campo opcional
   `- **Botão gravar:** sim` → cada tópico ganha o botão, que grava na hora (`gravarPeloBotao` em
   `assets/js/avaliacao-discursiva.js`). **As duas opções valem juntas:** a gravação automática

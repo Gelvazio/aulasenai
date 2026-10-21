@@ -127,10 +127,14 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
 
 ### #326.6 — Documentação da trava de caracteres mínimos
 
-**Próximo passo:** executor-leve escreve; o líder confere e commita junto com a #326.4.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro (executor-leve)
 - **Descrição:** item novo em `docs/regras/atividades.md` (junto do "Campo do tamanho da
   resposta") e linha no docstring do gerador não (fica com a #326.4). Feita em paralelo com a
   #326.4 a pedido do usuário ("FAÇA RÁPIDO, DISPARE MAIS AGENTES"), pela especificação da etapa.
+- **Entrega:** item "Mínimo de caracteres por resposta" em `docs/regras/atividades.md` (logo
+  depois do "Campo do tamanho da resposta"), pelo executor-leve.
+- **Verificação:** leitura do trecho pelo líder (linhas ≤ 100, estilo do arquivo); só esse
+  arquivo mudou.
