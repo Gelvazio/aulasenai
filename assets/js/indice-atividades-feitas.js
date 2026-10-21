@@ -4,7 +4,9 @@
 // Para o aluno logado: "Sim" se ele já respondeu pelo menos 1 vez (qualquer alternativa gravada
 // no banco); "Não" caso contrário. Só JavaScript: lê as tabelas atividade, resposta_atividade e
 // entrega_atividade (o RLS devolve ao aluno apenas as próprias respostas/entregas). Professor e
-// visitante não veem a coluna nem as cores. Cards informativos (data-sem-bloqueio, ex.: composição
+// visitante não veem a coluna nem as cores. O card inteiro também é pintado (#325): verde se o
+// aluno entregou todas as atividades cadastradas dele, vermelho piscando se falta alguma.
+// Cards informativos (data-sem-bloqueio, ex.: composição
 // da nota) não recebem a marca nem somem no filtro.
 // Carregado por assets/js/atividades-crud-modal.js, que já está em todo índice de atividades.
 // Depende de: supabase-js e js/supabase.js (obterClienteSupabase, sbGet).
@@ -17,6 +19,13 @@ const CLASSE_ATIVIDADE_PENDENTE = 'atividade--pendente';
 const CLASSE_ATIVIDADE_NAO_FEITA = 'atividade--nao-feita';
 // Guardado pelo indice-atividades-bloqueio.js quando o aluno não pode abrir a atividade (#281).
 const ATRIBUTO_HREF_GUARDADO_FEITAS = 'data-href-bloqueado';
+// Cor do card inteiro (#325): mesmas classes do professor (css/indice-atividades-pendentes.css).
+const CLASSE_CARD_CONCLUIDO_FEITAS = 'card-atividade-concluida';
+const CLASSE_CARD_PENDENTE_FEITAS = 'card-atividade-pendente';
+const CLASSE_AVISO_OCULTO_FEITAS = 'aviso-pendente-oculto';
+const CLASSE_AVISO_SITUACAO_FEITAS = 'aviso-situacao-feitas';
+const TEXTO_AVISO_PENDENTE_FEITAS = 'Você tem atividade pendente nesta aula.';
+const TEXTO_AVISO_CONCLUIDO_FEITAS = 'Você entregou todas as atividades desta aula.';
 const FILTRO_TODAS_FEITAS = 'todas';
 const FILTRO_SIM_FEITAS = 'sim';
 const FILTRO_NAO_FEITAS = 'nao';
@@ -132,6 +141,30 @@ function marcarLinksDoCard(card, estados) {
 }
 
 /**
+ * Pinta o card inteiro pela situação do aluno (#325): verde se entregou todas as atividades
+ * cadastradas do card (a nota não importa), vermelho piscando se falta alguma, sem cor se o card
+ * não tem atividade cadastrada. As classes e o CSS são os mesmos do professor.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {{paginas: Set<string>, entregues: Set<string>, respondidas: Set<string>}} estados
+ */
+function pintarCardSituacaoFeitas(card, estados) {
+    card.classList.remove(CLASSE_CARD_CONCLUIDO_FEITAS, CLASSE_CARD_PENDENTE_FEITAS);
+    card.querySelector('.' + CLASSE_AVISO_SITUACAO_FEITAS)?.remove();
+
+    const paginasDoCard = [...card.querySelectorAll(SELETOR_LINK_FEITAS)]
+        .map(obterPaginaDoLinkFeitas)
+        .filter((pagina) => pagina && estados.paginas.has(pagina));
+    if (!paginasDoCard.length) return;
+
+    const entregouTudo = paginasDoCard.every((pagina) => estados.entregues.has(pagina));
+    card.classList.add(entregouTudo ? CLASSE_CARD_CONCLUIDO_FEITAS : CLASSE_CARD_PENDENTE_FEITAS);
+    const aviso = document.createElement('span');
+    aviso.className = CLASSE_AVISO_SITUACAO_FEITAS + ' ' + CLASSE_AVISO_OCULTO_FEITAS;
+    aviso.textContent = entregouTudo ? TEXTO_AVISO_CONCLUIDO_FEITAS : TEXTO_AVISO_PENDENTE_FEITAS;
+    card.prepend(aviso);
+}
+
+/**
  * Acrescenta ao card a marca "Fez Atividade? Sim/Não".
  * @param {HTMLElement} card - Card do índice.
  * @param {boolean} fez - Se o aluno já respondeu ao menos 1 vez.
@@ -192,6 +225,7 @@ async function iniciarMarcacaoFeitas() {
         cards.forEach((card, indice) => {
             marcarCardFeitas(card, estados.respondidas.has(caminhos[indice]));
             marcarLinksDoCard(card, estados);
+            pintarCardSituacaoFeitas(card, estados);
         });
         montarFiltroFeitas();
     } catch (erro) {

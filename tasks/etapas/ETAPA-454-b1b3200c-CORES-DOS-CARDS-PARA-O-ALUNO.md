@@ -48,20 +48,25 @@ verde = feito) que o professor vê, para saber o que falta entregar.
 
 ### #325.2 — Mostrar as cores de situação nos cards para o aluno
 
-**Próximo passo:** livre para Sonnet: no `indice-atividades-feitas.js`, depois de pintar os
-botões, marcar o card com `card-atividade-concluida` se todas as atividades do banco no card
-foram entregues, senão `card-atividade-pendente`; no `atividades-crud-modal.js`, carregar
-`css/indice-atividades-pendentes.css` também para o aluno (sem o script do professor).
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de tela, até 3 arquivos (reclassificar na #325.1 se precisar de banco)
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** aluno logado vê alerta nas atividades pendentes e verde nas
   entregues, só com os dados dele; `node --check` ok; conferir na tela (usuário).
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** `assets/js/indice-atividades-feitas.js` (`pintarCardSituacaoFeitas`: card do aluno
+  verde se entregou todas as atividades cadastradas do card, vermelho piscando se falta alguma,
+  sem cor se não há; aviso para leitor de tela) e `assets/js/atividades-crud-modal.js` (carrega
+  `css/indice-atividades-pendentes.css` também para o aluno, sem o script do professor) — 2026-10-21 13:56
+- **Verificação:** `node --check` ok nos 2 arquivos; diff conferido pelo líder (só os 2 arquivos;
+  código novo só no caminho do ALUNO; atividades bloqueadas não entram porque o RLS não as
+  devolve). Conferir na tela (usuário): card verde/vermelho para o aluno e professor igual.
 
 ### #325.3 — Documentação das cores dos cards para o aluno
 
-**Próximo passo:** esperar a #325.2.
+**Próximo passo:** livre para Haiku: em `docs/regras/atividades.md`, acrescentar à seção do
+alerta de pendentes (#293) que o aluno também vê o card colorido com os dados dele (#325).
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro

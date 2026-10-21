@@ -739,6 +739,10 @@ function carregarMarcacaoFeitas() {
     const estiloBloquear = criarElementoCrud('link');
     estiloBloquear.rel = 'stylesheet';
     estiloBloquear.href = BASE_ASSETS_CRUD + 'css/indice-atividades-bloquear.css';
+    // Cores de situação do card (#325): o aluno só usa a folha, sem o script do professor.
+    const estiloSituacao = criarElementoCrud('link');
+    estiloSituacao.rel = 'stylesheet';
+    estiloSituacao.href = BASE_ASSETS_CRUD + 'css/indice-atividades-pendentes.css';
     const script = criarElementoCrud('script');
     script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-feitas.js';
     // A lista de matérias com o bloqueio da aula roda antes dos scripts de bloqueio (em ordem).
@@ -748,7 +752,8 @@ function carregarMarcacaoFeitas() {
     const scriptBloqueio = criarElementoCrud('script');
     scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
     scriptBloqueio.async = false;
-    document.head.append(estilo, estiloBloquear, script, scriptConfigBloqueio, scriptBloqueio);
+    document.head.append(estilo, estiloBloquear, estiloSituacao, script, scriptConfigBloqueio,
+        scriptBloqueio);
     carregarTurmaFavoritaIndice();
     carregarDataAulasIndice();
     carregarLogAlternativasIndice();
