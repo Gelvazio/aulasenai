@@ -1911,6 +1911,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 445-50000fd9 | Card da aula só com links de atividades vinculadas no banco (#316, pedida em 2026-10-20 16:24) | [ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) |
 | 446-159d25bf | Configurar no rules-ai a ferramenta de IA freellmapi (#317, pedida em 2026-10-20) | [ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) |
 | 447-98152865 | Correção pela IA da atividade 36 (#318, pedida em 2026-10-21) | [ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) |
+| 448-5601f0dd | Campo "Quantidade Questão Considerar" por aluno (#319, pedida em 2026-10-21) | [ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -1968,6 +1969,8 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | Artigos do HTML sem aula na tabela `aulas` (ex.: "Avaliação Prática" e "Média Final" do ITIC) deixaram de aparecer nos índices (#272) | Regra 15: só a tabela `aulas` cria card; para voltarem, cadastrar como aula no banco e ligar a atividade pelo `aula_id` | Quando o professor quiser |
 | #249: o card "AVALIAÇÃO 02" da ITIC aparece como "AULA 10" (o link fixo dele é da atividade 20, agora da aula 10); a atividade aparece nos dois cards | Identificação dos cards vem da #213; o mesmo caso da #221 foi cancelado pelo usuário em 2026-10-17 | Só se o usuário pedir |
 | #31: o PDF dos slides aberto pelo endereço direto continua acessível ao aluno | Arquivo estático do site; fechar exige servir os PDFs pelo Supabase Storage privado (tarefa grande, todas as matérias) | Quando o usuário pedir |
+| #319-5601f0dd-d00a-42de-af88-ff8d648479e1 | Campo "Quantidade Questão Considerar" por aluno (nota) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| #319.1 | Levantar o funcionamento atual e escrever o plano (para aprovação) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 | #29: prompt da rotina "Tarefa Aulas Senai" no claude.ai ainda fala da fila `tasks` do banco | A rotina está desligada e o prompt fica fora do repositório | Antes de ligar a rotina (item 140.6) |
 | #29: rotina de nuvem × "banco só pelo Claude Code local" (log em `agendamento_tarefa_logs` e cópia das regras da #26) | Decisão do usuário (`docs/regras/tarefas-agendadas.md` §3) | Antes de ligar a rotina |
 | #29: a #26 (regras no banco) é uma cópia das regras — decidir se continua com a fonte única nos arquivos | Tarefa reservada por outra frente | Quando o usuário decidir |
