@@ -1425,6 +1425,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.2 | Plano da configuração no rules-ai, para aprovação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #317.1 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #318-98152865-f88d-460f-9794-d4b791936d2a | Correção pela IA da atividade 36 (Avaliação Prática de Introdução às TIC) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [447-98152865](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) | — |
+| #318.1 | Corrigir pela IA as alternativas pendentes da atividade 36 (banco, equipe de agentes) · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | ⬜ Pendente | — | [447-98152865](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) | — |
 
 
 ## Escopo
@@ -1909,6 +1911,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 444-58ebb5da | Netlify sem "Pretty URLs" (#315, pedida em 2026-10-20 16:20) | [ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md](etapas/ETAPA-444-58ebb5da-NETLIFY-SEM-PRETTY-URLS.md) |
 | 445-50000fd9 | Card da aula só com links de atividades vinculadas no banco (#316, pedida em 2026-10-20 16:24) | [ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md) |
 | 446-159d25bf | Configurar no rules-ai a ferramenta de IA freellmapi (#317, pedida em 2026-10-20) | [ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) |
+| 447-98152865 | Correção pela IA da atividade 36 (#318, pedida em 2026-10-21) | [ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
