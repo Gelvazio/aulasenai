@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #319 entregue | ⏹️ Encerrada | 2026-10-21 10:34 |
+| nuvem · dreamy-faraday-7x7tud | #320.1 ([449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md)) | 🔄 Ativa | 2026-10-21 10:56 |
 
 ## 📌 Tarefas
 
@@ -1427,7 +1427,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #320-1ded6f66-de9c-475d-a80c-840485bade1b | Botão "Confirmar" no campo "Quantidade Questão Considerar" | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) | — |
-| #320.1 | Botão "Confirmar" + modal de confirmação antes de gravar · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) | — |
+| #320.1 | Botão "Confirmar" + modal de confirmação antes de gravar · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet) (nuvem · dreamy-faraday-7x7tud · executor-medio) (desde 2026-10-21 10:56) | [449-1ded6f66](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) | — |
 
 
 ## Escopo
