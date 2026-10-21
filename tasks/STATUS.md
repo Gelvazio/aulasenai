@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #320 entregue | ⏹️ Encerrada | 2026-10-21 10:58 |
+| nuvem · dreamy-faraday-7x7tud | #321 criada e publicada (livre para outra IA) | ⏹️ Encerrada | 2026-10-21 11:04 |
 
 ## 📌 Tarefas
 
@@ -1426,6 +1426,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.2 | Plano da configuração no rules-ai, para aprovação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #317.1 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
+| #321-fecaa982-7eb8-4d0f-a3ca-1ab363725047 | Data e hora máxima da atividade (prazo de entrega) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #321.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #321.2 | Banco: coluna `data_hora_limite` e bloqueio de gravar/entregar depois do prazo · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #321.1 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #321.3 | Cadastro: campo "Data e hora máxima" no modal de atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #321.4 | Página da atividade: mostrar o prazo e avisar/bloquear depois dele · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #321.5 | Documentação do prazo da atividade · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #321.3, #321.4 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 
 
 ## Escopo
@@ -1913,6 +1919,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 447-98152865 | Correção pela IA da atividade 36 (#318, pedida em 2026-10-21) | [ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md](etapas/ETAPA-447-98152865-CORRECAO-IA-ATIVIDADE-36.md) |
 | 448-5601f0dd | Campo "Quantidade Questão Considerar" por aluno (#319, pedida em 2026-10-21) | [ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
 | 449-1ded6f66 | Botão "Confirmar" no campo "Quantidade Questão Considerar" (#320, pedida em 2026-10-21) | [ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md](etapas/ETAPA-449-1ded6f66-BOTAO-CONFIRMAR-QUESTOES-NOTA.md) |
+| 450-fecaa982 | Data e hora máxima da atividade (#321, pedida em 2026-10-21) | [ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
