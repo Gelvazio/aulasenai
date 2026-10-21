@@ -49,7 +49,7 @@
 
 ### #319.2 — Banco: tabela `questoes_nota_aluno`, função `questoes_para_nota` e Média Final
 
-**Próximo passo:** — (entregue). 👀 Revogar o acesso do `anon` no SQL Editor (abaixo).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (tabela, RLS, função, seed)
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro
@@ -66,6 +66,9 @@
   `revoke all on public.questoes_nota_aluno from anon;` e
   `revoke all on function public.questoes_para_nota(bigint, uuid) from anon, public;`
   Sem elas, o `anon` não lê nada da tabela (as políticas são só de `authenticated`).
+- **✅ Feito em 2026-10-21 10:37** (pedido do usuário "execute voce mesmo os 2 scripts"): os 2 `revoke` rodaram
+  pelo conector; conferido: `anon` sem SELECT na tabela e sem EXECUTE na função;
+  `authenticated` mantém os dois.
 
 ### #319.3 — Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade
 
