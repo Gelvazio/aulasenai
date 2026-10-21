@@ -1456,6 +1456,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
+| #338-f9e4ac55-f1aa-427b-b073-44cfd3cef801 | Testar o deploy ignorado na Vercel | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [467-f9e4ac55](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) | — |
+| #338.1 | Conferir na Vercel os deploys depois da #337 · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [467-f9e4ac55](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1959,6 +1961,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 464-b4de8154 | Tela AO VIVO do quadro de tarefas (#335, pedida em 2026-10-21) | [ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) |
 | 465-a0943514 | Tela AO VIVO sem bloqueadas e pendentes (#336, pedida em 2026-10-21) | [ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) |
 | 466-310c16b7 | Vercel sem deploy quando só o quadro muda (#337, pedida em 2026-10-21) | [ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md) |
+| 467-f9e4ac55 | Testar o deploy ignorado na Vercel (#338, pedida em 2026-10-21) | [ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
