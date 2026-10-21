@@ -87,3 +87,23 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
   usuário). Plano B: mínimo de caracteres.
 - 30 respostas de 5 linhas em 3 h é muito texto para um só digitador (o líder); a equipe
   pesquisa e dita.
+
+### #326.3 — Discursiva PESQUISA INTERNET: 30 questões, gabarito, página e seed
+
+**Próximo passo:** — (entregue).
+
+- **Nível:** PESADO — gabarito (padrão de resposta) e seed de banco
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Entrega:** fontes `ATIVIDADES/CONTEUDO/ATIVIDADE-PESQUISA-INTERNET.md` (30 questões, 3 por
+  aula 01 a 10, todas pesquisáveis, "você como aluno consultor", aviso de equipe com só o líder
+  respondendo, campo `Mínimo de caracteres por resposta: 350` para a #326.4) e
+  `-GABARITO.md` (resposta esperada com 350+ caracteres e critérios para a IA); página
+  `ATIVIDADES/ATIVIDADE-PESQUISA-INTERNET.html` (gerador de discursivas, bloquear colar, campo do
+  tamanho, Exportar Meu Gabarito) no lugar da objetiva; seed
+  `database/2026-10-21-atividade-pesquisa-internet-seed-atividades.sql` (aula 10 da matéria
+  INTRODUCAO TIC, nome "PESQUISA INTERNET", 30 tópicos, nasce bloqueada) PENDENTE; seed objetivo e
+  fonte objetiva apagados (SUBSTITUÍDO), linha tirada do `scripts/gerar-seed-atividades.py`.
+- **Verificação:** gerador: "30 questões, 30 tópicos, 30 pontos; padrão de resposta: 30 tópicos
+  (0 sem padrão)"; `grep` sem resposta esperada no HTML; `git check-ignore` não se aplica (Git),
+  `.vercelignore` tira `*gabarito*` e `*-seed-atividades.sql` do site; `py_compile` do script do
+  seed. Sem navegador.

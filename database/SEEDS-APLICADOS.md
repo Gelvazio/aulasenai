@@ -109,7 +109,8 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-17-testes-frontend-atividade-pratica-aula-10-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-17 18:12 | Aplicado em 2026-10-17 pela #260.2 (s20): atividade 162 aula 131, bloqueada, 30 tópicos; md5 igual ao do arquivo |
 | `2026-10-17-comunicacao-oral-objetivas-aulas-01-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **CONCLUÍDO** | 2026-10-17 18:22 | Aplicado em 2026-10-17 pela #260.5 (s20) em 2 lotes: atividade 163 (aula 104) e 164 (aula 105), 50 gabaritos cada; md5 igual ao do arquivo; nenhuma aula nova na matéria |
 | `2026-10-20-jogo-liga-desliga-seed-atividades.sql` | Noções de Eletricidade (RSL) | 1 | **CONCLUÍDO** | 2026-10-20 09:51 | Aplicado em 2026-10-20 pela #302.1 (s30) com o conector: atividade 165 (aula 134, página do jogo), 12 gabaritos (letras ABAABABAAABB, iguais ao `safe` do jogo); consulta conferida |
-| `2026-10-21-itic-pesquisa-internet-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **PENDENTE** | — | Gerado em 2026-10-21 pela #326.1 (nuvem · elegant-planck-ul8ac1): atividade "PESQUISA INTERNET" (10 questões, aula 10), página `ATIVIDADE-PESQUISA-INTERNET.html`; aplicar pela frente local (#326.2) |
+| `2026-10-21-itic-pesquisa-internet-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **SUBSTITUÍDO** | 2026-10-21 13:35 | Versão objetiva de 10 questões da #326.1, nunca aplicada; trocada pela discursiva de 30 questões (#326.3) a pedido do usuário e o arquivo foi apagado |
+| `2026-10-21-atividade-pesquisa-internet-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **PENDENTE** | — | Gerado em 2026-10-21 pela #326.3 (nuvem · elegant-planck-ul8ac1): discursiva "PESQUISA INTERNET" (30 questões, 30 tópicos, aula 10 da matéria INTRODUCAO TIC, nasce bloqueada); aplicar pela frente local (#326.5) e ligar às equipes da 135081 |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
