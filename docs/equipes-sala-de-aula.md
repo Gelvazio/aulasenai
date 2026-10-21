@@ -124,3 +124,42 @@ clone) e `tasks/etapas/ETAPA-439-c4a7e2d1-CONFIRMAR-RESPOSTAS-DO-LIDER-DA-EQUIPE
 - `node --check` em `assets/js/equipes-atividades.js` e nos demais JS da feature: sem erro.
 - Migrações aplicadas e conferidas por consulta (etapas 436 e 439). O teste na tela (professor
   ligando e confirmando; líder vendo o botão) fica com o professor, sem navegador.
+
+## Votação das equipes (2026-10-21, #333)
+
+Na apresentação em sala, a equipe elege um apresentador e a pergunta é sorteada. A turma dá uma
+nota de 1 a 10 para a equipe que apresenta.
+
+### Professor
+
+- Na página da atividade, o bloco **🗳️ Votação das equipes** fica logo abaixo do Progresso da
+  turma. Tem uma linha por equipe ligada à atividade, seguindo o combo "Turma" do progresso.
+- Cada linha mostra a situação (🟢 Aberta / Fechada), "Votos: N", "Média: X,X" e o botão
+  **Abrir votação** ou **Fechar votação**. A tela atualiza a cada 5 s.
+- Código: `assets/js/votacao-equipes-professor.js`.
+
+### Aluno
+
+- Enquanto a votação de uma equipe está aberta, aparece embaixo da tela o card
+  "🗳️ Votar na <equipe>", com os botões de 1 a 10.
+- Antes de gravar, pede confirmação ("o voto não pode ser trocado"). Depois mostra
+  "✅ Voto registrado".
+- Código: `assets/js/votacao-equipes-aluno.js`. Estilo: `assets/css/votacao-equipes.css`.
+
+### Regras no banco (resumo)
+
+- 1 voto por aluno em cada equipe, sem trocar. Ninguém vota na própria equipe.
+- Só vota com a votação aberta e só aluno da turma da equipe.
+- O aluno não vê votos nem média; só o professor vê.
+- Tabelas `votacao_equipe` e `voto_equipe` com RLS sem políticas. O acesso é só pelas funções
+  `abrir_votacao_equipe`, `votacoes_equipes_professor`, `votacoes_abertas_aluno` e `votar_equipe`.
+- SQL: `database/2026-10-21-votacao-equipes.sql`. Detalhes: `docs/database.md`, seção
+  "Votação das equipes (#333)".
+
+### Não entra (por enquanto)
+
+- A média não vai para a nota da atividade.
+- Não há critérios separados de nota.
+- O sorteio da pergunta não é feito pelo sistema.
+- Só vale na `ATIVIDADE-PESQUISA-INTERNET.html` da ITIC. As outras atividades com equipes entram
+  depois, a pedido.

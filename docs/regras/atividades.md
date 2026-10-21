@@ -263,6 +263,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     gravado nem guardado no navegador; sem equipe ligada, o combo não aparece. Código:
     `assets/js/filtro-equipe-progresso.js` (incluído pela página; não mexe no
     `progresso-turma-global.js`).
+  - **🗳️ Votação das equipes (2026-10-21, #333):** na apresentação em sala, a turma dá
+    nota de 1 a 10 à equipe que apresenta. Professor abre/fecha a votação e vê votos e média
+    no bloco abaixo do Progresso; aluno vota no card embaixo da tela (1 voto, sem trocar).
+    Regras no banco (`votacao_equipe`, `voto_equipe`, só por funções). Só na ITIC por enquanto:
+    `docs/equipes-sala-de-aula.md`.
   - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
     **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
     desligado (padrão), **7 ou mais** (invertido em 2026-10-14, #146). Aluno sem nota final continua na lista. Lembrado no localStorage

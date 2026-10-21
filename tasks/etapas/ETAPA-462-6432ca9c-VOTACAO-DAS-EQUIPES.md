@@ -111,9 +111,13 @@ turma votam de 1 a 10 pelo celular e o professor vê a média de cada equipe.
 
 ### #333.5 — Documentação da votação das equipes
 
-**Próximo passo:** documentar a votação em `docs/regras/atividades.md` e `docs/equipes-sala-de-aula.md`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
 - **Descrição:** `docs/regras/atividades.md` e `docs/equipes-sala-de-aula.md`.
-- **Entrega:** — · **Verificação:** —
+- **Executor:** Claude Code (Haiku · executor-leve) (nuvem · elegant-planck-ul8ac1), líder Opus 5.5
+- **Entrega:** seção "Votação das equipes (#333)" em `docs/equipes-sala-de-aula.md` e item em
+  `docs/regras/atividades.md` — 2026-10-21 16:01
+- **Verificação:** diff conferido pelo líder (texto bate com o código e o banco); ajuste do líder:
+  "sorteio do apresentador" → "sorteio da pergunta".
