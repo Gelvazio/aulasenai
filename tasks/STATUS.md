@@ -74,6 +74,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
+| nuvem · clever-edison-o722i5 | #324 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) criada e publicada | ⏹️ Encerrada | 2026-10-21 12:49 |
 
 ## 📌 Tarefas
 
@@ -1432,6 +1433,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #321.3 | Cadastro: campo "Data e hora máxima" no modal de atividades · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #321.4 | Página da atividade: mostrar o prazo e avisar/bloquear depois dele · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #321.2 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
 | #321.5 | Documentação do prazo da atividade · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #321.3, #321.4 | ⬜ Pendente | — | [450-fecaa982](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) | — |
+| #324-e41c087e-cd62-4347-8a4f-26e1b7254a7f | Atividade ligada às turmas (aula × atividade × matéria × turma); excluir só na turma atual | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.2 | Banco: tabela do vínculo, RLS, carga inicial e "excluir na turma" · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #324.1 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.3 | Card e modal da aula: só as atividades da turma do combo; excluir só nela · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.4 | Cadastro de atividades: excluir na turma e gravar o vínculo ao criar · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #324.2 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
+| #324.5 | Documentação do vínculo atividade × turma · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #324.3, #324.4 | ⬜ Pendente | — | [453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) | — |
 
 
 ## Escopo
@@ -1922,6 +1929,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 450-fecaa982 | Data e hora máxima da atividade (#321, pedida em 2026-10-21) | [ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md](etapas/ETAPA-450-fecaa982-DATA-HORA-MAXIMA-ATIVIDADE.md) |
 | 451-fe809753 | Correção pela IA da atividade 36, 2ª rodada (#322, pedida em 2026-10-21) | [ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md](etapas/ETAPA-451-fe809753-CORRECAO-IA-ATIVIDADE-36-RODADA-2.md) |
 | 452-c290819b | Correção pela IA da atividade 36, 3ª rodada (#323, pedida em 2026-10-21) | [ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md](etapas/ETAPA-452-c290819b-CORRECAO-IA-ATIVIDADE-36-RODADA-3.md) |
+| 453-e41c087e | Atividade ligada às turmas; excluir só na turma atual (#324, pedida em 2026-10-21) | [ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
