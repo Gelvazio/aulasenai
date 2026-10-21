@@ -43,6 +43,8 @@ const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
+const ARQUIVO_QUESTOES_NOTA_PROGRESSO_GLOBAL = 'questoes-nota-aluno-progresso.js';
+const SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL = '.questoes-nota__campo';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
@@ -210,7 +212,7 @@ function montarCelulaNotaParcialGlobal(aluno, totalPartes) {
     const celula = criarElementoProgressoGlobal('span', classe + ' ' + classe + '--parcial',
         textos.icone + ' ' + formatarNotaProgressoGlobal(aluno.notaParcial) + ' · ' + acerto +
         '% (' + correcao.corrigidos + '/' + totalPartes + ')');
-    celula.title = textos.dicaParcial + ' Mínimo do aluno: ' + aluno.minimo + ' questões; ' +
+    celula.title = textos.dicaParcial + ' Questões na nota: ' + aluno.questoesNota + '; ' +
         correcao.corrigidos + ' de ' + totalPartes + ' ' + textos.partes + ' com resultado, ' +
         acerto + '% de acerto nas ' + textos.descricaoAcerto + '.';
     return celula;
@@ -232,14 +234,13 @@ function montarCelulaNotaFinalGlobal(aluno) {
         const confirmada = criarElementoProgressoGlobal('span', classe + ' ' + classe +
             '--professor', textos.iconeProfessor + ' ' +
             formatarNotaProgressoGlobal(aluno.notaDoProfessor));
-        confirmada.title = textos.dicaProfessor + ' Mínimo do aluno: ' + aluno.minimo +
-            ' questões.';
+        confirmada.title = textos.dicaProfessor + ' Questões na nota: ' + aluno.questoesNota;
         return confirmada;
     }
 
     const celula = criarElementoProgressoGlobal('span', classe,
         textos.icone + ' ' + formatarNotaProgressoGlobal(aluno.valorNotaFinal));
-    celula.title = textos.dicaFinal + ' Mínimo do aluno: ' + aluno.minimo + ' questões.';
+    celula.title = textos.dicaFinal + ' Questões na nota: ' + aluno.questoesNota + '.';
     return celula;
 }
 
@@ -267,16 +268,19 @@ function calcularIndicadoresDoAlunoGlobal(aluno, medida) {
     const totalQuestoes = medida.estrutura.size;
     const minimo = Math.min(totalQuestoes,
         aluno.minimoDoAluno || estadoProgressoGlobal.memoria.minimoPadrao || totalQuestoes);
+    // "Quantidade Questão Considerar": quantas questões contam na nota (vazio = o mínimo).
+    const questoesNota = Math.min(totalQuestoes, aluno.questoesNotaDoAluno || minimo);
+    const escala = { totalQuestoes, minimo: questoesNota };
     const notaParcial = aluno.correcao
-        ? notaProporcionalGlobal(aluno.correcao.nota, { totalQuestoes, minimo }) : null;
+        ? notaProporcionalGlobal(aluno.correcao.nota, escala) : null;
     const temNotaFinal = aluno.entregue && respondidos > 0 &&
         aluno.correcao?.corrigidos >= respondidos;
     const notaDoProfessor = aluno.provaCorrigida && aluno.notaProfessor !== undefined
-        ? notaProporcionalGlobal(aluno.notaProfessor, { totalQuestoes, minimo }) : null;
+        ? notaProporcionalGlobal(aluno.notaProfessor, escala) : null;
     const valorNotaFinal = temNotaFinal ? notaParcial : SEM_NOTA_PROGRESSO_GLOBAL;
     return {
-        ...aluno, respondidos, percentual, completas, totalQuestoes, minimo, notaParcial,
-        notaDoProfessor,
+        ...aluno, respondidos, percentual, completas, totalQuestoes, minimo, questoesNota,
+        notaParcial, notaDoProfessor,
         valorSituacao: aluno.entregue ? totalQuestoes + 1 : completas,
         valorNotaParcial: notaParcial === null ? SEM_NOTA_PROGRESSO_GLOBAL : notaParcial,
         valorNotaFinal: notaDoProfessor === null ? valorNotaFinal : notaDoProfessor,
@@ -391,7 +395,11 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
         aoMudar: estadoProgressoGlobal.atualizarAgora }));
     const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
-    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []));
+    const campoNota = window.criarCampoQuestoesNota?.({
+        atividadeId: estadoProgressoGlobal.atividadeId, aluno,
+        aoMudar: estadoProgressoGlobal.atualizarAgora });
+    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []),
+        ...(campoNota ? [campoNota] : []));
     return celula;
 }
 
@@ -551,6 +559,28 @@ async function prepararBotoesNomeGlobal(tipo) {
         } catch (erro) {
             console.warn('Botão do aluno no progresso:', erro.message);
         }
+    }
+}
+
+/**
+ * Diz se o professor está digitando no campo "Quantidade Questão Considerar" (a atualização
+ * automática espera, para o redesenho não apagar o número ainda não gravado).
+ * @returns {boolean} true se o foco está no campo.
+ */
+function estaDigitandoQuestoesNotaGlobal() {
+    return Boolean(document.activeElement?.matches(SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL));
+}
+
+/**
+ * Carrega o campo "Quantidade Questão Considerar" (abaixo do "Faltou?"); falha não derruba o
+ * painel (a lista sai sem o campo).
+ */
+async function prepararCampoQuestoesNotaGlobal() {
+    try {
+        if (typeof window.criarCampoQuestoesNota === 'function') return;
+        await carregarScriptProgressoGlobal(ARQUIVO_QUESTOES_NOTA_PROGRESSO_GLOBAL);
+    } catch (erro) {
+        console.warn('Quantidade Questão Considerar:', erro.message);
     }
 }
 
@@ -942,6 +972,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
     await prepararBotoesNomeGlobal(tipo);
+    await prepararCampoQuestoesNotaGlobal();
     await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);
@@ -949,8 +980,10 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
         coluna.aoMudar = estadoProgressoGlobal.atualizarAgora;
     });
     await atualizarProgressoGlobal(tela, medida);
-    estadoProgressoGlobal.temporizador = setInterval(
-        () => atualizarProgressoGlobal(tela, medida), INTERVALO_PROGRESSO_GLOBAL_MS);
+    estadoProgressoGlobal.temporizador = setInterval(() => {
+        if (estaDigitandoQuestoesNotaGlobal()) return;
+        atualizarProgressoGlobal(tela, medida);
+    }, INTERVALO_PROGRESSO_GLOBAL_MS);
 }
 
 (function incluirEstiloProgressoGlobal() {

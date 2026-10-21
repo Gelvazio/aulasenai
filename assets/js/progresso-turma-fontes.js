@@ -79,6 +79,23 @@ async function lerMinimosDosAlunos(atividadeId) {
 }
 
 /**
+ * Lê a "Quantidade Questão Considerar" de cada aluno (tabela questoes_nota_aluno): quantas
+ * questões contam para a nota. Falha ao ler = segue sem a quantidade (a nota usa o mínimo).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Map<string, number>>} Aluno → quantidade para a nota.
+ */
+async function lerQuestoesNotaDosAlunos(atividadeId) {
+    try {
+        const linhas = await sbGet('questoes_nota_aluno',
+            'select=aluno_id,quantidade&atividade_id=eq.' + atividadeId);
+        return new Map(linhas.map((linha) => [linha.aluno_id, linha.quantidade]));
+    } catch (erro) {
+        console.warn('Quantidade Questão Considerar:', erro.message);
+        return new Map();
+    }
+}
+
+/**
  * Lê (uma vez) o mínimo padrão de questões da atividade (vazio = todas).
  * @param {number} atividadeId - Id da atividade.
  * @param {Object} memoria - Memória da fonte entre as leituras.
@@ -125,6 +142,7 @@ function montarAlunosDoProgresso(progresso, extras) {
             entregue: extras.entregues.has(chave),
             entreguePorProfessor: extras.peloProfessor.has(chave),
             minimoDoAluno: extras.minimos.get(id) || null,
+            questoesNotaDoAluno: extras.questoesNota?.get(id) || null,
             correcao: extras.correcoes.get(chave) || null,
         };
     }).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
@@ -182,11 +200,12 @@ function converterAcertosEmCorrecao(linha) {
  * @returns {Promise<Object[]>} Alunos no formato comum.
  */
 async function lerAlunosObjetiva(atividadeId, memoria) {
-    const [respostas, resumo, minimos] = await Promise.all([
+    const [respostas, resumo, minimos, questoesNota] = await Promise.all([
         lerTodasAsLinhasProgresso({ tabela: 'resposta_atividade',
             colunas: 'aluno_id,tentativa,item', atividadeId, ordem: COLUNAS_CHAVE_OBJETIVA }),
         lerResumoObjetiva(atividadeId),
         lerMinimosDosAlunos(atividadeId),
+        lerQuestoesNotaDosAlunos(atividadeId),
         lerMinimoPadraoDaAtividade(atividadeId, memoria),
     ]);
     const correcoes = new Map();
@@ -202,8 +221,9 @@ async function lerAlunosObjetiva(atividadeId, memoria) {
     const progresso = contarPartesPorAluno(respostas);
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
     // A objetiva é corrigida pelo banco: entregue = corrigida.
-    return montarAlunosDoProgresso(progresso, { nomes: memoria.nomes, minimos, entregues,
-        peloProfessor, correcoes }).map((aluno) => ({ ...aluno, provaCorrigida: aluno.entregue }));
+    return montarAlunosDoProgresso(progresso, { nomes: memoria.nomes, minimos, questoesNota,
+        entregues, peloProfessor, correcoes })
+        .map((aluno) => ({ ...aluno, provaCorrigida: aluno.entregue }));
 }
 
 /**
@@ -316,7 +336,7 @@ function discursivaFoiCorrigida(aluno, notasDoProfessor) {
  * @returns {Promise<Object[]>} Alunos no formato comum.
  */
 async function lerAlunosDiscursiva(atividadeId, memoria) {
-    const [respostas, entregas, linhasIa, pontos, minimos] = await Promise.all([
+    const [respostas, entregas, linhasIa, pontos, minimos, questoesNota] = await Promise.all([
         lerTodasAsLinhasProgresso({ tabela: 'resposta_discursiva',
             colunas: 'aluno_id,tentativa,item,texto', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
@@ -327,6 +347,7 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
         lerPontosDosTopicos(atividadeId, memoria),
         lerMinimosDosAlunos(atividadeId),
+        lerQuestoesNotaDosAlunos(atividadeId),
         lerMinimoPadraoDaAtividade(atividadeId, memoria),
     ]);
     const progresso = contarPartesPorAluno(respostas,
@@ -335,7 +356,8 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
     const notasDoProfessor = contarNotasDoProfessor(linhasIa);
     const somasDoProfessor = somarNotasDoProfessor(linhasIa);
     const alunos = montarAlunosDoProgresso(progresso, {
-        nomes: memoria.nomes, minimos, correcoes: somarCorrecoesDaIa(linhasIa, pontos),
+        nomes: memoria.nomes, minimos, questoesNota,
+        correcoes: somarCorrecoesDaIa(linhasIa, pontos),
         entregues: new Set(entregas.map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
         peloProfessor: new Set(entregas.filter((entrega) => entrega.entregue_por)
             .map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),

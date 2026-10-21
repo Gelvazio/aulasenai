@@ -69,13 +69,20 @@
 
 ### #319.3 — Progresso da turma: campo abaixo do "Faltou?" e nota pela quantidade
 
-**Próximo passo:** esperar a #319.2.
+**Próximo passo:** — (entregue).
 
 - **Nível:** MEDIO — tela com lógica, módulo novo + `progresso-turma-global.js` e fontes
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** campo grava/limpa por aluno; nota parcial, IA e professor usam a
   quantidade; `node --check` ok; conferir na tela pelo professor.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:33 — executor-medio (Sonnet): módulo novo `assets/js/questoes-nota-aluno-progresso.js`
+  + `assets/css/questoes-nota-aluno-progresso.css` (campo abaixo do "Faltou?", salva no change/Enter,
+  vazio apaga a linha); `progresso-turma-fontes.js` lê `questoes_nota_aluno`;
+  `progresso-turma-global.js` carrega o módulo e calcula as notas parcial/IA/professor por
+  `questoesNota` (o 🎯 e os filtros seguem o mínimo). Líder: a atualização automática (5 s) espera
+  enquanto o professor digita no campo.
+- **Verificação:** `node --check` nos 3 `.js`; `progresso-turma-global.js` com 997 linhas; linhas
+  novas ≤ 100. Conferir na tela: digitar 20 → nota na escala de 20; limpar → volta ao mínimo.
 
 ### #319.4 — Páginas do aluno (objetiva e discursiva): nota pela função nova
 

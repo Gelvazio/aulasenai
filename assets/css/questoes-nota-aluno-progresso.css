@@ -1,0 +1,25 @@
+/* Professor: campo "Quantidade Questão Considerar" de cada aluno no Progresso da turma
+   (assets/js/questoes-nota-aluno-progresso.js). */
+
+:root {
+    --questoes-nota-texto-suave: #4a5568;
+    --questoes-nota-borda: #cbd5e0;
+    --questoes-nota-raio: 4px;
+}
+
+.questoes-nota {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--questoes-nota-texto-suave);
+    font-size: 11px;
+}
+
+.questoes-nota__campo {
+    width: 64px;
+    padding: 2px 6px;
+    border: 1px solid var(--questoes-nota-borda);
+    border-radius: var(--questoes-nota-raio);
+    font: inherit;
+    font-size: 12px;
+}
