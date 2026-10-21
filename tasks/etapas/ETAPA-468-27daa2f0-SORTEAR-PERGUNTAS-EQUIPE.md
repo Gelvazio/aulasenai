@@ -48,6 +48,7 @@
 | 2026-10-21 20:31 | Modo **sem equipe** e escolhas da #339.21 (respostas uma a uma): sorteia **aluno + 1 pergunta**; **sem** os 2 min de preparo (vai direto ao 1 min); votam **todos menos quem responde**; aluno já sorteado só volta **depois que todos forem**; só **presentes** (sem "Faltou?"); votos na nota = **o professor decide** por aula/atividade; liga/desliga e com/sem equipe **na página da atividade e no modal da aula**; a escolha vale para **todas as turmas** | Usuário |
 | 2026-10-21 20:36 | Acrescentadas #339.22 a #339.31 (5 ideias com Three.js e 5 tipos de jogo; a ideia de "missões da semana" ficou de fora) e os cuidados de 3D/jogos no Escopo | Usuário |
 | 2026-10-21 20:39 | Acrescentadas #339.32 a #339.43 (aposta, reações, pergunta da plateia, nome/brasão, combo, capitão, cartas do professor, modo projetor, resumo em PDF, antiabuso, fila de votos, leitura em voz alta) | Usuário |
+| 2026-10-21 20:53 | Acrescentadas #339.44 a #339.51 (regras na tela, votação por critérios, fechamento, painel pós-aula, perguntas boas para o jogo, resposta escrita para quem não pode falar, votação sem humilhação, internet ruim) | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -56,7 +57,7 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, extras #339.32–#339.43, modelo global #339.21, telas,
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, extras #339.32–#339.51, modelo global #339.21, telas,
   verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
@@ -467,9 +468,89 @@
 - **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
 - **Entrega:** — · **Verificação:** —
 
+### #339.44 — Tela de regras antes de começar (30 s)
+
+**Próximo passo:** esperar a #339.3.
+
+- **Nível:** MEDIO — tela
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** antes da rodada, uma tela de 30 segundos explica o jogo: tempos, quem vota e o que vale nota.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.45 — Votação por critérios (clareza, correção, exemplo)
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (nota por critério) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** em vez de uma nota só, o votante dá nota em 2 ou 3 critérios rápidos; a nota do voto é a média deles.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.46 — Fechamento da aula: perguntas com média baixa, sem dizer quem respondeu
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (lista anônima)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** nos últimos 5 minutos, o professor vê e comenta as perguntas de média baixa, sem mostrar o nome de quem respondeu.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; sem nome de aluno na tela de fechamento.
+- **Entrega:** — · **Verificação:** —
+
+### #339.47 — Painel pós-aula do professor: perguntas mais difíceis da turma
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (leitura agregada, só professor)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** mostra as perguntas com média mais baixa para indicar o conteúdo a revisar.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; só professor vê.
+- **Entrega:** — · **Verificação:** —
+
+### #339.48 — Perguntas boas para o jogo: marcar as que dá para responder falando em 1 min
+
+**Próximo passo:** esperar a #339.2.
+
+- **Nível:** PESADO — banco (marca na pergunta, só professor altera) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** o professor marca as perguntas próprias para o jogo; o sorteio pode usar só as marcadas.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.49 — Responder por escrito no lugar de falar (liberado por aluno)
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (liberação por aluno + resposta escrita, RLS) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** para aluno tímido ou com dificuldade de falar, o professor libera responder por escrito no minuto da pergunta.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.50 — Votação sem humilhação: nota do votante escondida e média baixa só para o professor
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco/RLS (quem vê o quê)
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** ninguém vê a nota que cada colega deu; médias abaixo de um limite aparecem só para o professor.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.51 — Funcionar com internet ruim (atualização leve a cada poucos segundos)
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com lógica (intervalo de atualização e dados mínimos)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** a sala inteira usando ao mesmo tempo: atualizar em intervalos de poucos segundos, só o necessário, e o modo projetor leve.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
 ### #339.21 — Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe
 
-**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.43.
+**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.51.
 
 - **Nível:** PESADO — arquitetura (recurso global para todas as matérias), banco (escolha por aula/atividade) e mais de 3 arquivos
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (parte de banco: só Claude Code local)
