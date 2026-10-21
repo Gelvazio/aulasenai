@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
+| nuvem · dreamy-faraday-7x7tud | #339 criada e publicada (livre para outra IA) | ⏹️ Encerrada | 2026-10-21 19:26 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
 | nuvem · elegant-planck-ul8ac1 | #333 concluída ([462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md)) — votação das equipes (banco, professor, aluno, docs) | ⏹️ Encerrada | 2026-10-21 16:01 |
 
@@ -1458,6 +1458,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #338-f9e4ac55-f1aa-427b-b073-44cfd3cef801 | Testar o deploy ignorado na Vercel | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [467-f9e4ac55](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) | — |
 | #338.1 | Conferir na Vercel os deploys depois da #337 · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [467-f9e4ac55](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) | — |
+| #339-27daa2f0-5381-4027-a66a-8b85515d7348 | Botão "Sortear perguntas" ao lado de "Abrir votação" (professor) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.2 | Banco: tabela do sorteio por equipe e função de sortear sem repetir · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #339.1 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.3 | Professor: botão "Sortear perguntas" + modal · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.2 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.4 | Aluno: ver as perguntas sorteadas da própria equipe · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #339.2 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
+| #339.5 | Documentação do sorteio de perguntas · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #339.3, #339.4 | ⬜ Pendente | — | [468-27daa2f0](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1962,6 +1968,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 465-a0943514 | Tela AO VIVO sem bloqueadas e pendentes (#336, pedida em 2026-10-21) | [ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) |
 | 466-310c16b7 | Vercel sem deploy quando só o quadro muda (#337, pedida em 2026-10-21) | [ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md) |
 | 467-f9e4ac55 | Testar o deploy ignorado na Vercel (#338, pedida em 2026-10-21) | [ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) |
+| 468-27daa2f0 | Botão "Sortear perguntas" por equipe (#339, pedida em 2026-10-21) | [ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
