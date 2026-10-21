@@ -75,7 +75,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
 | nuvem · dreamy-faraday-7x7tud | #323 entregue | ⏹️ Encerrada | 2026-10-21 11:19 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
-| nuvem · elegant-planck-ul8ac1 | #330 concluída ([459-a07b91ce](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md)) — combo "Equipe" no progresso da PESQUISA INTERNET; #331 criada para as demais | ⏹️ Encerrada | 2026-10-21 14:39 |
+| nuvem · elegant-planck-ul8ac1 | #333.1 ([462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md)) — 👀 plano da votação das equipes aguardando o "sim" do usuário | 🔄 Ativa | 2026-10-21 15:28 |
 
 ## 📌 Tarefas
 
@@ -1454,6 +1454,12 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
+| #333-6432ca9c-7a14-4b48-825c-517526fde7fd | Votação das equipes: a turma dá nota de 1 a 10 para cada equipe que apresenta (simples) | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.1 | Plano e aprovação do usuário · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 15:28) | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.2 | Banco: tabelas da votação, RLS e regra de voto · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #333.1 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.3 | Tela do professor: abrir/fechar a votação e ver as médias · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.4 | Tela do aluno: card "Votar na Equipe X" (1 a 10) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #333.2 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
+| #333.5 | Documentação da votação das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #333.3, #333.4 | ⬜ Pendente | — | [462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -1952,6 +1958,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 459-a07b91ce | Combo "Equipe" no quadro de progresso da PESQUISA INTERNET (#330, pedida em 2026-10-21) | [ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md](etapas/ETAPA-459-a07b91ce-COMBO-EQUIPE-NO-PROGRESSO.md) |
 | 460-4f858e55 | Combo "Equipe" no progresso de todas as atividades com equipes (#331, pedida em 2026-10-21) | [ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md](etapas/ETAPA-460-4f858e55-COMBO-EQUIPE-EM-TODAS-AS-ATIVIDADES.md) |
 | 461-260986a7 | Accordeon na equipe do modal de equipes (#332, pedida em 2026-10-21) | [ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) |
+| 462-6432ca9c | Votação das equipes, nota de 1 a 10 da turma (#333, pedida em 2026-10-21) | [ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
