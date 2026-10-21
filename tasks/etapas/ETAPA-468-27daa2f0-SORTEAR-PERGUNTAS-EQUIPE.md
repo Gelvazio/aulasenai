@@ -23,6 +23,11 @@
 - **Visual futurista (acrescentado em 2026-10-21 19:32):** telas do sorteio, contadores e votação no estilo do
   prompt `prompts/VISUAL-FUTURISTA.md` do repositório `rules-ai` (fundo escuro, neon ciano/magenta/
   violeta, Orbitron + Share Tech Mono, `prefers-reduced-motion`, contraste e foco visível).
+- **Cuidados para 3D e jogos (acrescentado em 2026-10-21 20:36, valem para #339.22 a #339.31):**
+  - Three.js só por CDN (versão fixa) e carregado **só nas telas de jogo**, sem pesar nas demais páginas.
+  - Sempre uma **versão simples, sem 3D**, usada em celular fraco, sem WebGL e com
+    `prefers-reduced-motion: reduce`.
+  - ⛔ **Gabarito nunca vai para a tela** (resposta esperada e critérios), nem dentro do 3D ou dos jogos.
 - **Não entra:** mudar a votação existente além do item acima.
 
 ### Riscos
@@ -41,6 +46,7 @@
 | 2026-10-21 19:35 | Enunciado da pergunta da vez ao lado do cronômetro (#339.7); todas as 10 sugestões de gamificação viram as subtarefas #339.11 a #339.20 | Usuário |
 | 2026-10-21 20:26 | Etapa final #339.21: a atividade gamificada vira **modelo global** para toda atividade discursiva ou prática; em cada aula o professor escolhe usar ou não e se é **com equipe ou sem equipe** | Usuário |
 | 2026-10-21 20:31 | Modo **sem equipe** e escolhas da #339.21 (respostas uma a uma): sorteia **aluno + 1 pergunta**; **sem** os 2 min de preparo (vai direto ao 1 min); votam **todos menos quem responde**; aluno já sorteado só volta **depois que todos forem**; só **presentes** (sem "Faltou?"); votos na nota = **o professor decide** por aula/atividade; liga/desliga e com/sem equipe **na página da atividade e no modal da aula**; a escolha vale para **todas as turmas** | Usuário |
+| 2026-10-21 20:36 | Acrescentadas #339.22 a #339.31 (5 ideias com Three.js e 5 tipos de jogo; a ideia de "missões da semana" ficou de fora) e os cuidados de 3D/jogos no Escopo | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -49,7 +55,7 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, modelo global #339.21, telas,
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, modelo global #339.21, telas,
   verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
@@ -240,9 +246,109 @@
 - **Critérios de aceitação:** conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
 - **Entrega:** — · **Verificação:** —
 
+### #339.22 — Roleta 3D do sorteio (globo de bingo com Three.js)
+
+**Próximo passo:** esperar a #339.13.
+
+- **Nível:** MEDIO — tela com biblioteca 3D
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** esfera/globo de números que gira e solta as bolinhas sorteadas; substitui a roleta da #339.13 quando o 3D estiver disponível.
+- **Critérios de aceitação:** versão sem 3D funcionando (celular fraco, sem WebGL, `prefers-reduced-motion`); Three.js só por CDN e só nesta tela; sem gabarito na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.23 — Arena das equipes em 3D (torres/naves que crescem com a média dos votos)
+
+**Próximo passo:** esperar a #339.11.
+
+- **Nível:** MEDIO — tela com biblioteca 3D
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** cada equipe é uma torre ou nave 3D que cresce conforme a média; o placar ao vivo vira corrida visual.
+- **Critérios de aceitação:** versão sem 3D funcionando (celular fraco, sem WebGL, `prefers-reduced-motion`); Three.js só por CDN e só nesta tela; sem gabarito na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.24 — Pódio 3D com luzes neon e confete
+
+**Próximo passo:** esperar a #339.18.
+
+- **Nível:** MEDIO — tela com biblioteca 3D
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** os 3 primeiros sobem num pódio 3D com luzes neon e confete em partículas, no visual futurista.
+- **Critérios de aceitação:** versão sem 3D funcionando (celular fraco, sem WebGL, `prefers-reduced-motion`); Three.js só por CDN e só nesta tela; sem gabarito na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.25 — Cronômetro holográfico 3D
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela com biblioteca 3D
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** anel 3D que vai se apagando e muda de cor nos últimos 10 segundos.
+- **Critérios de aceitação:** versão sem 3D funcionando (celular fraco, sem WebGL, `prefers-reduced-motion`); Three.js só por CDN e só nesta tela; sem gabarito na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.26 — Mapa de conquistas 3D ("galáxia" das perguntas respondidas)
+
+**Próximo passo:** esperar a #339.9.
+
+- **Nível:** MEDIO — tela com biblioteca 3D
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** cada pergunta respondida acende um planeta/nó numa rede 3D; no fim da aula a turma vê a galáxia.
+- **Critérios de aceitação:** versão sem 3D funcionando (celular fraco, sem WebGL, `prefers-reduced-motion`); Three.js só por CDN e só nesta tela; sem gabarito na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.27 — Jogo "Duelo": duas equipes ou dois alunos na mesma pergunta; a turma vota na melhor
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (duelo e voto comparativo) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** duas equipes (ou dois alunos) respondem a mesma pergunta e a turma vota em qual resposta foi melhor.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.28 — Jogo "Desafio": a equipe que respondeu escolhe a próxima equipe e a pergunta
+
+**Próximo passo:** esperar a #339.2.
+
+- **Nível:** PESADO — banco (escolha registrada, sem repetir pergunta) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** a equipe que acabou de responder escolhe a próxima equipe e o número da pergunta dela, mantendo o "sem repetir".
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.29 — Jogo "Batata quente": tempo dividido entre os membros da equipe
+
+**Próximo passo:** esperar a #339.7.
+
+- **Nível:** MEDIO — tela com lógica (sequência de tempos)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** o tempo da pergunta é dividido entre os membros e cada um completa a resposta do anterior.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
+### #339.30 — Jogo "Caça ao tesouro por pistas": a pergunta aparece em pedaços; responder cedo vale mais
+
+**Próximo passo:** esperar a #339.8.
+
+- **Nível:** PESADO — banco (pontuação pelo momento da resposta) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** o enunciado aparece em partes, uma a cada 15 segundos; quem responde com menos pistas ganha mais pontos.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.31 — Jogo "Rodada relâmpago": 5 perguntas de 20 s, uma pessoa por equipe
+
+**Próximo passo:** esperar a #339.2.
+
+- **Nível:** MEDIO — tela com lógica (sorteio já existente + tempos)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** no fim da aula, 5 perguntas de 20 segundos cada, uma pessoa por equipe.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
+- **Entrega:** — · **Verificação:** —
+
 ### #339.21 — Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe
 
-**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20.
+**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.31.
 
 - **Nível:** PESADO — arquitetura (recurso global para todas as matérias), banco (escolha por aula/atividade) e mais de 3 arquivos
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (parte de banco: só Claude Code local)
