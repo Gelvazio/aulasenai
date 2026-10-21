@@ -478,3 +478,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | **#334-7687696c-c42c-4f2a-919e-e381c59a1089** | **Visualizador de tarefas mais leve, com filtro por data e visual futurista** | 🟡 Média | — | — | 🔄 Em execução | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #334.2 | Filtro por data na aba TASKS (abre nos últimos 3 dias) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #334.1 | ✅ Concluído | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
 | #334.3 | Visual futurista no visualizador · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [463-7687696c](etapas/ETAPA-463-7687696c-VISUALIZADOR-LEVE-E-FILTRO-DATA.md) | — |
+| #335.2 | Botão AO VIVO no menu do visualizador · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | — | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |

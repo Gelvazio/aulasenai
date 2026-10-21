@@ -31,7 +31,7 @@ publicado no GitHub e se atualiza sozinho.
 
 ### #335.2 — Botão AO VIVO no menu do visualizador
 
-**Próximo passo:** executor-leve acrescenta o botão no `modelo.html`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — um link no HTML + estilo, sem lógica
 - **Modelo:** só Haiku — nunca outro
@@ -40,3 +40,8 @@ publicado no GitHub e se atualiza sozinho.
   em `estilo.css`, o modificador `.abas__botao--ao-vivo` (ponto pulsando magenta antes do texto,
   desligado em `prefers-reduced-motion`).
 - **Critérios de aceitação:** link no menu; só tokens; linhas ≤ 100; conferir na tela (usuário).
+- **Executor:** Claude Code (Haiku · executor-leve) (local · main · s34), líder Opus 5.5
+- **Entrega:** link AO VIVO no `modelo.html` e `.abas__botao--ao-vivo` (+ `::before` pulsando,
+  `@keyframes pulsar-ao-vivo`, desligado em reduced-motion) no `estilo.css` — 2026-10-21 19:02
+- **Verificação:** grep do link e das regras; nenhuma linha > 100; só tokens existentes; diff
+  conferido pelo líder. Conferir na tela (usuário).

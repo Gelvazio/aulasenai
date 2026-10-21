@@ -1457,7 +1457,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | **#335-b4de8154-2af7-4357-a5bc-3319de3387e3** | **Tela AO VIVO do quadro de tarefas** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
 | #335.1 | Página live.html que se atualiza sozinha · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s34) (desde 2026-10-21 18:58) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
-| #335.2 | Botão AO VIVO no menu do visualizador · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main · s34 · agente 2) (desde 2026-10-21 18:58) | [464-b4de8154](etapas/ETAPA-464-b4de8154-TELA-AO-VIVO-DO-QUADRO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
