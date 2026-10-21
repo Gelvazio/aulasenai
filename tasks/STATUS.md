@@ -21,7 +21,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
-| local · main · s34 | #336.1 ([465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md)) — live.html sem bloqueadas e pendentes (executor-medio) | 🔄 Ativa | 2026-10-21 19:02 |
+| local · main · s34 | #336 concluída ([465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md)) — live.html sem bloqueadas e pendentes | ⏹️ Encerrada | 2026-10-21 19:06 |
 | local · main · s33 | #315 e #316 concluídas ([445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md)) — card da aula só com atividades vinculadas no banco | ⏹️ Encerrada | 2026-10-20 16:32 |
 | local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
 | local · main · s17 | #287.2 ([416-510f8b12](etapas/ETAPA-416-510f8b12-HAIKU-CONFERE-COMMITA-E-ENVIA.md)) — regra global no rules-ai; #286.1 reservada para o executor-medio | 🔄 Ativa | 2026-10-18 20:15 |
@@ -1455,8 +1455,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #332-260986a7-71f9-47fc-b41b-c617b313e758 | Accordeon na equipe do modal 👥 Equipes: clicar expande e recolhe os alunos | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.1 | Accordeon nas linhas das equipes do modal · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
 | #332.2 | Documentação do accordeon das equipes · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #332.1 | ⬜ Pendente | — | [461-260986a7](etapas/ETAPA-461-260986a7-ACCORDEON-DAS-EQUIPES.md) | — |
-| **#336-a0943514-62d9-4297-926b-309e2601cd9e** | **Tela AO VIVO sem bloqueadas e pendentes** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) | — |
-| #336.1 | Tirar bloqueadas e pendentes da live.html · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s34) (desde 2026-10-21 19:02) | [465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

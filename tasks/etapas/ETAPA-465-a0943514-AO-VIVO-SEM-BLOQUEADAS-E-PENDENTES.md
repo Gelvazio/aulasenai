@@ -8,7 +8,7 @@ concluídas), sem bloqueadas e pendentes.
 
 ### #336.1 — Tirar bloqueadas e pendentes da live.html
 
-**Próximo passo:** executor-medio remove os itens do resumo e a seção ⛔.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — JS de tela, 2 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -17,3 +17,8 @@ concluídas), sem bloqueadas e pendentes.
   `live-modelo.html`, tirar a seção "⛔ Bloqueadas". Regenerar.
 - **Critérios de aceitação:** nenhum "Bloqueadas"/"Pendentes" na `live.html`; `node --check` ok;
   conferir na tela (usuário).
+- **Executor:** Claude Code (Sonnet · executor-medio) (local · main · s34), líder Opus 5.5
+- **Entrega:** `live.js` (sem ⛔/⬜ no resumo e sem a tabela de bloqueadas; constantes sem uso
+  removidas) e `live-modelo.html` (sem a seção ⛔) — 2026-10-21 19:05
+- **Verificação:** `node --check` ok; grep "Bloquead|Pendentes|ao-vivo-bloqueadas" na
+  `live.html` = 0; linhas ≤ 100. Conferir na tela (usuário).

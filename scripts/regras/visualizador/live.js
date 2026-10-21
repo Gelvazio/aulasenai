@@ -10,8 +10,6 @@ const MARCA_FRENTES = '🧭 Frentes';
 const MARCA_CONCLUIDAS = '✅ Concluídas';
 const EMOJI_EXECUCAO = '🔄';
 const EMOJI_AGUARDANDO = '👀';
-const EMOJI_BLOQUEADA = '⛔';
-const EMOJI_PENDENTE = '⬜';
 const SITUACAO_FRENTE_ATIVA = '🔄 Ativa';
 const COLUNAS_EXECUCAO = ['Tarefa', 'Título', 'Modelo', 'Em uso por'];
 const COLUNAS_ESPERA = ['Tarefa', 'Título', 'Status'];
@@ -21,8 +19,6 @@ const MSG_SEM_LINHAS = 'Nenhuma.';
 const RESUMO_ITENS = [
   { emoji: EMOJI_EXECUCAO, rotulo: 'Em execução' },
   { emoji: EMOJI_AGUARDANDO, rotulo: 'Aguardando' },
-  { emoji: EMOJI_BLOQUEADA, rotulo: 'Bloqueadas' },
-  { emoji: EMOJI_PENDENTE, rotulo: 'Pendentes' },
 ];
 
 const estado = { anterior: null, proximaLeitura: 0 };
@@ -242,7 +238,6 @@ function desenharTela({ status, concluidas }) {
   const tabela = (emoji, colunas) => montarTabela(filtrarPorStatus(tarefas, emoji), colunas, novos);
   trocarConteudo('ao-vivo-execucao', tabela(EMOJI_EXECUCAO, COLUNAS_EXECUCAO));
   trocarConteudo('ao-vivo-aguardando', tabela(EMOJI_AGUARDANDO, COLUNAS_ESPERA));
-  trocarConteudo('ao-vivo-bloqueadas', tabela(EMOJI_BLOQUEADA, COLUNAS_ESPERA));
   desenharConcluidas(concluidas);
   guardarAnterior(tarefas);
 }
