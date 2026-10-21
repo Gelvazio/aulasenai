@@ -33,7 +33,7 @@
 
 ### #318.1 — Corrigir pela IA as alternativas pendentes da atividade 36 (banco)
 
-**Próximo passo:** frente local reservar, rodar a consulta de pendentes (seção 4.1 do
+**Próximo passo:** rodar a consulta de pendentes (seção 4.1 do
 `CORRECAO-PROVA-ADAG.md` com 36) e dividir os alunos em lotes para os agentes.
 
 - **Nível:** PESADO — banco (leitura e gravação em `correcao_discursiva`) e gabarito
