@@ -1446,7 +1446,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #326-a6ce0e06-c9e6-47ea-bb69-18ab96e8b5d0 | Atividade objetiva "PESQUISA INTERNET" da ITIC (10 questões) | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 | #326.4 | Trava "mínimo de 5 linhas por resposta" no Entregar · `MEDIO` | 🟡 Média | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:28) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
 | #326.5 | Banco: aplicar o seed e ligar às equipes da 135081 (só local) · `PESADO` | 🟡 Média | PESADO · só Opus 5.5+/Fable | #326.3, #326.4 | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | — |
-| #326.6 | Documentação da trava de linhas · `LEVE` | 🟡 Média | LEVE · só Haiku | #326.4 | ⬜ Pendente | — | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | —
+| #326.6 | Documentação da trava de linhas · `LEVE` | 🟡 Média | LEVE · só Haiku | #326.4 (spec pronta) | 🔄 Em execução | Claude Code (Haiku · executor-leve) (nuvem · elegant-planck-ul8ac1) (desde 2026-10-21 13:30) | [455-a6ce0e06](etapas/ETAPA-455-a6ce0e06-ATIVIDADE-PESQUISA-INTERNET-ITIC.md) | —
 
 
 ## Escopo

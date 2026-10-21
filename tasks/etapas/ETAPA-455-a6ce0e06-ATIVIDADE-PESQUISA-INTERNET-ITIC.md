@@ -124,3 +124,13 @@ Tarefa grande (banco + código + várias partes): plano abaixo, **aprovado** pel
 - **Critérios de aceitação:** sem o campo na fonte, nada muda nas outras discursivas; com o
   campo, entregar com qualquer resposta curta é recusado; `node --check` e `py_compile` passam;
   página PESQUISA INTERNET regerada com o atributo.
+
+### #326.6 — Documentação da trava de caracteres mínimos
+
+**Próximo passo:** executor-leve escreve; o líder confere e commita junto com a #326.4.
+
+- **Nível:** LEVE — só `.md`
+- **Modelo:** só Haiku — nunca outro (executor-leve)
+- **Descrição:** item novo em `docs/regras/atividades.md` (junto do "Campo do tamanho da
+  resposta") e linha no docstring do gerador não (fica com a #326.4). Feita em paralelo com a
+  #326.4 a pedido do usuário ("FAÇA RÁPIDO, DISPARE MAIS AGENTES"), pela especificação da etapa.
