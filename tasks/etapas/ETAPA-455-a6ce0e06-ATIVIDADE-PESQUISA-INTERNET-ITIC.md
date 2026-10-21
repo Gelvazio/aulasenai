@@ -41,3 +41,40 @@ CEPLAS TARDE 135081) respondidas por pesquisa na internet, além dos slides.
 - **Nível:** PESADO — banco
 - **Modelo:** só Opus 5.5+ ou Fable, **só Claude Code local** — nunca outro
 - **Descrição:** ciclo de seeds (`seeds.md`), autorização permanente.
+
+## Mudança de 2026-10-21 13:40 — vira discursiva em equipe (30 questões, mínimo de 5 linhas)
+
+**Pedido:** "SOMENTE O ALUNO LIDER DEVE RESPONDER NA EQUIPE, E ESTA ETAPA É DO TIPO DISCURSIVA, OS
+DEMAIS ALUNOS DEVEM FAZER A PESQUISA E SUGERIR AS RESPOSTAS, AUMENTE PRA NO MINIMO 30 QUESTOES
+DISCURSIVAS E TODAS PESQUISAVEIS NA INETERNET E COBRE NELAS *MINIMO DE 5 LINHAS NAS RESPOSTAS*,
+NAO DEIXE ENTREGAR SE NAO TIVER ISSO"
+
+Tarefa grande (banco + código + várias partes): plano abaixo, aguardando o "sim" do usuário.
+
+### Escopo (plano proposto)
+
+- **Entra:** discursiva "PESQUISA INTERNET" com 30 questões (3 por aula, Aulas 01 a 10), todas
+  respondíveis por pesquisa na internet, "você como aluno consultor", com padrão de resposta
+  para a IA no `-GABARITO.md`; cabeçalho com bloqueio de colar e campo do tamanho da resposta;
+  trava nova "Mínimo de linhas por resposta: 5" (sem isso, o botão Entregar recusa e mostra
+  quais questões faltam); em equipe pelo recurso que já existe (equipe ligada à atividade,
+  o líder 👑 responde e confirma, e a resposta dele vale para os integrantes).
+- **Sai:** a versão objetiva de 10 questões (seed nunca aplicado → SUBSTITUÍDO; página e fonte
+  apagadas; linha tirada do `scripts/gerar-seed-atividades.py`).
+- **Não entra:** mudar as outras discursivas (a trava só liga com o campo novo na fonte).
+
+### Subtarefas planejadas
+
+| Subtarefa | O quê | Nível |
+|---|---|---|
+| #326.3 | Fontes `ATIVIDADE-PESQUISA-INTERNET.md` + `-GABARITO.md` (30 questões), página e seed pelo gerador de discursivas; tirar a versão objetiva | PESADO (gabarito, seed) |
+| #326.4 | Trava do mínimo de linhas: campo novo no gerador + verificação no Entregar (`avaliacao-discursiva.js` ou módulo próprio) + aviso na questão | MEDIO |
+| #326.5 | Banco (só local): aplicar o seed e ligar a atividade às equipes da turma 135081 | PESADO |
+| #326.6 | Documentação da trava em `docs/regras/atividades.md` | LEVE |
+
+### Riscos
+
+- "Linha" muda com a largura da tela → a contagem precisa de uma definição fixa (pergunta ao
+  usuário). Plano B: mínimo de caracteres.
+- 30 respostas de 5 linhas em 3 h é muito texto para um só digitador (o líder); a equipe
+  pesquisa e dita.
