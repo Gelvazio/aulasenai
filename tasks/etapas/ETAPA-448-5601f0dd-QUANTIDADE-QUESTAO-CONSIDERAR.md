@@ -102,8 +102,10 @@
 
 ### #319.5 — Documentação (`docs/regras/atividades.md`, `docs/database.md`)
 
-**Próximo passo:** esperar a #319.3 e a #319.4.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** 2026-10-21 10:34 — executor-leve (Haiku): `docs/regras/atividades.md`, `docs/database.md` e
+  `docs/relatorio_verificacao_database.html`.
+- **Verificação:** diff lido pelo líder.

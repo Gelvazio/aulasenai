@@ -73,7 +73,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #319.5 (executor Haiku) ([448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | 🔄 Ativa | 2026-10-21 09:43 |
+| nuvem · dreamy-faraday-7x7tud | #319 entregue | ⏹️ Encerrada | 2026-10-21 10:34 |
 
 ## 📌 Tarefas
 
@@ -1426,8 +1426,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #317.2 | Plano da configuração no rules-ai, para aprovação · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #317.1 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.3 | Configurar o freellmapi no rules-ai (só local) · `PESADO · effort high` | 🟡 Média | PESADO · só Claude Code local (Opus 5.5+/Fable) | #317.2 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
 | #317.4 | Registrar no aulasenai e conferir a sincronização · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #317.3 | ⬜ Pendente | — | [446-159d25bf](etapas/ETAPA-446-159d25bf-RULES-AI-FREELLMAPI.md) | — |
-| #319-5601f0dd-d00a-42de-af88-ff8d648479e1 | Campo "Quantidade Questão Considerar" por aluno (nota) | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
-| #319.5 | Documentação da Quantidade Questão Considerar · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #319.3, #319.4 | 🔄 Em execução | Claude Code (Haiku) (nuvem · dreamy-faraday-7x7tud · executor-leve) (desde 2026-10-21 10:33) | [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 
 
 ## Escopo
@@ -1966,6 +1964,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| #319.2: revogar o acesso do `anon` à tabela `questoes_nota_aluno` e à função `questoes_para_nota` | O conector do Supabase trava em `revoke` (pede confirmação e estoura o tempo); as políticas já são só de `authenticated` | Quando o professor rodar no SQL Editor as 2 linhas `revoke` da etapa [448-5601f0dd](etapas/ETAPA-448-5601f0dd-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
 | #85: as páginas `ATIVIDADE-EXCEL-29-09-2026.html` e `ATIVIDADE-EXCEL-01-10-2026.html` de Análise de Dados não têm o "📄 Exportar Meu Gabarito" | Usam `assets/js/atividade-pratica-excel.js`, que não tem o recurso (exige adaptador novo) ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) | Quando o usuário pedir |
 | #290: `indice-atividades-bloqueio.js` (`obterCaminhoBloqueio`) compara o caminho sem cortar em `/MATERIAIS/`: com o site aberto numa pasta (servidor local), o 🔒 da atividade bloqueada não aparece ao aluno (o RLS e a página da atividade continuam barrando) | Fora do bug da duplicata; trocar pela `obterCaminhoHtml`, que já corta ([419-fef2fcf2](etapas/ETAPA-419-fef2fcf2-ATIVIDADE-DUPLICADA-PARA-O-ALUNO.md)) | ✅ Feita na #290.2 (2026-10-19 07:45) |
 | Artigos do HTML sem aula na tabela `aulas` (ex.: "Avaliação Prática" e "Média Final" do ITIC) deixaram de aparecer nos índices (#272) | Regra 15: só a tabela `aulas` cria card; para voltarem, cadastrar como aula no banco e ligar a atividade pelo `aula_id` | Quando o professor quiser |

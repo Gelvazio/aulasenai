@@ -728,8 +728,10 @@ Plano: `docs/quantidade-minima-questoes-discursiva.md`.
 |--------|---------|
 | `atividade.minimo_questoes_entrega` | `smallint`, vazio = todas as questões; `check` ≥ 1 |
 | `minimo_questoes_aluno` | PK (`atividade_id`, `aluno_id`); `minimo` (≥ 1), `definido_por`, `definido_em`; vale para todas as tentativas. RLS: aluno lê o próprio; professor lê e grava (insert/update/delete) só alunos de `professor_pode_ver_aluno`; `anon` sem acesso |
+| `questoes_nota_aluno` | (2026-10-21, #319, `database/2026-10-21-questoes-nota-aluno.sql`) PK (`atividade_id`, `aluno_id`); `quantidade` (smallint ≥ 1), `definido_por`, `definido_em`: quantas questões contam para a **nota** do aluno ("Quantidade Questão Considerar", abaixo do "Faltou?"). Vazio = usa o mínimo. Não muda o mínimo para entregar. RLS: aluno lê o próprio; professor grava e apaga (insert/update/delete) só alunos das turmas dele; `anon` sem acesso |
 | `total_questoes_discursiva(p_atividade)` | Quantidade de questões (itens) da discursiva |
 | `minimo_questoes_para_entregar(p_atividade, p_aluno)` | Mínimo do aluno, senão o da atividade, senão o total (nunca acima do total) |
+| `questoes_para_nota(p_atividade, p_aluno)` | (2026-10-21, #319) Quantidade do aluno em `questoes_nota_aluno` (limitada ao total); se não houver, `minimo_questoes_para_entregar`. Só define a **nota**; a entrega segue o mínimo. `notas_media_final` passa a usar esta função |
 | `questoes_completas_discursiva(p_atividade, p_aluno, p_tentativa)` | Questões com todos os tópicos com texto |
 | `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
 | `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
