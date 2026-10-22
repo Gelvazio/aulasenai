@@ -28,10 +28,53 @@ nas listas de atividades, equipes e demais telas, sem apagar o histórico dele.
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
 | 2026-10-22 | Tarefa criada e publicada; 👀 aguarda o "sim" ao plano (#342.1) | Claude Code (Sonnet 5.5) | banco + várias telas |
+| 2026-10-22 07:45 | Marca por turma (`turmaaluno`), não por usuário; #342.4 sobe para PESADO (16 arquivos) | Claude Code (Opus 5.5) (s36) | `alunos.html` lista vínculos; regra de níveis |
+
+### Plano (#342.1, 2026-10-22, Claude Code (Opus 5.5) (local · main · s36))
+
+**Respostas às perguntas do Escopo (propostas, valem com o "sim"):**
+
+| Pergunta | Resposta proposta |
+|---|---|
+| O botão alterna? | Sim: **Desistente** marca; no aluno já marcado o botão vira **Reativar**. Os dois pedem confirmação. |
+| O desistente continua em `alunos.html`? | Sim, com o selo **DESISTENTE** e a linha esmaecida, para poder reativar. É a única tela onde ele aparece. |
+| Entra no relatório de notas e na média final? | Não: some de todas as listas (progresso, pendências, correção, respostas, relatório, média final, equipes, votação, sorteio). As respostas antigas ficam no banco; ao reativar, ele volta a aparecer com tudo. |
+| O login é bloqueado? | Não: o aluno pode estar em outra turma. A desistência vale **por turma** (vínculo). |
+
+**Desenho (fonte única = vínculo aluno × turma):**
+
+- `alunos.html` lista **vínculos** (`turmaaluno`), não usuários. Por isso a marca fica em
+  `turmaaluno`: `desistente boolean not null default false`, `desistente_em timestamptz`,
+  `desistente_por uuid`.
+- As telas antigas leem a tabela `aluno` (turma principal, copiada da `turmaaluno` pelo trigger
+  `sincronizar_turma_principal_aluno`). O mesmo trigger passa a gravar `aluno.desistente` = o
+  aluno não tem **nenhum** vínculo ativo. A turma principal passa a ser escolhida entre os vínculos
+  ativos. Assim as telas que leem `aluno` só precisam de `desistente=eq.false`.
+- Gravação só por função `definir_desistente(p_vinculo bigint, p_desistente boolean)`
+  (`security definer`, só professor da turma pela `professor_tem_turma`, ou administrador). O
+  aluno não altera a coluna (RLS da `turmaaluno` já só deixa professor gravar; conferir).
+- Funções do banco que listam alunos da turma passam a ignorar vínculo desistente:
+  `alunos_da_turma_lider`, `alunos_sem_entrega_turma`, `atividades_pendentes_turma`,
+  `sugestoes_turmaaluno`, `equipe_membro_preparar` (recusa desistente em equipe nova),
+  `votacoes_abertas_aluno`, `votar_equipe`, `aluno_lider_da_turma`, `definir_lider_turma`,
+  `definir_lider_usuario` (não pode ser líder). Conferir cada uma no SQL antes de mudar.
+- Script `database/2026-10-22-turmaaluno-desistente.sql`, idempotente, sem apagar nada.
+
+**Telas (JS) que listam alunos e ganham o filtro** (levantadas por `grep`; #342.4 confere de novo):
+`alunos-da-turma-progresso`, `filtro-aluno-progresso`, `progresso-turma-fontes`,
+`alunos-sem-inicio-entrega`, `avaliacao-media-final(-professor)`, `correcao-discursiva-repositorio`,
+`finalizar-atividade-professor`, `painel-professor`, `relatorio-atividades-dados`,
+`respostas-aluno-professor`, `respostas-atividade-banco`, `respostas-atividade-professor`,
+`respostas-discursivas-banco`, `suspeita-copia-discursiva`, `indice-log-alternativas`,
+`aula-turma-repositorio` (todos em `assets/js/`); equipes: `equipes-repositorio`.
+
+**Verificação:** consultas de conferência no banco (marcar e desmarcar um vínculo de teste e ver as
+funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas as listas. A tela
+(botão, selo) o usuário confere no navegador.
 
 ### #342.1 — Plano detalhado e aprovação do usuário
 
-**Próximo passo:** levantar onde alunos são listados (grep em `assets/js` e páginas), responder as
+**Próximo passo:** plano escrito acima; aguardar o "sim" do usuário e registrar nas Decisões.
 perguntas do Escopo e pedir o "sim" ao usuário.
 
 - **Nível:** PESADO — plano de tarefa com banco e segurança
@@ -41,16 +84,15 @@ perguntas do Escopo e pedir o "sim" ao usuário.
   própria etapa e registrar a aprovação nas Decisões.
 - **Critérios de aceitação:** perguntas do Escopo respondidas; "sim" do usuário registrado.
 
-### #342.2 — Banco: coluna de desistente em `usuario` e RLS
+### #342.2 — Banco: coluna de desistente em `turmaaluno`, função e filtros
 
 **Próximo passo:** aguardar #342.1.
 
 - **Nível:** PESADO — SQL e RLS
 - **Modelo:** só Opus 5.5+ ou Fable (Claude Code local, banco) — nunca outro
 - **Effort:** high
-- **Descrição:** `database/<data>-usuario-desistente.sql` idempotente (coluna `desistente BOOLEAN
-  NOT NULL DEFAULT false`, data da marca); só professor altera; atualizar `docs/database.md` e o
-  relatório HTML; seeds em dia.
+- **Descrição:** `database/2026-10-22-turmaaluno-desistente.sql` como no Plano (colunas, trigger
+  de sincronização, `definir_desistente`, funções de lista); `docs/database.md` e o relatório HTML.
 - **Critérios de aceitação:** aluno não consegue marcar a si mesmo; consulta de conferência ok.
 
 ### #342.3 — Botão "Desistente" em `alunos.html`
@@ -68,9 +110,9 @@ perguntas do Escopo e pedir o "sim" ao usuário.
 
 **Próximo passo:** aguardar #342.2.
 
-- **Nível:** MEDIO — código com lógica
-- **Modelo:** só Sonnet — nunca outro
-- **Effort:** medium
+- **Nível:** PESADO — mais de 3 arquivos ligados (cerca de 16 telas)
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Effort:** high
 - **Descrição:** filtrar `desistente = false` nas listas de alunos de atividades, entrega,
   correção, progresso da turma, pendências e combos de aluno.
 - **Critérios de aceitação:** `grep` mostra o filtro em todas as listas levantadas na #342.1.
