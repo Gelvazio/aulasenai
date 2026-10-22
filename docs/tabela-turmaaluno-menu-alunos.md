@@ -51,3 +51,16 @@
 - Carga: 106 vínculos (133933 = 25, 135080 = 33, 135081 = 35, QA LBTSN 2026/1 M2 = 13).
 - Teste em bloco desfeito: vincular um PROFESSOR como aluno é recusado pelo trigger.
 - Menu ALUNOS para todo professor; `alunos.html` com CRUD, filtro por turma e busca. `node --check` ok (sem navegador).
+
+## Aluno desistente (#342, 2026-10-22)
+
+- **Botão na linha do vínculo:** 🚪 **Desistente** entre **Editar** e **Excluir**. Quando o vínculo
+  já está marcado, o botão vira ↩️ **Reativar**. Os dois pedem confirmação antes de gravar.
+- **Quem pode:** só o professor da turma (função `definir_desistente`). O administrador também.
+- **Visual:** o aluno desistente aparece com o selo **DESISTENTE** e a linha esmaecida, para
+  poder ser reativado.
+- **Vale por turma:** a desistência é do vínculo (aluno × turma). Se o aluno está em outra turma,
+  continua ativo nela. O login não é bloqueado.
+- **Histórico:** nada é apagado. Respostas e notas ficam no banco; ao reativar, o aluno volta a
+  aparecer com tudo.
+- Detalhes do banco: `docs/database.md`, seção "aluno desistente por turma".

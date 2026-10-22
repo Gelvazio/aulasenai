@@ -288,3 +288,26 @@ Registrada em 2026-09-28.
   matéria (filtra pela UC em `data-uc`) e `scripts/criar-usuarios-supabase-auth.js`.
   ⚠️ Dados pessoais de menores (LGPD): versionado no Git (decisão do usuário), mas **nunca no
   site** (`LISTAPRESENCA*.js` no `.vercelignore`).
+
+## 🚪 REGRA — ALUNO DESISTENTE POR TURMA (#342, 2026-10-22)
+
+Registrada em 2026-10-22. Etapa: `tasks/etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md`; banco:
+`docs/database.md` (seção "aluno desistente por turma").
+
+- ✅ A desistência vale **por turma** (vínculo da `turmaaluno`). Só o professor da turma marca ou
+  desmarca, pelo botão em `alunos.html`. Não bloqueia o login: o aluno pode estar em outra turma.
+- ✅ O histórico fica no banco. Reativar traz tudo de volta.
+- ✅ **Onde o desistente some:**
+  - progresso da turma e alunos sem início ou sem entrega;
+  - painel do professor;
+  - respostas dos alunos e resumo (inclusive "sem resposta");
+  - correção discursiva (entregas);
+  - relatório de atividades, inclusive na lista de presença;
+  - média final e log de alternativas;
+  - datas da aula do aluno;
+  - equipes: fora da escolha de membros. Quem já estava em equipe aparece como "Nome (desistente)"
+    (tabela, editar e PDF) e não entra em "alunos sem equipe";
+  - líder e votação: não vira líder e não vota.
+- ✅ **Única tela onde ele aparece:** `alunos.html`, com o selo DESISTENTE e a linha esmaecida.
+- ⚠️ **Sorteios e jogos** (#339 e #340) ainda não existem. Quando forem feitos, devem filtrar
+  `desistente`; o recado está em `tasks/RECADOS.md`.

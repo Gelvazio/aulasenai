@@ -8,3 +8,5 @@
 | #342.3 | Botão "Desistente" em alunos.html · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.4 | Desistente fora das listas de atividades e progresso · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.6 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #342.3 a #342.5 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342-7c1a4d93-5b2e-4f08-9a61-3d8e2c7f1b40 | Aluno desistente some das listas (botão Desistente em alunos.html) | 🟠 Alta | — | — | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |

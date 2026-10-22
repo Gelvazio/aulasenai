@@ -174,10 +174,14 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.6 — Documentação
 
-**Próximo passo:** executor-leve: `docs/tabela-turmaaluno-menu-alunos.md` e `docs/regras/usuarios-turmas-paginas-professor.md` com o aluno desistente.
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
 - **Effort:** low
 - **Descrição:** orientação em `docs/` das telas alteradas e `docs/database.md` conferido.
 - **Critérios de aceitação:** documentos citam a coluna e as telas filtradas.
+- **Entrega:** seção "Aluno desistente (#342)" em `docs/tabela-turmaaluno-menu-alunos.md` e em
+  `docs/regras/usuarios-turmas-paginas-professor.md` (`docs/database.md` e o relatório HTML já
+  vieram na #342.2). Feita pelo executor-leve (Haiku 5.5); conferida pelo líder Opus 5.5.
+- **Verificação:** diff lido; os textos batem com as entregas de #342.2 a #342.5.
