@@ -39,7 +39,7 @@ ProgramBox::ProgramBox(const sf::Vector2f &pos, const sf::Vector2f &size, const 
 
     // Inits the text indicating the name of the prog
     // Font load
-    if (!m_font.loadFromFile(Utils::FONT_PATH+FONT_NAME)) {
+    if (!m_font.openFromFile(Utils::FONT_PATH+FONT_NAME)) {
         std::cout << Utils::getTime() + "[Program Box-ERROR]: Could not load the font" << std::endl;
         std::cout << Utils::getTime() + "[Program Box-FIX]: Check \"" + Utils::FONT_PATH+FONT_NAME + "\"" << std::endl;
         std::cout << Utils::getTime() + "[Program Box-FIX]: The font will be ignored." << std::endl;
@@ -49,7 +49,7 @@ ProgramBox::ProgramBox(const sf::Vector2f &pos, const sf::Vector2f &size, const 
     }
 
     m_text.setString(prog_name);
-    m_text.setColor(TEXT_COLOR);
+    m_text.setFillColor(TEXT_COLOR);
     m_text.setPosition({TEXT_POS_GAP.x+pos.x,TEXT_POS_GAP.y+pos.y});
 }
 

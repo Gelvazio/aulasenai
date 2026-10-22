@@ -73,18 +73,17 @@ Button::Button(const Utils::Action &action, const sf::Vector2f &position, const 
 void Button::initLabel(const sf::Vector2f &position, const sf::Vector2f &size, const sf::Color &color, const sf::Text &font, const std::string &text){
 
     // Sets the font to the text
-    const sf::Font* font1 = font.getFont();
-    m_label.setFont(*font1);
+    m_label.setFont(font.getFont());
 
     // Sets the label to the text
     m_label.setString(text);
 
     // Sets the position of the label
-    m_label.setOrigin(size.x/3.5,size.y/4.);
+    m_label.setOrigin({size.x/3.5f,size.y/4.f});
     m_label.setPosition(position);
 
     // Sets the color & size of the label
-    m_label.setColor(color);
+    m_label.setFillColor(color);
     m_label.setCharacterSize(LABEL_SIZE);
 
 }
@@ -96,7 +95,7 @@ void Button::initButton(const sf::Vector2f &position, const sf::Vector2f &size, 
 
     // Sets the position of the rectangle
     m_button.setPosition(position);
-    m_button.setOrigin(size.x-size.x/2., size.y-size.y/2.);
+    m_button.setOrigin({size.x-size.x/2.f, size.y-size.y/2.f});
 
     // Sets the color / thickness of the rectangle
     m_button.setFillColor(fillColor);
@@ -111,7 +110,7 @@ void Button::initButton(const sf::Vector2f &position, const sf::Vector2f &size, 
 
     // Sets the position of the rectangle
     m_button.setPosition(position);
-    m_button.setOrigin(size.x-size.x/2., size.y-size.y/2.);
+    m_button.setOrigin({size.x-size.x/2.f, size.y-size.y/2.f});
 
     // Sets the color / thickness of the rectangle according to its theme
     m_button.setFillColor(theme->getRectDefaultFillColor());
@@ -225,7 +224,7 @@ void Button::setLabelText(const std::string &label){
     m_label.setString(label);
 }
 void Button::setLabelColor(const sf::Color &color){
-    m_label.setColor(color);
+    m_label.setFillColor(color);
 }
 
 void Button::setPosition(const sf::Vector2f &pos)

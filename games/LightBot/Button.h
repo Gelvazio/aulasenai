@@ -66,7 +66,7 @@ private:
     // The rectangle of the button
     sf::RectangleShape m_button;
     // The text of the button
-    sf::Text m_label;
+    sf::Text m_label{Utils::emptyFont()};
 };
 
 #endif // BUTTON_H

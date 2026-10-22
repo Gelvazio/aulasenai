@@ -193,7 +193,7 @@ sf::Text Theme::getLabel(){
     }
 
     // Font load
-    if (!m_font.loadFromFile(fontPath+fontName)) {
+    if (!m_font.openFromFile(fontPath+fontName)) {
         //throw "Police "+POLICE+" manquante";
         std::cout << Utils::getTime() + "[Theme-ERROR]: Could not load the font" << std::endl;
         std::cout << Utils::getTime() + "[Theme-FIX]: Check \""

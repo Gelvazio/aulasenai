@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "Cell.h"
+#include "Utils.h"
 #include "Robot.h"
 
 class Grid
@@ -52,11 +53,11 @@ private:
     bool m_error_drawing;
 
     // Grid height display
-    sf::Text m_text_levelheight;
+    sf::Text m_text_levelheight{Utils::emptyFont()};
     sf::Font m_font_levelheight;
 
     // Grid name display
-    sf::Text m_text_levelname;
+    sf::Text m_text_levelname{Utils::emptyFont()};
     sf::Font m_font_levelname;
 
     // The cell that is currently on mouse

@@ -18,7 +18,7 @@ private:
     sf::RectangleShape m_rect;
     // Program box name to draw
     sf::Font m_font;
-    sf::Text m_text;
+    sf::Text m_text{Utils::emptyFont()};
 
     // Type of the prog (main, p1, p2)
     Utils::TypeProg m_type_prog;

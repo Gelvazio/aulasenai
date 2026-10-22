@@ -10,6 +10,9 @@ class Utils
 public:
     // Absolute value
     static float abs(const float &value);
+    // SFML 3: sf::Text and sf::Sprite need a font/texture at construction; these are placeholders
+    static sf::Font& emptyFont();
+    static sf::Texture& emptyTexture();
     // Get the time for the outputs
     static std::string getTime();
     // Get PI (same method as Math.h)

@@ -75,7 +75,7 @@ void Grid::initRobotRect(){
 void Grid::initLabels(){
 
     // Font load (cell height)
-    if (!m_font_levelheight.loadFromFile(Utils::FONT_PATH+FONT_LEVELHEIGHT)) {
+    if (!m_font_levelheight.openFromFile(Utils::FONT_PATH+FONT_LEVELHEIGHT)) {
         std::cout << Utils::getTime() + "[Grid-ERROR]: Could not load the font" << std::endl;
         std::cout << Utils::getTime() + "[Grid-FIX]: Check \""+ Utils::FONT_PATH+FONT_LEVELHEIGHT + "\"" << std::endl;
         std::cout << Utils::getTime() + "[Grid-FIX]: The font will be ignored." << std::endl;
@@ -84,11 +84,11 @@ void Grid::initLabels(){
         std::cout << Utils::getTime() + "[Grid-INFO]: Font loaded" << std::endl;
     }
 
-    m_text_levelheight.setColor(TEXT_LEVELHEIGHT_COLOR);
+    m_text_levelheight.setFillColor(TEXT_LEVELHEIGHT_COLOR);
     m_text_levelheight.setCharacterSize(TEXT_LEVELHEIGHT_SIZE);
 
     // Font load (level name)
-    if (!m_font_levelname.loadFromFile(Utils::FONT_PATH+FONT_LEVELNAME)) {
+    if (!m_font_levelname.openFromFile(Utils::FONT_PATH+FONT_LEVELNAME)) {
         std::cout << Utils::getTime() + "[Grid-ERROR]: Could not load the font" << std::endl;
         std::cout << Utils::getTime() + "[Grid-FIX]: Check \""+ Utils::FONT_PATH+FONT_LEVELNAME + "\"" << std::endl;
         std::cout << Utils::getTime() + "[Grid-FIX]: The font will be ignored." << std::endl;
@@ -97,7 +97,7 @@ void Grid::initLabels(){
         std::cout << Utils::getTime() + "[Grid-INFO]: Font loaded" << std::endl;
     }
 
-    m_text_levelname.setColor(TEXT_LEVELNAME_COLOR);
+    m_text_levelname.setFillColor(TEXT_LEVELNAME_COLOR);
     m_text_levelname.setCharacterSize(TEXT_LEVELNAME_SIZE);
 
 }
@@ -429,7 +429,7 @@ void Grid::drawGrid(sf::RenderWindow& window, const sf::Vector2f &grid_pos){
 
         sf::CircleShape hexa;
         hexa.setPointCount(6);
-        hexa.setRotation(90);
+        hexa.setRotation(sf::degrees(90));
         hexa.setRadius(m_radius);
         hexa.setFillColor(CELL_FILL_COLOR);
         hexa.setOutlineColor(CELL_OUTLINE_COLOR);
@@ -473,12 +473,12 @@ void Grid::drawGrid(sf::RenderWindow& window, const sf::Vector2f &grid_pos){
 
             // The text where is the height
             m_text_levelheight.setString(label);
-            m_text_levelheight.setColor(sf::Color(TEXT_LEVELHEIGHT_COLOR));
+            m_text_levelheight.setFillColor(sf::Color(TEXT_LEVELHEIGHT_COLOR));
             // -4 here is to adjust the text position since m_text.getGlobalBounds().height is not working well
             // m_radius/2 is to show the text at the middle of the cell (the origin is on the top left corner)
             m_text_levelheight.setPosition({pos.x-4,pos.y+m_radius/2});
 
-            m_text_levelname.setColor(sf::Color(TEXT_LEVELNAME_COLOR));
+            m_text_levelname.setFillColor(sf::Color(TEXT_LEVELNAME_COLOR));
             // -4 here is to adjust the text position since m_text.getGlobalBounds().height is not working well
             // m_radius/2 is to show the text at the middle of the cell (the origin is on the top left corner)
             m_text_levelname.setPosition({0,0});

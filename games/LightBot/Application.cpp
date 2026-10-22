@@ -18,7 +18,7 @@
 
 
 Application::Application(unsigned int w, unsigned int h, const std::wstring & title)
-    :  m_window{{w, h}, title}, m_pressing_mouse{false}
+    :  m_window{sf::VideoMode({w, h}), title}, m_pressing_mouse{false}
 {
 }
 
@@ -54,31 +54,21 @@ void Application::process_events()
         return;
     }
 
-    sf::Event event;
-
-    while (m_window.pollEvent(event))
+    while (const std::optional event = m_window.pollEvent())
     {
-        switch (event.type)
-        {
-        case sf::Event::Closed :
+        if (event->is<sf::Event::Closed>()) {
             stop();
-            break;
-        case sf::Event::MouseButtonPressed :
+        } else if (const auto* pressed = event->getIf<sf::Event::MouseButtonPressed>()) {
             m_pressing_mouse = true;
-            set_mouse_coord(event.mouseButton.x, event.mouseButton.y);
+            set_mouse_coord(pressed->position.x, pressed->position.y);
             mouse_button_pressed();
-            break;
-        case sf::Event::MouseButtonReleased :   
+        } else if (const auto* released = event->getIf<sf::Event::MouseButtonReleased>()) {
             m_pressing_mouse = false;
-            set_mouse_coord(event.mouseButton.x, event.mouseButton.y);
+            set_mouse_coord(released->position.x, released->position.y);
             mouse_button_released();
-            break;
-        case sf::Event::MouseMoved :
-            set_mouse_coord(event.mouseMove.x, event.mouseMove.y);
+        } else if (const auto* moved = event->getIf<sf::Event::MouseMoved>()) {
+            set_mouse_coord(moved->position.x, moved->position.y);
             mouse_moved();
-            break;
-        default:
-            break;
         }
     }
 }

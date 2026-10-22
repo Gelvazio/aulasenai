@@ -65,9 +65,9 @@ private:
     /***********************/
     // Background
     sf::Texture m_texture;
-    sf::Sprite m_sprite;
+    sf::Sprite m_sprite{Utils::emptyTexture()};
     // Text of end_screen (when the execution is finished)
-    sf::Text m_end_screen_text;
+    sf::Text m_end_screen_text{Utils::emptyFont()};
     sf::Font m_end_screen_font;
 
     //============= METHODS ==============//

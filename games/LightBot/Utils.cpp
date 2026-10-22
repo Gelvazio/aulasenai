@@ -15,6 +15,19 @@
 //    Authors : Lilian Gallon, Tristan Renaudon
 
 #include "Utils.h"
+#include <cmath>
+
+sf::Font& Utils::emptyFont()
+{
+    static sf::Font font;
+    return font;
+}
+
+sf::Texture& Utils::emptyTexture()
+{
+    static sf::Texture texture;
+    return texture;
+}
 
 // Because we declared thos variables as static const, we have to initalize those there
 const std::string Utils::FONT_PATH = "resources/fonts/";
@@ -145,24 +158,24 @@ sf::Vector2f Utils::positionToPixel(const sf::Vector2f &pos_in_index, const sf::
 
     if((int)pos_in_index.x%2!=0 && (int)pos_in_index.y%2==0){
         if(pos_in_index.y==0){
-            pos.y -= (radius*sin(Utils::PI/3.)+1);
+            pos.y -= (radius*std::sin(Utils::PI/3.)+1);
         }else{
-            pos.y += pos_in_index.y * (radius*sin(Utils::PI/3.)+1) + (radius*sin(Utils::PI/3.)+1);
+            pos.y += pos_in_index.y * (radius*std::sin(Utils::PI/3.)+1) + (radius*std::sin(Utils::PI/3.)+1);
         }
     }else if((int)pos_in_index.x%2==0 && (int)pos_in_index.y%2==0){
         if(pos_in_index.y==0){
-            pos.y -= pos_in_index.y * 2*(radius*sin(Utils::PI/3.)+1);
+            pos.y -= pos_in_index.y * 2*(radius*std::sin(Utils::PI/3.)+1);
         }else{
-            pos.y += pos_in_index.y * 2*(radius*sin(Utils::PI/3.)+1);
+            pos.y += pos_in_index.y * 2*(radius*std::sin(Utils::PI/3.)+1);
         }
     }else if((int)pos_in_index.x%2!=0 && (int)pos_in_index.y%2!=0){
         if(pos_in_index.y==1){
-            pos.y += pos_in_index.y * (radius*sin(Utils::PI/3.)+1);
+            pos.y += pos_in_index.y * (radius*std::sin(Utils::PI/3.)+1);
         }else{
-            pos.y += pos_in_index.y * (radius*sin(Utils::PI/3.)+1) + 2*(radius*sin(Utils::PI/3.)+1);
+            pos.y += pos_in_index.y * (radius*std::sin(Utils::PI/3.)+1) + 2*(radius*std::sin(Utils::PI/3.)+1);
         }
     }else if((int)pos_in_index.x%2==0 && (int)pos_in_index.y%2!=0){
-        pos.y += pos_in_index.y * 2*(radius*sin(Utils::PI/3.)+1);
+        pos.y += pos_in_index.y * 2*(radius*std::sin(Utils::PI/3.)+1);
     }
     pos.x += pos_in_index.x * (radius+1 + radius * cos(Utils::PI/3.)+1);
 

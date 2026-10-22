@@ -2,6 +2,7 @@
 #define THEME_H
 
 #include <SFML/Graphics.hpp>
+#include "Utils.h"
 
 class Theme
 {
@@ -32,7 +33,7 @@ private:
     // Attributes
     int m_id;
     sf::Font m_font;
-    sf::Text m_text;
+    sf::Text m_text{Utils::emptyFont()};
 };
 
 #endif // THEME_H

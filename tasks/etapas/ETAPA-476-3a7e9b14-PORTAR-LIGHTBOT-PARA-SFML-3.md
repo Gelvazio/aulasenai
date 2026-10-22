@@ -12,9 +12,9 @@
 compilar com `mingw32-make` e corrigir os erros restantes.
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (Makefile + 6 `.cpp`/`.h`) com mudança de API de biblioteca.
-- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Modelo:** Sonnet, Opus 5.5+ ou Fable (C48, 2026-10-22)
 - **Effort:** high
 - **Descrição:** migração SFML 2 → 3 do clone em `games/LightBot`, sem mudar o comportamento do jogo.
 - **Critérios de aceitação:** `mingw32-make` gera `games/LightBot/LightBot.exe` no MSYS2 UCRT64 sem erros; o jogo abre
   e as fases carregam. `README_INSTALACAO_APP.md` atualizado (C++17, SFML 3).
-- **Entrega:** — · **Verificação:** compilação no MSYS2 (só o usuário roda; sem navegador).
+- **Entrega:** `Makefile` (C++17), `Application.cpp` (eventos `std::optional`), `Button/Grid/Interface/ProgramBox/Theme` (`openFromFile`, `setFillColor`, `Text`/`Sprite` com `Utils::emptyFont/emptyTexture`, `setOrigin`/`setPosition` com vetor, `sf::degrees`), `Utils` (`std::sin`) e `README_INSTALACAO_APP.md` · **Verificação:** `mingw32-make` no MSYS2 UCRT64 gerou `games/LightBot/LightBot.exe` sem erros e o `ldd` achou as DLLs da SFML 3; execução na tela fica para o usuário (sem abrir janela aqui).

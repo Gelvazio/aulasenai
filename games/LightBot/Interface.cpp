@@ -143,9 +143,9 @@ Interface::Interface()
 
     // END SCREEN TEXT (message you failed / you won ...)
     m_end_screen_text.setPosition(END_SCREEN_TEXT_POS);
-    m_end_screen_text.setColor(END_SCREEN_TEXT_COL);
+    m_end_screen_text.setFillColor(END_SCREEN_TEXT_COL);
 
-    if (!m_end_screen_font.loadFromFile(Utils::FONT_PATH+END_SCREEN_TEXT_FONT)) {
+    if (!m_end_screen_font.openFromFile(Utils::FONT_PATH+END_SCREEN_TEXT_FONT)) {
         std::cout << Utils::getTime() + "[Interface-ERROR]: Could not load the font of end level message" << std::endl;
         std::cout << Utils::getTime() + "[Interface-FIX]: Check \"" + Utils::FONT_PATH+END_SCREEN_TEXT_FONT + "\"" << std::endl;
         std::cout << Utils::getTime() + "[Interface-FIX]: The font will be ignored." << std::endl;
@@ -237,7 +237,7 @@ void Interface::loop()
             sf::RectangleShape rect;
             rect.setSize({SCREEN_WIDTH,SCREEN_HEIGHT});
             rect.setFillColor(sf::Color(128,128,128,150));
-            rect.setPosition(0,0);
+            rect.setPosition({0,0});
 
             // Draws the background, text, buttons
             m_window.draw(rect);
@@ -712,8 +712,8 @@ void Interface::loadBackground(){
         std::cout << Utils::getTime() + "[Texture-FIX]: Check \""+ Utils::IMG_PATH + "\"" << std::endl;
         std::cout << Utils::getTime() + "[Texture-FIX]: The texture will be ignored." << std::endl;
     }else{
-        m_sprite.setTexture(m_texture);
-        m_sprite.setPosition(0,0);
+        m_sprite.setTexture(m_texture, true);
+        m_sprite.setPosition({0,0});
     }
 }
 
