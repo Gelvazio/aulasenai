@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · dreamy-faraday-7x7tud | #349 concluída ([478-22ff916b](etapas/ETAPA-478-22ff916b-TURMA-ROBERTO-MACHADO-TARDE-NA-TELA-USUARIOS.md)) — todas as turmas visíveis na tela USUARIOS | ⏹️ Encerrada | 2026-10-22 16:34 |
+| nuvem · dreamy-faraday-7x7tud | #350.1 [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) — uma senha por vez na tela USUARIOS | 🔄 Ativa | 2026-10-22 17:20 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
@@ -1568,7 +1568,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | **#350-bbb9a770-d52e-40b8-82c7-c4211a76c7b9** | **Mostrar uma senha por vez na tela USUARIOS online** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
-| #350.1 | Botão por linha para mostrar/ocultar a senha do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
+| #350.1 | Botão por linha para mostrar/ocultar a senha do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio; líder Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 17:20) | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
