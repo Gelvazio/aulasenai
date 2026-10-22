@@ -20,11 +20,10 @@ usar no celular: textos legíveis, botões de toque, lista e modal sem rolagem l
 
 ### #351.1 — Layout da tela Pendências para celular
 
-**Próximo passo:** ler `pendencias.html`, `pendencias.css` e `pendencias-pagina.js` e ajustar o
-layout para telas estreitas.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — 1 tela (HTML + CSS, JS só se preciso)
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** em 360 px sem rolagem lateral; textos ≥ 16 px nos campos; botões e
   filtros com alvo de toque ≥ 44 px; lista e modal legíveis; desktop sem mudança; `node --check`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/css/pendencias.css` (bloco `@media (max-width: 640px)`: tabela vira cartões com o nome da coluna em cada linha, filtros em 2 colunas, campos de 16 px, alvos de toque de 44 px, modal em tela cheia por baixo), `assets/js/pendencias-pagina.js` (`data-rotulo` em cada célula) e `pendencias.html` (classes `pd-tabela` e `pd-botao-largo`); desktop sem mudança (tudo dentro da media query) · **Verificação:** `node --check`; chaves do CSS balanceadas; leitura do código; o visual só dá para conferir no celular (usuário)

@@ -20,6 +20,9 @@ const TEXTO_BOTAO_SALVAR_PD = "Salvar alterações";
 const TITULO_NOVA_PD = "Nova pendência";
 const TITULO_EDITAR_PD = "Editar pendência";
 const ROTA_LOGIN_PD = "../../login.html";
+const ROTULOS_COLUNAS_PD = [
+  "ID", "Nome", "Descrição", "Responsável", "Data de início", "Status", "Excluído", "Ações",
+];
 
 const estadoPd = { repositorio: null, pendencias: [], editandoId: null };
 
@@ -207,6 +210,17 @@ function criarCelulaAcoesPd(pendencia) {
 }
 
 /**
+ * Grava em cada célula o nome da coluna (data-rotulo), que o CSS mostra no celular, onde a
+ * tabela vira uma lista de cartões.
+ * @param {HTMLTableRowElement} linha - Linha com uma célula por coluna de ROTULOS_COLUNAS_PD.
+ */
+function rotularCelulasPd(linha) {
+  Array.from(linha.children).forEach((celula, posicao) => {
+    celula.dataset.rotulo = ROTULOS_COLUNAS_PD[posicao];
+  });
+}
+
+/**
  * Monta a linha da tabela de uma pendência.
  * @param {Object} pendencia - Linha da tabela.
  * @returns {HTMLTableRowElement} Linha.
@@ -218,13 +232,14 @@ function criarLinhaPd(pendencia) {
   linha.classList.toggle("tp-linha--editando", estadoPd.editandoId === pendencia.id);
   linha.append(
     criarElementoPd("td", "", String(pendencia.id)),
-    criarElementoPd("td", "", pendencia.nome),
+    criarElementoPd("td", "pd-celula-nome", pendencia.nome),
     criarElementoPd("td", "pd-descricao", pendencia.descricao || ""),
     criarElementoPd("td", "", pendencia.responsavel),
     criarElementoPd("td", "", formatarDataPd(pendencia.datainicio)),
     criarCelulaStatusPd(pendencia),
     criarElementoPd("td", "", estaExcluida ? "Sim" : "Não"),
     criarCelulaAcoesPd(pendencia));
+  rotularCelulasPd(linha);
   return linha;
 }
 

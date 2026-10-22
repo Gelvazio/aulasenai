@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · dreamy-faraday-7x7tud | #351.1 [480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md) — tela Pendências no celular | 🔄 Ativa | 2026-10-22 18:30 |
+| nuvem · dreamy-faraday-7x7tud | #351 concluída ([480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md)) — tela Pendências no celular | ⏹️ Encerrada | 2026-10-22 18:23 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
@@ -1567,8 +1567,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
-| **#351-394771ad-5a5f-4628-a465-eda0c07657b7** | **Tela Pendências: layout e usabilidade no celular** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md) | — |
-| #351.1 | Layout da tela Pendências para celular · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 18:30) | [480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

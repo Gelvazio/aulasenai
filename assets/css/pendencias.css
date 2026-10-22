@@ -59,3 +59,96 @@
 @media (max-width: 600px) {
     .pd-modal__linha { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ── Celular (#351): a tabela vira lista de cartões, campos e botões ficam fáceis de tocar ── */
+:root {
+    --pd-alvo-toque: 44px;
+    --pd-fonte-campo: 16px;
+}
+
+@media (max-width: 640px) {
+    body { padding: 10px; }
+    .guia { gap: 12px; }
+    .guia-cabecalho { padding: 14px 16px; }
+    .guia-cabecalho h1 { font-size: 22px; line-height: 1.25; }
+    .guia-cabecalho p { font-size: 14px; }
+    .guia-cartao { padding: 14px 12px; }
+
+    /* Filtros: 2 por linha, texto de 16 px (evita o zoom automático do iPhone) */
+    .pd-filtros { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .pd-filtros .tp-campo { font-size: 14px; }
+    .pd-filtros .tp-acoes { grid-column: 1 / -1; }
+    .tp-campo .guia-filtro {
+        min-height: var(--pd-alvo-toque);
+        font-size: var(--pd-fonte-campo);
+    }
+
+    .pd-botao-largo { width: 100%; min-height: var(--pd-alvo-toque); }
+    .pd-cabecalho-lista { flex-direction: column; align-items: stretch; }
+
+    /* Tabela → cartões: cada pendência é um bloco, cada célula mostra o nome da coluna */
+    .pd-tabela, .pd-tabela tbody, .pd-tabela tr, .pd-tabela td { display: block; width: 100%; }
+    .pd-tabela thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+    .pd-tabela tr {
+        margin-bottom: 12px;
+        border: 1px solid var(--guia-borda);
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+    }
+    .pd-tabela tr.pd-linha--excluida { background: var(--pd-fundo-excluida); }
+    .pd-tabela tr.tp-linha--editando { background: var(--tp-fundo-edicao); }
+    .pd-tabela td {
+        display: grid;
+        grid-template-columns: minmax(96px, 34%) minmax(0, 1fr);
+        gap: 8px;
+        align-items: center;
+        padding: 8px 12px;
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+    .pd-tabela td[data-rotulo]::before {
+        content: attr(data-rotulo);
+        color: var(--tp-cinza);
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .pd-tabela td.pd-celula-nome { background: var(--guia-fundo); font-weight: 700; }
+    .pd-tabela td.tp-vazio { display: block; padding: 16px 12px; }
+    .pd-descricao { max-width: none; }
+    .pd-status-linha { min-width: 0; width: 100%; }
+    .pd-tabela .guia-filtro { min-height: var(--pd-alvo-toque); font-size: var(--pd-fonte-campo); }
+
+    /* Ações: botões lado a lado, com alvo de toque grande */
+    .pd-tabela td.tp-celula-acoes { display: flex; flex-wrap: wrap; gap: 8px; white-space: normal; }
+    .pd-tabela td.tp-celula-acoes::before { flex: 1 1 100%; }
+    .pd-tabela .tp-celula-acoes .guia-botao {
+        flex: 1 1 120px;
+        min-height: var(--pd-alvo-toque);
+        margin: 0;
+        font-size: 15px;
+    }
+
+    /* Modal: ocupa a tela, botões de salvar/cancelar empilhados e grandes */
+    .tp-modal { padding: 0; align-items: flex-end; }
+    .pd-modal__caixa {
+        width: 100%;
+        max-height: 94vh;
+        padding: 16px 14px;
+        border-radius: 14px 14px 0 0;
+    }
+    .pd-modal__caixa .guia-filtro { font-size: var(--pd-fonte-campo); }
+    .pd-modal__caixa .tp-botao-icone {
+        min-width: var(--pd-alvo-toque);
+        min-height: var(--pd-alvo-toque);
+        font-size: 18px;
+    }
+    .pd-modal__caixa .tp-acoes { flex-direction: column-reverse; }
+    .pd-modal__caixa .tp-acoes .guia-botao { width: 100%; min-height: var(--pd-alvo-toque); }
+}
