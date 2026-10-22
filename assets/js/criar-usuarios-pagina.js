@@ -492,6 +492,17 @@ function criarElementoAbaGuia(classe, texto) {
  * @returns {HTMLButtonElement} Botão da aba.
  */
 function criarAbaTurmaGuia(turma, indice) {
+    const aba = criarAbaBaseGuia(turma);
+    aba.addEventListener('click', () => alternarAbaGuia(indice));
+    return aba;
+}
+
+/**
+ * Cria o botão de aba de uma turma, sem ação de clique.
+ * @param {Object} turma - Turma da aba.
+ * @returns {HTMLButtonElement} Botão da aba.
+ */
+function criarAbaBaseGuia(turma) {
     const aba = document.createElement('button');
     aba.type = 'button';
     aba.className = 'guia-aba';
@@ -501,7 +512,6 @@ function criarAbaTurmaGuia(turma, indice) {
     aba.append(criarElementoAbaGuia('guia-aba__turma',
         turma.nome + ' (' + turma.alunos.length + ')'));
     aba.dataset.turma = turma.codigo;
-    aba.addEventListener('click', () => alternarAbaGuia(indice));
     return aba;
 }
 
@@ -581,19 +591,71 @@ async function carregarTurmasBancoGuia(usuario) {
 }
 
 /**
- * Monta as abas e os cartões do modo banco e abre a aba da turma favorita (ou a primeira).
+ * Busca no banco o turno e a UC de cada turma (tabela turma).
+ * @returns {Promise<Map<string, {turno: string, uc: string}>>} Dados por código; vazio se falhar.
+ */
+async function buscarTurnoUcBancoGuia() {
+    try {
+        const resposta = await obterClienteSupabase().from(TABELA_TURMA_GUIA)
+            .select('codigo, turno, uc');
+        if (resposta.error) return new Map();
+        return new Map(resposta.data.map((turma) => [
+            String(turma.codigo), { turno: turma.turno || '', uc: turma.uc || '' }]));
+    } catch (erro) {
+        return new Map();
+    }
+}
+
+/**
+ * Põe turno e UC em cada turma e coloca a favorita primeiro (as demais seguem a ordem do banco).
+ * @param {Object[]} turmas - Turmas lidas do banco.
+ * @param {{favorita: string}} contexto - Contexto com o código da favorita.
+ * @returns {Promise<Object[]>} Turmas completas e ordenadas.
+ */
+async function completarTurmasBancoGuia(turmas, contexto) {
+    const dados = await buscarTurnoUcBancoGuia();
+    const completas = turmas.map((turma) => ({ ...turma, ...dados.get(String(turma.codigo)) }));
+    const ehFavorita = (turma) => turma.codigo === contexto.favorita;
+    return [...completas.filter(ehFavorita), ...completas.filter((turma) => !ehFavorita(turma))];
+}
+
+/**
+ * Marca a aba escolhida como ativa e rola até o cartão da turma, sem esconder nenhum.
+ * @param {string} codigo - Código da turma escolhida.
+ */
+function irParaTurmaBancoGuia(codigo) {
+    document.querySelectorAll('.guia-aba[data-turma]').forEach((aba) => {
+        aba.classList.toggle('guia-aba--ativa', aba.dataset.turma === String(codigo));
+    });
+    const cartao = Array.from(document.querySelectorAll('.guia-cartao[data-turma]'))
+        .find((item) => item.dataset.turma === String(codigo));
+    cartao?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Cria a aba de uma turma no modo banco: o clique rola até o cartão.
+ * @param {Object} turma - Turma da aba.
+ * @returns {HTMLButtonElement} Botão da aba.
+ */
+function criarAbaTurmaBancoGuia(turma) {
+    const aba = criarAbaBaseGuia(turma);
+    aba.addEventListener('click', () => irParaTurmaBancoGuia(turma.codigo));
+    return aba;
+}
+
+/**
+ * Monta as abas e todos os cartões do modo banco, com a turma favorita primeiro.
  * @param {Object[]} turmas - Turmas lidas do banco.
  */
 async function montarAbasBancoGuia(turmas) {
-    const turmasComUnidade = aplicarUnidadesGuia(turmas, await buscarUnidadesGuia());
     const contexto = { favorita: await buscarTurmaFavorita() };
-    obterElementoGuia('abas').replaceChildren(...turmasComUnidade.map(criarAbaTurmaGuia));
+    const comUnidade = aplicarUnidadesGuia(turmas, await buscarUnidadesGuia());
+    const ordenadas = await completarTurmasBancoGuia(comUnidade, contexto);
+    obterElementoGuia('abas').replaceChildren(...ordenadas.map(criarAbaTurmaBancoGuia));
     obterElementoGuia('turmas').replaceChildren(
-        ...turmasComUnidade.map(criarCartaoTurmaBancoGuia));
+        ...ordenadas.map((turma) => criarCartaoTurmaBancoGuia(turma)));
     atualizarFavoritaGuia(contexto);
-    const indiceFavorita = turmasComUnidade.findIndex((turma) => (
-        turma.codigo === contexto.favorita));
-    alternarAbaGuia(Math.max(indiceFavorita, 0));
+    document.querySelector('.guia-aba[data-turma]')?.classList.add('guia-aba--ativa');
 }
 
 /**

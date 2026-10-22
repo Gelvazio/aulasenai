@@ -40,12 +40,10 @@ as senhas, como as demais (#345).
 
 ### #349.2 — Modo banco mostra todas as turmas de uma vez, com turno e UC
 
-**Próximo passo:** em `assets/js/criar-usuarios-pagina.js`, no modo banco, mostrar todos os
-cartões (favorita primeiro), aba = atalho que rola até o cartão; título e aba com UC e turno lidos
-da tabela `turma`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — 1 arquivo JS de tela
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** todas as turmas visíveis na página sem clicar; título "NOME (código:
   X) - UNIDADE TURNO"; modo local sem mudança; `node --check` limpo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/criar-usuarios-pagina.js` — modo banco com todos os cartões visíveis (favorita primeiro), aba rola até o cartão, turno e UC lidos de `turma` (executor-medio) · **Verificação:** `node --check` no arquivo e nos 9 scripts da página juntos; leitura do diff (modo local sem mudança); conferir na tela (usuário)
