@@ -49,6 +49,7 @@
 | 2026-10-21 20:36 | Acrescentadas #339.22 a #339.31 (5 ideias com Three.js e 5 tipos de jogo; a ideia de "missões da semana" ficou de fora) e os cuidados de 3D/jogos no Escopo | Usuário |
 | 2026-10-21 20:39 | Acrescentadas #339.32 a #339.43 (aposta, reações, pergunta da plateia, nome/brasão, combo, capitão, cartas do professor, modo projetor, resumo em PDF, antiabuso, fila de votos, leitura em voz alta) | Usuário |
 | 2026-10-21 20:53 | Acrescentadas #339.44 a #339.51 (regras na tela, votação por critérios, fechamento, painel pós-aula, perguntas boas para o jogo, resposta escrita para quem não pode falar, votação sem humilhação, internet ruim) | Usuário |
+| 2026-10-21 21:02 | Acrescentadas #339.52 a #339.56: prêmios na aula (escolher o tema/jogo da próxima rodada, professor assistente, primeiro a escolher, carta especial) e o alerta ao professor com os cuidados da premiação | Usuário |
 
 ### #339.1 — Plano detalhado e aprovação do usuário
 
@@ -57,7 +58,7 @@
 - **Nível:** PESADO — banco, RLS e mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** plano (tabela, função de sorteio, horário de início do sorteio para os
-  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, extras #339.32–#339.51, modelo global #339.21, telas,
+  contadores, quem responde cada pergunta, votos 1–10, gamificação #339.11–#339.20, 3D e jogos #339.22–#339.31, extras #339.32–#339.56, modelo global #339.21, telas,
   verificação) e "sim" do usuário.
 - **Entrega:** — · **Verificação:** —
 
@@ -548,9 +549,59 @@
 - **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok.
 - **Entrega:** — · **Verificação:** —
 
+### #339.52 — Prêmio: a equipe vencedora escolhe o tema ou o jogo da próxima rodada
+
+**Próximo passo:** esperar a #339.11.
+
+- **Nível:** PESADO — banco (escolha guardada para a próxima rodada) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** ao fim da rodada, a equipe vencedora escolhe o tema ou o tipo de jogo da próxima; o professor pode aceitar ou trocar.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.53 — Prêmio: "professor assistente" na próxima aula
+
+**Próximo passo:** esperar a #339.3.
+
+- **Nível:** PESADO — segurança/papéis (permissão temporária e limitada para um aluno conduzir) + banco
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** o vencedor ajuda a conduzir a próxima rodada (sortear, ler a pergunta, iniciar o cronômetro), com permissão só para isso, só naquela rodada, e o professor podendo retirar a qualquer momento.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido; o aluno assistente nunca vê gabarito, notas dos colegas nem telas de professor.
+- **Entrega:** — · **Verificação:** —
+
+### #339.54 — Prêmio: primeiro a escolher a equipe ou a pergunta na próxima rodada
+
+**Próximo passo:** esperar a #339.11.
+
+- **Nível:** PESADO — banco (prioridade guardada) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** a equipe ou o aluno premiado escolhe primeiro na próxima rodada, mantendo o "sem repetir".
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.55 — Prêmio: carta especial para a próxima partida (tempo extra ou troca de pergunta)
+
+**Próximo passo:** esperar a #339.38.
+
+- **Nível:** PESADO — banco (carta concedida e uso único) + tela
+- **Modelo:** só Claude Code local (Opus 5.5+/Fable) — nunca outro
+- **Descrição:** o vencedor ganha uma carta para usar na próxima partida, nos mesmos efeitos das cartas do professor (#339.38).
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; SQL idempotente aplicado e conferido.
+- **Entrega:** — · **Verificação:** —
+
+### #339.56 — Alerta ao professor com os cuidados da premiação
+
+**Próximo passo:** esperar a #339.18.
+
+- **Nível:** MEDIO — tela (aviso no pódio e na tela de prêmios)
+- **Modelo:** só Sonnet — nunca outro
+- **Descrição:** ao abrir o pódio ou dar um prêmio, mostrar ao professor (só a ele) um alerta: premiar também quem evoluiu ("maior avanço da turma"), alternar as categorias para mais alunos terem chance, nunca expor o último lugar (só destaques), evitar dinheiro e comida como prêmio, e bônus na nota só se estiver no plano de ensino e combinado antes.
+- **Critérios de aceitação:** sem gabarito na tela; conferir na tela; `node --check` ok; alerta só no login do professor, com "não mostrar de novo nesta aula".
+- **Entrega:** — · **Verificação:** —
+
 ### #339.21 — Modelo global: atividade gamificada em toda discursiva ou prática, com ou sem equipe
 
-**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.51.
+**Próximo passo:** esperar a #339.2 a #339.4 e a #339.6 a #339.20 e #339.22 a #339.56.
 
 - **Nível:** PESADO — arquitetura (recurso global para todas as matérias), banco (escolha por aula/atividade) e mais de 3 arquivos
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro (parte de banco: só Claude Code local)
