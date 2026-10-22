@@ -23,6 +23,11 @@ recarregar com Ctrl+F5; com isso, achar a diferença.
   "ROBERTO MACHADO TARDE / QA LBTSN 2026/1 V1 (10)". Nenhuma causa achada por leitura; sem
   navegador não dá para ver a tela. A turma `124401` (QA LBTSN 2026/1 M1, CEPLAS manhã, 6 alunos
   na lista) **não** tem alunos no banco — fora do pedido.
+- **2026-10-22 16:50 (usuário: "nao aparece"):** a RPC simulada com o JWT real do professor
+  (Gelvazio, PROFESSOR + administrador) devolve a 124403 com 10 alunos. Diferença achada: a 124403
+  era a **única turma sem professor** em `turmaprofessor` (as telas que filtram por
+  `professor_tem_turma` não a mostravam). Corrigido: vínculo `turmaprofessor` (124403, Gelvazio)
+  inserido pelo conector (só acrescenta). Falta o usuário confirmar na tela qual lista não mostra.
 
 - **Nível:** PESADO — banco (consulta e cadastro de turma/alunos), senhas
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
