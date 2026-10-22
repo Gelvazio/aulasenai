@@ -103,12 +103,27 @@ function preencherSelectTa(select, opcoes, textoVazio) {
   }));
 }
 
+/**
+ * Refaz a lista "Aluno" do formulário só com alunos sem turma (sem vínculo em nenhuma turma).
+ * Na edição, o aluno do vínculo editado continua na lista. Mantém a escolha atual se ainda valer.
+ */
+function atualizarListaAlunosTa() {
+  const select = elementoTa("taAluno");
+  const escolhido = select.value;
+  const comTurma = new Set(estadoTa.vinculos.map((v) => v.aluno_id));
+  const vinculoEditado = estadoTa.vinculos.find((v) => v.id === estadoTa.editandoId);
+  const semTurma = estadoTa.alunos.filter(
+    (a) => !comTurma.has(a.id) || a.id === vinculoEditado?.aluno_id);
+  const opcoes = semTurma.map((a) => ({ valor: a.id, texto: descreverAlunoTa(a) }));
+  preencherSelectTa(select, opcoes, "Escolha o aluno");
+  select.value = semTurma.some((a) => a.id === escolhido) ? escolhido : "";
+}
+
 /** Preenche as listas de turma, aluno e filtro com os dados carregados. */
 function preencherListasTa() {
   const turmas = estadoTa.turmas.map((t) => ({ valor: t.codigo, texto: descreverTurmaTa(t) }));
-  const alunos = estadoTa.alunos.map((a) => ({ valor: a.id, texto: descreverAlunoTa(a) }));
   preencherSelectTa(elementoTa("taTurma"), turmas, "Escolha a turma");
-  preencherSelectTa(elementoTa("taAluno"), alunos, "Escolha o aluno");
+  atualizarListaAlunosTa();
   preencherSelectTa(elementoTa("taFiltroTurma"), turmas, "Todas as turmas");
 }
 
@@ -251,6 +266,7 @@ function alternarFiltroTurmaAcimaTa() {
 
 /** Redesenha a tabela quando a turma do formulário muda e o filtro por ela está ligado. */
 function aoMudarTurmaFormularioTa() {
+  atualizarListaAlunosTa();
   if (elementoTa("taFiltroTurmaAcima").checked) desenharVinculosTa();
 }
 
@@ -304,6 +320,7 @@ function limparFormularioTa() {
   elementoTa("taTituloFormulario").textContent = TITULO_NOVO_TA;
   elementoTa("taSalvar").textContent = TEXTO_BOTAO_VINCULAR_TA;
   elementoTa("taCancelar").hidden = true;
+  atualizarListaAlunosTa();
   desenharVinculosTa();
 }
 
@@ -314,6 +331,7 @@ function limparFormularioTa() {
 function iniciarEdicaoTa(vinculo) {
   estadoTa.editandoId = vinculo.id;
   elementoTa("taTurma").value = vinculo.turma_codigo;
+  atualizarListaAlunosTa();
   elementoTa("taAluno").value = vinculo.aluno_id;
   elementoTa("taTituloFormulario").textContent = TITULO_EDITAR_TA;
   elementoTa("taSalvar").textContent = TEXTO_BOTAO_SALVAR_TA;
@@ -347,6 +365,7 @@ async function carregarSugestoesPaginaTa() {
 async function recarregarVinculosTa() {
   estadoTa.vinculos = await estadoTa.repositorio.listarVinculos();
   await carregarSugestoesPaginaTa();
+  atualizarListaAlunosTa();
   desenharVinculosTa();
 }
 
