@@ -25,6 +25,7 @@ lida direto do banco; aluno nunca vê.
 | 2026-10-22 | Tarefa criada e publicada; #345.1 reservada pela nuvem | Claude Code (Opus 5.5) | segurança + banco |
 | 2026-10-22 13:45 | Levantamento feito; plano escrito, 👀 aguarda o "sim" | Claude Code (Opus 5.5) | senha só existe como hash no Auth |
 | 2026-10-22 13:52 | **Plano aprovado** pelo usuário: "1-SIM;2-QUALQUER PROFESSOR;3-SIM" — guardar a senha inicial em texto no banco com RLS; **qualquer professor** (perfil PROFESSOR) vê; a tela mostra a senha inicial mesmo se o aluno trocar | usuário (Gelvazio) | resposta às 3 perguntas do plano |
+| 2026-10-22 14:10 | **Exceção:** a nuvem faz a #345.2 (banco) pelo conector do Supabase; #345.3 e #345.4 em paralelo (executor-pesado A e B, arquivos separados) | usuário: "dispare mais agentes e faca ela completo" + "Sim, autorizo" (banco pela nuvem) | pedido explícito do usuário para fechar a tarefa inteira |
 | 2026-10-22 14:05 | #345.3 e #345.4 deixam de depender da #345.2: o código usa o esquema já aprovado da tabela e passa a funcionar quando o local criar a tabela; até lá a tela mostra erro de carregamento | Claude Code (Opus 5.5), pedido "faca 345" do usuário | a nuvem não mexe no banco; o código pode andar em paralelo |
 
 ### Levantamento (#345.1, 2026-10-22)

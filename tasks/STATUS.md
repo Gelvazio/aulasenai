@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| nuvem · dreamy-faraday-7x7tud | #345.3 [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) — tela USUARIOS online lendo do banco | 🔄 Ativa | 2026-10-22 14:05 |
+| nuvem · dreamy-faraday-7x7tud | #345.2 (líder, banco por exceção autorizada) e #345.3/#345.4 com executor-pesado [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | 🔄 Ativa | 2026-10-22 14:10 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
@@ -78,7 +78,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s29 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — plano aprovado; executada pela s30 | ⏹️ Encerrada | 2026-10-20 10:55 |
 | local · main · s30 | #302 ([431-7610d51c](etapas/ETAPA-431-7610d51c-JOGO-LIGA-DESLIGA-NO-BANCO.md)) — #302 concluída; #304.1 aviso RESPOSTA CERTA/ERRADA (delegada ao executor-medio) | 🔄 Ativa | 2026-10-20 10:50 |
 | local · main · s31 | #307 ([436-3fa9c2e8](etapas/ETAPA-436-3fa9c2e8-EQUIPE-ATIVIDADE-GABARITO-DA-DUPLA.md)) — #312 concluída; #313 livre para outra IA (PESADO) | ⏹️ Encerrada | 2026-10-20 16:30 |
-| nuvem · dreamy-faraday-7x7tud | #340 criada e publicada (livre para outra IA) | ⏹️ Encerrada | 2026-10-21 20:44 |
+| nuvem · dreamy-faraday-7x7tud | #345.2 (líder, banco por exceção autorizada) e #345.3/#345.4 com executor-pesado [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | 🔄 Ativa | 2026-10-22 14:10 |
 | nuvem · clever-edison-o722i5 | #324.1 ([453-e41c087e](etapas/ETAPA-453-e41c087e-ATIVIDADE-POR-TURMA.md)) em execução (líder + executor-pesado) | 🔄 Ativa | 2026-10-21 12:54 |
 | nuvem · elegant-planck-ul8ac1 | #333 concluída ([462-6432ca9c](etapas/ETAPA-462-6432ca9c-VOTACAO-DAS-EQUIPES.md)) — votação das equipes (banco, professor, aluno, docs) | ⏹️ Encerrada | 2026-10-21 16:01 |
 
@@ -1569,9 +1569,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | **#345-097d44db-e579-47a9-8945-9aaf66ef3122** | **Senhas dos alunos na tela Usuários (só professor, do banco)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
-| #345.2 | Tabela `usuario_senha_inicial` com RLS (só professor) e carga das senhas · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
-| #345.3 | Tela USUARIOS online lendo turmas, alunos e senhas do banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 14:05) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
-| #345.4 | Gravar a senha na tabela ao criar/regravar pela tela local · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| #345.2 | Tabela `usuario_senha_inicial` com RLS (só professor) e carga das senhas · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 14:10) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| #345.3 | Tela USUARIOS online lendo turmas, alunos e senhas do banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5 · executor-pesado A; líder Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 14:10) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| #345.4 | Gravar a senha na tabela ao criar/regravar pela tela local · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5 · executor-pesado B; líder Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 14:10) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | #345.5 | Documentação (`docs/database.md` e tela USUARIOS) · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #345.3, #345.4 | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | **#347-3a7e9b14** | **Portar o LightBot para a SFML 3** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
 | #347.1 | Portar o código do LightBot para a SFML 3 e compilar · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
