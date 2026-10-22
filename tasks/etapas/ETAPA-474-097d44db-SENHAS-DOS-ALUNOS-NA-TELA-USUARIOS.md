@@ -66,13 +66,13 @@ lida direto do banco; aluno nunca vê.
 
 ### #345.2 — Tabela `usuario_senha_inicial` com RLS e carga das senhas
 
-**Próximo passo:** escrever o SQL idempotente (`database/2026-10-22-usuario-senha-inicial.sql`), aplicar e carregar as senhas do `scripts/LISTAPRESENCA.js`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — banco, RLS, senhas
 - **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro
 - **Descrição:** tabela `usuario_senha_inicial` (`usuario_id` uuid PK → `usuario.id` on delete cascade, `senha_inicial` text not null, `atualizado_em` timestamptz default now()); RLS ligado; SELECT/INSERT/UPDATE só `authenticated` com `usuario.perfil = 'PROFESSOR'` do `auth.uid()`; sem acesso `anon`. Carga: e-mail do `LISTAPRESENCA.js` → `usuario.email` → senha. ⚠️ O SQL da carga tem senhas: não vai ao site (`.vercelignore`) — preferir rodar a carga pelo conector sem gravar arquivo com senha no Git.
 - **Critérios de aceitação:** como aluno, 0 linhas; como professor, uma linha por aluno com senha na lista; `docs/database.md` com a tabela.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** tabela `usuario_senha_inicial` (RLS + 3 políticas de professor), RPC `listar_usuarios_senhas()` e carga de 140 senhas pelo conector (nuvem, exceção autorizada); schema em `database/2026-10-22-usuario-senha-inicial.sql` (sem senhas). `drop policy`/`revoke` travam no conector: o `revoke all ... from anon` não foi aplicado (anon já não lê: RLS sem política para anon) · **Verificação:** consulta com papel authenticated: ALUNO = 0 linhas e RPC bloqueada (42501); PROFESSOR = 140 linhas na tabela, 142 alunos na RPC (140 com senha)
 
 ### #345.3 — Tela USUARIOS online lendo turmas, alunos e senhas do banco
 
