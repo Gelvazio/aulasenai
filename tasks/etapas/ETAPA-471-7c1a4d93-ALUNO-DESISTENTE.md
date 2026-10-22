@@ -29,6 +29,7 @@ nas listas de atividades, equipes e demais telas, sem apagar o histórico dele.
 |---|---|---|---|
 | 2026-10-22 | Tarefa criada e publicada; 👀 aguarda o "sim" ao plano (#342.1) | Claude Code (Sonnet 5.5) | banco + várias telas |
 | 2026-10-22 07:45 | Marca por turma (`turmaaluno`), não por usuário; #342.4 sobe para PESADO (16 arquivos) | Claude Code (Opus 5.5) (s36) | `alunos.html` lista vínculos; regra de níveis |
+| 2026-10-22 07:46 | **Plano aprovado** ("Sim, aprovo o plano da #342. Execute.") | Usuário (registrado por Claude Code (Opus 5.5) (s36)) | aprovação de tarefa grande |
 
 ### Plano (#342.1, 2026-10-22, Claude Code (Opus 5.5) (local · main · s36))
 
@@ -74,7 +75,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.1 — Plano detalhado e aprovação do usuário
 
-**Próximo passo:** plano escrito acima; aguardar o "sim" do usuário e registrar nas Decisões.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — plano de tarefa com banco e segurança
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -82,10 +83,11 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 - **Descrição:** fechar o desenho (coluna, política RLS, comportamento do botão, lista de telas) na
   própria etapa e registrar a aprovação nas Decisões.
 - **Critérios de aceitação:** perguntas do Escopo respondidas; "sim" do usuário registrado.
+- **Entrega:** seção Plano desta etapa (commits `afae46e0`, `ddc255a5`) · **Verificação:** usuário aprovou em 2026-10-22 07:46
 
 ### #342.2 — Banco: coluna de desistente em `turmaaluno`, função e filtros
 
-**Próximo passo:** aguardar #342.1.
+**Próximo passo:** escrever `database/2026-10-22-turmaaluno-desistente.sql` (ler antes as 10 funções no banco).
 
 - **Nível:** PESADO — SQL e RLS
 - **Modelo:** só Opus 5.5+ ou Fable (Claude Code local, banco) — nunca outro
