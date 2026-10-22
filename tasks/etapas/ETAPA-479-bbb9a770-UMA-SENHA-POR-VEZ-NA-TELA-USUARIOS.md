@@ -8,11 +8,10 @@ outras da turma.
 
 ### #350.1 — Botão por linha para mostrar/ocultar a senha do aluno
 
-**Próximo passo:** em `assets/js/criar-usuarios-tabela.js`, linha do modo banco com controle
-próprio de mostrar/ocultar a senha; o "Mostrar senhas" da turma continua mostrando todas.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — código de tela, 1 a 2 arquivos
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** cada linha mostra/oculta só a própria senha; o interruptor da
   turma liga/desliga todas; modo local sem mudança; `node --check` limpo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/criar-usuarios-tabela.js` (coluna "Ver" com botão 👁 Mostrar/🙈 Ocultar por linha, `aria-pressed`; o interruptor da turma mantém os botões coerentes) e `assets/css/criar-usuarios-comando.css` (`.guia-botao-senha`) — executor-medio · **Verificação:** `node --check` no arquivo e nos 9 scripts da página juntos; leitura do diff (senha só na função da linha; modo local intacto); conferir na tela (usuário)

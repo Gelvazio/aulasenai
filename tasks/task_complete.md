@@ -1,3 +1,3 @@
 
-| #349.2 | Modo banco mostra todas as turmas de uma vez, com turno e UC · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #349.1 | ✅ Concluído | — | [478-22ff916b](etapas/ETAPA-478-22ff916b-TURMA-ROBERTO-MACHADO-TARDE-NA-TELA-USUARIOS.md) | — |
-| **#349-22ff916b-7dd4-43ee-bc0e-c17abef6b037** | **Turma Roberto Machado (tarde) faltando na tela USUARIOS** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [478-22ff916b](etapas/ETAPA-478-22ff916b-TURMA-ROBERTO-MACHADO-TARDE-NA-TELA-USUARIOS.md) | — |
+| #350.1 | Botão por linha para mostrar/ocultar a senha do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
+| **#350-bbb9a770-d52e-40b8-82c7-c4211a76c7b9** | **Mostrar uma senha por vez na tela USUARIOS online** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |

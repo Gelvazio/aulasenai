@@ -188,3 +188,7 @@ a.guia-botao { display: inline-block; text-decoration: none; margin-top: 8px; }
 /* Modo banco (criar-usuarios-banco.js): opções de gravação escondidas e senha em fonte fixa */
 .guia-opcoes[hidden] { display: none; }
 .guia-senha { font-family: Consolas, monospace; }
+
+/* Botão de olho por linha no modo banco (mostra/oculta só a senha daquela linha) */
+.guia-botao-senha { padding: 2px 8px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.guia-botao-senha[aria-pressed="true"] { background: #e8eef7; font-weight: 600; }

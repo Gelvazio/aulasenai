@@ -9,6 +9,10 @@
 
 const SENHA_OCULTA = '—';
 const SENHA_AUSENTE_BANCO = '(sem senha no banco)';
+const TEXTO_BOTAO_MOSTRAR_SENHA = '👁 Mostrar';
+const TEXTO_BOTAO_OCULTAR_SENHA = '🙈 Ocultar';
+const ROTULO_MOSTRAR_SENHA_DE = 'Mostrar a senha de ';
+const ROTULO_OCULTAR_SENHA_DE = 'Ocultar a senha de ';
 const PERFIL_PROFESSOR_LISTA = 'PROFESSOR';
 const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
@@ -281,9 +285,24 @@ function atualizarSituacoesGuia(tabela, cadastrados) {
 }
 
 /**
- * Cria uma linha só de leitura do modo banco: Nº, aluno, e-mail de login e senha inicial.
- * A senha fica só na função da linha (nada em atributo, localStorage ou sessionStorage) e
- * aparece quando linha.mostrarSenha(true) é chamada.
+ * Cria o botão que mostra/oculta a senha de uma única linha do modo banco.
+ * @param {string} nome - Nome do aluno (para o rótulo de acessibilidade).
+ * @returns {HTMLButtonElement} Botão (estado inicial: senha oculta).
+ */
+function criarBotaoSenhaBancoGuia(nome) {
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'guia-botao-senha';
+    botao.textContent = TEXTO_BOTAO_MOSTRAR_SENHA;
+    botao.setAttribute('aria-pressed', 'false');
+    botao.setAttribute('aria-label', ROTULO_MOSTRAR_SENHA_DE + nome);
+    return botao;
+}
+
+/**
+ * Cria uma linha só de leitura do modo banco: Nº, aluno, e-mail de login, senha inicial e
+ * botão de olho. A senha fica só na função da linha (nada em atributo, localStorage ou
+ * sessionStorage) e aparece quando linha.mostrarSenha(true) é chamada ou o botão é acionado.
  * @param {{numero: number|string, nome: string, email: string, senha: string|null}} aluno
  *   - Aluno lido do banco.
  * @returns {HTMLTableRowElement} Linha da tabela (senha oculta).
@@ -293,12 +312,21 @@ function criarLinhaSenhaBancoGuia(aluno) {
     linha.dataset.email = aluno.email;
     const celulaSenha = criarCelulaGuia(SENHA_OCULTA);
     celulaSenha.className = 'guia-senha';
+    const botao = criarBotaoSenhaBancoGuia(aluno.nome);
+    let senhaVisivel = false;
     linha.mostrarSenha = (mostrar) => {
-        const senha = aluno.senha || SENHA_AUSENTE_BANCO;
-        celulaSenha.textContent = mostrar ? senha : SENHA_OCULTA;
+        senhaVisivel = mostrar;
+        celulaSenha.textContent = mostrar ? aluno.senha || SENHA_AUSENTE_BANCO : SENHA_OCULTA;
+        botao.textContent = mostrar ? TEXTO_BOTAO_OCULTAR_SENHA : TEXTO_BOTAO_MOSTRAR_SENHA;
+        botao.setAttribute('aria-pressed', String(mostrar));
+        botao.setAttribute('aria-label',
+            (mostrar ? ROTULO_OCULTAR_SENHA_DE : ROTULO_MOSTRAR_SENHA_DE) + aluno.nome);
     };
+    botao.addEventListener('click', () => linha.mostrarSenha(!senhaVisivel));
+    const celulaBotao = document.createElement('td');
+    celulaBotao.append(botao);
     linha.append(criarCelulaGuia(aluno.numero), criarCelulaGuia(aluno.nome),
-        criarCelulaGuia(aluno.email), celulaSenha);
+        criarCelulaGuia(aluno.email), celulaSenha, celulaBotao);
     return linha;
 }
 
@@ -311,7 +339,7 @@ function criarTabelaSenhasBancoGuia(turma) {
     const tabela = document.createElement('table');
     tabela.className = 'guia-tabela';
     tabela.innerHTML = '<thead><tr><th>Nº</th><th>Aluno</th><th>E-mail de login</th>'
-        + '<th>Senha</th></tr></thead>';
+        + '<th>Senha</th><th>Ver</th></tr></thead>';
     const corpo = document.createElement('tbody');
     corpo.append(...turma.alunos.map(criarLinhaSenhaBancoGuia));
     tabela.append(corpo);
