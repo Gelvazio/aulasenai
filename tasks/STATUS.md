@@ -1573,8 +1573,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #345.3 | Tela USUARIOS online lendo turmas, alunos e senhas do banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #345.2 | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | #345.4 | Gravar a senha na tabela ao criar/regravar pela tela local · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #345.2 | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | #345.5 | Documentação (`docs/database.md` e tela USUARIOS) · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #345.3, #345.4 | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
-| **#346-5c1d7e92** | **Clonar o LightBot em `games/`** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
-| #346.1 | Clonar `lilgallon/LightBot` em `games/LightBot` e ignorar no site · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

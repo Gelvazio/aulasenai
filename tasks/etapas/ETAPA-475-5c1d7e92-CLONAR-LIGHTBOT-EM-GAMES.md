@@ -19,7 +19,7 @@ AULASENAI/GAMES?" → "FAÇA ISSO AQUI"
 
 ### #346.1 — Clonar o repositório e ajustar `.vercelignore`
 
-**Próximo passo:** anexar `lilgallon/LightBot` à sessão, clonar em `games/LightBot`, apagar
+**Próximo passo:** (concluída) anexar `lilgallon/LightBot` à sessão, clonar em `games/LightBot`, apagar
 `games/LightBot/.git`, acrescentar `games/` ao `.vercelignore`, commit + push.
 
 - **Nível:** LEVE — sem lógica: copiar arquivos e uma linha de configuração.
@@ -27,4 +27,5 @@ AULASENAI/GAMES?" → "FAÇA ISSO AQUI"
 - **Descrição:** clonar, remover `.git` interno, conferir que `LICENSE` ficou, ignorar `games/`
   no site. · **Critérios de aceitação:** `games/LightBot` existe com os arquivos e a `LICENSE`,
   sem `.git`; `.vercelignore` lista `games/`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** clone raso de `lilgallon/lightbot` em `games/LightBot` (sem `.git`, com `LICENSE` GPL), `games/` no `.vercelignore`. Executado pelo agente `executor-leve` (Haiku), a pedido explícito do usuário; líder: Claude Code (Sonnet 5.5).
+- **Verificação:** `ls` conferiu a pasta, a `LICENSE` e a ausência de `.git`; `.vercelignore` com `games/`; sem chaves nos arquivos.
