@@ -1567,8 +1567,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
-| **#347-3a7e9b14** | **Portar o LightBot para a SFML 3** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
-| #347.1 | Portar o código do LightBot para a SFML 3 e compilar · `PESADO · effort high` | 🟡 Média | PESADO · Sonnet, Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
+| **#347-3a7e9b14** | **Portar o LightBot para a SFML 3** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
+| #347.1 | Portar o código do LightBot para a SFML 3 e compilar · `PESADO · effort high` | 🟡 Média | PESADO · Sonnet, Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-22 16:20) · 0% | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
