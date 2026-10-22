@@ -1567,6 +1567,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
+| **#350-bbb9a770-d52e-40b8-82c7-c4211a76c7b9** | **Mostrar uma senha por vez na tela USUARIOS online** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
+| #350.1 | Botão por linha para mostrar/ocultar a senha do aluno · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [479-bbb9a770](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2082,6 +2084,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 476-3a7e9b14 | Portar o LightBot para a SFML 3 (#347, pedida em 2026-10-22) | [ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) |
 | 477-e7bfc968 | Erro SENHA_OCULTA repetida na tela USUARIOS online (#348, pedida em 2026-10-22) | [ETAPA-477-e7bfc968-ERRO-SENHA-OCULTA-TELA-USUARIOS.md](etapas/ETAPA-477-e7bfc968-ERRO-SENHA-OCULTA-TELA-USUARIOS.md) |
 | 478-22ff916b | Turma Roberto Machado (tarde) faltando na tela USUARIOS (#349, pedida em 2026-10-22) | [ETAPA-478-22ff916b-TURMA-ROBERTO-MACHADO-TARDE-NA-TELA-USUARIOS.md](etapas/ETAPA-478-22ff916b-TURMA-ROBERTO-MACHADO-TARDE-NA-TELA-USUARIOS.md) |
+| 479-bbb9a770 | Mostrar uma senha por vez na tela USUARIOS online (#350, pedida em 2026-10-22) | [ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
