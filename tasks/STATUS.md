@@ -21,7 +21,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
-| local · main · s35 | #337 concluída ([466-310c16b7](etapas/ETAPA-466-310c16b7-VERCEL-SEM-DEPLOY-DO-QUADRO.md)) — Vercel sem deploy quando só o quadro muda | ⏹️ Encerrada | 2026-10-21 19:15 |
+| local · main · s35 | #341.1 em execução ([470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md)) — visualizador só com pedido explícito | 🔄 Ativa | 2026-10-22 07:20 |
 | local · main · s34 | #336 concluída ([465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md)) — live.html sem bloqueadas e pendentes | ⏹️ Encerrada | 2026-10-21 19:06 |
 | local · main · s33 | #315 e #316 concluídas ([445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md)) — card da aula só com atividades vinculadas no banco | ⏹️ Encerrada | 2026-10-20 16:32 |
 | local · main · s32 | #314 criada (👀 aguarda o "sim" ao plano); #85 concluída ([212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md)) — botão Exportar Meu Gabarito nas 10 atividades de Análise de Dados | ⏹️ Encerrada | 2026-10-20 15:55 |
@@ -1531,6 +1531,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #340.13 | Jogo "Batalha naval do conteúdo" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.14 | Jogo "Pitch relâmpago" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2, #339.9 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.15 | Documentação dos jogos · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #340.3 a #340.14 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #341-1ef1d267-a678-427a-a6e6-1d3b70cced36 | Visualizador só com pedido explícito e só no local (C45) | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) | — |
+| #341.1 | Alinhar as regras e comandos do projeto à C45 · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s35) (desde 2026-10-22 07:20) | [470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2037,6 +2039,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 467-f9e4ac55 | Testar o deploy ignorado na Vercel (#338, pedida em 2026-10-21) | [ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md](etapas/ETAPA-467-f9e4ac55-TESTE-DEPLOY-IGNORADO-VERCEL.md) |
 | 468-27daa2f0 | Botão "Sortear perguntas" por equipe (#339, pedida em 2026-10-21) | [ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) |
 | 469-e55e8932 | Jogos em sala de aula (#340, pedida em 2026-10-21) | [ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) |
+| 470-1ef1d267 | Visualizador só com pedido explícito e só no local (#341, pedida em 2026-10-22) | [ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
