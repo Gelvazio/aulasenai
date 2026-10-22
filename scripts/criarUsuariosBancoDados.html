@@ -13,6 +13,7 @@
     <script src="../assets/js/popup.js" defer></script>
     <script src="../assets/js/turma-favorita.js" defer></script>
     <script src="../assets/js/criar-usuarios-api.js" defer></script>
+    <script src="../assets/js/criar-usuarios-banco.js" defer></script>
     <script src="../assets/js/criar-usuarios-tabela.js" defer></script>
     <script src="../assets/js/criar-usuarios-exportar-pdf.js" defer></script>
     <script src="../assets/js/criar-usuarios-pagina.js" defer></script>
@@ -31,15 +32,18 @@
                 <code>scripts/variaveis.js</code> (fora do Git) e só grava em
                 <code>127.0.0.1</code> ou <code>localhost</code>. Use só na sua máquina: com o
                 Live Server aberto na rede, outras pessoas conseguiriam ler o
-                <code>variaveis.js</code>. Nunca publique esta página nem a chave.</p>
+                <code>variaveis.js</code>. Nunca publique a chave.</p>
+            <p>No site publicado (sem o <code>LISTAPRESENCA.js</code>), a página só mostra os
+                alunos e a senha inicial de cada um, lidos do banco de dados, e só para o perfil
+                <strong>PROFESSOR</strong> logado; nada é gravado.</p>
         </section>
 
         <section class="guia-cartao guia-erro" id="guiaBloqueio" hidden></section>
 
         <section class="guia-cartao" id="guiaOpcoes">
-            <h2>Opção de gravação</h2>
+            <h2 id="guiaOpcoesTitulo">Opção de gravação</h2>
             <p id="guiaAviso">Verificando o usuário logado...</p>
-            <div class="guia-opcoes">
+            <div class="guia-opcoes" id="guiaOpcoesGravacao">
                 <label><input type="checkbox" id="guiaRedefinir"> Regravar a senha de quem já
                     existe</label>
             </div>

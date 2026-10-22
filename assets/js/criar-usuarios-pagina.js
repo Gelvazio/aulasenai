@@ -4,6 +4,9 @@
 // window.LISTAS_PRESENCA (arquivo scripts/LISTAPRESENCA.js).
 // A unidade das abas vem só da tabela unidade: a da turma no banco (turma.unidade_id) ou, para
 // turma ainda não gravada, a do campo unidadeId da lista. O "local" escrito na lista não é usado.
+// Sem window.LISTAS_PRESENCA (site publicado), a página entra no modo banco: só leitura, com
+// turmas, alunos e senha inicial lidos pela RPC listar_usuarios_senhas (criar-usuarios-banco.js),
+// só para o perfil PROFESSOR (o banco recusa os demais). A gravação continua só no modo local.
 
 const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque o arquivo LISTAPRESENCA.js nesta pasta.';
 const MSG_GRAVANDO = 'Gravando...';
@@ -23,9 +26,18 @@ const TABELA_TURMA_GUIA = 'turma';
 const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
 const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTAPRESENCA.js, na lista '
     + "com professores: true, uma linha com perfil: 'PROFESSOR'.";
+const MSG_CARREGANDO_BANCO = 'Carregando alunos e senhas do banco de dados...';
+const MSG_BANCO_OK = 'Lista lida do banco de dados (só leitura; a gravação só funciona na máquina '
+    + 'local, com o LISTAPRESENCA.js).';
+const MSG_BANCO_SEM_ALUNOS = 'Nenhum aluno encontrado no banco de dados.';
+const MSG_BANCO_SEM_PERMISSAO = 'A lista de alunos e senhas é só para o perfil PROFESSOR.';
+const TITULO_OPCOES_BANCO = 'Lista do banco de dados';
+const TEXTO_MOSTRAR_SENHAS = ' Mostrar senhas';
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
+    opcoesTitulo: 'guiaOpcoesTitulo',
+    gravacao: 'guiaOpcoesGravacao',
     turmas: 'guiaTurmas',
     abas: 'guiaAbas',
     redefinir: 'guiaRedefinir',
@@ -494,9 +506,128 @@ function criarAbaTurmaGuia(turma, indice) {
 }
 
 /**
- * Inicia a página: só o professor logado vê senhas, consulta auth.users e grava; monta as abas com um cartão por turma.
+ * Mostra uma mensagem no aviso da página.
+ * @param {string} texto - Mensagem.
+ * @param {boolean} ehErro - true para pintar como erro.
+ */
+function mostrarAvisoGuia(texto, ehErro) {
+    const aviso = obterElementoGuia('aviso');
+    aviso.textContent = texto;
+    aviso.classList.toggle('guia-erro', ehErro);
+}
+
+/**
+ * Prepara a página para o modo banco: troca o título das opções e esconde a gravação.
+ */
+function prepararModoBancoGuia() {
+    obterElementoGuia('opcoesTitulo').textContent = TITULO_OPCOES_BANCO;
+    obterElementoGuia('gravacao').hidden = true;
+}
+
+/**
+ * Cria o interruptor "Mostrar senhas" do cartão da turma no modo banco (começa desligado).
+ * @param {HTMLTableElement} tabela - Tabela de senhas da turma.
+ * @returns {HTMLDivElement} Barra com o interruptor.
+ */
+function criarInterruptorSenhasBancoGuia(tabela) {
+    const interruptor = document.createElement('input');
+    interruptor.type = 'checkbox';
+    interruptor.className = 'guia-interruptor';
+    interruptor.setAttribute('role', 'switch');
+    interruptor.addEventListener('change', () => (
+        mostrarSenhasBancoGuia(tabela, interruptor.checked)));
+    const rotulo = document.createElement('label');
+    rotulo.append(interruptor, TEXTO_MOSTRAR_SENHAS);
+    const barra = document.createElement('div');
+    barra.className = 'guia-controles';
+    barra.append(rotulo);
+    return barra;
+}
+
+/**
+ * Cria o cartão só de leitura de uma turma no modo banco: título, interruptor e tabela.
+ * @param {Object} turma - Turma lida do banco (com unidadeNome).
+ * @returns {HTMLElement} Cartão pronto.
+ */
+function criarCartaoTurmaBancoGuia(turma) {
+    const cartao = document.createElement('section');
+    cartao.className = 'guia-cartao';
+    cartao.dataset.turma = turma.codigo;
+    const titulo = document.createElement('h2');
+    titulo.textContent = montarTituloTurmaGuia(turma);
+    const tabela = criarTabelaSenhasBancoGuia(turma);
+    cartao.append(titulo, criarInterruptorSenhasBancoGuia(tabela), tabela);
+    return cartao;
+}
+
+/**
+ * Busca no banco as turmas com alunos e senhas; na falha, explica o motivo na página.
+ * @param {Object} usuario - Usuário logado.
+ * @returns {Promise<Object[]|null>} Turmas; null se o banco recusou ou deu erro.
+ */
+async function carregarTurmasBancoGuia(usuario) {
+    try {
+        const linhas = await buscarUsuariosSenhasBanco(obterClienteSupabase());
+        return agruparTurmasBanco(linhas);
+    } catch (erro) {
+        if (erro.semPermissao) {
+            avisarSemPermissaoGuia(usuario);
+            mostrarAvisoGuia(MSG_BANCO_SEM_PERMISSAO, true);
+            return null;
+        }
+        mostrarAvisoGuia(erro.message, true);
+        return null;
+    }
+}
+
+/**
+ * Monta as abas e os cartões do modo banco e abre a aba da turma favorita (ou a primeira).
+ * @param {Object[]} turmas - Turmas lidas do banco.
+ */
+async function montarAbasBancoGuia(turmas) {
+    const turmasComUnidade = aplicarUnidadesGuia(turmas, await buscarUnidadesGuia());
+    const contexto = { favorita: await buscarTurmaFavorita() };
+    obterElementoGuia('abas').replaceChildren(...turmasComUnidade.map(criarAbaTurmaGuia));
+    obterElementoGuia('turmas').replaceChildren(
+        ...turmasComUnidade.map(criarCartaoTurmaBancoGuia));
+    atualizarFavoritaGuia(contexto);
+    const indiceFavorita = turmasComUnidade.findIndex((turma) => (
+        turma.codigo === contexto.favorita));
+    alternarAbaGuia(Math.max(indiceFavorita, 0));
+}
+
+/**
+ * Inicia o modo banco: exige login, lê do banco (que só responde ao perfil PROFESSOR) e monta
+ * as abas só de leitura. Sem plano B por arquivo: erro do banco vira mensagem na página.
+ */
+async function iniciarModoBancoGuia() {
+    prepararModoBancoGuia();
+    const usuario = await obterUsuarioLogadoGuia();
+    if (!usuario) {
+        avisarSemPermissaoGuia(null);
+        mostrarAvisoGuia(MSG_BANCO_SEM_PERMISSAO, true);
+        return;
+    }
+    mostrarAvisoGuia(MSG_CARREGANDO_BANCO, false);
+    const turmas = await carregarTurmasBancoGuia(usuario);
+    if (!turmas) return;
+    if (!turmas.length) {
+        mostrarAvisoGuia(MSG_BANCO_SEM_ALUNOS, true);
+        return;
+    }
+    mostrarAvisoGuia(MSG_BANCO_OK, false);
+    await montarAbasBancoGuia(turmas);
+}
+
+/**
+ * Inicia a página: só o professor logado vê senhas, consulta auth.users e grava; monta as abas
+ * com um cartão por turma. Sem a lista local (site publicado), segue pelo modo banco.
  */
 async function iniciarGuiaUsuarios() {
+    if (estaEmModoBancoUsuarios()) {
+        await iniciarModoBancoGuia();
+        return;
+    }
     const usuario = await obterUsuarioLogadoGuia();
     const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_EXIGIDO_GUIA;
     if (!ehProfessor) avisarSemPermissaoGuia(usuario);

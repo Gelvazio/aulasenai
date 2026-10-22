@@ -15,3 +15,4 @@
 | **#346-5c1d7e92** | **Clonar o LightBot em `games/`** | 🟡 Média | — | — | ✅ Concluído | — | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
 | #346.1 | Clonar `lilgallon/LightBot` em `games/LightBot` e ignorar no site · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | — | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
 | #345.2 | Tabela `usuario_senha_inicial` com RLS (só professor) e carga das senhas · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | — | ✅ Concluído | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| #345.3 | Tela USUARIOS online lendo turmas, alunos e senhas do banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |

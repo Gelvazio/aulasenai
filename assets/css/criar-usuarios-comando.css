@@ -184,3 +184,7 @@ a.guia-botao { display: inline-block; text-decoration: none; margin-top: 8px; }
     .guia-exportacao h1 { font-size: 18px; margin: 0 0 4px; }
     .guia-exportacao__tabela tr { break-inside: avoid; }
 }
+
+/* Modo banco (criar-usuarios-banco.js): opções de gravação escondidas e senha em fonte fixa */
+.guia-opcoes[hidden] { display: none; }
+.guia-senha { font-family: Consolas, monospace; }

@@ -76,13 +76,13 @@ lida direto do banco; aluno nunca vê.
 
 ### #345.3 — Tela USUARIOS online lendo turmas, alunos e senhas do banco
 
-**Próximo passo:** depois da #345.2, ler `assets/js/criar-usuarios-pagina.js` e `criar-usuarios-tabela.js` e montar a lista pelo banco quando não houver `LISTAPRESENCA`/`variaveis.js`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — senhas, JWT, mais de 3 arquivos ligados
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** professor logado (JWT, `js/supabase.js`) → turmas (`turma`), alunos (`turmaaluno` + `usuario`, sem desistentes) e senha (`usuario_senha_inicial`); aluno/anônimo não vê a lista; nada em `localStorage`.
 - **Critérios de aceitação:** em https://aulasenai.vercel.app/ o menu USUARIOS lista alunos e senhas para o professor; `node --check` limpo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** modo banco em `scripts/criarUsuariosBancoDados.html` (sem `LISTAPRESENCA.js`): RPC com o JWT, abas por turma, sem desistentes, só leitura, interruptor "Mostrar senhas" por turma (começa desligado); arquivos `assets/js/criar-usuarios-banco.js` (novo), `criar-usuarios-pagina.js`, `criar-usuarios-tabela.js`, `assets/css/criar-usuarios-comando.css` — executor-pesado A · **Verificação:** `node --check` nos 3 .js; simulação em Node do agrupamento e do erro 42501; RPC conferida no banco; conferir na tela (usuário)
 
 ### #345.4 — Gravar a senha na tabela ao criar ou regravar pela tela local
 

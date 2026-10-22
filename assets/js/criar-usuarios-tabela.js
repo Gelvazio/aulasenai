@@ -4,8 +4,11 @@
 // Ao trocar "Aluno anotou?", o professor grava no banco (tabela usuario, ligada ao auth.users pela
 // chave primária: senha_informada e senha_informada_em) que a senha foi informada ao aluno e
 // recebe um popup de confirmação. Ao abrir a página, o valor vem dessa tabela.
+// Modo banco (site publicado, criar-usuarios-banco.js): tabela só de leitura com Nº, aluno,
+// e-mail de login e senha inicial lida do banco; a senha só aparece com "Mostrar senhas" ligado.
 
 const SENHA_OCULTA = '—';
+const SENHA_AUSENTE_BANCO = '(sem senha no banco)';
 const PERFIL_PROFESSOR_LISTA = 'PROFESSOR';
 const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
@@ -275,4 +278,51 @@ function atualizarSituacoesGuia(tabela, cadastrados) {
     obterLinhasGuia(tabela).forEach((linha) => {
         pintarSituacaoGuia(linha, obterSituacaoCadastro(linha.dataset.email, cadastrados));
     });
+}
+
+/**
+ * Cria uma linha só de leitura do modo banco: Nº, aluno, e-mail de login e senha inicial.
+ * A senha fica só na função da linha (nada em atributo, localStorage ou sessionStorage) e
+ * aparece quando linha.mostrarSenha(true) é chamada.
+ * @param {{numero: number|string, nome: string, email: string, senha: string|null}} aluno
+ *   - Aluno lido do banco.
+ * @returns {HTMLTableRowElement} Linha da tabela (senha oculta).
+ */
+function criarLinhaSenhaBancoGuia(aluno) {
+    const linha = document.createElement('tr');
+    linha.dataset.email = aluno.email;
+    const celulaSenha = criarCelulaGuia(SENHA_OCULTA);
+    celulaSenha.className = 'guia-senha';
+    linha.mostrarSenha = (mostrar) => {
+        const senha = aluno.senha || SENHA_AUSENTE_BANCO;
+        celulaSenha.textContent = mostrar ? senha : SENHA_OCULTA;
+    };
+    linha.append(criarCelulaGuia(aluno.numero), criarCelulaGuia(aluno.nome),
+        criarCelulaGuia(aluno.email), celulaSenha);
+    return linha;
+}
+
+/**
+ * Cria a tabela só de leitura do modo banco, na ordem que veio do banco (número de chamada).
+ * @param {{alunos: Object[]}} turma - Turma com os alunos lidos do banco.
+ * @returns {HTMLTableElement} Tabela pronta (senhas ocultas).
+ */
+function criarTabelaSenhasBancoGuia(turma) {
+    const tabela = document.createElement('table');
+    tabela.className = 'guia-tabela';
+    tabela.innerHTML = '<thead><tr><th>Nº</th><th>Aluno</th><th>E-mail de login</th>'
+        + '<th>Senha</th></tr></thead>';
+    const corpo = document.createElement('tbody');
+    corpo.append(...turma.alunos.map(criarLinhaSenhaBancoGuia));
+    tabela.append(corpo);
+    return tabela;
+}
+
+/**
+ * Mostra ou oculta a senha de todas as linhas da tabela do modo banco.
+ * @param {HTMLTableElement} tabela - Tabela criada por criarTabelaSenhasBancoGuia.
+ * @param {boolean} mostrar - true para mostrar as senhas.
+ */
+function mostrarSenhasBancoGuia(tabela, mostrar) {
+    obterLinhasGuia(tabela).forEach((linha) => linha.mostrarSenha(mostrar));
 }
