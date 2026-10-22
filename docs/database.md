@@ -60,6 +60,7 @@ CURSO (1) ──→ (N) CURSOMATERIA (N) ←─── (1) MATERIA
 "Aluno anotou?"), com a chave `service_role`; ao trocar para Sim aparece um popup de confirmação.
 **⚠️ Segurança:** a política pública de SELECT continua permitindo ler a tabela com a chave anônima
 (inclusive `senha_hash`) — ativar RLS restritivo é pendência.
+**Senha inicial:** ver `usuario_senha_inicial` (seção 1️⃣ b, logo abaixo).
 
 -------|------|-----------|--------|-----|
 | **id** | INTEGER | PK, Auto-increment | — | Identificador único do usuário |
@@ -76,6 +77,45 @@ CURSO (1) ──→ (N) CURSOMATERIA (N) ←─── (1) MATERIA
 - ❌ RLS desabilitado - qualquer um com a chave anon pode ler/modificar
 - Campo `id` é INTEGER, não UUID (não vinculado a auth.users do Supabase)
 - Recomendação: Habilitar RLS e adicionar políticas
+
+---
+
+## 1️⃣ b Tabela: `usuario_senha_inicial`
+
+**Contém:** a senha inicial de cada aluno, guardada em texto para o professor consultar.
+Criada em 2026-10-22 (tarefa #345). Schema: `database/2026-10-22-usuario-senha-inicial.sql`.
+
+| Campo | Tipo | Restrição | Padrão | Uso |
+|-------|------|-----------|--------|-----|
+| **usuario_id** | UUID | PK, FK → `usuario(id)` CASCADE | — | Aluno (mesma chave de `usuario`) |
+| **senha_inicial** | TEXT | NOT NULL | — | Senha inicial em texto (decisão do usuário, 2026-10-22) |
+| **atualizado_em** | TIMESTAMPTZ | NOT NULL | `now()` | Quando a senha foi gravada |
+
+**Primary Key:** `usuario_id`  
+**RLS Status:** ✅ **LIGADO**  
+**Rows:** 140 (carga de 2026-10-22 a partir de `scripts/LISTAPRESENCA.js`;
+20 alunos da lista ainda não têm conta em `usuario`, por isso não entram)
+
+**Políticas (RLS):**
+- `usuario_senha_inicial_select_professor` (SELECT), `usuario_senha_inicial_insert_professor`
+  (INSERT) e `usuario_senha_inicial_update_professor` (UPDATE): só para `authenticated`
+  com `eh_professor()` (perfil PROFESSOR no `app_metadata` do JWT).
+- Aluno e usuário anônimo: 0 linhas.
+
+**Quem grava:** a tela local `scripts/criarUsuariosBancoDados.html` (lógica em
+`assets/js/criar-usuarios-api.js`), com upsert feito pela chave `service_role`, ao criar o aluno
+ou ao regravar a senha.
+
+**Regra:** se o aluno trocar a senha depois, esta tabela continua com a senha **inicial**.
+
+### Função `listar_usuarios_senhas()`
+
+- **Tipo:** `SECURITY DEFINER`, sem parâmetros.
+- **Quem pode:** só PROFESSOR. Quem não é professor recebe erro `42501`.
+- **O que devolve:** de todos os alunos de todas as turmas (junta `turmaaluno`, `usuario`,
+  `turma` e `aluno`): `turma_codigo`, `turma_nome`, `numero_chamada`, `usuario_id`, `nome`,
+  `email`, `senha_inicial` e `desistente`.
+- **Uso:** a tela de USUARIOS online (`assets/js/criar-usuarios-banco.js`).
 
 ---
 

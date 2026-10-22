@@ -95,8 +95,8 @@ lida direto do banco; aluno nunca vê.
 
 ### #345.5 — Documentação
 
-**Próximo passo:** depois de #345.3 e #345.4, atualizar `docs/database.md` (tabela nova) e o cabeçalho/orientação da tela USUARIOS.
+**Próximo passo:** — (concluída)
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `docs/database.md`: seção da tabela `usuario_senha_inicial` e da RPC `listar_usuarios_senhas()`, link na seção `usuario` — executor-leve · **Verificação:** releitura; sem senha real no arquivo
