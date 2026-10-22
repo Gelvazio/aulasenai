@@ -24,6 +24,7 @@ lida direto do banco; aluno nunca vê.
 |---|---|---|---|
 | 2026-10-22 | Tarefa criada e publicada; #345.1 reservada pela nuvem | Claude Code (Opus 5.5) | segurança + banco |
 | 2026-10-22 13:45 | Levantamento feito; plano escrito, 👀 aguarda o "sim" | Claude Code (Opus 5.5) | senha só existe como hash no Auth |
+| 2026-10-22 13:52 | **Plano aprovado** pelo usuário: "1-SIM;2-QUALQUER PROFESSOR;3-SIM" — guardar a senha inicial em texto no banco com RLS; **qualquer professor** (perfil PROFESSOR) vê; a tela mostra a senha inicial mesmo se o aluno trocar | usuário (Gelvazio) | resposta às 3 perguntas do plano |
 
 ### Levantamento (#345.1, 2026-10-22)
 
@@ -53,10 +54,47 @@ lida direto do banco; aluno nunca vê.
 
 ### #345.1 — Levantamento e plano (aprovação do usuário)
 
-**Próximo passo:** 👀 esperar o "sim" do usuário ao plano; depois criar as linhas #345.2 a #345.5.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — segurança (senhas), RLS, banco
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Descrição:** ler a tela e o schema; plano com subtarefas · **Critérios de aceitação:** plano
   na etapa e "sim" do usuário
+- **Entrega:** levantamento + plano aprovado (commits do quadro de 2026-10-22) · **Verificação:** leitura de `scripts/criarUsuariosBancoDados.html`, `assets/js/criar-usuarios-*.js`, `docs/database.md` e `.vercelignore`
+
+### #345.2 — Tabela `usuario_senha_inicial` com RLS e carga das senhas
+
+**Próximo passo:** escrever o SQL idempotente (`database/2026-10-22-usuario-senha-inicial.sql`), aplicar e carregar as senhas do `scripts/LISTAPRESENCA.js`.
+
+- **Nível:** PESADO — banco, RLS, senhas
+- **Modelo:** só Claude Code local (Opus 5.5+ ou Fable) — nunca outro
+- **Descrição:** tabela `usuario_senha_inicial` (`usuario_id` uuid PK → `usuario.id` on delete cascade, `senha_inicial` text not null, `atualizado_em` timestamptz default now()); RLS ligado; SELECT/INSERT/UPDATE só `authenticated` com `usuario.perfil = 'PROFESSOR'` do `auth.uid()`; sem acesso `anon`. Carga: e-mail do `LISTAPRESENCA.js` → `usuario.email` → senha. ⚠️ O SQL da carga tem senhas: não vai ao site (`.vercelignore`) — preferir rodar a carga pelo conector sem gravar arquivo com senha no Git.
+- **Critérios de aceitação:** como aluno, 0 linhas; como professor, uma linha por aluno com senha na lista; `docs/database.md` com a tabela.
+- **Entrega:** — · **Verificação:** —
+
+### #345.3 — Tela USUARIOS online lendo turmas, alunos e senhas do banco
+
+**Próximo passo:** depois da #345.2, ler `assets/js/criar-usuarios-pagina.js` e `criar-usuarios-tabela.js` e montar a lista pelo banco quando não houver `LISTAPRESENCA`/`variaveis.js`.
+
+- **Nível:** PESADO — senhas, JWT, mais de 3 arquivos ligados
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Descrição:** professor logado (JWT, `js/supabase.js`) → turmas (`turma`), alunos (`turmaaluno` + `usuario`, sem desistentes) e senha (`usuario_senha_inicial`); aluno/anônimo não vê a lista; nada em `localStorage`.
+- **Critérios de aceitação:** em https://aulasenai.vercel.app/ o menu USUARIOS lista alunos e senhas para o professor; `node --check` limpo.
+- **Entrega:** — · **Verificação:** —
+
+### #345.4 — Gravar a senha na tabela ao criar ou regravar pela tela local
+
+**Próximo passo:** depois da #345.2, em `assets/js/criar-usuarios-api.js`, upsert em `usuario_senha_inicial` após criar/regravar no Auth.
+
+- **Nível:** PESADO — senhas, chave `service_role`
+- **Modelo:** só Opus 5.5+ ou Fable — nunca outro
+- **Critérios de aceitação:** criar ou regravar um aluno atualiza a senha na tabela; `node --check` limpo.
+- **Entrega:** — · **Verificação:** —
+
+### #345.5 — Documentação
+
+**Próximo passo:** depois de #345.3 e #345.4, atualizar `docs/database.md` (tabela nova) e o cabeçalho/orientação da tela USUARIOS.
+
+- **Nível:** LEVE — só `.md`
+- **Modelo:** só Haiku — nunca outro
 - **Entrega:** — · **Verificação:** —
