@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| nuvem · dreamy-faraday-7x7tud | #345.1 [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) — levantamento e plano das senhas na tela Usuários | 🔄 Ativa | 2026-10-22 13:36 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
@@ -1567,6 +1568,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
+| **#345-097d44db-e579-47a9-8945-9aaf66ef3122** | **Senhas dos alunos na tela Usuários (só professor, do banco)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| #345.1 | Levantamento e plano (aprovação do usuário) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 13:36) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2077,6 +2080,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 471-7c1a4d93 | Aluno desistente some das listas (#342, pedida em 2026-10-22) | [ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) |
 | 472-3b8e5d21 | Tabela de notas ignora questões para a nota (#343, pedida em 2026-10-22) | [ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) |
 | 473-9c2f6a17 | Oficinas de Impressão 3D e Robótica: matéria completa, sem apostila (#344, pedida em 2026-10-22) | [ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) |
+| 474-097d44db | Senhas dos alunos na tela Usuários, só professor (#345, pedida em 2026-10-22) | [ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
