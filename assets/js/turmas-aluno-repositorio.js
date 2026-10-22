@@ -10,7 +10,8 @@ const PERFIL_ALUNO_REPOSITORIO = "ALUNO";
 const PERFIL_PROFESSOR_ALUNOS = "PROFESSOR";
 const COLUNAS_TURMA_ALUNOS = "codigo, nome, turno, horario, unidade:unidade_id(nome), uc";
 const COLUNAS_ALUNO_REPOSITORIO = "id, nome_completo, email, lider";
-const COLUNAS_VINCULO_ALUNO = "id, turma_codigo, aluno_id, criado_em";
+const COLUNAS_VINCULO_ALUNO = "id, turma_codigo, aluno_id, criado_em, desistente, desistente_em";
+const FUNCAO_DESISTENTE_ALUNOS = "definir_desistente";
 const FUNCAO_SUGESTOES_ALUNOS = "sugestoes_turmaaluno";
 
 /**
@@ -111,6 +112,18 @@ function criarRepositorioTurmasAluno(cliente) {
     async definirLider(usuarioId, lider) {
       dadosOuErroAlunos(await cliente.rpc("definir_lider_usuario",
         { p_usuario: usuarioId, p_lider: lider }));
+    },
+
+    /**
+     * Marca ou desmarca o aluno como desistente da turma (função definir_desistente).
+     * @param {number} id - Id do vínculo (turmaaluno.id).
+     * @param {boolean} desistente - true = desistente, false = reativa o aluno.
+     * @returns {Promise<void>}
+     * @throws {Error} Erro do banco (ex.: não é professor da turma).
+     */
+    async definirDesistente(id, desistente) {
+      dadosOuErroAlunos(await cliente.rpc(FUNCAO_DESISTENTE_ALUNOS,
+        { p_vinculo: id, p_desistente: desistente }));
     },
   };
 }

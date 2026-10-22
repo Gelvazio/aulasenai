@@ -16,6 +16,14 @@ const COLUNAS_TABELA_TA = 7;
 const FILTRO_TURMA_OK_SIM_TA = "sim";
 const FILTRO_TURMA_OK_NAO_TA = "nao";
 const TEXTO_TURMA_OK_SIM_TA = "✅ Sim";
+const TEXTO_BOTAO_DESISTENTE_TA = "🚪 Desistente";
+const TEXTO_BOTAO_REATIVAR_TA = "↩️ Reativar";
+const TEXTO_SELO_DESISTENTE_TA = "DESISTENTE";
+const TITULO_DESISTENTE_TA = "Marcar desistente";
+const TITULO_REATIVAR_TA = "Reativar aluno";
+const TITULO_ERRO_DESISTENTE_TA = "Situação não gravada";
+const CLASSE_LINHA_DESISTENTE_TA = "tp-linha--desistente";
+const CLASSE_SELO_DESISTENTE_TA = "tp-selo-desistente";
 
 const estadoTa = {
   repositorio: null, turmas: [], alunos: [], vinculos: [], editandoId: null,
@@ -126,19 +134,38 @@ function criarCelulaTa(principal, detalhe) {
 }
 
 /**
- * Cria a célula com os botões Editar e Excluir de um vínculo.
+ * Cria a célula com os botões Editar, Desistente (ou Reativar) e Excluir de um vínculo.
  * @param {Object} vinculo - Linha da turmaaluno.
  * @returns {HTMLTableCellElement} Célula de ações.
  */
 function criarCelulaAcoesTa(vinculo) {
   const celula = criarElementoTa("td", "tp-celula-acoes");
   const editar = criarElementoTa("button", "guia-botao tp-botao-pequeno", "✏️ Editar");
+  const textoDesistente = vinculo.desistente ? TEXTO_BOTAO_REATIVAR_TA : TEXTO_BOTAO_DESISTENTE_TA;
+  const desistente = criarElementoTa("button", "guia-botao tp-botao-pequeno", textoDesistente);
   const excluir = criarElementoTa("button", "guia-botao tp-botao-pequeno tp-botao-perigo", "🗑️ Excluir");
   editar.type = "button";
+  desistente.type = "button";
   excluir.type = "button";
   editar.addEventListener("click", () => iniciarEdicaoTa(vinculo));
+  desistente.addEventListener("click", () => alternarDesistenteTa(vinculo));
   excluir.addEventListener("click", () => excluirVinculoTa(vinculo));
-  celula.append(editar, excluir);
+  celula.append(editar, desistente, excluir);
+  return celula;
+}
+
+/**
+ * Cria a célula do aluno (nome e e-mail), com o selo DESISTENTE quando for o caso.
+ * @param {Object} vinculo - Linha da turmaaluno.
+ * @param {Object} aluno - Linha da tabela usuario (pode ser vazio).
+ * @returns {HTMLTableCellElement} Célula do aluno.
+ */
+function criarCelulaAlunoTa(vinculo, aluno) {
+  const celula = criarCelulaTa(
+    aluno.nome_completo || "(usuário sem cadastro)", aluno.email || vinculo.aluno_id);
+  if (!vinculo.desistente) return celula;
+  const selo = criarElementoTa("span", CLASSE_SELO_DESISTENTE_TA, TEXTO_SELO_DESISTENTE_TA);
+  celula.firstChild.after(selo);
   return celula;
 }
 
@@ -162,10 +189,11 @@ function detalharVinculoTa(vinculo) {
 function criarLinhaVinculoTa(vinculo) {
   const { turma, aluno } = detalharVinculoTa(vinculo);
   const linha = criarElementoTa("tr", vinculo.id === estadoTa.editandoId ? "tp-linha--editando" : "");
+  if (vinculo.desistente) linha.classList.add(CLASSE_LINHA_DESISTENTE_TA);
   linha.append(
     criarCelulaTa(vinculo.turma_codigo + " — " + (turma.nome || ""), montarUnidadeTurma(turma)),
     criarCelulaTa(turma.turno || "", turma.horario || ""),
-    criarCelulaTa(aluno.nome_completo || "(usuário sem cadastro)", aluno.email || vinculo.aluno_id),
+    criarCelulaAlunoTa(vinculo, aluno),
     criarCelulaTa(TEXTO_TURMA_OK_SIM_TA),
     criarCelulaLiderTa(aluno),
     criarCelulaTa(formatarDataTa(vinculo.criado_em)),
@@ -367,6 +395,28 @@ async function excluirVinculoTa(vinculo) {
   if (estadoTa.editandoId === vinculo.id) limparFormularioTa();
   await recarregarVinculosTa();
   await mostrarPopup("Vínculo excluído.", { tipo: "sucesso" });
+}
+
+/**
+ * Marca o aluno como desistente da turma (ou reativa) depois da confirmação.
+ * @param {Object} vinculo - Linha da turmaaluno.
+ */
+async function alternarDesistenteTa(vinculo) {
+  const { aluno } = detalharVinculoTa(vinculo);
+  const nome = aluno.nome_completo || aluno.email || "este aluno";
+  const reativar = Boolean(vinculo.desistente);
+  const acao = reativar ? "Reativar " : "Marcar como desistente: ";
+  const confirmou = await confirmarPopup(
+    acao + nome + " na turma " + vinculo.turma_codigo + "?",
+    { tipo: "pergunta", titulo: reativar ? TITULO_REATIVAR_TA : TITULO_DESISTENTE_TA });
+  if (!confirmou) return;
+  try {
+    await estadoTa.repositorio.definirDesistente(vinculo.id, !reativar);
+  } catch (erro) {
+    await mostrarPopup(mensagemErroTa(erro), { tipo: "erro", titulo: TITULO_ERRO_DESISTENTE_TA });
+    return;
+  }
+  await recarregarVinculosTa();
 }
 
 /** Carrega turmas, alunos, vínculos e alunos sem turma e mostra a tela. */

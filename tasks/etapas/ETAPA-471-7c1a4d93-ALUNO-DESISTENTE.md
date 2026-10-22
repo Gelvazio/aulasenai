@@ -105,7 +105,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.3 — Botão "Desistente" em `alunos.html`
 
-**Próximo passo:** executor-medio: botão em `assets/js/turmas-aluno-pagina.js` e chamada `definir_desistente` em `turmas-aluno-repositorio.js`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — tela, 1 a 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
@@ -113,10 +113,26 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 - **Descrição:** botão entre **Editar** e **Excluir**, com confirmação, gravando a marca com o JWT
   do professor; selo visual no aluno desistente.
 - **Critérios de aceitação:** ordem dos botões Editar · Desistente · Excluir; grava e recarrega.
+- **Entrega:** `assets/js/turmas-aluno-repositorio.js` (colunas `desistente`, `desistente_em`;
+  `definirDesistente` → RPC `definir_desistente`), `assets/js/turmas-aluno-pagina.js` (botão
+  🚪 Desistente / ↩️ Reativar entre Editar e Excluir, com confirmação; selo DESISTENTE; linha
+  esmaecida), `assets/css/turmas-professor.css` (`.tp-linha--desistente`, `.tp-selo-desistente`).
+  Feita pelo executor-medio (Sonnet 5.5); conferida pelo líder Opus 5.5.
+- **Verificação:** `node --check` nos 2 JS ok; leitura do diff (ordem dos botões, JSDoc, funções
+  < 45 linhas, nenhuma linha nova > 100). Botão e selo: **conferir na tela** (sem navegador).
 
 ### #342.4 — Desistente fora das listas de atividades e progresso
 
-**Próximo passo:** aguardar #342.2.
+**Telas da #342.4** (levantamento de 2026-10-22): filtram `desistente=eq.false` —
+`alunos-da-turma-progresso`, `progresso-turma-fontes`, `alunos-sem-inicio-entrega`,
+`avaliacao-media-final-professor`, `correcao-discursiva-repositorio`, `painel-professor`,
+`relatorio-atividades-dados`, `respostas-aluno-professor`, `respostas-atividade-professor`,
+`suspeita-copia-discursiva`, `indice-log-alternativas`, `aula-turma-repositorio`. **Não mudam**
+(só leem o próprio aluno logado ou não listam alunos): `avaliacao-media-final`,
+`respostas-atividade-banco`, `respostas-discursivas-banco`, `finalizar-atividade-professor`,
+`filtro-aluno-progresso`.
+
+**Próximo passo:** filtrar desistentes nas 13 telas listadas em "Telas da #342.4".
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (cerca de 16 telas)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro

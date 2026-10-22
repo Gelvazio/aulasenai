@@ -4,6 +4,7 @@
     --tp-cinza: #4a5568;
     --tp-perigo: #b42318;
     --tp-fundo-edicao: #eef4fb;
+    --tp-fundo-desistente: #f3f4f6;
     --tp-largura-pagina: min(1600px, 96vw);
 }
 
@@ -70,6 +71,19 @@
 .tp-detalhe { display: block; color: var(--tp-cinza); font-size: 12px; }
 
 .tp-linha--editando { background: var(--tp-fundo-edicao); }
+
+.tp-linha--desistente { background: var(--tp-fundo-desistente); color: var(--tp-cinza); }
+
+.tp-selo-desistente {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--tp-perigo);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
 
 .tp-celula-acoes { white-space: nowrap; }
 
