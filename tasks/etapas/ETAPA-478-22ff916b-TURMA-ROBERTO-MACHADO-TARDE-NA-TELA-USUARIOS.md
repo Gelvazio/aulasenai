@@ -13,8 +13,16 @@ as senhas, como as demais (#345).
 
 ### #349.1 — Achar por que a turma não aparece e corrigir
 
-**Próximo passo:** comparar a turma no `scripts/LISTAPRESENCA.js` com `turma`, `turmaaluno` e
-`usuario` no banco.
+**Próximo passo:** 👀 o usuário dizer quais abas aparecem na tela (ou mandar um print), depois de
+recarregar com Ctrl+F5; com isso, achar a diferença.
+
+- **Levantamento (2026-10-22 16:35):** no banco a turma existe e está completa — `124403`
+  "QA LBTSN 2026/1 V1", Tarde, unidade 4 "ROBERTO MACHADO" (leitura liberada), 10 vínculos em
+  `turmaaluno`, 10 contas em `usuario`, 10 senhas; a RPC `listar_usuarios_senhas()` como professor
+  devolve as 10 linhas (sem desistentes). O código agrupa por turma e a aba sai como
+  "ROBERTO MACHADO TARDE / QA LBTSN 2026/1 V1 (10)". Nenhuma causa achada por leitura; sem
+  navegador não dá para ver a tela. A turma `124401` (QA LBTSN 2026/1 M1, CEPLAS manhã, 6 alunos
+  na lista) **não** tem alunos no banco — fora do pedido.
 
 - **Nível:** PESADO — banco (consulta e cadastro de turma/alunos), senhas
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
