@@ -30,7 +30,8 @@ function listarNotasDaTurma(linhas, turma) {
         const aluno = alunos.get(linha.aluno_id) || { nome: linha.nome || '', nota: null };
         const temNota = linha.entregue_em && linha.total;
         if (temNota) {
-            const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
+            const nota = calcularNota({ acertos: linha.acertos, total: linha.total,
+                questoesNota: linha.questoesNota });
             aluno.nota = aluno.nota === null ? nota : Math.max(aluno.nota, nota);
         }
         alunos.set(linha.aluno_id, aluno);

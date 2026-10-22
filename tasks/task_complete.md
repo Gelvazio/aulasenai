@@ -1,3 +1,5 @@
 
 | **#341-1ef1d267-a678-427a-a6e6-1d3b70cced36** | **Visualizador só com pedido explícito e só no local (C45)** | 🟡 Média | — | — | ✅ Concluído | — (não reservável) | [470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) | — |
 | #341.1 | Alinhar as regras e comandos do projeto à C45 · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) | — |
+| **#343-3b8e5d21-6c4a-4f17-8d92-5a1e7b3c9f04** | **Tabela "Notas dos alunos" ignora a quantidade de questões para a nota** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [472-3b8e5d21](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) | — |
+| #343.1 | Passar `questoesNota` ao calcular a nota na tabela · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [472-3b8e5d21](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) | — |

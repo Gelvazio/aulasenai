@@ -2046,6 +2046,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 469-e55e8932 | Jogos em sala de aula (#340, pedida em 2026-10-21) | [ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) |
 | 470-1ef1d267 | Visualizador só com pedido explícito e só no local (#341, pedida em 2026-10-22) | [ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) |
 | 471-7c1a4d93 | Aluno desistente some das listas (#342, pedida em 2026-10-22) | [ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) |
+| 472-3b8e5d21 | Tabela de notas ignora questões para a nota (#343, pedida em 2026-10-22) | [ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
