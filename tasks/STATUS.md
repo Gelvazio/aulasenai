@@ -2084,6 +2084,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 472-3b8e5d21 | Tabela de notas ignora questões para a nota (#343, pedida em 2026-10-22) | [ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) |
 | 473-9c2f6a17 | Oficinas de Impressão 3D e Robótica: matéria completa, sem apostila (#344, pedida em 2026-10-22) | [ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) |
 | 474-097d44db | Senhas dos alunos na tela Usuários, só professor (#345, pedida em 2026-10-22) | [ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) |
+| 475-5c1d7e92 | Clonar o LightBot em `games/` (#346, pedida em 2026-10-22) | [ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

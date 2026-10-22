@@ -35,3 +35,6 @@ LISTA-PRESENCA*.js
 # Listas de alunos (nomes, CPF): dados pessoais (LGPD)
 LISTA-ALUNOS/
 
+# Jogos em C++ clonados de terceiros (ex.: games/LightBot): código de outro autor, não vai ao site
+games/
+

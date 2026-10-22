@@ -12,3 +12,5 @@
 | #342-7c1a4d93-5b2e-4f08-9a61-3d8e2c7f1b40 | Aluno desistente some das listas (botão Desistente em alunos.html) | 🟠 Alta | — | — | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #344.1 | `materia.json` e `DOCUMENTACAO/PLANO-AULAS.md` · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluído | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #345.1 | Levantamento e plano (aprovação do usuário) · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| **#346-5c1d7e92** | **Clonar o LightBot em `games/`** | 🟡 Média | — | — | ✅ Concluído | — | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
+| #346.1 | Clonar `lilgallon/LightBot` em `games/LightBot` e ignorar no site · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | — | [475-5c1d7e92](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) | — |
