@@ -10,6 +10,12 @@ const TAMANHO_MINIMO_SENHA_USUARIO = 6;
 const HOSTS_LOCAIS = ['127.0.0.1', 'localhost'];
 const MSG_HOST_NAO_LOCAL = 'Por segurança, a gravação só funciona em 127.0.0.1 ou localhost.';
 const MSG_SEM_CHAVE = 'Preencha SUPABASE_SERVICE_ROLE_KEY em scripts/variaveis.js.';
+const PREFER_MESCLAR = 'resolution=merge-duplicates,return=minimal';
+// Senha inicial que o professor entrega ao aluno; RLS só deixa o PROFESSOR ler (#345).
+const TABELA_SENHA_INICIAL = 'usuario_senha_inicial';
+const CONFLITO_SENHA_INICIAL = 'usuario_id';
+const SITUACAO_ERRO_SENHA = 'erro ao guardar a senha inicial';
+const SENHA_OCULTA = '***';
 
 /**
  * Obtém a chave service_role, só se a página estiver aberta em um host local.
@@ -131,7 +137,8 @@ async function listarExistentesUsuarios(chave) {
  * @param {Object} usuario - Usuário montado.
  * @param {Map<string, string>} existentes - Mapa e-mail → id.
  * @param {{chave: string, redefinirSenhas: boolean}} contexto - Chave e opção.
- * @returns {Promise<{id: string, resultado: string}>} Id e "criado" ou "atualizado".
+ * @returns {Promise<{id: string, resultado: string, senhaGravada: boolean}>} Id (auth.users.id),
+ *   "criado" ou "atualizado" e se a senha foi gravada no Auth (criação ou senha regravada).
  */
 async function gravarUsuarioAuthPagina(usuario, existentes, contexto) {
     const corpo = {
@@ -144,12 +151,12 @@ async function gravarUsuarioAuthPagina(usuario, existentes, contexto) {
     if (!idExistente) {
         const criado = await chamarApiUsuarios(ROTA_ADMIN,
             { metodo: 'POST', corpo: { ...corpo, password: usuario.senha } }, contexto.chave);
-        return { id: criado.id, resultado: 'criado' };
+        return { id: criado.id, resultado: 'criado', senhaGravada: true };
     }
     if (contexto.redefinirSenhas) corpo.password = usuario.senha;
     await chamarApiUsuarios(ROTA_ADMIN + '/' + idExistente,
         { metodo: 'PUT', corpo }, contexto.chave);
-    return { id: idExistente, resultado: 'atualizado' };
+    return { id: idExistente, resultado: 'atualizado', senhaGravada: contexto.redefinirSenhas };
 }
 
 /**
@@ -164,8 +171,47 @@ async function gravarTabelaUsuarios(tabela, linhas, chave) {
     await chamarApiUsuarios(ROTA_REST_USUARIOS + tabela, {
         metodo: 'POST',
         corpo: linhas,
-        headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
+        headers: { Prefer: PREFER_MESCLAR },
     }, chave);
+}
+
+/**
+ * Troca, na mensagem de erro, toda senha das linhas por asteriscos (a senha nunca vai ao log).
+ * @param {string} mensagem - Mensagem de erro da API.
+ * @param {Object[]} linhasSenha - Linhas {usuario_id, senha_inicial, atualizado_em}.
+ * @returns {string} Mensagem sem as senhas.
+ */
+function ocultarSenhasDaMensagem(mensagem, linhasSenha) {
+    return linhasSenha.reduce((texto, linha) => (
+        texto.split(linha.senha_inicial).join(SENHA_OCULTA)), String(mensagem));
+}
+
+/**
+ * Guarda (upsert) a senha inicial de quem foi criado ou teve a senha regravada no Auth. Roda
+ * depois da tabela usuario (chave estrangeira). Falha não derruba a gravação: vai para o log.
+ * @param {{linhas: Object[], emails: string[]}} senhas - Linhas da tabela e e-mail de cada uma.
+ * @param {{chave: string, aoResultado: Function}} contexto - Chave service_role e callback de log.
+ * @returns {Promise<{senhasGravadas: number, senhasComErro: number}>} Contagem para o resumo.
+ */
+async function gravarSenhasIniciais(senhas, contexto) {
+    const { linhas, emails } = senhas;
+    if (!linhas.length) return { senhasGravadas: 0, senhasComErro: 0 };
+
+    try {
+        const rota = ROTA_REST_USUARIOS + TABELA_SENHA_INICIAL
+            + '?on_conflict=' + CONFLITO_SENHA_INICIAL;
+        await chamarApiUsuarios(rota, {
+            metodo: 'POST',
+            corpo: linhas,
+            headers: { Prefer: PREFER_MESCLAR },
+        }, contexto.chave);
+        return { senhasGravadas: linhas.length, senhasComErro: 0 };
+    } catch (erro) {
+        const motivo = ocultarSenhasDaMensagem(erro.message, linhas);
+        emails.forEach((email) => contexto.aoResultado(
+            SITUACAO_ERRO_SENHA + ' (' + motivo + ')', email));
+        return { senhasGravadas: 0, senhasComErro: linhas.length };
+    }
 }
 
 /**
@@ -189,36 +235,59 @@ async function gravarVinculosTurmaAluno(vinculos, chave) {
  * @param {Object[]} usuarios - Usuários montados.
  * @param {{chave: string, redefinirSenhas: boolean}} contexto - Chave e opção.
  * @param {Function} aoResultado - Chamada com (situação, e-mail) a cada usuário.
- * @returns {Promise<{resumo: Object, alunos: Object[], linhasUsuario: Object[]}>} Resumo e as
- *   linhas das tabelas aluno e usuario (as duas usam o id do auth.users como chave).
+ * @returns {Promise<{resumo: Object, alunos: Object[], linhasUsuario: Object[],
+ *   vinculos: Object[], senhas: {linhas: Object[], emails: string[]}}>} Resumo e as linhas das
+ *   tabelas aluno, usuario, turmaaluno e usuario_senha_inicial (id do auth.users como chave).
  */
 async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
     const existentes = await listarExistentesUsuarios(contexto.chave);
     const resumo = { criado: 0, atualizado: 0, erro: 0 };
-    const alunos = [];
-    const linhasUsuario = [];
-    const vinculos = [];
+    const linhas = {
+        alunos: [], linhasUsuario: [], vinculos: [], senhas: { linhas: [], emails: [] },
+    };
     for (const usuario of usuarios) {
         try {
-            const { id, resultado } = await gravarUsuarioAuthPagina(usuario, existentes, contexto);
-            resumo[resultado] += 1;
-            linhasUsuario.push({ id, ...usuario.linhaUsuario });
-            if (usuario.linhaAluno) alunos.push({ id, ...usuario.linhaAluno });
-            if (usuario.turmaCodigo) vinculos.push({ turma_codigo: usuario.turmaCodigo, aluno_id: id });
-            aoResultado(resultado, usuario.email);
+            const gravado = await gravarUsuarioAuthPagina(usuario, existentes, contexto);
+            resumo[gravado.resultado] += 1;
+            acumularLinhasDoUsuario(linhas, usuario, gravado);
+            aoResultado(gravado.resultado, usuario.email);
         } catch (erro) {
             resumo.erro += 1;
             aoResultado('erro (' + erro.message + ')', usuario.email);
         }
     }
-    return { resumo, alunos, linhasUsuario, vinculos };
+    return { resumo, ...linhas };
+}
+
+/**
+ * Junta as linhas das tabelas de um usuário já gravado no Auth. A senha inicial só entra quando
+ * foi gravada no Auth (usuário criado ou senha regravada).
+ * @param {Object} linhas - Listas alunos, linhasUsuario, vinculos e senhas (alteradas aqui).
+ * @param {Object} usuario - Usuário montado.
+ * @param {{id: string, senhaGravada: boolean}} gravado - Id do auth.users e se a senha foi gravada.
+ */
+function acumularLinhasDoUsuario(linhas, usuario, gravado) {
+    const { id } = gravado;
+    linhas.linhasUsuario.push({ id, ...usuario.linhaUsuario });
+    if (usuario.linhaAluno) linhas.alunos.push({ id, ...usuario.linhaAluno });
+    if (usuario.turmaCodigo) {
+        linhas.vinculos.push({ turma_codigo: usuario.turmaCodigo, aluno_id: id });
+    }
+    if (!gravado.senhaGravada) return;
+
+    linhas.senhas.linhas.push({
+        usuario_id: id,
+        senha_inicial: usuario.senha,
+        atualizado_em: new Date().toISOString(),
+    });
+    linhas.senhas.emails.push(usuario.email);
 }
 
 /**
  * Grava turmas, usuários do Auth e alunos no Supabase.
  * @param {{turmas: Object[]}} lista - Lista (ou turmas reunidas) do LISTAPRESENCA.js.
  * @param {{redefinirSenhas: boolean, aoResultado: Function}} opcoes - Opção e callback de log.
- * @returns {Promise<Object>} Resumo com criado, atualizado e erro.
+ * @returns {Promise<Object>} Resumo com criado, atualizado, erro, senhasGravadas e senhasComErro.
  * @throws {Error} Se a chave, o host ou os dados forem inválidos.
  */
 async function gravarListaNoSupabase(lista, opcoes) {
@@ -236,12 +305,14 @@ async function gravarListaNoSupabase(lista, opcoes) {
     }));
     await gravarTabelaUsuarios('turma', turmas, chave);
     const contexto = { chave, redefinirSenhas: opcoes.redefinirSenhas };
-    const { resumo, alunos, linhasUsuario, vinculos } = await gravarUsuariosNoAuth(
+    const { resumo, alunos, linhasUsuario, vinculos, senhas } = await gravarUsuariosNoAuth(
         usuarios, contexto, opcoes.aoResultado);
     await gravarTabelaUsuarios('usuario', linhasUsuario, chave);
+    const contagemSenhas = await gravarSenhasIniciais(senhas,
+        { chave, aoResultado: opcoes.aoResultado });
     await gravarTabelaUsuarios('aluno', alunos, chave);
     await gravarVinculosTurmaAluno(vinculos, chave);
-    return resumo;
+    return { ...resumo, ...contagemSenhas };
 }
 
 /**

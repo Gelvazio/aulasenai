@@ -86,12 +86,12 @@ lida direto do banco; aluno nunca vê.
 
 ### #345.4 — Gravar a senha na tabela ao criar ou regravar pela tela local
 
-**Próximo passo:** depois da #345.2, em `assets/js/criar-usuarios-api.js`, upsert em `usuario_senha_inicial` após criar/regravar no Auth.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — senhas, chave `service_role`
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** criar ou regravar um aluno atualiza a senha na tabela; `node --check` limpo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/criar-usuarios-api.js`: upsert em `usuario_senha_inicial` (service_role) ao criar ou regravar a senha; falha vai ao log sem derrubar a criação; senha nunca no log — executor-pesado B · **Verificação:** `node --check`; leitura do código; conferir rodando a página local (usuário)
 
 ### #345.5 — Documentação
 
