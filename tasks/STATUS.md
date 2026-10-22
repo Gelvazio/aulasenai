@@ -1573,6 +1573,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #345.3 | Tela USUARIOS online lendo turmas, alunos e senhas do banco · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 14:05) | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | #345.4 | Gravar a senha na tabela ao criar/regravar pela tela local · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
 | #345.5 | Documentação (`docs/database.md` e tela USUARIOS) · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #345.3, #345.4 | ⬜ Pendente | — | [474-097d44db](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) | — |
+| **#347-3a7e9b14** | **Portar o LightBot para a SFML 3** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
+| #347.1 | Portar o código do LightBot para a SFML 3 e compilar · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2085,6 +2087,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 473-9c2f6a17 | Oficinas de Impressão 3D e Robótica: matéria completa, sem apostila (#344, pedida em 2026-10-22) | [ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) |
 | 474-097d44db | Senhas dos alunos na tela Usuários, só professor (#345, pedida em 2026-10-22) | [ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md](etapas/ETAPA-474-097d44db-SENHAS-DOS-ALUNOS-NA-TELA-USUARIOS.md) |
 | 475-5c1d7e92 | Clonar o LightBot em `games/` (#346, pedida em 2026-10-22) | [ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md](etapas/ETAPA-475-5c1d7e92-CLONAR-LIGHTBOT-EM-GAMES.md) |
+| 476-3a7e9b14 | Portar o LightBot para a SFML 3 (#347, pedida em 2026-10-22) | [ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
