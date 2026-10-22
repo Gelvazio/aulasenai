@@ -15,7 +15,7 @@
 | Momento | O que vai no commit |
 |---------|---------------------|
 | Reserva da tarefa (`tasks/frentes-e-reserva.md`) | Só o quadro — commit + push imediatos |
-| **Fim da tarefa** | Arquivos da tarefa + quadro (`tasks/STATUS.md` e a etapa) + visualizador regenerado — **1 commit + push** |
+| **Fim da tarefa** | Arquivos da tarefa + quadro (`tasks/STATUS.md` e a etapa) — **1 commit + push** (visualizador só com pedido explícito: `visualizador-regras.md`) |
 | Usuário pede "faça commit agora" | Na hora, mesmo no meio da tarefa |
 
 - Usuário diz "só commit, sem push" → respeitar.
@@ -29,7 +29,6 @@
 ```bash
 git fetch --all --prune          # sem isso o git status mente
 git pull --rebase origin main    # nunca pull sem --rebase (gera merge)
-python scripts/regras/gerar_visualizador_regras.py   # só no fim da tarefa (visualizador-regras.md)
 git add <caminho1> <caminho2>    # só os arquivos da tarefa + quadro
 git diff --cached --name-only    # conferir o que vai no commit
 git commit -m "feat(tema): descrição por <IA> (<frente>)
@@ -41,7 +40,7 @@ git push origin main
 - Claude: `Co-Authored-By: Claude <modelo> <noreply@anthropic.com>`; outras IAs usam o nome e o
   e-mail noreply do próprio fornecedor.
 - Push recusado porque o remoto andou → `fetch` + `pull --rebase` + reler o quadro + push de novo.
-  Conflito no `.claude/rules/index.html` → regenerar (não resolver à mão).
+  Conflito no `.claude/rules/index.html` → versão do remoto (`visualizador-regras.md`).
 
 ## Proibido
 

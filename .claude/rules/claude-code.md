@@ -22,7 +22,7 @@ Structure"). Vale para o Claude Code local e de nuvem; as outras IAs seguem as m
 | Comando | O que faz |
 |---------|-----------|
 | `/revisar` | Revisa o diff (SOLID, limites, RLS/JWT, gabarito) |
-| `/entregar` | Encerra a TASK: quadro, visualizador, 1 commit + push na `main` |
+| `/entregar` | Encerra a TASK: quadro, 1 commit + push na `main` |
 | `/validar` | `node --check`, JSON e Python — sem navegador e sem testes |
 | `/nova-materia <CURSO>/<MATERIA>` | Pastas e 5 status de `materias-global.md` |
 | `/documentar` | Atualiza a orientação em `docs/` dos arquivos alterados |

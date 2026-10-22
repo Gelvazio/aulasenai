@@ -58,7 +58,9 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
      identifica como IA + modelo. ⛔ **NUNCA executar tarefa que não é do seu modelo** (2026-10-16,
      #247, C22): só o seu nível (coluna **Modelo**), nem acima nem abaixo, sem exceção
      ([`niveis.md`](.claude/rules/niveis.md)).
-9. **Mudou regra ou encerrou tarefa → regenerar o visualizador** `.claude/rules/index.html`.
+9. **Visualizador `.claude/rules/index.html` só com pedido explícito** (2026-10-22, #341, global
+   C45): só é gerado quando o usuário pedir, e só no Claude Code local — nunca na nuvem, nunca
+   por conta própria (fim de tarefa, reserva, regra mudada) ([`visualizador-regras.md`](.claude/rules/visualizador-regras.md)).
 10. **Sem sugestões** (2026-10-08, "PARE DE SUGERIR"): responder só o pedido, sem oferecer opções,
     "quer que eu…?" ou próximos passos; se o usuário afirma algo, aceitar sem conferir. Pedir os
     detalhes de uma TASK (regra 1) e relatar bloqueios continua valendo.

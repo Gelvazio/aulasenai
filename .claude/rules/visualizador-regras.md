@@ -11,15 +11,18 @@
   Administrador (`js/header-usuario.js`), que o abre em **nova aba**.
 - ⛔ **Não editar à mão:** o arquivo é gerado e qualquer edição se perde na próxima geração.
 
-## Quando regenerar
+## Quando gerar — só com pedido explícito (2026-10-22, #341, global C45)
 
-Regenerar e commitar o `index.html` **no mesmo commit** quando:
-- mudar **qualquer arquivo de `.claude/rules/`** (inclusive `tasks/`);
-- **encerrar uma tarefa** (o quadro mudou).
+- ⛔ **Nunca gerar por conta própria:** nem no fim da tarefa, na reserva, na criação de tarefa, no
+  `verify` ou quando muda uma regra. Cada geração muda um arquivo grande do site e vira um deploy
+  novo na Vercel (o `ignoreCommand` só pula push que mexe só em `tasks/`).
+- ✅ **Só com pedido explícito do usuário** ("gere o visualizador") e **só no Claude Code local**.
+- ⛔ **Nunca na nuvem**, nem com pedido: avisar que a geração é feita só no local.
+- O `index.html` pode ficar desatualizado entre um pedido e outro: a fonte é o `.md`.
+- Conflito no `index.html` → ficar com a versão do remoto (`git checkout --ours --
+  .claude/rules/index.html` durante o `pull --rebase`); não regenerar nem resolver à mão.
 
-Não regenerar na reserva nem a cada item: com várias frentes, todas mexeriam no mesmo arquivo
-gerado e o `pull --rebase` daria conflito a toda hora. Conflito no `index.html` → regenerar depois
-do rebase (nunca resolver à mão).
+Quando pedido:
 
 ```bash
 python scripts/regras/gerar_visualizador_regras.py

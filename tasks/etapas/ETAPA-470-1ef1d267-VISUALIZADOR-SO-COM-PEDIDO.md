@@ -27,5 +27,16 @@ um deploy de ~51 MB na Vercel); só com pedido explícito do usuário, no Claude
   mensagem do hook `regras-bloqueio.js`, `docs/HISTORICO-REGRAS.md`; `rules-local/` atualizado.
 - **Critérios de aceitação:** nenhuma regra ou comando manda regenerar por conta própria;
   `node --check` do hook ok.
-- **Entrega:** —
-- **Verificação:** —
+- **Entrega:** regras, comandos, skills (`.claude` e `.agents`) e mensagem do hook sem ordem de
+  regenerar; `docs/HISTORICO-REGRAS.md`; `rules-local/` em `2026-10-22-00769678` (traz
+  `visualizador-gerado.md`) — 2026-10-22 07:25
+- **Verificação:** `grep -rnE "regenerad|gerar_visualizador"` nas regras, comandos e skills = só
+  o bloco "Quando pedido" e a tabela do gerador em `visualizador-regras.md`; `node --check` do
+  hook ok; regras ≤ 5 KB. `index.html` não regenerado (a própria regra).
+
+### Sincronização de tasks do rules-local (C36)
+
+| Situação | Arquivo | Código anterior | Código novo | Avaliação |
+|---|---|---|---|---|
+| mudado | INDEX.md | 75c72606d2c8c7a6 | de179c52c17ca671 | sem ajuste — só lista a regra nova |
+| adicionado | visualizador-gerado.md | — | bced4974cd78dc89 | exige ajuste → #341 (feito nesta tarefa) |

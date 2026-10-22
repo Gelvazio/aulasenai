@@ -43,6 +43,7 @@ Linhas já com `true` não são conferidas de novo (só quando o usuário pedir 
 
 ## 3. Entrega
 
-- Um commit com o quadro, as etapas anotadas e o visualizador regenerado (regras de git do projeto).
+- Um commit com o quadro e as etapas anotadas (regras de git do projeto; visualizador só com
+  pedido explícito).
 - Resposta ao usuário: conflitos achados, quantas linhas viraram `true`, parciais e não feitas
   (com o número da tarefa) e o que precisa dele (👀).

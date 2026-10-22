@@ -42,6 +42,7 @@ trabalham no mesmo repositório e só se falam pelos arquivos. Quadro: `quadro.m
 
 - Conflito no `STATUS.md` ao sincronizar: manter as mudanças das duas frentes (cada uma só mexe
   nas próprias linhas) e reler antes de seguir.
-- Arquivo **gerado** em conflito (ex.: visualizador do quadro): não resolver à mão — rodar o
+- Arquivo **gerado** em conflito: não resolver à mão — seguir a regra do projeto para ele (ex.:
+  visualizador: versão do remoto, sem regenerar). Outros gerados: rodar o
   gerador de novo depois de sincronizar.
 - Recado para outra frente (ou para todas) → `tasks/RECADOS.md`; ler os recados ao começar.

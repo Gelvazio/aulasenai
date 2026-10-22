@@ -71,8 +71,8 @@ const REGRAS_BLOQUEIO = [
   },
   function bloquearVisualizadorAMao(entrada) {
     if (!caminhoDaEntrada(entrada).endsWith(CAMINHO_VISUALIZADOR)) return null;
-    return "⛔ `.claude/rules/index.html` é gerado: rode " +
-      "`python scripts/regras/gerar_visualizador_regras.py` (visualizador-regras.md).";
+    return "⛔ `.claude/rules/index.html` é gerado: só com pedido explícito do usuário, " +
+      "no local, pelo gerador (visualizador-regras.md).";
   },
   function bloquearArquivoDeTeste(entrada) {
     const caminho = caminhoDaEntrada(entrada);

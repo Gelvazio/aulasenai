@@ -58,7 +58,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 |---------|---------|
 | `graphify.md` | Graphify: ler o relatório antes de criar e de executar tarefa; update no início da conversa e ao fim da tarefa (regra global C25) |
 | `claude-code.md` | Comandos, subagentes, skills e hooks do Claude Code (estrutura do infográfico, #170) |
-| `visualizador-regras.md` | `index.html` desta pasta: só visualizador; quando regenerar |
+| `visualizador-regras.md` | `index.html` desta pasta: só visualizador; gerar só com pedido explícito, no local |
 
 ## Onde mais procurar
 
@@ -72,7 +72,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
    de tarefas que sirva para qualquer projeto vai para `tasks/`, sem nada específico deste projeto.
 2. Não repita a regra em outro arquivo — aponte para ele.
 3. Registre a mudança em `docs/HISTORICO-REGRAS.md` (único histórico).
-4. Rode `python scripts/regras/gerar_visualizador_regras.py` e commite o `index.html` junto.
+4. Não regenere o `index.html` (só com pedido explícito do usuário — `visualizador-regras.md`).
 
 ---
 

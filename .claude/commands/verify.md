@@ -11,7 +11,7 @@ já têm `true` em **Verificado**.
 2. Conflitos (seção 1 da regra) → lista no relatório.
 3. Linhas ✅ ou 👀 de aceite com Verificado `—` → conferir a entrega com prova; só ✅ Feito
    recebe `true`; anotar o resultado na etapa.
-4. Um commit + push com o quadro, as etapas e o visualizador regenerado.
+4. Um commit + push com o quadro e as etapas (visualizador só com pedido explícito).
 
 ⛔ Sem navegador, sem testes, sem SQL que altera o banco, sem mexer na reserva de outra frente.
 Resposta: conflitos, linhas marcadas `true`, parciais e não feitas, e o que espera o usuário.

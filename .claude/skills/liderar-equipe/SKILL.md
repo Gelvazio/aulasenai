@@ -45,7 +45,7 @@ liberada. Assim não há dois agentes nos mesmos arquivos nem no Git.
    e avisar o usuário. ⛔ O líder **nunca** faz a subtarefa no lugar do executor (regra de níveis:
    nunca executar tarefa que não é do seu modelo).
 8. **Entregar:** seção da subtarefa com entrega e verificação; linha ✅ e "Em uso por" = `—`;
-   visualizador regenerado; **1 commit** `feat(<tema>): … (#N.x) por <frente do executor>` com os
+   **1 commit** `feat(<tema>): … (#N.x) por <frente do executor>` com os
    arquivos + quadro; push.
 9. **Próxima:** voltar ao passo 1. Parar quando não houver subtarefa livre, quando o usuário pedir,
    ou quando a próxima precisar de decisão ou autorização do usuário.
