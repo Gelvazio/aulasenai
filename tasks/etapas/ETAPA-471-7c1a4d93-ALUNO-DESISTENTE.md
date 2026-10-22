@@ -174,7 +174,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.6 — Documentação
 
-**Próximo passo:** aguardar #342.3 a #342.5.
+**Próximo passo:** executor-leve: `docs/tabela-turmaaluno-menu-alunos.md` e `docs/regras/usuarios-turmas-paginas-professor.md` com o aluno desistente.
 
 - **Nível:** LEVE — só `.md`
 - **Modelo:** só Haiku — nunca outro
