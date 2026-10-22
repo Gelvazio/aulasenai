@@ -75,7 +75,6 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 ### #342.1 — Plano detalhado e aprovação do usuário
 
 **Próximo passo:** plano escrito acima; aguardar o "sim" do usuário e registrar nas Decisões.
-perguntas do Escopo e pedir o "sim" ao usuário.
 
 - **Nível:** PESADO — plano de tarefa com banco e segurança
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
