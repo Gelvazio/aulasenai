@@ -13,8 +13,7 @@ as senhas, como as demais (#345).
 
 ### #349.1 — Achar por que a turma não aparece e corrigir
 
-**Próximo passo:** 👀 o usuário dizer quais abas aparecem na tela (ou mandar um print), depois de
-recarregar com Ctrl+F5; com isso, achar a diferença.
+**Próximo passo:** — (concluída)
 
 - **Levantamento (2026-10-22 16:35):** no banco a turma existe e está completa — `124403`
   "QA LBTSN 2026/1 V1", Tarde, unidade 4 "ROBERTO MACHADO" (leitura liberada), 10 vínculos em
@@ -32,4 +31,21 @@ recarregar com Ctrl+F5; com isso, achar a diferença.
 - **Nível:** PESADO — banco (consulta e cadastro de turma/alunos), senhas
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
 - **Critérios de aceitação:** a RPC `listar_usuarios_senhas()` devolve os alunos da turma.
+- **Entrega:** diagnóstico + vínculo `turmaprofessor` (124403, Gelvazio) · **Verificação:** consulta: 124403 com 1 professor; RPC com o JWT do professor devolve as 7 turmas
+
+- **2026-10-22 17:00:** o usuário mandou o print (só o cartão da 124403) e respondeu "Só essa turma
+  aparece". Causa: a 124403 é a turma **favorita** (`turma.favorito`), a tela abre só o cartão da
+  aba favorita e esconde os outros; as abas do modo banco não têm UC nem turno e passam
+  despercebidas.
+
+### #349.2 — Modo banco mostra todas as turmas de uma vez, com turno e UC
+
+**Próximo passo:** em `assets/js/criar-usuarios-pagina.js`, no modo banco, mostrar todos os
+cartões (favorita primeiro), aba = atalho que rola até o cartão; título e aba com UC e turno lidos
+da tabela `turma`.
+
+- **Nível:** MEDIO — 1 arquivo JS de tela
+- **Modelo:** só Sonnet — nunca outro
+- **Critérios de aceitação:** todas as turmas visíveis na página sem clicar; título "NOME (código:
+  X) - UNIDADE TURNO"; modo local sem mudança; `node --check` limpo.
 - **Entrega:** — · **Verificação:** —
