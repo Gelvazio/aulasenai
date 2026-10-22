@@ -15,7 +15,7 @@ const PREFER_MESCLAR = 'resolution=merge-duplicates,return=minimal';
 const TABELA_SENHA_INICIAL = 'usuario_senha_inicial';
 const CONFLITO_SENHA_INICIAL = 'usuario_id';
 const SITUACAO_ERRO_SENHA = 'erro ao guardar a senha inicial';
-const SENHA_OCULTA = '***';
+const SENHA_OCULTA_LOG = '***';
 
 /**
  * Obtém a chave service_role, só se a página estiver aberta em um host local.
@@ -183,7 +183,7 @@ async function gravarTabelaUsuarios(tabela, linhas, chave) {
  */
 function ocultarSenhasDaMensagem(mensagem, linhasSenha) {
     return linhasSenha.reduce((texto, linha) => (
-        texto.split(linha.senha_inicial).join(SENHA_OCULTA)), String(mensagem));
+        texto.split(linha.senha_inicial).join(SENHA_OCULTA_LOG)), String(mensagem));
 }
 
 /**

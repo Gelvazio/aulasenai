@@ -15,10 +15,10 @@ scripts dividem o escopo global da página: o segundo falha inteiro e as funçõ
 
 ### #348.1 — Renomear a constante do `criar-usuarios-api.js`
 
-**Próximo passo:** renomear `SENHA_OCULTA` para `SENHA_OCULTA_LOG` no `criar-usuarios-api.js`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — 1 arquivo JS
 - **Modelo:** só Sonnet — nunca outro
 - **Critérios de aceitação:** nenhuma constante global repetida entre os scripts da página;
   `node --check` limpo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `SENHA_OCULTA` → `SENHA_OCULTA_LOG` em `assets/js/criar-usuarios-api.js` (executor-medio) · **Verificação:** `node --check` no arquivo e nos 9 scripts da página juntos num arquivo só (sem declaração repetida); o erro `criarTabelaSenhasBancoGuia is not defined` era consequência (a função existe em `criar-usuarios-tabela.js`, que não carregava); conferir na tela (usuário)
