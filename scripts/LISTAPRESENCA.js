@@ -126,6 +126,58 @@ window.LISTAS_PRESENCA = [
             "naChamada": false
           }
         ]
+      },
+      {
+        "codigo": "124401",
+        "unidadeId": 4,
+        "nome": "QA LBTSN 2026/1 M1",
+        "turno": "Manhã",
+        "horario": "",
+        "local": "ROBERTO MACHADO",
+        "alunos": [
+          {
+            "numero": 1,
+            "nome": "Ânjuli Rahn Miranda Fagundes",
+            "email": "anjuli.fagundes@senai.local",
+            "senha": "tHRZpw",
+            "naChamada": true
+          },
+          {
+            "numero": 2,
+            "nome": "Brayan Pierry Constante Rocha",
+            "email": "brayan.rocha@senai.local",
+            "senha": "HryXH3",
+            "naChamada": true
+          },
+          {
+            "numero": 3,
+            "nome": "Isabella Arceno da Sila",
+            "email": "isabella.sila@senai.local",
+            "senha": "Kxymuy",
+            "naChamada": true
+          },
+          {
+            "numero": 4,
+            "nome": "Juan Elias Palmares Lozada",
+            "email": "juan.lozada@senai.local",
+            "senha": "eLT5hJ",
+            "naChamada": true
+          },
+          {
+            "numero": 5,
+            "nome": "Ketlyn Rosa Poepken",
+            "email": "ketlyn.poepken@senai.local",
+            "senha": "hGnKNW",
+            "naChamada": true
+          },
+          {
+            "numero": 6,
+            "nome": "Mikaias Tamanini",
+            "email": "mikaias.tamanini@senai.local",
+            "senha": "fHa5pM",
+            "naChamada": true
+          }
+        ]
       }
     ]
   },
