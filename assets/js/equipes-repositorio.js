@@ -10,6 +10,7 @@ const TABELA_TURMA_EQUIPES = 'turma';
 const TABELA_TURMAPROFESSOR_EQUIPES = 'turmaprofessor';
 const TABELA_TURMAALUNO_EQUIPES = 'turmaaluno';
 const TABELA_USUARIO_EQUIPES = 'usuario';
+const COLUNA_DESISTENTE = 'desistente';
 const TABELA_ATIVIDADE_EQUIPES = 'atividade';
 const TABELA_MATERIA_EQUIPES = 'materia';
 const TABELA_EQUIPE_ATIVIDADE = 'equipe_atividade';
@@ -77,11 +78,29 @@ function criarLeiturasContextoEquipes(cliente) {
      */
     async listarTurmasDoAluno(alunoId) {
       const vinculos = dadosOuErroEquipes(await cliente.from(TABELA_TURMAALUNO_EQUIPES)
-        .select('turma_codigo').eq('aluno_id', alunoId));
+        .select('turma_codigo').eq('aluno_id', alunoId).eq(COLUNA_DESISTENTE, false));
       const codigos = new Set(vinculos.map((vinculo) => vinculo.turma_codigo));
       const turmas = dadosOuErroEquipes(await cliente.from(TABELA_TURMA_EQUIPES)
         .select(COLUNAS_TURMA_EQUIPES).order('codigo'));
       return turmas.filter((turma) => codigos.has(turma.codigo));
+    },
+
+    /**
+     * Alunos desistentes da turma (turmaaluno.desistente), com o nome do usuario. Servem para
+     * marcar, nas equipes já formadas, quem desistiu.
+     * @param {string} turmaCodigo - Código da turma.
+     * @returns {Promise<{id: string, nome: string}[]>} Desistentes (vazio se não houver).
+     */
+    async listarDesistentesDaTurma(turmaCodigo) {
+      const vinculos = dadosOuErroEquipes(await cliente.from(TABELA_TURMAALUNO_EQUIPES)
+        .select('aluno_id').eq('turma_codigo', turmaCodigo).eq(COLUNA_DESISTENTE, true));
+      const ids = vinculos.map((vinculo) => vinculo.aluno_id);
+      if (!ids.length) return [];
+
+      const usuarios = dadosOuErroEquipes(await cliente.from(TABELA_USUARIO_EQUIPES)
+        .select('id, nome_completo').in('id', ids));
+      return usuarios.map((usuario) => ({
+        id: usuario.id, nome: usuario.nome_completo || 'Aluno sem nome' }));
     },
 
     /**
@@ -140,7 +159,7 @@ function criarLeiturasContextoEquipes(cliente) {
      */
     async listarAlunosDaTurma(turmaCodigo) {
       const vinculos = dadosOuErroEquipes(await cliente.from(TABELA_TURMAALUNO_EQUIPES)
-        .select('aluno_id').eq('turma_codigo', turmaCodigo));
+        .select('aluno_id').eq('turma_codigo', turmaCodigo).eq(COLUNA_DESISTENTE, false));
       const ids = vinculos.map((vinculo) => vinculo.aluno_id);
       if (!ids.length) return [];
 

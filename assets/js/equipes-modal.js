@@ -18,10 +18,12 @@ const MSG_DUPLICADO_EQUIPES = 'Já existe: o nome da equipe se repete ou o aluno
 const MSG_ERRO_EQUIPES = 'Não foi possível concluir: ';
 const MSG_NOME_OBRIGATORIO = 'Informe o nome da equipe.';
 const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
+const SUFIXO_DESISTENTE_EQUIPES = ' (desistente)';
 
 const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
-  turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false, materias: [],
+  turmaCodigo: '', alunos: [], desistentes: [], equipes: [], membros: [], ehLider: false,
+  materias: [],
   editandoEquipeId: null, editandoMembroId: null, atividades: [], ligacoes: [],
   atividadesMinhaEquipe: [],
 };
@@ -313,7 +315,10 @@ async function executarGravacaoEquipes(gravacao) {
  */
 function nomeDoAlunoEquipes(alunoId) {
   const aluno = estadoEquipes.alunos.find((item) => item.id === alunoId);
-  return aluno ? aluno.nome : 'Aluno fora da turma';
+  if (aluno) return aluno.nome;
+
+  const desistente = estadoEquipes.desistentes.find((item) => item.id === alunoId);
+  return desistente ? desistente.nome + SUFIXO_DESISTENTE_EQUIPES : 'Aluno fora da turma';
 }
 
 /**
@@ -410,6 +415,8 @@ async function carregarTurmaEquipes() {
   estadoEquipes.alunos = estadoEquipes.ehLider
     ? await repositorio.listarAlunosDaTurmaLider(turmaCodigo)
     : await repositorio.listarAlunosDaTurma(turmaCodigo);
+  estadoEquipes.desistentes = estadoEquipes.ehLider
+    ? [] : await repositorio.listarDesistentesDaTurma(turmaCodigo);
   estadoEquipes.equipes = await repositorio.listarEquipes(filtro);
   estadoEquipes.membros = await repositorio.listarMembros(estadoEquipes.equipes.map((e) => e.id));
   await carregarAtividadesEquipes();

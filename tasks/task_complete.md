@@ -7,3 +7,4 @@
 | #342.2 | Banco: coluna de desistente em `turmaaluno`, função e filtros · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #342.1 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.3 | Botão "Desistente" em alunos.html · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.4 | Desistente fora das listas de atividades e progresso · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |

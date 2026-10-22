@@ -154,7 +154,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.5 — Desistente fora de equipes, sorteios e jogos
 
-**Próximo passo:** executor-medio: `equipes-repositorio.js` (listarTurmasDoAluno, listarAlunosDaTurma) sem desistente e aviso de membro desistente em equipe já formada.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — código com lógica
 - **Modelo:** só Sonnet — nunca outro
@@ -162,6 +162,15 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 - **Descrição:** equipes (modal e tabela), sorteio de perguntas/equipes e jogos em sala não
   listam nem sorteiam desistente; equipe já formada com desistente é sinalizada ao professor.
 - **Critérios de aceitação:** nenhum sorteio sorteia desistente; `node --check` ok.
+- **Entrega:** `assets/js/equipes-repositorio.js` (`listarTurmasDoAluno` e `listarAlunosDaTurma`
+  com `desistente = false`; `listarDesistentesDaTurma` novo) e `assets/js/equipes-modal.js`
+  (membro desistente de equipe já formada aparece como "Nome (desistente)" na tabela, no editar e
+  no PDF; não entra em "alunos sem equipe"). No banco (#342.2) o trigger recusa desistente em
+  equipe nova e a votação o ignora. **Sorteios e jogos ainda não existem** (#339 e #340
+  pendentes): recado em `tasks/RECADOS.md` para filtrarem `desistente`. Feita pelo
+  executor-medio (Sonnet 5.5); o líder ajustou 1 linha > 100 e a constante do sufixo.
+- **Verificação:** `node --check` nos 2 JS ok; diff lido; nenhuma linha nova > 100. Tela:
+  **conferir no navegador**.
 
 ### #342.6 — Documentação
 
