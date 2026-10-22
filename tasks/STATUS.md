@@ -1570,7 +1570,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | **#347-3a7e9b14** | **Portar o LightBot para a SFML 3** | 🟡 Média | — | — | 🔄 Em execução | — (não reservável) | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
 | #347.1 | Portar o código do LightBot para a SFML 3 e compilar · `PESADO · effort high` | 🟡 Média | PESADO · Sonnet, Opus 5.5+ ou Fable | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-22 16:20) · 0% | [476-3a7e9b14](etapas/ETAPA-476-3a7e9b14-PORTAR-LIGHTBOT-PARA-SFML-3.md) | — |
 | **#348-e7bfc968-0c6d-4ba9-b06c-f3f85718dd32** | **Erro SENHA_OCULTA repetida na tela USUARIOS online** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [477-e7bfc968](etapas/ETAPA-477-e7bfc968-ERRO-SENHA-OCULTA-TELA-USUARIOS.md) | — |
-| #348.1 | Renomear a constante do `criar-usuarios-api.js` · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ⬜ Pendente | — | [477-e7bfc968](etapas/ETAPA-477-e7bfc968-ERRO-SENHA-OCULTA-TELA-USUARIOS.md) | — |
+| #348.1 | Renomear a constante do `criar-usuarios-api.js` · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet · executor-medio; líder Opus 5.5) (nuvem · dreamy-faraday-7x7tud) (desde 2026-10-22 16:22) | [477-e7bfc968](etapas/ETAPA-477-e7bfc968-ERRO-SENHA-OCULTA-TELA-USUARIOS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
