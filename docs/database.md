@@ -475,6 +475,28 @@ Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.htm
 próprios; INSERT/UPDATE/DELETE = professor **só nas turmas dele** (desde 2026-10-03). TRUNCATE revogado. **Carga inicial:**
 106 vínculos copiados de `aluno.turma_codigo`.
 
+### 🚪 Atualização 2026-10-22 — aluno desistente por turma (#342)
+
+**Script:** `database/2026-10-22-turmaaluno-desistente.sql` (aplicado em 2026-10-22 pelo conector
+do Supabase). **Etapa:** `tasks/etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md`. Tela: `alunos.html`
+(botão **Desistente** / **Reativar**).
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turmaaluno.desistente` | `boolean not null default false` | **fonte única**: o aluno desistiu desta turma; some das listas, o histórico fica |
+| `turmaaluno.desistente_em` / `desistente_por` | `timestamptz` / `uuid` → `auth.users` | quando e quem marcou (carimbo automático; `null` ao reativar) |
+| `aluno.desistente` | `boolean not null default false` | **cópia automática**: aluno sem nenhum vínculo ativo (para as telas que leem `aluno`) |
+| `turmaaluno_carimbar_desistente()` | trigger `before update of desistente` | grava `desistente_em` / `desistente_por` |
+| `sincronizar_turma_principal_aluno(uuid)` | função (alterada) | turma principal escolhida entre os vínculos ativos; atualiza `aluno.desistente` |
+| `definir_desistente(p_vinculo bigint, p_desistente boolean)` | função `security definer` (authenticated) | só professor da turma (ou administrador) marca/desmarca |
+
+**Listas que ignoram o vínculo desistente:** `alunos_da_turma_lider`, `aluno_lider_da_turma`,
+`alunos_sem_entrega_turma`, `atividades_pendentes_turma`, `definir_lider_turma`,
+`definir_lider_usuario` (desistente não vira líder), `equipe_membro_preparar` (não entra em
+equipe), `votacoes_abertas_aluno`, `votar_equipe`. **Não mudam:** `sugestoes_turmaaluno` (o
+desistente tem vínculo), `turma_esta_vazia` (o histórico conta), `professor_pode_ver_aluno`.
+**Telas:** filtram `aluno.desistente=eq.false` (tabela `aluno`) ou `turmaaluno.desistente=eq.false`.
+
 ### 🔒 Atualização 2026-10-05 — bloqueio de atividade por turma
 
 **Script:** `database/2026-10-05-bloqueio-atividade-por-turma.sql` (aplicado em 2026-10-05 pelo

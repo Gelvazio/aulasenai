@@ -4,3 +4,4 @@
 | **#343-3b8e5d21-6c4a-4f17-8d92-5a1e7b3c9f04** | **Tabela "Notas dos alunos" ignora a quantidade de questões para a nota** | 🟠 Alta | — | — | ✅ Concluído | — (não reservável) | [472-3b8e5d21](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) | — |
 | #343.1 | Passar `questoesNota` ao calcular a nota na tabela · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | — | ✅ Concluído | — | [472-3b8e5d21](etapas/ETAPA-472-3b8e5d21-NOTA-TABELA-NOTAS-ALUNOS.md) | — |
 | #342.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.2 | Banco: coluna de desistente em `turmaaluno`, função e filtros · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #342.1 | ✅ Concluído | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |

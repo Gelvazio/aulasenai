@@ -1240,6 +1240,48 @@
       </table>
     </div>
 
+    <h2>🚪 Atualização 2026-10-22 — aluno desistente por turma (#342)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-22-turmaaluno-desistente.sql</code> (aplicado em 2026-10-22) · Tela: <code>alunos.html</code> (botão Desistente / Reativar)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turmaaluno.desistente</td>
+          <td>Coluna boolean</td>
+          <td>Fonte única: o aluno desistiu desta turma; some das listas, o histórico fica</td>
+        </tr>
+        <tr>
+          <td>turmaaluno.desistente_em / desistente_por</td>
+          <td>Colunas</td>
+          <td>Quando e quem marcou (carimbo automático)</td>
+        </tr>
+        <tr>
+          <td>aluno.desistente</td>
+          <td>Coluna boolean</td>
+          <td>Cópia automática: aluno sem nenhum vínculo ativo</td>
+        </tr>
+        <tr>
+          <td>turmaaluno_carimbar_desistente_trg</td>
+          <td>Trigger</td>
+          <td>before update of desistente; grava data e autor</td>
+        </tr>
+        <tr>
+          <td>definir_desistente(bigint, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Só professor da turma (ou administrador) marca/desmarca</td>
+        </tr>
+        <tr>
+          <td>Listas de alunos da turma</td>
+          <td>Funções alteradas</td>
+          <td>alunos_da_turma_lider, aluno_lider_da_turma, alunos_sem_entrega_turma, atividades_pendentes_turma, definir_lider_turma, definir_lider_usuario, equipe_membro_preparar, votacoes_abertas_aluno, votar_equipe e sincronizar_turma_principal_aluno ignoram o vínculo desistente</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>💡 Atualização 2026-10-05 — sugestoes_turmaaluno() (alunos sem turma)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-05-sugestoes-turmaaluno.sql</code> (aplicado em 2026-10-05) · Tela: <code>alunos.html</code> (filtro Turma OK)</p>

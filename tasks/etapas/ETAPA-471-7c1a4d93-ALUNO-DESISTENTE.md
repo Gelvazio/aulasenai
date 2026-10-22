@@ -87,7 +87,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.2 — Banco: coluna de desistente em `turmaaluno`, função e filtros
 
-**Próximo passo:** escrever `database/2026-10-22-turmaaluno-desistente.sql` (ler antes as 10 funções no banco).
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — SQL e RLS
 - **Modelo:** só Opus 5.5+ ou Fable (Claude Code local, banco) — nunca outro
@@ -95,10 +95,17 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 - **Descrição:** `database/2026-10-22-turmaaluno-desistente.sql` como no Plano (colunas, trigger
   de sincronização, `definir_desistente`, funções de lista); `docs/database.md` e o relatório HTML.
 - **Critérios de aceitação:** aluno não consegue marcar a si mesmo; consulta de conferência ok.
+- **Entrega:** `database/2026-10-22-turmaaluno-desistente.sql` aplicado (migração
+  `turmaaluno_desistente`, 2026-10-22); `docs/database.md` e `docs/relatorio_verificacao_database.html`
+  com a seção "aluno desistente por turma".
+- **Verificação:** consulta: 4 colunas, `definir_desistente` e o gatilho existem; 11 funções com
+  `turmaaluno` + `desistente`; teste num bloco desfeito (`raise`): marcar o único vínculo de um aluno
+  → `aluno.desistente = true`, carimbo gravado; reativar → `false`. `definir_desistente` só para
+  `authenticated` e recusa quem não é professor da turma (`eh_professor` + `professor_tem_turma`).
 
 ### #342.3 — Botão "Desistente" em `alunos.html`
 
-**Próximo passo:** aguardar #342.2. Ler `docs/ORIENTACAO_*` do módulo antes de editar.
+**Próximo passo:** executor-medio: botão em `assets/js/turmas-aluno-pagina.js` e chamada `definir_desistente` em `turmas-aluno-repositorio.js`.
 
 - **Nível:** MEDIO — tela, 1 a 3 arquivos
 - **Modelo:** só Sonnet — nunca outro
