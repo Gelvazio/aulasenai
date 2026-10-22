@@ -21,7 +21,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
 | Grok Bot (principal) (nuvem · main) | #314.1 concluída ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)); #314.8 livre: depende de #314.6 e #314.7 (PESADO, livres para Opus 5.5+/Fable) | ⏹️ Encerrada | 2026-10-20 20:56 |
-| local · main · s36 | #342.4 ([471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md)) — desistente fora das telas | 🔄 Ativa | 2026-10-22 07:47 |
+| local · main · s36 | #342.5 ([471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md)) — desistente fora das equipes (executor-medio) | 🔄 Ativa | 2026-10-22 07:47 |
 | local · main · s35 | #341 concluída ([470-1ef1d267](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md)) — visualizador só com pedido explícito | ⏹️ Encerrada | 2026-10-22 07:25 |
 | local · main · s34 | #336 concluída ([465-a0943514](etapas/ETAPA-465-a0943514-AO-VIVO-SEM-BLOQUEADAS-E-PENDENTES.md)) — live.html sem bloqueadas e pendentes | ⏹️ Encerrada | 2026-10-21 19:06 |
 | local · main · s33 | #315 e #316 concluídas ([445-50000fd9](etapas/ETAPA-445-50000fd9-CARD-SO-COM-ATIVIDADES-VINCULADAS.md)) — card da aula só com atividades vinculadas no banco | ⏹️ Encerrada | 2026-10-20 16:32 |
@@ -1533,7 +1533,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #340.14 | Jogo "Pitch relâmpago" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2, #339.9 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.15 | Documentação dos jogos · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #340.3 a #340.14 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #342-7c1a4d93-5b2e-4f08-9a61-3d8e2c7f1b40 | Aluno desistente some das listas (botão Desistente em alunos.html) | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
-| #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | 🔄 Em execução | Claude Code (Sonnet 5.5 · executor-medio; líder Opus 5.5) (local · main · s36) (desde 2026-10-22 08:00) | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.6 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #342.3 a #342.5 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 
 ## Escopo

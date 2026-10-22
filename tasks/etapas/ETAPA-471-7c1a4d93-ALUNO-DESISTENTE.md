@@ -154,7 +154,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 
 ### #342.5 — Desistente fora de equipes, sorteios e jogos
 
-**Próximo passo:** aguardar #342.2.
+**Próximo passo:** executor-medio: `equipes-repositorio.js` (listarTurmasDoAluno, listarAlunosDaTurma) sem desistente e aviso de membro desistente em equipe já formada.
 
 - **Nível:** MEDIO — código com lógica
 - **Modelo:** só Sonnet — nunca outro
