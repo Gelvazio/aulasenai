@@ -1,6 +1,6 @@
 // Trava "nunca executar tarefa que não é do seu modelo" (tarefa #247, global C22): antes do
 // `git commit`, confere as reservas novas do `tasks/STATUS.md` — o modelo em "Em uso por" tem de
-// ser o do nível da subtarefa (Haiku só LEVE, Sonnet só MEDIO, Opus/Fable só PESADO).
+// ser o do nível da subtarefa (Haiku só LEVE, Sonnet MEDIO e PESADO — C48 —, Opus/Fable só PESADO).
 // Regra: .claude/rules/niveis.md
 
 const { execSync } = require("child_process");
@@ -18,7 +18,7 @@ const PADRAO_MODELO_CLAUDE = /\b(Haiku|Sonnet|Opus|Fable)\b/i;
 const PADRAO_CLAUDE_CODE = /^Claude Code\b/;
 const RESERVAS_LIVRES = ["", "—", "— (não reservável)"];
 const MODELO_DO_USUARIO = "Usuário";
-const MODELOS_POR_NIVEL = { LEVE: ["haiku"], MEDIO: ["sonnet"], PESADO: ["opus", "fable"] };
+const MODELOS_POR_NIVEL = { LEVE: ["haiku"], MEDIO: ["sonnet"], PESADO: ["sonnet", "opus", "fable"] };
 const TAMANHO_MAXIMO_DIFF = 50 * 1024 * 1024;
 
 /**

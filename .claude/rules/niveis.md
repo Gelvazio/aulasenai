@@ -19,8 +19,8 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 
 | Ferramenta | `LEVE` | `MEDIO` | `PESADO` |
 |---|---|---|---|
-| **Claude Code** local | Haiku | Sonnet | **Opus 5.5 ou superior, ou Fable** |
-| **Claude Code** nuvem | Haiku | Sonnet | Opus 5.5+ ou Fable, **sem banco** |
+| **Claude Code** local | Haiku | Sonnet | **Sonnet, Opus 5.5 ou superior, ou Fable** (C48) |
+| **Claude Code** nuvem | Haiku | Sonnet | Sonnet, Opus 5.5+ ou Fable, **sem banco** |
 | **Gemini CLI** | Flash | Pro | ⛔ |
 | **Antigravity** | Gemini Flash | ⛔ | ⛔ |
 | **Grok** | rápido | principal | ⛔ |
@@ -28,7 +28,7 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 | **Codex** / **Cursor** | ✅ | ✅ | ⛔ |
 | **Devin** / **Copilot** | ✅ | ⛔ | ⛔ |
 
-- `PESADO` é **só do Claude Code com Opus 5.5 ou superior, ou Fable**.
+- `PESADO` é do Claude Code com **Sonnet, Opus 5.5 ou superior, ou Fable** (C48, 2026-10-22).
 - Banco continua **só do Claude Code local** (`multiplas-ias.md`).
 - A tabela é do usuário: mudança nela vai para o "Registro de decisões" do `tasks/STATUS.md`.
 
@@ -38,8 +38,8 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
   ex.: `Claude Code (Sonnet 5.5) (local · main · s2)`, `Gemini CLI (Flash) (local · main)`. É
   assim que se sabe o modelo de quem reservou.
 - ⛔ **NUNCA executar subtarefa que não é do seu modelo** (2026-10-16, #247; global C22): cada IA
-  só pega os níveis marcados na **sua** linha — Haiku **só** `LEVE`, Sonnet **só** `MEDIO`, Opus
-  5.5+/Fable **só** `PESADO`. Nem acima nem abaixo, **sem exceção** (nem com autorização). Sem
+  só pega os níveis marcados na **sua** linha — Haiku **só** `LEVE`, Sonnet `MEDIO` **e**
+  `PESADO` (C48), Opus 5.5+/Fable **só** `PESADO`. Nem acima nem abaixo, **sem exceção** (nem com autorização). Sem
   subtarefa livre do seu modelo → não pega nenhuma e avisa o usuário. A coluna **Modelo** do
   quadro e a linha `- **Modelo:**` da etapa dizem qual é.
 - **Onde fica o nível:** 1º item da seção da subtarefa na etapa —
