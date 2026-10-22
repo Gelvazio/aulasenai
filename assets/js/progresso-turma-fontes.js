@@ -22,6 +22,9 @@ const TIPO_PROGRESSO_DISCURSIVA = 'discursiva';
 const COLUNAS_CHAVE_OBJETIVA = ['aluno_id', 'tentativa', 'item'];
 const COLUNAS_CHAVE_DISCURSIVA = ['aluno_id', 'tentativa', 'item', 'topico'];
 
+// Alunos desistentes (#342) lidos junto com os nomes: ficam fora da lista do progresso.
+const alunosDesistentesProgresso = new Set();
+
 /**
  * Lê todas as linhas de uma tabela da atividade, de 1000 em 1000 (a API do Supabase devolve no
  * máximo 1000 linhas por consulta; sem paginar, turmas grandes ficariam cortadas sem aviso).
@@ -111,7 +114,8 @@ async function lerMinimoPadraoDaAtividade(atividadeId, memoria) {
 }
 
 /**
- * Busca no banco só os nomes de alunos ainda não conhecidos (o resto vem da memória da fonte).
+ * Busca no banco só os nomes de alunos ainda não conhecidos (o resto vem da memória da fonte) e
+ * guarda quais são desistentes (#342).
  * @param {string[]} ids - Ids dos alunos.
  * @param {Map<string, string>} nomes - Memória dos nomes (preenchida aqui).
  */
@@ -119,19 +123,24 @@ async function carregarNomesDosAlunos(ids, nomes) {
     const novos = ids.filter((id) => !nomes.has(id));
     if (!novos.length) return;
 
-    const alunos = await sbGet('aluno', 'select=id,nome&id=in.(' + novos.join(',') + ')');
-    alunos.forEach((aluno) => nomes.set(aluno.id, aluno.nome));
+    const alunos = await sbGet('aluno',
+        'select=id,nome,desistente&id=in.(' + novos.join(',') + ')');
+    alunos.forEach((aluno) => {
+        nomes.set(aluno.id, aluno.nome);
+        if (aluno.desistente) alunosDesistentesProgresso.add(aluno.id);
+    });
 }
 
 /**
- * Monta a lista final de alunos no formato comum, em ordem alfabética.
+ * Monta a lista final de alunos no formato comum, em ordem alfabética (sem os desistentes).
  * @param {Map<string, Object>} progresso - Saída de contarPartesPorAluno.
  * @param {Object} extras - nomes, minimos, entregues e peloProfessor (Set "aluno|tentativa") e
  *     correcoes (Map).
  * @returns {Object[]} Alunos no formato comum.
  */
 function montarAlunosDoProgresso(progresso, extras) {
-    return [...progresso.keys()].map((id) => {
+    const ativos = [...progresso.keys()].filter((id) => !alunosDesistentesProgresso.has(id));
+    return ativos.map((id) => {
         const { tentativa, porQuestao } = progresso.get(id);
         const chave = id + '|' + tentativa;
         return {

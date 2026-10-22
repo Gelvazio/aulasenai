@@ -132,7 +132,7 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 `respostas-atividade-banco`, `respostas-discursivas-banco`, `finalizar-atividade-professor`,
 `filtro-aluno-progresso`.
 
-**Próximo passo:** filtrar desistentes nas 13 telas listadas em "Telas da #342.4".
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — mais de 3 arquivos ligados (cerca de 16 telas)
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro
@@ -140,6 +140,17 @@ funções); `node --check` em todo JS alterado; `grep` mostra o filtro em todas 
 - **Descrição:** filtrar `desistente = false` nas listas de alunos de atividades, entrega,
   correção, progresso da turma, pendências e combos de aluno.
 - **Critérios de aceitação:** `grep` mostra o filtro em todas as listas levantadas na #342.1.
+- **Entrega:** 11 arquivos em `assets/js/`: consulta com `desistente=eq.false` em
+  `alunos-da-turma-progresso`, `alunos-sem-inicio-entrega`, `avaliacao-media-final-professor`,
+  `painel-professor`, `indice-log-alternativas` (turmaaluno) e `aula-turma-repositorio`
+  (turmaaluno do aluno logado); lê `desistente` e tira o aluno da lista em
+  `progresso-turma-fontes`, `respostas-aluno-professor`, `respostas-atividade-professor`
+  (resumo e "sem resposta"), `correcao-discursiva-repositorio` (entregas) e
+  `relatorio-atividades-dados` (sai mesmo se estiver na lista de presença).
+  `suspeita-copia-discursiva` **não muda**: só anota a célula de quem já aparece no Progresso.
+- **Verificação:** `node --check` nos 11 arquivos ok; `git diff` sem linha nova > 100;
+  `grep -n desistente assets/js/*.js` mostra o filtro em cada tela. Listas na tela: **conferir no
+  navegador** (sem navegador aqui).
 
 ### #342.5 — Desistente fora de equipes, sorteios e jogos
 

@@ -52,7 +52,7 @@ async function lerTurmasDoAlunoAulaTurma() {
     if (!alunoId) return [];
 
     const vinculos = await sbGet(TABELA_TURMA_ALUNO_AULA_TURMA,
-        'select=turma_codigo&aluno_id=eq.' + encodeURIComponent(alunoId));
+        'select=turma_codigo&desistente=eq.false&aluno_id=eq.' + encodeURIComponent(alunoId));
     return [...new Set(vinculos.map((vinculo) => vinculo.turma_codigo))];
 }
 

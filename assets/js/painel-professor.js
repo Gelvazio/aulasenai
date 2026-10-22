@@ -163,8 +163,8 @@ function agruparTentativas(respostas, entregas, liberacoes) {
 async function carregarDadosAtividade(atividadeId, turmaCodigo, maximoTentativas) {
     const filtro = 'atividade_id=eq.' + atividadeId;
     const [alunos, gabarito, respostas, entregas, liberacoes] = await Promise.all([
-        sbGet('aluno', 'select=id,nome,email,numero_chamada&turma_codigo=eq.' +
-            encodeURIComponent(turmaCodigo) + '&order=numero_chamada'),
+        sbGet('aluno', 'select=id,nome,email,numero_chamada&desistente=eq.false' +
+            '&turma_codigo=eq.' + encodeURIComponent(turmaCodigo) + '&order=numero_chamada'),
         sbGet('gabarito', 'select=item,titulo,letra&' + filtro + '&order=item'),
         sbGet('resposta_atividade', 'select=aluno_id,tentativa,item,letra&' + filtro),
         sbGet('entrega_atividade', 'select=aluno_id,tentativa,entregue_em&' + filtro),

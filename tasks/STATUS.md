@@ -1533,7 +1533,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #340.14 | Jogo "Pitch relâmpago" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2, #339.9 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.15 | Documentação dos jogos · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #340.3 a #340.14 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #342-7c1a4d93-5b2e-4f08-9a61-3d8e2c7f1b40 | Aluno desistente some das listas (botão Desistente em alunos.html) | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
-| #342.4 | Desistente fora das listas de atividades e progresso · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | #342.2 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s36) (desde 2026-10-22 07:58) | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 | #342.6 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #342.3 a #342.5 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 

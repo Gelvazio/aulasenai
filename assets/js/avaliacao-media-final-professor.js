@@ -9,7 +9,7 @@
 const ROTA_RESUMO_MEDIA = '/rest/v1/rpc/resumo_tentativas_atividade';
 const CONSULTA_TURMAS_MEDIA = 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito,lider_aluno_id';
 const CONSULTA_ALUNOS_MEDIA = 'select=id,nome,turma_codigo,numero_chamada,na_chamada' +
-    '&order=numero_chamada.asc.nullslast,nome.asc';
+    '&desistente=eq.false&order=numero_chamada.asc.nullslast,nome.asc';
 const ROTULO_TURMA_MEDIA = 'Turma';
 const ROTULO_ALUNO_MEDIA = 'Aluno';
 const SUFIXO_LIDER_MEDIA = ' ⭐ líder';

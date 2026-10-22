@@ -105,11 +105,14 @@ async function listarAlunosQueResponderam(opcoes) {
     if (!grupos.length) return [];
 
     const ids = [...new Set(grupos.map((grupo) => grupo.alunoId))];
-    const alunos = await sbGet('aluno', 'select=id,nome&id=in.(' + ids.join(',') + ')');
+    const alunos = await sbGet('aluno', 'select=id,nome,desistente&id=in.(' + ids.join(',') + ')');
     const nomes = new Map(alunos.map((aluno) => [aluno.id, aluno.nome]));
+    // Desistente (#342) não aparece no combo de alunos que responderam.
+    const desistentes = new Set(
+        alunos.filter((aluno) => aluno.desistente).map((aluno) => aluno.id));
     const entregues = new Map(entregas.map((entrega) =>
         [entrega.aluno_id + '|' + entrega.tentativa, entrega.entregue_em]));
-    return grupos.map((grupo) => ({
+    return grupos.filter((grupo) => !desistentes.has(grupo.alunoId)).map((grupo) => ({
         ...grupo,
         nome: nomes.get(grupo.alunoId) || 'Aluno sem nome',
         entregueEm: entregues.get(grupo.alunoId + '|' + grupo.tentativa) || '',

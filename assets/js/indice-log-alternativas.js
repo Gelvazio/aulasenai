@@ -77,7 +77,8 @@ async function buscarAtividadesLog(paginas) {
  * @returns {Promise<{id: string, nome: string, turma: string}[]>} Alunos em ordem de nome.
  */
 async function buscarAlunosLog() {
-    const vinculos = await sbGet('turmaaluno', 'select=aluno_id,turma_codigo');
+    const vinculos = await sbGet('turmaaluno',
+        'select=aluno_id,turma_codigo&desistente=eq.false');
     const ids = [...new Set(vinculos.map((vinculo) => vinculo.aluno_id))];
     if (!ids.length) return [];
 

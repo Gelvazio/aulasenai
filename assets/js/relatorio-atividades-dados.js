@@ -14,7 +14,8 @@ const PERFIL_PROFESSOR_REL = 'PROFESSOR';
 const CONSULTA_ATIVIDADES_REL =
     'select=id,descricao,pagina,ativo,bloqueio,aulas(numero,materia(id,descricao))&order=id';
 const CONSULTA_TURMAS_REL = 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito';
-const CONSULTA_ALUNOS_REL = 'select=id,nome,email,turma_codigo,numero_chamada,na_chamada';
+const CONSULTA_ALUNOS_REL = 'select=id,nome,email,turma_codigo,numero_chamada,na_chamada,' +
+    'desistente';
 const STATUS_NOTA_FIXA_REL = 'fixa';
 
 /**
@@ -98,6 +99,11 @@ function mesclarAlunosRel(doBanco, daLista) {
     }));
     doBanco.forEach((aluno) => {
         const chave = String(aluno.email).toLowerCase();
+        // Desistente (#342) sai do relatório, mesmo se estiver na lista de presença.
+        if (aluno.desistente) {
+            porEmail.delete(chave);
+            return;
+        }
         const existente = porEmail.get(chave) || {};
         porEmail.set(chave, { ...existente, id: aluno.id, nome: aluno.nome || existente.nome,
             email: aluno.email, numero: aluno.numero_chamada ?? existente.numero,

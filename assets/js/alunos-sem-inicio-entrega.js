@@ -47,7 +47,8 @@ async function lerAlunosDaUcSemInicio(atividadeId) {
     const [atividades, turmas, alunos] = await Promise.all([
         sbGet('atividade', 'select=aulas(materia(descricao))&id=eq.' + atividadeId),
         sbGet('turma', 'select=codigo,uc'),
-        sbGet('aluno', 'select=id,nome,numero_chamada,turma_codigo&order=turma_codigo,nome'),
+        sbGet('aluno', 'select=id,nome,numero_chamada,turma_codigo&desistente=eq.false' +
+            '&order=turma_codigo,nome'),
     ]);
     const uc = normalizarTextoSemInicio(atividades[0]?.aulas?.materia?.descricao);
     const ucPorTurma = new Map(turmas.map((turma) => [turma.codigo, turma.uc]));

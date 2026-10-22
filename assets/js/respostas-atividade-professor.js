@@ -478,17 +478,22 @@ async function buscarUcDaAtividade(atividadeId) {
 async function acrescentarAlunosSemResposta(linhas, atividadeId, dadosTurmas) {
     try {
         const uc = await buscarUcDaAtividade(atividadeId).catch(() => '');
-        const alunos = await sbGet('aluno',
-            'select=id,nome,numero_chamada,turma_codigo,na_chamada&order=turma_codigo,numero_chamada');
-        const jaResponderam = new Set(linhas.map((linha) => linha.aluno_id));
+        const alunos = await sbGet('aluno', 'select=id,nome,numero_chamada,turma_codigo,' +
+            'na_chamada,desistente&order=turma_codigo,numero_chamada');
+        // Desistente (#342) some do resumo: nem com resposta nem como "sem resposta".
+        const desistentes = new Set(
+            alunos.filter((aluno) => aluno.desistente).map((aluno) => aluno.id));
+        const ativas = linhas.filter((linha) => !desistentes.has(linha.aluno_id));
+        const jaResponderam = new Set(ativas.map((linha) => linha.aluno_id));
         const turmaDaUc = (codigo) => !uc || !dadosTurmas.has(codigo) ||
             normalizarTexto(dadosTurmas.get(codigo).uc) === uc;
         const faltantes = alunos
-            .filter((aluno) => !jaResponderam.has(aluno.id) && turmaDaUc(aluno.turma_codigo))
+            .filter((aluno) => !aluno.desistente && !jaResponderam.has(aluno.id) &&
+                turmaDaUc(aluno.turma_codigo))
             .map((aluno) => ({ aluno_id: aluno.id, nome: aluno.nome,
                 numero_chamada: aluno.numero_chamada, turma_codigo: aluno.turma_codigo,
                 turma_nome: null, sem_resposta: true, fora_da_chamada: aluno.na_chamada === false }));
-        return [...linhas, ...faltantes];
+        return [...ativas, ...faltantes];
     } catch (erro) {
         return linhas;
     }

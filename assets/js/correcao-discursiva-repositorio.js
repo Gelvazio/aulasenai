@@ -73,12 +73,14 @@ function criarRepositorioCorrecao(cliente) {
       if (!entregas.length) return [];
       const ids = [...new Set(entregas.map((linha) => linha.aluno_id))];
       const alunos = dadosOuErroCorrecao(await cliente.from(TABELA_ALUNO_CORRECAO)
-        .select("id, nome, turma_codigo").in("id", ids));
+        .select("id, nome, turma_codigo, desistente").in("id", ids));
       const turmas = dadosOuErroCorrecao(await cliente.from(TABELA_TURMA_CORRECAO)
         .select("codigo, nome"));
       const porAluno = new Map(alunos.map((aluno) => [aluno.id, aluno]));
       const porTurma = new Map(turmas.map((turma) => [turma.codigo, turma.nome]));
-      return entregas.map((linha) => {
+      // Entrega de aluno desistente (#342) fica fora da correção.
+      const ativas = entregas.filter((linha) => !porAluno.get(linha.aluno_id)?.desistente);
+      return ativas.map((linha) => {
         const aluno = porAluno.get(linha.aluno_id) || {};
         return { ...linha, nome: aluno.nome, turma_codigo: aluno.turma_codigo,
           turma_nome: porTurma.get(aluno.turma_codigo) };

@@ -64,8 +64,9 @@ async function lerAlunosDaTurmaEscolhida(turmaEscolhida) {
     if (alunosPorTurma.has(turmaEscolhida)) return alunosPorTurma.get(turmaEscolhida);
 
     const codigos = turmaEscolhida ? [turmaEscolhida] : turmas.map((turma) => turma.codigo);
-    const alunos = codigos.length ? await sbGet('aluno', 'select=id,nome&turma_codigo=in.(' +
-        codigos.map(encodeURIComponent).join(',') + ')') : [];
+    // Desistente (#342) não entra na lista de alunos sem resposta.
+    const alunos = codigos.length ? await sbGet('aluno', 'select=id,nome&desistente=eq.false' +
+        '&turma_codigo=in.(' + codigos.map(encodeURIComponent).join(',') + ')') : [];
     alunosPorTurma.set(turmaEscolhida, alunos);
     return alunos;
 }
