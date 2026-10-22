@@ -1531,6 +1531,13 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #340.13 | Jogo "Batalha naval do conteúdo" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.14 | Jogo "Pitch relâmpago" · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #340.2, #339.9 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
 | #340.15 | Documentação dos jogos · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #340.3 a #340.14 | ⬜ Pendente | — | [469-e55e8932](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) | — |
+| #342-7c1a4d93-5b2e-4f08-9a61-3d8e2c7f1b40 | Aluno desistente some das listas (botão Desistente em alunos.html) | 🟠 Alta | — | — | 👀 Aguardando o "sim" ao plano | — (não reservável) | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.1 | Plano detalhado e aprovação do usuário · `PESADO · effort high` | 🟠 Alta | PESADO · só Opus 5.5+ ou Fable | — | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.2 | Banco: coluna de desistente em `usuario` e RLS · `PESADO · effort high` | 🟠 Alta | PESADO · só Claude Code local (Opus 5.5+/Fable) | #342.1 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.3 | Botão "Desistente" em alunos.html · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.4 | Desistente fora das listas de atividades e progresso · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.5 | Desistente fora de equipes, sorteios e jogos · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet | #342.2 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
+| #342.6 | Documentação · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | #342.3 a #342.5 | ⬜ Pendente | — | [471-7c1a4d93](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2038,6 +2045,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 468-27daa2f0 | Botão "Sortear perguntas" por equipe (#339, pedida em 2026-10-21) | [ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md](etapas/ETAPA-468-27daa2f0-SORTEAR-PERGUNTAS-EQUIPE.md) |
 | 469-e55e8932 | Jogos em sala de aula (#340, pedida em 2026-10-21) | [ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md](etapas/ETAPA-469-e55e8932-JOGOS-EM-SALA-DE-AULA.md) |
 | 470-1ef1d267 | Visualizador só com pedido explícito e só no local (#341, pedida em 2026-10-22) | [ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md](etapas/ETAPA-470-1ef1d267-VISUALIZADOR-SO-COM-PEDIDO.md) |
+| 471-7c1a4d93 | Aluno desistente some das listas (#342, pedida em 2026-10-22) | [ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md](etapas/ETAPA-471-7c1a4d93-ALUNO-DESISTENTE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
