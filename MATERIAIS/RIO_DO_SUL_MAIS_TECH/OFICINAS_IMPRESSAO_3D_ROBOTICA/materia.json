@@ -1,0 +1,678 @@
+{
+  "uc": "Oficinas de Impressão 3D e Robótica",
+  "uc_curta": "Oficinas de Impressão 3D e Robótica",
+  "curso": "Rio do Sul Mais Tech",
+  "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
+  "modulo": "UC 4",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 36,
+  "publico": "Alunos do 8º e 9º anos",
+  "fontes": [
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md — UC 4 (fonte da verdade: objetivo, capacidades e conhecimentos)",
+    "EMENTA-CHALKIE-AI.md da matéria, versão 2026-09 (módulos, sequência de aulas, avaliação e parte didática)"
+  ],
+  "versao_ementa": "2026-09",
+  "proveniencia": "Objetivo, capacidades e conhecimentos copiados literalmente da UC 4 da ementa do curso (a ementa do curso vence); módulos, sequência de aulas, avaliação e metodologias copiados da ementa da matéria. 36 h = 9 aulas de 4 h (regra '1 aula a cada 4 h'). A ementa da matéria não traz BNCC por aula, glossário, referências, situações-problema nem indicadores numerados: os campos correspondentes ficam vazios; o indicador de cada aula deriva da prática da seção VI.",
+  "objetivo_geral": {
+    "texto": "Proporcionar aos alunos uma formação prática e interdisciplinar que combina conceitos de design, engenharia, programação e tecnologia, através da construção de protótipos e robôs."
+  },
+  "capacidades": {
+    "C1": "Entender as diferenças entre as tecnologias de impressão: FDM, SLA e SLS",
+    "C2": "Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)",
+    "C3": "Aprender a usar programas como Tinkercad, Fusion 360, Blender ou SketchUp para criar modelos 3D",
+    "C4": "Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)",
+    "C5": "Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)",
+    "C6": "Compreender as diferenças entre tipos de robôs (industriais, serviço, móveis)"
+  },
+  "capacidades_socioemocionais": {},
+  "observacao_capacidades": "A UC 4 da ementa do curso não tem capacidades socioemocionais. O texto das capacidades é o da ementa do curso (a da matéria traz uma redação diferente, que não vale).",
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Interface do ambiente 3D",
+      "conteudos": [
+        "Interface do ambiente 3D"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Criação e edição de sólidos básicos",
+      "conteudos": [
+        "Criação e edição de sólidos básicos"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Geração de arquivo STL",
+      "conteudos": [
+        "Geração de arquivo STL"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Configurações de fatiamento",
+      "conteudos": [
+        "Configurações de fatiamento"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Programação de pontos e trajetórias",
+      "conteudos": [
+        "Programação de pontos e trajetórias"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Classificação dos robôs",
+      "conteudos": [
+        "Classificação dos robôs"
+      ]
+    },
+    {
+      "dominio": 7,
+      "titulo": "Atuadores Robóticos",
+      "conteudos": [
+        "Atuadores Robóticos"
+      ]
+    },
+    {
+      "dominio": 8,
+      "titulo": "Histórico da robótica",
+      "conteudos": [
+        "Histórico da robótica"
+      ]
+    },
+    {
+      "dominio": 9,
+      "titulo": "Integração entre robôs",
+      "conteudos": [
+        "Integração entre robôs"
+      ]
+    }
+  ],
+  "observacao_conhecimentos": "Conhecimentos literais da UC 4 da ementa do curso, na ordem em que aparecem (4 da primeira linha e 5 da segunda), numerados como domínios 1 a 9.",
+  "capacidades_x_conhecimentos": {
+    "C1": [],
+    "C2": [
+      3,
+      4
+    ],
+    "C3": [
+      1,
+      2
+    ],
+    "C4": [
+      3,
+      4,
+      9
+    ],
+    "C5": [
+      5,
+      7,
+      9
+    ],
+    "C6": [
+      6,
+      8
+    ]
+  },
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Introdução à Impressão 3D e Tecnologias",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 1 (Aula 1)",
+      "dominios": [],
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "Histórico e aplicações da manufatura aditiva",
+        "FDM, SLA e SLS: diferenças, materiais e usos",
+        "Funcionamento da impressora: fatiamento, extrusão e camadas",
+        "Diferenças entre FDM, SLA e SLS e como a impressora cria camadas por extrusão"
+      ],
+      "detalhamento_didatico": [
+        "Do protótipo industrial à peça sob demanda: linha do tempo da manufatura aditiva",
+        "Quadro comparativo FDM × SLA × SLS (material, acabamento, custo, uso)",
+        "Caminho da peça: modelo, fatiamento, camadas e extrusão"
+      ],
+      "indicadores": [
+        "Compara peças impressas em FDM, SLA e SLS e aponta as diferenças de acabamento"
+      ],
+      "indicadores_numeros": [
+        1
+      ],
+      "situacao_problema": "",
+      "atividade": "Comparar peças feitas em cada tecnologia e apontar diferenças de acabamento",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": "O Módulo 1 da ementa não vincula domínio da UC do curso; a aula trabalha as capacidades C1 e C2 (funcionamento da impressora 3D)."
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Modelagem 3D com Tinkercad",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 2 (Aula 2)",
+      "dominios": [
+        1,
+        2
+      ],
+      "capacidades": [
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "Interface do ambiente 3D (Tinkercad; noções de Fusion 360, Blender e SketchUp)",
+        "Criação e edição de sólidos básicos: agrupar, alinhar, furos e medidas",
+        "Uso de medidas reais (milímetros) e cuidado com peças pequenas demais para imprimir"
+      ],
+      "detalhamento_didatico": [
+        "Plano de trabalho, formas básicas e modo furo (booleanas)",
+        "Medidas em milímetros e espessura mínima para imprimir",
+        "Texto 3D para o nome do aluno"
+      ],
+      "indicadores": [
+        "Cria e edita um modelo 3D a partir de sólidos básicos no Tinkercad"
+      ],
+      "indicadores_numeros": [
+        2
+      ],
+      "situacao_problema": "",
+      "atividade": "Chaveiro personalizado com o nome do aluno",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Arquivos STL e Fatiamento",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 3 (Aula 3)",
+      "dominios": [
+        3,
+        4
+      ],
+      "capacidades": [
+        "C2",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "Geração de arquivo STL",
+        "Configurações de fatiamento: altura de camada, preenchimento e temperatura",
+        "Design para impressão: espessura de paredes, suportes e orientação"
+      ],
+      "detalhamento_didatico": [
+        "O STL como malha de triângulos",
+        "Altura de camada, preenchimento, temperatura e velocidade: qualidade × tempo",
+        "Orientação da peça e quando usar suportes"
+      ],
+      "indicadores": [
+        "Exporta o STL, configura o fatiador e estima o tempo e o material gastos"
+      ],
+      "indicadores_numeros": [
+        3
+      ],
+      "situacao_problema": "",
+      "atividade": "Fatiar o chaveiro e estimar tempo e material",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Operação de Impressoras 3D",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 3 (Aula 4)",
+      "dominios": [
+        4
+      ],
+      "capacidades": [
+        "C2",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "Operação da impressora: nivelamento, calibração e segurança",
+        "Configurações de fatiamento na prática",
+        "Calibrar, nivelar a mesa e imprimir com segurança, acompanhando as primeiras camadas"
+      ],
+      "detalhamento_didatico": [
+        "Roteiro de segurança: bico quente, cabelo preso e fila de impressão",
+        "Nivelamento da mesa, carga do filamento e primeira camada",
+        "Falhas comuns (empenamento, deslocamento de camada, extrusão fraca) e correção"
+      ],
+      "indicadores": [
+        "Nivela a mesa, acompanha as primeiras camadas e imprime a peça com segurança"
+      ],
+      "indicadores_numeros": [
+        4
+      ],
+      "situacao_problema": "",
+      "atividade": "Imprimir a peça modelada",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Introdução à Robótica",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 4 (Aula 5)",
+      "dominios": [
+        6,
+        8
+      ],
+      "capacidades": [
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "Histórico da robótica",
+        "Classificação dos robôs: industriais, de serviço e móveis",
+        "Robôs na indústria de Santa Catarina: montagem, solda e logística"
+      ],
+      "detalhamento_didatico": [
+        "Linha do tempo: dos autômatos aos robôs colaborativos",
+        "Critérios para classificar: ambiente, mobilidade e tarefa",
+        "Robôs da indústria catarinense em montagem, solda e logística"
+      ],
+      "indicadores": [
+        "Classifica robôs em industriais, de serviço e móveis"
+      ],
+      "indicadores_numeros": [
+        5
+      ],
+      "situacao_problema": "",
+      "atividade": "Classificar robôs vistos em vídeos da indústria",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Componentes de Robôs",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 4 (Aula 6)",
+      "dominios": [
+        7
+      ],
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Componentes: sensores, atuadores robóticos, motores e controladores",
+        "Sensores, atuadores, motores e controladores"
+      ],
+      "detalhamento_didatico": [
+        "Sensor lê, controlador decide, atuador age",
+        "Motor DC e servomotor: quando usar cada um",
+        "Ligação elétrica segura de um sensor a um motor"
+      ],
+      "indicadores": [
+        "Liga um sensor a um motor e explica o papel de cada componente"
+      ],
+      "indicadores_numeros": [
+        6
+      ],
+      "situacao_problema": "",
+      "atividade": "Ligar um sensor a um motor e testar a resposta",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "Programação de Robôs Simples",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 5 (Aula 7)",
+      "dominios": [
+        5
+      ],
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Programação de pontos e trajetórias (em blocos)",
+        "Lógica de controle em blocos (Blockly)"
+      ],
+      "detalhamento_didatico": [
+        "Sequência, repetição e condição em blocos",
+        "Trajetória por pontos: andar, girar e parar",
+        "Ler um sensor e decidir (desviar de obstáculo)"
+      ],
+      "indicadores": [
+        "Programa em blocos um robô que percorre um trajeto"
+      ],
+      "indicadores_numeros": [
+        7
+      ],
+      "situacao_problema": "",
+      "atividade": "Robô percorre um trajeto",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": "A UC do curso não tem capacidade própria de programação; a aula usa C5 (controladores) e o domínio 5."
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "Projeto Integrado: 3D + Robótica",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 5 (Aula 8)",
+      "dominios": [
+        9
+      ],
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Integração entre robôs e com peças impressas",
+        "Testes e ajustes: depurar o programa passo a passo",
+        "Peça impressa aplicada ao robô"
+      ],
+      "detalhamento_didatico": [
+        "Definir o problema da equipe e a peça que o robô precisa",
+        "Medir o robô antes de modelar a peça",
+        "Teste, ajuste da peça e depuração do programa"
+      ],
+      "indicadores": [
+        "Integra uma peça impressa ao robô e depura o programa"
+      ],
+      "indicadores_numeros": [
+        8
+      ],
+      "situacao_problema": "",
+      "atividade": "Protótipo com peça impressa funcionando",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": ""
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Apresentação de Projetos",
+      "carga_horaria": 4,
+      "modulos_ementa": "Módulo 5 (Aula 9)",
+      "dominios": [
+        9
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "conteudos_oficiais": [
+        "Projeto integrado e apresentação (avaliação final)",
+        "Demonstrar o protótipo e o processo"
+      ],
+      "detalhamento_didatico": [
+        "Estrutura: problema, solução, processo, resultado e melhorias",
+        "Demonstração do protótipo e documentação (fotos, código, STL)",
+        "Autoavaliação e feedback da turma"
+      ],
+      "indicadores": [
+        "Apresenta o protótipo e explica o processo de projeto"
+      ],
+      "indicadores_numeros": [
+        9
+      ],
+      "situacao_problema": "",
+      "atividade": "Apresentação (avaliação final)",
+      "estrategias": [
+        "Oficinas práticas de modelagem 3D",
+        "Operação de impressoras 3D",
+        "Montagem e programação de kits robóticos",
+        "Projetos práticos interdisciplinares",
+        "Competições de robótica"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "observacao": "Última aula da UC e avaliação final (nota mínima 7 e 75% de frequência)."
+    }
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Compara peças impressas em FDM, SLA e SLS e aponta as diferenças de acabamento",
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 2,
+      "indicador": "Cria e edita um modelo 3D a partir de sólidos básicos no Tinkercad",
+      "capacidades": [
+        "C3"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 3,
+      "indicador": "Exporta o STL, configura o fatiador e estima o tempo e o material gastos",
+      "capacidades": [
+        "C2",
+        "C4"
+      ],
+      "aulas": [
+        3
+      ]
+    },
+    {
+      "numero": 4,
+      "indicador": "Nivela a mesa, acompanha as primeiras camadas e imprime a peça com segurança",
+      "capacidades": [
+        "C2",
+        "C4"
+      ],
+      "aulas": [
+        4
+      ]
+    },
+    {
+      "numero": 5,
+      "indicador": "Classifica robôs em industriais, de serviço e móveis",
+      "capacidades": [
+        "C6"
+      ],
+      "aulas": [
+        5
+      ]
+    },
+    {
+      "numero": 6,
+      "indicador": "Liga um sensor a um motor e explica o papel de cada componente",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        6
+      ]
+    },
+    {
+      "numero": 7,
+      "indicador": "Programa em blocos um robô que percorre um trajeto",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        7
+      ]
+    },
+    {
+      "numero": 8,
+      "indicador": "Integra uma peça impressa ao robô e depura o programa",
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "aulas": [
+        8
+      ]
+    },
+    {
+      "numero": 9,
+      "indicador": "Apresenta o protótipo e explica o processo de projeto",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "aulas": [
+        9
+      ]
+    }
+  ],
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Testes/Provas",
+        "momento": "Aulas 01 a 09",
+        "peso": "35%",
+        "criterios": "Avaliação de compreensão conceitual"
+      },
+      {
+        "instrumento": "Projetos",
+        "momento": "Aulas 02 a 09",
+        "peso": "40%",
+        "criterios": "Trabalho prático aplicado"
+      },
+      {
+        "instrumento": "Participação",
+        "momento": "Todas as aulas",
+        "peso": "15%",
+        "criterios": "Engajamento e colaboração"
+      },
+      {
+        "instrumento": "Autoavaliação",
+        "momento": "Aulas 08 e 09",
+        "peso": "10%",
+        "criterios": "Reflexão sobre progresso"
+      }
+    ],
+    "nota_final": "Nota final mínima 7,0 e frequência mínima de 75%, conforme a ementa do curso.",
+    "recuperacao": "Dicas progressivas e reforço no Chalkie; o professor retoma o tópico na aula seguinte.",
+    "rubrica": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Domina conceitos, aplica criativamente, comunica claramente"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Compreende bem, aplica com pouca orientação, boa comunicação"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Compreensão básica, precisa orientação, comunicação adequada"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Compreensão limitada, dificuldade em aplicar"
+      }
+    ]
+  },
+  "estrategias_ementa": [
+    "Oficinas práticas de modelagem 3D",
+    "Operação de impressoras 3D",
+    "Montagem e programação de kits robóticos",
+    "Projetos práticos interdisciplinares",
+    "Competições de robótica"
+  ],
+  "mapeamento_bncc": [],
+  "recursos": [],
+  "acessibilidade": [],
+  "glossario_ementa": [],
+  "regras_ia": [],
+  "metricas": [],
+  "referencias": []
+}

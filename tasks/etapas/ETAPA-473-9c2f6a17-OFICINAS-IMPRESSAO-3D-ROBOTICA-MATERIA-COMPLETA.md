@@ -26,7 +26,7 @@
 
 ### #344.1 — `materia.json` e `DOCUMENTACAO/PLANO-AULAS.md`
 
-**Próximo passo:** ler a ementa e criar o `materia.json`.
+**Próximo passo:** nenhum (entregue). Seguir com #344.2 (aula 01).
 
 - **Nível:** MEDIO — conteúdo em Markdown/JSON e geradores, sem banco
 - **Modelo:** só Sonnet — nunca outro
@@ -34,7 +34,7 @@
 - **Depende de:** —
 - **Descrição:** Copiar da `EMENTA-CHALKIE-AI.md` (36 h, 9 aulas) os dados da matéria para `materia.json` e criar o plano de aulas em `DOCUMENTACAO/`.
 - **Critérios de aceitação:** JSON válido; capacidades C1… e S1…; 9 aulas com tema, horas, capacidades, conteúdos e indicadores.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `materia.json` (6 capacidades e 9 domínios literais da UC 4 do curso, 9 aulas somando 36 h) e `DOCUMENTACAO/PLANO-AULAS.md`, commit desta subtarefa. · **Verificação:** `assets/gerador-materia/materia.py` leu o arquivo (`ler_materia`: 9 aulas, 36 h); JSON válido. Campos sem fonte na ementa (BNCC, glossário, referências, situação-problema) ficaram vazios de propósito.
 
 ### #344.2 — Aula 01 em `CONTEUDO/` — Introdução a Impressão 3D e Tecnologias
 
