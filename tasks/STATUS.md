@@ -1568,6 +1568,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
+| **COMMIT.INICIAL.RULES-AI** | **Commit e push inicial do quadro com a tarefa COMMIT.INICIAL.RULES-AI (mudança em massa em 5 repositórios)** | 🟡 Média | — | Nenhuma | ⬜ Pendente | — (não reservável) | [ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) | — |
+| COMMIT.INICIAL.RULES-AI.1 | Registrar a tarefa no quadro, commit e push na `main` · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet, Opus 5.5+ ou Fable · effort high | Nenhuma | ⬜ Pendente | — | [ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2086,6 +2088,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 479-bbb9a770 | Mostrar uma senha por vez na tela USUARIOS online (#350, pedida em 2026-10-22) | [ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md](etapas/ETAPA-479-bbb9a770-UMA-SENHA-POR-VEZ-NA-TELA-USUARIOS.md) |
 | 480-394771ad | Tela Pendências: layout e usabilidade no celular (#351, pedida em 2026-10-22) | [ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md) |
 | 481-5d2b8e47 | index.html exige login (#352, pedida em 2026-10-23) | [ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md) |
+| 482-15d4abf4 | COMMIT.INICIAL.RULES-AI: commit e push inicial do quadro | [ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
