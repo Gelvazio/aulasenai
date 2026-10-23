@@ -27,5 +27,5 @@
 - **Effort:** medium
 - **Descrição:** o `ignoreCommand` ficou `git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ':(exclude)tasks/' ':(exclude)rules-local/'` e o `.vercelignore` ganhou `rules-local/`.
 - **Critérios de aceitação:** `vercel.json` é JSON válido com os dois `':(exclude)...'`; `rules-local/` no `.vercelignore`; comando padrão dá código 0 em commit só de `tasks/`/`rules-local/` e 1 em commit com outro arquivo.
-- **Entrega:** `vercel.json`, `.vercelignore` e esta etapa/quadro no commit desta entrega (a cargo do Haiku) · **Verificação:** `JSON.parse` do `vercel.json` ok; `git diff` só com a linha do `ignoreCommand` e as 2 linhas novas do `.vercelignore`; `git diff --quiet` do comando padrão: código 0 no commit `725e717e` (só `rules-local/`) e código 1 no `94310bde` (código de login). Conferência na Vercel (R4/R5) fica na subtarefa `.2` do `rules-ai`.
+- **Entrega:** `vercel.json`, `.vercelignore` e esta etapa/quadro no commit `ca467508` · **Verificação:** `JSON.parse` do `vercel.json` ok; `git diff` só com a linha do `ignoreCommand` e as 2 linhas novas do `.vercelignore`; `git diff --quiet` do comando padrão: código 0 no commit `725e717e` (só `rules-local/`) e código 1 no `94310bde` (código de login). Conferência na Vercel (R4/R5) fica na subtarefa `.2` do `rules-ai`.
 - **JEV-AI-SUGGESTION:** NAO
