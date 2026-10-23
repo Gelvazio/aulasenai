@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · rules-ai) | VERCEL-SEM-DEPLOY-DE-CONTROLE.1 concluída ([ETAPA-484](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md)) — `rules-local/` fora do deploy | ⏹️ Encerrada | 2026-10-23 18:00 |
 | Claude Code (Sonnet 5.5) (local · main) | COMMIT.INICIAL.RULES-AI.1 concluída ([ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md)) | ⏹️ Encerrada | 2026-10-23 09:38 |
 | local · main (Sonnet 5.5) | #352 concluída ([481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md)) — index.html exige login | ⏹️ Encerrada | 2026-10-23 09:22 |
 | nuvem · dreamy-faraday-7x7tud | #351 concluída ([480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md)) — tela Pendências no celular | ⏹️ Encerrada | 2026-10-22 18:23 |
@@ -2091,6 +2092,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 481-5d2b8e47 | index.html exige login (#352, pedida em 2026-10-23) | [ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md) |
 | 482-15d4abf4 | COMMIT.INICIAL.RULES-AI: commit e push inicial do quadro | [ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) |
 | 483-ce3b848a | JEV-NAO: Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47) | [ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) |
+| 484-77fe60ae | VERCEL-SEM-DEPLOY-DE-CONTROLE: `tasks/` e `rules-local/` nunca geram deploy (C46) | [ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

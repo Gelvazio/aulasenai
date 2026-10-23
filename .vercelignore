@@ -38,3 +38,5 @@ LISTA-ALUNOS/
 # Jogos em C++ clonados de terceiros (ex.: games/LightBot): código de outro autor, não vai ao site
 games/
 
+# Copia das regras globais e scripts de sessao (arquivo de controle): nunca vai ao site (C46, 2026-10-23)
+rules-local/
