@@ -5,8 +5,8 @@
 // Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
 // ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS e REGRAS (nova aba; REGRAS = visualizador
 // .claude/rules/index.html, 2026-10-13). Os demais professores não veem esses menus.
-// Guarda de sessão (2026-10-09): em toda página, menos index.html e login.html da raiz, sem login
-// nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o index.html.
+// Guarda de sessão (2026-10-09): em toda página, menos o login.html da raiz, sem login
+// nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o login.html.
 // Uso na página: <script src=".../js/header-usuario.js"></script> como PRIMEIRO script do <head>
 // (sem defer) + o div acima. A tag é posta por assets/gerador-menu/tags_header.py.
 // Em páginas de matéria (/MATERIAIS/<CURSO>/<MATÉRIA>/), o botão 👥 EQUIPES aparece só para o
@@ -60,8 +60,9 @@ const PASTAS_SEM_MATERIA_HEADER = ["MATERIAS-GERAIS", "AGENDA_COLABORADOR"];
 const PAPEIS_EQUIPES_HEADER = ["Líder (coordenador)", "Integrante"];
 const TABELA_USUARIO_HEADER = "usuario";
 // Guarda de sessão (2026-10-09): sem login nada da página aparece e vai para o index.html.
-// Páginas públicas (relativas à raiz do site): só o index.html e o login.html.
-const PAGINAS_PUBLICAS_HEADER = ["", "index.html", "index", "login.html", "login"];
+// Páginas públicas (relativas à raiz do site): só o login.html (o index.html exige login desde
+// 2026-10-23; sem sessão, toda página protegida vai para o login.html?voltar=...).
+const PAGINAS_PUBLICAS_HEADER = ["login.html", "login"];
 const ROTA_RAIZ_HEADER = "../";
 const ROTA_GIF_CARREGANDO = "../assets/img/carregando.gif";
 const TEXTO_CARREGANDO = "Aguarde, carregando...";
@@ -401,7 +402,7 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
 }
 
 /**
- * Diz se a página atual é pública (index.html ou login.html da raiz do site).
+ * Diz se a página atual é pública (só o login.html da raiz do site).
  * @returns {boolean} Verdadeiro se a página pode abrir sem login.
  */
 function ehPaginaPublicaHeader() {
@@ -435,11 +436,11 @@ function sessaoGravadaServe(sessao) {
 }
 
 /**
- * Sai da página sem login: para o carregamento e vai para o index.html da raiz.
+ * Sai da página sem login: para o carregamento e vai para o login.html (que volta para cá).
  */
 function redirecionarSemSessao() {
   window.stop();
-  location.replace(resolverRotaHeader(ROTA_HOME));
+  location.replace(montarUrlEntrarHeader());
 }
 
 /**

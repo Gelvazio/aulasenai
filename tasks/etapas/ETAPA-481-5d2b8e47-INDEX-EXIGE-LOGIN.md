@@ -13,9 +13,9 @@
 
 ### #352.1 — Guarda de sessão leva ao login.html
 
-**Próximo passo:** editar `js/header-usuario.js` (lista de páginas públicas e destino do redirecionamento) e `docs/ORIENTACAO_JS_LOGIN.md`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — login e guarda de sessão
 - **Modelo:** só Sonnet — nunca outro (C48: Sonnet pega PESADO)
 - **Critérios de aceitação:** `index.html` sem sessão redireciona para `login.html?voltar=index.html`; páginas protegidas também vão ao login; `login.html` continua público; sem laço de redirecionamento; `node --check`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `js/header-usuario.js` (só `login.html` é público; sem sessão vai para `login.html?voltar=`) e `docs/ORIENTACAO_JS_LOGIN.md` · **Verificação:** `node --check` ok; leitura do código (login.html segue público, sem laço); o comportamento no navegador deve ser conferido pelo usuário

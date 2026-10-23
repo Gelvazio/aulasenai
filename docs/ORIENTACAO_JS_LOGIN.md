@@ -31,6 +31,11 @@ Ordem obrigatória dos scripts na página:
 6. Já logado ao abrir login.html → painel "Você já está conectado como X" + Continuar / Sair
 ```
 
+## Guarda de sessão (2026-10-23)
+`js/header-usuario.js` (1º script do `<head>`) protege toda página, **inclusive o `index.html`**:
+só o `login.html` é público. Sem sessão, vai direto para `login.html?voltar=<página>` e, depois
+de entrar, volta para ela.
+
 ## Contas
 - Criadas **só pelo professor**: `scripts/criar-usuarios-supabase-auth.js` (lê a
   turma `--turma=CODIGO` do `scripts/LISTAPRESENCA.js`). Não há cadastro na página.

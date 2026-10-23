@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main (Sonnet 5.5) | #352.1 ([481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md)) — index.html exige login | 🔄 Ativa | 2026-10-23 09:22 |
+| local · main (Sonnet 5.5) | #352 concluída ([481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md)) — index.html exige login | ⏹️ Encerrada | 2026-10-23 09:22 |
 | nuvem · dreamy-faraday-7x7tud | #351 concluída ([480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md)) — tela Pendências no celular | ⏹️ Encerrada | 2026-10-22 18:23 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
 | Grok Bot · 314.2 (nuvem · main) | #314.2 concluída — `vercel.json` com cabeçalhos de cache ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:41 |
@@ -89,8 +89,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
-| **#352-5d2b8e47** | **index.html exige login (sem sessão vai para login.html)** | 🟠 Alta | — | — | 🔄 Em progresso | — (não reservável) | [481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md) | — |
-| #352.1 | Guarda de sessão leva ao login.html · `PESADO · effort high` | 🟠 Alta | PESADO · só Sonnet | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-23 09:22) | [481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
