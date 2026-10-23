@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Sonnet 5.5) (local · main) | COMMIT.INICIAL.RULES-AI.1 ([ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md)) | 🔄 Ativa | 2026-10-23 09:38 |
+| Claude Code (Sonnet 5.5) (local · main) | COMMIT.INICIAL.RULES-AI.1 concluída ([ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md)) | ⏹️ Encerrada | 2026-10-23 09:38 |
 | local · main (Sonnet 5.5) | #352 concluída ([481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md)) — index.html exige login | ⏹️ Encerrada | 2026-10-23 09:22 |
 | nuvem · dreamy-faraday-7x7tud | #351 concluída ([480-394771ad](etapas/ETAPA-480-394771ad-PENDENCIAS-USABILIDADE-NO-CELULAR.md)) — tela Pendências no celular | ⏹️ Encerrada | 2026-10-22 18:23 |
 | Grok Bot · 314.3/314.4 (nuvem · main) | #314.3 e #314.4 concluídas ([443-cf21e3c9](etapas/ETAPA-443-cf21e3c9-DESEMPENHO-E-CACHE-DAS-PAGINAS.md)) | ⏹️ Encerrada | 2026-10-20 20:55 |
@@ -1569,8 +1569,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.32 | Índice, menu das atividades e card do curso · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.31 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.33 | Status e conferência final · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #344.32 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
-| **COMMIT.INICIAL.RULES-AI** | **Commit e push inicial do quadro com a tarefa COMMIT.INICIAL.RULES-AI (mudança em massa em 5 repositórios)** | 🟡 Média | — | Nenhuma | 🔄 Em execução | — (não reservável) | [ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) | — |
-| COMMIT.INICIAL.RULES-AI.1 | Registrar a tarefa no quadro, commit e push na `main` · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet, Opus 5.5+ ou Fable · effort high | Nenhuma | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-23 09:38) · 0% | [ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
