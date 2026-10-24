@@ -54,3 +54,11 @@
 - **Descrição:** marcar as peças ✅ no `STATUS_MATERIA.md` (menu, avaliação objetiva, avaliação prática, média final página e composição), registrar a avaliação no `STATUS-ATIVIDADES.md` e fechar a etapa; commit + push na `main`.
 - **Critérios de aceitação:** peças ✅; etapa com entrega e verificação; 1 commit + push.
 - **Entrega:** — · **Verificação:** diff do commit
+
+### Resultado (2026-10-24, Devin)
+
+- **#343.1 ✅** — Criados `AVALIACAO-OBJETIVA-01-QUESTOES.md` (50 itens, 19 aulas cobertas, gabarito 13A/13B/12C/12D conferido por contagem), `AVALIACAO-PRATICA.md` (20 questões × 3 tópicos 0,1+0,2+0,2, projeto de agendamento online do curso, sem empresa fictícia) e `AVALIACAO-PRATICA-GABARITO.md` (60 padrões com critérios). Fontes em `ATIVIDADES/CONTEUDO/`, fora do site pelo `.vercelignore`.
+- **#343.2 ✅** — Páginas geradas pelos geradores oficiais: `AVALIACAO-OBJETIVA-01.html` (gerar_atividades `--so`), `AVALIACAO-PRATICA.html` (gerar_avaliacao_discursiva: "20 questões, 60 tópicos, 10 pontos; padrão 60/60"), `AVALIACAO-MEDIA-FINAL.html` (gerar_avaliacao_media_final a partir do `media-final.json` 30/40/30 da ementa, soma 100), `MENU-ATIVIDADES.js` (`node --check` ok, só item 👥 Equipes) e `index.html` regerado (gerar_indices, 41 arquivos). Nenhum gabarito exposto nas páginas do aluno (só botões de exportação com regra de papel). Seed gerado: `database/2026-10-24-avaliacao-pratica-seed-atividades.sql`.
+- **Pendência registrada:** o seed da Avaliação Objetiva 01 e a aplicação dos dois seeds no banco ficam para a subtarefa #276.159 (banco só pelo Claude Code local); o seed da prática está gerado, o da objetiva precisa do gerador de seed adaptado (o `scripts/gerar-seed-atividades.py` atual está fixo na ITIC).
+- **#343.3 ✅** — `STATUS_MATERIA.md` com as peças ✅ (a sessão paralela do Claude Code já havia regerado para 147/147); `STATUS-ATIVIDADES.md` com as três avaliações ✅. Entrega dos arquivos entrou no commit `b4ec96d2` da sessão paralela que trabalhava na #276; esta etapa fecha o quadro e o seed pendente.
+- **Verificação:** contagens (50 itens, 13/13/12/12; 20 itens, 60 tópicos, 60 padrões), `node --check` no menu, JSON válido, páginas sem gabarito exposto (grep), `git status` limpo para os arquivos da entrega.

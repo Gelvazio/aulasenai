@@ -6,7 +6,7 @@
 **Gerado em:** 2026-10-24 18:00 (atualizado manualmente devido a falha do script no Windows)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
-> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **✅ CONCLUÍDA** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
+> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
 
 ## 1. Peças da matéria (regra global de matérias)
 
