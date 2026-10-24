@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #358-3e1a9f2c — [Menu do Professor Administrador em duas linhas (metade em cima, metade embaixo)](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) · 🟠 🔄 Em execução · Devin (líder · local · main) (desde 2026-10-24 18:50) · 0%
-  - #358.1 — Dividir o menu do administrador em 2 linhas (JS + CSS do header) · ⬜ Pendente · `PESADO`
+  - #358.1 — Dividir o menu do administrador em 2 linhas (JS + CSS do header) · 🔄 Em execução · Claude Code (Sonnet · executor-pesado) (local · main) (desde 2026-10-24 18:52) · 0% · `PESADO`
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)
