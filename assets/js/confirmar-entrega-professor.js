@@ -14,6 +14,9 @@ const TEXTO_BOTAO_CONFIRMAR_ENTREGA = '📨 Confirmar Entrega';
 const TITULO_CONFIRMAR_ENTREGA = 'Confirmar Entrega';
 const CLASSE_BOTAO_CONFIRMAR_ENTREGA = 'progresso-turma__confirmar-entrega';
 const VALOR_LIGADO_ENTREGA_CONFIRMAR = 'sim';
+const TEXTO_CONFIRMAR_POPUP_ENTREGA = 'Confirmar Entrega';
+const MSG_AVISO_ENTREGA = 'O que não foi respondido fica em branco e o aluno não poderá mais ' +
+    'responder esta tentativa.';
 
 /**
  * Diz se a página já tem o "Marcar como entregue" (data-marcar-entregue="sim"), que faz o mesmo.
@@ -42,10 +45,9 @@ async function entregarAtividadeDoAluno(atividadeId, alunoId) {
  */
 async function confirmarEntregaDoAluno(contexto, botao) {
     const { atividadeId, aluno } = contexto;
-    const confirmou = await confirmarPopup('Entregar a atividade de ' + aluno.nome + ' como ' +
-        'está?\n\nO que não foi respondido fica em branco e o aluno não poderá mais responder ' +
-        'esta tentativa.',
-        { tipo: 'aviso', titulo: TITULO_CONFIRMAR_ENTREGA, textoConfirmar: 'Confirmar Entrega' });
+    const confirmou = await confirmarPopup('Entregar a atividade de ' + aluno.nome +
+        ' como está?\n\n' + MSG_AVISO_ENTREGA, { tipo: 'aviso',
+        titulo: TITULO_CONFIRMAR_ENTREGA, textoConfirmar: TEXTO_CONFIRMAR_POPUP_ENTREGA });
     if (!confirmou) return;
 
     botao.disabled = true;

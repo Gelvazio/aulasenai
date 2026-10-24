@@ -6,7 +6,7 @@
 
 ### CONFIRMAR-ENTREGA-BOTAO.1 — Levantar o código e escrever o plano
 
-**Próximo passo:** subagentes leem `assets/js/progresso-turma-global.js`, `assets/js/confirmar-todas-professor.js`, como a entrega é gravada hoje (aluno) e as políticas RLS; resumir no plano da etapa e pedir o "sim".
+**Próximo passo:** — (concluída; plano aprovado e implementado nas subtarefas .2 e .3)
 
 - **Descrição:** levantamento só de leitura; plano (escopo, arquivos, riscos, verificações) escrito nesta etapa. Tarefa grande (envolve gravação no banco e RLS): execução só após o "sim" do usuário.
 - **Critérios de Aceitação:** plano na etapa com arquivos, como a entrega é gravada, RLS necessária e verificação.
