@@ -452,7 +452,7 @@ async function escolherAlunoNotas(alunoId) {
         mostrarAvisoNotas('');
     } catch (erro) {
         console.warn('Notas indisponíveis:', erro.message);
-        mostrarAvisoNotas(MSG_ERRO_NOTAS, true);
+        mostrarAvisoNotas(MSG_ERRO_NOTAS + ' Detalhe: ' + erro.message, true);
     }
 }
 
@@ -684,7 +684,7 @@ async function iniciarCardNotas() {
         await preencherCardNotas();
     } catch (erro) {
         console.warn('Card de notas indisponível:', erro.message);
-        mostrarAvisoNotas(MSG_ERRO_NOTAS, true);
+        mostrarAvisoNotas(MSG_ERRO_NOTAS + ' Detalhe: ' + erro.message, true);
     }
 }
 

@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #375-c900a2d7 — [Diagnosticar "Não foi possível carregar as notas" no card "Notas e média"](etapas/ETAPA-524-c900a2d7-DIAGNOSTICO-ERRO-CARD-NOTAS.md) · 🔄 Em progresso · Devin (SWE-2) (local · main)
+  - #375.1 — Aviso do card com o detalhe do erro (diagnóstico) · 🔄 Em progresso · `MEDIO` · só Sonnet (pedido direto: Devin)
 - #374-2d18d485 — [Confirmar média do aluno (`media_finalizada`) no card "Notas e média" — botão só professor + "Listar todos"](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #374.1 — SQL: tabela `media_finalizada` (aluno × matéria) com RLS + aplicar · ✅ Concluído · `PESADO` · só Sonnet (pedido direto: Devin)
   - #374.2 — Repositório do card: matéria da página + ler/gravar o flag · ✅ Concluído · `PESADO` · só Sonnet (pedido direto: Devin)
