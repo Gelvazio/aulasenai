@@ -1573,7 +1573,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | **JEV-NAO** | **Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47)** | 🟡 Média | — | Nenhuma | ⬜ Pendente (mãe: pegue uma subtarefa) | — (não reservável) | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **REGRA-ATIVIDADES-APOS-MD** | **Atividades só depois dos Markdown dos slides (regra global das matérias)** | 🟡 Média | — | Nenhuma | ⬜ Pendente (mãe: pegue uma subtarefa) | — (não reservável) | [485-a7d3f9c1](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) | — |
-| REGRA-ATIVIDADES-APOS-MD.1 | Escrever a regra em `.claude/rules/` e ligar ao `AGENTS.md` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | Nenhuma | ⬜ Pendente | — | [485-a7d3f9c1](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) | — |
+| REGRA-ATIVIDADES-APOS-MD.1 | Escrever a regra em `.claude/rules/` e ligar ao `AGENTS.md` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | Nenhuma | 🔄 Em execução | Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main · s485) (desde 2026-10-24) | [485-a7d3f9c1](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
