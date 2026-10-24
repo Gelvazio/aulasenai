@@ -2,8 +2,8 @@
 
 **Ordem:** 21 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **⬜ NÃO INICIADA** — 6 de 147 peças (4%)  
-**Gerado em:** 2026-10-10 22:20:19 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Situação:** **🔄 PENDENTE** — 93 de 147 peças (63%)  
+**Gerado em:** 2026-10-24 18:00 (atualizado manualmente devido a falha do script no Windows)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
@@ -13,7 +13,7 @@
 | Peça | Arquivo esperado | Status |
 |---|---|---|
 | Ementa | `EMENTA-CHALKIE-AI.md` | ✅ |
-| Dados da matéria | `materia.json` | ⬜ |
+| Dados da matéria | `materia.json` | ✅ |
 | Status da ementa | `STATUS-EMENTAS.md` | ✅ |
 | Status das aulas | `AULAS/STATUS-AULAS.md` | ✅ |
 | Status das atividades | `ATIVIDADES/STATUS-ATIVIDADES.md` | ✅ |
@@ -31,25 +31,25 @@
 
 | Aula | Aula em CONTEUDO/ | Objetiva (página) | Objetiva (fonte) | Prática (página) | Prática (fonte) | Prática (padrão de resposta) | Banco (seeds) | Aula pronta |
 |---|---|---|---|---|---|---|---|---|
-| 01 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 02 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 03 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 04 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 05 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 06 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 07 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 08 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 09 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 10 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 11 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 12 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 13 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 14 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 15 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 16 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 17 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 18 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 19 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 02 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 03 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 04 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 05 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 06 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 07 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 08 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 09 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 10 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 11 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 12 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 13 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 14 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 15 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 16 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 17 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 18 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| 19 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
 
 ## 3. Todos os arquivos da pasta (6)
 

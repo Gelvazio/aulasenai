@@ -161,7 +161,6 @@ Formato de cada linha: `ITEM NN · tópico a) · categoria · "resposta prováve
 - ITEM 19 · tópico b) · certa · "Fluxo é a sequência ordenada de passos para uma meta; feedback é a resposta que confirma que a ação foi registrada." · Define fluxo e feedback corretamente.
 - ITEM 19 · tópico b) · meia certa · "Fluxo é o caminho e feedback é a resposta." · Definições vagas, sem a meta ou o registro.
 - ITEM 19 · tópico c) · certa · "A trilha mostra a hierarquia (Início > Agendamentos > Laboratório); o fluxo é a sequência de passos (data, horário, confirmar)." · Diferencia trilha de fluxo com um exemplo de cada.
-- ITEM 19 · tópico c) · meia certa · "A trilha mostra onde está e o fluxo é a sequência de passos." · Diferencia, mas sem exemplos.
 
 ## ITEM 20 — Diagnóstico de rota
 
