@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Devin (SWE-2) (local · main) | #353.1 ([502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md)) — card de UI/UX e resumo no índice do curso | 🔄 Ativa | 2026-10-24 16:44 |
+| Devin (SWE-2) (local · main) | #353 concluída ([502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md)) — índice do curso com o link das atividades de UI/UX | ⏹️ Encerrada | 2026-10-24 16:46 |
 | Claude Code (Sonnet 5.5) (local · main · s497) | PAINEL-IA-DESTAQUE.1 concluída ([499-c9a5d7e1](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md)) | ⏹️ Encerrada | 2026-10-24 15:20 |
 | Claude Code (Sonnet 5.5) (local · main · s497) | CORRECAO-IA-PAINEL: painel, comando e docs entregues; SQL aguarda o usuário ([497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 14:40 |
 | Claude Code (Sonnet 5.5) (local · main · s496) | REMOVER-QTD-CONSIDERAR concluída ([496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | ⏹️ Encerrada | 2026-10-24 18:30 |
@@ -1506,8 +1506,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
-| #353-41c1f170 | Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX | 🟠 Alta | — | — | 🔄 Em progresso | — (não reservável) | [502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) | — |
-| #353.1 | Atualizar o card de UI/UX e o resumo no índice do curso · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em execução | Devin (SWE-2) (local · main) (desde 2026-10-24 16:44) | [502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) | — |
+
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
