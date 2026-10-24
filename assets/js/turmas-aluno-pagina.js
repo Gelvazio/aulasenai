@@ -285,11 +285,16 @@ function montarLinhasVisiveisTa() {
   const sugestoes = turmaOk === FILTRO_TURMA_OK_SIM_TA ? []
     : estadoTa.sugestoes.filter((s) => sugestaoVisivelTa(s, filtro, busca));
   const linhasSim = vinculos.map((vinculo) => ({
-    turma: vinculo.turma_codigo, criar: () => criarLinhaVinculoTa(vinculo) }));
+    turma: vinculo.turma_codigo,
+    nome: detalharVinculoTa(vinculo).aluno.nome_completo || "",
+    criar: () => criarLinhaVinculoTa(vinculo) }));
   const linhasNao = sugestoes.map((sugestao) => ({
-    turma: sugestao.turma_sugerida || "~", criar: () => criarLinhaSugestaoTa(sugestao) }));
+    turma: sugestao.turma_sugerida || "~",
+    nome: sugestao.nome_completo || "",
+    criar: () => criarLinhaSugestaoTa(sugestao) }));
   const linhas = linhasSim.concat(linhasNao);
-  linhas.sort((a, b) => a.turma.localeCompare(b.turma));
+  linhas.sort((a, b) => a.turma.localeCompare(b.turma) ||
+    a.nome.localeCompare(b.nome, "pt-BR", { sensitivity: "base" }));
   return { linhas, sim: vinculos.length, nao: sugestoes.length };
 }
 
