@@ -19,4 +19,5 @@
 - **Modelo:** LEVE · só Haiku — executada pelo Devin por pedido direto do usuário nesta sessão (precedente: #353.1)
 - **Descrição:** `.claude/settings.json`, hooks `session-start` e `post-tool-use` do ai-memory: `command` vira `"C:\Users\gelva\AppData\Local\Programs\ai-memory\ai-memory.exe" --data-dir "C:\Users\gelva\AppData\Local\ai-memory" hook --event <evento> --agent claude-code --server-url "http://127.0.0.1:49374"`; remover `args`.
 - **Critérios de aceitação:** sem `Hook failed ... code 127` no Devin; `ai-memory.exe` chamado à mão com a nova string sai com 0; Claude Code continua rodando o mesmo hook.
-- **Entrega:** <commit(s)> · **Verificação:** <como foi conferido>
+- **Entrega:** `.claude/settings.json` — `command` das entradas do ai-memory em `SessionStart` e `PostToolUse` agora traz o caminho do `.exe` entre aspas e os argumentos na mesma string; campo `args` removido. Commit na `main`.
+- **Verificação:** `node -e require(...settings.json)` confirma JSON válido e a nova string; `bash -c '"C:\...\ai-memory.exe" --data-dir "..." hook --event post-tool-use ...'` retorna `{}` e exit 0. O próximo uso do Devin deve sair sem `Hook failed ... 127`.

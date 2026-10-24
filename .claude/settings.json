@@ -45,18 +45,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "C:\\Users\\gelva\\AppData\\Local\\Programs\\ai-memory\\ai-memory.exe",
-            "args": [
-              "--data-dir",
-              "C:\\Users\\gelva\\AppData\\Local\\ai-memory",
-              "hook",
-              "--event",
-              "session-start",
-              "--agent",
-              "claude-code",
-              "--server-url",
-              "http://127.0.0.1:49374"
-            ]
+            "command": "\"C:\\Users\\gelva\\AppData\\Local\\Programs\\ai-memory\\ai-memory.exe\" --data-dir \"C:\\Users\\gelva\\AppData\\Local\\ai-memory\" hook --event session-start --agent claude-code --server-url \"http://127.0.0.1:49374\""
           }
         ]
       }
@@ -89,18 +78,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "C:\\Users\\gelva\\AppData\\Local\\Programs\\ai-memory\\ai-memory.exe",
-            "args": [
-              "--data-dir",
-              "C:\\Users\\gelva\\AppData\\Local\\ai-memory",
-              "hook",
-              "--event",
-              "post-tool-use",
-              "--agent",
-              "claude-code",
-              "--server-url",
-              "http://127.0.0.1:49374"
-            ]
+            "command": "\"C:\\Users\\gelva\\AppData\\Local\\Programs\\ai-memory\\ai-memory.exe\" --data-dir \"C:\\Users\\gelva\\AppData\\Local\\ai-memory\" hook --event post-tool-use --agent claude-code --server-url \"http://127.0.0.1:49374\""
           }
         ]
       }
