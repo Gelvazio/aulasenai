@@ -58,3 +58,8 @@
 
 - **Nível:** PESADO — mesma classificação da tarefa
 - **Modelo:** só Sonnet
+
+### Entrega e verificação (2026-10-24)
+
+- **Entrega:** `database/2026-10-24-media-atividade-config.sql` (aplicado no banco; grants do `authenticated` limitados a select/insert/update e trigger que grava `atualizado_por`/`atualizado_em`), `assets/js/card-notas-media-calculo.js`, `card-notas-media-repositorio.js`, `card-notas-media.js`, `assets/css/card-notas-media.css`, ligação em `INTRODUCAO-TIC/ATIVIDADES/index.html` e em `gerar_indices.py` (sem regerar os demais índices), `docs/database.md` e relatório HTML. Feito por 3 agentes Sonnet em paralelo (dados, visão, CSS/ligação) + revisão de código e auditoria de segurança.
+- **Verificação:** `node --check` ok nos 3 JS; políticas, RLS e execução do `anon` conferidos por consulta; revisão achou colisão de `const` entre scripts e corridas (turma/peso) — corrigidas. **Conferir na tela (sem navegador aqui): o usuário** — abrir o índice como aluno e como professor.

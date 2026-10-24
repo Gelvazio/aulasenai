@@ -1,0 +1,100 @@
+/* Card "Notas e média" do índice de atividades da matéria (#371): ocupa a grade inteira. */
+.card-notas-media {
+    --notas-borda: #e2e8f0;
+    --notas-zebra: #f1f5f9;
+    --notas-ligado: #2f855a;
+    --notas-desligado: #c53030;
+    --notas-erro: #c53030;
+    grid-column: 1 / -1;
+    background: #f9fafb;
+    border-left: 5px solid var(--primary);
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.card-notas-media[hidden] { display: none; }
+.card-notas-media__titulo { font-size: 18px; line-height: 1.3; color: var(--text); }
+.card-notas-media__selecao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.card-notas-media__combo {
+    font: inherit; padding: 8px 10px; min-height: 40px; max-width: 100%;
+    border: 2px solid var(--primary); border-radius: 8px; background: white; color: var(--text);
+}
+.card-notas-media__tabela {
+    width: 100%; border-collapse: collapse; font-size: 14px; background: white;
+    display: block; overflow-x: auto;
+}
+.card-notas-media__tabela th,
+.card-notas-media__tabela td {
+    padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--notas-borda);
+    white-space: nowrap;
+}
+.card-notas-media__tabela th {
+    background: #edf2f7;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+.card-notas-media__linha:nth-child(even) { background: var(--notas-zebra); }
+.card-notas-media__linha--fora { opacity: 0.55; }
+.card-notas-media__nota { font-weight: 700; text-align: right; }
+.card-notas-media__interruptor {
+    position: relative; width: 64px; height: var(--altura-controle-atividade, 36px);
+    border: 0; border-radius: var(--altura-controle-atividade, 36px); cursor: pointer;
+    background: var(--notas-desligado);
+    color: white;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 0 8px 0 30px; text-align: right; transition: background 0.2s;
+}
+.card-notas-media__interruptor::before {
+    content: ''; position: absolute; left: 3px; top: 3px;
+    width: calc(var(--altura-controle-atividade, 36px) - 6px);
+    height: calc(var(--altura-controle-atividade, 36px) - 6px);
+    border-radius: 50%; background: white; transition: transform 0.2s;
+}
+.card-notas-media__interruptor--ligado {
+    background: var(--notas-ligado);
+    padding: 0 30px 0 8px;
+    text-align: left;
+}
+.card-notas-media__interruptor--ligado::before { transform: translateX(28px); }
+.card-notas-media__interruptor:disabled { opacity: 0.6; cursor: not-allowed; }
+.card-notas-media__interruptor:focus-visible { outline: 2px solid #1a56db; outline-offset: 2px; }
+.card-notas-media__peso {
+    width: 5rem; font: inherit; padding: 6px 8px; min-height: 36px;
+    border: 2px solid var(--notas-borda); border-radius: 8px; text-align: right;
+}
+.card-notas-media__rodape {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.card-notas-media__media {
+    font-size: 30px; font-weight: 800; color: var(--primary); line-height: 1.1;
+}
+.card-notas-media__aviso {
+    margin: 0; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    background: #fffbea; border: 2px solid var(--gold);
+}
+.card-notas-media__aviso--erro {
+    background: #fff5f5;
+    border-color: var(--notas-erro);
+    color: var(--notas-erro);
+}
+@media (max-width: 600px) {
+    .card-notas-media { padding: 14px 12px; border-left-width: 4px; }
+    .card-notas-media__combo { width: 100%; }
+    .card-notas-media__media { font-size: 26px; }
+}

@@ -1105,6 +1105,20 @@ Uso: botão 📚 Matérias de `turmas.html` (cadastro) e combo "Turma:" do `ATIV
 (`assets/js/indice-turma-favorita.js`): só as turmas da matéria; matéria sem vínculo = todas.
 Conferido: outro professor tem o insert recusado (simulação em transação desfeita).
 
+## 📊 Atualização 2026-10-24 — `media_atividade_config` e `notas_aluno_para_professor` (#371)
+
+SQL: `database/2026-10-24-media-atividade-config.sql` (aplicado em 2026-10-24; idempotente). Usado
+pelo card "Notas e média" do índice de atividades (`assets/js/card-notas-media*.js`).
+
+| Objeto | O que é |
+|---|---|
+| `media_atividade_config` | Config da média por turma e atividade. Colunas: `atividade_id` (FK `atividade`, cascade), `turma_codigo`, `na_media` (boolean, padrão `true`), `peso` (`numeric(6,2)`, padrão 1, `>= 0`), `atualizado_por`, `atualizado_em`. Chave `(atividade_id, turma_codigo)`. Sem linha = entra na média com peso 1 |
+| RLS de `media_atividade_config` | `select`: professor da turma (`eh_professor()` + `professor_tem_turma`) ou aluno da própria turma; `insert`/`update`: só professor da turma; `anon` sem acesso; sem `delete` |
+| `notas_aluno_para_professor(p_aluno uuid, p_paginas text[])` | Mesma conta de `notas_media_final`, para o aluno escolhido (`security definer`, `search_path = public`). Só devolve linhas se `eh_professor()` e o professor tem a turma do aluno. Não devolve gabarito. `anon` sem execução |
+
+Média do card = Σ(nota × peso) ÷ Σ(peso) das atividades ON com nota (discursiva sem correção fica
+fora).
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas

@@ -1102,6 +1102,33 @@
       </table>
     </div>
 
+    <h2>📊 Atualização 2026-10-24 — media_atividade_config e notas_aluno_para_professor (#371)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-24-media-atividade-config.sql</code> (aplicado em 2026-10-24) · Tela: card "Notas e média" do índice de atividades</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>media_atividade_config (atividade_id, turma_codigo, na_media, peso, atualizado_por, atualizado_em)</td>
+          <td>Tabela</td>
+          <td>Config da média por turma e atividade; chave (atividade_id, turma_codigo); sem linha = ON e peso 1; peso &gt;= 0</td>
+        </tr>
+        <tr>
+          <td>media_config_select / media_config_insert / media_config_update</td>
+          <td>Políticas RLS</td>
+          <td>Leitura: professor da turma ou aluno da própria turma; escrita: só professor da turma; sem DELETE; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>notas_aluno_para_professor(p_aluno, p_paginas)</td>
+          <td>Função (security definer)</td>
+          <td>Mesma conta de notas_media_final para o aluno escolhido; só professor da turma dele; não devolve gabarito; anon sem execução</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🏫 Atualização 2026-10-16 — CRUD da turma pelo Professor Administrador</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-16-turma-crud-administrador.sql</code> (aplicado em 2026-10-16) · Tela: <code>turmas.html</code> (consulta, modal de edição, excluir e botão Professores) · Tarefa #201</p>
