@@ -123,7 +123,7 @@
 
 ### #276.1 — Aula 01 · conteúdo: Princípios de design: definição e evolução histórica
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-01-PRINCIPIOS-DE-DESIGN-DEFINICAO-E-EVOLUCAO-HISTORICA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -227,7 +227,7 @@
 
 ### #276.9 — Aula 02 · conteúdo: Formas geométricas e regras de visualização dos elementos da interface
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-02-FORMAS-GEOMETRICAS-E-REGRAS-DE-VISUALIZACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -331,7 +331,7 @@
 
 ### #276.17 — Aula 03 · conteúdo: Teoria das cores na interface
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-03-TEORIA-DAS-CORES.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -435,7 +435,7 @@
 
 ### #276.25 — Aula 04 · conteúdo: Resolução de problemas: análise crítica
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-04-RESOLUCAO-DE-PROBLEMAS-ANALISE-CRITICA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -539,7 +539,7 @@
 
 ### #276.33 — Aula 05 · conteúdo: Resolução de problemas: análise de cenários
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-05-RESOLUCAO-DE-PROBLEMAS-ANALISE-DE-CENARIOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -643,7 +643,7 @@
 
 ### #276.41 — Aula 06 · conteúdo: User Interface: definição e tipos de interface
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-06-USER-INTERFACE-DEFINICAO-E-TIPOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -747,7 +747,7 @@
 
 ### #276.49 — Aula 07 · conteúdo: Layout: padrões de leitura F e Z e alinhamento
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-07-LAYOUT-PADROES-DE-LEITURA-F-E-Z-E-ALINHAMENTO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -851,7 +851,7 @@
 
 ### #276.57 — Aula 08 · conteúdo: Layout: tamanho, espaçamento, texturas, fontes e repetição
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-08-LAYOUT-TAMANHO-ESPACAMENTO-TEXTURAS-FONTES-E-REPETICAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -955,7 +955,7 @@
 
 ### #276.65 — Aula 09 · conteúdo: Eventos e navegação na interface
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-09-EVENTOS-E-NAVEGACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1059,7 +1059,7 @@
 
 ### #276.73 — Aula 10 · conteúdo: User Experience: definição e design centrado no usuário
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-10-USER-EXPERIENCE-DEFINICAO-E-DESIGN-CENTRADO-NO-USUARIO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1163,7 +1163,7 @@
 
 ### #276.81 — Aula 11 · conteúdo: Processo de design interativo
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-11-PROCESSO-DE-DESIGN-INTERATIVO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1267,7 +1267,7 @@
 
 ### #276.89 — Aula 12 · conteúdo: Jornada do usuário: objetivos do público-alvo e pesquisa
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-12-JORNADA-DO-USUARIO-OBJETIVOS-E-PESQUISA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1371,7 +1371,7 @@
 
 ### #276.97 — Aula 13 · conteúdo: Usabilidade: friendly e intuitividade
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-13-USABILIDADE-FRIENDLY-E-INTUITIVIDADE.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1475,7 +1475,7 @@
 
 ### #276.105 — Aula 14 · conteúdo: Estratégias de coleta de informações: determinação e aplicação
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-14-ESTRATEGIAS-DE-COLETA-DETERMINACAO-E-APLICACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1579,7 +1579,7 @@
 
 ### #276.113 — Aula 15 · conteúdo: Coleta de feedbacks e resolução de conflitos
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-15-COLETA-DE-FEEDBACKS-E-RESOLUCAO-DE-CONFLITOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
@@ -1683,7 +1683,7 @@
 
 ### #276.121 — Aula 16 · conteúdo: Determinação de escopo do projeto de interface
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-16-DETERMINACAO-DE-ESCOPO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
@@ -1787,7 +1787,7 @@
 
 ### #276.129 — Aula 17 · conteúdo: Prototipagem: storyboard e protótipos de papel
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-17-PROTOTIPAGEM-STORYBOARD-E-PROTOTIPOS-DE-PAPEL.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1891,7 +1891,7 @@
 
 ### #276.137 — Aula 18 · conteúdo: Mock-ups digitais e processo de criação
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-18-MOCK-UPS-DIGITAIS-E-PROCESSO-DE-CRIACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
@@ -1995,7 +1995,7 @@
 
 ### #276.145 — Aula 19 · conteúdo: Direito autoral: definição, anterioridade, Creative Commons e registro
 
-**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-19-DIREITO-AUTORAL.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
+**Próximo passo:** concluída; as atividades desta aula já podem ser pegas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
