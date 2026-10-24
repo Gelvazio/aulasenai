@@ -8,7 +8,7 @@
 - #374-2d18d485 — [Confirmar média do aluno (`media_finalizada`) no card "Notas e média" — botão só professor + "Listar todos"](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) · 🔄 Em progresso (plano aguarda o "sim") · Devin (SWE-2) (local · main)
   - #374.1 — SQL: tabela `media_finalizada` (aluno × matéria) com RLS + aplicar · ✅ Concluído · `PESADO` · só Sonnet (pedido direto: Devin)
   - #374.2 — Repositório do card: matéria da página + ler/gravar o flag · ✅ Concluído · `PESADO` · só Sonnet (pedido direto: Devin)
-  - #374.3 — Visão: "Confirmar Media Aluno" + "Listar todos" + combo filtrado · ⬜ Pendente · `MEDIO` · só Sonnet (pedido direto: Devin)
+  - #374.3 — Visão: "Confirmar Media Aluno" + "Listar todos" + combo filtrado · ✅ Concluído · `MEDIO` · só Sonnet (pedido direto: Devin)
   - #374.4 — Documentação (database.md + relatório HTML) · ⬜ Pendente · `LEVE` · só Haiku (pedido direto: Devin)
 - #373-5c8e1f47 — [Filtro "Apenas atividade de média" no card de notas e card global para todas as matérias](etapas/ETAPA-522-5c8e1f47-FILTRO-APENAS-ATIVIDADE-DE-MEDIA.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #373.1 — Filtro ON/OFF com localStorage e carga global do card · ✅ Concluído · `MEDIO` · só Sonnet

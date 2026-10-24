@@ -34,11 +34,16 @@ const CHAVE_FILTRO_NOTAS = 'card-notas-media:apenas-atividade-de-media';
 const ROTULO_FILTRO_NOTAS = 'Apenas atividade de média';
 const MSG_NENHUMA_NA_MEDIA_NOTAS = 'Nenhuma atividade conta na média.';
 const MSG_ERRO_GRAVAR_NOTAS = 'Não foi possível gravar a configuração: ';
+const ROTULO_LISTAR_TODOS_NOTAS = 'Listar todos';
+const ROTULO_CONFIRMAR_MEDIA_NOTAS = 'Confirmar Media Aluno';
+const SUFIXO_MEDIA_CONFIRMADA_NOTAS = ' (média confirmada)';
+const MSG_ERRO_CONFIRMAR_NOTAS = 'Não foi possível gravar a confirmação: ';
 
 const estadoNotas = {
     atividades: [], ids: new Map(), configuracao: new Map(), notas: new Map(),
     turmas: [], alunos: [], turma: '', alunoId: '', ehProfessor: false, usuarioId: '',
     elementos: null, temporizadores: new Map(), apenasNaMedia: false,
+    listarTodos: false, mediaFinalizadas: new Set(), materiaId: null,
 };
 
 /**
@@ -429,6 +434,7 @@ function textoAlunoNotas(aluno, turma) {
  */
 async function escolherAlunoNotas(alunoId) {
     estadoNotas.alunoId = alunoId;
+    atualizarInterruptorMediaNotas();
     estadoNotas.notas = new Map();
     if (!alunoId) {
         renderizarTabelaNotas();
@@ -451,6 +457,24 @@ async function escolherAlunoNotas(alunoId) {
 }
 
 /**
+ * Preenche o combo Aluno com a turma atual; com "Listar todos" desligado, omite os
+ * alunos com média confirmada e, ligado, os mostra com o sufixo de confirmada.
+ * @param {HTMLSelectElement} listaAluno - Combo de alunos.
+ */
+function preencherComboAlunosNotas(listaAluno) {
+    const turma = estadoNotas.turmas.find((item) => item.codigo === estadoNotas.turma);
+    const visiveis = estadoNotas.alunos.filter((aluno) =>
+        estadoNotas.listarTodos || !estadoNotas.mediaFinalizadas.has(String(aluno.id)));
+    const opcoes = visiveis.map((aluno) => {
+        const confirmado = estadoNotas.mediaFinalizadas.has(String(aluno.id));
+        const sufixo = confirmado ? SUFIXO_MEDIA_CONFIRMADA_NOTAS : '';
+        return new Option(textoAlunoNotas(aluno, turma) + sufixo, aluno.id);
+    });
+    listaAluno.replaceChildren(new Option(OPCAO_ALUNO_NOTAS, ''), ...opcoes);
+    listaAluno.value = estadoNotas.alunoId;
+}
+
+/**
  * Troca a turma: recarrega a configuração e o combo de alunos.
  * @param {HTMLSelectElement} listaAluno - Combo de alunos.
  * @param {string} codigo - Código da turma escolhida.
@@ -466,11 +490,120 @@ async function trocarTurmaNotas(listaAluno, codigo) {
     await carregarConfiguracaoNotas(codigo);
     if (estadoNotas.turma !== codigo) return;
 
-    const turma = estadoNotas.turmas.find((item) => item.codigo === codigo);
-    listaAluno.replaceChildren(new Option(OPCAO_ALUNO_NOTAS, ''),
-        ...estadoNotas.alunos.map((aluno) => new Option(textoAlunoNotas(aluno, turma), aluno.id)));
+    preencherComboAlunosNotas(listaAluno);
     await escolherAlunoNotas('');
     if (!estadoNotas.alunos.length) mostrarAvisoNotas(MSG_SEM_ALUNOS_NOTAS);
+}
+
+/**
+ * Lê a matéria da página e as médias já confirmadas nela; em falha, segue com Set vazio.
+ */
+async function carregarMediasDaMateriaNotas() {
+    try {
+        estadoNotas.materiaId = await lerMateriaIdDaPagina();
+        if (estadoNotas.materiaId === null) return;
+        estadoNotas.mediaFinalizadas =
+            await listarMediaFinalizadaDaMateria(estadoNotas.materiaId);
+    } catch (erro) {
+        estadoNotas.materiaId = null;
+        estadoNotas.mediaFinalizadas = new Set();
+        console.warn('Confirmações de média indisponíveis:', erro.message);
+    }
+}
+
+/**
+ * Pinta um botão interruptor conforme o estado ligado/desligado.
+ * @param {HTMLButtonElement} botao - Botão interruptor.
+ * @param {boolean} ligado - Estado a mostrar.
+ */
+function pintarInterruptorNotas(botao, ligado) {
+    botao.setAttribute('aria-checked', String(ligado));
+    botao.classList.toggle(PREFIXO_NOTAS + 'interruptor--ligado', ligado);
+    botao.textContent = ligado ? 'ON' : 'OFF';
+}
+
+/**
+ * Cria um rótulo com interruptor ON/OFF para a área de seleção do professor.
+ * @param {string} rotulo - Texto do interruptor.
+ * @returns {{etiqueta: HTMLLabelElement, botao: HTMLButtonElement}} Controle criado.
+ */
+function criarInterruptorSimplesNotas(rotulo) {
+    const etiqueta = criarElementoNotas('label', PREFIXO_NOTAS + 'chave');
+    const texto = criarElementoNotas('span', PREFIXO_NOTAS + 'filtro-rotulo', rotulo);
+    const botao = criarElementoNotas('button', PREFIXO_NOTAS + 'interruptor');
+    botao.type = 'button';
+    botao.setAttribute('role', 'switch');
+    botao.setAttribute('aria-label', rotulo);
+    etiqueta.append(texto, botao);
+    return { etiqueta, botao };
+}
+
+/**
+ * Interruptor "Listar todos": liga/desliga as médias confirmadas no combo Aluno.
+ * @param {HTMLSelectElement} listaAluno - Combo de alunos.
+ * @returns {HTMLLabelElement} Controle pronto para a área de seleção.
+ */
+function criarInterruptorListarTodosNotas(listaAluno) {
+    const controle = criarInterruptorSimplesNotas(ROTULO_LISTAR_TODOS_NOTAS);
+    pintarInterruptorNotas(controle.botao, estadoNotas.listarTodos);
+    controle.botao.addEventListener('click', () => {
+        estadoNotas.listarTodos = !estadoNotas.listarTodos;
+        pintarInterruptorNotas(controle.botao, estadoNotas.listarTodos);
+        preencherComboAlunosNotas(listaAluno);
+    });
+    return controle.etiqueta;
+}
+
+/**
+ * Repinta e habilita/desabilita o interruptor "Confirmar Media Aluno" conforme a seleção.
+ */
+function atualizarInterruptorMediaNotas() {
+    const botao = estadoNotas.elementos.interruptorMedia;
+    if (!botao) return;
+    const habilitado = estadoNotas.alunoId !== '' && estadoNotas.materiaId !== null;
+    botao.disabled = !habilitado;
+    pintarInterruptorNotas(botao,
+        habilitado && estadoNotas.mediaFinalizadas.has(estadoNotas.alunoId));
+}
+
+/**
+ * Grava a mudança do flag "média confirmada" do aluno; se falhar, reverte o pintado.
+ * @param {HTMLSelectElement} listaAluno - Combo de alunos.
+ */
+async function alternarMediaFinalizadaNotas(listaAluno) {
+    const botao = estadoNotas.elementos.interruptorMedia;
+    const alunoId = estadoNotas.alunoId;
+    const novoValor = !estadoNotas.mediaFinalizadas.has(alunoId);
+    pintarInterruptorNotas(botao, novoValor);
+    try {
+        await gravarMediaFinalizada({ alunoId, materiaId: estadoNotas.materiaId,
+            turma: estadoNotas.turma, finalizada: novoValor });
+        if (novoValor) estadoNotas.mediaFinalizadas.add(alunoId);
+        else estadoNotas.mediaFinalizadas.delete(alunoId);
+        preencherComboAlunosNotas(listaAluno);
+        if (novoValor && !estadoNotas.listarTodos) {
+            await escolherAlunoNotas('');
+            return;
+        }
+        mostrarAvisoNotas('');
+    } catch (erro) {
+        pintarInterruptorNotas(botao, !novoValor);
+        mostrarAvisoNotas(MSG_ERRO_CONFIRMAR_NOTAS + erro.message, true);
+    }
+}
+
+/**
+ * Interruptor "Confirmar Media Aluno": reflete e grava o flag do aluno selecionado.
+ * @param {HTMLSelectElement} listaAluno - Combo de alunos.
+ * @returns {HTMLLabelElement} Controle pronto para a área de seleção.
+ */
+function criarInterruptorConfirmarMediaNotas(listaAluno) {
+    const controle = criarInterruptorSimplesNotas(ROTULO_CONFIRMAR_MEDIA_NOTAS);
+    estadoNotas.elementos.interruptorMedia = controle.botao;
+    atualizarInterruptorMediaNotas();
+    controle.botao.addEventListener('click', () =>
+        alternarMediaFinalizadaNotas(listaAluno));
+    return controle.etiqueta;
 }
 
 /**
@@ -490,8 +623,11 @@ async function montarSelecaoProfessorNotas() {
     comboTurma.lista.addEventListener('change', () =>
         trocarTurmaNotas(comboAluno.lista, comboTurma.lista.value));
     comboAluno.lista.addEventListener('change', () => escolherAlunoNotas(comboAluno.lista.value));
+    await carregarMediasDaMateriaNotas();
     const { selecao } = estadoNotas.elementos;
-    selecao.replaceChildren(comboTurma.etiqueta, comboAluno.etiqueta);
+    selecao.replaceChildren(comboTurma.etiqueta, comboAluno.etiqueta,
+        criarInterruptorListarTodosNotas(comboAluno.lista),
+        criarInterruptorConfirmarMediaNotas(comboAluno.lista));
     selecao.hidden = false;
     const inicial = estadoNotas.turmas.find((turma) => turma.favorito) || estadoNotas.turmas[0];
     comboTurma.lista.value = inicial.codigo;

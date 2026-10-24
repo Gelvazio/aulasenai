@@ -1507,11 +1507,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | **#374-2d18d485** | **Confirmar média do aluno (`media_finalizada`) no card "Notas e média"** | 🟡 Média | — | Nenhuma | 🔄 Em progresso | — (não reservável) | [523-2d18d485](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) | — |
-
-| #374.3 | Visão: "Confirmar Media Aluno" + "Listar todos" + combo filtrado | 🟡 Média | MEDIO · só Sonnet · effort medium (pedido direto: Devin) | #374.2 | ⬜ Pendente | — | [523-2d18d485](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) | — |
 | #374.4 | Documentação (database.md + relatório HTML) | 🟡 Média | LEVE · só Haiku · effort low (pedido direto: Devin) | #374.1 | ⬜ Pendente | — | [523-2d18d485](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) | — |
-
-
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
