@@ -41,3 +41,16 @@
 - **Descrição:** conferir e corrigir as 40 atividades de `ATIVIDADES/CONTEUDO/` (objetiva `ATIVIDADES-AULA-NN-50-QUESTOES.md` e discursiva `ATIVIDADE-PRATICA-AULA-NN.md`), registrar no quadro as que estiverem certas e as pendências de cada uma.
 - **Critérios de aceitação:** 50 itens e gabarito 13/13/12/12 em cada objetiva; 20 itens com 3 tópicos (0,2 + 0,4 + 0,4) em cada discursiva; nenhuma empresa fictícia; nenhum arquivo fora de `ATIVIDADES/CONTEUDO/` alterado.
 - **Entrega:** commit único com as correções e o quadro · **Verificação:** contagens com grep e contagem de gabaritos por `uniq` (ver a saída no relatório da entrega).
+
+**Decisão D3 — 2026-10-24 14:12 (pedido do usuário, no chat: "SIM, FAÇA ISSO"):** a tarefa global passa a incluir os gabaritos das discursivas das aulas 01 a 19 (subtarefa .2 abaixo). Os gabaritos de #276 (#276.4, #276.12 e equivalentes) são entregues por esta tarefa e ficam ✅ quando o arquivo for conferido. As respostas prováveis (#276.5 e equivalentes) continuam em #276.
+
+### FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.2 — Gabaritos das discursivas das aulas 01 a 19
+
+**Próximo passo:** lançar um agente por aula (executor-leve) para escrever `ATIVIDADE-PRATICA-AULA-NN-GABARITO.md`, no formato do gabarito da ITIC (`### ITEM NN-a`, `**Resposta esperada:**`, `**Critérios:**`), com 20 itens × 3 tópicos.
+
+- **Nível:** LEVE — sugestão do Jev pelo hook neste pedido (confiança 0,56; valendo a matriz)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **Descrição:** gabarito de cada discursiva (padrão de resposta e critério certa/meia/errada por tópico). Nome do arquivo contém `GABARITO`, então o `.vercelignore` já o tira do site. Sem empresa fictícia.
+- **Critérios de aceitação:** 20 itens e 60 tópicos em cada gabarito; cada tópico com resposta esperada e critério; arquivo fora do site (nome com `GABARITO`).
+- **Entrega:** commit único com os 19 gabaritos e o quadro · **Verificação:** contagem de `### ITEM` (20) e de `**Resposta esperada:**` (60) por arquivo.
