@@ -283,6 +283,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     final gerada pela IA (mesma condição do 🤖: entregue, com resposta e com a correção da IA em
     todas as partes respondidas; sem correção conta como sem nota). Lembrado no localStorage
     (`progresso-turma:nota-ia-gerada`). Código: `assets/js/filtro-nota-ia-progresso.js`.
+  - **ON/OFF "ABAIXO DA MEDIA" (2026-10-24, #361):** depois do "Nota IA Gerada". Pela **nota
+    final**: ligado lista só os alunos que tiraram **menos que 7** (quem não tem nota final some);
+    desligado (padrão) não filtra. Lembrado no localStorage (`progresso-turma:abaixo-da-media`).
+    Código: `assets/js/filtro-abaixo-media-progresso.js`.
   - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
     dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
     certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia do
