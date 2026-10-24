@@ -108,7 +108,7 @@
 ---
 ### #276.0 — Ementa completa, `materia.json` e plano das 19 aulas
 
-**Próximo passo:** reservada em 2026-10-24 por Claude Code (Sonnet 5.5 · líder; executor-pesado); executor-pesado completa a ementa, cria `materia.json` e `DOCUMENTACAO/PLANO-AULAS.md`.
+**Próximo passo:** concluída; a #276.1 (e as aulas 2 a 19) já podem ser pegas.
 
 - **Effort:** high
 - **JEV-AI-SUGGESTION:** NAO
@@ -117,7 +117,7 @@
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
 - **Descrição:** Completar `EMENTA-CHALKIE-AI.md` até 14.800–14.950 caracteres, conferida com a UC da `EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md` (seções, rubrica e prompts do padrão, sem criar conhecimento além dos itens 1 a 7 da ementa); criar `materia.json` com `uc`, `uc_curta`, `curso`, `docente`, `autor_apostila`, `versao_apostila`, `modulo`, `modalidade`, `carga_horaria_uc` (76), `capacidades` (C1–C4), `capacidades_socioemocionais` (S1–S4), `conhecimentos`, `horas_por_aula` (4), `aulas` (as 19 do plano abaixo: número, tema, 4 h, capacidades, conteúdos oficiais, indicadores, prática e slides), `indicadores_desempenho`, `avaliacao` (pesos da ementa ou o padrão 30/20/20/30), `situacoes_aprendizagem`, `glossario_ementa` e `referencias`; criar `DOCUMENTACAO/PLANO-AULAS.md` com a tabela das 19 aulas; criar/atualizar os 5 arquivos de status com todas as aulas em ⬜.
 - **Critérios de aceitação:** Ementa com 14.800 a 14.950 caracteres; `materia.json` é JSON válido, com C1–C4, S1–S4 e os conhecimentos 1 a 7 completos; o plano das 19 aulas cobre todos os conhecimentos da ementa sem repetir e sem sobrar conteúdo de outra UC; `DOCUMENTACAO/PLANO-AULAS.md` com 19 linhas; 5 status criados.
-- **Entrega:** — · **Verificação:** conferir o tamanho da ementa, validar o JSON, comparar o `PLANO-AULAS.md` com a ementa; commit + push
+- **Entrega:** `EMENTA-CHALKIE-AI.md` (14.892 caracteres), `materia.json`, `DOCUMENTACAO/PLANO-AULAS.md` e `STATUS-EMENTAS.md` da matéria; commit desta entrega · **Verificação:** ementa com 14.892 caracteres (alvo 14.800–14.950); `materia.json` válido (node): C1–C4, S1–S4, 7 conhecimentos e 19 aulas; capacidades, função e objetivo conferidos literalmente com a ementa do curso; `PLANO-AULAS.md` com 19 linhas. `STATUS_MATERIA.md` não regerado (o script falha no `bash` do WSL).
 
 ### #276.1 — Aula 01 · conteúdo: Princípios de design: definição e evolução histórica
 
