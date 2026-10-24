@@ -7,7 +7,10 @@
 // acertos pelo banco; discursiva: nota parcial da IA). O RLS limita aos alunos das turmas do
 // professor. Ligado por assets/js/respostas-atividade.js (objetivas) e
 // assets/js/avaliacao-discursiva.js (discursivas). Substitui o antigo
-// progresso-turma-discursiva.js (2026-10-09). Depende de js/supabase.js e assets/js/popup.js.
+// progresso-turma-discursiva.js (2026-10-09). Botão "✅ CONFIRMAR TODA CORREÇÃO DE IA" (só
+// discursiva) acima da coluna "Aluno": roda o "Confirmar Todas" de cada aluno listado, com
+// popup antes (confirmar-toda-correcao-ia-progresso.js). Depende de js/supabase.js e
+// assets/js/popup.js.
 // Com <body data-marcar-entregue="sim">: "Marcar como entregue" / "Desfazer entrega" na situação
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
@@ -70,6 +73,10 @@ const ENTREGA_GLOBAL = { arquivo: 'confirmar-entrega-professor.js',
 const BOTOES_NOME_POR_TIPO_GLOBAL = {
     discursiva: [{ arquivo: 'confirmar-todas-professor.js', funcao: 'criarBotaoConfirmarTodas' }],
 };
+// "CONFIRMAR TODA CORREÇÃO DE IA" (só discursiva): usa o 'Confirmar Todas' de cada aluno, por
+// isso o módulo dele carrega primeiro.
+const ARQUIVOS_CONFIRMAR_TODA_CORRECAO_IA_GLOBAL = ['confirmar-todas-professor.js',
+    'confirmar-toda-correcao-ia-progresso.js'];
 const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
@@ -87,7 +94,7 @@ const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
-    botoesNome: [], filtro: null, faltas: null, filtrosDaLista: [],
+    botoesNome: [], filtro: null, faltas: null, filtrosDaLista: [], alunosVisiveis: [],
 };
 
 /**
@@ -373,6 +380,7 @@ function desenharListaDeAlunosGlobal(tela, medida) {
     const visiveis = filtrosDaLista.reduce((lista, filtro) => filtro.filtrar(lista),
         ultimosAlunos);
     const alunos = [...visiveis].sort(compararAlunosGlobal);
+    estadoProgressoGlobal.alunosVisiveis = alunos;
     if (tela.contagem) {
         tela.contagem.textContent = 'Mostrando ' + alunos.length + ' de ' +
             ultimosAlunos.length + ' alunos (com os filtros acima)';
@@ -1000,6 +1008,32 @@ async function prepararCorrecaoIaGlobal(area, tipo) {
 }
 
 /**
+ * Põe o botão "CONFIRMAR TODA CORREÇÃO DE IA" logo acima da lista, em cima da coluna "Aluno"
+ * (só discursiva). Carrega 'confirmar-todas-professor.js' antes. Falha não derruba o painel.
+ * @param {{lista: HTMLElement}} tela - Elementos da área.
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ */
+async function prepararConfirmarTodaCorrecaoIaGlobal(tela, tipo) {
+    if (tipo !== TIPO_PADRAO_PROGRESSO_GLOBAL) return;
+    try {
+        for (const arquivo of ARQUIVOS_CONFIRMAR_TODA_CORRECAO_IA_GLOBAL) {
+            await carregarScriptProgressoGlobal(arquivo);
+        }
+        if (typeof window.criarBotaoConfirmarTodaCorrecaoIa !== 'function') return;
+        const botao = window.criarBotaoConfirmarTodaCorrecaoIa({
+            atividadeId: estadoProgressoGlobal.atividadeId,
+            lerAlunos: () => estadoProgressoGlobal.alunosVisiveis,
+            aoMudar: async () => estadoProgressoGlobal.atualizarAgora?.() });
+        const faixa = criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL +
+            '__faixa-confirmar-correcao-ia');
+        faixa.appendChild(botao);
+        tela.lista.before(faixa);
+    } catch (erro) {
+        console.warn('Confirmar toda correção de IA do progresso:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -1042,6 +1076,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararInterruptorQuadroGlobal(area);
     await prepararCorrecaoIaGlobal(area, tipo);
     area.append(tela.resumo, tela.lista);
+    await prepararConfirmarTodaCorrecaoIaGlobal(tela, tipo);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
     await prepararBotoesNomeGlobal(tipo);

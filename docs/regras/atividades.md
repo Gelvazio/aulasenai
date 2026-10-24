@@ -379,6 +379,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     questões dele; pula as com suspeita de cópia pendente; se faltar nota da IA em alguma, mostra
     **"QUESTÕES SEM NOTA! GERE A CORREÇÃO DE IA DE NOVO!"** e não grava nada. Para isso, depois
     da entrega a IA dá 0 às questões em branco. Código: `assets/js/confirmar-todas-professor.js`.
+  - **✅ CONFIRMAR TODA CORREÇÃO DE IA (2026-10-24, regra global, só discursivas):** botão **só do
+    professor** logo **acima da coluna "Aluno"** do quadro de progresso (à esquerda). Roda o
+    **Confirmar Todas** em cada aluno listado (com os filtros), só os **entregues**, com **nota da
+    IA** e **sem suspeita de cópia pendente**, depois de um **popup de confirmação**. Vale para todo
+    quadro de progresso (código compartilhado: `assets/js/confirmar-toda-correcao-ia-progresso.js`,
+    ligado em `assets/js/progresso-turma-global.js`); os geradores só herdam.
   - **✅ Confirmar Entrega (2026-10-24, regra global de todo gerador de atividade):** botão ao
     lado de **Confirmar Todas** em todo quadro de progresso da turma. **Só o professor** o vê (RLS
     + JWT na gravação). Ao clicar, **entrega a atividade do aluno como está**, mesmo incompleta

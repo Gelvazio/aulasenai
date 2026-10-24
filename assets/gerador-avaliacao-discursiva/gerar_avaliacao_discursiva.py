@@ -19,6 +19,10 @@ de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-disc
 "- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
 automática continua). O professor vê o Progresso da turma GLOBAL em toda atividade
 (assets/js/progresso-turma-global.js), sem campo na fonte.
+Regra GLOBAL (#365), sem campo na fonte: botão "CONFIRMAR TODA CORREÇÃO DE IA" (só professor)
+acima da coluna "Aluno" do Progresso da turma; roda o "Confirmar Todas" em cada aluno listado
+(entregues, com nota da IA, sem suspeita de cópia pendente), após popup de confirmação
+(assets/js/confirmar-toda-correcao-ia-progresso.js).
 Regra GLOBAL (#363), sem campo na fonte: no painel "Respostas dos alunos", os filtros "Mostrar
 Certas / Meia Certas / Erradas" valem POR ALTERNATIVA (a, b, c) e usam a correção do professor
 quando ele já confirmou a alternativa; senão a sugestão da IA (assets/js/mostrar-certas-discursiva.js).

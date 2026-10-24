@@ -277,7 +277,8 @@
 /* "✅ Confirmar Todas" das discursivas (confirmar-todas-professor.js; desativado sem entrega) e
    "📨 Confirmar Entrega" de todas as atividades (confirmar-entrega-professor.js). */
 .progresso-turma__confirmar-todas,
-.progresso-turma__confirmar-entrega {
+.progresso-turma__confirmar-entrega,
+.progresso-turma__confirmar-toda-correcao-ia {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,8 +298,22 @@
     transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
+/* "✅ CONFIRMAR TODA CORREÇÃO DE IA" acima da coluna Aluno (confirmar-toda-correcao-ia-
+   progresso.js): à esquerda, largura do conteúdo, com margem embaixo. */
+.progresso-turma__faixa-confirmar-correcao-ia {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.progresso-turma__confirmar-toda-correcao-ia {
+    width: auto;
+    margin-bottom: 10px;
+    padding: 8px 18px;
+}
+
 .progresso-turma__confirmar-todas:disabled,
-.progresso-turma__confirmar-entrega:disabled {
+.progresso-turma__confirmar-entrega:disabled,
+.progresso-turma__confirmar-toda-correcao-ia:disabled {
     border-color: var(--progresso-turma-borda);
     background: var(--progresso-turma-fundo);
     color: var(--progresso-turma-texto-suave);
@@ -318,7 +333,8 @@
 }
 
 .progresso-turma__confirmar-todas:hover:not(:disabled),
-.progresso-turma__confirmar-entrega:hover:not(:disabled) {
+.progresso-turma__confirmar-entrega:hover:not(:disabled),
+.progresso-turma__confirmar-toda-correcao-ia:hover:not(:disabled) {
     background: var(--progresso-turma-completa-fundo);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     filter: brightness(0.95);
@@ -326,7 +342,8 @@
 
 .progresso-turma__minimo:active:not(:disabled),
 .progresso-turma__confirmar-todas:active:not(:disabled),
-.progresso-turma__confirmar-entrega:active:not(:disabled) {
+.progresso-turma__confirmar-entrega:active:not(:disabled),
+.progresso-turma__confirmar-toda-correcao-ia:active:not(:disabled) {
     box-shadow: none;
     transform: translateY(1px);
 }

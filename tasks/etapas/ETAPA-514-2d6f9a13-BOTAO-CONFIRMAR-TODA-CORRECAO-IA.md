@@ -11,3 +11,5 @@
 
 - **Nível:** PESADO — escrita em massa no banco pelo professor (Jev, sinal de massa)
 - **Modelo:** só Sonnet (neste projeto, nunca Opus)
+- **Entrega:** `assets/js/confirmar-toda-correcao-ia-progresso.js` (novo; roda em cada aluno listado a mesma lógica do "Confirmar Todas", com um popup de resumo antes; aluno sem nota da IA, não entregue ou com suspeita de cópia pendente fica de fora); `assets/js/progresso-turma-global.js` (carrega e põe o botão acima da coluna Aluno, só discursivas, global); `assets/css/progresso-turma-global.css`; `docs/regras/atividades.md`; `.claude/rules/atividades-banco.md`; anotação no gerador `gerar_avaliacao_discursiva.py`. Feito por 3 agentes (módulo, ligação/CSS/docs, revisão).
+- **Verificação:** `node --check` dos JS e `py_compile` ok; revisão por agente sem bug bloqueante (aplicado o aviso "Verificando..."). Só existe "Confirmar Todas" nas discursivas; objetivas não têm esse botão. Conferir na tela: o usuário.
