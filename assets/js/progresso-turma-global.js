@@ -55,14 +55,14 @@ const ARQUIVO_MOSTRAR_QUADRO_PROGRESSO_GLOBAL = 'mostrar-quadro-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
 // de aluno nem gabarito).
 const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
-// Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
-// ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
-// preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
+// Colunas extras por tipo: módulo e função que cria a coluna ({titulo, classeArea, atualizar,
+// montarCelula(aluno), aoMudar}); o painel preenche aoMudar (atualizar depois do botão).
 const COLUNAS_EXTRAS_POR_TIPO_GLOBAL = {
     discursiva: [{ arquivo: 'suspeita-copia-discursiva.js', funcao: 'criarColunaSuspeitaCopia' }],
 };
-// Botões extras ao lado do nome do aluno, por tipo: a função recebe {atividadeId, aluno, aoMudar}
-// e devolve o botão (ex.: "✅ Confirmar Todas" das discursivas).
+// Botões do nome do aluno (recebem {atividadeId, aluno, aoMudar}; devolvem botão ou null).
+const ENTREGA_GLOBAL = { arquivo: 'confirmar-entrega-professor.js',
+    funcao: 'criarBotaoConfirmarEntrega' };
 const BOTOES_NOME_POR_TIPO_GLOBAL = {
     discursiva: [{ arquivo: 'confirmar-todas-professor.js', funcao: 'criarBotaoConfirmarTodas' }],
 };
@@ -395,7 +395,7 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     botao.addEventListener('click', () => abrirMinimoDoAlunoGlobal(aluno));
     const extras = estadoProgressoGlobal.botoesNome.map((criarBotao) => criarBotao({
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
-        aoMudar: estadoProgressoGlobal.atualizarAgora }));
+        aoMudar: estadoProgressoGlobal.atualizarAgora })).filter(Boolean);
     const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
     const campoNota = window.criarCampoQuestoesNota?.({
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
@@ -551,7 +551,7 @@ async function prepararColunasExtrasGlobal(tipo, area) {
  * @param {string} tipo - 'objetiva' ou 'discursiva'.
  */
 async function prepararBotoesNomeGlobal(tipo) {
-    const modulos = BOTOES_NOME_POR_TIPO_GLOBAL[tipo] || [];
+    const modulos = [...(BOTOES_NOME_POR_TIPO_GLOBAL[tipo] || []), ENTREGA_GLOBAL];
     for (const modulo of modulos) {
         try {
             if (typeof window[modulo.funcao] !== 'function') {

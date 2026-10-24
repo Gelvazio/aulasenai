@@ -373,7 +373,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     + JWT na gravação). Ao clicar, **entrega a atividade do aluno como está**, mesmo incompleta
     (questões sem resposta ficam em branco, sem exigir o mínimo de questões). Vive no código
     compartilhado do progresso (`assets/js/progresso-turma-global.js`); os geradores só herdam.
-    Regra anotada na tarefa REGRA-CONFIRMAR-ENTREGA; implementação do botão é outra tarefa.
+    **Implementado (tarefa CONFIRMAR-ENTREGA-BOTAO, 2026-10-24):** `assets/js/confirmar-entrega-professor.js`
+    chama a RPC `professor_marcar_entregue` (sem SQL novo; recusa tentativa já entregue); aparece só
+    para quem ainda não entregou e **não** aparece nas páginas com `data-marcar-entregue="sim"` (lá o
+    "Marcar como entregue" já faz o mesmo). Registrado em `progresso-turma-global.js` para discursiva
+    e objetiva.
   - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
     e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
     **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao

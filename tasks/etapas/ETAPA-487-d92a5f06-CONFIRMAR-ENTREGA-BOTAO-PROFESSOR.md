@@ -39,7 +39,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** módulo único do botão "Confirmar Entrega" (só professor, entrega como está); desativado se `aluno.entregue`; usa a RPC existente, sem SQL novo.
 - **Critérios de Aceitação:** `node --check` ok; função ≤ 45 linhas, JSDoc, constantes nomeadas; sem alterar banco.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/confirmar-entrega-professor.js` (novo) no commit desta entrega · **Verificação:** `node --check` ok; 83 linhas; funções ≤ 45 linhas com JSDoc; usa a RPC `professor_marcar_entregue` (sem SQL novo); botão nulo se já entregue ou se a página tem `data-marcar-entregue="sim"`; executada pelo Sonnet 5.5 (MEDIO, Jev)
 - **JEV-AI-SUGGESTION:** SIM
 
 ### CONFIRMAR-ENTREGA-BOTAO.3 — Ligar nos dois tipos e documentar
@@ -52,5 +52,5 @@
 - **Fonte:** sinais
 - **Descrição:** ligação no quadro compartilhado e documentação.
 - **Critérios de Aceitação:** `node --check` ok; grep mostra o registro nos dois tipos; docs atualizadas; sem regenerar `index.html`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/progresso-turma-global.js` (registro em todos os tipos; `.filter(Boolean)`; continua com 1000 linhas), `assets/css/progresso-turma-global.css`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` no commit desta entrega · **Verificação:** `node --check` ok; `ENTREGA_GLOBAL` anexada a todos os tipos em `prepararBotoesNomeGlobal`; conferir na tela (sem navegador): botão ao lado de Confirmar Todas na discursiva e ao lado do nome na objetiva, só para o professor
 - **JEV-AI-SUGGESTION:** NAO

@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Sonnet 5.5) (local · main · s487) | CONFIRMAR-ENTREGA-BOTAO.2 e .3 ([487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md)) — implementando o botão | 🔄 Ativa | 2026-10-24 13:05 |
+| Claude Code (Sonnet 5.5) (local · main · s487) | CONFIRMAR-ENTREGA-BOTAO concluída ([487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md)) | ⏹️ Encerrada | 2026-10-24 13:05 |
 | Claude Code (Sonnet 5.5) (local · main · s486) | REGRA-CONFIRMAR-ENTREGA.1 concluída ([486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md)) | ⏹️ Encerrada | 2026-10-24 12:25 |
 | Claude Code (Sonnet 5.5) (local · main · s276) | #276.0 concluída ([404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md)) | ⏹️ Encerrada | 2026-10-24 |
 | Claude Code (Sonnet 5.5) (local · main · rules-ai) | VERCEL-SEM-DEPLOY-DE-CONTROLE.1 concluída ([ETAPA-484](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md)) — `rules-local/` fora do deploy | ⏹️ Encerrada | 2026-10-23 18:00 |
@@ -94,9 +94,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
-| **CONFIRMAR-ENTREGA-BOTAO** | **Botão "Confirmar Entrega" no Progresso da turma (professor)** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) | — |
-| CONFIRMAR-ENTREGA-BOTAO.2 | Criar `assets/js/confirmar-entrega-professor.js` | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s487) (desde 2026-10-24 13:05) | [487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) | — |
-| CONFIRMAR-ENTREGA-BOTAO.3 | Ligar nos dois tipos e documentar | 🟡 Média | MEDIO · só Sonnet · effort medium | CONFIRMAR-ENTREGA-BOTAO.2 | ⬜ Pendente | — | [487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |

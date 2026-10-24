@@ -261,8 +261,10 @@
     cursor: pointer;
 }
 
-/* Discursivas: "✅ Confirmar Todas" (confirmar-todas-professor.js); desativado sem entrega. */
-.progresso-turma__confirmar-todas {
+/* "✅ Confirmar Todas" das discursivas (confirmar-todas-professor.js; desativado sem entrega) e
+   "📨 Confirmar Entrega" de todas as atividades (confirmar-entrega-professor.js). */
+.progresso-turma__confirmar-todas,
+.progresso-turma__confirmar-entrega {
     padding: 2px 6px;
     border: 1px solid var(--progresso-turma-confirmar);
     border-radius: var(--progresso-turma-raio);
@@ -274,7 +276,8 @@
     cursor: pointer;
 }
 
-.progresso-turma__confirmar-todas:disabled {
+.progresso-turma__confirmar-todas:disabled,
+.progresso-turma__confirmar-entrega:disabled {
     border-color: var(--progresso-turma-borda);
     background: var(--progresso-turma-fundo);
     color: var(--progresso-turma-texto-suave);
