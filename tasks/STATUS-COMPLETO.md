@@ -1505,6 +1505,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| #353-41c1f170 | Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX | 🟠 Alta | — | — | ⬜ Pendente | — (não reservável) | [502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) | — |
+| #353.1 | Atualizar o card de UI/UX e o resumo no índice do curso · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ⬜ Pendente | — | [502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2041,6 +2043,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 497-b8f4c6d0 | CORRECAO-IA-PAINEL: Painel "Executar correção de IA" no quadro de progresso | [ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) |
 | 498-e563a26b | FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL: atividades das aulas 01 a 20 | [ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) |
 | 499-c9a5d7e1 | PAINEL-IA-DESTAQUE: Painel de correção de IA centralizado, com ícones e piscando | [ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md) |
+| 502-344fcb24 | Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX (#353, pedida em 2026-10-24) | [ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

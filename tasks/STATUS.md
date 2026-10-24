@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ⬜ Pendente
+  - #353.1 — Atualizar o card de UI/UX e o resumo no índice do curso · ⬜ Pendente · `LEVE · só Haiku`
 - #343-1b2043a2 — [Avaliações finais de Fundamentos de UI/UX (objetiva, prática, média final e menu)](etapas/ETAPA-501-8450b970-AVALIACOES-FINAIS-FUNDAMENTOS-UI-UX.md) · ✅ Concluído · Devin (local · main)
   - #343.1 — Fontes das avaliações em CONTEUDO/ · ✅ Concluído · Devin · `LEVE` (mesma classificação das #276.155–157)
   - #343.2 — Páginas, média final, menu e índice · ✅ Concluído · `PESADO` (pedido direto do usuário nesta sessão; equivale às #276.154/160)
