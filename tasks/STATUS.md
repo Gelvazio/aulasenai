@@ -105,9 +105,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
-| **FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL** | **Atividades objetivas e discursivas das aulas 01 a 20 (tarefa global)** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [498-e563a26b](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) | — |
-| FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.1 | Conferir e entregar as atividades das aulas 01 a 20 · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main · s498) (desde 2026-10-24 14:10) | [498-e563a26b](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) | — |
-| FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.2 | Gabaritos das discursivas das aulas 01 a 19 · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main · s498) (desde 2026-10-24 14:14) | [498-e563a26b](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |

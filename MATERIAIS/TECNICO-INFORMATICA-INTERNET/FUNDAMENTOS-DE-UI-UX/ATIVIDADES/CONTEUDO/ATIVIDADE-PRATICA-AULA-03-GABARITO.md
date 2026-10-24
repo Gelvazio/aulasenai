@@ -1,0 +1,245 @@
+# Padrão de Resposta — Atividade Prática da Aula 03 (uso exclusivo do professor e da correção por IA)
+
+Arquivo fora do site (nome contém GABARITO). Não publicar.
+
+**Regra geral de correção de cada tópico:** nota cheia = atende a todos os critérios com as palavras do aluno; metade = atende parcialmente; zero = em branco, errado, fora do tema ou copiado.
+
+### ITEM 01-a
+**Resposta esperada:** O botão cinza-claro sobre fundo branco tem contraste muito baixo, então, sob sol forte, ele quase some da tela. O texto sofre o mesmo efeito e deixa de ser visto.
+**Critérios:** Nota cheia: descreve que o botão e o texto somem ou ficam quase invisíveis sob luz solar por causa do contraste baixo entre cinza-claro e branco. Metade: identifica que o botão está difícil de ver, mas sem relacionar ao contraste ou à luz do sol. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 01-b
+**Resposta esperada:** Luminância é a quantidade de luz emitida ou refletida por uma cor, e é o fator mais decisivo para o contraste e a legibilidade do texto. Quando a luminância do texto e a do fundo ficam próximas, o olho não distingue um do outro, principalmente sob luz forte.
+**Critérios:** Nota cheia: define luminância como quantidade de luz e relaciona a diferença de luminância entre texto e fundo com a legibilidade, citando o caso do sol forte. Metade: relaciona contraste e legibilidade, mas sem explicar luminância ou sem citar o caso. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 01-c
+**Resposta esperada:** Sem conseguir ler as instruções, o paciente não confirma a consulta, pode desistir do agendamento ou cometer erro ao preencher a tela. Isso exclui o usuário do serviço, que é o efeito que a aula chama de inviabilizar serviços essenciais.
+**Critérios:** Nota cheia: indica uma consequência concreta para o usuário (não confirmar, desistir, errar ou ficar sem o serviço) ligada à falta de leitura. Metade: cita uma consequência genérica ("ele fica perdido") sem relação com a leitura. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 02-a
+**Resposta esperada:** Matiz (hue) é a cor pura em si, a identidade básica da cor, como vermelho, azul, amarelo ou verde.
+**Critérios:** Nota cheia: define matiz como a cor pura ou a identidade básica da cor, com exemplos ou com as palavras do aluno. Metade: dá uma definição vaga, como "é a cor", sem diferenciar a cor em si. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 02-b
+**Resposta esperada:** Saturação indica a pureza e a vivacidade da cor: cores muito saturadas chamam atenção demais e cansam, e cores desaturadas acalmam. Brilho (luminância) é a quantidade de luz emitida pela cor, e é o que cria o contraste com o fundo.
+**Critérios:** Nota cheia: diferencia saturação (pureza, vivacidade) de brilho (quantidade de luz), com as palavras do aluno. Metade: define um dos dois atributos corretamente e o outro de forma vaga. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 02-c
+**Resposta esperada:** O brilho (luminância) é o atributo que mais influencia o contraste e a legibilidade, porque a leitura depende da diferença de luz entre texto e fundo, e não da cor em si. Duas cores com o mesmo matiz podem ter brilhos diferentes e gerar leituras muito distintas.
+**Critérios:** Nota cheia: indica o brilho (luminância) como o atributo principal e justifica pela diferença de luz entre texto e fundo. Metade: indica o brilho, sem justificar, ou cita a saturação com justificativa parcial. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 03-a
+**Resposta esperada:** No círculo cromático, as 12 cores são organizadas em uma roda contínua, com as primárias, as secundárias e as terciárias, e as relações entre elas são medidas pelos ângulos na roda.
+**Critérios:** Nota cheia: descreve a roda com as 12 cores e pelo menos a ideia de primárias, secundárias e terciárias ligadas em sequência. Metade: menciona a roda ou as cores principais, sem a organização. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 03-b
+**Resposta esperada:** A harmonia monocromática usa uma única matiz, variando só saturação e brilho. Tem risco quase zero de combinações que colidam visualmente, mas exige cuidado para que os botões de ação não fiquem apagados.
+**Critérios:** Nota cheia: explica que usa uma só matiz e aponta uma vantagem (coesão, sem colisão) e um cuidado (botões apagados ou pouco destacados). Metade: explica a harmonia e cita só a vantagem ou só o cuidado. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 03-c
+**Resposta esperada:** A harmonia análoga usa cores vizinhas no círculo, como azul, azul-esverdeado e verde, e produz uma sensação natural, relaxante e coesa. Na interface, serve para agrupar categorias de conteúdo semelhantes, e não para diferenciar ações como "Salvar" e "Excluir".
+**Critérios:** Nota cheia: explica que as cores são vizinhas no círculo e indica um uso adequado (categorias similares, por exemplo), citando que não serve para diferenciar ações. Metade: explica as cores vizinhas, mas indica um uso pouco adequado ou sem justificar. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 04-a
+**Resposta esperada:** Cores complementares ficam em posições diametralmente opostas no círculo cromático. Um exemplo é o azul e o laranja, ou o roxo e o amarelo.
+**Critérios:** Nota cheia: define complementares como cores opostas no círculo e dá um par correto (azul e laranja, roxo e amarelo ou outro par oposto). Metade: define de forma vaga ou dá um par sem explicar a oposição. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 04-b
+**Resposta esperada:** A harmonia complementar é indicada para botões de conversão e chamadas para ação (CTA), porque o choque entre as cores cria o maior nível de energia visual e destaca a ação principal.
+**Critérios:** Nota cheia: indica botões de ação principal, botões de conversão ou CTA, e relaciona ao destaque ou à energia visual. Metade: indica um elemento de interface sem relacionar ao destaque. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 04-c
+**Resposta esperada:** Quando há texto fino sobre uma cor complementar pura, sem contraste de brilho, as duas cores parecem vibrar e o texto "treme" na tela, o que prejudica a leitura. Por isso a aula diz para não colocar texto fino nessa combinação sem contraste de brilho.
+**Critérios:** Nota cheia: descreve a vibração cromática (o texto treme ou fica instável) e a associa a texto fino sobre complementar sem contraste de brilho. Metade: menciona a vibração ou o texto fino, sem a relação completa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 05-a
+**Resposta esperada:** Os cinco papéis da paleta funcional são: cor primária (ação principal e identificação visual), cor secundária (filtros, abas ativas e apoio visual), neutro de fundo (respiro visual), neutro de texto (alto contraste para leitura) e cor de alerta/status (confirmação ou indisponibilidade).
+**Critérios:** Nota cheia: lista os cinco papéis (primária, secundária, neutro de fundo, neutro de texto e alerta/status), com as palavras do aluno. Metade: lista três ou quatro papéis corretos. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 05-b
+**Resposta esperada:** A cor primária define a marca e a ação principal, como o botão de confirmação do agendamento. Ela deve destacar a ação que o usuário mais precisa executar.
+**Critérios:** Nota cheia: indica que a primária define a marca e a ação principal e cita o botão de confirmação ou ação de destaque. Metade: indica a função de destaque sem o exemplo ou sem a ideia de ação principal. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 05-c
+**Resposta esperada:** O neutro de texto é a cor do texto (como o cinza escuro ou o preto) e precisa de alto contraste com o fundo para que a leitura seja feita sem esforço. Sem esse contraste, o texto fica difícil de ler, principalmente em condições de luz forte.
+**Critérios:** Nota cheia: indica que o neutro de texto é a cor do texto e explica que o alto contraste garante leitura sem esforço. Metade: indica a função do texto, sem justificar o contraste. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 06-a
+**Resposta esperada:** O verde costuma indicar sucesso e confirmação (horário livre, ação concluída). O vermelho indica alerta e erro (lotado, falha ou exclusão irreversível).
+**Critérios:** Nota cheia: indica a função do verde (sucesso ou confirmação) e a do vermelho (alerta ou erro). Metade: indica só uma das duas funções corretamente. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 06-b
+**Resposta esperada:** O azul é considerado neutro e confiável porque é uma cor de ação e informação, usada em links, status informativos e botões primários, sem carregar um sentido forte de perigo ou sucesso.
+**Critérios:** Nota cheia: explica que o azul é neutro e confiável e cita seu uso para ação ou informação (links, botões primários ou status informativos). Metade: diz que o azul é confiável, sem a justificativa de neutralidade ou o uso. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 06-c
+**Resposta esperada:** Uma cor de status não deve transmitir a informação sozinha porque pessoas com daltonismo vermelho-verde não distinguem verde e vermelho. Por isso a informação deve vir também com ícone ou texto complementar, como "Livre" ou "Lotado".
+**Critérios:** Nota cheia: explica que o daltonismo impede a distinção de cores e indica um reforço (ícone ou texto). Metade: indica o reforço, sem o motivo do daltonismo. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 07-a
+**Resposta esperada:** O problema é de hierarquia visual: as ações de confirmar e cancelar têm a mesma cor e o mesmo peso, então o usuário não distingue qual é a ação principal e qual é a de risco.
+**Critérios:** Nota cheia: identifica que os dois botões têm o mesmo peso e cor, sem hierarquia visual, e liga isso ao erro de cancelar. Metade: aponta a confusão entre os botões, sem falar em hierarquia. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 07-b
+**Resposta esperada:** A ação primária recebe cor sólida forte, como o botão de confirmar. A ação de cancelamento recebe tom neutro ou contorno vazado, sem disputar a atenção com a primária.
+**Critérios:** Nota cheia: propõe cor sólida forte para a ação primária e tom neutro ou contorno vazado para o cancelamento. Metade: propõe a diferenciação, mas sem especificar o tipo de cor ou o contorno. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 07-c
+**Resposta esperada:** Com a regra, a ação de confirmar se destaca e o cancelar deixa de chamar atenção, então o usuário em correria tem menos chance de tocar no botão errado e perder a vaga.
+**Critérios:** Nota cheia: explica que a diferença visual reduz o clique por engano, ligando à pressa do usuário e à perda de vaga ou consulta. Metade: diz que reduz o erro, sem relacionar à pressa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 08-a
+**Resposta esperada:** O efeito carnaval é o erro de usar cores saturadas diferentes em cada card, botão e menu, sem nenhum critério semântico, o que deixa a tela caótica.
+**Critérios:** Nota cheia: descreve o uso de muitas cores saturadas sem critério em cards, botões ou menus. Metade: descreve o excesso de cor, sem o critério ausente. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 08-b
+**Resposta esperada:** A sobrecarga cognitiva acontece quando o cérebro do usuário tenta decodificar o significado de cada cor, o que o cansa rapidamente e atrapalha a decisão.
+**Critérios:** Nota cheia: explica que a sobrecarga é o esforço mental para interpretar muitas cores e que isso cansa e prejudica a decisão. Metade: define a sobrecarga de forma vaga, sem o efeito no usuário. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 08-c
+**Resposta esperada:** A perda de hierarquia acontece porque, quando tudo quer chamar a atenção ao mesmo tempo, nada se destaca. O usuário não sabe por onde começar.
+**Critérios:** Nota cheia: explica que todos os elementos disputam atenção e, por isso, nenhum se destaca, relacionando à falta de prioridade visual. Metade: menciona a perda de hierarquia, sem o motivo. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 09-a
+**Resposta esperada:** Contraste é a diferença mensurável de luminância entre o texto (ou o elemento) em primeiro plano e a superfície de fundo, que torna o objeto distinguível.
+**Critérios:** Nota cheia: define contraste como diferença de luminância (ou de brilho) entre primeiro plano e fundo, com as palavras do aluno. Metade: define contraste como diferença de cor, sem a luminância. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 09-b
+**Resposta esperada:** A taxa mínima para texto normal é 4,5:1 e para texto grande é 3,0:1. Texto grande (títulos acima de 18pt, ou negrito a partir de 14pt) pode ter taxa menor porque é lido com mais facilidade pelo tamanho das letras.
+**Critérios:** Nota cheia: indica 4,5:1 para texto normal e 3,0:1 para texto grande e justifica a diferença pelo tamanho ou pela legibilidade. Metade: indica os dois valores, sem justificar, ou só um valor correto com justificativa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 09-c
+**Resposta esperada:** Para ícones, bordas e controles de formulário, a taxa mínima é 3,0:1 contra o fundo da tela.
+**Critérios:** Nota cheia: indica 3,0:1 para ícones e bordas de controles de formulário. Metade: indica um valor próximo ou correto sem citar ícones ou bordas. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 10-a
+**Resposta esperada:** Não. A combinação de texto cinza sobre fundo branco com taxa de 3,2:1 não atende ao padrão WCAG AA para texto corrido.
+**Critérios:** Nota cheia: responde que não atende e justifica pela taxa. Metade: responde sem justificativa ou com justificativa incompleta. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 10-b
+**Resposta esperada:** O nível AA exige taxa mínima de 4,5:1 para texto corrido. O valor de 3,2:1 está abaixo desse mínimo, então reprova.
+**Critérios:** Nota cheia: cita 4,5:1 como mínimo do AA para texto corrido e compara com 3,2:1, concluindo que é insuficiente. Metade: cita o mínimo correto, sem comparar, ou compara sem citar o valor exato. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 10-c
+**Resposta esperada:** A correção é escurecer o cinza do texto (ou usar um cinza mais escuro, ou o preto) até chegar a no mínimo 4,5:1 contra o fundo branco. Com mais contraste de luminância, o texto fica mais nítido e fácil de ler.
+**Critérios:** Nota cheia: propõe escurecer o texto ou trocar por cor de maior contraste, com meta de no mínimo 4,5:1, e explica o ganho de leitura. Metade: propõe um ajuste de cor sem a taxa mínima ou sem explicar o ganho. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 11-a
+**Resposta esperada:** Pessoas com daltonismo vermelho-verde enxergam o vermelho e o cinza como tons parecidos (marrom ou mostarda acinzentado). Por isso, o campo com erro não se destaca e o usuário não percebe onde está o problema.
+**Critérios:** Nota cheia: explica que o daltonismo vermelho-verde não distingue a mudança de cor e que, por isso, o usuário não percebe o erro. Metade: diz que a pessoa não percebe o erro, sem explicar o daltonismo. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 11-b
+**Resposta esperada:** Confiar só na cor é um erro de acessibilidade porque nem todos percebem a cor da mesma forma. A regra da WCAG (e da aula) é nunca transmitir uma mensagem crítica só pela cor.
+**Critérios:** Nota cheia: explica que a cor não é percebida por todos e cita a regra de não transmitir mensagem crítica só pela cor (WCAG). Metade: diz que é um erro de acessibilidade, sem a razão ou a regra. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 11-c
+**Resposta esperada:** O formulário deve comunicar o erro também por outro meio, como um ícone de alerta, um texto de mensagem ("Campo obrigatório: informe a data") ou um contorno mais grosso, além da cor. Esses sinais funcionam para quem não distingue a cor.
+**Critérios:** Nota cheia: propõe um sinal além da cor (ícone, texto ou forma) e explica que ele funciona para quem não enxerga a cor. Metade: propõe um sinal, sem explicar por que funciona. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 12-a
+**Resposta esperada:** O nível AA é a exigência padrão para produtos digitais comerciais. O nível AAA é o nível máximo, indicado para governos e serviços críticos.
+**Critérios:** Nota cheia: diferencia AA como padrão (produtos comerciais) e AAA como nível máximo (governos ou serviços críticos). Metade: diferencia só por "AAA é mais exigente", sem os usos. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 12-b
+**Resposta esperada:** A etapa de validação de contraste é o cálculo matemático entre tons claros e escuros, feito para verificar se a combinação atinge a taxa exigida pelo nível escolhido.
+**Critérios:** Nota cheia: explica a validação como cálculo da relação entre tons claros e escuros para conferir a taxa exigida. Metade: diz que é uma conferência de contraste, sem o cálculo ou a taxa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 12-c
+**Resposta esperada:** A recomendação é o nível AAA para um serviço público crítico, como o agendamento de atendimentos, porque a aula indica o AAA para governos e serviços críticos, e o usuário pode estar em condições variadas de visão e de luz.
+**Critérios:** Nota cheia: recomenda o AAA para serviço público crítico e justifica com a indicação da aula ou com a variedade de usuários e condições. Metade: recomenda AAA sem justificar, ou recomenda AA com justificativa coerente. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 13-a
+**Resposta esperada:** Duas ferramentas apresentadas na aula são o WebAIM Contrast Checker (site gratuito) e os plugins em editores gráficos, que alertam falhas durante o desenho. Também vale citar a ferramenta de inspeção do navegador.
+**Critérios:** Nota cheia: cita duas ferramentas da aula (WebAIM Contrast Checker, plugins de editores gráficos ou inspecionar elemento do navegador). Metade: cita uma ferramenta correta. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 13-b
+**Resposta esperada:** No WebAIM Contrast Checker, o aluno insere o código hexadecimal da cor de fundo e o da cor do texto, e a ferramenta mostra a taxa exata, que deve ser comparada com 4,5:1 (texto normal) ou 3,0:1 (texto grande).
+**Critérios:** Nota cheia: descreve a inserção dos dois códigos hexadecimais e a leitura da taxa comparada ao mínimo. Metade: descreve a inserção dos códigos, sem a comparação com o mínimo. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 13-c
+**Resposta esperada:** A ferramenta de desenvolvedor do navegador, ao inspecionar um texto, já calcula e mostra a nota de contraste. Isso permite conferir a taxa do texto real da tela, sem depender só da percepção visual.
+**Critérios:** Nota cheia: explica que a inspeção mostra a nota de contraste do elemento e que isso dá uma conferência objetiva da tela. Metade: diz que a inspeção ajuda, sem explicar a nota de contraste. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 14-a
+**Resposta esperada:** A vibração cromática é o efeito visual de instabilidade que aparece quando um texto fino fica sobre uma cor complementar pura, sem diferença de brilho entre eles. O texto parece tremer na tela.
+**Critérios:** Nota cheia: descreve a vibração como instabilidade ou tremor do texto causado pela combinação de complementares sem contraste de brilho. Metade: descreve o tremor, sem a causa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 14-b
+**Resposta esperada:** A falta de contraste de brilho prejudica a leitura porque o olho identifica o texto pela diferença de luz, e não pela diferença de cor. Quando as duas cores têm o mesmo brilho, o texto perde a nitidez.
+**Critérios:** Nota cheia: explica que o contraste de brilho (luminância) é o que separa texto e fundo, e que sem ele a leitura perde nitidez. Metade: diz que o brilho é importante, sem explicar a relação com a leitura. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 14-c
+**Resposta esperada:** A correção é manter a harmonia complementar só no botão ou no destaque, e usar um texto escuro ou claro com alto contraste de brilho sobre o fundo, sem colocar texto fino na cor complementar pura. Também vale escurecer ou clarear o tom do fundo ou do texto.
+**Critérios:** Nota cheia: propõe manter a harmonia e aumentar o contraste de brilho do texto (texto escuro ou claro, ou tom de fundo diferente), sem texto fino na complementar pura. Metade: propõe uma mudança de cor que melhora a leitura, sem manter a harmonia. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 15-a
+**Resposta esperada:** O aluno identifica a harmonia escolhida (monocromática, análoga ou complementar) e explica a relação entre as cores da paleta, por exemplo, uma cor primária e uma secundária vizinha no círculo.
+**Critérios:** Nota cheia: nomeia uma harmonia e descreve a relação entre as cores da paleta (vizinhas, mesma matiz ou opostas). Metade: nomeia a harmonia, sem descrever a relação. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 15-b
+**Resposta esperada:** A escolha se justifica pela coerência visual (as cores conversam entre si) e pelo objetivo da tela, que é mostrar horários com clareza e destacar a ação principal. Por exemplo, uma harmonia análoga dá coesão, e a cor primária destaca o botão de confirmar.
+**Critérios:** Nota cheia: justifica a harmonia pela coerência visual e pelo objetivo da tela (horários e ação principal), com base na aula. Metade: justifica só pela coerência ou só pelo objetivo. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 15-c
+**Resposta esperada:** O aluno descreve como conferiu o contraste do texto com o fundo, usando uma ferramenta como o WebAIM Contrast Checker ou a inspeção do navegador, e confirmou que a taxa atinge 4,5:1.
+**Critérios:** Nota cheia: descreve a conferência com uma ferramenta ou método e confirma a taxa de 4,5:1 entre texto e fundo. Metade: descreve a conferência, sem a taxa exigida. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 16-a
+**Resposta esperada:** A condição a testar é o uso do celular na rua, sob luz solar forte, ou com o brilho da tela reduzido para economizar bateria. Nessas situações, o contraste cai e a leitura fica mais difícil.
+**Critérios:** Nota cheia: descreve pelo menos uma das condições (sol forte, rua ou brilho reduzido) e relaciona à perda de contraste. Metade: cita a condição sem relacionar ao contraste. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 16-b
+**Resposta esperada:** Alto contraste garante que a interface continue operacional em condições variadas porque a leitura depende da diferença de luminância, que se mantém mesmo com luz forte ou brilho baixo. Assim, a interface segue útil para todo mundo.
+**Critérios:** Nota cheia: explica que o alto contraste mantém a leitura mesmo com luz forte ou brilho reduzido, relacionando à luminância. Metade: diz que o contraste ajuda, sem a condição variada. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 16-c
+**Resposta esperada:** O aluno testa a paleta com um colega em avaliação em pares, verificando no celular se o texto é legível sob o sol e se o botão principal se destaca. Também pode conferir a taxa de contraste com uma ferramenta e simular o brilho reduzido.
+**Critérios:** Nota cheia: descreve o teste em pares com o celular e pelo menos um dos critérios (leitura sob sol ou destaque do botão), com a avaliação em pares da aula. Metade: descreve um teste sem a avaliação em pares ou sem as condições. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 17-a
+**Resposta esperada:** Os quatro critérios de avaliação são: completude (5 cores funcionais), harmonia (relação lógica no círculo cromático), contraste (texto legível com taxa de 4,5:1) e justificativa (explicação técnica de cada escolha).
+**Critérios:** Nota cheia: lista os quatro critérios (completude, harmonia, contraste e justificativa). Metade: lista dois ou três critérios corretos. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 17-b
+**Resposta esperada:** O critério de contraste exige que o texto atinja a taxa mínima de 4,5:1 contra o fundo, o que garante leitura confortável, inclusive sob luz solar forte.
+**Critérios:** Nota cheia: indica a taxa de 4,5:1 para o texto e explica que garante leitura confortável. Metade: indica o critério, sem o valor. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 17-c
+**Resposta esperada:** O colega verifica se o botão principal (cor primária, sólida e forte) se destaca com clareza imediata e se não disputa a atenção com o botão secundário, que deve ter menos peso visual.
+**Critérios:** Nota cheia: indica que o colega compara o destaque do botão principal com o do secundário e verifica se a ação primária se destaca com clareza. Metade: indica o destaque do botão principal, sem a comparação com o secundário. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 18-a
+**Resposta esperada:** O neutro de fundo é a cor da superfície da tela (branco puro, cinza gelo ou um dark mode suave), que dá respiro visual ao conteúdo.
+**Critérios:** Nota cheia: define o neutro de fundo como a cor da superfície ou área de respiro da tela, com exemplos ou com as palavras do aluno. Metade: define o fundo sem a função de respiro. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 18-b
+**Resposta esperada:** Um fundo neutro não cansa a visão, porque não chama atenção em excesso e permite que o olho descanse entre as informações. Um fundo colorido forte, ao contrário, cansa e disputa atenção com o conteúdo.
+**Critérios:** Nota cheia: explica que o fundo neutro dá descanso à visão e evita cansaço, em comparação com um fundo colorido forte. Metade: diz que o fundo neutro é melhor, sem explicar o descanso. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 18-c
+**Resposta esperada:** O fundo e o texto devem ser escolhidos juntos porque a legibilidade depende do contraste entre eles. Por isso o neutro de texto precisa de no mínimo 4,5:1 contra o neutro de fundo escolhido.
+**Critérios:** Nota cheia: explica que fundo e texto precisam ser escolhidos juntos porque o contraste entre eles define a leitura, e cita a taxa de 4,5:1. Metade: explica que devem ser escolhidos juntos, sem o contraste ou a taxa. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 19-a
+**Resposta esperada:** A cor secundária equilibra a tela e é usada em elementos de apoio, como seletores de data, filtros, abas ativas e outros elementos secundários.
+**Critérios:** Nota cheia: define a cor secundária como cor de apoio ou equilíbrio da tela, com as palavras do aluno. Metade: define de forma vaga, sem o papel de apoio. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 19-b
+**Resposta esperada:** Dois usos típicos da cor secundária são os filtros e as abas ativas, e os seletores de data ou outros elementos de apoio.
+**Critérios:** Nota cheia: cita dois usos típicos corretos (filtros, abas ativas, seletores de data ou elementos de apoio). Metade: cita um uso correto. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 19-c
+**Resposta esperada:** A cor primária deve destacar a ação principal (como o botão de confirmação), enquanto a secundária serve de apoio. Se as duas tiverem o mesmo papel, o usuário não sabe qual é a ação principal, e a hierarquia visual se perde.
+**Critérios:** Nota cheia: diferencia o papel de destaque da primária do papel de apoio da secundária e relaciona a mesma função à perda de hierarquia. Metade: diferencia os papéis, sem relacionar à hierarquia. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 20-a
+**Resposta esperada:** Cada cor precisa de justificativa escrita para que o cliente e a equipe entendam a função dela na tela e possam aprovar a escolha com base em critérios técnicos, e não só no gosto.
+**Critérios:** Nota cheia: explica que a justificativa registra a função de cada cor e permite avaliação técnica, e não só estética. Metade: diz que a justificativa é importante, sem o motivo técnico. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 20-b
+**Resposta esperada:** Um referencial técnico é a WCAG, e uma escolha ligada a ele é o contraste mínimo de 4,5:1 para o texto corrido, conferido com ferramenta, em vez de confiar só na percepção.
+**Critérios:** Nota cheia: relaciona uma escolha de cor a um referencial da aula (WCAG, taxa de 4,5:1 ou 3,0:1) e explica a ligação. Metade: cita o referencial, sem ligá-lo à escolha. Zero: em branco, errado, fora do tema ou copiado.
+
+### ITEM 20-c
+**Resposta esperada:** Para baixa visão, a paleta usa alto contraste entre texto e fundo, para que a leitura funcione mesmo com dificuldade visual. Para daltonismo, a paleta não depende só da cor: os status e os erros vêm também com ícone ou texto.
+**Critérios:** Nota cheia: explica o alto contraste para baixa visão e a sinalização além da cor para daltonismo. Metade: cita só um dos dois públicos com justificativa. Zero: em branco, errado, fora do tema ou copiado.
