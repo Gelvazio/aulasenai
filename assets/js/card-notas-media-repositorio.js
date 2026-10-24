@@ -1,6 +1,7 @@
 // Card "Notas e média" do índice de atividades: acesso a dados (DOM do índice e Supabase).
 // Notas: RPC notas_media_final (aluno logado) e notas_aluno_para_professor (professor). Config da
 // média por turma: tabela media_atividade_config (RLS + JWT do usuário logado; nunca service_role).
+// Confirmação da média por aluno×matéria: tabela media_finalizada.
 // Depende de js/supabase.js (SUPABASE, sbGet, sbH, obterClienteSupabase).
 
 const RPC_NOTAS_ALUNO_CARD = 'notas_media_final';
@@ -19,6 +20,14 @@ const MSG_PESO_INVALIDO_CARD = 'Peso inválido';
 const MSG_SEM_CLIENTE_CARD = 'Não foi possível conectar ao banco de dados.';
 const MSG_FALHA_GRAVAR_CARD = 'Não foi possível gravar a configuração da média.';
 const REGEX_EMOJI_INICIAL_CARD = /^[^\p{L}\p{N}]+/u;
+const TABELA_MATERIA_CARD = 'materia';
+const TABELA_MEDIA_FINALIZADA_CARD = 'media_finalizada';
+const PASTA_ATIVIDADES_CARD = 'ATIVIDADES';
+const CONSULTA_MATERIA_CARD = 'select=id&descricao=ilike.';
+const MSG_SEM_ALUNO_MEDIA_CARD = 'Aluno não informado para a confirmação da média.';
+const MSG_SEM_MATERIA_MEDIA_CARD = 'Matéria não informada para a confirmação da média.';
+const MSG_SEM_TURMA_MEDIA_CARD = 'Turma não informada para a confirmação da média.';
+const MSG_FALHA_GRAVAR_MEDIA_CARD = 'Não foi possível gravar a confirmação da média.';
 
 /**
  * Converte o href de um link no caminho gravado em atividade.pagina.
@@ -236,4 +245,64 @@ async function gravarConfigDaAtividade({ atividadeId, turma, naMedia, peso }) {
 
     const detalhe = await resposta.text();
     throw new Error(detalhe || MSG_FALHA_GRAVAR_CARD);
+}
+
+/**
+ * Id da matéria da página pela pasta imediatamente antes de ATIVIDADES no endereço
+ * (.../<MATERIA>/ATIVIDADES/index.html), com espaços no lugar dos hífens, como em
+ * materia.descricao.
+ * @returns {Promise<number|null>} Id da matéria ou null quando não há pasta ATIVIDADES
+ *     no caminho ou a busca não devolve exatamente uma linha.
+ */
+async function lerMateriaIdDaPagina() {
+    const partes = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+    const posicao = partes.map((parte) => parte.toUpperCase())
+        .lastIndexOf(PASTA_ATIVIDADES_CARD);
+    if (posicao < 1) return null;
+
+    const nome = partes[posicao - 1].replace(/-/g, ' ');
+    const linhas = await sbGet(TABELA_MATERIA_CARD,
+        CONSULTA_MATERIA_CARD + encodeURIComponent(nome));
+    if (linhas.length !== 1) return null;
+
+    return Number(linhas[0].id);
+}
+
+/**
+ * Alunos com a média confirmada pelo professor na matéria.
+ * @param {number} materiaId - Id da matéria.
+ * @returns {Promise<Set<string>>} Ids dos alunos com media_finalizada = true.
+ */
+async function listarMediaFinalizadaDaMateria(materiaId) {
+    if (!materiaId) return new Set();
+
+    const linhas = await sbGet(TABELA_MEDIA_FINALIZADA_CARD,
+        'select=aluno_id&materia_id=eq.' + materiaId + '&media_finalizada=eq.true');
+    return new Set(linhas.map((linha) => String(linha.aluno_id)));
+}
+
+/**
+ * Grava (upsert) a confirmação da média do aluno na matéria.
+ * @param {{alunoId: string, materiaId: number, turma: string, finalizada: boolean}} dados -
+ *     Dados da confirmação.
+ * @returns {Promise<void>}
+ * @throws {Error} Se faltar aluno, matéria ou turma, ou o banco recusar a gravação.
+ */
+async function gravarMediaFinalizada({ alunoId, materiaId, turma, finalizada }) {
+    if (!alunoId) throw new Error(MSG_SEM_ALUNO_MEDIA_CARD);
+    if (!materiaId) throw new Error(MSG_SEM_MATERIA_MEDIA_CARD);
+    if (!turma) throw new Error(MSG_SEM_TURMA_MEDIA_CARD);
+
+    const resposta = await fetch(SUPABASE.URL + '/rest/v1/' + TABELA_MEDIA_FINALIZADA_CARD +
+        '?on_conflict=aluno_id,materia_id', {
+        method: 'POST',
+        headers: { ...(await sbH()),
+            Prefer: 'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify({ aluno_id: alunoId, materia_id: materiaId,
+            turma_codigo: turma, media_finalizada: Boolean(finalizada) }),
+    });
+    if (resposta.ok) return;
+
+    const detalhe = await resposta.text();
+    throw new Error(detalhe || MSG_FALHA_GRAVAR_MEDIA_CARD);
 }
