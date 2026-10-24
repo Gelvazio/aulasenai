@@ -1,0 +1,45 @@
+/* Painel "Correção de IA" do Progresso da turma (assets/js/correcao-ia-progresso.js). */
+
+.correcao-ia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    align-self: flex-end;
+    max-width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--progresso-turma-borda, #cbd5e0);
+    border-radius: 8px;
+    background: var(--progresso-turma-fundo, #ffffff);
+    font-size: 13px;
+    color: var(--progresso-turma-texto-suave, #4a5568);
+}
+
+.correcao-ia__botao {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--progresso-turma-botao, #2b6cb0);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.correcao-ia__botao:hover {
+    background: var(--progresso-turma-botao-hover, #2c5282);
+}
+
+.correcao-ia__botao:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.correcao-ia__mensagem {
+    font-weight: 600;
+}
+
+.correcao-ia__mensagem:empty {
+    display: none;
+}

@@ -101,3 +101,14 @@ as matérias, o mesmo painel de **Progresso da turma** da Prova Prática ADAG (i
 | Item | Motivo | Quando retomar |
 |---|---|---|
 | Aplicar o SQL do passo 5 | ✅ aplicado em 2026-10-09 11:02 a pedido do usuário | — |
+
+## Painel "Executar correção de IA" (2026-10-24, tarefa CORRECAO-IA-PAINEL)
+
+- **Onde:** `assets/js/correcao-ia-progresso.js` + `assets/css/correcao-ia-progresso.css`, plugado em
+  `progresso-turma-global.js` (`prepararCorrecaoIaGlobal`); só no tipo `discursiva`; atualiza a cada 5 s.
+- **Mostra:** botão (só professor), "Atividades entregues: N" (`aluno.entregue`), "Questões
+  corrigidas: X de Y" (X = `correcao_discursiva.nota_ia` não nula dos entregues; Y = tópicos × entregues)
+  e o estado do último pedido.
+- **Botão:** grava `pedido_correcao_ia` (`database/2026-10-24-pedido-correcao-ia.sql`, ainda a
+  aplicar) com o JWT do professor; não duplica pedido PENDENTE.
+- **Correção:** comando `/corrigir-ia` (Claude Code local) — só entregues e só tópicos sem `nota_ia`.

@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-24 14:30 | **Painel "Executar correção de IA" no Progresso da turma (tarefa CORRECAO-IA-PAINEL, pedido do usuário):** caixa no topo (só professor) com botão que grava pedido em `pedido_correcao_ia`, contagem de atividades entregues e questões corrigidas; o Claude Code local roda `/corrigir-ia`, que corrige só tópicos de entregas ainda sem `nota_ia`. Regra em `.claude/rules/atividades-banco.md`; docs em `docs/progresso-global-atividades.md` e `docs/regras/atividades.md` |
 | 2026-10-24 18:30 | **"Quantidade Questão Considerar" removida do Progresso da turma (tarefa REMOVER-QTD-CONSIDERAR, pedido do usuário):** o campo e o botão Confirmar duplicavam o botão "Quantidade Mínima"; sai o código e os CSS dele (`atividades-banco.md` e `docs/regras/atividades.md`); valores já gravados em `questoes_nota_aluno` continuam valendo na nota |
 | 2026-10-24 14:20 | **Linha entre alunos no Progresso da turma (tarefa LINHA-ENTRE-ALUNOS, pedido do usuário):** uma linha horizontal separa um aluno do seguinte, em todos os quadros, atividades e matérias (`atividades-banco.md` e `docs/regras/atividades.md`); CSS só em `progresso-turma-global.css` |
 | 2026-10-24 14:00 | **Visual global dos botões do Progresso da turma (tarefas BOTOES-PROGRESSO-GRANDES e HOVER-BOTOES-PROGRESSO, pedido do usuário):** botões da célula do aluno maiores, um por linha e com hover, valendo para todos os quadros, atividades e matérias; alterações só nos CSS compartilhados (`atividades-banco.md` e `docs/regras/atividades.md`) |

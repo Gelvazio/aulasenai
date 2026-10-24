@@ -81,3 +81,12 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** registrar o painel em `docs/progresso-global-atividades.md`, `docs/regras/atividades.md`, `.claude/rules/atividades-banco.md` e `docs/HISTORICO-REGRAS.md`.
 - **Critérios de Aceitação:** regra e docs descrevem o painel, a fila e o filtro "só entregues / só sem `nota_ia`".
+
+### Entrega (2026-10-24 14:40)
+
+- **Decisão:** usuário mandou "FAÇA AGORA" → opção A (fila + Claude Code local) executada.
+- **.1** `database/2026-10-24-pedido-correcao-ia.sql` (com índice único de 1 PENDENTE por atividade) + `docs/database.md` e `relatorio_verificacao_database.html` — **SQL NÃO aplicado** (👀: o usuário autoriza/aplica no Supabase; sem a tabela o botão dá erro).
+- **.2** `assets/js/correcao-ia-progresso.js` + `assets/css/correcao-ia-progresso.css` + plug em `progresso-turma-global.js` (1000 linhas, no limite). **Verificação:** `node --check` ok; revisão por agente (contagem por tuplas distintas, índice único, tokens CSS corrigidos); conferir na tela (sem navegador).
+- **.3** `.claude/commands/corrigir-ia.md`: só entregues, só sem `nota_ia`, grava só `nota_ia`/`nota_ia_em`.
+- **.4** docs: `.claude/rules/atividades-banco.md`, `docs/regras/atividades.md`, `docs/progresso-global-atividades.md`, `docs/HISTORICO-REGRAS.md`.
+- **Próxima mudança em `progresso-turma-global.js`:** extrair as funções `preparar...` para módulo próprio (arquivo no limite de 1000 linhas).

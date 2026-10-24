@@ -697,6 +697,28 @@
       </table>
     </div>
 
+    <h2>🤖 Atualização 2026-10-24 — pedido de correção pela IA</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-24-pedido-correcao-ia.sql</code> (idempotente; ainda não aplicado no Supabase)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>pedido_correcao_ia</td>
+          <td>Tabela</td>
+          <td>id (bigint identity), atividade_id bigint → atividade (cascade), solicitado_por uuid (default auth.uid()), solicitado_em timestamptz (default now()), estado text (PENDENTE/CONCLUIDO, default PENDENTE), concluido_em, total_corrigidas; índice (estado, solicitado_em)</td>
+        </tr>
+        <tr>
+          <td>RLS pedido_correcao_ia</td>
+          <td>Políticas</td>
+          <td>select e insert só para eh_professor(); insert exige solicitado_por = auth.uid() e estado = PENDENTE; sem update/delete para authenticated (o Claude Code local fecha o pedido); anon sem acesso</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>👥 Atualização 2026-10-05 — equipes por turma + matéria</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-05-equipes-turma-materia.sql</code> (✅ aplicado em 2026-10-05) · Tela: modal 👥 Equipes do menu das atividades</p>

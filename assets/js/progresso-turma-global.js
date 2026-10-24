@@ -18,14 +18,13 @@
 // filtro-recuperacao-progresso.js). ON/OFF "Prova Corrigida" (desligado: não corrigidas;
 // filtro-corrigida-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
 // escolhido (filtro-aluno-progresso.js).
-// As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
-// e voltam ao abrir a página; sem escolha guardada, vale o padrão.
+// As escolhas dos filtros e do "Mostrar quem faltou" ficam no localStorage; sem elas, o padrão.
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
 // ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
 // vale para o dia da atividade).
-// ON/OFF "Mostrar quadro" ao lado do título (desligado por padrão: esconde o quadro abaixo do
-// título; escolha por atividade no localStorage; mostrar-quadro-progresso.js).
+// ON/OFF "Mostrar quadro" ao lado do título (desligado: esconde o quadro; mostrar-quadro-
+// progresso.js). Painel "Correção de IA" só nas discursivas (correcao-ia-progresso.js).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -49,6 +48,7 @@ const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
 const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
 const ARQUIVO_MOSTRAR_QUADRO_PROGRESSO_GLOBAL = 'mostrar-quadro-progresso.js';
+const ARQUIVO_CORRECAO_IA_PROGRESSO_GLOBAL = 'correcao-ia-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
 // de aluno nem gabarito).
 const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
@@ -603,6 +603,7 @@ async function atualizarProgressoGlobal(tela, medida) {
         await atualizarSemInicioGlobal(tela);
         await atualizarColunasExtrasGlobal();
         await atualizarFaltasGlobal();
+        await estadoProgressoGlobal.correcaoIa?.atualizar();
         if (!alunos.length) {
             tela.resumo.replaceChildren('Nenhum aluno nas turmas do curso · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
@@ -913,6 +914,26 @@ async function atualizarFaltasGlobal() {
 }
 
 /**
+ * Põe o painel "Correção de IA" na área (só discursiva). Uma falha não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ */
+async function prepararCorrecaoIaGlobal(area, tipo) {
+    if (tipo !== TIPO_PADRAO_PROGRESSO_GLOBAL) return;
+    try {
+        if (!window.criarPainelCorrecaoIa) {
+            await carregarScriptProgressoGlobal(ARQUIVO_CORRECAO_IA_PROGRESSO_GLOBAL);
+        }
+        estadoProgressoGlobal.correcaoIa = await window.criarPainelCorrecaoIa({
+            atividadeId: estadoProgressoGlobal.atividadeId,
+            lerAlunos: () => estadoProgressoGlobal.ultimosAlunos });
+        area.appendChild(estadoProgressoGlobal.correcaoIa.elemento);
+    } catch (erro) {
+        console.warn('Correção de IA do progresso:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -950,6 +971,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararFiltroAlunoGlobal(area, redesenhar);
     await prepararComboTurmaGlobal(area);
     await prepararInterruptorQuadroGlobal(area);
+    await prepararCorrecaoIaGlobal(area, tipo);
     area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);

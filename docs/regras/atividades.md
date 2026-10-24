@@ -1000,3 +1000,10 @@ liga). O líder da equipe (👑) confirma as respostas dele, e elas passam a val
 integrantes (com cópia de segurança do que for apagado); a entrega dos integrantes não é apagada.
 Regras, tabelas e telas: `docs/equipes-sala-de-aula.md` (seção de 2026-10-20) e
 `docs/database.md`.
+
+## Painel de correção de IA no progresso (2026-10-24)
+
+Caixa "Executar correção de IA agora" no topo do quadro de progresso das discursivas (só
+professor). O botão registra um pedido em `pedido_correcao_ia`; o Claude Code local executa
+`/corrigir-ia`, que corrige **somente** tópicos de atividades entregues ainda sem `nota_ia` e grava só
+`nota_ia`/`nota_ia_em`. Detalhes: `docs/progresso-global-atividades.md`.

@@ -771,6 +771,19 @@ da turma dão nota de 1 a 10.
 
 ---
 
+## 🤖 Atualização 2026-10-24 — Pedido de correção pela IA (CORRECAO-IA-PAINEL)
+
+SQL: `database/2026-10-24-pedido-correcao-ia.sql` (idempotente; ⬜ ainda não aplicado no Supabase).
+O professor pede, pelo painel, que a IA corrija uma atividade; o Claude Code local atende e
+fecha o pedido.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `pedido_correcao_ia` | `id` (bigint identity, PK), `atividade_id` bigint → `atividade.id` (cascade, not null), `solicitado_por` uuid not null (default `auth.uid()`), `solicitado_em` timestamptz not null (default `now()`), `estado` text not null (default `'PENDENTE'`, check `PENDENTE`/`CONCLUIDO`), `concluido_em` timestamptz, `total_corrigidas` integer; índice `pedido_correcao_ia_estado_idx` (`estado`, `solicitado_em`) |
+| RLS | ligado. `select` e `insert` só para `eh_professor()`; o `insert` exige `solicitado_por = auth.uid()` e `estado = 'PENDENTE'`. **Sem update/delete** para `authenticated` (quem fecha o pedido é o Claude Code local com `service_role`/conector). `anon` sem acesso |
+
+---
+
 ## ✍️ Atualização 2026-10-06 — Correção das discursivas e notas da média final do aluno
 
 SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplicado no Supabase em

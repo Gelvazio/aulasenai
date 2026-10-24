@@ -41,6 +41,16 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
   botão Quantidade Mínima); o mínimo do aluno é definido só por esse botão.
 - ✅ Uma **linha horizontal separa um aluno do seguinte** no quadro (2026-10-24, global).
 
+## Painel "Executar correção de IA" no quadro de progresso (2026-10-24, só discursiva)
+
+- ✅ Caixa no topo do quadro, à direita dos filtros: botão **Executar correção de IA agora** (só
+  professor), **Atividades entregues** e **Questões corrigidas (X de Y)**. Código:
+  `assets/js/correcao-ia-progresso.js`; os geradores só herdam.
+- ✅ O botão **não chama IA**: grava um pedido em `pedido_correcao_ia` (RLS, só professor) e o
+  Claude Code local roda `/corrigir-ia`. Sem chave de IA no site.
+- ✅ Cada execução corrige **só** tópicos de atividades **entregues** (`entrega_atividade`) que
+  **ainda não têm `nota_ia`**; grava só `nota_ia`/`nota_ia_em`, nunca `nota_professor`.
+
 ## Alvo: pasta da matéria só com Markdown
 
 ```
