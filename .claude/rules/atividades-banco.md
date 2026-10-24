@@ -37,6 +37,7 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
   (altura ≥ 40px, fonte 14px), **um por linha** e com efeito **hover**. Isso vale para todos os
   quadros, atividades e matérias: só se muda nos CSS compartilhados (`progresso-turma-global.css`,
   `falta-aluno-progresso.css`, `questoes-nota-aluno-progresso.css`), nunca por página ou matéria.
+- ✅ Uma **linha horizontal separa um aluno do seguinte** no quadro (2026-10-24, global).
 
 ## Alvo: pasta da matéria só com Markdown
 

@@ -380,7 +380,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     e objetiva.
     **Visual global (2026-10-24):** botões da célula do aluno maiores (≥ 40px, fonte 14px), um por
     linha e com hover, para todos os quadros, atividades e matérias; só se muda nos CSS
-    compartilhados do progresso, nunca por página.
+    compartilhados do progresso, nunca por página. Uma **linha horizontal separa um aluno do
+    seguinte** no quadro (tarefa LINHA-ENTRE-ALUNOS, 2026-10-24).
     **Visual global (2026-10-24):** botões da célula do aluno maiores (≥ 40px, fonte 14px), um por
     linha e com hover, para todos os quadros, atividades e matérias; só se muda nos CSS
     compartilhados do progresso, nunca por página.

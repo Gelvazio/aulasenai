@@ -207,6 +207,17 @@
     min-width: 0;
 }
 
+/* Uma linha horizontal separa um aluno do seguinte (nenhuma depois do último). */
+.progresso-turma__linha:not(.progresso-turma__linha--titulos) {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--progresso-turma-borda);
+}
+
+.progresso-turma__linha:not(.progresso-turma__linha--titulos):last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
 .progresso-turma__linha--titulos {
     font-size: 12px;
     font-weight: 700;
