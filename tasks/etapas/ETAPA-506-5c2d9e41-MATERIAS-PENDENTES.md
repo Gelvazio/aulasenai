@@ -40,13 +40,54 @@
 Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem gabarito; **sem navegador** — o teste na tela fica com o usuário.
 
 ### Decisões
-- 2026-10-24 17:45 — Devin (local · main) escreveu o plano; **aguardando o "sim"** do usuário e a escolha A/B.
+- 2026-10-24 17:45 — Devin (local · main) escreveu o plano; aguardava o "sim" e a escolha A/B.
+- 2026-10-24 17:52 — usuário respondeu **"A"**: plano aprovado com a **opção A** (gerador de `materias-pendentes.json` a partir dos `STATUS_MATERIA.md`). Escopo aprovado = o da seção Escopo; mudança material pede nova aprovação.
 - Observação de nível: a matriz marca `PESADO` para login/papéis; o Devin só executa LEVE. Se o usuário aprovar e pedir que o Devin execute, fica registrado como pedido direto (precedente #353/#355/#356).
 
 ### #357.0 — Escrever o plano e obter a aprovação do usuário
 
-**Próximo passo:** usuário responder "sim" (e A ou B); depois criar as subtarefas .1 a .5 no `STATUS.md` e executar uma por vez.
+**Próximo passo:** concluída (plano aprovado em 2026-10-24 17:52). Seguir com a #357.1.
 
 - **Nível:** PESADO — Jev (confiança 1,00; sinais: banco, segredo, mais de 3 arquivos); login/papéis
 - **Modelo:** só Sonnet (ou DeepSeek/OpenCode) — Devin age a pedido do usuário
-- **Entrega:** plano acima · **Verificação:** leitura; aprovação pendente
+- **Entrega:** plano acima · **Verificação:** aprovação do usuário registrada nas Decisões (2026-10-24 17:52)
+
+### #357.1 — Gerador do `materias-pendentes.json` a partir dos `STATUS_MATERIA.md`
+
+**Próximo passo:** ler `STATUS_MATERIA.md` e `scripts/status-materias/` e criar o gerador.
+
+- **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
+- **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
+- **Entrega:** pendente · **Verificação:** pendente
+
+### #357.2 — Repositório + regras (JS) da página
+
+**Próximo passo:** aguardando a subtarefa anterior.
+
+- **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
+- **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
+- **Entrega:** pendente · **Verificação:** pendente
+
+### #357.3 — Página `materias-pendentes.html` + CSS futurista + JS da tela
+
+**Próximo passo:** aguardando a subtarefa anterior.
+
+- **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
+- **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
+- **Entrega:** pendente · **Verificação:** pendente
+
+### #357.4 — Item de menu no `header-usuario.js` (só admin, nova janela) + conferência da RPC na página
+
+**Próximo passo:** aguardando a subtarefa anterior.
+
+- **Nível:** PESADO — plano aprovado (ver Subtarefas previstas)
+- **Modelo:** PESADO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
+- **Entrega:** pendente · **Verificação:** pendente
+
+### #357.5 — Documentação e conferência de segurança (`.vercelignore`, sem gabarito)
+
+**Próximo passo:** aguardando a subtarefa anterior.
+
+- **Nível:** LEVE — plano aprovado (ver Subtarefas previstas)
+- **Modelo:** LEVE · só Haiku — Devin executa a pedido do usuário (precedente #353/#355/#356)
+- **Entrega:** pendente · **Verificação:** pendente
