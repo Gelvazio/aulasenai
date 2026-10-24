@@ -3,43 +3,78 @@
 .correcao-ia {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    align-self: flex-end;
-    max-width: 100%;
-    padding: 10px 14px;
-    border: 1px solid var(--progresso-turma-borda, #cbd5e0);
-    border-radius: 8px;
+    align-items: center;
+    gap: 10px;
+    align-self: center;
+    width: min(100%, 460px);
+    margin: 14px auto;
+    padding: 16px 20px;
+    border: 2px solid var(--progresso-turma-botao, #2b6cb0);
+    border-radius: 12px;
     background: var(--progresso-turma-fundo, #ffffff);
-    font-size: 13px;
-    color: var(--progresso-turma-texto-suave, #4a5568);
+    box-shadow: 0 0 0 0 rgba(43, 108, 176, 0.45);
+    font-size: 15px;
+    text-align: center;
+    color: var(--progresso-turma-texto, #2d3748);
+    animation: correcao-ia-brilho 2s ease-in-out infinite;
 }
 
 .correcao-ia__botao {
-    min-height: 40px;
-    padding: 8px 14px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 18px;
     border: 0;
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--progresso-turma-botao, #2b6cb0);
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
+    animation: correcao-ia-piscar 1.2s ease-in-out infinite;
 }
 
 .correcao-ia__botao:hover {
     background: var(--progresso-turma-botao-hover, #2c5282);
+    animation: none;
 }
 
 .correcao-ia__botao:disabled {
-    opacity: 0.6;
     cursor: wait;
+    animation: none;
+    opacity: 0.7;
+}
+
+.correcao-ia__linha {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.correcao-ia__linha--pendente {
+    color: #c05621;
+    animation: correcao-ia-piscar 0.9s ease-in-out infinite;
 }
 
 .correcao-ia__mensagem {
+    font-size: 14px;
     font-weight: 600;
+    color: var(--progresso-turma-botao, #2b6cb0);
 }
 
-.correcao-ia__mensagem:empty {
-    display: none;
+@keyframes correcao-ia-piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
+@keyframes correcao-ia-brilho {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(43, 108, 176, 0.45); }
+    50% { box-shadow: 0 0 14px 4px rgba(43, 108, 176, 0.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .correcao-ia,
+    .correcao-ia__botao,
+    .correcao-ia__linha--pendente {
+        animation: none;
+    }
 }

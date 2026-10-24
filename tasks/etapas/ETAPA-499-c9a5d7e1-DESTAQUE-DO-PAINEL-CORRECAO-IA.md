@@ -6,7 +6,7 @@
 
 ### PAINEL-IA-DESTAQUE.1 — Centralizar, destacar e ler o id da página
 
-**Próximo passo:** executar.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — Jev (mensagem do pedido, confiança 0,83)
 - **Modelo:** só Sonnet — nunca outro
@@ -15,3 +15,4 @@
 - **Fonte:** jev (confiança 0,83)
 - **Descrição:** `assets/css/correcao-ia-progresso.css` (centralizado, ícones, piscando, respeita `prefers-reduced-motion`), `assets/js/correcao-ia-progresso.js` (ícones nas linhas; id vindo do selo do título) e `assets/js/atividade-id-titulo.js` (expõe os ids da página no selo).
 - **Critérios de Aceitação:** painel centralizado; ícones e piscar; id lido do HTML da página; `node --check` passa; sem `!important`.
+- **Entrega:** `assets/css/correcao-ia-progresso.css` (centralizado, borda e botão piscando, brilho, `prefers-reduced-motion`), `assets/js/correcao-ia-progresso.js` (ícones 🤖✨📦✅🕒; id vindo do selo do título), `assets/js/atividade-id-titulo.js` (`data-ids` + `obterIdsAtividadeDaPagina`), docs · **Verificação:** `node --check` ok; sem linha > 100; conferir na tela (sem navegador)

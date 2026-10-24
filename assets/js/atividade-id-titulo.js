@@ -51,8 +51,20 @@ function acrescentarSeloIdAoTitulo(titulo, ids) {
     const selo = document.createElement('span');
     selo.className = CLASSE_ID_TITULO;
     selo.textContent = rotulo + ids.join(', ');
+    selo.dataset.ids = ids.join(',');
     titulo.append(' ', selo);
 }
+
+/**
+ * Ids da atividade desta página, como o selo do título os mostra (outros módulos reaproveitam).
+ * @returns {number[]} Ids (vazio se o selo ainda não foi mostrado).
+ */
+function obterIdsAtividadeDaPagina() {
+    const selo = document.querySelector('.' + CLASSE_ID_TITULO);
+    return selo?.dataset.ids ? selo.dataset.ids.split(',').map(Number) : [];
+}
+
+window.obterIdsAtividadeDaPagina = obterIdsAtividadeDaPagina;
 
 /**
  * Mostra o id da atividade no título, se esta página tiver atividade no banco.

@@ -48,6 +48,8 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
   `assets/js/correcao-ia-progresso.js`; os geradores só herdam.
 - ✅ O botão **não chama IA**: grava um pedido em `pedido_correcao_ia` (RLS, só professor) e o
   Claude Code local roda `/corrigir-ia`. Sem chave de IA no site.
+- ✅ Visual: caixa **centralizada**, com ícones e **piscando**; o **id da atividade** vem do HTML da
+  página (selo do título, `atividade.pagina`), não do quadro.
 - ✅ Cada execução corrige **só** tópicos de atividades **entregues** (`entrega_atividade`) que
   **ainda não têm `nota_ia`**; grava só `nota_ia`/`nota_ia_em`, nunca `nota_professor`.
 

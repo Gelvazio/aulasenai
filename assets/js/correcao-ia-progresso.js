@@ -13,7 +13,8 @@ const TABELA_PEDIDO_CORRECAO_IA = 'pedido_correcao_ia';
 const ESTADO_PENDENTE_CORRECAO_IA = 'PENDENTE';
 const PERFIL_PROFESSOR_CORRECAO_IA = 'PROFESSOR';
 const LINHAS_POR_PAGINA_CORRECAO_IA = 1000;
-const TEXTO_BOTAO_CORRECAO_IA = 'Executar correção de IA agora';
+const CLASSE_PENDENTE_CORRECAO_IA = CLASSE_CORRECAO_IA + '__linha--pendente';
+const TEXTO_BOTAO_CORRECAO_IA = '🤖 Executar correção de IA agora ✨';
 const MSG_PEDIDO_ENVIADO_CORRECAO_IA = 'Pedido enviado: execute /corrigir-ia no Claude Code';
 const MSG_PEDIDO_JA_EXISTE_CORRECAO_IA = 'Já existe um pedido pendente: execute /corrigir-ia ' +
     'no Claude Code';
@@ -67,6 +68,18 @@ async function contarQuestoesCorrigidasIa(atividadeId, idsEntregues) {
         .filter((linha) => idsEntregues.has(linha.aluno_id))
         .map((linha) => linha.aluno_id + '|' + linha.item + '|' + linha.topico));
     return { corrigidas: distintas.size, total: topicos.length * idsEntregues.size };
+}
+
+/**
+ * Id da atividade desta página: o mesmo do selo do título (atividade.pagina). Com mais de um id
+ * na página, vale o do quadro se estiver entre eles; sem selo, vale o do quadro.
+ * @param {number} idDoQuadro - Id que o quadro de progresso recebeu.
+ * @returns {number} Id da atividade a usar.
+ */
+function obterIdAtividadeDaPaginaCorrecaoIa(idDoQuadro) {
+    const ids = window.obterIdsAtividadeDaPagina?.() || [];
+    if (!ids.length || ids.includes(Number(idDoQuadro))) return idDoQuadro;
+    return ids[0];
 }
 
 /**
@@ -126,7 +139,7 @@ function criarElementoCorrecaoIa(tag, sufixo, texto = '') {
 
 /**
  * Cria o botão "Executar correção de IA agora" (grava o pedido e mostra a mensagem).
- * @param {number} atividadeId - Id da atividade.
+ * @param {Function} atividadeId - Devolve o id da atividade (lido do HTML da página).
  * @param {{mensagem: HTMLElement, aoPedir: Function}} tela - Mensagem e atualização do painel.
  * @returns {HTMLButtonElement} Botão pronto.
  */
@@ -136,7 +149,7 @@ function criarBotaoCorrecaoIa(atividadeId, tela) {
     botao.addEventListener('click', async () => {
         botao.disabled = true;
         try {
-            tela.mensagem.textContent = await pedirCorrecaoIa(atividadeId);
+            tela.mensagem.textContent = await pedirCorrecaoIa(atividadeId());
             await tela.aoPedir();
         } catch (erro) {
             tela.mensagem.textContent = 'Não foi possível enviar o pedido: ' + erro.message;
@@ -170,18 +183,21 @@ async function criarPainelCorrecaoIa({ atividadeId, lerAlunos }) {
             console.warn('Correção de IA do progresso:', erro.message);
         }
     };
+    const idDaPagina = () => obterIdAtividadeDaPaginaCorrecaoIa(atividadeId);
     const atualizar = async () => {
         const entregues = lerAlunos().filter((aluno) => aluno.entregue === true);
-        const contagem = await contarQuestoesCorrigidasIa(atividadeId,
+        const contagem = await contarQuestoesCorrigidasIa(idDaPagina(),
             new Set(entregues.map((aluno) => aluno.alunoId)));
-        textos.entregues.textContent = 'Atividades entregues: ' + entregues.length;
-        textos.corrigidas.textContent = 'Questões corrigidas: ' + contagem.corrigidas +
+        textos.entregues.textContent = '📦 Atividades entregues: ' + entregues.length;
+        textos.corrigidas.textContent = '✅ Questões corrigidas: ' + contagem.corrigidas +
             ' de ' + contagem.total;
-        const estado = await lerEstadoUltimoPedidoIa(atividadeId);
-        textos.pedido.textContent = 'Último pedido: ' + (estado || 'nenhum');
+        const estado = await lerEstadoUltimoPedidoIa(idDaPagina());
+        textos.pedido.textContent = '🕒 Último pedido: ' + (estado || 'nenhum');
+        textos.pedido.classList.toggle(CLASSE_PENDENTE_CORRECAO_IA,
+            estado === ESTADO_PENDENTE_CORRECAO_IA);
     };
     if (await ehProfessorCorrecaoIa()) {
-        elemento.append(criarBotaoCorrecaoIa(atividadeId, { mensagem, aoPedir: atualizar }));
+        elemento.append(criarBotaoCorrecaoIa(idDaPagina, { mensagem, aoPedir: atualizar }));
     }
     elemento.append(textos.entregues, textos.corrigidas, textos.pedido, mensagem);
     return { elemento, atualizar: atualizarSemFalha };
