@@ -294,6 +294,30 @@ function somarCorrecoesDaIa(linhas, pontos) {
 }
 
 /**
+ * Discursiva: fator que leva os pontos brutos à escala da prova inteira (0 a 10), igual ao banco
+ * (notas_media_final: soma das notas ÷ pontos de todos os tópicos × 10). Sem isso, uma prova que
+ * vale mais de 10 pontos estoura o limite e todo aluno aparece com 10,00.
+ * @param {Map<string, number>} pontos - Pontos de cada tópico ("item|topico").
+ * @returns {number} Fator (1 se a prova não tiver pontos).
+ */
+function fatorDeEscalaDaDiscursiva(pontos) {
+    const total = [...pontos.values()].reduce((soma, valor) => soma + valor, 0);
+    return total > 0 ? NOTA_TOTAL_DA_PROVA / total : 1;
+}
+
+/**
+ * Discursiva: passa a nota e os pontos possíveis de cada correção para a escala da prova (0 a
+ * 10), sem mudar o percentual de acerto (nota ÷ possível).
+ * @param {Map<string, Object>} correcoes - "aluno|tentativa" → correção em pontos brutos.
+ * @param {number} fator - Fator de fatorDeEscalaDaDiscursiva.
+ * @returns {Map<string, Object>} Correções na escala da prova.
+ */
+function escalarCorrecoesDaDiscursiva(correcoes, fator) {
+    return new Map([...correcoes].map(([chave, correcao]) => [chave,
+        { ...correcao, nota: correcao.nota * fator, possivel: correcao.possivel * fator }]));
+}
+
+/**
  * Discursiva: conta, por aluno e tentativa, os tópicos com a nota do professor.
  * @param {Object[]} linhas - Linhas de correcao_discursiva (nota_professor).
  * @returns {Map<string, number>} Chave "aluno|tentativa" → tópicos com nota do professor.
@@ -323,6 +347,16 @@ function somarNotasDoProfessor(linhas) {
         somas.set(chave, (somas.get(chave) || 0) + Number(linha.nota_professor));
     });
     return somas;
+}
+
+/**
+ * Discursiva: passa a soma das notas do professor para a escala da prova (0 a 10).
+ * @param {number|undefined} soma - Soma em pontos brutos (undefined = sem nota do professor).
+ * @param {number} fator - Fator de fatorDeEscalaDaDiscursiva.
+ * @returns {number|undefined} Soma na escala da prova, ou undefined.
+ */
+function escalarNotaDoProfessor(soma, fator) {
+    return soma === undefined ? undefined : soma * fator;
 }
 
 /**
@@ -364,16 +398,18 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
     const notasDoProfessor = contarNotasDoProfessor(linhasIa);
     const somasDoProfessor = somarNotasDoProfessor(linhasIa);
+    const fator = fatorDeEscalaDaDiscursiva(pontos);
     const alunos = montarAlunosDoProgresso(progresso, {
         nomes: memoria.nomes, minimos, questoesNota,
-        correcoes: somarCorrecoesDaIa(linhasIa, pontos),
+        correcoes: escalarCorrecoesDaDiscursiva(somarCorrecoesDaIa(linhasIa, pontos), fator),
         entregues: new Set(entregas.map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
         peloProfessor: new Set(entregas.filter((entrega) => entrega.entregue_por)
             .map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
     });
     return alunos.map((aluno) => ({ ...aluno,
         provaCorrigida: discursivaFoiCorrigida(aluno, notasDoProfessor),
-        notaProfessor: somasDoProfessor.get(aluno.alunoId + '|' + aluno.tentativa) }));
+        notaProfessor: escalarNotaDoProfessor(
+            somasDoProfessor.get(aluno.alunoId + '|' + aluno.tentativa), fator) }));
 }
 
 // Textos de cada tipo: a coluna "parcial" vale também antes da entrega; a "final" só com a
