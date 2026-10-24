@@ -23,6 +23,9 @@ Regra GLOBAL (#365), sem campo na fonte: botão "CONFIRMAR TODA CORREÇÃO DE IA
 acima da coluna "Aluno" do Progresso da turma; roda o "Confirmar Todas" em cada aluno listado
 (entregues, com nota da IA, sem suspeita de cópia pendente), após popup de confirmação
 (assets/js/confirmar-toda-correcao-ia-progresso.js).
+Regra GLOBAL (#362, #367), sem campo na fonte: filtros ON/OFF "ABAIXO MEDIA(IA)" e "MEDIA ATINGIDA(IA)"
+no Progresso da turma, pela nota sugerida da IA (percentual de acerto, corte de 70%), em todo quadro
+(assets/js/filtro-abaixo-media-ia-progresso.js e filtro-media-atingida-ia-progresso.js).
 Regra GLOBAL (#363), sem campo na fonte: no painel "Respostas dos alunos", os filtros "Mostrar
 Certas / Meia Certas / Erradas" valem POR ALTERNATIVA (a, b, c) e usam a correção do professor
 quando ele já confirmou a alternativa; senão a sugestão da IA (assets/js/mostrar-certas-discursiva.js).

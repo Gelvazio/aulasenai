@@ -289,6 +289,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     Código: `assets/js/filtro-abaixo-media-progresso.js`.
   - **ON/OFF "ABAIXO MEDIA(IA)" (2026-10-24, #362):** depois do "ABAIXO DA MEDIA". Pelo **percentual de acerto da IA** (o "85%" da coluna "Nota parcial IA"; vale já durante a correção): ligado lista só os alunos **abaixo de 70%** (média 7; quem não tem correção da IA some); desligado (padrão) não filtra. Lembrado no localStorage (`progresso-turma:abaixo-da-media-ia`). Código:
     `assets/js/filtro-abaixo-media-ia-progresso.js`.
+  - **ON/OFF "MEDIA ATINGIDA(IA)" (2026-10-24, #367):** depois do "ABAIXO MEDIA(IA)". Pelo **percentual de acerto da IA** (o "85%" da coluna "Nota parcial IA"): ligado lista só os alunos **a partir de 70%** (média 7 atingida; quem não tem correção da IA some); desligado (padrão) não filtra. Lembrado no localStorage (`progresso-turma:media-atingida-ia`). Código:
+    `assets/js/filtro-media-atingida-ia-progresso.js`.
   - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
     dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
     certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia do

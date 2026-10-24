@@ -10,3 +10,5 @@
 
 - **Nível:** MEDIO — JS com lógica, 2 arquivos (Jev, confiança 0,85)
 - **Modelo:** só Sonnet
+- **Entrega:** `assets/js/filtro-media-atingida-ia-progresso.js` (novo), `assets/js/progresso-turma-global.js`, `docs/regras/atividades.md`, `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
+- **Verificação:** node --check dos JS e py_compile ok; ligado = percentual de acerto da IA >= 70% (sem correção da IA some); desligado = todos. Conferir na tela: o usuário.
