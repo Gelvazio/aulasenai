@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #364-8c1d4e27 — [Conferir e corrigir a regra global dos filtros Certas/Meia/Erradas (por alternativa; IA até o professor confirmar)](etapas/ETAPA-513-8c1d4e27-CONFERIR-REGRA-FILTROS-CATEGORIA.md) · ⬜ Pendente · livre
+  - #364.1 — Conferir na tela e nos demais geradores/atividades e corrigir o que divergir · ⬜ Pendente · `MEDIO` · só Sonnet
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)
