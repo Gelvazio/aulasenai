@@ -149,3 +149,5 @@
 | #358.2 | Links do menu menos redondos e centralizados · `LEVE · effort low` | 🟡 Normal | LEVE · Devin | #358.1 | ✅ Concluído | 2026-10-24 | [507-3e1a9f2c](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) | — |
 | #358 | Menu do Professor Administrador em duas linhas · `LEVE/PESADO` | 🟠 Alta | — | — | ✅ Concluído | 2026-10-24 | [507-3e1a9f2c](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) | — |
 | #359 | Filtros de materias-pendentes.html guardam estado no localStorage · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet (Devin a pedido do usuário) | #358 | ✅ Concluído | 2026-10-24 | [508-9f2b4d71](etapas/ETAPA-508-9f2b4d71-FILTROS-COM-ESTADO.md) | — |
+| #360.1 | Filtro ON/OFF "Nota IA Gerada" no Progresso da turma · `PESADO · effort high` | 🟠 Alta | PESADO · Sonnet (executor-pesado) | — | ✅ Concluído | 2026-10-24 | [509-4c7a2e91](etapas/ETAPA-509-4c7a2e91-FILTRO-NOTA-IA-GERADA.md) | — |
+| #360 | Filtro ON/OFF "Nota IA Gerada" no Progresso da turma (todas as atividades) · `PESADO · effort high` | 🟠 Alta | — | — | ✅ Concluído | 2026-10-24 | [509-4c7a2e91](etapas/ETAPA-509-4c7a2e91-FILTRO-NOTA-IA-GERADA.md) | — |

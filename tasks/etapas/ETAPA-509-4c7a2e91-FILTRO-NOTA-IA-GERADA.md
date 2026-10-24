@@ -20,7 +20,8 @@
   - **Arquivos:** `assets/js/filtro-nota-ia-progresso.js` (novo), `assets/js/progresso-turma-global.js`, `docs/regras/atividades.md`
   - **Critérios:** padrão dos filtros irmãos (mesma classe, preferências, `window.criarFiltroNotaIa`); ligado = nota final da IA gerada, desligado = sem ela; posição depois de "Prova Corrigida"; nomes em português, JSDoc, linhas ≤ 100, funções ≤ 45 linhas; falha ao carregar não derruba o painel.
   - **Nível:** PESADO (Jev, confiança 0,72 — sinal: massa + mais de 3 arquivos)
-  - **Entrega:** pendente · **Verificação:** pendente
+  - **Entrega:** `assets/js/filtro-nota-ia-progresso.js` (novo, padrão `filtro-corrigida-progresso.js`, preferência `nota-ia-gerada` sim/nao, `window.criarFiltroNotaIa`); `assets/js/progresso-turma-global.js` (constante do arquivo, `prepararFiltroNotaIaGlobal`, chamada após `prepararFiltroCorrigidaGlobal`, cabeçalho); `docs/regras/atividades.md` (linha do filtro). Commit na `main`.
+  - **Verificação:** `node --check` dos dois JS ok; linhas ≤ 100 (a única >100 é antiga, fora do diff); filtro entra em `filtrosDaLista` e soma com os demais; desligado = sem nota da IA, ligado = com; falha de carga não derruba o painel. Função real de montagem é `montarProgressoDaTurma` (a etapa citou `montarPainelProgressoGlobal`).
 
 ### Registro
 

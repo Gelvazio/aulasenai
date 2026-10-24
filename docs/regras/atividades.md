@@ -278,6 +278,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor** em todas as questões respondidas. Lembrado no localStorage
     (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
     `provaCorrigida` em `progresso-turma-fontes.js`.
+  - **ON/OFF "Nota IA Gerada" (2026-10-24, #360):** depois do "Prova Corrigida". Desligado
+    (padrão) lista só os alunos **sem** a nota final da IA; ligado, só os que **já têm** a nota
+    final gerada pela IA (mesma condição do 🤖: entregue, com resposta e com a correção da IA em
+    todas as partes respondidas; sem correção conta como sem nota). Lembrado no localStorage
+    (`progresso-turma:nota-ia-gerada`). Código: `assets/js/filtro-nota-ia-progresso.js`.
   - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
     dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
     certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia do
