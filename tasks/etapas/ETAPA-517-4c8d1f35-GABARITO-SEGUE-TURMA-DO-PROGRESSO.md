@@ -12,3 +12,4 @@
 - **Modelo:** só Sonnet
 - **Entrega:** `assets/js/alunos-da-turma-progresso.js` (expõe `lerTurmaEscolhidaProgresso()` e dispara `relatorio-professor:turma`), `assets/js/liberacao-respostas-discursiva.js` (select do gabarito abre na turma do Progresso e a acompanha), `assets/js/respostas-atividade-professor.js` (objetivas/práticas: abas de turma do relatório), `docs/regras/atividades.md`, anotação no gerador. Regra GLOBAL (discursivas, práticas e objetivas). Feito por 3 agentes + revisão.
 - **Verificação:** `node --check` ok; revisão por agente. Motivo do pedido: o gabarito da avaliação 36 estava liberado só para a turma 122552 e o aluno da 135080 não via a nota. Conferir na tela: o usuário.
+- **Correção da revisão:** objetivas/práticas só aplicam a turma do Progresso na primeira montagem do relatório (as remontagens mantêm a aba que o professor escolheu).

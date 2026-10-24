@@ -1007,9 +1007,9 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         if (!linhas.length) return;
         const turmas = listarTurmasRelatorio(linhas, dadosTurmas);
         const doProgresso = String(window.lerTurmaEscolhidaProgresso?.() || '');
-        if (turmas.some((turma) => turma.codigo === doProgresso)) {
-            turmaEscolhidaRelatorio = doProgresso;
-        }
+        const ehPrimeiraMontagem = turmaEscolhidaRelatorio === null;
+        const progressoNaLista = turmas.some((turma) => turma.codigo === doProgresso);
+        if (ehPrimeiraMontagem && progressoNaLista) turmaEscolhidaRelatorio = doProgresso;
         const existe = turmas.some((turma) => turma.codigo === turmaEscolhidaRelatorio);
         const favorita = turmas.find((turma) => turma.favorita);
         if (!existe) turmaEscolhidaRelatorio = (favorita || turmas[0]).codigo;
