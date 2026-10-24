@@ -2,11 +2,11 @@
 
 **Ordem:** 21 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **🔄 PENDENTE** — 135 de 147 peças (92%)  
+**Situação:** **✅ CONCLUÍDA** — 147 de 147 peças (100%)  
 **Gerado em:** 2026-10-24 18:00 (atualizado manualmente devido a falha do script no Windows)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
-> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
+> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **✅ CONCLUÍDA** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
 
 ## 1. Peças da matéria (regra global de matérias)
 
@@ -19,11 +19,11 @@
 || Status das atividades | `ATIVIDADES/STATUS-ATIVIDADES.md` | ✅ |
 || Status da apostila | `APOSTILA/STATUS-APOSTILA.md` | ✅ |
 || Índice das atividades | `ATIVIDADES/index.html` | ✅ |
-|| Menu das atividades | `ATIVIDADES/MENU-ATIVIDADES.js` | ⬜ |
-|| Avaliação objetiva | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | ⬜ |
-|| Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ⬜ |
-|| Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ⬜ |
-|| Média final (composição) | `ATIVIDADES/media-final.json` | ⬜ |
+|| Menu das atividades | `ATIVIDADES/MENU-ATIVIDADES.js` | ✅ |
+|| Avaliação objetiva | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | ✅ |
+|| Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ✅ |
+|| Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ✅ |
+|| Média final (composição) | `ATIVIDADES/media-final.json` | ✅ |
 || Apostila (HTML) | `APOSTILA/APOSTILA-*.html` | ✅ |
 || Apostila (Markdown completo) | `APOSTILA/APOSTILA-*.md` | ✅ |
 

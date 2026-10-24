@@ -1,0 +1,78 @@
+{
+  "nota_minima": 70,
+  "grupos": [
+    {
+      "id": "atividades",
+      "peso": "30%",
+      "nota_subtotal": true,
+      "subtotal": "Subtotal — avaliação contínua: 38 atividades das aulas (0,79 ponto cada)",
+      "itens": [
+        { "nome": "Atividade Aula 01", "conteudo": "Princípios de design: definição e evolução histórica", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-01-50-QUESTOES.html" },
+        { "nome": "Prática Aula 01", "conteudo": "Princípios de design: definição e evolução histórica", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-01.html" },
+        { "nome": "Atividade Aula 02", "conteudo": "Formas geométricas e regras de visualização", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-02-50-QUESTOES.html" },
+        { "nome": "Prática Aula 02", "conteudo": "Formas geométricas e regras de visualização", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-02.html" },
+        { "nome": "Atividade Aula 03", "conteudo": "Teoria das cores na interface", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-03-50-QUESTOES.html" },
+        { "nome": "Prática Aula 03", "conteudo": "Teoria das cores na interface", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-03.html" },
+        { "nome": "Atividade Aula 04", "conteudo": "Resolução de problemas: análise crítica", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-04-50-QUESTOES.html" },
+        { "nome": "Prática Aula 04", "conteudo": "Resolução de problemas: análise crítica", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-04.html" },
+        { "nome": "Atividade Aula 05", "conteudo": "Resolução de problemas: análise de cenários", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-05-50-QUESTOES.html" },
+        { "nome": "Prática Aula 05", "conteudo": "Resolução de problemas: análise de cenários", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-05.html" },
+        { "nome": "Atividade Aula 06", "conteudo": "User Interface: definição e tipos de interface", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-06-50-QUESTOES.html" },
+        { "nome": "Prática Aula 06", "conteudo": "User Interface: definição e tipos de interface", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-06.html" },
+        { "nome": "Atividade Aula 07", "conteudo": "Layout: padrões de leitura F e Z e alinhamento", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-07-50-QUESTOES.html" },
+        { "nome": "Prática Aula 07", "conteudo": "Layout: padrões de leitura F e Z e alinhamento", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-07.html" },
+        { "nome": "Atividade Aula 08", "conteudo": "Layout: tamanho, espaçamento, texturas, fontes e repetição", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-08-50-QUESTOES.html" },
+        { "nome": "Prática Aula 08", "conteudo": "Layout: tamanho, espaçamento, texturas, fontes e repetição", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-08.html" },
+        { "nome": "Atividade Aula 09", "conteudo": "Eventos e navegação na interface", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-09-50-QUESTOES.html" },
+        { "nome": "Prática Aula 09", "conteudo": "Eventos e navegação na interface", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-09.html" },
+        { "nome": "Atividade Aula 10", "conteudo": "User Experience e design centrado no usuário", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-10-50-QUESTOES.html" },
+        { "nome": "Prática Aula 10", "conteudo": "User Experience e design centrado no usuário", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-10.html" },
+        { "nome": "Atividade Aula 11", "conteudo": "Processo de design interativo", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-11-50-QUESTOES.html" },
+        { "nome": "Prática Aula 11", "conteudo": "Processo de design interativo", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-11.html" },
+        { "nome": "Atividade Aula 12", "conteudo": "Jornada do usuário: público-alvo e pesquisa", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-12-50-QUESTOES.html" },
+        { "nome": "Prática Aula 12", "conteudo": "Jornada do usuário: público-alvo e pesquisa", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-12.html" },
+        { "nome": "Atividade Aula 13", "conteudo": "Usabilidade: friendly e intuitividade", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-13-50-QUESTOES.html" },
+        { "nome": "Prática Aula 13", "conteudo": "Usabilidade: friendly e intuitividade", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-13.html" },
+        { "nome": "Atividade Aula 14", "conteudo": "Estratégias de coleta de informações", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-14-50-QUESTOES.html" },
+        { "nome": "Prática Aula 14", "conteudo": "Estratégias de coleta de informações", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-14.html" },
+        { "nome": "Atividade Aula 15", "conteudo": "Coleta de feedbacks e resolução de conflitos", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-15-50-QUESTOES.html" },
+        { "nome": "Prática Aula 15", "conteudo": "Coleta de feedbacks e resolução de conflitos", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-15.html" },
+        { "nome": "Atividade Aula 16", "conteudo": "Determinação de escopo do projeto de interface", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-16-50-QUESTOES.html" },
+        { "nome": "Prática Aula 16", "conteudo": "Determinação de escopo do projeto de interface", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-16.html" },
+        { "nome": "Atividade Aula 17", "conteudo": "Prototipagem: storyboard e protótipos de papel", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-17-50-QUESTOES.html" },
+        { "nome": "Prática Aula 17", "conteudo": "Prototipagem: storyboard e protótipos de papel", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-17.html" },
+        { "nome": "Atividade Aula 18", "conteudo": "Mock-ups digitais e processo de criação", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-18-50-QUESTOES.html" },
+        { "nome": "Prática Aula 18", "conteudo": "Mock-ups digitais e processo de criação", "pontos": 0.79, "pagina": "ATIVIDADE-PRATICA-AULA-18.html" },
+        { "nome": "Atividade Aula 19", "conteudo": "Direito autoral e Creative Commons", "pontos": 0.79, "pagina": "ATIVIDADES-AULA-19-50-QUESTOES.html" },
+        { "nome": "Prática Aula 19", "conteudo": "Direito autoral e Creative Commons", "pontos": 0.77, "pagina": "ATIVIDADE-PRATICA-AULA-19.html" }
+      ]
+    },
+    {
+      "id": "objetiva",
+      "subtotal": "Subtotal — 1 avaliação objetiva (40 pontos)",
+      "itens": [
+        { "nome": "Avaliação Objetiva 01", "conteudo": "Aulas 01 a 19", "pontos": 40, "peso": "40%", "pagina": "AVALIACAO-OBJETIVA-01.html" }
+      ]
+    },
+    {
+      "id": "pratica",
+      "peso": "30%",
+      "pontos": 30,
+      "pagina": "AVALIACAO-PRATICA.html",
+      "subtotal": "Subtotal — 1 avaliação prática (projeto de interface de agendamento online)",
+      "itens": [
+        { "nome": "Avaliação Prática — análise fundamentada", "conteudo": "Diagnóstico, pesquisa com usuário, jornada e escopo", "pontos": 10 },
+        { "nome": "Avaliação Prática — protótipo e mock-up", "conteudo": "Fluxo testado no papel e telas fiéis ao projeto", "pontos": 12 },
+        { "nome": "Avaliação Prática — licenças e entrega", "conteudo": "Direito autoral conferido e documentação do processo", "pontos": 8 }
+      ]
+    }
+  ],
+  "regras": [
+    "Cada atividade e cada avaliação tem nota de 0 a 10, convertida para os pontos dela. Exemplo: nota 8 numa atividade de 0,79 ponto = 0,63 ponto.",
+    "Avaliação contínua (ementa: 30%): a objetiva de 50 questões e a atividade prática de cada uma das 19 aulas.",
+    "Nas avaliações vale a melhor nota entre a avaliação e as recuperações (recuperação: refazer a avaliação não atingida com outra situação ou novo banco de questões, conforme o regimento da unidade SENAI).",
+    "Atividade ou avaliação não feita vale 0 ponto.",
+    "**Peso no sistema (ementa):** avaliação contínua 30% (lançar a média das 38 atividades, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 40% e Avaliação Prática 30%. Nota final = soma de cada nota × peso.",
+    "**Aprovação: 70 pontos ou mais** (nota final ≥ 7,0) e presença mínima de 75%."
+  ]
+}

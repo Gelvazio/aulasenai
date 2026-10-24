@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação — Média Final (100 pontos)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-media-final.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../../../../js/supabase.js" defer></script>
+    <script src="../../../../assets/js/unidade.js" defer></script>
+    <script src="../../../../assets/js/avaliacao-media-final-professor.js" defer></script>
+    <script src="../../../../assets/js/avaliacao-media-final.js" defer></script>
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+</head>
+<body data-uc="Fundamentos de UI / UX">
+<div id="header-usuario"></div>
+    <!-- gerador-avaliacao-media-final: página gerada a partir de media-final.json -->
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🏁 Avaliação — Média Final</h1>
+            <p>Fundamentos de UI/UX · Técnico em Informática para Internet — 100 pontos somados</p>
+        </header>
+
+        <main class="content-section">
+            <section class="aula-card">
+                <span class="aula-badge">COMPOSIÇÃO</span>
+                <h2 class="aula-title">Como os 100 pontos são distribuídos</h2>
+                <div id="mediaSelecao" class="media-selecao" hidden></div>
+                <p id="mediaSituacao" class="media-situacao">Carregando suas notas...</p>
+                <div class="media-rolagem">
+                    <table class="media-tabela" data-nota-minima="70">
+                        <thead>
+                            <tr>
+                                <th>Instrumento</th>
+                                <th>Conteúdo</th>
+                                <th class="media-numero">Pontos</th>
+                                <th class="media-numero">Peso no sistema</th>
+                                <th class="media-numero">Sua nota (0–10)</th>
+                                <th class="media-numero">Seus pontos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-01-50-QUESTOES.html"><td>Atividade Aula 01</td><td>Princípios de design: definição e evolução histórica</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-01.html"><td>Prática Aula 01</td><td>Princípios de design: definição e evolução histórica</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-02-50-QUESTOES.html"><td>Atividade Aula 02</td><td>Formas geométricas e regras de visualização</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-02.html"><td>Prática Aula 02</td><td>Formas geométricas e regras de visualização</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-03-50-QUESTOES.html"><td>Atividade Aula 03</td><td>Teoria das cores na interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-03.html"><td>Prática Aula 03</td><td>Teoria das cores na interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-04-50-QUESTOES.html"><td>Atividade Aula 04</td><td>Resolução de problemas: análise crítica</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-04.html"><td>Prática Aula 04</td><td>Resolução de problemas: análise crítica</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-05-50-QUESTOES.html"><td>Atividade Aula 05</td><td>Resolução de problemas: análise de cenários</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-05.html"><td>Prática Aula 05</td><td>Resolução de problemas: análise de cenários</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-06-50-QUESTOES.html"><td>Atividade Aula 06</td><td>User Interface: definição e tipos de interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-06.html"><td>Prática Aula 06</td><td>User Interface: definição e tipos de interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-07-50-QUESTOES.html"><td>Atividade Aula 07</td><td>Layout: padrões de leitura F e Z e alinhamento</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-07.html"><td>Prática Aula 07</td><td>Layout: padrões de leitura F e Z e alinhamento</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-08-50-QUESTOES.html"><td>Atividade Aula 08</td><td>Layout: tamanho, espaçamento, texturas, fontes e repetição</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-08.html"><td>Prática Aula 08</td><td>Layout: tamanho, espaçamento, texturas, fontes e repetição</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-09-50-QUESTOES.html"><td>Atividade Aula 09</td><td>Eventos e navegação na interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-09.html"><td>Prática Aula 09</td><td>Eventos e navegação na interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-10-50-QUESTOES.html"><td>Atividade Aula 10</td><td>User Experience e design centrado no usuário</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-10.html"><td>Prática Aula 10</td><td>User Experience e design centrado no usuário</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-11-50-QUESTOES.html"><td>Atividade Aula 11</td><td>Processo de design interativo</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-11.html"><td>Prática Aula 11</td><td>Processo de design interativo</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-12-50-QUESTOES.html"><td>Atividade Aula 12</td><td>Jornada do usuário: público-alvo e pesquisa</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-12.html"><td>Prática Aula 12</td><td>Jornada do usuário: público-alvo e pesquisa</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-13-50-QUESTOES.html"><td>Atividade Aula 13</td><td>Usabilidade: friendly e intuitividade</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-13.html"><td>Prática Aula 13</td><td>Usabilidade: friendly e intuitividade</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-14-50-QUESTOES.html"><td>Atividade Aula 14</td><td>Estratégias de coleta de informações</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-14.html"><td>Prática Aula 14</td><td>Estratégias de coleta de informações</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-15-50-QUESTOES.html"><td>Atividade Aula 15</td><td>Coleta de feedbacks e resolução de conflitos</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-15.html"><td>Prática Aula 15</td><td>Coleta de feedbacks e resolução de conflitos</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-16-50-QUESTOES.html"><td>Atividade Aula 16</td><td>Determinação de escopo do projeto de interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-16.html"><td>Prática Aula 16</td><td>Determinação de escopo do projeto de interface</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-17-50-QUESTOES.html"><td>Atividade Aula 17</td><td>Prototipagem: storyboard e protótipos de papel</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-17.html"><td>Prática Aula 17</td><td>Prototipagem: storyboard e protótipos de papel</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-18-50-QUESTOES.html"><td>Atividade Aula 18</td><td>Mock-ups digitais e processo de criação</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADE-PRATICA-AULA-18.html"><td>Prática Aula 18</td><td>Mock-ups digitais e processo de criação</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.79" data-pagina="ATIVIDADES-AULA-19-50-QUESTOES.html"><td>Atividade Aula 19</td><td>Direito autoral e Creative Commons</td><td class="media-numero">0,79</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="0.77" data-pagina="ATIVIDADE-PRATICA-AULA-19.html"><td>Prática Aula 19</td><td>Direito autoral e Creative Commons</td><td class="media-numero">0,77</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades media-subtotal" data-subtotal="atividades" data-pontos="30"><td colspan="2">Subtotal — avaliação contínua: 38 atividades das aulas (0,79 ponto cada)</td><td class="media-numero">30</td><td class="media-numero media-peso">30%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+
+                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="40" data-pagina="AVALIACAO-OBJETIVA-01.html"><td>Avaliação Objetiva 01</td><td>Aulas 01 a 19</td><td class="media-numero">40</td><td class="media-numero media-peso">40%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva media-subtotal" data-subtotal="objetiva"><td colspan="2">Subtotal — 1 avaliação objetiva (40 pontos)</td><td class="media-numero">40</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+
+                            <tr class="media-grupo--pratica"><td>Avaliação Prática — análise fundamentada</td><td>Diagnóstico, pesquisa com usuário, jornada e escopo</td><td class="media-numero">10</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica"><td>Avaliação Prática — protótipo e mock-up</td><td>Fluxo testado no papel e telas fiéis ao projeto</td><td class="media-numero">12</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica"><td>Avaliação Prática — licenças e entrega</td><td>Direito autoral conferido e documentação do processo</td><td class="media-numero">8</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica media-subtotal" data-grupo="pratica" data-pontos="30" data-pagina="AVALIACAO-PRATICA.html"><td colspan="2">Subtotal — 1 avaliação prática (projeto de interface de agendamento online)</td><td class="media-numero">30</td><td class="media-numero media-peso">30%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr data-total><td colspan="2">TOTAL</td><td class="media-numero">100</td><td class="media-numero media-peso">100%</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="aula-card">
+                <span class="aula-badge">REGRAS</span>
+                <h2 class="aula-title">Como a nota é calculada</h2>
+                <ul class="media-regras">
+                    <li>Cada atividade e cada avaliação tem nota de 0 a 10, convertida para os pontos dela. Exemplo: nota 8 numa atividade de 0,79 ponto = 0,63 ponto.</li>
+                    <li>Avaliação contínua (ementa: 30%): a objetiva de 50 questões e a atividade prática de cada uma das 19 aulas.</li>
+                    <li>Nas avaliações vale a melhor nota entre a avaliação e as recuperações (recuperação: refazer a avaliação não atingida com outra situação ou novo banco de questões, conforme o regimento da unidade SENAI).</li>
+                    <li>Atividade ou avaliação não feita vale 0 ponto.</li>
+                    <li><strong>Peso no sistema (ementa):</strong> avaliação contínua 30% (lançar a média das 38 atividades, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 40% e Avaliação Prática 30%. Nota final = soma de cada nota × peso.</li>
+                    <li><strong>Aprovação: 70 pontos ou mais</strong> (nota final ≥ 7,0) e presença mínima de 75%.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
