@@ -32,8 +32,8 @@ Reservar tarefa para a sessão atual.
 || 4. Salvar como database/2026-10-24-atividade-pratica-aula-15-seed-atividades.sql | ✅ Concluído | 2026-10-24 | - |
 || 5. Aplicar seed no banco via script Node.js (exec_sql RPC) | ✅ Concluído | 2026-10-24 | - |
 || 6. Atualizar STATUS_MATERIA.md marcando seed da aula 15 como ✅ | ✅ Concluído | 2026-10-24 | - |
-|| 7. Commit e push | 🔄 Em progresso | - | - |
+|| 7. Commit e push | ✅ Concluído | 2026-10-24 | - |
 
 ## Próximo passo
 
-Commit e push das alterações.
+Tarefa concluída.
