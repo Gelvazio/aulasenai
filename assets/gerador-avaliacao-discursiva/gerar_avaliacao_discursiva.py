@@ -23,6 +23,9 @@ Regra GLOBAL (#365), sem campo na fonte: botão "CONFIRMAR TODA CORREÇÃO DE IA
 acima da coluna "Aluno" do Progresso da turma; roda o "Confirmar Todas" em cada aluno listado
 (entregues, com nota da IA, sem suspeita de cópia pendente), após popup de confirmação
 (assets/js/confirmar-toda-correcao-ia-progresso.js).
+Regra GLOBAL (#372), sem campo na fonte, em discursivas, práticas e objetivas: o modal "Quantidade
+Mínima de Questões" do aluno abre com a quantidade que vale na nota; Salvar grava a mesma
+quantidade em minimo_questoes_aluno e questoes_nota_aluno; Voltar ao padrão apaga as duas.
 Regra GLOBAL (#368), sem campo na fonte, também nas práticas e objetivas: o seletor de turma do
 "Liberar gabaritos" abre na turma escolhida no combo "Turma" do Progresso da turma e a acompanha
 (assets/js/alunos-da-turma-progresso.js, liberacao-respostas-discursiva.js).

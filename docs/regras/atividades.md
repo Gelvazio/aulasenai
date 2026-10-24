@@ -505,6 +505,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     `.questao--fora-do-minimo` em `atividade.css`). Ligado em Testes de Front-End, aulas 01 a 10
     (Aula 02 pela #33; as demais pela #36, 2026-10-16); as demais matérias entram pela #34 (etapa
     161-7aee2d7e).
+- ✅ **Modal "Quantidade Mínima de Questões" grava a quantidade da nota (2026-10-24, #372,
+  GLOBAL):** o modal abre com a quantidade que **vale na nota** do aluno; **Salvar** grava a mesma
+  quantidade em `minimo_questoes_aluno` e em `questoes_nota_aluno` para o aluno nesta atividade;
+  **Voltar ao padrão** apaga as duas. Vale para discursivas, práticas e objetivas (o painel global
+  lê `minimoDoAluno` e `questoesNotaDoAluno` de `assets/js/progresso-turma-fontes.js` nas duas
+  fontes).
 - ⛔ **REMOVIDO da tela em 2026-10-24 (pedido do usuário: duplicava o botão "Quantidade Mínima"):** o
   campo e o botão "Confirmar" não aparecem mais no Progresso da turma; os valores já gravados em
   `questoes_nota_aluno` continuam valendo no cálculo da nota. Texto original abaixo.

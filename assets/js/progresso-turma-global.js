@@ -477,7 +477,9 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
         '🎯 Quantidade Mínima de Questões: ' + aluno.questoesNota + '/' + aluno.totalQuestoes);
     botao.title = 'Questões que entram na nota deste aluno (mínimo padrão: ' + aluno.minimo + ').';
     botao.type = 'button';
-    if (aluno.minimoDoAluno) botao.classList.add(CLASSE_PROGRESSO_GLOBAL + '__minimo--proprio');
+    if (aluno.minimoDoAluno || aluno.questoesNotaDoAluno) {
+        botao.classList.add(CLASSE_PROGRESSO_GLOBAL + '__minimo--proprio');
+    }
     botao.addEventListener('click', () => abrirMinimoDoAlunoGlobal(aluno));
     const extras = estadoProgressoGlobal.botoesNome.map((criarBotao) => criarBotao({
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
@@ -516,7 +518,8 @@ function abrirMinimoDoAlunoGlobal(aluno) {
         funcao: 'abrirMinimoQuestoes', titulo: 'a quantidade mínima' }, {
         atividadeId: estadoProgressoGlobal.atividadeId, alunoId: aluno.alunoId,
         nome: aluno.nome, minimo: aluno.minimo, totalQuestoes: aluno.totalQuestoes,
-        temMinimoProprio: Boolean(aluno.minimoDoAluno),
+        questoesNota: aluno.questoesNota,
+        temMinimoProprio: Boolean(aluno.minimoDoAluno || aluno.questoesNotaDoAluno),
     });
 }
 
