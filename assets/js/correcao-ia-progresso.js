@@ -13,6 +13,8 @@ const TABELA_PEDIDO_CORRECAO_IA = 'pedido_correcao_ia';
 const ESTADO_PENDENTE_CORRECAO_IA = 'PENDENTE';
 const PERFIL_PROFESSOR_CORRECAO_IA = 'PROFESSOR';
 const LINHAS_POR_PAGINA_CORRECAO_IA = 1000;
+const SELETOR_LEGENDA_CORRECAO_IA = '.progresso-turma__legenda';
+const SELETOR_CONTAGEM_CORRECAO_IA = '.progresso-turma__contagem';
 const CLASSE_PENDENTE_CORRECAO_IA = CLASSE_CORRECAO_IA + '__linha--pendente';
 const TEXTO_BOTAO_CORRECAO_IA = '🤖 Executar correção de IA agora ✨';
 const MSG_PEDIDO_ENVIADO_CORRECAO_IA = 'Pedido enviado: execute /corrigir-ia no Claude Code';
@@ -44,6 +46,20 @@ async function lerTodasAsLinhasCorrecaoIa(tabela, consulta) {
 async function ehProfessorCorrecaoIa() {
     const { data } = await obterClienteSupabase().auth.getSession();
     return data?.session?.user?.app_metadata?.perfil === PERFIL_PROFESSOR_CORRECAO_IA;
+}
+
+/**
+ * Alunos que entregaram ESTA atividade (só o id atual, em entrega_atividade), dentro dos alunos
+ * que o quadro está mostrando (turma escolhida).
+ * @param {number} atividadeId - Id da atividade atual.
+ * @param {Object[]} alunosDoQuadro - Alunos do quadro (com alunoId).
+ * @returns {Promise<Set<string>>} Ids dos alunos que entregaram a atividade.
+ */
+async function lerIdsEntreguesIdAtualCorrecaoIa(atividadeId, alunosDoQuadro) {
+    const entregas = await lerTodasAsLinhasCorrecaoIa('entrega_atividade',
+        'select=aluno_id&atividade_id=eq.' + atividadeId + '&order=aluno_id');
+    const idsDoQuadro = new Set(alunosDoQuadro.map((aluno) => aluno.alunoId));
+    return new Set(entregas.map((linha) => linha.aluno_id).filter((id) => idsDoQuadro.has(id)));
 }
 
 /**
@@ -185,10 +201,9 @@ async function criarPainelCorrecaoIa({ atividadeId, lerAlunos }) {
     };
     const idDaPagina = () => obterIdAtividadeDaPaginaCorrecaoIa(atividadeId);
     const atualizar = async () => {
-        const entregues = lerAlunos().filter((aluno) => aluno.entregue === true);
-        const contagem = await contarQuestoesCorrigidasIa(idDaPagina(),
-            new Set(entregues.map((aluno) => aluno.alunoId)));
-        textos.entregues.textContent = '📦 Atividades entregues: ' + entregues.length;
+        const idEntregues = await lerIdsEntreguesIdAtualCorrecaoIa(idDaPagina(), lerAlunos());
+        const contagem = await contarQuestoesCorrigidasIa(idDaPagina(), idEntregues);
+        textos.entregues.textContent = '📦 Atividades entregues: ' + idEntregues.size;
         textos.corrigidas.textContent = '✅ Questões corrigidas: ' + contagem.corrigidas +
             ' de ' + contagem.total;
         const estado = await lerEstadoUltimoPedidoIa(idDaPagina());
@@ -203,6 +218,34 @@ async function criarPainelCorrecaoIa({ atividadeId, lerAlunos }) {
     return { elemento, atualizar: atualizarSemFalha };
 }
 
+/**
+ * Põe o painel lá em cima, à direita dos filtros: agrupa legenda, filtros e contagem numa coluna
+ * e o painel ao lado. Sem esses elementos, o painel só vai para o fim da área.
+ * @param {HTMLElement} area - Área "Progresso da turma".
+ * @param {HTMLElement} painel - Painel "Correção de IA".
+ * @returns {void}
+ */
+function posicionarPainelCorrecaoIa(area, painel) {
+    const legenda = area.querySelector(SELETOR_LEGENDA_CORRECAO_IA);
+    const contagem = area.querySelector(SELETOR_CONTAGEM_CORRECAO_IA);
+    if (!legenda || !contagem) {
+        area.appendChild(painel);
+        return;
+    }
+    const grupo = [];
+    for (let no = legenda; no; no = no.nextElementSibling) {
+        grupo.push(no);
+        if (no === contagem) break;
+    }
+    const topo = criarElementoCorrecaoIa('div', 'topo');
+    topo.className = CLASSE_CORRECAO_IA + '-topo';
+    const filtros = criarElementoCorrecaoIa('div', 'filtros');
+    filtros.className = CLASSE_CORRECAO_IA + '-topo__filtros';
+    legenda.before(topo);
+    filtros.append(...grupo);
+    topo.append(filtros, painel);
+}
+
 (function incluirEstiloCorrecaoIa() {
     if (!BASE_SCRIPTS_CORRECAO_IA) return;
     const link = document.createElement('link');
@@ -212,3 +255,4 @@ async function criarPainelCorrecaoIa({ atividadeId, lerAlunos }) {
 })();
 
 window.criarPainelCorrecaoIa = criarPainelCorrecaoIa;
+window.posicionarPainelCorrecaoIa = posicionarPainelCorrecaoIa;

@@ -927,7 +927,7 @@ async function prepararCorrecaoIaGlobal(area, tipo) {
         estadoProgressoGlobal.correcaoIa = await window.criarPainelCorrecaoIa({
             atividadeId: estadoProgressoGlobal.atividadeId,
             lerAlunos: () => estadoProgressoGlobal.ultimosAlunos });
-        area.appendChild(estadoProgressoGlobal.correcaoIa.elemento);
+        window.posicionarPainelCorrecaoIa(area, estadoProgressoGlobal.correcaoIa.elemento);
     } catch (erro) {
         console.warn('Correção de IA do progresso:', erro.message);
     }
