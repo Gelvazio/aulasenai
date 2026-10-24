@@ -21,7 +21,7 @@
 - Banco de produção: só com o "sim" do usuário; SQL idempotente, sem apagar dados.
 
 ### Decisões
-- (aguardando) média ponderada só das atividades ON com nota; padrão ON e peso 1; configuração por turma.
+- **Aprovado pelo usuário em 2026-10-24** ("sim, aprovado o plano da #370; use vários agentes"). Média ponderada só das atividades ON com nota; padrão ON e peso 1; configuração por turma.
 
 ### #370.1 — SQL: tabela de configuração + função de notas para o professor
 

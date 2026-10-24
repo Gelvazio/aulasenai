@@ -5,7 +5,7 @@
 
 ## Tarefas
 
-- #370-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-519-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · 👀 Aguardando o "sim" do usuário ao plano · livre
+- #370-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-519-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · 🔄 Em execução (plano aprovado 2026-10-24) · Claude Code (Sonnet 5.5) (local · main)
   - #370.1 — SQL: tabela de configuração + função de notas para o professor · ⬜ Pendente · `PESADO` · só Sonnet
   - #370.2 — Repositório de dados do card · ⬜ Pendente · `PESADO` · só Sonnet
   - #370.3 — Visão do card: tabela, média ponderada, ON/OFF e peso · ⬜ Pendente · `PESADO` · só Sonnet
