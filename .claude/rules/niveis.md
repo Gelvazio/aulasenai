@@ -29,6 +29,9 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 | **Devin** / **Copilot** | ✅ | ⛔ | ⛔ |
 
 - `PESADO` é do Claude Code com **Sonnet, Opus 5.5 ou superior, ou Fable** (C48, 2026-10-22).
+- ⛔ **NESTE PROJETO NUNCA USAR OPUS** (2026-10-24, pedido do usuário: "é projeto simples"): nem
+  como executor, nem como agente de equipe (`executor-pesado`), nem como líder. `PESADO` aqui é do
+  **Sonnet** (ou DeepSeek); `LEVE` do Haiku. Vale mais que a linha da tabela acima que cita Opus.
 - Banco continua **só do Claude Code local** (`multiplas-ias.md`).
 - A tabela é do usuário: mudança nela vai para o "Registro de decisões" do `tasks/STATUS.md`.
 
