@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #360-4c7a2e91 — [Filtro ON/OFF "Nota IA Gerada" no Progresso da turma (todas as atividades)](etapas/ETAPA-509-4c7a2e91-FILTRO-NOTA-IA-GERADA.md) · 🟠 🔄 Em execução · Devin (líder · local · main) (desde 2026-10-24 19:35) · 0%
+  - #360.1 — Filtro ON/OFF "Nota IA Gerada" no Progresso da turma · 🔄 Em execução · Claude Code (Sonnet · executor-pesado) (local · main) (desde 2026-10-24 19:35) · 0% · `PESADO`
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)
