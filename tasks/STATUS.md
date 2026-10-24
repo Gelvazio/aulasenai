@@ -1572,6 +1572,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | **JEV-NAO** | **Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47)** | 🟡 Média | — | Nenhuma | ⬜ Pendente (mãe: pegue uma subtarefa) | — (não reservável) | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
+| **REGRA-ATIVIDADES-APOS-MD** | **Atividades só depois dos Markdown dos slides (regra global das matérias)** | 🟡 Média | — | Nenhuma | ⬜ Pendente (mãe: pegue uma subtarefa) | — (não reservável) | [485-a7d3f9c1](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) | — |
+| REGRA-ATIVIDADES-APOS-MD.1 | Escrever a regra em `.claude/rules/` e ligar ao `AGENTS.md` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | Nenhuma | ⬜ Pendente | — | [485-a7d3f9c1](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2093,6 +2095,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 482-15d4abf4 | COMMIT.INICIAL.RULES-AI: commit e push inicial do quadro | [ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md) |
 | 483-ce3b848a | JEV-NAO: Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47) | [ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) |
 | 484-77fe60ae | VERCEL-SEM-DEPLOY-DE-CONTROLE: `tasks/` e `rules-local/` nunca geram deploy (C46) | [ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md) |
+| 485-a7d3f9c1 | REGRA-ATIVIDADES-APOS-MD: Atividades só depois dos Markdown dos slides | [ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
