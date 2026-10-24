@@ -3,29 +3,24 @@ var SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOi
 
 async function verificarMaterias() {
   console.log('Listando todas as matérias');
-
-  var sql = "SELECT id, descricao FROM public.materia ORDER BY descricao";
-
-  var response = await fetch(SUPABASE_URL + '/rest/v1/rpc/exec_sql', {
-    method: 'POST',
+  
+  var response = await fetch(SUPABASE_URL + '/rest/v1/materia?select=id,descricao&order=descricao', {
+    method: 'GET',
     headers: {
       'apikey': SUPABASE_SERVICE_ROLE_KEY,
       'Authorization': 'Bearer ' + SUPABASE_SERVICE_ROLE_KEY,
-      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ sql_text: sql }),
   });
-
-  var texto = await response.text();
-  var data = texto ? JSON.parse(texto) : null;
-
-  if (!response.ok) {
-    console.error('Erro:', data);
-    throw new Error(data.message || 'Erro desconhecido');
-  }
-
-  console.log('Matérias encontradas:', JSON.stringify(data, null, 2));
-  return data;
+  
+  var materias = await response.json();
+  console.log('Matérias encontradas:', JSON.stringify(materias, null, 2));
+  
+  // Filter for UI-related
+  var uiMaterias = materias.filter(function(m) {
+    return m.descricao && m.descricao.indexOf('UI') !== -1;
+  });
+  console.log('Matérias com UI:', JSON.stringify(uiMaterias, null, 2));
+  return materias;
 }
 
 verificarMaterias().catch(function(err) {
