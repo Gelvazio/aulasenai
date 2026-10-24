@@ -2,7 +2,7 @@
 
 <!-- gerado por scripts/sincronizar.mjs; não editar -->
 
-- **Versão:** 2026-10-23-4f19d945
+- **Versão:** 2026-10-24-29a935b0
 - **Algoritmo:** sha256 do texto (sem BOM, fim de linha LF); 16 caracteres por arquivo, 8 na versão
 - **Fonte:** https://github.com/Gelvazio/rules-ai/tree/main/regras
 
@@ -10,32 +10,37 @@
 
 | # | Arquivo | Código |
 |---|---------|--------|
-| 0 | INDEX.md | de179c52c17ca671 |
-| 1 | ciclo-da-task.md | 0f655a1970c31da1 |
-| 2 | niveis-e-modelos.md | e563d4c406d280c2 |
-| 3 | frentes-e-reserva.md | 35dc8d1e8f3c16f0 |
-| 4 | comando-ponto.md | 25fab5e441b75d40 |
-| 5 | comando-interrogacao.md | e81811ae12199f38 |
-| 6 | quadro-de-tarefas.md | 412bac4a23471c1a |
-| 7 | exibicao-de-status.md | 762e831da32bdc80 |
-| 8 | git-geral.md | 9d2938daf92d3efe |
-| 9 | testes-validacao.md | 233579829f757900 |
-| 10 | codigo-limites-nomes.md | ca88cca3360ef918 |
-| 11 | codigo-solid.md | 6f3e1050946d15af |
-| 12 | espec.md | 1cfd3d3f1e4c4742 |
-| 13 | esforco.md | d897c4cb72bd6c76 |
-| 14 | graphify.md | f31357d0386045d2 |
-| 15 | gerenciador-centralizado.md | c6f5535db0d613a4 |
-| 16 | pastas-ignoradas.md | b33814d65cafd940 |
-| 17 | rules-local.md | 39d036270b2def36 |
-| 18 | herdr.md | 0ed9c7e0c2280ae0 |
-| 19 | jev.md | 1500944d066573c9 |
-| 20 | visualizador-gerado.md | bced4974cd78dc89 |
-| 21 | atividades-e-idioma.md | a37b651279928422 |
+| 0 | INDEX.md | 763172a1e2dbed0d |
+| 1 | regra-maior.md | bbf5f654197ffa51 |
+| 2 | ciclo-da-task.md | 706d60bd58960947 |
+| 3 | niveis-e-modelos.md | 59a67190ed6ef932 |
+| 4 | frentes-e-reserva.md | 869cf62ea28db83a |
+| 5 | comando-ponto.md | 25fab5e441b75d40 |
+| 6 | comando-interrogacao.md | e81811ae12199f38 |
+| 7 | quadro-de-tarefas.md | 6358739af2e50a25 |
+| 8 | exibicao-de-status.md | 762e831da32bdc80 |
+| 9 | git-geral.md | 2167c76b4283c32a |
+| 10 | testes-validacao.md | 233579829f757900 |
+| 11 | codigo-limites-nomes.md | ca88cca3360ef918 |
+| 12 | codigo-solid.md | 6f3e1050946d15af |
+| 13 | espec.md | 1cfd3d3f1e4c4742 |
+| 14 | esforco.md | d897c4cb72bd6c76 |
+| 15 | graphify.md | f31357d0386045d2 |
+| 16 | gerenciador-centralizado.md | c6f5535db0d613a4 |
+| 17 | pastas-ignoradas.md | b33814d65cafd940 |
+| 18 | rules-local.md | c324790daa1a3a05 |
+| 19 | herdr.md | 7d5677aa568db2a8 |
+| 20 | jev.md | 8b78c1578c16b6ec |
+| 21 | visualizador-gerado.md | bced4974cd78dc89 |
+| 22 | memoria-ai.md | 19bbb249bd19b203 |
+| 23 | mcp-quadro.md | 005e9e89838e472a |
+| 24 | vercel-sem-deploy-de-controle.md | 9801278fe383e99f |
+| 25 | mods-claude-code.md | 7792a2db01fe37f2 |
+| 26 | atividades-e-idioma.md | a37b651279928422 |
 
 ## Pacote do rules-local (scripts e Jev)
 
-- **Código do pacote:** 01d50472
+- **Código do pacote:** b310c868
 
 | # | Arquivo | Código |
 |---|---------|--------|
@@ -66,6 +71,6 @@
 | 24 | jev/mensagem/limite.mjs | 43777eeb103ac62b |
 | 25 | jev/mensagem/perguntas.mjs | b4076242fdb3536e |
 | 26 | jev/mensagem/repetida.mjs | 474b24f73b753f48 |
-| 27 | jev/modelos.mjs | cbc5abbfe246fffe |
+| 27 | jev/modelos.mjs | ea46c576c4d409e6 |
 | 28 | jev/perguntas.mjs | bcec2aa12dcfdb10 |
 | 29 | jev/proxy.mjs | a027d2b70b57a904 |

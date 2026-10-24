@@ -2,18 +2,20 @@
 
 <!-- gerado por rules-local/sessao.mjs; não editar -->
 
-- **Versão anterior:** 2026-10-22-6637f9d5
-- **Versão nova:** 2026-10-23-4f19d945
-- **Gerado em:** 2026-10-23 10:50 (Brasília)
+- **Versão anterior:** 2026-10-24-ab3bdd19
+- **Versão nova:** 2026-10-24-29a935b0
+- **Gerado em:** 2026-10-24 14:32 (Brasília)
 - **Motivo:** versão diferente
-- **Totais:** 2 mudado · 0 adicionado · 0 removido · 20 igual
+- **Totais:** 3 mudado · 0 adicionado · 1 removido · 24 igual
 
 ## Itens
 
 | Situação | Arquivo | Código anterior | Código novo |
 |---|---|---|---|
-| mudado | jev.md | 23f4adc018284d92 | 1500944d066573c9 |
-| mudado | niveis-e-modelos.md | 665a75ded178ffe6 | e563d4c406d280c2 |
+| mudado | comando-ponto.md | f7a65ab467b7d368 | 25fab5e441b75d40 |
+| mudado | frentes-e-reserva.md | 0d9244377755f18d | 869cf62ea28db83a |
+| mudado | git-geral.md | 9d2938daf92d3efe | 2167c76b4283c32a |
+| removido | ponto-subagentes-haiku.md | b871dd65230fe8d0 | — |
 
 ## Restaurados
 
