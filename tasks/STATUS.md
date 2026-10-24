@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s497) | PAINEL-IA-DESTAQUE.1 em execução ([499-c9a5d7e1](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md)) | 🔄 Ativa | 2026-10-24 14:55 |
 | Claude Code (Sonnet 5.5) (local · main · s497) | CORRECAO-IA-PAINEL: painel, comando e docs entregues; SQL aguarda o usuário ([497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 14:40 |
 | Claude Code (Sonnet 5.5) (local · main · s496) | REMOVER-QTD-CONSIDERAR concluída ([496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | ⏹️ Encerrada | 2026-10-24 18:30 |
 | Claude Code (Sonnet 5.5) (local · main · s495) | ID-ATIVIDADE-TITULO concluída ([495-f6d2a4b8](etapas/ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md)) | ⏹️ Encerrada | 2026-10-24 18:00 |
@@ -1569,6 +1570,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| **PAINEL-IA-DESTAQUE** | **Painel de correção de IA centralizado, com ícones, piscando e id do HTML** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [499-c9a5d7e1](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md) | — |
+| PAINEL-IA-DESTAQUE.1 | Centralizar, destacar e ler o id da página | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s497) (desde 2026-10-24 14:55) | [499-c9a5d7e1](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2104,6 +2107,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 496-a7e3b5c9 | REMOVER-QTD-CONSIDERAR: Remover "Quantidade Questão Considerar" duplicada | [ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
 | 497-b8f4c6d0 | CORRECAO-IA-PAINEL: Painel "Executar correção de IA" no quadro de progresso | [ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) |
 | 498-e563a26b | FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL: atividades das aulas 01 a 20 | [ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) |
+| 499-c9a5d7e1 | PAINEL-IA-DESTAQUE: Painel de correção de IA centralizado, com ícones e piscando | [ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
