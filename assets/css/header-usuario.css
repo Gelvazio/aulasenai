@@ -26,8 +26,10 @@
 .header-usuario__botao:hover { background: #d97706; }
 @media print { #header-usuario { display: none; } }
 .header-usuario__home { margin-right: auto; }
-.header-usuario__menu { display: flex; flex-wrap: wrap; gap: 10px; }
+/* O menu empilha as linhas; cada linha distribui os links lado a lado. */
+.header-usuario__menu { display: flex; flex-direction: column; gap: 10px; }
 .header-usuario__menu:empty { display: none; }
+.header-usuario__menu-linha { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .header-usuario__menu-link {
     color: #fff;
     font-size: 13px;
@@ -35,7 +37,8 @@
     text-decoration: none;
     padding: 5px 16px;
     border: 2px solid #f7941d;
-    border-radius: 16px;
+    border-radius: 8px;
+    text-align: center;
 }
 .header-usuario__menu-link:hover { background: #f7941d; }
 button.header-usuario__menu-link { background: transparent; font-family: inherit; cursor: pointer; }
@@ -46,6 +49,7 @@ button.header-usuario__menu-link { background: transparent; font-family: inherit
     .header-usuario__nome { flex: 1 1 100%; order: -1; overflow-wrap: anywhere; }
     .header-usuario__home { margin-right: 0; }
     .header-usuario__menu { flex: 1 1 100%; gap: 6px; }
+    .header-usuario__menu-linha { gap: 6px; }
     .header-usuario__menu-link { padding: 6px 12px; font-size: 13px; }
     .header-usuario__botao { padding: 8px 16px; }
 }

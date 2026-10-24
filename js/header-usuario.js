@@ -5,6 +5,9 @@
 // Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
 // ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS e REGRAS (nova aba; REGRAS = visualizador
 // .claude/rules/index.html, 2026-10-13). Os demais professores não veem esses menus.
+// Esse menu sai em 2 linhas de propósito (#358, 2026-10-24): a primeira metade dos itens em cima
+// e a segunda metade embaixo (cada metade num .header-usuario__menu-linha), com o botão EQUIPES
+// dentro da segunda linha, antes do link REGRAS.
 // Guarda de sessão (2026-10-09): em toda página, menos o login.html da raiz, sem login
 // nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o login.html.
 // Uso na página: <script src=".../js/header-usuario.js"></script> como PRIMEIRO script do <head>
@@ -37,9 +40,13 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
   // Telemetria das matérias por curso/ano/semestre (o que falta em cada uma, #357).
   { rotulo: "Matérias Pendentes", rota: "../materias-pendentes.html" },
-  // Só visualizador das regras e do quadro (gerado por scripts/regras/gerar_visualizador_regras.py).
+  // Só visualizador das regras e do quadro (scripts/regras/gerar_visualizador_regras.py).
   { rotulo: "Regras", rota: "../.claude/rules/index.html" },
 ];
+// Menu em 2 linhas (#358): o botão EQUIPES entra logo antes deste item do menu.
+const ROTULO_REGRAS_HEADER = "Regras";
+const CLASSE_LINHA_MENU_HEADER = "header-usuario__menu-linha";
+const TOTAL_LINHAS_MENU_HEADER = 2;
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "🏠 Início";
@@ -53,8 +60,8 @@ const ICONE_ENTRAR_DESTAQUE_FIM = "👉🔑";
 // Se a página tiver este espaço (ex.: index.html), o card vai para ele em vez da barra.
 const ID_ENTRAR_DESTAQUE_PAGINA = "entrar-destaque";
 const ROTULO_PERFIL = { PROFESSOR: "Professor", ALUNO: "Aluno" };
-// Botão EQUIPES (global, 2026-10-08): professor e aluno líder, em toda página dentro de uma matéria
-// (/MATERIAIS/<CURSO>/<MATÉRIA>/...) e abre o modal de equipes daquela matéria.
+// Botão EQUIPES (global, 2026-10-08): professor e aluno líder, em toda página dentro de
+// uma matéria (/MATERIAIS/<CURSO>/<MATÉRIA>/...); abre o modal de equipes daquela matéria.
 const TEXTO_EQUIPES_HEADER = "👥 EQUIPES";
 const ROTA_ACAO_EQUIPES_JS = "../assets/js/menu-acao-equipes.js";
 const MARCADOR_MATERIAIS_HEADER = "/MATERIAIS/";
@@ -183,6 +190,33 @@ function criarLinkMenuHeader(item) {
 }
 
 /**
+ * Cria uma linha do menu do header com os elementos recebidos.
+ * @param {HTMLElement[]} itens - Links e botões que ficam na linha.
+ * @returns {HTMLDivElement} Linha do menu.
+ */
+function criarLinhaMenuHeader(itens) {
+  const linha = criarElementoHeader("div", CLASSE_LINHA_MENU_HEADER, "");
+  linha.append(...itens);
+  return linha;
+}
+
+/**
+ * Divide os itens ao meio e põe cada metade numa linha própria do menu (metade em cima,
+ * metade embaixo). Sobrando item, a primeira linha fica com o extra.
+ * @param {HTMLElement} menu - Elemento <nav> do menu.
+ * @param {HTMLElement[]} itens - Links e botões do menu, na ordem de exibição.
+ */
+function montarLinhasMenuHeader(menu, itens) {
+  if (!itens.length) return;
+
+  const quantidadePrimeiraLinha = Math.ceil(itens.length / TOTAL_LINHAS_MENU_HEADER);
+  const primeiraLinha = itens.slice(0, quantidadePrimeiraLinha);
+  const segundaLinha = itens.slice(quantidadePrimeiraLinha);
+  menu.append(criarLinhaMenuHeader(primeiraLinha));
+  if (segundaLinha.length) menu.append(criarLinhaMenuHeader(segundaLinha));
+}
+
+/**
  * Descobre a pasta da matéria da página atual (/MATERIAIS/<CURSO>/<MATÉRIA>/).
  * @returns {string|null} URL absoluta da pasta da matéria ou null fora de uma matéria.
  */
@@ -243,10 +277,26 @@ async function ehAlunoLiderHeader(cliente, usuario) {
 }
 
 /**
- * Põe o botão EQUIPES antes do nome do usuário, só em página de matéria e só para professor
- * ou aluno líder (usuario.lider = 1). Quem decide o acesso aos dados continua sendo o RLS.
- * @param {{cliente: Object, usuario: Object|null, referencia: HTMLElement}} contexto - Cliente,
- *   usuário logado e o elemento antes do qual o botão entra.
+ * Diz se o usuário logado pode ver o botão EQUIPES: professor (sempre) ou aluno líder dentro
+ * de uma matéria. Quem decide o acesso aos dados continua sendo o RLS.
+ * @param {{cliente: Object, usuario: Object, pastaMateria: string|null}} contexto - Cliente,
+ *   usuário logado e pasta da matéria da página (null fora de uma matéria).
+ * @returns {Promise<boolean>} Verdadeiro se o botão deve aparecer.
+ */
+async function podeVerBotaoEquipes(contexto) {
+  const { cliente, usuario, pastaMateria } = contexto;
+  // Professor: sempre (fora de uma matéria, escolhe a matéria no modal). Líder: só na matéria.
+  if (usuario.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER) return true;
+  if (!pastaMateria) return false;
+  return ehAlunoLiderHeader(cliente, usuario);
+}
+
+/**
+ * Põe o botão EQUIPES antes do elemento de referência (o nome do usuário); só para
+ * professor ou aluno líder. Para o Professor Administrador o botão já entra dentro da
+ * segunda linha do menu, antes do link REGRAS (#358).
+ * @param {{cliente: Object, usuario: Object|null, referencia: HTMLElement}} contexto -
+ *   Cliente, usuário logado e elemento antes do qual o botão entra.
  * @returns {Promise<void>}
  */
 async function incluirBotaoEquipesHeader(contexto) {
@@ -254,29 +304,68 @@ async function incluirBotaoEquipesHeader(contexto) {
   if (!usuario) return;
 
   const pastaMateria = obterPastaMateriaHeader();
-  // Professor: sempre (fora de uma matéria, escolhe a matéria no modal). Líder: só na matéria.
-  const ehProfessor = usuario.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
-  if (ehProfessor) return void referencia.before(criarBotaoEquipesHeader(pastaMateria));
-  if (!pastaMateria) return;
-  if (await ehAlunoLiderHeader(cliente, usuario)) {
-    referencia.before(criarBotaoEquipesHeader(pastaMateria));
+  if (!(await podeVerBotaoEquipes({ cliente, usuario, pastaMateria }))) return;
+
+  referencia.before(criarBotaoEquipesHeader(pastaMateria));
+}
+
+/**
+ * Diz se o usuário logado é Professor Administrador, pelo banco. O e-mail e o user_metadata
+ * não decidem nada: quem decide é eh_professor_administrador().
+ * @param {Object} cliente - Cliente do Supabase.
+ * @returns {Promise<boolean>} Verdadeiro se o banco confirmar o papel.
+ */
+async function ehProfessorAdministradorHeader(cliente) {
+  try {
+    const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_HEADER);
+    return !error && data === true;
+  } catch (erro) {
+    console.warn("Não foi possível conferir o Professor Administrador:", erro);
+    return false;
   }
 }
 
 /**
- * Acrescenta ao menu os itens do Professor Administrador, só se o banco confirmar o papel.
- * O e-mail e o user_metadata não decidem nada: quem decide é eh_professor_administrador().
- * @param {Object} cliente - Cliente do Supabase.
+ * Monta a lista de elementos do menu do administrador, na ordem de exibição: os links de
+ * MENU_ADMINISTRADOR_HEADER com o botão EQUIPES logo antes do link Regras (o último).
+ * @returns {HTMLElement[]} Links e botões do menu.
+ */
+function montarItensMenuAdministrador() {
+  const pastaMateria = obterPastaMateriaHeader();
+  const itens = [];
+  MENU_ADMINISTRADOR_HEADER.forEach((item) => {
+    const ehLinkRegras = item.rotulo === ROTULO_REGRAS_HEADER;
+    if (ehLinkRegras) itens.push(criarBotaoEquipesHeader(pastaMateria));
+    itens.push(criarLinkMenuHeader(item));
+  });
+  return itens;
+}
+
+/**
+ * Acrescenta ao menu os itens do Professor Administrador, em 2 linhas (metade em cima,
+ * metade embaixo). O papel já foi confirmado pelo banco por quem chama.
  * @param {HTMLElement} menu - Elemento <nav> do menu do professor.
  */
-async function incluirMenuAdministrador(cliente, menu) {
-  try {
-    const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_HEADER);
-    if (error || data !== true) return;
-    MENU_ADMINISTRADOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
-  } catch (erro) {
-    console.warn("Não foi possível conferir o Professor Administrador:", erro);
+function incluirMenuAdministrador(menu) {
+  montarLinhasMenuHeader(menu, montarItensMenuAdministrador());
+}
+
+/**
+ * Põe no header os acessos de quem está logado: o Professor Administrador recebe o menu em
+ * 2 linhas (com o botão EQUIPES dentro); os demais, só o botão EQUIPES, quando têm direito.
+ * @param {{cliente: Object, usuario: Object|null, menu: HTMLElement|null,
+ *   referencia: HTMLElement}} contexto - Cliente, usuário logado, menu do professor (null
+ *   para quem não é professor) e o elemento antes do qual o botão EQUIPES entra.
+ * @returns {Promise<void>}
+ */
+async function incluirAcessosHeader(contexto) {
+  const { cliente, usuario, menu, referencia } = contexto;
+  const ehAdministrador = Boolean(menu) && (await ehProfessorAdministradorHeader(cliente));
+  if (ehAdministrador) {
+    incluirMenuAdministrador(menu);
+    return;
   }
+  await incluirBotaoEquipesHeader({ cliente, usuario, referencia });
 }
 
 /**
@@ -394,14 +483,12 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
     return;
   }
   const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
-  if (ehProfessor) {
-    const menu = criarMenuProfessor();
-    barra.append(menu);
-    if (cliente) incluirMenuAdministrador(cliente, menu);
-  }
-  const nome = criarElementoHeader("span", "header-usuario__nome", descreverUsuarioHeader(usuario));
+  const menu = ehProfessor ? criarMenuProfessor() : null;
+  if (menu) barra.append(menu);
+  const texto = descreverUsuarioHeader(usuario);
+  const nome = criarElementoHeader("span", "header-usuario__nome", texto);
   barra.append(nome);
-  if (cliente) incluirBotaoEquipesHeader({ cliente, usuario, referencia: nome });
+  if (cliente) incluirAcessosHeader({ cliente, usuario, menu, referencia: nome });
   barra.append(criarBotaoSair(cliente));
   destino.replaceChildren(barra);
   if (cliente) incluirIdDaAtividadeNoTitulo();

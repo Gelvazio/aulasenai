@@ -19,7 +19,15 @@
   - **Arquivos:** `js/header-usuario.js`, `assets/css/header-usuario.css`
   - **Critérios:** itens do `MENU_ADMINISTRADOR_HEADER` + EQUIPES + Regras renderizam em 2 linhas (metade/metade); o menu continua só do Professor Administrador (RPC) e os links abrem em nova aba; nomes em português, JSDoc, funções ≤ 45 linhas, linhas ≤ 100 caracteres; sem overflow horizontal; mobile segue quebrando normalmente.
   - **Nível:** PESADO (Jev, confiança 0,18 — baixa; mantido por segurança porque toca o header de todas as páginas)
-  - **Entrega:** pendente · **Verificação:** pendente
+  - **Entrega:** `js/header-usuario.js` (lista única de itens, EQUIPES antes do Regras, `montarLinhasMenuHeader` divide ao meio em 2 `.header-usuario__menu-linha`) e `assets/css/header-usuario.css` (menu em coluna + classe de linha). Executor-pesado (Sonnet); correções finais do líder (código corrompido removido, `catch` restaurado, linhas > 100).
+  - **Verificação:** `node --check` ok; DOM falso em Node: 2 linhas de 5 itens cada (USUARIOS…TURMAS / CURSO…Regras, EQUIPES antes de Regras); menu só após RPC; links `target="_blank"` mantidos.
+
+- **#358.2 — Links do menu menos redondos e centralizados**
+  - **Arquivos:** `assets/css/header-usuario.css`
+  - **Critérios:** `.header-usuario__menu-link` com `border-radius` menor (de 16 px para 8 px); linhas do menu centralizadas (`justify-content: center`); mobile sem overflow.
+  - **Nível:** LEVE (Jev, confiança 0,77)
+  - **Entrega:** `assets/css/header-usuario.css` — `border-radius` de 16 para 8 px, `justify-content: center` nas linhas e `text-align: center` nos links. Devin (LEVE).
+- **Verificação:** linhas ≤ 100; `node --check` do JS ok; flex-wrap mantido no mobile.
 
 ### Registro
 
