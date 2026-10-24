@@ -8,9 +8,10 @@
 
 **Próximo passo:** acrescentar a regra "Confirmar Entrega" (texto abaixo) em `.claude/rules/atividades-banco.md` (seção de recursos que toda atividade tem, mantendo o arquivo ≤ 5 KB), em `docs/regras/atividades.md` (junto da seção "Confirmar Todas") e uma linha em `docs/HISTORICO-REGRAS.md`; não regenerar o `index.html` das regras.
 
-- **Nível:** a classificar pelo Jev
-- **Modelo:** — (a classificar pelo Jev)
-- **Effort:** a classificar pelo Jev
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **Fonte:** sinais
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** regra global (todas as matérias e todos os geradores de atividade): no quadro de progresso de cada aluno, ao lado do botão "Confirmar Todas", existe o botão **Confirmar Entrega**. (1) Só o perfil **professor** o vê (aluno nunca); a gravação continua protegida por RLS + JWT. (2) Ao clicar, a atividade do aluno é **entregue como está**, mesmo incompleta (questões sem resposta ficam em branco), sem exigir a quantidade mínima de questões. (3) Fica no código compartilhado do progresso (`assets/js/progresso-turma-global.js` e módulos ligados), nunca replicado por matéria. Implementar o botão não faz parte desta subtarefa: aqui só se anota a regra.
 - **Critérios de Aceitação:** regra escrita nos dois arquivos e no histórico; `atividades-banco.md` com no máximo 5 KB; sem alterar JS, HTML nem banco.
