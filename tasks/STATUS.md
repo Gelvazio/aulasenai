@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s497) | CORRECAO-IA-PAINEL em execução ([497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md)) | 🔄 Ativa | 2026-10-24 14:10 |
 | Claude Code (Sonnet 5.5) (local · main · s496) | REMOVER-QTD-CONSIDERAR concluída ([496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | ⏹️ Encerrada | 2026-10-24 18:30 |
 | Claude Code (Sonnet 5.5) (local · main · s495) | ID-ATIVIDADE-TITULO concluída ([495-f6d2a4b8](etapas/ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md)) | ⏹️ Encerrada | 2026-10-24 18:00 |
 | Claude Code (Sonnet 5.5) (local · main · s494) | TITULO-CABECALHO-MENOR concluída ([494-e5c1f3a7](etapas/ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md)) | ⏹️ Encerrada | 2026-10-24 17:30 |
@@ -1564,6 +1565,11 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #344.34 | Apostila (PENDENTE de propósito, para outra IA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #344.2 a #344.10 | ⬜ Pendente | — | [473-9c2f6a17](etapas/ETAPA-473-9c2f6a17-OFICINAS-IMPRESSAO-3D-ROBOTICA-MATERIA-COMPLETA.md) | — |
 | **JEV-NAO** | **Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47)** | 🟡 Média | — | Nenhuma | ⬜ Pendente (mãe: pegue uma subtarefa) | — (não reservável) | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
+| **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | ⬜ Pendente | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| CORRECAO-IA-PAINEL.2 | Painel e botão no quadro de progresso | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | CORRECAO-IA-PAINEL.1 | ⬜ Pendente | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| CORRECAO-IA-PAINEL.3 | Rotina de correção pelo Claude Code local | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | CORRECAO-IA-PAINEL.1 | ⬜ Pendente | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| CORRECAO-IA-PAINEL.4 | Documentação e regra | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | CORRECAO-IA-PAINEL.2, CORRECAO-IA-PAINEL.3 | ⬜ Pendente | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -2097,6 +2103,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 494-e5c1f3a7 | TITULO-CABECALHO-MENOR: Título do cabeçalho das atividades menor e mais baixo | [ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md](etapas/ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md) |
 | 495-f6d2a4b8 | ID-ATIVIDADE-TITULO: ID da atividade no título do cabeçalho | [ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md](etapas/ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md) |
 | 496-a7e3b5c9 | REMOVER-QTD-CONSIDERAR: Remover "Quantidade Questão Considerar" duplicada | [ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
+| 497-b8f4c6d0 | CORRECAO-IA-PAINEL: Painel "Executar correção de IA" no quadro de progresso | [ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
