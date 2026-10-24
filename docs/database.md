@@ -130,6 +130,8 @@ ou ao regravar a senha.
 | descricao | TEXT | Nullable | NULL | Descrição do curso |
 | ativo | INTEGER | Nullable | `1` | Status (1=ativo, 0=inativo) |
 | unidade_id | BIGINT | FK → `unidade.id` (on delete restrict) | NULL | Unidade do curso (2026-10-09) |
+| ano | SMALLINT | Nullable, CHECK 2000–2100 | NULL | Ano de oferta (AAAA); lista Curso das equipes e cadastro de curso (2026-10-24) |
+| semestre | SMALLINT | Nullable, CHECK 1 ou 2 | NULL | Semestre de oferta; mesmo uso de `ano` (2026-10-24) |
 | materias | JSONB | Nullable | NULL | Cache de matérias (denormalizado) |
 | created_at | TIMESTAMPTZ | Nullable | `now()` | Data criação |
 | updated_at | TIMESTAMPTZ | Nullable | `now()` | Data última atualização |

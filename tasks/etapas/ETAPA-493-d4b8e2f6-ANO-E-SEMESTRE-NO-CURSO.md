@@ -37,7 +37,7 @@
 
 ### ANO-SEMESTRE-CURSO.1 — SQL: colunas ano e semestre em curso, com a documentação do schema
 
-**Próximo passo:** escrever o SQL em `database/` e atualizar os docs do schema.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -46,6 +46,7 @@
 - **Fonte:** sinais
 - **Descrição:** arquivo SQL idempotente + `docs/database.md` + `docs/relatorio_verificacao_database.html`.
 - **Critérios de Aceitação:** só `ADD COLUMN IF NOT EXISTS`; sem DROP/DELETE; docs com as 2 colunas.
+- **Entrega:** `database/2026-10-24-curso-ano-semestre.sql`, `docs/database.md` no commit desta entrega · **Verificação:** SQL só com ADD COLUMN IF NOT EXISTS, constraints idempotentes e UPDATE só onde ano/semestre estão vazios; sem DROP/DELETE de dados; `docs/database.md` com as 2 colunas; `relatorio_verificacao_database.html` não lista colunas do curso (nada a mudar)
 
 ### ANO-SEMESTRE-CURSO.2 — Aplicar no banco e preencher ano e semestre dos cursos
 
