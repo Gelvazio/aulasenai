@@ -28,9 +28,9 @@
 | 14 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
 | 15 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
 | 16 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 17 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 18 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 19 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 17 | Prototipagem: storyboard e protótipos de papel | ✅ | 50 | ✅ | ⬜ | ✅ |
+| 18 | Mock-ups digitais e processo de criação | ✅ | 50 | ✅ | ⬜ | ✅ |
+| 19 | Direito autoral: definição, anterioridade, Creative Commons e registro | ⛔ | 50 | ✅ | ⬜ | ⚠️ |
 
 ## Atividade prática por aula (padrão da prova id 82)
 
@@ -52,9 +52,9 @@
 | 14 | ⬜ `ATIVIDADE-PRATICA-AULA-14.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
 | 15 | ⬜ `ATIVIDADE-PRATICA-AULA-15.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
 | 16 | ⬜ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
-| 17 | ⬜ `ATIVIDADE-PRATICA-AULA-17.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
-| 18 | ⬜ `ATIVIDADE-PRATICA-AULA-18.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
-| 19 | ⬜ `ATIVIDADE-PRATICA-AULA-19.html` | 10 × 3 (10 pontos) | ⬜ | ⬜ | ⬜ |
+| 17 | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | 20 × 3 (20 pontos) | ✅ | ⬜ | ✅ |
+| 18 | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | 20 × 3 (20 pontos) | ✅ | ⬜ | ✅ |
+| 19 | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 20 × 3 (20 pontos) | ✅ | ⬜ | ✅ |
 
 ## Avaliações (modelo da ITIC)
 

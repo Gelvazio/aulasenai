@@ -25,9 +25,9 @@
 | 14 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 15 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 16 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 17 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 18 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 19 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 17 | Prototipagem: storyboard e protótipos de papel | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 18 | Mock-ups digitais e processo de criação | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 19 | Direito autoral: definição, anterioridade, Creative Commons e registro | ✅ | ✅ | ⛔ | ✅ | ⬜ |
 
 ## Observações
 
