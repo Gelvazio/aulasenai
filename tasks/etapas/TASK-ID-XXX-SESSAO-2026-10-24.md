@@ -14,22 +14,26 @@ Gerar SQL de seed para atividade prática da Aula 13 de Fundamentos de UI/UX e a
 
 ## Itens
 
-1. ⬜ Reservar tarefa para sessão atual
-2. ⬜ Gerar SQL de seed para atividade prática da Aula 13 de Fundamentos de UI/UX
-3. ⬜ Aplicar seed no banco
-4. ⬜ Atualizar STATUS_MATERIA.md
-5. ⬜ Commit e push
+1. ✅ Reservar tarefa para sessão atual
+2. ✅ Ler arquivo gabarito da atividade prática da Aula 13 de Fundamentos de UI/UX
+3. ✅ Gerar SQL de seed usando script Python
+4. ✅ Salvar como database/2026-10-24-atividade-pratica-aula-13-seed-atividades.sql
+5. ✅ Aplicar seed no banco via script Node.js (exec_sql RPC)
+6. ✅ Atualizar STATUS_MATERIA.md marcando seed da aula 13 como ✅
+7. 🔄 Commit e push
 
 ## Status
 
 | Item | Status | Concluído em | Verificação |
 |------|--------|--------------|-------------|
-| 1. Reservar tarefa para sessão atual | 🔄 Em progresso | - | - |
-| 2. Gerar SQL de seed para atividade prática da Aula 13 de Fundamentos de UI/UX | ⬜ Pendente | - | - |
-| 3. Aplicar seed no banco | ⬜ Pendente | - | - |
-| 4. Atualizar STATUS_MATERIA.md | ⬜ Pendente | - | - |
-| 5. Commit e push | ⬜ Pendente | - | - |
+| 1. Reservar tarefa para sessão atual | ✅ Concluído | 2026-10-24 | true |
+| 2. Ler arquivo gabarito da atividade prática da Aula 13 de Fundamentos de UI/UX | ✅ Concluído | 2026-10-24 | true |
+| 3. Gerar SQL de seed usando script Python | ✅ Concluído | 2026-10-24 | true |
+| 4. Salvar como database/2026-10-24-atividade-pratica-aula-13-seed-atividades.sql | ✅ Concluído | 2026-10-24 | true |
+| 5. Aplicar seed no banco via script Node.js (exec_sql RPC) | ✅ Concluído | 2026-10-24 | true |
+| 6. Atualizar STATUS_MATERIA.md marcando seed da aula 13 como ✅ | ✅ Concluído | 2026-10-24 | true |
+| 7. Commit e push | 🔄 Em progresso | - | - |
 
 ## Próximo passo
 
-Ler o arquivo de gabarito da Aula 13 e gerar o SQL de seed.
+Fazer commit e push das alterações.
