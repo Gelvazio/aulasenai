@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-24 18:30 | **"Quantidade Questão Considerar" removida do Progresso da turma (tarefa REMOVER-QTD-CONSIDERAR, pedido do usuário):** o campo e o botão Confirmar duplicavam o botão "Quantidade Mínima"; sai o código e os CSS dele (`atividades-banco.md` e `docs/regras/atividades.md`); valores já gravados em `questoes_nota_aluno` continuam valendo na nota |
 | 2026-10-24 14:20 | **Linha entre alunos no Progresso da turma (tarefa LINHA-ENTRE-ALUNOS, pedido do usuário):** uma linha horizontal separa um aluno do seguinte, em todos os quadros, atividades e matérias (`atividades-banco.md` e `docs/regras/atividades.md`); CSS só em `progresso-turma-global.css` |
 | 2026-10-24 14:00 | **Visual global dos botões do Progresso da turma (tarefas BOTOES-PROGRESSO-GRANDES e HOVER-BOTOES-PROGRESSO, pedido do usuário):** botões da célula do aluno maiores, um por linha e com hover, valendo para todos os quadros, atividades e matérias; alterações só nos CSS compartilhados (`atividades-banco.md` e `docs/regras/atividades.md`) |
 | 2026-10-24 12:30 | **Botão "Confirmar Entrega" (tarefa REGRA-CONFIRMAR-ENTREGA, pedido do usuário):** regra global de todo gerador de atividade, em `.claude/rules/atividades-banco.md` e `docs/regras/atividades.md`: ao lado de "Confirmar Todas" em todo quadro de progresso, só o professor vê o botão, que entrega a atividade do aluno como está, mesmo incompleta. Botão implementado na tarefa CONFIRMAR-ENTREGA-BOTAO (`assets/js/confirmar-entrega-professor.js`, RPC existente) |

@@ -43,10 +43,7 @@ const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
-const ARQUIVO_QUESTOES_NOTA_PROGRESSO_GLOBAL = 'questoes-nota-aluno-progresso.js';
-const SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL = '.questoes-nota__campo';
-const SELETOR_PENDENTE_QUESTOES_NOTA_GLOBAL =
-    '.questoes-nota__campo[data-alterado="sim"], .popup__fundo';
+const SELETOR_POPUP_ABERTO_GLOBAL = '.popup__fundo';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
@@ -397,11 +394,7 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
         aoMudar: estadoProgressoGlobal.atualizarAgora })).filter(Boolean);
     const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
-    const campoNota = window.criarCampoQuestoesNota?.({
-        atividadeId: estadoProgressoGlobal.atividadeId, aluno,
-        aoMudar: estadoProgressoGlobal.atualizarAgora });
-    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []),
-        ...(campoNota ? [campoNota] : []));
+    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []));
     return celula;
 }
 
@@ -565,26 +558,12 @@ async function prepararBotoesNomeGlobal(tipo) {
 }
 
 /**
- * Diz se o campo "Quantidade Questão Considerar" está em uso (foco, valor não confirmado ou
- * popup aberto): a atualização automática espera, para não apagar o número antes de confirmar.
+ * Diz se há um popup aberto: a atualização automática espera, para não refazer a lista no meio
+ * de uma confirmação.
  * @returns {boolean} true se deve esperar.
  */
-function estaDigitandoQuestoesNotaGlobal() {
-    const estaComFoco = document.activeElement?.matches(SELETOR_CAMPO_QUESTOES_NOTA_GLOBAL);
-    return Boolean(estaComFoco || document.querySelector(SELETOR_PENDENTE_QUESTOES_NOTA_GLOBAL));
-}
-
-/**
- * Carrega o campo "Quantidade Questão Considerar" (abaixo do "Faltou?"); falha não derruba o
- * painel (a lista sai sem o campo).
- */
-async function prepararCampoQuestoesNotaGlobal() {
-    try {
-        if (typeof window.criarCampoQuestoesNota === 'function') return;
-        await carregarScriptProgressoGlobal(ARQUIVO_QUESTOES_NOTA_PROGRESSO_GLOBAL);
-    } catch (erro) {
-        console.warn('Quantidade Questão Considerar:', erro.message);
-    }
+function estaComPopupAbertoGlobal() {
+    return Boolean(document.querySelector(SELETOR_POPUP_ABERTO_GLOBAL));
 }
 
 /**
@@ -975,7 +954,6 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
     await prepararBotoesNomeGlobal(tipo);
-    await prepararCampoQuestoesNotaGlobal();
     await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);
@@ -984,7 +962,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     });
     await atualizarProgressoGlobal(tela, medida);
     estadoProgressoGlobal.temporizador = setInterval(() => {
-        if (estaDigitandoQuestoesNotaGlobal()) return;
+        if (estaComPopupAbertoGlobal()) return;
         atualizarProgressoGlobal(tela, medida);
     }, INTERVALO_PROGRESSO_GLOBAL_MS);
 }
