@@ -3,9 +3,9 @@ var SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOi
 
 async function verificarAulas() {
   console.log('Verificando aulas da matéria Fundamentos de UI / UX');
-  
-  var sql = "SELECT a.id, a.numero, m.descricao as materia_descricao FROM public.aulas a JOIN public.materia m ON m.id = a.materia_id WHERE m.descricao = 'Fundamentos de UI / UX' ORDER BY a.numero";
-  
+
+  var sql = "SELECT a.id, a.numero, m.descricao FROM public.aulas a JOIN public.materia m ON m.id = a.materia_id WHERE m.descricao = 'Fundamentos de UI / UX' ORDER BY a.numero";
+
   var response = await fetch(SUPABASE_URL + '/rest/v1/rpc/exec_sql', {
     method: 'POST',
     headers: {
@@ -15,28 +15,17 @@ async function verificarAulas() {
     },
     body: JSON.stringify({ sql_text: sql }),
   });
-  
-  var result = await response.json();
-  
+
+  var texto = await response.text();
+  var data = texto ? JSON.parse(texto) : null;
+
   if (!response.ok) {
-    console.error('Erro:', result);
-    throw new Error(result.message || 'Erro desconhecido');
+    console.error('Erro:', data);
+    throw new Error(data.message || 'Erro desconhecido');
   }
-  
-  console.log('Resultado exec_sql:', result);
-  
-  // Now query the actual data using a separate approach
-  var dataResponse = await fetch(SUPABASE_URL + '/rest/v1/aulas?select=id,numero&order=numero', {
-    method: 'GET',
-    headers: {
-      'apikey': SUPABASE_SERVICE_ROLE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_SERVICE_ROLE_KEY,
-    },
-  });
-  
-  var aulas = await dataResponse.json();
-  console.log('Todas as aulas (primeiras 5):', JSON.stringify(aulas.slice(0, 5), null, 2));
-  return aulas;
+
+  console.log('Aulas encontradas:', JSON.stringify(data, null, 2));
+  return data;
 }
 
 verificarAulas().catch(function(err) {
