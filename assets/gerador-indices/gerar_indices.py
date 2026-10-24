@@ -27,7 +27,18 @@ JS_SUPABASE = RAIZ_PROJETO / "js" / "supabase.js"
 CSS_CRUD = RAIZ_PROJETO / "assets" / "css" / "atividades-crud-modal.css"
 JS_CRUD_REPOSITORIO = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-repositorio.js"
 JS_CRUD_MODAL = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-modal.js"
+JS_POPUP = RAIZ_PROJETO / "assets" / "js" / "popup.js"
+JS_FAIXA_ENSALADO = RAIZ_PROJETO / "assets" / "js" / "faixa-materias-ensalado.js"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+# Faixa "Matérias" abre em SOMENTE ENSALADO (faixa-materias-ensalado.md, #356): o filtro só liga
+# nos cursos com id no banco (curso.id). Curso novo: acrescentar a pasta e o id aqui.
+IDS_CURSO_BANCO = {
+    "OPERADOR_PRODUCAO_INDUSTRIAL": 2,
+    "TECNICO-INFORMATICA-INTERNET": 4,
+    "ASSISTENTE-DE-OPERACOES-LOGISTICAS": 5,
+    "RIO_DO_SUL_MAIS_TECH": 6,
+    "GESTAO_E_CONTROLE_MATERIAIS": 7,
+}
 NOME_INDICE = "index.html"
 NOME_PASTA_ATIVIDADES = "ATIVIDADES"
 MARCADOR = '<meta name="gerador" content="gerador-indices">'
@@ -198,10 +209,42 @@ def montar_faixa_materias(curso, pasta_indice, atual=None):
             classe += " faixa-materias__card--atual"
         cards.append(f'<a class="{classe}" href="{href}">📘 {escapar(nome_legivel(materia))}</a>')
     return (
-        '\n        <nav class="faixa-materias" aria-label="Matérias do curso">'
+        '\n        <nav class="faixa-materias"'
+        f'{atributo_curso_banco(curso)} aria-label="Matérias do curso">'
         f'<span class="faixa-materias__titulo">Matérias — {escapar(nome_legivel(curso))}</span>'
         f'<div class="faixa-materias__lista">{"".join(cards)}</div></nav>'
     )
+
+
+def atributo_curso_banco(curso):
+    """Atributo data-curso-id da faixa (liga o filtro SOMENTE ENSALADO), ou vazio sem id.
+
+    Args:
+        curso: Pasta do curso.
+
+    Returns:
+        ' data-curso-id="N"' quando o curso tem id em IDS_CURSO_BANCO; senão texto vazio.
+    """
+    curso_id = IDS_CURSO_BANCO.get(curso.name)
+    return f' data-curso-id="{curso_id}"' if curso_id else ""
+
+
+def montar_tags_filtro_ensalado(curso, pasta_indice, com_supabase):
+    """Scripts do filtro SOMENTE ENSALADO da faixa de matérias, com caminhos relativos ao índice.
+
+    Args:
+        curso: Pasta do curso.
+        pasta_indice: Pasta onde a página será gravada.
+        com_supabase: True quando a página ainda não carrega o supabase.js (índice do curso).
+
+    Returns:
+        Tags <script> (uma por linha), ou vazio se o curso não tem id no banco.
+    """
+    if curso.name not in IDS_CURSO_BANCO:
+        return ""
+    scripts = [URL_SUPABASE_JS, link_relativo(JS_SUPABASE, pasta_indice)] if com_supabase else []
+    scripts += [link_relativo(js, pasta_indice) for js in (JS_POPUP, JS_FAIXA_ENSALADO)]
+    return "".join(f'\n    <script src="{script}" defer></script>' for script in scripts)
 
 
 def montar_tags_crud(pasta_indice, recuo):
@@ -220,6 +263,8 @@ def montar_pagina(dados):
     O bloqueio das atividades vem do banco de dados (atividade.ativo): o professor liga ou
     desliga o interruptor "Bloquear" de cada card (assets/js/indice-atividades-bloqueio.js).
     """
+    chaves_head = ("menu", "crud", "filtro_ensalado")
+    tags_extras = "".join(dados.get(chave, "") for chave in chaves_head)
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -227,7 +272,7 @@ def montar_pagina(dados):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {MARCADOR}
     <title>{escapar(dados["titulo"])}</title>
-    <link rel="stylesheet" href="{dados["css"]}">{dados.get("menu", "")}{dados.get("crud", "")}
+    <link rel="stylesheet" href="{dados["css"]}">{tags_extras}
 </head>
 <body>
     <div class="container">{dados.get("faixa", "")}
@@ -391,6 +436,7 @@ def gerar_indice_materia(materia, curso, forcar):
     }
     dados_pagina["menu"] = montar_tags_menu(pasta_indice, "    ")
     dados_pagina["crud"] = montar_tags_crud(pasta_indice, "    ")
+    dados_pagina["filtro_ensalado"] = montar_tags_filtro_ensalado(curso, pasta_indice, False)
     pagina = montar_pagina(dados_pagina)
     return atividades, gravar_indice(pasta_indice / NOME_INDICE, pagina, forcar)
 
@@ -446,6 +492,7 @@ def gerar_indice_curso(curso, pastas_forcadas, situacoes):
         "resumo": f"<span>{len(materias)} matérias</span><span>·</span>"
                   f"<span>{com_atividade} com atividades</span>",
         "faixa": montar_faixa_materias(curso, curso),
+        "filtro_ensalado": montar_tags_filtro_ensalado(curso, curso, True),
         "cards": cards,
         "rodape": f'<a class="btn" href="{voltar}">← Todos os cursos</a>',
     })

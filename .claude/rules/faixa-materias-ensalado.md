@@ -11,6 +11,15 @@ curso.
 - O botão do filtro em uso fica com **fundo verde piscando levemente**.
 - No índice do curso, a grade de matérias de baixo segue o mesmo filtro.
 
+## Gerador de índices (2026-10-24, #356)
+
+- ⛔ Todo `index.html` de curso e de matéria **gerado** por `assets/gerador-indices/gerar_indices.py`
+  já sai com o filtro: `data-curso-id` na faixa e os scripts `popup.js` e
+  `faixa-materias-ensalado.js` no `<head>`. Nunca acrescentar isso à mão (o gerador regrava a página).
+- O id do curso fica em `IDS_CURSO_BANCO` (pasta do curso → `curso.id`). **Curso novo = acrescentar
+  a pasta e o id ali**; curso fora da tabela fica sem filtro (hoje: QUALIFICACAO-PROFISSIONAL e
+  CURSO-PROFESSOR-RAFAEL, sem id registrado no repositório).
+
 ## ON/OFF por matéria
 
 - Cada matéria da faixa tem um botão **ON/OFF** ao lado do nome para marcar/desmarcar `ensalado`.
