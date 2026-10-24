@@ -101,7 +101,7 @@ Arquivo fora do site (nome contém GABARITO). Não publicar.
 **Critérios:** Nota cheia: propõe dois ajustes concretos e corretos (posição no topo ou centro; espaço livre ao redor; contraste). Metade: propõe um ajuste concreto correto, ou dois ajustes vagos. Zero: propõe ajuste que piora a visibilidade, ou fica em branco.
 
 ### ITEM 09-a
-**Resposta esperada:** A aula apresenta a fórmula do peso visual com três fatores: tamanho (área geométrica total), contraste (diferença de valor contra o fundo) e espaço (respiro vazio ao redor da forma). O enunciado pede quatro: se o aluno citar um quarto fator que não contrarie a aula, não penalizar, mas os três da aula devem aparecer.
+**Resposta esperada:** A aula apresenta a fórmula do peso visual com três fatores: tamanho (área geométrica total), contraste (diferença de valor contra o fundo) e espaço (respiro vazio ao redor da forma). O enunciado pede os três fatores da aula.
 **Critérios:** Nota cheia: cita tamanho, contraste e espaço, com a ideia de cada um. Metade: cita dois dos três fatores da aula. Zero: cita um fator ou nenhum, ou fica em branco.
 
 ### ITEM 09-b
