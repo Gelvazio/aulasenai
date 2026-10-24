@@ -231,13 +231,16 @@ function montarModalEquipes(papeis) {
   cabecalho.append(titulo, criarBotaoEquipes({ texto: '✕ Fechar', acao: 'fechar' }));
   const turma = criarControleEquipes('select', 'turma');
   const materia = criarControleEquipes('select', 'materia');
+  const curso = criarControleEquipes('select', 'curso');
+  const campoCurso = criarCampoEquipes('Curso', curso);
   const campoMateria = criarCampoEquipes('Matéria', materia);
+  campoCurso.hidden = true;
   campoMateria.hidden = true;
   const barra = criarElementoEquipes('div', 'equipes-barra');
-  barra.append(campoMateria, criarCampoEquipes('Turma', turma),
+  barra.append(campoCurso, campoMateria, criarCampoEquipes('Turma', turma),
     criarBotaoEquipes({ texto: '📄 Exportar Equipes', acao: 'exportar-equipes' }));
   const elementos = {
-    fundo, titulo, turma, barra, materia, campoMateria,
+    fundo, titulo, turma, barra, materia, campoMateria, curso, campoCurso,
     mensagem: criarElementoEquipes('p', 'equipes-mensagem'),
     resumo: criarElementoEquipes('p', 'equipes-resumo'),
     lista: criarElementoEquipes('div', 'equipes-lista'),
@@ -548,20 +551,60 @@ async function carregarInicialEquipes() {
  */
 async function resolverMateriaEquipes(ehProfessor) {
   const repositorio = estadoEquipes.repositorio;
-  elementosEquipes.campoMateria.hidden = true;
+  definirListasMateriaVisiveisEquipes(false);
   const prefixo = estadoEquipes.prefixoPasta;
   const daPasta = prefixo ? await repositorio.buscarMateriaDaPasta(prefixo) : null;
   if (daPasta || !ehProfessor) return daPasta;
 
-  estadoEquipes.materias = await repositorio.listarMaterias();
-  const opcoes = [{ valor: '', texto: 'Selecione a matéria…' }].concat(
-    estadoEquipes.materias.map((materia) => (
-      { valor: String(materia.id), texto: materia.id + ' — ' + materia.descricao })));
-  const atual = estadoEquipes.materia ? String(estadoEquipes.materia.id) : '';
-  preencherSelectEquipes(elementosEquipes.materia, opcoes, atual);
-  elementosEquipes.campoMateria.hidden = false;
+  const [materias, cursos] = await Promise.all([
+    repositorio.listarMaterias(), repositorio.listarCursos()]);
+  estadoEquipes.materias = materias;
+  const atual = estadoEquipes.materia
+    ? materias.find((materia) => materia.id === estadoEquipes.materia.id) : null;
+  const cursoAtual = atual ? String(atual.curso_id) : '';
+  const opcoesCurso = [{ valor: '', texto: 'Selecione o curso…' }].concat(
+    cursos.map((curso) => ({ valor: String(curso.id), texto: curso.nome_completo })));
+  preencherSelectEquipes(elementosEquipes.curso, opcoesCurso, cursoAtual);
+  preencherMateriasDoCursoEquipes(elementosEquipes.curso.value, atual ? String(atual.id) : '');
+  definirListasMateriaVisiveisEquipes(true);
   const escolhida = Number(elementosEquipes.materia.value);
-  return estadoEquipes.materias.find((materia) => materia.id === escolhida) || null;
+  return materias.find((materia) => materia.id === escolhida) || null;
+}
+
+/**
+ * Mostra ou esconde as listas "Curso" e "Matéria" juntas.
+ * @param {boolean} visiveis - true para mostrar.
+ * @returns {void}
+ */
+function definirListasMateriaVisiveisEquipes(visiveis) {
+  elementosEquipes.campoCurso.hidden = !visiveis;
+  elementosEquipes.campoMateria.hidden = !visiveis;
+}
+
+/**
+ * Preenche a lista "Matéria" só com as matérias do curso escolhido (sem curso, fica travada).
+ * @param {string} cursoId - Id do curso escolhido ('' = nenhum).
+ * @param {string} materiaAtual - Id da matéria a manter selecionada.
+ * @returns {void}
+ */
+function preencherMateriasDoCursoEquipes(cursoId, materiaAtual) {
+  const select = elementosEquipes.materia;
+  select.disabled = !cursoId;
+  const textoVazio = cursoId ? 'Selecione a matéria…' : 'Selecione o curso primeiro…';
+  const doCurso = estadoEquipes.materias.filter((materia) => String(materia.curso_id) === cursoId);
+  const opcoes = [{ valor: '', texto: textoVazio }].concat(
+    doCurso.map((materia) => (
+      { valor: String(materia.id), texto: materia.id + ' — ' + materia.descricao })));
+  preencherSelectEquipes(select, opcoes, materiaAtual);
+}
+
+/**
+ * Professor trocou o curso: lista só as matérias dele e volta ao estado "sem matéria".
+ * @returns {Promise<void>}
+ */
+async function aoMudarCursoEquipes() {
+  preencherMateriasDoCursoEquipes(elementosEquipes.curso.value, '');
+  await aoMudarMateriaEquipes();
 }
 
 /**
@@ -806,6 +849,9 @@ function ligarEventosEquipes() {
   elementosEquipes.formularioMembro.addEventListener('submit', (evento) => {
     evento.preventDefault();
     salvarMembro();
+  });
+  elementosEquipes.curso.addEventListener('change', () => {
+    aoMudarCursoEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));
   });
   elementosEquipes.materia.addEventListener('change', () => {
     aoMudarMateriaEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));

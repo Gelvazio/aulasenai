@@ -17,8 +17,9 @@ integrantes), começando pela Introdução à TIC (turma 135080 — CEPLAS ITIC 
 1. **Global:** o mesmo código serve a qualquer matéria e turma. A matéria vem da própria pasta
    (as atividades cadastradas em `atividade.pagina` → `aulas` → `materia`); a turma é escolhida
    no modal (turmas do professor; 1 turma = já selecionada; administrador vê todas). Quando a
-   matéria não vem da pasta, a lista "Matéria" mostra `<id> — <descrição>` (2026-10-24), para
-   separar matérias de nome parecido (ex.: as 3 de Introdução à TIC: 23, 25 e 39).
+   matéria não vem da pasta, o professor escolhe primeiro o **Curso** e a lista "Matéria" mostra
+   só as matérias dele como `<id> — <descrição>` (2026-10-24), para não misturar matérias de nome
+   parecido de cursos diferentes (ex.: as 3 de Introdução à TIC: 23, 25 e 39).
 2. **Equipe = turma + matéria + nome** (nome único dentro da turma/matéria) e descrição.
 3. **Integrante** = aluno da turma (`turmaaluno`) com papel, tarefas combinadas e marca de
    **líder** (no máximo 1 por equipe). Cada aluno fica em **uma** equipe por turma + matéria.

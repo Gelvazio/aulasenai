@@ -6,7 +6,7 @@
 
 ### CURSO-MATERIA-EQUIPES.1 — Seletor de curso e matérias filtradas no modal Equipes
 
-**Próximo passo:** reservar, ler `assets/js/equipes-modal.js` e `equipes-repositorio.js` e implementar.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.97))
 - **Modelo:** só Sonnet — nunca outro
@@ -15,3 +15,4 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** novo seletor "Curso" acima de "Matéria"; ao escolher o curso, "Matéria" lista só as matérias dele (`materia.curso_id`); sem curso escolhido, a matéria fica desabilitada.
 - **Critérios de Aceitação:** curso antes da matéria; matéria filtrada pelo curso; matéria vinda da pasta continua sem mostrar a lista; `node --check` passa.
+- **Entrega:** `assets/js/equipes-modal.js`, `assets/js/equipes-repositorio.js`, `docs/equipes-sala-de-aula.md` no commit desta entrega · **Verificação:** `node --check` ok nos 2 JS; sem linha nova > 100 caracteres; curso lido de `curso.nome_completo`, matérias filtradas por `materia.curso_id`; conferir na tela (sem navegador)

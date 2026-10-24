@@ -13,6 +13,7 @@ const TABELA_USUARIO_EQUIPES = 'usuario';
 const COLUNA_DESISTENTE = 'desistente';
 const TABELA_ATIVIDADE_EQUIPES = 'atividade';
 const TABELA_MATERIA_EQUIPES = 'materia';
+const TABELA_CURSO_EQUIPES = 'curso';
 const TABELA_EQUIPE_ATIVIDADE = 'equipe_atividade';
 const COLUNAS_ATIVIDADE_EQUIPES = 'id, nome_atividade, aulas!inner(materia_id)';
 const CONFLITO_EQUIPE_ATIVIDADE = 'equipe_id,atividade_id';
@@ -117,11 +118,21 @@ function criarLeiturasContextoEquipes(cliente) {
 
     /**
      * Todas as matérias (o professor escolhe quando abre as equipes fora de uma matéria).
-     * @returns {Promise<{id: number, descricao: string}[]>} Matérias pela descrição.
+     * @returns {Promise<{id: number, descricao: string, curso_id: number}[]>} Matérias pela
+     *   descrição.
      */
     async listarMaterias() {
       return dadosOuErroEquipes(await cliente.from(TABELA_MATERIA_EQUIPES)
-        .select('id, descricao').order('descricao'));
+        .select('id, descricao, curso_id').order('descricao'));
+    },
+
+    /**
+     * Todos os cursos (o professor escolhe o curso antes da matéria).
+     * @returns {Promise<{id: number, nome_completo: string}[]>} Cursos pelo nome.
+     */
+    async listarCursos() {
+      return dadosOuErroEquipes(await cliente.from(TABELA_CURSO_EQUIPES)
+        .select('id, nome_completo').order('nome_completo'));
     },
 
     /**
