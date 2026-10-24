@@ -179,7 +179,7 @@ Você, como aluno consultor, compara dois cartões de uma mesma tela. O primeiro
 Determine qual cartão atrai mais o olhar e justifique com os fatores do peso visual.
 
 **Tópicos:**
-- a) Cite os quatro fatores que compõem o peso visual de um elemento. (0,2)
+- a) Cite os três fatores que compõem o peso visual de um elemento. (0,2)
 - b) Relacione cada cartão aos fatores do peso visual. (0,4)
 - c) Diga qual cartão atrai mais o olhar e explique por quê. (0,4)
 
