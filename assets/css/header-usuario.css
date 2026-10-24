@@ -26,8 +26,8 @@
 .header-usuario__botao:hover { background: #d97706; }
 @media print { #header-usuario { display: none; } }
 .header-usuario__home { margin-right: auto; }
-/* O menu empilha as linhas; cada linha distribui os links lado a lado. */
-.header-usuario__menu { display: flex; flex-direction: column; gap: 10px; }
+/* O menu ocupa o espaço livre da barra e empilha as linhas, centralizadas. */
+.header-usuario__menu { display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .header-usuario__menu:empty { display: none; }
 .header-usuario__menu-linha { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .header-usuario__menu-link {
@@ -37,7 +37,7 @@
     text-decoration: none;
     padding: 5px 16px;
     border: 2px solid #f7941d;
-    border-radius: 8px;
+    border-radius: 4px;
     text-align: center;
 }
 .header-usuario__menu-link:hover { background: #f7941d; }
