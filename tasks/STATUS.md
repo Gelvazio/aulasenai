@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · 🔄 Em progresso · Devin (local · main)
+  - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · 🔄 Em progresso · Devin · `LEVE · só Haiku` (pedido direto do usuário nesta sessão)
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)
   - #353.1 — Atualizar o card de UI/UX e o resumo no índice do curso · ✅ Concluído · `LEVE`
 - #343-1b2043a2 — [Avaliações finais de Fundamentos de UI/UX (objetiva, prática, média final e menu)](etapas/ETAPA-501-8450b970-AVALIACOES-FINAIS-FUNDAMENTOS-UI-UX.md) · ✅ Concluído · Devin (local · main)

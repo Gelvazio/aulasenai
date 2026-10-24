@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Devin (SWE-2) (local · main) | #353 concluída ([502-344fcb24](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md)) — índice do curso com o link das atividades de UI/UX | ⏹️ Encerrada | 2026-10-24 16:46 |
+| Devin (SWE-2) (local · main) | #354.1 ([503-1278024c](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md)) — hook do ai-memory falhando no Devin (exit 127) | 🔄 Ativa | 2026-10-24 19:55 |
 | Claude Code (Sonnet 5.5) (local · main · s497) | PAINEL-IA-DESTAQUE.1 concluída ([499-c9a5d7e1](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md)) | ⏹️ Encerrada | 2026-10-24 15:20 |
 | Claude Code (Sonnet 5.5) (local · main · s497) | CORRECAO-IA-PAINEL: painel, comando e docs entregues; SQL aguarda o usuário ([497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 14:40 |
 | Claude Code (Sonnet 5.5) (local · main · s496) | REMOVER-QTD-CONSIDERAR concluída ([496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | ⏹️ Encerrada | 2026-10-24 18:30 |
@@ -1506,6 +1506,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
+| **#354-1278024c** | **Hook do ai-memory falhando no Devin Desktop (exit 127)** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [503-1278024c](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) | — |
+| #354.1 | Corrigir os hooks do ai-memory no `.claude/settings.json` (command+args numa string) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku (executada pelo Devin a pedido do usuário) | — | 🔄 Em progresso | Devin (SWE-2) (local · main) (desde 2026-10-24 19:55) | [503-1278024c](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) | — |
 
 
 ## Escopo
@@ -2044,6 +2046,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 498-e563a26b | FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL: atividades das aulas 01 a 20 | [ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md](etapas/ETAPA-498-e563a26b-FUNDAMENTOS-UI-UX-ATIVIDADES-GLOBAL.md) |
 | 499-c9a5d7e1 | PAINEL-IA-DESTAQUE: Painel de correção de IA centralizado, com ícones e piscando | [ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md](etapas/ETAPA-499-c9a5d7e1-DESTAQUE-DO-PAINEL-CORRECAO-IA.md) |
 | 502-344fcb24 | Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX (#353, pedida em 2026-10-24) | [ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) |
+| 503-1278024c | Hook do ai-memory falhando no Devin Desktop (exit 127) (#354, pedida em 2026-10-24 19:55) | [ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
