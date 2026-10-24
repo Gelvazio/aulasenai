@@ -10,7 +10,7 @@ begin
     where m.descricao = 'Fundamentos de UI / UX' and a.numero = 11
     order by a.id limit 1;
   if v_aula is null then
-    raise exception 'Aula 11 da materia "Fundamentos de UI / UX" nao encontrada. Verifique se a materia e as aulas foram cadastradas.';
+    raise exception 'Aula 11 da matéria não encontrada';
   end if;
 
   insert into public.atividade (nome_atividade, status, aula_id, descricao, pagina,

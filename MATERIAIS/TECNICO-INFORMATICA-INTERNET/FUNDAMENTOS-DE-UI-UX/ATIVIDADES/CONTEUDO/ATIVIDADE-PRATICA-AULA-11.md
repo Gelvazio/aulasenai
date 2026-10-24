@@ -368,7 +368,7 @@ Analise a sugestão e explique qual deve ser a decisão da equipe.
 ## ITEM 20 — Postura iterativa e síntese
 
 - **Aula:** 11 · Processo de design interativo
-- **Capacidade:** C2 e S4
+- **Capacidade:** C2, S4
 
 **Contexto:**
 Ao final do projeto, a equipe deve apresentar ao cliente a evolução da tela de agendamento, da Versão 1 à Versão 2, e explicar o processo que levou às melhorias.
