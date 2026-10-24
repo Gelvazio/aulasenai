@@ -16,5 +16,5 @@
 - **Fonte:** jev (confiança 0.86)
 - **Descrição:** regra global das matérias: antes de gerar atividades (objetiva, prática, discursiva, avaliação) de uma aula, conferir se existe o Markdown dela (extração dos slides) na pasta `CONTEUDO/`; sem o arquivo, aguardar e avisar o usuário, sem gerar com base em PDF, PPTX, Google Slides ou memória. Com o Markdown, as atividades usam esse arquivo como base.
 - **Critérios de Aceitação:** regra escrita em `materias-global.md` (≤ 5 KB no arquivo), citada no `AGENTS.md` e no `docs/HISTORICO-REGRAS.md`; sem regenerar o `index.html` das regras.
-- **Entrega:** a preencher · **Verificação:** a preencher
+- **Entrega:** `.claude/rules/materias-global.md` e `AGENTS.md` (regra 16) no commit be206073 (junto com a #276 de outra frente); `docs/HISTORICO-REGRAS.md` no commit desta entrega · **Verificação:** materias-global.md com 4446 bytes (≤ 5 KB); seção lida; regra 16 no AGENTS.md (grep); linha 2026-10-24 no histórico; executado pelo Haiku 5.5 (executor-leve)
 - **JEV-AI-SUGGESTION:** SIM
