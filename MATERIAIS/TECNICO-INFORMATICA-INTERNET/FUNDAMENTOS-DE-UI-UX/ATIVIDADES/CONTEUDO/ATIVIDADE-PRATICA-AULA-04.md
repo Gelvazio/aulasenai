@@ -260,8 +260,7 @@ Descreva os quatro elementos que compõem o relatório técnico de uma falha.
 ## ITEM 14 — Comunicação empática
 
 - **Aula:** 04 · Resolução de problemas: análise crítica
-- **Capacidade:** S2 · C3
-- **Socioemocional:** S4 — Comprometer-se com o engajamento e a cooperação nas relações de trabalho pela prática da amabilidade nas relações profissionais.
+- **Capacidade:** C3
 
 **Contexto:**
 Um colega de equipe criou a tela de agendamento. Você precisa apontar um problema de contraste sem atacar o trabalho dele.
@@ -279,8 +278,7 @@ Compare a abordagem agressiva e a abordagem construtiva para comunicar a falha e
 ## ITEM 15 — Amabilidade na crítica
 
 - **Aula:** 04 · Resolução de problemas: análise crítica
-- **Capacidade:** S4 · S2
-- **Socioemocional:** S4 — Comprometer-se com o engajamento e a cooperação nas relações de trabalho pela prática da amabilidade nas relações profissionais.
+- **Capacidade:** C3
 
 **Contexto:**
 Você precisa apresentar as falhas de uma tela à equipe que a desenhou. Alguns integrantes estão na defensiva.
@@ -298,7 +296,7 @@ Explique como manter a amabilidade sem deixar de apontar as falhas técnicas.
 ## ITEM 16 — Ação de debate técnico
 
 - **Aula:** 04 · Resolução de problemas: análise crítica
-- **Capacidade:** S2 · C3
+- **Capacidade:** C3
 
 **Contexto:**
 Na reunião de consultoria, alguém propõe redesenhar o botão principal "para melhorar a usabilidade e conversão", sem dados. Você precisa responder de forma técnica.
@@ -370,7 +368,7 @@ Defina cada conceito com as suas palavras e explique a diferença entre eles.
 ## ITEM 20 — Síntese do método
 
 - **Aula:** 04 · Resolução de problemas: análise crítica
-- **Capacidade:** C3 · S2
+- **Capacidade:** C3
 
 **Contexto:**
 Ao final do diagnóstico, você precisa explicar à equipe, em poucas frases, por que o método de análise crítica produz melhores decisões do que a opinião.

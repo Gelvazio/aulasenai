@@ -26,7 +26,6 @@
 ## ITEM 01 — Escolha entre questionário e entrevista
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, foi chamado para melhorar o aplicativo de notas de uma escola. A equipe quer saber quantos estudantes têm dificuldade para achar a média final, e também entender por que isso acontece. Ainda não há nenhuma pesquisa feita.
@@ -44,7 +43,6 @@ Diferencie questionário e entrevista quanto ao tipo de dado que cada um produz 
 ## ITEM 02 — Determinação da estratégia pelo contexto do projeto
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, recebeu três pedidos de pesquisa para projetos diferentes: a) um app de agendamento com dezenas de usuários a alcançar rápido; b) uma tela de cadastro em que já se sabe que os usuários travam, mas não se sabe o motivo; c) um painel de relatórios que precisa de números para aprovação.
@@ -62,7 +60,6 @@ Para cada pedido, determine a estratégia de coleta mais adequada ao contexto e 
 ## ITEM 03 — Quando combinar os métodos
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, percebeu que uma pesquisa inicial por questionário mostrou que 60% dos estudantes evitam o módulo de provas, mas não explicou o porquê. O próximo passo do projeto precisa dessa explicação antes de qualquer desenho de tela.
@@ -80,7 +77,6 @@ Explique como combinar questionário e entrevista nesta situação, indicando a 
 ## ITEM 04 — Estrutura de um questionário
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, vai montar um questionário para estudantes que usam o aplicativo de notas no celular. O questionário precisa ser rápido de preencher e responder à pergunta de frequência de uso e à facilidade para achar as notas.
@@ -98,7 +94,6 @@ Monte a estrutura do questionário, indicando o formato de cada tipo de pergunta
 ## ITEM 05 — Escala de avaliação com extremos definidos
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, quer medir a facilidade de achar as tarefas no aplicativo de notas. Um colega sugeriu perguntar "O que você achou?", mas você sabe que esse tipo de pergunta costuma gerar respostas vagas.
@@ -116,7 +111,6 @@ Explique por que a pergunta sugerida é fraca e reescreva a medição usando uma
 ## ITEM 06 — Pergunta indutora e pergunta neutra
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, recebeu de um professor duas perguntas para a pesquisa sobre o novo menu de um aplicativo: "Você concorda que nosso menu azul ficou muito mais moderno e fácil de achar?" e "Como você avalia a facilidade para encontrar o menu principal da tela?".
@@ -134,7 +128,6 @@ Analise as duas perguntas e explique qual delas pode distorcer os dados coletado
 ## ITEM 07 — Revisão de perguntas antes da coleta
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, vai aplicar uma pesquisa sobre o fluxo de cadastro de um serviço on-line. Antes de aplicar, revisa o roteiro e encontra três perguntas com adjetivos opinativos e uma pergunta sobre o tempo gasto no formulário.
@@ -152,7 +145,6 @@ Descreva o que você faria na revisão do roteiro antes da coleta, para garantir
 ## ITEM 08 — Limite de tamanho do formulário
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, recebeu um formulário de pesquisa com 22 perguntas sobre o aplicativo de notas. Ao revisar, você percebe que o público-alvo são estudantes que respondem no intervalo das aulas.
@@ -170,7 +162,6 @@ Analise o formulário e proponha uma forma de reduzi-lo para aumentar a particip
 ## ITEM 09 — Roteiro de entrevista em blocos
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, vai entrevistar um estudante que usa o aplicativo de notas todos os dias. A entrevista não pode ser uma conversa solta: ela segue um roteiro com objetivos claros para cada bloco.
@@ -188,7 +179,6 @@ Organize o roteiro da entrevista em blocos, na ordem em que ela deve acontecer.
 ## ITEM 10 — Encerramento e registro da entrevista
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, terminou uma entrevista sobre a dificuldade de consultar notas. O estudante está cansado e você ainda não registrou as falas dele no caderno de pesquisa.
@@ -206,7 +196,6 @@ Descreva como você encerra a sessão e registra as informações coletadas.
 ## ITEM 11 — Aprofundamento com perguntas investigativas
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, está numa entrevista e o estudante diz apenas: "A tela de notas é confusa." Você precisa obter um relato concreto e não um palpite sobre o futuro.
@@ -224,7 +213,6 @@ Monte três perguntas de aprofundamento que levem o estudante a um episódio rea
 ## ITEM 12 — Escuta ativa diante de uma crítica forte
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, está entrevistando um colega que diz com irritação: "Eu achei esse sistema horrível porque nada funciona". Você percebe que a frase é emocional e pouco precisa.
@@ -242,7 +230,6 @@ Descreva como você reage usando escuta ativa, sem rebater e sem defender o sist
 ## ITEM 13 — Parafrasear para confirmar o entendimento
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, ouviu de um estudante que o botão de consulta "é pequeno e some na tela". Você precisa confirmar se entendeu corretamente antes de seguir com a entrevista.
@@ -260,7 +247,6 @@ Explique a técnica de parafrasear e escreva uma frase de confirmação para ess
 ## ITEM 14 — Quantitativo e qualitativo na mesma pesquisa
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, precisa responder duas perguntas para a equipe: quantos estudantes têm dificuldade para achar as provas e por que eles têm essa dificuldade.
@@ -278,7 +264,6 @@ Associe cada pergunta ao tipo de dado e ao método mais adequado para respondê-
 ## ITEM 15 — Dilema do palpite no redesenho
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, foi chamado para redesenhar o aplicativo de notas de uma escola. Um colega propõe começar pelos botões que a equipe acha bonitos, sem perguntar nada aos estudantes e professores.
@@ -296,7 +281,6 @@ Explique o risco dessa proposta e diga o que você faria antes de desenhar qualq
 ## ITEM 16 — Postura neutra do consultor
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, está aplicando uma pesquisa e percebe que tem uma opinião forte sobre a cor de um botão. O usuário entrevistado parece concordar com tudo o que você diz.
@@ -314,7 +298,6 @@ Descreva a postura que você deve manter durante a coleta para não influenciar 
 ## ITEM 17 — Erros comuns na coleta
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, revisou a coleta feita por outra dupla. Encontrou três problemas: um formulário com mais de 10 perguntas, uma entrevista em que o entrevistador completava as frases do entrevistado e relatos muito estranhos que foram descartados sem análise.
@@ -332,7 +315,6 @@ Analise cada problema e explique o prejuízo que ele causa aos dados.
 ## ITEM 18 — Checklist do pesquisador
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, vai coletar dados com estudantes de uma turma na próxima semana. Quer organizar as etapas da coleta para não esquecer nada importante.
@@ -350,7 +332,6 @@ Monte um checklist de três momentos da coleta: antes, durante e depois.
 ## ITEM 19 — Da coleta à tabulação
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, terminou a coleta e tem várias folhas com anotações soltas e números espalhados. A equipe de design precisa de um resultado organizado para decidir o que entra no protótipo.
@@ -368,7 +349,6 @@ Descreva as etapas de tabulação que você seguiria, desde a limpeza até a vis
 ## ITEM 20 — Da tabulação à decisão de tela
 
 - **Aula:** 14 · Estratégias de coleta de informações: determinação e aplicação
-- **Capacidade:** C2 · S2
 
 **Contexto:**
 Você, como aluno consultor, tabulou os dados de uma pesquisa com 32 estudantes. O gráfico mostra que o fluxo de consulta de notas é o maior obstáculo da turma. Você precisa transformar essa evidência em uma decisão de interface.

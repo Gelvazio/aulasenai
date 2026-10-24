@@ -479,10 +479,12 @@ def aplicar_capacidades(meta, itens, dados, assets):
     if not usados:
         return CAIXA_CAPACIDADE_TEXTO.format(texto=escapar(meta["Capacidade avaliada"])), ""
     tabela = dados.get(cap.CAMPO_DADOS, {})
+    tabela_socio = dados.get("capacidades_socioemocionais", {})
+    tabela_completa = {**tabela, **tabela_socio}
     for item in itens:
-        cap.validar_codigos(tabela, item["capacidades"], f"ITEM {item['numero']:02d}")
-        item["quadro"] = cap.html_caixa_questao(tabela, item["capacidades"], RECUO_QUADRO)
-    inicio = cap.html_quadro(tabela, cap.codigos_usados(usados, tabela), RECUO_QUADRO)
+        cap.validar_codigos(tabela, item["capacidades"], f"ITEM {item['numero']:02d}", tabela_socio)
+        item["quadro"] = cap.html_caixa_questao(tabela_completa, item["capacidades"], RECUO_QUADRO)
+    inicio = cap.html_quadro(tabela_completa, cap.codigos_usados(usados, tabela_completa, tabela_socio), RECUO_QUADRO)
     return inicio, f'\n    <link rel="stylesheet" href="{assets}/css/capacidades.css">'
 
 
