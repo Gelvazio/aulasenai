@@ -2,7 +2,7 @@
 
 **Ordem:** 21 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **🔄 PENDENTE** — 119 de 147 peças (81%)  
+**Situação:** **🔄 PENDENTE** — 124 de 147 peças (84%)  
 **Gerado em:** 2026-10-24 18:00 (atualizado manualmente devido a falha do script no Windows)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
@@ -31,11 +31,11 @@
 
 || Aula | Aula em CONTEUDO/ | Objetiva (página) | Objetiva (fonte) | Prática (página) | Prática (fonte) | Prática (padrão de resposta) | Banco (seeds) | Aula pronta |
 ||---|---|---|---|---|---|---|---|---|
-|| 01 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-|| 02 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-|| 03 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-|| 04 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-|| 05 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+|| 01 | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+|| 02 | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+|| 03 | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+|| 04 | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+|| 05 | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ |
 || 06 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
 || 07 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
 || 08 | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |

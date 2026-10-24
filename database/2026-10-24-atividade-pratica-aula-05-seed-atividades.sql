@@ -7,7 +7,7 @@ declare
   v_atividade bigint;
 begin
   select a.id into v_aula from public.aulas a join public.materia m on m.id = a.materia_id
-    where m.descricao = 'FUNDAMENTOS DE UI UX' and a.numero = 5
+    where m.descricao = 'Fundamentos de UI / UX' and a.numero = 5
     order by a.id limit 1;
   if v_aula is null then
     raise exception 'Aula 05 da matéria não encontrada';
