@@ -1129,6 +1129,33 @@
       </table>
     </div>
 
+    <h2>✅ Atualização 2026-10-24 — media_finalizada: média do aluno confirmada (#374)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-24-media-finalizada.sql</code> (aplicado em 2026-10-24) · Tela: card "Notas e média" do índice de atividades — interruptor "Confirmar Media Aluno" (só professor); confirmado sai do combo Aluno, "Listar todos" o traz de volta</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>media_finalizada (aluno_id, materia_id, turma_codigo, media_finalizada, atualizado_por, atualizado_em)</td>
+          <td>Tabela</td>
+          <td>Confirmação da média por aluno × matéria; chave (aluno_id, materia_id); sem linha ou false = média não confirmada</td>
+        </tr>
+        <tr>
+          <td>media_finalizada_select / media_finalizada_insert / media_finalizada_update</td>
+          <td>Políticas RLS</td>
+          <td>Leitura: professor da turma ou o próprio aluno; escrita: só professor da turma; sem DELETE; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>media_finalizada_auditar() + trigger</td>
+          <td>Função + gatilho</td>
+          <td>Carimbo em todo insert/update: atualizado_por = auth.uid(), atualizado_em = now()</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🏫 Atualização 2026-10-16 — CRUD da turma pelo Professor Administrador</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-16-turma-crud-administrador.sql</code> (aplicado em 2026-10-16) · Tela: <code>turmas.html</code> (consulta, modal de edição, excluir e botão Professores) · Tarefa #201</p>

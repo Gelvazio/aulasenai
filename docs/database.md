@@ -1119,6 +1119,19 @@ pelo card "Notas e média" do índice de atividades (`assets/js/card-notas-media
 Média do card = Σ(nota × peso) ÷ Σ(peso) das atividades ON com nota (discursiva sem correção fica
 fora).
 
+## ✅ Atualização 2026-10-24 — `media_finalizada`: média do aluno confirmada (#374)
+
+SQL: `database/2026-10-24-media-finalizada.sql` (aplicado em 2026-10-24; idempotente). Usado pelo
+card "Notas e média" do índice de atividades: o professor liga o interruptor **"Confirmar Media
+Aluno"** e o aluno confirmado sai do combo Aluno (o interruptor **"Listar todos"** o traz de
+volta).
+
+| Objeto | O que é |
+|---|---|
+| `media_finalizada` | Confirmação da média por **aluno × matéria**. Colunas: `aluno_id` (FK `auth.users`, cascade), `materia_id` (FK `materia`, cascade), `turma_codigo` (usada pelo RLS), `media_finalizada` (boolean, padrão `false`), `atualizado_por`, `atualizado_em`. Chave `(aluno_id, materia_id)`. Sem linha ou `false` = média não confirmada (aluno aparece no combo) |
+| RLS de `media_finalizada` | `select`: professor da turma (`eh_professor()` + `professor_tem_turma(turma_codigo)`) ou o próprio aluno; `insert`/`update`: só professor da turma; `anon` sem acesso; sem `delete` |
+| `media_finalizada_auditar()` + trigger | Carimbo: grava `atualizado_por = auth.uid()` e `atualizado_em = now()` em todo insert/update |
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas
