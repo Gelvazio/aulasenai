@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #373-5c8e1f47 — [Filtro "Apenas atividade de média" no card de notas](etapas/ETAPA-522-5c8e1f47-FILTRO-APENAS-ATIVIDADE-DE-MEDIA.md) · 🔄 Em execução · Claude Code (Sonnet 5.5) (local · main)
+  - #373.1 — Filtro ON/OFF com localStorage · 🔄 Em execução · `MEDIO` · só Sonnet
 - #372-4a9d2e61 — [Melhorar o CSS dos combos Turma e Aluno do card de notas](etapas/ETAPA-521-4a9d2e61-CSS-COMBOS-CARD-NOTAS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #372.1 — Reescrever o CSS de `__selecao` e `__combo` · ✅ Concluído · `LEVE` · só Sonnet
 - #371-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-520-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
