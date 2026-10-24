@@ -22,8 +22,8 @@
 
 **Próximo passo:** editar `vercel.json` trocando o `ignoreCommand` pelo comando com fallback (ver Diagnóstico); commit + push na `main`; conferir pelo conector que o próximo deploy sai de `ERROR` (push com site = `READY`; push só de `tasks/`/`rules-local/` = `CANCELED`).
 
-- **Nível:** PESADO — classificação do Jev (confiança 0,76; revisão humana recomendada); configuração de deploy/infraestrutura
-- **Modelo:** só Sonnet (ou DeepSeek / OpenCode deepseek-v4-pro, conforme matriz e classificação) — ⛔ não é do Devin; neste projeto nunca usar Opus
+- **Nível:** MEDIO — reclassificado pelo Jev em 2026-10-24 (confiança 0,18; revisão humana recomendada); 1 arquivo de configuração de deploy, sem banco/RLS (antes PESADO, confiança 0,76)
+- **Modelo:** MEDIO · só Sonnet — executada pelo Devin por pedido direto do usuário nesta sessão ("faca a task 355"), depois de avisado de que o Devin não é o modelo do nível (precedente: #353.1, #354.1)
 - **Descrição:** `vercel.json`, chave `ignoreCommand`: substituir `git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ':(exclude)tasks/' ':(exclude)rules-local/'` pelo comando com fallback `HEAD^` que só retorna 0 ou 1 (ver Diagnóstico). Nada mais no arquivo muda.
 - **Critérios de aceitação:** próximo deploy do `main` não fica `ERROR`; push com mudança de site → `READY`; push só de `tasks/` ou `rules-local/` → `CANCELED` (regra C46 preservada).
 - **Entrega:** pendente · **Verificação:** `node -e "JSON.parse(require('fs').readFileSync('vercel.json'))"` válido; `list_deployments` no conector Vercel mostra o deploy seguinte com `state` diferente de `ERROR`.
