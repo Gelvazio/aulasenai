@@ -12,3 +12,4 @@
 - **Modelo:** só Sonnet
 - **Entrega:** `assets/js/mostrar-certas-discursiva.js` (categoria certa/meia/errada pela sugestão da IA até o professor confirmar todos os tópicos respondidos; depois, pela correção dele); `docs/regras/atividades.md`. A tela do aluno já usava só a nota confirmada do professor. Revisão por agente (revisor-codigo): sem achados.
 - **Verificação:** `node --check` ok; linhas ≤ 100. Conferir na tela: o usuário.
+- **Correção (2026-10-24):** a regra passou a valer POR TÓPICO (nota do professor se confirmou o tópico; senão a da IA), pois exigir todos os tópicos confirmados mantinha na lista "Meia Certas" a pergunta que o professor já marcou como Certa.

@@ -3,9 +3,9 @@
 // - "Falta Corrigir?" (ligado ao abrir): mostra só as questões que o professor ainda não marcou
 //   (algum tópico RESPONDIDO sem nota do professor; tópico em branco não conta) — tarefa #150;
 // - "Mostrar Certas / Meia Certas / Erradas" (categorias em categorias-pergunta-discursiva.js):
-//   todos desmarcados mostra todas; marcados combinam — tarefa #159. A categoria vem da sugestão
-//   da IA enquanto o professor não confirmou a questão; confirmada (todos os tópicos respondidos
-//   com nota do professor), vem da correção dele (#363). Questão sem nota nunca é escondida.
+//   todos desmarcados mostra todas; marcados combinam — tarefa #159. Em cada tópico, a nota
+//   que vale é a do professor se ele já confirmou; senão a sugestão da IA (#363).
+//   Questão sem nota nunca é escondida.
 // Os filtros valem juntos. Só muda a tela: nada é gravado. As escolhas ficam no localStorage
 // (respostas-aluno:falta-corrigir e respostas-aluno:categoria-*) e voltam ao abrir (#157).
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js (sbGet) e de
@@ -34,20 +34,15 @@ const estadoMostrarCertas = {
 };
 
 /**
- * Notas que valem na pergunta: com TODOS os tópicos respondidos já confirmados pelo professor,
- * a correção dele; senão a sugestão da IA (sem nota da IA no tópico, usa a do professor, se
- * houver).
+ * Notas que valem na pergunta, tópico a tópico: a do professor quando ele já confirmou o
+ * tópico; senão a sugestão da IA.
  * @param {{notaIa: number|null, notaProfessor: number|null, pontos: number}[]} topicos -
  *     Tópicos respondidos da pergunta.
- * @param {boolean} confirmada - true se o professor já confirmou todos os tópicos.
  * @returns {{nota: number|null, pontos: number}[]} Notas e pontos de cada tópico.
  */
-function notasQueValemNaPergunta(topicos, confirmada) {
-    return topicos.map((topico) => {
-        const usaNotaProfessor = confirmada || topico.notaIa === null;
-        const nota = usaNotaProfessor ? topico.notaProfessor ?? topico.notaIa : topico.notaIa;
-        return { nota, pontos: topico.pontos };
-    });
+function notasQueValemNaPergunta(topicos) {
+    return topicos.map((topico) => ({
+        nota: topico.notaProfessor ?? topico.notaIa, pontos: topico.pontos }));
 }
 
 /**
@@ -107,7 +102,7 @@ async function lerQuestoesDoAluno(aluno, atividadeId) {
         const lista = topicosPorItem.get(item) || [];
         const confirmada = lista.every((topico) => topico.notaProfessor !== null);
         categorias.set(item, window.classificarPerguntaPorNotas(
-            notasQueValemNaPergunta(lista, confirmada)));
+            notasQueValemNaPergunta(lista)));
         if (confirmada) corrigidas.add(item);
     });
     return { categorias, corrigidas };

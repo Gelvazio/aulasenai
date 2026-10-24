@@ -313,9 +313,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     corrigida. **Todos desmarcados: mostra todas as perguntas**; marcados **combinam** (mostra as
     de qualquer categoria marcada). Categoria da pergunta: **certa** = todos os tópicos com nota
     cheia; **errada** = todos com nota zero; **meia certa** = o resto (só tópicos respondidos).
-    Nota que vale (regra global, #363): a **sugestão da IA** enquanto o professor não confirmou a
-    pergunta; com **todos os tópicos respondidos** confirmados pelo professor, a **correção dele**
-    (aluno: só a confirmada do professor).
+    Nota que vale (regra global, #363): **por tópico**, a **correção do professor** quando ele já confirmou; senão a **sugestão da IA** (aluno: só a confirmada do professor).
     Pergunta ainda sem nota nunca some. No professor combinam também com "Falta Corrigir?". As
     escolhas ficam no **localStorage** (`respostas-aluno:categoria-*` e `resultado-aluno:categoria-*`).
     Código: `assets/js/categorias-pergunta-discursiva.js` (compartilhado),
