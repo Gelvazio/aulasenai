@@ -18,6 +18,7 @@ const TEXTO_VAZIO_MP = "Nenhuma matéria pendente para o filtro escolhido.";
 const TEXTO_DETALHES_MP = "O QUE FALTA";
 const CLASSE_SITUACAO_MP = "mp-materia__situacao";
 const CLASSE_SITUACAO_NAO_INICIADA_MP = "mp-materia__situacao--nao-iniciada";
+const CHAVE_FILTROS_MP = "materias-pendentes:filtros";
 
 const estadoMp = {
   repositorio: null, materias: [], cursosPorId: new Map(), cursos: [], geradoEm: "",
@@ -98,6 +99,46 @@ function preencherFiltrosMp() {
     anos.map((ano) => ({ valor: String(ano), texto: String(ano) })));
   preencherSeletorMp(elementoMp("mpSemestre"), TEXTO_TODOS_SEMESTRES_MP,
     semestres.map((valor) => ({ valor: String(valor), texto: valor + SUFIXO_SEMESTRE_MP })));
+}
+
+/**
+ * Aplica nos seletores o filtro guardado, só se o valor existir nas opções atuais.
+ * @param {HTMLSelectElement} seletor - Seletor do filtro.
+ * @param {string} valor - Valor guardado.
+ */
+function aplicarValorGuardadoMp(seletor, valor) {
+  if (valor && Array.from(seletor.options).some((opcao) => opcao.value === valor)) {
+    seletor.value = valor;
+  }
+}
+
+/**
+ * Devolve o filtro guardado no localStorage para os seletores (os que ainda existirem).
+ */
+function restaurarFiltrosMp() {
+  try {
+    const guardado = JSON.parse(localStorage.getItem(CHAVE_FILTROS_MP) || "{}");
+    aplicarValorGuardadoMp(elementoMp("mpCurso"), guardado.curso);
+    aplicarValorGuardadoMp(elementoMp("mpAno"), guardado.ano);
+    aplicarValorGuardadoMp(elementoMp("mpSemestre"), guardado.semestre);
+  } catch (erro) {
+    localStorage.removeItem(CHAVE_FILTROS_MP);
+  }
+}
+
+/** Guarda no localStorage o filtro escolhido, para abrir a página já com ele. */
+function guardarFiltrosMp() {
+  localStorage.setItem(CHAVE_FILTROS_MP, JSON.stringify(lerFiltroMp()));
+}
+
+/** Liga os filtros: mudança guarda o estado e redesenha; "Limpar filtros" apaga o guardado. */
+function ligarEventosMp() {
+  const formulario = elementoMp("mpFiltros");
+  formulario.addEventListener("change", () => { guardarFiltrosMp(); desenharListaMp(); });
+  formulario.addEventListener("reset", () => {
+    localStorage.removeItem(CHAVE_FILTROS_MP);
+    setTimeout(desenharListaMp);
+  });
 }
 
 /**
@@ -185,13 +226,6 @@ function desenharListaMp() {
   });
 }
 
-/** Liga os filtros: qualquer mudança (ou o "Limpar filtros") redesenha a lista. */
-function ligarEventosMp() {
-  const formulario = elementoMp("mpFiltros");
-  formulario.addEventListener("change", desenharListaMp);
-  formulario.addEventListener("reset", () => setTimeout(desenharListaMp));
-}
-
 /** Carrega os dados e abre a página. */
 async function carregarDadosMp() {
   const [cursos, pendencias] = await Promise.all([
@@ -202,6 +236,7 @@ async function carregarDadosMp() {
   estadoMp.materias = pendencias.materias;
   estadoMp.geradoEm = pendencias.gerado_em;
   preencherFiltrosMp();
+  restaurarFiltrosMp();
   ligarEventosMp();
   desenharListaMp();
   elementoMp("mpConteudo").hidden = false;

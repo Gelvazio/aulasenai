@@ -148,3 +148,4 @@
 | #358.1 | Dividir o menu do administrador em 2 linhas (JS + CSS do header) · `PESADO · effort high` | 🟠 Alta | PESADO · Sonnet (executor-pesado; correções do líder) | — | ✅ Concluído | 2026-10-24 | [507-3e1a9f2c](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) | — |
 | #358.2 | Links do menu menos redondos e centralizados · `LEVE · effort low` | 🟡 Normal | LEVE · Devin | #358.1 | ✅ Concluído | 2026-10-24 | [507-3e1a9f2c](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) | — |
 | #358 | Menu do Professor Administrador em duas linhas · `LEVE/PESADO` | 🟠 Alta | — | — | ✅ Concluído | 2026-10-24 | [507-3e1a9f2c](etapas/ETAPA-507-3e1a9f2c-MENU-ADMIN-EM-DUAS-LINHAS.md) | — |
+| #359 | Filtros de materias-pendentes.html guardam estado no localStorage · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet (Devin a pedido do usuário) | #358 | ✅ Concluído | 2026-10-24 | [508-9f2b4d71](etapas/ETAPA-508-9f2b4d71-FILTROS-COM-ESTADO.md) | — |
