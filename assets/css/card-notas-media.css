@@ -19,14 +19,55 @@
 .card-notas-media__selecao {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 12px 14px;
+    background: white;
+    border: 1px solid var(--notas-borda);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(45, 55, 72, 0.08);
 }
 .card-notas-media__combo {
-    font: inherit; padding: 8px 10px; min-height: 40px; max-width: 100%;
-    border: 2px solid var(--primary); border-radius: 8px; background: white; color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1 1 260px;
+    min-width: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+.card-notas-media__combo select {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 38px 8px 12px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--text);
+    background-color: #f7fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+.card-notas-media__combo select:hover {
+    border-color: var(--primary);
+    background-color: white;
+}
+.card-notas-media__combo select:focus-visible {
+    outline: none;
+    border-color: var(--primary);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
 }
 .card-notas-media__tabela {
     width: 100%; border-collapse: collapse; font-size: 14px; background: white;
@@ -95,6 +136,6 @@
 }
 @media (max-width: 600px) {
     .card-notas-media { padding: 14px 12px; border-left-width: 4px; }
-    .card-notas-media__combo { width: 100%; }
+    .card-notas-media__combo { flex-basis: 100%; }
     .card-notas-media__media { font-size: 26px; }
 }

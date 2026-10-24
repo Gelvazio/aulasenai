@@ -11,3 +11,5 @@
 - **Nível:** LEVE — só CSS, 1 arquivo, sem lógica (Jev sugeriu MEDIO com confiança 0,25; pedido pequeno de estilo)
 - **Modelo:** só Sonnet
 - **Verificação:** leitura do CSS; conferir na tela: o usuário.
+
+- **Entrega:** `assets/css/card-notas-media.css` — painel branco com borda e sombra, rótulo em caixa alta acima do campo, select com seta própria, hover, foco visível com anel, largura flexível e 100% no celular. Sem mudança de JS.
