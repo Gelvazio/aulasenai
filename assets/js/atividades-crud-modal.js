@@ -862,6 +862,26 @@ function carregarTurmaFavoritaIndice() {
     document.head.append(estilo, ...scripts);
 }
 
+/**
+ * Carrega o card "Notas e média" (CSS e scripts) em todo índice de atividades que usa este
+ * módulo, para valer em todas as matérias sem mexer em cada página.
+ */
+function carregarCardNotasMediaIndice() {
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/card-notas-media.css';
+    const caminhos = ['js/card-notas-media-calculo.js', 'js/card-notas-media-repositorio.js',
+        'js/card-notas-media.js'];
+    const scripts = caminhos.map((caminho) => {
+        const script = criarElementoCrud('script');
+        script.src = BASE_ASSETS_CRUD + caminho;
+        script.async = false;
+        return script;
+    });
+    document.head.append(estilo, ...scripts);
+}
+
 abrirAtividadesEmNovaAba();
 carregarMarcacaoFeitas();
 iniciarCrudAtividades();
+carregarCardNotasMediaIndice();

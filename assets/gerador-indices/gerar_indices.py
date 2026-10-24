@@ -27,15 +27,6 @@ JS_SUPABASE = RAIZ_PROJETO / "js" / "supabase.js"
 CSS_CRUD = RAIZ_PROJETO / "assets" / "css" / "atividades-crud-modal.css"
 JS_CRUD_REPOSITORIO = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-repositorio.js"
 JS_CRUD_MODAL = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-modal.js"
-CSS_CARD_NOTAS = RAIZ_PROJETO / "assets" / "css" / "card-notas-media.css"
-JS_CARD_NOTAS = tuple(
-    RAIZ_PROJETO / "assets" / "js" / nome
-    for nome in (
-        "card-notas-media-calculo.js",
-        "card-notas-media-repositorio.js",
-        "card-notas-media.js",
-    )
-)
 JS_POPUP = RAIZ_PROJETO / "assets" / "js" / "popup.js"
 JS_FAIXA_ENSALADO = RAIZ_PROJETO / "assets" / "js" / "faixa-materias-ensalado.js"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
@@ -266,22 +257,13 @@ def montar_tags_crud(pasta_indice, recuo):
     return "".join(f"\n{recuo}{linha}" for linha in linhas)
 
 
-def montar_tags_card_notas(pasta_indice, recuo):
-    """Tags (CSS e scripts) do card "Notas e média", com caminhos relativos ao índice."""
-    linhas = [f'<link rel="stylesheet" href="{link_relativo(CSS_CARD_NOTAS, pasta_indice)}">']
-    linhas += [
-        f'<script src="{link_relativo(js, pasta_indice)}" defer></script>' for js in JS_CARD_NOTAS
-    ]
-    return "".join(f"\n{recuo}{linha}" for linha in linhas)
-
-
 def montar_pagina(dados):
     """Monta a página completa de índice (cabeçalho, resumo, grade de cards e rodapé).
 
     O bloqueio das atividades vem do banco de dados (atividade.ativo): o professor liga ou
     desliga o interruptor "Bloquear" de cada card (assets/js/indice-atividades-bloqueio.js).
     """
-    chaves_head = ("menu", "crud", "card_notas", "filtro_ensalado")
+    chaves_head = ("menu", "crud", "filtro_ensalado")
     tags_extras = "".join(dados.get(chave, "") for chave in chaves_head)
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -454,7 +436,6 @@ def gerar_indice_materia(materia, curso, forcar):
     }
     dados_pagina["menu"] = montar_tags_menu(pasta_indice, "    ")
     dados_pagina["crud"] = montar_tags_crud(pasta_indice, "    ")
-    dados_pagina["card_notas"] = montar_tags_card_notas(pasta_indice, "    ")
     dados_pagina["filtro_ensalado"] = montar_tags_filtro_ensalado(curso, pasta_indice, False)
     pagina = montar_pagina(dados_pagina)
     return atividades, gravar_indice(pasta_indice / NOME_INDICE, pagina, forcar)

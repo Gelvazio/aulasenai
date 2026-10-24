@@ -30,12 +30,15 @@ const MSG_SEM_ATIVIDADES_NOTAS = 'Não há atividades neste índice.';
 const MSG_SELECIONE_ALUNO_NOTAS = 'Selecione o aluno para ver as notas.';
 const MSG_SEM_ALUNOS_NOTAS = 'Nenhum aluno cadastrado nesta turma.';
 const MSG_SEM_TURMAS_NOTAS = 'Nenhuma turma disponível.';
+const CHAVE_FILTRO_NOTAS = 'card-notas-media:apenas-atividade-de-media';
+const ROTULO_FILTRO_NOTAS = 'Apenas atividade de média';
+const MSG_NENHUMA_NA_MEDIA_NOTAS = 'Nenhuma atividade conta na média.';
 const MSG_ERRO_GRAVAR_NOTAS = 'Não foi possível gravar a configuração: ';
 
 const estadoNotas = {
     atividades: [], ids: new Map(), configuracao: new Map(), notas: new Map(),
     turmas: [], alunos: [], turma: '', alunoId: '', ehProfessor: false, usuarioId: '',
-    elementos: null, temporizadores: new Map(),
+    elementos: null, temporizadores: new Map(), apenasNaMedia: false,
 };
 
 /**
@@ -84,12 +87,13 @@ function montarEsqueletoNotas() {
     const titulo = criarElementoNotas('h2', PREFIXO_NOTAS + 'titulo', TITULO_NOTAS);
     const selecao = criarElementoNotas('div', PREFIXO_NOTAS + 'selecao');
     selecao.hidden = true;
+    const filtro = criarElementoNotas('div', PREFIXO_NOTAS + 'filtro');
     const tabela = criarElementoNotas('table', PREFIXO_NOTAS + 'tabela');
     const rodape = criarElementoNotas('div', PREFIXO_NOTAS + 'rodape');
     const aviso = criarElementoNotas('p', PREFIXO_NOTAS + 'aviso');
     aviso.hidden = true;
-    card.append(titulo, selecao, tabela, rodape, aviso);
-    estadoNotas.elementos = { card, selecao, tabela, rodape, aviso };
+    card.append(titulo, selecao, filtro, tabela, rodape, aviso);
+    estadoNotas.elementos = { card, selecao, filtro, tabela, rodape, aviso };
     return card;
 }
 
@@ -156,7 +160,7 @@ async function gravarConfiguracaoNotas(atividade, anterior, turma) {
 function aplicarConfiguracaoNotas(atividade, nova) {
     const anterior = lerConfiguracaoNotas(atividade.pagina);
     estadoNotas.configuracao.set(atividade.pagina, nova);
-    atualizarMediaNotas();
+    renderizarTabelaNotas();
     gravarConfiguracaoNotas(atividade, anterior, estadoNotas.turma);
 }
 
@@ -278,6 +282,81 @@ function criarLinhaNotas(atividade) {
 }
 
 /**
+ * Lista as atividades da tabela: só as que contam na média quando o filtro está ligado.
+ * @returns {{pagina: string}[]} Atividades a mostrar.
+ */
+function listarAtividadesVisiveisNotas() {
+    if (!estadoNotas.apenasNaMedia) return estadoNotas.atividades;
+
+    return estadoNotas.atividades
+        .filter((atividade) => lerConfiguracaoNotas(atividade.pagina).naMedia);
+}
+
+/**
+ * Linha única mostrada quando o filtro não deixa nenhuma atividade na tabela.
+ * @param {number} quantidadeColunas - Colunas da tabela.
+ * @returns {HTMLTableRowElement} Linha com a mensagem.
+ */
+function criarLinhaVaziaNotas(quantidadeColunas) {
+    const linha = criarElementoNotas('tr', PREFIXO_NOTAS + 'linha');
+    const celula = criarElementoNotas('td', PREFIXO_NOTAS + 'vazio', MSG_NENHUMA_NA_MEDIA_NOTAS);
+    celula.colSpan = quantidadeColunas;
+    linha.append(celula);
+    return linha;
+}
+
+/**
+ * Lê no localStorage se o filtro "Apenas atividade de média" estava ligado.
+ * @returns {boolean} true se o filtro estava ligado.
+ */
+function lerFiltroSalvoNotas() {
+    try {
+        return localStorage.getItem(CHAVE_FILTRO_NOTAS) === 'sim';
+    } catch (erro) {
+        return false;
+    }
+}
+
+/**
+ * Guarda no localStorage o estado do filtro (sem falhar se o navegador bloquear).
+ * @param {boolean} ligado - Estado do filtro.
+ */
+function salvarFiltroNotas(ligado) {
+    try {
+        localStorage.setItem(CHAVE_FILTRO_NOTAS, ligado ? 'sim' : 'nao');
+    } catch (erro) {
+        console.warn('Filtro não salvo no navegador:', erro.message);
+    }
+}
+
+/**
+ * Monta a chave ON/OFF "Apenas atividade de média" acima da tabela.
+ */
+function montarFiltroNotas() {
+    const { filtro } = estadoNotas.elementos;
+    const rotulo = criarElementoNotas('span', PREFIXO_NOTAS + 'filtro-rotulo',
+        ROTULO_FILTRO_NOTAS);
+    const botao = criarElementoNotas('button', PREFIXO_NOTAS + 'interruptor');
+    botao.type = 'button';
+    botao.setAttribute('role', 'switch');
+    botao.setAttribute('aria-label', ROTULO_FILTRO_NOTAS);
+    const pintar = () => {
+        botao.setAttribute('aria-checked', String(estadoNotas.apenasNaMedia));
+        botao.classList.toggle(PREFIXO_NOTAS + 'interruptor--ligado', estadoNotas.apenasNaMedia);
+        botao.textContent = estadoNotas.apenasNaMedia ? 'ON' : 'OFF';
+    };
+    estadoNotas.apenasNaMedia = lerFiltroSalvoNotas();
+    pintar();
+    botao.addEventListener('click', () => {
+        estadoNotas.apenasNaMedia = !estadoNotas.apenasNaMedia;
+        salvarFiltroNotas(estadoNotas.apenasNaMedia);
+        pintar();
+        renderizarTabelaNotas();
+    });
+    filtro.replaceChildren(rotulo, botao);
+}
+
+/**
  * Desenha a tabela inteira e o rodapé com a média.
  */
 function renderizarTabelaNotas() {
@@ -292,7 +371,9 @@ function renderizarTabelaNotas() {
     });
     cabecalho.append(linhaCabecalho);
     const corpo = document.createElement('tbody');
-    corpo.append(...estadoNotas.atividades.map(criarLinhaNotas));
+    const visiveis = listarAtividadesVisiveisNotas();
+    if (visiveis.length) corpo.append(...visiveis.map(criarLinhaNotas));
+    else corpo.append(criarLinhaVaziaNotas(colunas.length));
     tabela.replaceChildren(cabecalho, corpo);
     atualizarMediaNotas();
 }
@@ -462,6 +543,7 @@ async function iniciarCardNotas() {
     if (!grade || grade.querySelector('.' + CLASSE_CARD_NOTAS)) return;
 
     grade.prepend(montarEsqueletoNotas());
+    montarFiltroNotas();
     try {
         await preencherCardNotas();
     } catch (erro) {

@@ -139,3 +139,22 @@
     .card-notas-media__combo { flex-basis: 100%; }
     .card-notas-media__media { font-size: 26px; }
 }
+
+.card-notas-media__filtro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-notas-media__filtro-rotulo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+.card-notas-media__vazio {
+    padding: 14px;
+    text-align: center;
+    color: #718096;
+    font-style: italic;
+}

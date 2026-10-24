@@ -11,3 +11,9 @@
 - **Nível:** MEDIO — JS com lógica, 1 arquivo + CSS (Jev, confiança 0,97)
 - **Modelo:** só Sonnet
 - **Verificação:** `node --check`; conferir na tela: o usuário.
+
+### Escopo ampliado (pedido do usuário, mesma sessão)
+"VALE DE FORMA GLOBAL PRA TODAS AS MATERIAS": o card inteiro (e o filtro) passa a valer em todo índice de atividades.
+
+- **Entrega:** `assets/js/card-notas-media.js` (chave ON/OFF "Apenas atividade de média" acima da tabela; ON lista só as atividades que contam na média, OFF lista todas; valor no `localStorage` em `card-notas-media:apenas-atividade-de-media`; mudar ON/OFF ou peso de uma atividade refaz a tabela e a média na hora), `assets/css/card-notas-media.css`, e `assets/js/atividades-crud-modal.js` (nova `carregarCardNotasMediaIndice`, que carrega CSS e os 3 scripts em todos os 37 índices de matéria que já usam o módulo e em futuros). As tags estáticas da #371 no `index.html` de Introdução à TIC e no `gerar_indices.py` foram removidas para não carregar duas vezes.
+- **Verificação:** `node --check` ok; os 37 `ATIVIDADES/index.html` incluem `atividades-crud-modal.js`. Conferir na tela: o usuário (aluno e professor, em mais de uma matéria).
