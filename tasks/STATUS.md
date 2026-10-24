@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Sonnet 5.5) (local · main · s493) | ANO-SEMESTRE-CURSO ([493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md)) — plano aguardando o "sim" | 👀 Aguardando o usuário | 2026-10-24 15:20 |
+| Claude Code (Sonnet 5.5) (local · main · s493) | ANO-SEMESTRE-CURSO.1 ([493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md)) | 🔄 Ativa | 2026-10-24 15:40 |
 | Claude Code (Sonnet 5.5) (local · main · s492) | CURSO-MATERIA-EQUIPES concluída ([492-c3a9d7e1](etapas/ETAPA-492-c3a9d7e1-CURSO-ANTES-DA-MATERIA-EM-EQUIPES.md)) | ⏹️ Encerrada | 2026-10-24 15:10 |
 | Claude Code (Sonnet 5.5) (local · main · s491) | ID-MATERIA-EQUIPES concluída ([491-b7e3c915](etapas/ETAPA-491-b7e3c915-ID-DA-MATERIA-NO-SELETOR-DE-EQUIPES.md)) | ⏹️ Encerrada | 2026-10-24 14:40 |
 | Claude Code (Sonnet 5.5) (local · main · s490) | LINHA-ENTRE-ALUNOS concluída ([490-a8d24e63](etapas/ETAPA-490-a8d24e63-LINHA-SEPARANDO-ALUNOS-NO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 14:10 |
@@ -100,8 +100,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
-| **ANO-SEMESTRE-CURSO** | **Ano e semestre no curso (lista Curso do modal Equipes)** | 🟡 Média | — | — | 👀 Aguardando o usuário (aprovar o plano) | — (não reservável) | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
-| ANO-SEMESTRE-CURSO.1 | SQL: colunas ano e semestre em curso, com a documentação do schema | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | ⬜ Pendente | — | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
+| **ANO-SEMESTRE-CURSO** | **Ano e semestre no curso (lista Curso do modal Equipes)** | 🟡 Média | — | — | 🔄 Em progresso (plano aprovado 2026-10-24 15:40) | — (não reservável) | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
+| ANO-SEMESTRE-CURSO.1 | SQL: colunas ano e semestre em curso, com a documentação do schema | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s493) (desde 2026-10-24 15:41) | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
 | ANO-SEMESTRE-CURSO.2 | Aplicar no banco e preencher ano e semestre dos cursos | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | ANO-SEMESTRE-CURSO.1 | ⬜ Pendente | — | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
 | ANO-SEMESTRE-CURSO.3 | Lista Curso do modal Equipes mostra ano e semestre | 🟡 Média | MEDIO · só Sonnet · effort medium | ANO-SEMESTRE-CURSO.2 | ⬜ Pendente | — | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |
 | ANO-SEMESTRE-CURSO.4 | Campos ano e semestre no cadastro de curso | 🟡 Média | MEDIO · só Sonnet · effort medium | ANO-SEMESTRE-CURSO.2 | ⬜ Pendente | — | [493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) | — |

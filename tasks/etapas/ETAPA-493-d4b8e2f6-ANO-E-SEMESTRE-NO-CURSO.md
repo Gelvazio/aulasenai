@@ -33,10 +33,11 @@
 
 - 2026-10-24 15:30 — pedido do usuário: "ADICIONE FILTROS EM CIMA, DE NOME ANO, SEMESTRE, DO TIPO ON/OFF". Interpretação (a confirmar no "sim"): filtros acima da lista Curso do modal Equipes; nome por texto, ano e semestre por botões ON/OFF (padrão do `faixa-materias-ensalado.md`); tudo ligado = mostra todos. Virou a subtarefa .5.
 - 2026-10-24 15:20 — usuário escolheu criar colunas no curso (em vez de derivar das turmas). Plano **aguardando o "sim"** do usuário.
+- 2026-10-24 15:40 — usuário respondeu "sim, aprovado o plano ANO-SEMESTRE-CURSO; pode executar" (inclui as subtarefas .1 a .5).
 
 ### ANO-SEMESTRE-CURSO.1 — SQL: colunas ano e semestre em curso, com a documentação do schema
 
-**Próximo passo:** aguardar o "sim" do usuário ao plano; depois reservar e escrever o SQL em `database/`.
+**Próximo passo:** escrever o SQL em `database/` e atualizar os docs do schema.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
