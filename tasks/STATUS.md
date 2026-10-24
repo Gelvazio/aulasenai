@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #374-2d18d485 — [Confirmar média do aluno (`media_finalizada`) no card "Notas e média" — botão só professor + "Listar todos"](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) · 🔄 Em progresso (plano aguarda o "sim") · Devin (SWE-2) (local · main)
-  - #374.1 — SQL: tabela `media_finalizada` (aluno × matéria) com RLS + aplicar · 🔄 Em progresso · `PESADO` · só Sonnet (pedido direto: Devin)
+  - #374.1 — SQL: tabela `media_finalizada` (aluno × matéria) com RLS + aplicar · ✅ Concluído · `PESADO` · só Sonnet (pedido direto: Devin)
   - #374.2 — Repositório do card: matéria da página + ler/gravar o flag · ⬜ Pendente · `PESADO` · só Sonnet (pedido direto: Devin)
   - #374.3 — Visão: "Confirmar Media Aluno" + "Listar todos" + combo filtrado · ⬜ Pendente · `MEDIO` · só Sonnet (pedido direto: Devin)
   - #374.4 — Documentação (database.md + relatório HTML) · ⬜ Pendente · `LEVE` · só Haiku (pedido direto: Devin)

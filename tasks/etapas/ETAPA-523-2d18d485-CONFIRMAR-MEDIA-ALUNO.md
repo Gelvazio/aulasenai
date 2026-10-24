@@ -86,42 +86,52 @@ combo Aluno do card (o interruptor "Listar todos" o traz de volta).
 
 ### Decisões
 
-- (aguardando o "sim" do usuário ao plano)
+- **Aprovado pelo usuário em 2026-10-24** ("ponto critico-crie a tabela necessaria"): tabela nova
+  `media_finalizada` (aluno × matéria), flag por matéria, OFF volta a `false`. Exceções aceitas:
+  Devin executa PESADO e aplica o banco pelo conector Supabase desta sessão (pedido direto).
 
 ### #374.1 — SQL: tabela `media_finalizada` (aluno × matéria) com RLS + aplicar no banco
 
-**Próximo passo:** escrever o SQL e, com o "sim", aplicar pelo conector do Supabase.
+**Próximo passo:** ✅ Entregue em 2026-10-24 — `database/2026-10-24-media-finalizada.sql` criado
+e aplicado pelo `database/aplicar_seed.js` (RPC `exec_sql`; o conector MCP está em modo
+somente-leitura).
 
 - **Nível:** PESADO — banco/RLS (Jev: PESADO, confiança 1,00; sinal: banco, mais_de_3_arquivos)
 - **Modelo:** PESADO · só Sonnet — executada pelo Devin (pedido direto do usuário)
 - **Effort:** high · **JEV-AI-SUGGESTION:** NAO
-- **Verificação:** consulta de leitura ao banco; policies conferidas.
+- **Verificação:** consulta ao banco — 6 colunas, RLS ativo, 3 policies
+  (`media_finalizada_select/insert/update`), trigger `media_finalizada_auditar_trg` ✅
 
 ### #374.2 — Repositório do card: matéria da página + ler/gravar `media_finalizada`
 
-**Próximo passo:** depende da .1 (nome da tabela/colunas já fechado nesta etapa — pode rodar em
-paralelo com a aplicação).
+**Próximo passo:** ✅ Entregue em 2026-10-24 pelo agente Devin — `lerMateriaIdDaPagina`,
+`listarMediaFinalizadaDaMateria` e `gravarMediaFinalizada` em
+`assets/js/card-notas-media-repositorio.js`.
 
 - **Nível:** PESADO — consultas ao banco + RLS sensível (mesma classificação da #371.2)
 - **Modelo:** PESADO · só Sonnet — pedido direto do usuário (agente Devin)
 - **Effort:** high · **JEV-AI-SUGGESTION:** NAO
-- **Verificação:** `node --check`; leitura das funções.
+- **Verificação:** `node --check` ✅; leitura das 3 funções (ilike da matéria, upsert
+  `on_conflict=aluno_id,materia_id`, validações) ✅
 
 ### #374.3 — Visão do card: "Confirmar Media Aluno" + "Listar todos" + combo filtrado
 
-**Próximo passo:** depende da .2 (interface das funções já fechada nesta etapa — pode rodar em
-paralelo).
+**Próximo passo:** ✅ Entregue em 2026-10-24 pelo agente Devin — interruptores em
+`card-notas-media.js` (+ classe `__chave` no CSS) e combo Aluno filtrado; só no fluxo do
+professor.
 
 - **Nível:** MEDIO — JS/DOM + CSS, 2 arquivos (Jev da mãe: PESADO por banco; esta parte é tela)
 - **Modelo:** MEDIO · só Sonnet — pedido direto do usuário (agente Devin)
 - **Effort:** medium · **JEV-AI-SUGGESTION:** NAO
-- **Verificação:** `node --check`; conferir na tela: o usuário.
+- **Verificação:** `node --check` ✅; leitura (gate `ehProfessor`, filtro do combo, reversão em
+  falha de gravação) ✅; conferência visual na tela fica com o usuário.
 
 ### #374.4 — Documentação (`docs/database.md` + relatório HTML)
 
-**Próximo passo:** depende da .1 aplicada.
+**Próximo passo:** ✅ Entregue em 2026-10-24 pelo Devin — seção "media_finalizada" nos dois
+arquivos.
 
 - **Nível:** LEVE — só .md e .html de documentação
 - **Modelo:** LEVE · só Haiku — pedido direto do usuário (Devin)
 - **Effort:** low · **JEV-AI-SUGGESTION:** NAO
-- **Verificação:** leitura da seção nova.
+- **Verificação:** leitura da seção nova ✅
