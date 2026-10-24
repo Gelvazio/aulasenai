@@ -6,7 +6,7 @@
 
 ### HOVER-BOTOES-PROGRESSO.1 — Acrescentar `:hover` nos CSS dos botões da célula do aluno
 
-**Próximo passo:** acrescentar `:hover:not(:disabled)` (cor/borda/fundo mais fortes, transição curta, cursor pointer) nos 3 CSS: `progresso-turma-global.css`, `falta-aluno-progresso.css` e `questoes-nota-aluno-progresso.css`.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.89))
 - **Modelo:** só Sonnet — nunca outro
@@ -14,5 +14,6 @@
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.89)
 - **Descrição:** só CSS; sem JS, HTML nem banco; botão desativado não reage ao hover.
+- **Decisão (usuário, 2026-10-24 14:00):** os ajustes (maiores, um por linha, hover, Confirmar Entrega) são **globais**: todos os quadros, atividades e matérias. Conferido: há uma só implementação do quadro (`progresso-turma-global.js/css`, carregada por `respostas-atividade.js` e `avaliacao-discursiva.js`), sem sobrescrita por página; regra registrada em `atividades-banco.md`, `docs/regras/atividades.md` e no histórico.
 - **Critérios de Aceitação:** hover visível em todos os botões listados; sem `!important`; linhas ≤ 100 caracteres.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/css/progresso-turma-global.css`, `assets/css/falta-aluno-progresso.css`, `assets/css/questoes-nota-aluno-progresso.css` (3 executores-medio em paralelo, um CSS cada), `.claude/rules/atividades-banco.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` no commit desta entrega · **Verificação:** chaves balanceadas nos 3 CSS; sem `!important` novo; borda âmbar do campo alterado preservada no hover; implementação única do quadro (vale para todas as atividades e matérias); conferir na tela (sem navegador)

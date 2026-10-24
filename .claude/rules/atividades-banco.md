@@ -32,6 +32,11 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
   resposta ficam em branco), sem exigir o mínimo de questões.
 - ✅ Vive no código compartilhado do progresso (`assets/js/progresso-turma-global.js`); os
   geradores de atividade apenas herdam, nunca replicam por matéria.
+- ✅ **Visual global (2026-10-24):** os botões da célula do aluno (Quantidade Mínima, Confirmar
+  Todas, Confirmar Entrega, Faltou?, Quantidade Questão Considerar + Confirmar) são **maiores**
+  (altura ≥ 40px, fonte 14px), **um por linha** e com efeito **hover**. Isso vale para todos os
+  quadros, atividades e matérias: só se muda nos CSS compartilhados (`progresso-turma-global.css`,
+  `falta-aluno-progresso.css`, `questoes-nota-aluno-progresso.css`), nunca por página ou matéria.
 
 ## Alvo: pasta da matéria só com Markdown
 

@@ -31,9 +31,18 @@
     border-radius: var(--questoes-nota-raio);
     font: inherit;
     font-size: 16px;
+    transition: border-color .15s, box-shadow .15s;
 }
 
-.questoes-nota__campo[data-alterado="sim"] {
+.questoes-nota__campo:hover:not(:disabled),
+.questoes-nota__campo:focus:not(:disabled) {
+    border-color: var(--questoes-nota-confirmar);
+    box-shadow: 0 0 0 1px var(--questoes-nota-confirmar);
+}
+
+.questoes-nota__campo[data-alterado="sim"],
+.questoes-nota__campo[data-alterado="sim"]:hover:not(:disabled),
+.questoes-nota__campo[data-alterado="sim"]:focus:not(:disabled) {
     border-color: var(--questoes-nota-alterado);
 }
 
@@ -57,4 +66,16 @@
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+    transition: background-color .15s, border-color .15s, color .15s, box-shadow .15s;
+}
+
+.questoes-nota__confirmar:hover:not(:disabled) {
+    background: var(--questoes-nota-confirmar);
+    border-color: var(--questoes-nota-confirmar-texto);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(47, 133, 90, .35);
+}
+
+.questoes-nota__confirmar:disabled {
+    cursor: not-allowed;
 }

@@ -378,6 +378,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     para quem ainda não entregou e **não** aparece nas páginas com `data-marcar-entregue="sim"` (lá o
     "Marcar como entregue" já faz o mesmo). Registrado em `progresso-turma-global.js` para discursiva
     e objetiva.
+    **Visual global (2026-10-24):** botões da célula do aluno maiores (≥ 40px, fonte 14px), um por
+    linha e com hover, para todos os quadros, atividades e matérias; só se muda nos CSS
+    compartilhados do progresso, nunca por página.
+    **Visual global (2026-10-24):** botões da célula do aluno maiores (≥ 40px, fonte 14px), um por
+    linha e com hover, para todos os quadros, atividades e matérias; só se muda nos CSS
+    compartilhados do progresso, nunca por página.
   - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
     e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
     **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao

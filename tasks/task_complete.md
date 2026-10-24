@@ -18,3 +18,5 @@
 | CONFIRMAR-ENTREGA-BOTAO.3 | Ligar nos dois tipos e documentar | 🟡 Média | MEDIO · só Sonnet · effort medium | CONFIRMAR-ENTREGA-BOTAO.2 | ✅ Concluído | — | [487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) | — |
 | **BOTOES-PROGRESSO-GRANDES** | **Botões do nome do aluno maiores, um por linha** | 🟡 Média | — | — | ✅ Concluído | — (não reservável) | [488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) | — |
 | BOTOES-PROGRESSO-GRANDES.1 | Ajustar o CSS dos botões da célula do aluno | 🟡 Média | MEDIO · só Sonnet · effort medium | — | ✅ Concluído | — | [488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) | — |
+| **HOVER-BOTOES-PROGRESSO** | **Efeito de mouse hover nos botões do aluno** | 🟡 Média | — | — | ✅ Concluído | — (não reservável) | [489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md) | — |
+| HOVER-BOTOES-PROGRESSO.1 | Acrescentar `:hover` nos CSS dos botões da célula do aluno | 🟡 Média | MEDIO · só Sonnet · effort medium | — | ✅ Concluído | — | [489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md) | — |

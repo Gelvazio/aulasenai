@@ -260,6 +260,7 @@
     font: inherit;
     font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
 /* "✅ Confirmar Todas" das discursivas (confirmar-todas-professor.js; desativado sem entrega) e
@@ -282,6 +283,7 @@
     text-align: center;
     font-weight: 700;
     cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
 .progresso-turma__confirmar-todas:disabled,
@@ -296,6 +298,30 @@
     border-color: var(--progresso-turma-barra);
     color: var(--progresso-turma-barra);
     font-weight: 700;
+}
+
+.progresso-turma__minimo:hover:not(:disabled) {
+    border-color: var(--progresso-turma-barra);
+    background: var(--progresso-turma-vazia-fundo);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.progresso-turma__confirmar-todas:hover:not(:disabled),
+.progresso-turma__confirmar-entrega:hover:not(:disabled) {
+    background: var(--progresso-turma-completa-fundo);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    filter: brightness(0.95);
+}
+
+.progresso-turma__minimo:active:not(:disabled),
+.progresso-turma__confirmar-todas:active:not(:disabled),
+.progresso-turma__confirmar-entrega:active:not(:disabled) {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+.progresso-turma__minimo:disabled {
+    cursor: not-allowed;
 }
 
 .progresso-turma__nome {
