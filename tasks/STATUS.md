@@ -5,12 +5,12 @@
 
 ## Tarefas
 
-- #370-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-519-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · 🔄 Em execução (plano aprovado 2026-10-24) · Claude Code (Sonnet 5.5) (local · main)
-  - #370.1 — SQL: tabela de configuração + função de notas para o professor · ⬜ Pendente · `PESADO` · só Sonnet
-  - #370.2 — Repositório de dados do card · ⬜ Pendente · `PESADO` · só Sonnet
-  - #370.3 — Visão do card: tabela, média ponderada, ON/OFF e peso · ⬜ Pendente · `PESADO` · só Sonnet
-  - #370.4 — CSS, ligação no índice e no gerador · ⬜ Pendente · `PESADO` · só Sonnet
-  - #370.5 — Documentação · ⬜ Pendente · `PESADO` · só Sonnet
+- #371-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-520-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · 🔄 Em execução (plano aprovado 2026-10-24) · Claude Code (Sonnet 5.5) (local · main)
+  - #371.1 — SQL: tabela de configuração + função de notas para o professor · ⬜ Pendente · `PESADO` · só Sonnet
+  - #371.2 — Repositório de dados do card · ⬜ Pendente · `PESADO` · só Sonnet
+  - #371.3 — Visão do card: tabela, média ponderada, ON/OFF e peso · ⬜ Pendente · `PESADO` · só Sonnet
+  - #371.4 — CSS, ligação no índice e no gerador · ⬜ Pendente · `PESADO` · só Sonnet
+  - #371.5 — Documentação · ⬜ Pendente · `PESADO` · só Sonnet
 - #364-8c1d4e27 — [Conferir e corrigir a regra global dos filtros Certas/Meia/Erradas (por alternativa; IA até o professor confirmar)](etapas/ETAPA-513-8c1d4e27-CONFERIR-REGRA-FILTROS-CATEGORIA.md) · ⬜ Pendente · livre
   - #364.1 — Conferir na tela e nos demais geradores/atividades e corrigir o que divergir · ⬜ Pendente · `MEDIO` · só Sonnet
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)

@@ -1,6 +1,6 @@
-## Etapa 519-7f3b9c20 — Card "Notas e média" no índice de atividades (aluno e professor)
+## Etapa 520-7f3b9c20 — Card "Notas e média" no índice de atividades (aluno e professor)
 
-**Tarefa:** #370-7f3b9c20 · **Pedido em:** 2026-10-24 · **Criada por:** Claude Code (Sonnet 5.5) (local · main)
+**Tarefa:** #371-7f3b9c20 · **Pedido em:** 2026-10-24 · **Criada por:** Claude Code (Sonnet 5.5) (local · main)
 **Pedido:** "CRIE 1 CARD AQUI, QUE MOSTRE A NOTA DE TODAS AS ATIVIDADES E A MEDIA DO ALUNO, PARA O ALUNO E PARA O PROFESSOR, MAS PARA O PROFESSOR, ELE DEVE SELECIONAR O ALUNO, PARA O ALUNO JA DEVE VIR CARREGADO COM OS DADOS DELE" e, em seguida: "USE VARIOS AGENTES, DEVE TER TODAS AS ATIVIDADES NO QUADRO E SOMENTE PARA O PROFESSOR, AO LADO DE CADA 1 DELAS, DEVE TER UM BOTAO DE NOME *ADICIONAR NA MEDIA* DO TIPO ON/OFF, E UM CAMPO COM O PESO, ISSO DEVE RECALCULAR A MEDIA DO ALUNO SELECIONADO".
 **Objetivo:** um card na grade do `ATIVIDADES/index.html` com a nota de cada atividade e a média (ponderada) do aluno; o professor escolhe turma e aluno e controla, por atividade, se entra na média e com que peso.
 
@@ -21,9 +21,9 @@
 - Banco de produção: só com o "sim" do usuário; SQL idempotente, sem apagar dados.
 
 ### Decisões
-- **Aprovado pelo usuário em 2026-10-24** ("sim, aprovado o plano da #370; use vários agentes"). Média ponderada só das atividades ON com nota; padrão ON e peso 1; configuração por turma.
+- **Aprovado pelo usuário em 2026-10-24** ("sim, aprovado o plano da #371; use vários agentes"). Média ponderada só das atividades ON com nota; padrão ON e peso 1; configuração por turma.
 
-### #370.1 — SQL: tabela de configuração + função de notas para o professor
+### #371.1 — SQL: tabela de configuração + função de notas para o professor
 
 **Próximo passo:** escrever o SQL e, com o "sim", aplicar pelo Claude Code local.
 
@@ -31,28 +31,28 @@
 - **Modelo:** só Sonnet
 - **Verificação:** consulta de leitura ao banco, policies conferidas.
 
-### #370.2 — Repositório de dados do card (atividades, notas, config)
+### #371.2 — Repositório de dados do card (atividades, notas, config)
 
 **Próximo passo:** depende da .1.
 
 - **Nível:** PESADO — Jev sugeriu mais de 3 arquivos; vale a matriz
 - **Modelo:** só Sonnet
 
-### #370.3 — Visão do card: tabela, média ponderada, ON/OFF e peso
+### #371.3 — Visão do card: tabela, média ponderada, ON/OFF e peso
 
 **Próximo passo:** depende da .2.
 
 - **Nível:** PESADO — Jev sugeriu mais de 3 arquivos; vale a matriz
 - **Modelo:** só Sonnet
 
-### #370.4 — CSS, ligação no índice e no gerador
+### #371.4 — CSS, ligação no índice e no gerador
 
 **Próximo passo:** depende da .3.
 
 - **Nível:** PESADO — mesma classificação da tarefa
 - **Modelo:** só Sonnet
 
-### #370.5 — Documentação (`docs/database.md`, relatório HTML, orientação)
+### #371.5 — Documentação (`docs/database.md`, relatório HTML, orientação)
 
 **Próximo passo:** depende da .1 aplicada.
 
