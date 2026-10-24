@@ -56,6 +56,9 @@ const ROTULO_PERFIL = { PROFESSOR: "Professor", ALUNO: "Aluno" };
 const TEXTO_EQUIPES_HEADER = "👥 EQUIPES";
 const ROTA_ACAO_EQUIPES_JS = "../assets/js/menu-acao-equipes.js";
 const MARCADOR_MATERIAIS_HEADER = "/MATERIAIS/";
+// Id da atividade no título (2026-10-24): script carregado só em página de atividade.
+const ROTA_ID_ATIVIDADE_JS = "../assets/js/atividade-id-titulo.js";
+const SELETOR_TITULO_ATIVIDADE_HEADER = ".container > header h1";
 const PASTAS_SEM_MATERIA_HEADER = ["MATERIAS-GERAIS", "AGENDA_COLABORADOR"];
 const PAPEIS_EQUIPES_HEADER = ["Líder (coordenador)", "Integrante"];
 const TABELA_USUARIO_HEADER = "usuario";
@@ -399,6 +402,20 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
   if (cliente) incluirBotaoEquipesHeader({ cliente, usuario, referencia: nome });
   barra.append(criarBotaoSair(cliente));
   destino.replaceChildren(barra);
+  if (cliente) incluirIdDaAtividadeNoTitulo();
+}
+
+/**
+ * Em página de atividade (dentro de /MATERIAIS/ e com o cabeçalho ".container > header h1"),
+ * carrega o script que mostra o id da atividade no título. Falha ao carregar não atrapalha.
+ */
+function incluirIdDaAtividadeNoTitulo() {
+  const estaEmMateria = decodeURIComponent(location.pathname).includes(MARCADOR_MATERIAIS_HEADER);
+  if (!estaEmMateria || !document.querySelector(SELETOR_TITULO_ATIVIDADE_HEADER)) return;
+
+  carregarScriptHeader(resolverRotaHeader(ROTA_ID_ATIVIDADE_JS)).catch((erro) => {
+    console.warn(erro.message);
+  });
 }
 
 /**

@@ -500,6 +500,16 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.
 
+## 🆔 REGRA — ID DA ATIVIDADE NO TÍTULO DO CABEÇALHO (2026-10-24, pedido do usuário)
+
+- O título (`h1`) do cabeçalho de toda página de atividade mostra o selo **ID <n>** (ou **IDs a, b**
+  quando a página tem mais de uma atividade no banco), lido de `atividade.id` pelo
+  `atividade.pagina` da própria página.
+- Implementação única: `assets/js/atividade-id-titulo.js`, carregado por `js/header-usuario.js` em
+  páginas dentro de `/MATERIAIS/` com o cabeçalho `.container > header h1`; o estilo do selo fica
+  em `assets/css/atividade.css` (`.atividade-id-titulo`). Não colocar o id à mão nas páginas.
+- Página que não está na tabela `atividade` (ou consulta que falha) fica sem selo.
+
 ## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
 
 Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **todas** as matérias.
