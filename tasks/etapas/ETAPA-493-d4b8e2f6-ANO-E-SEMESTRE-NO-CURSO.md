@@ -89,7 +89,7 @@
 
 ### ANO-SEMESTRE-CURSO.5 — Filtros Nome, Ano e Semestre (ON/OFF) acima da lista Curso
 
-**Próximo passo:** depende do .3.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.98))
 - **Modelo:** só Sonnet — nunca outro
@@ -98,3 +98,4 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** acima da lista Curso do modal Equipes: campo de busca por nome e botões ON/OFF de ano e de semestre; a lista Curso mostra só os cursos que passam nos filtros; a matéria escolhida some da lista se o curso dela for filtrado.
 - **Critérios de Aceitação:** `node --check` passa; todos os filtros ligados = todos os cursos; botão ligado destacado como no `faixa-materias-ensalado.md`; sem linha nova > 100 caracteres.
+- **Entrega:** `assets/js/equipes-filtro-curso.js` (novo), `assets/js/equipes-modal.js`, `assets/js/menu-acao-equipes.js`, `assets/css/equipes-modal.css`, `docs/equipes-sala-de-aula.md` no commit desta entrega · **Verificação:** `node --check` ok nos 3 JS; sem linha nova > 100 caracteres em JS; filtros nome (sem acento/maiúscula), ano e semestre ON/OFF; filtro tira o curso escolhido da lista e volta a "sem matéria"; conferir na tela (sem navegador)

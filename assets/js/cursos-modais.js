@@ -1,5 +1,6 @@
 // Modais da página cursos.html (assets/js/cursos-pagina.js):
-// - modal do curso: incluir (➕ Novo curso) ou editar (✏️) nome, unidade, ano, semestre e descrição;
+// - modal do curso: incluir (➕ Novo curso) ou editar (✏️) nome, unidade, ano, semestre e
+//   descrição;
 // - modal 🏫 Turmas: turmas já vinculadas ao curso (Desvincular) e as demais (Vincular; turma de
 //   outro curso pede confirmação antes de mudar). Grava pela função definir_curso_turma.
 // Fecham pelo botão Fechar/Cancelar, clique fora ou Esc. Depende de estadoCu e das funções da

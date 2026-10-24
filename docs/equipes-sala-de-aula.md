@@ -19,7 +19,11 @@ integrantes), começando pela Introdução à TIC (turma 135080 — CEPLAS ITIC 
    no modal (turmas do professor; 1 turma = já selecionada; administrador vê todas). Quando a
    matéria não vem da pasta, o professor escolhe primeiro o **Curso** e a lista "Matéria" mostra
    só as matérias dele como `<id> — <descrição>` (2026-10-24), para não misturar matérias de nome
-   parecido de cursos diferentes (ex.: as 3 de Introdução à TIC: 23, 25 e 39).
+   parecido de cursos diferentes (ex.: as 3 de Introdução à TIC: 23, 25 e 39). A lista Curso
+   mostra `nome — AAAA/S` (colunas `curso.ano` e `curso.semestre`, preenchidas no cadastro de
+   curso) e tem filtros acima: busca por **nome** e botões **ON/OFF** de **ano** e de
+   **semestre** (`assets/js/equipes-filtro-curso.js`); curso sem ano/semestre nunca some por
+   esses botões.
 2. **Equipe = turma + matéria + nome** (nome único dentro da turma/matéria) e descrição.
 3. **Integrante** = aluno da turma (`turmaaluno`) com papel, tarefas combinadas e marca de
    **líder** (no máximo 1 por equipe). Cada aluno fica em **uma** equipe por turma + matéria.

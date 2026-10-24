@@ -49,6 +49,26 @@
 .equipes-caixa h3 { margin: 0 0 8px; color: var(--equipes-azul); font-size: 16px; }
 
 .equipes-barra { margin-top: 12px; max-width: 560px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+.equipes-filtro-curso { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.equipes-filtro-curso[hidden] { display: none; }
+.equipes-filtro-curso .equipes-controle { flex: 1 1 220px; width: auto; }
+.equipes-filtro-curso__grupo { display: flex; flex-wrap: wrap; gap: 6px; }
+.equipes-filtro-curso__botao {
+  padding: 6px 10px;
+  border: 1px solid var(--equipes-borda);
+  border-radius: var(--equipes-raio);
+  background: var(--equipes-fundo);
+  color: var(--equipes-suave);
+  font-weight: 600;
+  cursor: pointer;
+}
+.equipes-filtro-curso__botao:hover { border-color: var(--equipes-azul); color: var(--equipes-azul); }
+.equipes-filtro-curso__botao--ligado,
+.equipes-filtro-curso__botao--ligado:hover {
+  background: var(--equipes-verde);
+  border-color: var(--equipes-verde);
+  color: #fff;
+}
 .equipes-mensagem {
   margin: 12px 0 0;
   padding: 10px 12px;

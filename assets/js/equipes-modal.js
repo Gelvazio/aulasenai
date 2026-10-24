@@ -21,7 +21,7 @@ const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
 const SUFIXO_DESISTENTE_EQUIPES = ' (desistente)';
 
 const estadoEquipes = {
-  repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
+  repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null, cursos: [],
   turmaCodigo: '', alunos: [], desistentes: [], equipes: [], membros: [], ehLider: false,
   materias: [],
   editandoEquipeId: null, editandoMembroId: null, atividades: [], ligacoes: [],
@@ -234,13 +234,18 @@ function montarModalEquipes(papeis) {
   const curso = criarControleEquipes('select', 'curso');
   const campoCurso = criarCampoEquipes('Curso', curso);
   const campoMateria = criarCampoEquipes('Matéria', materia);
+  const filtros = criarFiltrosCursoEquipes(() => {
+    aplicarFiltrosCursoEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));
+  });
+  filtros.bloco.hidden = true;
   campoCurso.hidden = true;
   campoMateria.hidden = true;
   const barra = criarElementoEquipes('div', 'equipes-barra');
-  barra.append(campoCurso, campoMateria, criarCampoEquipes('Turma', turma),
+  barra.append(filtros.bloco, campoCurso, campoMateria, criarCampoEquipes('Turma', turma),
     criarBotaoEquipes({ texto: '📄 Exportar Equipes', acao: 'exportar-equipes' }));
   const elementos = {
     fundo, titulo, turma, barra, materia, campoMateria, curso, campoCurso,
+    filtrosCurso: filtros.bloco, filtroAnos: filtros.anos,
     mensagem: criarElementoEquipes('p', 'equipes-mensagem'),
     resumo: criarElementoEquipes('p', 'equipes-resumo'),
     lista: criarElementoEquipes('div', 'equipes-lista'),
@@ -562,9 +567,11 @@ async function resolverMateriaEquipes(ehProfessor) {
   const atual = estadoEquipes.materia
     ? materias.find((materia) => materia.id === estadoEquipes.materia.id) : null;
   const cursoAtual = atual ? String(atual.curso_id) : '';
-  const opcoesCurso = [{ valor: '', texto: 'Selecione o curso…' }].concat(
-    cursos.map((curso) => ({ valor: String(curso.id), texto: textoCursoEquipes(curso) })));
-  preencherSelectEquipes(elementosEquipes.curso, opcoesCurso, cursoAtual);
+  estadoEquipes.cursos = cursos;
+  desenharFiltrosAnoEquipes(elementosEquipes.filtroAnos, cursos, () => {
+    aplicarFiltrosCursoEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));
+  });
+  preencherListaCursoEquipes(cursoAtual);
   preencherMateriasDoCursoEquipes(elementosEquipes.curso.value, atual ? String(atual.id) : '');
   definirListasMateriaVisiveisEquipes(true);
   const escolhida = Number(elementosEquipes.materia.value);
@@ -583,11 +590,35 @@ function textoCursoEquipes(curso) {
 }
 
 /**
- * Mostra ou esconde as listas "Curso" e "Matéria" juntas.
+ * Preenche a lista "Curso" só com os cursos que passam nos filtros de nome, ano e semestre.
+ * @param {string} cursoAtual - Id do curso a manter selecionado (se ainda aparecer).
+ * @returns {void}
+ */
+function preencherListaCursoEquipes(cursoAtual) {
+  const opcoes = [{ valor: '', texto: 'Selecione o curso…' }].concat(
+    estadoEquipes.cursos.filter(cursoPassaNoFiltroEquipes).map((curso) => (
+      { valor: String(curso.id), texto: textoCursoEquipes(curso) })));
+  preencherSelectEquipes(elementosEquipes.curso, opcoes, cursoAtual);
+}
+
+/**
+ * Um filtro mudou: refaz a lista "Curso"; se o curso escolhido saiu da lista, volta a
+ * "sem matéria".
+ * @returns {Promise<void>}
+ */
+async function aplicarFiltrosCursoEquipes() {
+  const anterior = elementosEquipes.curso.value;
+  preencherListaCursoEquipes(anterior);
+  if (elementosEquipes.curso.value !== anterior) await aoMudarCursoEquipes();
+}
+
+/**
+ * Mostra ou esconde os filtros e as listas "Curso" e "Matéria" juntos.
  * @param {boolean} visiveis - true para mostrar.
  * @returns {void}
  */
 function definirListasMateriaVisiveisEquipes(visiveis) {
+  elementosEquipes.filtrosCurso.hidden = !visiveis;
   elementosEquipes.campoCurso.hidden = !visiveis;
   elementosEquipes.campoMateria.hidden = !visiveis;
 }

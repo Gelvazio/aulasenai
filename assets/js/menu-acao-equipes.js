@@ -33,6 +33,10 @@ const DEPENDENCIAS_EQUIPES = [
     estaCarregada: () => typeof criarBarraAtividadesEquipes === 'function',
     endereco: 'equipes-atividades.js',
   },
+  {
+    estaCarregada: () => typeof criarFiltrosCursoEquipes === 'function',
+    endereco: 'equipes-filtro-curso.js',
+  },
   { estaCarregada: () => typeof abrirModalEquipes === 'function', endereco: 'equipes-modal.js' },
 ];
 
