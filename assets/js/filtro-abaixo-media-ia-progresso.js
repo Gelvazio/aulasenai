@@ -1,8 +1,8 @@
 // Professor: ON/OFF "ABAIXO MEDIA(IA)" no Progresso da turma GLOBAL (progresso-turma-global.js),
 // em toda atividade. Vale o PERCENTUAL DE ACERTO que a IA mostra na coluna "Nota parcial IA"
-// (ex.: 85%): LIGADO lista apenas os alunos com percentual menor que 70% (média 7); desligado
-// (padrão) não filtra nada. Aluno sem correção da IA não tem percentual e some da lista quando o
-// filtro está ligado. Vale já durante a correção. A escolha fica no localStorage do navegador
+// (ex.: 85%): LIGADO lista só quem tem menos de 70% (média 7); desligado (padrão) não filtra.
+// Aluno sem correção da IA não tem percentual e some da lista quando o filtro está ligado.
+// Vale já durante a correção. A escolha fica no localStorage do navegador
 // (preferências injetadas pelo painel). Só filtra a lista na tela: nada é gravado no banco.
 // Pedido do usuário em 2026-10-24 (tarefa #362). Regra: docs/regras/atividades.md
 
