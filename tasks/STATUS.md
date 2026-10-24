@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s488) | BOTOES-PROGRESSO-GRANDES.1 ([488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md)) — delegada ao executor-leve (Haiku) | 🔄 Ativa | 2026-10-24 13:30 |
 | Claude Code (Sonnet 5.5) (local · main · s487) | CONFIRMAR-ENTREGA-BOTAO concluída ([487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md)) | ⏹️ Encerrada | 2026-10-24 13:05 |
 | Claude Code (Sonnet 5.5) (local · main · s486) | REGRA-CONFIRMAR-ENTREGA.1 concluída ([486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md)) | ⏹️ Encerrada | 2026-10-24 12:25 |
 | Claude Code (Sonnet 5.5) (local · main · s276) | #276.0 concluída ([404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md)) | ⏹️ Encerrada | 2026-10-24 |
@@ -94,6 +95,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
+| **BOTOES-PROGRESSO-GRANDES** | **Botões do nome do aluno maiores, um por linha** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) | — |
+| BOTOES-PROGRESSO-GRANDES.1 | Ajustar o CSS dos botões da célula do aluno | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s488) (desde 2026-10-24 13:33) | [488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
@@ -2098,6 +2101,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 485-a7d3f9c1 | REGRA-ATIVIDADES-APOS-MD: Atividades só depois dos Markdown dos slides | [ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) |
 | 486-c4e81b27 | REGRA-CONFIRMAR-ENTREGA: Botão "Confirmar Entrega" do professor, regra global das atividades | [ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md) |
 | 487-d92a5f06 | CONFIRMAR-ENTREGA-BOTAO: Botão "Confirmar Entrega" no Progresso da turma | [ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) |
+| 488-e5b73a19 | BOTOES-PROGRESSO-GRANDES: Botões do nome do aluno maiores, um por linha | [ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
