@@ -31,6 +31,7 @@
 .header-usuario__menu:empty { display: none; }
 .header-usuario__menu-linha { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .header-usuario__menu-link {
+    flex: 1;
     color: #fff;
     font-size: 13px;
     font-weight: 700;
