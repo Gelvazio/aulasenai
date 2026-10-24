@@ -10,3 +10,5 @@
 
 - **Nível:** MEDIO — JS com lógica, poucos arquivos (Jev, confiança 0,53; matriz)
 - **Modelo:** só Sonnet
+- **Entrega:** `assets/js/mostrar-certas-discursiva.js` (categoria certa/meia/errada pela sugestão da IA até o professor confirmar todos os tópicos respondidos; depois, pela correção dele); `docs/regras/atividades.md`. A tela do aluno já usava só a nota confirmada do professor. Revisão por agente (revisor-codigo): sem achados.
+- **Verificação:** `node --check` ok; linhas ≤ 100. Conferir na tela: o usuário.

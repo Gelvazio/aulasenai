@@ -155,3 +155,5 @@
 | #361 | Filtro ON/OFF "ABAIXO DA MEDIA" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | — | — | ✅ Concluído | 2026-10-24 | [510-7d3b9e52](etapas/ETAPA-510-7d3b9e52-FILTRO-ABAIXO-DA-MEDIA.md) | — |
 | #362.1 | Filtro ON/OFF "ABAIXO MEDIA(IA)" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet | — | ✅ Concluído | 2026-10-24 | [511-3f8a1c64](etapas/ETAPA-511-3f8a1c64-FILTRO-ABAIXO-MEDIA-IA.md) | — |
 | #362 | Filtro ON/OFF "ABAIXO MEDIA(IA)" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | — | — | ✅ Concluído | 2026-10-24 | [511-3f8a1c64](etapas/ETAPA-511-3f8a1c64-FILTRO-ABAIXO-MEDIA-IA.md) | — |
+| #363.1 | Filtros "Respostas dos alunos" (Certas/Meia/Erradas) pela IA até o professor confirmar · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet | — | ✅ Concluído | 2026-10-24 | [512-5b2e7d90](etapas/ETAPA-512-5b2e7d90-FILTROS-RESPOSTAS-PELA-CORRECAO.md) | — |
+| #363 | Filtros "Respostas dos alunos" pela IA até o professor confirmar · `MEDIO · effort medium` | 🟡 Normal | — | — | ✅ Concluído | 2026-10-24 | [512-5b2e7d90](etapas/ETAPA-512-5b2e7d90-FILTROS-RESPOSTAS-PELA-CORRECAO.md) | — |

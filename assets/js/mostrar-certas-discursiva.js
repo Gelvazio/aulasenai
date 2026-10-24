@@ -3,8 +3,9 @@
 // - "Falta Corrigir?" (ligado ao abrir): mostra só as questões que o professor ainda não marcou
 //   (algum tópico RESPONDIDO sem nota do professor; tópico em branco não conta) — tarefa #150;
 // - "Mostrar Certas / Meia Certas / Erradas" (categorias em categorias-pergunta-discursiva.js):
-//   todos desmarcados mostra todas; marcados combinam — tarefa #159. A nota que vale no tópico é a
-//   do professor; sem ela, a da IA. Questão ainda sem nota nunca é escondida.
+//   todos desmarcados mostra todas; marcados combinam — tarefa #159. A categoria vem da sugestão
+//   da IA enquanto o professor não confirmou a questão; confirmada (todos os tópicos respondidos
+//   com nota do professor), vem da correção dele (#363). Questão sem nota nunca é escondida.
 // Os filtros valem juntos. Só muda a tela: nada é gravado. As escolhas ficam no localStorage
 // (respostas-aluno:falta-corrigir e respostas-aluno:categoria-*) e voltam ao abrir (#157).
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js (sbGet) e de
@@ -33,17 +34,29 @@ const estadoMostrarCertas = {
 };
 
 /**
- * Nota que vale no tópico: a do professor; sem ela, a da IA.
- * @param {{nota_professor: number|null, nota_ia: number|null}|undefined} linha - Correção.
- * @returns {number|null} Nota que vale ou null se ainda não houver.
+ * Notas que valem na pergunta: com TODOS os tópicos respondidos já confirmados pelo professor,
+ * a correção dele; senão a sugestão da IA (sem nota da IA no tópico, usa a do professor, se
+ * houver).
+ * @param {{notaIa: number|null, notaProfessor: number|null, pontos: number}[]} topicos -
+ *     Tópicos respondidos da pergunta.
+ * @param {boolean} confirmada - true se o professor já confirmou todos os tópicos.
+ * @returns {{nota: number|null, pontos: number}[]} Notas e pontos de cada tópico.
  */
-function notaQueValeNoTopico(linha) {
-    if (!linha) return null;
-    if (linha.nota_professor !== null && linha.nota_professor !== undefined) {
-        return Number(linha.nota_professor);
-    }
-    if (linha.nota_ia !== null && linha.nota_ia !== undefined) return Number(linha.nota_ia);
-    return null;
+function notasQueValemNaPergunta(topicos, confirmada) {
+    return topicos.map((topico) => {
+        const usaNotaProfessor = confirmada || topico.notaIa === null;
+        const nota = usaNotaProfessor ? topico.notaProfessor ?? topico.notaIa : topico.notaIa;
+        return { nota, pontos: topico.pontos };
+    });
+}
+
+/**
+ * Converte a nota lida do banco em número (null quando ainda não há).
+ * @param {number|string|null|undefined} valor - Nota do banco.
+ * @returns {number|null} Nota ou null.
+ */
+function lerNotaDoBanco(valor) {
+    return valor === null || valor === undefined ? null : Number(valor);
 }
 
 /**
@@ -84,17 +97,18 @@ async function lerQuestoesDoAluno(aluno, atividadeId) {
         .forEach((topico) => {
             const linha = porTopico.get(topico.item + '|' + topico.topico);
             const lista = topicosPorItem.get(topico.item) || [];
-            const doProfessor = linha?.nota_professor !== null &&
-                linha?.nota_professor !== undefined;
-            lista.push({ nota: notaQueValeNoTopico(linha), pontos: topico.pontos, doProfessor });
+            lista.push({ notaIa: lerNotaDoBanco(linha?.nota_ia),
+                notaProfessor: lerNotaDoBanco(linha?.nota_professor), pontos: topico.pontos });
             topicosPorItem.set(topico.item, lista);
         });
     const categorias = new Map();
     const corrigidas = new Set();
     new Set(topicos.map((topico) => topico.item)).forEach((item) => {
         const lista = topicosPorItem.get(item) || [];
-        categorias.set(item, window.classificarPerguntaPorNotas(lista));
-        if (lista.every((topico) => topico.doProfessor)) corrigidas.add(item);
+        const confirmada = lista.every((topico) => topico.notaProfessor !== null);
+        categorias.set(item, window.classificarPerguntaPorNotas(
+            notasQueValemNaPergunta(lista, confirmada)));
+        if (confirmada) corrigidas.add(item);
     });
     return { categorias, corrigidas };
 }
