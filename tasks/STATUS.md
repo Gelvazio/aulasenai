@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s496) | REMOVER-QTD-CONSIDERAR.1 ([496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md)) | 🔄 Ativa | 2026-10-24 18:10 |
 | Claude Code (Sonnet 5.5) (local · main · s495) | ID-ATIVIDADE-TITULO concluída ([495-f6d2a4b8](etapas/ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md)) | ⏹️ Encerrada | 2026-10-24 18:00 |
 | Claude Code (Sonnet 5.5) (local · main · s494) | TITULO-CABECALHO-MENOR concluída ([494-e5c1f3a7](etapas/ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md)) | ⏹️ Encerrada | 2026-10-24 17:30 |
 | Claude Code (Sonnet 5.5) (local · main · s493) | ANO-SEMESTRE-CURSO concluída ([493-d4b8e2f6](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md)) | ⏹️ Encerrada | 2026-10-24 17:00 |
@@ -102,6 +103,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
+| **REMOVER-QTD-CONSIDERAR** | **Remover "Quantidade Questão Considerar" duplicada do quadro de progresso** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
+| REMOVER-QTD-CONSIDERAR.1 | Remover o bloco duplicado do quadro de progresso | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s496) (desde 2026-10-24 18:12) | [496-a7e3b5c9](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
@@ -2114,6 +2117,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 493-d4b8e2f6 | ANO-SEMESTRE-CURSO: Ano e semestre no curso | [ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md](etapas/ETAPA-493-d4b8e2f6-ANO-E-SEMESTRE-NO-CURSO.md) |
 | 494-e5c1f3a7 | TITULO-CABECALHO-MENOR: Título do cabeçalho das atividades menor e mais baixo | [ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md](etapas/ETAPA-494-e5c1f3a7-TITULO-DO-CABECALHO-MENOR.md) |
 | 495-f6d2a4b8 | ID-ATIVIDADE-TITULO: ID da atividade no título do cabeçalho | [ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md](etapas/ETAPA-495-f6d2a4b8-ID-DA-ATIVIDADE-NO-TITULO.md) |
+| 496-a7e3b5c9 | REMOVER-QTD-CONSIDERAR: Remover "Quantidade Questão Considerar" duplicada | [ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md](etapas/ETAPA-496-a7e3b5c9-REMOVER-QUANTIDADE-QUESTAO-CONSIDERAR.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
