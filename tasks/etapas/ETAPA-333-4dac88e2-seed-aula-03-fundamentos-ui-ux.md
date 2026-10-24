@@ -18,17 +18,18 @@
 
 ### Decisões
 - Tarefa pequena (ajuste pontual, ~3 arquivos, sem banco/segurança/RLS, sem estrutura ou gerador novo, sem mudança em massa): executar direto, com registro no quadro e commit
+- **2026-10-24 — Usuário:** tarefa **encerrada como redundante** — o seed da Aula 03 já foi gerado, aplicado no banco e registrado pela **#276** (matéria completa de UI/UX, seeds das 19 aulas). Linhas movidas do `STATUS.md` para o `task_complete.md` como ✅ Concluído.
 
 ### #333.1 — Gerar e aplicar o seed da Aula 03
 
-**Próximo passo:** Fazer o push das mudanças (conflito no repositório remoto).
+**Próximo passo:** Nenhum — subtarefa concluída (trabalho absorvido pela #276).
 
 - **Nível:** LEVE — tarefa simples de geração e aplicação de seed
 - **Modelo:** só Haiku — tarefa leve
 - **Descrição:** Gerar o SQL de seed da atividade prática da Aula 03 de Fundamentos de UI/UX usando o gerador de avaliações discursivas, aplicar no banco e atualizar o STATUS_MATERIA.md
 - **Critérios de aceitação:**
-  - Arquivo SQL gerado em `database/2026-10-24-atividade-pratica-aula-03-seed-atividades.sql`
-  - SQL aplicado no banco com sucesso
+  - Arquivo SQL gerado em `database/2026-10-24-atividade-pratica-aula-03-seed-atividades.sql` ✅ (commit `a07c5b05`)
+  - SQL aplicado no banco com sucesso ✅ (`SEEDS-APLICADOS.md`: CONCLUÍDO, aplicado pela #276 via RPC `exec_sql` — 60 tópicos, 20×3)
   - STATUS_MATERIA.md atualizado marcando o seed da aula 03 como ✅
-  - Commit realizado (push pendente devido a conflito no remoto)
-- **Entrega:** Commit com o arquivo SQL e STATUS_MATERIA.md atualizado · **Verificação:** Conferir se o seed foi aplicado verificando os registros no banco
+  - Commit realizado e push feito (conflito no remoto resolvido; `main` sincronizada)
+- **Entrega:** Commit `a07c5b05` com o arquivo SQL e STATUS_MATERIA.md atualizado · **Verificação:** seed registrado como CONCLUÍDO em `database/SEEDS-APLICADOS.md` · **Status:** ✅ Concluído (absorvida pela #276; encerrada a pedido do usuário em 2026-10-24)
