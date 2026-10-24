@@ -24,8 +24,8 @@
 || Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ⬜ |
 || Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ⬜ |
 || Média final (composição) | `ATIVIDADES/media-final.json` | ⬜ |
-|| Apostila (HTML) | `APOSTILA/APOSTILA-*.html` | ⬜ |
-|| Apostila (Markdown completo) | `APOSTILA/APOSTILA-*.md` | ⬜ |
+|| Apostila (HTML) | `APOSTILA/APOSTILA-*.html` | ✅ |
+|| Apostila (Markdown completo) | `APOSTILA/APOSTILA-*.md` | ✅ |
 
 ## 2. Aulas (uma linha por aula do `AULAS/STATUS-AULAS.md`)
 

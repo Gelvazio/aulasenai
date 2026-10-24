@@ -324,7 +324,7 @@ def md_detalhe_aula(item, horas, glossario):
         str(dominio) for dominio in item.get("dominios", []))
     linhas = [f"## Aula {item['numero']} — {item['tema']}", "",
               f"- **Carga horária:** {item.get('carga_horaria', horas)} h · **Domínios:** "
-              f"{dominios} · **Capacidades:** {', '.join(item.get('capacidades', []))}"]
+              f"{dominios} · **Capacidades:** {' · '.join(item.get('capacidades', []))}"]
     opcionais = (("Data prevista", item.get("data_prevista")),
                  ("Situação-problema", item.get("situacao_problema")),
                  ("Atividade / entrega", item.get("atividade")),
@@ -591,7 +591,9 @@ def md_avaliacao_ementa(materia):
                (("Formativa", "formativa"), ("Recuperação", "recuperacao")) if avaliacao.get(campo)]
     if avaliacao.get("rubrica_lista"):
         linhas += ["", "**Rubrica de desempenho:**", ""]
-        linhas += [f"- {nivel}" for nivel in avaliacao["rubrica_lista"]]
+        linhas += [f"- **{nivel['nivel']}** ({nivel['nota']}): {nivel['descricao']}"
+                   if isinstance(nivel, dict) else f"- {nivel}"
+                   for nivel in avaliacao["rubrica_lista"]]
     if avaliacao.get("rubrica"):
         linhas += ["", "| Nível | Nota | Descrição |", "|---|---|---|"]
         linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
