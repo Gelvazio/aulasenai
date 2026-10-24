@@ -1,6 +1,6 @@
 /* Painel "Correção de IA" do Progresso da turma (assets/js/correcao-ia-progresso.js). */
 
-/* Em cima: filtros à esquerda, painel à direita deles (sobe até a linha do combo Aluno). */
+/* Em cima: filtros à esquerda, painel à direita deles (abaixo do cabeçalho, sem cobrir nada). */
 .correcao-ia-topo {
     display: flex;
     flex-wrap: wrap;
@@ -13,12 +13,6 @@
     flex: 0 1 auto;
     flex-direction: column;
     gap: 10px;
-}
-
-@media (min-width: 1100px) {
-    .correcao-ia-topo .correcao-ia {
-        margin-top: -44px;
-    }
 }
 
 .correcao-ia {
