@@ -1,8 +1,9 @@
 {
- "gerado_em": "2026-10-24 17:29",
+ "gerado_em": "2026-10-24 17:31",
  "materias": [
   {
    "curso": "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
+   "curso_id": 5,
    "materia": "INTRODUCAO-TIC",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 68,
@@ -215,6 +216,7 @@
   },
   {
    "curso": "GESTAO_E_CONTROLE_MATERIAIS",
+   "curso_id": 7,
    "materia": "ANALISE_DADOS_APLICADA_GESTAO",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 23,
@@ -401,6 +403,7 @@
   },
   {
    "curso": "OPERADOR_PRODUCAO_INDUSTRIAL",
+   "curso_id": 2,
    "materia": "FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 41,
@@ -678,6 +681,7 @@
   },
   {
    "curso": "QUALIFICACAO-PROFISSIONAL",
+   "curso_id": null,
    "materia": "CANVAS-APRESENTACAO",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -773,6 +777,7 @@
   },
   {
    "curso": "QUALIFICACAO-PROFISSIONAL",
+   "curso_id": null,
    "materia": "DIGITAL SKILLS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -946,6 +951,7 @@
   },
   {
    "curso": "QUALIFICACAO-PROFISSIONAL",
+   "curso_id": null,
    "materia": "INTRODUCAO-LEAN-MANUFACTORING",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -1132,6 +1138,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -1331,6 +1338,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 9,
@@ -1530,6 +1538,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 29,
@@ -1729,6 +1738,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "INTRODUCAO_COMUNICACAO_ORAL_ESCRITA",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 26,
@@ -1928,6 +1938,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -2127,6 +2138,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "OFICINAS_IMPRESSAO_3D_ROBOTICA",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -2326,6 +2338,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "REFORCO_LINGUAGENS",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 40,
@@ -2538,6 +2551,7 @@
   },
   {
    "curso": "RIO_DO_SUL_MAIS_TECH",
+   "curso_id": 6,
    "materia": "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 22,
@@ -2828,6 +2842,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "ARQUITETURA-DE-HARDWARE-E-SOFTWARE",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -2988,6 +3003,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "BANCO-DE-DADOS",
    "situacao": "✅ CONCLUÍDA",
    "pecas_ok": 154,
@@ -3330,6 +3346,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "CODIFICACAO-PARA-BACK-END",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -3737,6 +3754,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "CODIFICACAO-PARA-FRONT-END",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -4144,6 +4162,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "DESENVOLVIMENTO-DE-APIS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -4421,6 +4440,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "FUNDAMENTOS-DE-UI-UX",
    "situacao": "✅ CONCLUÍDA",
    "pecas_ok": 147,
@@ -4750,6 +4770,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "INTERACAO-COM-APIS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -4962,6 +4983,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "INTRODUCAO-A-INDUSTRIA-4-0",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -5122,6 +5144,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -5256,6 +5279,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 8,
@@ -5468,6 +5492,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -5589,6 +5614,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "LOGICA-DE-PROGRAMACAO",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -6087,6 +6113,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "PROJETO-DE-BACK-END",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -6468,6 +6495,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "PROJETO-DE-FRONT-END",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -6849,6 +6877,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "SAUDE-E-SEGURANCA-NO-TRABALHO",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -6970,6 +6999,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -7078,6 +7108,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "Testes de Sistemas-EXISTENTES",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -7277,6 +7308,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "TESTES-DE-BACK-END",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,
@@ -7489,6 +7521,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "TESTES-DE-FRONTEND",
    "situacao": "🔄 PENDENTE",
    "pecas_ok": 44,
@@ -7701,6 +7734,7 @@
   },
   {
    "curso": "TECNICO-INFORMATICA-INTERNET",
+   "curso_id": 4,
    "materia": "VERSIONAMENTO-E-COLABORACAO",
    "situacao": "⬜ NÃO INICIADA",
    "pecas_ok": 6,

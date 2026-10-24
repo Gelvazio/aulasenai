@@ -63,11 +63,12 @@ Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem g
 
 ### #357.2 — Repositório + regras (JS) da página
 
-**Próximo passo:** aguardando a subtarefa anterior.
+**Próximo passo:** concluída; seguir com a #357.3 (página + CSS futurista + JS da tela).
 
 - **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
 - **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
-- **Entrega:** pendente · **Verificação:** pendente
+- **Entrega:** `assets/js/materias-pendentes-repositorio.js` e `assets/js/materias-pendentes-regras.js` (novos); `scripts/status-materias/gerar_materias_pendentes_json.py` passou a gravar `curso_id` (fonte única: `IDS_CURSO_BANCO` do gerador de índices) e o JSON foi regerado. Commit na `main`.
+- **Verificação:** `node --check` ok; linhas ≤ 100 e funções ≤ 45 linhas; regras rodadas em `vm` com o JSON real: 32 pendentes de 34, curso 4 = 18, ano 2026/sem 1 = 18, sem curso = 3 (6 matérias nos grupos), UI/UX concluída fora da lista, CANVAS com CONTEÚDO/AULAS/OBJETIVA/PRÁTICA/BANCO/APOSTILA/MÉDIA FINAL/OUTROS.
 
 ### #357.3 — Página `materias-pendentes.html` + CSS futurista + JS da tela
 

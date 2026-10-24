@@ -16,6 +16,9 @@ from datetime import datetime
 from pathlib import Path
 
 RAIZ_PROJETO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ_PROJETO / "assets" / "gerador-indices"))
+from gerar_indices import IDS_CURSO_BANCO  # noqa: E402  (fonte única do id do curso no banco)
+
 PASTA_MATERIAIS = RAIZ_PROJETO / "MATERIAIS"
 ARQUIVO_SAIDA = RAIZ_PROJETO / "materias-pendentes.json"
 NOME_STATUS_MATERIA = "STATUS_MATERIA.md"
@@ -147,6 +150,7 @@ def ler_materia(arquivo_status):
     secoes = separar_secoes(texto)
     return {
         "curso": arquivo_status.parents[1].name,
+        "curso_id": IDS_CURSO_BANCO.get(arquivo_status.parents[1].name),
         "materia": arquivo_status.parent.name,
         "situacao": achado["situacao"].strip(),
         "pecas_ok": int(achado["ok"]),
