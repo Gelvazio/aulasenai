@@ -81,11 +81,12 @@ Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem g
 
 ### #357.4 — Item de menu no `header-usuario.js` (só admin, nova janela) + conferência da RPC na página
 
-**Próximo passo:** aguardando a subtarefa anterior.
+**Próximo passo:** concluída; seguir com a #357.5 (documentação e conferência de segurança).
 
 - **Nível:** PESADO — plano aprovado (ver Subtarefas previstas)
 - **Modelo:** PESADO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
-- **Entrega:** pendente · **Verificação:** pendente
+- **Entrega:** `js/header-usuario.js` — item `Matérias Pendentes` em `MENU_ADMINISTRADOR_HEADER` (rota `../materias-pendentes.html`); aparece só quando a RPC `eh_professor_administrador` confirma o papel e abre em nova aba (`target="_blank"` de `criarLinkMenuHeader`). A página já tinha a conferência própria da RPC (#357.3). Commit na `main`.
+- **Verificação:** `node --check` ok; o item entra na lista alimentada só após `rpc(...) === true` em `incluirMenuAdministrador`; a página confere o papel de novo e bloqueia quem não for administrador. Sem navegador.
 
 ### #357.5 — Documentação e conferência de segurança (`.vercelignore`, sem gabarito)
 
