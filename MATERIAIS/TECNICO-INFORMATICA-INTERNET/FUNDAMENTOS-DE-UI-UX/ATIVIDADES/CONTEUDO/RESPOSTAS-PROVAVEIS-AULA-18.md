@@ -1,0 +1,189 @@
+# Respostas Prováveis — Atividade Prática da Aula 18 (uso exclusivo do professor e da correção por IA)
+
+> Arquivo fora do site (nome contém RESPOSTAS-PROVAVEIS). Não publicar.
+
+**Formato:** `ITEM NN · tópico a) · categoria · resposta provável · motivo`
+**Categorias:** `certa` (cobre o padrão de resposta) · `meia certa` (cobre parcialmente) · `errada` (em branco, fora do tema, contradiz o padrão ou copiado).
+**Base:** `ATIVIDADE-PRATICA-AULA-18-GABARITO.md` (padrão oficial e critérios de cada tópico).
+**Uso:** comparação do JEV-AI e apoio à correção. Sem dado pessoal de aluno (LGPD).
+
+- ITEM 01 · tópico a) · certa · Baixa fidelidade é a representação em estrutura e fluxo, feita à mão ou com wireframes simples em tons de cinza, sem preocupação estética; prioriza a organização das telas e a ordem das ações. · Cita estrutura e fluxo como prioridade e o rascunho em cinza sem acabamento.
+- ITEM 01 · tópico a) · meia certa · É um rascunho simples da tela. · Cita só a estrutura ou o rascunho, sem o caráter sem acabamento.
+- ITEM 01 · tópico a) · errada · É a tela final com todas as cores aplicadas. · Contradiz a aula (baixa fidelidade não tem acabamento).
+- ITEM 01 · tópico b) · certa · Média fidelidade já tem alinhamento e proporções exatas feitos no software, mas ainda não tem a paleta de cores definitiva nem fotografias finais. · Menciona alinhamento e proporções exatos e o que fica sem definição.
+- ITEM 01 · tópico b) · meia certa · É a versão com alinhamento no software. · Menciona só o alinhamento, sem a falta de cores e fotos finais.
+- ITEM 01 · tópico b) · errada · É quando já existem as fotografias finais. · Contradiz a aula (fotos finais ainda não definidas).
+- ITEM 01 · tópico c) · certa · Alta fidelidade é o mock-up final, com cores, tipografia, ícones, fotos e contrastes aplicados com precisão pixel a pixel; corresponde ao mock-up final porque reúne todos esses acabamentos. · Descreve os acabamentos e liga a alta fidelidade ao mock-up final.
+- ITEM 01 · tópico c) · meia certa · É o mock-up com cores e ícones. · Descreve os acabamentos, mas não faz a ligação com o mock-up final.
+- ITEM 01 · tópico c) · errada · É um esboço rápido em papel. · Confunde alta fidelidade com baixa fidelidade.
+- ITEM 02 · tópico a) · certa · Mock-up digital é um modelo estático de alta fidelidade que mostra como a interface vai parecer quando for lançada; serve para inspecionar hierarquia, harmonia de cores e legibilidade. · Diz que é um modelo visual estático de alta fidelidade que mostra a aparência final.
+- ITEM 02 · tópico a) · meia certa · É um desenho da tela no computador. · Define de forma vaga, sem o caráter estático ou a aparência final.
+- ITEM 02 · tópico a) · errada · É um aplicativo com código e banco funcionando. · Contradiz (o mock-up não tem código funcionando).
+- ITEM 02 · tópico b) · certa · O mock-up não tem código nem banco de dados funcionando por trás, porque é um modelo visual; ele apenas mostra a aparência, sem executar ações. · Afirma que não há programação nem banco e explica que é só visual.
+- ITEM 02 · tópico b) · meia certa · Porque ele não tem código. · Afirma a ausência de código, sem explicar o motivo.
+- ITEM 02 · tópico b) · errada · Porque ele já tem o banco de dados conectado. · Contradiz a aula.
+- ITEM 02 · tópico c) · certa · O mock-up é um guia técnico para os desenvolvedores front-end, porque orienta espaçamentos e estilos exatos (cores, fontes, medidas) a seguir na implementação. · Diz que orienta o front-end sobre espaçamentos e estilos exatos.
+- ITEM 02 · tópico c) · meia certa · Ele ajuda o desenvolvedor. · Diz que ajuda, sem citar espaçamentos ou estilos.
+- ITEM 02 · tópico c) · errada · Ele serve só para o cliente aprovar a marca. · Fora do papel de guia técnico.
+- ITEM 03 · tópico a) · certa · A principal função do protótipo de papel é testar fluxos e ações de forma rápida, com custo mínimo e ajustes imediatos, validando a ordem das ações com colegas. · Diz que o papel testa fluxos e a ordem das ações de forma rápida e barata.
+- ITEM 03 · tópico a) · meia certa · Ele serve para testar a interface. · Cita só a rapidez ou só o teste, sem o foco em fluxo.
+- ITEM 03 · tópico a) · errada · Ele serve para definir as cores finais. · Fora da função do papel.
+- ITEM 03 · tópico b) · certa · A principal função do mock-up digital é mostrar a aparência final da tela, com cores, fontes, medidas e acabamento, para inspeção visual e como guia para o desenvolvedor. · Diz que mostra a aparência final (acabamento, cores, fontes ou medidas).
+- ITEM 03 · tópico b) · meia certa · Ele é mais bonito e detalhado. · Diz só que é mais bonito, sem o objetivo visual.
+- ITEM 03 · tópico b) · errada · Ele serve para testar a ordem das ações no papel. · Confunde com a função do papel.
+- ITEM 03 · tópico c) · certa · O mock-up não deve inventar passos que não foram testados no papel, porque alterar o fluxo sem teste prévio quebra a validação feita no papel e pode introduzir novos erros de usabilidade. · Explica que criar passos não testados quebra a validação e pode trazer erros.
+- ITEM 03 · tópico c) · meia certa · Não se deve inventar passos. · Diz que não se deve inventar, sem explicar o efeito na validação.
+- ITEM 03 · tópico c) · errada · O mock-up pode mudar o fluxo livremente para melhorar. · Contradiz a fidelidade ao papel.
+- ITEM 04 · tópico a) · certa · O frame é a prancheta do editor gráfico, o espaço de tela com as dimensões exatas do dispositivo escolhido; é nele que a tela é montada. · Diz que o frame é o espaço/prancheta com as dimensões do dispositivo.
+- ITEM 04 · tópico a) · meia certa · É uma área de desenho. · Diz que é área de desenho, sem as dimensões do dispositivo.
+- ITEM 04 · tópico a) · errada · É a camada de fundo do protótipo. · Confunde frame com camada.
+- ITEM 04 · tópico b) · certa · 375 × 812 px é usado como exemplo de celular porque corresponde às dimensões de uma tela de celular, e é a medida indicada na aula para o frame de dispositivo móvel. · Relaciona 375 × 812 px às dimensões de tela de celular.
+- ITEM 04 · tópico b) · meia certa · É uma medida de celular. · Diz que é medida de celular, sem explicar a relação com o dispositivo.
+- ITEM 04 · tópico b) · errada · É a medida de uma tela de computador desktop. · Erra o dispositivo.
+- ITEM 04 · tópico c) · certa · Se o frame for criado sem a dimensão do dispositivo, a leitura da tela muda: os elementos ficam em proporção errada, podem não caber ou sair da área visível, e o mock-up deixa de representar a tela real. · Explica que sem a dimensão certa a proporção e o encaixe ficam errados.
+- ITEM 04 · tópico c) · meia certa · A tela fica errada. · Diz só que fica errada, sem explicar o efeito.
+- ITEM 04 · tópico c) · errada · Não muda nada; a dimensão não importa. · Contradiz a aula.
+- ITEM 05 · tópico a) · certa · A regra da grade de 8 pixels organiza os espaçamentos e as medidas usando múltiplos de 8, para que nada fique solto "no olho". · Diz que a regra usa múltiplos de 8 px para organizar espaçamentos e medidas.
+- ITEM 05 · tópico a) · meia certa · É uma grade de medidas. · Diz que é grade ou padrão, sem o múltiplo de 8.
+- ITEM 05 · tópico a) · errada · É usar medidas aleatórias sem padrão. · Contradiz a aula.
+- ITEM 05 · tópico b) · certa · Exemplos: espaçamentos entre cards, margens e alturas de botões usando 8, 16, 24 ou 32 px. · Dá pelo menos dois exemplos válidos com valores múltiplos de 8.
+- ITEM 05 · tópico b) · meia certa · Espaçamentos entre cards. · Dá apenas um exemplo válido.
+- ITEM 05 · tópico b) · errada · Medidas como 10 e 15 px. · Valores fora dos múltiplos de 8.
+- ITEM 05 · tópico c) · certa · A repetição do mesmo ritmo de espaçamento cria harmonia e equilíbrio, de modo que o usuário sente conforto visual sem perceber o motivo. · Liga a repetição do ritmo ao equilíbrio e ao conforto visual.
+- ITEM 05 · tópico c) · meia certa · O ritmo deixa a tela mais organizada. · Diz que organiza, sem ligar ao conforto do usuário.
+- ITEM 05 · tópico c) · errada · A repetição deixa a tela cansativa. · Contradiz a aula.
+- ITEM 06 · tópico a) · certa · A margem lateral usual indicada na aula é de 16 px (ou 24 px, conforme o caso), medida a partir do limite da tela. · Cita 16 px ou 24 px como margem lateral usual.
+- ITEM 06 · tópico a) · meia certa · É uma margem pequena. · Cita uma margem sem valor.
+- ITEM 06 · tópico a) · errada · Não existe margem lateral. · Contradiz a aula.
+- ITEM 06 · tópico b) · certa · As margens devem ser consistentes em todas as telas para que o conteúdo tenha o mesmo alinhamento nas bordas, dando unidade ao aplicativo e evitando elementos encostados na borda do celular. · Diz que a consistência mantém o alinhamento e a unidade entre telas.
+- ITEM 06 · tópico b) · meia certa · A margem deve ser igual. · Diz que deve ser igual, sem o efeito no alinhamento.
+- ITEM 06 · tópico b) · errada · Cada tela pode ter uma margem diferente. · Contradiz a consistência.
+- ITEM 06 · tópico c) · certa · A margem define a área útil da tela; um botão que ocupa a área útil tem a largura da tela menos as margens esquerda e direita, sem encostar nas bordas. · Explica que a margem delimita a área útil e que o botão ocupa essa área.
+- ITEM 06 · tópico c) · meia certa · A margem influencia o botão. · Diz que influencia, sem explicar o cálculo da área útil.
+- ITEM 06 · tópico c) · errada · A margem não afeta a largura do botão. · Contradiz a aula.
+- ITEM 07 · tópico a) · certa · A área útil é 375 − 16 − 16 = 343 px, ou seja, a largura da tela descontadas as duas margens laterais de 16 px. · Chega a 343 px e mostra que descontou as duas margens.
+- ITEM 07 · tópico a) · meia certa · A área útil é 359 px. · Desconta só uma margem (erro de conta com raciocínio próximo).
+- ITEM 07 · tópico a) · errada · A área útil é 375 px. · Valor errado, sem descontar as margens.
+- ITEM 07 · tópico b) · certa · 375 − 16 − 16 = 343 px; a largura do botão é 343 px. · Mostra a conta 375 − 16 − 16 = 343 px.
+- ITEM 07 · tópico b) · meia certa · 375 − 16 = 359 px. · Erro de cálculo, mas com a lógica de subtrair margens.
+- ITEM 07 · tópico b) · errada · A largura é 375 px. · Sem descontar margens.
+- ITEM 07 · tópico c) · certa · O cálculo deve ser feito antes para que o botão tenha a largura exata e fique alinhado à margem da grade, em vez de depender da estimativa visual, que pode deixá-lo desalinhado. · Explica que o cálculo garante precisão e alinhamento, e que a estimativa pode errar.
+- ITEM 07 · tópico c) · meia certa · Porque o cálculo é melhor. · Diz que é melhor, sem explicar o motivo.
+- ITEM 07 · tópico c) · errada · Não precisa calcular; dá para fazer no olho. · Contradiz a aula.
+- ITEM 08 · tópico a) · certa · O título da tela deve ter entre 24 e 28 px e informar o objetivo imediato, como "Escolha a Data". · Indica 24 a 28 px para o título e exemplo de objetivo imediato.
+- ITEM 08 · tópico a) · meia certa · O título deve ser grande. · Indica o tamanho sem o exemplo, ou o exemplo sem o tamanho.
+- ITEM 08 · tópico a) · errada · O título deve ter 12 px. · Tamanho errado para título.
+- ITEM 08 · tópico b) · certa · Subtítulos e rótulos devem ter entre 16 e 18 px e servem para nomear campos, especialidades ou botões; exemplo: o rótulo "Especialidade". · Indica 16 a 18 px e dá um exemplo de uso.
+- ITEM 08 · tópico b) · meia certa · Devem ter 16 a 18 px. · Indica o tamanho sem exemplo.
+- ITEM 08 · tópico b) · errada · Devem ter 30 px. · Tamanho errado.
+- ITEM 08 · tópico c) · certa · O texto de apoio (12 a 14 px) traz instruções secundárias e mensagens de ajuda; deve ser menor para não competir com o título e os rótulos, mantendo a hierarquia visual. · Indica a função de instrução secundária e explica o tamanho menor para preservar a hierarquia.
+- ITEM 08 · tópico c) · meia certa · É um texto de ajuda. · Diz a função, sem a razão hierárquica.
+- ITEM 08 · tópico c) · errada · Deve ter o mesmo tamanho do título. · Contradiz a hierarquia.
+- ITEM 09 · tópico a) · certa · Camada é um nível individual de sobreposição gráfica onde cada elemento fica e pode ser editado; as camadas são empilhadas e o painel de camadas lista os objetos. · Diz que a camada é um nível individual de sobreposição onde cada objeto fica e é editado.
+- ITEM 09 · tópico a) · meia certa · É uma parte do desenho. · Diz que é um nível, sem a ideia de empilhamento.
+- ITEM 09 · tópico a) · errada · É a tela inteira do aplicativo. · Confunde camada com tela.
+- ITEM 09 · tópico b) · certa · O fundo fica na base porque deve ficar atrás de tudo; o conteúdo fica no topo para que textos e ícones permaneçam visíveis acima dos cards. · Explica que o fundo fica atrás para não cobrir e o conteúdo no topo para ficar visível.
+- ITEM 09 · tópico b) · meia certa · O fundo fica atrás. · Diz só uma das duas partes.
+- ITEM 09 · tópico b) · errada · O fundo fica na frente do conteúdo. · Contradiz a ordem de empilhamento.
+- ITEM 09 · tópico c) · certa · A causa provável é o texto ter ficado atrás do retângulo do card, na ordem de empilhamento; para verificar, confere-se no painel de camadas se o texto está abaixo do retângulo e sobe-se para o topo. · Aponta a camada do texto abaixo do card e indica verificar no painel de camadas.
+- ITEM 09 · tópico c) · meia certa · O texto ficou atrás do card. · Aponta a causa, sem a forma de verificar.
+- ITEM 09 · tópico c) · errada · O texto foi apagado do arquivo. · Diagnóstico fora da aula.
+- ITEM 10 · tópico a) · certa · Nomes padrão como "Retângulo 54" não dizem o que o objeto é nem para que serve, o que confunde a edição e a localização de elementos na lista de camadas. · Diz que o nome padrão não informa a função e atrapalha a edição.
+- ITEM 10 · tópico a) · meia certa · Porque é confuso. · Diz que é confuso, sem o motivo.
+- ITEM 10 · tópico a) · errada · Nomes padrão são melhores que nomes descritivos. · Contradiz a aula.
+- ITEM 10 · tópico b) · certa · Nomes claros permitem encontrar e editar cada elemento rapidamente, inclusive para outra pessoa que receber o arquivo depois. · Diz que nomes claros facilitam achar e editar, inclusive para outras pessoas.
+- ITEM 10 · tópico b) · meia certa · Facilita a edição. · Diz que facilita, sem citar a outra pessoa.
+- ITEM 10 · tópico b) · errada · Não faz diferença na edição. · Contradiz a aula.
+- ITEM 10 · tópico c) · certa · Exemplo: "Botão de avanço" ou "Botao_Avancar", um nome que descreve o elemento e sua função. · Dá um nome descritivo que indica o elemento e a função.
+- ITEM 10 · tópico c) · meia certa · "Botão 2". · Nome vago, sem descrever a função.
+- ITEM 10 · tópico c) · errada · "Retângulo 54". · Nome padrão, não descritivo.
+- ITEM 11 · tópico a) · certa · Componente é um bloco mestre reutilizável de interface; em vez de redesenhar o mesmo elemento, cria-se um componente mestre que gera instâncias dele. · Diz que o componente é reutilizável e que o mestre gera instâncias.
+- ITEM 11 · tópico a) · meia certa · É um elemento reutilizável. · Diz que é reutilizável, sem o mestre e as instâncias.
+- ITEM 11 · tópico a) · errada · É um elemento único que não se repete. · Contradiz a aula.
+- ITEM 11 · tópico b) · certa · Quando o componente mestre é alterado, todas as instâncias são atualizadas automaticamente; no caso do botão, o novo raio da borda vale em todas as telas. · Diz que as instâncias são atualizadas automaticamente quando o mestre muda.
+- ITEM 11 · tópico b) · meia certa · As instâncias mudam quando o mestre muda. · Diz que mudam, sem falar em atualização automática.
+- ITEM 11 · tópico b) · errada · É preciso alterar cada instância uma a uma. · Contradiz a atualização automática.
+- ITEM 11 · tópico c) · certa · A solução evita redesenhar o botão em cada tela, economiza tempo e garante que todo o aplicativo tenha a mesma linguagem visual, pelo princípio de repetição. · Cita a economia de trabalho repetitivo e a consistência visual.
+- ITEM 11 · tópico c) · meia certa · Economiza tempo. · Cita só a economia de tempo ou só a consistência.
+- ITEM 11 · tópico c) · errada · Deixa cada tela com um visual diferente. · Contradiz a consistência.
+- ITEM 12 · tópico a) · certa · A prancheta central (canvas) é o espaço onde o desenho é feito, com as telas e os elementos da interface. · Diz que a prancheta é o espaço central de desenho onde a tela é montada.
+- ITEM 12 · tópico a) · meia certa · É a área de trabalho. · Diz que é a área de trabalho, sem a função.
+- ITEM 12 · tópico a) · errada · É o painel de camadas. · Confunde prancheta com painel.
+- ITEM 12 · tópico b) · certa · A barra de criação reúne as ferramentas de formas (retângulo, elipse, linha), caixa de texto e caneta, usadas para construir botões e cards. · Diz que reúne as ferramentas de criação e que servem para construir botões e cards.
+- ITEM 12 · tópico b) · meia certa · Tem ferramentas de desenho. · Cita só algumas ferramentas, sem a função.
+- ITEM 12 · tópico b) · errada · É onde se configura a fonte. · Confunde com o painel de estilos.
+- ITEM 12 · tópico c) · certa · O painel de camadas mostra a árvore hierárquica de todos os objetos, organizados de baixo para cima; o painel de estilos configura preenchimento, contorno, raio de borda, opacidade, fonte e alinhamento. · Descreve o painel de camadas como lista hierárquica e o de estilos como configurações visuais.
+- ITEM 12 · tópico c) · meia certa · O painel de camadas lista os objetos. · Descreve só um dos painéis.
+- ITEM 12 · tópico c) · errada · Os dois painéis fazem a mesma coisa. · Contradiz a aula.
+- ITEM 13 · tópico a) · certa · Um retângulo do papel vira um botão ou um card no digital, com a forma geométrica traduzida para um elemento de interface, mantendo a posição e a função testadas. · Diz que o retângulo vira botão ou card mantendo a função testada.
+- ITEM 13 · tópico a) · meia certa · Ele vira um elemento de interface. · Diz que vira um elemento, sem citar botão ou card.
+- ITEM 13 · tópico a) · errada · Ele vira uma linha de código. · Fora do contexto visual.
+- ITEM 13 · tópico b) · certa · Fundo e texto devem respeitar a proporção mínima de legibilidade indicada pela aula (WCAG), para que o texto seja legível no digital. · Cita a regra de contraste fundo/texto e a proporção mínima (WCAG).
+- ITEM 13 · tópico b) · meia certa · O contraste deve ser bom. · Diz que deve ser bom, sem a proporção mínima.
+- ITEM 13 · tópico b) · errada · O contraste não importa no digital. · Contradiz a aula.
+- ITEM 13 · tópico c) · certa · As informações cruciais devem seguir o padrão Z ou F, que é o caminho natural de leitura da tela, colocando os elementos mais importantes nos pontos de maior atenção. · Diz que a disposição segue o padrão Z/F e as informações importantes ficam nesse caminho.
+- ITEM 13 · tópico c) · meia certa · Segue o padrão Z ou F. · Cita o padrão sem explicar a disposição das informações.
+- ITEM 13 · tópico c) · errada · As informações ficam em qualquer ordem. · Contradiz a aula.
+- ITEM 14 · tópico a) · certa · A aula indica como referência a proporção mínima de legibilidade do WCAG entre fundo e texto. · Cita o WCAG e a proporção mínima de contraste.
+- ITEM 14 · tópico a) · meia certa · É sobre contraste e legibilidade. · Cita contraste ou legibilidade, sem o WCAG.
+- ITEM 14 · tópico a) · errada · É uma regra de espaçamento de 8 px. · Confunde com a grade.
+- ITEM 14 · tópico b) · certa · O digital permite conferir a cor exata com precisão pixel a pixel e ajustar o contraste antes de a tela ir para a equipe; no papel, a cor não é definida e não há como medir. · Diz que o digital permite cores exatas e medir/ajustar o contraste com precisão.
+- ITEM 14 · tópico b) · meia certa · É mais preciso no digital. · Diz que é mais preciso, sem ligar ao contraste.
+- ITEM 14 · tópico b) · errada · O papel define a cor exata. · Contradiz a aula.
+- ITEM 14 · tópico c) · certa · A equipe deve ajustar a cor do texto ou do fundo (por exemplo, escurecer o texto cinza) até atingir a proporção mínima, e só então seguir a tela para a equipe. · Propõe ajustar as cores e conferir a proporção mínima antes de seguir.
+- ITEM 14 · tópico c) · meia certa · Ajustar as cores. · Propõe ajustar, sem conferir a proporção.
+- ITEM 14 · tópico c) · errada · Seguir a tela sem conferir o contraste. · Contradiz a aula.
+- ITEM 15 · tópico a) · certa · Quando cada card é desenhado de um jeito, a interface fica sem padrão: cada card tem medidas, cores ou formas diferentes, e o usuário sente a tela desorganizada. · Diz que cards diferentes quebram o padrão e a consistência visual.
+- ITEM 15 · tópico a) · meia certa · Os cards ficam diferentes. · Diz que fica diferente, sem falar em padrão ou consistência.
+- ITEM 15 · tópico a) · errada · Cards diferentes são bons para destacar cada um. · Contradiz a aula.
+- ITEM 15 · tópico b) · certa · O princípio de repetição garante unidade: elementos iguais repetidos mantêm a coerência, e o componente é a forma prática de repetir o mesmo elemento com o mesmo visual. · Liga a repetição à unidade visual e diz que o componente reutiliza o elemento.
+- ITEM 15 · tópico b) · meia certa · A repetição deixa tudo igual. · Cita a repetição ou o componente, sem a ligação.
+- ITEM 15 · tópico b) · errada · Cada elemento deve ser único. · Contradiz o princípio de repetição.
+- ITEM 15 · tópico c) · certa · Os componentes devem ser reutilizados nas duas telas para que o agendamento tenha a mesma linguagem visual do início ao fim, e o usuário não se sinta em outro aplicativo. · Diz que reutilizar nas duas telas mantém a consistência do fluxo.
+- ITEM 15 · tópico c) · meia certa · Deve ser reutilizado. · Diz que deve reutilizar, sem ligar ao fluxo.
+- ITEM 15 · tópico c) · errada · Cada tela deve ter seus próprios botões diferentes. · Contradiz a consistência.
+- ITEM 16 · tópico a) · certa · Fidelidade estrutural é manter, no digital, a ordem dos passos e a posição dos elementos validados no papel, sem mudar a lógica testada com os colegas. · Diz que é manter a ordem dos passos e a posição dos elementos testados no papel.
+- ITEM 16 · tópico a) · meia certa · É seguir o papel. · Diz que segue o papel, sem a ordem ou a posição.
+- ITEM 16 · tópico a) · errada · É mudar o fluxo para melhorar. · Contradiz a fidelidade estrutural.
+- ITEM 16 · tópico b) · certa · A decisão é manter o botão de avanço no canto inferior, onde ficou no papel, porque a mudança para o topo altera uma posição que não foi testada e pode quebrar a validação. · Decide manter no canto inferior e justifica pela fidelidade ao papel testado.
+- ITEM 16 · tópico b) · meia certa · Manter o botão onde ficou no papel. · Decide manter, sem justificar.
+- ITEM 16 · tópico b) · errada · Mover o botão para o topo. · Contradiz a fidelidade ao papel.
+- ITEM 16 · tópico c) · certa · O digital pode melhorar o acabamento, as cores, a tipografia, o contraste e os ícones, sem alterar a ordem das ações nem a posição testada dos elementos principais. · Cita melhorias visuais e diz que a ordem das ações não muda.
+- ITEM 16 · tópico c) · meia certa · Melhorar as cores e a tipografia. · Cita melhorias visuais, sem a ressalva sobre a ordem.
+- ITEM 16 · tópico c) · errada · Mudar a ordem das ações no digital. · Contradiz a fidelidade estrutural.
+- ITEM 17 · tópico a) · certa · O registro de decisões explica por que cada escolha foi feita; exemplo: a cor azul ciano foi escolhida para transmitir calma e profissionalismo na área de saúde. · Explica que o registro justifica as escolhas e dá o exemplo da cor com a razão.
+- ITEM 17 · tópico a) · meia certa · É explicar as escolhas. · Explica o registro, sem exemplo.
+- ITEM 17 · tópico a) · errada · É só listar as telas feitas. · Fora do registro de decisões.
+- ITEM 17 · tópico b) · certa · O registro de alterações mostra quais problemas observados no protótipo de papel foram corrigidos no digital. · Diz que o registro lista os problemas do papel corrigidos no digital.
+- ITEM 17 · tópico b) · meia certa · Registra as mudanças. · Diz que registra mudanças, sem ligar ao papel.
+- ITEM 17 · tópico b) · errada · Registra só as cores usadas. · Fora do registro de alterações.
+- ITEM 17 · tópico c) · certa · A ficha técnica traz os tamanhos de fontes, os códigos de cores hexadecimais e os espaçamentos anotados do mock-up. · Cita pelo menos dois itens (fontes, cores hexadecimais, espaçamentos).
+- ITEM 17 · tópico c) · meia certa · Traz os códigos de cores. · Cita um item.
+- ITEM 17 · tópico c) · errada · Traz o roteiro da aula. · Fora da ficha técnica.
+- ITEM 18 · tópico a) · certa · Cada etapa do registro deve trazer a tela trabalhada, o que mudou em relação ao protótipo de papel e por que a mudança foi feita. · Cita os três elementos (tela, mudança em relação ao papel, motivo).
+- ITEM 18 · tópico a) · meia certa · A tela e a mudança. · Cita dois dos três.
+- ITEM 18 · tópico a) · errada · Só o nome do arquivo. · Fora do registro.
+- ITEM 18 · tópico b) · certa · Exemplo: "Tela de seleção: mantive a ordem dos elementos testada no papel; ajustei o alinhamento do botão na grade para deixar a composição consistente." · Frase que cita a tela, relaciona a ordem ao papel e explica a mudança.
+- ITEM 18 · tópico b) · meia certa · "Ajustei a tela de seleção." · Frase que cita a tela, sem a relação completa.
+- ITEM 18 · tópico b) · errada · "Ficou bonito." · Frase genérica.
+- ITEM 18 · tópico c) · certa · Devem ser conferidos o alinhamento do botão e dos cards na grade, a legibilidade dos textos (contraste e tamanhos) e a organização das camadas, para que não haja texto escondido. · Cita pelo menos dois pontos (alinhamento, legibilidade, camadas) com a razão.
+- ITEM 18 · tópico c) · meia certa · Conferir o alinhamento. · Cita um ponto.
+- ITEM 18 · tópico c) · errada · Não precisa conferir nada. · Contradiz a aula.
+- ITEM 19 · tópico a) · certa · Nem tudo que aparece na busca da internet pode ser usado, porque imagens e ícones têm autores e proteções legais. · Diz que recursos da internet têm autor e proteção legal.
+- ITEM 19 · tópico a) · meia certa · Pode ter direito autoral. · Diz que pode ter direito autoral, sem a razão.
+- ITEM 19 · tópico a) · errada · Tudo da internet é livre para usar. · Contradiz a aula.
+- ITEM 19 · tópico b) · certa · Usar recursos protegidos sem autorização gera risco de infração e pode invalidar um projeto comercial, com consequências legais e financeiras. · Diz que há risco de infração e que pode invalidar o projeto comercial.
+- ITEM 19 · tópico b) · meia certa · Há risco legal. · Diz que há risco legal, sem ligar ao projeto comercial.
+- ITEM 19 · tópico b) · errada · Não há nenhum risco. · Contradiz a aula.
+- ITEM 19 · tópico c) · certa · A conduta correta é usar recursos com licença conhecida e autorizada (por exemplo, Creative Commons) e registrar a origem e a licença de cada ícone e foto, ou criar os próprios recursos. · Cita o uso de licença autorizada e a verificação da origem ou licença.
+- ITEM 19 · tópico c) · meia certa · Usar recursos com licença. · Cita só a licença, sem a verificação.
+- ITEM 19 · tópico c) · errada · Usar qualquer imagem sem conferir a licença. · Contradiz a conduta correta.
+- ITEM 20 · tópico a) · certa · As três fases, na ordem, são: 1) Planejamento (pesquisa, storyboard e protótipo de papel testado); 2) Transposição (frames, blocos com grade, cores e componentes mestre); 3) Acabamento (teste de contraste, documentação e preparação legal). · Cita as três fases na ordem, com conteúdo de cada.
+- ITEM 20 · tópico a) · meia certa · Planejamento, transposição e acabamento. · Cita as três fases, fora de ordem ou sem conteúdo.
+- ITEM 20 · tópico a) · errada · Desenho, impressão e venda. · Fora da aula.
+- ITEM 20 · tópico b) · certa · Os critérios de avaliação coletiva são: Estrutura (alinhamento e proporção dos blocos), Legibilidade (contraste e fontes), Consistência (componentes e botões padronizados) e Acabamento (camadas e detalhes visuais). · Cita os quatro critérios e o que cada um observa.
+- ITEM 20 · tópico b) · meia certa · Estrutura e legibilidade. · Cita dois critérios com explicação.
+- ITEM 20 · tópico b) · errada · Apenas a beleza do mock-up. · Fora dos critérios.
+- ITEM 20 · tópico c) · certa · O feedback construtivo aponta soluções técnicas, como alinhar o botão à grade ou aumentar o contraste, e não faz críticas pessoais; assim pratica a amabilidade no trabalho em equipe. · Diz que aponta soluções técnicas e evita críticas pessoais, ligando à amabilidade.
+- ITEM 20 · tópico c) · meia certa · O feedback deve ser gentil. · Diz que deve ser gentil, sem o foco em solução técnica.
+- ITEM 20 · tópico c) · errada · Criticar a pessoa para motivar. · Contradiz a aula.

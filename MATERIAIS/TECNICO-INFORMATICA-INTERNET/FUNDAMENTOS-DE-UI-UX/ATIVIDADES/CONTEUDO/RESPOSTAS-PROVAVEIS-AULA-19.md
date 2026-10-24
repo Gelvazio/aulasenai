@@ -1,0 +1,189 @@
+# Respostas Prováveis — Atividade Prática da Aula 19 (uso exclusivo do professor e da correção por IA)
+
+> Arquivo fora do site (nome contém RESPOSTAS-PROVAVEIS). Não publicar.
+
+**Formato:** `ITEM NN · tópico a) · categoria · resposta provável · motivo`
+**Categorias:** `certa` (cobre o padrão de resposta) · `meia certa` (cobre parcialmente) · `errada` (em branco, fora do tema, contradiz o padrão ou copiado).
+**Base:** `ATIVIDADE-PRATICA-AULA-19-GABARITO.md` (padrão oficial e critérios de cada tópico).
+**Uso:** comparação do JEV-AI e apoio à correção. Sem dado pessoal de aluno (LGPD).
+
+- ITEM 01 · tópico a) · certa · Direito autoral é o conjunto de direitos jurídicos concedidos ao criador sobre sua obra intelectual ou artística, como ilustrações, textos, fotos e interfaces. · Define direito autoral como direito do criador sobre a obra.
+- ITEM 01 · tópico a) · meia certa · É uma proteção para quem cria. · Cita a proteção ao criador, sem relação com a obra.
+- ITEM 01 · tópico a) · errada · É um imposto sobre obras publicadas. · Fora do conceito.
+- ITEM 01 · tópico b) · certa · A interface passa a ser protegida no momento da criação original (rascunho ou editor vetorial), segundo a Lei nº 9.610/1998. · Indica o momento da criação e cita a Lei nº 9.610/1998.
+- ITEM 01 · tópico b) · meia certa · É protegida na criação. · Indica o momento, mas não cita a lei.
+- ITEM 01 · tópico b) · errada · Só é protegida depois de registrada. · Contradiz a aula (proteção nasce na criação).
+- ITEM 01 · tópico c) · certa · A proteção nasce com a criação; o registro em órgão oficial serve para formalizar a prova de titularidade, não para criar o direito. · Separa a proteção na criação do registro como prova.
+- ITEM 01 · tópico c) · meia certa · O registro formaliza a titularidade. · Explica só um dos dois lados.
+- ITEM 01 · tópico c) · errada · Só o registro protege a obra. · Contradiz a aula.
+- ITEM 02 · tópico a) · certa · Direitos morais garantem o reconhecimento eterno de quem criou a obra, ligado à autoria. · Define direitos morais como o reconhecimento da autoria.
+- ITEM 02 · tópico a) · meia certa · É o direito de ter o nome citado. · Cita o nome citado, sem a ideia de autoria.
+- ITEM 02 · tópico a) · errada · É o direito de vender a obra. · Confunde moral com patrimonial.
+- ITEM 02 · tópico b) · certa · Os direitos morais são inalienáveis e irrenunciáveis: ninguém pode comprar a autoria nem remover o nome do criador da obra. · Cita inalienáveis e irrenunciáveis e que não se vendem nem se removem.
+- ITEM 02 · tópico b) · meia certa · Não podem ser removidos. · Diz que não podem ser removidos, sem explicar que não se vendem.
+- ITEM 02 · tópico b) · errada · Podem ser vendidos ou removidos. · Contradiz a aula.
+- ITEM 02 · tópico c) · certa · Os direitos patrimoniais permitem ao autor ceder, vender ou licenciar a reprodução, a distribuição e a adaptação da criação para aplicativos e sites. · Cita pelo menos duas ações ligadas à exploração econômica.
+- ITEM 02 · tópico c) · meia certa · Permitem explorar economicamente a obra. · Cita uma ação ou fala de exploração sem exemplos.
+- ITEM 02 · tópico c) · errada · Proíbem qualquer uso comercial. · Contradiz (são exatamente sobre exploração).
+- ITEM 03 · tópico a) · certa · As três etapas são criação, fixação e publicação. · Nomeia as três etapas na ordem.
+- ITEM 03 · tópico a) · meia certa · Criação e publicação. · Nomeia duas etapas corretas.
+- ITEM 03 · tópico a) · errada · Ideia, rascunho e venda. · Fora da aula.
+- ITEM 03 · tópico b) · certa · A fixação salva a obra em suporte físico ou repositório com data e hora (timestamp); o registro com data e hora serve de prova da existência da obra naquela data. · Explica a fixação com timestamp e o registro como prova.
+- ITEM 03 · tópico b) · meia certa · A fixação salva a obra com data. · Explica só a fixação, sem a prova.
+- ITEM 03 · tópico b) · errada · A fixação é a publicação ao público. · Confunde fixação com publicação.
+- ITEM 03 · tópico c) · certa · Publicar é o lançamento oficial da obra ao público, sob os termos de uma licença que define o uso permitido. · Diz que é o lançamento ao público e vem com termos de licença.
+- ITEM 03 · tópico c) · meia certa · É lançar a obra. · Diz só que é lançar, sem citar a licença.
+- ITEM 03 · tópico c) · errada · É guardar a obra em sigilo. · Contradiz o lançamento público.
+- ITEM 04 · tópico a) · certa · O princípio da anterioridade diz que vence quem comprovar que a sua criação existia primeiro, por meio de registros confiáveis, datas, commits ou depósitos. · Diz que vence quem prova a criação primeiro.
+- ITEM 04 · tópico a) · meia certa · Vence quem é o primeiro. · Diz que é ser o primeiro, sem falar em prova.
+- ITEM 04 · tópico a) · errada · Vence quem registra primeiro, mesmo criando depois. · Contradiz a anterioridade.
+- ITEM 04 · tópico b) · certa · Três entre: registros cronológicos confiáveis, datas de arquivos, commits de código, depósitos formais ou rascunhos datados em papel. · Lista três tipos corretos.
+- ITEM 04 · tópico b) · meia certa · Datas de arquivos. · Lista um ou dois tipos corretos.
+- ITEM 04 · tópico b) · errada · Opiniões de colegas. · Fora da aula.
+- ITEM 04 · tópico c) · certa · Rascunhos datados e o histórico de versões funcionam como evidência cronológica de que a criação existia antes de cópias, o que fortalece a defesa profissional. · Liga rascunhos e histórico à evidência de anterioridade e à defesa.
+- ITEM 04 · tópico c) · meia certa · São úteis como prova. · Diz que são úteis, sem explicar a prova cronológica.
+- ITEM 04 · tópico c) · errada · Não servem como prova. · Contradiz a aula.
+- ITEM 05 · tópico a) · certa · Não. O acesso público não autoriza o uso livre; a imagem continua protegida por direito autoral. · Responde "não" e justifica que estar publicado não dá permissão.
+- ITEM 05 · tópico a) · meia certa · Não. · Responde "não" sem justificativa.
+- ITEM 05 · tópico a) · errada · Sim, o que está público pode ser usado livremente. · Contradiz a aula.
+- ITEM 05 · tópico b) · certa · Três entre: infração de direito autoral, infração de direito de imagem, multas pesadas (no caso de fontes), banimento do app na loja e dano à reputação. · Cita três riscos corretos.
+- ITEM 05 · tópico b) · meia certa · Infração de direito autoral. · Cita um ou dois riscos corretos.
+- ITEM 05 · tópico b) · errada · Nenhum risco. · Contradiz a aula.
+- ITEM 05 · tópico c) · certa · A notificação extrajudicial exige a retirada imediata do ar em até 48 horas. · Explica a notificação e cita o prazo de 48 horas.
+- ITEM 05 · tópico c) · meia certa · Exige retirar do ar. · Explica a notificação sem o prazo.
+- ITEM 05 · tópico c) · errada · Não há prazo para retirar. · Contradiz a aula.
+- ITEM 06 · tópico a) · certa · Duas formas de infração: infração de direito de imagem e infração de direito autoral. · Cita as duas formas.
+- ITEM 06 · tópico a) · meia certa · Infração de direito autoral. · Cita apenas uma forma correta.
+- ITEM 06 · tópico a) · errada · Infração de trânsito. · Fora do tema.
+- ITEM 06 · tópico b) · certa · A autorização do fotógrafo é necessária porque ele é o autor da foto (direito autoral); a da pessoa retratada é necessária por causa do direito de imagem. · Explica as duas autorizações, cada uma com sua razão.
+- ITEM 06 · tópico b) · meia certa · Precisa da autorização do fotógrafo. · Explica só uma das duas.
+- ITEM 06 · tópico b) · errada · Não precisa de nenhuma autorização. · Contradiz a aula.
+- ITEM 06 · tópico c) · certa · Usar a foto sem autorização pode causar infração e fazer o cliente perder a confiança na consultoria, com risco de o aplicativo ser banido das lojas. · Relaciona o uso indevido à perda de confiança e ao dano à reputação.
+- ITEM 06 · tópico c) · meia certa · Causa dano à reputação. · Cita o dano sem ligar ao cliente.
+- ITEM 06 · tópico c) · errada · Não causa nenhuma consequência. · Contradiz a aula.
+- ITEM 07 · tópico a) · certa · Porque as fontes são softwares protegidos por direito autoral. · Diz que a fonte é software protegido.
+- ITEM 07 · tópico a) · meia certa · Porque são protegidas. · Diz que é protegida, sem citar que é software.
+- ITEM 07 · tópico a) · errada · Porque são de graça e livres. · Contradiz a aula.
+- ITEM 07 · tópico b) · certa · Conferir a licença do arquivo (o EULA) e se ela autoriza o uso em webfont ou em app, especialmente em app vendido (licença comercial). · Cita a licença (EULA) e a permissão para webfont ou app, com foco no uso comercial.
+- ITEM 07 · tópico b) · meia certa · Conferir a licença. · Cita só a licença, sem o uso no app.
+- ITEM 07 · tópico b) · errada · Usar a fonte sem conferir nada. · Contradiz a conduta correta.
+- ITEM 07 · tópico c) · certa · Primeira etapa: ler o EULA (abrir o arquivo de licença de usuário); segunda etapa: ver a permissão (conferir se a licença autoriza webfont ou app). · Descreve as duas etapas na ordem.
+- ITEM 07 · tópico c) · meia certa · Ler o EULA. · Descreve uma etapa corretamente.
+- ITEM 07 · tópico c) · errada · Baixar e usar imediatamente. · Fora da ordem correta.
+- ITEM 08 · tópico a) · certa · Pacotes de ícones podem exigir citação pública de autoria, por exemplo no rodapé do aplicativo. · Diz que a aula exige citação pública de autoria.
+- ITEM 08 · tópico a) · meia certa · Há exigência de autoria. · Diz que há exigência, sem citar a citação pública.
+- ITEM 08 · tópico a) · errada · Não precisam de nenhuma citação. · Contradiz a aula.
+- ITEM 08 · tópico b) · certa · Significa que não se pode vender o pacote de ícones diretamente como produto, ou seja, revender a obra em si. · Explica que não se pode revender o recurso em si.
+- ITEM 08 · tópico b) · meia certa · Não pode vender. · Explica de forma vaga, sem o sentido de revenda direta.
+- ITEM 08 · tópico b) · errada · Pode revender os ícones. · Contradiz a aula.
+- ITEM 08 · tópico c) · certa · A citação deve aparecer publicamente no aplicativo, por exemplo no rodapé ou na tela de créditos, com o nome do autor e o link da licença. · Indica o local (rodapé/créditos) e o conteúdo (autor e link).
+- ITEM 08 · tópico c) · meia certa · No rodapé do aplicativo. · Indica o local sem o conteúdo.
+- ITEM 08 · tópico c) · errada · Em nenhum lugar visível. · Contradiz a citação pública.
+- ITEM 09 · tópico a) · certa · Suspensão da plataforma: as lojas digitais, como Google Play e App Store, desativam o aplicativo por violação dos termos. · Cita a suspensão do app pela loja por violação dos termos.
+- ITEM 09 · tópico a) · meia certa · O app é suspenso. · Cita a suspensão sem a causa.
+- ITEM 09 · tópico a) · errada · Nada acontece com o app. · Contradiz a aula.
+- ITEM 09 · tópico b) · certa · Indenização financeira é o pagamento retroativo de perdas e danos pelo uso não autorizado do patrimônio alheio. · Define como pagamento de perdas e danos pelo uso não autorizado.
+- ITEM 09 · tópico b) · meia certa · É uma multa. · Diz que é multa, sem o uso não autorizado.
+- ITEM 09 · tópico b) · errada · É um prêmio por usar a obra. · Fora do conceito.
+- ITEM 09 · tópico c) · certa · O dano à reputação faz o cliente perder a confiança na consultoria de design, o que prejudica o trabalho futuro do aluno consultor. · Relaciona a reputação à perda de confiança na consultoria.
+- ITEM 09 · tópico c) · meia certa · Prejudica a reputação. · Cita o dano sem ligar à consultoria.
+- ITEM 09 · tópico c) · errada · Não afeta a confiança do cliente. · Contradiz a aula.
+- ITEM 10 · tópico a) · certa · Creative Commons é uma organização global que oferece licenças prévias para criadores; ao contrário de "todos os direitos reservados", adota "alguns direitos reservados". · Define o CC e faz a diferença com "todos os direitos reservados".
+- ITEM 10 · tópico a) · meia certa · É um tipo de licença. · Define o CC sem a diferença.
+- ITEM 10 · tópico a) · errada · É uma lei que proíbe o uso. · Fora do conceito.
+- ITEM 10 · tópico b) · certa · O lema "alguns direitos reservados" significa que o criador reserva certos direitos e libera outros, definidos claramente na licença. · Explica que alguns direitos são reservados e outros liberados.
+- ITEM 10 · tópico b) · meia certa · Significa liberar a obra. · Explica de forma vaga, sem a liberação parcial.
+- ITEM 10 · tópico b) · errada · Significa reservar todos os direitos. · Contradiz o lema.
+- ITEM 10 · tópico c) · certa · Porque a licença define antecipadamente o que é permitido, então ninguém precisa pedir autorização individual ao criador. · Liga a licença prévia e clara à dispensa de contato individual.
+- ITEM 10 · tópico c) · meia certa · Porque a licença facilita. · Diz que facilita, sem explicar o motivo.
+- ITEM 10 · tópico c) · errada · Porque sempre precisa pedir autorização. · Contradiz a aula.
+- ITEM 11 · tópico a) · certa · BY (Atribuição) exige citar o nome do criador original e fornecer o link para a licença. · Diz que exige citar o criador e fornecer o link.
+- ITEM 11 · tópico a) · meia certa · É dar crédito. · Diz "dar crédito", sem o link.
+- ITEM 11 · tópico a) · errada · Proíbe citar o autor. · Contradiz a atribuição.
+- ITEM 11 · tópico b) · certa · NC (Não Comercial) proíbe usar a obra para obter lucro direto ou benefício econômico. · Diz que proíbe lucro direto ou benefício econômico.
+- ITEM 11 · tópico b) · meia certa · Não pode usar para vender. · Diz "não pode vender", sem ampliar para benefício econômico.
+- ITEM 11 · tópico b) · errada · Permite qualquer uso comercial. · Contradiz o NC.
+- ITEM 11 · tópico c) · certa · ND (Sem Derivações) permite só o arquivo exato original e proíbe editar, cortar ou alterar as cores, por exemplo trocar a cor de um ícone. · Diz o que permite e o que proíbe, com exemplo de cor.
+- ITEM 11 · tópico c) · meia certa · Proíbe editar. · Diz o que proíbe, sem falar do que permite.
+- ITEM 11 · tópico c) · errada · Permite modificar livremente. · Contradiz o ND.
+- ITEM 12 · tópico a) · certa · BY = citar o autor; NC = sem vendas (não comercial); SA = espelhar os termos (a obra derivada usa a mesma licença). · Relaciona as três siglas aos três termos corretos.
+- ITEM 12 · tópico a) · meia certa · BY é citar o autor e NC é não comercial. · Relaciona duas siglas corretamente.
+- ITEM 12 · tópico a) · errada · BY é não comercial. · Relaciona incorretamente.
+- ITEM 12 · tópico b) · certa · O bloco SA obriga que o projeto resultante (a adaptação) também seja licenciado como CC BY-NC-SA. · Diz que o projeto derivado precisa ter a mesma licença.
+- ITEM 12 · tópico b) · meia certa · É preciso compartilhar. · Diz que precisa compartilhar, sem indicar a mesma licença.
+- ITEM 12 · tópico b) · errada · Permite usar qualquer licença no derivado. · Contradiz o SA.
+- ITEM 12 · tópico c) · certa · Não. O bloco NC proíbe monetizar o aplicativo com essa ilustração, pois o app pago tem finalidade comercial. · Responde "não" e justifica pelo NC.
+- ITEM 12 · tópico c) · meia certa · Não. · Responde "não" sem justificar.
+- ITEM 12 · tópico c) · errada · Sim, pode monetizar. · Contradiz o NC.
+- ITEM 13 · tópico a) · certa · A cláusula ND impede modificar a obra no design: não pode mudar a cor nem recortar a peça. · Diz que impede mudar a cor e recortar a peça.
+- ITEM 13 · tópico a) · meia certa · Impede mudar a cor. · Cita só um dos dois impedimentos.
+- ITEM 13 · tópico a) · errada · Permite recortar e mudar a cor. · Contradiz o ND.
+- ITEM 13 · tópico b) · certa · Porque, em produtos pagos, o recurso precisa permitir explicitamente o uso comercial; sem isso, o uso no app pago não é permitido. · Liga o produto pago à necessidade de permissão explícita de uso comercial.
+- ITEM 13 · tópico b) · meia certa · Porque é preciso permissão. · Diz que é preciso permissão, sem ligar ao produto pago.
+- ITEM 13 · tópico b) · errada · Porque produto pago não precisa de licença. · Contradiz a aula.
+- ITEM 13 · tópico c) · certa · Não alterar o recurso com ND: pedir autorização formal ao criador, usar um recurso com licença que permita derivações e uso comercial, ou ajustar a cor por meio do tema do sistema, sem editar o arquivo. · Indica conduta que não altera o arquivo com ND.
+- ITEM 13 · tópico c) · meia certa · Pedir autorização. · Indica uma conduta genérica.
+- ITEM 13 · tópico c) · errada · Alterar a cor do arquivo com ND. · Contradiz a restrição.
+- ITEM 14 · tópico a) · certa · Não. A arte CC BY-NC 4.0 não pode ser usada no aplicativo pago. · Responde "não" para o uso no app pago.
+- ITEM 14 · tópico a) · meia certa · Não. · Responde "não" sem clareza.
+- ITEM 14 · tópico a) · errada · Sim. · Contradiz a aula.
+- ITEM 14 · tópico b) · certa · A cláusula NC proíbe qualquer finalidade comercial ou de lucro financeiro, e um app pago tem finalidade comercial. · Justifica pelo NC e pela finalidade comercial do app pago.
+- ITEM 14 · tópico b) · meia certa · Por causa do NC. · Cita o NC sem ligar ao app pago.
+- ITEM 14 · tópico b) · errada · Porque o app pago é gratuito. · Contradiz a aula.
+- ITEM 14 · tópico c) · certa · Usar um recurso com licença permissiva, por exemplo o ícone Lucide (licença ISC) ou a fonte Inter (SIL Open Font License), que permitem uso comercial. · Indica uma alternativa permissiva e cita um exemplo da aula.
+- ITEM 14 · tópico c) · meia certa · Usar um recurso permissivo. · Indica alternativa permissiva sem exemplo.
+- ITEM 14 · tópico c) · errada · Usar outra arte com NC. · Contradiz a aula.
+- ITEM 15 · tópico a) · certa · As quatro etapas são: 1 Ler o EULA; 2 Ver permissão; 3 Baixar o txt; 4 Registrar. · Lista as quatro etapas na ordem.
+- ITEM 15 · tópico a) · meia certa · Ler o EULA e ver a permissão. · Lista três etapas corretas (ou menos).
+- ITEM 15 · tópico a) · errada · Baixar e usar sem conferir. · Fora da ordem correta.
+- ITEM 15 · tópico b) · certa · Na etapa "Ver permissão", deve-se conferir se a licença autoriza o uso como webfont ou em app. · Diz que é conferido se a licença autoriza webfont ou app.
+- ITEM 15 · tópico b) · meia certa · Conferir a permissão. · Diz que confere a permissão, sem o tipo de uso.
+- ITEM 15 · tópico b) · errada · Ver se a fonte é bonita. · Fora do conteúdo da etapa.
+- ITEM 15 · tópico c) · certa · Na etapa "Registrar", anota-se o nome do criador e o tipo de licença. · Cita nome do criador e tipo de licença.
+- ITEM 15 · tópico c) · meia certa · Anota o nome do criador. · Cita apenas um dos dois.
+- ITEM 15 · tópico c) · errada · Não registra nada. · Contradiz a etapa.
+- ITEM 16 · tópico a) · certa · Os três itens são: URL da fonte original; data do download (print com data); termo de autorização (cópia em PDF dos termos da plataforma). · Cita os três itens.
+- ITEM 16 · tópico a) · meia certa · URL e data do download. · Cita dois itens corretos.
+- ITEM 16 · tópico a) · errada · Nome do aluno e CPF. · Dado pessoal, fora do contexto.
+- ITEM 16 · tópico b) · certa · O print com data mostra os termos que estavam valendo no momento do download, o que comprova a licença vigente naquele dia. · Liga o print com data aos termos vigentes no momento do download.
+- ITEM 16 · tópico b) · meia certa · Serve de prova. · Diz que serve de prova, sem a ideia de termos vigentes.
+- ITEM 16 · tópico b) · errada · Não serve para nada. · Contradiz a aula.
+- ITEM 16 · tópico c) · certa · A trilha comprova de onde veio a imagem e em quais termos foi baixada, protegendo a agência e o cliente em caso de questionamento. · Diz que comprova origem e termos e protege agência e cliente.
+- ITEM 16 · tópico c) · meia certa · Protege contra questionamentos. · Diz que protege, sem explicar como.
+- ITEM 16 · tópico c) · errada · Não tem valor jurídico. · Contradiz a aula.
+- ITEM 17 · tópico a) · certa · O INPI registra marcas, programas de computador e desenhos industriais (aspecto ornamental de produtos e ícones tridimensionais). · Cita marcas, programas e desenhos industriais.
+- ITEM 17 · tópico a) · meia certa · Registra marcas e programas. · Cita dois dos três.
+- ITEM 17 · tópico a) · errada · Registra obras literárias. · Fora do INPI.
+- ITEM 17 · tópico b) · certa · A Biblioteca Nacional registra o direito autoral de obras visuais e artísticas, como ilustrações, personagens originais, identidades completas e manuais de marca. · Diz que registra direito autoral de obras visuais/artísticas, com exemplo.
+- ITEM 17 · tópico b) · meia certa · Registra direito autoral. · Diz que registra direito autoral, sem os tipos de obra.
+- ITEM 17 · tópico b) · errada · Registra patentes de máquinas. · Fora da Biblioteca Nacional.
+- ITEM 17 · tópico c) · certa · O INPI cuida da propriedade industrial (marcas, programas e desenhos industriais), e a Biblioteca Nacional cuida das obras visuais e artísticas do direito autoral. · Diferencia os dois órgãos pelo tipo de criação.
+- ITEM 17 · tópico c) · meia certa · São órgãos diferentes. · Diferencia só de forma vaga.
+- ITEM 17 · tópico c) · errada · São o mesmo órgão. · Contradiz a aula.
+- ITEM 18 · tópico a) · certa · Logotipos, paletas cromáticas exclusivas e componentes de interface estilizados. · Cita os três elementos.
+- ITEM 18 · tópico a) · meia certa · Logotipos e paletas. · Cita dois.
+- ITEM 18 · tópico a) · errada · Nomes de ruas. · Fora do tema.
+- ITEM 18 · tópico b) · certa · O registro de marca e do código do software garante exclusividade de mercado, impedindo que concorrentes copiem a identidade e o programa. · Diz que garante exclusividade de mercado e impede cópia de marca e código.
+- ITEM 18 · tópico b) · meia certa · Garante exclusividade. · Cita o registro sem o efeito de exclusividade.
+- ITEM 18 · tópico b) · errada · Permite que qualquer um copie. · Contradiz a aula.
+- ITEM 18 · tópico c) · certa · A exclusividade visual impede que concorrentes copiem a experiência, evitando que enganem o usuário final com uma interface parecida. · Liga a exclusividade a não enganar o usuário final.
+- ITEM 18 · tópico c) · meia certa · Protege a marca. · Diz que protege a marca, sem ligar ao usuário final.
+- ITEM 18 · tópico c) · errada · Não tem efeito prático. · Contradiz a aula.
+- ITEM 19 · tópico a) · certa · A ficha tem as colunas: Recurso/Tipo, Autor/Criador, Licença Exata e Uso Comercial? (com link de origem). · Lista as colunas principais (com o link).
+- ITEM 19 · tópico a) · meia certa · Recurso e autor. · Lista duas colunas corretas.
+- ITEM 19 · tópico a) · errada · Nome do aluno e nota. · Fora da ficha.
+- ITEM 19 · tópico b) · certa · Cada recurso (fonte, ícones, foto de perfil) precisa de uma linha com autor, link e licença exata, além da informação de uso comercial. · Diz que cada recurso tem linha com link e licença exata, citando os recursos.
+- ITEM 19 · tópico b) · meia certa · Cada recurso deve ser registrado. · Diz que registra cada recurso, sem link ou licença exata.
+- ITEM 19 · tópico b) · errada · Basta registrar um recurso no total. · Contradiz a aula.
+- ITEM 19 · tópico c) · certa · A ficha compõe a entrega oficial e serve de garantia jurídica antes do envio para a codificação, evitando problemas depois. · Diz que é parte da entrega e garantia jurídica antes da codificação.
+- ITEM 19 · tópico c) · meia certa · É parte da entrega. · Diz que é entrega ou garantia, sem o momento antes da codificação.
+- ITEM 19 · tópico c) · errada · Não precisa ser entregue. · Contradiz a aula.
+- ITEM 20 · tópico a) · certa · Os três passos são: receber o mock-up; validar os links; emitir o parecer (apontando ativos seguros ou pendências). · Lista os três passos na ordem.
+- ITEM 20 · tópico a) · meia certa · Receber o mock-up e emitir o parecer. · Lista dois passos corretos.
+- ITEM 20 · tópico a) · errada · Codificar o app diretamente. · Fora do processo de validação.
+- ITEM 20 · tópico b) · certa · Conformidade total: recurso com licença permissiva comprovada ou autoria própria; Atribuição pendente: CC BY sem crédito no app; Risco de infração: recurso sem procedência clara ou com NC/ND em app comercial. · Explica os três critérios com a ideia de cada um.
+- ITEM 20 · tópico b) · meia certa · Conformidade e risco de infração. · Explica dois critérios corretos.
+- ITEM 20 · tópico b) · errada · Só existe um critério. · Contradiz a aula.
+- ITEM 20 · tópico c) · certa · Validar os links testando se a URL abre a licença real; redigir o parecer com respeito e colaboração, apontando os pontos de risco de forma amável. · Explica a validação de links e a redação amável do parecer.
+- ITEM 20 · tópico c) · meia certa · Validar os links. · Explica só um dos dois.
+- ITEM 20 · tópico c) · errada · Criticar duramente quem errou. · Contradiz a redação amável.
