@@ -5,8 +5,6 @@
 
 ## Tarefas
 
-- #355-07b5ba8a — [Deploys da Vercel falhando no ignoreCommand (fatal: bad object, exit 128)](etapas/ETAPA-504-07b5ba8a-DEPLOY-VERCEL-ERRO-IGNORE-COMMAND.md) · 🔴 🔄 Em execução · Devin (local · main) (desde 2026-10-24 17:10) · 0%
-  - #355.1 — Corrigir o `ignoreCommand` do `vercel.json` para sair só 0 ou 1 · 🔄 Em execução · `MEDIO` · Devin (local · main) por pedido direto do usuário
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)

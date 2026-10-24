@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ':(exclude)tasks/' ':(exclude)rules-local/'",
+  "ignoreCommand": "PREV=${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}; git rev-parse -q --verify \"$PREV^{commit}\" >/dev/null 2>&1 || PREV=HEAD^; git diff --quiet \"$PREV\" HEAD -- . ':(exclude)tasks/' ':(exclude)rules-local/'; test $? -eq 0",
   "headers": [
     {
       "source": "/(.*)\\.(js|mjs|css|woff|woff2|ttf|otf|eot|svg|png|jpg|jpeg|gif|webp|avif|ico)",
