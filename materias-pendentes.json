@@ -1,0 +1,7850 @@
+{
+ "gerado_em": "2026-10-24 17:29",
+ "materias": [
+  {
+   "curso": "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
+   "materia": "INTRODUCAO-TIC",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 68,
+   "pecas_total": 84,
+   "percentual": 81,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-INTRODUCAO-TIC.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-INTRODUCAO-TIC.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "GESTAO_E_CONTROLE_MATERIAIS",
+   "materia": "ANALISE_DADOS_APLICADA_GESTAO",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 23,
+   "pecas_total": 70,
+   "percentual": 33,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "OPERADOR_PRODUCAO_INDUSTRIAL",
+   "materia": "FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 41,
+   "pecas_total": 119,
+   "percentual": 34,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "QUALIFICACAO-PROFISSIONAL",
+   "materia": "CANVAS-APRESENTACAO",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 21,
+   "percentual": 29,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "QUALIFICACAO-PROFISSIONAL",
+   "materia": "DIGITAL SKILLS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 63,
+   "percentual": 10,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "QUALIFICACAO-PROFISSIONAL",
+   "materia": "INTRODUCAO-LEAN-MANUFACTORING",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 70,
+   "percentual": 9,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 77,
+   "percentual": 8,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 9,
+   "pecas_total": 77,
+   "percentual": 12,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 29,
+   "pecas_total": 77,
+   "percentual": 38,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "INTRODUCAO_COMUNICACAO_ORAL_ESCRITA",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 26,
+   "pecas_total": 77,
+   "percentual": 34,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 77,
+   "percentual": 8,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "OFICINAS_IMPRESSAO_3D_ROBOTICA",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 77,
+   "percentual": 8,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "REFORCO_LINGUAGENS",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 40,
+   "pecas_total": 84,
+   "percentual": 48,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-REFORCO_LINGUAGENS.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-REFORCO_LINGUAGENS.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "RIO_DO_SUL_MAIS_TECH",
+   "materia": "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 22,
+   "pecas_total": 126,
+   "percentual": 17,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "ARQUITETURA-DE-HARDWARE-E-SOFTWARE",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 56,
+   "percentual": 11,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "BANCO-DE-DADOS",
+   "situacao": "✅ CONCLUÍDA",
+   "pecas_ok": 154,
+   "pecas_total": 154,
+   "percentual": 100,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-BANCO-DE-DADOS.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-BANCO-DE-DADOS.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "CODIFICACAO-PARA-BACK-END",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 189,
+   "percentual": 3,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "21",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "22",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "23",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "24",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "25",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "CODIFICACAO-PARA-FRONT-END",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 189,
+   "percentual": 3,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "21",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "22",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "23",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "24",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "25",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "DESENVOLVIMENTO-DE-APIS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 119,
+   "percentual": 5,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "FUNDAMENTOS-DE-UI-UX",
+   "situacao": "✅ CONCLUÍDA",
+   "pecas_ok": 147,
+   "pecas_total": 147,
+   "percentual": 100,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": true
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": true
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "INTERACAO-COM-APIS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 84,
+   "percentual": 7,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "INTRODUCAO-A-INDUSTRIA-4-0",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 56,
+   "percentual": 11,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "INTRODUCAO-A-QUALIDADE-E-PRODUTIVIDADE",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 42,
+   "percentual": 14,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 8,
+   "pecas_total": 84,
+   "percentual": 10,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "INTRODUCAO-AO-DESENVOLVIMENTO-DE-PROJETOS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 35,
+   "percentual": 17,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "LOGICA-DE-PROGRAMACAO",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 238,
+   "percentual": 3,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "21",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "22",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "23",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "24",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "25",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "26",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "27",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "28",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "29",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "30",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "31",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "32",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "PROJETO-DE-BACK-END",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 175,
+   "percentual": 3,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "21",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "22",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "23",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "PROJETO-DE-FRONT-END",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 175,
+   "percentual": 3,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "11",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "12",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "13",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "14",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "15",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "16",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "17",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "18",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "19",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "20",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "21",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "22",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "23",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "SAUDE-E-SEGURANCA-NO-TRABALHO",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 35,
+   "percentual": 17,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 28,
+   "percentual": 21,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "Testes de Sistemas-EXISTENTES",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 77,
+   "percentual": 8,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "TESTES-DE-BACK-END",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 84,
+   "percentual": 7,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "TESTES-DE-FRONTEND",
+   "situacao": "🔄 PENDENTE",
+   "pecas_ok": 44,
+   "pecas_total": 84,
+   "percentual": 52,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": true
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-TESTES-DE-FRONTEND.html",
+     "ok": true
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-TESTES-DE-FRONTEND.md",
+     "ok": true
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": true,
+      "Objetiva (fonte)": true,
+      "Prática (página)": true,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": true,
+      "Banco (seeds)": true,
+      "Aula pronta": true
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "06",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "07",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "08",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "09",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "10",
+     "pecas": {
+      "Aula em CONTEUDO/": true,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": true,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  },
+  {
+   "curso": "TECNICO-INFORMATICA-INTERNET",
+   "materia": "VERSIONAMENTO-E-COLABORACAO",
+   "situacao": "⬜ NÃO INICIADA",
+   "pecas_ok": 6,
+   "pecas_total": 49,
+   "percentual": 12,
+   "pecas": [
+    {
+     "peca": "Ementa",
+     "arquivo": "EMENTA-CHALKIE-AI.md",
+     "ok": true
+    },
+    {
+     "peca": "Dados da matéria",
+     "arquivo": "materia.json",
+     "ok": false
+    },
+    {
+     "peca": "Status da ementa",
+     "arquivo": "STATUS-EMENTAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das aulas",
+     "arquivo": "AULAS/STATUS-AULAS.md",
+     "ok": true
+    },
+    {
+     "peca": "Status das atividades",
+     "arquivo": "ATIVIDADES/STATUS-ATIVIDADES.md",
+     "ok": true
+    },
+    {
+     "peca": "Status da apostila",
+     "arquivo": "APOSTILA/STATUS-APOSTILA.md",
+     "ok": true
+    },
+    {
+     "peca": "Índice das atividades",
+     "arquivo": "ATIVIDADES/index.html",
+     "ok": true
+    },
+    {
+     "peca": "Menu das atividades",
+     "arquivo": "ATIVIDADES/MENU-ATIVIDADES.js",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação objetiva",
+     "arquivo": "ATIVIDADES/AVALIACAO-OBJETIVA-01.html",
+     "ok": false
+    },
+    {
+     "peca": "Avaliação prática",
+     "arquivo": "ATIVIDADES/AVALIACAO-PRATICA.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (página)",
+     "arquivo": "ATIVIDADES/AVALIACAO-MEDIA-FINAL.html",
+     "ok": false
+    },
+    {
+     "peca": "Média final (composição)",
+     "arquivo": "ATIVIDADES/media-final.json",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (HTML)",
+     "arquivo": "APOSTILA/APOSTILA-*.html",
+     "ok": false
+    },
+    {
+     "peca": "Apostila (Markdown completo)",
+     "arquivo": "APOSTILA/APOSTILA-*.md",
+     "ok": false
+    }
+   ],
+   "aulas": [
+    {
+     "aula": "01",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "02",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "03",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "04",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    },
+    {
+     "aula": "05",
+     "pecas": {
+      "Aula em CONTEUDO/": false,
+      "Objetiva (página)": false,
+      "Objetiva (fonte)": false,
+      "Prática (página)": false,
+      "Prática (fonte)": false,
+      "Prática (padrão de resposta)": false,
+      "Banco (seeds)": false,
+      "Aula pronta": false
+     }
+    }
+   ]
+  }
+ ]
+}

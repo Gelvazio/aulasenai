@@ -54,11 +54,12 @@ Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem g
 
 ### #357.1 — Gerador do `materias-pendentes.json` a partir dos `STATUS_MATERIA.md`
 
-**Próximo passo:** ler `STATUS_MATERIA.md` e `scripts/status-materias/` e criar o gerador.
+**Próximo passo:** concluída; seguir com a #357.2 (repositório + regras em JS lendo o materias-pendentes.json e as tabelas curso/materia).
 
 - **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
 - **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
-- **Entrega:** pendente · **Verificação:** pendente
+- **Entrega:** `scripts/status-materias/gerar_materias_pendentes_json.py` (novo) e `materias-pendentes.json` (raiz, gerado). Commit na `main`.
+- **Verificação:** `py_compile` ok; linhas ≤ 100; gerador lê os 34 `STATUS_MATERIA.md` (34 matérias, 32 pendentes); UI/UX = ✅ CONCLUÍDA 147/147 com 14 peças e 19 aulas; CANVAS = ⬜ NÃO INICIADA com as 8 peças pendentes; JSON só com nomes de peça e true/false (sem gabarito nem conteúdo).
 
 ### #357.2 — Repositório + regras (JS) da página
 
