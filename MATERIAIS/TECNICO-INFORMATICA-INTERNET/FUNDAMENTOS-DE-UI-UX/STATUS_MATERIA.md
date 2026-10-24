@@ -2,7 +2,7 @@
 
 **Ordem:** 21 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **🔄 PENDENTE** — 102 de 147 peças (69%)  
+**Situação:** **🔄 PENDENTE** — 119 de 147 peças (81%)  
 **Gerado em:** 2026-10-24 18:00 (atualizado manualmente devido a falha do script no Windows)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
