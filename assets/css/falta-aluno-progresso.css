@@ -18,6 +18,18 @@
     color: var(--falta-aluno-texto-suave);
 }
 
-.falta-aluno__interruptor--aluno {
-    font-size: 11px;
+/* "Faltou?" do aluno: linha própria, largura da célula, alvo de toque grande. As variáveis da
+   chave são redefinidas aqui para aumentar o interruptor sem mexer em progresso-turma-global.css. */
+.progresso-turma__interruptor.falta-aluno__interruptor--aluno {
+    --progresso-turma-chave-largura: 44px;
+    --progresso-turma-chave-altura: 24px;
+    --progresso-turma-bolinha: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
 }

@@ -6,7 +6,7 @@
 
 ### BOTOES-PROGRESSO-GRANDES.1 — Ajustar o CSS dos botões da célula do aluno
 
-**Próximo passo:** em `assets/css/progresso-turma-global.css` (e nos CSS dos módulos Faltou? e Quantidade Questão Considerar, se necessário), aumentar fonte/padding dos botões "Confirmar Todas" e "Confirmar Entrega" e deixar cada controle em uma linha.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -15,4 +15,4 @@
 - **Fonte:** sinais
 - **Descrição:** só CSS; sem JS, HTML nem banco.
 - **Critérios de Aceitação:** botões da célula (Confirmar Todas, Confirmar Entrega, Faltou?, Quantidade Questão Considerar com Confirmar) um por linha, maiores; sem `!important` novo; mobile continua sem rolagem horizontal.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/css/progresso-turma-global.css`, `assets/css/falta-aluno-progresso.css`, `assets/css/questoes-nota-aluno-progresso.css` (3 executores-medio em paralelo, um CSS cada) no commit desta entrega · **Verificação:** chaves balanceadas nos 3 CSS; sem `!important` novo; sem JS/HTML/banco alterado; conferir na tela (sem navegador): botões maiores, um por linha, bolinha do Faltou? ligada
