@@ -563,12 +563,23 @@ async function resolverMateriaEquipes(ehProfessor) {
     ? materias.find((materia) => materia.id === estadoEquipes.materia.id) : null;
   const cursoAtual = atual ? String(atual.curso_id) : '';
   const opcoesCurso = [{ valor: '', texto: 'Selecione o curso…' }].concat(
-    cursos.map((curso) => ({ valor: String(curso.id), texto: curso.nome_completo })));
+    cursos.map((curso) => ({ valor: String(curso.id), texto: textoCursoEquipes(curso) })));
   preencherSelectEquipes(elementosEquipes.curso, opcoesCurso, cursoAtual);
   preencherMateriasDoCursoEquipes(elementosEquipes.curso.value, atual ? String(atual.id) : '');
   definirListasMateriaVisiveisEquipes(true);
   const escolhida = Number(elementosEquipes.materia.value);
   return materias.find((materia) => materia.id === escolhida) || null;
+}
+
+/**
+ * Texto da opção do curso: nome e, quando houver, o período (ano/semestre).
+ * @param {{nome_completo: string, ano: ?number, semestre: ?number}} curso - Curso.
+ * @returns {string} Ex.: "Técnico em Informática para Internet — 2026/1".
+ */
+function textoCursoEquipes(curso) {
+  if (!curso.ano) return curso.nome_completo;
+  const periodo = curso.semestre ? curso.ano + '/' + curso.semestre : String(curso.ano);
+  return curso.nome_completo + ' — ' + periodo;
 }
 
 /**

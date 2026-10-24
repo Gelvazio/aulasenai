@@ -128,11 +128,12 @@ function criarLeiturasContextoEquipes(cliente) {
 
     /**
      * Todos os cursos (o professor escolhe o curso antes da matéria).
-     * @returns {Promise<{id: number, nome_completo: string}[]>} Cursos pelo nome.
+     * @returns {Promise<{id: number, nome_completo: string, ano: ?number, semestre: ?number}[]>}
+     *   Cursos pelo nome.
      */
     async listarCursos() {
       return dadosOuErroEquipes(await cliente.from(TABELA_CURSO_EQUIPES)
-        .select('id, nome_completo').order('nome_completo'));
+        .select('id, nome_completo, ano, semestre').order('nome_completo'));
     },
 
     /**

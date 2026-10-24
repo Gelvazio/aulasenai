@@ -63,7 +63,7 @@
 
 ### ANO-SEMESTRE-CURSO.3 — Lista Curso do modal Equipes mostra ano e semestre
 
-**Próximo passo:** depende do .2.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.97))
 - **Modelo:** só Sonnet — nunca outro
@@ -72,6 +72,7 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** `nome — AAAA/S` em cada opção da lista Curso.
 - **Critérios de Aceitação:** `node --check` passa; sem linha nova > 100 caracteres; curso sem período mostra só o nome.
+- **Entrega:** `assets/js/equipes-modal.js`, `assets/js/equipes-repositorio.js` no commit desta entrega · **Verificação:** `node --check` ok nos 2 JS; sem linha nova > 100 caracteres; `textoCursoEquipes` mostra `nome — AAAA/S` (só `AAAA` sem semestre; só o nome sem ano); conferir na tela (sem navegador)
 
 ### ANO-SEMESTRE-CURSO.4 — Campos ano e semestre no cadastro de curso
 
