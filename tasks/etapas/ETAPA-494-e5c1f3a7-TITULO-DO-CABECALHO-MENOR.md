@@ -6,7 +6,7 @@
 
 ### TITULO-CABECALHO-MENOR.1 — Reduzir título e altura do cabeçalho no CSS compartilhado
 
-**Próximo passo:** reservar e editar `header`/`header h1` em `assets/css/atividade.css` (usado por todas as páginas de atividade).
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -15,3 +15,4 @@
 - **Fonte:** sinais
 - **Descrição:** só CSS: menor `font-size` do `h1`, menor `padding` vertical e margens do cabeçalho; vale para todas as páginas que usam `atividade.css` (layout global); sem `!important`; mobile continua menor ainda.
 - **Critérios de Aceitação:** título e cabeçalho visivelmente menores; sem `!important`; linhas ≤ 100 caracteres.
+- **Entrega:** `assets/css/atividade.css` no commit desta entrega · **Verificação:** desktop: `header` padding 40px→18px, `h1` 36px→24px, `p` 16px→14px; tablet `h1` 20px; celular `h1` 18px; sem `!important`; implementação única (vale para as páginas que usam `atividade.css`); conferir na tela (sem navegador)
