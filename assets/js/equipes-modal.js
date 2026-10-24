@@ -556,7 +556,7 @@ async function resolverMateriaEquipes(ehProfessor) {
   estadoEquipes.materias = await repositorio.listarMaterias();
   const opcoes = [{ valor: '', texto: 'Selecione a matéria…' }].concat(
     estadoEquipes.materias.map((materia) => (
-      { valor: String(materia.id), texto: materia.descricao })));
+      { valor: String(materia.id), texto: materia.id + ' — ' + materia.descricao })));
   const atual = estadoEquipes.materia ? String(estadoEquipes.materia.id) : '';
   preencherSelectEquipes(elementosEquipes.materia, opcoes, atual);
   elementosEquipes.campoMateria.hidden = false;

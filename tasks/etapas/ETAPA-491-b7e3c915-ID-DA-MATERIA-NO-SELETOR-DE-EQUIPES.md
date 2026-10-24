@@ -15,7 +15,7 @@ de cursos diferentes (nada duplicado por erro do seletor).
 
 ### ID-MATERIA-EQUIPES.1 — Mostrar o id da matéria no seletor do modal Equipes
 
-**Próximo passo:** reservar, editar `assets/js/equipes-modal.js` e entregar.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.98))
 - **Modelo:** só Sonnet — nunca outro
@@ -24,3 +24,4 @@ de cursos diferentes (nada duplicado por erro do seletor).
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** o texto de cada opção do seletor passa a `<id> — <descricao>`; o `value` continua sendo o id.
 - **Critérios de Aceitação:** opção mostra o id antes do nome; `node --check` passa; linhas ≤ 100 caracteres.
+- **Entrega:** `assets/js/equipes-modal.js`, `docs/equipes-sala-de-aula.md` no commit desta entrega · **Verificação:** `node --check` ok; as 3 matérias conferidas no banco (ids 23, 25, 39, cursos 2, 5 e 4); `value` do seletor continua o id; conferir na tela (sem navegador)

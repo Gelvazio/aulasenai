@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Sonnet 5.5) (local · main · s491) | ID-MATERIA-EQUIPES.1 ([491-b7e3c915](etapas/ETAPA-491-b7e3c915-ID-DA-MATERIA-NO-SELETOR-DE-EQUIPES.md)) | 🔄 Ativa | 2026-10-24 14:30 |
+| Claude Code (Sonnet 5.5) (local · main · s491) | ID-MATERIA-EQUIPES concluída ([491-b7e3c915](etapas/ETAPA-491-b7e3c915-ID-DA-MATERIA-NO-SELETOR-DE-EQUIPES.md)) | ⏹️ Encerrada | 2026-10-24 14:40 |
 | Claude Code (Sonnet 5.5) (local · main · s490) | LINHA-ENTRE-ALUNOS concluída ([490-a8d24e63](etapas/ETAPA-490-a8d24e63-LINHA-SEPARANDO-ALUNOS-NO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 14:10 |
 | Claude Code (Sonnet 5.5) (local · main · s489) | HOVER-BOTOES-PROGRESSO concluída ([489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md)) | ⏹️ Encerrada | 2026-10-24 13:50 |
 | Claude Code (Sonnet 5.5) (local · main · s488) | BOTOES-PROGRESSO-GRANDES concluída ([488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md)) | ⏹️ Encerrada | 2026-10-24 13:30 |
@@ -98,8 +98,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
-| **ID-MATERIA-EQUIPES** | **ID da matéria na frente do nome no seletor de Equipes** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [491-b7e3c915](etapas/ETAPA-491-b7e3c915-ID-DA-MATERIA-NO-SELETOR-DE-EQUIPES.md) | — |
-| ID-MATERIA-EQUIPES.1 | Mostrar o id da matéria no seletor do modal Equipes | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s491) (desde 2026-10-24 14:32) | [491-b7e3c915](etapas/ETAPA-491-b7e3c915-ID-DA-MATERIA-NO-SELETOR-DE-EQUIPES.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
