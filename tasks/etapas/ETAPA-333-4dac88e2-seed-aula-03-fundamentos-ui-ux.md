@@ -21,7 +21,7 @@
 
 ### #333.1 — Gerar e aplicar o seed da Aula 03
 
-**Próximo passo:** Ler o arquivo de gabarito da atividade prática da Aula 03 e usar o gerador para criar o SQL de seed.
+**Próximo passo:** Fazer o push das mudanças (conflito no repositório remoto).
 
 - **Nível:** LEVE — tarefa simples de geração e aplicação de seed
 - **Modelo:** só Haiku — tarefa leve
@@ -30,5 +30,5 @@
   - Arquivo SQL gerado em `database/2026-10-24-atividade-pratica-aula-03-seed-atividades.sql`
   - SQL aplicado no banco com sucesso
   - STATUS_MATERIA.md atualizado marcando o seed da aula 03 como ✅
-  - Commit e push realizados
+  - Commit realizado (push pendente devido a conflito no remoto)
 - **Entrega:** Commit com o arquivo SQL e STATUS_MATERIA.md atualizado · **Verificação:** Conferir se o seed foi aplicado verificando os registros no banco

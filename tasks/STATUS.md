@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #333-4dac88e2 — [Seed da atividade prática da Aula 03 de Fundamentos de UI/UX](etapas/ETAPA-333-4dac88e2-seed-aula-03-fundamentos-ui-ux.md) · 🔄 Em progresso · Claude Code local
-  - #333.1 — [Gerar e aplicar o seed da Aula 03](etapas/ETAPA-333-4dac88e2-seed-aula-03-fundamentos-ui-ux.md) · 🔄 Em progresso · Claude Code local · `LEVE · só Haiku`
+  - #333.1 — [Gerar e aplicar o seed da Aula 03](etapas/ETAPA-333-4dac88e2-seed-aula-03-fundamentos-ui-ux.md) · � Aguardando o usuário · Claude Code local · `LEVE · só Haiku` (push pendente: conflito no remoto)
 - #2 — [Apostilas só em Markdown (.md)](status/TASK-ID-2-STATUS.md)
 - #4 — [Preencher `PLANO-AULAS.md` em 8 disciplinas](status/TASK-ID-4-STATUS.md)
 - #5 — [Organizar atividades em `ATIVIDADES/`](status/TASK-ID-5-STATUS.md)
