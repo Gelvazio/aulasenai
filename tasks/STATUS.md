@@ -5,8 +5,6 @@
 
 ## Tarefas
 
-- #357-5c2d9e41 — [Menu "Matérias Pendentes" (só Professor Administrador) e página materias-pendentes.html](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) · 🟠 🔄 Em execução (plano aprovado em 2026-10-24 17:52) · Devin (local · main) (desde 2026-10-24 17:40) · 90%
-  - #357.5 — Documentação e conferência de segurança (`.vercelignore`, sem gabarito) · 🔄 Em execução · Devin (local · main) · `LEVE`
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
 - #353-41c1f170 — [Índice do Técnico em Informática para Internet sem o link das atividades de UI/UX](etapas/ETAPA-502-344fcb24-INDICE-TECNICO-SEM-LINK-ATIVIDADES.md) · ✅ Concluído · Devin (local · main)

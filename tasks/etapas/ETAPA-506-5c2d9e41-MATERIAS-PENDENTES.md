@@ -90,8 +90,9 @@ Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem g
 
 ### #357.5 — Documentação e conferência de segurança (`.vercelignore`, sem gabarito)
 
-**Próximo passo:** aguardando a subtarefa anterior.
+**Próximo passo:** concluída; TASK #357 completa.
 
 - **Nível:** LEVE — plano aprovado (ver Subtarefas previstas)
 - **Modelo:** LEVE · só Haiku — Devin executa a pedido do usuário (precedente #353/#355/#356)
-- **Entrega:** pendente · **Verificação:** pendente
+- **Entrega:** `docs/ORIENTACAO_JS_MATERIAS_PENDENTES.md` (novo). Commit na `main`.
+- **Verificação:** `.vercelignore` não exclui a página nem o JSON; o JSON contém só status (o único termo parecido com resposta é o rótulo `Prática (padrão de resposta)`, sem conteúdo de gabarito); dupla trava do papel conferida (menu só após RPC e página reconfere a RPC).
