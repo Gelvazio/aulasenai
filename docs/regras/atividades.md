@@ -368,6 +368,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     questões dele; pula as com suspeita de cópia pendente; se faltar nota da IA em alguma, mostra
     **"QUESTÕES SEM NOTA! GERE A CORREÇÃO DE IA DE NOVO!"** e não grava nada. Para isso, depois
     da entrega a IA dá 0 às questões em branco. Código: `assets/js/confirmar-todas-professor.js`.
+  - **✅ Confirmar Entrega (2026-10-24, regra global de todo gerador de atividade):** botão ao
+    lado de **Confirmar Todas** em todo quadro de progresso da turma. **Só o professor** o vê (RLS
+    + JWT na gravação). Ao clicar, **entrega a atividade do aluno como está**, mesmo incompleta
+    (questões sem resposta ficam em branco, sem exigir o mínimo de questões). Vive no código
+    compartilhado do progresso (`assets/js/progresso-turma-global.js`); os geradores só herdam.
+    Regra anotada na tarefa REGRA-CONFIRMAR-ENTREGA; implementação do botão é outra tarefa.
   - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
     e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
     **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao

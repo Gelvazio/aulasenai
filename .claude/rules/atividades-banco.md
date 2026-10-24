@@ -23,6 +23,16 @@ Uma página por tipo, para todas as matérias, que recebe o **id da atividade** 
 Recursos que toda atividade já tem (não replicar por matéria): progresso da turma, gráficos,
 cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito por turma, PDF SENAI.
 
+## Quadro de progresso: botão "Confirmar Entrega" (2026-10-24, vale para todo gerador)
+
+- ✅ Em **todo** quadro de progresso da turma, ao lado de **Confirmar Todas**, existe o botão
+  **Confirmar Entrega**.
+- ✅ **Só o professor** o vê (o aluno nunca); a gravação segue protegida por RLS + JWT.
+- ✅ Ao clicar, a atividade do aluno é **entregue como está**, mesmo incompleta (questões sem
+  resposta ficam em branco), sem exigir o mínimo de questões.
+- ✅ Vive no código compartilhado do progresso (`assets/js/progresso-turma-global.js`); os
+  geradores de atividade apenas herdam, nunca replicam por matéria.
+
 ## Alvo: pasta da matéria só com Markdown
 
 ```
