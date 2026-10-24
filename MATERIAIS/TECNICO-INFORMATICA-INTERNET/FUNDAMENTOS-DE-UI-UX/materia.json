@@ -199,7 +199,7 @@
       ],
       "atividade": "Linha do tempo do design com cinco marcos comentados",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md",
-      "slides": "AULAS/AULA-01-SLIDES.pdf",
+      "slides": "CONTEUDO/1-Fundamentos-e-Evolução-Histórica-do-Design.pdf",
       "bncc": [
         "CG3 Repertório cultural"
       ],
@@ -238,7 +238,7 @@
       ],
       "atividade": "Mapa das formas e das regras visuais de uma tela",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md",
-      "slides": "AULAS/AULA-02-SLIDES.pdf",
+      "slides": "CONTEUDO/2-Formas-Geométricas-em-UI.pdf",
       "bncc": [
         "CG3 Repertório cultural"
       ],
@@ -276,7 +276,7 @@
       ],
       "atividade": "Paleta de cores justificada, com contraste conferido",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md",
-      "slides": "AULAS/AULA-03-SLIDES.pdf",
+      "slides": "CONTEUDO/3-Teoria-das-Cores-e-Contraste.pdf",
       "bncc": [
         "CG3 Repertório cultural"
       ],
@@ -315,7 +315,7 @@
       ],
       "atividade": "Análise crítica de uma tela: problemas, causas e efeitos",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md",
-      "slides": "AULAS/AULA-04-SLIDES.pdf",
+      "slides": "CONTEUDO/4-Resolução-de-Problemas-Análise-Crítica.pdf",
       "bncc": [
         "CG2 Pensamento crítico e criativo"
       ],
@@ -351,7 +351,7 @@
       ],
       "atividade": "Quadro de cenários de uso com riscos e soluções",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md",
-      "slides": "AULAS/AULA-05-SLIDES.pdf",
+      "slides": "CONTEUDO/5-Resolução-de-Problemas-Análise-de-Cenários.pdf",
       "bncc": [
         "CG2 Pensamento crítico e criativo"
       ],
@@ -392,7 +392,7 @@
       ],
       "atividade": "Comparativo de interfaces por texto, voz e natural",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md",
-      "slides": "AULAS/AULA-06-SLIDES.pdf",
+      "slides": "CONTEUDO/6-User-Interface-Definição-e-Tipos.pdf",
       "bncc": [
         "CG5 Cultura digital"
       ],
@@ -432,7 +432,7 @@
       ],
       "atividade": "Esboço de página nos padrões F e Z, com grade",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md",
-      "slides": "AULAS/AULA-07-SLIDES.pdf",
+      "slides": "CONTEUDO/7-Layout-de-Interfaces-Padrões-de-Leitura-e-Alinhamento.pdf",
       "bncc": [
         "CG3 Repertório cultural"
       ],
@@ -474,7 +474,7 @@
       ],
       "atividade": "Guia visual: tamanhos, espaços, fontes e componentes repetidos",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md",
-      "slides": "AULAS/AULA-08-SLIDES.pdf",
+      "slides": "CONTEUDO/8-Elementos-Visuais-de-Layout.pdf",
       "bncc": [
         "CG3 Repertório cultural"
       ],
@@ -509,7 +509,7 @@
       ],
       "atividade": "Mapa de navegação com os eventos de cada tela",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md",
-      "slides": "AULAS/AULA-09-SLIDES.pdf",
+      "slides": "CONTEUDO/9-Dinâmica-da-Interface-Eventos-e-Navegação.pdf",
       "bncc": [
         "CG5 Cultura digital"
       ],
@@ -548,7 +548,7 @@
       ],
       "atividade": "Ficha de necessidades do usuário do serviço",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md",
-      "slides": "AULAS/AULA-10-SLIDES.pdf",
+      "slides": "CONTEUDO/10-User-Experience-(UX).pdf",
       "bncc": [
         "CG9 Empatia e cooperação"
       ],
@@ -584,7 +584,7 @@
       ],
       "atividade": "Ciclo de design interativo aplicado a uma tela (versões 1 e 2)",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-11.md",
-      "slides": "AULAS/AULA-11-SLIDES.pdf",
+      "slides": "CONTEUDO/11-Design-Interativo.pdf",
       "bncc": [
         "CG2 Pensamento crítico e criativo"
       ],
@@ -620,7 +620,7 @@
       ],
       "atividade": "Roteiro de pesquisa e mapa da jornada",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-12.md",
-      "slides": "AULAS/AULA-12-SLIDES.pdf",
+      "slides": "CONTEUDO/12-Jornada-do-Usuário-e-Pesquisa.pdf",
       "bncc": [
         "CG9 Empatia e cooperação"
       ],
@@ -660,7 +660,7 @@
       ],
       "atividade": "Checklist de usabilidade aplicado a uma tela",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-13.md",
-      "slides": "AULAS/AULA-13-SLIDES.pdf",
+      "slides": "CONTEUDO/13-Usabilidade-Interfaces-Amigáveis-e-Intuitividade.pdf",
       "bncc": [
         "CG5 Cultura digital"
       ],
@@ -698,7 +698,7 @@
       ],
       "atividade": "Plano de coleta (questionário ou entrevista) aplicado em sala",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-14.md",
-      "slides": "AULAS/AULA-14-SLIDES.pdf",
+      "slides": "CONTEUDO/14-Estratégias-de-Coleta.pdf",
       "bncc": [
         "CG9 Empatia e cooperação"
       ],
@@ -737,7 +737,7 @@
       ],
       "atividade": "Relatório de feedbacks com decisão sobre pedidos conflitantes",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-15.md",
-      "slides": "AULAS/AULA-15-SLIDES.pdf",
+      "slides": "CONTEUDO/15-Coleta-de-Feedbacks-e-Resolução-de-Conflitos.pdf",
       "bncc": [
         "CG9 Empatia e cooperação"
       ],
@@ -773,7 +773,7 @@
       ],
       "atividade": "Documento de escopo: entra, não entra e prioridades",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-16.md",
-      "slides": "AULAS/AULA-16-SLIDES.pdf",
+      "slides": "CONTEUDO/16-Determinação-de-Escopo-do-Projeto-de-Interface.pdf",
       "bncc": [
         "CG2 Pensamento crítico e criativo"
       ],
@@ -811,7 +811,7 @@
       ],
       "atividade": "Storyboard e protótipo de papel testado com colegas",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-17.md",
-      "slides": "AULAS/AULA-17-SLIDES.pdf",
+      "slides": "CONTEUDO/17-Prototipagem-Storyboard-e-Protótipos-de-Papel.pdf",
       "bncc": [
         "CG2 Pensamento crítico e criativo"
       ],
@@ -852,7 +852,7 @@
       ],
       "atividade": "Mock-up digital das telas principais, com o registro do processo",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-18.md",
-      "slides": "AULAS/AULA-18-SLIDES.pdf",
+      "slides": "CONTEUDO/18-Mock-Ups-Digitais-e-Criação.pdf",
       "bncc": [
         "CG5 Cultura digital"
       ],
@@ -894,7 +894,7 @@
       ],
       "atividade": "Ficha de licenças dos recursos gráficos do projeto",
       "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-19.md",
-      "slides": "AULAS/AULA-19-SLIDES.pdf",
+      "slides": "CONTEUDO/19-Direito-Autoral-e-Propriedade-Intelectual-no-Design.pdf",
       "bncc": [
         "CG10 Responsabilidade"
       ],
