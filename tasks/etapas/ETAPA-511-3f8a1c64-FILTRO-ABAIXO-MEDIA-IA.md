@@ -11,3 +11,5 @@
 - **Nível:** MEDIO — JS com lógica, 2 arquivos (Jev, confiança 0,91)
 - **Modelo:** só Sonnet
 - **Descrição:** ligado = só alunos com nota parcial da IA (`valorNotaParcial`) entre 0 e 7 (exclusive); sem nota da IA some; desligado = todos.
+- **Entrega:** `assets/js/filtro-abaixo-media-ia-progresso.js` (novo, padrão dos filtros irmãos, preferência `abaixo-da-media-ia`); `assets/js/progresso-turma-global.js` (carrega e põe depois do "ABAIXO DA MEDIA"); `docs/regras/atividades.md`.
+- **Verificação:** `node --check` dos dois JS ok; linhas ≤ 100; ligado = `valorNotaParcial` entre 0 e 7 (sem nota da IA some); desligado = todos. Conferir na tela: o usuário.

@@ -19,6 +19,7 @@
 // filtro-corrigida-progresso.js). ON/OFF "Nota IA Gerada" (desligado: só quem ainda não tem a
 // nota final da IA; ligado: só quem já tem; filtro-nota-ia-progresso.js). ON/OFF "ABAIXO DA
 // MEDIA" (ligado: só quem tirou menos que 7; desligado: todos; filtro-abaixo-media-progresso.js).
+// ON/OFF "ABAIXO MEDIA(IA)" (igual, pela nota sugerida da IA; filtro-abaixo-media-ia-progresso.js).
 // Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno escolhido
 // (filtro-aluno-progresso.js).
 // As escolhas dos filtros e do "Mostrar quem faltou" ficam no localStorage; sem elas, o padrão.
@@ -52,6 +53,7 @@ const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progress
 const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
 const ARQUIVO_FILTRO_NOTA_IA_PROGRESSO_GLOBAL = 'filtro-nota-ia-progresso.js';
 const ARQUIVO_FILTRO_ABAIXO_MEDIA_PROGRESSO_GLOBAL = 'filtro-abaixo-media-progresso.js';
+const ARQUIVO_FILTRO_ABAIXO_MEDIA_IA_PROGRESSO_GLOBAL = 'filtro-abaixo-media-ia-progresso.js';
 const ARQUIVO_MOSTRAR_QUADRO_PROGRESSO_GLOBAL = 'mostrar-quadro-progresso.js';
 const ARQUIVO_CORRECAO_IA_PROGRESSO_GLOBAL = 'correcao-ia-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
@@ -887,6 +889,26 @@ async function prepararFiltroAbaixoMediaGlobal(area, aoMudar) {
 }
 
 /**
+ * Cria o ON/OFF "ABAIXO MEDIA(IA)" (ligado: só quem tem nota sugerida da IA menor que 7;
+ * desligado: todos) e o põe na área, depois do "ABAIXO DA MEDIA". Uma falha aqui não derruba o
+ * painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroAbaixoMediaIaGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroAbaixoMediaIa !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ABAIXO_MEDIA_IA_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroAbaixoMediaIa(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "ABAIXO MEDIA(IA)" do progresso:', erro.message);
+    }
+}
+
+/**
  * Põe o combo "Aluno" ao lado do título (filtro-aluno-progresso.js; a escolha fica no
  * navegador). Ele é o primeiro filtro da lista, para as opções terem todos os alunos da turma.
  * Uma falha aqui não derruba o painel.
@@ -1012,6 +1034,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararFiltroCorrigidaGlobal(area, redesenhar);
     await prepararFiltroNotaIaGlobal(area, redesenhar);
     await prepararFiltroAbaixoMediaGlobal(area, redesenhar);
+    await prepararFiltroAbaixoMediaIaGlobal(area, redesenhar);
     tela.contagem = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__contagem');
     area.appendChild(tela.contagem);
     await prepararFiltroAlunoGlobal(area, redesenhar);

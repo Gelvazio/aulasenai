@@ -153,3 +153,5 @@
 | #360 | Filtro ON/OFF "Nota IA Gerada" no Progresso da turma (todas as atividades) · `PESADO · effort high` | 🟠 Alta | — | — | ✅ Concluído | 2026-10-24 | [509-4c7a2e91](etapas/ETAPA-509-4c7a2e91-FILTRO-NOTA-IA-GERADA.md) | — |
 | #361.1 | Filtro ON/OFF "ABAIXO DA MEDIA" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet | — | ✅ Concluído | 2026-10-24 | [510-7d3b9e52](etapas/ETAPA-510-7d3b9e52-FILTRO-ABAIXO-DA-MEDIA.md) | — |
 | #361 | Filtro ON/OFF "ABAIXO DA MEDIA" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | — | — | ✅ Concluído | 2026-10-24 | [510-7d3b9e52](etapas/ETAPA-510-7d3b9e52-FILTRO-ABAIXO-DA-MEDIA.md) | — |
+| #362.1 | Filtro ON/OFF "ABAIXO MEDIA(IA)" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | MEDIO · só Sonnet | — | ✅ Concluído | 2026-10-24 | [511-3f8a1c64](etapas/ETAPA-511-3f8a1c64-FILTRO-ABAIXO-MEDIA-IA.md) | — |
+| #362 | Filtro ON/OFF "ABAIXO MEDIA(IA)" no Progresso da turma · `MEDIO · effort medium` | 🟡 Normal | — | — | ✅ Concluído | 2026-10-24 | [511-3f8a1c64](etapas/ETAPA-511-3f8a1c64-FILTRO-ABAIXO-MEDIA-IA.md) | — |
