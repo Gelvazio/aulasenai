@@ -1,0 +1,189 @@
+# Respostas Prováveis — Atividade Prática da Aula 17 (uso exclusivo do professor e da correção por IA)
+
+> Arquivo fora do site (nome contém RESPOSTAS-PROVAVEIS). Não publicar.
+
+**Formato:** `ITEM NN · tópico a) · categoria · resposta provável · motivo`
+**Categorias:** `certa` (cobre o padrão de resposta) · `meia certa` (cobre parcialmente) · `errada` (em branco, fora do tema, contradiz o padrão ou copiado).
+**Base:** `ATIVIDADE-PRATICA-AULA-17-GABARITO.md` (padrão oficial e critérios de cada tópico).
+**Uso:** comparação do JEV-AI e apoio à correção. Sem dado pessoal de aluno (LGPD).
+
+- ITEM 01 · tópico a) · certa · Significa definir com clareza quais funções aprovadas e essenciais entram no projeto e quais ficam de fora, criando fronteiras antes de desenhar as telas. · Cobre a separação entre o que entra e o que não entra, com fronteiras claras.
+- ITEM 01 · tópico a) · meia certa · É separar o que vai e o que não vai no projeto. · Cita a separação, mas sem explicar o sentido nem as fronteiras.
+- ITEM 01 · tópico a) · errada · É listar todas as ideias da equipe para desenhar o máximo de telas possível. · Contradiz a aula: o escopo limita, não amplia.
+- ITEM 01 · tópico b) · certa · Priorizar os recursos essenciais mantém o foco nas funções que resolvem a dor central do usuário, deixando de lado o que não contribui para resolvê-la. · Relaciona a priorização dos essenciais com a dor central.
+- ITEM 01 · tópico b) · meia certa · É escolher o que é mais importante para o projeto. · Menciona a priorização, mas não liga à dor central do usuário.
+- ITEM 01 · tópico b) · errada · É colocar todas as funções pedidas na mesma ordem do pedido. · Não prioriza e não relaciona à dor central.
+- ITEM 01 · tópico c) · certa · Funções secundárias consomem tempo de desenho, de desenvolvimento e de testes, e por isso atrasam o cronograma de entrega. · Explica que secundárias consomem tempo e atrasam a entrega.
+- ITEM 01 · tópico c) · meia certa · Elas atrasam o cronograma. · Diz que atrasam, mas sem explicar o motivo.
+- ITEM 01 · tópico c) · errada · Funções secundárias aceleram a entrega porque oferecem mais opções ao usuário. · Contradiz a aula: secundárias atrasam.
+- ITEM 02 · tópico a) · certa · Prototipar é dar forma palpável e testável a uma ideia abstrata, criando um modelo experimental para validar se ela resolve o problema real de quem usa. · Explica prototipar como criar um modelo para testar antes da produção.
+- ITEM 02 · tópico a) · meia certa · É fazer um modelo para testar uma ideia. · Cita testar ou modelo, mas não explica o propósito de validar o problema.
+- ITEM 02 · tópico a) · errada · É entregar a versão final bonita para o cliente aprovar. · Confunde protótipo com produto finalizado.
+- ITEM 02 · tópico b) · certa · O objetivo não é deixar bonito ou finalizado, porque o foco é aprender rápido com falhas e ajustar a estrutura; caprichar no acabamento gasta tempo sem validar nada. · Explica o aprendizado com falhas e que o acabamento não é o objetivo.
+- ITEM 02 · tópico b) · meia certa · Porque o protótipo não precisa ficar bonito. · Diz que não é para ser bonito, sem explicar o aprendizado com falhas.
+- ITEM 02 · tópico b) · errada · O protótipo deve ficar bonito e finalizado antes de ser mostrado a qualquer pessoa. · Contradiz a aula.
+- ITEM 02 · tópico c) · certa · Ao descobrir as falhas cedo, a equipe corrige a estrutura em minutos, sem reescrever código nem refazer o que já estava pronto, evitando gastar tempo com a solução errada. · Relaciona achar falhas cedo com correção rápida e economia de retrabalho.
+- ITEM 02 · tópico c) · meia certa · Porque corrigir no protótipo é mais rápido. · Diz que é mais rápido, mas não relaciona com as falhas cedo.
+- ITEM 02 · tópico c) · errada · Porque o protótipo dispensa qualquer teste depois dele. · Contradiz: o protótipo serve justamente para testar.
+- ITEM 03 · tópico a) · certa · No papel e no esboço o custo é quase zero: basta apagar com borracha ou desenhar outra folha em minutos. · Descreve custo quase zero e a correção com borracha ou nova folha.
+- ITEM 03 · tópico a) · meia certa · No papel é barato de corrigir. · Diz que é barato, sem citar a forma de correção.
+- ITEM 03 · tópico a) · errada · No papel o custo é o mais alto do projeto. · Contradiz a aula (papel tem custo quase zero).
+- ITEM 03 · tópico b) · certa · No design digital o custo é médio, porque é preciso remodelar componentes e vetores nas ferramentas, o que leva mais tempo do que no papel. · Descreve custo médio e o retrabalho de remodelar componentes ou vetores.
+- ITEM 03 · tópico b) · meia certa · No digital custa mais do que no papel. · Diz que custa mais, sem detalhar o retrabalho.
+- ITEM 03 · tópico b) · errada · No digital o custo é zero, porque é só clicar e refazer. · Contradiz a aula (custo médio, com retrabalho).
+- ITEM 03 · tópico c) · certa · Com o código em produção o custo é altíssimo: é preciso reprogramar telas, testar o banco e redistribuir aos usuários; o custo cresce a cada etapa avançada do projeto. · Descreve custo altíssimo e compara com as etapas anteriores.
+- ITEM 03 · tópico c) · meia certa · Em produção o custo é alto. · Descreve o custo alto, sem comparar com as outras etapas.
+- ITEM 03 · tópico c) · errada · Em produção o custo é igual ao do papel. · Contradiz a aula: o custo cresce entre as etapas.
+- ITEM 04 · tópico a) · certa · Storyboard é a história visual da experiência do usuário no seu ambiente cotidiano, contada em quadros, como uma sequência de quadrinhos. · Define storyboard como a história visual da experiência do usuário no ambiente cotidiano.
+- ITEM 04 · tópico a) · meia certa · É uma história contada em quadros. · Diz que é uma história em quadros, sem citar a experiência do usuário.
+- ITEM 04 · tópico a) · errada · É um desenho detalhado dos botões e das cores de cada tela. · Fala só de telas e botões, fora do conceito.
+- ITEM 04 · tópico b) · certa · Além das telas, o storyboard mostra quem é o usuário (o personagem), onde ele está (o cenário), qual é a necessidade urgente dele e como o sistema o ajuda a resolver o problema. · Cita quem é o usuário e onde ele está, além da necessidade e da ajuda do sistema.
+- ITEM 04 · tópico b) · meia certa · Mostra o usuário e o cenário. · Cita só quem/onde, sem a necessidade ou a ajuda do sistema.
+- ITEM 04 · tópico b) · errada · Mostra apenas os botões e os links da interface. · Fala só de telas e botões.
+- ITEM 04 · tópico c) · certa · O storyboard coloca a necessidade do usuário no centro porque mostra o problema real do mundo dele, e não apenas os botões isolados; assim a interface é pensada para resolver uma situação humana. · Explica a necessidade do usuário como centro, em contraste com desenhar só botões.
+- ITEM 04 · tópico c) · meia certa · Porque o usuário é o centro do storyboard. · Diz que o usuário é o centro, sem o contraste com as telas isoladas.
+- ITEM 04 · tópico c) · errada · Porque o storyboard serve para deixar a interface mais bonita. · Fora do tema (o foco é a necessidade, não a estética).
+- ITEM 05 · tópico a) · certa · O Personagem é o usuário principal, com suas motivações, limitações de tempo e necessidades claras. · Descreve o personagem como o usuário principal com motivações, limitações e necessidades.
+- ITEM 05 · tópico a) · meia certa · O Personagem é o usuário. · Diz que é o usuário, sem as informações que ele deve conter.
+- ITEM 05 · tópico a) · errada · O Personagem é o computador que simula a interface. · Confunde o personagem com o papel do computador.
+- ITEM 05 · tópico b) · certa · O Cenário é o ambiente físico onde a ação ocorre; exemplos: iluminação forte, barulho, pressa ou chuva. · Descreve o cenário como ambiente físico e dá dois exemplos de condições.
+- ITEM 05 · tópico b) · meia certa · O Cenário é o ambiente onde a ação acontece. · Descreve o cenário, mas sem exemplos de condições.
+- ITEM 05 · tópico b) · errada · O Cenário é a tela inicial do aplicativo. · Confunde cenário com tela/interface.
+- ITEM 05 · tópico c) · certa · O Conflito é o obstáculo que o usuário enfrenta; o Desfecho é a resolução positiva gerada pela interação eficaz com a interface, e só existe se a interface superar o conflito. · Define conflito e desfecho e relaciona que o desfecho depende de superar o conflito.
+- ITEM 05 · tópico c) · meia certa · O Conflito é o problema e o Desfecho é a solução. · Define os dois, mas sem relacioná-los.
+- ITEM 05 · tópico c) · errada · O Conflito e o Desfecho são a mesma coisa. · Contradiz a aula.
+- ITEM 06 · tópico a) · certa · O primeiro quadro mostra a dor surgindo: o usuário precisa agendar uma consulta antes de sair para o trabalho ou para a escola. · Descreve o quadro da dor, com o usuário precisando agendar antes de sair.
+- ITEM 06 · tópico a) · meia certa · O primeiro quadro mostra o usuário precisando de algo. · Descreve o quadro, mas sem a urgência ou a dor específica.
+- ITEM 06 · tópico a) · errada · O primeiro quadro mostra a tela do aplicativo pronta. · Fala de tela, não da dor do usuário.
+- ITEM 06 · tópico b) · certa · O quadro da ação direta mostra o usuário abrindo o protótipo no celular, selecionando a data desejada e clicando no botão de confirmação. · Descreve a ação na tela, com a escolha da data e o clique em confirmar.
+- ITEM 06 · tópico b) · meia certa · Mostra o usuário usando a tela. · Descreve uma ação na tela, sem o passo completo.
+- ITEM 06 · tópico b) · errada · Mostra o usuário desistindo de usar o aplicativo. · Fora da sequência da narrativa.
+- ITEM 06 · tópico c) · certa · O quadro do problema resolvido mostra o usuário recebendo o aviso imediato na tela e seguindo o dia sem estresse; ele fecha a narrativa porque mostra o resultado da história, com a necessidade atendida. · Descreve o aviso de confirmação e o alívio, e explica que fecha a narrativa por mostrar a necessidade resolvida.
+- ITEM 06 · tópico c) · meia certa · O quadro final mostra o problema resolvido. · Descreve o quadro final, sem explicar por que fecha a narrativa.
+- ITEM 06 · tópico c) · errada · O quadro final mostra o usuário ainda com a dor, sem solução. · Contradiz a narrativa de desfecho.
+- ITEM 07 · tópico a) · certa · O primeiro passo é identificar o contexto e o problema enfrentado pelo usuário, porque sem entender a situação não há motivo para desenhar a interface. · Indica contexto e problema como primeiro passo, com o porquê.
+- ITEM 07 · tópico a) · meia certa · O primeiro passo é entender o problema. · Indica o primeiro passo, sem justificar.
+- ITEM 07 · tópico a) · errada · O primeiro passo é desenhar o desfecho. · Erra a ordem (começar pelo desfecho).
+- ITEM 07 · tópico b) · certa · O último passo é mostrar o desfecho satisfatório, com a tarefa concluída. · Indica o desfecho satisfatório com a tarefa concluída como último passo.
+- ITEM 07 · tópico b) · meia certa · O último passo é o desfecho. · Indica o desfecho, sem dizer que mostra a tarefa concluída.
+- ITEM 07 · tópico b) · errada · O último passo é apresentar o contexto. · Erra a ordem da narrativa.
+- ITEM 07 · tópico c) · certa · A interação direta do usuário com as telas vem antes do desfecho porque o desfecho é consequência da ação dele; não há resolução antes de a pessoa agir. · Explica que o desfecho depende da ação do usuário e por isso vem depois.
+- ITEM 07 · tópico c) · meia certa · Porque a interação vem antes do desfecho. · Diz a ordem, sem o motivo.
+- ITEM 07 · tópico c) · errada · Porque o desfecho deve vir antes da ação do usuário. · Contradiz a ordem da aula.
+- ITEM 08 · tópico a) · certa · Protótipos de papel são feitos com folhas avulsas, cartolinas, tesoura e lápis, formando maquetes visuais das telas. · Cita materiais de papel e que são maquetes das telas.
+- ITEM 08 · tópico a) · meia certa · São feitos de papel. · Diz que são de papel, sem os detalhes dos materiais.
+- ITEM 08 · tópico a) · errada · São feitos em ferramentas digitais de design. · Contradiz a aula (são físicos, de papel).
+- ITEM 08 · tópico b) · certa · Na fase inicial, o protótipo de papel prioriza a hierarquia das informações, o posicionamento dos botões e o fluxo entre as telas. · Cita hierarquia, posicionamento e o fluxo entre telas.
+- ITEM 08 · tópico b) · meia certa · Prioriza a hierarquia das informações. · Cita só um dos aspectos.
+- ITEM 08 · tópico b) · errada · Prioriza as cores e as fontes finais. · Contradiz a aula (isso não é o foco na fase inicial).
+- ITEM 08 · tópico c) · certa · Fontes sofisticadas, ilustrações finais e cores complexas distraem a equipe e o testador, sem ajudar a validar a estrutura, que é o foco nessa fase. · Explica que esses elementos distraem e não ajudam a validar a estrutura.
+- ITEM 08 · tópico c) · meia certa · Porque não devem ser o foco nessa fase. · Diz que não devem ser o foco, sem explicar por quê.
+- ITEM 08 · tópico c) · errada · Porque deixam o protótipo mais bonito e profissional. · Contradiz a aula (a beleza não é o objetivo).
+- ITEM 09 · tópico a) · certa · A vantagem de custo é que o protótipo de papel exige só papel comum, lápis e régua, disponíveis em qualquer sala de aula ou escritório, sem gastar com licenças de software. · Explica o custo quase zero com materiais simples e disponíveis.
+- ITEM 09 · tópico a) · meia certa · Porque é barato. · Diz que é barato, sem explicar os materiais.
+- ITEM 09 · tópico a) · errada · Porque o papel é mais caro que as licenças de software. · Contradiz a aula.
+- ITEM 09 · tópico b) · certa · A correção veloz é poder rasurar na hora ou desenhar uma nova tela em dois minutos; por exemplo, se uma opção confunde o testador, a equipe rasura ou desenha outra tela na hora. · Explica a correção veloz e dá um exemplo durante o teste.
+- ITEM 09 · tópico b) · meia certa · É corrigir rápido no papel. · Explica a correção, sem exemplo de teste.
+- ITEM 09 · tópico b) · errada · É refazer tudo no software e agendar nova reunião. · Contradiz a correção imediata do papel.
+- ITEM 09 · tópico c) · certa · O desapego total significa que ninguém tem receio de criticar ou descartar um desenho simples feito numa tira de papel, e por isso as críticas tendem a ser mais sinceras. · Explica o desapego e a relação com críticas sinceras.
+- ITEM 09 · tópico c) · meia certa · É não se apegar ao desenho. · Explica o desapego, sem relacionar com a sinceridade.
+- ITEM 09 · tópico c) · errada · É se apegar ao desenho para não perder o trabalho. · Contradiz o conceito de desapego.
+- ITEM 10 · tópico a) · certa · Duas formas citadas na aula: alterar com borracha (rasurando) e colocar novos recortes ou notas adesivas durante a sessão. · Descreve duas formas (borracha e novos recortes/notas adesivas).
+- ITEM 10 · tópico a) · meia certa · Rasurar com borracha. · Descreve uma forma apenas.
+- ITEM 10 · tópico a) · errada · Refazer o código do aplicativo. · Fora do contexto do papel.
+- ITEM 10 · tópico b) · certa · A alteração imediata é uma vantagem porque a equipe corrige o problema na hora e o teste continua com a versão ajustada, sem esperar uma nova versão digital. · Explica que a alteração é imediata e o teste continua sem espera.
+- ITEM 10 · tópico b) · meia certa · Porque é rápido. · Diz que é rápido, sem relacionar com o teste.
+- ITEM 10 · tópico b) · errada · Porque dispensa testar novamente. · Contradiz a aula (o teste continua).
+- ITEM 10 · tópico c) · certa · O protótipo de papel serve para testar fluxos e estrutura, e não entrega funcionalidade real; o código final ainda precisa ser escrito pelos programadores. · Explica que o papel testa o fluxo e não entrega o código ou a funcionalidade real.
+- ITEM 10 · tópico c) · meia certa · Porque não substitui o código. · Diz que não substitui, sem o motivo.
+- ITEM 10 · tópico c) · errada · Porque o papel já é o código final do sistema. · Contradiz a aula.
+- ITEM 11 · tópico a) · certa · As folhas e molduras são folhas A4 recortadas na proporção do smartphone ou do monitor, que servem de chassi (base) do protótipo. · Explica que são a base (chassi) recortada na proporção da tela.
+- ITEM 11 · tópico a) · meia certa · Servem de base do protótipo. · Diz que servem de base, sem a proporção.
+- ITEM 11 · tópico a) · errada · Servem para escrever o código do protótipo. · Fora do contexto do papel.
+- ITEM 11 · tópico b) · certa · As notas adesivas simulam elementos que surgem na tela, como caixas de diálogo, alertas, teclados virtuais e menus deslizantes; exemplo: um alerta de sucesso. · Explica a função das notas adesivas e dá um exemplo.
+- ITEM 11 · tópico b) · meia certa · Simulam elementos que aparecem na tela. · Explica a função, sem exemplo.
+- ITEM 11 · tópico b) · errada · Servem para colar as folhas na parede. · Fora da função de simular elementos de tela.
+- ITEM 11 · tópico c) · certa · As tiras e cartões deslizam por trás da moldura e imitam a rolagem (scroll) de feeds e listas, mostrando novos itens conforme são puxados. · Explica que as tiras deslizam por trás da moldura para imitar a rolagem.
+- ITEM 11 · tópico c) · meia certa · Imitam a rolagem de listas. · Diz que imitam a rolagem, sem o mecanismo.
+- ITEM 11 · tópico c) · errada · Servem para deixar o protótipo mais colorido. · Fora da função de rolagem.
+- ITEM 12 · tópico a) · certa · Um menu expansível é representado por uma tira de papel dobrada, que é aberta quando o usuário clica no botão. · Descreve a tira dobrada que se abre ao clique no botão.
+- ITEM 12 · tópico a) · meia certa · Uma tira de papel que se abre. · Descreve a abertura, sem o recurso de papel dobrado.
+- ITEM 12 · tópico a) · errada · Um código de programação que abre o menu. · Fora do contexto do papel.
+- ITEM 12 · tópico b) · certa · Uma mensagem de alerta do tipo modal é representada por uma nota adesiva colada no centro, cobrindo a tela atual. · Descreve a nota adesiva central cobrindo a tela atual.
+- ITEM 12 · tópico b) · meia certa · Uma nota adesiva na tela. · Descreve uma nota adesiva, sem a posição central ou a cobertura.
+- ITEM 12 · tópico b) · errada · Um novo arquivo de página. · Fora do contexto do papel.
+- ITEM 12 · tópico c) · certa · Um campo de texto é representado por um pequeno pedaço de papel com texto manuscrito, colocado quando o usuário "digita". · Descreve o pequeno papel com texto manuscrito trocado ao digitar.
+- ITEM 12 · tópico c) · meia certa · Um papel com texto. · Diz que se usa um papel com texto, sem o momento da digitação.
+- ITEM 12 · tópico c) · errada · Um teclado físico conectado ao protótipo. · Fora do contexto do papel.
+- ITEM 13 · tópico a) · certa · A técnica do homem-computador é uma encenação em que um integrante reage aos toques do usuário no papel, simulando a interface; é chamada de Mágico de Oz porque a interface parece responder sozinha, quando na verdade alguém a move por trás. · Explica a técnica e o apelido de Mágico de Oz.
+- ITEM 13 · tópico a) · meia certa · É quando um integrante reage aos toques no papel. · Explica a técnica, sem o apelido.
+- ITEM 13 · tópico a) · errada · É o computador programando a interface sozinho. · Contradiz (alguém move por trás).
+- ITEM 13 · tópico b) · certa · A cada toque do usuário na folha, o membro da equipe move, substitui ou cola manualmente o elemento seguinte que a tela apresentaria. · Descreve mover, substituir ou colar o próximo elemento a cada toque.
+- ITEM 13 · tópico b) · meia certa · Ele reage ao toque do usuário. · Diz que reage ao toque, sem a ação concreta.
+- ITEM 13 · tópico b) · errada · Ele explica ao usuário onde clicar. · Contradiz a regra de conduta.
+- ITEM 13 · tópico c) · certa · Ele nunca fala nem ensina onde clicar porque deve apenas reagir ao toque; se orientar, o teste avalia a orientação dada e deixa de avaliar a intuição do usuário. · Diz que não fala nem ensina e explica que o teste mede a intuição.
+- ITEM 13 · tópico c) · meia certa · Porque ele não pode falar. · Diz que não fala, sem o motivo.
+- ITEM 13 · tópico c) · errada · Porque ele deve orientar o testador para terminar mais rápido. · Contradiz a aula.
+- ITEM 14 · tópico a) · certa · O facilitador apresenta o objetivo da tarefa, acolhe o testador e pede que ele pense em voz alta. · Descreve apresentar o objetivo, acolher e pedir para pensar em voz alta.
+- ITEM 14 · tópico a) · meia certa · Ele apresenta o objetivo da tarefa. · Descreve uma das ações apenas.
+- ITEM 14 · tópico a) · errada · Ele digita as respostas do testador no sistema. · Fora do papel do facilitador.
+- ITEM 14 · tópico b) · certa · O computador troca as folhas, os recortes e os menus em silêncio absoluto, conforme os toques do usuário ocorrem. · Descreve trocar folhas, recortes e menus em silêncio, conforme os toques.
+- ITEM 14 · tópico b) · meia certa · Ele troca as telas conforme os toques. · Diz que troca as telas, sem o silêncio.
+- ITEM 14 · tópico b) · errada · Ele conversa com o usuário durante o teste. · Contradiz o silêncio absoluto.
+- ITEM 14 · tópico c) · certa · O anotador registra onde o usuário hesitou, o que ele procurou na tela e onde ficou confuso; é importante porque guarda os registros que orientam os ajustes da equipe. · Descreve o registro de hesitações, buscas e confusões, e explica a importância para os ajustes.
+- ITEM 14 · tópico c) · meia certa · Ele anota as dúvidas do usuário. · Descreve o registro, sem a importância.
+- ITEM 14 · tópico c) · errada · Ele decide sozinho as mudanças finais do produto. · Fora do papel do anotador.
+- ITEM 15 · tópico a) · certa · A instrução exata de onde clicar avalia se a pessoa sabe seguir ordens, e não se a interface é intuitiva. · Diz que avalia a obediência a ordens e não a intuitividade.
+- ITEM 15 · tópico a) · meia certa · Ela não avalia a intuição. · Diz que não avalia a intuição, sem o contraste.
+- ITEM 15 · tópico a) · errada · Ela é a melhor forma de testar a intuitividade. · Contradiz a aula.
+- ITEM 15 · tópico b) · certa · Com cenário e objetivo aberto, a navegação fica por conta do usuário, e a equipe observa por onde ele procura, hesita e chega ao resultado. · Explica que a navegação fica com o usuário e que a equipe observa o caminho.
+- ITEM 15 · tópico b) · meia certa · O usuário navega sozinho. · Diz que o usuário navega sozinho, sem o que se observa.
+- ITEM 15 · tópico b) · errada · A equipe indica cada passo do caminho. · Contradiz o objetivo aberto.
+- ITEM 15 · tópico c) · certa · Exemplo de tarefa: "Você precisa marcar uma consulta odontológica para quinta-feira às 14h. Mostre como faria isso usando esta tela." A tarefa não indica onde clicar. · Escreve tarefa com cenário e objetivo aberto, sem indicar onde clicar.
+- ITEM 15 · tópico c) · meia certa · "Marque uma consulta clicando no botão Agendar." · Tarefa com cenário, mas indica o botão ou caminho.
+- ITEM 15 · tópico c) · errada · "Clique no botão no canto superior direito e depois em Confirmar." · Dá instrução exata de cliques.
+- ITEM 16 · tópico a) · certa · Após o relato, a equipe apaga o texto dúbio com borracha, redesenha a posição do botão (ex.: no padrão F de leitura) ou cola uma nota adesiva com um novo atalho. · Descreve pelo menos uma ação a lápis e borracha após o relato.
+- ITEM 16 · tópico a) · meia certa · A equipe corrige o protótipo. · Descreve uma ação genérica de corrigir, sem lápis, borracha ou nota.
+- ITEM 16 · tópico a) · errada · A equipe marca uma reunião para a semana seguinte. · Contradiz a correção imediata.
+- ITEM 16 · tópico b) · certa · A correção é feita na hora, com lápis e borracha, e a equipe não precisa de reunião formal porque o ajuste é pequeno, rápido e feito no próprio protótipo. · Explica que a correção é imediata e dispensa reunião pela agilidade.
+- ITEM 16 · tópico b) · meia certa · Porque não precisa de reunião. · Diz que não precisa de reunião, sem explicar a agilidade.
+- ITEM 16 · tópico b) · errada · Porque a reunião formal é obrigatória antes de qualquer ajuste. · Contradiz a aula.
+- ITEM 16 · tópico c) · certa · O segundo testador deve receber a versão corrigida logo em seguida para testar o ajuste sem perder o ritmo e confirmar se a correção funcionou. · Explica que a versão corrigida vai logo ao segundo testador para validar o ajuste.
+- ITEM 16 · tópico c) · meia certa · Porque ele deve receber a versão corrigida. · Diz que ele recebe a versão corrigida, sem o motivo.
+- ITEM 16 · tópico c) · errada · Porque ele não precisa testar de novo. · Contradiz a aula.
+- ITEM 17 · tópico a) · certa · O passo 1 é o desenho inicial da tela no papel, que é o que será testado. · Indica o desenho inicial da tela no papel e o que é produzido.
+- ITEM 17 · tópico a) · meia certa · O primeiro passo é o desenho. · Indica o desenho, sem a tela no papel.
+- ITEM 17 · tópico a) · errada · O primeiro passo é aplicar o teste com o colega. · Erra a ordem do ciclo.
+- ITEM 17 · tópico b) · certa · O passo 2 é aplicar o teste com um colega; o passo 3 é anotar as dúvidas e os travamentos observados durante o teste. · Descreve o teste com o colega (passo 2) e a anotação das dúvidas e travamentos (passo 3).
+- ITEM 17 · tópico b) · meia certa · O passo 2 é testar com um colega. · Descreve só um dos dois passos.
+- ITEM 17 · tópico b) · errada · O passo 2 é escrever o código final. · Fora do ciclo da bancada.
+- ITEM 17 · tópico c) · certa · O passo 4 é ajustar a lápis e deve ser seguido de um novo teste imediato, porque só o teste mostra se o ajuste resolveu o problema. · Descreve o ajuste a lápis e explica o novo teste imediato.
+- ITEM 17 · tópico c) · meia certa · O passo 4 é ajustar a lápis. · Descreve o ajuste, sem o novo teste ou o motivo.
+- ITEM 17 · tópico c) · errada · O passo 4 é entregar o produto final ao cliente. · Fora do ciclo iterativo.
+- ITEM 18 · tópico a) · certa · Na versão 1, a tela tinha uma lista enorme com 30 horários misturados, sem divisão de dias ou filtros de turno; o usuário passou 45 segundos rolando e desistiu. · Descreve a lista longa de horários misturados, sem divisão ou filtros, e o usuário desistindo.
+- ITEM 18 · tópico a) · meia certa · A lista era longa e o usuário desistiu. · Descreve só a lista ou só a desistência.
+- ITEM 18 · tópico a) · errada · A versão 1 já tinha calendário e filtros. · Contradiz a descrição da versão 1.
+- ITEM 18 · tópico b) · certa · Na versão 2, a equipe recortou um calendário visual no topo e três blocos de botões (Manhã, Tarde e Noite), o que organiza os horários por data e por turno. · Descreve o calendário no topo e os blocos Manhã/Tarde/Noite, e explica que organizam os horários.
+- ITEM 18 · tópico b) · meia certa · A equipe mudou a tela para organizar os horários. · Descreve a mudança, sem os blocos ou a organização.
+- ITEM 18 · tópico b) · errada · A equipe apenas mudou as cores da lista. · Não corresponde à mudança da versão 2.
+- ITEM 18 · tópico c) · certa · No reteste, o segundo usuário concluiu o agendamento em 8 segundos, contra 45 da versão 1; isso comprova que a organização por calendário e turnos reduziu a busca e que o ajuste funcionou. · Compara o tempo do reteste com o da versão 1 e conclui que o ajuste funcionou.
+- ITEM 18 · tópico c) · meia certa · O reteste foi mais rápido e o ajuste funcionou. · Cita a melhora, sem os tempos ou a conclusão.
+- ITEM 18 · tópico c) · errada · O reteste piorou o tempo de agendamento. · Contradiz o resultado da aula.
+- ITEM 19 · tópico a) · certa · O usuário escolheu a data da consulta, mas não sabia se o sistema gravou a escolha; o diagnóstico é a falta de feedback visual de confirmação na tela. · Descreve a dúvida sobre a gravação e identifica a falta de feedback visual.
+- ITEM 19 · tópico a) · meia certa · O usuário ficou em dúvida. · Descreve a dúvida, sem o diagnóstico de feedback.
+- ITEM 19 · tópico a) · errada · O problema era a cor errada do botão. · Diagnóstico fora da aula.
+- ITEM 19 · tópico b) · certa · A ação física foi desenhar uma nota adesiva com aviso de sucesso e colá-la no protótipo, para confirmar a escolha na tela. · Descreve a nota adesiva com aviso de sucesso colada no protótipo.
+- ITEM 19 · tópico b) · meia certa · Colocar um aviso de confirmação. · Descreve um aviso, sem a nota adesiva.
+- ITEM 19 · tópico b) · errada · Alterar o código do banco de dados. · Fora do contexto do papel.
+- ITEM 19 · tópico c) · certa · O reteste precisa confirmar que o usuário percebe a confirmação sem ajuda; no caso da aula, o usuário seguinte confirmou o entendimento em 2 segundos. · Explica que o reteste confirma a percepção sem ajuda.
+- ITEM 19 · tópico c) · meia certa · O reteste verifica o ajuste. · Diz que o reteste verifica, sem o critério de percepção.
+- ITEM 19 · tópico c) · errada · O reteste não é necessário depois do ajuste. · Contradiz a aula.
+- ITEM 20 · tópico a) · certa · O teste revelou que quatro de cinco testadores tocaram no logotipo achando que era o botão de voltar; isso indica que a tela não tem o botão de voltar visível, ou seja, falta o elemento que o usuário espera. · Descreve os quatro testadores e indica a ausência do elemento esperado.
+- ITEM 20 · tópico a) · meia certa · Os testadores tocaram no logotipo por engano. · Descreve o erro, sem indicar a ausência do elemento.
+- ITEM 20 · tópico a) · errada · A tela estava perfeita e não precisava de mudanças. · Contradiz o diagnóstico.
+- ITEM 20 · tópico b) · certa · A alteração a lápis imediata é desenhar um botão de voltar visível no topo da tela. · Propõe desenhar um botão de voltar visível, no topo da tela.
+- ITEM 20 · tópico b) · meia certa · Desenhar um botão de voltar. · Propõe um botão, sem a visibilidade ou o lugar.
+- ITEM 20 · tópico b) · errada · Mudar a cor do logotipo. · Não resolve a ausência do botão de voltar.
+- ITEM 20 · tópico c) · certa · A alteração resolve o diagnóstico porque coloca o elemento que o usuário espera (o botão de voltar) de forma clara, no lugar onde ele procura, e deixa de confundir com o logotipo. · Relaciona o botão visível ao elemento esperado e explica que resolve a confusão com o logotipo.
+- ITEM 20 · tópico c) · meia certa · Porque o botão resolve o problema. · Diz que o botão resolve, sem relacionar com o elemento esperado.
+- ITEM 20 · tópico c) · errada · Porque mudar a cor do logotipo resolve a confusão. · Contradiz o diagnóstico da aula.
