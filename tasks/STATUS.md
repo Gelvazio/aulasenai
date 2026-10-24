@@ -5,6 +5,7 @@
 
 ## Tarefas
 
+- #XXX — [Sessão 2026-10-24 (Reservada)](etapas/TASK-ID-XXX-SESSAO-2026-10-24.md) · 🔄 Em progresso · Claude Code local
 - #2 — [Apostilas só em Markdown (.md)](status/TASK-ID-2-STATUS.md)
 - #4 — [Preencher `PLANO-AULAS.md` em 8 disciplinas](status/TASK-ID-4-STATUS.md)
 - #5 — [Organizar atividades em `ATIVIDADES/`](status/TASK-ID-5-STATUS.md)
