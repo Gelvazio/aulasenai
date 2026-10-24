@@ -32,7 +32,7 @@ Gerar SQL de seed para atividade prática da Aula 13 de Fundamentos de UI/UX e a
 | 4. Salvar como database/2026-10-24-atividade-pratica-aula-13-seed-atividades.sql | ✅ Concluído | 2026-10-24 | true |
 | 5. Aplicar seed no banco via script Node.js (exec_sql RPC) | ✅ Concluído | 2026-10-24 | true |
 | 6. Atualizar STATUS_MATERIA.md marcando seed da aula 13 como ✅ | ✅ Concluído | 2026-10-24 | true |
-| 7. Commit e push | 🔄 Em progresso | - | - |
+| 7. Commit e push | ✅ Concluído | 2026-10-24 | true |
 
 ## Próximo passo
 
