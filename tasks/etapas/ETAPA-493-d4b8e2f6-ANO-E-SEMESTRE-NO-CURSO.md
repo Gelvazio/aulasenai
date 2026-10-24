@@ -76,7 +76,7 @@
 
 ### ANO-SEMESTRE-CURSO.4 — Campos ano e semestre no cadastro de curso
 
-**Próximo passo:** depende do .2.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.82))
 - **Modelo:** só Sonnet — nunca outro
@@ -85,6 +85,7 @@
 - **Fonte:** jev (confiança 0.82)
 - **Descrição:** o professor informa e edita ano e semestre ao cadastrar ou editar o curso.
 - **Critérios de Aceitação:** `node --check` passa; semestre só 1 ou 2; ano com 4 dígitos.
+- **Entrega:** `cursos.html`, `assets/js/cursos-modais.js`, `assets/js/cursos-repositorio.js` no commit desta entrega · **Verificação:** `node --check` ok; campos Ano (2000–2100) e Semestre (1º/2º) no modal do curso, lidos e gravados em `incluirCurso`/`alterarCurso`; semestre só com ano; conferir na tela (sem navegador)
 
 ### ANO-SEMESTRE-CURSO.5 — Filtros Nome, Ano e Semestre (ON/OFF) acima da lista Curso
 

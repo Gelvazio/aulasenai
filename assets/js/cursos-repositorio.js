@@ -11,7 +11,7 @@ const TABELA_TURMA_CURSO_REPOSITORIO = "turma";
 const TABELA_UNIDADE_REPOSITORIO = "unidade";
 const RPC_ADMINISTRADOR_CURSO = "eh_professor_administrador";
 const RPC_DEFINIR_CURSO_TURMA = "definir_curso_turma";
-const COLUNAS_CURSO_REPOSITORIO = "id, nome_completo, descricao, unidade_id, ativo";
+const COLUNAS_CURSO_REPOSITORIO = "id, nome_completo, descricao, unidade_id, ativo, ano, semestre";
 const COLUNAS_TURMA_CURSO_REPOSITORIO = "codigo, nome, turno, horario, curso_id, unidade_id";
 const COLUNAS_UNIDADE_REPOSITORIO = "id, nome, endereco";
 

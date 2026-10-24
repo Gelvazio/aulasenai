@@ -1,5 +1,5 @@
 // Modais da página cursos.html (assets/js/cursos-pagina.js):
-// - modal do curso: incluir (➕ Novo curso) ou editar (✏️) nome, unidade e descrição;
+// - modal do curso: incluir (➕ Novo curso) ou editar (✏️) nome, unidade, ano, semestre e descrição;
 // - modal 🏫 Turmas: turmas já vinculadas ao curso (Desvincular) e as demais (Vincular; turma de
 //   outro curso pede confirmação antes de mudar). Grava pela função definir_curso_turma.
 // Fecham pelo botão Fechar/Cancelar, clique fora ou Esc. Depende de estadoCu e das funções da
@@ -32,6 +32,8 @@ function abrirModalCursoCu(curso) {
   elementoCu("cuTituloCurso").textContent = curso ? "Editar curso" : "Novo curso";
   elementoCu("cuNome").value = curso?.nome_completo || "";
   preencherUnidadesCursoCu(curso?.unidade_id ?? null);
+  elementoCu("cuAno").value = curso?.ano ?? "";
+  elementoCu("cuSemestre").value = curso?.semestre ? String(curso.semestre) : "";
   elementoCu("cuDescricao").value = curso?.descricao || "";
   elementoCu("cuModalCurso").hidden = false;
   elementoCu("cuNome").focus();
@@ -55,15 +57,32 @@ function preencherUnidadesCursoCu(unidadeId) {
 
 /**
  * Lê os campos do formulário do curso.
- * @returns {{nome_completo: string, unidade_id: number|null, descricao: string|null}} Dados.
+ * @returns {{nome_completo: string, unidade_id: number|null, ano: number|null,
+ *   semestre: number|null, descricao: string|null}} Dados.
  */
 function lerFormularioCursoCu() {
   const unidadeEscolhida = elementoCu("cuUnidade").value;
+  const ano = elementoCu("cuAno").value;
+  const semestre = elementoCu("cuSemestre").value;
   return {
     nome_completo: elementoCu("cuNome").value.trim(),
     unidade_id: unidadeEscolhida ? Number(unidadeEscolhida) : null,
+    ano: ano ? Number(ano) : null,
+    semestre: semestre ? Number(semestre) : null,
     descricao: elementoCu("cuDescricao").value.trim() || null,
   };
+}
+
+/**
+ * Confere ano e semestre do formulário (ano de 2000 a 2100; semestre só com ano).
+ * @param {{ano: number|null, semestre: number|null}} dados - Dados lidos do formulário.
+ * @returns {string} Mensagem do problema, ou "" quando está tudo certo.
+ */
+function validarPeriodoCursoCu({ ano, semestre }) {
+  const anoInvalido = ano !== null && (!Number.isInteger(ano) || ano < 2000 || ano > 2100);
+  if (anoInvalido) return "Informe o ano com 4 dígitos, entre 2000 e 2100.";
+  if (semestre !== null && ano === null) return "Informe o ano do semestre escolhido.";
+  return "";
 }
 
 /**
@@ -75,6 +94,11 @@ async function salvarCursoCu(evento) {
   const dados = lerFormularioCursoCu();
   if (!dados.nome_completo) {
     await mostrarPopup("Informe o nome do curso.", { tipo: "aviso" });
+    return;
+  }
+  const problemaPeriodo = validarPeriodoCursoCu(dados);
+  if (problemaPeriodo) {
+    await mostrarPopup(problemaPeriodo, { tipo: "aviso" });
     return;
   }
   const editando = estadoModaisCu.cursoEditando;
