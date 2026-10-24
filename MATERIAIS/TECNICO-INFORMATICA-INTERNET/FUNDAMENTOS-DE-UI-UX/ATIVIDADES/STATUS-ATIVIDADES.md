@@ -12,16 +12,16 @@
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 02 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 03 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 04 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 05 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 06 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 07 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 08 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 09 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
-| 10 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
+| 01 | Princípios de design: definição e evolução histórica | ✅ | 50 | ✅ | ✅ | ✅ |
+| 02 | Formas geométricas e regras de visualização dos elementos da interface | ✅ | 50 | ✅ | ✅ | ✅ |
+| 03 | Teoria das cores na interface | ✅ | 50 | ✅ | ✅ | ✅ |
+| 04 | Resolução de problemas: análise crítica | ✅ | 50 | ✅ | ✅ | ✅ |
+| 05 | Resolução de problemas: análise de cenários | ✅ | 50 | ✅ | ⬜ | 🔄 |
+| 06 | User Interface: definição e tipos de interface | ✅ | 50 | ✅ | ✅ | ✅ |
+| 07 | Layout: padrões de leitura F e Z e alinhamento | ✅ | 50 | ✅ | ✅ | ✅ |
+| 08 | Layout: tamanho, espaçamento, texturas, fontes e repetição | ✅ | 50 | ✅ | ⬜ | 🔄 |
+| 09 | Eventos e navegação na interface | ✅ | 50 | ✅ | ✅ | ✅ |
+| 10 | User Experience: definição e design centrado no usuário | ✅ | 50 | ✅ | ✅ | ✅ |
 | 11 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
 | 12 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |
 | 13 | A definir (extrair da `EMENTA-CHALKIE-AI.md`) | ⬜ | 50 | ⬜ | ⬜ | ⬜ |

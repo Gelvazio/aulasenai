@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 — Eventos e navegação na interface (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="09" data-tema="Eventos e navegação na interface" data-total="50"
+      data-uc="Fundamentos de UI / UX" data-uc-curta="Fundamentos de UI/UX"
+      data-docente="Gelvazio Camargo" data-turma="AI AOPL 2026/2 M1 (135080)" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧭 Aula 09: Eventos e navegação na interface</h1>
+            <p>Fundamentos de UI/UX · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-09-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</p>
+                    <p class="quadro-capacidades__linha"><strong>S1 —</strong> Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Evento em UI</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como você, aluno consultor, definiria um evento em design de interface?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer acontecimento detectável, originado pelo usuário ou pelo sistema operacional, que a interface pode escutar</li>
+                        <li><span class="letra">B)</span>Um arquivo de imagem que é carregado junto com a tela do aplicativo</li>
+                        <li><span class="letra">C)</span>A cor de fundo definida para cada bloco de conteúdo da página</li>
+                        <li><span class="letra">D)</span>A fonte tipográfica usada em títulos e em textos corridos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Toque longo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um aplicativo de mensagens, qual evento você projetaria para revelar opções ocultas, como excluir uma mensagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Clique ou toque simples, com ativação instantânea</li>
+                        <li><span class="letra">B)</span>Foco por teclado, sem ação física do usuário</li>
+                        <li><span class="letra">C)</span>Toque longo, mantendo o dedo pressionado por mais de meio segundo</li>
+                        <li><span class="letra">D)</span>Deslize lateral, que arrasta a tela para a próxima seção</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Deslize</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um carrossel de fotos deve trocar de imagem quando o usuário arrasta o dedo pela tela. Qual evento está sendo usado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toque longo</li>
+                        <li><span class="letra">B)</span>Deslize (swipe)</li>
+                        <li><span class="letra">C)</span>Foco e hover</li>
+                        <li><span class="letra">D)</span>Clique ou toque</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Feedback no vidro liso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o design precisa devolver feedback imediato quando o usuário toca em um botão na tela lisa do smartphone?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o vidro do aparelho dispensa qualquer resposta visual, sonora ou tátil</li>
+                        <li><span class="letra">B)</span>Porque o sistema operacional exige que todo botão tenha uma animação longa</li>
+                        <li><span class="letra">C)</span>Porque a tela do celular não permite cores diferentes para os botões</li>
+                        <li><span class="letra">D)</span>Porque o vidro liso não oferece resistência física nem estalo, então a resposta precisa vir da interface</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Canal sonoro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao confirmar que um item foi selecionado, mesmo sem olhar fixamente para a tela, qual canal de resposta o usuário recebe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resposta sonora, como um bipe curto ou um clique suave</li>
+                        <li><span class="letra">B)</span>Resposta visual, como a mudança de cor de um componente</li>
+                        <li><span class="letra">C)</span>Resposta tátil, como um pulso vibratório para erros críticos</li>
+                        <li><span class="letra">D)</span>Resposta por mapa de navegação, que indica a tela seguinte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Resposta tátil</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um aplicativo de pagamentos, qual canal de resposta é mais indicado para avisar, de forma discreta, um erro crítico que o usuário pode não estar olhando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resposta sonora contínua, em volume alto</li>
+                        <li><span class="letra">B)</span>Resposta tátil (háptica), com pequenos pulsos vibratórios</li>
+                        <li><span class="letra">C)</span>Resposta visual apenas com texto em tamanho pequeno</li>
+                        <li><span class="letra">D)</span>Nenhuma resposta, para não distrair o usuário</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Estados de componentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os cinco estados visuais fundamentais de um componente interativo, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Padrão, carregando, erro, sucesso e vazio</li>
+                        <li><span class="letra">B)</span>Ligado, desligado, pausado, cancelado e concluído</li>
+                        <li><span class="letra">C)</span>Padrão, hover, ativo, foco e desabilitado</li>
+                        <li><span class="letra">D)</span>Claro, escuro, grande, pequeno e neutro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Estado ativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um botão de confirmação deve mostrar que está sendo pressionado no momento exato do toque. Qual estado da interface representa essa situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Estado padrão, em repouso e pronto para uso</li>
+                        <li><span class="letra">B)</span>Estado desabilitado, opaco e bloqueado</li>
+                        <li><span class="letra">C)</span>Estado de foco, destacado para navegação por teclado</li>
+                        <li><span class="letra">D)</span>Estado ativo, no momento em que o botão está pressionado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Anel de foco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o anel de foco é considerado obrigatório em uma interface acessível?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ele substitui o texto dos botões para pessoas com baixa visão</li>
+                        <li><span class="letra">B)</span>Porque ele indica ao usuário que navega com teclas, como a tecla Tab, onde está o elemento selecionado</li>
+                        <li><span class="letra">C)</span>Porque ele impede que o usuário clique em dois botões ao mesmo tempo</li>
+                        <li><span class="letra">D)</span>Porque ele aumenta a velocidade de carregamento da página</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Botão desabilitado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">S1 — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa mostrar em um formulário que o botão &quot;Enviar&quot; ainda não pode ser usado porque faltam dados. Qual tratamento segue a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reduzir a opacidade do botão a cerca de 40% e bloquear o cursor, sem resposta a cliques</li>
+                        <li><span class="letra">B)</span>Manter o botão com animação normal de hover e clique, para parecer ativo</li>
+                        <li><span class="letra">C)</span>Remover o botão da tela sem explicar ao usuário o motivo</li>
+                        <li><span class="letra">D)</span>Deixar o botão com cor forte e trocar apenas o texto para &quot;Erro&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Componente desabilitado e eventos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um componente desabilitado não deve reagir a eventos interativos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ele precisa ficar invisível para o usuário na tela</li>
+                        <li><span class="letra">B)</span>Porque ele não pode mudar de cor em nenhuma situação</li>
+                        <li><span class="letra">C)</span>Porque reagir induziria o usuário a esperar uma ação que está bloqueada</li>
+                        <li><span class="letra">D)</span>Porque o sistema operacional proíbe qualquer evento de toque</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Fluxo de navegação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, o fluxo de navegação é comparado a um corredor que liga os cômodos de uma casa. Qual é a função principal desse corredor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Decorar o ambiente com quadros e objetos</li>
+                        <li><span class="letra">B)</span>Diminuir o número de telas disponíveis no sistema</li>
+                        <li><span class="letra">C)</span>Esconder as opções mais importantes do usuário</li>
+                        <li><span class="letra">D)</span>Ligar as telas de forma organizada, evitando que a pessoa fique presa ou desorientada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Perguntas do usuário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são as três perguntas que o usuário se faz de forma inconsciente em qualquer interface digital?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Onde estou, de onde vim e para onde posso ir</li>
+                        <li><span class="letra">B)</span>Quanto custa, quem criou e quando foi lançado</li>
+                        <li><span class="letra">C)</span>Qual é a cor, qual é a fonte e qual é o tamanho</li>
+                        <li><span class="letra">D)</span>Quem sou, o que quero comprar e quando pagarei</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Barra inferior</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um aplicativo de celular com cinco seções principais, qual padrão de navegação é o mais indicado para permitir a troca de seções com o dedão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trilha (breadcrumb) com a hierarquia da página</li>
+                        <li><span class="letra">B)</span>Barra inferior (bottom nav), com 3 a 5 seções principais</li>
+                        <li><span class="letra">C)</span>Barra superior (top bar) com botões de ação de contexto</li>
+                        <li><span class="letra">D)</span>Menu oculto com mais de dez opções em lista</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Trilha (breadcrumb)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um portal com várias camadas de páginas, qual padrão mostra a hierarquia e permite voltar vários níveis com um clique direto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barra inferior (bottom nav)</li>
+                        <li><span class="letra">B)</span>Modal de confirmação</li>
+                        <li><span class="letra">C)</span>Animação de expansão de elemento</li>
+                        <li><span class="letra">D)</span>Trilha (breadcrumb)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Beco sem saída</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza um beco sem saída (dead end) em uma interface?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tela com muitas cores, que confunde o usuário</li>
+                        <li><span class="letra">B)</span>Uma lista com mais de cinco itens de navegação</li>
+                        <li><span class="letra">C)</span>Uma tela ou modal em que o usuário não encontra forma óbvia de voltar, fechar ou avançar</li>
+                        <li><span class="letra">D)</span>Uma tela que carrega mais lentamente que as demais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Mapa de navegação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a aula recomenda construir o mapa de navegação antes de desenhar os detalhes visuais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o mapa revela rotas muito longas, botões faltando e inconsistências estruturais</li>
+                        <li><span class="letra">B)</span>Porque o mapa substitui a necessidade de testar o sistema com usuários</li>
+                        <li><span class="letra">C)</span>Porque o mapa define automaticamente as cores e as fontes da interface</li>
+                        <li><span class="letra">D)</span>Porque o mapa elimina a necessidade de qualquer tela de confirmação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Transição push</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual transição indica avanço para uma tela mais profunda ou retorno para trás no fluxo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esmaecimento (fade)</li>
+                        <li><span class="letra">B)</span>Deslizar lateral (push)</li>
+                        <li><span class="letra">C)</span>Subida vertical (modal)</li>
+                        <li><span class="letra">D)</span>Expansão de elemento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Transição modal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao preencher um filtro de pesquisa em um catálogo, qual transição sinaliza uma subtarefa temporária?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deslizar lateral (push)</li>
+                        <li><span class="letra">B)</span>Esmaecimento (fade)</li>
+                        <li><span class="letra">C)</span>Subida vertical (modal)</li>
+                        <li><span class="letra">D)</span>Expansão de elemento sem retorno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Transição fade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a transição neutra recomendada para trocar de abas no mesmo nível hierárquico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deslizar lateral (push)</li>
+                        <li><span class="letra">B)</span>Subida vertical (modal)</li>
+                        <li><span class="letra">C)</span>Expansão de elemento</li>
+                        <li><span class="letra">D)</span>Esmaecimento (fade)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Arquitetura de informação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, até quantos toques de distância as telas principais devem estar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um toque</li>
+                        <li><span class="letra">B)</span>Dois toques</li>
+                        <li><span class="letra">C)</span>Quatro toques</li>
+                        <li><span class="letra">D)</span>Seis toques</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Níveis da arquitetura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um aplicativo de agendamento, a ficha de confirmação de um horário pertence a qual nível da arquitetura de informação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nível de detalhe, com a ficha ou confirmação da ação</li>
+                        <li><span class="letra">B)</span>Nível raiz, com a tela de entrada</li>
+                        <li><span class="letra">C)</span>Nível de categoria, com listas e calendários</li>
+                        <li><span class="letra">D)</span>Nível de menu, com as configurações gerais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Prototipagem rápida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que designers testam caminhos com os dedos sobre cartões de papel antes de criar telas digitais complexas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o papel é obrigatório em qualquer projeto digital</li>
+                        <li><span class="letra">B)</span>Porque o papel substitui a necessidade de um mapa de navegação</li>
+                        <li><span class="letra">C)</span>Porque o cartão de papel define a paleta de cores da tela digital</li>
+                        <li><span class="letra">D)</span>Porque encontram becos sem saída em poucos minutos e sem custo de desenvolvimento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Tabela de eventos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao montar o mapa de eventos de uma tela, quais são as três colunas da tabela simples recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nome, idade e nível de acesso do usuário</li>
+                        <li><span class="letra">B)</span>Início, meio e fim do fluxo de trabalho</li>
+                        <li><span class="letra">C)</span>Elemento, evento e destino ou resposta</li>
+                        <li><span class="letra">D)</span>Tela, cor e fonte utilizada no botão</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Checklist de desorientação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual item do checklist contra a desorientação exige que o ícone de voltar permaneça no mesmo local em todas as telas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Título visível em cada tela</li>
+                        <li><span class="letra">B)</span>Botão de retorno constante</li>
+                        <li><span class="letra">C)</span>Zero becos sem saída</li>
+                        <li><span class="letra">D)</span>Indicação de seleção ativa na barra inferior</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Erro crítico de navegação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual erro é apontado na aula como crítico na navegação móvel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esconder opções essenciais em gavetas laterais profundas sem pistas na tela inicial</li>
+                        <li><span class="letra">B)</span>Colocar a barra inferior com três a cinco seções</li>
+                        <li><span class="letra">C)</span>Usar cores de contraste alto nos botões principais</li>
+                        <li><span class="letra">D)</span>Usar a transição de esmaecimento entre abas do mesmo nível</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Padrão de navegação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual padrão de navegação exibe o título da página atual, o botão de retornar e ações de contexto rápido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barra inferior (bottom nav)</li>
+                        <li><span class="letra">B)</span>Trilha (breadcrumb)</li>
+                        <li><span class="letra">C)</span>Barra superior (top bar)</li>
+                        <li><span class="letra">D)</span>Subida vertical (modal)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Ordem do agendamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No estudo de caso do agendamento do laboratório, qual é a ordem lógica correta do fluxo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Confirmação, calendário, horário livre, comprovante</li>
+                        <li><span class="letra">B)</span>Horário livre, calendário, comprovante, confirmação</li>
+                        <li><span class="letra">C)</span>Comprovante, confirmação, calendário, horário livre</li>
+                        <li><span class="letra">D)</span>Calendário, horário livre, confirmação com carregamento e comprovante com retorno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Horários ocupados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tela de horários do agendamento, como os horários ocupados devem ser apresentados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em estado desabilitado, sem resposta a cliques</li>
+                        <li><span class="letra">B)</span>Em verde, como os horários livres</li>
+                        <li><span class="letra">C)</span>Com animação de carregamento contínua</li>
+                        <li><span class="letra">D)</span>Com transição de expansão para o detalhe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Confirmação com carregamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">S1 — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, deve propor a resposta visual do botão de envio na tela de confirmação. Qual solução a aula recomenda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Botão sem nenhuma mudança até a tela de sucesso aparecer</li>
+                        <li><span class="letra">B)</span>Botão com indicador giratório e tela de sucesso com rota de retorno</li>
+                        <li><span class="letra">C)</span>Botão que some e reaparece após dez segundos</li>
+                        <li><span class="letra">D)</span>Botão com texto em vermelho e sem indicação de envio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Matriz de transição</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a matriz de transição apresentada, qual é o tipo de interação mais frequente em aplicativos móveis?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Voltar, com 50%</li>
+                        <li><span class="letra">B)</span>Deslize, com 70%</li>
+                        <li><span class="letra">C)</span>Longo, com 30%</li>
+                        <li><span class="letra">D)</span>Toque, com 90%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Consistência da navegação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a consistência da barra de navegação reduz o esforço mental do usuário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a barra de navegação deixa de existir em algumas telas</li>
+                        <li><span class="letra">B)</span>Porque a barra passa a exigir mais toques para cada ação</li>
+                        <li><span class="letra">C)</span>Porque o usuário não precisa aprender onde estão os botões ao trocar de tela</li>
+                        <li><span class="letra">D)</span>Porque a barra elimina a necessidade de títulos nas telas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Definição de feedback</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a definição correta de feedback, conforme o glossário da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resposta perceptível que confirma o registro da ação</li>
+                        <li><span class="letra">B)</span>Linha de navegação que indica o caminho hierárquico percorrido</li>
+                        <li><span class="letra">C)</span>Sequência ordenada de passos para cumprir uma tarefa</li>
+                        <li><span class="letra">D)</span>Ação do usuário que dispara uma resposta no sistema</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Definição de fluxo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a definição correta de fluxo, conforme o glossário da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resposta visual que confirma o registro da ação</li>
+                        <li><span class="letra">B)</span>Sequência lógica ordenada de passos para completar uma meta</li>
+                        <li><span class="letra">C)</span>Linha de navegação que mostra a hierarquia de páginas</li>
+                        <li><span class="letra">D)</span>Ação do usuário que dispara uma resposta no sistema</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Evento em um card</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um usuário toca em um card de uma lista e a interface abre o detalhe do item. Qual parte desse processo corresponde ao conceito de evento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O detalhe do item, que aparece na tela depois do toque</li>
+                        <li><span class="letra">B)</span>A lista de cards, que fica organizada em colunas</li>
+                        <li><span class="letra">C)</span>O toque no card, que é a ação que dispara a resposta do sistema</li>
+                        <li><span class="letra">D)</span>A cor do card, que indica o estado padrão do componente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Clique em anúncio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um usuário clica em um anúncio e chega a uma tela sem barra nem botão de voltar. Qual erro de navegação ocorreu?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Excesso de cores na tela</li>
+                        <li><span class="letra">B)</span>Falta de feedback sonoro</li>
+                        <li><span class="letra">C)</span>Uso de toque longo no anúncio</li>
+                        <li><span class="letra">D)</span>Beco sem saída (dead end)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Foco por teclado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um computador, qual evento prepara um campo de formulário para digitação quando o usuário navega com o teclado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toque longo</li>
+                        <li><span class="letra">B)</span>Foco e hover</li>
+                        <li><span class="letra">C)</span>Deslize</li>
+                        <li><span class="letra">D)</span>Clique duplo sem feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Tela de Termos de Uso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">S1 — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, encontra uma tela de Termos de Uso sem botão de fechar e sem barra superior. Qual correção segue os princípios da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Adicionar botões claros de fechar ou cancelar e uma barra superior com retorno</li>
+                        <li><span class="letra">B)</span>Remover os termos e deixar o usuário sem nenhuma informação</li>
+                        <li><span class="letra">C)</span>Bloquear o botão de voltar do aparelho até o usuário aceitar</li>
+                        <li><span class="letra">D)</span>Manter a tela como está e pedir ao usuário que reinicie o aplicativo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Nível de categoria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nível da arquitetura de informação corresponde a listas, calendários e catálogos navegáveis?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nível raiz</li>
+                        <li><span class="letra">B)</span>Nível de detalhe</li>
+                        <li><span class="letra">C)</span>Nível de categoria</li>
+                        <li><span class="letra">D)</span>Nível de feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Hover</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">S1 — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa avaliar se um botão reage de forma adequada ao cursor. Qual estado descreve o cursor posicionado sobre o elemento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Padrão</li>
+                        <li><span class="letra">B)</span>Ativo</li>
+                        <li><span class="letra">C)</span>Desabilitado</li>
+                        <li><span class="letra">D)</span>Hover</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Animação em componente desabilitado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe propõe que um botão desabilitado tenha animações normais de hover e clique para mostrar que o sistema funciona. Qual avaliação está de acordo com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A proposta está incorreta, pois o componente desabilitado não deve responder a eventos interativos</li>
+                        <li><span class="letra">B)</span>A proposta está correta, pois mostra atividade do sistema</li>
+                        <li><span class="letra">C)</span>A proposta está correta, desde que o botão tenha cor vermelha</li>
+                        <li><span class="letra">D)</span>A proposta está incorreta, pois botões nunca devem mudar de cor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Arquivar mensagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um aplicativo de mensagens, o usuário arrasta a conversa para a esquerda para arquivá-la. Qual evento foi acionado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toque simples</li>
+                        <li><span class="letra">B)</span>Deslize (swipe)</li>
+                        <li><span class="letra">C)</span>Foco por teclado</li>
+                        <li><span class="letra">D)</span>Toque longo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Toque sem resposta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando um usuário toca em um botão e nada muda na tela, o que a aula aponta como causa do problema de interface?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Excesso de feedback visual, com cores muito fortes no botão</li>
+                        <li><span class="letra">B)</span>Uso de transição push entre duas telas do mesmo nível</li>
+                        <li><span class="letra">C)</span>Uso de uma barra inferior com cinco seções</li>
+                        <li><span class="letra">D)</span>Falta de resposta imediata do sistema, sem feedback visual, sonoro ou tátil</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Tríade de orientação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual conjunto de respostas uma tela deve dar para orientar o usuário em qualquer momento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quanto custa, quando chega e quem entrega</li>
+                        <li><span class="letra">B)</span>Quem sou, de onde sou e para onde vou viajar</li>
+                        <li><span class="letra">C)</span>Onde estou, de onde vim e para onde posso ir</li>
+                        <li><span class="letra">D)</span>Qual a cor do fundo, qual a fonte e qual o peso</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Mapa de navegação mobile</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao desenhar o mapa de navegação de um app escolar com as telas Início, Biblioteca e Empréstimo, o que você deve indicar para cada tela, segundo a atividade prática?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As setas de ida e volta, o botão de ação principal com seu feedback e a ausência de becos sem saída</li>
+                        <li><span class="letra">B)</span>Apenas o nome da tela e a cor principal</li>
+                        <li><span class="letra">C)</span>A quantidade de imagens e o tamanho da fonte</li>
+                        <li><span class="letra">D)</span>Somente o horário em que cada tela foi criada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Formulário temporário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tela de um aplicativo, o usuário abre um formulário temporário para escrever uma mensagem. Qual transição é a mais adequada, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esmaecimento (fade) entre abas</li>
+                        <li><span class="letra">B)</span>Subida vertical (modal)</li>
+                        <li><span class="letra">C)</span>Deslizar lateral (push) para a tela anterior</li>
+                        <li><span class="letra">D)</span>Expansão de elemento sem retorno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Evento principal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual evento é o principal para ativar botões, abrir links e marcar opções com resposta instantânea?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toque longo</li>
+                        <li><span class="letra">B)</span>Deslize</li>
+                        <li><span class="letra">C)</span>Clique ou toque</li>
+                        <li><span class="letra">D)</span>Foco e hover</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Feedback nos cinco estados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que cada clique deve ter retorno visual imediato nos cinco estados fundamentais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o tamanho do arquivo da interface</li>
+                        <li><span class="letra">B)</span>Para remover a necessidade de navegação entre telas</li>
+                        <li><span class="letra">C)</span>Para substituir o mapa de navegação do projeto</li>
+                        <li><span class="letra">D)</span>Para dar segurança ao usuário sobre o registro da ação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Próxima ação após o horário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Empregar técnicas de processos de criação na concepção de interfaces e experiência do usuário</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um agendamento pelo celular, após escolher o horário livre, qual ação deve vir a seguir no fluxo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tela final exibe o comprovante e o botão para voltar ao início</li>
+                        <li><span class="letra">B)</span>O usuário pressiona o botão de confirmação e vê o carregamento</li>
+                        <li><span class="letra">C)</span>O usuário seleciona a data disponível no calendário</li>
+                        <li><span class="letra">D)</span>O sistema exibe os horários ocupados como livres</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Barra inferior versus gavetas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">S1 — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe duas propostas para a navegação de um app: uma com gavetas laterais profundas e outra com barra inferior de 3 a 5 seções. Qual avaliação está de acordo com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A barra inferior é mais adequada para seções principais no celular, pois fica ao alcance do dedão</li>
+                        <li><span class="letra">B)</span>As gavetas profundas são sempre preferíveis, porque escondem as opções essenciais</li>
+                        <li><span class="letra">C)</span>As duas propostas são equivalentes, porque a navegação não influencia a experiência</li>
+                        <li><span class="letra">D)</span>A barra inferior deve ter mais de dez seções para ser considerada eficaz</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos de UI / UX — Aula 09: Eventos e navegação na interface</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
