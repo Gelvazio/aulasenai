@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias Pendentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/materias-pendentes.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="assets/js/materias-pendentes-repositorio.js" defer></script>
+    <script src="assets/js/materias-pendentes-regras.js" defer></script>
+    <script src="assets/js/materias-pendentes-pagina.js" defer></script>
+</head>
+<body class="mp-corpo">
+    <div id="header-usuario"></div>
+    <main class="mp-pagina">
+        <header class="mp-cabecalho">
+            <svg class="mp-rede" viewBox="0 0 240 60" aria-hidden="true" focusable="false">
+                <line class="mp-rede__linha" x1="20" y1="30" x2="90" y2="12"></line>
+                <line class="mp-rede__linha" x1="90" y1="12" x2="150" y2="44"></line>
+                <line class="mp-rede__linha" x1="150" y1="44" x2="220" y2="20"></line>
+                <circle class="mp-rede__no" cx="20" cy="30" r="4"></circle>
+                <circle class="mp-rede__no" cx="90" cy="12" r="4"></circle>
+                <circle class="mp-rede__no" cx="150" cy="44" r="4"></circle>
+                <circle class="mp-rede__no" cx="220" cy="20" r="4"></circle>
+            </svg>
+            <h1 class="mp-titulo">Matérias Pendentes</h1>
+            <p class="mp-subtitulo">
+                Telemetria das matérias por curso, ano e semestre — uso exclusivo do Professor Administrador
+            </p>
+        </header>
+
+        <section class="mp-cartao mp-bloqueio" id="mpBloqueio" role="alert" hidden></section>
+
+        <div id="mpConteudo" hidden>
+            <section class="mp-cartao" aria-label="Filtros">
+                <form class="mp-filtros" id="mpFiltros">
+                    <label class="mp-campo">Curso
+                        <select id="mpCurso" class="mp-seletor"></select>
+                    </label>
+                    <label class="mp-campo">Ano
+                        <select id="mpAno" class="mp-seletor"></select>
+                    </label>
+                    <label class="mp-campo">Semestre
+                        <select id="mpSemestre" class="mp-seletor"></select>
+                    </label>
+                    <button type="reset" class="mp-botao" id="mpLimpar">Limpar filtros</button>
+                </form>
+                <p class="mp-resumo" id="mpResumo" aria-live="polite"></p>
+            </section>
+
+            <section id="mpLista" class="mp-lista" aria-label="Matérias pendentes"></section>
+        </div>
+    </main>
+</body>
+</html>

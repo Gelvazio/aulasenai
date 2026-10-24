@@ -1,0 +1,193 @@
+/* Página materias-pendentes.html (#357) — visual futurista (rules-ai/prompts/VISUAL-FUTURISTA.md).
+   Fundo escuro, neon ciano/magenta/violeta, cartões holográficos, Orbitron + Share Tech Mono.
+   Classes com prefixo mp-. Animações desligadas com prefers-reduced-motion. */
+
+:root {
+    --mp-cor-fundo: #05030d;
+    --mp-cor-superficie: rgba(18, 12, 40, 0.72);
+    --mp-cor-texto: #e8f4ff;
+    --mp-cor-texto-suave: #9fb4d6;
+    --mp-cor-ciano: #00f0ff;
+    --mp-cor-magenta: #ff2bd6;
+    --mp-cor-violeta: #7b2cff;
+    --mp-cor-ok: #3dffb0;
+    --mp-cor-alerta: #ffb800;
+    --mp-cor-erro: #ff4d6d;
+    --mp-fonte-titulo: "Orbitron", "Segoe UI", sans-serif;
+    --mp-fonte-dados: "Share Tech Mono", "Consolas", monospace;
+    --mp-brilho-ciano: 0 0 14px rgba(0, 240, 255, 0.45);
+    --mp-brilho-magenta: 0 0 14px rgba(255, 43, 214, 0.45);
+    --mp-raio: 14px;
+}
+
+.mp-corpo {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--mp-cor-texto);
+    font-family: var(--mp-fonte-dados);
+    background:
+        radial-gradient(ellipse at 15% 0%, rgba(123, 44, 255, 0.35), transparent 55%),
+        radial-gradient(ellipse at 90% 20%, rgba(255, 43, 214, 0.22), transparent 50%),
+        var(--mp-cor-fundo);
+}
+
+.mp-corpo::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+}
+
+.mp-pagina { position: relative; max-width: 1100px; margin: 0 auto; padding: 24px 16px 56px; }
+
+.mp-cabecalho { text-align: center; margin-bottom: 22px; }
+.mp-titulo {
+    margin: 6px 0;
+    font-family: var(--mp-fonte-titulo);
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mp-cor-ciano);
+    text-shadow: var(--mp-brilho-ciano);
+}
+.mp-subtitulo { margin: 0; color: var(--mp-cor-texto-suave); }
+
+.mp-rede { width: min(260px, 70%); height: 56px; }
+.mp-rede__linha {
+    stroke: var(--mp-cor-violeta);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 5;
+    animation: mp-fluxo 3s linear infinite;
+}
+.mp-rede__no { fill: var(--mp-cor-magenta); animation: mp-pulso 2.2s ease-in-out infinite; }
+
+.mp-cartao {
+    background: var(--mp-cor-superficie);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    border-radius: var(--mp-raio);
+    box-shadow: var(--mp-brilho-ciano);
+    padding: 16px;
+    margin-bottom: 18px;
+}
+
+.mp-bloqueio { border-color: var(--mp-cor-erro); box-shadow: 0 0 14px rgba(255, 77, 109, 0.45); }
+.mp-bloqueio__link { color: var(--mp-cor-ciano); }
+
+.mp-filtros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 12px;
+    align-items: end;
+}
+.mp-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--mp-cor-texto-suave);
+}
+.mp-seletor {
+    background: rgba(5, 3, 13, 0.85);
+    color: var(--mp-cor-texto);
+    border: 1px solid var(--mp-cor-violeta);
+    border-radius: 8px;
+    padding: 9px 10px;
+    font-family: var(--mp-fonte-dados);
+    font-size: 1rem;
+}
+.mp-botao {
+    background: transparent;
+    color: var(--mp-cor-magenta);
+    border: 1px solid var(--mp-cor-magenta);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-family: var(--mp-fonte-titulo);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.mp-botao:hover { background: rgba(255, 43, 214, 0.15); box-shadow: var(--mp-brilho-magenta); }
+
+.mp-seletor:focus-visible, .mp-botao:focus-visible, .mp-detalhes__titulo:focus-visible {
+    outline: 2px solid var(--mp-cor-magenta);
+    outline-offset: 2px;
+}
+
+.mp-resumo { margin: 14px 0 0; color: var(--mp-cor-ciano); }
+
+.mp-grupo__titulo {
+    margin: 22px 0 10px;
+    font-family: var(--mp-fonte-titulo);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--mp-cor-magenta);
+    text-shadow: var(--mp-brilho-magenta);
+}
+.mp-grupo__materias { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+.mp-materia { margin: 0; }
+.mp-materia__nome {
+    margin: 0 0 6px;
+    font-family: var(--mp-fonte-titulo);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+.mp-materia__situacao { margin: 0 0 8px; color: var(--mp-cor-alerta); font-size: 0.85rem; }
+.mp-materia__situacao--nao-iniciada { color: var(--mp-cor-erro); }
+.mp-materia__telemetria { display: flex; align-items: center; gap: 10px; }
+.mp-materia__percentual { min-width: 3.4em; text-align: right; color: var(--mp-cor-ciano); }
+
+.mp-progresso {
+    flex: 1;
+    height: 12px;
+    appearance: none;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+.mp-progresso::-webkit-progress-bar { background: rgba(255, 255, 255, 0.08); border-radius: 8px; }
+.mp-progresso::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--mp-cor-violeta), var(--mp-cor-ciano));
+    border-radius: 8px;
+    box-shadow: var(--mp-brilho-ciano);
+}
+.mp-progresso::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--mp-cor-violeta), var(--mp-cor-ciano));
+    border-radius: 8px;
+}
+
+.mp-detalhes { margin-top: 12px; }
+.mp-detalhes__titulo { cursor: pointer; color: var(--mp-cor-ciano); }
+.mp-categoria { margin: 10px 0 0; }
+.mp-categoria__nome {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--mp-cor-violeta);
+    filter: brightness(1.7);
+}
+.mp-categoria__itens {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--mp-cor-texto-suave);
+    font-size: 0.85rem;
+}
+
+@keyframes mp-fluxo { to { stroke-dashoffset: -22; } }
+@keyframes mp-pulso { 50% { opacity: 0.35; } }
+
+@media (max-width: 720px) {
+    .mp-filtros, .mp-grupo__materias { grid-template-columns: 1fr; }
+    .mp-pagina { padding: 16px 10px 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mp-rede__linha, .mp-rede__no { animation: none; }
+}

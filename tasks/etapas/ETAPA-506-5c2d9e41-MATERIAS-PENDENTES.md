@@ -72,11 +72,12 @@ Verificação de cada uma: `node --check`, linhas ≤ 100, conferir o JSON sem g
 
 ### #357.3 — Página `materias-pendentes.html` + CSS futurista + JS da tela
 
-**Próximo passo:** aguardando a subtarefa anterior.
+**Próximo passo:** concluída; seguir com a #357.4 (item de menu no header-usuario.js, só admin, nova janela).
 
 - **Nível:** MEDIO — plano aprovado (ver Subtarefas previstas)
 - **Modelo:** MEDIO · só Sonnet — Devin executa a pedido do usuário (precedente #353/#355/#356)
-- **Entrega:** pendente · **Verificação:** pendente
+- **Entrega:** `materias-pendentes.html` (raiz), `assets/css/materias-pendentes.css` e `assets/js/materias-pendentes-pagina.js` (novos). Commit na `main`.
+- **Verificação:** `node --check` ok; linhas ≤ 100 e funções ≤ 45; HTML semântico sem estilo/JS inline; fluxo testado em DOM falso (vm): sem papel = acesso negado, administrador = 32 pendentes em 3 grupos, filtros preenchidos (curso/ano/semestre + Sem curso no banco), filtro por curso redesenha a lista, cartão com O QUE FALTA por categoria. Teste na tela fica com o usuário (sem navegador).
 
 ### #357.4 — Item de menu no `header-usuario.js` (só admin, nova janela) + conferência da RPC na página
 

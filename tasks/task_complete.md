@@ -141,3 +141,4 @@
 | #357.0 | Escrever o plano e obter a aprovação do usuário · `PESADO` | 🟠 Alta | PESADO · só Sonnet (Devin a pedido do usuário) | — | ✅ Concluído | — | [506-5c2d9e41](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) | — |
 | #357.1 | Gerador do `materias-pendentes.json` a partir dos `STATUS_MATERIA.md` · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet (Devin a pedido do usuário) | — | ✅ Concluído | — | [506-5c2d9e41](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) | — |
 | #357.2 | Repositório + regras (JS) da página · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet (Devin a pedido do usuário) | #357.1 | ✅ Concluído | — | [506-5c2d9e41](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) | — |
+| #357.3 | Página `materias-pendentes.html` + CSS futurista + JS da tela · `MEDIO · effort medium` | 🟠 Alta | MEDIO · só Sonnet (Devin a pedido do usuário) | #357.2 | ✅ Concluído | — | [506-5c2d9e41](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) | — |

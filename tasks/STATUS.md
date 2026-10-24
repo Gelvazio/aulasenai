@@ -5,9 +5,8 @@
 
 ## Tarefas
 
-- #357-5c2d9e41 — [Menu "Matérias Pendentes" (só Professor Administrador) e página materias-pendentes.html](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) · 🟠 🔄 Em execução (plano aprovado em 2026-10-24 17:52) · Devin (local · main) (desde 2026-10-24 17:40) · 55%
-  - #357.3 — Página `materias-pendentes.html` + CSS futurista + JS da tela · 🔄 Em execução · Devin (local · main) · `MEDIO`
-  - #357.4 — Item de menu no `header-usuario.js` (só admin, nova janela) + conferência da RPC na página · ⬜ Pendente · `PESADO` · depende da #357.3
+- #357-5c2d9e41 — [Menu "Matérias Pendentes" (só Professor Administrador) e página materias-pendentes.html](etapas/ETAPA-506-5c2d9e41-MATERIAS-PENDENTES.md) · 🟠 🔄 Em execução (plano aprovado em 2026-10-24 17:52) · Devin (local · main) (desde 2026-10-24 17:40) · 75%
+  - #357.4 — Item de menu no `header-usuario.js` (só admin, nova janela) + conferência da RPC na página · 🔄 Em execução · Devin (local · main) · `PESADO`
   - #357.5 — Documentação e conferência de segurança (`.vercelignore`, sem gabarito) · ⬜ Pendente · `LEVE` · depende da #357.4
 - #354-1278024c — [Hook do ai-memory falhando no Devin Desktop (exit 127)](etapas/ETAPA-503-1278024c-HOOK-AI-MEMORY-FALHANDO-NO-DEVIN.md) · ✅ Concluído · Devin (local · main)
   - #354.1 — Corrigir os hooks do ai-memory no `.claude/settings.json` · ✅ Concluído · Devin · `LEVE`
