@@ -110,6 +110,7 @@
 - #197-25203735-ba0e-4629-b6d4-27073640d497 — ["Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) · `PESADO · effort high`](status/TASK-ID-197-25203735-ba0e-4629-b6d4-27073640d497-STATUS.md)
 - #199-65a7038f-5e37-4865-aa3b-9a8cd578e24b — [Bug: "Exportar Meu Gabarito" não aparece na atividade id 152](status/TASK-ID-199-65a7038f-5e37-4865-aa3b-9a8cd578e24b-STATUS.md)
 - #209-77564f72-9786-4bff-b0e7-13af8a43abe7 — [**Slides bloqueados junto com a aula (também pelo endereço do PDF)**](status/TASK-ID-209-77564f72-9786-4bff-b0e7-13af8a43abe7-STATUS.md)
+- #XXX — [Sessão 2026-10-24 (Reservada)](etapas/TASK-ID-XXX-SESSAO-2026-10-24.md)
 - #221-c7244bf6-9b58-4d1a-866c-f20d325e287a — [**Dois cards da Aula 06 editam a mesma aula**](status/TASK-ID-221-c7244bf6-9b58-4d1a-866c-f20d325e287a-STATUS.md)
 - #226-cac80fd1-0dd4-4e3e-98e6-e656b7ba5820 — [Introdução à Tecnologia da Informação e Comunicação — aulas e atividades (Técnico em Informática para Internet)](status/TASK-ID-226-cac80fd1-0dd4-4e3e-98e6-e656b7ba5820-STATUS.md)
 - #227-92ce2a45-04a4-457b-accc-8bd8c5e11fdd — [Introdução ao Desenvolvimento de Projetos — aulas e atividades (Técnico em Informática para Internet)](status/TASK-ID-227-92ce2a45-04a4-457b-accc-8bd8c5e11fdd-STATUS.md)
