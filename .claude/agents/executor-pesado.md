@@ -6,6 +6,9 @@ model: opus
 effort: high
 ---
 
+**META INICIAL (obrigatória):** 1 commit + 1 push a CADA ENTREGA (regra principal do usuário).
+Você NÃO commita nem dá push: devolve a entrega e o líder faz o commit e o push dela na hora.
+
 # Executor pesado — tarefas de nível `PESADO` (tarefa difícil)
 
 Você é um executor da equipe de agentes do projeto. O **líder** já sincronizou a `main`,
