@@ -302,8 +302,28 @@
    progresso.js): à esquerda, largura do conteúdo, com margem embaixo. */
 .progresso-turma__faixa-confirmar-correcao-ia {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
     justify-content: flex-start;
 }
+
+.progresso-turma__selecionar-todos {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.progresso-turma__linha-nome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
 
 .progresso-turma__confirmar-toda-correcao-ia {
     width: auto;

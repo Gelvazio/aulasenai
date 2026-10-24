@@ -381,7 +381,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     da entrega a IA dá 0 às questões em branco. Código: `assets/js/confirmar-todas-professor.js`.
   - **✅ CONFIRMAR TODA CORREÇÃO DE IA (2026-10-24, regra global, só discursivas):** botão **só do
     professor** logo **acima da coluna "Aluno"** do quadro de progresso (à esquerda). Roda o
-    **Confirmar Todas** em cada aluno listado (com os filtros), só os **entregues**, com **nota da
+    **Confirmar Todas** só nos alunos **marcados** (chave ON/OFF à esquerda do nome; nenhum marcado ao
+    abrir) e **visíveis** (com os filtros); ao lado do botão há **Selecionar todos** (marca os
+    visíveis, fica indeterminado se só alguns) e o botão mostra a quantidade marcada. A marcação
+    sobrevive ao redesenho da lista. Sem ninguém marcado, avisa "Marque ao menos um aluno". Só os
+    **entregues**, com **nota da
     IA** e **sem suspeita de cópia pendente**, depois de um **popup de confirmação**. Vale para todo
     quadro de progresso (código compartilhado: `assets/js/confirmar-toda-correcao-ia-progresso.js`,
     ligado em `assets/js/progresso-turma-global.js`); os geradores só herdam.

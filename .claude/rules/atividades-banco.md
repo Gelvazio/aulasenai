@@ -26,7 +26,8 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
 ## Quadro de progresso: botão "Confirmar Entrega" (2026-10-24, vale para todo gerador)
 
 - ✅ **CONFIRMAR TODA CORREÇÃO DE IA** (2026-10-24, só discursivas): botão só do professor acima da
-  coluna Aluno; roda o Confirmar Todas em cada aluno listado (entregues, com nota da IA, sem
+  coluna Aluno; roda o Confirmar Todas só nos alunos marcados (chave ON/OFF ao lado do nome + "Selecionar
+  todos" ao lado do botão; nenhum marcado ao abrir) e visíveis (entregues, com nota da IA, sem
   suspeita de cópia pendente), com popup de confirmação antes. Global para todo quadro de progresso
   (`assets/js/confirmar-toda-correcao-ia-progresso.js`).
 

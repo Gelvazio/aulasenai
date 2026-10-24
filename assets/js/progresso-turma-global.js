@@ -80,6 +80,8 @@ const ARQUIVOS_CONFIRMAR_TODA_CORRECAO_IA_GLOBAL = ['confirmar-todas-professor.j
 const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
+const CLASSE_INTERRUPTOR_PROGRESSO_GLOBAL = 'progresso-turma__interruptor';
+const TEXTO_SELECIONAR_TODOS_GLOBAL = 'Selecionar todos';
 const SEM_NOTA_PROGRESSO_GLOBAL = -1;
 const NOTA_MAXIMA_PROGRESSO_GLOBAL = 10;
 const BASE_SCRIPTS_PROGRESSO_GLOBAL = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -95,6 +97,8 @@ const estadoProgressoGlobal = {
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
     botoesNome: [], filtro: null, faltas: null, filtrosDaLista: [], alunosVisiveis: [],
+    // Seleção do botão "Confirmar toda correção de IA" (null = sem o botão, só discursiva).
+    selecaoConfirmar: null, caixaSelecionarTodos: null, botaoConfirmarToda: null,
 };
 
 /**
@@ -388,6 +392,67 @@ function desenharListaDeAlunosGlobal(tela, medida) {
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
         ...alunos.map((aluno) => montarLinhaDoAlunoGlobal(aluno, medida)));
+    atualizarSelecaoConfirmarGlobal();
+}
+
+/**
+ * Alunos marcados no checkbox E visíveis na lista (os escondidos pelos filtros ficam de fora).
+ * @returns {Object[]} Alunos marcados e visíveis.
+ */
+function lerAlunosMarcadosGlobal() {
+    const { selecaoConfirmar, alunosVisiveis } = estadoProgressoGlobal;
+    if (!selecaoConfirmar) return [];
+    return alunosVisiveis.filter((aluno) => selecaoConfirmar.has(aluno.alunoId));
+}
+
+/**
+ * Atualiza o "Selecionar todos" (ligado só com todos os visíveis marcados) e a quantidade no botão.
+ */
+function atualizarSelecaoConfirmarGlobal() {
+    const { caixaSelecionarTodos, botaoConfirmarToda, alunosVisiveis } = estadoProgressoGlobal;
+    const marcados = lerAlunosMarcadosGlobal().length;
+    if (caixaSelecionarTodos) {
+        caixaSelecionarTodos.checked = marcados > 0 && marcados === alunosVisiveis.length;
+    }
+    botaoConfirmarToda?.definirQuantidade?.(marcados);
+}
+
+/**
+ * Marca ou desmarca todos os alunos visíveis para o botão em massa.
+ * @param {boolean} marcar - true marca todos; false desmarca todos os visíveis.
+ */
+function selecionarTodosVisiveisGlobal(marcar) {
+    const { selecaoConfirmar, alunosVisiveis } = estadoProgressoGlobal;
+    alunosVisiveis.forEach((aluno) => {
+        if (marcar) selecaoConfirmar.add(aluno.alunoId);
+        else selecaoConfirmar.delete(aluno.alunoId);
+    });
+    document.querySelectorAll('.' + CLASSE_PROGRESSO_GLOBAL + '__marcar-aluno')
+        .forEach((caixa) => { caixa.checked = marcar; });
+    atualizarSelecaoConfirmarGlobal();
+}
+
+/**
+ * Cria a chave ON/OFF de um aluno (ligada a partir do Set, que sobrevive ao redesenho da lista).
+ * @param {Object} aluno - Aluno com alunoId e nome.
+ * @returns {HTMLLabelElement} Chave pronta (a caixa fica invisível; aparece a chave).
+ */
+function criarCaixaMarcarAlunoGlobal(aluno) {
+    const chave = criarElementoProgressoGlobal('label', CLASSE_INTERRUPTOR_PROGRESSO_GLOBAL);
+    chave.title = 'Marcar ' + aluno.nome + ' para "Confirmar toda correção de IA"';
+    const caixa = criarElementoProgressoGlobal('input', CLASSE_PROGRESSO_GLOBAL +
+        '__marcar-aluno');
+    caixa.type = 'checkbox';
+    caixa.checked = estadoProgressoGlobal.selecaoConfirmar.has(aluno.alunoId);
+    caixa.addEventListener('change', () => {
+        const selecao = estadoProgressoGlobal.selecaoConfirmar;
+        if (caixa.checked) selecao.add(aluno.alunoId);
+        else selecao.delete(aluno.alunoId);
+        atualizarSelecaoConfirmarGlobal();
+    });
+    chave.append(caixa, criarElementoProgressoGlobal('span',
+        CLASSE_INTERRUPTOR_PROGRESSO_GLOBAL + '-chave'));
+    return chave;
 }
 
 /**
@@ -400,6 +465,12 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     const nome = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__nome',
         aluno.nome);
     nome.title = aluno.nome;
+    const linhaNome = criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL +
+        '__linha-nome');
+    if (estadoProgressoGlobal.selecaoConfirmar) {
+        linhaNome.appendChild(criarCaixaMarcarAlunoGlobal(aluno));
+    }
+    linhaNome.appendChild(nome);
     const botao = criarElementoProgressoGlobal('button', CLASSE_PROGRESSO_GLOBAL + '__minimo',
         '🎯 Quantidade Mínima de Questões: ' + aluno.minimo + '/' + aluno.totalQuestoes);
     botao.type = 'button';
@@ -409,7 +480,7 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
         aoMudar: estadoProgressoGlobal.atualizarAgora })).filter(Boolean);
     const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
-    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []));
+    celula.append(linhaNome, botao, ...extras, ...(faltou ? [faltou] : []));
     return celula;
 }
 
@@ -623,6 +694,8 @@ async function atualizarProgressoGlobal(tela, medida) {
             tela.resumo.replaceChildren('Nenhum aluno nas turmas do curso · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
             tela.lista.replaceChildren();
+            estadoProgressoGlobal.alunosVisiveis = [];
+            atualizarSelecaoConfirmarGlobal();
             return;
         }
         tela.resumo.replaceChildren(...montarResumoDaTurmaGlobal(
@@ -1008,6 +1081,24 @@ async function prepararCorrecaoIaGlobal(area, tipo) {
 }
 
 /**
+ * Cria a chave ON/OFF "Selecionar todos" ao lado do botão em massa (liga/desliga os alunos
+ * visíveis).
+ * @returns {HTMLLabelElement} Chave pronta.
+ */
+function criarRotuloSelecionarTodosGlobal() {
+    const rotulo = criarElementoProgressoGlobal('label', CLASSE_INTERRUPTOR_PROGRESSO_GLOBAL +
+        ' ' + CLASSE_PROGRESSO_GLOBAL + '__selecionar-todos');
+    const caixa = document.createElement('input');
+    caixa.type = 'checkbox';
+    caixa.addEventListener('change', () => selecionarTodosVisiveisGlobal(caixa.checked));
+    estadoProgressoGlobal.caixaSelecionarTodos = caixa;
+    rotulo.append(caixa, criarElementoProgressoGlobal('span',
+        CLASSE_INTERRUPTOR_PROGRESSO_GLOBAL + '-chave'),
+        criarElementoProgressoGlobal('span', '', TEXTO_SELECIONAR_TODOS_GLOBAL));
+    return rotulo;
+}
+
+/**
  * Põe o botão "CONFIRMAR TODA CORREÇÃO DE IA" logo acima da lista, em cima da coluna "Aluno"
  * (só discursiva). Carrega 'confirmar-todas-professor.js' antes. Falha não derruba o painel.
  * @param {{lista: HTMLElement}} tela - Elementos da área.
@@ -1020,14 +1111,21 @@ async function prepararConfirmarTodaCorrecaoIaGlobal(tela, tipo) {
             await carregarScriptProgressoGlobal(arquivo);
         }
         if (typeof window.criarBotaoConfirmarTodaCorrecaoIa !== 'function') return;
+        estadoProgressoGlobal.selecaoConfirmar = new Set();
         const botao = window.criarBotaoConfirmarTodaCorrecaoIa({
             atividadeId: estadoProgressoGlobal.atividadeId,
-            lerAlunos: () => estadoProgressoGlobal.alunosVisiveis,
+            lerAlunos: lerAlunosMarcadosGlobal,
             aoMudar: async () => estadoProgressoGlobal.atualizarAgora?.() });
+        if (!botao) {
+            estadoProgressoGlobal.selecaoConfirmar = null;
+            return;
+        }
+        estadoProgressoGlobal.botaoConfirmarToda = botao;
         const faixa = criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL +
             '__faixa-confirmar-correcao-ia');
-        faixa.appendChild(botao);
+        faixa.append(botao, criarRotuloSelecionarTodosGlobal());
         tela.lista.before(faixa);
+        estadoProgressoGlobal.atualizarAgora?.();
     } catch (erro) {
         console.warn('Confirmar toda correção de IA do progresso:', erro.message);
     }

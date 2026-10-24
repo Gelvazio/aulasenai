@@ -1,5 +1,6 @@
 // Professor: botão "✅ CONFIRMAR TODA CORREÇÃO DE IA" no painel do Progresso da turma das
-// discursivas (progresso-turma-global.js). Faz, em CADA aluno da lista exibida (já com os filtros),
+// discursivas (progresso-turma-global.js). Faz, em CADA aluno MARCADO (chave ON/OFF ao lado do nome) e
+// visível na lista (já com os filtros; "Selecionar todos" ao lado do botão marca todos),
 // o mesmo que o "Confirmar Todas" do aluno: grava a nota da IA como nota do professor
 // (correcao_discursiva.nota_professor, travada depois de gravada), reaproveitando as funções de
 // confirmar-todas-professor.js (que precisa ser carregado antes deste arquivo).
@@ -15,7 +16,7 @@ const TEXTO_BOTAO_CONFIRMAR_TODA_IA = '✅ CONFIRMAR TODA CORREÇÃO DE IA';
 const TEXTO_VERIFICANDO_CONFIRMAR_TODA_IA = '⏳ Verificando os alunos...';
 const TITULO_CONFIRMAR_TODA_IA = 'Confirmar toda correção de IA';
 const TEXTO_CONFIRMAR_POPUP_TODA_IA = 'Confirmar tudo';
-const MSG_SEM_ALUNOS_TODA_IA = 'Não há aluno na lista para confirmar.';
+const MSG_SEM_ALUNOS_TODA_IA = 'Marque ao menos um aluno.';
 const MSG_NADA_TODA_IA = 'Nenhum aluno tem questão para confirmar agora.';
 const MSG_TRAVA_TODA_IA = 'Depois de confirmada, a nota não pode mais ser alterada.';
 const SITUACAO_GRAVAR_TODA_IA = 'gravar';
@@ -70,14 +71,15 @@ function contarSituacaoConfirmarTodaIa(avaliacoes, situacao) {
 /**
  * Monta o texto do popup de confirmação com o resumo do que será gravado e do que fica de fora.
  * @param {Object[]} aGravar - Avaliações com situação "gravar".
- * @param {Object[]} avaliacoes - Todas as avaliações.
+ * @param {Object[]} avaliacoes - Todas as avaliações (uma por aluno marcado).
  * @returns {string} Texto do popup.
  */
 function montarResumoConfirmarTodaIa(aGravar, avaliacoes) {
+    const marcados = avaliacoes.length;
     const questoes = aGravar.reduce((soma, item) => soma + item.separacao.aConfirmar.length, 0);
     const puladas = aGravar.reduce((soma, item) => soma + item.separacao.puladas, 0);
     const linhas = ['Confirmar a nota da IA como nota do professor em ' + questoes +
-        ' questão(ões) de ' + aGravar.length + ' aluno(s)?'];
+        ' questão(ões) de ' + aGravar.length + ' aluno(s) (' + marcados + ' marcado(s))?'];
     const fora = [
         [SITUACAO_SEM_ENTREGA_TODA_IA, 'aluno(s) não entregaram'],
         [SITUACAO_SEM_NOTA_TODA_IA, 'aluno(s) com questão sem nota da IA'],
@@ -189,7 +191,7 @@ async function executarConfirmarTodaIa(contexto, botao) {
             { tipo: 'erro', titulo: TITULO_CONFIRMAR_TODA_IA });
     } finally {
         botao.disabled = false;
-        botao.textContent = TEXTO_BOTAO_CONFIRMAR_TODA_IA;
+        botao.definirQuantidade(Number(botao.dataset.quantidade || 0));
     }
 }
 
@@ -205,7 +207,13 @@ function criarBotaoConfirmarTodaCorrecaoIa(contexto) {
     const botao = document.createElement('button');
     botao.type = 'button';
     botao.className = CLASSE_BOTAO_CONFIRMAR_TODA_IA;
-    botao.textContent = TEXTO_BOTAO_CONFIRMAR_TODA_IA;
+    botao.definirQuantidade = (quantidade) => {
+        botao.dataset.quantidade = quantidade;
+        if (botao.disabled) return;
+        botao.textContent = TEXTO_BOTAO_CONFIRMAR_TODA_IA +
+            (quantidade ? ' (' + quantidade + ')' : '');
+    };
+    botao.definirQuantidade(0);
     botao.addEventListener('click', () => executarConfirmarTodaIa(contexto, botao));
     return botao;
 }

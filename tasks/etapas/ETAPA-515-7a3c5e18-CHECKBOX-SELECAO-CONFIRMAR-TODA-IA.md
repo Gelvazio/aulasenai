@@ -10,3 +10,5 @@
 
 - **Nível:** MEDIO — JS com lógica, 2 arquivos (Jev, confiança 0,89)
 - **Modelo:** só Sonnet
+- **Entrega:** chave ON/OFF (não checkbox) ao lado do nome de cada aluno e "Selecionar todos" (também ON/OFF) ao lado do botão "CONFIRMAR TODA CORREÇÃO DE IA"; o botão roda o "Confirmar Todas" só nos alunos ligados e visíveis; seleção guardada em Set e mantida nos redesenhos. Arquivos: `assets/js/progresso-turma-global.js`, `assets/js/confirmar-toda-correcao-ia-progresso.js`, `assets/css/progresso-turma-global.css`, `docs/regras/atividades.md`, `.claude/rules/atividades-banco.md`. Feito por agentes (implementação + 2 revisões); aplicadas as correções reais da revisão (botão nulo, redesenho inicial, lista vazia).
+- **Verificação:** `node --check` ok. `progresso-turma-global.js` já passava de 1000 linhas antes (pendência de dividir o arquivo). Conferir na tela: o usuário.
