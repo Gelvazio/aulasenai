@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s486) | REGRA-CONFIRMAR-ENTREGA ([486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md)) — regra do botão Confirmar Entrega | 🔄 Ativa | 2026-10-24 12:25 |
 | Claude Code (Sonnet 5.5) (local · main · s276) | #276.0 concluída ([404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md)) | ⏹️ Encerrada | 2026-10-24 |
 | Claude Code (Sonnet 5.5) (local · main · rules-ai) | VERCEL-SEM-DEPLOY-DE-CONTROLE.1 concluída ([ETAPA-484](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md)) — `rules-local/` fora do deploy | ⏹️ Encerrada | 2026-10-23 18:00 |
 | Claude Code (Sonnet 5.5) (local · main) | COMMIT.INICIAL.RULES-AI.1 concluída ([ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md)) | ⏹️ Encerrada | 2026-10-23 09:38 |
@@ -92,6 +93,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
+| **REGRA-CONFIRMAR-ENTREGA** | **Botão "Confirmar Entrega" do professor, regra global das atividades** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md) | — |
+| REGRA-CONFIRMAR-ENTREGA.1 | Escrever a regra em `atividades-banco.md`, `docs/regras/atividades.md` e no histórico | 🟡 Média | — (a classificar pelo Jev) | — | ⬜ Pendente | — | [486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
@@ -2094,6 +2097,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 483-ce3b848a | JEV-NAO: Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47) | [ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) |
 | 484-77fe60ae | VERCEL-SEM-DEPLOY-DE-CONTROLE: `tasks/` e `rules-local/` nunca geram deploy (C46) | [ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md) |
 | 485-a7d3f9c1 | REGRA-ATIVIDADES-APOS-MD: Atividades só depois dos Markdown dos slides | [ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md](etapas/ETAPA-485-a7d3f9c1-REGRA-ATIVIDADES-APOS-MARKDOWN.md) |
+| 486-c4e81b27 | REGRA-CONFIRMAR-ENTREGA: Botão "Confirmar Entrega" do professor, regra global das atividades | [ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
