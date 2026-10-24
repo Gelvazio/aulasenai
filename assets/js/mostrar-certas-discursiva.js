@@ -14,6 +14,8 @@
 const CLASSE_MOSTRAR_CERTAS = 'mostrar-certas';
 const EVENTO_NOTA_CONFIRMADA_ESCUTADO = 'nota-professor-confirmada';
 const CLASSE_QUESTAO_CATEGORIA_OCULTA = 'questao-discursiva--categoria-oculta';
+const CLASSE_TOPICO_CATEGORIA_OCULTO = 'topico-resposta--categoria-oculto';
+const SELETOR_TOPICO_MOSTRAR_CERTAS = '.topico-resposta[data-item][data-topico]';
 const CLASSE_QUESTAO_CORRIGIDA_OCULTA = 'questao-discursiva--corrigida-oculta';
 const SELETOR_QUESTAO_MOSTRAR_CERTAS = '.questao-discursiva[data-item]';
 const SELETOR_TITULO_RESPOSTAS_ALUNO = '.respostas-aluno-professor__titulo';
@@ -30,6 +32,7 @@ const estadoMostrarCertas = {
     faltaCorrigir: true,
     escolhas: { certa: false, meia: false, errada: false },
     categorias: new Map(),
+    categoriasTopico: new Map(),
     questoesCorrigidas: new Set(),
 };
 
@@ -74,38 +77,54 @@ async function lerDadosDoAlunoParaFiltrar(aluno, atividadeId) {
 }
 
 /**
- * Classifica cada pergunta do aluno (certa, meia, errada ou sem nota) e acha as já marcadas pelo
- * professor (todos os tópicos respondidos com nota do professor). Só os tópicos respondidos
- * contam; pergunta sem nenhum tópico respondido não tem categoria e conta como já marcada.
- * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
- * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{categorias: Map<number, string|null>, corrigidas: Set<number>}>} Resultado.
- * @throws {Error} Se o banco recusar.
+ * Agrupa por pergunta os tópicos respondidos do aluno, com a nota da IA e a do professor.
+ * @param {{correcoes: Object[], topicos: Object[], respostas: Object[]}} dados - Linhas lidas.
+ * @returns {Map<number, Object[]>} Tópicos respondidos de cada pergunta.
  */
-async function lerQuestoesDoAluno(aluno, atividadeId) {
-    const { correcoes, topicos, respostas } = await lerDadosDoAlunoParaFiltrar(aluno, atividadeId);
-    const respondidos = new Set(respostas.filter((linha) => (linha.texto || '').trim() !== '')
+function agruparTopicosRespondidos(dados) {
+    const respondidos = new Set(dados.respostas
+        .filter((linha) => (linha.texto || '').trim() !== '')
         .map((linha) => linha.item + '|' + linha.topico));
-    const porTopico = new Map(correcoes.map((linha) => [linha.item + '|' + linha.topico, linha]));
+    const porTopico = new Map(dados.correcoes.map((linha) =>
+        [linha.item + '|' + linha.topico, linha]));
     const topicosPorItem = new Map();
-    topicos.filter((topico) => respondidos.has(topico.item + '|' + topico.topico))
+    dados.topicos.filter((topico) => respondidos.has(topico.item + '|' + topico.topico))
         .forEach((topico) => {
             const linha = porTopico.get(topico.item + '|' + topico.topico);
             const lista = topicosPorItem.get(topico.item) || [];
-            lista.push({ notaIa: lerNotaDoBanco(linha?.nota_ia),
+            lista.push({ topico: topico.topico, notaIa: lerNotaDoBanco(linha?.nota_ia),
                 notaProfessor: lerNotaDoBanco(linha?.nota_professor), pontos: topico.pontos });
             topicosPorItem.set(topico.item, lista);
         });
+    return topicosPorItem;
+}
+
+/**
+ * Classifica cada pergunta e cada alternativa do aluno (certa, meia, errada ou sem nota) e acha
+ * as perguntas já marcadas pelo professor (todos os tópicos respondidos com nota dele). Em cada
+ * tópico vale a nota do professor se ele já confirmou; senão a sugestão da IA. Pergunta sem
+ * nenhum tópico respondido não tem categoria e conta como já marcada.
+ * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<{categorias: Map<number, string|null>, categoriasTopico:
+ *     Map<string, string|null>, corrigidas: Set<number>}>} Resultado.
+ * @throws {Error} Se o banco recusar.
+ */
+async function lerQuestoesDoAluno(aluno, atividadeId) {
+    const dados = await lerDadosDoAlunoParaFiltrar(aluno, atividadeId);
+    const topicosPorItem = agruparTopicosRespondidos(dados);
     const categorias = new Map();
+    const categoriasTopico = new Map();
     const corrigidas = new Set();
-    new Set(topicos.map((topico) => topico.item)).forEach((item) => {
+    new Set(dados.topicos.map((topico) => topico.item)).forEach((item) => {
         const lista = topicosPorItem.get(item) || [];
-        const confirmada = lista.every((topico) => topico.notaProfessor !== null);
         categorias.set(item, window.classificarPerguntaPorNotas(
             notasQueValemNaPergunta(lista)));
-        if (confirmada) corrigidas.add(item);
+        lista.forEach((topico) => categoriasTopico.set(item + '|' + topico.topico,
+            window.classificarPerguntaPorNotas(notasQueValemNaPergunta([topico]))));
+        if (lista.every((topico) => topico.notaProfessor !== null)) corrigidas.add(item);
     });
-    return { categorias, corrigidas };
+    return { categorias, categoriasTopico, corrigidas };
 }
 
 /**
@@ -124,12 +143,31 @@ function regrasQueEscondem(item) {
 }
 
 /**
- * Esconde ou mostra as questões do aluno escolhido conforme os filtros.
+ * Esconde ou mostra as alternativas de uma pergunta pela categoria de cada uma.
+ * @param {HTMLElement} questao - Pergunta na tela.
+ * @returns {boolean} true se a pergunta tem alternativas e todas ficaram escondidas.
+ */
+function aplicarCategoriaNasAlternativas(questao) {
+    const blocos = [...questao.querySelectorAll(SELETOR_TOPICO_MOSTRAR_CERTAS)];
+    const escondidos = blocos.map((bloco) => {
+        const chave = bloco.dataset.item + '|' + bloco.dataset.topico;
+        const categoria = estadoMostrarCertas.categoriasTopico.get(chave) || null;
+        const esconder = !window.perguntaPassaNoFiltro(categoria, estadoMostrarCertas.escolhas);
+        bloco.classList.toggle(CLASSE_TOPICO_CATEGORIA_OCULTO, esconder);
+        return esconder;
+    });
+    return escondidos.length > 0 && escondidos.every(Boolean);
+}
+
+/**
+ * Esconde ou mostra as perguntas e as alternativas do aluno escolhido conforme os filtros: a
+ * categoria vale por alternativa; a pergunta some quando todas as alternativas somem.
  */
 function aplicarMostrarCertas() {
     document.querySelectorAll(SELETOR_QUESTAO_MOSTRAR_CERTAS).forEach((questao) => {
-        const { categoria, corrigida } = regrasQueEscondem(Number(questao.dataset.item));
-        questao.classList.toggle(CLASSE_QUESTAO_CATEGORIA_OCULTA, categoria);
+        const { corrigida } = regrasQueEscondem(Number(questao.dataset.item));
+        const semAlternativaVisivel = aplicarCategoriaNasAlternativas(questao);
+        questao.classList.toggle(CLASSE_QUESTAO_CATEGORIA_OCULTA, semAlternativaVisivel);
         questao.classList.toggle(CLASSE_QUESTAO_CORRIGIDA_OCULTA, corrigida);
     });
 }
@@ -143,11 +181,13 @@ async function mostrarCertasDoAluno(aluno, atividadeId) {
     estadoMostrarCertas.aluno = aluno;
     estadoMostrarCertas.atividadeId = atividadeId;
     estadoMostrarCertas.categorias = new Map();
+    estadoMostrarCertas.categoriasTopico = new Map();
     estadoMostrarCertas.questoesCorrigidas = new Set();
     try {
         if (aluno && atividadeId) {
             const questoes = await lerQuestoesDoAluno(aluno, atividadeId);
             estadoMostrarCertas.categorias = questoes.categorias;
+            estadoMostrarCertas.categoriasTopico = questoes.categoriasTopico;
             estadoMostrarCertas.questoesCorrigidas = questoes.corrigidas;
         }
     } finally {

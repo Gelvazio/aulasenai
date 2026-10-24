@@ -313,7 +313,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     corrigida. **Todos desmarcados: mostra todas as perguntas**; marcados **combinam** (mostra as
     de qualquer categoria marcada). Categoria da pergunta: **certa** = todos os tópicos com nota
     cheia; **errada** = todos com nota zero; **meia certa** = o resto (só tópicos respondidos).
-    Nota que vale (regra global, #363): **por tópico**, a **correção do professor** quando ele já confirmou; senão a **sugestão da IA** (aluno: só a confirmada do professor).
+    Nota que vale (regra global, #363): **por tópico**, a **correção do professor** quando ele já confirmou; senão a **sugestão da IA** (aluno: só a confirmada do professor). O filtro vale **por alternativa** (a, b, c): a alternativa que não é da categoria marcada some; a pergunta só some quando todas as alternativas somem. **Regra global, em toda atividade e em todo gerador de atividades** (anotada em `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`).
     Pergunta ainda sem nota nunca some. No professor combinam também com "Falta Corrigir?". As
     escolhas ficam no **localStorage** (`respostas-aluno:categoria-*` e `resultado-aluno:categoria-*`).
     Código: `assets/js/categorias-pergunta-discursiva.js` (compartilhado),

@@ -84,3 +84,9 @@
 .questao-discursiva.questao-discursiva--corrigida-oculta {
     display: none;
 }
+
+/* Alternativa de uma categoria não marcada (Certas / Meia Certas / Erradas), escondida quando há
+   algum filtro de categoria marcado. */
+.topico-resposta.topico-resposta--categoria-oculto {
+    display: none;
+}

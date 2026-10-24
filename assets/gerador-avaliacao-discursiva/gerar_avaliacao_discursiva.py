@@ -19,6 +19,9 @@ de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-disc
 "- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
 automática continua). O professor vê o Progresso da turma GLOBAL em toda atividade
 (assets/js/progresso-turma-global.js), sem campo na fonte.
+Regra GLOBAL (#363), sem campo na fonte: no painel "Respostas dos alunos", os filtros "Mostrar
+Certas / Meia Certas / Erradas" valem POR ALTERNATIVA (a, b, c) e usam a correção do professor
+quando ele já confirmou a alternativa; senão a sugestão da IA (assets/js/mostrar-certas-discursiva.js).
 "- **Ocultar respostas após entrega:** sim" faz o aluno que já entregou não ver (nem carregar do
 banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
 "- **Exportar Meu Gabarito:** sim" põe o botão do aluno "📄 Exportar Meu Gabarito" (PDF só com as
