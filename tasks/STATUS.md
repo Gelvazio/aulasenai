@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5) (local · main · s489) | HOVER-BOTOES-PROGRESSO.1 ([489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md)) — 3 executores em paralelo | 🔄 Ativa | 2026-10-24 13:50 |
 | Claude Code (Sonnet 5.5) (local · main · s488) | BOTOES-PROGRESSO-GRANDES concluída ([488-e5b73a19](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md)) | ⏹️ Encerrada | 2026-10-24 13:30 |
 | Claude Code (Sonnet 5.5) (local · main · s487) | CONFIRMAR-ENTREGA-BOTAO concluída ([487-d92a5f06](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md)) | ⏹️ Encerrada | 2026-10-24 13:05 |
 | Claude Code (Sonnet 5.5) (local · main · s486) | REGRA-CONFIRMAR-ENTREGA.1 concluída ([486-c4e81b27](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md)) | ⏹️ Encerrada | 2026-10-24 12:25 |
@@ -95,6 +96,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa | Verificado |
 |---|---|---|---|---|---|---|---|---|
+| **HOVER-BOTOES-PROGRESSO** | **Efeito de mouse hover nos botões do aluno** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md) | — |
+| HOVER-BOTOES-PROGRESSO.1 | Acrescentar `:hover` nos CSS dos botões da célula do aluno | 🟡 Média | MEDIO · só Sonnet · effort medium | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s489) (desde 2026-10-24 13:52) | [489-f1c6d0b4](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md) | — |
 | #2 | Apostilas só em Markdown (.md) | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (plano aprovado pelo usuário 2026-10-17) | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) | — |
 | #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) | — |
 | #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | ⚠️ sem nível (classificar antes) | — | ⬜ Pendente (liberado pelo usuário 2026-10-17) | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) | — |
@@ -2100,6 +2103,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 486-c4e81b27 | REGRA-CONFIRMAR-ENTREGA: Botão "Confirmar Entrega" do professor, regra global das atividades | [ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md](etapas/ETAPA-486-c4e81b27-REGRA-CONFIRMAR-ENTREGA-GLOBAL.md) |
 | 487-d92a5f06 | CONFIRMAR-ENTREGA-BOTAO: Botão "Confirmar Entrega" no Progresso da turma | [ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md](etapas/ETAPA-487-d92a5f06-CONFIRMAR-ENTREGA-BOTAO-PROFESSOR.md) |
 | 488-e5b73a19 | BOTOES-PROGRESSO-GRANDES: Botões do nome do aluno maiores, um por linha | [ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md](etapas/ETAPA-488-e5b73a19-BOTOES-DO-PROGRESSO-MAIORES-UM-POR-LINHA.md) |
+| 489-f1c6d0b4 | HOVER-BOTOES-PROGRESSO: Efeito de mouse hover nos botões do aluno | [ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md](etapas/ETAPA-489-f1c6d0b4-HOVER-NOS-BOTOES-DO-PROGRESSO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
