@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #372-4a9d2e61 — [Melhorar o CSS dos combos Turma e Aluno do card de notas](etapas/ETAPA-521-4a9d2e61-CSS-COMBOS-CARD-NOTAS.md) · 🔄 Em execução · Claude Code (Sonnet 5.5) (local · main)
+  - #372.1 — Reescrever o CSS de `__selecao` e `__combo` · 🔄 Em execução · `LEVE` · só Sonnet
 - #371-7f3b9c20 — [Card "Notas e média" no índice de atividades (aluno e professor, ON/OFF e peso por atividade)](etapas/ETAPA-520-7f3b9c20-CARD-NOTAS-E-MEDIA-DO-ALUNO.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #371.1 — SQL: tabela de configuração + função de notas para o professor · ✅ Concluído · `PESADO` · só Sonnet
   - #371.2 — Repositório de dados do card · ✅ Concluído · `PESADO` · só Sonnet
