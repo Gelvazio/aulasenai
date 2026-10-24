@@ -114,8 +114,8 @@
 - #209-77564f72-9786-4bff-b0e7-13af8a43abe7 — [**Slides bloqueados junto com a aula (também pelo endereço do PDF)**](status/TASK-ID-209-77564f72-9786-4bff-b0e7-13af8a43abe7-STATUS.md)
 - #210-101679a7 — [Seed da atividade prática da Aula 08 de Fundamentos de UI/UX](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md)
 || #210.1 | Gerar SQL de seed da Aula 08 | 🟡 Média | MEDIO · só Sonnet | Claude Code local (Sonnet) (desde 2026-10-24) | ✅ Concluído | — | [210-101679a7](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md) | —
-|| #210.2 | Aplicar SQL no banco via RPC | 🟡 Média | MEDIO · só Sonnet | #210.1 | 🔄 Em progresso | Claude Code local (Sonnet) (desde 2026-10-24) | [210-101679a7](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md) | —
-|| #210.3 | Atualizar STATUS_MATERIA.md e commitar | 🟡 Média | MEDIO · só Sonnet | #210.2 | ⬜ Pendente | — | [210-101679a7](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md) | —
+|| #210.2 | Aplicar SQL no banco via RPC | 🟡 Média | MEDIO · só Sonnet | #210.1 | ✅ Concluído | Claude Code local (Sonnet) (desde 2026-10-24) | [210-101679a7](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md) | —
+|| #210.3 | Atualizar STATUS_MATERIA.md e commitar | 🟡 Média | MEDIO · só Sonnet | #210.2 | 🔄 Em progresso | Claude Code local (Sonnet) (desde 2026-10-24) | [210-101679a7](etapas/ETAPA-210-101679a7-SEED-AULA-08-UI-UX.md) | —
 - #XXX — [Sessão 2026-10-24 (Reservada)](etapas/TASK-ID-XXX-SESSAO-2026-10-24.md)
 ||| #XXX.1 | Gerar SQL de seed da Aula 13 de Fundamentos de UI/UX | 🟡 Média | LEVE · só Haiku | — | ✅ Concluído | Claude Code local (Sonnet) | [XXX](etapas/TASK-ID-XXX-SESSAO-2026-10-24.md) | —
 ||| #XXX.2 | Aplicar SQL no banco via RPC | 🟡 Média | LEVE · só Haiku | #XXX.1 | ✅ Concluído | — | [XXX](etapas/TASK-ID-XXX-SESSAO-2026-10-24.md) | —
