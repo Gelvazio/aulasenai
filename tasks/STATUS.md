@@ -18,6 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
+| Claude Code (Sonnet 5.5 · líder; executor-pesado) (local · main · s276) | #276.0 ([404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md)) — ementa, `materia.json` e plano das 19 aulas | 🔄 Ativa | 2026-10-24 |
 | Claude Code (Sonnet 5.5) (local · main · rules-ai) | VERCEL-SEM-DEPLOY-DE-CONTROLE.1 concluída ([ETAPA-484](etapas/ETAPA-484-77fe60ae-VERCEL-SEM-DEPLOY-DE-CONTROLE.md)) — `rules-local/` fora do deploy | ⏹️ Encerrada | 2026-10-23 18:00 |
 | Claude Code (Sonnet 5.5) (local · main) | COMMIT.INICIAL.RULES-AI.1 concluída ([ETAPA-482](etapas/ETAPA-482-15d4abf4-COMMIT-INICIAL-RULES-AI.md)) | ⏹️ Encerrada | 2026-10-23 09:38 |
 | local · main (Sonnet 5.5) | #352 concluída ([481-5d2b8e47](etapas/ETAPA-481-5d2b8e47-INDEX-EXIGE-LOGIN.md)) — index.html exige login | ⏹️ Encerrada | 2026-10-23 09:22 |
@@ -950,7 +951,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #275-c7e27893-0d94-47f2-9665-50a69cf4d450 | Versão PWA só do aluno na pasta `pwa/` | 🟡 Média | — | #267 | 🔄 Em execução | — (não reservável) | [402-c7e27893](etapas/ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md) | — |
 | #275.1 | Plano de implantação com o máximo de subtarefas · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #267.3 | ⬜ Pendente | — | [402-c7e27893](etapas/ETAPA-402-c7e27893-VERSAO-PWA-DO-ALUNO.md) | — |
 | #276-627c95d8-d2ac-4cd8-9f5f-387ce08d88ed | **Fundamentos de UI/UX — matéria completa** (19 aulas, objetivas de 50, discursivas de 20, respostas prováveis, seeds e análise do JEV-AI) | 🟠 Alta | — | — | ⬜ Pendente (plano aprovado em 2026-10-24; níveis pelo Jev) | — (não reservável) | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |
-| #276.0 | Ementa completa, `materia.json` e plano das 19 aulas · `MEDIO · effort medium` | 🟠 Alta | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | ⬜ Pendente | — | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |
+| #276.0 | Ementa completa, `materia.json` e plano das 19 aulas · `MEDIO · effort medium` | 🟠 Alta | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 🔄 Em execução | Claude Code (Sonnet 5.5 · líder; executor-pesado) (local · main · s276) (desde 2026-10-24) | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |
 | #276.1 | Aula 01 · conteúdo: Princípios de design: definição e evolução histórica · `MEDIO · effort medium` | 🟠 Alta | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | #276.0 | ⬜ Pendente | — | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |
 | #276.2 | Aula 01 · objetiva de 50 questões (fonte + gabarito) · `PESADO · effort high` | 🟠 Alta | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | #276.1 | ⬜ Pendente | — | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |
 | #276.3 | Aula 01 · discursiva de 20 questões (fonte) · `MEDIO · effort medium` | 🟠 Alta | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash · effort low | #276.1 | ⬜ Pendente | — | [404-627c95d8](etapas/ETAPA-404-627c95d8-FUNDAMENTOS-DE-UI-UX-COMPLETA.md) | — |

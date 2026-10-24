@@ -108,7 +108,7 @@
 ---
 ### #276.0 — Ementa completa, `materia.json` e plano das 19 aulas
 
-**Próximo passo:** começar — nada depende dela.
+**Próximo passo:** reservada em 2026-10-24 por Claude Code (Sonnet 5.5 · líder; executor-pesado); executor-pesado completa a ementa, cria `materia.json` e `DOCUMENTACAO/PLANO-AULAS.md`.
 
 - **Effort:** high
 - **JEV-AI-SUGGESTION:** NAO
