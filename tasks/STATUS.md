@@ -166,3 +166,4 @@
 - #29: duas etapas com o número 114 (BLOQUEIO e LINKS) — [Histórico; o quadro agora usa o link do arquivo](status/TASK-ID-29: duas etapas com o número 114 (BLOQUEIO e LINKS)-STATUS.md)
 - #29: horários 12:26/12:27 de 2026-10-13 nas tarefas #15 e #18 parecem UTC (3 h a mais) — [Escritos por outra frente](status/TASK-ID-29: horários 12:26/12:27 de 2026-10-13 nas tarefas #15 e #18 parecem UTC (3 h a mais)-STATUS.md)
 - #301: a turma QA LBTSN 2026/1 M2 tem 2 contas antigas repetidas no banco, "Carlos Daniel" (nº 5) e "Luis Fernando" (nº 4), além das contas certas — [Fora do escopo da #301; apagar exige pedido do professor](status/TASK-ID-301: a turma QA LBTSN 2026/1 M2 tem 2 contas antigas repetidas no banco, "Carlos Daniel" (nº 5) e "Luis Fernando" (nº 4), além das contas certas-STATUS.md)
+- #217-490cffe8-27bc-415f-99a0-d23cf813d6e8 — [Seed da Aula 16 de Fundamentos de UI/UX](status/TASK-ID-217-490cffe8-27bc-415f-99a0-d23cf813d6e8-STATUS.md)
