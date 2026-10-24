@@ -26,7 +26,7 @@
   - **Arquivos:** `assets/css/header-usuario.css`
   - **Critérios:** `.header-usuario__menu-link` com `border-radius` menor (de 16 px para 8 px); linhas do menu centralizadas (`justify-content: center`); mobile sem overflow.
   - **Nível:** LEVE (Jev, confiança 0,77)
-  - **Entrega:** `assets/css/header-usuario.css` — `border-radius` de 16 para 4 px (reforço: pedido repetido), menu com `flex: 1` ocupando o espaço livre da barra, `justify-content: center` nas linhas e `text-align: center` nos links e `flex: 1` no link (todos com a mesma largura na linha). Devin (LEVE).
+  - **Entrega:** `assets/css/header-usuario.css` — `border-radius` de 16 para 4 px (reforço: pedido repetido), menu com `flex: 1` ocupando o espaço livre da barra, `justify-content: center` nas linhas e `text-align: center` nos links e `flex: 1` no link (todos com a mesma largura na linha) e `transition` suave de 0,25 s no hover. Devin (LEVE).
 - **Verificação:** linhas ≤ 100; `node --check` do JS ok; flex-wrap mantido no mobile.
 
 ### Registro
