@@ -474,7 +474,8 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     }
     linhaNome.appendChild(nome);
     const botao = criarElementoProgressoGlobal('button', CLASSE_PROGRESSO_GLOBAL + '__minimo',
-        '🎯 Quantidade Mínima de Questões: ' + aluno.minimo + '/' + aluno.totalQuestoes);
+        '🎯 Quantidade Mínima de Questões: ' + aluno.questoesNota + '/' + aluno.totalQuestoes);
+    botao.title = 'Questões que entram na nota deste aluno (mínimo padrão: ' + aluno.minimo + ').';
     botao.type = 'button';
     if (aluno.minimoDoAluno) botao.classList.add(CLASSE_PROGRESSO_GLOBAL + '__minimo--proprio');
     botao.addEventListener('click', () => abrirMinimoDoAlunoGlobal(aluno));
