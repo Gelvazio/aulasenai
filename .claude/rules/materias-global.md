@@ -30,6 +30,17 @@ Os nomes acima são os reais (inclusive `STATUS_MATERIA.md` com sublinhado).
   `docs/regras/materias.md` §3. O plano de cada aula (tema, domínios, capacidades…) fica só no
   `materia.json`.
 
+## Conteúdo da aula é do usuário (2026-10-24, pedido do usuário) — vale para TODAS as matérias
+
+- ⛔ A IA **nunca gera, completa nem reescreve** `CONTEUDO/AULA-NN-*.md`. O conteúdo vem **direto
+  dos slides do Chalkie.AI** e é colocado em Markdown **pelo usuário**.
+- ✅ Subtarefa de conteúdo de aula = ação do usuário: `Modelo` = `Usuário`, status 👀 Aguardando o
+  usuário.
+- ✅ **Só depois** que o Markdown da aula existir a IA gera as atividades dela (objetiva, discursiva,
+  gabaritos, respostas prováveis, seeds), **com base nesse arquivo**. Sem o arquivo, a atividade
+  da aula fica esperando (dependência).
+- Ao criar tarefa de matéria nova: a subtarefa de conteúdo de cada aula já nasce como 👀 do usuário.
+
 ## Sem slides (2026-10-16, #244.9)
 
 - ⛔ A IA **não gera slides** de aula: nem `AULA-NN-SLIDES.pdf` nem `.pptx`. Vale para **todas as
@@ -65,6 +76,15 @@ curso → materia → aulas → atividade → resposta
 - ⛔ Banco fora do ar ou com erro: mostrar a mensagem de erro de carregamento; nunca montar a
   lista pelos HTMLs como plano B.
 - Aula que não está na tabela `aulas` não aparece; para aparecer, cadastrar no banco.
+
+## Atividades só depois dos Markdown (2026-10-24)
+
+- ✅ Antes de gerar qualquer atividade (objetiva, prática, discursiva, avaliação) de uma aula,
+  conferir se o Markdown dela (extração dos slides do Chalkie AI) existe em `CONTEUDO/`.
+- ⛔ Sem o Markdown: **aguardar**, não gerar e avisar o usuário qual aula está sem arquivo.
+- ❌ PDF, PowerPoint e Google Slides nunca são fonte; só o `.md`.
+- ✅ Com o Markdown, as atividades usam esse arquivo como base, junto com a ementa.
+- Vale para **todas** as matérias.
 
 ## Critério de pronto
 

@@ -66,7 +66,11 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 10. **Sem sugestões** (2026-10-08, "PARE DE SUGERIR"): responder só o pedido, sem oferecer opções,
     "quer que eu…?" ou próximos passos; se o usuário afirma algo, aceitar sem conferir. Pedir os
     detalhes de uma TASK (regra 1) e relatar bloqueios continua valendo.
-11. **A IA não gera slides de aula** (2026-10-16, #244.9): nem PDF nem PPTX, em nenhuma aula de
+11. **A IA nunca gera o conteúdo das aulas** (2026-10-24, pedido do usuário; todas as matérias): o
+    Markdown de `CONTEUDO/AULA-NN-*.md` vem dos slides do Chalkie.AI e é colocado pelo usuário; só
+    depois a IA gera as atividades, com base nele
+    ([`materias-global.md`](.claude/rules/materias-global.md)).
+    **A IA não gera slides de aula** (2026-10-16, #244.9): nem PDF nem PPTX, em nenhuma aula de
     nenhuma matéria — o professor gera os slides em outro momento
     ([`materias-global.md`](.claude/rules/materias-global.md)).
 12. **Sempre verificar as regras do `rules-ai`** (2026-10-16, #246): ao iniciar a sessão (antes
@@ -87,6 +91,9 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 15. **Cards de aula só da tabela `aulas`** (2026-10-17, #272, pedido do usuário): a lista de
     cards de aulas vem só do banco; arquivos nunca criam, escolhem nem ocultam cards, sem plano B
     por HTML ([`materias-global.md`](.claude/rules/materias-global.md)).
+16. **Atividades só depois do Markdown** (2026-10-24, pedido do usuário): sem o `.md` da aula em
+    `CONTEUDO/` (extração dos slides), aguardar e avisar; nunca gerar a partir de PDF ou PPTX
+    ([`materias-global.md`](.claude/rules/materias-global.md)).
 
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).
 

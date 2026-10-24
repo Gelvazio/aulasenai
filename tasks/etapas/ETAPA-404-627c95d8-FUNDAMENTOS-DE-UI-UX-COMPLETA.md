@@ -90,6 +90,8 @@
 
 - **D7 — 2026-10-24 (usuário, no chat):** o usuário autorizou rodar o Jev nas 166 subtarefas (C52). Rodado com `--gravar --reclassificar`: 101 ficaram LEVE (só Haiku 5.5 ou DeepSeek V4.1 Flash) e 65 PESADO; nenhuma MEDIO. Os níveis antigos da D2 foram substituídos. 61 LEVE e 65 PESADO saíram por sinais (confiança < 0,80); 40 LEVE saíram pelo Jev (>= 0,80).
 
+- **D8 — 2026-10-24 (usuário, no chat):** o conteúdo das 19 aulas **vem direto dos slides do Chalkie.AI e é colocado em Markdown pelo usuário; a IA nunca gera esses arquivos**. As subtarefas de conteúdo (#276.1, 9, 17, …, 145) ficam 👀 Aguardando o usuário; as atividades de cada aula só são feitas depois que o Markdown da aula existir, e são geradas a partir dele.
+
 ### Riscos e plano B
 
 | Risco | Chance | Impacto | Plano B |
@@ -121,14 +123,14 @@
 
 ### #276.1 — Aula 01 · conteúdo: Princípios de design: definição e evolução histórica
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-01-PRINCIPIOS-DE-DESIGN-DEFINICAO-E-EVOLUCAO-HISTORICA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-01-PRINCIPIOS-DE-DESIGN-DEFINICAO-E-EVOLUCAO-HISTORICA.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 7 e 7.1–7.2, capacidades C3 e socioemocional S1); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (7 e 7.1–7.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-01-PRINCIPIOS-DE-DESIGN-DEFINICAO-E-EVOLUCAO-HISTORICA.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -225,14 +227,14 @@
 
 ### #276.9 — Aula 02 · conteúdo: Formas geométricas e regras de visualização dos elementos da interface
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-02-FORMAS-GEOMETRICAS-E-REGRAS-DE-VISUALIZACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.86)
-- **Nível:** LEVE — classificado (jev (confiança 0.86))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-02-FORMAS-GEOMETRICAS-E-REGRAS-DE-VISUALIZACAO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 7.3–7.4, capacidades C1 e socioemocional S3); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (7.3–7.4); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-02-FORMAS-GEOMETRICAS-E-REGRAS-DE-VISUALIZACAO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -329,14 +331,14 @@
 
 ### #276.17 — Aula 03 · conteúdo: Teoria das cores na interface
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-03-TEORIA-DAS-CORES.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.85)
-- **Nível:** LEVE — classificado (jev (confiança 0.85))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-03-TEORIA-DAS-CORES.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 7.5, capacidades C1 e socioemocional S2); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (7.5); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-03-TEORIA-DAS-CORES.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -433,14 +435,14 @@
 
 ### #276.25 — Aula 04 · conteúdo: Resolução de problemas: análise crítica
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-04-RESOLUCAO-DE-PROBLEMAS-ANALISE-CRITICA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.80)
-- **Nível:** LEVE — classificado (jev (confiança 0.80))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-04-RESOLUCAO-DE-PROBLEMAS-ANALISE-CRITICA.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 1 e 1.1, capacidades C3 e socioemocional S2); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (1 e 1.1); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-04-RESOLUCAO-DE-PROBLEMAS-ANALISE-CRITICA.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -537,14 +539,14 @@
 
 ### #276.33 — Aula 05 · conteúdo: Resolução de problemas: análise de cenários
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-05-RESOLUCAO-DE-PROBLEMAS-ANALISE-DE-CENARIOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.83)
-- **Nível:** LEVE — classificado (jev (confiança 0.83))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-05-RESOLUCAO-DE-PROBLEMAS-ANALISE-DE-CENARIOS.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 1.2, capacidades C3 e socioemocional S1); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (1.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-05-RESOLUCAO-DE-PROBLEMAS-ANALISE-DE-CENARIOS.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -641,14 +643,14 @@
 
 ### #276.41 — Aula 06 · conteúdo: User Interface: definição e tipos de interface
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-06-USER-INTERFACE-DEFINICAO-E-TIPOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.80)
-- **Nível:** LEVE — classificado (jev (confiança 0.80))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-06-USER-INTERFACE-DEFINICAO-E-TIPOS.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 3, 3.1 e 3.5 (texto, voz, natural), capacidades C3 e socioemocional S4); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (3, 3.1 e 3.5 (texto, voz, natural)); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-06-USER-INTERFACE-DEFINICAO-E-TIPOS.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -745,14 +747,14 @@
 
 ### #276.49 — Aula 07 · conteúdo: Layout: padrões de leitura F e Z e alinhamento
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-07-LAYOUT-PADROES-DE-LEITURA-F-E-Z-E-ALINHAMENTO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.83)
-- **Nível:** LEVE — classificado (jev (confiança 0.83))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-07-LAYOUT-PADROES-DE-LEITURA-F-E-Z-E-ALINHAMENTO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 3.2.1–3.2.2, capacidades C1 e socioemocional S3); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (3.2.1–3.2.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-07-LAYOUT-PADROES-DE-LEITURA-F-E-Z-E-ALINHAMENTO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -849,14 +851,14 @@
 
 ### #276.57 — Aula 08 · conteúdo: Layout: tamanho, espaçamento, texturas, fontes e repetição
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-08-LAYOUT-TAMANHO-ESPACAMENTO-TEXTURAS-FONTES-E-REPETICAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-08-LAYOUT-TAMANHO-ESPACAMENTO-TEXTURAS-FONTES-E-REPETICAO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 3.2.3–3.2.7, capacidades C1 e socioemocional S2); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (3.2.3–3.2.7); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-08-LAYOUT-TAMANHO-ESPACAMENTO-TEXTURAS-FONTES-E-REPETICAO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -953,14 +955,14 @@
 
 ### #276.65 — Aula 09 · conteúdo: Eventos e navegação na interface
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-09-EVENTOS-E-NAVEGACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.80)
-- **Nível:** LEVE — classificado (jev (confiança 0.80))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-09-EVENTOS-E-NAVEGACAO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 3.3–3.4, capacidades C2 e socioemocional S1); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (3.3–3.4); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-09-EVENTOS-E-NAVEGACAO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1057,14 +1059,14 @@
 
 ### #276.73 — Aula 10 · conteúdo: User Experience: definição e design centrado no usuário
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-10-USER-EXPERIENCE-DEFINICAO-E-DESIGN-CENTRADO-NO-USUARIO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.85)
-- **Nível:** LEVE — classificado (jev (confiança 0.85))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-10-USER-EXPERIENCE-DEFINICAO-E-DESIGN-CENTRADO-NO-USUARIO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 4, 4.1 e 4.2, capacidades C2 e socioemocional S3); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (4, 4.1 e 4.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-10-USER-EXPERIENCE-DEFINICAO-E-DESIGN-CENTRADO-NO-USUARIO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1161,14 +1163,14 @@
 
 ### #276.81 — Aula 11 · conteúdo: Processo de design interativo
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-11-PROCESSO-DE-DESIGN-INTERATIVO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.86)
-- **Nível:** LEVE — classificado (jev (confiança 0.86))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-11-PROCESSO-DE-DESIGN-INTERATIVO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 4.3, capacidades C2 e socioemocional S4); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (4.3); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-11-PROCESSO-DE-DESIGN-INTERATIVO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1265,14 +1267,14 @@
 
 ### #276.89 — Aula 12 · conteúdo: Jornada do usuário: objetivos do público-alvo e pesquisa
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-12-JORNADA-DO-USUARIO-OBJETIVOS-E-PESQUISA.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-12-JORNADA-DO-USUARIO-OBJETIVOS-E-PESQUISA.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 4.4, 4.4.1 e 4.4.2, capacidades C2 e socioemocional S1); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (4.4, 4.4.1 e 4.4.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-12-JORNADA-DO-USUARIO-OBJETIVOS-E-PESQUISA.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1369,14 +1371,14 @@
 
 ### #276.97 — Aula 13 · conteúdo: Usabilidade: friendly e intuitividade
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-13-USABILIDADE-FRIENDLY-E-INTUITIVIDADE.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-13-USABILIDADE-FRIENDLY-E-INTUITIVIDADE.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 4.5, 4.5.1 e 4.5.2, capacidades C2 e socioemocional S3); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (4.5, 4.5.1 e 4.5.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-13-USABILIDADE-FRIENDLY-E-INTUITIVIDADE.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1473,14 +1475,14 @@
 
 ### #276.105 — Aula 14 · conteúdo: Estratégias de coleta de informações: determinação e aplicação
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-14-ESTRATEGIAS-DE-COLETA-DETERMINACAO-E-APLICACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-14-ESTRATEGIAS-DE-COLETA-DETERMINACAO-E-APLICACAO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 5, 5.1 e 5.2, capacidades C2 e socioemocional S2); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (5, 5.1 e 5.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-14-ESTRATEGIAS-DE-COLETA-DETERMINACAO-E-APLICACAO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1577,14 +1579,14 @@
 
 ### #276.113 — Aula 15 · conteúdo: Coleta de feedbacks e resolução de conflitos
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-15-COLETA-DE-FEEDBACKS-E-RESOLUCAO-DE-CONFLITOS.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
 - **Fonte:** sinais
-- **Nível:** LEVE — classificado (sinais)
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-15-COLETA-DE-FEEDBACKS-E-RESOLUCAO-DE-CONFLITOS.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 5.3–5.4, capacidades C2 e socioemocional S3); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (5.3–5.4); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-15-COLETA-DE-FEEDBACKS-E-RESOLUCAO-DE-CONFLITOS.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1681,14 +1683,14 @@
 
 ### #276.121 — Aula 16 · conteúdo: Determinação de escopo do projeto de interface
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-16-DETERMINACAO-DE-ESCOPO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
 - **Fonte:** sinais
-- **Nível:** LEVE — classificado (sinais)
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-16-DETERMINACAO-DE-ESCOPO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 5.5, capacidades C2 e socioemocional S4); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (5.5); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-16-DETERMINACAO-DE-ESCOPO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1785,14 +1787,14 @@
 
 ### #276.129 — Aula 17 · conteúdo: Prototipagem: storyboard e protótipos de papel
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-17-PROTOTIPAGEM-STORYBOARD-E-PROTOTIPOS-DE-PAPEL.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.83)
-- **Nível:** LEVE — classificado (jev (confiança 0.83))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-17-PROTOTIPAGEM-STORYBOARD-E-PROTOTIPOS-DE-PAPEL.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 2, 2.1 e 2.2, capacidades C2 e socioemocional S1); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (2, 2.1 e 2.2); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-17-PROTOTIPAGEM-STORYBOARD-E-PROTOTIPOS-DE-PAPEL.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1889,14 +1891,14 @@
 
 ### #276.137 — Aula 18 · conteúdo: Mock-ups digitais e processo de criação
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-18-MOCK-UPS-DIGITAIS-E-PROCESSO-DE-CRIACAO.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.82)
-- **Nível:** LEVE — classificado (jev (confiança 0.82))
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-18-MOCK-UPS-DIGITAIS-E-PROCESSO-DE-CRIACAO.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 2.3 e 7.6, capacidades C2 e socioemocional S4); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (2.3 e 7.6); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-18-MOCK-UPS-DIGITAIS-E-PROCESSO-DE-CRIACAO.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
@@ -1993,14 +1995,14 @@
 
 ### #276.145 — Aula 19 · conteúdo: Direito autoral: definição, anterioridade, Creative Commons e registro
 
-**Próximo passo:** esperar #276.0.
+**Próximo passo:** 👀 o usuário coloca o Markdown da aula (vindo dos slides do Chalkie.AI) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-19-DIREITO-AUTORAL.md`; a IA nunca gera o conteúdo. Só depois as atividades desta aula são feitas.
 
 - **Effort:** low
 - **JEV-AI-SUGGESTION:** NAO
 - **Fonte:** sinais
-- **Nível:** LEVE — classificado (sinais)
-- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
-- **Descrição:** Criar `MATERIAIS/TECNICO-INFORMATICA-INTERNET/FUNDAMENTOS-DE-UI-UX/CONTEUDO/AULA-19-DIREITO-AUTORAL.md` com as 10 partes da aula de `docs/regras/materias.md` §3, nesta ordem: (1) título e cabeçalho (matéria, curso, 4 h, conhecimentos da ementa 6 e 6.1–6.4, capacidades C4 e socioemocional S2); (2) indicadores do `materia.json`; (3) objetivos; (4) roteiro de 240 min com intervalo; (5) conteúdo em seções numeradas com exemplos, tabelas e imagens citadas quando o tema pedir; (6) exemplo no contexto do curso (desenvolvimento de interfaces); (7) dinâmica (objetivo, materiais, passo a passo, fechamento); (8) situação-problema e entrega; (9) verificação da aprendizagem; (10) recursos e o caminho dos slides entre crases — ⛔ não gerar slides (#244.9). Só o conhecimento desta aula (6 e 6.1–6.4); ⛔ nunca ler PDF nem usar conteúdo de outra UC; contexto "Você, como aluno consultor…", sem empresa fictícia.
+- **Nível:** — (ação do usuário; não é tarefa de IA)
+- **Modelo:** só o usuário — a IA nunca gera o conteúdo da aula
+- **Descrição:** o usuário converte os slides do Chalkie.AI da aula em Markdown e salva em `CONTEUDO/AULA-19-DIREITO-AUTORAL.md` (10 partes, `docs/regras/materias.md` §3). ⛔ A IA não gera, não completa e não reescreve este arquivo.
 - **Critérios de aceitação:** Arquivo com as 10 partes na ordem; roteiro somando 240 min; só os conhecimentos e capacidades desta aula; nenhum conhecimento fora da ementa; slides sem clique enquanto o arquivo não existir; texto em português.
 - **Entrega:** — · **Verificação:** conferir contra `docs/regras/materias.md` §3, a ementa e o `materia.json`; commit + push
 
