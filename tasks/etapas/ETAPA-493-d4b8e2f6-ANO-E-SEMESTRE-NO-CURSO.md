@@ -50,7 +50,7 @@
 
 ### ANO-SEMESTRE-CURSO.2 — Aplicar no banco e preencher ano e semestre dos cursos
 
-**Próximo passo:** depende do .1.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -59,6 +59,7 @@
 - **Fonte:** sinais
 - **Descrição:** aplicar pelo conector do Supabase (Claude Code local) e preencher pelo período das turmas.
 - **Critérios de Aceitação:** colunas existem; cada curso com turma com período tem `ano` e `semestre`; registro em `database/SEEDS-APLICADOS.md` se aplicável.
+- **Entrega:** `database/2026-10-24-curso-ano-semestre.sql` aplicado no Supabase (migração `curso_ano_semestre`); etapa no commit desta entrega · **Verificação:** consulta de leitura: colunas `ano`/`semestre` existem; cursos 2 e 4 = 2026/1, 5 e 7 = 2026/2, 6 = 2026/1 (iguais ao período das turmas); cursos 1 e 3 sem turma com período ficam em branco
 
 ### ANO-SEMESTRE-CURSO.3 — Lista Curso do modal Equipes mostra ano e semestre
 
