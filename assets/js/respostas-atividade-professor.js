@@ -955,6 +955,28 @@ async function abrirLiberarGabarito(bloco, atividadeId) {
     }
 }
 
+let ouvinteTurmaProgressoRelatorio = null;
+
+/**
+ * Faz as abas de turma (e o gabarito) acompanharem a turma escolhida no Progresso da turma.
+ * Um único ouvinte vale por vez; o evento que o próprio relatório dispara é ignorado.
+ * @param {HTMLElement} bloco - Cartão do relatório.
+ * @param {Object[]} linhas - Todas as linhas do resumo.
+ * @param {{codigo: string}[]} turmas - Turmas do relatório.
+ */
+function acompanharTurmaProgressoRelatorio(bloco, linhas, turmas) {
+    if (ouvinteTurmaProgressoRelatorio) {
+        document.removeEventListener('relatorio-professor:turma', ouvinteTurmaProgressoRelatorio);
+    }
+    ouvinteTurmaProgressoRelatorio = (evento) => {
+        const turma = String(evento.detail?.turma || '');
+        const ehConhecida = turmas.some((item) => item.codigo === turma);
+        if (!ehConhecida || turma === turmaEscolhidaRelatorio || !bloco.isConnected) return;
+        aplicarFiltroTurmaRelatorio(bloco, linhas, turma);
+    };
+    document.addEventListener('relatorio-professor:turma', ouvinteTurmaProgressoRelatorio);
+}
+
 /**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
@@ -984,6 +1006,10 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         atualizarResumoRelatorio(resumo, linhas);
         if (!linhas.length) return;
         const turmas = listarTurmasRelatorio(linhas, dadosTurmas);
+        const doProgresso = String(window.lerTurmaEscolhidaProgresso?.() || '');
+        if (turmas.some((turma) => turma.codigo === doProgresso)) {
+            turmaEscolhidaRelatorio = doProgresso;
+        }
         const existe = turmas.some((turma) => turma.codigo === turmaEscolhidaRelatorio);
         const favorita = turmas.find((turma) => turma.favorita);
         if (!existe) turmaEscolhidaRelatorio = (favorita || turmas[0]).codigo;
@@ -997,6 +1023,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
         aplicarNotasGlobais(bloco);
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
+        acompanharTurmaProgressoRelatorio(bloco, linhas, turmas);
         await abrirLiberarGabarito(bloco, atividadeId);
         await abrirTabelaNotas(bloco, linhas, turmas);
     } catch (erro) {

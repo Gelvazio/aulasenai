@@ -6,6 +6,8 @@
 // Gráficos e Cálculo Nota) fica só com os alunos dela — também tira quem respondeu sendo de outra
 // turma. Vale para toda atividade com Progresso da turma (objetiva, prática e discursiva).
 // Só leitura; o RLS limita ao que o professor pode ver. Depende de js/supabase.js (sbGet).
+// Tarefa #368: expõe lerTurmaEscolhidaProgresso() e dispara 'relatorio-professor:turma' (turma
+// específica) para o combo do Gabarito da avaliação abrir na mesma turma; não escuta o evento.
 // Pedidos do usuário em 2026-10-14 (tarefas #137 e #139). Regra: docs/regras/atividades.md
 
 const TENTATIVA_INICIAL_ALUNOS_DA_TURMA = 1;
@@ -15,6 +17,7 @@ const TEXTO_TODAS_TURMAS_PROGRESSO = 'Todas as turmas';
 const ROTULO_COMBO_TURMA_PROGRESSO = 'Turma:';
 const CLASSE_COMBO_TURMA_PROGRESSO = 'progresso-turma__turma';
 const ID_COMBO_TURMA_PROGRESSO = 'progresso-turma-combo-turma';
+const EVENTO_TURMA_PROGRESSO = 'relatorio-professor:turma';
 
 const memoriaAlunosDaTurma = {
     atividadeId: null, turmas: [], turmaEscolhida: VALOR_TODAS_TURMAS_PROGRESSO,
@@ -105,6 +108,25 @@ async function completarComAlunosDaTurma(alunos, atividadeId) {
 }
 
 /**
+ * Devolve o código da turma escolhida no combo "Turma" do Progresso da turma.
+ * @returns {string} Código da turma, ou '' para "todas as turmas" / sem escolha.
+ */
+function lerTurmaEscolhidaProgresso() {
+    return memoriaAlunosDaTurma.turmaEscolhida || VALOR_TODAS_TURMAS_PROGRESSO;
+}
+
+/**
+ * Avisa (evento no document) a turma específica escolhida; "todas" não dispara.
+ * @param {string} codigo - Código da turma do combo.
+ * @returns {void}
+ */
+function avisarTurmaEscolhidaProgresso(codigo) {
+    if (!codigo || codigo === VALOR_TODAS_TURMAS_PROGRESSO) return;
+
+    document.dispatchEvent(new CustomEvent(EVENTO_TURMA_PROGRESSO, { detail: { turma: codigo } }));
+}
+
+/**
  * Cria o combo "Turma" do Progresso da turma (abre na turma favorita do curso, se houver).
  * @param {{atividadeId: number, aoMudar: Function}} dados - Atividade e releitura da lista.
  * @returns {Promise<HTMLElement>} Rótulo com o combo.
@@ -124,8 +146,10 @@ async function criarComboTurmaProgresso(dados) {
         (turma.favorito ? '⭐ ' : '') + (turma.nome || turma.codigo) + ' (' + turma.codigo + ')',
         turma.codigo)));
     combo.value = memoriaAlunosDaTurma.turmaEscolhida;
+    avisarTurmaEscolhidaProgresso(combo.value);
     combo.addEventListener('change', () => {
         memoriaAlunosDaTurma.turmaEscolhida = combo.value;
+        avisarTurmaEscolhidaProgresso(combo.value);
         dados.aoMudar();
     });
     rotulo.append(combo);
@@ -134,3 +158,4 @@ async function criarComboTurmaProgresso(dados) {
 
 window.completarComAlunosDaTurma = completarComAlunosDaTurma;
 window.criarComboTurmaProgresso = criarComboTurmaProgresso;
+window.lerTurmaEscolhidaProgresso = lerTurmaEscolhidaProgresso;

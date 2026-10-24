@@ -69,18 +69,61 @@ async function listarTurmasLiberacaoDiscursiva() {
     });
 }
 
+let ouvinteTurmaProgressoDiscursiva = null;
+
+/**
+ * Lê a turma escolhida no combo "Turma" do Progresso da turma (vazio se não houver).
+ * @returns {string} Código da turma escolhida, ou ''.
+ */
+function lerTurmaProgressoDiscursiva() {
+    return String(window.lerTurmaEscolhidaProgresso?.() || '');
+}
+
+/**
+ * Define a turma inicial: a do Progresso, se estiver na lista; senão a primeira.
+ * @param {{codigo: string}[]} turmas - Turmas da lista.
+ * @returns {string} Código da turma inicial.
+ */
+function escolherTurmaInicialLiberacao(turmas) {
+    const escolhida = lerTurmaProgressoDiscursiva();
+    const existe = turmas.some((turma) => turma.codigo === escolhida);
+    return existe ? escolhida : turmas[0].codigo;
+}
+
+/**
+ * Faz a lista "Turma" acompanhar a turma escolhida no Progresso (sem reemitir o evento).
+ * Remove o ouvinte anterior para não registrar em duplicidade.
+ * @param {HTMLSelectElement} lista - Lista de turmas.
+ * @param {{codigo: string}[]} turmas - Turmas da lista.
+ */
+function acompanharTurmaProgressoLiberacao(lista, turmas) {
+    if (ouvinteTurmaProgressoDiscursiva) {
+        document.removeEventListener(EVENTO_TURMA_LIBERACAO_DISCURSIVA,
+            ouvinteTurmaProgressoDiscursiva);
+    }
+    ouvinteTurmaProgressoDiscursiva = (evento) => {
+        const codigo = String(evento.detail?.turma || '');
+        const estaNaLista = turmas.some((turma) => turma.codigo === codigo);
+        if (estaNaLista && codigo !== lista.value) lista.value = codigo;
+    };
+    document.addEventListener(EVENTO_TURMA_LIBERACAO_DISCURSIVA, ouvinteTurmaProgressoDiscursiva);
+}
+
 /**
  * Monta a lista "Turma" do professor; trocar a turma atualiza o botão de liberar.
  * @param {{codigo: string, rotulo: string}[]} turmas - Turmas da lista.
+ * @param {string} turmaInicial - Código da turma que abre selecionada.
  * @returns {HTMLLabelElement} Lista pronta.
  */
-function criarListaTurmasLiberacao(turmas) {
+function criarListaTurmasLiberacao(turmas, turmaInicial) {
     const etiqueta = criarElementoDiscursivaLiberacao('label',
         CLASSE_LIBERACAO_DISCURSIVA + '__turma', 'Turma: ');
     const lista = document.createElement('select');
     turmas.forEach((turma) => lista.appendChild(new Option(turma.rotulo, turma.codigo)));
+    lista.value = turmaInicial;
     lista.addEventListener('change', () => document.dispatchEvent(new CustomEvent(
         EVENTO_TURMA_LIBERACAO_DISCURSIVA, { detail: { turma: lista.value } })));
+    acompanharTurmaProgressoLiberacao(lista, turmas);
     etiqueta.appendChild(lista);
     return etiqueta;
 }
@@ -104,8 +147,9 @@ async function montarLiberacaoProfessorDiscursiva(painel, atividadeId) {
     if (typeof window.montarLiberarGabaritoProfessor !== 'function') {
         await carregarScriptLiberacao(ARQUIVO_LIBERACAO_PROFESSOR);
     }
-    area.appendChild(criarListaTurmasLiberacao(turmas));
-    montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmas[0].codigo });
+    const turmaInicial = escolherTurmaInicialLiberacao(turmas);
+    area.appendChild(criarListaTurmasLiberacao(turmas, turmaInicial));
+    montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmaInicial });
 }
 
 /**

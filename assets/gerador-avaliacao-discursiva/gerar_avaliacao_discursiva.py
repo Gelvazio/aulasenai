@@ -23,6 +23,9 @@ Regra GLOBAL (#365), sem campo na fonte: botão "CONFIRMAR TODA CORREÇÃO DE IA
 acima da coluna "Aluno" do Progresso da turma; roda o "Confirmar Todas" em cada aluno listado
 (entregues, com nota da IA, sem suspeita de cópia pendente), após popup de confirmação
 (assets/js/confirmar-toda-correcao-ia-progresso.js).
+Regra GLOBAL (#368), sem campo na fonte, também nas práticas e objetivas: o seletor de turma do
+"Liberar gabaritos" abre na turma escolhida no combo "Turma" do Progresso da turma e a acompanha
+(assets/js/alunos-da-turma-progresso.js, liberacao-respostas-discursiva.js).
 Regra GLOBAL (#362, #367), sem campo na fonte: filtros ON/OFF "ABAIXO MEDIA(IA)" e "MEDIA ATINGIDA(IA)"
 no Progresso da turma, pela nota sugerida da IA (percentual de acerto, corte de 70%), em todo quadro
 (assets/js/filtro-abaixo-media-ia-progresso.js e filtro-media-atingida-ia-progresso.js).
