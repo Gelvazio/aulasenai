@@ -23,8 +23,10 @@ novamente mais tarde." com rodapé "0 de 0 atividades na média" (screenshot do 
 
 ### #375.1 — Aviso do card com o detalhe do erro (diagnóstico)
 
-**Próximo passo:** editar os dois catch que mostram `MSG_ERRO_NOTAS` para incluir `erro.message`,
-pedir ao usuário o texto novo na tela.
+**Próximo passo:** ✅ Entregue em 2026-10-24 — o aviso mostra o detalhe real do erro. Diagnóstico
+com o detalhe do usuário: `lerLoginCard is not defined` = o script
+`card-notas-media-repositorio.js` não chegou ao browser (deploy/cache); verificado em produção
+(`aulasenai.vercel.app`): arquivo completo e válido.
 
 - **Nível:** MEDIO — JS com lógica, 1 arquivo
 - **Modelo:** MEDIO · só Sonnet — pedido direto do usuário (Devin)

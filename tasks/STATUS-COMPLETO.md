@@ -1506,8 +1506,6 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ⬜ Pendente | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
 | **CORRECAO-IA-PAINEL** | **Painel "Executar correção de IA" no quadro de progresso** | 🟡 Média | — | — | 🔄 Em progresso | — (não reservável) | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
 | CORRECAO-IA-PAINEL.1 | Tabela pedido_correcao_ia com RLS (SQL) | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek · effort high | — | 👀 Aguardando o usuário | — | [497-b8f4c6d0](etapas/ETAPA-497-b8f4c6d0-PAINEL-CORRECAO-IA-NO-PROGRESSO.md) | — |
-| **#375-c900a2d7** | **Diagnosticar "Não foi possível carregar as notas" no card "Notas e média"** | 🟡 Média | — | Nenhuma | 🔄 Em progresso | — (não reservável) | [524-c900a2d7](etapas/ETAPA-524-c900a2d7-DIAGNOSTICO-ERRO-CARD-NOTAS.md) | — |
-| #375.1 | Aviso do card com o detalhe do erro (diagnóstico) | 🟡 Média | MEDIO · só Sonnet · effort low (pedido direto: Devin) | Nenhuma | 🔄 Em progresso | Devin (SWE-2) (local · main) (desde 2026-10-24) | [524-c900a2d7](etapas/ETAPA-524-c900a2d7-DIAGNOSTICO-ERRO-CARD-NOTAS.md) | — |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
