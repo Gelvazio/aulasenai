@@ -20,7 +20,7 @@ const MSG_PESO_INVALIDO_CARD = 'Peso inválido';
 const MSG_SEM_CLIENTE_CARD = 'Não foi possível conectar ao banco de dados.';
 const MSG_FALHA_GRAVAR_CARD = 'Não foi possível gravar a configuração da média.';
 const REGEX_EMOJI_INICIAL_CARD = /^[^\p{L}\p{N}]+/u;
-const TABELA_MATERIA_CARD = 'materia';
+const TABELA_MATERIA_NOTAS = 'materia';
 const TABELA_MEDIA_FINALIZADA_CARD = 'media_finalizada';
 const PASTA_ATIVIDADES_CARD = 'ATIVIDADES';
 const CONSULTA_MATERIA_CARD = 'select=id&descricao=ilike.';
@@ -261,7 +261,7 @@ async function lerMateriaIdDaPagina() {
     if (posicao < 1) return null;
 
     const nome = partes[posicao - 1].replace(/-/g, ' ');
-    const linhas = await sbGet(TABELA_MATERIA_CARD,
+    const linhas = await sbGet(TABELA_MATERIA_NOTAS,
         CONSULTA_MATERIA_CARD + encodeURIComponent(nome));
     if (linhas.length !== 1) return null;
 

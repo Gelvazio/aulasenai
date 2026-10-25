@@ -23,6 +23,16 @@ no Live Server (`http://127.0.0.1:5501/MATERIAIS/.../ATIVIDADES/index.html`), me
 |---|---|---|
 | 376.1 | `atividades-crud-modal.js`: injetar os 3 scripts do card em **ordem garantida por `onload`** (sequencial, `onerror` continua), sem depender do flag `async=false` | ✅ 2026-10-25 |
 | 376.2 | `card-notas-media.js`: `esperarRepositorioNotas()` — espera limitada (~5 s) até `lerLoginCard` existir; se não vier, o aviso mostra a causa real (`card-notas-media-repositorio.js não carregou`) | ✅ 2026-10-25 |
+| 376.3 | **CAUSA RAIZ**: `const TABELA_MATERIA_CARD` estava declarada em `indice-aula-repositorio.js` (injetado antes) E em `card-notas-media-repositorio.js` → `SyntaxError: Identifier already declared` ao parsear o repositório → nenhuma função dele (`lerLoginCard`...) registrava. Renomeado para `TABELA_MATERIA_NOTAS` no card | ✅ 2026-10-25 |
+
+## Causa raiz (confirmada por agente de investigação)
+
+Os ~25 scripts do índice são clássicos e dividem o mesmo escopo global (`window`).
+`indice-aula-repositorio.js:8` e `card-notas-media-repositorio.js:23` declaravam a mesma
+`const TABELA_MATERIA_CARD = 'materia'`. Como o `indice-aula-repositorio.js` é injetado antes,
+o parse do `card-notas-media-repositorio.js` lançava `SyntaxError` e o arquivo inteiro era
+descartado — HTTP 200 e conteúdo íntegro, mas nenhuma função registrada. Por isso `lerLoginCard`
+ficava `undefined`. Corrigido renomeando a constante do card para `TABELA_MATERIA_NOTAS`.
 
 ## Verificação
 

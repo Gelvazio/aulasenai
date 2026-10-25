@@ -8,6 +8,7 @@
 - #376-9b1f79e3 — [Corrigir "lerLoginCard is not defined": ordem garantida dos scripts do card + guarda de dependência](etapas/ETAPA-525-9b1f79e3-FIX-CARD-NOTAS-ORDEM-SCRIPTS.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #376.1 — Modal: injeção sequencial dos 3 scripts do card via `onload` · ✅ Concluído · `LEVE` · só Haiku (pedido direto: Devin)
   - #376.2 — Card: espera limitada pelo repositório + erro explícito · ✅ Concluído · `LEVE` · só Haiku (pedido direto: Devin)
+  - #376.3 — Causa raiz: `const TABELA_MATERIA_CARD` duplicada (colisão global com `indice-aula-repositorio.js`) → renomeada para `TABELA_MATERIA_NOTAS` · ✅ Concluído · `LEVE` · só Haiku (pedido direto: Devin)
 - #375-c900a2d7 — [Diagnosticar "Não foi possível carregar as notas" no card "Notas e média"](etapas/ETAPA-524-c900a2d7-DIAGNOSTICO-ERRO-CARD-NOTAS.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #375.1 — Aviso do card com o detalhe do erro (diagnóstico) · ✅ Concluído · `MEDIO` · só Sonnet (pedido direto: Devin)
 - #374-2d18d485 — [Confirmar média do aluno (`media_finalizada`) no card "Notas e média" — botão só professor + "Listar todos"](etapas/ETAPA-523-2d18d485-CONFIRMAR-MEDIA-ALUNO.md) · ✅ Concluído · Devin (SWE-2) (local · main)
