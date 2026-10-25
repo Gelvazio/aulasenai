@@ -646,11 +646,38 @@ async function montarVisaoAlunoNotas() {
     mostrarAvisoNotas('');
 }
 
+const ESPERA_REPO_NOTAS_MS = 100;
+const MAX_ESPERA_REPO_NOTAS = 50;
+
+/**
+ * Espera o repositório do card (carregado em script separado) ficar disponível.
+ * Rejeita se não aparecer em ~5 s, para o aviso mostrar a causa real.
+ */
+function esperarRepositorioNotas() {
+    return new Promise((resolve, reject) => {
+        let tentativas = 0;
+        const verificar = () => {
+            if (typeof lerLoginCard === 'function') {
+                resolve();
+                return;
+            }
+            tentativas += 1;
+            if (tentativas > MAX_ESPERA_REPO_NOTAS) {
+                reject(new Error('card-notas-media-repositorio.js não carregou'));
+                return;
+            }
+            setTimeout(verificar, ESPERA_REPO_NOTAS_MS);
+        };
+        verificar();
+    });
+}
+
 /**
  * Preenche o card conforme o perfil, depois de conferir login e atividades.
  */
 async function preencherCardNotas() {
     mostrarAvisoNotas(MSG_CARREGANDO_NOTAS);
+    await esperarRepositorioNotas();
     const login = await lerLoginCard();
     if (!login.logado) {
         mostrarAvisoNotas(MSG_SEM_LOGIN_NOTAS);

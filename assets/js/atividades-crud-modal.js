@@ -870,15 +870,19 @@ function carregarCardNotasMediaIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/card-notas-media.css';
+    document.head.append(estilo);
     const caminhos = ['js/card-notas-media-calculo.js', 'js/card-notas-media-repositorio.js',
         'js/card-notas-media.js'];
-    const scripts = caminhos.map((caminho) => {
+    const carregarProximoScript = () => {
+        const caminho = caminhos.shift();
+        if (!caminho) return;
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
-        script.async = false;
-        return script;
-    });
-    document.head.append(estilo, ...scripts);
+        script.onload = carregarProximoScript;
+        script.onerror = carregarProximoScript;
+        document.head.append(script);
+    };
+    carregarProximoScript();
 }
 
 abrirAtividadesEmNovaAba();
