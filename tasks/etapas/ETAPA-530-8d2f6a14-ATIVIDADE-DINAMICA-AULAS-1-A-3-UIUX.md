@@ -62,6 +62,281 @@ SQL de produção: só o Claude Code local.
 
 **Entrega (2026-10-26):** `docs/regras/atividade-dinamica.md`, 3 fontes em `ATIVIDADES/CONTEUDO/`, `assets/gerador-atividade-dinamica/` (+ ícone 🎯 em `gerar_indices.py`), `assets/css/atividade-dinamica.css`, `assets/js/nota-dinamica-*.js`, 3 páginas `ATIVIDADE-DINAMICA-AULA-0N.html`, SQL e seeds. **Bloqueio:** o classificador do Claude Code negou `apply_migration` no Supabase.
 
+## Seções das subtarefas (lidas pelo Jev)
+
+### 381.1 — Modelo da fonte `ATIVIDADE-DINAMICA-AULA-NN.md` (campos, critérios que somam 10) em `docs/regras/atividades.md`
+
+- **Descrição:** Modelo da fonte `ATIVIDADE-DINAMICA-AULA-NN.md` (campos, critérios que somam 10) em `docs/regras/atividades.md`.
+- **Depende de:** —.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.2 — Ler os Markdown das aulas 01, 02 e 03 de `CONTEUDO/` e anotar tema e capacidades de cada uma
+
+- **Descrição:** Ler os Markdown das aulas 01, 02 e 03 de `CONTEUDO/` e anotar tema e capacidades de cada uma.
+- **Depende de:** —.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.3 — Fonte da dinâmica da Aula 01 (`CONTEUDO/ATIVIDADE-DINAMICA-AULA-01.md`)
+
+- **Descrição:** Fonte da dinâmica da Aula 01 (`CONTEUDO/ATIVIDADE-DINAMICA-AULA-01.md`).
+- **Depende de:** 381.1, 381.2.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.4 — Fonte da dinâmica da Aula 02
+
+- **Descrição:** Fonte da dinâmica da Aula 02.
+- **Depende de:** 381.1, 381.2.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.5 — Fonte da dinâmica da Aula 03
+
+- **Descrição:** Fonte da dinâmica da Aula 03.
+- **Depende de:** 381.1, 381.2.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.6 — Gerador `assets/gerador-atividade-dinamica/` (leitura da fonte, ficha, roteiro só professor, tempo/materiais)
+
+- **Descrição:** Gerador `assets/gerador-atividade-dinamica/` (leitura da fonte, ficha, roteiro só professor, tempo/materiais).
+- **Depende de:** 381.1.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.7 — Template HTML e CSS da página da dinâmica (tokens `:root`, sem estilo inline)
+
+- **Descrição:** Template HTML e CSS da página da dinâmica (tokens `:root`, sem estilo inline).
+- **Depende de:** 381.6.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.8 — Card/ícone 🎯 da dinâmica no `gerar_indices.py`
+
+- **Descrição:** Card/ícone 🎯 da dinâmica no `gerar_indices.py`.
+- **Depende de:** 381.6.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.9 — SQL `nota_dinamica` (tabela, RLS, JWT, idempotente)
+
+- **Descrição:** SQL `nota_dinamica` (tabela, RLS, JWT, idempotente).
+- **Depende de:** 381.1.
+- **Situação:** ✅ 2026-10-26 (SQL escrito).
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.10 — Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local)
+
+- **Descrição:** Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local).
+- **Depende de:** 381.9.
+- **Situação:** 👀 aguarda o usuário (aplicar o SQL; o conector recusou).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.11 — Repositório JS de notas da dinâmica (ler/gravar por aluno ou grupo)
+
+- **Descrição:** Repositório JS de notas da dinâmica (ler/gravar por aluno ou grupo).
+- **Depende de:** 381.10.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.12 — Tela do professor: lista da turma, formato, grupos e lançar nota
+
+- **Descrição:** Tela do professor: lista da turma, formato, grupos e lançar nota.
+- **Depende de:** 381.11, 381.7.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.13 — Visão do aluno: ver a própria nota depois de lançada
+
+- **Descrição:** Visão do aluno: ver a própria nota depois de lançada.
+- **Depende de:** 381.11, 381.7.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.14 — Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média"
+
+- **Descrição:** Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média".
+- **Depende de:** 381.10.
+- **Situação:** 👀 vem junto com o 381.10 (funções no mesmo SQL).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.15 — Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices
+
+- **Descrição:** Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices.
+- **Depende de:** 381.3–381.8.
+- **Situação:** 🔄 páginas e seeds gerados; seeds aguardam o 381.10.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.16 — Documentação: `docs/database.md` + relatório HTML + `.claude/rules/atividades-banco.md` + histórico
+
+- **Descrição:** Documentação: `docs/database.md` + relatório HTML + `.claude/rules/atividades-banco.md` + histórico.
+- **Depende de:** 381.10.
+- **Situação:** ✅ 2026-10-26.
+
+**Próximo passo:** nenhum, entregue.
+
+### 381.17 — Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela
+
+- **Descrição:** Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela.
+- **Depende de:** 381.15, 381.16.
+- **Situação:** 🔄 `py_compile` e `node --check` ok; falta conferir no banco após o 381.10.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.1 — LEVE | low | jev
+
+- **Descrição:** LEVE | low | jev.
+- **Depende de:** 0.95.
+- **Situação:** Haiku.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.2 — LEVE | low | jev
+
+- **Descrição:** LEVE | low | jev.
+- **Depende de:** 1.
+- **Situação:** Haiku.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.3 — LEVE | low | jev
+
+- **Descrição:** LEVE | low | jev.
+- **Depende de:** 0.95.
+- **Situação:** Haiku.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.4 — LEVE | low | jev
+
+- **Descrição:** LEVE | low | jev.
+- **Depende de:** 0.88.
+- **Situação:** Haiku.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.5 — LEVE | low | jev
+
+- **Descrição:** LEVE | low | jev.
+- **Depende de:** 0.89.
+- **Situação:** Haiku.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.6 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.62.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.7 — MEDIO | medium | matriz
+
+- **Descrição:** MEDIO | medium | matriz.
+- **Depende de:** 0.61.
+- **Situação:** Sonnet.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.8 — MEDIO | medium | matriz
+
+- **Descrição:** MEDIO | medium | matriz.
+- **Depende de:** 0.3.
+- **Situação:** Sonnet.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.9 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 1.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.10 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 1.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.11 — MEDIO | medium | matriz
+
+- **Descrição:** MEDIO | medium | matriz.
+- **Depende de:** 0.33.
+- **Situação:** Sonnet.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.12 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.23.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.13 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.2.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.14 — MEDIO | medium | matriz
+
+- **Descrição:** MEDIO | medium | matriz.
+- **Depende de:** 0.58.
+- **Situação:** Sonnet.
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.15 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.37.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.16 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.31.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+### 381.17 — PESADO | high | matriz
+
+- **Descrição:** PESADO | high | matriz.
+- **Depende de:** 0.51.
+- **Situação:** Sonnet (sem Opus neste projeto).
+
+**Próximo passo:** executar conforme a descrição, depois de classificado pelo Jev.
+
+
 ## Classificação do Jev (2026-10-26)
 
 Feita com `node C:/fontes/rules-ai/scripts/jev.mjs mensagem` sobre a descrição de cada subtarefa (o `classificar --gravar` não lê o formato deste quadro). `jev` = decidiu com confiança ≥ 0,80; `matriz` = abaixo disso, vale o nível mais restritivo e pede revisão humana.
