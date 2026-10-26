@@ -46,3 +46,24 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 | 382.14 | Verificação geral (`py_compile`, leitura dos HTML, conferência dos cards) | 382.13 | ⬜ |
 
 **Próximo passo:** aguardar a conclusão da #381.
+
+## Classificação do Jev (2026-10-26)
+
+Feita com `node C:ontesules-ai\scripts\jev.mjs mensagem` sobre a descrição de cada subtarefa (o `classificar --gravar` não lê o formato deste quadro). `jev` = decidiu com confiança ≥ 0,80; `matriz` = abaixo disso, vale o nível mais restritivo e pede revisão humana.
+
+| Item | Nível | Effort | Decisão | Confiança | Executor neste projeto |
+|---|---|---|---|---|---|
+| 382.1 | LEVE | low | jev | 0.85 | Haiku |
+| 382.2 | PESADO | high | matriz | 0.27 | Sonnet (sem Opus neste projeto) |
+| 382.3 | PESADO | high | matriz | 0.62 | Sonnet (sem Opus neste projeto) |
+| 382.4 | PESADO | high | matriz | 0.95 | Sonnet (sem Opus neste projeto) |
+| 382.5 | PESADO | high | matriz | 0.43 | Sonnet (sem Opus neste projeto) |
+| 382.6 | LEVE | low | jev | 0.98 | Haiku |
+| 382.7 | LEVE | low | jev | 0.94 | Haiku |
+| 382.8 | LEVE | low | matriz | 0.79 | Haiku |
+| 382.9 | LEVE | low | jev | 0.98 | Haiku |
+| 382.10 | LEVE | low | jev | 0.98 | Haiku |
+| 382.11 | PESADO | high | matriz | 0.62 | Sonnet (sem Opus neste projeto) |
+| 382.12 | LEVE | low | matriz | 0.4 | Haiku |
+| 382.13 | LEVE | low | jev | 0.97 | Haiku |
+| 382.14 | PESADO | high | matriz | 0.25 | Sonnet (sem Opus neste projeto) |

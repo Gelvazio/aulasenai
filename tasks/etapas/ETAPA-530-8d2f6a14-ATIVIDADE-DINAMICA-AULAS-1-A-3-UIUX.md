@@ -61,3 +61,27 @@ SQL de produção: só o Claude Code local.
 **Próximo passo:** o usuário (ou o Claude Code local com permissão) aplica `database/2026-10-26-nota-dinamica.sql` e depois os 3 `database/2026-10-26-atividade-dinamica-aula-0N-seed-atividades.sql` no Supabase (381.10); em seguida conferir as políticas e fechar 381.14/15/17.
 
 **Entrega (2026-10-26):** `docs/regras/atividade-dinamica.md`, 3 fontes em `ATIVIDADES/CONTEUDO/`, `assets/gerador-atividade-dinamica/` (+ ícone 🎯 em `gerar_indices.py`), `assets/css/atividade-dinamica.css`, `assets/js/nota-dinamica-*.js`, 3 páginas `ATIVIDADE-DINAMICA-AULA-0N.html`, SQL e seeds. **Bloqueio:** o classificador do Claude Code negou `apply_migration` no Supabase.
+
+## Classificação do Jev (2026-10-26)
+
+Feita com `node C:ontesules-ai\scripts\jev.mjs mensagem` sobre a descrição de cada subtarefa (o `classificar --gravar` não lê o formato deste quadro). `jev` = decidiu com confiança ≥ 0,80; `matriz` = abaixo disso, vale o nível mais restritivo e pede revisão humana.
+
+| Item | Nível | Effort | Decisão | Confiança | Executor neste projeto |
+|---|---|---|---|---|---|
+| 381.1 | LEVE | low | jev | 0.95 | Haiku |
+| 381.2 | LEVE | low | jev | 1 | Haiku |
+| 381.3 | LEVE | low | jev | 0.95 | Haiku |
+| 381.4 | LEVE | low | jev | 0.88 | Haiku |
+| 381.5 | LEVE | low | jev | 0.89 | Haiku |
+| 381.6 | PESADO | high | matriz | 0.62 | Sonnet (sem Opus neste projeto) |
+| 381.7 | MEDIO | medium | matriz | 0.61 | Sonnet |
+| 381.8 | MEDIO | medium | matriz | 0.3 | Sonnet |
+| 381.9 | PESADO | high | matriz | 1 | Sonnet (sem Opus neste projeto) |
+| 381.10 | PESADO | high | matriz | 1 | Sonnet (sem Opus neste projeto) |
+| 381.11 | MEDIO | medium | matriz | 0.33 | Sonnet |
+| 381.12 | PESADO | high | matriz | 0.23 | Sonnet (sem Opus neste projeto) |
+| 381.13 | PESADO | high | matriz | 0.2 | Sonnet (sem Opus neste projeto) |
+| 381.14 | MEDIO | medium | matriz | 0.58 | Sonnet |
+| 381.15 | PESADO | high | matriz | 0.37 | Sonnet (sem Opus neste projeto) |
+| 381.16 | PESADO | high | matriz | 0.31 | Sonnet (sem Opus neste projeto) |
+| 381.17 | PESADO | high | matriz | 0.51 | Sonnet (sem Opus neste projeto) |
