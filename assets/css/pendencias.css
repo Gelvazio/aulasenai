@@ -11,8 +11,15 @@
 .pd-filtros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: var(--pd-espaco);
+    gap: 6px var(--pd-espaco);
     align-items: end;
+}
+
+/* Filtros compactos no computador (no celular o alvo de toque volta a ser grande) */
+@media (min-width: 641px) {
+    .pd-filtros .tp-campo { gap: 2px; font-size: 13px; }
+    .pd-filtros .tp-campo .guia-filtro { min-height: 30px; padding: 3px 8px; }
+    .pd-filtros .guia-botao { padding-top: 5px; padding-bottom: 5px; }
 }
 
 .pd-status-linha { min-width: 160px; }
