@@ -356,12 +356,12 @@ function montarFiltroNotas() {
     };
     estadoNotas.apenasNaMedia = lerFiltroSalvoNotas();
     pintar();
-    botao.addEventListener('click', () => {
+    botao.addEventListener('click', () => executarComCarregandoNotas(() => {
         estadoNotas.apenasNaMedia = !estadoNotas.apenasNaMedia;
         salvarFiltroNotas(estadoNotas.apenasNaMedia);
         pintar();
         renderizarTabelaNotas();
-    });
+    }));
     filtro.replaceChildren(rotulo, botao);
 }
 
@@ -551,11 +551,11 @@ function criarInterruptorSimplesNotas(rotulo) {
 function criarInterruptorListarTodosNotas(listaAluno) {
     const controle = criarInterruptorSimplesNotas(ROTULO_LISTAR_TODOS_NOTAS);
     pintarInterruptorNotas(controle.botao, estadoNotas.listarTodos);
-    controle.botao.addEventListener('click', () => {
+    controle.botao.addEventListener('click', () => executarComCarregandoNotas(() => {
         estadoNotas.listarTodos = !estadoNotas.listarTodos;
         pintarInterruptorNotas(controle.botao, estadoNotas.listarTodos);
         preencherComboAlunosNotas(listaAluno);
-    });
+    }));
     return controle.etiqueta;
 }
 
@@ -607,7 +607,7 @@ function criarInterruptorConfirmarMediaNotas(listaAluno) {
     estadoNotas.elementos.interruptorMedia = controle.botao;
     atualizarInterruptorMediaNotas();
     controle.botao.addEventListener('click', () =>
-        alternarMediaFinalizadaNotas(listaAluno));
+        executarComCarregandoNotas(() => alternarMediaFinalizadaNotas(listaAluno)));
     return controle.etiqueta;
 }
 

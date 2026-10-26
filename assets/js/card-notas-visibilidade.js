@@ -114,7 +114,8 @@ function criarBotaoVisibilidadeNotas() {
     if (estadoVisibilidadeCard.botao) return estadoVisibilidadeCard.botao;
 
     const controle = criarInterruptorSimplesNotas(ROTULO_VISIBILIDADE_CARD);
-    controle.botao.addEventListener('click', () => alternarVisibilidadeNotas(controle.botao));
+    controle.botao.addEventListener('click', () =>
+        executarComCarregandoNotas(() => alternarVisibilidadeNotas(controle.botao)));
     const { visibilidade } = estadoNotas.elementos;
     visibilidade.replaceChildren(controle.etiqueta);
     visibilidade.hidden = false;

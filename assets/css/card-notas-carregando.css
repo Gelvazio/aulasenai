@@ -1,0 +1,27 @@
+/* Loading em tela cheia do card "Notas e média". */
+.card-notas-carregando {
+    --carregando-fundo: rgba(26, 32, 44, 0.45);
+    --carregando-roda: #667eea;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: var(--carregando-fundo);
+    color: white;
+    font-weight: 600;
+}
+.card-notas-carregando__roda {
+    width: 52px;
+    height: 52px;
+    border: 5px solid rgba(255, 255, 255, 0.35);
+    border-top-color: var(--carregando-roda);
+    border-radius: 50%;
+    animation: card-notas-carregando-giro 0.8s linear infinite;
+}
+@keyframes card-notas-carregando-giro {
+    to { transform: rotate(360deg); }
+}
