@@ -1,0 +1,73 @@
+/* Atividade Dinâmica (tarefa #381): roteiro do professor, ficha e notas. Regra: docs/regras/atividade-dinamica.md */
+:root {
+    --dinamica-destaque: #667eea;
+    --dinamica-fundo: #f7fafc;
+    --dinamica-borda: #e2e8f0;
+    --dinamica-ok: #2f855a;
+    --dinamica-erro: #c53030;
+}
+
+.dinamica__aviso,
+.dinamica__texto,
+.dinamica__total { margin: 8px 0; }
+
+.dinamica__formatos,
+.dinamica__ficha,
+.dinamica__criterios,
+.dinamica__roteiro { margin: 8px 0 8px 22px; }
+
+.dinamica__formatos li,
+.dinamica__ficha li,
+.dinamica__criterios li,
+.dinamica__roteiro li { margin-bottom: 8px; }
+
+.dinamica__professor { border-left-color: var(--dinamica-destaque); }
+
+.dinamica__tabela-rolagem { overflow-x: auto; }
+
+.dinamica__tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.dinamica__tabela th,
+.dinamica__tabela td {
+    border: 1px solid var(--dinamica-borda);
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.dinamica__tabela th { background: var(--dinamica-fundo); }
+
+.dinamica__tabela tr + tr td { border-top: 2px solid var(--dinamica-borda); }
+
+.dinamica__campo-nota { width: 64px; }
+
+.dinamica__campo-texto { width: 100%; min-width: 120px; }
+
+.dinamica__total-aluno { font-weight: 700; white-space: nowrap; }
+
+.dinamica__botao {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--dinamica-destaque);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dinamica__botao:hover { filter: brightness(0.92); }
+
+.dinamica__botao:disabled { opacity: 0.6; cursor: wait; }
+
+.dinamica__situacao--ok { color: var(--dinamica-ok); font-weight: 600; }
+
+.dinamica__situacao--erro { color: var(--dinamica-erro); font-weight: 600; }
+
+.dinamica__combo { margin: 6px 8px 6px 0; padding: 6px 8px; }
+
+.dinamica__nota-aluno { font-size: 28px; font-weight: 700; color: var(--dinamica-destaque); }

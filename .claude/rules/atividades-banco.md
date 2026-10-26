@@ -59,6 +59,13 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
 - ✅ Cada execução corrige **só** tópicos de atividades **entregues** (`entrega_atividade`) que
   **ainda não têm `nota_ia`**; grava só `nota_ia`/`nota_ia_em`, nunca `nota_professor`.
 
+## Atividade Dinâmica (2026-10-26, #381/#382)
+
+- ✅ Cada aula pode ter a etapa **Atividade Dinâmica** (em sala): fonte `ATIVIDADE-DINAMICA-AULA-NN.md`
+  em `ATIVIDADES/CONTEUDO/`, página gerada por `assets/gerador-atividade-dinamica/`, card 🎯 no índice.
+- ✅ Nota **do professor** (0 a 10, por critério) em `nota_dinamica`; entra na Média Final. Formatos:
+  individual, duplas, grupos, turma toda. Só depois do Markdown da aula. Regra: `docs/regras/atividade-dinamica.md`.
+
 ## Alvo: pasta da matéria só com Markdown
 
 ```

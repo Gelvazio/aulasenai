@@ -1129,6 +1129,33 @@
       </table>
     </div>
 
+    <h2>🎯 Atualização 2026-10-26 — nota_dinamica: nota da Atividade Dinâmica (#381)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-26-nota-dinamica.sql</code> (escrito; ainda não aplicado) · Tela: <code>ATIVIDADE-DINAMICA-AULA-NN.html</code> (painel do professor e "Minha nota" do aluno)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>nota_dinamica (aluno_id, atividade_id, nota, criterios, formato, grupo, comentario, lancado_por, lancado_em)</td>
+          <td>Tabela</td>
+          <td>Nota do professor (0 a 10) por aluno × atividade; chave (aluno_id, atividade_id)</td>
+        </tr>
+        <tr>
+          <td>nota_dinamica_select / nota_dinamica_insert / nota_dinamica_update</td>
+          <td>Políticas RLS</td>
+          <td>Leitura: professor que vê o aluno ou o próprio aluno; escrita: só professor; sem DELETE; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>notas_media_final / notas_aluno_para_professor</td>
+          <td>Funções</td>
+          <td>Incluem a nota da dinâmica na Média Final e no card Notas e média</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>✅ Atualização 2026-10-24 — media_finalizada: média do aluno confirmada (#374)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-24-media-finalizada.sql</code> (aplicado em 2026-10-24) · Tela: card "Notas e média" do índice de atividades — interruptor "Confirmar Media Aluno" (só professor); confirmado sai do combo Aluno, "Listar todos" o traz de volta</p>

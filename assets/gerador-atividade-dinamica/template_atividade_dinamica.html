@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ROTULO}} — {{TEMA}}</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade-dinamica.css">
+{{MENU}}
+</head>
+<body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}"
+      data-docente="{{DOCENTE}}" data-criterios="{{CRITERIOS_JSON}}" data-nota-maxima="10"
+      data-login="sim">
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>{{ICONE}} {{ROTULO}}: {{TEMA}}</h1>
+            <p>{{UC_CURTA}} · {{CURSO}} — Atividade Dinâmica em sala</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de {{ARQUIVO_MD}} por gerar_atividade_dinamica.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INFORMAÇÕES</span>
+                <h2 class="aula-title">Sobre a dinâmica</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> {{DURACAO}}<br>
+                        <strong>Estilo:</strong> {{ESTILO}}<br>
+                        <strong>Materiais:</strong> {{MATERIAIS}}<br>
+                        <strong>Nota:</strong> de 0 a 10, lançada pelo professor
+                    </div>
+                </div>
+{{CAPACIDADE}}                <div class="content-box">
+                    <div class="content-label">🧭 CONTEXTO</div>
+                    <div class="content-text">{{CONTEXTO}}</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 OBJETIVO</div>
+                    <div class="content-text">{{OBJETIVO}}</div>
+                </div>
+            </section>
+
+            <section class="aula-card">
+                <span class="aula-badge">FORMATOS</span>
+                <h2 class="aula-title">Como organizar a turma</h2>
+                <p class="dinamica__aviso">O professor escolhe o formato na hora.</p>
+                <ul class="dinamica__formatos">
+{{FORMATOS}}
+                </ul>
+            </section>
+
+            <section class="aula-card">
+                <span class="aula-badge">FICHA</span>
+                <h2 class="aula-title">Ficha do aluno ou do grupo</h2>
+                <ul class="dinamica__ficha">
+{{FICHA}}
+                </ul>
+            </section>
+
+            <section id="dinamica-roteiro" class="aula-card dinamica__professor" hidden>
+                <span class="aula-badge">PROFESSOR</span>
+                <h2 class="aula-title">Roteiro e critérios de nota</h2>
+                <ol class="dinamica__roteiro">
+{{ROTEIRO}}
+                </ol>
+                <p class="dinamica__total">Tempo total do roteiro: <strong>{{MINUTOS}} min</strong></p>
+                <ul class="dinamica__criterios">
+{{CRITERIOS}}
+                </ul>
+            </section>
+
+            <section id="dinamica-notas" class="aula-card dinamica__professor" hidden aria-live="polite">
+                <span class="aula-badge">NOTAS</span>
+                <h2 class="aula-title">Lançar notas da turma</h2>
+                <p class="dinamica__texto">Carregando...</p>
+            </section>
+
+            <section id="dinamica-minha-nota" class="aula-card" hidden aria-live="polite">
+                <span class="aula-badge">MINHA NOTA</span>
+                <h2 class="aula-title">Resultado da dinâmica</h2>
+                <p class="dinamica__texto">Carregando...</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>{{UC}} — {{ROTULO}}: {{TEMA}}</strong></p>
+        <p>{{CURSO}} — SENAI</p>
+        <p>Atividade Dinâmica • Em sala de aula</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{RAIZ}}/js/supabase.js"></script>
+    <script src="{{RAIZ}}/js/login.js"></script>
+    <script src="{{ASSETS}}/js/indice-bloqueio-aula-config.js"></script>
+    <script src="{{ASSETS}}/js/atividade-bloqueio-aula.js"></script>
+    <script src="{{ASSETS}}/js/popup.js"></script>
+    <script src="{{ASSETS}}/js/nota-dinamica-repositorio.js"></script>
+    <script src="{{ASSETS}}/js/nota-dinamica-professor.js"></script>
+    <script src="{{ASSETS}}/js/nota-dinamica-aluno.js"></script>
+</body>
+</html>

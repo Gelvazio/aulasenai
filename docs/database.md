@@ -1119,6 +1119,17 @@ pelo card "Notas e média" do índice de atividades (`assets/js/card-notas-media
 Média do card = Σ(nota × peso) ÷ Σ(peso) das atividades ON com nota (discursiva sem correção fica
 fora).
 
+## 🎯 Atualização 2026-10-26 — `nota_dinamica`: nota da Atividade Dinâmica (#381)
+
+Script: `database/2026-10-26-nota-dinamica.sql` (**escrito; ainda não aplicado no Supabase**). Regra: `docs/regras/atividade-dinamica.md`.
+
+| Objeto | Descrição |
+|---|---|
+| `nota_dinamica` | Nota do professor por **aluno × atividade**. Colunas: `aluno_id` (FK `auth.users`, cascade), `atividade_id` (FK `atividade`, cascade), `nota` (0 a 10), `criterios` (jsonb, nota por critério), `formato` (INDIVIDUAL, DUPLA, GRUPO, TURMA), `grupo`, `comentario`, `lancado_por`, `lancado_em`. Chave `(aluno_id, atividade_id)` |
+| RLS de `nota_dinamica` | `select`: `professor_pode_ver_aluno(aluno_id)` ou o próprio aluno; `insert`/`update`: só `professor_pode_ver_aluno`; `anon` sem acesso; sem `delete` |
+| `nota_dinamica_auditar()` + gatilho | Carimba `lancado_por = auth.uid()` e `lancado_em = now()` em todo insert/update |
+| `notas_media_final(p_paginas)` e `notas_aluno_para_professor(p_aluno, p_paginas)` | Passam a incluir a nota da dinâmica (CTE `notas_dinamicas`); o resto do cálculo não muda |
+
 ## ✅ Atualização 2026-10-24 — `media_finalizada`: média do aluno confirmada (#374)
 
 SQL: `database/2026-10-24-media-finalizada.sql` (aplicado em 2026-10-24; idempotente). Usado pelo

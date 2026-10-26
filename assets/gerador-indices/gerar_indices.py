@@ -71,6 +71,7 @@ ICONES_TIPO_ATIVIDADE = (
     (re.compile(r"EXCEL", re.IGNORECASE), "📊"),
     (re.compile(r"EQUIPE", re.IGNORECASE), "👥"),
     (re.compile(r"APOSTILA", re.IGNORECASE), "📘"),
+    (re.compile(r"DINAMICA", re.IGNORECASE), "🎯"),
     (re.compile(r"PRATICA|DISCURSIVA", re.IGNORECASE), "✍️"),
     (re.compile(r"QUESTOES|OBJETIVA", re.IGNORECASE), "📝"),
 )
@@ -390,10 +391,12 @@ def card_aula_agrupada(paginas, pasta_indice):
     O ícone do card é o do tipo da 1ª página que não seja prática nem discursiva
     (normalmente a objetiva); se todas forem, usa o da 1ª página.
     """
-    paginas = sorted(paginas, key=lambda p: ("DISCURSIVA" in p.name.upper(), p.name.lower()))
+    paginas = sorted(paginas, key=lambda p: (
+        bool(re.search(r"DISCURSIVA|DINAMICA", p.name, re.IGNORECASE)), p.name.lower()))
     numero = numero_aula_do_arquivo(paginas[0])
     principal = next(
-        (p for p in paginas if not re.search(r"PRATICA|DISCURSIVA", p.name, re.IGNORECASE)),
+        (p for p in paginas
+         if not re.search(r"PRATICA|DISCURSIVA|DINAMICA", p.name, re.IGNORECASE)),
         paginas[0],
     )
     return montar_card({

@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-26 12:00 | **Atividade Dinâmica (tarefas #381 e #382, pedido do usuário):** nova etapa de sala de aula por aula, com roteiro do professor, ficha, tempo e materiais, card 🎯 e nota do professor (tabela `nota_dinamica`, que entra na Média Final). Regra nova: `docs/regras/atividade-dinamica.md`; gerador `assets/gerador-atividade-dinamica/`; piloto nas aulas 01 a 03 de Fundamentos de UI/UX. |
 | 2026-10-24 15:20 | **Painel de correção de IA centralizado, com ícones e piscando (tarefa PAINEL-IA-DESTAQUE, pedido do usuário):** o id da atividade vem do HTML da página (o mesmo do selo do título, por `atividade.pagina`); regra em `.claude/rules/atividades-banco.md` |
 | 2026-10-24 14:30 | **Painel "Executar correção de IA" no Progresso da turma (tarefa CORRECAO-IA-PAINEL, pedido do usuário):** caixa no topo (só professor) com botão que grava pedido em `pedido_correcao_ia`, contagem de atividades entregues e questões corrigidas; o Claude Code local roda `/corrigir-ia`, que corrige só tópicos de entregas ainda sem `nota_ia`. Regra em `.claude/rules/atividades-banco.md`; docs em `docs/progresso-global-atividades.md` e `docs/regras/atividades.md` |
 | 2026-10-24 18:30 | **"Quantidade Questão Considerar" removida do Progresso da turma (tarefa REMOVER-QTD-CONSIDERAR, pedido do usuário):** o campo e o botão Confirmar duplicavam o botão "Quantidade Mínima"; sai o código e os CSS dele (`atividades-banco.md` e `docs/regras/atividades.md`); valores já gravados em `questoes_nota_aluno` continuam valendo na nota |
