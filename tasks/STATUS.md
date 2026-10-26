@@ -5,6 +5,10 @@
 
 ## Tarefas
 
+- #390-6d1e8b35 — [Perguntas em JSON + ativação pelo banco em todas as demais matérias](etapas/ETAPA-537-6d1e8b35-PERGUNTAS-EM-JSON-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação; depende da #389) · — (não reservável)
+  - #390.1 a #390.4 — inventário, gerador de JSON, migração, docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
+- #389-2a7f4c91 — [Perguntas em arquivo JSON + ativação pelo banco: Aula 01 de Fundamentos de UI / UX](etapas/ETAPA-536-2a7f4c91-PERGUNTAS-EM-JSON-AULA-01-UIUX.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
+  - #389.1 a #389.5 — plano, JSON, banco, páginas, controle do professor (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #388-9c3d5e18 — [Auditar as demais matérias: tela = espelho do banco e carga dinâmica das perguntas](etapas/ETAPA-535-9c3d5e18-AUDITAR-TELA-ESPELHO-BANCO-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
   - #388.1 a #388.5 — inventário, correção, schema/carga dinâmica, gerador, docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #387-4e8b2d07 — [Reduzir as atividades 168 (10 itens, só tópico A) e 190 (20 questões)](etapas/ETAPA-534-4e8b2d07-REDUZIR-ATIVIDADES-168-190.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
