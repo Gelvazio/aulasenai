@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #387-4e8b2d07 — [Reduzir as atividades 168 (10 itens, só tópico A) e 190 (20 questões)](etapas/ETAPA-534-4e8b2d07-REDUZIR-ATIVIDADES-168-190.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #387.1 e #387.2 — exclusão no banco com backup e conferência · ✅ Concluído · `PESADO` · só Sonnet
 - #386-7c2e9b14 — Ensalado por turma: combo Turma na faixa de matérias e tabela turma_materia_ensalado · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #386.1 a #386.4 — SQL aplicado e migrado, faixa com combo Turma, ON/OFF por turma, docs · ✅ Concluído · pedido direto do usuário
 - #385-6a1d3f58 — Esconder a faixa "Matérias — curso" (SOMENTE ENSALADO / VER TODAS) dos alunos; a grade de baixo continua · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
