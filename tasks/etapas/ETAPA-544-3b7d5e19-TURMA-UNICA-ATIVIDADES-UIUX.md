@@ -1,8 +1,9 @@
 # ETAPA 544 — Turma escolhida em um só lugar (Quadro de Progresso) nas aulas e atividades de Fundamentos de UI / UX
 
 - **TASK:** #399 (pedida em 2026-10-26)
-- **Nível/Modelo:** de cada subtarefa = a classificar pelo Jev (regra C52). Neste projeto nunca Opus.
-- **Tipo:** tarefa grande (várias partes, muitas páginas): precisa de plano e do "sim" do usuário antes de executar.
+- **Nível/Modelo:** LEVE · effort low (Jev, conf. 0,45 — revisão humana). Executada pelo Devin a pedido direto do usuário (mesmo caso da #354.1). Neste projeto nunca Opus.
+- **Tipo:** tarefa grande (várias partes, muitas páginas).
+- **Aprovação:** usuário em 2026-10-26 — "faça a tarefa 399 agora".
 
 ## Pedido
 
