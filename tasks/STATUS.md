@@ -5,8 +5,8 @@
 
 ## Tarefas
 
-- #402-4c9e1b38 — [Bloco "INSTRUÇÕES / Como Responder" visível só para alunos](etapas/ETAPA-547-4c9e1b38-INSTRUCOES-SO-PARA-ALUNOS.md) · ⬜ Pendente · — (não reservável)
-  - #402.1 — Esconder o bloco INSTRUÇÕES do professor em todas as atividades discursivas · ⬜ Pendente · `PESADO` · effort high (Jev, conf. 0,40) · só Claude Code (Sonnet/Opus 5.5+/Fable), DeepSeek ou OpenCode (deepseek-v4-pro)
+- #402-4c9e1b38 — [Bloco "INSTRUÇÕES / Como Responder" visível só para alunos](etapas/ETAPA-547-4c9e1b38-INSTRUCOES-SO-PARA-ALUNOS.md) · 🔄 Em progresso · Devin (SWE-2) (local · main)
+  - #402.1 — Esconder o bloco INSTRUÇÕES do professor em todas as atividades discursivas · 🔄 Em progresso · `LEVE` · effort low (Jev, conf. 0,74) · só Haiku 5.5 ou DeepSeek V4.1 Flash (reclassificado + ordem do usuário: Devin)
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 

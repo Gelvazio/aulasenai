@@ -1,9 +1,9 @@
 # ETAPA 547 — Bloco "INSTRUÇÕES / Como Responder" visível só para alunos
 
 - **TASK:** #402 (pedida em 2026-10-26)
-- **Nível/Modelo:** PESADO · effort high (Jev, conf. 0,40 — sinal "segredo"; valendo a matriz; revisão humana recomendada). Elegíveis: Claude Code (Sonnet/Opus 5.5+/Fable — neste projeto nunca Opus), DeepSeek, OpenCode (deepseek-v4-pro). ⛔ Devin não executa (só LEVE).
+- **Nível/Modelo:** LEVE · effort low (reclassificação do Jev, conf. 0,74 — primeira classificação PESADO/conf. 0,40 por sinal "segredo" foi revista; usuário: "é algo simples, faça"). Executada pelo Devin.
 - **Tipo:** mudança de visibilidade por perfil (professor × aluno) em todas as atividades discursivas/práticas.
-- **Aprovação:** pedido direto do usuário ("estas instruções devem aparecer apenas aos alunos").
+- **Aprovação:** pedido direto do usuário ("estas instruções devem aparecer apenas aos alunos" + "faça").
 
 ## Pedido
 
@@ -23,7 +23,7 @@ O bloco **INSTRUÇÕES — "Como Responder"** das páginas de atividade prática
 
 ### 402.1 — Esconder o bloco INSTRUÇÕES do professor em todas as atividades discursivas
 
-- **Nível:** PESADO · **Status:** ⬜ Pendente (livre)
-- **Descrição:** quando `dados.ehProfessor`, o bloco INSTRUÇÕES/"Como Responder" não aparece (JS compartilhado preferível, cobrindo as 191 páginas); aluno continua vendo. Atualizar `docs/regras/atividades.md`.
-- **Próximo passo:** pegar a subtarefa (modelo elegível), implementar, verificar.
+- **Nível:** LEVE (Jev, conf. 0,74) · **Status:** 🔄 Em progresso · Devin (local · main)
+- **Descrição:** quando `dados.ehProfessor`, o bloco INSTRUÇÕES/"Como Responder" não aparece (JS compartilhado preferível, cobrindo as 191 páginas); aluno continua vendo. Atualizar `docs/regras/atividades.md`. Achado no caminho: a prova inteira já fica oculta ao professor pela classe `discursiva--respostas-ocultas`, mas o botão "Mostrar questões" a reexibe **incluindo** as instruções — a correção marca o card INSTRUÇÕES e o mantém escondido nos dois estados.
+- **Próximo passo:** editar `avaliacao-discursiva.js`, `node --check`, docs e quadro.
 - **Verificação:** `node --check` + grep + releitura; sem navegador.
