@@ -25,3 +25,12 @@
 @keyframes card-notas-carregando-giro {
     to { transform: rotate(360deg); }
 }
+
+/* O interruptor "Mostrar" esconde o corpo do card com [hidden]; sem isto o display dos
+   blocos (flex, table) vence o atributo e o conteúdo continua à vista. */
+.card-notas-media__selecao[hidden],
+.card-notas-media__filtro[hidden],
+.card-notas-media__tabela[hidden],
+.card-notas-media__rodape[hidden],
+.card-notas-media__aviso[hidden],
+.card-notas-media__faixa[hidden] { display: none; }
