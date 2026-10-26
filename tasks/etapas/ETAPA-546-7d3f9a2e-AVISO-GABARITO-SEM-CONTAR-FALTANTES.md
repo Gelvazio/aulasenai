@@ -23,7 +23,8 @@ O aviso e a confirmação do gabarito não contam nem citam alunos sem entrega. 
 
 ### 401.1 — Remover a contagem de faltantes do aviso e da confirmação do gabarito
 
-- **Nível:** LEVE (Jev, conf. 0,82) · **Status:** 🔄 Em progresso
+- **Nível:** LEVE (Jev, conf. 0,82) · **Status:** ✅ Concluído
 - **Descrição:** editar `liberacao-respostas-professor.js` (sem `alunos_sem_entrega_turma`, sem `faltam`, textos neutros) e `docs/regras/atividades.md`.
-- **Próximo passo:** editar o JS, `node --check`, atualizar docs e o quadro.
-- **Verificação:** `node --check` + grep sem "Faltam" no JS + releitura dos trechos.
+- **Entrega:** `liberacao-respostas-professor.js` — removidos `ROTA_SEM_ENTREGA_GABARITO`, o estado `faltam` e os textos "Faltam N aluno(s) entregar"; aviso não liberado = "Ao liberar o gabarito, o preenchimento desta turma será encerrado."; confirmação sem o trecho de faltantes; `lerSituacaoGabaritoTurma` só lê `gabarito_liberado`. Docs: `docs/regras/atividades.md` (regra do botão) e `docs/liberacao-respostas-por-turma.md` (atualização 2026-10-26).
+- **Próximo passo:** nenhum — task fechada.
+- **Verificação:** `node --check` OK; grep sem `faltam`/`Faltam`/`alunos_sem_entrega` no JS; o RPC permanece no banco para outras consultas.

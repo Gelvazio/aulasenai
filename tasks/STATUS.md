@@ -5,8 +5,6 @@
 
 ## Tarefas
 
-- #401-7d3f9a2e — [Aviso do "Liberar gabaritos" sem contar alunos sem entrega](etapas/ETAPA-546-7d3f9a2e-AVISO-GABARITO-SEM-CONTAR-FALTANTES.md) · 🔄 Em progresso · Devin (SWE-2) (local · main)
-  - #401.1 — Remover a contagem de faltantes do aviso e da confirmação do gabarito · 🔄 Em progresso · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash (pedido direto: Devin)
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 

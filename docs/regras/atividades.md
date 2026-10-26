@@ -595,8 +595,9 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado):
   - no quadro "Respostas dos alunos nesta atividade", o professor tem o botão
     **"🔓 Liberar gabaritos (turma X)"** (turma da aba), **sempre ativo** desde 2026-10-15 (#175,
-    pedido do usuário: "tem aluno que não fez a atividade"); com alunos sem entrega, o aviso e a
-    confirmação dizem "Faltam N aluno(s) entregar: eles não poderão mais responder"; depois vira
+    pedido do usuário: "tem aluno que não fez a atividade"); **sem contar nem citar alunos sem
+    entrega** no aviso nem na confirmação desde 2026-10-26 (#401 — a página deixou de chamar
+    `alunos_sem_entrega_turma`); depois vira
     "🔒 Recolher gabarito". Código: `assets/js/liberacao-respostas-professor.js` (+ css);
   - grava o código da turma em `atividade.gabarito_liberado` (função `liberar_gabarito_turma`);
   - **depois da liberação, nenhuma nova tentativa nem recuperação** para os alunos da turma

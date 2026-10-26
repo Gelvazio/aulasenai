@@ -26,6 +26,13 @@ libere o botão Liberar gabaritos". Aprovado em 2026-10-15 14:28 para **todas as
 
 SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (✅ aplicado em 2026-10-15 15:06). A regra "só com todos entregues" abaixo vale até 2026-10-15.
 
+## Atualização 2026-10-26 (tarefa #401)
+
+Pedido do usuário: "nesta mensagem, não deve considerar quem faltou". O aviso ao lado do botão e
+a pergunta de confirmação **não contam nem citam** alunos sem entrega: a página deixou de chamar
+a função `alunos_sem_entrega_turma`, e o aviso passou a "Ao liberar o gabarito, o preenchimento
+desta turma será encerrado." A função segue no banco (usada por outras consultas).
+
 ## Objetivo
 
 O aluno **não vê** o gabarito nem o botão "🔑 Exportar Gabarito" até o professor liberar. O
