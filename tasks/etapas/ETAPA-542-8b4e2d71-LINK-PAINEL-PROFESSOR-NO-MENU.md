@@ -10,6 +10,8 @@
 
 | Item | Descrição | Status |
 |---|---|---|
-| 397.1 | Acrescentar o item **Painel Professor** (abre `painel-professor.html`) no menu do perfil Professor, junto do item **Regras** (`js/header-usuario.js`); aparece só para o professor | ⬜ Livre (só Haiku) |
+| 397.1 | Acrescentar o item **Painel Professor** (abre `painel-professor.html`) no menu do perfil Professor, junto do item **Regras** (`js/header-usuario.js`); aparece só para o professor | ✅ 2026-10-26 |
 
-**Próximo passo:** quem pegar (Haiku) lê `js/header-usuario.js` e `docs/` do menu, replica o padrão do item Regras e confere com `node --check`.
+**Entrega:** item `{ rotulo: "Painel Professor", rota: "../painel-professor.html" }` acrescentado em
+`MENU_ADMINISTRADOR_HEADER` (`js/header-usuario.js`), logo antes do item **Regras** — mesmo padrão
+(rota relativa à raiz, abre em nova aba). `node --check js/header-usuario.js` OK.

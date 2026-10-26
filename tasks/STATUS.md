@@ -5,8 +5,8 @@
 
 ## Tarefas
 
-- #397-8b4e2d71 — [Link "Painel Professor" no menu do professor](etapas/ETAPA-542-8b4e2d71-LINK-PAINEL-PROFESSOR-NO-MENU.md) · ⬜ Pendente · — (livre)
-  - #397.1 — Item Painel Professor no menu (junto de Regras) · ⬜ Pendente · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+- #397-8b4e2d71 — [Link "Painel Professor" no menu do professor](etapas/ETAPA-542-8b4e2d71-LINK-PAINEL-PROFESSOR-NO-MENU.md) · ✅ Concluído · Devin (SWE-2) (local · main)
+  - #397.1 — Item Painel Professor no menu (junto de Regras) · ✅ Concluído · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash (pedido direto: Devin)
 - #394-5d8a3f26 — [Filtros do Progresso da turma só filtram quando ligados (localStorage)](etapas/ETAPA-541-5d8a3f26-FILTROS-PROGRESSO-SO-QUANDO-LIGADOS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #394.1 — Ajustar 5 filtros · ✅ Concluído · `MEDIO` · só Sonnet
 - #393-3c6f9a28 — [Liberar só a nota e o resultado por tópico (sem o padrão de resposta), em todas as atividades discursivas](etapas/ETAPA-540-3c6f9a28-LIBERAR-NOTA-SEM-PADRAO-RESPOSTA.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

@@ -40,6 +40,8 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
   // Telemetria das matérias por curso/ano/semestre (o que falta em cada uma, #357).
   { rotulo: "Matérias Pendentes", rota: "../materias-pendentes.html" },
+  // Painel do professor (telemetria/ações do professor), ao lado do visualizador de Regras.
+  { rotulo: "Painel Professor", rota: "../painel-professor.html" },
   // Só visualizador das regras e do quadro (scripts/regras/gerar_visualizador_regras.py).
   { rotulo: "Regras", rota: "../.claude/rules/index.html" },
 ];
