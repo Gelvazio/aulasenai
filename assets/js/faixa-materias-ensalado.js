@@ -219,6 +219,7 @@ async function ligarFaixaEnsalado(faixa, perfil) {
   botoes.somente.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, true));
   botoes.todas.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, false));
   aplicarFiltroInicialEnsalado(faixaMontada);
+  faixa.hidden = !ehProfessor;
 }
 
 /**
@@ -241,6 +242,8 @@ async function iniciarFaixasEnsalado() {
   );
   if (faixas.length === 0) return;
 
+  // Escondida até saber o perfil: só o professor vê a faixa (a grade de baixo vale para todos).
+  faixas.forEach((faixa) => { faixa.hidden = true; });
   const perfil = await buscarPerfilEnsalado();
   for (const faixa of faixas) {
     await ligarFaixaEnsalado(faixa, perfil);

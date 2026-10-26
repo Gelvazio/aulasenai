@@ -144,6 +144,7 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .menu-principal[hidden] { display: none; }
 
 .faixa-materias { background: white; border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
+.faixa-materias[hidden] { display: none; }
 .faixa-materias__titulo { display: block; font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
 .faixa-materias__lista { columns: 3 240px; column-gap: 8px; }
 .faixa-materias__card { display: block; break-inside: avoid; margin-bottom: 8px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--text); background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 8px 12px; }

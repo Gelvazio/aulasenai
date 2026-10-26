@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #385-6a1d3f58 — Esconder a faixa "Matérias — curso" (SOMENTE ENSALADO / VER TODAS) dos alunos; a grade de baixo continua · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #385.1 — Faixa escondida para quem não é professor (`faixa-materias-ensalado.js` + CSS) · ✅ Concluído · pedido direto do usuário
 - #384-2d9e6b50 — [Botão ON/OFF do card "Notas e média" em todas as demais matérias](etapas/ETAPA-533-2d9e6b50-BOTAO-ON-OFF-CARD-NOTAS-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
   - #384.1 a #384.7 — ver a etapa · ⬜ Pendente · nível a classificar pelo Jev
 - #383-8f4c1a27 — [Botão ON/OFF no card "Notas e média": mostra ou esconde o card aos alunos (Fundamentos de UI / UX)](etapas/ETAPA-532-8f4c1a27-BOTAO-ON-OFF-CARD-NOTAS-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

@@ -25,5 +25,5 @@ curso.
 - Cada matéria da faixa tem um botão **ON/OFF** ao lado do nome para marcar/desmarcar `ensalado`.
 - A mudança grava no banco: coluna **`materia.ensalado`** (boolean). Não criar coluna nova
   (ver `docs/database.md`).
-- O ON/OFF aparece e grava **só para o perfil PROFESSOR** (garantido por RLS); o aluno vê apenas o
-  filtro.
+- O ON/OFF aparece e grava **só para o perfil PROFESSOR** (garantido por RLS); o aluno **não vê a faixa** (2026-10-26,
+  #385): só o professor; a grade de matérias de baixo continua para todos, no filtro ensalado.
