@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 16px 0;
+    margin: 16px 40px;
     padding: 16px;
     border: 2px solid var(--progresso-turma-barra);
     border-radius: var(--progresso-turma-raio);
@@ -467,6 +467,16 @@
     .progresso-turma__linha--titulos {
         display: none;
     }
+}
+
+/* O quadro fica fora do .content-section; a margem lateral acompanha o padding dele
+   (atividade.css: 40px, 20px em <=768px, 10px em <=600px). */
+@media (max-width: 768px) {
+    .progresso-turma { margin-left: 20px; margin-right: 20px; }
+}
+
+@media (max-width: 600px) {
+    .progresso-turma { margin-left: 10px; margin-right: 10px; }
 }
 
 @media print {
