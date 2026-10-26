@@ -22,7 +22,6 @@
 | Menu das atividades | `ATIVIDADES/MENU-ATIVIDADES.js` | ✅ |
 | Avaliação objetiva | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | ✅ |
 | Avaliação prática | `ATIVIDADES/AVALIACAO-PRATICA.html` | ⬜ |
-| Média final (página) | `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | ✅ |
 | Média final (composição) | `ATIVIDADES/media-final.json` | ✅ |
 | Apostila (HTML) | `APOSTILA/APOSTILA-*.html` | ⬜ |
 | Apostila (Markdown completo) | `APOSTILA/APOSTILA-*.md` | ⬜ |
@@ -175,7 +174,6 @@
 | `ATIVIDADES/ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html` | 91170 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html` | 91002 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html` | 90897 | 📎 outro arquivo |
-| `ATIVIDADES/AVALIACAO-MEDIA-FINAL.html` | 8752 | ✅ peça do padrão |
 | `ATIVIDADES/AVALIACAO-OBJETIVA-01.html` | 106204 | ✅ peça do padrão |
 | `ATIVIDADES/AVALIACAO-OBJETIVA-02.html` | 110065 | 📎 outro arquivo |
 | `ATIVIDADES/CLAUDE.md` | 8196 | 📎 outro arquivo |

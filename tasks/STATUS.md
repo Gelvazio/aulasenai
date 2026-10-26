@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #379-1f8b4d63 — [Remover a Média Final (composição da nota) de Análise de Dados Aplicada à Gestão](etapas/ETAPA-528-1f8b4d63-REMOVER-MEDIA-FINAL-ANALISE-DADOS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #379.1 — Remover card, linha e página · ✅ Concluído · `LEVE` · pedido direto do usuário
 - #378-6c2d9f14 — [Combo Turma do card Notas e média só com as turmas do curso](etapas/ETAPA-527-6c2d9f14-COMBO-TURMA-SO-DO-CURSO.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #378.1 — Filtrar as turmas pelo curso da matéria · ✅ Concluído · `MEDIO` · só Sonnet
 - #377-3e7a1b95 — [Filtros da tela de Pendências salvos no localStorage](etapas/ETAPA-526-3e7a1b95-FILTROS-PENDENCIAS-LOCALSTORAGE.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

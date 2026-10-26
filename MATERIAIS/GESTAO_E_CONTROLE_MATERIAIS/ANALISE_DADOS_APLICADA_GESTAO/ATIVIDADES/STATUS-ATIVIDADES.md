@@ -28,7 +28,6 @@
 |---|---|---|
 | `ATIVIDADE-EXCEL-01-10-2026.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-EXCEL-29-09-2026.html` | discursiva/prática/composição | ✅ bloqueada |
-| `AVALIACAO-MEDIA-FINAL.html` | discursiva/prática/composição | ⬜ sem cadastro |
 | `AVALIACAO-OBJETIVA-01.html` | 60 questões objetivas | ✅ liberada |
 | `AVALIACAO-OBJETIVA-02.html` | 60 questões objetivas | ✅ bloqueada |
 | ~~`PROVA-PRATICA.html`~~ | excluída em 2026-10-06 (id 37; questões unidas na id 82) | ⛔ removida |
