@@ -42,3 +42,4 @@ games/
 
 # Copia das regras globais e scripts de sessao (arquivo de controle): nunca vai ao site (C46, 2026-10-23)
 rules-local/
+ATIVIDADE-DINAMICA-*.md
