@@ -166,3 +166,18 @@
     gap: 6px;
     padding-bottom: 8px;
 }
+.card-notas-media[hidden] { display: none; }
+.card-notas-media__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card-notas-media__visibilidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.card-notas-media__visibilidade[hidden] { display: none; }

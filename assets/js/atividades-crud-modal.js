@@ -872,7 +872,7 @@ function carregarCardNotasMediaIndice() {
     estilo.href = BASE_ASSETS_CRUD + 'css/card-notas-media.css';
     document.head.append(estilo);
     const caminhos = ['js/card-notas-media-calculo.js', 'js/card-notas-media-repositorio.js',
-        'js/card-notas-media.js'];
+        'js/card-notas-visibilidade.js', 'js/card-notas-media.js'];
     const carregarProximoScript = () => {
         const caminho = caminhos.shift();
         if (!caminho) return;

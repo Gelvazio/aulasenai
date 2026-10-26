@@ -89,7 +89,11 @@ function montarEsqueletoNotas() {
     const card = document.createElement('article');
     card.className = CLASSE_CARD_NOTAS;
     card.setAttribute('data-sem-bloqueio', '');
+    const cabecalho = criarElementoNotas('div', PREFIXO_NOTAS + 'cabecalho');
     const titulo = criarElementoNotas('h2', PREFIXO_NOTAS + 'titulo', TITULO_NOTAS);
+    const visibilidade = criarElementoNotas('div', PREFIXO_NOTAS + 'visibilidade');
+    visibilidade.hidden = true;
+    cabecalho.append(titulo, visibilidade);
     const selecao = criarElementoNotas('div', PREFIXO_NOTAS + 'selecao');
     selecao.hidden = true;
     const filtro = criarElementoNotas('div', PREFIXO_NOTAS + 'filtro');
@@ -97,8 +101,8 @@ function montarEsqueletoNotas() {
     const rodape = criarElementoNotas('div', PREFIXO_NOTAS + 'rodape');
     const aviso = criarElementoNotas('p', PREFIXO_NOTAS + 'aviso');
     aviso.hidden = true;
-    card.append(titulo, selecao, filtro, tabela, rodape, aviso);
-    estadoNotas.elementos = { card, selecao, filtro, tabela, rodape, aviso };
+    card.append(cabecalho, selecao, filtro, tabela, rodape, aviso);
+    estadoNotas.elementos = { card, selecao, filtro, tabela, rodape, aviso, visibilidade };
     return card;
 }
 
@@ -481,6 +485,7 @@ function preencherComboAlunosNotas(listaAluno) {
  */
 async function trocarTurmaNotas(listaAluno, codigo) {
     estadoNotas.turma = codigo;
+    atualizarVisibilidadeNotas();
     estadoNotas.temporizadores.forEach((temporizador) => clearTimeout(temporizador));
     estadoNotas.temporizadores.clear();
     const alunos = codigo ? await listarAlunosDaTurmaCard(codigo) : [];
@@ -640,6 +645,10 @@ async function montarSelecaoProfessorNotas() {
 async function montarVisaoAlunoNotas() {
     const paginas = estadoNotas.atividades.map((atividade) => atividade.pagina);
     estadoNotas.turma = await lerTurmaDoAlunoLogado(estadoNotas.usuarioId);
+    if (!(await cardVisivelParaAlunoNotas())) {
+        estadoNotas.elementos.card.hidden = true;
+        return;
+    }
     await carregarConfiguracaoNotas(estadoNotas.turma);
     estadoNotas.notas = await buscarNotasDoAlunoLogado(paginas);
     renderizarTabelaNotas();
@@ -680,7 +689,7 @@ async function preencherCardNotas() {
     await esperarRepositorioNotas();
     const login = await lerLoginCard();
     if (!login.logado) {
-        mostrarAvisoNotas(MSG_SEM_LOGIN_NOTAS);
+        estadoNotas.elementos.card.hidden = true;
         return;
     }
     estadoNotas.atividades = lerAtividadesDoIndice();

@@ -66,6 +66,10 @@ cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito
 - ✅ Nota **do professor** (0 a 10, por critério) em `nota_dinamica`; entra na Média Final. Formatos:
   individual, duplas, grupos, turma toda. Só depois do Markdown da aula. Regra: `docs/regras/atividade-dinamica.md`.
 
+## Card "Notas e média": visível para o aluno só se o professor ligar (2026-10-26, #383 e #384)
+
+- ✅ Botão **ON/OFF** ao lado do título do card (só professor, vale para a turma do combo Turma), gravado em `card_notas_visivel` (matéria × turma); sem linha = **OFF** (escondido). Aluno só vê com `visivel = true` na turma dele; sem login, escondido. Global (`atividades-crud-modal.js`).
+
 ## Alvo: pasta da matéria só com Markdown
 
 ```

@@ -14,7 +14,7 @@ O professor decide quando o card "Notas e média" aparece para os alunos; enquan
 
 ## Decisões em aberto
 
-- Escopo da visibilidade: por matéria e turma (proposta) ou só por matéria. Sem linha no banco = escondido.
+- **Decidido em 2026-10-26 pelo usuário:** a visibilidade vale por matéria e turma. Sem linha no banco = escondido.
 
 ## Subtarefas
 
@@ -125,3 +125,9 @@ O professor decide quando o card "Notas e média" aparece para os alunos; enquan
 - **Depende de:** 383.6, 383.7, 383.8.
 
 **Próximo passo:** executar depois do plano aprovado e de classificado pelo Jev.
+
+## Entrega (2026-10-26)
+
+- SQL `database/2026-10-26-card-notas-visivel.sql` aplicado (RLS ligado, 3 políticas, `anon` sem acesso, sem delete, 0 linhas = tudo escondido).
+- `assets/js/card-notas-visibilidade.js` (novo, carregado antes de `card-notas-media.js` por `atividades-crud-modal.js`), ajustes em `card-notas-media.js` (cabeçalho com o botão; aluno e visitante sem login ficam com o card escondido) e CSS. Documentação em `docs/database.md`, relatório HTML, `atividades-banco.md` e histórico.
+- Verificação: `node --check` nos 3 JS e consulta das políticas. **Não testado na tela.** Como o card é carregado globalmente, a #384 deve confirmar as demais matérias.

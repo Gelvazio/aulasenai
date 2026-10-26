@@ -1119,6 +1119,16 @@ pelo card "Notas e média" do índice de atividades (`assets/js/card-notas-media
 Média do card = Σ(nota × peso) ÷ Σ(peso) das atividades ON com nota (discursiva sem correção fica
 fora).
 
+## 👁️ Atualização 2026-10-26 — `card_notas_visivel`: card "Notas e média" visível para a turma (#383, #384)
+
+Script: `database/2026-10-26-card-notas-visivel.sql` (**aplicado no Supabase em 2026-10-26**; idempotente). Usado pelo card "Notas e média" do índice de atividades (carregado em todas as matérias por `assets/js/atividades-crud-modal.js`): o professor liga/desliga o botão ON/OFF ao lado do título do card, para a turma escolhida no combo Turma. Sem linha = escondido (padrão OFF); sem login o card fica escondido.
+
+| Objeto | Descrição |
+|---|---|
+| `card_notas_visivel` | Visibilidade do card para os **alunos**, por matéria × turma. Colunas: `materia_id` (FK `materia`, cascade), `turma_codigo`, `visivel` (boolean, padrão `false`), `atualizado_por` (uuid, padrão `auth.uid()`), `atualizado_em`. Chave `(materia_id, turma_codigo)` |
+| RLS de `card_notas_visivel` | `select`: professor da turma (`eh_professor()` + `professor_tem_turma`) ou aluno da própria turma; `insert`/`update`: só professor da turma; `anon` sem acesso; sem `delete`; `grant select, insert, update` só para `authenticated` |
+| `card_notas_visivel_auditar()` + gatilho `card_notas_visivel_auditar_trg` | `before insert or update`: carimba `atualizado_por = auth.uid()` e `atualizado_em = now()` |
+
 ## 🎯 Atualização 2026-10-26 — `nota_dinamica`: nota da Atividade Dinâmica (#381)
 
 Script: `database/2026-10-26-nota-dinamica.sql` (**aplicado no Supabase em 2026-10-26**; seeds das aulas 01 a 03: atividades 211, 212 e 213). Regra: `docs/regras/atividade-dinamica.md`.

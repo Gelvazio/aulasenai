@@ -7,8 +7,8 @@
 
 - #384-2d9e6b50 — [Botão ON/OFF do card "Notas e média" em todas as demais matérias](etapas/ETAPA-533-2d9e6b50-BOTAO-ON-OFF-CARD-NOTAS-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
   - #384.1 a #384.7 — ver a etapa · ⬜ Pendente · nível a classificar pelo Jev
-- #383-8f4c1a27 — [Botão ON/OFF no card "Notas e média": mostra ou esconde o card aos alunos (Fundamentos de UI / UX)](etapas/ETAPA-532-8f4c1a27-BOTAO-ON-OFF-CARD-NOTAS-UIUX.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
-  - #383.1 a #383.9 — ver a etapa · ⬜ Pendente · nível a classificar pelo Jev
+- #383-8f4c1a27 — [Botão ON/OFF no card "Notas e média": mostra ou esconde o card aos alunos (Fundamentos de UI / UX)](etapas/ETAPA-532-8f4c1a27-BOTAO-ON-OFF-CARD-NOTAS-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #383.1 a #383.9 — escopo, SQL aplicado, repositório, botão do professor, card escondido ao aluno, CSS, docs e verificação · ✅ Concluído · níveis no quadro completo
 - #382-4b7e9c31 — [Aplicar a Atividade Dinâmica em todas as matérias](etapas/ETAPA-531-4b7e9c31-ATIVIDADE-DINAMICA-TODAS-AS-MATERIAS.md) · ⬜ Pendente (depende da #381; tarefa grande: aguarda aprovação) · — (não reservável)
   - #382.1 a #382.14 — inventário, plano, 8 matérias, índices, avisos, docs e verificação (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #381-8d2f6a14 — [Atividade Dinâmica nas aulas 1 a 3 de Fundamentos de UI / UX (piloto)](etapas/ETAPA-530-8d2f6a14-ATIVIDADE-DINAMICA-AULAS-1-A-3-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

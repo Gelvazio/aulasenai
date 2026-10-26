@@ -1129,6 +1129,33 @@
       </table>
     </div>
 
+    <h2>👁️ Atualização 2026-10-26 — card_notas_visivel: card "Notas e média" visível para a turma (#383, #384)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-26-card-notas-visivel.sql</code> (aplicado em 2026-10-26) · Tela: card "Notas e média" do índice de atividades (todas as matérias) — botão ON/OFF ao lado do título, por turma; sem linha = escondido; sem login o card fica escondido</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>card_notas_visivel (materia_id, turma_codigo, visivel, atualizado_por, atualizado_em)</td>
+          <td>Tabela</td>
+          <td>Visibilidade do card para os alunos por matéria × turma; visivel padrão false; chave (materia_id, turma_codigo)</td>
+        </tr>
+        <tr>
+          <td>card_notas_visivel_select / card_notas_visivel_insert / card_notas_visivel_update</td>
+          <td>Políticas RLS</td>
+          <td>Leitura: professor da turma ou aluno da própria turma; escrita: só professor da turma; sem DELETE; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>card_notas_visivel_auditar() / card_notas_visivel_auditar_trg</td>
+          <td>Função + gatilho</td>
+          <td>Carimba atualizado_por (auth.uid()) e atualizado_em (now()) em todo insert/update</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🎯 Atualização 2026-10-26 — nota_dinamica: nota da Atividade Dinâmica (#381)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-26-nota-dinamica.sql</code> (aplicado em 2026-10-26) · Tela: <code>ATIVIDADE-DINAMICA-AULA-NN.html</code> (painel do professor e "Minha nota" do aluno)</p>
