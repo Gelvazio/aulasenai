@@ -1,5 +1,5 @@
 // Professor: ON/OFF "RECUPERAÇÃO" no Progresso da turma GLOBAL (progresso-turma-global.js), logo
-// depois do "Mostrar quem faltou", em toda atividade. Vale só a NOTA FINAL (coluna "Nota final"):
+// depois do "Esconder Quem faltou", em toda atividade. Vale só a NOTA FINAL (coluna "Nota final"):
 // LIGADO mostra quem pegou recuperação (nota final MENOR que 7); desligado (padrão), quem tem
 // nota final 7 ou mais (invertido a pedido do usuário em 2026-10-14, tarefa #146). Aluno sem
 // nota final (não entregou ou a IA ainda corrige) não é escondido por este filtro.

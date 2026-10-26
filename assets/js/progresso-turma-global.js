@@ -26,10 +26,10 @@
 // ON/OFF "MEDIA ATINGIDA(IA)" (só quem tem 70% ou mais na IA; filtro-media-atingida-ia-progresso).
 // Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno escolhido
 // (filtro-aluno-progresso.js).
-// As escolhas dos filtros e do "Mostrar quem faltou" ficam no localStorage; sem elas, o padrão.
+// As escolhas dos filtros e do "Esconder Quem faltou" ficam no localStorage; sem elas, o padrão.
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
-// ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
+// ON/OFF "Faltou?" por aluno e "Esconder Quem faltou" em cima (falta-aluno-progresso.js; a falta
 // vale para o dia da atividade).
 // ON/OFF "Mostrar quadro" ao lado do título (desligado: esconde o quadro; mostrar-quadro-
 // progresso.js). Painel "Correção de IA" só nas discursivas (correcao-ia-progresso.js).
@@ -859,7 +859,7 @@ async function prepararFiltroGlobal(area, aoMudar) {
 }
 
 /**
- * Cria o ON/OFF "Mostrar quem faltou" (e o "Faltou?" de cada aluno) e o põe na área. Uma falha
+ * Cria o ON/OFF "Esconder Quem faltou" (e o "Faltou?" de cada aluno) e o põe na área. Uma falha
  * aqui não derruba o painel (a lista sai sem as faltas).
  * @param {HTMLElement} area - Área do painel.
  * @param {Function} aoMudar - Redesenha a lista quando uma falta ou o ON/OFF muda.
@@ -900,7 +900,7 @@ async function prepararFiltroEntregueGlobal(area, aoMudar) {
 
 /**
  * Cria o ON/OFF "RECUPERAÇÃO" (pela nota final: ligado < 7, desligado >= 7) e o põe na área,
- * depois do "Mostrar quem faltou". Uma falha aqui não derruba o painel.
+ * depois do "Esconder Quem faltou". Uma falha aqui não derruba o painel.
  * @param {HTMLElement} area - Área do painel.
  * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
  */

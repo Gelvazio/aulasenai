@@ -1,7 +1,7 @@
 // Professor: faltas no Progresso da turma GLOBAL (progresso-turma-global.js), em toda atividade.
 // - ON/OFF "Faltou?" ao lado do nome de cada aluno: grava/apaga a falta do aluno NO DIA da
 //   atividade (tabela falta_aluno; vale para todas as atividades daquele dia).
-// - ON/OFF "Mostrar quem faltou" em cima da lista: abre em OFF (não filtra); ON mostra só quem faltou.
+// - ON/OFF "Esconder Quem faltou" em cima da lista: abre em OFF (não filtra); ON esconde quem faltou.
 // Só muda a lista na tela: resumo, Gráficos e Cálculo Nota seguem com a turma toda.
 // Dia da atividade: atividade.data_atividade, senão aulas.data_planejada; sem nenhuma, os
 // botões ficam desligados. RLS: o professor só marca alunos das turmas dele.
@@ -11,11 +11,11 @@ const TABELA_FALTA_ALUNO = 'falta_aluno';
 const CLASSE_FALTA_ALUNO = 'falta-aluno';
 const CLASSE_INTERRUPTOR_FALTA = 'progresso-turma__interruptor';
 const ARQUIVO_CSS_FALTA_ALUNO = '../css/falta-aluno-progresso.css';
-const TEXTO_MOSTRAR_FALTOU = 'Mostrar quem faltou';
+const TEXTO_MOSTRAR_FALTOU = 'Esconder Quem faltou';
 const TEXTO_BOTAO_FALTOU = 'Faltou?';
 const MSG_SEM_DATA_FALTA = 'Atividade sem data: não dá para marcar faltas.';
 const MSG_ERRO_FALTA = 'Não foi possível gravar a falta: ';
-const CHAVE_PREFERENCIA_FALTOU = 'mostrar-quem-faltou';
+const CHAVE_PREFERENCIA_FALTOU = 'esconder-quem-faltou';
 const VALOR_LIGADO_PREFERENCIA_FALTOU = 'sim';
 const VALOR_DESLIGADO_PREFERENCIA_FALTOU = 'nao';
 const BASE_SCRIPTS_FALTA_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -126,7 +126,7 @@ async function mudarFaltaDoAluno(estado, dados) {
 }
 
 /**
- * Cria o controle de faltas do Progresso da turma ("Mostrar quem faltou" abre na escolha
+ * Cria o controle de faltas do Progresso da turma ("Esconder Quem faltou" abre na escolha
  * guardada no navegador; sem ela, desligado).
  * @param {{atividadeId: number, aoMudar: Function, preferencias: Object}} dados - Atividade,
  *     redesenho da lista e escolhas guardadas no navegador ({ler, gravar}, opcional).
@@ -158,7 +158,7 @@ async function criarControleFaltas(dados) {
             contagem.textContent = estado.faltas.size + ' falta(s) no dia ' + estado.dia;
         },
         filtrar: (alunos) => (estado.mostrar
-            ? alunos.filter((aluno) => estado.faltas.has(aluno.alunoId)) : alunos),
+            ? alunos.filter((aluno) => !estado.faltas.has(aluno.alunoId)) : alunos),
         criarBotao: (aluno) => montarBotaoFaltouDoAluno(estado, aluno),
     };
 }

@@ -268,7 +268,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     no bloco abaixo do Progresso; aluno vota no card embaixo da tela (1 voto, sem trocar).
     Regras no banco (`votacao_equipe`, `voto_equipe`, só por funções). Só na ITIC por enquanto:
     `docs/equipes-sala-de-aula.md`.
-  - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
+  - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Esconder Quem faltou". Vale só a
     **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
     desligado (padrão), não filtra (2026-10-26, #394). Aluno sem nota final continua na lista. Lembrado no localStorage
     (`progresso-turma:recuperacao`). Código: `assets/js/filtro-recuperacao-progresso.js`.
@@ -339,7 +339,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     fica "— Selecione o aluno —". Padrões sem escolha: Falta Corrigir? ligado; os outros dois
     desligados. Código: `assets/js/respostas-aluno-professor.js` e `mostrar-certas-discursiva.js`.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
-    "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
+    "Esconder Quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
     guardada, o padrão (Todas · desligado · desligado).
   - **ON/OFF "Mostrar quadro" (2026-10-18, #289):** logo ao lado do título "Progresso da
@@ -349,7 +349,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     `assets/js/mostrar-quadro-progresso.js`.
   - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
     falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
-    ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (não filtra); ligado, só quem faltou. Dia =
+    ON/OFF **"Esconder Quem faltou"** acima do resumo abre em **OFF** (não filtra); ligado, esconde quem faltou. Dia =
     `atividade.data_atividade`, senão `aulas.data_planejada`; sem nenhuma, os botões ficam
     desligados. Quem faltou **entra nas contas** (resumo, Gráficos, Cálculo Nota). Código:
     `assets/js/falta-aluno-progresso.js` + CSS.
