@@ -1,5 +1,7 @@
 // Faixa "Matérias — <CURSO>": botões SOMENTE ENSALADO e VER TODAS MATÉRIAS ao lado do título,
-// e um botão ON/OFF ao lado de cada matéria (só PROFESSOR grava). Lê e grava materia.ensalado.
+// e um botão ON/OFF ao lado de cada matéria (só PROFESSOR grava). O ensalado vale POR TURMA
+// (#386): o professor escolhe a turma no combo da faixa e o ON/OFF grava/apaga a linha
+// (matéria × turma) em turma_materia_ensalado; o aluno vê o filtro da turma dele.
 // Depende de js/supabase.js (sbGet, sbPatch, obterClienteSupabase) e assets/js/popup.js.
 // Cada faixa informa o curso do banco em <nav class="faixa-materias" data-curso-id="N">.
 // Toda faixa já abre mostrando só as matérias ensaladas (SOMENTE ENSALADO).
@@ -13,6 +15,11 @@ const SELETOR_LINK_CARTAO_GRADE = '.acoes a[href]';
 const ATRIBUTO_CURSO_FAIXA = 'cursoId';
 const PERFIL_PROFESSOR_ENSALADO = 'PROFESSOR';
 const TABELA_MATERIA_ENSALADO = 'materia';
+const TABELA_TURMA_ENSALADO = 'turma';
+const TABELA_ENSALADO_TURMA = 'turma_materia_ensalado';
+const TABELA_ALUNO_ENSALADO = 'aluno';
+const ROTULO_TURMA_ENSALADO = 'Turma:';
+const PREFIXO_FAVORITA_ENSALADO = '⭐ ';
 const PREFIXO_EMOJI_CARD = /^📘\s*/;
 const TEXTO_SOMENTE_ENSALADO = 'SOMENTE ENSALADO';
 const TEXTO_VER_TODAS_MATERIAS = 'VER TODAS MATÉRIAS';
@@ -51,6 +58,43 @@ async function buscarPerfilEnsalado() {
  */
 async function buscarMateriasEnsalado(cursoId) {
   return sbGet(TABELA_MATERIA_ENSALADO, `curso_id=eq.${cursoId}&select=id,descricao,ensalado`);
+}
+
+/**
+ * Busca as turmas do curso (a favorita primeiro).
+ * @param {string} cursoId - id do curso na tabela curso.
+ * @returns {Promise<{codigo: string, nome: string, favorito: boolean}[]>} Turmas do curso.
+ */
+async function buscarTurmasEnsalado(cursoId) {
+  const turmas = await sbGet(TABELA_TURMA_ENSALADO,
+    `curso_id=eq.${cursoId}&select=codigo,nome,favorito&order=nome`);
+  return turmas.sort((a, b) => Number(b.favorito === true) - Number(a.favorito === true));
+}
+
+/**
+ * Turma do aluno logado (RLS devolve só a linha dele).
+ * @returns {Promise<string>} Código da turma, ou vazio se não for aluno.
+ */
+async function buscarTurmaDoAlunoEnsalado() {
+  const { data } = await obterClienteSupabase().auth.getSession();
+  const usuarioId = data?.session?.user?.id;
+  if (!usuarioId) return '';
+  const [aluno] = await sbGet(TABELA_ALUNO_ENSALADO, `id=eq.${usuarioId}&select=turma_codigo`);
+  return aluno?.turma_codigo ?? '';
+}
+
+/**
+ * Marca em cada matéria se está ensalada na turma (linha em turma_materia_ensalado).
+ * @param {Object[]} materias - Matérias do curso.
+ * @param {string} turma - Código da turma ('' = nenhuma ensalada).
+ */
+async function carregarEnsaladoDaTurma(materias, turma) {
+  const linhas = turma
+    ? await sbGet(TABELA_ENSALADO_TURMA,
+      `turma_codigo=eq.${encodeURIComponent(turma)}&select=materia_id`).catch(() => [])
+    : [];
+  const ids = new Set(linhas.map((linha) => linha.materia_id));
+  materias.forEach((materia) => { materia.ensalado = ids.has(materia.id); });
 }
 
 /**
@@ -168,14 +212,20 @@ function atualizarOnOffEnsalado(botao, ligado) {
 }
 
 /**
- * Grava ensalado da matéria no banco e reflete o novo valor no botão.
+ * Liga/desliga o ensalado da matéria NA TURMA escolhida e reflete o novo valor no botão.
  * @param {Object} materia - Linha da matéria (id e ensalado).
  * @param {HTMLButtonElement} botao - Botão ON/OFF da matéria.
+ * @param {{turma: string}} estado - Turma escolhida na faixa.
  */
-async function gravarEnsaladoMateria(materia, botao) {
+async function gravarEnsaladoMateria(materia, botao, estado) {
   const novoValor = !materia.ensalado;
+  const filtro = `materia_id=eq.${materia.id}&turma_codigo=eq.${encodeURIComponent(estado.turma)}`;
   try {
-    await sbPatch(TABELA_MATERIA_ENSALADO, 'id', materia.id, { ensalado: novoValor });
+    if (novoValor) {
+      await sbPost(TABELA_ENSALADO_TURMA, { materia_id: materia.id, turma_codigo: estado.turma });
+    } else {
+      await sbDelete(TABELA_ENSALADO_TURMA, filtro);
+    }
     materia.ensalado = novoValor;
     atualizarOnOffEnsalado(botao, novoValor);
   } catch (erro) {
@@ -187,12 +237,15 @@ async function gravarEnsaladoMateria(materia, botao) {
 /**
  * Cria o botão ON/OFF de uma matéria (só para professor, e só se a matéria existe no banco).
  * @param {Object} materia - Linha da matéria no banco.
+ * @param {{turma: string}} estado - Turma escolhida na faixa.
  * @returns {HTMLButtonElement} Botão ON/OFF.
  */
-function criarOnOffEnsalado(materia) {
+function criarOnOffEnsalado(materia, estado) {
   const botao = criarBotaoEnsalado('', 'faixa-materias__onoff');
   atualizarOnOffEnsalado(botao, materia.ensalado);
-  botao.addEventListener('click', () => gravarEnsaladoMateria(materia, botao));
+  botao.disabled = !estado.turma;
+  botao.addEventListener('click', () => gravarEnsaladoMateria(materia, botao, estado));
+  materia.botaoOnOff = botao;
   return botao;
 }
 
@@ -208,18 +261,72 @@ async function ligarFaixaEnsalado(faixa, perfil) {
   const materias = await buscarMateriasEnsalado(cursoId).catch(() => []);
   const mapaMaterias = new Map(materias.map((m) => [normalizarNomeMateria(m.descricao), m]));
   const ehProfessor = perfil === PERFIL_PROFESSOR_ENSALADO;
+  const estado = { turma: '' };
+  const faixaMontada = { itens, mapaMaterias, botoes, estado };
 
   itens.forEach(({ item, nome }) => {
     const materia = mapaMaterias.get(nome);
     if (!materia || !ehProfessor) return;
-    item.append(criarOnOffEnsalado(materia));
+    item.append(criarOnOffEnsalado(materia, estado));
   });
-
-  const faixaMontada = { itens, mapaMaterias, botoes };
   botoes.somente.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, true));
   botoes.todas.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, false));
-  aplicarFiltroInicialEnsalado(faixaMontada);
+  await iniciarTurmaEnsalado(faixa, faixaMontada, cursoId, ehProfessor);
   faixa.hidden = !ehProfessor;
+}
+
+/**
+ * Define a turma da faixa: o professor escolhe no combo (abre na favorita); o aluno usa a dele.
+ * @param {HTMLElement} faixa - Elemento nav.faixa-materias.
+ * @param {Object} faixaMontada - Dados da faixa (itens, mapaMaterias, botoes, estado).
+ * @param {string} cursoId - id do curso.
+ * @param {boolean} ehProfessor - true para o perfil PROFESSOR.
+ */
+async function iniciarTurmaEnsalado(faixa, faixaMontada, cursoId, ehProfessor) {
+  if (!ehProfessor) {
+    const turma = await buscarTurmaDoAlunoEnsalado().catch(() => '');
+    await trocarTurmaEnsalado(faixaMontada, turma);
+    return;
+  }
+  const turmas = await buscarTurmasEnsalado(cursoId).catch(() => []);
+  const combo = montarComboTurmaEnsalado(faixa, turmas);
+  combo.addEventListener('change', () => trocarTurmaEnsalado(faixaMontada, combo.value));
+  await trocarTurmaEnsalado(faixaMontada, combo.value);
+}
+
+/**
+ * Cria o combo Turma na barra da faixa (só professor).
+ * @param {HTMLElement} faixa - Elemento nav.faixa-materias.
+ * @param {{codigo: string, nome: string, favorito: boolean}[]} turmas - Turmas do curso.
+ * @returns {HTMLSelectElement} Combo (abre na turma favorita, ou na primeira).
+ */
+function montarComboTurmaEnsalado(faixa, turmas) {
+  const etiqueta = document.createElement('label');
+  etiqueta.className = 'faixa-materias__turma';
+  etiqueta.append(`${ROTULO_TURMA_ENSALADO} `);
+  const combo = document.createElement('select');
+  turmas.forEach((turma) => combo.add(new Option(
+    (turma.favorito ? PREFIXO_FAVORITA_ENSALADO : '') + turma.nome, turma.codigo)));
+  etiqueta.append(combo);
+  faixa.querySelector('.faixa-materias__barra').append(etiqueta);
+  return combo;
+}
+
+/**
+ * Troca a turma da faixa: recarrega o ensalado dela, repinta os ON/OFF e refaz o filtro.
+ * @param {Object} faixaMontada - Dados da faixa (itens, mapaMaterias, botoes, estado).
+ * @param {string} turma - Código da turma escolhida ('' = nenhuma).
+ */
+async function trocarTurmaEnsalado(faixaMontada, turma) {
+  faixaMontada.estado.turma = turma;
+  const materias = [...faixaMontada.mapaMaterias.values()];
+  await carregarEnsaladoDaTurma(materias, turma);
+  materias.forEach((materia) => {
+    if (!materia.botaoOnOff) return;
+    materia.botaoOnOff.disabled = !turma;
+    atualizarOnOffEnsalado(materia.botaoOnOff, materia.ensalado);
+  });
+  aplicarFiltroInicialEnsalado(faixaMontada);
 }
 
 /**

@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #386-7c2e9b14 — Ensalado por turma: combo Turma na faixa de matérias e tabela turma_materia_ensalado · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #386.1 a #386.4 — SQL aplicado e migrado, faixa com combo Turma, ON/OFF por turma, docs · ✅ Concluído · pedido direto do usuário
 - #385-6a1d3f58 — Esconder a faixa "Matérias — curso" (SOMENTE ENSALADO / VER TODAS) dos alunos; a grade de baixo continua · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #385.1 — Faixa escondida para quem não é professor (`faixa-materias-ensalado.js` + CSS) · ✅ Concluído · pedido direto do usuário
 - #384-2d9e6b50 — [Botão ON/OFF do card "Notas e média" em todas as demais matérias](etapas/ETAPA-533-2d9e6b50-BOTAO-ON-OFF-CARD-NOTAS-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)

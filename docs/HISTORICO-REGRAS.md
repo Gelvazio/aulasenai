@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-26 17:00 | **Ensalado por turma (tarefa #386, pedido do usuário):** a matéria passa a ser ensalada por turma (`turma_materia_ensalado`); na faixa o professor escolhe a turma antes de ligar/desligar o ON/OFF; `materia.ensalado` fica como legado. Regra: `.claude/rules/faixa-materias-ensalado.md`. |
 | 2026-10-26 15:00 | **Card "Notas e média" com botão ON/OFF de visibilidade (tarefas #383 e #384, pedido do usuário):** o professor liga/desliga, por turma, se o card aparece para os alunos; padrão OFF (sem linha = escondido); nova tabela `card_notas_visivel` (matéria × turma, RLS professor/aluno da turma). Regra em `.claude/rules/atividades-banco.md`; schema em `docs/database.md` |
 | 2026-10-26 12:00 | **Atividade Dinâmica (tarefas #381 e #382, pedido do usuário):** nova etapa de sala de aula por aula, com roteiro do professor, ficha, tempo e materiais, card 🎯 e nota do professor (tabela `nota_dinamica`, que entra na Média Final). Regra nova: `docs/regras/atividade-dinamica.md`; gerador `assets/gerador-atividade-dinamica/`; piloto nas aulas 01 a 03 de Fundamentos de UI/UX. |
 | 2026-10-24 15:20 | **Painel de correção de IA centralizado, com ícones e piscando (tarefa PAINEL-IA-DESTAQUE, pedido do usuário):** o id da atividade vem do HTML da página (o mesmo do selo do título, por `atividade.pagina`); regra em `.claude/rules/atividades-banco.md` |

@@ -27,3 +27,9 @@ curso.
   (ver `docs/database.md`).
 - O ON/OFF aparece e grava **só para o perfil PROFESSOR** (garantido por RLS); o aluno **não vê a faixa** (2026-10-26,
   #385): só o professor; a grade de matérias de baixo continua para todos, no filtro ensalado.
+
+## Ensalado por turma (2026-10-26, #386)
+
+- ✅ O ensalado vale **por turma**: tabela `turma_materia_ensalado` (existe a linha = ensalada na turma). `materia.ensalado` é legado e a faixa não o lê mais.
+- ✅ Na faixa o **professor escolhe a turma** no combo (abre na favorita) e só então liga/desliga o ON/OFF; o filtro SOMENTE ENSALADO vale para a turma escolhida. O aluno usa a turma dele.
+- ⛔ Não trocar por `turma_materia` (#211): aquela só vincula turmas ao combo do índice.

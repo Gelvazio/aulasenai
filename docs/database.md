@@ -1129,6 +1129,18 @@ Script: `database/2026-10-26-card-notas-visivel.sql` (**aplicado no Supabase em 
 | RLS de `card_notas_visivel` | `select`: professor da turma (`eh_professor()` + `professor_tem_turma`) ou aluno da própria turma; `insert`/`update`: só professor da turma; `anon` sem acesso; sem `delete`; `grant select, insert, update` só para `authenticated` |
 | `card_notas_visivel_auditar()` + gatilho `card_notas_visivel_auditar_trg` | `before insert or update`: carimba `atualizado_por = auth.uid()` e `atualizado_em = now()` |
 
+## 🏫 Atualização 2026-10-26 — `turma_materia_ensalado`: ensalado por turma (#386)
+
+Script: `database/2026-10-26-ensalado-por-turma.sql` (**aplicado em 2026-10-26**). A matéria está **ensalada na turma** quando existe a linha (matéria × turma).
+
+| Objeto | Descrição |
+|---|---|
+| `turma_materia_ensalado` | `materia_id` (FK `materia`, cascade), `turma_codigo` (FK `turma.codigo`, update/delete cascade), `criado_por`, `criado_em`. Chave `(materia_id, turma_codigo)` |
+| RLS | `select`: professor da turma (`eh_professor()` + `professor_tem_turma`) ou aluno da turma; `insert`/`delete`: professor da turma; `anon` sem acesso; sem `update` |
+| Migração | cada matéria com `materia.ensalado = true` virou ensalada em todas as turmas do curso dela (35 e 48 × 124519 e 134407) |
+| `materia.ensalado` | legado: a faixa de matérias não lê mais a coluna |
+| `turma_materia` (#211) | continua sendo só o vínculo que limita o combo Turma do índice |
+
 ## 🎯 Atualização 2026-10-26 — `nota_dinamica`: nota da Atividade Dinâmica (#381)
 
 Script: `database/2026-10-26-nota-dinamica.sql` (**aplicado no Supabase em 2026-10-26**; seeds das aulas 01 a 03: atividades 211, 212 e 213). Regra: `docs/regras/atividade-dinamica.md`.

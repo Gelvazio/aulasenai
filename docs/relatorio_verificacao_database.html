@@ -1156,6 +1156,28 @@
       </table>
     </div>
 
+    <h2>🏫 Atualização 2026-10-26 — turma_materia_ensalado: ensalado por turma (#386)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-26-ensalado-por-turma.sql</code> (aplicado em 2026-10-26) · Tela: faixa "Matérias" do índice do curso (combo Turma + ON/OFF por matéria, só professor)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma_materia_ensalado (materia_id, turma_codigo, criado_por, criado_em)</td>
+          <td>Tabela</td>
+          <td>Existe a linha = matéria ensalada na turma; chave (materia_id, turma_codigo)</td>
+        </tr>
+        <tr>
+          <td>turma_materia_ensalado_select / _insert / _delete</td>
+          <td>Políticas RLS</td>
+          <td>Leitura: professor da turma ou aluno da turma; escrita e remoção: professor da turma; anon sem acesso</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🎯 Atualização 2026-10-26 — nota_dinamica: nota da Atividade Dinâmica (#381)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-26-nota-dinamica.sql</code> (aplicado em 2026-10-26) · Tela: <code>ATIVIDADE-DINAMICA-AULA-NN.html</code> (painel do professor e "Minha nota" do aluno)</p>
