@@ -1265,6 +1265,177 @@ window.LISTAS_PRESENCA = [
     ]
   },
   {
+    "uc": "Fundamentos de UI / UX",
+    "professor": "Gelvazio Camargo",
+    "local": "SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul",
+    "turmas": [
+      {
+        "codigo": "134407",
+        "unidadeId": 1,
+        "nome": "T TIIN 2026/2 V1",
+        "turno": "Tarde",
+        "horario": "",
+        "local": "SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul",
+        "alunos": [
+          {
+            "numero": 1,
+            "nome": "Alberto Jhoan Arreaza Caraballo",
+            "email": "alberto.caraballo@senai.local",
+            "senha": "7vaAmc",
+            "naChamada": true
+          },
+          {
+            "numero": 2,
+            "nome": "Andriel Cruz Bennert",
+            "email": "andriel.bennert@senai.local",
+            "senha": "FGV6Pb",
+            "naChamada": true
+          },
+          {
+            "numero": 3,
+            "nome": "Caio Fernando Boll",
+            "email": "caio.boll@senai.local",
+            "senha": "eFVUg9",
+            "naChamada": true
+          },
+          {
+            "numero": 4,
+            "nome": "Caio Tobia",
+            "email": "caio.tobia@senai.local",
+            "senha": "na5Kq2",
+            "naChamada": true
+          },
+          {
+            "numero": 5,
+            "nome": "Carla Kuhl Miranda",
+            "email": "carla.miranda@senai.local",
+            "senha": "LgfW9f",
+            "naChamada": true
+          },
+          {
+            "numero": 6,
+            "nome": "Djonatan Pereira Watraz",
+            "email": "djonatan.watraz@senai.local",
+            "senha": "779E7c",
+            "naChamada": true
+          },
+          {
+            "numero": 7,
+            "nome": "Henrico Gabriel Demarch Elias",
+            "email": "henrico.elias@senai.local",
+            "senha": "DBep2M",
+            "naChamada": true
+          },
+          {
+            "numero": 8,
+            "nome": "Ian Carlos Garcia Schroder",
+            "email": "ian.schroder@senai.local",
+            "senha": "etYM6F",
+            "naChamada": true
+          },
+          {
+            "numero": 9,
+            "nome": "João Victor dos Reis Rodrigues",
+            "email": "joao.rodrigues@senai.local",
+            "senha": "tVL9dj",
+            "naChamada": true
+          },
+          {
+            "numero": 10,
+            "nome": "José Eduardo Padilha",
+            "email": "jose.padilha@senai.local",
+            "senha": "3hxPbk",
+            "naChamada": true
+          },
+          {
+            "numero": 11,
+            "nome": "Kauan Valentin de Souza",
+            "email": "kauan.souza@senai.local",
+            "senha": "d6SETu",
+            "naChamada": true
+          },
+          {
+            "numero": 12,
+            "nome": "Ketlyn Vitória Mateus",
+            "email": "ketlyn.mateus@senai.local",
+            "senha": "EKZ4r5",
+            "naChamada": true
+          },
+          {
+            "numero": 13,
+            "nome": "Larissa Elis Alves de Sousa",
+            "email": "larissa.sousa@senai.local",
+            "senha": "7zSHNf",
+            "naChamada": true
+          },
+          {
+            "numero": 14,
+            "nome": "Laysa Gardelin",
+            "email": "laysa.gardelin@senai.local",
+            "senha": "bJ7wek",
+            "naChamada": true
+          },
+          {
+            "numero": 15,
+            "nome": "Maicon Franco",
+            "email": "maicon.franco@senai.local",
+            "senha": "YdzE9x",
+            "naChamada": true
+          },
+          {
+            "numero": 16,
+            "nome": "Mikhael Popenga Bridi",
+            "email": "mikhael.bridi@senai.local",
+            "senha": "TX9bSv",
+            "naChamada": true
+          },
+          {
+            "numero": 17,
+            "nome": "Nicoli Portela Pacheco",
+            "email": "nicoli.pacheco@senai.local",
+            "senha": "JzKSd4",
+            "naChamada": true
+          },
+          {
+            "numero": 18,
+            "nome": "Nycolas Ferreira Amorin",
+            "email": "nycolas.amorin@senai.local",
+            "senha": "b6JNUy",
+            "naChamada": true
+          },
+          {
+            "numero": 19,
+            "nome": "Pedro dos Santos Marques",
+            "email": "pedro.marques@senai.local",
+            "senha": "JRvK57",
+            "naChamada": true
+          },
+          {
+            "numero": 20,
+            "nome": "Sérgio Barboza de Oliveira Junior",
+            "email": "sergio.oliveira@senai.local",
+            "senha": "7BVKa6",
+            "naChamada": true
+          },
+          {
+            "numero": 21,
+            "nome": "Victoria Layanne Soares de Souza",
+            "email": "victoria.souza@senai.local",
+            "senha": "qzkaJ7",
+            "naChamada": true
+          },
+          {
+            "numero": 22,
+            "nome": "Vitor Levi Weber Gomes",
+            "email": "vitor.gomes@senai.local",
+            "senha": "AYkh3y",
+            "naChamada": true
+          }
+        ]
+      }
+    ]
+  },
+  {
     "uc": "Fundamentos de Automação/Instrumentação",
     "professor": "Gelvazio Camargo",
     "local": "APRENDIZAGEM INDUSTRIAL TAIÓ TARDE",
