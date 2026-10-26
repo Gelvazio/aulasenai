@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #377-3e7a1b95 — [Filtros da tela de Pendências salvos no localStorage](etapas/ETAPA-526-3e7a1b95-FILTROS-PENDENCIAS-LOCALSTORAGE.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #377.1 — Salvar e restaurar os filtros em `pendencias_filtros` · ✅ Concluído · `MEDIO` · só Sonnet
 - #376-9b1f79e3 — [Corrigir "lerLoginCard is not defined": ordem garantida dos scripts do card + guarda de dependência](etapas/ETAPA-525-9b1f79e3-FIX-CARD-NOTAS-ORDEM-SCRIPTS.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #376.1 — Modal: injeção sequencial dos 3 scripts do card via `onload` · ✅ Concluído · `LEVE` · só Haiku (pedido direto: Devin)
   - #376.2 — Card: espera limitada pelo repositório + erro explícito · ✅ Concluído · `LEVE` · só Haiku (pedido direto: Devin)

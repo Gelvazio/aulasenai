@@ -13,6 +13,11 @@ const STATUS_PADRAO_PENDENCIA = "PENDENTE";
 const FILTRO_EXCLUIDO = { nao: "Não excluídas", sim: "Excluídas", todas: "Todas" };
 const FILTRO_EXCLUIDO_PADRAO = "nao";
 const VALOR_TODOS_PD = "";
+const CHAVE_FILTROS_PD = "pendencias_filtros";
+const IDS_FILTROS_PD = [
+  "pdFiltroId", "pdFiltroNome", "pdFiltroDescricao", "pdFiltroResponsavel",
+  "pdFiltroDataDe", "pdFiltroDataAte", "pdFiltroStatus", "pdFiltroExcluido",
+];
 const TEXTO_SEM_LOGIN_PD = "Entre com a conta do Professor Administrador para ver as pendências.";
 const TEXTO_SEM_ADMIN_PD = "Acesso restrito ao Professor Administrador.";
 const TEXTO_BOTAO_CADASTRAR_PD = "Cadastrar";
@@ -394,12 +399,42 @@ async function restaurarPendenciaPd(pendencia) {
   await mostrarPopup("Pendência restaurada.", { tipo: "sucesso" });
 }
 
+/** Grava no localStorage os valores atuais dos filtros (falha de storage é ignorada). */
+function salvarFiltrosPd() {
+  const valores = {};
+  IDS_FILTROS_PD.forEach((id) => { valores[id] = elementoPd(id).value; });
+  try {
+    localStorage.setItem(CHAVE_FILTROS_PD, JSON.stringify(valores));
+  } catch (erro) {
+    // Sem storage disponível: os filtros só não são lembrados.
+  }
+}
+
+/** Reaplica nos campos os filtros guardados no localStorage, quando houver. */
+function restaurarFiltrosPd() {
+  let valores = null;
+  try {
+    valores = JSON.parse(localStorage.getItem(CHAVE_FILTROS_PD));
+  } catch (erro) {
+    return;
+  }
+  if (!valores || typeof valores !== "object") return;
+  IDS_FILTROS_PD.forEach((id) => {
+    const campo = elementoPd(id);
+    const valor = typeof valores[id] === "string" ? valores[id] : "";
+    campo.value = valor;
+    // Opção que não existe mais deixa o select vazio: volta ao valor inicial dele.
+    if (campo.tagName === "SELECT" && campo.value !== valor) campo.selectedIndex = 0;
+  });
+}
+
 /** Preenche as listas de status e de excluído e o formulário vazio. */
 function prepararCamposPd() {
   preencherSelectPd(elementoPd("pdStatus"), STATUS_PENDENCIA);
   preencherSelectPd(elementoPd("pdFiltroStatus"), STATUS_PENDENCIA, "Todos");
   preencherSelectPd(elementoPd("pdFiltroExcluido"), FILTRO_EXCLUIDO);
   elementoPd("pdFiltroExcluido").value = FILTRO_EXCLUIDO_PADRAO;
+  restaurarFiltrosPd();
   elementoPd("pdDataInicio").value = hojePd();
   elementoPd("pdStatus").value = STATUS_PADRAO_PENDENCIA;
 }
@@ -409,11 +444,15 @@ function ligarEventosPd() {
   elementoPd("pdFormulario").addEventListener("submit", salvarPendenciaPd);
   ligarModalPendenciaPd();
   const filtros = elementoPd("pdFiltros");
-  filtros.addEventListener("input", desenharPendenciasPd);
+  filtros.addEventListener("input", () => {
+    salvarFiltrosPd();
+    desenharPendenciasPd();
+  });
   filtros.addEventListener("submit", (evento) => evento.preventDefault());
   // O reset limpa os campos só depois do evento; o padrão de "excluído" é reaplicado depois.
   filtros.addEventListener("reset", () => setTimeout(() => {
     elementoPd("pdFiltroExcluido").value = FILTRO_EXCLUIDO_PADRAO;
+    salvarFiltrosPd();
     desenharPendenciasPd();
   }));
 }

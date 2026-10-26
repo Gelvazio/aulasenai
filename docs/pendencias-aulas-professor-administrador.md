@@ -34,9 +34,10 @@ aulas, gravadas no Supabase com RLS que só ele consegue usar.
 - **Filtros (todos os campos, combinados):** id (exato), nome (contém), responsável (contém),
   data de início (de / até), status (Todos / PENDENTE / EM_ANDAMENTO / CONCLUIDA) e excluído
   (Não excluídas / Excluídas / Todas); botão "Limpar filtros". Filtro feito na própria página
-  sobre a lista lida do banco.
-- Avisos sempre pelo popup (`assets/js/popup.js`), nunca `alert()`/`confirm()`; nada em
-  localStorage.
+  sobre a lista lida do banco. Os valores dos filtros ficam salvos no `localStorage` (chave
+  `pendencias_filtros`) e voltam ao reabrir a tela; "Limpar filtros" também limpa o salvo.
+- Avisos sempre pelo popup (`assets/js/popup.js`), nunca `alert()`/`confirm()`; só os filtros
+  usam localStorage (nenhum dado de pendência).
 
 ## Tecnologias
 HTML + CSS + JavaScript vanilla, supabase-js v2 (CDN), `js/supabase.js`, `assets/js/popup.js`,
