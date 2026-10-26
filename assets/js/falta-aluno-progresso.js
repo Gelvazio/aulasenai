@@ -1,7 +1,7 @@
 // Professor: faltas no Progresso da turma GLOBAL (progresso-turma-global.js), em toda atividade.
 // - ON/OFF "Faltou?" ao lado do nome de cada aluno: grava/apaga a falta do aluno NO DIA da
 //   atividade (tabela falta_aluno; vale para todas as atividades daquele dia).
-// - ON/OFF "Mostrar quem faltou" em cima da lista: abre em OFF (esconde quem faltou).
+// - ON/OFF "Mostrar quem faltou" em cima da lista: abre em OFF (não filtra); ON mostra só quem faltou.
 // Só muda a lista na tela: resumo, Gráficos e Cálculo Nota seguem com a turma toda.
 // Dia da atividade: atividade.data_atividade, senão aulas.data_planejada; sem nenhuma, os
 // botões ficam desligados. RLS: o professor só marca alunos das turmas dele.
@@ -157,8 +157,8 @@ async function criarControleFaltas(dados) {
             estado.faltas = await lerFaltasDoDia(estado.dia);
             contagem.textContent = estado.faltas.size + ' falta(s) no dia ' + estado.dia;
         },
-        filtrar: (alunos) => (estado.mostrar ? alunos
-            : alunos.filter((aluno) => !estado.faltas.has(aluno.alunoId))),
+        filtrar: (alunos) => (estado.mostrar
+            ? alunos.filter((aluno) => estado.faltas.has(aluno.alunoId)) : alunos),
         criarBotao: (aluno) => montarBotaoFaltouDoAluno(estado, aluno),
     };
 }

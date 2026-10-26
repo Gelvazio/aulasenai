@@ -247,7 +247,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     faltas, quantidade mínima, Gráficos, Cálculo Nota nem "Entregue". Só lê as respostas dele
     (RLS); banco sem mudança. Código: `assets/js/progresso-do-aluno.js`.
   - **ON/OFF "Tarefa Entregue?" (2026-10-14, #140):** acima do resumo, em toda atividade. Abre
-    **desligado = só quem não entregou**; ligado = **só quem entregou** (revisão #146). Só filtra a lista na
+    **desligado = não filtra**; ligado = **só quem entregou** (revisão #394). Só filtra a lista na
     tela. Código: `assets/js/filtro-entregue-progresso.js` (chave ON/OFF comum
     `.progresso-turma__interruptor` em `progresso-turma-global.css`).
   - **Combo "Aluno" (2026-10-14, #143):** ao lado do combo "Turma", com "Todos os alunos" e os
@@ -270,16 +270,16 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     `docs/equipes-sala-de-aula.md`.
   - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
     **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
-    desligado (padrão), **7 ou mais** (invertido em 2026-10-14, #146). Aluno sem nota final continua na lista. Lembrado no localStorage
+    desligado (padrão), não filtra (2026-10-26, #394). Aluno sem nota final continua na lista. Lembrado no localStorage
     (`progresso-turma:recuperacao`). Código: `assets/js/filtro-recuperacao-progresso.js`.
   - **ON/OFF "Prova Corrigida" (2026-10-14, #147):** depois do "RECUPERAÇÃO". Desligado
-    (padrão) lista só as provas **não corrigidas**; ligado, só as **corrigidas**. Objetiva:
+    (padrão) não filtra; ligado, só as **corrigidas**. Objetiva:
     **entregue = corrigida** (correção automática). Discursiva: entregue e com a **nota do
     professor** em todas as questões respondidas. Lembrado no localStorage
     (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
     `provaCorrigida` em `progresso-turma-fontes.js`.
   - **ON/OFF "Nota IA Gerada" (2026-10-24, #360):** depois do "Prova Corrigida". Desligado
-    (padrão) lista só os alunos **sem** a nota final da IA; ligado, só os que **já têm** a nota
+    (padrão) não filtra; ligado, só os que **já têm** a nota
     final gerada pela IA (mesma condição do 🤖: entregue, com resposta e com a correção da IA em
     todas as partes respondidas; sem correção conta como sem nota). Lembrado no localStorage
     (`progresso-turma:nota-ia-gerada`). Código: `assets/js/filtro-nota-ia-progresso.js`.
@@ -349,7 +349,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     `assets/js/mostrar-quadro-progresso.js`.
   - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
     falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
-    ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (esconde quem faltou). Dia =
+    ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (não filtra); ligado, só quem faltou. Dia =
     `atividade.data_atividade`, senão `aulas.data_planejada`; sem nenhuma, os botões ficam
     desligados. Quem faltou **entra nas contas** (resumo, Gráficos, Cálculo Nota). Código:
     `assets/js/falta-aluno-progresso.js` + CSS.
@@ -1058,3 +1058,5 @@ Caixa "Executar correção de IA agora" no topo do quadro de progresso das discu
 professor). O botão registra um pedido em `pedido_correcao_ia`; o Claude Code local executa
 `/corrigir-ia`, que corrige **somente** tópicos de atividades entregues ainda sem `nota_ia` e grava só
 `nota_ia`/`nota_ia_em`. Detalhes: `docs/progresso-global-atividades.md`.
+
+- **Regra geral dos filtros do Progresso (2026-10-26, #394):** todo ON/OFF só filtra quando está **ligado**; desligado não filtra nada. A escolha fica no localStorage. Vale para todo quadro de progresso (código compartilhado).

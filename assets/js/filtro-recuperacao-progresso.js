@@ -9,7 +9,7 @@
 
 const TEXTO_FILTRO_RECUPERACAO = 'RECUPERAÇÃO';
 const DICA_FILTRO_RECUPERACAO = 'Pela nota final. Ligado: quem pegou recuperação (nota menor ' +
-    'que 7). Desligado: nota 7 ou mais. Quem ainda não tem nota final continua na lista.';
+    'que 7). Desligado: não filtra. Quem ainda não tem nota final continua na lista.';
 const CLASSE_INTERRUPTOR_RECUPERACAO = 'progresso-turma__interruptor';
 const NOTA_MINIMA_RECUPERACAO = 7;
 const CHAVE_PREFERENCIA_RECUPERACAO = 'recuperacao';
@@ -23,11 +23,12 @@ const VALOR_DESLIGADO_PREFERENCIA_RECUPERACAO = 'nao';
  * @returns {boolean} true se o aluno aparece.
  */
 function alunoPassaNaRecuperacao(aluno, ligado) {
+    if (!ligado) return true;
+
     const temNotaFinal = aluno.valorNotaFinal >= 0;
     if (!temNotaFinal) return true;
 
-    const atingiu = aluno.valorNotaFinal >= NOTA_MINIMA_RECUPERACAO;
-    return ligado ? !atingiu : atingiu;
+    return aluno.valorNotaFinal < NOTA_MINIMA_RECUPERACAO;
 }
 
 /**

@@ -1,5 +1,5 @@
 // Professor: ON/OFF "Nota IA Gerada" no Progresso da turma GLOBAL (progresso-turma-global.js),
-// em toda atividade. Desligado (padrão): lista só os alunos SEM a nota final da IA; ligado: só
+// em toda atividade. Desligado (padrão): não filtra; ligado: só
 // os que já têm a nota final gerada pela IA. Nota final da IA = a mesma condição do 🤖 no
 // painel: entregue, com pelo menos uma parte respondida e com a correção da IA em todas as
 // partes respondidas (aluno sem correção conta como sem nota). A escolha fica no localStorage
@@ -8,7 +8,7 @@
 // Pedido do usuário em 2026-10-24 (tarefa #360). Regra: docs/regras/atividades.md
 
 const TEXTO_FILTRO_NOTA_IA = 'Nota IA Gerada';
-const DICA_FILTRO_NOTA_IA = 'Desligado: só os alunos sem a nota final da IA. Ligado: só os ' +
+const DICA_FILTRO_NOTA_IA = 'Desligado: não filtra. Ligado: só os ' +
     'alunos com a nota final gerada pela IA (entregue e com tudo corrigido pela IA).';
 const CLASSE_INTERRUPTOR_NOTA_IA = 'progresso-turma__interruptor';
 const CHAVE_PREFERENCIA_NOTA_IA = 'nota-ia-gerada';
@@ -55,7 +55,7 @@ function criarFiltroNotaIa(aoMudar, preferencias) {
 
     return {
         elemento,
-        filtrar: (alunos) => alunos.filter((aluno) => temNotaIaGerada(aluno) === caixa.checked),
+        filtrar: (alunos) => (caixa.checked ? alunos.filter(temNotaIaGerada) : alunos),
     };
 }
 

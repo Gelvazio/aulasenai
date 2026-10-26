@@ -6,8 +6,7 @@
 // Pedido do usuário em 2026-10-14 (tarefa #140). Regra: docs/regras/atividades.md
 
 const TEXTO_FILTRO_ENTREGUE = 'Tarefa Entregue?';
-const DICA_FILTRO_ENTREGUE = 'Desligado: só quem ainda não entregou. Ligado: só quem ' +
-    'entregou.';
+const DICA_FILTRO_ENTREGUE = 'Desligado: não filtra. Ligado: só quem entregou.';
 const CLASSE_INTERRUPTOR_ENTREGUE = 'progresso-turma__interruptor';
 const CHAVE_PREFERENCIA_ENTREGUE = 'tarefa-entregue';
 const VALOR_LIGADO_PREFERENCIA_ENTREGUE = 'sim';
@@ -42,7 +41,7 @@ function criarFiltroEntregue(aoMudar, preferencias) {
 
     return {
         elemento,
-        filtrar: (alunos) => alunos.filter((aluno) => aluno.entregue === caixa.checked),
+        filtrar: (alunos) => (caixa.checked ? alunos.filter((aluno) => aluno.entregue) : alunos),
     };
 }
 

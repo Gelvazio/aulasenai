@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #394-5d8a3f26 — [Filtros do Progresso da turma só filtram quando ligados (localStorage)](etapas/ETAPA-541-5d8a3f26-FILTROS-PROGRESSO-SO-QUANDO-LIGADOS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #394.1 — Ajustar 5 filtros · ✅ Concluído · `MEDIO` · só Sonnet
 - #393-3c6f9a28 — [Liberar só a nota e o resultado por tópico (sem o padrão de resposta), em todas as atividades discursivas](etapas/ETAPA-540-3c6f9a28-LIBERAR-NOTA-SEM-PADRAO-RESPOSTA.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #393.1 a #393.4 — SQL, página do aluno, botão do professor, docs · ✅ Concluído · `PESADO` · só Sonnet
 - #392-7e4c1a92 — [Renomear as atividades objetivas de Fundamentos de UI / UX para "Atividade Objetiva Aula NN"](etapas/ETAPA-539-7e4c1a92-RENOMEAR-OBJETIVAS-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

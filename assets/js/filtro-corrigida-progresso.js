@@ -7,7 +7,7 @@
 // Pedido do usuário em 2026-10-14 (tarefa #147). Regra: docs/regras/atividades.md
 
 const TEXTO_FILTRO_CORRIGIDA = 'Prova Corrigida';
-const DICA_FILTRO_CORRIGIDA = 'Desligado: só as provas ainda não corrigidas. Ligado: só as ' +
+const DICA_FILTRO_CORRIGIDA = 'Desligado: não filtra. Ligado: só as ' +
     'corrigidas (objetiva: entregue; discursiva: nota do professor em todas as questões).';
 const CLASSE_INTERRUPTOR_CORRIGIDA = 'progresso-turma__interruptor';
 const CHAVE_PREFERENCIA_CORRIGIDA = 'prova-corrigida';
@@ -43,8 +43,8 @@ function criarFiltroCorrigida(aoMudar, preferencias) {
 
     return {
         elemento,
-        filtrar: (alunos) => alunos.filter((aluno) =>
-            Boolean(aluno.provaCorrigida) === caixa.checked),
+        filtrar: (alunos) => (caixa.checked
+            ? alunos.filter((aluno) => Boolean(aluno.provaCorrigida)) : alunos),
     };
 }
 
