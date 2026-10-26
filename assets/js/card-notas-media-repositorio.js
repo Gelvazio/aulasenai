@@ -182,11 +182,27 @@ async function buscarIdsDasAtividades(paginas) {
 }
 
 /**
- * Turmas oferecidas ao professor no card.
+ * Id do curso de uma matéria.
+ * @param {number|null} materiaId - Id da matéria.
+ * @returns {Promise<number|null>} Id do curso ou null se a matéria não tiver curso.
+ */
+async function lerCursoIdDaMateriaCard(materiaId) {
+    if (!materiaId) return null;
+
+    const linhas = await sbGet(TABELA_MATERIA_NOTAS, 'select=curso_id&id=eq.' + materiaId);
+    return linhas[0]?.curso_id ? Number(linhas[0].curso_id) : null;
+}
+
+/**
+ * Turmas oferecidas ao professor no card: só as do curso da matéria da página; sem curso
+ * conhecido, todas.
+ * @param {number|null} materiaId - Id da matéria da página.
  * @returns {Promise<Object[]>} Turmas (codigo, nome, turno, unidade, favorito, lider_aluno_id).
  */
-async function listarTurmasCard() {
-    return sbGet('turma', CONSULTA_TURMAS_CARD);
+async function listarTurmasCard(materiaId) {
+    const cursoId = await lerCursoIdDaMateriaCard(materiaId);
+    const filtroCurso = cursoId ? '&curso_id=eq.' + cursoId : '';
+    return sbGet('turma', CONSULTA_TURMAS_CARD + filtroCurso);
 }
 
 /**

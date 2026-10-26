@@ -610,7 +610,8 @@ function criarInterruptorConfirmarMediaNotas(listaAluno) {
  * Monta os combos Turma e Aluno do professor, começando na turma favorita.
  */
 async function montarSelecaoProfessorNotas() {
-    estadoNotas.turmas = await listarTurmasCard();
+    await carregarMediasDaMateriaNotas();
+    estadoNotas.turmas = await listarTurmasCard(estadoNotas.materiaId);
     if (!estadoNotas.turmas.length) {
         renderizarTabelaNotas();
         mostrarAvisoNotas(MSG_SEM_TURMAS_NOTAS);
@@ -623,7 +624,6 @@ async function montarSelecaoProfessorNotas() {
     comboTurma.lista.addEventListener('change', () =>
         trocarTurmaNotas(comboAluno.lista, comboTurma.lista.value));
     comboAluno.lista.addEventListener('change', () => escolherAlunoNotas(comboAluno.lista.value));
-    await carregarMediasDaMateriaNotas();
     const { selecao } = estadoNotas.elementos;
     selecao.replaceChildren(comboTurma.etiqueta, comboAluno.etiqueta,
         criarInterruptorListarTodosNotas(comboAluno.lista),
