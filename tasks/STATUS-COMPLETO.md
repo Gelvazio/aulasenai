@@ -2111,6 +2111,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-26 19:09 | **C54 (global): MEDIO liberado para Devin e Copilot** — matriz de `niveis-e-modelos.md` (rules-ai) e a cópia do projeto (`.claude/rules/niveis.md`) com `✅` em MEDIO; PESADO continua ⛔ | Gelvazio | "mude a regra global... permitindo o devin pegar medio tambem" |
 | 2026-10-21 15:39 | Exceção à regra "banco só local": a sessão `nuvem · elegant-planck-ul8ac1` aplica o banco da #333.2 pelo conector do Supabase (só essa subtarefa) | Usuário (pergunta respondida) | Votação das equipes para uso rápido em sala |
 | 2026-10-20 10:47 | #299.4 (cena 3D do avatar) reclassificada de PESADO para MEDIO · só Sonnet | Gelvazio (pedido direto) | Decisão do usuário |
 | 2026-10-18 18:55 | A #22 (etapa 137) fica ⛔ **substituída pela #278** (TESTES-DE-FRONTEND-TASK): o que faltava dela (seeds da aula 05, banco e aceite) está na tarefa nova, que faz a matéria inteira no padrão novo | Pedido do usuário nesta data | Mesmo assunto; evitar dois planos abertos |

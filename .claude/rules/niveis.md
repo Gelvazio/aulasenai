@@ -26,7 +26,7 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 | **Grok** | rápido | principal | ⛔ |
 | **DeepSeek** | Flash | raciocínio | ⛔ |
 | **Codex** / **Cursor** | ✅ | ✅ | ⛔ |
-| **Devin** / **Copilot** | ✅ | ⛔ | ⛔ |
+| **Devin** / **Copilot** | ✅ | ✅ | ⛔ |
 
 - `PESADO` é do Claude Code com **Sonnet, Opus 5.5 ou superior, ou Fable** (C48, 2026-10-22).
 - ⛔ **NESTE PROJETO NUNCA USAR OPUS** (2026-10-24, pedido do usuário: "é projeto simples"): nem
