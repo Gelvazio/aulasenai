@@ -1060,3 +1060,5 @@ professor). O botão registra um pedido em `pedido_correcao_ia`; o Claude Code l
 `nota_ia`/`nota_ia_em`. Detalhes: `docs/progresso-global-atividades.md`.
 
 - **Regra geral dos filtros do Progresso (2026-10-26, #394):** todo ON/OFF só filtra quando está **ligado**; desligado não filtra nada. A escolha fica no localStorage. Vale para todo quadro de progresso (código compartilhado).
+
+- **ON/OFF "Falta Entregar" (2026-10-26, #396):** depois do "Tarefa Entregue?". Desligado (padrão) não filtra; ligado, só os alunos que **não entregaram**. Lembrado no localStorage (`progresso-turma:falta-entregar`). Código: `assets/js/filtro-falta-entregar-progresso.js`.

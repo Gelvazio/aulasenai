@@ -52,6 +52,7 @@ const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const SELETOR_POPUP_ABERTO_GLOBAL = '.popup__fundo';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
+const ARQUIVO_FILTRO_FALTA_ENTREGAR_PROGRESSO_GLOBAL = 'filtro-falta-entregar-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
 const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
@@ -899,6 +900,25 @@ async function prepararFiltroEntregueGlobal(area, aoMudar) {
 }
 
 /**
+ * Cria o ON/OFF "Falta Entregar" (ligado: só quem não entregou) e o põe na área. Uma falha aqui
+ * não derruba o painel (a lista sai sem esse filtro).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroFaltaEntregarGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroFaltaEntregar !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_FALTA_ENTREGAR_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroFaltaEntregar(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "Falta Entregar" do progresso:', erro.message);
+    }
+}
+
+/**
  * Cria o ON/OFF "RECUPERAÇÃO" (pela nota final: ligado < 7, desligado >= 7) e o põe na área,
  * depois do "Esconder Quem faltou". Uma falha aqui não derruba o painel.
  * @param {HTMLElement} area - Área do painel.
@@ -1187,6 +1207,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     };
     await prepararFiltroGlobal(area, redesenhar);
     await prepararFiltroEntregueGlobal(area, redesenhar);
+    await prepararFiltroFaltaEntregarGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
     await prepararFiltroRecuperacaoGlobal(area, redesenhar);
     await prepararFiltroCorrigidaGlobal(area, redesenhar);
