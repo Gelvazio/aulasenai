@@ -257,11 +257,12 @@ function criarOnOffEnsalado(materia, estado) {
 async function ligarFaixaEnsalado(faixa, perfil) {
   const cursoId = faixa.dataset[ATRIBUTO_CURSO_FAIXA];
   const itens = envolverCardsEnsalado(faixa);
+  itens.forEach(({ cartoesGrade }) => cartoesGrade.forEach((cartao) => { cartao.hidden = true; }));
   const botoes = montarBarraEnsalado(faixa);
   const materias = await buscarMateriasEnsalado(cursoId).catch(() => []);
   const mapaMaterias = new Map(materias.map((m) => [normalizarNomeMateria(m.descricao), m]));
   const ehProfessor = perfil === PERFIL_PROFESSOR_ENSALADO;
-  const estado = { turma: '' };
+  const estado = { turma: '', ehProfessor };
   const faixaMontada = { itens, mapaMaterias, botoes, estado };
 
   itens.forEach(({ item, nome }) => {
@@ -331,13 +332,14 @@ async function trocarTurmaEnsalado(faixaMontada, turma) {
 
 /**
  * Abre a faixa já em SOMENTE ENSALADO (padrão de todos os cursos).
- * Sem matéria ensalada (ou sem banco), mantém a lista completa para não esvaziar a faixa.
+ * Professor sem matéria ensalada na turma vê a lista completa; o aluno vê só as ensaladas.
  * @param {{itens: Object[], mapaMaterias: Map, botoes: Object}} faixaMontada - Dados da faixa.
  */
 function aplicarFiltroInicialEnsalado(faixaMontada) {
   const materias = [...faixaMontada.mapaMaterias.values()];
   const temEnsalada = materias.some((materia) => materia.ensalado);
-  escolherFiltroEnsalado(faixaMontada, temEnsalada);
+  // Aluno: só as ensaladas na turma dele, mesmo que nenhuma (sem plano B de "todas").
+  escolherFiltroEnsalado(faixaMontada, !faixaMontada.estado.ehProfessor || temEnsalada);
 }
 
 /**

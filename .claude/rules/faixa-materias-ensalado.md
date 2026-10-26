@@ -33,3 +33,5 @@ curso.
 - ✅ O ensalado vale **por turma**: tabela `turma_materia_ensalado` (existe a linha = ensalada na turma). `materia.ensalado` é legado e a faixa não o lê mais.
 - ✅ Na faixa o **professor escolhe a turma** no combo (abre na favorita) e só então liga/desliga o ON/OFF; o filtro SOMENTE ENSALADO vale para a turma escolhida. O aluno usa a turma dele.
 - ⛔ Não trocar por `turma_materia` (#211): aquela só vincula turmas ao combo do índice.
+- ✅ **Aluno:** o índice do curso lista **só** as matérias ensaladas na turma dele (2026-10-26); 
+  turma sem nenhuma ensalada = nenhuma matéria (sem plano B de "todas"). Os cartões ficam escondidos até o banco responder.
