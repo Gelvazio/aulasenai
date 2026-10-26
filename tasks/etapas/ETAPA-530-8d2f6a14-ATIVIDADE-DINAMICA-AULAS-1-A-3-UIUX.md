@@ -64,7 +64,7 @@ SQL de produção: só o Claude Code local.
 
 ## Classificação do Jev (2026-10-26)
 
-Feita com `node C:ontesules-ai\scripts\jev.mjs mensagem` sobre a descrição de cada subtarefa (o `classificar --gravar` não lê o formato deste quadro). `jev` = decidiu com confiança ≥ 0,80; `matriz` = abaixo disso, vale o nível mais restritivo e pede revisão humana.
+Feita com `node C:/fontes/rules-ai/scripts/jev.mjs mensagem` sobre a descrição de cada subtarefa (o `classificar --gravar` não lê o formato deste quadro). `jev` = decidiu com confiança ≥ 0,80; `matriz` = abaixo disso, vale o nível mais restritivo e pede revisão humana.
 
 | Item | Nível | Effort | Decisão | Confiança | Executor neste projeto |
 |---|---|---|---|---|---|
