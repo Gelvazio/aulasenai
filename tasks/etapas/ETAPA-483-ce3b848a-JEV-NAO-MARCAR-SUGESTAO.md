@@ -17,5 +17,5 @@
 - **Effort:** high
 - **Descrição:** o script do `rules-ai` (`scripts/marcar_jev_ai_suggestion.py`) acrescenta a linha `JEV-AI-SUGGESTION: NAO` em toda seção de subtarefa das etapas em `tasks/etapas/` que ainda não a tem. Segunda execução não altera nada. Não existe cópia do script neste projeto: usar o caminho do `rules-ai` (só no computador local).
 - **Critérios de Aceitação:** o dry-run seguinte mostra 0 seções a marcar; só arquivos em `tasks/etapas/` mudaram (`git diff --name-only`); nenhum outro texto das etapas mudou (`git diff` só com linhas `+` do campo); commit com o quadro no mesmo commit.
-- **Entrega:** a preencher · **Verificação:** a preencher (dry-run com 0 pendentes)
+- **Entrega:** commit `feat(JEV-NAO.1)` de 2026-10-26 · **Verificação:** dry-run antes: 44 seções em 14 arquivos; `--aplicar`; dry-run depois: 0 seções; `git diff -U0 -- tasks/etapas` só com linhas `+` do campo (nenhuma linha removida); nenhum arquivo fora de `tasks/etapas/` entrou no commit. Obs.: o script tocou também a etapa 548 (não versionada, do Devin), que ficou fora do commit.
 - **JEV-AI-SUGGESTION:** NAO

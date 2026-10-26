@@ -27,3 +27,4 @@ Na matriz de `C:\fontes\rules-ai` (`regras/niveis-e-modelos.md`), a linha **Devi
 - **Entrega:** `regras/niveis-e-modelos.md` e `scripts/jev/modelos.mjs` (rules-ai, commits `4bb8ef3`/`0f58f2d`), `dist/REGRAS-GLOBAIS.md` + `VERSAO.md` regerados (sem `--aplicar`), skill `classificar-tarefa` alinhada, `.claude/rules/niveis.md` e `rules-local/` do projeto atualizados (versão `2026-10-26-06f7c1a8`); decisão C54 nos dois quadros. No rules-ai: tarefa `NIVEL-DEVIN` (etapa 056) ✅.
 - **Próximo passo:** nenhum — task fechada. O `--aplicar` (regravar os arquivos globais das IAs, ex.: `~/.config/devin/AGENTS.md`) fica para ordem do usuário — regra já vale pelos quadros/regras dos projetos.
 - **Verificação:** `node --check modelos.mjs` OK; grep "Devin" em `dist/`, `rules-local/` e `.claude/rules/niveis.md` mostra `✅ ✅ ⛔`.
+- **JEV-AI-SUGGESTION:** NAO

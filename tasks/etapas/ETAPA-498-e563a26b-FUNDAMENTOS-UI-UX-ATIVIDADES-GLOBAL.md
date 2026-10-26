@@ -54,6 +54,7 @@
 - **Descrição:** gabarito de cada discursiva (padrão de resposta e critério certa/meia/errada por tópico). Nome do arquivo contém `GABARITO`, então o `.vercelignore` já o tira do site. Sem empresa fictícia.
 - **Critérios de aceitação:** 20 itens e 60 tópicos em cada gabarito; cada tópico com resposta esperada e critério; arquivo fora do site (nome com `GABARITO`).
 - **Entrega:** commit único com os 19 gabaritos e o quadro · **Verificação:** contagem de `### ITEM` (20) e de `**Resposta esperada:**` (60) por arquivo.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### Entrega e verificação ($2026-10-24 14:18)
 - **.1 (conferência):** 40 arquivos de atividade (objetiva 50 e discursiva 20 × 3) conferidos: 50 itens e gabarito 13/13/12/12 em cada objetiva; 20 itens e 60 tópicos em cada discursiva; sem empresa fictícia. Corrigido o caminho do conteúdo-base (`../../CONTEUDO/`) e o nome do PDF do slide nas 15 objetivas que tinham caminho ou nome errado. Entrega: commit com as atividades e as correções.

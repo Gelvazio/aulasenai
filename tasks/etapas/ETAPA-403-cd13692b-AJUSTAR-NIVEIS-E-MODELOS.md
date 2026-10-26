@@ -25,6 +25,7 @@ aplicar em `.claude/rules/niveis.md` a matriz com as linhas **OpenCode** e **Qod
 - **Nível:** LEVE — só `.md` (linhas de tabela e uma frase), sem lógica.
 - **Modelo:** só Haiku — nunca outro
 - **Descrição:** em `.claude/rules/niveis.md`: (1) acrescentar à tabela "Quem pega cada nível" a
+- **JEV-AI-SUGGESTION:** NAO
   linha `| **OpenCode** | DeepSeek V4.1 Flash (\`deepseek-flash\`) | DeepSeek V4.1 Flash com thinking
   (\`deepseek-flash\`) | **DeepSeek V4 Pro (\`deepseek-v4-pro\`)** |`; (2) acrescentar a linha
   `| **Qoder** | ✅ | ✅ | ⛔ |`; (3) trocar a frase "`PESADO` é **só do Claude Code com Opus 5.5 ou

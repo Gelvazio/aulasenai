@@ -69,6 +69,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Modelo da fonte `ATIVIDADE-DINAMICA-AULA-NN.md` (campos, critérios que somam 10) em `docs/regras/atividades.md`.
 - **Depende de:** —.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -77,6 +78,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Ler os Markdown das aulas 01, 02 e 03 de `CONTEUDO/` e anotar tema e capacidades de cada uma.
 - **Depende de:** —.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -85,6 +87,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Fonte da dinâmica da Aula 01 (`CONTEUDO/ATIVIDADE-DINAMICA-AULA-01.md`).
 - **Depende de:** 381.1, 381.2.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -93,6 +96,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Fonte da dinâmica da Aula 02.
 - **Depende de:** 381.1, 381.2.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -101,6 +105,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Fonte da dinâmica da Aula 03.
 - **Depende de:** 381.1, 381.2.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -109,6 +114,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Gerador `assets/gerador-atividade-dinamica/` (leitura da fonte, ficha, roteiro só professor, tempo/materiais).
 - **Depende de:** 381.1.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -117,6 +123,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Template HTML e CSS da página da dinâmica (tokens `:root`, sem estilo inline).
 - **Depende de:** 381.6.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -125,6 +132,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Card/ícone 🎯 da dinâmica no `gerar_indices.py`.
 - **Depende de:** 381.6.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -133,6 +141,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** SQL `nota_dinamica` (tabela, RLS, JWT, idempotente).
 - **Depende de:** 381.1.
 - **Situação:** ✅ 2026-10-26 (SQL escrito).
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -154,6 +163,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Repositório JS de notas da dinâmica (ler/gravar por aluno ou grupo).
 - **Depende de:** 381.10.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -162,6 +172,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Tela do professor: lista da turma, formato, grupos e lançar nota.
 - **Depende de:** 381.11, 381.7.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -170,6 +181,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Visão do aluno: ver a própria nota depois de lançada.
 - **Depende de:** 381.11, 381.7.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 
@@ -204,6 +216,7 @@ SQL de produção: só o Claude Code local.
 - **Descrição:** Documentação: `docs/database.md` + relatório HTML + `.claude/rules/atividades-banco.md` + histórico.
 - **Depende de:** 381.10.
 - **Situação:** ✅ 2026-10-26.
+- **JEV-AI-SUGGESTION:** NAO
 
 **Próximo passo:** nenhum, entregue.
 

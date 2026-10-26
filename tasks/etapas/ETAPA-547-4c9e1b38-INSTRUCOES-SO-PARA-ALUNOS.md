@@ -28,3 +28,4 @@ O bloco **INSTRUÇÕES — "Como Responder"** das páginas de atividade prática
 - **Entrega:** `aplicarInstrucoesSoParaAluno()` em `avaliacao-discursiva.js` (chamada no init) e em `respostas-atividade.js` (chamada após `escolherProvedor`); esconde o `.aula-card` cujo `.aula-badge` é "INSTRUÇÕES" quando não é aluno logado. Cobre as 191 páginas com "Como Responder" (74 discursivas + 117 objetivas — conferido: nenhuma carrega outro motor). `docs/regras/atividades.md` atualizado.
 - **Próximo passo:** nenhum — task fechada.
 - **Verificação:** `node --check` nos 2 JS OK; grep confirmou que toda página com "Como Responder" carrega `avaliacao-discursiva.js` ou `respostas-atividade.js`; sem navegador.
+- **JEV-AI-SUGGESTION:** NAO

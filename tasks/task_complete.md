@@ -186,3 +186,6 @@
 | #402.1 | Esconder o bloco INSTRUÇÕES de quem não é aluno logado em todas as atividades (discursivas e objetivas) · `LEVE` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash (reclassificado pelo Jev, conf. 0,74; executada pelo Devin a pedido do usuário) | — | ✅ Concluído | — | [547-4c9e1b38](etapas/ETAPA-547-4c9e1b38-INSTRUCOES-SO-PARA-ALUNOS.md) | — |
 | **#404-2f8c4a17** | **Regra global: Devin (e Copilot) passa a pegar subtarefa MEDIO** | 🟡 Média | — | — | ✅ Concluído | — (não reservável) | [549-2f8c4a17](etapas/ETAPA-549-2f8c4a17-DEVIN-PEGA-MEDIO.md) | — |
 | #404.1 | Liberar MEDIO para Devin/Copilot na matriz global e nas cópias · `LEVE` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash (executada pelo Devin a pedido do usuário) | — | ✅ Concluído | — | [549-2f8c4a17](etapas/ETAPA-549-2f8c4a17-DEVIN-PEGA-MEDIO.md) | — |
+
+| JEV-NAO.1 | Rodar o script que marca JEV-AI-SUGGESTION: NAO nas subtarefas | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ✅ Concluído | — | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |
+| **JEV-NAO** | **Marcar JEV-AI-SUGGESTION: NAO nas etapas do projeto (C47)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [483-ce3b848a](etapas/ETAPA-483-ce3b848a-JEV-NAO-MARCAR-SUGESTAO.md) | — |

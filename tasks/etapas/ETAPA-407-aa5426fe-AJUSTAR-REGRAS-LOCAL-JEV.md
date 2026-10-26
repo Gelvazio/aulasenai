@@ -22,6 +22,7 @@ conhecem o Laya/sinais, então precisam do passo novo.
 - **Nível:** LEVE — só `.md` (as duas cópias da skill), sem lógica nem banco.
 - **Modelo:** só Haiku — nunca outro
 - **Descrição:** nas duas cópias da skill (`classificar-tarefa`): (1) passo novo antes do Laya —
+- **JEV-AI-SUGGESTION:** NAO
   `node C:/fontes/rules-ai/scripts/jev.mjs classificar` (só local; sem `TYPESAFE_API_KEY`, com
   `JEV_MODO=off` ou falha → segue o fluxo Laya/sinais, e `off` é o rollback); (2) registrar a
   confiança do Jev junto do nível e, se Jev e Laya/sinais discordarem, vale o nível mais alto;

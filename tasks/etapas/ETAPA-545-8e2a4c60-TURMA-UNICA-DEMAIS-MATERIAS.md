@@ -23,21 +23,25 @@ Nenhuma atividade de nenhuma matéria tem combo "Turma:" fora do Quadro de Progr
 - **Nível:** a classificar pelo Jev
 - **Depende de:** 399.
 - **Próximo passo:** executar depois do plano aprovado e de classificado pelo Jev.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 400.2 — Ajustar os geradores de atividade/avaliação das demais matérias
 
 - **Nível:** a classificar pelo Jev
 - **Depende de:** 400.1.
 - **Próximo passo:** executar depois do plano aprovado e de classificado pelo Jev.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 400.3 — Regravar/ajustar as páginas das demais matérias e cursos (sem editar à mão o que é gerado)
 
 - **Nível:** a classificar pelo Jev
 - **Depende de:** 400.2.
 - **Próximo passo:** executar depois do plano aprovado e de classificado pelo Jev.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 400.4 — Conferir todas as matérias e documentar
 
 - **Nível:** a classificar pelo Jev
 - **Depende de:** 400.3.
 - **Próximo passo:** executar depois do plano aprovado e de classificado pelo Jev.
+- **JEV-AI-SUGGESTION:** NAO

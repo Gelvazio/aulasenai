@@ -46,6 +46,7 @@
 - **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/ideias.json` (programa, turma, 10 ideias com id, título, UC, formato, tempo, materiais, situação, 4 passos, entrega e critério, mais as 3 observações ao professor).
 - **Verificação:** `python -m json.tool ideias.json` passou; 10 itens; cada campo e cada passo foi achado no `.md` (comparação com espaços normalizados), 0 divergências.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.2 — Tema CSS futurista (tokens, grade, botões, cards)
 **Próximo passo:** — (concluída em 2026-10-20 11:02).
@@ -57,6 +58,7 @@
 - **Entrega:** `assets/css/futurista.css` (tokens em `:root`, grade holográfica, hero com logo, rede de nós, cartões, botões, telemetria, palco do avatar com plano B SVG, seções, navegação, celular até 720px, projetor a partir de 1600px, `prefers-reduced-motion`).
 - **Verificação:** leitura do arquivo: 76 `{` e 76 `}`; 0 `!important`; 0 cor fora de `:root`; todo token usado está definido; nenhuma linha acima de 100 caracteres; foco visível magenta e alvo de toque de 44px.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.3 — index.html com logo central e rede de nós
 **Próximo passo:** — (concluída em 2026-10-20 11:04).
@@ -68,6 +70,7 @@
 - **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/index.html` (hero com a logo `logo-sesi-senai.png` no centro, rede de nós em SVG, 10 cartões "Aluno 01" a "Aluno 10" com link para `ideia-NN.html`); classe `fut-cartao__meta` acrescentada ao `futurista.css`.
 - **Verificação:** leitura do HTML: logo e CSS existem nos caminhos relativos (`../../../assets/...`); 10 links `ideia-NN.html`; 0 `style=`/`onclick`; tags balanceadas; só a URL das fontes passa de 100 caracteres.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.4 — Cena 3D do avatar (Three.js) e rede de nós
 **Próximo passo:** — (concluída em 2026-10-20 11:06).
@@ -79,6 +82,7 @@
 - **Entrega:** `assets/js/cena-3d.js` (avatar holográfico girando por aluno, rede de nós 3D, Three.js r128 do cdnjs a ser carregado pelo HTML, plano B com silhueta SVG, pausa fora da tela e com a aba oculta, `?3d=0` para projetor fraco); classes `fut-rede-3d` acrescentadas ao `futurista.css`.
 - **Verificação:** `node --check` passou; 22 funções, a maior com 19 linhas, todas com JSDoc, até 3 parâmetros, 0 `var`, nenhuma linha acima de 100 caracteres; execução simulada em Node nos 5 cenários (com 3D, sem WebGL, movimento reduzido, sem Three.js, `?3d=0`): o plano B entra em todos os 4 últimos. O desenho real na tela fica para o professor conferir no navegador (sem navegador aqui).
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.5 — Gerador das 10 páginas ideia-NN.html
 **Próximo passo:** criar o gerador (script) que lê `ideias.json` e grava `ideia-01.html` a `ideia-10.html`.
@@ -90,6 +94,7 @@
 - **Entrega:** —
 - **Verificação:** contagem de arquivos = 10; busca por nomes reais = nenhum; `node --check` do gerador.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.6 — Navegação e responsividade (celular e projetor)
 **Próximo passo:** criar `assets/js/navegacao.js` e ajustar o CSS para celular e projetor.
@@ -101,6 +106,7 @@
 - **Entrega:** —
 - **Verificação:** `node --check assets/js/navegacao.js`; leitura das regras de `@media`.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.7 — Conferência por leitura e node --check (sem navegador)
 **Próximo passo:** rodar `node --check` nos JS, `python -m json.tool` no JSON e conferir os requisitos.
@@ -112,6 +118,7 @@
 - **Entrega:** —
 - **Verificação:** saída dos comandos e leitura registradas nesta seção.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 299.8 — Fechamento: quadro, commit e push por subtarefa
 **Próximo passo:** mover as linhas concluídas para `task_complete.md`, commit + push.
@@ -123,3 +130,4 @@
 - **Entrega:** —
 - **Verificação:** `git log` com um commit por subtarefa.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO

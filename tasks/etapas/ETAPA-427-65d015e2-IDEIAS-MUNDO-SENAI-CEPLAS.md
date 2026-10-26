@@ -30,3 +30,4 @@
 - **Entrega:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/MUNDO-SENAI/IDEIAS-MUNDO-SENAI.md` com 10 ideias, uma por aluno, cada uma com UC, formato, tempo, materiais, passos, entrega e critério. ✅ Concluída em 2026-10-19 20:12 (commit no push desta tarefa).
 - **Verificação:** leitura do arquivo: 10 seções "Ideia" e a tabela-resumo com 10 linhas; acentuação conferida; nenhum nome de empresa fictícia; nenhum dado pessoal de aluno.
 - **Anotação:** —
+- **JEV-AI-SUGGESTION:** NAO

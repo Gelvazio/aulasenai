@@ -11,6 +11,7 @@
 - **Descrição:** levantamento só de leitura; plano (escopo, arquivos, riscos, verificações) escrito nesta etapa. Tarefa grande (envolve gravação no banco e RLS): execução só após o "sim" do usuário.
 - **Critérios de Aceitação:** plano na etapa com arquivos, como a entrega é gravada, RLS necessária e verificação.
 - **Entrega:** plano abaixo (aprovado pelo usuário em 2026-10-24) · **Verificação:** 3 agentes de leitura; relatórios conferidos
+- **JEV-AI-SUGGESTION:** NAO
 
 ### Plano (levantamento por 3 agentes de leitura, 2026-10-24 12:50)
 

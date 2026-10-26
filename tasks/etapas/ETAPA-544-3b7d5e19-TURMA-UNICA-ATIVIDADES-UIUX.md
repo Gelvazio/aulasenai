@@ -26,25 +26,30 @@ Escolher a turma uma única vez, no Quadro de Progresso; o Exportar PDF, o Gabar
 - **Descrição:** Mapear arquivos, eventos e chaves dos 3 combos.
 - **Entrega:** inventário — `select#progresso-turma-combo-turma` (Quadro, `alunos-da-turma-progresso.js`: estado `memoriaAlunosDaTurma.turmaEscolhida`, `window.lerTurmaEscolhidaProgresso()`, eventos `relatorio-professor:turma` e `progresso-turma:mudou`); `select#turmaExportacao` na `.export-bar` (`turma-exportacao.js`, lido por `obterTurmaParaExportacao()` em `atividade.js`, `exportar-pdf-discursiva.js` e `exportar-word.js`); select do "🔑 Gabarito da avaliação" (`liberacao-respostas-discursiva.js`, já acompanhava o Quadro). Nenhum HTML de UI/UX tem combo fixo.
 - **Verificação:** grep nos 3 arquivos + páginas de UI/UX.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 399.2 — Turma do Quadro de Progresso vira a única fonte (estado + evento de troca)
 
 - **Nível:** LEVE · **Status:** ✅ Concluído
 - **Descrição:** `avisarTurmaEscolhidaProgresso` passa a disparar `relatorio-professor:turma` também ao voltar para "Todas as turmas" (turma `''`) — os dependentes reagem (botões do gabarito/nota escondem com aviso, tabela de notas mostra todas).
 - **Entrega:** `alunos-da-turma-progresso.js` (+ `liberacao-respostas-professor.js`, `liberacao-nota-professor.js` e `tabela-notas-professor.js` tratando `''`).
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 399.3 — Remover o combo "Turma:" do Exportar PDF e usar a turma do Quadro
 
 - **Nível:** LEVE · **Status:** ✅ Concluído
 - **Descrição:** `turma-exportacao.js` reduzido a `obterTurmaParaExportacao()`, que lê o `select#progresso-turma-combo-turma` e devolve o texto da opção; sem o combo → linha em branco no PDF (aluno/sem login/sem Quadro). Removidos: select da `.export-bar`, consultas de vínculos/RPC admin, popup "Selecione a turma", inclusão do `turma-exportacao.css` e a carga de `unidade.js` em `exportar-pdf-discursiva.js`.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 399.4 — Remover o combo "Turma:" do Gabarito da avaliação e usar a turma do Quadro
 
 - **Nível:** LEVE · **Status:** ✅ Concluído
 - **Descrição:** `liberacao-respostas-discursiva.js`: removidos `listarTurmasLiberacaoDiscursiva`, `criarListaTurmasLiberacao`, `acompanharTurmaProgressoLiberacao`, `escolherTurmaInicialLiberacao` e o aviso "sem turmas vinculadas". `montarLiberacaoProfessorDiscursiva` usa `lerTurmaProgressoDiscursiva()`; os botões já se atualizam pelo evento `relatorio-professor:turma`.
+- **JEV-AI-SUGGESTION:** NAO
 
 ### 399.5 — Conferir todas as aulas e atividades de Fundamentos de UI / UX e documentar
 
 - **Nível:** LEVE · **Status:** ✅ Concluído
 - **Descrição:** `node --check` nos 6 JS alterados (todos OK); grep confirmou que nenhuma página de UI/UX tem combo "Turma:" fixo e não há restos de `turmaExportacao`; `docs/regras/atividades.md` atualizado (regra de exportação reescrita + nota #399 substituindo a #368).
 - **Verificação:** `node --check` + grep + leitura dos consumidores do evento.
+- **JEV-AI-SUGGESTION:** NAO
