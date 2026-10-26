@@ -95,6 +95,10 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
     `CONTEUDO/` (extração dos slides), aguardar e avisar; nunca gerar a partir de PDF ou PPTX
     ([`materias-global.md`](.claude/rules/materias-global.md)).
 
+17. **Tela = espelho do banco** (2026-10-26, pedido do usuário; todas as matérias): perguntas da
+    página iguais às do banco (quantidade, ordem, texto) e carregadas dinamicamente dele
+    ([`atividades-banco.md`](.claude/rules/atividades-banco.md)).
+
 Histórico de mudanças das regras: [`docs/HISTORICO-REGRAS.md`](docs/HISTORICO-REGRAS.md).
 
 <!-- rules-local:inicio -->

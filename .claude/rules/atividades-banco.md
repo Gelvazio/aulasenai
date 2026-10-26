@@ -9,6 +9,17 @@ que ainda não foi feita. **Até a migração terminar, vale o jeito atual** des
 `docs/regras/atividades.md` (páginas e fontes por aula). ⛔ Não criar página nova por aula fora do
 plano da #25.
 
+## Tela = espelho do banco (2026-10-26, #387/#388, pedido do usuário) — vale para TODAS as matérias
+
+- ✅ As perguntas/itens que aparecem na **tela** são **sempre um espelho** do que está no banco
+  (`gabarito`, `topico_discursivo`, `atividade.total_itens`): mesma quantidade, mesma ordem, mesmo
+  texto. Ajustar o banco (ex.: cortar questões) obriga ajustar a página no mesmo passo.
+- ✅ A página deve **carregar dinamicamente do banco** (não ter as questões fixas no HTML): o
+  gerador, ao gerar a página pela primeira vez, lê as perguntas do banco e a página as monta na hora.
+- ⛔ Página com questão que não existe no banco, ou banco com questão que a página não mostra.
+- Conferir após mexer: contar itens/tópicos do banco × da página (`data-total`, `data-topicos`).
+- Auditoria das demais matérias e migração do que ainda é HTML fixo: tarefa #388.
+
 ## Alvo: questões só no banco
 
 Enunciado, alternativas, gabarito e tópicos ficam **só no banco**. A página busca pelo id da

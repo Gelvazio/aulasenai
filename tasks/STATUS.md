@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #388-9c3d5e18 — [Auditar as demais matérias: tela = espelho do banco e carga dinâmica das perguntas](etapas/ETAPA-535-9c3d5e18-AUDITAR-TELA-ESPELHO-BANCO-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
+  - #388.1 a #388.5 — inventário, correção, schema/carga dinâmica, gerador, docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #387-4e8b2d07 — [Reduzir as atividades 168 (10 itens, só tópico A) e 190 (20 questões)](etapas/ETAPA-534-4e8b2d07-REDUZIR-ATIVIDADES-168-190.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #387.1 e #387.2 — exclusão no banco com backup e conferência · ✅ Concluído · `PESADO` · só Sonnet
 - #386-7c2e9b14 — Ensalado por turma: combo Turma na faixa de matérias e tabela turma_materia_ensalado · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
