@@ -18,6 +18,8 @@ const ROTULO_COMBO_TURMA_PROGRESSO = 'Turma:';
 const CLASSE_COMBO_TURMA_PROGRESSO = 'progresso-turma__turma';
 const ID_COMBO_TURMA_PROGRESSO = 'progresso-turma-combo-turma';
 const EVENTO_TURMA_PROGRESSO = 'relatorio-professor:turma';
+// Dispara a cada troca do combo (inclusive "Todas as turmas") para o combo "Respostas dos alunos".
+const EVENTO_TURMA_MUDOU_PROGRESSO = 'progresso-turma:mudou';
 
 const memoriaAlunosDaTurma = {
     atividadeId: null, turmas: [], turmaEscolhida: VALOR_TODAS_TURMAS_PROGRESSO,
@@ -147,9 +149,11 @@ async function criarComboTurmaProgresso(dados) {
         turma.codigo)));
     combo.value = memoriaAlunosDaTurma.turmaEscolhida;
     avisarTurmaEscolhidaProgresso(combo.value);
+    document.dispatchEvent(new CustomEvent(EVENTO_TURMA_MUDOU_PROGRESSO));
     combo.addEventListener('change', () => {
         memoriaAlunosDaTurma.turmaEscolhida = combo.value;
         avisarTurmaEscolhidaProgresso(combo.value);
+        document.dispatchEvent(new CustomEvent(EVENTO_TURMA_MUDOU_PROGRESSO));
         dados.aoMudar();
     });
     rotulo.append(combo);

@@ -21,6 +21,7 @@ const VALOR_DESLIGADO_MEMORIA = 'nao';
 const TEXTO_PENDENTE_CORRECAO = 'Pendente Correcao';
 const DICA_PENDENTE_CORRECAO = 'Ligado: o combo lista só os alunos que o professor ainda não ' +
     'corrigiu. Desligado: todos os alunos.';
+const EVENTO_TURMA_MUDOU_RESPOSTAS = 'progresso-turma:mudou';
 const BASE_SCRIPTS_RESPOSTAS_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -105,8 +106,10 @@ async function listarAlunosQueResponderam(opcoes) {
     if (!grupos.length) return [];
 
     const ids = [...new Set(grupos.map((grupo) => grupo.alunoId))];
-    const alunos = await sbGet('aluno', 'select=id,nome,desistente&id=in.(' + ids.join(',') + ')');
+    const alunos = await sbGet('aluno',
+        'select=id,nome,desistente,turma_codigo&id=in.(' + ids.join(',') + ')');
     const nomes = new Map(alunos.map((aluno) => [aluno.id, aluno.nome]));
+    const turmas = new Map(alunos.map((aluno) => [aluno.id, aluno.turma_codigo || '']));
     // Desistente (#342) não aparece no combo de alunos que responderam.
     const desistentes = new Set(
         alunos.filter((aluno) => aluno.desistente).map((aluno) => aluno.id));
@@ -115,6 +118,7 @@ async function listarAlunosQueResponderam(opcoes) {
     return grupos.filter((grupo) => !desistentes.has(grupo.alunoId)).map((grupo) => ({
         ...grupo,
         nome: nomes.get(grupo.alunoId) || 'Aluno sem nome',
+        turmaCodigo: turmas.get(grupo.alunoId) || '',
         entregueEm: entregues.get(grupo.alunoId + '|' + grupo.tentativa) || '',
     })).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR') || a.tentativa - b.tentativa);
 }
@@ -306,6 +310,31 @@ async function restaurarEscolhasSalvas(estado, opcoes) {
 }
 
 /**
+ * Devolve só os alunos da turma escolhida no combo "Turma" do Progresso da turma.
+ * @param {Object[]} alunos - Lista de listarAlunosQueResponderam.
+ * @returns {Object[]} Alunos da turma; todos, se não houver turma escolhida.
+ */
+function filtrarAlunosPorTurmaEscolhida(alunos) {
+    const turma = window.lerTurmaEscolhidaProgresso?.() || '';
+    if (!turma) return alunos;
+    return alunos.filter((aluno) => aluno.turmaCodigo === turma);
+}
+
+/**
+ * Troca da turma no Progresso da turma: refaz o combo só com os alunos dela e recarrega as
+ * respostas (mantém o aluno escolhido se ele for da turma; senão limpa a tela).
+ * @param {{tela: Object, filtro: Object}} estado - Tela e filtro do combo.
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno.
+ */
+async function aplicarTurmaNoCombo(estado, opcoes) {
+    const { tela, filtro } = estado;
+    const escolhido = tela.alunos[Number(tela.combo.value)];
+    tela.todos = filtrarAlunosPorTurmaEscolhida(tela.origem);
+    filtrarComboPendentes(tela, filtro, escolhido);
+    await carregarAlunoEscolhido(tela, opcoes);
+}
+
+/**
  * Monta o combo "Aluno" que carrega na tela as respostas de cada aluno.
  * @param {HTMLElement} destino - Elemento onde a área do combo é acrescentada.
  * @param {{atividadeId: number, tabela: string, colunas: string, converter: Function,
@@ -330,14 +359,17 @@ async function montarRespostasDoAluno(destino, opcoes) {
     const combo = criarComboAlunos(alunos);
     const aviso = criarElementoRespostasAluno('span', CLASSE_RESPOSTAS_ALUNO + '__aviso');
     etiqueta.appendChild(combo);
-    const tela = { combo, alunos, aviso, todos: alunos };
+    const tela = { combo, alunos, aviso, todos: alunos, origem: alunos };
+    tela.todos = filtrarAlunosPorTurmaEscolhida(alunos);
+    tela.alunos = tela.todos;
+    preencherComboAlunos(combo, tela.alunos);
     const filtro = { somentePendentes: false, corrigidos: new Set() };
     const pendenteLigado = lerMemoriaRespostasAluno('pendente-correcao') === VALOR_LIGADO_MEMORIA;
     const pendente = criarChavePendenteCorrecao(pendenteLigado, async (ligado) => {
         gravarMemoriaRespostasAluno('pendente-correcao',
             ligado ? VALOR_LIGADO_MEMORIA : VALOR_DESLIGADO_MEMORIA);
         try {
-            if (ligado) filtro.corrigidos = await lerAlunosCorrigidos(alunos, opcoes);
+            if (ligado) filtro.corrigidos = await lerAlunosCorrigidos(tela.todos, opcoes);
             filtro.somentePendentes = ligado;
             await aplicarPendenteCorrecao(tela, filtro, opcoes);
         } catch (erro) {
@@ -347,6 +379,8 @@ async function montarRespostasDoAluno(destino, opcoes) {
     area.append(etiqueta, pendente, aviso);
     combo.addEventListener('change', () => carregarAlunoEscolhido(tela, opcoes));
     window.atualizarPendenteCorrecao = criarAtualizacaoPendentes({ tela, filtro }, opcoes);
+    document.addEventListener(EVENTO_TURMA_MUDOU_RESPOSTAS,
+        () => aplicarTurmaNoCombo({ tela, filtro }, opcoes));
     await restaurarEscolhasSalvas({ tela, filtro, pendenteLigado }, opcoes);
 }
 
