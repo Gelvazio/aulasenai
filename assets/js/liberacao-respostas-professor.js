@@ -13,6 +13,8 @@ const ROTA_LIBERAR_GABARITO = '/rest/v1/rpc/liberar_gabarito_turma';
 const ROTA_SEM_ENTREGA_GABARITO = '/rest/v1/rpc/alunos_sem_entrega_turma';
 const CLASSE_LIBERAR_GABARITO = 'liberar-gabarito';
 const EVENTO_TURMA_LIBERAR_GABARITO = 'relatorio-professor:turma';
+const MSG_ESCOLHA_TURMA_QUADRO_GABARITO = 'Escolha a turma no combo "Turma" do Quadro de ' +
+    'Progresso.';
 const estadoLiberarGabarito = { botao: null, aviso: null, atividadeId: null, turma: '',
     liberado: false, faltam: 0 };
 
@@ -56,7 +58,10 @@ async function atualizarBotaoLiberarGabarito() {
     if (!botao) return;
 
     botao.hidden = !turma;
-    if (!turma) return;
+    if (!turma) {
+        aviso.textContent = MSG_ESCOLHA_TURMA_QUADRO_GABARITO;
+        return;
+    }
     try {
         const { liberado, faltam } = await lerSituacaoGabaritoTurma();
         estadoLiberarGabarito.liberado = liberado;

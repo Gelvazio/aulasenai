@@ -19,14 +19,15 @@ const MARGEM_PDF_NOTAS = 15;
 const estadoTabelaNotas = { linhas: [], turmas: [], turma: null, bloco: null };
 
 /**
- * Agrupa as linhas do resumo por aluno, com a maior nota entregue.
+ * Agrupa as linhas do resumo por aluno, com a maior nota entregue. Turma vazia ("Todas as
+ * turmas" do Quadro de Progresso, #399) = todos os alunos.
  * @param {Object[]} linhas - Linhas do resumo (uma por aluno e tentativa).
- * @param {string|null} turma - Código da turma escolhida.
+ * @param {string|null} turma - Código da turma escolhida, ou vazio para todas.
  * @returns {{nome: string, nota: number|null}[]} Alunos da turma em ordem alfabética.
  */
 function listarNotasDaTurma(linhas, turma) {
     const alunos = new Map();
-    linhas.filter((linha) => (linha.turma_codigo || '') === (turma || '')).forEach((linha) => {
+    linhas.filter((linha) => !turma || (linha.turma_codigo || '') === turma).forEach((linha) => {
         const aluno = alunos.get(linha.aluno_id) || { nome: linha.nome || '', nota: null };
         const temNota = linha.entregue_em && linha.total;
         if (temNota) {
@@ -55,8 +56,9 @@ function montarLinhasTextoNotas(alunos) {
  * @returns {string} Nome da turma.
  */
 function obterNomeTurmaNotas() {
+    if (!estadoTabelaNotas.turma) return 'Todas as turmas';
     const turma = estadoTabelaNotas.turmas.find((item) => item.codigo === estadoTabelaNotas.turma);
-    return turma ? turma.nome : (estadoTabelaNotas.turma || 'Sem turma');
+    return turma ? turma.nome : estadoTabelaNotas.turma;
 }
 
 /**
@@ -98,7 +100,7 @@ function atualizarTabelaNotas() {
  */
 function montarNomeArquivoNotas() {
     const pagina = (location.pathname.split('/').pop() || 'atividade').replace(/\.html?$/i, '');
-    const turma = String(estadoTabelaNotas.turma || 'SEM-TURMA').replace(/[^\w-]+/g, '-');
+    const turma = String(estadoTabelaNotas.turma || 'TODAS').replace(/[^\w-]+/g, '-');
     return pagina + '-NOTAS-' + turma + '.pdf';
 }
 

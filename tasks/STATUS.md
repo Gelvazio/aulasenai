@@ -7,8 +7,7 @@
 
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
-- #399-3b7d5e19 — [Turma escolhida só no Quadro de Progresso: aulas e atividades de Fundamentos de UI / UX](etapas/ETAPA-544-3b7d5e19-TURMA-UNICA-ATIVIDADES-UIUX.md) · 🔄 Em progresso · Devin (local · main)
-  - #399.1 a #399.5 — inventário, turma única, Exportar PDF, Gabarito, conferência e docs (ver a etapa) · 🔄 Em execução · Devin (a pedido do usuário) · `LEVE` (Jev, conf. 0,45)
+
 - #398-1de07962 — [Interruptor "Mostrar" do card de notas: renomear e esconder o card do professor quando OFF](etapas/ETAPA-543-1de07962-MOSTRAR-ESCONDE-CARD-DO-PROFESSOR.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #398.1 — Renomear o rótulo para "Mostrar" · ✅ Concluído · `MEDIO` · pedido direto: Devin
   - #398.2 — Com OFF, esconder o corpo do card também do professor · ✅ Concluído · `MEDIO` · pedido direto: Devin

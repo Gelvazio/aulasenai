@@ -8,6 +8,9 @@
 // Só leitura; o RLS limita ao que o professor pode ver. Depende de js/supabase.js (sbGet).
 // Tarefa #368: expõe lerTurmaEscolhidaProgresso() e dispara 'relatorio-professor:turma' (turma
 // específica) para o combo do Gabarito da avaliação abrir na mesma turma; não escuta o evento.
+// Tarefa #399 (2026-10-26): este combo é a ÚNICA fonte de turma da página — o evento dispara
+// também ao voltar para "Todas as turmas" (turma ''), e os botões do gabarito/notas e a lista
+// "Turma" da exportação em PDF deixam de existir como combos próprios.
 // Pedidos do usuário em 2026-10-14 (tarefas #137 e #139). Regra: docs/regras/atividades.md
 
 const TENTATIVA_INICIAL_ALUNOS_DA_TURMA = 1;
@@ -118,13 +121,12 @@ function lerTurmaEscolhidaProgresso() {
 }
 
 /**
- * Avisa (evento no document) a turma específica escolhida; "todas" não dispara.
+ * Avisa (evento no document) a turma escolhida — dispara sempre, inclusive ao voltar para
+ * "Todas as turmas" (turma ''), pois este combo é a única fonte de turma da página (#399).
  * @param {string} codigo - Código da turma do combo.
  * @returns {void}
  */
 function avisarTurmaEscolhidaProgresso(codigo) {
-    if (!codigo || codigo === VALOR_TODAS_TURMAS_PROGRESSO) return;
-
     document.dispatchEvent(new CustomEvent(EVENTO_TURMA_PROGRESSO, { detail: { turma: codigo } }));
 }
 

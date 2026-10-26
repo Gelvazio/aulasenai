@@ -11,6 +11,7 @@ const EVENTO_TURMA_LIBERAR_NOTA = 'relatorio-professor:turma';
 const AVISO_NOTA_LIBERADA = 'Nota liberada: o aluno vê a nota e o resultado por tópico, sem o ' +
     'padrão de resposta.';
 const AVISO_NOTA_RECOLHIDA = 'Nota não liberada para esta turma.';
+const MSG_ESCOLHA_TURMA_QUADRO_NOTA = 'Escolha a turma no combo "Turma" do Quadro de Progresso.';
 const estadoLiberarNota = { botao: null, aviso: null, atividadeId: null, turma: '',
     liberada: false };
 
@@ -38,7 +39,10 @@ async function atualizarBotaoLiberarNota() {
     if (!botao) return;
 
     botao.hidden = !turma;
-    if (!turma) return;
+    if (!turma) {
+        aviso.textContent = MSG_ESCOLHA_TURMA_QUADRO_NOTA;
+        return;
+    }
     try {
         const linhas = await sbGet('atividade', 'select=nota_liberada&id=eq.' + atividadeId);
         estadoLiberarNota.liberada = (linhas[0]?.nota_liberada || []).includes(turma);

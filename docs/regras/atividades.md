@@ -289,7 +289,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     Código: `assets/js/filtro-abaixo-media-progresso.js`.
   - **ON/OFF "ABAIXO MEDIA(IA)" (2026-10-24, #362):** depois do "ABAIXO DA MEDIA". Pelo **percentual de acerto da IA** (o "85%" da coluna "Nota parcial IA"; vale já durante a correção): ligado lista só os alunos **abaixo de 70%** (média 7; quem não tem correção da IA some); desligado (padrão) não filtra. Lembrado no localStorage (`progresso-turma:abaixo-da-media-ia`). Código:
     `assets/js/filtro-abaixo-media-ia-progresso.js`.
-  - **Turma do gabarito segue a turma do Progresso (2026-10-24, #368, GLOBAL: discursivas, práticas e objetivas):** o seletor de turma do "Liberar gabaritos (turma X)" abre já na turma escolhida no combo "Turma" do Progresso da turma e acompanha as trocas dele (evento `relatorio-professor:turma`; `window.lerTurmaEscolhidaProgresso()` em `assets/js/alunos-da-turma-progresso.js`). Discursivas: `liberacao-respostas-discursiva.js`; objetivas/práticas: abas de turma do relatório (`respostas-atividade-professor.js`). Trocar a turma no gabarito não muda o combo do Progresso.
+  - **Turma única no Quadro de Progresso (2026-10-26, #399, GLOBAL: discursivas, práticas e objetivas):** a turma da página é escolhida só no combo "Turma" do Quadro de Progresso (`window.lerTurmaEscolhidaProgresso()` e evento `relatorio-professor:turma`, disparado também ao voltar para "Todas as turmas" — turma `''`). O "Liberar gabaritos/notas (turma X)" usa essa turma e fica escondido quando está em "Todas"; o campo Turma do PDF exportado usa a mesma (o combo próprio da `.export-bar` e o do gabarito foram removidos). Discursivas: `liberacao-respostas-discursiva.js`; exportação: `turma-exportacao.js`; objetivas/práticas: abas de turma do relatório (`respostas-atividade-professor.js`).
+  - **(substituído pela #399) Turma do gabarito segue a turma do Progresso (2026-10-24, #368):** antes o gabarito tinha combo próprio que abria na turma do Progresso.
   - **ON/OFF "MEDIA ATINGIDA(IA)" (2026-10-24, #367):** depois do "ABAIXO MEDIA(IA)". Pelo **percentual de acerto da IA** (o "85%" da coluna "Nota parcial IA"): ligado lista só os alunos **a partir de 70%** (média 7 atingida; quem não tem correção da IA some); desligado (padrão) não filtra. Lembrado no localStorage (`progresso-turma:media-atingida-ia`). Código:
     `assets/js/filtro-media-atingida-ia-progresso.js`.
   - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
@@ -545,24 +546,20 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 
 ## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
 
-Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **todas** as matérias.
+Registrada em 2026-10-03; **reescrita em 2026-10-26 (#399)**. Vale para **todas** as atividades
+e avaliações de **todas** as matérias.
 
+- ✅ **A turma é escolhida em um único lugar: o combo "Turma" do Quadro de Progresso**
+  (`select#progresso-turma-combo-turma`, `assets/js/alunos-da-turma-progresso.js`). Não existe
+  mais lista "Turma" na `.export-bar` nem no bloco "🔑 Gabarito da avaliação".
 - ✅ Ao exportar (PDF da atividade/prova completa e **Gabarito** do professor), o campo
-  **Turma** do PDF é preenchido com a **turma selecionada** — não fica a linha em branco quando o
-  professor tem turma.
-- ✅ **Lista (combo) "Turma" antes dos botões de exportar**, no início da `.export-bar`, só para o
-  PROFESSOR logado:
-  - professor com **1 turma** → ela já vem selecionada;
-  - professor com **mais de uma turma** → a lista começa em "Selecione a turma…" e ele **tem de
-    escolher**; sem escolha, a exportação para com o popup "Selecione a turma antes de exportar.";
-  - turmas visíveis: as dos vínculos dele na `turmaprofessor`; o Professor Administrador
-    (`eh_professor_administrador()`) vê todas.
-- ✅ Aluno, usuário sem login ou professor sem turma: sem lista; o campo Turma do PDF fica em
+  **Turma** do PDF é preenchido com a turma escolhida no Quadro (texto igual ao da opção);
+  "Todas as turmas" sai como "Todas as turmas".
+- ✅ Aluno, usuário sem login ou página sem Quadro de Progresso: o campo Turma do PDF fica em
   branco para preencher à mão.
 - ✅ Código único: `assets/js/turma-exportacao.js` (carregado sozinho pelo `assets/js/atividade.js`,
-  que gera os PDFs) + `assets/css/turma-exportacao.css` (incluído pelo próprio módulo). Página
-  nova de atividade ou avaliação com exportação **deve usar o `atividade.js`** (não repetir a
-  lógica por página).
+  que gera os PDFs). Página nova de atividade ou avaliação com exportação **deve usar o
+  `atividade.js`** (não repetir a lógica por página).
 - ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
   `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação).
 

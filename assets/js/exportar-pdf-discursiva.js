@@ -3,7 +3,8 @@
 // Desempenho, Data, Docente, Unidade Curricular, Turma, Estudante), quadro CAPACIDADES, uma tabela
 // por questão (cabeçalho cinza; capacidade, contexto e comando; cada tópico com os pontos e o espaço
 // da resposta) e rodapé "Página X de Y". A resposta já digitada pelo aluno logado entra no PDF; sem
-// resposta, ficam linhas em branco. A turma vem da lista "Turma" (assets/js/turma-exportacao.js).
+// resposta, ficam linhas em branco. A turma vem do combo "Turma" do Quadro de Progresso
+// (assets/js/turma-exportacao.js — fonte única da página, #399).
 // Nada de padrão de resposta no PDF. Carregado pelo assets/js/avaliacao-discursiva.js.
 // PDF compacto (<body data-pdf-compacto="sim">, campo "PDF compacto: sim" da fonte): fonte e
 // espaços menores, sem a linha "Aula" e a caixa de capacidade de cada questão (ficam no quadro
@@ -17,7 +18,6 @@ const URL_JSPDF_DISCURSIVA = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1
 const URL_AUTOTABLE_DISCURSIVA =
     'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js';
 const ARQUIVO_TURMA_DISCURSIVA = 'turma-exportacao.js';
-const ARQUIVO_TURMA_UNIDADE_DISCURSIVA = 'unidade.js';
 const BASE_SCRIPTS_PDF_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const TURMA_EM_BRANCO_DISCURSIVA = '___________________';
 const MARGEM_PDF_DISCURSIVA = 15;
@@ -103,7 +103,7 @@ async function dadosCabecalhoDiscursiva() {
 }
 
 /**
- * Turma do PDF: a escolhida na lista "Turma" (professor) ou em branco.
+ * Turma do PDF: a escolhida no combo "Turma" do Quadro de Progresso, ou em branco.
  * @returns {Promise<string|null>} Turma; null = exportação cancelada.
  */
 async function turmaPdfDiscursiva() {
@@ -368,9 +368,7 @@ function montarBarraPdfDiscursiva() {
     mostrarBotaoPdfSeProfessorDiscursiva(botao);
     conteudo.prepend(barra);
     if (typeof obterTurmaParaExportacao !== 'function' && BASE_SCRIPTS_PDF_DISCURSIVA) {
-        carregarScriptPdfDiscursiva(BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_UNIDADE_DISCURSIVA)
-            .then(() => carregarScriptPdfDiscursiva(
-                BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_DISCURSIVA))
+        carregarScriptPdfDiscursiva(BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_DISCURSIVA)
             .catch((erro) => console.warn(erro.message));
     }
 }

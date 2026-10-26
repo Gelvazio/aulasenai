@@ -3,8 +3,8 @@
 // data-uc-curta e data-docente no <body>
 // e o gabarito em <script type="application/json" id="gabarito-dados">.
 // O docente do PDF é o professor logado; o data-docente só vale quando não há professor logado.
-// A turma do PDF vem da lista "Turma" da .export-bar (assets/js/turma-exportacao.js, carregado
-// aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
+// A turma do PDF vem do combo "Turma" do Quadro de Progresso — fonte única da página
+// (assets/js/turma-exportacao.js, carregado aqui; 2026-10-26, #399).
 // E o assets/js/documento-word.js + assets/js/exportar-word.js (hoje sem botões de Word).
 // Toda atividade com folha de respostas no banco (body data-login="sim") ganha o botão
 // Questões escondidas por passarem da quantidade mínima (assets/js/questoes-ate-minimo.js)

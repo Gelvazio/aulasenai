@@ -1,13 +1,15 @@
 // Regra do gabarito nas DISCURSIVAS (carregado pelo assets/js/avaliacao-discursiva.js).
-//  • PROFESSOR: no painel de identificação, lista "Turma" + botão "🔓 Liberar gabaritos (turma X)"
+//  • PROFESSOR: no painel de identificação, botão "🔓 Liberar gabaritos (turma X)"
 //    (liberacao-respostas-professor.js): libera mesmo com alunos sem entrega e encerra o
-//    preenchimento da turma (2026-10-15, #175).
+//    preenchimento da turma (2026-10-15, #175). A turma é a do combo "Turma" do Quadro de
+//    Progresso — fonte única da página (2026-10-26, #399); sem turma específica escolhida
+//    ("Todas as turmas"), o botão fica escondido.
 //  • ALUNO: botão "🔑 Gabarito da Atividade-Respostas" (antes "Ver Gabarito"; o "📄 Exportar Meu
 //    Gabarito" fica ao lado dele, no mesmo grupo — #196.5). Antes da liberação, aviso "Aguarde professor liberar os
 //    gabaritos" (o banco grava o pedido em tentativaacessogabarito); depois, o padrão de resposta
 //    de cada tópico aparece abaixo da resposta do aluno (função solicitar_gabarito_discursivo).
 // O padrão de resposta nunca fica na página antes da liberação. Plano:
-// docs/liberacao-respostas-por-turma.md. Depende de popup.js e js/supabase.js (sbGet, sbH).
+// docs/liberacao-respostas-por-turma.md. Depende de popup.js e js/supabase.js (sbH).
 
 const ROTA_SOLICITAR_GABARITO_DISCURSIVO = '/rest/v1/rpc/solicitar_gabarito_discursivo';
 const MSG_AGUARDE_GABARITO_DISCURSIVO = 'Aguarde professor liberar os gabaritos';
@@ -18,8 +20,6 @@ const CLASSE_GRUPO_GABARITO_ALUNO = CLASSE_LIBERACAO_DISCURSIVA + ' ' +
 const TEXTO_BOTAO_GABARITO_ALUNO = '🔑 Gabarito da Atividade-Respostas';
 const ARQUIVO_LIBERACAO_PROFESSOR = 'liberacao-respostas-professor.js';
 const ARQUIVO_LIBERACAO_NOTA = 'liberacao-nota-professor.js';
-const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'unidade.js';
-const EVENTO_TURMA_LIBERACAO_DISCURSIVA = 'relatorio-professor:turma';
 const BASE_SCRIPTS_LIBERACAO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -52,106 +52,31 @@ function carregarScriptLiberacao(arquivo) {
 }
 
 /**
- * Lista as turmas vinculadas ao professor (o administrador lê todos os vínculos), com o texto
- * "código — nome · UNIDADE" (assets/js/unidade.js).
- * @returns {Promise<{codigo: string, rotulo: string}[]>} Turmas sem repetição, em ordem.
- */
-async function listarTurmasLiberacaoDiscursiva() {
-    if (typeof acrescentarUnidadeTurma !== 'function') {
-        await carregarScriptLiberacao(ARQUIVO_TURMA_UNIDADE_LIBERACAO);
-    }
-    const [vinculos, turmas] = await Promise.all([sbGet('turmaprofessor', 'select=turma_codigo'),
-        sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome)')]);
-    const porCodigo = new Map(turmas.map((turma) => [turma.codigo, turma]));
-    const codigos = [...new Set(vinculos.map((vinculo) => vinculo.turma_codigo))].sort();
-    return codigos.map((codigo) => {
-        const turma = porCodigo.get(codigo) || { codigo };
-        return { codigo, rotulo: acrescentarUnidadeTurma(codigo + ' — ' + (turma.nome || ''), turma) };
-    });
-}
-
-let ouvinteTurmaProgressoDiscursiva = null;
-
-/**
- * Lê a turma escolhida no combo "Turma" do Progresso da turma (vazio se não houver).
- * @returns {string} Código da turma escolhida, ou ''.
+ * Lê a turma escolhida no combo "Turma" do Progresso da turma — fonte única da página (#399).
+ * @returns {string} Código da turma escolhida, ou '' ("Todas as turmas" / sem Quadro).
  */
 function lerTurmaProgressoDiscursiva() {
     return String(window.lerTurmaEscolhidaProgresso?.() || '');
 }
 
 /**
- * Define a turma inicial: a do Progresso, se estiver na lista; senão a primeira.
- * @param {{codigo: string}[]} turmas - Turmas da lista.
- * @returns {string} Código da turma inicial.
- */
-function escolherTurmaInicialLiberacao(turmas) {
-    const escolhida = lerTurmaProgressoDiscursiva();
-    const existe = turmas.some((turma) => turma.codigo === escolhida);
-    return existe ? escolhida : turmas[0].codigo;
-}
-
-/**
- * Faz a lista "Turma" acompanhar a turma escolhida no Progresso (sem reemitir o evento).
- * Remove o ouvinte anterior para não registrar em duplicidade.
- * @param {HTMLSelectElement} lista - Lista de turmas.
- * @param {{codigo: string}[]} turmas - Turmas da lista.
- */
-function acompanharTurmaProgressoLiberacao(lista, turmas) {
-    if (ouvinteTurmaProgressoDiscursiva) {
-        document.removeEventListener(EVENTO_TURMA_LIBERACAO_DISCURSIVA,
-            ouvinteTurmaProgressoDiscursiva);
-    }
-    ouvinteTurmaProgressoDiscursiva = (evento) => {
-        const codigo = String(evento.detail?.turma || '');
-        const estaNaLista = turmas.some((turma) => turma.codigo === codigo);
-        if (estaNaLista && codigo !== lista.value) lista.value = codigo;
-    };
-    document.addEventListener(EVENTO_TURMA_LIBERACAO_DISCURSIVA, ouvinteTurmaProgressoDiscursiva);
-}
-
-/**
- * Monta a lista "Turma" do professor; trocar a turma atualiza o botão de liberar.
- * @param {{codigo: string, rotulo: string}[]} turmas - Turmas da lista.
- * @param {string} turmaInicial - Código da turma que abre selecionada.
- * @returns {HTMLLabelElement} Lista pronta.
- */
-function criarListaTurmasLiberacao(turmas, turmaInicial) {
-    const etiqueta = criarElementoDiscursivaLiberacao('label',
-        CLASSE_LIBERACAO_DISCURSIVA + '__turma', 'Turma: ');
-    const lista = document.createElement('select');
-    turmas.forEach((turma) => lista.appendChild(new Option(turma.rotulo, turma.codigo)));
-    lista.value = turmaInicial;
-    lista.addEventListener('change', () => document.dispatchEvent(new CustomEvent(
-        EVENTO_TURMA_LIBERACAO_DISCURSIVA, { detail: { turma: lista.value } })));
-    acompanharTurmaProgressoLiberacao(lista, turmas);
-    etiqueta.appendChild(lista);
-    return etiqueta;
-}
-
-/**
- * Professor: lista de turmas + botão de liberar/recolher o gabarito da discursiva.
+ * Professor: botões de liberar/recolher o gabarito e a nota da discursiva, na turma escolhida
+ * no combo "Turma" do Quadro de Progresso (o evento `relatorio-professor:turma` atualiza os
+ * botões a cada troca; sem turma específica, ficam escondidos).
  * @param {HTMLElement} painel - Painel de identificação da página.
  * @param {number} atividadeId - Id da atividade.
  */
 async function montarLiberacaoProfessorDiscursiva(painel, atividadeId) {
-    const turmas = await listarTurmasLiberacaoDiscursiva();
     const area = criarElementoDiscursivaLiberacao('div', CLASSE_LIBERACAO_DISCURSIVA);
     area.appendChild(criarElementoDiscursivaLiberacao('strong', CLASSE_LIBERACAO_DISCURSIVA +
         '__titulo', '🔑 Gabarito da avaliação'));
     painel.appendChild(area);
-    if (!turmas.length) {
-        area.appendChild(criarElementoDiscursivaLiberacao('span', CLASSE_LIBERACAO_DISCURSIVA +
-            '__aviso', 'Você não tem turmas vinculadas.'));
-        return;
-    }
     if (typeof window.montarLiberarGabaritoProfessor !== 'function') {
         await carregarScriptLiberacao(ARQUIVO_LIBERACAO_PROFESSOR);
     }
-    const turmaInicial = escolherTurmaInicialLiberacao(turmas);
-    area.appendChild(criarListaTurmasLiberacao(turmas, turmaInicial));
-    montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmaInicial });
-    await montarLiberarNotaSemFalha(area, { atividadeId, turma: turmaInicial });
+    const turma = lerTurmaProgressoDiscursiva();
+    montarLiberarGabaritoProfessor(area, { atividadeId, turma });
+    await montarLiberarNotaSemFalha(area, { atividadeId, turma });
 }
 
 /**
