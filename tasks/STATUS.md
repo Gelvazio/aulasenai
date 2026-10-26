@@ -5,6 +5,11 @@
 
 ## Tarefas
 
+- #382-4b7e9c31 — [Aplicar a Atividade Dinâmica em todas as matérias](etapas/ETAPA-531-4b7e9c31-ATIVIDADE-DINAMICA-TODAS-AS-MATERIAS.md) · ⬜ Pendente (depende da #381; tarefa grande: aguarda aprovação) · — (não reservável)
+  - #382.1 a #382.14 — inventário, plano, 8 matérias, índices, avisos, docs e verificação (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
+- #381-8d2f6a14 — [Atividade Dinâmica nas aulas 1 a 3 de Fundamentos de UI / UX (piloto)](etapas/ETAPA-530-8d2f6a14-ATIVIDADE-DINAMICA-AULAS-1-A-3-UIUX.md) · 🔄 Em execução · — (não reservável)
+  - #381.1 — Modelo da fonte e docs · 🔄 Em execução · Claude Code (Sonnet 5.5) (local · main) · nível a classificar pelo Jev
+  - #381.2 a #381.17 — leitura das aulas, 3 fontes, gerador, template, card, SQL, aplicar, JS (repositório, professor, aluno), média, páginas, docs, verificação (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #380-5a3c8e71 — [Lista de alunos da turma T TIIN 2026/2 V1 (Fundamentos de UI / UX) no LISTAPRESENCA.js](etapas/ETAPA-529-5a3c8e71-LISTA-ALUNOS-TIIN-2026-2-V1-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #380.1 — Inserir a turma e os 22 alunos · ✅ Concluído · `MEDIO` · só Sonnet
 - #379-1f8b4d63 — [Remover a Média Final (composição da nota) de Análise de Dados Aplicada à Gestão](etapas/ETAPA-528-1f8b4d63-REMOVER-MEDIA-FINAL-ANALISE-DADOS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
