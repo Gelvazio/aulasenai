@@ -22,6 +22,9 @@
     .pd-filtros .guia-botao { padding-top: 5px; padding-bottom: 5px; }
 }
 
+/* Título único e discreto no lugar do cabeçalho azul grande */
+.pd-titulo { margin: 0; font-size: 16px; font-weight: 700; color: var(--guia-azul); }
+
 .pd-status-linha { min-width: 160px; }
 
 .pd-linha--excluida { background: var(--pd-fundo-excluida); color: var(--pd-texto-excluida); }
