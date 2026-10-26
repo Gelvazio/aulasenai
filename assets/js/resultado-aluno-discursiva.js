@@ -13,6 +13,8 @@
 const CLASSE_RESULTADO_ALUNO = 'resultado-aluno';
 const ROTA_NOTA_RESULTADO = '/rest/v1/rpc/notas_media_final';
 const ROTA_GABARITO_RESULTADO = '/rest/v1/rpc/solicitar_gabarito_discursivo';
+// Só a nota liberada (#393): tópicos e pontos, sem o padrão de resposta.
+const ROTA_RESULTADO_SEM_PADRAO = '/rest/v1/rpc/solicitar_resultado_discursivo';
 const SELETOR_TOPICO_RESULTADO = '.topico-resposta';
 const SELETOR_RODAPE_RESULTADO = '.topico-resposta__rodape';
 const SELETOR_DESTINO_RESULTADO = '.content-section';
@@ -65,15 +67,17 @@ async function chamarFuncaoResultado(rota, corpo) {
  * Lê a nota, as correções confirmadas, o histórico de mudanças e o gabarito (pontos e padrão de
  * resposta) do aluno.
  * @param {number} atividadeId - Id da atividade.
+ * @param {boolean} mostrarPadrao - true (gabarito liberado) lê também o padrão de resposta.
  * @returns {Promise<{nota: Object|null, correcoes: Object[], gabarito: Object[],
  *     historico: Object[]}>} Dados.
  */
-async function lerResultadoDoAluno(atividadeId) {
+async function lerResultadoDoAluno(atividadeId, mostrarPadrao) {
+    const rotaTopicos = mostrarPadrao ? ROTA_GABARITO_RESULTADO : ROTA_RESULTADO_SEM_PADRAO;
     const [notas, correcoes, gabarito, historico] = await Promise.all([
         chamarFuncaoResultado(ROTA_NOTA_RESULTADO, { p_paginas: [location.pathname] }),
         sbGet(VIEW_CORRECAO_RESULTADO, 'select=item,topico,nota_professor,comentario' +
             '&atividade_id=eq.' + atividadeId),
-        chamarFuncaoResultado(ROTA_GABARITO_RESULTADO, { p_atividade: atividadeId }),
+        chamarFuncaoResultado(rotaTopicos, { p_atividade: atividadeId }),
         sbGet(TABELA_HISTORICO_RESULTADO, 'select=item,topico,tipo,nota_anterior,nota_nova,' +
             'justificativa,feito_em&atividade_id=eq.' + atividadeId +
             '&order=feito_em.asc,id.asc').catch(() => []),
@@ -173,8 +177,8 @@ function agruparHistoricoResultado(historico) {
 /**
  * Mostra em cada alternativa o selo, o botão "Histórico" (se houver eventos), a explicação, a
  * justificativa da mudança e o padrão de resposta.
- * @param {{atividadeId: number, correcoes: Object[], gabarito: Object[], historico: Object[]}}
- *     dados - Atividade e dados lidos.
+ * @param {{atividadeId: number, correcoes: Object[], gabarito: Object[], historico: Object[],
+ *     mostrarPadrao: boolean}} dados - Atividade, dados lidos e se mostra o padrão de resposta.
  */
 function mostrarResultadoNasAlternativas(dados) {
     const chave = (linha) => linha.item + '|' + linha.topico;
@@ -186,15 +190,15 @@ function mostrarResultadoNasAlternativas(dados) {
         const rodape = bloco?.querySelector(SELETOR_RODAPE_RESULTADO);
         if (!rodape) return;
         montarResultadoDaAlternativa({ bloco, rodape, linha, atividadeId: dados.atividadeId,
-            correcao: notas.get(chave(linha)), eventos: eventos.get(chave(linha)) || [] });
+            mostrarPadrao: dados.mostrarPadrao, correcao: notas.get(chave(linha)), eventos: eventos.get(chave(linha)) || [] });
     });
 }
 
 /**
  * Monta o resultado de uma alternativa na tela.
  * @param {{bloco: HTMLElement, rodape: HTMLElement, linha: Object, atividadeId: number,
- *     correcao: Object|undefined, eventos: Object[]}} dados - Elementos, gabarito, correção e
- *     eventos do histórico da alternativa.
+ *     mostrarPadrao: boolean, correcao: Object|undefined, eventos: Object[]}} dados - Elementos,
+ *     gabarito, correção e eventos do histórico da alternativa.
  */
 function montarResultadoDaAlternativa(dados) {
     const { bloco, rodape, linha, correcao, eventos } = dados;
@@ -208,6 +212,7 @@ function montarResultadoDaAlternativa(dados) {
     const mudanca = eventos.filter((evento) => evento.tipo === 'mudanca').pop();
     const explicacao = criarExplicacaoResultado({ correcao, pontos, mudanca });
     if (explicacao) bloco.appendChild(explicacao);
+    if (!dados.mostrarPadrao) return;
     // Mesma classe do botão "Ver Gabarito" (resposta-esperada): não duplica a caixa.
     const esperada = criarElementoResultado('div', 'resposta-esperada ' +
         CLASSE_RESULTADO_ALUNO + '__esperada');
@@ -239,16 +244,19 @@ function montarQuadroNota(nota) {
  * Mostra ao aluno a prova corrigida: nota, resultado por alternativa, explicação, histórico e
  * padrão de resposta (só com a entrega feita e o gabarito liberado).
  * @param {number} atividadeId - Id da atividade.
+ * @param {{mostrarPadrao: boolean}} [opcoes] - mostrarPadrao=false (só a nota liberada) esconde o
+ *     padrão de resposta; padrão: true.
  */
-async function mostrarResultadoDoAluno(atividadeId) {
+async function mostrarResultadoDoAluno(atividadeId, opcoes = {}) {
+    const mostrarPadrao = opcoes.mostrarPadrao !== false;
     const destino = document.querySelector(SELETOR_DESTINO_RESULTADO);
     if (!destino || document.querySelector('.' + CLASSE_RESULTADO_ALUNO)) return;
 
-    const { nota, correcoes, gabarito, historico } = await lerResultadoDoAluno(atividadeId);
+    const { nota, correcoes, gabarito, historico } = await lerResultadoDoAluno(atividadeId, mostrarPadrao);
     const painel = destino.querySelector(SELETOR_PAINEL_RESULTADO);
     const quadro = montarQuadroNota(nota);
     destino.insertBefore(quadro, painel ? painel.nextSibling : destino.firstChild);
-    mostrarResultadoNasAlternativas({ atividadeId, correcoes, gabarito, historico });
+    mostrarResultadoNasAlternativas({ atividadeId, correcoes, gabarito, historico, mostrarPadrao });
     window.ligarMostrarCertasAluno?.(quadro, { correcoes, gabarito });
     if (nota?.situacao === 'NOTA') {
         window.mostrarAlertaDeEntrega?.(MSG_CORRIGIDA_RESULTADO, 'corrigida');

@@ -466,18 +466,22 @@ async function abrirMeuProgressoDiscursiva(dados) {
 }
 
 /**
- * Aluno que entregou, com o gabarito liberado para a turma: mostra a prova corrigida (nota,
- * resultado de cada alternativa, observação da IA e padrão de resposta). Falha não quebra a página.
+ * Aluno que entregou, com a nota ou o gabarito liberado para a turma: mostra a prova corrigida
+ * (nota, resultado de cada alternativa, observação e, só com o gabarito liberado, o padrão de
+ * resposta). Falha não quebra a página.
  * @param {Object} dados - Estado carregado do banco.
  */
 async function abrirResultadoDoAluno(dados) {
-    const podeVerResultado = !dados.ehProfessor && dados.entregueEm && dados.gabaritoLiberado;
+    const podeVerResultado = !dados.ehProfessor && dados.entregueEm &&
+        (dados.gabaritoLiberado || dados.resultadoLiberado);
     if (!podeVerResultado) return;
     try {
         const faltaResultado = typeof window.mostrarResultadoDoAluno !== 'function';
         await carregarModaisDaNota({ antes: faltaResultado ? [ARQUIVO_RESULTADO_ALUNO] : [],
             depois: [ARQUIVO_CATEGORIAS_PERGUNTA, ARQUIVO_MOSTRAR_CERTAS_ALUNO] });
-        await window.mostrarResultadoDoAluno(dados.atividadeId);
+        // Só a nota liberada (sem o gabarito): mostra o resultado, mas não o padrão de resposta.
+        await window.mostrarResultadoDoAluno(dados.atividadeId,
+            { mostrarPadrao: Boolean(dados.gabaritoLiberado) });
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
     }

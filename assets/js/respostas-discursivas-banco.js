@@ -13,6 +13,7 @@ const ROTA_ABERTURA_DISCURSIVA = '/rest/v1/abertura_atividade';
 const ROTA_HORARIO_DISCURSIVA = '/rest/v1/rpc/horario_da_turma_do_aluno';
 const ROTA_MINIMO_QUESTOES_DISCURSIVA = '/rest/v1/rpc/minimo_questoes_para_entregar';
 const ROTA_GABARITO_LIBERADO_DISCURSIVA = '/rest/v1/rpc/aluno_pode_ver_gabarito';
+const ROTA_NOTA_LIBERADA_DISCURSIVA = '/rest/v1/rpc/aluno_pode_ver_nota';
 const PREFERENCIA_UPSERT_DISCURSIVA = 'resolution=merge-duplicates,return=minimal';
 const PREFERENCIA_IGNORAR_REPETIDA = 'resolution=ignore-duplicates,return=minimal';
 const PERFIL_PROFESSOR_DISCURSIVA = 'PROFESSOR';
@@ -205,6 +206,25 @@ async function lerGabaritoLiberadoDiscursiva(sessao) {
 }
 
 /**
+ * Diz se a NOTA (e o resultado por tópico) já foi liberada para a turma do aluno que entregou:
+ * por "Liberar notas" ou por "Liberar gabaritos" (função aluno_pode_ver_nota, #393).
+ * @param {Object} sessao - Estado do repositório.
+ * @returns {Promise<boolean>} true se o aluno pode ver a nota e o resultado.
+ */
+async function lerNotaLiberadaDiscursiva(sessao) {
+    try {
+        const resposta = await enviarPedidoDiscursivo({
+            rota: ROTA_NOTA_LIBERADA_DISCURSIVA, corpo: { p_atividade: sessao.atividade.id },
+            preferencia: 'return=representation',
+        });
+        if (!resposta.ok) return false;
+        return (await resposta.json()) === true;
+    } catch (erro) {
+        return false;
+    }
+}
+
+/**
  * Carrega sessão, atividade, tentativa, respostas e entrega do usuário logado.
  * @param {Object} sessao - Estado do repositório (preenchido aqui).
  * @returns {Promise<Object>} Dados iniciais da página (disponivel=false sem banco ou cadastro).
@@ -231,9 +251,12 @@ async function carregarDiscursiva(sessao) {
     // Gabarito liberado para a turma do aluno que entregou: a prova volta com respostas e nota.
     const gabaritoLiberado = Boolean(!ehProfessor && entregueEm &&
         await lerGabaritoLiberadoDiscursiva(sessao));
+    // Nota liberada (#393): só a nota e o resultado por tópico, sem o padrão de resposta.
+    const resultadoLiberado = Boolean(!ehProfessor && entregueEm &&
+        (gabaritoLiberado || await lerNotaLiberadaDiscursiva(sessao)));
     // Regra global das práticas (#160): o aluno que já entregou não vê mais as próprias respostas
-    // até o professor liberar o gabarito; elas nem são lidas do banco.
-    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado);
+    // até o professor liberar a nota ou o gabarito; elas nem são lidas do banco.
+    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !resultadoLiberado);
     const respostas = respostasOcultas ? {} : await lerRespostasDiscursivas(sessao);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
     if (deveRegistrarAbertura) {
@@ -242,7 +265,7 @@ async function carregarDiscursiva(sessao) {
     }
     return {
         disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, respostasOcultas,
-        entregueEm, minimoQuestoes, gabaritoLiberado,
+        entregueEm, minimoQuestoes, gabaritoLiberado, resultadoLiberado,
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
         maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };

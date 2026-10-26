@@ -641,6 +641,12 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   data-json=... data-antes=... data-depois=...>`; o loader monta os cards e só então carrega os scripts da
   atividade; o professor vê a caixa "Liberar perguntas" (`liberar-itens-professor.js`). SQL:
   `database/2026-10-26-itens-ativos-aula01.sql`. Outras matérias: tarefa #390.
+- ✅ **Liberar só a nota (2026-10-26, #393; todas as discursivas):** além do "🔓 Liberar gabaritos", o
+  professor tem "📊 Liberar notas (turma X)" (`liberacao-nota-professor.js`; coluna `atividade.nota_liberada`,
+  função `liberar_nota_turma`). O aluno que entregou passa a ver a nota, as próprias respostas e o resultado
+  por tópico (✅/🟡/❌ + explicação), **sem** o padrão de resposta (`solicitar_resultado_discursivo`, sem
+  `resposta_esperada`) e sem encerrar o preenchimento. Liberar o gabarito continua liberando tudo
+  (`aluno_pode_ver_nota` vale para os dois). SQL: `database/2026-10-26-liberar-nota-turma.sql`.
 - ✅ **Práticas: sem exportar antes da correção (2026-10-26, #391):** na prática/discursiva, se o
   professor ainda não corrigiu (nota `AGUARDANDO_CORRECAO` em `notas_media_final`), o clique em
   "Exportar Meu Gabarito" mostra um aviso para aguardar a correção e não gera o PDF

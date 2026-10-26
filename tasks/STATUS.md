@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #393-3c6f9a28 — [Liberar só a nota e o resultado por tópico (sem o padrão de resposta), em todas as atividades discursivas](etapas/ETAPA-540-3c6f9a28-LIBERAR-NOTA-SEM-PADRAO-RESPOSTA.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #393.1 a #393.4 — SQL, página do aluno, botão do professor, docs · ✅ Concluído · `PESADO` · só Sonnet
 - #392-7e4c1a92 — [Renomear as atividades objetivas de Fundamentos de UI / UX para "Atividade Objetiva Aula NN"](etapas/ETAPA-539-7e4c1a92-RENOMEAR-OBJETIVAS-UIUX.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
   - #392.1 — Atualizar `nome_atividade` das aulas 02 a 19 · ✅ Concluído · `MEDIO` · só Sonnet
 - #391-5b9a2c47 — [Exportar Meu Gabarito (práticas) só depois da correção do professor](etapas/ETAPA-538-5b9a2c47-MEU-GABARITO-SO-APOS-CORRECAO.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)

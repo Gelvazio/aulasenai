@@ -17,6 +17,7 @@ const CLASSE_GRUPO_GABARITO_ALUNO = CLASSE_LIBERACAO_DISCURSIVA + ' ' +
     CLASSE_LIBERACAO_DISCURSIVA + '--aluno';
 const TEXTO_BOTAO_GABARITO_ALUNO = '🔑 Gabarito da Atividade-Respostas';
 const ARQUIVO_LIBERACAO_PROFESSOR = 'liberacao-respostas-professor.js';
+const ARQUIVO_LIBERACAO_NOTA = 'liberacao-nota-professor.js';
 const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'unidade.js';
 const EVENTO_TURMA_LIBERACAO_DISCURSIVA = 'relatorio-professor:turma';
 const BASE_SCRIPTS_LIBERACAO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -150,6 +151,24 @@ async function montarLiberacaoProfessorDiscursiva(painel, atividadeId) {
     const turmaInicial = escolherTurmaInicialLiberacao(turmas);
     area.appendChild(criarListaTurmasLiberacao(turmas, turmaInicial));
     montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmaInicial });
+    await montarLiberarNotaSemFalha(area, { atividadeId, turma: turmaInicial });
+}
+
+/**
+ * Põe o botão "Liberar notas" (só a nota, sem o padrão de resposta, #393) junto do "Liberar
+ * gabaritos". Uma falha aqui não derruba o painel do professor.
+ * @param {HTMLElement} area - Área do gabarito no painel.
+ * @param {{atividadeId: number, turma: string}} contexto - Atividade e turma escolhida.
+ */
+async function montarLiberarNotaSemFalha(area, contexto) {
+    try {
+        if (typeof window.montarLiberarNotaProfessor !== 'function') {
+            await carregarScriptLiberacao(ARQUIVO_LIBERACAO_NOTA);
+        }
+        window.montarLiberarNotaProfessor(area, contexto);
+    } catch (erro) {
+        console.warn('Liberar notas:', erro.message);
+    }
 }
 
 /**
