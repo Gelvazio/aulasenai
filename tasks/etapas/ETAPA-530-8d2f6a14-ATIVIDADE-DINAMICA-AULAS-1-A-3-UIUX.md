@@ -138,6 +138,11 @@ SQL de produção: só o Claude Code local.
 
 ### 381.10 — Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local)
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local).
 - **Depende de:** 381.9.
 - **Situação:** 👀 aguarda o usuário (aplicar o SQL; o conector recusou).
@@ -170,6 +175,11 @@ SQL de produção: só o Claude Code local.
 
 ### 381.14 — Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média"
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média".
 - **Depende de:** 381.10.
 - **Situação:** 👀 vem junto com o 381.10 (funções no mesmo SQL).
@@ -178,6 +188,11 @@ SQL de produção: só o Claude Code local.
 
 ### 381.15 — Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices.
 - **Depende de:** 381.3–381.8.
 - **Situação:** 🔄 páginas e seeds gerados; seeds aguardam o 381.10.
@@ -194,6 +209,11 @@ SQL de produção: só o Claude Code local.
 
 ### 381.17 — Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela.
 - **Depende de:** 381.15, 381.16.
 - **Situação:** 🔄 `py_compile` e `node --check` ok; falta conferir no banco após o 381.10.

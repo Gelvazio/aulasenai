@@ -51,6 +51,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.1 — Inventário: matérias e aulas com Markdown × sem Markdown (lista para o usuário)
 
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Inventário: matérias e aulas com Markdown × sem Markdown (lista para o usuário).
 - **Depende de:** #381.
 - **Situação:** ⬜.
@@ -59,6 +64,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.2 — Plano e aprovação do usuário (ordem das matérias, aulas por matéria)
 
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Plano e aprovação do usuário (ordem das matérias, aulas por matéria).
 - **Depende de:** 382.1.
 - **Situação:** ⬜.
@@ -67,6 +77,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.3 — Fundamentos de UI/UX — aulas 04 a 19 (fontes + páginas)
 
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Fundamentos de UI/UX — aulas 04 a 19 (fontes + páginas).
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -75,6 +90,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.4 — BANCO-DE-DADOS — fontes + páginas
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** BANCO-DE-DADOS — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -83,6 +103,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.5 — TESTES-DE-FRONTEND — fontes + páginas
 
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** TESTES-DE-FRONTEND — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -91,6 +116,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.6 — INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO — fontes + páginas
 
+- **Nível:** LEVE — classificado (jev (confiança 0.91))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.91)
 - **Descrição:** INTRODUCAO-A-TECNOLOGIA-DA-INFORMACAO-E-COMUNICACAO — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -99,6 +129,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.7 — REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO — fontes + páginas
 
+- **Nível:** LEVE — classificado (jev (confiança 0.88))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.88)
 - **Descrição:** REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -107,6 +142,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.8 — REFORCO_LINGUAGENS — fontes + páginas
 
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** REFORCO_LINGUAGENS — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -115,6 +155,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.9 — INTRODUCAO_COMUNICACAO_ORAL_ESCRITA — fontes + páginas
 
+- **Nível:** LEVE — classificado (jev (confiança 0.92))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.92)
 - **Descrição:** INTRODUCAO_COMUNICACAO_ORAL_ESCRITA — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -123,6 +168,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.10 — FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO — fontes + páginas
 
+- **Nível:** LEVE — classificado (jev (confiança 0.89))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.89)
 - **Descrição:** FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO — fontes + páginas.
 - **Depende de:** 382.2.
 - **Situação:** ⬜.
@@ -131,6 +181,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.11 — Regravar os índices de atividades das matérias tocadas (card 🎯)
 
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Regravar os índices de atividades das matérias tocadas (card 🎯).
 - **Depende de:** 382.3–382.10.
 - **Situação:** ⬜.
@@ -139,6 +194,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.12 — Matérias sem Markdown: avisar o usuário a lista de aulas aguardando (👀)
 
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Matérias sem Markdown: avisar o usuário a lista de aulas aguardando (👀).
 - **Depende de:** 382.1.
 - **Situação:** ⬜.
@@ -147,6 +207,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.13 — Documentação final (histórico de regras, `STATUS-ATIVIDADES.md` das matérias)
 
+- **Nível:** LEVE — classificado (jev (confiança 0.97))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.97)
 - **Descrição:** Documentação final (histórico de regras, `STATUS-ATIVIDADES.md` das matérias).
 - **Depende de:** 382.11.
 - **Situação:** ⬜.
@@ -155,6 +220,11 @@ Mudança em massa: gerar por matéria, um commit por matéria; não regravar ín
 
 ### 382.14 — Verificação geral (`py_compile`, leitura dos HTML, conferência dos cards)
 
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
 - **Descrição:** Verificação geral (`py_compile`, leitura dos HTML, conferência dos cards).
 - **Depende de:** 382.13.
 - **Situação:** ⬜.
