@@ -1,0 +1,1207 @@
+{
+  "atividadeId": 190,
+  "aula": "01",
+  "tipo": "objetiva",
+  "itens": [
+    {
+      "item": 1,
+      "titulo": "Definição de design",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Você, como aluno consultor, precisa explicar a um cliente o que é design de interfaces. Qual definição está de acordo com a aula?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Planejamento intencional da forma e da função de um produto, para resolver uma necessidade humana concreta."
+        },
+        {
+          "letra": "B",
+          "texto": "Aplicação de cores e sombras para deixar a tela mais bonita, sem outras preocupações com o uso."
+        },
+        {
+          "letra": "C",
+          "texto": "Processo de programação que dispensa a pesquisa com as pessoas que usam o sistema."
+        },
+        {
+          "letra": "D",
+          "texto": "Criação artística livre, sem compromisso com a facilidade de uso da pessoa."
+        }
+      ]
+    },
+    {
+      "item": 2,
+      "titulo": "Tela bonita, botão perdido",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Você, como aluno consultor, analisa um aplicativo com cores vibrantes e animações, mas em que o usuário não encontra o botão de salvar. Qual análise está correta?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A tela é um bom design, porque a forma sozinha garante o sucesso do produto."
+        },
+        {
+          "letra": "B",
+          "texto": "O problema é apenas estético, e basta trocar a paleta de cores para resolver."
+        },
+        {
+          "letra": "C",
+          "texto": "A função falhou: a aparência não permite cumprir a tarefa principal, e isso compromete o design."
+        },
+        {
+          "letra": "D",
+          "texto": "Não há problema, porque o usuário sempre aprende a operar o sistema sozinho."
+        }
+      ]
+    },
+    {
+      "item": 3,
+      "titulo": "Design funcional",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual característica diferencia o design funcional de sistemas da estética pura?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O design funcional busca a autoexpressão do autor e a provocação de emoções subjetivas."
+        },
+        {
+          "letra": "B",
+          "texto": "O design funcional é medido pela clareza com que a pessoa realiza uma tarefa sem cometer erros."
+        },
+        {
+          "letra": "C",
+          "texto": "O design funcional não precisa de nenhum compromisso com a pessoa que usa o produto."
+        },
+        {
+          "letra": "D",
+          "texto": "A estética pura deve sempre facilitar a execução das tarefas do sistema."
+        }
+      ]
+    },
+    {
+      "item": 4,
+      "titulo": "Marco de Gutenberg",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Por volta de 1450, qual invenção obrigou desenhistas e impressores a padronizar fontes, margens e entrelinhas para que as pessoas lessem com conforto?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A fotografia digital, que permitiu reproduzir imagens com rapidez."
+        },
+        {
+          "letra": "B",
+          "texto": "A Bauhaus, escola alemã que uniu arte, artesanato e indústria."
+        },
+        {
+          "letra": "C",
+          "texto": "A World Wide Web, criada na década de 1990."
+        },
+        {
+          "letra": "D",
+          "texto": "A prensa de tipos móveis de Johannes Gutenberg."
+        }
+      ]
+    },
+    {
+      "item": 5,
+      "titulo": "Origem do design gráfico comercial",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Com a Revolução Industrial, por que surgiu o design gráfico comercial?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Porque objetos passaram a ser fabricados aos milhares, e era preciso comunicar preços, marcas e instruções a públicos diversos."
+        },
+        {
+          "letra": "B",
+          "texto": "Porque as máquinas a vapor dispensaram qualquer tipo de identidade visual nos produtos."
+        },
+        {
+          "letra": "C",
+          "texto": "Porque a manufatura artesanal exigia cartazes pintados à mão em cada peça produzida."
+        },
+        {
+          "letra": "D",
+          "texto": "Porque as telas sensíveis ao toque substituíram o papel impresso na comunicação pública."
+        }
+      ]
+    },
+    {
+      "item": 6,
+      "titulo": "Premissa da Bauhaus",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual premissa a Bauhaus, fundada em 1919, consagrou para o design?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A decoração deve ser o centro do projeto, para atrair o olhar de quem vê a peça."
+        },
+        {
+          "letra": "B",
+          "texto": "A forma deve seguir a função, eliminando ornamentos que não têm utilidade."
+        },
+        {
+          "letra": "C",
+          "texto": "A tipografia deve sempre usar serifas e ornamentos, para parecer mais elegante."
+        },
+        {
+          "letra": "D",
+          "texto": "O design deve separar arte e indústria, para preservar o artesanato tradicional."
+        }
+      ]
+    },
+    {
+      "item": 7,
+      "titulo": "Contribuição do Estilo Suíço",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual contribuição do Estilo Suíço, de 1950, é apontada como base direta dos layouts de sites atuais?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "As fontes ornamentadas e cheias de detalhes decorativos."
+        },
+        {
+          "letra": "B",
+          "texto": "As texturas de couro e os relevos em 3D nos botões."
+        },
+        {
+          "letra": "C",
+          "texto": "Os grids modulares rígidos e a tipografia sem serifa, como a Helvetica."
+        },
+        {
+          "letra": "D",
+          "texto": "A eliminação completa de qualquer alinhamento entre os elementos da página."
+        }
+      ]
+    },
+    {
+      "item": 8,
+      "titulo": "O desafio da linha de comando",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Nos primeiros anos da computação, qual era o principal problema da interação com a máquina?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Exigia digitar comandos textuais complexos, o que restringia o uso a operadores treinados."
+        },
+        {
+          "letra": "B",
+          "texto": "Exigia que o usuário desenhasse ícones à mão para cada tarefa do computador."
+        },
+        {
+          "letra": "C",
+          "texto": "Permitia apenas o uso de imagens coloridas, sem nenhum texto na tela."
+        },
+        {
+          "letra": "D",
+          "texto": "Impedia o uso de qualquer tela, porque tudo era feito em papel impresso."
+        }
+      ]
+    },
+    {
+      "item": 9,
+      "titulo": "A ideia da interface gráfica",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "A Interface Gráfica do Usuário (GUI), concebida no centro Xerox PARC, mudou a forma de usar o computador. Qual foi a ideia central?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Obrigar o usuário a memorizar comandos em código para cada tarefa."
+        },
+        {
+          "letra": "B",
+          "texto": "Restringir a operação do computador a cientistas e operadores treinados."
+        },
+        {
+          "letra": "C",
+          "texto": "Eliminar as telas e usar apenas comandos de voz para controlar a máquina."
+        },
+        {
+          "letra": "D",
+          "texto": "Permitir apontar e clicar com o mouse em elementos familiares, como pastas e janelas."
+        }
+      ]
+    },
+    {
+      "item": 10,
+      "titulo": "A metáfora da área de trabalho",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Por que a tela inicial do computador é chamada de área de trabalho e usa objetos como pastas, folhas e lixeiras?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Para tornar o sistema mais difícil de aprender, reservando-o a especialistas."
+        },
+        {
+          "letra": "B",
+          "texto": "Para aproveitar o que as pessoas já conheciam do escritório físico e dispensar manuais exaustivos."
+        },
+        {
+          "letra": "C",
+          "texto": "Porque a linguagem de programação da época só aceitava desenhos de papel."
+        },
+        {
+          "letra": "D",
+          "texto": "Para copiar fielmente todos os papéis impressos do escritório para dentro da tela."
+        }
+      ]
+    },
+    {
+      "item": 11,
+      "titulo": "As primeiras páginas da web",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Como eram as primeiras páginas da World Wide Web, na década de 1990?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Documentos estáticos de texto azul sublinhado sobre fundo cinza, focados em compartilhar artigos."
+        },
+        {
+          "letra": "B",
+          "texto": "Sites com animações complexas e vídeos em alta definição, carregados sem demora."
+        },
+        {
+          "letra": "C",
+          "texto": "Telas sensíveis ao toque, com gestos de pinça e deslizamento para navegar."
+        },
+        {
+          "letra": "D",
+          "texto": "Aplicativos responsivos, que se adaptavam automaticamente a qualquer tamanho de tela."
+        }
+      ]
+    },
+    {
+      "item": 12,
+      "titulo": "Meio impresso e tela digital",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual alternativa descreve corretamente a diferença entre o meio impresso e a tela digital?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O impresso é dinâmico, e a tela digital tem dimensões fixas, como o papel A4."
+        },
+        {
+          "letra": "B",
+          "texto": "O impresso reage a toques e cliques, enquanto a tela digital é imutável."
+        },
+        {
+          "letra": "C",
+          "texto": "A tela digital é responsiva, e a interação é ativa: a tela reage a toques, cliques e rolagem."
+        },
+        {
+          "letra": "D",
+          "texto": "Nos dois meios a pessoa interage da mesma forma, sem diferenças relevantes."
+        }
+      ]
+    },
+    {
+      "item": 13,
+      "titulo": "Fase do ciclo de adaptação",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Uma tela digital já tem padrões e linguagens visuais próprios para a tecnologia, que não copiam o papel. Em qual fase do ciclo de adaptação dos meios visuais ela está?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Transposição direta: a nova mídia copia as regras do papel impresso."
+        },
+        {
+          "letra": "B",
+          "texto": "Foco humano: centrar o projeto na experiência do usuário e na acessibilidade."
+        },
+        {
+          "letra": "C",
+          "texto": "Experimentação caótica: recursos visuais excessivos, sem critérios de usabilidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Maturidade funcional: criação de padrões e linguagens visuais próprias para o digital."
+        }
+      ]
+    },
+    {
+      "item": 14,
+      "titulo": "Ajuste da virada mobile",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Com a introdução das telas multi-toque, em 2007, os designers precisaram repensar a interface. Qual ajuste foi necessário?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Aumentar os textos para que possam ser lidos com o ponteiro do mouse."
+        },
+        {
+          "letra": "B",
+          "texto": "Repensar o tamanho mínimo dos botões e os espaçamentos, para evitar cliques acidentais."
+        },
+        {
+          "letra": "C",
+          "texto": "Remover os gestos naturais, como pinça e deslizamento, para simplificar a tela."
+        },
+        {
+          "letra": "D",
+          "texto": "Aumentar o número de ícones pequenos em cada tela, para oferecer mais opções."
+        }
+      ]
+    },
+    {
+      "item": 15,
+      "titulo": "Objetivo do esqueumorfismo",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual era o objetivo do esqueumorfismo, de 2007?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Imitar texturas de materiais reais, como couro e relevos 3D, para ensinar que botões digitais podiam ser pressionados."
+        },
+        {
+          "letra": "B",
+          "texto": "Eliminar sombras e texturas, para que a tela carregasse mais rápido e com clareza."
+        },
+        {
+          "letra": "C",
+          "texto": "Usar cores sólidas e formas puras, para destacar a tipografia acima de qualquer outro elemento."
+        },
+        {
+          "letra": "D",
+          "texto": "Criar camadas e sombras sutis para indicar o que está acima ou abaixo de cada elemento."
+        }
+      ]
+    },
+    {
+      "item": 16,
+      "titulo": "Característica do Flat Design",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual é a principal característica do Flat Design, de 2012?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Imitação de couro e vidro, para ensinar o usuário a pressionar os botões."
+        },
+        {
+          "letra": "B",
+          "texto": "Sombras profundas, que indicam as camadas dos elementos na tela."
+        },
+        {
+          "letra": "C",
+          "texto": "Eliminação de sombras e texturas, com formas puras e cores sólidas para carregamento rápido."
+        },
+        {
+          "letra": "D",
+          "texto": "Uso de gestos de pinça como principal forma de navegar entre as telas."
+        }
+      ]
+    },
+    {
+      "item": 17,
+      "titulo": "Noção trazida pelo Material Design",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "O Material Design, de 2014, trouxe de volta uma noção importante. Qual?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ausência total de profundidade, com todos os elementos sempre em um único plano."
+        },
+        {
+          "letra": "B",
+          "texto": "Profundidade e camadas, com sombras sutis para indicar o que está acima ou abaixo."
+        },
+        {
+          "letra": "C",
+          "texto": "Imitação de materiais como couro e madeira em todos os botões da interface."
+        },
+        {
+          "letra": "D",
+          "texto": "Telas somente em preto e branco, para economizar a energia do aparelho."
+        }
+      ]
+    },
+    {
+      "item": 18,
+      "titulo": "Foco do design inclusivo",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual foco caracteriza o design inclusivo, apontado como a fase atual da evolução do design?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Maior quantidade de animações, para chamar a atenção de todos os públicos."
+        },
+        {
+          "letra": "B",
+          "texto": "Uso exclusivo de fontes decorativas, para diferenciar as marcas no mercado."
+        },
+        {
+          "letra": "C",
+          "texto": "Padronização de uma única forma de uso, igual para todas as pessoas."
+        },
+        {
+          "letra": "D",
+          "texto": "Acessibilidade digital, com alto contraste, suporte a leitores de tela e personalização."
+        }
+      ]
+    },
+    {
+      "item": 19,
+      "titulo": "Tecnologia e necessidades humanas",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual afirmação resume a relação entre tecnologia e necessidades humanas, segundo a aula?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A tecnologia é guiada por necessidades humanas fundamentais, e compreender a dor de quem usa é a base do design."
+        },
+        {
+          "letra": "B",
+          "texto": "A tecnologia deve ser criada primeiro, e só depois se pensa em quem vai usá-la."
+        },
+        {
+          "letra": "C",
+          "texto": "As necessidades humanas não influenciam a tecnologia, que segue apenas a moda da época."
+        },
+        {
+          "letra": "D",
+          "texto": "As pessoas devem se adaptar a qualquer tecnologia, sem que o design precise considerá-las."
+        }
+      ]
+    },
+    {
+      "item": 20,
+      "titulo": "Regra de ouro",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual é a regra de ouro apresentada na aula sobre forma e função?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A forma deve sempre vencer a função, para atrair o maior número de usuários."
+        },
+        {
+          "letra": "B",
+          "texto": "A função deve ser ignorada quando a tela já é considerada bonita pelo público."
+        },
+        {
+          "letra": "C",
+          "texto": "O design excelente surge quando forma e função cooperam sem disputar espaço."
+        },
+        {
+          "letra": "D",
+          "texto": "A forma e a função devem ser planejadas por áreas separadas, sem contato entre elas."
+        }
+      ]
+    },
+    {
+      "item": 21,
+      "titulo": "Intenção de projeto",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Você, como aluno consultor, vai desenhar uma tela de agendamento. Antes de qualquer desenho, precisa definir o objetivo concreto da tela. Qual pergunta orienta essa definição?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Qual é a cor preferida da equipe de desenvolvimento para o projeto?"
+        },
+        {
+          "letra": "B",
+          "texto": "A tela deve facilitar uma consulta rápida ou incentivar uma leitura calma e aprofundada?"
+        },
+        {
+          "letra": "C",
+          "texto": "Quantas fontes decorativas serão usadas para deixar a tela mais atraente?"
+        },
+        {
+          "letra": "D",
+          "texto": "Qual linguagem de programação será usada no futuro, quando o projeto crescer?"
+        }
+      ]
+    },
+    {
+      "item": 22,
+      "titulo": "Definição de interface",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Segundo o glossário da aula, o que é uma interface?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Evolução: mudança contínua, moldada por avanços técnicos e sociais."
+        },
+        {
+          "letra": "B",
+          "texto": "Funcionalidade: cumprir o objetivo de modo prático e eficaz."
+        },
+        {
+          "letra": "C",
+          "texto": "Forma: o aspecto estético e visual do artefato, com cores e proporções."
+        },
+        {
+          "letra": "D",
+          "texto": "Interface: ponto de contato e comunicação entre a pessoa e o sistema."
+        }
+      ]
+    },
+    {
+      "item": 23,
+      "titulo": "Causa do botão que ninguém vê",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Em uma tela de agendamento de consultas, o botão de confirmação é cinza claro sobre fundo branco, sem borda nem destaque. Qual é a causa técnica identificada?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ausência de contraste e desrespeito à regra de hierarquia visual primária."
+        },
+        {
+          "letra": "B",
+          "texto": "Excesso de texto na tela, que impede a leitura do botão pelo usuário."
+        },
+        {
+          "letra": "C",
+          "texto": "Uso de fonte com serifa no título da página, que diminui a leitura."
+        },
+        {
+          "letra": "D",
+          "texto": "Falta de conexão com a internet no momento em que o usuário clica."
+        }
+      ]
+    },
+    {
+      "item": 24,
+      "titulo": "Solução para o botão",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Para o botão de confirmação do caso anterior, qual solução de interface é adequada?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Manter a cor cinza e reduzir o tamanho do botão, para que ele fique mais discreto."
+        },
+        {
+          "letra": "B",
+          "texto": "Aplicar cor de destaque com alto contraste e posicionar o botão na base da tela, com área de toque adequada."
+        },
+        {
+          "letra": "C",
+          "texto": "Remover o botão e deixar a confirmação apenas para a última etapa do sistema."
+        },
+        {
+          "letra": "D",
+          "texto": "Colocar o botão no canto superior, com fonte pequena e sem nenhum contraste com o fundo."
+        }
+      ]
+    },
+    {
+      "item": 25,
+      "titulo": "Etapa que centra o projeto no ser humano",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Em qual etapa do ciclo de adaptação dos meios visuais o projeto é centrado na experiência do usuário, na acessibilidade e na resolução de suas dores?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Transposição direta: a nova mídia copia as regras do papel impresso."
+        },
+        {
+          "letra": "B",
+          "texto": "Experimentação caótica: recursos visuais excessivos, sem critérios de usabilidade."
+        },
+        {
+          "letra": "C",
+          "texto": "Foco humano: centrar o projeto na experiência do usuário e na acessibilidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Maturidade funcional: criação de padrões e linguagens visuais próprias para o digital."
+        }
+      ]
+    },
+    {
+      "item": 26,
+      "titulo": "Virada mobile e o dedo",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Por que o design precisou repensar os espaçamentos entre os botões com a chegada das telas multi-toque?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Para dar mais espaço ao ponteiro do mouse, que é o principal meio de clique."
+        },
+        {
+          "letra": "B",
+          "texto": "Para aumentar o número de botões em cada tela sem reduzir o tamanho deles."
+        },
+        {
+          "letra": "C",
+          "texto": "Porque o dedo humano é mais preciso do que o ponteiro do mouse na tela."
+        },
+        {
+          "letra": "D",
+          "texto": "Para evitar cliques acidentais, já que a ponta do dedo é menos precisa que o mouse."
+        }
+      ]
+    },
+    {
+      "item": 27,
+      "titulo": "Associação de termos",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual associação entre o termo e a definição está correta?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Grades modulares: estrutura de alinhamento matemático herdada do design suíço."
+        },
+        {
+          "letra": "B",
+          "texto": "GUI: imitação visual de materiais reais do mundo físico, em pixels."
+        },
+        {
+          "letra": "C",
+          "texto": "Flat design: sombras profundas que indicam as camadas dos elementos."
+        },
+        {
+          "letra": "D",
+          "texto": "Esqueumorfismo: estilo bidimensional focado em cores puras e sem sombras."
+        }
+      ]
+    },
+    {
+      "item": 28,
+      "titulo": "Definição de GUI",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual definição corresponde à GUI?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Imitação visual de materiais reais do mundo físico, aplicada em pixels."
+        },
+        {
+          "letra": "B",
+          "texto": "Interface gráfica que utiliza janelas, ícones e mouse para o usuário interagir."
+        },
+        {
+          "letra": "C",
+          "texto": "Estilo bidimensional, focado em cores puras e sem nenhum tipo de sombra."
+        },
+        {
+          "letra": "D",
+          "texto": "Estrutura de alinhamento matemático, herdada da tipografia suíça."
+        }
+      ]
+    },
+    {
+      "item": 29,
+      "titulo": "Origem do modo escuro",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Segundo a aula, o modo escuro surgiu para atender a qual necessidade humana?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Pessoas tinham dificuldade para ler letras miúdas nas telas da época."
+        },
+        {
+          "letra": "B",
+          "texto": "Os aparelhos não tinham cores suficientes para exibir textos claros."
+        },
+        {
+          "letra": "C",
+          "texto": "Usuários sentiam cansaço visual após horas em telas brilhantes."
+        },
+        {
+          "letra": "D",
+          "texto": "As empresas queriam reduzir o número de páginas impressas no trabalho."
+        }
+      ]
+    },
+    {
+      "item": 30,
+      "titulo": "Significado de desígnio",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "A aula explica que o termo design deriva do conceito de desígnio. O que esse conceito significa?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Decoração e embelezamento superficial de um objeto ou de uma tela."
+        },
+        {
+          "letra": "B",
+          "texto": "Imitação de objetos do mundo físico, aplicada às telas digitais."
+        },
+        {
+          "letra": "C",
+          "texto": "Aplicação de cores sem um objetivo definido para a interface."
+        },
+        {
+          "letra": "D",
+          "texto": "Propósito, planejamento e intenção deliberada."
+        }
+      ]
+    },
+    {
+      "item": 31,
+      "titulo": "O que o design equilibra",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Segundo a definição de design apresentada na aula, o que deve ser equilibrado ao solucionar uma necessidade humana?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Como o produto parece e como ele opera."
+        },
+        {
+          "letra": "B",
+          "texto": "O custo do projeto e o prazo de entrega combinados com o cliente."
+        },
+        {
+          "letra": "C",
+          "texto": "A quantidade de cores e de fontes usadas na tela."
+        },
+        {
+          "letra": "D",
+          "texto": "O tamanho da equipe e o tempo de treinamento dos usuários."
+        }
+      ]
+    },
+    {
+      "item": 32,
+      "titulo": "Marco de 1957",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual marco da evolução do design está associado ao ano de 1957?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prensa de Gutenberg e a tipografia móvel, que padronizou os textos."
+        },
+        {
+          "letra": "B",
+          "texto": "Criação da Helvetica e do design suíço modular, com grids rígidos."
+        },
+        {
+          "letra": "C",
+          "texto": "Bauhaus, que une forma funcional e produção industrial em um só projeto."
+        },
+        {
+          "letra": "D",
+          "texto": "Cartazes litográficos e litografia colorida, usados na publicidade da época."
+        }
+      ]
+    },
+    {
+      "item": 33,
+      "titulo": "Marco de 1880",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual marco da linha do tempo do design está associado ao ano de 1880?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prensa de Gutenberg e a tipografia móvel."
+        },
+        {
+          "letra": "B",
+          "texto": "Bauhaus, que une forma funcional e produção industrial."
+        },
+        {
+          "letra": "C",
+          "texto": "Cartazes litográficos e litografia colorida."
+        },
+        {
+          "letra": "D",
+          "texto": "Criação da Helvetica e do design suíço modular."
+        }
+      ]
+    },
+    {
+      "item": 34,
+      "titulo": "Ordem cronológica dos marcos",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual é a ordem cronológica correta dos marcos da evolução do design e da comunicação?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prensa de Gutenberg, Bauhaus, interfaces gráficas com janelas e mouse, interfaces mobile sensíveis ao toque."
+        },
+        {
+          "letra": "B",
+          "texto": "Bauhaus, prensa de Gutenberg, interfaces gráficas com janelas e mouse, interfaces mobile sensíveis ao toque."
+        },
+        {
+          "letra": "C",
+          "texto": "Interfaces gráficas com janelas e mouse, prensa de Gutenberg, interfaces mobile, Bauhaus."
+        },
+        {
+          "letra": "D",
+          "texto": "Interfaces mobile sensíveis ao toque, interfaces gráficas, Bauhaus, prensa de Gutenberg."
+        }
+      ]
+    },
+    {
+      "item": 35,
+      "titulo": "O que a Xerox PARC concebeu",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual fato sobre o centro Xerox PARC está de acordo com a aula?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Criou a Bauhaus, em 1919, como escola de arte, artesanato e indústria."
+        },
+        {
+          "letra": "B",
+          "texto": "Inventou a prensa de tipos móveis que Gutenberg aperfeiçoou no século XV."
+        },
+        {
+          "letra": "C",
+          "texto": "Criou a Helvetica, em 1957, com a tipografia sem serifa usada em sites."
+        },
+        {
+          "letra": "D",
+          "texto": "Concebeu, nos anos 1970 e 1980, a ideia da Interface Gráfica do Usuário (GUI)."
+        }
+      ]
+    },
+    {
+      "item": 36,
+      "titulo": "Por que o botão é um problema",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Um botão cinza claro sobre fundo branco, sem borda, é considerado um problema de interface. Qual é o motivo?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Porque o botão é grande demais para a tela de um aparelho celular."
+        },
+        {
+          "letra": "B",
+          "texto": "Porque falta contraste, e o botão não se destaca como ação principal da tela."
+        },
+        {
+          "letra": "C",
+          "texto": "Porque a cor cinza só pode ser usada em textos corridos da interface."
+        },
+        {
+          "letra": "D",
+          "texto": "Porque o botão fica acima da área visível da tela, sem como ser rolado."
+        }
+      ]
+    },
+    {
+      "item": 37,
+      "titulo": "Exemplos de tarefas do design funcional",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual é um exemplo de tarefa citado na aula para medir o sucesso do design funcional?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Transferir dinheiro, comprar um ingresso ou consultar notas."
+        },
+        {
+          "letra": "B",
+          "texto": "Pintar um quadro com a finalidade de expressar sentimentos do autor."
+        },
+        {
+          "letra": "C",
+          "texto": "Criar uma escultura para provocar emoções subjetivas em quem a observa."
+        },
+        {
+          "letra": "D",
+          "texto": "Admirar uma obra de arte sem nenhuma finalidade prática definida."
+        }
+      ]
+    },
+    {
+      "item": 38,
+      "titulo": "Primeira etapa da consultoria",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Na consultoria de interface apresentada na aula, qual é a primeira etapa?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prototipagem ágil, com fluxos esboçados em storyboard e testados em papel."
+        },
+        {
+          "letra": "B",
+          "texto": "Pesquisa com o usuário, para compreender objetivos e queixas frequentes."
+        },
+        {
+          "letra": "C",
+          "texto": "Diagnóstico visual, para identificar formas, contrastes e problemas de layout em telas existentes."
+        },
+        {
+          "letra": "D",
+          "texto": "Entrega do mock-up final, com todas as telas aprovadas pelo professor."
+        }
+      ]
+    },
+    {
+      "item": 39,
+      "titulo": "Missão do aluno consultor na SA 1",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Na Situação de Aprendizagem 1, qual é a missão do aluno consultor?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Criar um site de comércio eletrônico completo, do zero, para um cliente novo."
+        },
+        {
+          "letra": "B",
+          "texto": "Programar o back-end de um sistema bancário, com foco em segurança de dados."
+        },
+        {
+          "letra": "C",
+          "texto": "Desenhar um logotipo novo para uma marca que ainda não tem identidade visual."
+        },
+        {
+          "letra": "D",
+          "texto": "Diagnosticar uma página de agendamento mobile com muitas reclamações e apontar melhorias de layout e cores."
+        }
+      ]
+    },
+    {
+      "item": 40,
+      "titulo": "Competências do curso",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Segundo a aula, quais competências o curso busca desenvolver?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Apenas a decoração de páginas com cores vibrantes e fontes variadas."
+        },
+        {
+          "letra": "B",
+          "texto": "Competências técnicas e socioemocionais para estruturar sistemas acessíveis, robustos e fáceis de navegar."
+        },
+        {
+          "letra": "C",
+          "texto": "A memorização de comandos textuais complexos para operar computadores antigos."
+        },
+        {
+          "letra": "D",
+          "texto": "O uso exclusivo de ferramentas de impressão para criar materiais de comunicação."
+        }
+      ]
+    },
+    {
+      "item": 41,
+      "titulo": "Função da padronização de Gutenberg",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Por que os desenhistas e impressores precisaram padronizar fontes, margens e entrelinhas após a prensa de Gutenberg?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Para que as pessoas pudessem ler com conforto e rapidez."
+        },
+        {
+          "letra": "B",
+          "texto": "Para eliminar a necessidade de revisão dos livros depois de impressos."
+        },
+        {
+          "letra": "C",
+          "texto": "Para substituir os desenhistas por máquinas capazes de criar os layouts."
+        },
+        {
+          "letra": "D",
+          "texto": "Para aumentar o número de cores disponíveis nos impressos da época."
+        }
+      ]
+    },
+    {
+      "item": 42,
+      "titulo": "Elementos familiares da GUI",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Quais elementos da vida real a GUI passou a usar para aproximar as pessoas do computador?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Comandos de código memorizados para cada operação do sistema."
+        },
+        {
+          "letra": "B",
+          "texto": "Cartões perfurados e fitas de papel, que eram lidos pela máquina."
+        },
+        {
+          "letra": "C",
+          "texto": "Pastas de arquivos, documentos, janelas e lixeiras de descarte."
+        },
+        {
+          "letra": "D",
+          "texto": "Textos em azul sublinhado sobre fundo cinza, como nas páginas antigas."
+        }
+      ]
+    },
+    {
+      "item": 43,
+      "titulo": "Limitação técnica da web nos anos 1990",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Que limitação técnica moldou o design da web nos anos 1990?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Excesso de velocidade nas conexões, que deixava as imagens pesadas demais."
+        },
+        {
+          "letra": "B",
+          "texto": "Conexões discadas lentas e monitores de baixa resolução."
+        },
+        {
+          "letra": "C",
+          "texto": "Ausência total de textos, já que a web era composta só de imagens."
+        },
+        {
+          "letra": "D",
+          "texto": "Uso obrigatório de realidade virtual para acessar qualquer página."
+        }
+      ]
+    },
+    {
+      "item": 44,
+      "titulo": "Característica do meio impresso",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual característica é própria do meio impresso, em comparação com a tela digital?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O espaço varia conforme o aparelho em que o conteúdo é lido."
+        },
+        {
+          "letra": "B",
+          "texto": "A tela reage instantaneamente a toques, cliques e rolagem da pessoa."
+        },
+        {
+          "letra": "C",
+          "texto": "A interação é ativa, com a pessoa controlando a navegação pelo conteúdo."
+        },
+        {
+          "letra": "D",
+          "texto": "As dimensões são fixas, como as do papel A4, e o consumo é passivo."
+        }
+      ]
+    },
+    {
+      "item": 45,
+      "titulo": "Mudança trazida pela Revolução Industrial",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Qual frase descreve corretamente a Revolução Industrial, nos séculos XVIII e XIX?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "As máquinas a vapor e as fábricas substituíram a manufatura artesanal."
+        },
+        {
+          "letra": "B",
+          "texto": "A prensa de tipos móveis substituiu os livros copiados à mão pelos monges."
+        },
+        {
+          "letra": "C",
+          "texto": "A World Wide Web se tornou pública e acessível às empresas de comunicação."
+        },
+        {
+          "letra": "D",
+          "texto": "O mouse foi inventado para permitir o uso das primeiras telas sensíveis ao toque."
+        }
+      ]
+    },
+    {
+      "item": 46,
+      "titulo": "Objetivo estratégico do sistema",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Na tríade da comunicação em interfaces, qual elemento representa o objetivo estratégico do sistema?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Linguagem visual: formas, contrastes e hierarquia."
+        },
+        {
+          "letra": "B",
+          "texto": "Sucesso do usuário: tarefa cumprida sem barreiras."
+        },
+        {
+          "letra": "C",
+          "texto": "Intenção: o objetivo estratégico do sistema."
+        },
+        {
+          "letra": "D",
+          "texto": "Forma estética: apenas a aparência do produto."
+        }
+      ]
+    },
+    {
+      "item": 47,
+      "titulo": "Etapa de storyboard e teste em papel",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Na consultoria de interface, qual etapa envolve esboçar fluxos em storyboard, testar em papel e refinar os mock-ups digitais?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Diagnóstico visual, com a identificação de formas e contrastes da tela."
+        },
+        {
+          "letra": "B",
+          "texto": "Prototipagem ágil, com fluxos esboçados e testados antes da versão final."
+        },
+        {
+          "letra": "C",
+          "texto": "Pesquisa com o usuário, para compreender os objetivos e as queixas."
+        },
+        {
+          "letra": "D",
+          "texto": "Avaliação final, com a nota atribuída pelo professor ao projeto entregue."
+        }
+      ]
+    },
+    {
+      "item": 48,
+      "titulo": "Fase de recursos sem critério",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Recursos visuais excessivos e ferramentas novas usadas sem critérios de usabilidade caracterizam qual fase do ciclo de adaptação dos meios visuais?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Transposição direta: a nova mídia copia as regras do papel impresso."
+        },
+        {
+          "letra": "B",
+          "texto": "Maturidade funcional: criação de padrões e linguagens visuais próprias."
+        },
+        {
+          "letra": "C",
+          "texto": "Foco humano: centrar o projeto na experiência do usuário e na acessibilidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Experimentação caótica: recursos visuais excessivos, sem critérios de usabilidade."
+        }
+      ]
+    },
+    {
+      "item": 49,
+      "titulo": "Gesto natural da tela sensível ao toque",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Com a introdução das telas multi-toque, qual gesto passou a ser natural para a pessoa interagir com a interface?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Clique com o botão direito do mouse para abrir o menu de contexto."
+        },
+        {
+          "letra": "B",
+          "texto": "Digitação de comandos em uma linha de texto, como na tela antiga."
+        },
+        {
+          "letra": "C",
+          "texto": "Apontar com uma caneta de luz para selecionar cada elemento da tela."
+        },
+        {
+          "letra": "D",
+          "texto": "Pinça e deslizamento, gestos naturais para ampliar e navegar pela tela."
+        }
+      ]
+    },
+    {
+      "item": 50,
+      "titulo": "Origem do tamanho dinâmico da fonte",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "comando": "Segundo a aula, por que surgiram os tamanhos de fonte dinâmicos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Os textos precisavam de serifas para serem impressos com qualidade."
+        },
+        {
+          "letra": "B",
+          "texto": "Os computadores deixaram de ter teclado e precisavam de outra forma de entrada."
+        },
+        {
+          "letra": "C",
+          "texto": "Pessoas tinham dificuldade para ler letras miúdas, e a tecnologia precisou se adaptar."
+        },
+        {
+          "letra": "D",
+          "texto": "A Bauhaus exigia fontes maiores para que os textos seguissem a sua forma."
+        }
+      ]
+    }
+  ]
+}

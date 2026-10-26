@@ -1,0 +1,427 @@
+{
+  "atividadeId": 168,
+  "aula": "01",
+  "tipo": "pratica",
+  "itens": [
+    {
+      "item": 1,
+      "titulo": "Design como planejamento intencional",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você, como aluno consultor, recebe um colega que afirma que design é só \"deixar a tela bonita\". Ele quer usar essa ideia para justificar um projeto de página de agendamento.",
+      "comando": "Explique, com as suas palavras, o que é design de verdade e por que ele não se resume à decoração.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Explique a origem da palavra design e o que ela significa"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Diferencie design de decoração superficial, usando a ideia de propósito e planejamento"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga qual é o objetivo do design ao resolver uma necessidade humana concreta"
+        }
+      ]
+    },
+    {
+      "item": 2,
+      "titulo": "Forma e função na mesma tela",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Um aplicativo tem cores vibrantes e animações exuberantes, mas o usuário não encontra o botão de salvar. Você foi chamado para avaliar o problema.",
+      "comando": "Analise o caso aplicando os conceitos de forma e função.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Defina forma e dê dois exemplos de elementos formais da tela citada"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Defina função e explique por que a falha do botão de salvar compromete o produto"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique a regra de ouro do design e diga como ela se aplica a esse aplicativo"
+        }
+      ]
+    },
+    {
+      "item": 3,
+      "titulo": "Estética pura e design funcional",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você foi chamado para comparar duas situações: uma obra de arte contemplativa e a tela de transferência bancária de um sistema digital.",
+      "comando": "Compare os dois casos quanto ao foco, ao objetivo e à forma de medir o sucesso.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva o foco da estética pura e o que ela não precisa garantir"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva o foco do design funcional e como o seu sucesso é medido"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique por que a tela de transferência bancária deve ser avaliada pela clareza com que a pessoa conclui a tarefa"
+        }
+      ]
+    },
+    {
+      "item": 4,
+      "titulo": "A prensa de Gutenberg",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você está estudando as origens do design para explicar a um grupo de colegas por que a comunicação planejada começou antes das telas.",
+      "comando": "Descreva a contribuição da prensa de tipos móveis de Gutenberg para o design.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Diga em que século surgiu a prensa de tipos móveis e o que ela permitiu"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique por que os desenhistas passaram a padronizar fontes, margens e entrelinhas"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Relacione esse marco com a necessidade de leitura confortável que existe até hoje em interfaces"
+        }
+      ]
+    },
+    {
+      "item": 5,
+      "titulo": "Revolução Industrial e a comunicação",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Uma fábrica do século XIX passou a produzir objetos aos milhares. Você, como aluno consultor, precisa explicar por que a comunicação visual virou necessidade.",
+      "comando": "Explique o surgimento do design gráfico comercial a partir da produção seriada.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva a mudança da manufatura artesanal para a produção seriada"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique por que surgiram identidades visuais padronizadas"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Cite as informações que precisavam ser comunicadas com clareza a públicos diversos"
+        }
+      ]
+    },
+    {
+      "item": 6,
+      "titulo": "A Bauhaus e a forma que segue a função",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você recebeu a tarefa de revisar uma tela cheia de ornamentos que não ajudam a pessoa a concluir a ação principal.",
+      "comando": "Explique a premissa da Bauhaus e como ela orienta a sua revisão.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Diga o que a Bauhaus uniu e em que ano foi fundada"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique a premissa de que a forma deve seguir a função"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga quais ornamentos você eliminaria na tela e por quê"
+        }
+      ]
+    },
+    {
+      "item": 7,
+      "titulo": "O design suíço e os grids",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você analisa o layout de um site de notícias que mantém colunas alinhadas e tipografia sem serifa limpa.",
+      "comando": "Relacione esse layout ao estilo suíço da década de 1950.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva o que são grids modulares rígidos"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique o que é a tipografia sem serifa e cite um exemplo da época"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique por que essa estrutura é a base dos layouts de sites atuais"
+        }
+      ]
+    },
+    {
+      "item": 8,
+      "titulo": "Linha do tempo dos marcos gráficos",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você vai montar a linha do tempo do design para o seu portfólio de consultoria, com um marco por década de destaque.",
+      "comando": "Organize os marcos de 1450, 1880, 1919 e 1957 em ordem cronológica e comente cada um.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Ordene os quatro marcos do mais antigo para o mais recente"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva o que aconteceu em 1880 e em 1919"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Descreva o que a criação da Helvetica representou para o design modular em 1957"
+        }
+      ]
+    },
+    {
+      "item": 9,
+      "titulo": "Da linha de comando à interface gráfica",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Um cliente idoso precisa usar um computador, mas se assusta com telas que pedem comandos textuais.",
+      "comando": "Explique a diferença entre a interface de linha de comando e a interface gráfica e por que a segunda facilita o uso.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva como era a interação nas interfaces de linha de comando"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique o que a GUI permitiu que as pessoas fizessem em vez de memorizar comandos"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga qual foi a contribuição do design para levar a tecnologia a pessoas sem treinamento técnico"
+        }
+      ]
+    },
+    {
+      "item": 10,
+      "titulo": "A metáfora do escritório físico",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Um usuário que nunca usou computador precisa entender a tela inicial do sistema para encontrar seus documentos.",
+      "comando": "Explique por que a tela inicial é chamada de Área de Trabalho e qual é o benefício dessa metáfora.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva dois objetos do escritório físico usados como metáfora"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique o que é uma metáfora visual deliberada de design"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique por que essa escolha reduz a necessidade de manuais técnicos"
+        }
+      ]
+    },
+    {
+      "item": 11,
+      "titulo": "A Web 1.0 e as limitações técnicas",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você foi convidado a comparar uma página dos anos 1990 com um site atual, para mostrar à equipe como o design mudou.",
+      "comando": "Descreva as características da Web 1.0 e as limitações que moldaram o design da época.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva como eram as primeiras páginas da World Wide Web"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique o papel das conexões discadas lentas e dos monitores de baixa resolução no design"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga por que o design gráfico precisou se adaptar quando empresas e pessoas comuns entraram na rede"
+        }
+      ]
+    },
+    {
+      "item": 12,
+      "titulo": "Meio impresso e tela digital",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Um professor quer transformar uma revista em aplicativo e pede a sua análise sobre o que muda na experiência de quem lê.",
+      "comando": "Compare o meio impresso com a tela digital quanto à forma e à interação.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva o caráter fixo do meio impresso"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva o caráter dinâmico e responsivo da tela digital"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique por que a interação ativa exige um design diferente do design para papel"
+        }
+      ]
+    },
+    {
+      "item": 13,
+      "titulo": "Ciclo de adaptação dos meios visuais",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você analisa um site que reproduz exatamente as margens e a diagramação de um jornal impresso, sem adaptar nada para o celular.",
+      "comando": "Identifique em qual etapa do ciclo de adaptação esse site se encontra e proponha a saída.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Nomeie a primeira etapa do ciclo e descreva-a"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Justifique por que o site analisado está nessa etapa"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga qual é a etapa seguinte desejada e como chegar a ela"
+        }
+      ]
+    },
+    {
+      "item": 14,
+      "titulo": "A virada mobile e os toques",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Um botão de agendamento em um celular é tocado por engano várias vezes. Você precisa justificar a mudança de tamanho e espaçamento.",
+      "comando": "Explique as mudanças de design trazidas pelas telas multi-toque a partir de 2007.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Diga o que mudou na precisão da interação com o dedo em relação ao mouse"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Explique por que o tamanho mínimo dos botões deve ser de pelo menos 44×44 pixels"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique a função dos espaçamentos e dos gestos naturais nesse contexto"
+        }
+      ]
+    },
+    {
+      "item": 15,
+      "titulo": "Esqueumorfismo, Flat Design e Material Design",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Uma equipe quer escolher um estilo visual para um aplicativo novo e pede a sua comparação entre três tendências históricas.",
+      "comando": "Descreva as características de cada tendência e aponte um ponto forte de cada uma.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva o esqueumorfismo e o objetivo de imitar texturas reais"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva o Flat Design e o motivo de eliminar sombras e texturas"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Descreva o Material Design e como ele usa sombras para indicar camadas"
+        }
+      ]
+    },
+    {
+      "item": 16,
+      "titulo": "Design inclusivo",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você foi chamado para revisar um portal de matrículas que é difícil de usar por pessoas com baixa visão.",
+      "comando": "Explique o foco do design inclusivo e proponha duas ações para o portal.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva o foco do design inclusivo na acessibilidade digital"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Proponha uma ação ligada a alto contraste e explique o benefício"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Proponha uma ação ligada a leitores de tela ou personalização e explique o benefício"
+        }
+      ]
+    },
+    {
+      "item": 17,
+      "titulo": "Necessidades humanas moldam a tecnologia",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você está pesquisando por que certos recursos de interface existem hoje, como o tamanho de fonte dinâmico e o modo escuro.",
+      "comando": "Explique como essas duas soluções nasceram de necessidades humanas.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva a dificuldade de leitura que levou aos tamanhos de fonte dinâmicos"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva o problema do cansaço visual que levou ao modo escuro"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Explique por que compreender a dor de quem usa é a base do design"
+        }
+      ]
+    },
+    {
+      "item": 18,
+      "titulo": "A tríade da comunicação em interfaces",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você recebeu uma tela de agendamento de consultas para avaliar e precisa conferir se ela comunica o que deveria.",
+      "comando": "Aplique a tríade da comunicação (intenção, linguagem visual e sucesso do usuário) à tela analisada.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Defina a intenção estratégica do sistema na tela de agendamento"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva como formas, contrastes e hierarquia orientam a atenção da pessoa"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Diga como saber se o sucesso do usuário foi alcançado sem barreiras"
+        }
+      ]
+    },
+    {
+      "item": 19,
+      "titulo": "Análise de caso do botão de ação",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Em uma tela de agendamento de consultas médicas, 35% dos usuários não concluem o agendamento porque não percebem onde confirmar. O botão atual é cinza claro sobre fundo branco.",
+      "comando": "Faça o diagnóstico visual e a causa técnica do problema e proponha a solução de interface.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Faça o diagnóstico visual do botão atual"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Identifique a causa técnica do problema, ligada a contraste e hierarquia visual"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Proponha a solução de interface, com cor de destaque, posição e área de toque"
+        }
+      ]
+    },
+    {
+      "item": 20,
+      "titulo": "Etapas da consultoria e a SA1",
+      "capacidade": "C3 — Identificar princípios básicos e contexto histórico de Design",
+      "contexto": "Você foi escolhido para diagnosticar uma página de agendamento mobile com alto volume de reclamações, na Situação de Aprendizagem 1 (SA1).",
+      "comando": "Descreva as etapas da consultoria de interface e diga como elas se aplicam ao seu diagnóstico.",
+      "topicos": [
+        {
+          "topico": 1,
+          "enunciado": "Descreva a etapa de diagnóstico visual"
+        },
+        {
+          "topico": 2,
+          "enunciado": "Descreva a etapa de pesquisa com usuário e diga que informações ela busca"
+        },
+        {
+          "topico": 3,
+          "enunciado": "Descreva a etapa de prototipagem ágil e diga como ela ajuda a testar a sua proposta"
+        }
+      ]
+    }
+  ]
+}
