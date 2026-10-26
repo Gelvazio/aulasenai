@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #391-5b9a2c47 — [Exportar Meu Gabarito (práticas) só depois da correção do professor](etapas/ETAPA-538-5b9a2c47-MEU-GABARITO-SO-APOS-CORRECAO.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
+  - #391.1 — Alerta e bloqueio no botão das discursivas · ✅ Concluído · `MEDIO` · só Sonnet
 - #390-6d1e8b35 — [Perguntas em JSON + ativação pelo banco em todas as demais matérias](etapas/ETAPA-537-6d1e8b35-PERGUNTAS-EM-JSON-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda aprovação; depende da #389) · — (não reservável)
   - #390.1 a #390.4 — inventário, gerador de JSON, migração, docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #389-2a7f4c91 — [Perguntas em arquivo JSON + ativação pelo banco: Aula 01 de Fundamentos de UI / UX](etapas/ETAPA-536-2a7f4c91-PERGUNTAS-EM-JSON-AULA-01-UIUX.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)

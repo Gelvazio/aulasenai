@@ -44,14 +44,34 @@ function avisarMeuGabarito(texto) {
 }
 
 /**
- * Gera o PDF: pede os dados ao adaptador da página e entrega ao gerador.
- * @param {HTMLButtonElement} botao - Botão clicado (fica ocupado enquanto gera).
- * @param {Function} obterDados - Função assíncrona do adaptador que devolve os dados do PDF.
+ * Mostra um aviso (não erro) pelo popup do projeto; sem ele, usa o alert do navegador.
+ * @param {string} texto - Mensagem.
  */
-async function exportarMeuGabarito(botao, obterDados) {
+function alertarMeuGabarito(texto) {
+    if (typeof window.mostrarPopup === 'function') {
+        window.mostrarPopup(texto, { tipo: 'aviso' });
+        return;
+    }
+    alert(texto);
+}
+
+/**
+ * Gera o PDF: pede os dados ao adaptador da página e entrega ao gerador. Antes, o adaptador
+ * pode barrar a exportação (ex.: práticas sem a correção do professor) com uma mensagem.
+ * @param {HTMLButtonElement} botao - Botão clicado (fica ocupado enquanto gera).
+ * @param {{obterDados: Function, motivoBloqueio: Function}} adaptador - Dados do PDF e,
+ *     opcional, função assíncrona que devolve a mensagem de bloqueio (ou null para liberar).
+ */
+async function exportarMeuGabarito(botao, adaptador) {
+    const { obterDados, motivoBloqueio } = adaptador;
     botao.disabled = true;
     botao.textContent = TEXTO_GERANDO_MEU_GABARITO;
     try {
+        const bloqueio = motivoBloqueio ? await motivoBloqueio() : null;
+        if (bloqueio) {
+            alertarMeuGabarito(bloqueio);
+            return;
+        }
         if (typeof window.gerarPdfMeuGabarito !== 'function') {
             await carregarScriptMeuGabarito(ARQUIVO_PDF_MEU_GABARITO);
         }
@@ -66,8 +86,8 @@ async function exportarMeuGabarito(botao, obterDados) {
 
 /**
  * Cria o bloco do botão: ativo só com a atividade entregue, com a dica do porquê.
- * @param {{estaEntregue: boolean, obterDados: Function}} opcoes - Situação da entrega e o
- *     adaptador que monta os dados do PDF.
+ * @param {{estaEntregue: boolean, obterDados: Function, motivoBloqueio: Function}} opcoes -
+ *     Situação da entrega, o adaptador que monta os dados do PDF e o bloqueio opcional.
  * @returns {HTMLElement} Bloco com o botão e a dica.
  */
 function criarBlocoMeuGabarito(opcoes) {
@@ -78,7 +98,7 @@ function criarBlocoMeuGabarito(opcoes) {
     botao.className = 'btn-export ' + CLASSE_MEU_GABARITO + '__botao';
     botao.textContent = TEXTO_BOTAO_MEU_GABARITO;
     botao.disabled = !opcoes.estaEntregue;
-    botao.addEventListener('click', () => exportarMeuGabarito(botao, opcoes.obterDados));
+    botao.addEventListener('click', () => exportarMeuGabarito(botao, opcoes));
     const dica = document.createElement('span');
     dica.className = CLASSE_MEU_GABARITO + '__dica';
     dica.textContent = opcoes.estaEntregue

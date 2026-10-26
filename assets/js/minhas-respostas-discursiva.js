@@ -13,6 +13,8 @@ const ARQUIVO_BOTAO_MEU_GABARITO_DISCURSIVA = 'botao-minhas-respostas.js';
 const ROTA_NOTA_MEU_GABARITO = '/rest/v1/rpc/notas_media_final';
 const SITUACAO_COM_NOTA = 'NOTA';
 const TEXTO_NOTA_PENDENTE = 'Aguardando a correção do professor';
+const MSG_AGUARDAR_CORRECAO_MEU_GABARITO = 'Aguarde: o professor ainda não realizou a correção ' +
+    'desta atividade. O "Exportar Meu Gabarito" fica disponível depois da correção.';
 const TEXTO_EM_BRANCO_DISCURSIVA = '(em branco)';
 const SELETOR_TOPICOS_MEU_GABARITO = '.topico-resposta[data-item][data-topico]';
 
@@ -45,6 +47,15 @@ async function lerNotaMeuGabaritoDiscursiva() {
     if (linha?.situacao !== SITUACAO_COM_NOTA) return TEXTO_NOTA_PENDENTE;
     return Number(linha.nota).toLocaleString('pt-BR',
         { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' (máximo 10)';
+}
+
+/**
+ * Barra o "Exportar Meu Gabarito" enquanto o professor não corrigiu a atividade (sem nota).
+ * @returns {Promise<string|null>} Mensagem de bloqueio, ou null se a correção já saiu.
+ */
+async function motivoBloqueioMeuGabaritoDiscursiva() {
+    const nota = await lerNotaMeuGabaritoDiscursiva();
+    return nota === TEXTO_NOTA_PENDENTE ? MSG_AGUARDAR_CORRECAO_MEU_GABARITO : null;
 }
 
 /**
@@ -134,6 +145,7 @@ async function iniciarMeuGabaritoDiscursiva(contexto) {
         destino: contexto.destino,
         estaEntregue: Boolean(contexto.dados.entregueEm),
         obterDados: () => montarDadosMeuGabaritoDiscursiva(contexto),
+        motivoBloqueio: motivoBloqueioMeuGabaritoDiscursiva,
     });
 }
 

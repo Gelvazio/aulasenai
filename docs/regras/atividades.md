@@ -630,6 +630,10 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   (não grava pedido) e só então chama `solicitar_gabarito`. Código:
   `assets/js/correcao-objetiva-aluno.js` (carregado por `respostas-atividade.js`) + CSS em
   `assets/css/respostas-atividade.css`.
+- ✅ **Práticas: sem exportar antes da correção (2026-10-26, #391):** na prática/discursiva, se o
+  professor ainda não corrigiu (nota `AGUARDANDO_CORRECAO` em `notas_media_final`), o clique em
+  "Exportar Meu Gabarito" mostra um aviso para aguardar a correção e não gera o PDF
+  (`minhas-respostas-discursiva.js` → `motivoBloqueio` em `botao-minhas-respostas.js`). Objetiva não muda.
 - ✅ **"📄 Exportar Meu Gabarito" (2026-10-14, #82):** em toda atividade (objetiva, prática,
   discursiva e avaliação) com `<body data-exportar-meu-gabarito="sim">`, o **aluno** tem o
   botão, desativado ("Disponível depois de entregar") até a **última tentativa liberada** estar
