@@ -26,7 +26,7 @@ const TITULO_NOVA_PD = "Nova pendência";
 const TITULO_EDITAR_PD = "Editar pendência";
 const ROTA_LOGIN_PD = "../../login.html";
 const ROTULOS_COLUNAS_PD = [
-  "ID", "Nome", "Descrição", "Responsável", "Data de início", "Status", "Excluído", "Ações",
+  "ID", "Nome", "Responsável", "Data de início", "Status", "Excluído", "Ações",
 ];
 
 const estadoPd = { repositorio: null, pendencias: [], editandoId: null };
@@ -238,7 +238,6 @@ function criarLinhaPd(pendencia) {
   linha.append(
     criarElementoPd("td", "", String(pendencia.id)),
     criarElementoPd("td", "pd-celula-nome", pendencia.nome),
-    criarElementoPd("td", "pd-descricao", pendencia.descricao || ""),
     criarElementoPd("td", "", pendencia.responsavel),
     criarElementoPd("td", "", formatarDataPd(pendencia.datainicio)),
     criarCelulaStatusPd(pendencia),
@@ -255,7 +254,7 @@ function desenharPendenciasPd() {
   const corpo = elementoPd("pdLinhas");
   if (!visiveis.length) {
     const vazio = criarElementoPd("td", "tp-vazio", "Nenhuma pendência encontrada.");
-    vazio.colSpan = 8;
+    vazio.colSpan = ROTULOS_COLUNAS_PD.length;
     const linha = criarElementoPd("tr");
     linha.append(vazio);
     corpo.replaceChildren(linha);
