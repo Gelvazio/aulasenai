@@ -331,6 +331,8 @@ async function aplicarTurmaNoCombo(estado, opcoes) {
     const escolhido = tela.alunos[Number(tela.combo.value)];
     tela.todos = filtrarAlunosPorTurmaEscolhida(tela.origem);
     filtrarComboPendentes(tela, filtro, escolhido);
+    // Sem aluno antes nem depois: nada a recarregar (e a escolha guardada no navegador é mantida).
+    if (!escolhido && !tela.combo.value) return;
     await carregarAlunoEscolhido(tela, opcoes);
 }
 
@@ -382,6 +384,8 @@ async function montarRespostasDoAluno(destino, opcoes) {
     document.addEventListener(EVENTO_TURMA_MUDOU_RESPOSTAS,
         () => aplicarTurmaNoCombo({ tela, filtro }, opcoes));
     await restaurarEscolhasSalvas({ tela, filtro, pendenteLigado }, opcoes);
+    // A turma favorita pode ter sido definida pelo combo "Turma" enquanto a lista carregava.
+    await aplicarTurmaNoCombo({ tela, filtro }, opcoes);
 }
 
 (function incluirEstiloRespostasAluno() {
