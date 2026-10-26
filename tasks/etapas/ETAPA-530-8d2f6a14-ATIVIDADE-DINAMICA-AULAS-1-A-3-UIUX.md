@@ -49,18 +49,18 @@ SQL de produção: só o Claude Code local.
 | 381.7 | Template HTML e CSS da página da dinâmica (tokens `:root`, sem estilo inline) | 381.6 | ✅ 2026-10-26 |
 | 381.8 | Card/ícone 🎯 da dinâmica no `gerar_indices.py` | 381.6 | ✅ 2026-10-26 |
 | 381.9 | SQL `nota_dinamica` (tabela, RLS, JWT, idempotente) | 381.1 | ✅ 2026-10-26 (SQL escrito) |
-| 381.10 | Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local) | 381.9 | 👀 aguarda o usuário (aplicar o SQL; o conector recusou) |
+| 381.10 | Aplicar o SQL no Supabase e conferir as políticas (só Claude Code local) | 381.9 | ✅ 2026-10-26 (migração e 3 seeds aplicados)|
 | 381.11 | Repositório JS de notas da dinâmica (ler/gravar por aluno ou grupo) | 381.10 | ✅ 2026-10-26 |
 | 381.12 | Tela do professor: lista da turma, formato, grupos e lançar nota | 381.11, 381.7 | ✅ 2026-10-26 |
 | 381.13 | Visão do aluno: ver a própria nota depois de lançada | 381.11, 381.7 | ✅ 2026-10-26 |
-| 381.14 | Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média" | 381.10 | 👀 vem junto com o 381.10 (funções no mesmo SQL) |
-| 381.15 | Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices | 381.3–381.8 | 🔄 páginas e seeds gerados; seeds aguardam o 381.10 |
+| 381.14 | Entrada da nota da dinâmica em `notas_media_final` e no card "Notas e média" | 381.10 | ✅ 2026-10-26 (funções com `notas_dinamicas` no banco)|
+| 381.15 | Gerar as 3 páginas HTML (aulas 01–03) e regravar os índices | 381.3–381.8 | ✅ 2026-10-26 (3 atividades cadastradas, bloqueadas; índices não regravados)|
 | 381.16 | Documentação: `docs/database.md` + relatório HTML + `.claude/rules/atividades-banco.md` + histórico | 381.10 | ✅ 2026-10-26 |
-| 381.17 | Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela | 381.15, 381.16 | 🔄 `py_compile` e `node --check` ok; falta conferir no banco após o 381.10 |
+| 381.17 | Verificação: `py_compile`, `node --check`, leitura dos HTML, consulta das políticas; avisar o usuário para testar na tela | 381.15, 381.16 | ✅ 2026-10-26 (RLS ativo, 3 políticas, anon sem acesso, sem delete, 2 funções)|
 
-**Próximo passo:** o usuário (ou o Claude Code local com permissão) aplica `database/2026-10-26-nota-dinamica.sql` e depois os 3 `database/2026-10-26-atividade-dinamica-aula-0N-seed-atividades.sql` no Supabase (381.10); em seguida conferir as políticas e fechar 381.14/15/17.
+**Próximo passo:** nenhum no banco. O usuário libera cada dinâmica no ON/OFF do índice e confere o painel de notas na tela (não testado).
 
-**Entrega (2026-10-26):** `docs/regras/atividade-dinamica.md`, 3 fontes em `ATIVIDADES/CONTEUDO/`, `assets/gerador-atividade-dinamica/` (+ ícone 🎯 em `gerar_indices.py`), `assets/css/atividade-dinamica.css`, `assets/js/nota-dinamica-*.js`, 3 páginas `ATIVIDADE-DINAMICA-AULA-0N.html`, SQL e seeds. **Bloqueio:** o classificador do Claude Code negou `apply_migration` no Supabase.
+**Entrega (2026-10-26):** `docs/regras/atividade-dinamica.md`, 3 fontes em `ATIVIDADES/CONTEUDO/`, `assets/gerador-atividade-dinamica/` (+ ícone 🎯 em `gerar_indices.py`), `assets/css/atividade-dinamica.css`, `assets/js/nota-dinamica-*.js`, 3 páginas `ATIVIDADE-DINAMICA-AULA-0N.html`, SQL e seeds. **Banco (2026-10-26):** `apply_migration` liberado pelo usuário e aplicado; seeds rodados (atividades 211, 212 e 213, `ativo = false`).
 
 ## Seções das subtarefas (lidas pelo Jev)
 

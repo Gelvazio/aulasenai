@@ -1121,7 +1121,7 @@ fora).
 
 ## 🎯 Atualização 2026-10-26 — `nota_dinamica`: nota da Atividade Dinâmica (#381)
 
-Script: `database/2026-10-26-nota-dinamica.sql` (**escrito; ainda não aplicado no Supabase**). Regra: `docs/regras/atividade-dinamica.md`.
+Script: `database/2026-10-26-nota-dinamica.sql` (**aplicado no Supabase em 2026-10-26**; seeds das aulas 01 a 03: atividades 211, 212 e 213). Regra: `docs/regras/atividade-dinamica.md`.
 
 | Objeto | Descrição |
 |---|---|
