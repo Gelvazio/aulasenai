@@ -7,7 +7,7 @@
 // Depende de js/supabase.js (SUPABASE, sbGet, sbH). Regra: docs/database.md
 
 const TABELA_VISIBILIDADE_CARD = 'card_notas_visivel';
-const ROTULO_VISIBILIDADE_CARD = 'Mostrar aos alunos';
+const ROTULO_VISIBILIDADE_CARD = 'Mostrar';
 const MSG_FALHA_VISIBILIDADE_CARD = 'Não foi possível gravar a visibilidade do card.';
 const MSG_SEM_MATERIA_VISIBILIDADE_CARD = 'Matéria não identificada para a visibilidade do card.';
 const MSG_SEM_TURMA_VISIBILIDADE_CARD = 'Turma não informada para a visibilidade do card.';
@@ -68,6 +68,23 @@ async function cardVisivelParaAlunoNotas() {
 }
 
 /**
+ * Professor: mostra ou esconde o corpo do card (combos, filtro, tabela, rodapé e aviso)
+ * conforme o interruptor "Mostrar". Com OFF, nem o professor vê as notas — só o título e o
+ * próprio interruptor continuam à vista, para ligar de novo.
+ * @param {boolean} visivel - Estado do interruptor "Mostrar".
+ */
+function aplicarVisibilidadeCorpoNotas(visivel) {
+    if (!estadoNotas.ehProfessor) return;
+
+    const { selecao, filtro, tabela, rodape, aviso, faixa } = estadoNotas.elementos;
+    const esconder = !visivel;
+    [selecao, filtro, tabela, rodape, faixa].forEach((elemento) => {
+        if (elemento) elemento.hidden = esconder;
+    });
+    if (esconder && aviso) aviso.hidden = true;
+}
+
+/**
  * Grava o novo estado do botão e o repinta; em falha, volta ao estado anterior.
  * @param {HTMLButtonElement} botao - Botão ON/OFF.
  * @returns {Promise<void>}
@@ -85,6 +102,7 @@ async function alternarVisibilidadeNotas(botao) {
         mostrarAvisoNotas(MSG_FALHA_VISIBILIDADE_CARD + ' ' + erro.message, true);
     }
     pintarInterruptorNotas(botao, estadoVisibilidadeCard.visivel);
+    aplicarVisibilidadeCorpoNotas(estadoVisibilidadeCard.visivel);
     botao.disabled = false;
 }
 
@@ -122,5 +140,6 @@ async function atualizarVisibilidadeNotas() {
         console.warn('Visibilidade do card indisponível:', erro.message);
     }
     pintarInterruptorNotas(botao, estadoVisibilidadeCard.visivel);
+    aplicarVisibilidadeCorpoNotas(estadoVisibilidadeCard.visivel);
     botao.disabled = !estadoNotas.materiaId || !turma;
 }

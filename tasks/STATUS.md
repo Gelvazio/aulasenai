@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #398-1de07962 — [Interruptor "Mostrar" do card de notas: renomear e esconder o card do professor quando OFF](etapas/ETAPA-543-1de07962-MOSTRAR-ESCONDE-CARD-DO-PROFESSOR.md) · ✅ Concluído · Devin (SWE-2) (local · main)
+  - #398.1 — Renomear o rótulo para "Mostrar" · ✅ Concluído · `MEDIO` · pedido direto: Devin
+  - #398.2 — Com OFF, esconder o corpo do card também do professor · ✅ Concluído · `MEDIO` · pedido direto: Devin
 - #397-8b4e2d71 — [Link "Painel Professor" no menu do professor](etapas/ETAPA-542-8b4e2d71-LINK-PAINEL-PROFESSOR-NO-MENU.md) · ✅ Concluído · Devin (SWE-2) (local · main)
   - #397.1 — Item Painel Professor no menu (junto de Regras) · ✅ Concluído · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash (pedido direto: Devin)
 - #394-5d8a3f26 — [Filtros do Progresso da turma só filtram quando ligados (localStorage)](etapas/ETAPA-541-5d8a3f26-FILTROS-PROGRESSO-SO-QUANDO-LIGADOS.md) · ✅ Concluído · Claude Code (Sonnet 5.5) (local · main)
