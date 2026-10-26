@@ -118,11 +118,13 @@ function criarBotaoEnsalado(texto, classe) {
  */
 function mapearCartoesGrade() {
   const mapa = new Map();
+  // O cartão pode ter vários links (Apostila e Atividades): o da faixa é o do índice ATIVIDADES.
   document.querySelectorAll(SELETOR_CARTOES_GRADE).forEach((cartao) => {
-    const link = cartao.querySelector(SELETOR_LINK_CARTAO_GRADE);
-    if (!link) return;
-    const href = link.getAttribute('href');
-    mapa.set(href, [...(mapa.get(href) ?? []), cartao]);
+    cartao.querySelectorAll(SELETOR_LINK_CARTAO_GRADE).forEach((link) => {
+      const href = link.getAttribute('href');
+      const cartoes = mapa.get(href) ?? [];
+      if (!cartoes.includes(cartao)) mapa.set(href, [...cartoes, cartao]);
+    });
   });
   return mapa;
 }
