@@ -630,6 +630,17 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   (não grava pedido) e só então chama `solicitar_gabarito`. Código:
   `assets/js/correcao-objetiva-aluno.js` (carregado por `respostas-atividade.js`) + CSS em
   `assets/css/respostas-atividade.css`.
+- ✅ **Perguntas em JSON + ativação pelo banco (2026-10-26, #389; piloto Aula 01 de UI/UX):**
+  `ATIVIDADES/DADOS/ATIVIDADE-OBJETIVA-AULA-NN.json` e `ATIVIDADE-PRATICA-AULA-NN.json` guardam TODAS as
+  perguntas (enunciado, alternativas/tópicos), **nunca** a resposta certa. No banco, `gabarito_catalogo` e
+  `topico_discursivo_catalogo` guardam tudo com `ativo`; `gabarito` e `topico_discursivo` são **views** só
+  com os ativos (todo código e função que já os lê só enxerga o liberado). `itens_ativos(atividade_id)`
+  diz à página o que mostrar (sem gabarito) e `liberar_itens(atividade_id, quantidade, topicos)` (só
+  professor) define a quantidade e refaz os pontos dos tópicos (`pontos_base` normalizado a 1 por item).
+  A página tem `<span id="ancora-perguntas" hidden>` e o `<script src=".../perguntas-json.js"
+  data-json=... data-antes=... data-depois=...>`; o loader monta os cards e só então carrega os scripts da
+  atividade; o professor vê a caixa "Liberar perguntas" (`liberar-itens-professor.js`). SQL:
+  `database/2026-10-26-itens-ativos-aula01.sql`. Outras matérias: tarefa #390.
 - ✅ **Práticas: sem exportar antes da correção (2026-10-26, #391):** na prática/discursiva, se o
   professor ainda não corrigiu (nota `AGUARDANDO_CORRECAO` em `notas_media_final`), o clique em
   "Exportar Meu Gabarito" mostra um aviso para aguardar a correção e não gera o PDF

@@ -18,6 +18,9 @@ plano da #25.
   gerador, ao gerar a página pela primeira vez, lê as perguntas do banco e a página as monta na hora.
 - ⛔ Página com questão que não existe no banco, ou banco com questão que a página não mostra.
 - Conferir após mexer: contar itens/tópicos do banco × da página (`data-total`, `data-topicos`).
+- ✅ **Modelo #389:** perguntas em **JSON** (`ATIVIDADES/DADOS/*.json`, sem a resposta certa); o banco
+  guarda todas no catálogo com `ativo` e o professor libera a quantidade (`liberar_itens`); a página monta só
+  as ativas (`assets/js/perguntas-json.js`). Detalhes: `docs/regras/atividades.md`.
 - Auditoria das demais matérias e migração do que ainda é HTML fixo: tarefa #388.
 
 ## Alvo: questões só no banco
