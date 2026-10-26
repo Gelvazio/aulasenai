@@ -62,6 +62,7 @@ const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só o
     'A prova fica escondida: ela aparece, com as respostas do aluno, quando você escolhe um ' +
     'aluno em "Respostas dos alunos", ou sem respostas no botão "Mostrar questões".';
 const CLASSE_RESPOSTAS_OCULTAS_PROFESSOR = 'discursiva--respostas-ocultas';
+const ROTULO_INSTRUCOES_DISCURSIVA = 'INSTRUÇÕES';
 const ID_BOTAO_QUESTOES_PROFESSOR = 'btnMostrarQuestoesProfessor';
 const ROTULO_MOSTRAR_QUESTOES = '👁️ Mostrar questões';
 const ROTULO_ESCONDER_QUESTOES = '🙈 Esconder questões';
@@ -496,6 +497,21 @@ function alternarRespostasDoProfessor(mostrar) {
     document.body.classList.toggle(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR, !mostrar);
     const botao = document.getElementById(ID_BOTAO_QUESTOES_PROFESSOR);
     if (botao) botao.textContent = mostrar ? ROTULO_ESCONDER_QUESTOES : ROTULO_MOSTRAR_QUESTOES;
+}
+
+/**
+ * O cartão "INSTRUÇÕES — Como Responder" é só do aluno (2026-10-26, #402): fica escondido para
+ * professor e visitante, mesmo quando o professor mostra as questões (botão "Mostrar questões"),
+ * que antes o reexibia junto.
+ */
+function aplicarInstrucoesSoParaAluno() {
+    const dados = estadoDiscursivo.dados;
+    const ehAluno = Boolean(dados?.disponivel && dados.logado && !dados.ehProfessor);
+    if (ehAluno) return;
+    document.querySelectorAll('.aula-card').forEach((card) => {
+        const badge = card.querySelector(':scope > .aula-badge');
+        if (badge?.textContent.trim() === ROTULO_INSTRUCOES_DISCURSIVA) card.hidden = true;
+    });
 }
 
 /**
@@ -987,6 +1003,7 @@ async function iniciarAvaliacaoDiscursiva() {
     }
     preencherCampos(estadoDiscursivo.dados.respostas || {});
     if (estadoDiscursivo.dados.ehProfessor) alternarRespostasDoProfessor(false);
+    aplicarInstrucoesSoParaAluno();
     aplicarPermissaoDeEscrita();
     montarPainel(estadoDiscursivo.dados);
     abrirResultadoDoAluno(estadoDiscursivo.dados);

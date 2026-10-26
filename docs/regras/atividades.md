@@ -378,6 +378,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
     `avaliacao-discursiva.js` + CSS). Desde 2026-10-14 o painel do professor tem também o botão
     **👁️ Mostrar questões / 🙈 Esconder questões**, que mostra a prova sem escolher aluno (#119).
+    **O cartão "INSTRUÇÕES — Como Responder" é só do aluno** (2026-10-26, #402): nem o "Mostrar
+    questões" o reexibe, e nas objetivas (`respostas-atividade.js`) ele também só aparece para o
+    aluno logado — professor e visitante não o veem.
   - **✅ Confirmar Todas (2026-10-14, #134):** botão ao lado do nome do aluno no Progresso da
     turma (só depois da entrega): grava a nota da IA como nota do professor (travada) em todas as
     questões dele; pula as com suspeita de cópia pendente; se faltar nota da IA em alguma, mostra

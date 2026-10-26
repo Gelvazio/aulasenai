@@ -39,6 +39,7 @@ const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
 const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
 const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
 const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
+const ROTULO_INSTRUCOES_OBJETIVA = 'INSTRUÇÕES';
 const VALOR_ATIVO_MEU_GABARITO = 'sim';
 const SELETOR_MEU_GABARITO_PADRAO = '.folha-respostas';
 const SELETOR_MEU_GABARITO_TOPO = '.export-bar';
@@ -849,6 +850,20 @@ function preCarregarScriptsDoProfessor() {
 }
 
 /**
+ * O cartão "INSTRUÇÕES — Como Responder" é só do aluno (2026-10-26, #402): escondido para
+ * professor e visitante; só o aluno logado o vê.
+ * @param {Object} carregado - Dados do provedor (logado, ehProfessor).
+ */
+function aplicarInstrucoesSoParaAluno(carregado) {
+    const ehAluno = Boolean(carregado.logado && !carregado.ehProfessor);
+    if (ehAluno) return;
+    document.querySelectorAll('.aula-card').forEach((card) => {
+        const badge = card.querySelector(':scope > .aula-badge');
+        if (badge?.textContent.trim() === ROTULO_INSTRUCOES_OBJETIVA) card.hidden = true;
+    });
+}
+
+/**
  * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
  */
 async function iniciarRespostasAtividade() {
@@ -857,6 +872,7 @@ async function iniciarRespostasAtividade() {
 
     await Promise.all([garantirPopup(), garantirTermosTentativa()]);
     const { provedor, carregado } = await escolherProvedor();
+    aplicarInstrucoesSoParaAluno(carregado);
     const estado = {
         provedor,
         itens: listarItens(),

@@ -21,9 +21,10 @@ O bloco **INSTRUÇÕES — "Como Responder"** das páginas de atividade prática
 
 ## Subtarefas
 
-### 402.1 — Esconder o bloco INSTRUÇÕES do professor em todas as atividades discursivas
+### 402.1 — Esconder o bloco INSTRUÇÕES do professor em todas as atividades
 
-- **Nível:** LEVE (Jev, conf. 0,74) · **Status:** 🔄 Em progresso · Devin (local · main)
-- **Descrição:** quando `dados.ehProfessor`, o bloco INSTRUÇÕES/"Como Responder" não aparece (JS compartilhado preferível, cobrindo as 191 páginas); aluno continua vendo. Atualizar `docs/regras/atividades.md`. Achado no caminho: a prova inteira já fica oculta ao professor pela classe `discursiva--respostas-ocultas`, mas o botão "Mostrar questões" a reexibe **incluindo** as instruções — a correção marca o card INSTRUÇÕES e o mantém escondido nos dois estados.
-- **Próximo passo:** editar `avaliacao-discursiva.js`, `node --check`, docs e quadro.
-- **Verificação:** `node --check` + grep + releitura; sem navegador.
+- **Nível:** LEVE (Jev, conf. 0,74) · **Status:** ✅ Concluído
+- **Descrição:** quando `ehProfessor`, o bloco INSTRUÇÕES/"Como Responder" não aparece; aluno continua vendo. Achado no caminho: a prova inteira já fica oculta ao professor pela classe `discursiva--respostas-ocultas`, mas o botão "Mostrar questões" a reexibia **incluindo** as instruções — agora o card INSTRUÇÕES fica escondido nos dois estados; e nas objetivas (`respostas-atividade.js`) o professor já o via sempre — agora escondido também. Decisão literal do pedido ("apenas aos alunos"): **só o aluno logado vê** — visitante também não vê.
+- **Entrega:** `aplicarInstrucoesSoParaAluno()` em `avaliacao-discursiva.js` (chamada no init) e em `respostas-atividade.js` (chamada após `escolherProvedor`); esconde o `.aula-card` cujo `.aula-badge` é "INSTRUÇÕES" quando não é aluno logado. Cobre as 191 páginas com "Como Responder" (74 discursivas + 117 objetivas — conferido: nenhuma carrega outro motor). `docs/regras/atividades.md` atualizado.
+- **Próximo passo:** nenhum — task fechada.
+- **Verificação:** `node --check` nos 2 JS OK; grep confirmou que toda página com "Como Responder" carrega `avaliacao-discursiva.js` ou `respostas-atividade.js`; sem navegador.
