@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análise de MATERIAIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap">
+  <link rel="stylesheet" href="painel.css">
+  <script src="painel.js" defer></script>
+</head>
+<body>
+  <header class="painel-cabecalho">
+    <h1 class="painel-titulo">Análise de MATERIAIS</h1>
+    <p class="painel-subtitulo" id="gerado-em">Carregando dados...</p>
+  </header>
+
+  <main class="painel-principal">
+    <p class="painel-erro" id="mensagem-erro" role="alert" hidden></p>
+
+    <section class="cartoes-resumo" id="cartoes-resumo" aria-label="Resumo"></section>
+
+    <section class="bloco" aria-labelledby="titulo-tipos">
+      <h2 class="bloco-titulo" id="titulo-tipos">Arquivos por tipo</h2>
+      <ul class="barras" id="barras-tipos"></ul>
+    </section>
+
+    <section class="bloco" aria-labelledby="titulo-pastas">
+      <h2 class="bloco-titulo" id="titulo-pastas">Arquivos por pasta</h2>
+      <div class="lista-pastas" id="lista-pastas"></div>
+    </section>
+  </main>
+</body>
+</html>

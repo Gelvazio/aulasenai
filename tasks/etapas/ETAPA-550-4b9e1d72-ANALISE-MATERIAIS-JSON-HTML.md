@@ -38,6 +38,7 @@
   - `arquivos`: lista de `{ "caminho": "CURSO/.../arquivo.ext", "pasta": "...", "tipo": "ext", "tamanhoBytes": n ou null, "modificadoEm": "ISO 8601" }`
   - Regra: `totalArquivos` = soma de `porTipo` = soma de `porPasta.total` = tamanho de `arquivos`.
 - 2026-10-26 (#401.1, Haiku 5.5): inventário de MATERIAIS. 2086 arquivos. Extensões: md 1045 · html 323 · svg 99 · json 99 · js 94 · png 85 · pdf 84 · docx 70 · py 42 · pptx 25 · gif 24 · txt 22 · jpg 20 · jpeg 14 · css 7 · xlsx 6 · csv 1 · bat 1. Há também arquivos sem extensão útil (ex.: `nul`, `.gitignore`, `.prettierrc`), que caem em `(sem extensão)` ou no tipo pelo nome; a regra de tipo fica para 401.5. Pastas de primeiro nível: AGENDA_COLABORADOR, ASSISTENTE-DE-OPERACOES-LOGISTICAS, CURSO-PROFESSOR-RAFAEL, GESTAO_E_CONTROLE_MATERIAIS, OPERADOR_PRODUCAO_INDUSTRIAL, QUALIFICACAO-PROFISSIONAL, RIO_DO_SUL_MAIS_TECH, TECNICO-INFORMATICA-INTERNET. Observação: `find` mostra um arquivo chamado `nul` dentro de TECNICO-INFORMATICA-INTERNET (nome reservado do Windows, sem conteúdo útil).
+- 2026-10-26 (#401.4–.12, Sonnet 5.5): script e página feitos por 2 agentes executor-medio em paralelo; as constantes da #401.3 já estão no topo do script (Haiku só confere e fecha a .3). JSON tem 2073 arquivos (o 2086 do inventário incluía __pycache__/.git, ignorados).
 - 2026-10-26 (usuário): aprovou o plano desta etapa ("Sim, aprovo o plano da #401"). Execução fica para uma frente com nível MEDIO/PESADO (Haiku não pega essas subtarefas).
 
 ### Aprovação
@@ -96,7 +97,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** percorrer a árvore, pular `PASTAS_IGNORADAS`, devolver os caminhos de arquivo.
 - **Critérios de aceitação:** função com no máximo 45 linhas, com docstring (objetivo, parâmetros, retorno, exceções).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `listar_arquivos` em analises/analisar_materiais.py (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok; função de 21 linhas com docstring
 
 ### #401.5 — Função de classificação por tipo
 
@@ -109,7 +110,7 @@
 - **Fonte:** jev (confiança 0.94)
 - **Descrição:** extensão sem ponto, em minúsculas; sem extensão → `EXTENSAO_SEM_TIPO`.
 - **Critérios de aceitação:** função pura, sem acesso ao disco.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `tipo_do_arquivo` (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok; 11 linhas, pura
 
 ### #401.6 — Função de metadados do arquivo
 
@@ -122,7 +123,7 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** caminho relativo à `MATERIAIS` (barras `/`), tipo, tamanho em bytes, data de modificação em ISO 8601.
 - **Critérios de aceitação:** nenhuma chamada a `open()` no arquivo lido.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ler_metadados` (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok; sem open() no arquivo lido
 
 ### #401.7 — Função de contagem por tipo e por pasta
 
@@ -135,7 +136,7 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** dois dicionários agregados; a pasta é o primeiro nível dentro da `MATERIAIS`.
 - **Critérios de aceitação:** a soma de `porTipo` é igual a `totalArquivos`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `contar_por_tipo` e `contar_por_pasta` (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** soma de porTipo = totalArquivos = 2073
 
 ### #401.8 — Função de gravação do JSON
 
@@ -148,7 +149,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** criar `analises/` se não existir; `ensure_ascii=False`, `indent=2`, UTF-8.
 - **Critérios de aceitação:** falha no meio não deixa JSON pela metade.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `gravar_json` (temporário + os.replace) (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok; escrita atômica
 
 ### #401.9 — Tratamento de erros e saída do script
 
@@ -161,7 +162,7 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** pasta `MATERIAIS` inexistente → mensagem e código de saída 1; arquivo ilegível → entra na lista com tamanho `null` e um aviso.
 - **Critérios de aceitação:** nenhuma exceção sem tratamento no terminal.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `main()` com try/except e exit 1 (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok
 
 ### #401.10 — Script `analisar_materiais.py` completo e com docstrings
 
@@ -174,7 +175,7 @@
 - **Fonte:** jev (confiança 0.92)
 - **Descrição:** cada função com no máximo 45 linhas, nomes em português sem acento, linhas até 100 caracteres, arquivo abaixo de 1000 linhas.
 - **Critérios de aceitação:** `python -m py_compile` passa; execução gera o JSON.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** analises/analisar_materiais.py completo (187 linhas) (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile ok; funções ≤28 linhas, linhas ≤100 caracteres
 
 ### #401.11 — Gerar o JSON e conferir os números
 
@@ -187,7 +188,7 @@
 - **Fonte:** sinais
 - **Descrição:** conferir `totalArquivos` e a soma de `porTipo`.
 - **Critérios de aceitação:** os dois números batem; JSON lido com `json.load` sem erro.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** analises/analise-materiais.json (2073 arquivos) (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** total 2073 = soma de porTipo = `find` (exclui __pycache__ e .git); json.load ok
 
 ### #401.12 — Página `analises/index.html` com visual futurista
 
@@ -200,7 +201,7 @@
 - **Fonte:** sinais
 - **Descrição:** fundo escuro com gradientes violeta e magenta; cards com borda neon; barras de contagem por tipo e por pasta (CSS); fontes Orbitron (títulos) e Share Tech Mono (números); grade de fundo em `::before`; `@media (prefers-reduced-motion: reduce)`; `:focus-visible` magenta; uma coluna até 720 px; a página lê `analise-materiais.json` com `fetch`, sem dados fixos no HTML.
 - **Critérios de aceitação:** nenhum `style=""` nem `onclick` inline; cores em `:root`; sem rolagem horizontal até 720 px.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** analises/index.html, painel.css, painel.js (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** node --check ok; sem style=/onclick/innerHTML; só !important do reduced-motion; lido sem navegador (precisa de servidor HTTP: fetch não funciona em file://)
 
 ### #401.13 — Decidir o que sai do site e do Git
 
@@ -239,7 +240,7 @@
 - **Fonte:** sinais
 - **Descrição:** `python -m py_compile analises/analisar_materiais.py`; `node --check` não se aplica; checar que `index.html` não tem `style=""` nem `onclick`; checar contraste e foco pelo código. Sem navegador e sem testes automatizados (`testes-validacao.md`).
 - **Critérios de aceitação:** todas as conferências por comando ou leitura registradas na seção de verificação.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** conferência final (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** py_compile e node --check ok; greps de style=/onclick/innerHTML limpos; linhas ≤100
 
 ### #401.16 — Commit e push da entrega
 
@@ -252,4 +253,4 @@
 - **Fonte:** sinais
 - **Descrição:** um commit com o script, o JSON, o HTML, o LEIA-ME e o quadro; sem `git add .`.
 - **Critérios de aceitação:** push feito; linha da mãe movida para `task_complete.md` só quando todas as subtarefas estiverem ✅.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit e push na main (Claude Code Sonnet 5.5, agentes executor-medio) · **Verificação:** ver commit desta entrega

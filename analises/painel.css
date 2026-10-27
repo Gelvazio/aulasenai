@@ -1,0 +1,231 @@
+:root {
+  --cor-fundo: #05030d;
+  --cor-texto: #e8e6f5;
+  --cor-texto-suave: #a9a3c9;
+  --cor-ciano: #00f0ff;
+  --cor-magenta: #ff2bd6;
+  --cor-violeta: #7a2cff;
+  --cor-cartao: rgba(20, 12, 44, 0.65);
+  --cor-borda: rgba(0, 240, 255, 0.35);
+  --cor-trilho: rgba(255, 255, 255, 0.08);
+  --cor-erro: #ff5c7a;
+  --fonte-titulo: "Orbitron", sans-serif;
+  --fonte-dados: "Share Tech Mono", monospace;
+  --raio: 10px;
+  --largura-maxima: 1100px;
+  --tamanho-grade: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cor-texto);
+  font-family: var(--fonte-dados);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(122, 44, 255, 0.35), transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(255, 43, 214, 0.25), transparent 45%),
+    var(--cor-fundo);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.06) 1px, transparent 1px);
+  background-size: var(--tamanho-grade) var(--tamanho-grade);
+}
+
+.painel-cabecalho,
+.painel-principal {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.painel-cabecalho {
+  padding-top: 32px;
+}
+
+.painel-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--cor-ciano);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+}
+
+.painel-subtitulo {
+  margin: 8px 0 0;
+  color: var(--cor-texto-suave);
+}
+
+.painel-erro {
+  margin: 20px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--cor-erro);
+  border-radius: var(--raio);
+  color: var(--cor-erro);
+  background: rgba(255, 92, 122, 0.1);
+}
+
+.cartoes-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.cartao {
+  padding: 16px;
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 18px rgba(122, 44, 255, 0.25);
+}
+
+.cartao-rotulo {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+}
+
+.cartao-valor {
+  margin: 8px 0 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  color: var(--cor-magenta);
+  text-shadow: 0 0 10px rgba(255, 43, 214, 0.6);
+}
+
+.bloco {
+  margin-bottom: 28px;
+  padding: 18px;
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  backdrop-filter: blur(6px);
+}
+
+.bloco-titulo {
+  margin: 0 0 16px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  color: var(--cor-ciano);
+}
+
+.barras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.barra-linha {
+  display: grid;
+  grid-template-columns: 110px 1fr 70px;
+  align-items: center;
+  gap: 12px;
+}
+
+.barra-rotulo,
+.barra-quantidade {
+  overflow-wrap: anywhere;
+}
+
+.barra-quantidade {
+  text-align: right;
+  color: var(--cor-ciano);
+}
+
+.barra-trilho {
+  height: 12px;
+  background: var(--cor-trilho);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barra-preenchimento {
+  width: var(--largura-barra, 0%);
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--cor-violeta), var(--cor-magenta), var(--cor-ciano));
+  box-shadow: 0 0 10px rgba(255, 43, 214, 0.6);
+  transition: width 0.8s ease;
+}
+
+.lista-pastas {
+  display: grid;
+  gap: 16px;
+}
+
+.pasta {
+  padding: 14px;
+  border: 1px solid var(--cor-trilho);
+  border-radius: var(--raio);
+}
+
+.pasta-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: normal;
+  overflow-wrap: anywhere;
+}
+
+.pasta-total {
+  color: var(--cor-magenta);
+  white-space: nowrap;
+}
+
+.pasta .barra-linha {
+  grid-template-columns: 90px 1fr 60px;
+}
+
+.painel-principal :focus-visible,
+.painel-cabecalho :focus-visible {
+  outline: 2px solid var(--cor-magenta);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .cartoes-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .barra-linha,
+  .pasta .barra-linha {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .barra-quantidade {
+    text-align: left;
+  }
+
+  .painel-titulo {
+    font-size: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
