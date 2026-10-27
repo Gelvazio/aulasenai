@@ -252,3 +252,5 @@
 | **#416-b3f60d85** | **Regra global: Objetiva e Prática mostram só a quantidade mínima do banco** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [563-b3f60d85](etapas/ETAPA-563-b3f60d85-REGRA-GLOBAL-SO-QUANTIDADE-MINIMA.md) | — |
 | #417.1 | Meu progresso só com as questões visíveis · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [564-c9d27a14](etapas/ETAPA-564-c9d27a14-MEU-PROGRESSO-SO-MINIMO.md) | — |
 | **#417-c9d27a14** | **Meu progresso do aluno mostra só as questões até o mínimo** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [564-c9d27a14](etapas/ETAPA-564-c9d27a14-MEU-PROGRESSO-SO-MINIMO.md) | — |
+| #418.1 | Folha e avisos da objetiva só com as questões visíveis · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [565-d4e81b36](etapas/ETAPA-565-d4e81b36-OBJETIVA-TEXTOS-SO-VISIVEIS.md) | — |
+| **#418-d4e81b36** | **Objetiva conta só as questões visíveis na folha e nos avisos** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [565-d4e81b36](etapas/ETAPA-565-d4e81b36-OBJETIVA-TEXTOS-SO-VISIVEIS.md) | — |

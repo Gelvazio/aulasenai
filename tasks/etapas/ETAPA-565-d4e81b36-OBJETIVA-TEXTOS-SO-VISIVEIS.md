@@ -26,7 +26,7 @@
 
 ### #418.1 — Folha e avisos da objetiva só com as questões visíveis
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (objetiva 191: "Respondidas: X de 20").
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -35,3 +35,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** aluno com mínimo 20 de 50 vê "Respondidas: X de 20" e as pendências só entre as 20 visíveis.
+- **Entrega:** `assets/js/respostas-atividade.js` (`manterSoQuestoesVisiveisDoAluno`; corte antes da folha) e `docs/regras/atividades.md` · **Verificação:** `node --check` ok; leitura do código; o teste na tela só o usuário confirma (sem navegador).

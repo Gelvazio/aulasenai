@@ -37,6 +37,7 @@ const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
 const ARQUIVO_MEU_PROGRESSO_OBJETIVA = 'progresso-do-aluno.js';
 const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
 const VALOR_DESLIGADO_QUESTOES_ATE_MINIMO_PAGINA = 'nao';
+const CLASSE_FORA_DO_MINIMO_PAGINA = 'questao--fora-do-minimo';
 const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
 const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
 const ROTULO_INSTRUCOES_OBJETIVA = 'INSTRUÇÕES';
@@ -731,6 +732,20 @@ async function mostrarSoAteOMinimo(estado, carregado) {
 }
 
 /**
+ * Aluno: depois do corte pelo mínimo, os itens da página (folha, avisos de pendência, "mínimo de
+ * N de T") passam a ser só as questões que ele vê. O professor mantém todos (#418).
+ * @param {Object} estado - Estado da página (itens).
+ * @param {Object} carregado - Dados do provedor (logado, ehProfessor).
+ */
+function manterSoQuestoesVisiveisDoAluno(estado, carregado) {
+    const ehAluno = Boolean(carregado.logado) && !carregado.ehProfessor;
+    if (!ehAluno) return;
+
+    estado.itens = estado.itens.filter((item) =>
+        !item.card.classList.contains(CLASSE_FORA_DO_MINIMO_PAGINA));
+}
+
+/**
  * Aluno com a objetiva entregue: se o professor já liberou os gabaritos da turma, marca ✅/❌ em
  * cada questão e a alternativa certa nas erradas (assets/js/correcao-objetiva-aluno.js).
  * Uma falha aqui não pode impedir o resto da página.
@@ -888,13 +903,15 @@ async function iniciarRespostasAtividade() {
     estado.questoesNota = Math.min(carregado.questoesNota || estado.minimo, estado.itens.length);
     estado.atualizarFolha = () => atualizarFolha(estado);
 
+    await mostrarSoAteOMinimo(estado, carregado);
+    manterSoQuestoesVisiveisDoAluno(estado, carregado);
+
     const identificacao = provedor.montarIdentificacao();
     secao.insertBefore(identificacao, secao.firstChild);
     secao.appendChild(montarFolha(estado));
     ligarAlternativas(estado);
     if (!estado.entregue) esconderQuestoesHerdadas(estado, carregado.herdadas || []);
     estado.atualizarFolha();
-    await mostrarSoAteOMinimo(estado, carregado);
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
     await abrirRecursosDoAluno(estado, carregado);
