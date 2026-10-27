@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #408-9292a625 — [Campo "Data do assunto" no modal Editar aula](etapas/ETAPA-555-9292a625-DATA-DO-ASSUNTO-NO-MODAL.md) · ⬜ Pendente · — (não reservável)
+  - #408.1 — Campo "Data do assunto" no modal (ler e gravar por turma) · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5) (local · main) (desde 2026-10-27 10:44)
+
 
 
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
