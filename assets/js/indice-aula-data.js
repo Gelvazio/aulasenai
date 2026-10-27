@@ -35,6 +35,9 @@ const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
 const CLASSE_NOME_ATIVIDADE_LINK = 'nome-atividade-card';
 const CLASSE_ID_AULA_CARD = 'aula-id-card';
 const TEXTO_ID_AULA_CARD = 'Id Aula: ';
+const CLASSE_DATA_AULA_CARD = 'aula-data-card';
+const TEXTO_DATA_AULA_CARD = 'Data: ';
+const TEXTO_DATA_NAO_INFORMADA = 'Data não informada';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
@@ -234,6 +237,7 @@ function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
     renderizarIdDaAulaNoCard(item);
+    renderizarDataDaAulaNoCard(item);
     if (typeof desenharBotaoSlidesDoBanco === 'function') desenharBotaoSlidesDoBanco(item);
     if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
 }
@@ -255,6 +259,37 @@ function renderizarIdDaAulaNoCard(item) {
         rotulo.parentNode.insertBefore(etiqueta, rotulo);
     }
     etiqueta.textContent = `${TEXTO_ID_AULA_CARD}${item.aula.id}`;
+}
+
+/**
+ * Converte a data do banco (AAAA-MM-DD) em DD/MM/AAAA, sem passar por fuso horário.
+ * @param {string} dataBanco - Data no formato do banco.
+ * @returns {string} Data para exibir.
+ */
+function formatarDataAulaCard(dataBanco) {
+    const [ano, mes, dia] = dataBanco.slice(0, 10).split('-');
+    return `${dia}/${mes}/${ano}`;
+}
+
+/**
+ * Mostra no card "Data: DD/MM/AAAA" (aula_turma.data_aula da turma lida) ou "Data não
+ * informada". Só aparece onde a turma é lida (matérias com o bloqueio da aula ligado).
+ * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
+ */
+function renderizarDataDaAulaNoCard(item) {
+    const nome = item.card.querySelector(SELETOR_NOME_CARD_AULA);
+    const podeMostrar = item.aula && nome && bloqueioDaAulaNoIndice()
+        && typeof obterDataAulaNaTurma === 'function';
+    if (!podeMostrar) return;
+
+    let campo = item.card.querySelector(`.${CLASSE_DATA_AULA_CARD}`);
+    if (!campo) {
+        campo = criarElementoCardAula('div', CLASSE_DATA_AULA_CARD);
+        nome.after(campo);
+    }
+    const data = obterDataAulaNaTurma(item.aula);
+    campo.textContent = data ? TEXTO_DATA_AULA_CARD + formatarDataAulaCard(data)
+        : TEXTO_DATA_NAO_INFORMADA;
 }
 
 /**

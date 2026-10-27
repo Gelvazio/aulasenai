@@ -214,3 +214,5 @@
 | #402.4 | Incluir `MATERIAIS-SEM-HTML/` no `.vercelignore` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [551-36e9dc49](etapas/ETAPA-551-36e9dc49-MATERIAIS-SEM-HTML.md) | — |
 | #402.5 | Conferir a contagem e os caminhos · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [551-36e9dc49](etapas/ETAPA-551-36e9dc49-MATERIAIS-SEM-HTML.md) | — |
 | #402.6 | Commit e push da entrega · `a classificar pelo Jev` | 🟡 Média | a classificar pelo Jev | Nenhuma | ✅ Concluído | — | [551-36e9dc49](etapas/ETAPA-551-36e9dc49-MATERIAIS-SEM-HTML.md) | — |
+| #405 | Campo "Data:" no card de aula | 🟡 Média | — | Nenhuma | ✅ Concluído | — | [552-5c7d2e91](etapas/ETAPA-552-5c7d2e91-DATA-DA-AULA-NO-CARD.md) | —  |
+| #405.1 | Mostrar a data no card · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [552-5c7d2e91](etapas/ETAPA-552-5c7d2e91-DATA-DA-AULA-NO-CARD.md) | — |

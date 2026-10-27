@@ -6,9 +6,6 @@
 ## Tarefas
 
 
-- #405-5c7d2e91 — [Campo "Data:" no card de aula (data da aula por turma ou "Data não informada")](etapas/ETAPA-552-5c7d2e91-DATA-DA-AULA-NO-CARD.md) · 🔄 Em progresso · — (não reservável)
-  - #405.1 — Mostrar a data no card · 🔄 Em execução · `MEDIO` · só Sonnet (Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 07:15))
-
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 

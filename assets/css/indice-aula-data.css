@@ -25,6 +25,14 @@
     color: var(--aula-id-card-cor);
 }
 
+/* Campo "Data:" da aula na turma, abaixo do nome do card (assets/js/indice-aula-data.js). */
+.aula-data-card {
+    font-size: var(--aula-id-card-fonte);
+    font-weight: 700;
+    color: var(--aula-id-card-cor);
+    margin-top: 4px;
+}
+
 .aula-data-botao {
     background: var(--aula-data-botao-fundo);
     border: 1px solid var(--aula-data-botao-borda);

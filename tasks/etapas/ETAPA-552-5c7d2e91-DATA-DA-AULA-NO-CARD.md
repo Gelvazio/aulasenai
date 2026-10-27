@@ -8,9 +8,9 @@
 
 ### #405.1 — Mostrar "Data: dd/mm/aaaa" ou "Data não informada" no card
 
-**Próximo passo:** editar `assets/js/indice-aula-data.js` e `assets/css/indice-aula-data.css`.
+**Próximo passo:** concluído; antes: editar `assets/js/indice-aula-data.js` e `assets/css/indice-aula-data.css`.
 
 - **Nível:** MEDIO — JS com lógica, 2 arquivos
 - **Modelo:** só Sonnet — nunca outro
 - **Descrição:** a data vem de `aula_turma.data_aula` da turma do combo "Turma:" (professor) ou da turma única do aluno; sem linha ou sem data, mostra "Data não informada".
-- **Entrega:** (a preencher) · **Verificação:** (a preencher)
+- **Entrega:** `indice-aula-data.js` (campo `Data:` abaixo do nome, formato DD/MM/AAAA ou "Data não informada"), `indice-aula-bloqueio.js` (`obterDataAulaNaTurma`; o aluno com turma única também lê as linhas) e `indice-aula-data.css`. Só aparece nas matérias com o bloqueio da aula ligado (onde a turma é lida). · **Verificação:** `node --check` nos 2 JS OK; conferir na tela (sem navegador).

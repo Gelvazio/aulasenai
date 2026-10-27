@@ -64,12 +64,25 @@ async function carregarBloqueioAulaTurma({ turma = '', turmas = [] }) {
     if (lista.length && typeof lerAulasBloqueadasNasTurmas === 'function') {
         try {
             lido.bloqueadas = await lerAulasBloqueadasNasTurmas(lista);
-            if (turma) lido.linhas = await lerLinhasAulaTurma(turma);
+            const turmaDasLinhas = turma || (lista.length === 1 ? lista[0] : '');
+            if (turmaDasLinhas) lido.linhas = await lerLinhasAulaTurma(turmaDasLinhas);
         } catch (erro) {
             console.warn('Bloqueio da aula por turma indisponível:', erro.message);
         }
     }
     if (leitura === estado.leitura) Object.assign(estado, lido);
+}
+
+/**
+ * Data da aula na turma lida (aula_turma.data_aula): a do combo (professor) ou a turma única
+ * do aluno.
+ * @param {Object|null} aula - Linha da tabela aulas.
+ * @returns {?string} Data AAAA-MM-DD, ou null se não houver.
+ */
+function obterDataAulaNaTurma(aula) {
+    if (!aula) return null;
+
+    return estadoBloqueioAulaTurma.linhas.get(aula.id)?.data_aula || null;
 }
 
 /**
