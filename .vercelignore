@@ -42,4 +42,6 @@ games/
 
 # Copia das regras globais e scripts de sessao (arquivo de controle): nunca vai ao site (C46, 2026-10-23)
 rules-local/
+# Análise de MATERIAIS (#401): o JSON lista nomes de arquivo, inclusive de gabaritos; só no Git
+analises/
 ATIVIDADE-DINAMICA-*.md

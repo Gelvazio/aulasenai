@@ -30,6 +30,7 @@
 ### Decisões
 
 - 2026-10-26 (Claude Code Haiku 5.5): tarefa grande (gerador novo, várias partes). Plano nesta etapa; execução só após **"sim" claro do usuário** (regra `ciclo-da-task.md`).
+- 2026-10-26 (#401.13, Haiku 5.5): `analises/` vai para o `.vercelignore` (não sobe ao site). Motivo: o JSON lista nomes de arquivo, e a `MATERIAIS` tem nomes com `GABARITO`, `RESPOSTAS-PROVAVEIS` e `QUESTOES.md`; nomes já bastam para expor a existência de gabarito. `analises/` continua no Git. Pendente de resposta do usuário: manter `analises/` no `.gitignore` ou não (hoje não está lá; o `.gitignore` não foi alterado).
 - 2026-10-26 (#401.2, Haiku 5.5): esquema do `analises/analise-materiais.json`, só metadados (sem conteúdo de arquivo):
   - `geradoEm` (ISO 8601 com fuso de Brasília) · `pastaBase` (`"MATERIAIS"`) · `totalArquivos` (inteiro)
   - `porTipo`: tipo → quantidade, ordenado do maior para o menor
@@ -212,7 +213,7 @@
 - **Fonte:** sinais
 - **Descrição:** o JSON tem nomes de arquivo; se a lista for sensível, `analises/` vai para o `.vercelignore`. Aplicar a regra `vercel-sem-deploy-de-controle.md` e perguntar ao usuário antes de mudar o `.gitignore`.
 - **Critérios de aceitação:** decisão registrada nas Decisões da etapa, com o motivo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `.vercelignore` com `analises/` (decisão em Decisões, 2026-10-26, #401.13) · **Verificação:** `grep -n "analises/" .vercelignore` acha a linha; `.gitignore` não mudou (pergunta ao usuário pendente, ver abaixo).
 
 ### #401.14 — Documentar a análise no cabeçalho do script e na etapa
 

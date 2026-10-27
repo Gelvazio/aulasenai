@@ -16,7 +16,6 @@
   - #401.10 — Script analisar_materiais.py completo e com docstrings · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.11 — Gerar o JSON e conferir os números · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.12 — Página analises/index.html com visual futurista · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #401.13 — Decidir o que sai do site e do Git · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #401.14 — Documentar a análise (LEIA-ME) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #401.15 — Verificação final sem navegador e sem testes · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.16 — Commit e push da entrega · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
