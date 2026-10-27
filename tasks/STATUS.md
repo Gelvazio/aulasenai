@@ -7,7 +7,7 @@
 
 - #401-4b9e1d72 — [Análise da pasta MATERIAIS em JSON e painel HTML futurista](etapas/ETAPA-550-4b9e1d72-ANALISE-MATERIAIS-JSON-HTML.md) · ⬜ Pendente (aprovada em 2026-10-26; aguarda frente Sonnet) · — (não reservável)
   - #401.3 — Constantes do script · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-  - #401.4 — Função de varredura recursiva · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.4 — Função de varredura recursiva · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-26 21:19)
   - #401.5 — Função de classificação por tipo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.6 — Função de metadados do arquivo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.7 — Função de contagem por tipo e por pasta · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
