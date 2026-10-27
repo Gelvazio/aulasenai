@@ -8,8 +8,6 @@
 
 
 
-- #414-4e8b1d37 — [Reforçar o bloqueio de copiar/colar nas atividades práticas](etapas/ETAPA-561-4e8b1d37-REFORCO-COLAR-PRATICAS.md) · 🔄 Em andamento (tarefa pequena) · — (não reservável)
-  - #414.1 — Reforçar bloqueio de colar/copiar nas práticas · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:22)
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

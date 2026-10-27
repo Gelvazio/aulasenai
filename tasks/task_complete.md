@@ -244,3 +244,5 @@
 | **#412-5b2e8f14** | **Botões de atividade entregue ficam verdes em todos os botões do card (objetiva e dinâmica)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [559-5b2e8f14](etapas/ETAPA-559-5b2e8f14-COR-VERDE-TODAS-ATIVIDADES.md) | — |
 | #413.1 | Módulo e botão de exportar o enunciado em PDF · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ✅ Concluído | — | [560-7c3d9a21](etapas/ETAPA-560-7c3d9a21-ENUNCIADO-PDF-DINAMICA.md) | — |
 | **#413-7c3d9a21** | **Enunciado da Atividade Dinâmica exportável em PDF** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [560-7c3d9a21](etapas/ETAPA-560-7c3d9a21-ENUNCIADO-PDF-DINAMICA.md) | — |
+| #414.1 | Reforçar bloqueio de colar/copiar nas práticas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [561-4e8b1d37](etapas/ETAPA-561-4e8b1d37-REFORCO-COLAR-PRATICAS.md) | — |
+| **#414-4e8b1d37** | **Reforçar o bloqueio de copiar/colar nas atividades práticas** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [561-4e8b1d37](etapas/ETAPA-561-4e8b1d37-REFORCO-COLAR-PRATICAS.md) | — |

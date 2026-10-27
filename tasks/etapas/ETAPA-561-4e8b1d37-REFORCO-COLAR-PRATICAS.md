@@ -30,13 +30,17 @@
 
 ### #414.1 — Reforçar bloqueio de colar/copiar nas práticas
 
-**Próximo passo:** rodar o Jev, reservar e editar `bloqueio-colar-discursiva.js`.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.92))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
 - **JEV-AI-SUGGESTION:** SIM
 - **Fonte:** jev (confiança 0.92)
+- **Nível:** MEDIO — Jev (confiança 0,92)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** práticas sem o atributo bloqueiam colar; atalhos, menu e inserção em bloco bloqueados.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/bloqueio-colar-discursiva.js` (liga sozinho nas práticas; atalhos, menu, enunciado e entrada em bloco) e `docs/regras/atividades.md` · **Verificação:** `node --check` ok; leitura do código; o teste de colar só o usuário confirma (sem navegador).
