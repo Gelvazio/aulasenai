@@ -35,7 +35,7 @@
 
 ### #421.1 — Botão "Progresso Atividades" no card da aula (só professor)
 
-**Próximo passo:** classificar pelo Jev e, depois, reservar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -44,7 +44,7 @@
 - **Fonte:** sinais
 - **Descrição:** botão antes de "Aula liberada" em `indice-aula-data.js`/`indice-aula-bloqueio.js`; só professor; abre o modal da 421.2.
 - **Critérios de Aceitação:** botão visível só ao professor, antes de "Aula liberada", em todo card.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-botao.js` (novo), `assets/js/indice-aula-data.js` (acrescenta o botão antes do "Aula liberada") e `assets/js/atividades-crud-modal.js` (carrega o script) · **Verificação:** `node --check` ok nos 3 JS; leitura do código (o botão só é montado em `adicionarBotaoEditarAula`, que é só do professor); o teste na tela só o usuário confirma (sem navegador).
 
 ### #421.2 — Modal: abrir, fechar e estrutura visual
 

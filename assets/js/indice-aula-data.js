@@ -335,6 +335,10 @@ function adicionarBotaoEditarAula(item) {
     const botao = criarElementoCardAula('button', 'btn aula-data-botao', TEXTO_BOTAO_EDITAR_AULA);
     botao.type = 'button';
     botao.addEventListener('click', () => abrirModalAulaCard(item, contexto));
+    // "📊 Progresso Atividades" (#421): antes de "Aula liberada" (indice-aula-progresso-botao.js).
+    if (typeof criarBotaoProgressoAtividades === 'function') {
+        acoes.append(criarBotaoProgressoAtividades(item));
+    }
     if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
     acoes.append(botao);
     // "🗑️ Excluir" (#253): só exclui a aula sem atividade vinculada (indice-aula-excluir-card.js).

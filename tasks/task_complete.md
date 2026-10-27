@@ -258,3 +258,4 @@
 | **#419-e5f92c47** | **Professor também vê só a quantidade mínima na prática** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [566-e5f92c47](etapas/ETAPA-566-e5f92c47-PROFESSOR-VE-SO-O-MINIMO.md) | — |
 | #420.1 | Estrutura da objetiva só com as questões visíveis · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 | Nenhuma | ✅ Concluído | — | [567-f6a03d58](etapas/ETAPA-567-f6a03d58-QUADRO-PROFESSOR-SO-VISIVEIS.md) | — |
 | **#420-f6a03d58** | **Quadro de progresso do professor (objetiva) só com as questões visíveis** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [567-f6a03d58](etapas/ETAPA-567-f6a03d58-QUADRO-PROFESSOR-SO-VISIVEIS.md) | — |
+| #421.1 | Botão "Progresso Atividades" no card (só professor) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |
