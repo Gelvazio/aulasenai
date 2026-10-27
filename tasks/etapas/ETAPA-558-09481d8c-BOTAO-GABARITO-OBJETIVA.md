@@ -35,6 +35,7 @@
 ### Decisões
 
 - 2026-10-27 (usuário): pediu a abertura da tarefa para corrigir o botão nas atividades objetivas.
+- 2026-10-27 (usuário, "Aprovo o plano da #411"): plano aprovado; execução pelo Sonnet nas subtarefas 411.1 e 411.2.
 - 2026-10-27 (Haiku, C52): níveis e modelos das subtarefas não foram escritos pela IA; quem classifica é o Jev.
 
 ### 411.1 — Gerador das objetivas grava o atributo
