@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #416-b3f60d85 — [Regra global: Objetiva e Prática mostram só a quantidade mínima do banco](etapas/ETAPA-563-b3f60d85-REGRA-GLOBAL-SO-QUANTIDADE-MINIMA.md) · 🔄 Em andamento · — (não reservável)
+  - #416.1 — Objetiva corta no mínimo por padrão e registrar a regra global · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+
 
 
 
