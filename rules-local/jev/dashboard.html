@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JEV // TELEMETRIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho__marca">
+      <h1 class="marca">JEV <span class="marca__separador">//</span> TELEMETRIA</h1>
+      <p class="cabecalho__fonte">Fonte: <span id="fonte-nome">--</span></p>
+    </div>
+
+    <div class="cabecalho__estado">
+      <div id="estado-conexao" class="estado-conexao estado-conexao--sem-conexao" role="status">
+        <span class="led" aria-hidden="true"></span>
+        <span class="texto">Sem conexão</span>
+      </div>
+      <p class="cabecalho__leitura">Última leitura: <span id="ultima-leitura">--:--:--</span></p>
+    </div>
+
+    <div class="cabecalho__controles">
+      <div id="filtros-periodo" class="filtros" role="group" aria-label="Período">
+        <button type="button" class="botao filtro filtro--ativo" data-periodo="hoje"
+          aria-pressed="true">Hoje</button>
+        <button type="button" class="botao filtro" data-periodo="24h"
+          aria-pressed="false">24h</button>
+        <button type="button" class="botao filtro" data-periodo="tudo"
+          aria-pressed="false">Tudo</button>
+      </div>
+      <button type="button" id="botao-pausar" class="botao">Pausar</button>
+      <button type="button" id="botao-conectar-pasta" class="botao botao--destaque"
+        hidden>Conectar pasta</button>
+    </div>
+  </header>
+
+  <main class="painel">
+    <p id="aviso-erro" class="aviso-erro" role="alert" hidden></p>
+
+    <section class="cartao-holo cartao-holo--largo" aria-labelledby="titulo-indicadores">
+      <h2 id="titulo-indicadores" class="cartao-holo__titulo">Indicadores</h2>
+      <div id="indicadores" class="indicadores"></div>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-rede">
+      <h2 id="titulo-rede" class="cartao-holo__titulo">Rede de nós</h2>
+      <svg id="rede-nos" class="grafico" viewBox="0 0 480 140" role="img"
+        aria-label="Fluxo entre gancho, API do Jev e decisão">
+        <line class="rede__linha" x1="90" y1="70" x2="240" y2="70"></line>
+        <line class="rede__linha" x1="240" y1="70" x2="390" y2="70"></line>
+        <line class="rede__linha rede__linha--curva" x1="90" y1="70" x2="390" y2="70"></line>
+        <g id="no-gancho" class="no">
+          <circle class="no__halo" cx="90" cy="70" r="26"></circle>
+          <circle class="no__centro" cx="90" cy="70" r="14"></circle>
+          <text class="no__rotulo" x="90" y="120" text-anchor="middle">GANCHO</text>
+        </g>
+        <g id="no-jev" class="no no--jev">
+          <circle class="no__halo" cx="240" cy="70" r="26"></circle>
+          <circle class="no__centro" cx="240" cy="70" r="14"></circle>
+          <text class="no__rotulo" x="240" y="120" text-anchor="middle">JEV API</text>
+        </g>
+        <g id="no-decisao" class="no no--decisao">
+          <circle class="no__halo" cx="390" cy="70" r="26"></circle>
+          <circle class="no__centro" cx="390" cy="70" r="14"></circle>
+          <text class="no__rotulo" x="390" y="120" text-anchor="middle">DECISÃO</text>
+        </g>
+      </svg>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-horas">
+      <h2 id="titulo-horas" class="cartao-holo__titulo">Chamadas por hora</h2>
+      <svg id="grafico-horas" class="grafico" viewBox="0 0 480 160" role="img"
+        aria-label="Chamadas por hora do dia"></svg>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-latencia">
+      <h2 id="titulo-latencia" class="cartao-holo__titulo">Latência (últimas 60)</h2>
+      <svg id="grafico-latencia" class="grafico" viewBox="0 0 480 160" role="img"
+        aria-label="Latência das últimas chamadas"></svg>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-nivel">
+      <h2 id="titulo-nivel" class="cartao-holo__titulo">Distribuição por nível</h2>
+      <div id="distribuicao-nivel" class="distribuicao"></div>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-decisao">
+      <h2 id="titulo-decisao" class="cartao-holo__titulo">Distribuição por decisão</h2>
+      <div id="distribuicao-decisao" class="distribuicao"></div>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-confianca">
+      <h2 id="titulo-confianca" class="cartao-holo__titulo">Histograma de confiança</h2>
+      <svg id="histograma-confianca" class="grafico" viewBox="0 0 480 120" role="img"
+        aria-label="Histograma de confiança de 0 a 1"></svg>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-term-chamadas">
+      <h2 id="titulo-term-chamadas" class="cartao-holo__titulo">Terminal // chamadas</h2>
+      <ul id="terminal-chamadas" class="terminal"></ul>
+    </section>
+
+    <section class="cartao-holo" aria-labelledby="titulo-term-mensagens">
+      <h2 id="titulo-term-mensagens" class="cartao-holo__titulo">Terminal // mensagens</h2>
+      <ul id="terminal-mensagens" class="terminal"></ul>
+    </section>
+
+    <section class="cartao-holo cartao-holo--largo" aria-labelledby="titulo-tarefas">
+      <h2 id="titulo-tarefas" class="cartao-holo__titulo">Tarefas por nível</h2>
+      <div id="colunas-cartoes" class="colunas-cartoes">
+        <section class="coluna-cartoes" data-nivel="A CLASSIFICAR">
+          <h3>A CLASSIFICAR</h3>
+          <span class="coluna-cartoes__contagem">0</span>
+          <div class="coluna-cartoes__lista"></div>
+        </section>
+        <section class="coluna-cartoes" data-nivel="LEVE">
+          <h3>LEVE</h3>
+          <span class="coluna-cartoes__contagem">0</span>
+          <div class="coluna-cartoes__lista"></div>
+        </section>
+        <section class="coluna-cartoes" data-nivel="MEDIO">
+          <h3>MEDIO</h3>
+          <span class="coluna-cartoes__contagem">0</span>
+          <div class="coluna-cartoes__lista"></div>
+        </section>
+        <section class="coluna-cartoes" data-nivel="PESADO">
+          <h3>PESADO</h3>
+          <span class="coluna-cartoes__contagem">0</span>
+          <div class="coluna-cartoes__lista"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="dashboard-dados.js"></script>
+  <script src="dashboard-fonte.js"></script>
+  <script src="dashboard-cartoes.js"></script>
+  <script src="dashboard-tela.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

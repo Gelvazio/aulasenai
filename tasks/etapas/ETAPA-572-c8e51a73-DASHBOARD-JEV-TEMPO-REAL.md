@@ -28,7 +28,7 @@
 
 ### #425.1 — Criar o dashboard do Jev (HTML, CSS e JS)
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -37,3 +37,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** `dashboard.html` abre no Live Server e mostra os indicadores e os terminais com as chamadas reais, atualizando sozinho.
+- **Entrega:** `rules-local/jev/dashboard.html`, `dashboard.css`, `dashboard-dados.js`, `dashboard-fonte.js`, `dashboard-tela.js`, `dashboard-cartoes.js` e `dashboard.js` (feitos em paralelo por 3 agentes executor-medio: HTML+CSS, tela, fonte+orquestração; dados e revisão pelo executor principal) · **Verificação:** `node --check` ok nos 5 JS; teste de fumaça em Node dos agregadores com os logs reais (617 chamadas, 809 mensagens, quadro com 56 subtarefas abertas por nível); conferência de que todos os ids usados pelo JS existem no HTML; sem `style`/`onclick` inline; o visual e o tempo real só o usuário confirma na tela (sem navegador): abrir `http://127.0.0.1:5501/rules-local/jev/dashboard.html` pelo Live Server.

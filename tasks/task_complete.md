@@ -266,3 +266,5 @@
 | #421.6 | Mensagens de carregamento e de erro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #421.5 | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |
 | #424.1 | Filtros por situação no quadro de progresso da aula · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [571-9b2d4f60](etapas/ETAPA-571-9b2d4f60-FILTROS-PROGRESSO-ATIVIDADES.md) | — |
 | **#424-9b2d4f60** | **Filtros Entregue, Andamento e Sem começar no modal "Progresso Atividades"** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [571-9b2d4f60](etapas/ETAPA-571-9b2d4f60-FILTROS-PROGRESSO-ATIVIDADES.md) | — |
+| #425.1 | Criar o dashboard do Jev (HTML, CSS e JS) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [572-c8e51a73](etapas/ETAPA-572-c8e51a73-DASHBOARD-JEV-TEMPO-REAL.md) | — |
+| **#425-c8e51a73** | **Dashboard em tempo real das chamadas do Jev (visual futurista)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [572-c8e51a73](etapas/ETAPA-572-c8e51a73-DASHBOARD-JEV-TEMPO-REAL.md) | — |
