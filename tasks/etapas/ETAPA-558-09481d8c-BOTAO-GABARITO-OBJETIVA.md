@@ -40,7 +40,7 @@
 
 ### 411.1 — Gerador das objetivas grava o atributo
 
-**Próximo passo:** aguardar o "sim" do usuário ao plano; depois localizar o ponto de montagem do `<body>` em `assets/gerador-atividades/`.
+**Próximo passo:** (entregue) — nada; segue a 411.2.
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.82))
 - **Modelo:** só Sonnet — nunca outro
@@ -49,7 +49,7 @@
 - **Fonte:** jev (confiança 0.82)
 - **Descrição:** o gerador grava `data-exportar-meu-gabarito="sim"` no `<body>` de toda página objetiva, como o gerador de discursivas já faz (`CAMPO_EXPORTAR_MEU_GABARITO` em `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`).
 - **Critérios de aceitação:** toda página objetiva gerada nova traz o atributo; nenhuma outra linha do gerador muda.
-- **Entrega:** — · **Verificação:** — (a preencher na entrega)
+- **Entrega:** `assets/gerador-atividades/template_atividade.html` (o `<body>` ganhou `data-exportar-meu-gabarito="sim"`; o `gerar_atividades.py` monta a página a partir desse template) · **Verificação:** `git diff` de 1 linha conferido pelo líder; `py_compile` do gerador ok; nenhuma página regerada.
 
 ### 411.2 — Páginas objetivas existentes recebem o atributo
 

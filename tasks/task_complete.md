@@ -231,3 +231,4 @@
 | #410.1 | Tabela `entrega_dinamica` com RLS + JWT · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #410.2 | Módulos base three.js (cena e ferramentas) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #410.1 | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #410.3 | Módulo da Aula 02: tela "ruim" e alvos do raio-x · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| #411.1 | Gerador das objetivas grava o atributo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [558-09481d8c](etapas/ETAPA-558-09481d8c-BOTAO-GABARITO-OBJETIVA.md) | — |
