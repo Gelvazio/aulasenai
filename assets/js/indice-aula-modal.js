@@ -21,6 +21,8 @@ const MSG_SEM_ATIVIDADES_AULA = 'Nenhuma atividade ligada a esta aula.';
 const MSG_ATIVIDADES_ERRO = '❌ Não foi possível carregar as atividades desta aula.';
 const MSG_EXCLUIR_ATIVIDADE = ' será EXCLUÍDA. O gabarito, as respostas e as entregas dos ' +
     'alunos dela também serão apagados. Continuar?';
+// O 1º campo da turma (Data da aula) entra logo depois deste campo da tabela aulas.
+const NOME_CAMPO_ANTES_DA_DATA_MODAL_AULA = 'sequencia';
 
 // Campos editáveis da tabela aulas: para incluir um campo novo, basta acrescentar aqui.
 const CAMPOS_MODAL_AULA = [
@@ -108,8 +110,19 @@ function criarCampoModalAula(definicao) {
 }
 
 /**
+ * Diz em que posição da lista de campos entra o 1º campo da turma (Data da aula).
+ * @returns {number} Posição logo após o campo de referência; fim da lista se ele não existir.
+ */
+function obterPosicaoCamposTurmaModalAula() {
+    const indice = CAMPOS_MODAL_AULA.findIndex(({ nome }) =>
+        nome === NOME_CAMPO_ANTES_DA_DATA_MODAL_AULA);
+    return indice === -1 ? CAMPOS_MODAL_AULA.length : indice + 1;
+}
+
+/**
  * Monta o formulário da aula: informações fixas e campos editáveis (os botões ficam na barra do
- * topo, montarBarraModalAula).
+ * topo, montarBarraModalAula). O 1º campo da turma (Data da aula) vai logo após Sequência; os
+ * demais campos da turma (Aula bloqueada) ficam no fim.
  * @returns {{formulario: HTMLFormElement, info: HTMLElement}}
  */
 function montarFormularioModalAula() {
@@ -118,7 +131,12 @@ function montarFormularioModalAula() {
     const info = criarElementoModalAula('p', 'aula-modal-info');
     const camposDaTurma = typeof criarCamposTurmaModalAula === 'function'
         ? criarCamposTurmaModalAula() : [];
-    formulario.append(info, ...CAMPOS_MODAL_AULA.map(criarCampoModalAula), ...camposDaTurma);
+    const campos = CAMPOS_MODAL_AULA.map(criarCampoModalAula);
+    const [campoDataTurma, ...demaisCamposTurma] = camposDaTurma;
+    if (campoDataTurma) {
+        campos.splice(obterPosicaoCamposTurmaModalAula(), 0, campoDataTurma);
+    }
+    formulario.append(info, ...campos, ...demaisCamposTurma);
     return { formulario, info };
 }
 

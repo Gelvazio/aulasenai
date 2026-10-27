@@ -13,4 +13,4 @@
 - **Nível:** LEVE — troca de ordem de campos, 1 arquivo
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** a data (`criarCamposTurmaModalAula()[0]`) vira o 6º campo; leitura e gravação não mudam (acham o campo pelo nome).
-- **Entrega:** (a preencher) · **Verificação:** (a preencher)
+- **Entrega:** `indice-aula-modal.js`: `obterPosicaoCamposTurmaModalAula` e `montarFormularioModalAula` inserem o campo Data da aula logo após Sequência; o bloqueio fica no fim (executor-leve, Haiku). · **Verificação:** diff conferido pelo líder; `node --check` OK; posição na grade só confirmável na tela (sem navegador).

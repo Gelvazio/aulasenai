@@ -218,3 +218,5 @@
 | #405.1 | Mostrar a data no card · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [552-5c7d2e91](etapas/ETAPA-552-5c7d2e91-DATA-DA-AULA-NO-CARD.md) | — |
 | #406 | Editar aula: Salvar verde e Cancelar vermelho | 🟡 Média | — | Nenhuma | ✅ Concluído | — | [553-6e8f3a12](etapas/ETAPA-553-6e8f3a12-SALVAR-VERDE-CANCELAR-VERMELHO.md) | — |
 | #406.1 | Cores dos botões do modal · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [553-6e8f3a12](etapas/ETAPA-553-6e8f3a12-SALVAR-VERDE-CANCELAR-VERMELHO.md) | — |
+| #407 | Editar aula: campo Data da aula no topo | 🟡 Média | — | Nenhuma | ✅ Concluído | — | [554-7a9b4c23](etapas/ETAPA-554-7a9b4c23-DATA-DA-AULA-NO-TOPO-DO-MODAL.md) | — |
+| #407.1 | Mover a data para depois de Sequência · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [554-7a9b4c23](etapas/ETAPA-554-7a9b4c23-DATA-DA-AULA-NO-TOPO-DO-MODAL.md) | — |
