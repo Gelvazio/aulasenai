@@ -240,3 +240,5 @@
 | #410.7 | Documentação da regra · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #410.8 | Conferência final · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | **#410-3d7a91c2** | **Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| #412.1 | Consultar as páginas de todos os botões do card · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [559-5b2e8f14](etapas/ETAPA-559-5b2e8f14-COR-VERDE-TODAS-ATIVIDADES.md) | — |
+| **#412-5b2e8f14** | **Botões de atividade entregue ficam verdes em todos os botões do card (objetiva e dinâmica)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [559-5b2e8f14](etapas/ETAPA-559-5b2e8f14-COR-VERDE-TODAS-ATIVIDADES.md) | — |

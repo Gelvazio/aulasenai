@@ -8,8 +8,6 @@
 
 
 
-- #412-5b2e8f14 — [Botões de atividade entregue ficam verdes em todos os botões do card (objetiva e dinâmica)](etapas/ETAPA-559-5b2e8f14-COR-VERDE-TODAS-ATIVIDADES.md) · 🔄 Em andamento (tarefa pequena) · — (não reservável)
-  - #412.1 — Consultar as páginas de todos os botões do card · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 17:10)
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

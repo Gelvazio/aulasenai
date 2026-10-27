@@ -212,6 +212,18 @@ function montarFiltroFeitas() {
 }
 
 /**
+ * Lista as páginas de TODOS os botões de atividade dos cards (prática, objetiva, dinâmica...),
+ * sem repetir, para o banco dizer o que o aluno respondeu e entregou em cada uma.
+ * @param {HTMLElement[]} cards - Cards do índice.
+ * @returns {string[]} Caminhos das páginas.
+ */
+function listarPaginasDosBotoesFeitas(cards) {
+    const paginas = cards.flatMap((card) =>
+        [...card.querySelectorAll(SELETOR_LINK_FEITAS)].map(obterPaginaDoLinkFeitas));
+    return [...new Set(paginas.filter(Boolean))];
+}
+
+/**
  * Inicia a marcação: só para aluno logado; falhas de rede não quebram o índice.
  */
 async function iniciarMarcacaoFeitas() {
@@ -221,7 +233,7 @@ async function iniciarMarcacaoFeitas() {
         const cards = [...document.querySelectorAll(SELETOR_CARD_FEITAS)];
         const caminhos = cards.map((card) =>
             obterPaginaDoLinkFeitas(card.querySelector(SELETOR_LINK_FEITAS)));
-        const estados = await buscarEstadosFeitas([...new Set(caminhos.filter(Boolean))]);
+        const estados = await buscarEstadosFeitas(listarPaginasDosBotoesFeitas(cards));
         cards.forEach((card, indice) => {
             marcarCardFeitas(card, estados.respondidas.has(caminhos[indice]));
             marcarLinksDoCard(card, estados);

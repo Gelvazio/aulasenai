@@ -31,7 +31,7 @@
 
 ### #412.1 — Consultar as páginas de todos os botões do card
 
-**Próximo passo:** em `iniciarMarcacaoFeitas`, juntar as páginas de todos os links de cada card antes de chamar `buscarEstadosFeitas`.
+**Próximo passo:** (entregue) — nada; o usuário confirma a cor na tela. Foi: juntar as páginas de todos os links de cada card antes de chamar `buscarEstadosFeitas`.
 
 - **Nível:** MEDIO — Jev (confiança 0,97)
 - **Modelo:** só Sonnet — nunca outro
@@ -39,4 +39,4 @@
 - **JEV-AI-SUGGESTION:** SIM
 - **Descrição:** hoje `caminhos` guarda só o primeiro botão de cada card e vai inteiro para `buscarEstadosFeitas`; criar `paginasDeTodosOsBotoes` com todos os botões, mantendo `caminhos` só para a marca "Fez Atividade?".
 - **Critérios de Aceitação:** botões objetiva e dinâmica recebem a classe `atividade--feita` quando entregues.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/indice-atividades-feitas.js` (nova `listarPaginasDosBotoesFeitas`; `iniciarMarcacaoFeitas` consulta o banco com as páginas de todos os botões) · **Verificação:** `node --check` ok; leitura do fluxo (`buscarEstadosFeitas` → `marcarLinksDoCard`); consulta ao banco simulando o aluno mostrou entregas visíveis para 168, 182, 190 e 191; a cor na tela só o usuário confirma (sem navegador).
