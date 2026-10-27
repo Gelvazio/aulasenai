@@ -9,6 +9,8 @@ const CAMPO_DATA_TURMA_MODAL_AULA = 'data_aula_turma';
 const CAMPO_BLOQUEIO_TURMA_MODAL_AULA = 'bloqueio_aula_turma';
 const SELETOR_COMBO_TURMA_MODAL_AULA = '.barra-turma-favorita__lista';
 const ROTULO_DATA_TURMA_MODAL_AULA = 'Data da aula';
+const CAMPO_DATA_ASSUNTO_TURMA_MODAL_AULA = 'data_assunto_turma';
+const ROTULO_DATA_ASSUNTO_TURMA_MODAL_AULA = 'Data do assunto';
 const ROTULO_BLOQUEIO_TURMA_MODAL_AULA = 'Aula bloqueada nesta turma';
 const TEXTO_SEM_TURMA_MODAL_AULA = ' (escolha uma turma no combo do índice)';
 const EVENTO_AULA_BLOQUEIO_MODAL_TURMA = 'aula-bloqueio-alterado';
@@ -41,6 +43,8 @@ function criarCampoTurmaModalAula({ nome, rotulo, tipo }) {
 function criarCamposTurmaModalAula() {
     return [
         { nome: CAMPO_DATA_TURMA_MODAL_AULA, rotulo: ROTULO_DATA_TURMA_MODAL_AULA, tipo: 'date' },
+        { nome: CAMPO_DATA_ASSUNTO_TURMA_MODAL_AULA, rotulo: ROTULO_DATA_ASSUNTO_TURMA_MODAL_AULA,
+            tipo: 'date' },
         { nome: CAMPO_BLOQUEIO_TURMA_MODAL_AULA, rotulo: ROTULO_BLOQUEIO_TURMA_MODAL_AULA,
             tipo: 'checkbox' },
     ].map(criarCampoTurmaModalAula);
@@ -79,13 +83,16 @@ function rotularCampoTurmaModalAula(controle, rotulo, turma) {
  */
 async function preencherCamposTurmaModalAula(formulario, aula) {
     const data = formulario.elements[CAMPO_DATA_TURMA_MODAL_AULA];
+    const dataAssunto = formulario.elements[CAMPO_DATA_ASSUNTO_TURMA_MODAL_AULA];
     const bloqueio = formulario.elements[CAMPO_BLOQUEIO_TURMA_MODAL_AULA];
     const turma = document.querySelector(SELETOR_COMBO_TURMA_MODAL_AULA)?.value || '';
     Object.assign(estadoModalAulaTurma, { turma, linha: null, bloqueada: false });
     rotularCampoTurmaModalAula(data, ROTULO_DATA_TURMA_MODAL_AULA, turma);
+    rotularCampoTurmaModalAula(dataAssunto, ROTULO_DATA_ASSUNTO_TURMA_MODAL_AULA, turma);
     rotularCampoTurmaModalAula(bloqueio, ROTULO_BLOQUEIO_TURMA_MODAL_AULA, turma);
     bloqueio.closest('label').hidden = !bloqueioAulaNoModalTurma(turma);
     data.value = '';
+    dataAssunto.value = '';
     bloqueio.checked = false;
     if (!turma) return;
 
@@ -93,6 +100,7 @@ async function preencherCamposTurmaModalAula(formulario, aula) {
         const linha = (await lerLinhasAulaTurma(turma)).get(aula.id) || null;
         Object.assign(estadoModalAulaTurma, { linha, bloqueada: linha?.bloqueio === true });
         data.value = linha?.data_aula || '';
+        dataAssunto.value = linha?.data_assunto || '';
         bloqueio.checked = estadoModalAulaTurma.bloqueada;
     } catch (erro) {
         console.warn('Data da aula na turma indisponível:', erro.message);
@@ -100,19 +108,30 @@ async function preencherCamposTurmaModalAula(formulario, aula) {
 }
 
 /**
- * Grava a data da aula na turma, se mudou.
+ * Diz se alguma das datas da turma mudou em relação à linha lida ao abrir o modal.
+ * @param {{data_aula: ?string, data_assunto: ?string}} datas - Datas do formulário.
+ * @returns {boolean} true se há o que gravar.
+ */
+function datasTurmaModalMudaram(datas) {
+    const linha = estadoModalAulaTurma.linha;
+    return (linha?.data_aula || null) !== datas.data_aula
+        || (linha?.data_assunto || null) !== datas.data_assunto;
+}
+
+/**
+ * Grava a data da aula e a data do assunto na turma, se mudaram.
  * @param {number} aulaId - Id da aula.
- * @param {string|null} dataAula - Data AAAA-MM-DD, ou null para limpar.
+ * @param {{data_aula: ?string, data_assunto: ?string}} datas - Datas AAAA-MM-DD, ou null.
  * @throws {Error} Se o banco recusar.
  */
-async function gravarDataTurmaModalAula(aulaId, dataAula) {
+async function gravarDatasTurmaModalAula(aulaId, datas) {
     const { turma, linha } = estadoModalAulaTurma;
-    if ((linha?.data_aula || null) === dataAula) return;
+    if (!datasTurmaModalMudaram(datas)) return;
 
     // Sem linha lida (modal salvo antes da leitura terminar), confere de novo para não duplicar.
     const existente = linha || (await lerLinhasAulaTurma(turma)).get(aulaId) || null;
     const gravada = await gravarLinhaAulaTurma({ aulaId, turmaCodigo: turma, existente },
-        { data_aula: dataAula });
+        { data_aula: datas.data_aula, data_assunto: datas.data_assunto });
     estadoModalAulaTurma.linha = gravada;
     if (typeof registrarLinhaAulaTurma === 'function') registrarLinhaAulaTurma(gravada);
 }
@@ -128,7 +147,10 @@ async function gravarCamposTurmaModalAula(formulario, aula) {
     if (!estadoModalAulaTurma.turma) return aula;
 
     const campos = formulario.elements;
-    await gravarDataTurmaModalAula(aula.id, campos[CAMPO_DATA_TURMA_MODAL_AULA].value || null);
+    await gravarDatasTurmaModalAula(aula.id, {
+        data_aula: campos[CAMPO_DATA_TURMA_MODAL_AULA].value || null,
+        data_assunto: campos[CAMPO_DATA_ASSUNTO_TURMA_MODAL_AULA].value || null,
+    });
     const vaiBloquear = campos[CAMPO_BLOQUEIO_TURMA_MODAL_AULA].checked;
     const mudouBloqueio = vaiBloquear !== estadoModalAulaTurma.bloqueada;
     if (!bloqueioAulaNoModalTurma(estadoModalAulaTurma.turma) || !mudouBloqueio) return aula;

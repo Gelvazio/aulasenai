@@ -37,4 +37,4 @@
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** 1 arquivo, sem banco, sem lógica nova de tela além de um campo igual ao de data da aula.
 - **Critérios de aceitação:** campo aparece ao lado de "Data da aula"; valor lido e gravado por turma; `node --check` ok.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-modal-turma.js` (commit desta entrega) · **Verificação:** `node --check` ok; função antiga `gravarDataTurmaModalAula` sem nenhuma chamada restante; conferência no navegador não feita (regra do projeto).

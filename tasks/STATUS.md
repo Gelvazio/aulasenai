@@ -5,8 +5,6 @@
 
 ## Tarefas
 
-- #408-9292a625 — [Campo "Data do assunto" no modal Editar aula](etapas/ETAPA-555-9292a625-DATA-DO-ASSUNTO-NO-MODAL.md) · ⬜ Pendente · — (não reservável)
-  - #408.1 — Campo "Data do assunto" no modal (ler e gravar por turma) · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5) (local · main) (desde 2026-10-27 10:44)
 
 
 

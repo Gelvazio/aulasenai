@@ -226,3 +226,5 @@
 | #403.3 | Mostrar "Data do assunto" no card · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #403.2 | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
 | #403.4 | Documentar em `docs/database.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
 | #403.5 | Commit e push da entrega · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #403.2, #403.3 | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| **#408-9292a625** | **Campo "Data do assunto" no modal Editar aula** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [555-9292a625](etapas/ETAPA-555-9292a625-DATA-DO-ASSUNTO-NO-MODAL.md) | — |
+| #408.1 | Campo "Data do assunto" no modal (ler e gravar por turma) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [555-9292a625](etapas/ETAPA-555-9292a625-DATA-DO-ASSUNTO-NO-MODAL.md) | — |
