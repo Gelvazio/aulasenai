@@ -27,7 +27,7 @@
 
 ### #420.1 — Estrutura da objetiva só com as questões visíveis
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** nenhum; subtarefa entregue.
 
 - **Nível:** LEVE — classificado (sinais)
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
@@ -36,3 +36,5 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** quadro do professor da 191 com 20 células por aluno e "x/20".
+- **Entrega:** `assets/js/progresso-turma-fontes.js` (seletor da estrutura ignora `questao--fora-do-minimo`); `assets/js/progresso-do-aluno.js` (função duplicada da #417 removida; usa a mesma leitura); `docs/regras/atividades.md` (nota #420).
+- **Verificação:** `node --check` nos dois JS: OK. Leitura do código: quadro do professor e do aluno leem a mesma estrutura, só com as visíveis. Tela só o usuário confere (sem navegador).

@@ -15,7 +15,8 @@
 
 const LINHAS_POR_PAGINA_PROGRESSO = 1000;
 const NOTA_TOTAL_DA_PROVA = 10;
-const SELETOR_QUESTAO_OBJETIVA_PROGRESSO = '.aula-card.questao';
+// Questões escondidas por passarem do mínimo do aluno (questoes-ate-minimo.js) não contam.
+const SELETOR_QUESTAO_OBJETIVA_PROGRESSO = '.aula-card.questao:not(.questao--fora-do-minimo)';
 const SELETOR_TOPICO_DISCURSIVA_PROGRESSO = '.topico-resposta';
 const TIPO_PROGRESSO_OBJETIVA = 'objetiva';
 const TIPO_PROGRESSO_DISCURSIVA = 'discursiva';

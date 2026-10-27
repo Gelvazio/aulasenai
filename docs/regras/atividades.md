@@ -514,6 +514,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - **Meu progresso só até o mínimo (2026-10-27, #417):** o quadro "📊 Meu progresso" do aluno
     (`progresso-do-aluno.js`) ignora as questões com `questao--fora-do-minimo`: só desenha e conta
     as que ele vê (ex.: "N de 20 questões respondidas").
+  - **Quadro do professor só com as visíveis (2026-10-27, #420):** `lerEstruturaObjetiva`
+    (`progresso-turma-fontes.js`) lê só as questões sem `questao--fora-do-minimo`; o quadro do
+    aluno e o do professor usam essa mesma leitura (ex.: "x/20" na atividade 191, não "x/50").
   - **Global (2026-10-27, #416):** a regra abaixo vale para **toda** objetiva, sem atributo; só
     `data-questoes-ate-minimo="nao"` desliga. A prática discursiva faz o mesmo (#415).
   - **Tela e PDF só até o mínimo (2026-10-14, #33):** na objetiva, a página mostra só as questões **1 até o

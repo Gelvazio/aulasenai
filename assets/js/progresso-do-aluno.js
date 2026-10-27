@@ -12,7 +12,6 @@ const CLASSE_MEU_PROGRESSO = 'progresso-turma';
 const CLASSE_MEU_PROGRESSO_AREA = 'meu-progresso';
 const PERFIL_PROFESSOR_MEU_PROGRESSO = 'PROFESSOR';
 const INTERVALO_MEU_PROGRESSO_MS = 5000;
-const CLASSE_FORA_DO_MINIMO_MEU_PROGRESSO = 'questao--fora-do-minimo';
 const ARQUIVO_FONTES_MEU_PROGRESSO = 'progresso-turma-fontes.js';
 const ARQUIVO_CSS_MEU_PROGRESSO = '../css/progresso-turma-global.css';
 const SELETOR_CABECALHO_MEU_PROGRESSO = '.container > header';
@@ -117,22 +116,6 @@ function desenharMeuProgresso(conteudo, medida) {
 }
 
 /**
- * Tira da estrutura as questões escondidas por passarem da quantidade mínima do aluno
- * (classe questao--fora-do-minimo, de questoes-ate-minimo.js): o quadro só conta o que ele vê.
- * @param {Map<number, number>} estrutura - Questão → partes, de toda a página.
- * @returns {Map<number, number>} Estrutura só com as questões visíveis.
- */
-function manterQuestoesVisiveisMeuProgresso(estrutura) {
-    const escondidas = new Set();
-    document.querySelectorAll('.' + CLASSE_FORA_DO_MINIMO_MEU_PROGRESSO).forEach((card) => {
-        const numero = Number((card.querySelector('.aula-badge')?.textContent.match(/\d+/) ||
-            [0])[0]);
-        if (numero) escondidas.add(numero);
-    });
-    return new Map([...estrutura].filter(([item]) => !escondidas.has(item)));
-}
-
-/**
  * Lê o aluno logado (sem login ou professor: null).
  * @returns {Promise<string|null>} Id do aluno logado.
  */
@@ -160,8 +143,7 @@ async function montarMeuProgresso(atividadeId, tipo) {
     if (!window.FONTES_PROGRESSO_TURMA) {
         await carregarScriptMeuProgresso(ARQUIVO_FONTES_MEU_PROGRESSO);
     }
-    const estrutura = manterQuestoesVisiveisMeuProgresso(
-        window.FONTES_PROGRESSO_TURMA[tipo].lerEstrutura());
+    const estrutura = window.FONTES_PROGRESSO_TURMA[tipo].lerEstrutura();
     if (!estrutura.size) return;
 
     const area = criarElementoMeuProgresso('section',
