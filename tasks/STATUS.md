@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #425-c8e51a73 — [Dashboard em tempo real das chamadas do Jev (visual futurista)](etapas/ETAPA-572-c8e51a73-DASHBOARD-JEV-TEMPO-REAL.md) · 🔄 Em andamento · — (não reservável)
-  - #425.1 — Criar o dashboard do Jev (HTML, CSS e JS) · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #425.1 — Criar o dashboard do Jev (HTML, CSS e JS) · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 21:10)
 
 
 
