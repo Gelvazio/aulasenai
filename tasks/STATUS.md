@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #424-9b2d4f60 — [Filtros Entregue, Andamento e Sem começar no modal "Progresso Atividades"](etapas/ETAPA-571-9b2d4f60-FILTROS-PROGRESSO-ATIVIDADES.md) · 🔄 Em andamento · — (não reservável)
+  - #424.1 — Filtros por situação no quadro de progresso da aula · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+
 
 
 
