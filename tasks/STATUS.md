@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #415-a7c41e90 — [Prática mostra ao aluno só as N primeiras questões (N = quantidade mínima)](etapas/ETAPA-562-a7c41e90-PRATICA-SO-AS-N-PRIMEIRAS.md) · 🔄 Em andamento · — (não reservável)
-  - #415.1 — Esconder do aluno as questões depois da N-ésima · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #415.1 — Esconder do aluno as questões depois da N-ésima · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:45)
 
 
 
@@ -27,7 +27,7 @@
   - #409.13 — Leitura complementar e referências · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.14 — Glossário · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.15 — Anexos e rodapé · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-  - #409.16 — Folha de estilo e layout para celular · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #409.16 — Folha de estilo e layout para celular · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:45)
   - #409.17 — Conferência do conteúdo (leitura) · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.18 — Commit, push e quadro · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
