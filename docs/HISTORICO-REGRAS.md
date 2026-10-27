@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-26 | **Opus como líder, nunca executor (pedido do usuário: "LIBERE O OPUS COMO LIDER, SEMPRE" e "E COMO EXECUTOR, NUNCA"):** `AGENTS.md` (regra 8) e `.claude/rules/niveis.md` passam a dizer que o Opus nunca executa subtarefa (nem `executor-pesado`) e pode ser líder sempre (reserva, delega, revisa e dispara Haiku/Sonnet). |
 | 2026-10-26 17:00 | **Ensalado por turma (tarefa #386, pedido do usuário):** a matéria passa a ser ensalada por turma (`turma_materia_ensalado`); na faixa o professor escolhe a turma antes de ligar/desligar o ON/OFF; `materia.ensalado` fica como legado. Regra: `.claude/rules/faixa-materias-ensalado.md`. |
 | 2026-10-26 15:00 | **Card "Notas e média" com botão ON/OFF de visibilidade (tarefas #383 e #384, pedido do usuário):** o professor liga/desliga, por turma, se o card aparece para os alunos; padrão OFF (sem linha = escondido); nova tabela `card_notas_visivel` (matéria × turma, RLS professor/aluno da turma). Regra em `.claude/rules/atividades-banco.md`; schema em `docs/database.md` |
 | 2026-10-26 12:00 | **Atividade Dinâmica (tarefas #381 e #382, pedido do usuário):** nova etapa de sala de aula por aula, com roteiro do professor, ficha, tempo e materiais, card 🎯 e nota do professor (tabela `nota_dinamica`, que entra na Média Final). Regra nova: `docs/regras/atividade-dinamica.md`; gerador `assets/gerador-atividade-dinamica/`; piloto nas aulas 01 a 03 de Fundamentos de UI/UX. |

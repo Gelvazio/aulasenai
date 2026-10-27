@@ -58,8 +58,10 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
      identifica como IA + modelo. ⛔ **NUNCA executar tarefa que não é do seu modelo** (2026-10-16,
      #247, C22): só o seu nível (coluna **Modelo**), nem acima nem abaixo, sem exceção
      ([`niveis.md`](.claude/rules/niveis.md)).
-   - ⛔ **NUNCA usar Opus neste projeto** (2026-10-24, pedido do usuário: projeto simples): nem
-     `executor-pesado`. `PESADO` fica com Sonnet; `LEVE` com Haiku.
+   - ⛔ **Opus nunca executa** subtarefa neste projeto (2026-10-24, pedido do usuário: projeto
+     simples): nem `executor-pesado`. `PESADO` fica com Sonnet; `LEVE` com Haiku.
+   - ✅ **Opus pode ser líder sempre** (2026-10-26, pedido do usuário: "LIBERE O OPUS COMO LIDER,
+     SEMPRE"): reserva, delega, revisa e dispara agentes Haiku/Sonnet, sem executar subtarefa.
 9. **Visualizador `.claude/rules/index.html` só com pedido explícito** (2026-10-22, #341, global
    C45): só é gerado quando o usuário pedir, e só no Claude Code local — nunca na nuvem, nunca
    por conta própria (fim de tarefa, reserva, regra mudada) ([`visualizador-regras.md`](.claude/rules/visualizador-regras.md)).

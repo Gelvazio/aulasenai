@@ -29,9 +29,12 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 | **Devin** / **Copilot** | ✅ | ✅ | ⛔ |
 
 - `PESADO` é do Claude Code com **Sonnet, Opus 5.5 ou superior, ou Fable** (C48, 2026-10-22).
-- ⛔ **NESTE PROJETO NUNCA USAR OPUS** (2026-10-24, pedido do usuário: "é projeto simples"): nem
-  como executor, nem como agente de equipe (`executor-pesado`), nem como líder. `PESADO` aqui é do
-  **Sonnet** (ou DeepSeek); `LEVE` do Haiku. Vale mais que a linha da tabela acima que cita Opus.
+- ⛔ **OPUS NUNCA EXECUTA** neste projeto (2026-10-24, pedido do usuário: "é projeto simples";
+  2026-10-26, pedido do usuário: "E COMO EXECUTOR, NUNCA"): nem executor, nem agente de equipe
+  (`executor-pesado`). `PESADO` aqui é do **Sonnet** (ou DeepSeek); `LEVE` do Haiku. Vale mais que
+  a linha da tabela acima que cita Opus.
+- ✅ **Opus pode ser líder sempre** (2026-10-26, pedido do usuário: "LIBERE O OPUS COMO LIDER,
+  SEMPRE"): reserva, delega, revisa e dispara agentes Haiku/Sonnet, sem executar subtarefa.
 - Banco continua **só do Claude Code local** (`multiplas-ias.md`).
 - A tabela é do usuário: mudança nela vai para o "Registro de decisões" do `tasks/STATUS.md`.
 
