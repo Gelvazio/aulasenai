@@ -6,6 +6,7 @@
 
 const RPC_NOTAS_ALUNO_CARD = 'notas_media_final';
 const RPC_NOTAS_PROFESSOR_CARD = 'notas_aluno_para_professor';
+const RPC_MEDIA_PERGUNTAS_CARD = 'media_perguntas_turma';
 const TABELA_CONFIG_CARD = 'media_atividade_config';
 const SITUACAO_AGUARDANDO_CARD = 'AGUARDANDO_CORRECAO';
 const PERFIL_PROFESSOR_CARD = 'PROFESSOR';
@@ -163,6 +164,27 @@ async function buscarNotasDoAlunoLogado(paginas) {
 async function buscarNotasParaProfessor(alunoId, paginas) {
     return chamarRpcNotasCard(RPC_NOTAS_PROFESSOR_CARD,
         { p_aluno: alunoId, p_paginas: paginas });
+}
+
+/**
+ * Média de perguntas respondidas por atividade entre os alunos de uma turma (só professor).
+ * @param {string} turma - Código da turma.
+ * @param {string[]} paginas - Caminhos das páginas de atividade.
+ * @returns {Promise<Map<string, {media: number, total: number}>>} Média e total por página.
+ * @throws {Error} Se não houver cliente ou o banco responder com erro.
+ */
+async function buscarMediaPerguntasTurma(turma, paginas) {
+    const cliente = obterClienteSupabase();
+    if (!cliente) throw new Error(MSG_SEM_CLIENTE_CARD);
+
+    const { data, error } = await cliente.rpc(RPC_MEDIA_PERGUNTAS_CARD,
+        { p_turma: turma, p_paginas: paginas });
+    if (error) throw new Error(error.message);
+
+    const mapa = new Map();
+    (data || []).forEach((linha) => mapa.set(linha.pagina,
+        { media: Number(linha.media), total: Number(linha.total) }));
+    return mapa;
 }
 
 /**

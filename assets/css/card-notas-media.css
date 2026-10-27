@@ -15,6 +15,7 @@
     gap: 12px;
 }
 .card-notas-media[hidden] { display: none; }
+.card-notas-media__combo[hidden] { display: none; }
 .card-notas-media__titulo { font-size: 18px; line-height: 1.3; color: var(--text); }
 .card-notas-media__selecao {
     display: flex;
@@ -142,6 +143,7 @@
 
 .card-notas-media__filtro {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
 }

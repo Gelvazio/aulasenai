@@ -16,3 +16,4 @@ GERADOR-AULAS/OFFICE FACIL/*.pdf
 
 # Configuração pessoal do Claude Code (permissões e preferências de cada máquina)
 .claude/settings.local.json
+node_modules/

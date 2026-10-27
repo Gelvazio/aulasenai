@@ -22,7 +22,21 @@ const OPCAO_ALUNO_NOTAS = 'Selecione o Aluno';
 const SUFIXO_LIDER_NOTAS = ' ⭐ líder';
 const SUFIXO_FORA_CHAMADA_NOTAS = ' (fora da chamada)';
 const COLUNAS_ALUNO_NOTAS = ['Aula', 'Atividade', 'Nota', 'Peso'];
-const COLUNAS_PROFESSOR_NOTAS = ['Aula', 'Atividade', 'Nota', ROTULO_INTERRUPTOR_NOTAS, 'Peso'];
+const ROTULO_PERGUNTAS_NOTAS = 'Média de perguntas respondidas (turma)';
+const COLUNAS_PROFESSOR_NOTAS = ['Aula', 'Atividade', 'Nota', ROTULO_PERGUNTAS_NOTAS,
+    ROTULO_INTERRUPTOR_NOTAS, 'Peso'];
+const CHAVE_SELECAO_NOTAS = 'card-notas-media:selecao';
+const CHAVE_FAIXA_PERGUNTAS_NOTAS = 'card-notas-media:faixa-perguntas';
+const ROTULO_FAIXA_PERGUNTAS_NOTAS = 'Perguntas respondidas';
+// Faixas em percentual: acima de "de" (exclusivo, exceto a primeira) até "ate" (inclusivo).
+const FAIXAS_PERGUNTAS_NOTAS = [
+    { valor: '', rotulo: 'Todas', de: -1, ate: 100 },
+    { valor: '0-10', rotulo: 'Até 10%', de: -1, ate: 10 },
+    { valor: '10-30', rotulo: '10 a 30%', de: 10, ate: 30 },
+    { valor: '30-50', rotulo: '30 a 50%', de: 30, ate: 50 },
+    { valor: '50-70', rotulo: '50 a 70%', de: 50, ate: 70 },
+    { valor: '70-100', rotulo: '70 a 100%', de: 70, ate: 100 },
+];
 const MSG_SEM_LOGIN_NOTAS = 'Entre com seu usuário (botão ENTRAR) para ver as suas notas.';
 const MSG_CARREGANDO_NOTAS = 'Carregando as notas...';
 const MSG_ERRO_NOTAS = 'Não foi possível carregar as notas. Tente novamente mais tarde.';
@@ -32,7 +46,7 @@ const MSG_SEM_ALUNOS_NOTAS = 'Nenhum aluno cadastrado nesta turma.';
 const MSG_SEM_TURMAS_NOTAS = 'Nenhuma turma disponível.';
 const CHAVE_FILTRO_NOTAS = 'card-notas-media:apenas-atividade-de-media';
 const ROTULO_FILTRO_NOTAS = 'Apenas atividade de média';
-const MSG_NENHUMA_NA_MEDIA_NOTAS = 'Nenhuma atividade conta na média.';
+const MSG_NENHUMA_NA_MEDIA_NOTAS = 'Nenhuma atividade para os filtros escolhidos.';
 const MSG_ERRO_GRAVAR_NOTAS = 'Não foi possível gravar a configuração: ';
 const ROTULO_LISTAR_TODOS_NOTAS = 'Listar todos';
 const ROTULO_CONFIRMAR_MEDIA_NOTAS = 'Confirmar Media Aluno';
@@ -44,6 +58,7 @@ const estadoNotas = {
     turmas: [], alunos: [], turma: '', alunoId: '', ehProfessor: false, usuarioId: '',
     elementos: null, temporizadores: new Map(), apenasNaMedia: false,
     listarTodos: false, mediaFinalizadas: new Set(), materiaId: null,
+    mediaPerguntas: new Map(), faixaPerguntas: '',
 };
 
 /**
@@ -280,7 +295,8 @@ function criarLinhaNotas(atividade) {
     linha.append(criarCelulaNotas(atividade.rotuloAula || ''),
         criarCelulaAtividadeNotas(atividade), celulaNota);
     if (estadoNotas.ehProfessor) {
-        linha.append(criarCelulaNotas(criarInterruptorNotas(atividade, linha)),
+        linha.append(criarCelulaNotas(textoPerguntasNotas(atividade.pagina)),
+            criarCelulaNotas(criarInterruptorNotas(atividade, linha)),
             criarCelulaNotas(criarCampoPesoNotas(atividade)));
         return linha;
     }
@@ -295,10 +311,48 @@ function criarLinhaNotas(atividade) {
  * @returns {{pagina: string}[]} Atividades a mostrar.
  */
 function listarAtividadesVisiveisNotas() {
-    if (!estadoNotas.apenasNaMedia) return estadoNotas.atividades;
+    return estadoNotas.atividades.filter((atividade) =>
+        (!estadoNotas.apenasNaMedia || lerConfiguracaoNotas(atividade.pagina).naMedia)
+        && passaFaixaPerguntasNotas(atividade.pagina));
+}
 
-    return estadoNotas.atividades
-        .filter((atividade) => lerConfiguracaoNotas(atividade.pagina).naMedia);
+/**
+ * Percentual de perguntas respondidas (média da turma / total) de uma atividade.
+ * @param {string} pagina - Caminho da página da atividade.
+ * @returns {number|null} Percentual de 0 a 100 ou null sem dados.
+ */
+function percentualPerguntasNotas(pagina) {
+    const dados = estadoNotas.mediaPerguntas.get(pagina);
+    if (!dados || !dados.total) return null;
+
+    return (dados.media / dados.total) * 100;
+}
+
+/**
+ * Texto da coluna de perguntas: "média/total (percentual)", ex.: 15/25 (60%).
+ * @param {string} pagina - Caminho da página da atividade.
+ * @returns {string} Texto da célula.
+ */
+function textoPerguntasNotas(pagina) {
+    const dados = estadoNotas.mediaPerguntas.get(pagina);
+    const percentual = percentualPerguntasNotas(pagina);
+    if (percentual === null) return TEXTO_SEM_NOTA_NOTAS;
+
+    const media = dados.media.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+    return media + '/' + dados.total + ' (' + Math.round(percentual) + '%)';
+}
+
+/**
+ * Diz se a atividade está na faixa de percentual escolhida (sem faixa, todas passam).
+ * @param {string} pagina - Caminho da página da atividade.
+ * @returns {boolean} true se deve aparecer na tabela.
+ */
+function passaFaixaPerguntasNotas(pagina) {
+    const faixa = FAIXAS_PERGUNTAS_NOTAS.find((item) => item.valor === estadoNotas.faixaPerguntas);
+    if (!faixa || faixa.valor === '' || !estadoNotas.ehProfessor) return true;
+
+    const percentual = percentualPerguntasNotas(pagina);
+    return percentual !== null && percentual > faixa.de && percentual <= faixa.ate;
 }
 
 /**
@@ -362,7 +416,55 @@ function montarFiltroNotas() {
         pintar();
         renderizarTabelaNotas();
     }));
-    filtro.replaceChildren(rotulo, botao);
+    filtro.replaceChildren(rotulo, botao, montarFiltroFaixaNotas());
+}
+
+/**
+ * Lê no localStorage a faixa de perguntas escolhida ("" se nenhuma ou inválida).
+ * @returns {string} Valor da faixa salva.
+ */
+function lerFaixaSalvaNotas() {
+    try {
+        const valor = localStorage.getItem(CHAVE_FAIXA_PERGUNTAS_NOTAS) || '';
+        return FAIXAS_PERGUNTAS_NOTAS.some((faixa) => faixa.valor === valor) ? valor : '';
+    } catch (erro) {
+        return '';
+    }
+}
+
+/**
+ * Guarda no localStorage a faixa de perguntas escolhida.
+ * @param {string} valor - Valor da faixa.
+ */
+function salvarFaixaNotas(valor) {
+    try {
+        localStorage.setItem(CHAVE_FAIXA_PERGUNTAS_NOTAS, valor);
+    } catch (erro) {
+        console.warn('Faixa não salva no navegador:', erro.message);
+    }
+}
+
+/**
+ * Monta o combo da faixa de perguntas respondidas (só aparece para o professor).
+ * @returns {HTMLLabelElement} Rótulo com o combo, oculto até o perfil professor.
+ */
+function montarFiltroFaixaNotas() {
+    const etiqueta = criarElementoNotas('label', PREFIXO_NOTAS + 'combo',
+        ROTULO_FAIXA_PERGUNTAS_NOTAS + ' ');
+    etiqueta.hidden = true;
+    const lista = document.createElement('select');
+    FAIXAS_PERGUNTAS_NOTAS.forEach((faixa) =>
+        lista.add(new Option(faixa.rotulo, faixa.valor)));
+    estadoNotas.faixaPerguntas = lerFaixaSalvaNotas();
+    lista.value = estadoNotas.faixaPerguntas;
+    lista.addEventListener('change', () => {
+        estadoNotas.faixaPerguntas = lista.value;
+        salvarFaixaNotas(lista.value);
+        renderizarTabelaNotas();
+    });
+    estadoNotas.elementos.faixa = etiqueta;
+    etiqueta.append(lista);
+    return etiqueta;
 }
 
 /**
@@ -405,6 +507,23 @@ async function carregarConfiguracaoNotas(turma) {
         });
     } catch (erro) {
         console.warn('Configuração da média indisponível (assume ON/peso 1):', erro.message);
+    }
+}
+
+/**
+ * Lê a média de perguntas respondidas da turma; em falha, a coluna mostra "—".
+ * @param {string} turma - Código da turma.
+ */
+async function carregarMediaPerguntasNotas(turma) {
+    estadoNotas.mediaPerguntas = new Map();
+    if (!turma) return;
+
+    try {
+        const paginas = estadoNotas.atividades.map((atividade) => atividade.pagina);
+        const mapa = await buscarMediaPerguntasTurma(turma, paginas);
+        if (estadoNotas.turma === turma) estadoNotas.mediaPerguntas = mapa;
+    } catch (erro) {
+        console.warn('Média de perguntas indisponível:', erro.message);
     }
 }
 
@@ -493,6 +612,7 @@ async function trocarTurmaNotas(listaAluno, codigo) {
 
     estadoNotas.alunos = alunos;
     await carregarConfiguracaoNotas(codigo);
+    await carregarMediaPerguntasNotas(codigo);
     if (estadoNotas.turma !== codigo) return;
 
     preencherComboAlunosNotas(listaAluno);
@@ -612,9 +732,50 @@ function criarInterruptorConfirmarMediaNotas(listaAluno) {
 }
 
 /**
- * Monta os combos Turma e Aluno do professor, começando na turma favorita.
+ * Lê no localStorage a turma e o aluno escolhidos da última vez.
+ * @returns {{turma: string, aluno: string}} Seleção salva (textos vazios se não houver).
+ */
+function lerSelecaoSalvaNotas() {
+    try {
+        const salvo = JSON.parse(localStorage.getItem(CHAVE_SELECAO_NOTAS));
+        return { turma: String(salvo?.turma || ''), aluno: String(salvo?.aluno || '') };
+    } catch (erro) {
+        return { turma: '', aluno: '' };
+    }
+}
+
+/**
+ * Guarda no localStorage a turma e o aluno escolhidos (sem falhar se o navegador bloquear).
+ * @param {string} turma - Código da turma.
+ * @param {string} aluno - Id do aluno ("" = nenhum).
+ */
+function salvarSelecaoNotas(turma, aluno) {
+    try {
+        localStorage.setItem(CHAVE_SELECAO_NOTAS, JSON.stringify({ turma, aluno }));
+    } catch (erro) {
+        console.warn('Seleção não salva no navegador:', erro.message);
+    }
+}
+
+/**
+ * Reaplica o aluno salvo, se ele ainda estiver no combo da turma atual.
+ * @param {HTMLSelectElement} listaAluno - Combo de alunos.
+ * @param {string} alunoSalvo - Id do aluno salvo.
+ */
+async function restaurarAlunoSalvoNotas(listaAluno, alunoSalvo) {
+    const existe = alunoSalvo
+        && [...listaAluno.options].some((opcao) => opcao.value === alunoSalvo);
+    if (!existe) return;
+
+    listaAluno.value = alunoSalvo;
+    await escolherAlunoNotas(alunoSalvo);
+}
+
+/**
+ * Monta os combos Turma e Aluno do professor, começando na turma salva ou na favorita.
  */
 async function montarSelecaoProfessorNotas() {
+    estadoNotas.elementos.faixa.hidden = false;
     await carregarMediasDaMateriaNotas();
     estadoNotas.turmas = await listarTurmasCard(estadoNotas.materiaId);
     if (!estadoNotas.turmas.length) {
@@ -626,17 +787,27 @@ async function montarSelecaoProfessorNotas() {
     const comboAluno = criarComboNotas('Aluno');
     estadoNotas.turmas.forEach((turma) => comboTurma.lista.add(new Option(
         rotuloTurmaNotas(turma), turma.codigo)));
-    comboTurma.lista.addEventListener('change', () =>
-        trocarTurmaNotas(comboAluno.lista, comboTurma.lista.value));
-    comboAluno.lista.addEventListener('change', () => escolherAlunoNotas(comboAluno.lista.value));
+    comboTurma.lista.addEventListener('change', () => {
+        salvarSelecaoNotas(comboTurma.lista.value, '');
+        trocarTurmaNotas(comboAluno.lista, comboTurma.lista.value);
+    });
+    comboAluno.lista.addEventListener('change', () => {
+        salvarSelecaoNotas(comboTurma.lista.value, comboAluno.lista.value);
+        escolherAlunoNotas(comboAluno.lista.value);
+    });
     const { selecao } = estadoNotas.elementos;
     selecao.replaceChildren(comboTurma.etiqueta, comboAluno.etiqueta,
         criarInterruptorListarTodosNotas(comboAluno.lista),
         criarInterruptorConfirmarMediaNotas(comboAluno.lista));
     selecao.hidden = false;
-    const inicial = estadoNotas.turmas.find((turma) => turma.favorito) || estadoNotas.turmas[0];
+    const salva = lerSelecaoSalvaNotas();
+    const inicial = estadoNotas.turmas.find((turma) => turma.codigo === salva.turma)
+        || estadoNotas.turmas.find((turma) => turma.favorito) || estadoNotas.turmas[0];
     comboTurma.lista.value = inicial.codigo;
     await trocarTurmaNotas(comboAluno.lista, inicial.codigo);
+    if (inicial.codigo === salva.turma) {
+        await restaurarAlunoSalvoNotas(comboAluno.lista, salva.aluno);
+    }
 }
 
 /**
