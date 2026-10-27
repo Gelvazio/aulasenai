@@ -150,23 +150,15 @@ function criarBotaoVisibilidadeNotas() {
 }
 
 /**
- * Professor: mostra o botão e o pinta conforme a turma escolhida (padrão OFF).
+ * Professor: mostra o botão e o pinta conforme a preferência salva no navegador (padrão OFF).
+ * O valor do banco não entra aqui: ele não pode sobrescrever o estado visual do professor
+ * (que já foi aplicado na montagem do card); o clique no botão é que grava no banco.
  * Chamado a cada troca de turma.
- * @returns {Promise<void>}
  */
-async function atualizarVisibilidadeNotas() {
-    const turma = estadoNotas.turma;
+function atualizarVisibilidadeNotas() {
     const botao = criarBotaoVisibilidadeNotas();
-    estadoVisibilidadeCard.visivel = false;
-    pintarInterruptorNotas(botao, false);
-    botao.disabled = true;
-    try {
-        const visivel = await lerVisibilidadeCard(estadoNotas.materiaId, turma);
-        if (estadoNotas.turma === turma) estadoVisibilidadeCard.visivel = visivel;
-    } catch (erro) {
-        console.warn('Visibilidade do card indisponível:', erro.message);
-    }
+    estadoVisibilidadeCard.visivel = lerPreferenciaMostrarNotas();
     pintarInterruptorNotas(botao, estadoVisibilidadeCard.visivel);
     aplicarVisibilidadeCorpoNotas(estadoVisibilidadeCard.visivel);
-    botao.disabled = !estadoNotas.materiaId || !turma;
+    botao.disabled = !estadoNotas.materiaId || !estadoNotas.turma;
 }
