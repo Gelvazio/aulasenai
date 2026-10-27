@@ -12,8 +12,7 @@
   - #411.1 — Gerador das objetivas grava o atributo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet (a classificar pelo Jev)
   - #411.2 — Páginas objetivas existentes recebem o atributo · ⬜ Pendente (depende da #411.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek (a classificar pelo Jev)
 - #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 🔄 Em andamento (plano aprovado) · — (não reservável)
-  - #410.3 — Módulo da Aula 02: tela "ruim" e alvos do raio-x · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:40)
-  - #410.4 — Repositório da entrega e painel do professor · ⬜ Pendente (depende da #410.1) · `PESADO · effort high` · só Sonnet
+  - #410.4 — Repositório da entrega e painel do professor · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:41)
   - #410.5 — Gerador: modo `digital-3d` e página da Aula 02 · ⬜ Pendente (depende da #410.2 a #410.4) · `PESADO · effort high` · só Sonnet
   - #410.6 — Skill `atividade-dinamica-3d` · ⬜ Pendente (depende da #410.5) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #410.7 — Documentação da regra · ⬜ Pendente (depende da #410.5) · `PESADO · effort high` · só Sonnet

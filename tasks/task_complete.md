@@ -230,3 +230,4 @@
 | #408.1 | Campo "Data do assunto" no modal (ler e gravar por turma) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [555-9292a625](etapas/ETAPA-555-9292a625-DATA-DO-ASSUNTO-NO-MODAL.md) | — |
 | #410.1 | Tabela `entrega_dinamica` com RLS + JWT · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #410.2 | Módulos base three.js (cena e ferramentas) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #410.1 | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| #410.3 | Módulo da Aula 02: tela "ruim" e alvos do raio-x · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |

@@ -72,7 +72,7 @@
 
 ### #410.3 — Módulo da Aula 02: tela de agendamento "ruim" e alvos do raio-x
 
-**Próximo passo:** criar `assets/js/dinamica-3d-aula-02.js` descrevendo os blocos (topo, formulário, botão Confirmar 20×20 cinza, rodapé).
+**Próximo passo:** (entregue) — criar `assets/js/dinamica-3d-aula-02.js` descrevendo os blocos (topo, formulário, botão Confirmar 20×20 cinza, rodapé).
 
 - **Nível:** MEDIO — Jev (código com lógica; confiança 0,66)
 - **Modelo:** só Sonnet — nunca outro
@@ -80,7 +80,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** dados da tela e dos alvos, sem empresa fictícia (aluno consultor); checklist do aluno consultor ao final.
 - **Critérios de Aceitação:** só dados; usa os módulos da .2; `node --check` ok.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/dinamica-3d-aula-02.js` (tela de agendamento com 11 elementos, ficha de 4 campos, checklist de 3 itens e instruções das 3 etapas) · **Verificação:** `node --check` ok; linhas ≤ 100 colunas; sem gabarito nos dados; sem empresa fictícia (aluno consultor).
 
 ### #410.4 — Repositório da entrega e painel do professor
 
