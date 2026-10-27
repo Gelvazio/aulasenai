@@ -61,7 +61,7 @@
 
 ### #421.3 — Ler os alunos da turma, sem os que faltaram
 
-**Próximo passo:** depois da 421.2; classificar pelo Jev.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -70,7 +70,7 @@
 - **Fonte:** sinais
 - **Descrição:** ler os alunos da turma escolhida, excluindo os marcados como "Faltou" (mesma fonte do quadro de progresso); RLS e JWT do professor.
 - **Critérios de Aceitação:** aluno com falta não aparece; lista em ordem alfabética.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-alunos.js` (novo; `lerAlunosPresentesDaTurma({ dias })`) e `assets/js/atividades-crud-modal.js` (carrega o script) · **Verificação:** `node --check` ok; leitura do código: turma do combo `.barra-turma-favorita__lista`; alunos de `turmaaluno` sem desistentes; exclui quem tem linha em `falta_aluno` nos dias das atividades (mesma tabela e regra do "Faltou?"); RLS do professor; só leitura, sem ler gabarito; teste na tela só o usuário.
 
 ### #421.4 — Ler as atividades da aula e a entrega de cada aluno
 
