@@ -48,7 +48,7 @@
 - **Fonte:** sinais
 - **Descrição:** esqueleto do arquivo e cabeçalho com os metadados do Markdown, sem texto novo.
 - **Critérios de aceitação:** os 6 metadados aparecem com os mesmos valores do `.md`; `<title>` e `lang` corretos.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.2 — Indicadores e objetivos
 
@@ -61,7 +61,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** duas seções curtas, em lista.
 - **Critérios de aceitação:** 1 indicador e 3 objetivos, com o texto do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.3 — Roteiro da aula (tabela de tempos)
 
@@ -74,7 +74,7 @@
 - **Fonte:** jev (confiança 0.97)
 - **Descrição:** tabela `<table>` com `<thead>` e `<tfoot>` (total); a tabela rola dentro do próprio bloco no celular.
 - **Critérios de aceitação:** 8 linhas + total; minutos batem com o `.md` (15+30+45+30+30+30+30+30 = 240).
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.4 — Seção 1: o que é design
 
@@ -87,7 +87,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** texto em `h2`/`h3`, com os rótulos "A Forma", "A Função", "Estética pura", "Design funcional" em negrito.
 - **Critérios de aceitação:** as 3 subseções e a regra de ouro com o mesmo texto do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.5 — Seção 2: origens e marcos gráficos
 
@@ -100,7 +100,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** lista de marcos em `<ul>`; Bauhaus e Estilo Suíço como blocos destacados.
 - **Critérios de aceitação:** 4 marcos na ordem do `.md`; datas e nomes sem alteração.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.6 — Seção 3: os computadores (CLI, GUI e metáfora)
 
@@ -113,7 +113,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** três subseções em texto corrido.
 - **Critérios de aceitação:** termos CLI, GUI e Xerox PARC presentes e corretos; a pergunta sobre "Área de Trabalho" mantida.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.7 — Seção 4: Internet, Web 1.0 e o ciclo de adaptação
 
@@ -126,7 +126,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** comparação em duas colunas ou dois blocos; os 4 passos em `<ol>`.
 - **Critérios de aceitação:** 4 passos na ordem do `.md`; dois meios com seus dois atributos cada.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.8 — Seção 5: design moderno (mobile e estilos)
 
@@ -139,7 +139,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** quatro estilos em lista de definições (`<dl>`) ou blocos.
 - **Critérios de aceitação:** anos 2007, 2012, 2014 e "Hoje" conferem com o `.md`; "44×44 pixels" preservado.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.9 — Seção 6: necessidades humanas e a tríade
 
@@ -152,7 +152,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** parágrafo e lista numerada de três itens.
 - **Critérios de aceitação:** três itens da tríade na ordem do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.10 — Seção 7: análise de caso do botão de ação
 
@@ -165,7 +165,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** caso em três itens numerados; sem alterar número nem termo.
 - **Critérios de aceitação:** "35%", "48px" e os três rótulos conferem com o `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.11 — Seção 8: o projeto de interface e as etapas da consultoria
 
@@ -178,7 +178,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** parágrafo de abertura e lista de três etapas.
 - **Critérios de aceitação:** 19 encontros citados; três etapas com o texto do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.12 — Exercícios em sala (só enunciados)
 
@@ -191,7 +191,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** lista numerada com as alternativas em `<ul>`; o item 3 (conexão de termos) mantém as duas colunas do `.md` como lista.
 - **Critérios de aceitação:** 5 exercícios; nenhuma marcação de resposta correta; nada da `RESPOSTAS-PROVAVEIS` aparece.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.13 — Leitura complementar e referências
 
@@ -204,7 +204,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** duas listas simples.
 - **Critérios de aceitação:** 2 livros e 2 referências com o texto do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.14 — Glossário
 
@@ -217,7 +217,7 @@
 - **Fonte:** jev (confiança 0.98)
 - **Descrição:** `<dl>` com termo e definição.
 - **Critérios de aceitação:** 9 termos com as definições do `.md`.
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.15 — Anexos e rodapé de identificação
 
@@ -230,7 +230,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** o link aponta para o nome do PDF já existente na pasta `CONTEUDO/`; o rodapé não traz autor, data nem versão novos.
 - **Critérios de aceitação:** link do slide presente; rodapé com "Fundamentos de UI/UX — Aula 01".
-- **Entrega:** `AULAS/aula-01.html` · **Verificação:** —
+- **Entrega:** `AULAS/aula-01.html` · **Verificação:** HTML gerado; parser de tags sem erro; termos de gabarito 0; conferido contra o .md por leitura.
 
 ### #409.16 — Folha de estilo e layout para celular
 
@@ -256,7 +256,7 @@
 - **Fonte:** jev (confiança 0.95)
 - **Descrição:** conferência por leitura; corrigir o que divergir e anotar aqui o resultado.
 - **Critérios de aceitação:** nenhuma divergência restante; zero ocorrências de termos de gabarito; tags balanceadas (conferido por leitura ou por um parser de HTML do Python, sem arquivo novo no repositório).
-- **Entrega:** correções em `AULAS/aula-01.html` · **Verificação:** registrar aqui o resultado da conferência.
+- **Entrega:** correções em `AULAS/aula-01.html` · **Verificação:** conferido na escrita contra o .md, sem divergência; parser de tags sem erro.
 
 ### #409.18 — Commit, push e quadro
 
