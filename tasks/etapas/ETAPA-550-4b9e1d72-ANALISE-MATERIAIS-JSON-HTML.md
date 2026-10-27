@@ -30,6 +30,12 @@
 ### Decisões
 
 - 2026-10-26 (Claude Code Haiku 5.5): tarefa grande (gerador novo, várias partes). Plano nesta etapa; execução só após **"sim" claro do usuário** (regra `ciclo-da-task.md`).
+- 2026-10-26 (#401.2, Haiku 5.5): esquema do `analises/analise-materiais.json`, só metadados (sem conteúdo de arquivo):
+  - `geradoEm` (ISO 8601 com fuso de Brasília) · `pastaBase` (`"MATERIAIS"`) · `totalArquivos` (inteiro)
+  - `porTipo`: tipo → quantidade, ordenado do maior para o menor
+  - `porPasta`: pasta de primeiro nível → `{ "total": n, "porTipo": { tipo: n } }`
+  - `arquivos`: lista de `{ "caminho": "CURSO/.../arquivo.ext", "pasta": "...", "tipo": "ext", "tamanhoBytes": n ou null, "modificadoEm": "ISO 8601" }`
+  - Regra: `totalArquivos` = soma de `porTipo` = soma de `porPasta.total` = tamanho de `arquivos`.
 - 2026-10-26 (#401.1, Haiku 5.5): inventário de MATERIAIS. 2086 arquivos. Extensões: md 1045 · html 323 · svg 99 · json 99 · js 94 · png 85 · pdf 84 · docx 70 · py 42 · pptx 25 · gif 24 · txt 22 · jpg 20 · jpeg 14 · css 7 · xlsx 6 · csv 1 · bat 1. Há também arquivos sem extensão útil (ex.: `nul`, `.gitignore`, `.prettierrc`), que caem em `(sem extensão)` ou no tipo pelo nome; a regra de tipo fica para 401.5. Pastas de primeiro nível: AGENDA_COLABORADOR, ASSISTENTE-DE-OPERACOES-LOGISTICAS, CURSO-PROFESSOR-RAFAEL, GESTAO_E_CONTROLE_MATERIAIS, OPERADOR_PRODUCAO_INDUSTRIAL, QUALIFICACAO-PROFISSIONAL, RIO_DO_SUL_MAIS_TECH, TECNICO-INFORMATICA-INTERNET. Observação: `find` mostra um arquivo chamado `nul` dentro de TECNICO-INFORMATICA-INTERNET (nome reservado do Windows, sem conteúdo útil).
 - 2026-10-26 (usuário): aprovou o plano desta etapa ("Sim, aprovo o plano da #401"). Execução fica para uma frente com nível MEDIO/PESADO (Haiku não pega essas subtarefas).
 
@@ -63,7 +69,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** definir `geradoEm`, `totalArquivos`, `porTipo` (tipo → quantidade), `porPasta` (pasta → quantidade e tipos), `arquivos` (caminho relativo, tipo, tamanho em bytes, data de modificação).
 - **Critérios de aceitação:** esquema escrito aqui; nenhum campo com conteúdo de arquivo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** esquema fixado em Decisões (2026-10-26, #401.2) · **Verificação:** esquema lido de volta: só metadados (caminho, pasta, tipo, tamanho, data); nenhum campo com conteúdo de arquivo.
 
 ### #401.3 — Constantes do script (pasta de entrada, pasta de saída, ignorados)
 

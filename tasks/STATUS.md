@@ -6,7 +6,6 @@
 ## Tarefas
 
 - #401-4b9e1d72 — [Análise da pasta MATERIAIS em JSON e painel HTML futurista](etapas/ETAPA-550-4b9e1d72-ANALISE-MATERIAIS-JSON-HTML.md) · ⬜ Pendente (aprovada em 2026-10-26; aguarda frente Sonnet) · — (não reservável)
-  - #401.2 — Fixar o esquema do JSON de saída · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5) (local · main) (desde 2026-10-26)
   - #401.3 — Constantes do script · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #401.4 — Função de varredura recursiva · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
   - #401.5 — Função de classificação por tipo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
