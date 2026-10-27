@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #417-c9d27a14 — [Meu progresso do aluno mostra só as questões até o mínimo](etapas/ETAPA-564-c9d27a14-MEU-PROGRESSO-SO-MINIMO.md) · 🔄 Em andamento · — (não reservável)
-  - #417.1 — Meu progresso só com as questões visíveis · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #417.1 — Meu progresso só com as questões visíveis · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 16:45)
 
 
 
