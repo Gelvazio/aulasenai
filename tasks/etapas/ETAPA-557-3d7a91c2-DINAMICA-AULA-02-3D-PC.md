@@ -37,11 +37,12 @@
 
 - 2026-10-27 (usuário): versão para o PC **substitui o papel** e fica no lugar da atividade id 212, usando three.js.
 - 2026-10-27 (usuário): guardar o método como **skill** chamada ao criar atividades dinâmicas.
-- 2026-10-27 (Sonnet, C52): níveis e modelos das subtarefas não foram escritos pela IA; ficam `a classificar pelo Jev`.
+- 2026-10-27 (Sonnet, C52): níveis e modelos das subtarefas não foram escritos pela IA; o Jev classificou (sinais acima). Opus nunca executa neste projeto: `PESADO` fica com Sonnet; `LEVE` com Haiku.
+- 2026-10-27 (usuário): "sim, execute o plano da #410" — plano aprovado.
 
 ### Aprovação
 
-- 👀 Tarefa grande (banco + estrutura nova): aguardando o "sim" do usuário ao plano acima.
+- ✅ Tarefa grande (banco + estrutura nova): plano aprovado pelo usuário em 2026-10-27 ("sim, execute o plano da #410").
 
 ---
 
@@ -49,7 +50,10 @@
 
 **Próximo passo:** escrever `database/` o SQL (tabela, índice único por atividade + usuário, RLS: aluno lê e grava a própria; professor lê as da turma) e aplicar.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** PESADO — Jev (banco 0,99, segredo 0,95; confiança 1,00)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** colunas `id`, `atividade_id`, `usuario_id`, `estado` (jsonb), `entregue` (boolean), `entregue_em`, `atualizado_em`. Sem gabarito.
 - **Critérios de Aceitação:** `CREATE TABLE IF NOT EXISTS`, RLS ligado, políticas com `DROP POLICY IF EXISTS`; consulta confirma a tabela; registro em `docs/database.md`.
 - **Entrega:** — · **Verificação:** —
@@ -58,7 +62,10 @@
 
 **Próximo passo:** criar `assets/js/dinamica-3d-cena.js`, `dinamica-3d-ferramentas.js` e `assets/css/dinamica-3d.css`.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** MEDIO — Jev (código com lógica; confiança 0,35, vale a matriz)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** cena ortográfica sobre a "tela", seleção por raycaster, ferramentas retângulo/círculo/triângulo, mover, redimensionar, cor, preenchimento × contorno, raio de canto; operação por mouse **e** botões (toque).
 - **Critérios de Aceitação:** `node --check` ok; módulos sem dados da aula; funções ≤ 45 linhas; JSDoc.
 - **Entrega:** — · **Verificação:** —
@@ -67,7 +74,10 @@
 
 **Próximo passo:** criar `assets/js/dinamica-3d-aula-02.js` descrevendo os blocos (topo, formulário, botão Confirmar 20×20 cinza, rodapé).
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** MEDIO — Jev (código com lógica; confiança 0,66)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** dados da tela e dos alvos, sem empresa fictícia (aluno consultor); checklist do aluno consultor ao final.
 - **Critérios de Aceitação:** só dados; usa os módulos da .2; `node --check` ok.
 - **Entrega:** — · **Verificação:** —
@@ -76,7 +86,10 @@
 
 **Próximo passo:** criar `assets/js/entrega-dinamica-repositorio.js` (salvar rascunho, entregar, ler) e a lista de entregas no `nota-dinamica-professor.js`.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** PESADO — Jev (JWT/segredo 0,95; confiança 0,94)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** JWT do usuário logado em toda chamada; aluno entrega uma vez; professor vê a ficha e a captura da cena de cada aluno.
 - **Critérios de Aceitação:** sem `service_role`; `node --check` ok; depende da .1.
 - **Entrega:** — · **Verificação:** —
@@ -85,7 +98,10 @@
 
 **Próximo passo:** ler `leitor_dinamica.py`/`gerar_atividade_dinamica.py` e acrescentar o modo; atualizar o `.md`; regerar o HTML.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** PESADO — Jev (mais de 3 arquivos 0,65; confiança 0,92)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** `Modo: digital-3d` gera a página com o contêiner da cena, CDN do three.js (versão fixa) e os scripts da .2, .3 e .4; padrão (sem o campo) continua em papel.
 - **Critérios de Aceitação:** `py_compile` ok; página regerada traz a cena; nota e bloqueio inalterados.
 - **Entrega:** — · **Verificação:** —
@@ -94,7 +110,10 @@
 
 **Próximo passo:** criar `.claude/skills/atividade-dinamica-3d/SKILL.md` e listar em `.claude/rules/claude-code.md`.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** LEVE — Jev (só .md; confiança 0,89)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** quando usar, formato do `.md` com `Modo: digital-3d`, como escrever o módulo da aula, banco, ordem de entrega, o que nunca fazer (gabarito, navegador, testes).
 - **Critérios de Aceitação:** frontmatter `name`/`description`; ≤ 5 KB de regra; aponta para o gerador e os módulos.
 - **Entrega:** — · **Verificação:** —
@@ -103,7 +122,10 @@
 
 **Próximo passo:** atualizar `docs/regras/atividade-dinamica.md` e `docs/database.md`.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** PESADO — Jev (banco 0,50 (docs/database.md); confiança 0,62, sobe o nível)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** modo digital, tabela `entrega_dinamica`, onde ficam os módulos.
 - **Critérios de Aceitação:** leitura confere com o que foi feito.
 - **Entrega:** — · **Verificação:** —
@@ -112,7 +134,10 @@
 
 **Próximo passo:** `node --check` e `py_compile`; consulta ao banco (tabela, RLS, atividade 212 bloqueada); limites de tamanho.
 
-- **Nível:** a classificar pelo Jev
+- **Nível:** PESADO — Jev (banco 0,81; confiança 1,00)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** conferir tudo sem navegador e avisar o usuário o que só a tela confirma.
 - **Critérios de Aceitação:** todas as subtarefas ✅; mãe fecha.
 - **Entrega:** — · **Verificação:** —

@@ -8,15 +8,15 @@
 
 
 
-- #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 👀 Aguardando o usuário (tarefa grande: plano na etapa, falta o "sim") · — (não reservável)
-  - #410.1 — Tabela `entrega_dinamica` com RLS + JWT · ⬜ Pendente · nível a classificar pelo Jev
-  - #410.2 — Módulos base three.js (cena e ferramentas) · ⬜ Pendente (depende da #410.1 só para entregar) · nível a classificar pelo Jev
-  - #410.3 — Módulo da Aula 02: tela "ruim" e alvos do raio-x · ⬜ Pendente (depende da #410.2) · nível a classificar pelo Jev
-  - #410.4 — Repositório da entrega e painel do professor · ⬜ Pendente (depende da #410.1) · nível a classificar pelo Jev
-  - #410.5 — Gerador: modo `digital-3d` e página da Aula 02 · ⬜ Pendente (depende da #410.2 a #410.4) · nível a classificar pelo Jev
-  - #410.6 — Skill `atividade-dinamica-3d` · ⬜ Pendente (depende da #410.5) · nível a classificar pelo Jev
-  - #410.7 — Documentação da regra · ⬜ Pendente (depende da #410.5) · nível a classificar pelo Jev
-  - #410.8 — Conferência final · ⬜ Pendente (depende das anteriores) · nível a classificar pelo Jev
+- #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 🔄 Em andamento (plano aprovado) · — (não reservável)
+  - #410.1 — Tabela `entrega_dinamica` com RLS + JWT · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:50)
+  - #410.2 — Módulos base three.js (cena e ferramentas) · ⬜ Pendente (depende da #410.1 só para entregar) · `MEDIO · effort medium` · só Sonnet
+  - #410.3 — Módulo da Aula 02: tela "ruim" e alvos do raio-x · ⬜ Pendente (depende da #410.2) · `MEDIO · effort medium` · só Sonnet
+  - #410.4 — Repositório da entrega e painel do professor · ⬜ Pendente (depende da #410.1) · `PESADO · effort high` · só Sonnet
+  - #410.5 — Gerador: modo `digital-3d` e página da Aula 02 · ⬜ Pendente (depende da #410.2 a #410.4) · `PESADO · effort high` · só Sonnet
+  - #410.6 — Skill `atividade-dinamica-3d` · ⬜ Pendente (depende da #410.5) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #410.7 — Documentação da regra · ⬜ Pendente (depende da #410.5) · `PESADO · effort high` · só Sonnet
+  - #410.8 — Conferência final · ⬜ Pendente (depende das anteriores) · `PESADO · effort high` · só Sonnet
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
