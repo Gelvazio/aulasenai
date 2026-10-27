@@ -30,6 +30,7 @@
 ### Decisões
 
 - 2026-10-26 (Claude Code Haiku 5.5): tarefa grande (gerador novo, várias partes). Plano nesta etapa; execução só após **"sim" claro do usuário** (regra `ciclo-da-task.md`).
+- 2026-10-26 (#401.1, Haiku 5.5): inventário de MATERIAIS. 2086 arquivos. Extensões: md 1045 · html 323 · svg 99 · json 99 · js 94 · png 85 · pdf 84 · docx 70 · py 42 · pptx 25 · gif 24 · txt 22 · jpg 20 · jpeg 14 · css 7 · xlsx 6 · csv 1 · bat 1. Há também arquivos sem extensão útil (ex.: `nul`, `.gitignore`, `.prettierrc`), que caem em `(sem extensão)` ou no tipo pelo nome; a regra de tipo fica para 401.5. Pastas de primeiro nível: AGENDA_COLABORADOR, ASSISTENTE-DE-OPERACOES-LOGISTICAS, CURSO-PROFESSOR-RAFAEL, GESTAO_E_CONTROLE_MATERIAIS, OPERADOR_PRODUCAO_INDUSTRIAL, QUALIFICACAO-PROFISSIONAL, RIO_DO_SUL_MAIS_TECH, TECNICO-INFORMATICA-INTERNET. Observação: `find` mostra um arquivo chamado `nul` dentro de TECNICO-INFORMATICA-INTERNET (nome reservado do Windows, sem conteúdo útil).
 - 2026-10-26 (usuário): aprovou o plano desta etapa ("Sim, aprovo o plano da #401"). Execução fica para uma frente com nível MEDIO/PESADO (Haiku não pega essas subtarefas).
 
 ### Aprovação
@@ -49,7 +50,7 @@
 - **Fonte:** jev (confiança 0.95)
 - **Descrição:** conferir quais extensões existem e quais pastas têm arquivos, para fixar a lista de tipos.
 - **Critérios de aceitação:** lista de extensões e de pastas anotada na seção da etapa (Decisões).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** inventário anotado em Decisões (2026-10-26) · **Verificação:** `find MATERIAIS -type f | wc -l` = 2086 arquivos; soma das extensões conferida pela contagem (`sort | uniq -c`); 8 pastas de primeiro nível listadas. Nenhum arquivo aberto.
 
 ### #401.2 — Fixar o esquema do JSON de saída
 
