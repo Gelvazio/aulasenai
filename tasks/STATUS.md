@@ -7,8 +7,8 @@
 
 - #402-36e9dc49 — [Clone de MATERIAIS sem HTML (matéria de teste: FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO)](etapas/ETAPA-551-36e9dc49-MATERIAIS-SEM-HTML.md) · ⬜ Pendente · — (não reservável)
   - #402.1 — Registrar a etapa e a mãe no quadro · 🔄 Em execução · nível a classificar pelo Jev
-  - #402.2 — Copiar a matéria sem `*.html` para MATERIAIS-SEM-HTML · ⬜ Pendente (depende da #402.1) · nível a classificar pelo Jev
-  - #402.3 — Criar `assets/js/` vazia com `.gitkeep` · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #402.2 — Copiar a matéria sem `*.html` para MATERIAIS-SEM-HTML · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (executor-medio; líder Haiku 5.5) (local · main) (desde 2026-10-26 23:10)
+  - #402.3 — Criar `assets/js/` vazia com `.gitkeep` · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5) (local · main) (desde 2026-10-26 23:10)
   - #402.4 — Incluir `MATERIAIS-SEM-HTML/` no `.vercelignore` · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #402.5 — Conferir a contagem e os caminhos · ⬜ Pendente (depende da #402.2) · nível a classificar pelo Jev
   - #402.6 — Commit e push da entrega · ⬜ Pendente (depende da #402.5) · nível a classificar pelo Jev
