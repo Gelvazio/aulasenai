@@ -8,6 +8,25 @@
 
 
 
+- #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · ⬜ Pendente · — (não reservável)
+  - #409.1 — Cabeçalho e metadados da aula · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.2 — Indicadores e objetivos · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.3 — Roteiro da aula (tabela de tempos) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.4 — Seção 1: o que é design · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.5 — Seção 2: origens e marcos gráficos · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.6 — Seção 3: computadores (CLI, GUI, metáfora) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.7 — Seção 4: Web 1.0 e ciclo de adaptação · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.8 — Seção 5: design moderno (mobile e estilos) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.9 — Seção 6: necessidades humanas e tríade · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.10 — Seção 7: análise de caso do botão · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.11 — Seção 8: projeto de interface e etapas · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.12 — Exercícios em sala (só enunciados) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.13 — Leitura complementar e referências · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.14 — Glossário · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.15 — Anexos e rodapé · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.16 — Folha de estilo e layout para celular · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #409.17 — Conferência do conteúdo (leitura) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #409.18 — Commit, push e quadro · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 
