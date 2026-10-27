@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #416-b3f60d85 — [Regra global: Objetiva e Prática mostram só a quantidade mínima do banco](etapas/ETAPA-563-b3f60d85-REGRA-GLOBAL-SO-QUANTIDADE-MINIMA.md) · 🔄 Em andamento · — (não reservável)
-  - #416.1 — Objetiva corta no mínimo por padrão e registrar a regra global · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #416.1 — Objetiva corta no mínimo por padrão e registrar a regra global · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 16:15)
 
 
 
@@ -29,7 +29,7 @@
   - #409.15 — Anexos e rodapé · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.16 — Folha de estilo e layout para celular · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:45)
   - #409.17 — Conferência do conteúdo (leitura) · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-  - #409.18 — Commit, push e quadro · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #409.18 — Commit, push e quadro · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 16:15)
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 
