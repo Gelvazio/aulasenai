@@ -8,6 +8,15 @@
 
 
 
+- #421-daafb3cb — [Botão "Progresso Atividades" no card da aula (índice)](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) · ⬜ Pendente · — (não reservável)
+  - #421.1 — Botão "Progresso Atividades" no card (só professor) · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #421.2 — Modal: abrir, fechar e estrutura visual · ⬜ Pendente (depende da #421.1) · `MEDIO · effort medium` · só Sonnet
+  - #421.3 — Ler alunos da turma, sem os que faltaram · ⬜ Pendente (depende da #421.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #421.4 — Ler atividades da aula e entrega de cada aluno · ⬜ Pendente (depende da #421.2) · `MEDIO · effort medium` · só Sonnet
+  - #421.5 — Quadro alunos × atividades · ⬜ Pendente (depende das #421.3 e #421.4) · `MEDIO · effort medium` · só Sonnet
+  - #421.6 — Mensagens de carregamento e de erro · ⬜ Pendente (depende da #421.5) · `MEDIO · effort medium` · só Sonnet
+  - #421.7 — Documentação em docs/ · ⬜ Pendente (depende da #421.6) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #421.8 — Verificação · ⬜ Pendente (depende da #421.7) · `MEDIO · effort medium` · só Sonnet
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
