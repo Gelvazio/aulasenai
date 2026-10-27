@@ -6,9 +6,6 @@
 ## Tarefas
 
 
-- #406-6e8f3a12 — [Editar aula: Salvar verde à esquerda e Cancelar vermelho à direita](etapas/ETAPA-553-6e8f3a12-SALVAR-VERDE-CANCELAR-VERMELHO.md) · 🔄 Em progresso · — (não reservável)
-  - #406.1 — Cores dos botões do modal · 🔄 Em execução · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash (Claude Code (Haiku 5.5 · executor-leve; frente Sonnet 5.5) (local · main) (desde 2026-10-27 07:30))
-
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 

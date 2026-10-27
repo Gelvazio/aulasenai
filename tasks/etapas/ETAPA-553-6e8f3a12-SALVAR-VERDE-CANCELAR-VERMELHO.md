@@ -13,4 +13,4 @@
 - **Nível:** LEVE — só cores em CSS, 1 arquivo
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** `.aula-modal-cancelar` vermelho (`#c53030`); Salvar (`.crud-btn--principal` dentro de `.aula-modal-grade`) verde (`#2f855a`); só nesta grade.
-- **Entrega:** (a preencher) · **Verificação:** (a preencher)
+- **Entrega:** `indice-aula-data.css`: `--aula-cancelar-fundo` #c53030, `--aula-salvar-fundo` #2f855a e regra do Salvar na grade (executor-leve, Haiku). A ordem Salvar à esquerda e Cancelar à direita já existia. · **Verificação:** diff conferido pelo líder; conferir na tela (sem navegador).

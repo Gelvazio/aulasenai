@@ -7,7 +7,8 @@
     --aula-data-botao-borda: #667eea;
     --aula-fechar-fundo: #c53030;
     --aula-fechar-texto: #ffffff;
-    --aula-cancelar-fundo: #2f855a;
+    --aula-cancelar-fundo: #c53030;
+    --aula-salvar-fundo: #2f855a;
     --aula-salvar-altura: 52px;
     --aula-salvar-fonte: 17px;
     --aula-espaco-linhas-botoes: 24px;
@@ -106,6 +107,13 @@
 .crud-btn.aula-modal-cancelar {
     background: var(--aula-cancelar-fundo);
     border-color: var(--aula-cancelar-fundo);
+    color: var(--aula-fechar-texto);
+}
+
+/* Botão Salvar da grade do "Editar aula" em verde (#406); só dentro da grade do modal. */
+.aula-modal-grade .crud-btn.crud-btn--principal {
+    background: var(--aula-salvar-fundo);
+    border-color: var(--aula-salvar-fundo);
     color: var(--aula-fechar-texto);
 }
 
