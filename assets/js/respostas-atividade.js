@@ -36,7 +36,7 @@ const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
 const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
 const ARQUIVO_MEU_PROGRESSO_OBJETIVA = 'progresso-do-aluno.js';
 const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
-const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
+const VALOR_DESLIGADO_QUESTOES_ATE_MINIMO_PAGINA = 'nao';
 const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
 const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
 const ROTULO_INSTRUCOES_OBJETIVA = 'INSTRUÇÕES';
@@ -710,15 +710,15 @@ async function abrirRespostasDoAlunoProfessor(estado, identificacao, atividadeId
 }
 
 /**
- * Mostra só as questões 1 até o mínimo quando a página pede (body data-questoes-ate-minimo="sim";
- * assets/js/questoes-ate-minimo.js). Sem login ou com falha ao carregar, mostra todas.
+ * Mostra só as questões 1 até o mínimo do banco, sempre (regra global #416; só body
+ * data-questoes-ate-minimo="nao" desliga; assets/js/questoes-ate-minimo.js). Sem login ou com falha ao carregar, mostra todas.
  * @param {Object} estado - Estado da página (minimo).
  * @param {Object} carregado - Dados do provedor (logado, ehProfessor, atividadeId).
  */
 async function mostrarSoAteOMinimo(estado, carregado) {
-    const estaAtivo = document.body.dataset.questoesAteMinimo ===
-        VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA;
-    if (!estaAtivo || !carregado.logado) return;
+    const estaDesligado = document.body.dataset.questoesAteMinimo ===
+        VALOR_DESLIGADO_QUESTOES_ATE_MINIMO_PAGINA;
+    if (estaDesligado || !carregado.logado) return;
     try {
         if (typeof window.iniciarQuestoesAteMinimo !== 'function') {
             await carregarScript(ARQUIVO_QUESTOES_ATE_MINIMO);

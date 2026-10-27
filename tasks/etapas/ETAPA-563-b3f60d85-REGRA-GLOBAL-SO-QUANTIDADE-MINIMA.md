@@ -27,7 +27,7 @@
 
 ### #416.1 — Objetiva corta no mínimo por padrão e registrar a regra global
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (objetiva 191 com mínimo 20 mostra só 20).
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -36,3 +36,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** objetiva sem atributo mostra só as questões 1 até o mínimo do aluno no banco; professor vê todas; regra global escrita.
+- **Entrega:** `assets/js/questoes-ate-minimo.js` e `assets/js/respostas-atividade.js` (ligam por padrão; "nao" desliga), `.claude/rules/atividades-banco.md` e `docs/regras/atividades.md` (regra global) · **Verificação:** `node --check` ok nos dois JS; leitura do código; nenhuma referência à constante antiga; o teste na tela só o usuário confirma (sem navegador).

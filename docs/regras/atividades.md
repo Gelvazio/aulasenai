@@ -503,8 +503,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     mostra o resumo e a tabela dos alunos, e o botão **"Quantidade Mínima de Questões"** grava o
     mínimo informado **só para quem ainda está com o total** (quem tem mínimo próprio não muda).
     A nota continua seguindo o mínimo de cada aluno. `assets/js/calculo-nota-progresso.js` + CSS.
-  - **Tela e PDF só até o mínimo (2026-10-14, #33):** na objetiva com
-    `data-questoes-ate-minimo="sim"` no `<body>`, a página mostra só as questões **1 até o
+  - **Global (2026-10-27, #416):** a regra abaixo vale para **toda** objetiva, sem atributo; só
+    `data-questoes-ate-minimo="nao"` desliga. A prática discursiva faz o mesmo (#415).
+  - **Tela e PDF só até o mínimo (2026-10-14, #33):** na objetiva, a página mostra só as questões **1 até o
     mínimo** e o "Exportar PDF (atividade completa)" leva só essas (total e gabarito também).
     Aluno: o mínimo dele; professor: muda na hora ao aplicar no Cálculo Nota e, ao abrir, usa o
     mínimo mais usado da atividade. `assets/js/questoes-ate-minimo.js` (+ `atividade.js` e

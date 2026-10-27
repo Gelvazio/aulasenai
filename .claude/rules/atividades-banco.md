@@ -9,6 +9,16 @@ que ainda não foi feita. **Até a migração terminar, vale o jeito atual** des
 `docs/regras/atividades.md` (páginas e fontes por aula). ⛔ Não criar página nova por aula fora do
 plano da #25.
 
+## Aluno vê só a quantidade mínima do banco (2026-10-27, #415/#416, pedido do usuário) — GLOBAL
+
+- ✅ **Objetiva e Prática, sempre, em todas as matérias:** o aluno vê só as questões 1 até a quantidade
+  mínima dele, lida do banco (`minimo_questoes_para_entregar`: `minimo_questoes_aluno`, senão o
+  padrão da atividade, senão o total). Dinâmico por aula (atividade) e por aluno/turma.
+- ✅ Liga **sozinho**, sem atributo por página; só `data-questoes-ate-minimo="nao"` (objetiva)
+  desliga. O professor continua vendo todas. Código: `questoes-ate-minimo.js` (objetiva) e
+  `limite-questoes-discursiva.js` (prática).
+- ⛔ Nunca fixar o número no código nem no HTML: o limite vem sempre do banco.
+
 ## Tela = espelho do banco (2026-10-26, #387/#388, pedido do usuário) — vale para TODAS as matérias
 
 - ✅ As perguntas/itens que aparecem na **tela** são **sempre um espelho** do que está no banco

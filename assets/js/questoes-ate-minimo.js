@@ -8,7 +8,7 @@
 // Carregado por assets/js/respostas-atividade.js. Depende de js/supabase.js (sbGet).
 // Regra: docs/regras/atividades.md
 
-const VALOR_ATIVO_QUESTOES_ATE_MINIMO = 'sim';
+const VALOR_DESLIGADO_QUESTOES_ATE_MINIMO = 'nao';
 const CLASSE_FORA_DO_MINIMO = 'questao--fora-do-minimo';
 const SELETOR_QUESTOES_ATE_MINIMO = '.aula-card.questao';
 const SELETOR_AVISO_EXPORTACAO_MINIMO = '.export-bar small';
@@ -16,11 +16,12 @@ const EVENTO_MINIMO_APLICADO = 'minimo-questoes-aplicado';
 const TABELA_MINIMO_ATE_MINIMO = 'minimo_questoes_aluno';
 
 /**
- * Diz se a página pediu para mostrar só as questões até o mínimo.
- * @returns {boolean} true com data-questoes-ate-minimo="sim" no <body>.
+ * Diz se a página mostra só as questões até o mínimo: sempre, em toda objetiva (regra global,
+ * #416); só data-questoes-ate-minimo="nao" no <body> desliga.
+ * @returns {boolean} false só quando a página desligou com "nao".
  */
 function estaAtivoQuestoesAteMinimo() {
-    return document.body?.dataset.questoesAteMinimo === VALOR_ATIVO_QUESTOES_ATE_MINIMO;
+    return document.body?.dataset.questoesAteMinimo !== VALOR_DESLIGADO_QUESTOES_ATE_MINIMO;
 }
 
 /**
