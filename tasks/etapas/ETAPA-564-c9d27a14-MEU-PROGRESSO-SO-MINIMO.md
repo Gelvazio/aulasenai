@@ -25,7 +25,7 @@
 
 ### #417.1 — Meu progresso só com as questões visíveis
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (objetiva 191 mostra 20 células e "de 20").
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -34,3 +34,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** objetiva com mínimo 20 de 50 mostra 20 células e "N de 20 questões respondidas".
+- **Entrega:** `assets/js/progresso-do-aluno.js` (`manterQuestoesVisiveisMeuProgresso`) e `docs/regras/atividades.md` · **Verificação:** `node --check` ok; leitura do código (o quadro é montado depois de `mostrarSoAteOMinimo`); o teste na tela só o usuário confirma (sem navegador).
