@@ -29,6 +29,7 @@
 ### Decisões
 
 - 2026-10-27 (Haiku, C52): nível e modelo de cada subtarefa classificados pelo Jev; a IA não escreveu nível.
+- 2026-10-27 (Sonnet 5.5): o usuário mandou "faca a tarefa 421" no chat — vale como aprovação do plano; o Sonnet executa as subtarefas MEDIO e PESADO, uma por vez; a 421.7 (LEVE) fica para o Haiku.
 
 ---
 
