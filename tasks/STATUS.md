@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #418-d4e81b36 — [Objetiva conta só as questões visíveis na folha e nos avisos](etapas/ETAPA-565-d4e81b36-OBJETIVA-TEXTOS-SO-VISIVEIS.md) · 🔄 Em andamento · — (não reservável)
+  - #418.1 — Folha e avisos da objetiva só com as questões visíveis · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+
 
 
 
