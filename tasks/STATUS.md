@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #415-a7c41e90 — [Prática mostra ao aluno só as N primeiras questões (N = quantidade mínima)](etapas/ETAPA-562-a7c41e90-PRATICA-SO-AS-N-PRIMEIRAS.md) · 🔄 Em andamento · — (não reservável)
+  - #415.1 — Esconder do aluno as questões depois da N-ésima · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+
 
 
 
