@@ -84,7 +84,7 @@
 
 ### #410.4 — Repositório da entrega e painel do professor
 
-**Próximo passo:** criar `assets/js/entrega-dinamica-repositorio.js` (salvar rascunho, entregar, ler) e a lista de entregas no `nota-dinamica-professor.js`.
+**Próximo passo:** (entregue) — criar `assets/js/entrega-dinamica-repositorio.js` (salvar rascunho, entregar, ler) e a lista de entregas no `nota-dinamica-professor.js`.
 
 - **Nível:** PESADO — Jev (JWT/segredo 0,95; confiança 0,94)
 - **Modelo:** só Sonnet — nunca outro
@@ -92,7 +92,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** JWT do usuário logado em toda chamada; aluno entrega uma vez; professor vê a ficha e a captura da cena de cada aluno.
 - **Critérios de Aceitação:** sem `service_role`; `node --check` ok; depende da .1.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/entrega-dinamica-repositorio.js`, `assets/js/dinamica-3d-pagina.js`, `assets/js/entrega-dinamica-professor.js` (feito por agente executor-medio, conferido pelo líder), registro de dados por aula no `dinamica-3d-controle.js`, CSS da lista de entregas · **Verificação:** `node --check` ok em todos; linhas ≤ 100 colunas e funções ≤ 45 linhas (script); JWT do usuário em toda chamada (sbH), sem `service_role`; aluno entrega uma vez (RLS bloqueia update após entregar).
 
 ### #410.5 — Gerador: modo `digital-3d`, `.md` e página da Aula 02
 

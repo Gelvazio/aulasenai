@@ -135,3 +135,17 @@
 @media (max-width: 720px) {
     .dinamica3d__area { grid-template-columns: 1fr; }
 }
+
+.dinamica3d__entregas-lista { margin: 8px 0; padding: 0; list-style: none; }
+
+.dinamica3d__entrega {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--dinamica3d-borda);
+}
+
+.dinamica3d-visualizacao { margin-top: 12px; }

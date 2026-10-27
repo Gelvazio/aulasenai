@@ -11,8 +11,7 @@
 - #411-09481d8c — [Botão "Exportar Meu Gabarito" nas atividades objetivas (não aparece para o aluno)](etapas/ETAPA-558-09481d8c-BOTAO-GABARITO-OBJETIVA.md) · ⬜ Pendente (plano aprovado; aguarda Sonnet) · — (não reservável)
   - #411.2 — Páginas objetivas existentes recebem o atributo · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5 · agente executor-pesado; líder Sonnet 5.5) (local · main · 411) (desde 2026-10-27 14:45)
 - #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 🔄 Em andamento (plano aprovado) · — (não reservável)
-  - #410.4 — Repositório da entrega e painel do professor · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:41)
-  - #410.5 — Gerador: modo `digital-3d` e página da Aula 02 · ⬜ Pendente (depende da #410.2 a #410.4) · `PESADO · effort high` · só Sonnet
+  - #410.5 — Gerador: modo `digital-3d` e página da Aula 02 · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:45)
   - #410.6 — Skill `atividade-dinamica-3d` · ⬜ Pendente (depende da #410.5) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #410.7 — Documentação da regra · ⬜ Pendente (depende da #410.5) · `PESADO · effort high` · só Sonnet
   - #410.8 — Conferência final · ⬜ Pendente (depende das anteriores) · `PESADO · effort high` · só Sonnet

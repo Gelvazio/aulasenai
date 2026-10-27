@@ -40,7 +40,7 @@ function montarInterface3d(partes) {
     let atualizarPainel = () => {};
     const aoMudar = () => {
         atualizarPainel();
-        mostrarStatus3d(refs, MSG_ALTERADO_3D);
+        if (!config.semGravacao) mostrarStatus3d(refs, MSG_ALTERADO_3D);
     };
     const ferramentas = criarFerramentas3d(cena, estado, { original, aoMudar });
     const raioX = criarPainelRaioX3d(ferramentas);

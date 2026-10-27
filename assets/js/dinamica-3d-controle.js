@@ -13,6 +13,25 @@ const MSG_SALVO_3D = 'Rascunho salvo.';
 const MSG_ENTREGUE_3D = 'Atividade entregue. Aguarde a nota do professor.';
 const MSG_ALTERADO_3D = 'Há alterações ainda não salvas.';
 const MSG_ERRO_GRAVAR_3D = 'Não foi possível gravar: ';
+const REGISTRO_DINAMICAS_3D = new Map();
+
+/**
+ * Registra os dados de uma aula (tela, ficha, checklist, instruções).
+ * @param {string} aula - Número da aula, como em data-aula (ex.: '02').
+ * @param {Object} dados - Dados da dinâmica daquela aula.
+ */
+function registrarDinamica3d(aula, dados) {
+    REGISTRO_DINAMICAS_3D.set(aula, dados);
+}
+
+/**
+ * Devolve os dados registrados de uma aula.
+ * @param {string} aula - Número da aula.
+ * @returns {Object|null} Dados da aula, ou null se não houver.
+ */
+function obterDinamica3d(aula) {
+    return REGISTRO_DINAMICAS_3D.get(aula) || null;
+}
 
 /**
  * Cria um elemento HTML simples.
@@ -153,6 +172,8 @@ function iniciarDinamica3d(config) {
     const contexto = { refs, estado, config, bloquear: () => {} };
     const pintar = montarInterface3d({ contexto, cena, original });
     pintar.mudarEtapa(estado.etapa);
+    if (config.semGravacao) refs.acoes.hidden = true;
+    if (config.avisoInicial) mostrarStatus3d(refs, config.avisoInicial);
     if (config.somenteLeitura) contexto.bloquear();
     return { obterEstado: () => estado, destruir: () => { pintar.destruir(); cena.destruir(); } };
 }

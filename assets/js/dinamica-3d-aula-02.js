@@ -56,7 +56,7 @@ function montarTelaAula02() {
     ];
 }
 
-const DINAMICA_3D_AULA_02 = {
+registrarDinamica3d('02', {
     tela: montarTelaAula02(),
     instrucoes: {
         raiox: 'Você, como aluno consultor, recebeu esta tela de agendamento: os usuários não '
@@ -83,4 +83,4 @@ const DINAMICA_3D_AULA_02 = {
         'Destaque unívoco: existe apenas um botão sólido principal por seção?',
         'Ergonomia geométrica: as áreas de toque respeitam o tamanho dos dedos (44 x 44)?'
     ]
-};
+});
