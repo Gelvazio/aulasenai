@@ -30,10 +30,11 @@
 ### Decisões
 
 - 2026-10-26 (Claude Code Haiku 5.5): tarefa grande (gerador novo, várias partes). Plano nesta etapa; execução só após **"sim" claro do usuário** (regra `ciclo-da-task.md`).
+- 2026-10-26 (usuário): aprovou o plano desta etapa ("Sim, aprovo o plano da #401"). Execução fica para uma frente com nível MEDIO/PESADO (Haiku não pega essas subtarefas).
 
 ### Aprovação
 
-- ⬜ Aguardando o "sim" do usuário ao plano desta etapa.
+- ✅ Aprovada pelo usuário em 2026-10-26 (mensagem "Sim, aprovo o plano da #401").
 
 ---
 

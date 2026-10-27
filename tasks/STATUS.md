@@ -5,7 +5,7 @@
 
 ## Tarefas
 
-- #401-4b9e1d72 — [Análise da pasta MATERIAIS em JSON e painel HTML futurista](etapas/ETAPA-550-4b9e1d72-ANALISE-MATERIAIS-JSON-HTML.md) · ⬜ Pendente (tarefa grande: aguarda aprovação) · — (não reservável)
+- #401-4b9e1d72 — [Análise da pasta MATERIAIS em JSON e painel HTML futurista](etapas/ETAPA-550-4b9e1d72-ANALISE-MATERIAIS-JSON-HTML.md) · ⬜ Pendente (aprovada em 2026-10-26; aguarda frente Sonnet) · — (não reservável)
   - #401.1 a #401.16 — inventário, script Python, JSON, painel HTML, decisão do site e verificação (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
