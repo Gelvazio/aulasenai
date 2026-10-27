@@ -8,6 +8,8 @@
 
 
 
+- #423-5f2c8d1e — [Aba comentada (só professor) na Atividade Dinâmica da aula 02 de UI/UX](etapas/ETAPA-570-5f2c8d1e-ABA-COMENTADA-UIUX-AULA-02.md) · ⬜ Pendente · — (não reservável)
+  - #423.1 — Aba "4. Resposta comentada" com redesenho e balões · ⬜ Pendente · nível a classificar pelo Jev (provável MEDIO · só Sonnet)
 - #422-a7c3e19b — [Mínimo de questões em Fundamentos de UI/UX (aulas 3 em diante): objetiva 20, prática 10](etapas/ETAPA-569-a7c3e19b-MINIMO-QUESTOES-UIUX.md) · 👀 Aguardando o usuário (tarefa grande: aguarda "sim") · — (não reservável)
   - #422.1 — Gravar o padrão de questões mínimas · ⬜ Pendente · nível a classificar pelo Jev
   - #422.2 — Conferência e registro · ⬜ Pendente (depende da #422.1) · nível a classificar pelo Jev
