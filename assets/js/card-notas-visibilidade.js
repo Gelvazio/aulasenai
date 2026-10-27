@@ -12,7 +12,37 @@ const MSG_FALHA_VISIBILIDADE_CARD = 'Não foi possível gravar a visibilidade do
 const MSG_SEM_MATERIA_VISIBILIDADE_CARD = 'Matéria não identificada para a visibilidade do card.';
 const MSG_SEM_TURMA_VISIBILIDADE_CARD = 'Turma não informada para a visibilidade do card.';
 
+const CHAVE_MOSTRAR_CARD_NOTAS = 'card-notas-media:mostrar';
+const VALOR_LIGADO_MOSTRAR_CARD = 'sim';
+const VALOR_DESLIGADO_MOSTRAR_CARD = 'nao';
+const CLASSE_CORPO_OCULTO_CARD = 'card-notas-media--corpo-oculto';
+
 const estadoVisibilidadeCard = { botao: null, visivel: false };
+
+/**
+ * Lê no localStorage se o interruptor "Mostrar" ficou ligado; sem valor salvo, vale OFF.
+ * @returns {boolean} true só se o valor salvo for "sim".
+ */
+function lerPreferenciaMostrarNotas() {
+    try {
+        return localStorage.getItem(CHAVE_MOSTRAR_CARD_NOTAS) === VALOR_LIGADO_MOSTRAR_CARD;
+    } catch (erro) {
+        return false;
+    }
+}
+
+/**
+ * Guarda no localStorage o estado do interruptor "Mostrar" (sem falhar se for bloqueado).
+ * @param {boolean} ligado - Estado do interruptor.
+ */
+function salvarPreferenciaMostrarNotas(ligado) {
+    try {
+        localStorage.setItem(CHAVE_MOSTRAR_CARD_NOTAS,
+            ligado ? VALOR_LIGADO_MOSTRAR_CARD : VALOR_DESLIGADO_MOSTRAR_CARD);
+    } catch (erro) {
+        console.warn('Preferência "Mostrar" não salva no navegador:', erro.message);
+    }
+}
 
 /**
  * Lê se o card está visível aos alunos da turma na matéria.
@@ -76,12 +106,8 @@ async function cardVisivelParaAlunoNotas() {
 function aplicarVisibilidadeCorpoNotas(visivel) {
     if (!estadoNotas.ehProfessor) return;
 
-    const { selecao, filtro, tabela, rodape, aviso, faixa } = estadoNotas.elementos;
-    const esconder = !visivel;
-    [selecao, filtro, tabela, rodape, faixa].forEach((elemento) => {
-        if (elemento) elemento.hidden = esconder;
-    });
-    if (esconder && aviso) aviso.hidden = true;
+    estadoNotas.elementos.card.classList.toggle(CLASSE_CORPO_OCULTO_CARD, !visivel);
+    salvarPreferenciaMostrarNotas(visivel);
 }
 
 /**

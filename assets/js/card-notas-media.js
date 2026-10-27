@@ -104,6 +104,7 @@ function montarEsqueletoNotas() {
     const card = document.createElement('article');
     card.className = CLASSE_CARD_NOTAS;
     card.setAttribute('data-sem-bloqueio', '');
+    card.classList.toggle(CLASSE_CORPO_OCULTO_CARD, !lerPreferenciaMostrarNotas());
     const cabecalho = criarElementoNotas('div', PREFIXO_NOTAS + 'cabecalho');
     const titulo = criarElementoNotas('h2', PREFIXO_NOTAS + 'titulo', TITULO_NOTAS);
     const visibilidade = criarElementoNotas('div', PREFIXO_NOTAS + 'visibilidade');
@@ -862,6 +863,9 @@ async function preencherCardNotas() {
     if (!login.logado) {
         estadoNotas.elementos.card.hidden = true;
         return;
+    }
+    if (!login.ehProfessor) {
+        estadoNotas.elementos.card.classList.remove(CLASSE_CORPO_OCULTO_CARD);
     }
     estadoNotas.atividades = lerAtividadesDoIndice();
     if (!estadoNotas.atividades.length) {

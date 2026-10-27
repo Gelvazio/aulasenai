@@ -183,3 +183,5 @@
     font-size: 13px;
 }
 .card-notas-media__visibilidade[hidden] { display: none; }
+/* Corpo escondido desde a montagem (interruptor "Mostrar" OFF): evita piscar antes do banco. */
+.card-notas-media--corpo-oculto > :not(.card-notas-media__cabecalho) { display: none; }
