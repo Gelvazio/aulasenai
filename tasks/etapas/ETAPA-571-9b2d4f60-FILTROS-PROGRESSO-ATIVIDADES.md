@@ -25,7 +25,7 @@
 
 ### #424.1 — Filtros por situação no quadro de progresso da aula
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (modal da aula 02: filtros acima do quadro).
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.94))
 - **Modelo:** só Sonnet — nunca outro
@@ -34,3 +34,4 @@
 - **Fonte:** jev (confiança 0.94)
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** botões Todos/Entregue/Em andamento/Sem começar acima do quadro, com contagem; clicar filtra as linhas.
+- **Entrega:** `assets/js/indice-aula-progresso-filtro.js` (novo; `criarFiltroProgressoAula`), `assets/js/indice-aula-progresso-quadro.js` (coloca a barra acima da tabela), `assets/js/atividades-crud-modal.js` (carrega o script) e `assets/css/indice-aula-progresso.css` (estilos) · **Verificação:** `node --check` ok nos 3 JS; leitura do código: Entregue = entregou alguma atividade, Em andamento = está fazendo alguma, Sem começar = nenhuma começada; contagem por filtro; "Todos" ao abrir; aviso quando nenhum aluno cai no filtro; sem leitura de banco; o teste na tela só o usuário confirma (sem navegador).

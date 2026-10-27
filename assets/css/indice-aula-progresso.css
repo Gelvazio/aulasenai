@@ -9,6 +9,7 @@
     --progresso-aula-texto-suave: #4a5568;
     --progresso-aula-erro: #c53030;
     --progresso-aula-raio: 10px;
+    --progresso-aula-texto-sobre-destaque: #ffffff;
     --progresso-aula-sem-comecar: #e2e8f0;
     --progresso-aula-andamento: #f6e05e;
     --progresso-aula-entregue: #68d391;
@@ -115,4 +116,49 @@
 .aula-progresso__quadro__mensagem--erro {
     color: var(--progresso-aula-erro);
     font-weight: 600;
+}
+
+.aula-progresso__filtro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.aula-progresso__filtro__botao {
+    padding: 6px 14px;
+    border: 2px solid var(--progresso-aula-borda);
+    border-radius: 999px;
+    background: transparent;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.aula-progresso__filtro__botao:hover {
+    border-color: var(--progresso-aula-destaque);
+}
+
+.aula-progresso__filtro__botao--entregue {
+    border-color: var(--progresso-aula-entregue);
+}
+
+.aula-progresso__filtro__botao--andamento {
+    border-color: var(--progresso-aula-andamento);
+}
+
+.aula-progresso__filtro__botao--vazia {
+    border-color: var(--progresso-aula-sem-comecar);
+}
+
+.aula-progresso__filtro__botao--ativo {
+    background: var(--progresso-aula-destaque);
+    border-color: var(--progresso-aula-destaque);
+    color: var(--progresso-aula-texto-sobre-destaque);
+}
+
+.aula-progresso__filtro__aviso {
+    margin: 0;
+    color: var(--progresso-aula-texto-suave);
 }

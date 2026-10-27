@@ -104,7 +104,9 @@ function desenharQuadroProgressoAula(corpo, dados) {
     dados.alunos.forEach((aluno) => corpoTabela.appendChild(
         montarLinhaQuadroProgressoAula(aluno, dados)));
     tabela.append(montarCabecalhoQuadroProgressoAula(dados), corpoTabela);
-    corpo.replaceChildren(tabela);
+    const filtro = typeof window.criarFiltroProgressoAula === 'function'
+        ? window.criarFiltroProgressoAula({ ...dados, tabela }) : null;
+    corpo.replaceChildren(...(filtro ? [filtro] : []), tabela);
 }
 
 /**
