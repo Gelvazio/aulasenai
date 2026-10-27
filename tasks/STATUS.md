@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #419-e5f92c47 — [Professor também vê só a quantidade mínima na prática](etapas/ETAPA-566-e5f92c47-PROFESSOR-VE-SO-O-MINIMO.md) · 🔄 Em andamento · — (não reservável)
-  - #419.1 — Professor da prática vê só o mínimo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #419.1 — Professor da prática vê só o mínimo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 17:35)
 
 
 
