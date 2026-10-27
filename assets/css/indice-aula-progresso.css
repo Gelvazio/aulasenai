@@ -65,3 +65,45 @@
     overflow: auto;
     color: var(--progresso-aula-texto-suave);
 }
+
+.aula-progresso__quadro {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.aula-progresso__quadro th,
+.aula-progresso__quadro td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--progresso-aula-borda);
+    text-align: left;
+}
+
+.aula-progresso__quadro thead th {
+    position: sticky;
+    top: 0;
+    background: var(--progresso-aula-janela);
+}
+
+.aula-progresso__quadro__contagem {
+    display: block;
+    font-weight: 400;
+    color: var(--progresso-aula-texto-suave);
+}
+
+.aula-progresso__quadro__celula {
+    text-align: center;
+    font-weight: 600;
+}
+
+.aula-progresso__quadro__celula--vazia {
+    background: var(--progresso-aula-sem-comecar);
+}
+
+.aula-progresso__quadro__celula--andamento {
+    background: var(--progresso-aula-andamento);
+}
+
+.aula-progresso__quadro__celula--entregue {
+    background: var(--progresso-aula-entregue);
+}

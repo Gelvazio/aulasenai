@@ -87,7 +87,7 @@
 
 ### #421.5 — Desenhar o quadro alunos × atividades
 
-**Próximo passo:** depois das 421.3 e 421.4.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.95))
 - **Modelo:** só Sonnet — nunca outro
@@ -96,7 +96,7 @@
 - **Fonte:** jev (confiança 0.95)
 - **Descrição:** tabela com alunos nas linhas e atividades nas colunas; célula com a situação (cor e texto); contagem "entregues de total" por atividade; rola dentro do modal.
 - **Critérios de Aceitação:** com 3 atividades e N alunos, a tabela tem N linhas e 3 colunas de situação.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-quadro.js` (novo; `montarQuadroProgressoAula`), `assets/css/indice-aula-progresso.css` (estilos do quadro) e `assets/js/atividades-crud-modal.js` (carrega o script) · **Verificação:** `node --check` ok; leitura do código: linhas = alunos presentes, colunas = atividades da aula, célula com cor e texto (Sem começar / Em andamento / Entregue), "X de N entregues" no título da coluna, rola dentro do modal; teste na tela só o usuário.
 
 ### #421.6 — Mensagens de carregamento e de erro
 
