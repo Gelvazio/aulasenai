@@ -84,7 +84,7 @@
 - **Fonte:** sinais
 - **Descrição:** `PASTA_MATERIAIS`, `PASTA_ANALISES`, `NOME_JSON`, `PASTAS_IGNORADAS` (`__pycache__`, `.git`), `EXTENSAO_SEM_TIPO`.
 - **Critérios de aceitação:** nenhum valor fixo espalhado pelo código (regra de constantes).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** constantes já no topo de `analises/analisar_materiais.py` (entregues junto com #401.4 a .12, commit `bc9fbec9`); Haiku só conferiu · **Verificação:** Haiku (2026-10-26 22:55): `grep` mostra os literais `MATERIAIS`, `analises`, `__pycache__`, `.git`, `utf-8` e `analise-materiais.json` só nas linhas 13 a 18 (bloco de constantes); `py_compile` ok.
 
 ### #401.4 — Função de varredura recursiva
 
@@ -227,7 +227,7 @@
 - **Fonte:** jev (confiança 1.00)
 - **Descrição:** comando para rodar o script (`python analises\analisar_materiais.py`), o que cada campo do JSON significa e a data da última geração.
 - **Critérios de aceitação:** o comando do LEIA-ME funciona sem editar nada.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `analises/LEIA-ME.md` (Claude Code Haiku 5.5) · **Verificação:** Haiku (2026-10-26 22:55): comando `C:\Python314\python.exe analises\analisar_materiais.py` conferido por leitura (o caminho do script existe e o `py_compile` passa); o JSON não foi regenerado nesta entrega, para não mudar `geradoEm`.
 
 ### #401.15 — Verificação final sem navegador e sem testes
 
