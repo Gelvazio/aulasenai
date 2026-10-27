@@ -6,7 +6,22 @@
 ## Tarefas
 
 - #401-4b9e1d72 — [Análise da pasta MATERIAIS em JSON e painel HTML futurista](etapas/ETAPA-550-4b9e1d72-ANALISE-MATERIAIS-JSON-HTML.md) · ⬜ Pendente (aprovada em 2026-10-26; aguarda frente Sonnet) · — (não reservável)
-  - #401.1 a #401.16 — inventário, script Python, JSON, painel HTML, decisão do site e verificação (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
+  - #401.1 — Inventário de tipos e pastas de MATERIAIS · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #401.2 — Fixar o esquema do JSON de saída · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #401.3 — Constantes do script · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #401.4 — Função de varredura recursiva · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.5 — Função de classificação por tipo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.6 — Função de metadados do arquivo · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.7 — Função de contagem por tipo e por pasta · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.8 — Função de gravação do JSON · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.9 — Tratamento de erros e saída do script · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.10 — Script analisar_materiais.py completo e com docstrings · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.11 — Gerar o JSON e conferir os números · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.12 — Página analises/index.html com visual futurista · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #401.13 — Decidir o que sai do site e do Git · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #401.14 — Documentar a análise (LEIA-ME) · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #401.15 — Verificação final sem navegador e sem testes · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
+  - #401.16 — Commit e push da entrega · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 
