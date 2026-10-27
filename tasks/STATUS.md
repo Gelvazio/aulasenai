@@ -5,6 +5,14 @@
 
 ## Tarefas
 
+- #402-36e9dc49 — [Clone de MATERIAIS sem HTML (matéria de teste: FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO)](etapas/ETAPA-551-36e9dc49-MATERIAIS-SEM-HTML.md) · ⬜ Pendente · — (não reservável)
+  - #402.1 — Registrar a etapa e a mãe no quadro · 🔄 Em execução · nível a classificar pelo Jev
+  - #402.2 — Copiar a matéria sem `*.html` para MATERIAIS-SEM-HTML · ⬜ Pendente (depende da #402.1) · nível a classificar pelo Jev
+  - #402.3 — Criar `assets/js/` vazia com `.gitkeep` · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #402.4 — Incluir `MATERIAIS-SEM-HTML/` no `.vercelignore` · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #402.5 — Conferir a contagem e os caminhos · ⬜ Pendente (depende da #402.2) · nível a classificar pelo Jev
+  - #402.6 — Commit e push da entrega · ⬜ Pendente (depende da #402.5) · nível a classificar pelo Jev
+
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 
