@@ -12,7 +12,6 @@
   - #422.1 — Gravar o padrão de questões mínimas · ⬜ Pendente · nível a classificar pelo Jev
   - #422.2 — Conferência e registro · ⬜ Pendente (depende da #422.1) · nível a classificar pelo Jev
 - #421-daafb3cb — [Botão "Progresso Atividades" no card da aula (índice)](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) · 🔄 Em andamento · — (não reservável)
-  - #421.4 — Ler atividades da aula e entrega de cada aluno · ⬜ Pendente (depende da #421.2) · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 19:30)
   - #421.5 — Quadro alunos × atividades · ⬜ Pendente (depende das #421.3 e #421.4) · `MEDIO · effort medium` · só Sonnet
   - #421.6 — Mensagens de carregamento e de erro · ⬜ Pendente (depende da #421.5) · `MEDIO · effort medium` · só Sonnet
   - #421.7 — Documentação em docs/ · ⬜ Pendente (depende da #421.6) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

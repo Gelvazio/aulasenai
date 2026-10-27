@@ -74,7 +74,7 @@
 
 ### #421.4 — Ler as atividades da aula e a entrega de cada aluno
 
-**Próximo passo:** depois da 421.2; classificar pelo Jev.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -83,7 +83,7 @@
 - **Fonte:** sinais
 - **Descrição:** ler as atividades da aula (ex.: 182, 191, 212) e, por aluno, se não começou, está em andamento ou foi entregue; reaproveitar a leitura do quadro de progresso.
 - **Critérios de Aceitação:** cada aluno tem uma situação por atividade, sem ler gabarito.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-dados.js` (novo; `lerAtividadesDaAula`, `lerSituacoesDasAtividades`, `SITUACOES_PROGRESSO_AULA`) e `assets/js/atividades-crud-modal.js` (carrega o script) · **Verificação:** `node --check` ok; leitura do código: atividades de `atividade.aula_id`; respostas lidas com a leitura paginada do Progresso da turma (`resposta_atividade`/`resposta_discursiva`), entregas em `entrega_atividade` e `entrega_dinamica`; entregue = entrega na última tentativa; sem ler gabarito; teste na tela só o usuário.
 
 ### #421.5 — Desenhar o quadro alunos × atividades
 

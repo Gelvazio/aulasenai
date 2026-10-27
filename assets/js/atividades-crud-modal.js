@@ -834,6 +834,7 @@ function carregarDataAulasIndice() {
         'js/indice-aula-modal.js', 'js/indice-aula-excluir-card.js',
         'js/indice-aula-bloqueio.js', 'js/indice-aula-progresso-botao.js',
         'js/indice-aula-progresso-modal.js', 'js/indice-aula-progresso-alunos.js',
+        'js/indice-aula-progresso-dados.js',
         'js/indice-aula-atividades-vinculadas.js',
         'js/indice-aula-grade-banco.js', 'js/indice-aula-data.js',
         'js/indice-gerenciar-aulas-repositorio.js', 'js/indice-gerenciar-aulas-formulario.js',
