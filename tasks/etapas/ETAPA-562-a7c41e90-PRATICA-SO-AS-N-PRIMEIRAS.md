@@ -27,7 +27,7 @@
 
 ### #415.1 — Esconder do aluno as questões depois da N-ésima
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (aluno com mínimo 10 vê só 10 questões).
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -36,3 +36,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** aluno com mínimo 10 vê só as 10 primeiras questões da prática; professor e aluno sem N veem todas.
+- **Entrega:** `assets/js/limite-questoes-discursiva.js` (novo), `assets/js/avaliacao-discursiva.js` (`aplicarLimiteDeQuestoes`) e `docs/regras/atividades.md` · **Verificação:** `node --check` ok nos dois JS; leitura do código; o teste na tela só o usuário confirma (sem navegador).

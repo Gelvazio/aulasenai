@@ -20,6 +20,7 @@ const TITULO_ENTREGA_FEITA = 'Avaliação entregue';
 const MSG_ENTREGUE_AGUARDE = 'Atividade já entregue! Aguarde a correção!';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
+const ARQUIVO_LIMITE_QUESTOES_DISCURSIVA = 'limite-questoes-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
 const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
@@ -991,6 +992,25 @@ function recarregarSeVeioDoCache(evento) {
 }
 
 /**
+ * Mostra ao aluno só as N primeiras questões (N = quantidade mínima dele). O professor, e o
+ * aluno sem mínimo definido, veem todas. Uma falha aqui não atrapalha a avaliação.
+ * @param {Object} dados - Dados carregados do banco.
+ */
+async function aplicarLimiteDeQuestoes(dados) {
+    const deveLimitar = Boolean(dados.logado) && !dados.ehProfessor && dados.minimoQuestoes > 0;
+    if (!deveLimitar) return;
+
+    try {
+        if (typeof window.limitarQuestoesAoMinimo !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_LIMITE_QUESTOES_DISCURSIVA);
+        }
+        window.limitarQuestoesAoMinimo(dados.minimoQuestoes);
+    } catch (erro) {
+        console.warn('Limite de questões:', erro.message);
+    }
+}
+
+/**
  * Inicializa a página: carrega o banco, preenche os campos e liga os eventos.
  */
 async function iniciarAvaliacaoDiscursiva() {
@@ -1001,6 +1021,7 @@ async function iniciarAvaliacaoDiscursiva() {
         console.warn('Banco indisponível:', erro.message);
         estadoDiscursivo.dados = { disponivel: false };
     }
+    await aplicarLimiteDeQuestoes(estadoDiscursivo.dados);
     preencherCampos(estadoDiscursivo.dados.respostas || {});
     if (estadoDiscursivo.dados.ehProfessor) alternarRespostasDoProfessor(false);
     aplicarInstrucoesSoParaAluno();

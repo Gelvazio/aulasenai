@@ -246,3 +246,5 @@
 | **#413-7c3d9a21** | **Enunciado da Atividade Dinâmica exportável em PDF** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [560-7c3d9a21](etapas/ETAPA-560-7c3d9a21-ENUNCIADO-PDF-DINAMICA.md) | — |
 | #414.1 | Reforçar bloqueio de colar/copiar nas práticas · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [561-4e8b1d37](etapas/ETAPA-561-4e8b1d37-REFORCO-COLAR-PRATICAS.md) | — |
 | **#414-4e8b1d37** | **Reforçar o bloqueio de copiar/colar nas atividades práticas** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [561-4e8b1d37](etapas/ETAPA-561-4e8b1d37-REFORCO-COLAR-PRATICAS.md) | — |
+| #415.1 | Esconder do aluno as questões depois da N-ésima · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [562-a7c41e90](etapas/ETAPA-562-a7c41e90-PRATICA-SO-AS-N-PRIMEIRAS.md) | — |
+| **#415-a7c41e90** | **Prática mostra ao aluno só as N primeiras questões (N = quantidade mínima)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [562-a7c41e90](etapas/ETAPA-562-a7c41e90-PRATICA-SO-AS-N-PRIMEIRAS.md) | — |
