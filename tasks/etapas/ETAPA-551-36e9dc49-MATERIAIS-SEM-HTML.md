@@ -66,7 +66,7 @@
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** a pasta existe e vai ao Git pelo `.gitkeep`; os `.js` entram depois, quando o usuário indicar quais.
 - **Critérios de aceitação:** `MATERIAIS-SEM-HTML/assets/js/.gitkeep` existe.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `MATERIAIS-SEM-HTML/assets/js/.gitkeep` (Claude Code Haiku 5.5) · **Verificação:** `ls -la` mostra `.gitkeep` com 0 bytes dentro de `assets/js/`.
 
 ### #402.4 — Incluir MATERIAIS-SEM-HTML/ no .vercelignore
 
@@ -76,7 +76,7 @@
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** a pasta tem Markdown com gabarito e lista de alunos; não pode ir ao site.
 - **Critérios de aceitação:** `grep -n "MATERIAIS-SEM-HTML" .vercelignore` acha a linha; a linha tem comentário explicando o motivo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** linha `MATERIAIS-SEM-HTML/` no `.vercelignore` (linha 49) · **Verificação:** `grep -n "MATERIAIS-SEM-HTML" .vercelignore` acha a linha. (O plano citava `git check-ignore`, mas ele não serve para `.vercelignore`, que não é um `.gitignore`; a checagem correta é o `grep`.)
 
 ### #402.5 — Conferir a contagem e os caminhos
 

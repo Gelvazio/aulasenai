@@ -45,3 +45,5 @@ rules-local/
 # Análise de MATERIAIS (#401): o JSON lista nomes de arquivo, inclusive de gabaritos; só no Git
 analises/
 ATIVIDADE-DINAMICA-*.md
+# Clone de MATERIAIS sem HTML (#402): tem Markdown com gabarito e lista de alunos; nunca vai ao site
+MATERIAIS-SEM-HTML/
