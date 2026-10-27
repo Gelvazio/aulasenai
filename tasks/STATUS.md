@@ -8,8 +8,6 @@
 
 
 
-- #413-7c3d9a21 — [Enunciado da Atividade Dinâmica exportável em PDF](etapas/ETAPA-560-7c3d9a21-ENUNCIADO-PDF-DINAMICA.md) · 🔄 Em andamento (tarefa pequena) · — (não reservável)
-  - #413.1 — Módulo e botão de exportar o enunciado em PDF · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 15:08)
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

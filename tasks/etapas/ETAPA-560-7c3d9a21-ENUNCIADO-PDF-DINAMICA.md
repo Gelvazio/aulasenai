@@ -24,13 +24,17 @@
 
 ### #413.1 — Módulo e botão de exportar o enunciado em PDF
 
-**Próximo passo:** rodar o Jev, reservar, criar o módulo e ligar na página e no template.
+**Próximo passo:** (entregue) — nada; o usuário confirma o download do PDF na tela.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
 - **Effort:** high
 - **JEV-AI-SUGGESTION:** NAO
 - **Fonte:** sinais
+- **Nível:** PESADO — Jev (sinais; confiança baixa)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** gerar o PDF do enunciado a partir do DOM da página (cards INFORMAÇÕES e FORMATOS) e dos dados da aula (instruções das 3 etapas, ficha e checklist).
 - **Critérios de Aceitação:** botão visível para aluno e professor; PDF sem nota/roteiro do professor.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/dinamica-3d-pdf-enunciado.js` (novo), `assets/css/dinamica-3d.css`, `template_atividade_dinamica_3d.html` e `ATIVIDADE-DINAMICA-AULA-02.html` (scripts + botão no card Informações) · **Verificação:** `node --check` ok; leitura: PDF só com texto visível ao aluno + instruções, ficha e checklist da aula (sem roteiro nem critérios); o download só o usuário confirma (sem navegador).
