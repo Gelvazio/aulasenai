@@ -1,0 +1,137 @@
+/* Atividade Dinâmica no PC (tarefa #410): cena three.js, painel, ficha e botões.
+   Regra: docs/regras/atividade-dinamica.md */
+:root {
+    --dinamica3d-destaque: #667eea;
+    --dinamica3d-fundo: #f7fafc;
+    --dinamica3d-borda: #cbd5e0;
+    --dinamica3d-texto: #2d3748;
+    --dinamica3d-ativo: #2b6cb0;
+    --dinamica3d-ok: #2f855a;
+    --dinamica3d-erro: #c53030;
+    --dinamica3d-raio: 8px;
+    --dinamica3d-alvo-toque: 44px;
+}
+
+.dinamica3d { display: flex; flex-direction: column; gap: 12px; }
+
+.dinamica3d__etapas { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.dinamica3d__instrucao {
+    margin: 0;
+    padding: 10px 12px;
+    background: var(--dinamica3d-fundo);
+    border-left: 4px solid var(--dinamica3d-destaque);
+    border-radius: var(--dinamica3d-raio);
+}
+
+.dinamica3d__area {
+    display: grid;
+    grid-template-columns: minmax(220px, 480px) 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.dinamica3d__palco { width: 100%; max-width: 480px; }
+
+.dinamica3d__canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--dinamica3d-borda);
+    border-radius: var(--dinamica3d-raio);
+    touch-action: none;
+    cursor: crosshair;
+    outline: none;
+}
+
+.dinamica3d__canvas:focus-visible { border-color: var(--dinamica3d-ativo); }
+
+.dinamica3d__canvas--somente-leitura { cursor: default; }
+
+.dinamica3d__painel { display: flex; flex-direction: column; gap: 10px; }
+
+.dinamica3d__grupo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+
+.dinamica3d__grupo-titulo {
+    flex: 0 0 100%;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dinamica3d-texto);
+}
+
+.dinamica3d__botao {
+    min-height: var(--dinamica3d-alvo-toque);
+    padding: 8px 14px;
+    border: 2px solid var(--dinamica3d-borda);
+    border-radius: var(--dinamica3d-raio);
+    background: #fff;
+    color: var(--dinamica3d-texto);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dinamica3d__botao:hover:not(:disabled) { border-color: var(--dinamica3d-ativo); }
+
+.dinamica3d__botao:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.dinamica3d__botao.is-ativo {
+    border-color: var(--dinamica3d-ativo);
+    background: var(--dinamica3d-ativo);
+    color: #fff;
+}
+
+.dinamica3d__botao--principal {
+    border-color: var(--dinamica3d-ok);
+    background: var(--dinamica3d-ok);
+    color: #fff;
+    font-weight: 700;
+}
+
+.dinamica3d__cor {
+    width: var(--dinamica3d-alvo-toque);
+    padding: 0;
+    background: var(--cor-amostra);
+}
+
+.dinamica3d__campo {
+    flex: 1 1 160px;
+    min-height: var(--dinamica3d-alvo-toque);
+    padding: 8px 10px;
+    border: 2px solid var(--dinamica3d-borda);
+    border-radius: var(--dinamica3d-raio);
+    font-size: 14px;
+}
+
+.dinamica3d__aviso-selecao { margin: 0; color: var(--dinamica3d-texto); font-style: italic; }
+
+.dinamica3d__opcao { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+
+.dinamica3d__ficha-bloco { display: flex; flex-direction: column; gap: 12px; }
+
+.dinamica3d__ficha { display: flex; flex-direction: column; gap: 12px; }
+
+.dinamica3d__ficha-campo { display: flex; flex-direction: column; gap: 4px; font-weight: 600; }
+
+.dinamica3d__ficha-texto {
+    min-height: 84px;
+    padding: 8px 10px;
+    border: 2px solid var(--dinamica3d-borda);
+    border-radius: var(--dinamica3d-raio);
+    font: inherit;
+    font-weight: 400;
+    resize: vertical;
+}
+
+.dinamica3d__checklist { margin: 0; padding-left: 20px; }
+
+.dinamica3d__checklist-item { margin-bottom: 6px; }
+
+.dinamica3d__acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.dinamica3d__status { margin: 0; min-height: 1.4em; color: var(--dinamica3d-ok); }
+
+.dinamica3d__status--erro { color: var(--dinamica3d-erro); }
+
+@media (max-width: 720px) {
+    .dinamica3d__area { grid-template-columns: 1fr; }
+}

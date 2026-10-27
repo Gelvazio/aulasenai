@@ -60,7 +60,7 @@
 
 ### #410.2 — Módulos base three.js (cena, câmera, ferramentas de marcar e editar)
 
-**Próximo passo:** criar `assets/js/dinamica-3d-cena.js`, `dinamica-3d-ferramentas.js` e `assets/css/dinamica-3d.css`.
+**Próximo passo:** (entregue) — criar `assets/js/dinamica-3d-cena.js`, `dinamica-3d-ferramentas.js` e `assets/css/dinamica-3d.css`.
 
 - **Nível:** MEDIO — Jev (código com lógica; confiança 0,35, vale a matriz)
 - **Modelo:** só Sonnet — nunca outro
@@ -68,7 +68,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** cena ortográfica sobre a "tela", seleção por raycaster, ferramentas retângulo/círculo/triângulo, mover, redimensionar, cor, preenchimento × contorno, raio de canto; operação por mouse **e** botões (toque).
 - **Critérios de Aceitação:** `node --check` ok; módulos sem dados da aula; funções ≤ 45 linhas; JSDoc.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/dinamica-3d-{formas,estado,cena,ferramentas,painel,interface,controle}.js` e `assets/css/dinamica-3d.css` (API: `iniciarDinamica3d(config)`) · **Verificação:** `node --check` ok nos 7 JS; nenhuma linha > 100 colunas nem função > 45 linhas (conferido por script); só a página real confirma a aparência (sem navegador).
 
 ### #410.3 — Módulo da Aula 02: tela de agendamento "ruim" e alvos do raio-x
 
