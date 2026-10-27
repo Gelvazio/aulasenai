@@ -9,7 +9,6 @@
 
 
 - #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 🔄 Em andamento (plano aprovado) · — (não reservável)
-  - #410.1 — Tabela `entrega_dinamica` com RLS + JWT · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:50)
   - #410.2 — Módulos base three.js (cena e ferramentas) · ⬜ Pendente (depende da #410.1 só para entregar) · `MEDIO · effort medium` · só Sonnet
   - #410.3 — Módulo da Aula 02: tela "ruim" e alvos do raio-x · ⬜ Pendente (depende da #410.2) · `MEDIO · effort medium` · só Sonnet
   - #410.4 — Repositório da entrega e painel do professor · ⬜ Pendente (depende da #410.1) · `PESADO · effort high` · só Sonnet

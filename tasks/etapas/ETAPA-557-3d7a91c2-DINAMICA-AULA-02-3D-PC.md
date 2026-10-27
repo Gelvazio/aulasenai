@@ -48,7 +48,7 @@
 
 ### #410.1 — Tabela `entrega_dinamica` com RLS + JWT (SQL idempotente)
 
-**Próximo passo:** escrever `database/` o SQL (tabela, índice único por atividade + usuário, RLS: aluno lê e grava a própria; professor lê as da turma) e aplicar.
+**Próximo passo:** (entregue) —  escrever `database/` o SQL (tabela, índice único por atividade + usuário, RLS: aluno lê e grava a própria; professor lê as da turma) e aplicar.
 
 - **Nível:** PESADO — Jev (banco 0,99, segredo 0,95; confiança 1,00)
 - **Modelo:** só Sonnet — nunca outro
@@ -56,7 +56,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** colunas `id`, `atividade_id`, `usuario_id`, `estado` (jsonb), `entregue` (boolean), `entregue_em`, `atualizado_em`. Sem gabarito.
 - **Critérios de Aceitação:** `CREATE TABLE IF NOT EXISTS`, RLS ligado, políticas com `DROP POLICY IF EXISTS`; consulta confirma a tabela; registro em `docs/database.md`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-27-entrega-dinamica.sql`, aplicado no Supabase em 2026-10-27 · **Verificação:** consulta ao banco: RLS ligado, políticas select/insert/update, grants só para `authenticated`, 1 gatilho; `atividade` 212 intacta.
 
 ### #410.2 — Módulos base three.js (cena, câmera, ferramentas de marcar e editar)
 
