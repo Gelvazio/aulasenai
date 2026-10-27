@@ -821,7 +821,8 @@ function liberarLinksDosCardsIndice() {
  * os chama; o botão e os modais depois, porque usam as funções do indice-aula-modal.js.
  */
 function carregarDataAulasIndice() {
-    const folhas = ['css/indice-aula-data.css', 'css/indice-gerenciar-aulas.css'];
+    const folhas = ['css/indice-aula-data.css', 'css/indice-gerenciar-aulas.css',
+        'css/indice-aula-progresso.css'];
     const estilos = folhas.map((caminho) => {
         const estilo = criarElementoCrud('link');
         estilo.rel = 'stylesheet';
@@ -832,6 +833,7 @@ function carregarDataAulasIndice() {
         'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
         'js/indice-aula-modal.js', 'js/indice-aula-excluir-card.js',
         'js/indice-aula-bloqueio.js', 'js/indice-aula-progresso-botao.js',
+        'js/indice-aula-progresso-modal.js',
         'js/indice-aula-atividades-vinculadas.js',
         'js/indice-aula-grade-banco.js', 'js/indice-aula-data.js',
         'js/indice-gerenciar-aulas-repositorio.js', 'js/indice-gerenciar-aulas-formulario.js',

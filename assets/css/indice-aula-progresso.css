@@ -1,0 +1,67 @@
+/* Professor: modal "Progresso das atividades" do card da aula (indice-aula-progresso-modal.js) e
+   o quadro alunos × atividades dentro dele (indice-aula-progresso-quadro.js). Tarefa #421. */
+
+:root {
+    --progresso-aula-fundo-escuro: rgba(26, 32, 44, 0.6);
+    --progresso-aula-janela: #ffffff;
+    --progresso-aula-borda: #cbd5e0;
+    --progresso-aula-destaque: #667eea;
+    --progresso-aula-texto-suave: #4a5568;
+    --progresso-aula-erro: #c53030;
+    --progresso-aula-raio: 10px;
+    --progresso-aula-sem-comecar: #e2e8f0;
+    --progresso-aula-andamento: #f6e05e;
+    --progresso-aula-entregue: #68d391;
+}
+
+.aula-progresso {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: var(--progresso-aula-fundo-escuro);
+}
+
+.aula-progresso__janela {
+    display: flex;
+    flex-direction: column;
+    width: min(960px, 100%);
+    max-height: 90vh;
+    padding: 20px;
+    border-radius: var(--progresso-aula-raio);
+    background: var(--progresso-aula-janela);
+}
+
+.aula-progresso__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.aula-progresso__titulo {
+    margin: 0;
+    font-size: 18px;
+}
+
+.aula-progresso__fechar {
+    padding: 4px 10px;
+    border: 1px solid var(--progresso-aula-borda);
+    border-radius: var(--progresso-aula-raio);
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.aula-progresso__fechar:hover {
+    background: var(--progresso-aula-sem-comecar);
+}
+
+.aula-progresso__corpo {
+    overflow: auto;
+    color: var(--progresso-aula-texto-suave);
+}

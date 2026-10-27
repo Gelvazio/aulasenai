@@ -48,7 +48,7 @@
 
 ### #421.2 — Modal: abrir, fechar e estrutura visual
 
-**Próximo passo:** depois da 421.1; classificar pelo Jev.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (jev (confiança 0.94))
 - **Modelo:** só Sonnet — nunca outro
@@ -57,7 +57,7 @@
 - **Fonte:** jev (confiança 0.94)
 - **Descrição:** modal novo (JS e CSS próprios, um arquivo por responsabilidade); fecha por botão, Esc e clique fora; título com o nome da aula.
 - **Critérios de Aceitação:** abre e fecha nos três modos; sem `style` inline nem `onclick`.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-modal.js` e `assets/css/indice-aula-progresso.css` (novos; carregados por `assets/js/atividades-crud-modal.js`) · **Verificação:** `node --check` ok; leitura do código (✕, Esc e clique no fundo fecham; sem `style`/`onclick`; o corpo é entregue a `montarQuadroProgressoAula`, feita na 421.5); o teste na tela só o usuário confirma (sem navegador).
 
 ### #421.3 — Ler os alunos da turma, sem os que faltaram
 
