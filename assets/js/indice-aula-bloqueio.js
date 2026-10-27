@@ -86,6 +86,17 @@ function obterDataAulaNaTurma(aula) {
 }
 
 /**
+ * Data do assunto na turma lida (aula_turma.data_assunto, #403).
+ * @param {Object|null} aula - Linha da tabela aulas.
+ * @returns {?string} Data AAAA-MM-DD, ou null se não informada.
+ */
+function obterDataAssuntoNaTurma(aula) {
+    if (!aula) return null;
+
+    return estadoBloqueioAulaTurma.linhas.get(aula.id)?.data_assunto || null;
+}
+
+/**
  * Turma em que o bloqueio da aula está sendo lido e gravado (a do combo; vazio = nenhuma).
  * @returns {string} Código da turma.
  */

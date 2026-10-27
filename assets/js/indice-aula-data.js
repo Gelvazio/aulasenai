@@ -38,6 +38,9 @@ const TEXTO_ID_AULA_CARD = 'Id Aula: ';
 const CLASSE_DATA_AULA_CARD = 'aula-data-card';
 const TEXTO_DATA_AULA_CARD = 'Data: ';
 const TEXTO_DATA_NAO_INFORMADA = 'Data não informada';
+const CLASSE_DATA_ASSUNTO_CARD = 'aula-data-assunto-card';
+const TEXTO_DATA_ASSUNTO_CARD = 'Data do assunto: ';
+const TEXTO_DATA_ASSUNTO_NAO_INFORMADA = 'Data do assunto não informada';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
@@ -290,6 +293,26 @@ function renderizarDataDaAulaNoCard(item) {
     const data = obterDataAulaNaTurma(item.aula);
     campo.textContent = data ? TEXTO_DATA_AULA_CARD + formatarDataAulaCard(data)
         : TEXTO_DATA_NAO_INFORMADA;
+    renderizarDataDoAssuntoNoCard(item, campo);
+}
+
+/**
+ * Mostra, logo abaixo de "Data:", "Data do assunto: DD/MM/AAAA" (aula_turma.data_assunto) ou
+ * "Data do assunto não informada" (#403).
+ * @param {{card: HTMLElement, aula: Object}} item - Card e aula.
+ * @param {HTMLElement} campoData - Elemento "Data:" do card.
+ */
+function renderizarDataDoAssuntoNoCard(item, campoData) {
+    if (typeof obterDataAssuntoNaTurma !== 'function') return;
+
+    let campo = item.card.querySelector(`.${CLASSE_DATA_ASSUNTO_CARD}`);
+    if (!campo) {
+        campo = criarElementoCardAula('div', CLASSE_DATA_ASSUNTO_CARD);
+        campoData.after(campo);
+    }
+    const data = obterDataAssuntoNaTurma(item.aula);
+    campo.textContent = data ? TEXTO_DATA_ASSUNTO_CARD + formatarDataAulaCard(data)
+        : TEXTO_DATA_ASSUNTO_NAO_INFORMADA;
 }
 
 /**

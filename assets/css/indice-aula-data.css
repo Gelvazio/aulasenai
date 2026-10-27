@@ -27,7 +27,8 @@
 }
 
 /* Campo "Data:" da aula na turma, abaixo do nome do card (assets/js/indice-aula-data.js). */
-.aula-data-card {
+.aula-data-card,
+.aula-data-assunto-card {
     font-size: var(--aula-id-card-fonte);
     font-weight: 700;
     color: var(--aula-id-card-cor);

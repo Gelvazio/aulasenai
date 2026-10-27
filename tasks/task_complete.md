@@ -220,3 +220,9 @@
 | #406.1 | Cores dos botões do modal · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [553-6e8f3a12](etapas/ETAPA-553-6e8f3a12-SALVAR-VERDE-CANCELAR-VERMELHO.md) | — |
 | #407 | Editar aula: campo Data da aula no topo | 🟡 Média | — | Nenhuma | ✅ Concluído | — | [554-7a9b4c23](etapas/ETAPA-554-7a9b4c23-DATA-DA-AULA-NO-TOPO-DO-MODAL.md) | — |
 | #407.1 | Mover a data para depois de Sequência · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [554-7a9b4c23](etapas/ETAPA-554-7a9b4c23-DATA-DA-AULA-NO-TOPO-DO-MODAL.md) | — |
+| **#403-e1261d1e** | **Coluna data_assunto em aula_turma, mostrada no card logo abaixo de "Data"** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| #403.1 | Script SQL idempotente da coluna `data_assunto` · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| #403.2 | Aplicar o SQL e conferir por leitura · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #403.1 | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| #403.3 | Mostrar "Data do assunto" no card · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #403.2 | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| #403.4 | Documentar em `docs/database.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |
+| #403.5 | Commit e push da entrega · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #403.2, #403.3 | ✅ Concluído | — | [552-e1261d1e](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) | — |

@@ -7,13 +7,14 @@
 
 const TABELA_AULA_TURMA = 'aula_turma';
 const TABELA_TURMA_ALUNO_AULA_TURMA = 'turmaaluno';
-const CAMPOS_AULA_TURMA = 'id,aula_id,turma_codigo,data_aula,bloqueio';
+const CAMPOS_AULA_TURMA = 'id,aula_id,turma_codigo,data_aula,data_assunto,bloqueio';
 
 /**
  * Lê as linhas já cadastradas de uma turma (data e bloqueio de cada aula).
  * @param {string} turmaCodigo - Código da turma.
  * @returns {Promise<Map<number, {id: number, aula_id: number, data_aula: ?string,
- *   bloqueio: boolean}>>} Linhas por id da aula.
+ *   data_assunto: ?string, bloqueio: boolean}>>} Linhas por id da aula (data_assunto = data
+ *   efetiva de passagem do assunto, #403).
  * @throws {Error} Se o banco recusar.
  */
 async function lerLinhasAulaTurma(turmaCodigo) {
