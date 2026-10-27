@@ -6,11 +6,11 @@
 ## Tarefas
 
 - #403-e1261d1e — [Coluna data_assunto em aula_turma, mostrada no card logo abaixo de "Data"](etapas/ETAPA-552-e1261d1e-DATA-ASSUNTO-AULA-TURMA.md) · ⬜ Pendente (aprovada em 2026-10-27) · — (não reservável)
-  - #403.1 — Script SQL idempotente da coluna `data_assunto` · ⬜ Pendente · `PESADO · effort high` · só Sonnet
-  - #403.2 — Aplicar o SQL e conferir por leitura · ⬜ Pendente (depende da #403.1) · `PESADO · effort high` · só Sonnet
-  - #403.3 — Mostrar "Data do assunto" no card · ⬜ Pendente (depende da #403.2) · `PESADO · effort high` · só Sonnet
-  - #403.4 — Documentar em `docs/database.md` · ⬜ Pendente · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-  - #403.5 — Commit e push da entrega · ⬜ Pendente (depende da #403.4) · `PESADO · effort high` · só Sonnet
+  - #403.1 — Script SQL idempotente da coluna `data_assunto` · ✅ Concluído · `PESADO · effort high` · Sonnet (entregue pelo líder em 2026-10-27)
+  - #403.2 — Aplicar o SQL e conferir por leitura · ⛔ Bloqueado (sem acesso ao projeto do aulasenai pelo conector; o usuário aplica o SQL no SQL Editor) · `PESADO · effort high` · só Sonnet
+  - #403.3 — Mostrar "Data do assunto" no card · 🔄 Código pronto, sem commit (depende da #403.2) · `PESADO · effort high` · só Sonnet
+  - #403.4 — Documentar em `docs/database.md` · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #403.5 — Commit e push da entrega · ⬜ Pendente (depende da #403.2 e da #403.3) · `PESADO · effort high` · só Sonnet
 
 
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)

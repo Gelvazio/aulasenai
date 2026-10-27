@@ -29,6 +29,9 @@
 
 - 2026-10-27 10:37: tarefa grande (banco). Plano nesta etapa; execução só após "sim" do usuário.
 - 2026-10-27 (usuário): "sim", aprovou o plano acima.
+- 2026-10-27 (Sonnet, #403.1 e #403.3): script SQL criado; JS de `aula-turma-repositorio.js`, `indice-aula-bloqueio.js` e `indice-aula-data.js` alterado. Passou do escopo: `assets/css/indice-aula-data.css` recebeu a classe `.aula-data-assunto-card` no mesmo estilo de `.aula-data-card`. Mantido, por ser uma linha só.
+- 2026-10-27 (#403.2): ⛔ **bloqueada**. O conector do Supabase só enxerga o projeto "Projetos de IA" (`ubrvdzwywyxydcblghwz`); o projeto do aulasenai (`hxlvonriearllcmfqeri`) não aparece, e a leitura de `aula_turma` nele deu "You do not have permission". Nada foi aplicado no banco. Destrava: o usuário roda o `database/2026-10-27-aula-turma-data-assunto.sql` no SQL Editor do projeto do aulasenai, ou dá acesso ao conector.
+- 2026-10-27 (líder, Haiku): JS e CSS **não** vão ao Git antes do SQL: a leitura de `aula_turma` com `data_assunto` falharia sem a coluna. Entram num commit separado depois que o usuário confirmar que o SQL foi aplicado.
 
 ### Aprovação
 
@@ -44,7 +47,7 @@
 - **Modelo:** só Sonnet — nunca outro
 - **Descrição:** o script não apaga dados e pode rodar mais de uma vez.
 - **Critérios de aceitação:** script idempotente; nenhuma linha alterada além da coluna nova.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `database/2026-10-27-aula-turma-data-assunto.sql` (commit desta entrega) · **Verificação:** arquivo lido de volta pelo líder: `alter table public.aula_turma add column if not exists data_assunto date null;` + `comment on column`; sem `delete`, `drop` nem `update`.
 
 ### #403.2 — Aplicar o SQL e conferir por leitura
 
@@ -54,7 +57,7 @@
 - **Modelo:** só Sonnet — nunca outro
 - **Descrição:** aplicação autorizada pelo "sim" do usuário; conferência só por leitura.
 - **Critérios de aceitação:** coluna existe; todas as linhas com `null`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** ⛔ bloqueada (ver Decisões de 2026-10-27) · **Verificação:** — (nada aplicado; sem acesso ao projeto `hxlvonriearllcmfqeri` pelo conector)
 
 ### #403.3 — Mostrar "Data do assunto" no card
 
@@ -64,7 +67,7 @@
 - **Modelo:** só Sonnet — nunca outro
 - **Descrição:** ler `data_assunto` junto com `data_aula` em `aula-turma-repositorio.js`; funções curtas, JSDoc e sem valor fixo fora de constante.
 - **Critérios de aceitação:** card com a linha nova nas matérias com bloqueio ligado; texto padrão quando vazio.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** código pronto no working tree (`indice-aula-data.js`, `indice-aula-bloqueio.js`, `aula-turma-repositorio.js`, `indice-aula-data.css`), **sem commit** até o #403.2 · **Verificação:** `node --check` ok nos 3 JS (Sonnet); conferência no navegador não feita (regra do projeto).
 
 ### #403.4 — Documentar em docs/database.md
 
@@ -74,7 +77,7 @@
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Descrição:** uma linha na tabela de colunas e uma nota de data.
 - **Critérios de aceitação:** coluna documentada com tipo e descrição.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `docs/database.md` (linha `data_assunto` na tabela de `aula_turma`) · **Verificação:** leitura da linha pelo líder.
 
 ### #403.5 — Commit e push da entrega
 

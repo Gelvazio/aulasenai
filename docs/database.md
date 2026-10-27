@@ -1038,6 +1038,7 @@ SUBSTITUÍDA: a tabela continua no banco e a #206 acrescentou a chave da matéri
 | `materia_id` | `bigint not null` → `materia.id` | chave da matéria; o gatilho `aula_turma_materia_da_aula_trg` (BEFORE) copia sempre a da aula |
 | `turma_codigo` | `text` → `turma.codigo` | chave da turma |
 | `data_aula` | `date` (aceita vazio) | data da aula nessa turma (cada turma tem dias diferentes) |
+| `data_assunto` | `date` (aceita vazio, inicial `null`) | data efetiva de passagem do assunto nessa turma (#403, 2026-10-27); o card mostra "Data do assunto" logo abaixo de "Data" |
 | `bloqueio` | `boolean default false` | `true` = aula bloqueada **nessa turma** |
 | `created_at`, `updated_at` | `timestamptz` | — |
 | `aula_turma_bloqueio_propaga_atividades_trg` | gatilho (AFTER) | bloquear a aula na turma põe a turma em `atividade.bloqueio` das atividades ativas da aula; liberar não mexe nelas |
