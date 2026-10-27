@@ -27,6 +27,9 @@ from tags_header import inserir_header_em_html  # noqa: E402
 import materia as dados_materia  # noqa: E402
 
 TEMPLATE = GERADOR / "template_atividade_dinamica.html"
+TEMPLATE_3D = GERADOR / "template_atividade_dinamica_3d.html"
+CAMPO_MODO = "Modo"
+MODO_DIGITAL_3D = "digital-3d"
 PASTA_FONTES = "CONTEUDO"
 PADRAO_FONTES = "ATIVIDADE-DINAMICA-AULA-*.md"
 PASTA_SQL = RAIZ / "database"
@@ -127,6 +130,19 @@ def montar_trocas(dados, contexto):
     }
 
 
+def escolher_template(dados):
+    """Escolhe o template: papel (padrão) ou computador com three.js (Modo: digital-3d).
+
+    Args:
+        dados: Dados lidos da fonte.
+
+    Returns:
+        Caminho do template.
+    """
+    modo = dados["meta"].get(CAMPO_MODO, "").strip().lower()
+    return TEMPLATE_3D if modo == MODO_DIGITAL_3D else TEMPLATE
+
+
 def gerar_pagina(pasta, caminho_md, dados):
     """Grava o HTML da dinâmica na pasta ATIVIDADES.
 
@@ -145,7 +161,7 @@ def gerar_pagina(pasta, caminho_md, dados):
     raiz_relativa = "/".join([".."] * profundidade)
     contexto = {"materia": dados_materia.ler_materia(pasta), "arquivo_md": caminho_md.name,
                 "pasta": pasta, "assets": raiz_relativa + "/assets", "raiz": raiz_relativa}
-    pagina = TEMPLATE.read_text(encoding="utf-8")
+    pagina = escolher_template(dados).read_text(encoding="utf-8")
     for chave, valor in montar_trocas(dados, contexto).items():
         pagina = pagina.replace(chave, valor)
     if "{{" in pagina:

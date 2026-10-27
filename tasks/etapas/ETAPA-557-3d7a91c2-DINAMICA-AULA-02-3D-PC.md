@@ -96,7 +96,7 @@
 
 ### #410.5 — Gerador: modo `digital-3d`, `.md` e página da Aula 02
 
-**Próximo passo:** ler `leitor_dinamica.py`/`gerar_atividade_dinamica.py` e acrescentar o modo; atualizar o `.md`; regerar o HTML.
+**Próximo passo:** (entregue) — ler `leitor_dinamica.py`/`gerar_atividade_dinamica.py` e acrescentar o modo; atualizar o `.md`; regerar o HTML.
 
 - **Nível:** PESADO — Jev (mais de 3 arquivos 0,65; confiança 0,92)
 - **Modelo:** só Sonnet — nunca outro
@@ -104,7 +104,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** `Modo: digital-3d` gera a página com o contêiner da cena, CDN do three.js (versão fixa) e os scripts da .2, .3 e .4; padrão (sem o campo) continua em papel.
 - **Critérios de Aceitação:** `py_compile` ok; página regerada traz a cena; nota e bloqueio inalterados.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/gerador-atividade-dinamica/gerar_atividade_dinamica.py` (Modo: digital-3d escolhe o template), `template_atividade_dinamica_3d.html` novo, `ATIVIDADES/CONTEUDO/ATIVIDADE-DINAMICA-AULA-02.md` (Modo: digital-3d; papel trocado pelo computador) e `ATIVIDADE-DINAMICA-AULA-02.html` regerado · **Verificação:** `py_compile` ok; página regerada traz `#dinamica-3d`, three.js r128 por CDN com versão fixa, scripts na ordem certa e a seção `#dinamica-entregas`; seed gerado idêntico ao existente (descartado, atividade id 212 intacta); cena só confirmável pelo usuário na tela.
 
 ### #410.6 — Skill `atividade-dinamica-3d`
 
