@@ -9,9 +9,7 @@
 
 
 - #410-3d7a91c2 — [Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) · 🔄 Em andamento (plano aprovado) · — (não reservável)
-  - #410.6 — Skill `atividade-dinamica-3d` · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:47)
-  - #410.7 — Documentação da regra · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 16:35)
-  - #410.8 — Conferência final · ⬜ Pendente (depende das anteriores) · `PESADO · effort high` · só Sonnet
+  - #410.8 — Conferência final · 🔄 Em execução · `PESADO · effort high` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 14:49)
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
   - #409.1 — Cabeçalho e metadados da aula · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #409.2 — Indicadores e objetivos · ✅ Concluído · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

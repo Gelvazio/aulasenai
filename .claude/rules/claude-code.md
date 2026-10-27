@@ -30,7 +30,8 @@ Structure"). Vale para o Claude Code local e de nuvem; as outras IAs seguem as m
 | `/verify [tudo]` | Verificação do quadro: conflitos e entregas aplicadas; coluna Verificado (`tasks/verificacao.md`) |
 
 Subagentes: `revisor-codigo`, `auditor-seguranca`, `auditor-quadro`. Skills novas:
-`revisao-codigo`, `auditoria-seguranca` (a auditoria de tarefa é da #168).
+`revisao-codigo`, `auditoria-seguranca` (a auditoria de tarefa é da #168);
+`atividade-dinamica-3d` (Atividade Dinâmica no PC, Modo digital-3d).
 Equipe por nível (#182, `niveis.md`): skills `classificar-tarefa` e `liderar-equipe`; subagentes
 `classificador-tarefas`, `executor-leve` (Haiku), `executor-medio` (Sonnet), `executor-pesado` (Opus).
 

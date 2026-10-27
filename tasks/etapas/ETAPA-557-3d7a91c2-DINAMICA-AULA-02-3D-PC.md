@@ -108,7 +108,7 @@
 
 ### #410.6 — Skill `atividade-dinamica-3d`
 
-**Próximo passo:** criar `.claude/skills/atividade-dinamica-3d/SKILL.md` e listar em `.claude/rules/claude-code.md`.
+**Próximo passo:** (entregue) — criar `.claude/skills/atividade-dinamica-3d/SKILL.md` e listar em `.claude/rules/claude-code.md`.
 
 - **Nível:** LEVE — Jev (só .md; confiança 0,89)
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
@@ -116,11 +116,11 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** quando usar, formato do `.md` com `Modo: digital-3d`, como escrever o módulo da aula, banco, ordem de entrega, o que nunca fazer (gabarito, navegador, testes).
 - **Critérios de Aceitação:** frontmatter `name`/`description`; ≤ 5 KB de regra; aponta para o gerador e os módulos.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `.claude/skills/atividade-dinamica-3d/SKILL.md` (4512 bytes) e linha em `.claude/rules/claude-code.md` (feito por agente executor-leve, revisado pelo líder) · **Verificação:** Frontmatter name/description presente; caminhos citados conferidos com os arquivos reais; ≤ 5 KB; listada em claude-code.md.
 
 ### #410.7 — Documentação da regra
 
-**Próximo passo:** atualizar `docs/regras/atividade-dinamica.md` e `docs/database.md`.
+**Próximo passo:** (entregue) — atualizar `docs/regras/atividade-dinamica.md` e `docs/database.md`.
 
 - **Nível:** PESADO — Jev (banco 0,50 (docs/database.md); confiança 0,62, sobe o nível)
 - **Modelo:** só Sonnet — nunca outro
@@ -128,7 +128,7 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** modo digital, tabela `entrega_dinamica`, onde ficam os módulos.
 - **Critérios de Aceitação:** leitura confere com o que foi feito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `docs/regras/atividade-dinamica.md` (seção do modo digital-3d) e `docs/database.md` (seção `entrega_dinamica`) · **Verificação:** Leitura confere com o SQL aplicado e com os arquivos criados.
 
 ### #410.8 — Conferência final
 

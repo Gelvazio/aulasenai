@@ -1142,6 +1142,16 @@ Script: `database/2026-10-26-ensalado-por-turma.sql` (**aplicado em 2026-10-26**
 | `materia.ensalado` | legado: a faixa de matérias não lê mais a coluna |
 | `turma_materia` (#211) | continua sendo só o vínculo que limita o combo Turma do índice |
 
+## 🎯 Atualização 2026-10-27 — `entrega_dinamica`: entrega da Atividade Dinâmica no PC (#410)
+
+Script: `database/2026-10-27-entrega-dinamica.sql` (**aplicado no Supabase em 2026-10-27**; idempotente). Regra: `docs/regras/atividade-dinamica.md` (modo `digital-3d`).
+
+| Objeto | Descrição |
+|---|---|
+| `entrega_dinamica` | Entrega do aluno por **aluno × atividade**. Colunas: `aluno_id` (FK `auth.users`, cascade), `atividade_id` (FK `atividade`, cascade), `estado` (jsonb com marcas, redesenho e ficha; limite de 300.000 caracteres), `entregue` (boolean), `entregue_em`, `atualizado_em`. Chave `(aluno_id, atividade_id)`. Sem gabarito |
+| RLS de `entrega_dinamica` | `select`: o próprio aluno ou `professor_pode_ver_aluno(aluno_id)`; `insert`: só o próprio aluno; `update`: só o próprio aluno **enquanto `entregue = false`**; `anon` sem acesso; sem `delete` |
+| `entrega_dinamica_auditar()` + gatilho | Carimba `atualizado_em` e, ao entregar, `entregue_em` |
+
 ## 🎯 Atualização 2026-10-26 — `nota_dinamica`: nota da Atividade Dinâmica (#381)
 
 Script: `database/2026-10-26-nota-dinamica.sql` (**aplicado no Supabase em 2026-10-26**; seeds das aulas 01 a 03: atividades 211, 212 e 213). Regra: `docs/regras/atividade-dinamica.md`.

@@ -74,6 +74,29 @@ Tabela `nota_dinamica` (`database/2026-10-26-nota-dinamica.sql`): uma nota por a
 `formato`, `grupo` e `comentario`; RLS: professor lê/grava só alunos que pode ver; aluno lê só a própria.
 A nota entra em `notas_media_final` (`atividade_eh_dinamica`). Detalhes: `docs/database.md`.
 
+## Modo `digital-3d`: a dinâmica feita no computador (tarefa #410)
+
+Pedido em 2026-10-27. Com `- **Modo:** digital-3d` no cabeçalho da fonte, a página **substitui o
+papel** por uma cena three.js (r128, CDN com versão fixa). Sem o campo, o gerador segue em papel.
+Piloto: Aula 02 de Fundamentos de UI/UX (atividade `id 212`, mesma linha e mesmo bloqueio).
+
+| Parte | Onde |
+|---|---|
+| Template do modo | `assets/gerador-atividade-dinamica/template_atividade_dinamica_3d.html` |
+| Dados da aula (tela, ficha, checklist, instruções) | `assets/js/dinamica-3d-aula-NN.js` (`registrarDinamica3d('NN', {...})`) |
+| Cena, formas, ferramentas, painel, controle | `assets/js/dinamica-3d-{formas,estado,cena,ferramentas,painel,interface,controle}.js` e `assets/css/dinamica-3d.css` |
+| Ligação com o banco | `assets/js/dinamica-3d-pagina.js` e `assets/js/entrega-dinamica-repositorio.js` |
+| Painel do professor | `assets/js/entrega-dinamica-professor.js` (seção `#dinamica-entregas`) |
+| Skill | `.claude/skills/atividade-dinamica-3d/SKILL.md` |
+
+**Fluxo do aluno:** 1) Raio-x: marca retângulo, círculo e triângulo arrastando sobre a tela; 2) Redesenho:
+seleciona, move e muda tamanho, cor, sólido/contorno e cantos; 3) Ficha: preenche e **entrega**. Salvar
+rascunho grava; **Entregar** trava a atividade (o RLS recusa alterações depois). Funciona com mouse,
+toque e botões. O professor vê uma pré-visualização que **não grava** e abre cada entrega em modo leitura.
+
+**Banco:** `entrega_dinamica` (`database/2026-10-27-entrega-dinamica.sql`); a nota continua na
+`nota_dinamica`. Os dados da aula **não trazem gabarito**; quem avalia é o professor.
+
 ## Verificação
 
 `py_compile` do gerador, `node --check` dos JS, leitura do HTML gerado e consulta das políticas.

@@ -236,3 +236,5 @@
 | #410.5 | Gerador: modo `digital-3d` e página da Aula 02 · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #411.2 | Páginas objetivas existentes recebem o atributo · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | #411.1 | ✅ Concluído | — | [558-09481d8c](etapas/ETAPA-558-09481d8c-BOTAO-GABARITO-OBJETIVA.md) | — |
 | **#411-09481d8c** | **Botão "Exportar Meu Gabarito" nas atividades objetivas (não aparece para o aluno)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [558-09481d8c](etapas/ETAPA-558-09481d8c-BOTAO-GABARITO-OBJETIVA.md) | — |
+| #410.6 | Skill `atividade-dinamica-3d` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| #410.7 | Documentação da regra · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
