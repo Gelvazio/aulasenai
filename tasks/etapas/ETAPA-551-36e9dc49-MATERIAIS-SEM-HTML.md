@@ -50,13 +50,13 @@
 
 ### #402.2 — Copiar a matéria sem `*.html` para MATERIAIS-SEM-HTML
 
-**Próximo passo:** copiar `MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO` para `MATERIAIS-SEM-HTML/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO`, excluindo `*.html`.
+**Próximo passo:** concluído.
 
-- **Nível:** a classificar pelo Jev
-- **Modelo:** a classificar pelo Jev
+- **Nível:** MEDIO · effort medium (executor-medio, Sonnet)
+- **Modelo:** só Sonnet
 - **Descrição:** cópia da árvore sem HTML; a origem não é alterada.
 - **Critérios de aceitação:** 89 arquivos no clone; nenhum `.html`; origem intacta.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** cópia feita pelo executor-medio com `tar` (a primeira tentativa com `cpio` falhou: o comando não existe no ambiente, e só sobrou a pasta vazia). · **Verificação:** conferido pelo Haiku (líder) em 2026-10-26: `.html` no destino = 0; arquivos no destino = 89; lista de caminhos da origem sem `.html` é igual à do destino; MD5 de todos os 89 arquivos é igual ao da origem.
 
 ### #402.3 — Criar assets/js vazia na raiz do clone
 
@@ -80,13 +80,13 @@
 
 ### #402.5 — Conferir a contagem e os caminhos
 
-**Próximo passo:** rodar a contagem e o diff de caminhos entre origem (sem `.html`) e clone.
+**Próximo passo:** concluído.
 
-- **Nível:** a classificar pelo Jev
-- **Modelo:** a classificar pelo Jev
+- **Nível:** LEVE · effort low
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash
 - **Descrição:** `find ... -name "*.html" | wc -l` = 0; `find ... -type f | wc -l` = 89; diff dos caminhos relativos vazio.
 - **Critérios de aceitação:** os três números batem.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** conferência feita pelo líder (Haiku), somente leitura · **Verificação:** 0 `.html`; 89 arquivos; diff de caminhos vazio; MD5 igual nos 89 arquivos.
 
 ### #402.6 — Commit e push da entrega
 
