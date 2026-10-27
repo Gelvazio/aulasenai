@@ -2,7 +2,7 @@
 
 <!-- gerado por scripts/sincronizar.mjs; não editar -->
 
-- **Versão:** 2026-10-26-06f7c1a8
+- **Versão:** 2026-10-26-584e06a5
 - **Algoritmo:** sha256 do texto (sem BOM, fim de linha LF); 16 caracteres por arquivo, 8 na versão
 - **Fonte:** https://github.com/Gelvazio/rules-ai/tree/main/regras
 
@@ -12,13 +12,13 @@
 |---|---------|--------|
 | 0 | INDEX.md | 763172a1e2dbed0d |
 | 1 | regra-maior.md | bbf5f654197ffa51 |
-| 2 | ciclo-da-task.md | 706d60bd58960947 |
+| 2 | ciclo-da-task.md | c33948460b09e32e |
 | 3 | niveis-e-modelos.md | d97fe686f7646747 |
-| 4 | frentes-e-reserva.md | 869cf62ea28db83a |
+| 4 | frentes-e-reserva.md | f34a17a522d8c2af |
 | 5 | comando-ponto.md | 25fab5e441b75d40 |
 | 6 | comando-interrogacao.md | e81811ae12199f38 |
-| 7 | quadro-de-tarefas.md | 6358739af2e50a25 |
-| 8 | exibicao-de-status.md | 762e831da32bdc80 |
+| 7 | quadro-de-tarefas.md | 145f77a3dfd8e21c |
+| 8 | exibicao-de-status.md | c93f3dbedccb1486 |
 | 9 | git-geral.md | 2167c76b4283c32a |
 | 10 | testes-validacao.md | 233579829f757900 |
 | 11 | codigo-limites-nomes.md | ca88cca3360ef918 |
@@ -40,7 +40,7 @@
 
 ## Pacote do rules-local (scripts e Jev)
 
-- **Código do pacote:** 8e593681
+- **Código do pacote:** a7fc37dc
 
 | # | Arquivo | Código |
 |---|---------|--------|
@@ -53,7 +53,7 @@
 | 6 | jev/cliente.mjs | 6b7824f10440578f |
 | 7 | jev/config.mjs | 40c6d99b6227f964 |
 | 8 | jev/decidir.mjs | 0548abe0d9805f84 |
-| 9 | jev/estado.mjs | f4a070ac742efc9a |
+| 9 | jev/estado.mjs | f05d06ea745f226c |
 | 10 | jev/ganchos/claude-prompt.mjs | da652d43e1845614 |
 | 11 | jev/ganchos/codex-prompt.mjs | cbff42b994d5e2f8 |
 | 12 | jev/guardrails/aprovacao.mjs | 960ae110bf3a2f90 |
@@ -74,3 +74,4 @@
 | 27 | jev/modelos.mjs | 1263d15bcaecf0ff |
 | 28 | jev/perguntas.mjs | bcec2aa12dcfdb10 |
 | 29 | jev/proxy.mjs | a027d2b70b57a904 |
+| 30 | jev/quadro-formato.mjs | 7ae4298bf789c584 |
