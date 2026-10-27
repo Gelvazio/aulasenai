@@ -19,8 +19,8 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 
 | Ferramenta | `LEVE` | `MEDIO` | `PESADO` |
 |---|---|---|---|
-| **Claude Code** local | Haiku | Sonnet | **Sonnet, Opus 5.5 ou superior, ou Fable** (C48) |
-| **Claude Code** nuvem | Haiku | Sonnet | Sonnet, Opus 5.5+ ou Fable, **sem banco** |
+| **Claude Code** local | Haiku | Sonnet | **Sonnet** (C48) |
+| **Claude Code** nuvem | Haiku | Sonnet | Sonnet, **sem banco** |
 | **Gemini CLI** | Flash | Pro | ⛔ |
 | **Antigravity** | Gemini Flash | ⛔ | ⛔ |
 | **Grok** | rápido | principal | ⛔ |
@@ -28,11 +28,11 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 | **Codex** / **Cursor** | ✅ | ✅ | ⛔ |
 | **Devin** / **Copilot** | ✅ | ✅ | ⛔ |
 
-- `PESADO` é do Claude Code com **Sonnet, Opus 5.5 ou superior, ou Fable** (C48, 2026-10-22).
+- `PESADO` é do Claude Code com **Sonnet** (C48, 2026-10-22; 2026-10-26: Opus sai de `PESADO`).
 - ⛔ **OPUS NUNCA EXECUTA** neste projeto (2026-10-24, pedido do usuário: "é projeto simples";
   2026-10-26, pedido do usuário: "E COMO EXECUTOR, NUNCA"): nem executor, nem agente de equipe
   (`executor-pesado`). `PESADO` aqui é do **Sonnet** (ou DeepSeek); `LEVE` do Haiku. Vale mais que
-  a linha da tabela acima que cita Opus.
+  a regra antiga de PESADO com Opus, que saiu da tabela.
 - ✅ **Opus pode ser líder sempre** (2026-10-26, pedido do usuário: "LIBERE O OPUS COMO LIDER,
   SEMPRE"): reserva, delega, revisa e dispara agentes Haiku/Sonnet, sem executar subtarefa.
 - Banco continua **só do Claude Code local** (`multiplas-ias.md`).
@@ -45,9 +45,9 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
   assim que se sabe o modelo de quem reservou.
 - ⛔ **NUNCA executar subtarefa que não é do seu modelo** (2026-10-16, #247; global C22): cada IA
   só pega os níveis marcados na **sua** linha — Haiku **só** `LEVE`, Sonnet `MEDIO` **e**
-  `PESADO` (C48), Opus 5.5+/Fable **só** `PESADO`. Nem acima nem abaixo, **sem exceção** (nem com autorização). Sem
-  subtarefa livre do seu modelo → não pega nenhuma e avisa o usuário. A coluna **Modelo** do
-  quadro e a linha `- **Modelo:**` da etapa dizem qual é.
+  `PESADO` (C48); Opus 5.5+/Fable não executa nenhum nível (só líder). Nem acima nem abaixo,
+  **sem exceção** (nem com autorização). Sem subtarefa livre do seu modelo → não pega nenhuma
+  e avisa o usuário. A coluna **Modelo** do quadro e a linha `- **Modelo:**` da etapa dizem qual é.
 - **Onde fica o nível:** 1º item da seção da subtarefa na etapa —
   `- **Nível:** MEDIO — motivo curto` (o sinal que decidiu).
 - **Quem classifica:** quem cria ou divide a subtarefa, pela skill
@@ -61,6 +61,6 @@ e reserva: `tasks/quadro.md` e `tasks/frentes-e-reserva.md`.
 
 Skill `.claude/skills/liderar-equipe/SKILL.md`: o líder (Opus 5.5+ ou Fable) reserva **uma
 subtarefa por vez**, delega ao agente do nível (`executor-leve` = Haiku, `executor-medio` =
-Sonnet, `executor-pesado` = Opus), confere, valida e commita. Só o líder usa Git e edita o
+Sonnet, `executor-pesado` = Sonnet), confere, valida e commita. Só o líder usa Git e edita o
 quadro; o agente `classificador-tarefas` só grava a linha `- **Nível:**` nas etapas. Quem
 **executa** é o agente do nível (o líder nunca faz a subtarefa no lugar dele).
