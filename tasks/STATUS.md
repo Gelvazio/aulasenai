@@ -6,6 +6,9 @@
 ## Tarefas
 
 
+- #407-7a9b4c23 — [Editar aula: campo "Data da aula" no topo do formulário](etapas/ETAPA-554-7a9b4c23-DATA-DA-AULA-NO-TOPO-DO-MODAL.md) · 🔄 Em progresso · — (não reservável)
+  - #407.1 — Mover a data para depois de Sequência · 🔄 Em execução · `LEVE` · só Haiku 5.5 ou DeepSeek V4.1 Flash (Claude Code (Haiku 5.5 · executor-leve; frente Sonnet 5.5) (local · main) (desde 2026-10-27 07:45))
+
 - #400-8e2a4c60 — [Turma escolhida só no Quadro de Progresso: todas as demais matérias de todos os cursos](etapas/ETAPA-545-8e2a4c60-TURMA-UNICA-DEMAIS-MATERIAS.md) · ⬜ Pendente (depende da #399; tarefa grande: aguarda aprovação) · — (não reservável)
   - #400.1 a #400.4 — inventário, geradores, páginas, conferência e docs (ver a etapa) · ⬜ Pendente · nível a classificar pelo Jev
 
