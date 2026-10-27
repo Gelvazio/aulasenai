@@ -992,19 +992,22 @@ function recarregarSeVeioDoCache(evento) {
 }
 
 /**
- * Mostra ao aluno só as N primeiras questões (N = quantidade mínima dele). O professor, e o
- * aluno sem mínimo definido, veem todas. Uma falha aqui não atrapalha a avaliação.
+ * Mostra só as N primeiras questões: ao aluno, a quantidade mínima dele; ao professor, o mínimo
+ * mais usado da atividade (#419). Sem mínimo definido, aparecem todas. Uma falha aqui não
+ * atrapalha a avaliação.
  * @param {Object} dados - Dados carregados do banco.
  */
 async function aplicarLimiteDeQuestoes(dados) {
-    const deveLimitar = Boolean(dados.logado) && !dados.ehProfessor && dados.minimoQuestoes > 0;
-    if (!deveLimitar) return;
+    const deveLimitarAluno = !dados.ehProfessor && dados.minimoQuestoes > 0;
+    const deveLimitarProfessor = Boolean(dados.ehProfessor) && Boolean(dados.atividadeId);
+    if (!dados.logado || !(deveLimitarAluno || deveLimitarProfessor)) return;
 
     try {
         if (typeof window.limitarQuestoesAoMinimo !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_LIMITE_QUESTOES_DISCURSIVA);
         }
-        window.limitarQuestoesAoMinimo(dados.minimoQuestoes);
+        if (deveLimitarProfessor) await window.limitarQuestoesDoProfessor(dados.atividadeId);
+        else window.limitarQuestoesAoMinimo(dados.minimoQuestoes);
     } catch (erro) {
         console.warn('Limite de questões:', erro.message);
     }

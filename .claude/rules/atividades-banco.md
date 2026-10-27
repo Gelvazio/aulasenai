@@ -14,8 +14,10 @@ plano da #25.
 - ✅ **Objetiva e Prática, sempre, em todas as matérias:** o aluno vê só as questões 1 até a quantidade
   mínima dele, lida do banco (`minimo_questoes_para_entregar`: `minimo_questoes_aluno`, senão o
   padrão da atividade, senão o total). Dinâmico por aula (atividade) e por aluno/turma.
+- ✅ **O professor vê como o aluno** (#419): só até o mínimo mais usado da atividade (senão o padrão
+  da atividade); sem mínimo no banco, vê todas.
 - ✅ Liga **sozinho**, sem atributo por página; só `data-questoes-ate-minimo="nao"` (objetiva)
-  desliga. O professor continua vendo todas. Código: `questoes-ate-minimo.js` (objetiva) e
+  desliga. Código: `questoes-ate-minimo.js` (objetiva) e
   `limite-questoes-discursiva.js` (prática).
 - ⛔ Nunca fixar o número no código nem no HTML: o limite vem sempre do banco.
 

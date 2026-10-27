@@ -196,7 +196,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   mostra um popup. Não é 100% (extensões e ditado por voz passam); prova com pesquisa continua
   permitida — o aluno lê e escreve com as próprias palavras.
   - **Reforço nas práticas (2026-10-27, #414, pedido do usuário):** nas páginas `ATIVIDADE-PRATICA-*` o bloqueio liga **sozinho** (sem o atributo); `data-bloquear-colar="nao"` desliga. Além de colar/arrastar, bloqueia os atalhos (Ctrl/Cmd+V/C/X, Shift+Insert, Ctrl+Insert, Shift+Delete), o menu de contexto, copiar/selecionar o **enunciado** da questão e texto que aparece de uma vez (> 25 caracteres num só `input`: o campo volta ao texto anterior). Provas/avaliações continuam opt-in. Não vale para as 8 práticas de TIC/Comunicação que não carregam o script. Limites: DevTools, extensões que mexem na página e outro aparelho.
-  - **Só as N primeiras questões (2026-10-27, #415, pedido do usuário):** na prática/avaliação discursiva o aluno vê só as N primeiras questões, onde N é a quantidade mínima dele (`questoes_nota_aluno`, senão `minimo_questoes_aluno`, senão o padrão da atividade). `assets/js/limite-questoes-discursiva.js` (carregado por `avaliacao-discursiva.js`) tira da página as questões depois da N-ésima; o professor e o aluno sem mínimo veem todas.
+  - **Só as N primeiras questões (2026-10-27, #415, pedido do usuário):** na prática/avaliação discursiva o aluno vê só as N primeiras questões, onde N é a quantidade mínima dele (`questoes_nota_aluno`, senão `minimo_questoes_aluno`, senão o padrão da atividade). `assets/js/limite-questoes-discursiva.js` (carregado por `avaliacao-discursiva.js`) tira da página as questões depois da N-ésima; o aluno sem mínimo vê todas (o professor: ver #419).
   - **1º uso:** Prova Prática ADAG (id 82, `PROVA-PRATICA-ADAG-SALETE.md`).
   - ⏳ **Futuro (pendência no `STATUS.md`):** ligar o campo nas **outras avaliações
     discursivas** (fonte `.md` + regerar a página), uma por vez, quando o usuário pedir. Opcional
@@ -503,6 +503,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     mostra o resumo e a tabela dos alunos, e o botão **"Quantidade Mínima de Questões"** grava o
     mínimo informado **só para quem ainda está com o total** (quem tem mínimo próprio não muda).
     A nota continua seguindo o mínimo de cada aluno. `assets/js/calculo-nota-progresso.js` + CSS.
+  - **Professor vê só o mínimo (2026-10-27, #419, pedido do usuário):** na objetiva o professor já
+    via só até o mínimo mais usado; na prática, `limite-questoes-discursiva.js`
+    (`limitarQuestoesDoProfessor`) corta no mínimo mais usado em `minimo_questoes_aluno` da
+    atividade, senão no padrão `minimo_questoes_entrega`; sem mínimo no banco, vê todas.
   - **Folha e avisos só com as visíveis (2026-10-27, #418):** na objetiva, o corte pelo mínimo roda
     antes de montar a folha e, só para o aluno, `estado.itens` fica com as questões visíveis
     ("Respondidas: X de N", pendências e "mínimo de N de N" só entre elas). Professor mantém todos.

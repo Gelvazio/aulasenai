@@ -254,3 +254,5 @@
 | **#417-c9d27a14** | **Meu progresso do aluno mostra só as questões até o mínimo** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [564-c9d27a14](etapas/ETAPA-564-c9d27a14-MEU-PROGRESSO-SO-MINIMO.md) | — |
 | #418.1 | Folha e avisos da objetiva só com as questões visíveis · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [565-d4e81b36](etapas/ETAPA-565-d4e81b36-OBJETIVA-TEXTOS-SO-VISIVEIS.md) | — |
 | **#418-d4e81b36** | **Objetiva conta só as questões visíveis na folha e nos avisos** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [565-d4e81b36](etapas/ETAPA-565-d4e81b36-OBJETIVA-TEXTOS-SO-VISIVEIS.md) | — |
+| #419.1 | Professor da prática vê só o mínimo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [566-e5f92c47](etapas/ETAPA-566-e5f92c47-PROFESSOR-VE-SO-O-MINIMO.md) | — |
+| **#419-e5f92c47** | **Professor também vê só a quantidade mínima na prática** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [566-e5f92c47](etapas/ETAPA-566-e5f92c47-PROFESSOR-VE-SO-O-MINIMO.md) | — |

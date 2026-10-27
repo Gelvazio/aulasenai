@@ -26,7 +26,7 @@
 
 ### #419.1 — Professor da prática vê só o mínimo
 
-**Próximo passo:** classificar pelo Jev, reservar e implementar.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (professor na prática 182 vê só 1 a 10).
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -35,3 +35,4 @@
 - **Fonte:** sinais
 - **Descrição:** conforme o escopo acima.
 - **Critérios de Aceitação:** professor abre a prática da 182 e vê só as questões 1 a 10; a objetiva segue cortando para ele.
+- **Entrega:** `assets/js/limite-questoes-discursiva.js` (`limitarQuestoesDoProfessor`), `assets/js/avaliacao-discursiva.js` (`aplicarLimiteDeQuestoes`), `docs/regras/atividades.md` e `.claude/rules/atividades-banco.md` · **Verificação:** `node --check` ok nos dois JS; leitura do código; o teste na tela só o usuário confirma (sem navegador).
