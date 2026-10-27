@@ -53,7 +53,7 @@
 
 ### 411.2 — Páginas objetivas existentes recebem o atributo
 
-**Próximo passo:** depois do 411.1, listar as páginas objetivas sem o atributo e acrescentá-lo no `<body>`.
+**Próximo passo:** (entregue) — nada; o usuário confirma o botão na tela com o aluno logado.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -62,4 +62,4 @@
 - **Fonte:** sinais
 - **Descrição:** acrescentar `data-exportar-meu-gabarito="sim"` no `<body>` das páginas objetivas existentes, sem mudar mais nada da página.
 - **Critérios de aceitação:** grep mostra o atributo em todas as objetivas; nenhuma outra linha da página muda.
-- **Entrega:** — · **Verificação:** — (a preencher na entrega)
+- **Entrega:** 83 páginas objetivas em `MATERIAIS/` (79 `ATIVIDADES-AULA-NN-*-QUESTOES.html` e 4 avaliações/provas objetivas) ganharam `data-exportar-meu-gabarito="sim"` no `<body>`, feito por agente executor-pesado · **Verificação:** varredura antes 117 objetivas / 34 com atributo; depois 117 / 117; `git diff --numstat` = 1 linha trocada em cada um dos 83 arquivos (conferido pelo líder); os 7 `ATIVIDADES-AULA-01-50-QUESTOES.html` têm o atributo. A tela só o usuário confirma (sem navegador).
