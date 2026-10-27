@@ -107,3 +107,12 @@
 .aula-progresso__quadro__celula--entregue {
     background: var(--progresso-aula-entregue);
 }
+
+.aula-progresso__quadro__mensagem {
+    margin: 12px 0;
+}
+
+.aula-progresso__quadro__mensagem--erro {
+    color: var(--progresso-aula-erro);
+    font-weight: 600;
+}

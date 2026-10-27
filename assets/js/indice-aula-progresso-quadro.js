@@ -13,6 +13,8 @@ const TEXTOS_SITUACAO_PROGRESSO_AULA = {
 };
 const MSG_SEM_ATIVIDADES_PROGRESSO_AULA = 'Esta aula ainda não tem atividades cadastradas.';
 const MSG_SEM_ALUNOS_PROGRESSO_AULA = 'Nenhum aluno presente nesta turma.';
+const MSG_CARREGANDO_PROGRESSO_AULA = 'Carregando…';
+const MSG_ERRO_PROGRESSO_AULA = 'Não foi possível carregar o progresso das atividades: ';
 
 /**
  * Cria uma célula (th ou td) com texto e classe.
@@ -106,19 +108,38 @@ function desenharQuadroProgressoAula(corpo, dados) {
 }
 
 /**
- * Lê os dados da aula e desenha o quadro no corpo do modal.
+ * Mostra no corpo do modal uma mensagem de estado (carregando ou erro), sem desenhar lista.
+ * @param {HTMLElement} corpo - Corpo do modal.
+ * @param {string} texto - Mensagem.
+ * @param {boolean} ehErro - true para o estilo de erro.
+ */
+function mostrarMensagemProgressoAula(corpo, texto, ehErro) {
+    const mensagem = document.createElement('p');
+    mensagem.className = CLASSE_QUADRO_PROGRESSO_AULA + '__mensagem' +
+        (ehErro ? ' ' + CLASSE_QUADRO_PROGRESSO_AULA + '__mensagem--erro' : '');
+    mensagem.textContent = texto;
+    corpo.replaceChildren(mensagem);
+}
+
+/**
+ * Lê os dados da aula e desenha o quadro no corpo do modal: "Carregando…" enquanto lê e, se o
+ * banco falhar, só a mensagem de erro (nunca uma lista montada por outra fonte).
  * @param {HTMLElement} corpo - Corpo do modal.
  * @param {{aula: {id: number}}} item - Card e aula.
- * @returns {Promise<void>} Resolve quando o quadro estiver desenhado.
- * @throws {Error} Se alguma leitura do banco falhar (a 421.6 mostra o erro ao professor).
+ * @returns {Promise<void>} Resolve quando o quadro (ou o erro) estiver na tela.
  */
 async function montarQuadroProgressoAula(corpo, item) {
-    const atividades = await window.lerAtividadesDaAula(item.aula.id);
-    const dias = [...new Set(atividades.map((atividade) => atividade.dia).filter(Boolean))];
-    const [{ alunos }, situacoes] = await Promise.all([
-        window.lerAlunosPresentesDaTurma({ dias }),
-        window.lerSituacoesDasAtividades(atividades)]);
-    desenharQuadroProgressoAula(corpo, { atividades, alunos, situacoes });
+    mostrarMensagemProgressoAula(corpo, MSG_CARREGANDO_PROGRESSO_AULA, false);
+    try {
+        const atividades = await window.lerAtividadesDaAula(item.aula.id);
+        const dias = [...new Set(atividades.map((atividade) => atividade.dia).filter(Boolean))];
+        const [{ alunos }, situacoes] = await Promise.all([
+            window.lerAlunosPresentesDaTurma({ dias }),
+            window.lerSituacoesDasAtividades(atividades)]);
+        desenharQuadroProgressoAula(corpo, { atividades, alunos, situacoes });
+    } catch (erro) {
+        mostrarMensagemProgressoAula(corpo, MSG_ERRO_PROGRESSO_AULA + erro.message, true);
+    }
 }
 
 window.montarQuadroProgressoAula = montarQuadroProgressoAula;

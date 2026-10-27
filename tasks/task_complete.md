@@ -263,3 +263,4 @@
 | #421.3 | Ler alunos da turma, sem os que faltaram · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | #421.2 | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |
 | #421.4 | Ler atividades da aula e entrega de cada aluno · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #421.2 | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |
 | #421.5 | Quadro alunos × atividades · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #421.3, #421.4 | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |
+| #421.6 | Mensagens de carregamento e de erro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #421.5 | ✅ Concluído | — | [568-daafb3cb](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) | — |

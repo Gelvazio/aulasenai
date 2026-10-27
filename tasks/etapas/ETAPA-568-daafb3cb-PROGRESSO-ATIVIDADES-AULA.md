@@ -100,7 +100,7 @@
 
 ### #421.6 — Mensagens de carregamento e de erro
 
-**Próximo passo:** depois da 421.5.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela.
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -109,7 +109,7 @@
 - **Fonte:** sinais
 - **Descrição:** "Carregando…" enquanto lê; mensagem de erro se o banco falhar; sem lista de plano B.
 - **Critérios de Aceitação:** erro mostra mensagem e não desenha lista.
-- **Entrega:** —  · **Verificação:** —
+- **Entrega:** `assets/js/indice-aula-progresso-quadro.js` (`mostrarMensagemProgressoAula`; `montarQuadroProgressoAula` com "Carregando…" e `try/catch`) e `assets/css/indice-aula-progresso.css` (mensagem e erro) · **Verificação:** `node --check` ok; leitura do código: "Carregando…" antes da leitura, falha mostra só "Não foi possível carregar o progresso das atividades: <motivo>" e nenhuma tabela é desenhada; teste na tela só o usuário.
 
 ### #421.7 — Documentação em docs/
 
