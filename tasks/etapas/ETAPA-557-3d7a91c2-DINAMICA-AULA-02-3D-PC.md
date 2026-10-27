@@ -132,7 +132,7 @@
 
 ### #410.8 — Conferência final
 
-**Próximo passo:** `node --check` e `py_compile`; consulta ao banco (tabela, RLS, atividade 212 bloqueada); limites de tamanho.
+**Próximo passo:** (entregue) — `node --check` e `py_compile`; consulta ao banco (tabela, RLS, atividade 212 bloqueada); limites de tamanho.
 
 - **Nível:** PESADO — Jev (banco 0,81; confiança 1,00)
 - **Modelo:** só Sonnet — nunca outro
@@ -140,4 +140,4 @@
 - **JEV-AI-SUGGESTION:** NAO
 - **Descrição:** conferir tudo sem navegador e avisar o usuário o que só a tela confirma.
 - **Critérios de Aceitação:** todas as subtarefas ✅; mãe fecha.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** Conferência final sem alterar arquivos · **Verificação:** `node --check` ok em todos os 14 JS (dinamica-3d-*, entrega-dinamica-*); nenhuma linha > 100 colunas nem função > 45 linhas; `py_compile` ok no gerador; módulos carregados em sandbox node sem erro e sem função duplicada ou indefinida; banco: `entrega_dinamica` com RLS e 0 linhas, atividade 212 mesma linha (id e página) com o bloqueio por turmas que já tinha; a cena em si só o usuário confirma na tela (sem navegador).

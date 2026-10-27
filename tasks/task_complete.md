@@ -238,3 +238,5 @@
 | **#411-09481d8c** | **Botão "Exportar Meu Gabarito" nas atividades objetivas (não aparece para o aluno)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [558-09481d8c](etapas/ETAPA-558-09481d8c-BOTAO-GABARITO-OBJETIVA.md) | — |
 | #410.6 | Skill `atividade-dinamica-3d` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
 | #410.7 | Documentação da regra · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| #410.8 | Conferência final · `PESADO · effort high` | 🟡 Média | PESADO · só Sonnet | Nenhuma | ✅ Concluído | — | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
+| **#410-3d7a91c2** | **Atividade Dinâmica da Aula 02 (UI/UX) feita no PC com three.js, no lugar do papel (atividade id 212) + skill** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [557-3d7a91c2](etapas/ETAPA-557-3d7a91c2-DINAMICA-AULA-02-3D-PC.md) | — |
