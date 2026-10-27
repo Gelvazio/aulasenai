@@ -12,7 +12,7 @@
   - #422.1 — Gravar o padrão de questões mínimas · ⬜ Pendente · nível a classificar pelo Jev
   - #422.2 — Conferência e registro · ⬜ Pendente (depende da #422.1) · nível a classificar pelo Jev
 - #421-daafb3cb — [Botão "Progresso Atividades" no card da aula (índice)](etapas/ETAPA-568-daafb3cb-PROGRESSO-ATIVIDADES-AULA.md) · 🔄 Em andamento · — (não reservável)
-  - #421.6 — Mensagens de carregamento e de erro · ⬜ Pendente (depende da #421.5) · `MEDIO · effort medium` · só Sonnet
+  - #421.6 — Mensagens de carregamento e de erro · ⬜ Pendente (depende da #421.5) · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-27 20:15)
   - #421.7 — Documentação em docs/ · ⬜ Pendente (depende da #421.6) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #421.8 — Verificação · ⬜ Pendente (depende da #421.7) · `MEDIO · effort medium` · só Sonnet
 - #409-f21ab99e — [Aula 01 de Fundamentos de UI/UX em HTML (AULAS/aula-01.html)](etapas/ETAPA-556-f21ab99e-AULA-01-UI-UX-HTML.md) · 🔄 Em andamento (faltam 409.16 e 409.18) · — (não reservável)
