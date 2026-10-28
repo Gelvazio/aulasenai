@@ -11,7 +11,7 @@
 
 
 - #426-d4b7a2e9 — [Pasta PEDAGOGICO com index.html e a imagem do slide](etapas/ETAPA-573-d4b7a2e9-PASTA-PEDAGOGICO.md) · ⬜ Pendente · — (não reservável)
-  - #426.1 — Criar PEDAGOGICO/index.html e colocar as 2 imagens dos slides · ⬜ Pendente (imagens só no chat: o usuário precisa salvar os arquivos) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #426.1 — Criar PEDAGOGICO/index.html e colocar as 3 imagens dos slides · ⬜ Pendente (imagens só no chat: o usuário precisa salvar os arquivos) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #423-5f2c8d1e — [Aba comentada (só professor) na Atividade Dinâmica da aula 02 de UI/UX](etapas/ETAPA-570-5f2c8d1e-ABA-COMENTADA-UIUX-AULA-02.md) · ⬜ Pendente · — (não reservável)
   - #423.1 — Aba "4. Resposta comentada" com redesenho e balões · ⬜ Pendente · nível a classificar pelo Jev (provável MEDIO · só Sonnet)
 - #422-a7c3e19b — [Mínimo de questões em Fundamentos de UI/UX (aulas 3 em diante): objetiva 20, prática 10](etapas/ETAPA-569-a7c3e19b-MINIMO-QUESTOES-UIUX.md) · 👀 Aguardando o usuário (tarefa grande: aguarda "sim") · — (não reservável)
