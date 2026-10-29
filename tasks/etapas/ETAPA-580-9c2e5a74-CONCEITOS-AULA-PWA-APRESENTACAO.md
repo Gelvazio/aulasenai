@@ -20,7 +20,7 @@
 
 ### #433.1 — PWA (manifest, ícone SVG, service worker) e modo apresentação
 
-**Próximo passo:** criar os arquivos de `CONCEITOS-AULA-PWA/` e `conceitos-aula-sw.js`, ajustar o HTML, conferir com `node --check` e entregar.
+**Próximo passo:** (entregue) — nada.
 
 - **Nível:** MEDIO — classificado pela matriz (Jev: confiança 0,64 na mensagem; sinal de mais de 3 arquivos pequenos, sem banco nem segurança)
 - **Modelo:** só Sonnet — nunca outro
@@ -29,4 +29,4 @@
 - **Fonte:** sinais
 - **Descrição:** slides = capa + cada card (com o título da seção); contador e barra de progresso; cache offline do HTML, manifest, ícone e JS.
 - **Critérios de aceitação:** manifest válido (JSON); `node --check` ok no JS e no service worker; nenhum `<a>`; PageDown/PageUp navegam em modo apresentação; `prefers-reduced-motion` respeitado.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `AULAS/CONCEITOS-AULA.html` (manifest, botão Apresentar, painel, CSS do modo), `AULAS/CONCEITOS-AULA-PWA/` (`manifest.webmanifest`, `icone.svg`, `apresentacao.js`) e `AULAS/conceitos-aula-sw.js` · **Verificação:** `node --check` ok no JS e no service worker; manifest e SVG válidos; 0 `<a>`; linhas até 100 caracteres (exceto URL das fontes). Teclas, instalação e offline só o usuário confirma no navegador (HTTPS ou localhost).

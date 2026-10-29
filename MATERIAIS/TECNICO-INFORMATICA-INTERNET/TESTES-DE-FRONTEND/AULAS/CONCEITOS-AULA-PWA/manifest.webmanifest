@@ -1,0 +1,21 @@
+{
+  "name": "Conceitos da aula — API, HTTP, JSON e DOM",
+  "short_name": "Conceitos",
+  "description": "Conteúdo adicional da aula de Testes de Front-end, com modo apresentação.",
+  "lang": "pt-BR",
+  "start_url": "../CONCEITOS-AULA.html?apresentar=1",
+  "scope": "../",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#05030d",
+  "theme_color": "#05030d",
+  "icons": [
+    {
+      "src": "icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -277,3 +277,5 @@
 | #431 | Card da aula verde para o professor ignora atividade bloqueada (global) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [578-e8a41c07](etapas/ETAPA-578-e8a41c07-VERDE-IGNORA-ATIVIDADE-BLOQUEADA.md) | — |
 | #432.1 | Criar CONCEITOS-AULA.html · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [579-3f9b6d21](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) | — |
 | #432 | CONCEITOS-AULA.html (cards, visual futurista) em TESTES-DE-FRONTEND | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [579-3f9b6d21](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) | — |
+| #433.1 | PWA (manifest, ícone, service worker) e modo apresentação · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [580-9c2e5a74](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) | — |
+| #433 | CONCEITOS-AULA como PWA com modo apresentação (caneta de slide) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [580-9c2e5a74](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) | — |

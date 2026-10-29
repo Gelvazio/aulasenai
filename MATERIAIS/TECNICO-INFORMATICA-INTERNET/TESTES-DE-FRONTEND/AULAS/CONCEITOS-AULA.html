@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05030d">
+  <link rel="manifest" href="CONCEITOS-AULA-PWA/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="CONCEITOS-AULA-PWA/icone.svg">
   <title>Conceitos da aula — API, HTTP, JSON e DOM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -313,6 +316,87 @@
       font-size: 14px;
     }
 
+    /* Botões e painel do modo apresentação (CONCEITOS-AULA-PWA/apresentacao.js) */
+    .botao-apresentar,
+    .botao-sair {
+      padding: 8px 16px;
+      border: 1px solid var(--cor-magenta);
+      border-radius: 10px;
+      background: rgba(255, 43, 214, 0.15);
+      color: var(--cor-texto);
+      font-family: var(--fonte-dados);
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(255, 43, 214, 0.35);
+    }
+
+    .botao-apresentar { position: fixed; top: 14px; right: 14px; z-index: 20; }
+
+    .botao-apresentar:hover,
+    .botao-sair:hover { background: rgba(255, 43, 214, 0.32); }
+
+    .painel-apresentacao {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 18px;
+      background: rgba(5, 3, 13, 0.85);
+      font-family: var(--fonte-dados);
+    }
+
+    .painel-apresentacao[hidden],
+    .tela-preta[hidden] { display: none; }
+
+    .painel-apresentacao__dica { flex: 1; color: var(--cor-texto-suave); font-size: 13px; }
+
+    .barra-progresso { flex: 0 0 min(260px, 30vw); height: 6px; border-radius: 999px; }
+
+    .barra-progresso { background: rgba(25, 243, 255, 0.18); overflow: hidden; }
+
+    .barra-progresso__preenchimento {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--cor-ciano), var(--cor-magenta));
+      transition: width 0.25s ease;
+    }
+
+    .tela-preta { position: fixed; inset: 0; z-index: 50; background: #000; }
+
+    /* Modo apresentação: um slide por vez, letras grandes */
+    .modo-apresentacao .botao-apresentar,
+    .modo-apresentacao .indice,
+    .modo-apresentacao .rodape,
+    .modo-apresentacao .topo { display: none; }
+
+    .modo-apresentacao.slide-capa .topo { display: block; }
+
+    .modo-apresentacao .pagina {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding-bottom: 70px;
+    }
+
+    .modo-apresentacao .secao { display: none; margin-top: 0; }
+    .modo-apresentacao .secao--ativa { display: block; }
+    .modo-apresentacao .grade { display: block; }
+    .modo-apresentacao .cartao { display: none; }
+
+    .modo-apresentacao .cartao--ativo {
+      display: block;
+      max-height: calc(100vh - 190px);
+      overflow-y: auto;
+      font-size: clamp(17px, 2.1vw, 30px);
+    }
+
+    .modo-apresentacao .cartao:hover { transform: none; }
+    .modo-apresentacao pre { font-size: 0.8em; }
+
     /* Acessibilidade */
     :focus-visible { outline: 2px solid var(--cor-magenta); outline-offset: 3px; }
 
@@ -320,6 +404,7 @@
       html { scroll-behavior: auto; }
       .rede__linha, .rede__no, .barra-telemetria::after { animation: none; }
       .cartao { transition: none; }
+      .barra-progresso__preenchimento { transition: none; }
     }
 
     @media (max-width: 720px) {
@@ -697,5 +782,22 @@ lista.append(item);</code></pre>
 
     <footer class="rodape">Conteúdo adicional da aula de Testes de Front-end</footer>
   </main>
+
+  <button type="button" class="botao-apresentar" id="botao-apresentar">▶ Apresentar</button>
+
+  <div class="painel-apresentacao" id="painel-apresentacao" hidden>
+    <button type="button" class="botao-sair" id="botao-sair">Sair (Esc)</button>
+    <span class="painel-apresentacao__dica">
+      PageDown/PageUp ou setas: avançar e voltar · B ou . : tela preta · F : tela cheia
+    </span>
+    <span id="contador-slides">1 / 1</span>
+    <span class="barra-progresso" role="presentation">
+      <span class="barra-progresso__preenchimento" id="progresso-slides"></span>
+    </span>
+  </div>
+
+  <div class="tela-preta" id="tela-preta" hidden></div>
+
+  <script src="CONCEITOS-AULA-PWA/apresentacao.js"></script>
 </body>
 </html>
