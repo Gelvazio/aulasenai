@@ -16,7 +16,7 @@
 
 ### #431.1 — Ignorar atividade bloqueada no estado do card
 
-**Próximo passo:** editar `estadoDoCardPendentes`, conferir com `node --check` e atualizar o comentário do arquivo e a orientação em `docs/`.
+**Próximo passo:** (entregue) — nada.
 
 - **Nível:** PESADO — classificado pelo Jev (mensagem do usuário, confiança 0,83; sinal: massa, pois a regra vale para todas as matérias)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -25,4 +25,4 @@
 - **Fonte:** jev (confiança 0,83)
 - **Descrição:** hoje `temBloqueada` devolve '' (sem cor). Filtrar as bloqueadas antes: sem atividade liberada = ''; com liberada e pendente = pendente; senão = concluído.
 - **Critérios de aceitação:** Aula 01 da turma 124519 (96 entregue por 5, 99 bloqueada) fica verde; aula só com bloqueadas fica sem cor; pendente continua vermelho.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `assets/js/indice-atividades-pendentes.js` (`estadoDoCardPendentes` ignora atividade bloqueada), `docs/regras/atividades.md`, `.claude/rules/atividades-banco.md` · **Verificação:** `node --check` ok; leitura: aula 93 na turma 124519 tem a 96 liberada (5 entregas) e a 99 bloqueada, então só a 96 decide e o card fica verde; só bloqueadas = sem cor; pendente continua vermelho. Visual só o usuário confirma na tela (sem navegador).

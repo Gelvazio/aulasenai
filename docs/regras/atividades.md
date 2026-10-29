@@ -872,8 +872,9 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
 - ✅ **Turma inteira: só o professor vê.** No índice de atividades, com a turma escolhida no combo
   "Turma:", o card inteiro da aula fica com **fundo vermelho claro piscando** (≈1 s) quando ≥ 1
   aluno da turma tem atividade pendente. Fica com **fundo verde claro fixo** quando nenhuma
-  atividade do card está pendente e nenhuma está bloqueada. Os dois nunca aparecem juntos. Com
-  `prefers-reduced-motion`, o vermelho não pisca.
+  atividade **liberada** do card está pendente. **Atividade bloqueada na turma não conta** (regra
+  global, #431, 2026-10-29): é ignorada; card só com bloqueadas fica sem cor. Os dois nunca
+  aparecem juntos. Com `prefers-reduced-motion`, o vermelho não pisca.
 - **Pendente** = aluno da turma, sem falta no dia da atividade ("Faltou?" não conta), atividade
   com questão e não bloqueada para a turma, e na tentativa atual: (a) não entregou, ou (b)
   entregou com nota abaixo da nota mínima da matéria (`materia.json` → `avaliacao.nota_minima`;

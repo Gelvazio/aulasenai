@@ -125,19 +125,18 @@ const ESTADO_CARD_CONCLUIDO = 'concluido';
 
 /**
  * Diz o estado do card pela lista de atividades da aula na turma escolhida (R11/R12/R14).
- * Verde só quando nenhuma atividade está pendente e nenhuma está bloqueada.
+ * Atividade bloqueada na turma não conta (regra global, #431): só as liberadas decidem. Verde
+ * quando há ao menos uma liberada e nenhuma está pendente; sem liberada, sem cor.
  * @param {Object[]} atividades - Atividades da aula vindas da fonte de dados.
  * @param {number} [notaMinima] - Nota mínima da matéria.
  * @returns {string} 'pendente', 'concluido' ou '' (sem cor).
  */
 function estadoDoCardPendentes(atividades, notaMinima = NOTA_MINIMA_PADRAO_PENDENTES) {
-    const lista = atividades || [];
-    if (!lista.length) return '';
-    const temPendente = lista.some((atividade) =>
+    const liberadas = (atividades || []).filter((atividade) => !atividade.bloqueada);
+    if (!liberadas.length) return '';
+    const temPendente = liberadas.some((atividade) =>
         atividadePendentePendentes(atividade, notaMinima));
-    if (temPendente) return ESTADO_CARD_PENDENTE;
-    const temBloqueada = lista.some((atividade) => Boolean(atividade.bloqueada));
-    return temBloqueada ? '' : ESTADO_CARD_CONCLUIDO;
+    return temPendente ? ESTADO_CARD_PENDENTE : ESTADO_CARD_CONCLUIDO;
 }
 
 // Cards do índice e classes do alerta.

@@ -21,6 +21,12 @@ plano da #25.
   `limite-questoes-discursiva.js` (prática).
 - ⛔ Nunca fixar o número no código nem no HTML: o limite vem sempre do banco.
 
+## Card da aula verde: atividade bloqueada não conta (2026-10-29, #431, pedido do usuário) — GLOBAL
+
+- ✅ Para o professor, o card fica verde quando nenhuma atividade **liberada** está pendente na turma do
+  combo; atividade **bloqueada** na turma (OFF, `ativo = false` ou turma em `bloqueio`) é ignorada.
+  Só bloqueadas = sem cor. Vale para todas as matérias (`indice-atividades-pendentes.js`).
+
 ## Tela = espelho do banco (2026-10-26, #387/#388, pedido do usuário) — vale para TODAS as matérias
 
 - ✅ As perguntas/itens que aparecem na **tela** são **sempre um espelho** do que está no banco
