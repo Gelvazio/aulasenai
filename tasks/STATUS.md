@@ -10,6 +10,8 @@
 
 
 
+- #432-3f9b6d21 — [CONCEITOS-AULA.html (cards, visual futurista) em TESTES-DE-FRONTEND](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) · 🔄 Em andamento · — (não reservável)
+  - #432.1 — Criar CONCEITOS-AULA.html · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 10:03)
 - #430-12380dd8 — [Ajustar AULA-04 de TESTES-DE-FRONTEND e criar AULA-04.html em slides](etapas/ETAPA-577-12380dd8-AULA-04-AJUSTES-E-SLIDES-HTML.md) · ⬜ Pendente (aguarda Sonnet; Haiku não pega MEDIO) · — (não reservável)
   - #430.1 — Aplicar as correções 1 a 12 no CONTEUDO/AULA-04 · ⬜ Pendente · nível a classificar pelo Jev
   - #430.2 — Criar AULAS/AULA-04.html em slides · ⬜ Pendente (depende da #430.1) · nível a classificar pelo Jev
