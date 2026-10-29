@@ -210,6 +210,8 @@ function renderizarTextosNoCard(item) {
     const nome = item.card.querySelector(SELETOR_NOME_CARD_AULA);
     if (rotulo) rotulo.textContent = obterRotuloDaAula(item.aula);
     if (nome) nome.textContent = obterNomeDaAula(item.aula);
+    // "SLIDE AULA NN" (#428): botão do PDF da aula, lido de aulas.link_aula (indice-aula-slide.js).
+    if (typeof renderizarLinkSlideNoCard === 'function') renderizarLinkSlideNoCard(item);
 }
 
 /**

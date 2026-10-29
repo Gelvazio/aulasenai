@@ -55,7 +55,7 @@
 
 ### #428.3 — Link "SLIDE AULA NN" ao lado de "Aula NN" no índice de atividades
 
-**Próximo passo:** depois da #428.2, ler `link_aula` do banco no índice e mostrar o botão ao lado do nome da aula.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela. A #428.4 (documentação) é de Haiku ou DeepSeek.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -64,7 +64,7 @@
 - **Fonte:** sinais
 - **Descrição:** o botão "SLIDE AULA NN" abre o PDF em nova aba; o texto é fixo, o caminho vem do banco.
 - **Critérios de aceitação:** 10 botões visíveis; sem `link_aula` não aparece botão; aula fora da tabela `aulas` continua fora.
-- **Entrega:** — · **Verificação:** — (leitura do código e node --check)
+- **Entrega:** `assets/js/indice-aula-slide.js` (novo; `renderizarLinkSlideNoCard`), `assets/js/indice-aula-data.js` (chama o botão ao escrever os textos do card), `assets/js/indice-aula-repositorio.js` (lê `link_aula` na seleção da aula), `assets/js/atividades-crud-modal.js` (carrega o script) e `assets/css/indice-aula-data.css` (estilo do botão) · **Verificação:** `node --check` ok nos 4 JS; teste de fumaça em Node da função com DOM simulado: link https gera "SLIDE AULA 03" com `target=_blank` e a classe do card; link `javascript:`, nulo e aula fora do banco não geram botão; o botão só aparece quando a aula do banco foi encontrada; o visual e o clique só o usuário confirma na tela (sem navegador).
 
 ### #428.4 — Documentação e conferência
 

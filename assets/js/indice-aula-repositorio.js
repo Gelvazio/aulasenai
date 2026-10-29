@@ -7,7 +7,7 @@ const TABELA_AULAS_CARD = 'aulas';
 const TABELA_ATIVIDADE_AULA = 'atividade';
 const TABELA_MATERIA_CARD = 'materia';
 const CAMPOS_AULA_CARD = 'id,numero,titulo,descricao,materia_id,curso_id,duracao_minutos,' +
-    'data_planejada,sequencia,ativo,visivel_alunos,conteudo,nome_card,excluido,' +
+    'data_planejada,sequencia,ativo,visivel_alunos,conteudo,nome_card,excluido,link_aula,' +
     'materia(descricao),curso(nome_completo)';
 const CAMPOS_ATIVIDADE_DA_AULA = 'id,nome_atividade,descricao,data_atividade,total_itens,' +
     'pagina,ativo,aula_id';

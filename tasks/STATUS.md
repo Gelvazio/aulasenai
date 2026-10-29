@@ -16,7 +16,6 @@
   - #429.3 — Botão "SLIDE AULA NN" no índice de todas as matérias · ⬜ Pendente (depende da #429.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #429.4 — Documentação e conferência · ⬜ Pendente (depende da #429.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #428-1490b69b — [Link "SLIDE AULA NN" ao lado de cada aula em TESTES-DE-FRONTEND](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) · 🔄 Em andamento · — (não reservável)
-  - #428.3 — Botão "SLIDE AULA NN" no índice de atividades · ⬜ Pendente (depende da #428.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 08:40)
   - #428.4 — Documentação e conferência · ⬜ Pendente (depende da #428.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #426-d4b7a2e9 — [Pasta PEDAGOGICO com index.html e a imagem do slide](etapas/ETAPA-573-d4b7a2e9-PASTA-PEDAGOGICO.md) · ⬜ Pendente · — (não reservável)
   - #426.1 — Criar PEDAGOGICO/index.html e colocar as 3 imagens dos slides · ⬜ Pendente (imagens só no chat: o usuário precisa salvar os arquivos) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

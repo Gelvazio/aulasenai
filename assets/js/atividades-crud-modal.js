@@ -832,7 +832,7 @@ function carregarDataAulasIndice() {
     const caminhos = ['js/indice-aula-repositorio.js', 'js/aula-turma-repositorio.js',
         'js/indice-aula-modal-turma.js', 'js/indice-aula-modal-vinculo.js',
         'js/indice-aula-modal.js', 'js/indice-aula-excluir-card.js',
-        'js/indice-aula-bloqueio.js', 'js/indice-aula-progresso-botao.js',
+        'js/indice-aula-bloqueio.js', 'js/indice-aula-slide.js', 'js/indice-aula-progresso-botao.js',
         'js/indice-aula-progresso-modal.js', 'js/indice-aula-progresso-alunos.js',
         'js/indice-aula-progresso-dados.js', 'js/indice-aula-progresso-filtro.js',
         'js/indice-aula-progresso-quadro.js',
