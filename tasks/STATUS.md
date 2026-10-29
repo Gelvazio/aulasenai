@@ -15,8 +15,8 @@
   - #429.2 — Preencher link_aula de todas as matérias · ⬜ Pendente (depende da #429.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #429.3 — Botão "SLIDE AULA NN" no índice de todas as matérias · ⬜ Pendente (depende da #429.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #429.4 — Documentação e conferência · ⬜ Pendente (depende da #429.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-- #428-1490b69b — [Link "SLIDE AULA NN" ao lado de cada aula em TESTES-DE-FRONTEND](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) · ⬜ Pendente (tarefa grande: aguarda "sim") · — (não reservável)
-  - #428.1 — Coluna link_aula (text) na tabela aula, com backup · ⬜ Pendente (tarefa grande: aguarda "sim") · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+- #428-1490b69b — [Link "SLIDE AULA NN" ao lado de cada aula em TESTES-DE-FRONTEND](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) · 🔄 Em andamento · — (não reservável)
+  - #428.1 — Coluna link_aula (text) na tabela aula, com backup · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 08:00)
   - #428.2 — Preencher link_aula das aulas 01 a 10 · ⬜ Pendente (depende da #428.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #428.3 — Botão "SLIDE AULA NN" no índice de atividades · ⬜ Pendente (depende da #428.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #428.4 — Documentação e conferência · ⬜ Pendente (depende da #428.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash

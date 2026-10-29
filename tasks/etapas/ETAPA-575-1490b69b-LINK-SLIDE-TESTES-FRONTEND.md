@@ -22,6 +22,9 @@
 ### Decisões
 - 2026-10-29 — Usuário pediu a tarefa no chat, com o campo `link_aula` text em `aula`. Execução aguarda "sim" (tarefa grande).
 - 2026-10-29 — Usuário decidiu: `link_aula` guarda o **link do PDF no GitHub** (`https://github.com/Gelvazio/aulasenai/blob/main/MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf`), não o caminho local.
+- 2026-10-29 (Sonnet 5.5) — O usuário mandou "execute a tarefa 428 inteira agora" no chat: vale como o "sim" da tarefa grande. Sonnet executa a 428.1 a 428.3 (PESADO); a 428.4 (LEVE) fica para Haiku ou DeepSeek.
+- 2026-10-29 (Sonnet 5.5) — Correção de nome: a tabela das aulas do banco se chama **`aulas`** (não existe `aula`); a coluna `link_aula text` entra em `aulas`. As 10 aulas de TESTES DE FRONTEND (`materia_id` da matéria "TESTES DE FRONTEND", curso 4) têm os ids 93, 94, 95, 124, 126, 127, 128, 129, 130 e 131 (números 1 a 10).
+- 2026-10-29 (Sonnet 5.5) — Backup antes do ALTER: cópia `aulas_backup_20261029` (com RLS ligado e sem política, ninguém lê pela API) feita na mesma migração.
 - 2026-10-29 — Verificado: o repositório `Gelvazio/aulasenai` é **PRIVATE**. Sem login com acesso ao repositório, o link do GitHub não abre para o aluno. Tornar o repositório público **não** é opção sem antes tirar do Git os gabaritos e seeds (o `.vercelignore` só protege o site). Pendente: decisão do usuário sobre onde o PDF fica público.
 
 ### #428.1 — Coluna link_aula na tabela aula (SQL com backup)
