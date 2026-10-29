@@ -6,12 +6,12 @@
 
 ### Escopo
 - Entra: inventário das pastas `AULAS/` (slides) de cada matéria de cada curso.
-- Entra: preencher `link_aula` das aulas que têm slide.
+- Entra: preencher `link_aula` das aulas que têm slide, com o link do PDF no GitHub (decisão do usuário em 2026-10-29, igual à #428).
 - Entra: o índice ATIVIDADES de cada matéria mostra "SLIDE AULA NN" lendo o banco (mesmo padrão da #428).
 - Não entra: criar slides, mudar a tela da #428 além do padrão, mexer em aula sem slide.
 
 ### Riscos
-- `.vercelignore` tem `*.pdf` (slides não vão ao ar): mesmo risco da #428; decidir o plano B antes desta tarefa.
+- `.vercelignore` tem `*.pdf` e o repositório é PRIVATE: o link do GitHub só abre com acesso ao repositório. Mesma decisão pendente da #428 antes desta tarefa.
 - Mudança em massa no banco: exige backup e conferência por matéria.
 - Depende da #428 (coluna e padrão). Sem ela, não começa.
 

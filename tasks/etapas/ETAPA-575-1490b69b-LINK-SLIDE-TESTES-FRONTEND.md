@@ -11,7 +11,8 @@
 - Não entra: outras matérias (#429), upload dos PDFs, mudança nos slides.
 
 ### Riscos
-- `.vercelignore` tem `*.pdf`: os slides **não vão ao ar** no site. O link do PDF daria 404 para o aluno. Plano B (decisão do usuário): hospedar os PDFs no Supabase Storage ou tirar a regra do `.vercelignore` para a pasta `AULAS/`.
+- `.vercelignore` tem `*.pdf`: os slides **não vão ao ar** no site. Por isso o link é o do PDF no GitHub (decisão do usuário).
+- O repositório é **PRIVATE**: o link do GitHub só abre para quem tem acesso ao repositório. Para o aluno abrir, é preciso um lugar público para os PDFs (decisão pendente do usuário).
 - Mudança de schema no banco = tarefa grande: só com "sim" do usuário.
 
 ### Verificação
@@ -20,6 +21,8 @@
 
 ### Decisões
 - 2026-10-29 — Usuário pediu a tarefa no chat, com o campo `link_aula` text em `aula`. Execução aguarda "sim" (tarefa grande).
+- 2026-10-29 — Usuário decidiu: `link_aula` guarda o **link do PDF no GitHub** (`https://github.com/Gelvazio/aulasenai/blob/main/MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf`), não o caminho local.
+- 2026-10-29 — Verificado: o repositório `Gelvazio/aulasenai` é **PRIVATE**. Sem login com acesso ao repositório, o link do GitHub não abre para o aluno. Tornar o repositório público **não** é opção sem antes tirar do Git os gabaritos e seeds (o `.vercelignore` só protege o site). Pendente: decisão do usuário sobre onde o PDF fica público.
 
 ### #428.1 — Coluna link_aula na tabela aula (SQL com backup)
 
@@ -43,7 +46,7 @@
 - **Effort:** high
 - **JEV-AI-SUGGESTION:** NAO
 - **Fonte:** sinais
-- **Descrição:** update por `aula.id` (matéria TESTES-DE-FRONTEND), um caminho por aula.
+- **Descrição:** update por `aula.id` (matéria TESTES-DE-FRONTEND), um link do GitHub por aula (`https://github.com/Gelvazio/aulasenai/blob/main/MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf`).
 - **Critérios de aceitação:** 10 linhas com `link_aula` preenchido; nenhuma outra linha alterada.
 - **Entrega:** — · **Verificação:** — (select de leitura)
 
