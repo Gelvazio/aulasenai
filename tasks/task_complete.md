@@ -275,3 +275,5 @@
 | #428.3 | Botão "SLIDE AULA NN" no índice de atividades · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | #428.2 | ✅ Concluído | — | [575-1490b69b](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) | — |
 | #431.1 | Ignorar atividade bloqueada no estado do card · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ✅ Concluído | — | [578-e8a41c07](etapas/ETAPA-578-e8a41c07-VERDE-IGNORA-ATIVIDADE-BLOQUEADA.md) | — |
 | #431 | Card da aula verde para o professor ignora atividade bloqueada (global) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [578-e8a41c07](etapas/ETAPA-578-e8a41c07-VERDE-IGNORA-ATIVIDADE-BLOQUEADA.md) | — |
+| #432.1 | Criar CONCEITOS-AULA.html · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [579-3f9b6d21](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) | — |
+| #432 | CONCEITOS-AULA.html (cards, visual futurista) em TESTES-DE-FRONTEND | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [579-3f9b6d21](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) | — |

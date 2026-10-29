@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conceitos da aula — API, HTTP, JSON e DOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap">
+  <style>
+    /* Conteúdo adicional da aula: visual futurista (rules-ai/prompts/VISUAL-FUTURISTA.md) */
+    :root {
+      --cor-fundo: #05030d;
+      --cor-painel: rgba(18, 10, 40, 0.72);
+      --cor-texto: #e9e6ff;
+      --cor-texto-suave: #a9a3d6;
+      --cor-ciano: #19f3ff;
+      --cor-magenta: #ff2bd6;
+      --cor-violeta: #8b3dff;
+      --cor-verde: #3dff9a;
+      --cor-amarelo: #ffd23d;
+      --cor-vermelho: #ff4d6d;
+      --fonte-titulo: 'Orbitron', 'Segoe UI', sans-serif;
+      --fonte-dados: 'Share Tech Mono', 'Consolas', monospace;
+      --raio: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cor-texto);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(900px 500px at 12% -5%, rgba(139, 61, 255, 0.35), transparent 60%),
+        radial-gradient(800px 500px at 100% 10%, rgba(255, 43, 214, 0.22), transparent 60%),
+        radial-gradient(700px 600px at 50% 110%, rgba(25, 243, 255, 0.16), transparent 60%),
+        var(--cor-fundo);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(25, 243, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(25, 243, 255, 0.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+    }
+
+    .pagina { position: relative; max-width: 1180px; margin: 0 auto; padding: 28px 20px 70px; }
+
+    /* Cabeçalho */
+    .topo { text-align: center; padding: 34px 0 26px; }
+
+    .topo__selo {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid var(--cor-ciano);
+      border-radius: 999px;
+      color: var(--cor-ciano);
+      font-family: var(--fonte-dados);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      box-shadow: 0 0 14px rgba(25, 243, 255, 0.35);
+    }
+
+    .topo__titulo {
+      margin: 18px 0 8px;
+      font-family: var(--fonte-titulo);
+      font-size: clamp(26px, 5vw, 46px);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      background: linear-gradient(90deg, var(--cor-ciano), var(--cor-magenta), var(--cor-violeta));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 18px rgba(255, 43, 214, 0.35));
+    }
+
+    .topo__subtitulo { margin: 0 auto; max-width: 720px; color: var(--cor-texto-suave); }
+
+    .rede { display: block; width: 100%; max-width: 760px; height: 90px; margin: 22px auto 0; }
+    .rede__linha {
+      stroke: var(--cor-ciano);
+      stroke-width: 1.4;
+      stroke-dasharray: 6 8;
+      opacity: 0.7;
+      animation: fluxo-dados 2.4s linear infinite;
+    }
+    .rede__no { fill: var(--cor-magenta); animation: pulsar-no 2s ease-in-out infinite; }
+    .rede__no--ciano { fill: var(--cor-ciano); }
+    .rede__no--violeta { fill: var(--cor-violeta); }
+
+    @keyframes fluxo-dados { to { stroke-dashoffset: -28; } }
+    @keyframes pulsar-no { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    /* Navegação interna da própria página (sem sair dela) */
+    .indice {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 4px 0 30px;
+    }
+
+    .indice__item {
+      padding: 6px 12px;
+      border: 1px solid rgba(139, 61, 255, 0.6);
+      border-radius: 8px;
+      background: rgba(139, 61, 255, 0.12);
+      color: var(--cor-texto);
+      font-family: var(--fonte-dados);
+      font-size: 13px;
+    }
+
+    /* Seções */
+    .secao { margin-top: 38px; }
+
+    .secao__titulo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 6px;
+      font-family: var(--fonte-titulo);
+      font-size: clamp(18px, 3vw, 24px);
+      letter-spacing: 0.06em;
+      color: var(--cor-ciano);
+      text-shadow: 0 0 14px rgba(25, 243, 255, 0.55);
+    }
+
+    .secao__titulo::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cor-ciano), transparent);
+    }
+
+    .secao__intro { margin: 0 0 16px; color: var(--cor-texto-suave); }
+
+    /* Cards */
+    .grade {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .cartao {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid rgba(25, 243, 255, 0.35);
+      border-radius: var(--raio);
+      background: var(--cor-painel);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 22px rgba(139, 61, 255, 0.18), inset 0 0 28px rgba(25, 243, 255, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .cartao:hover {
+      transform: translateY(-4px);
+      border-color: var(--cor-magenta);
+      box-shadow: 0 0 30px rgba(255, 43, 214, 0.35), inset 0 0 28px rgba(255, 43, 214, 0.06);
+    }
+
+    .cartao--largo { grid-column: 1 / -1; }
+
+    .cartao__etiqueta {
+      font-family: var(--fonte-dados);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cor-magenta);
+    }
+
+    .cartao__titulo {
+      margin: 4px 0 10px;
+      font-family: var(--fonte-titulo);
+      font-size: 19px;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+
+    .cartao p { margin: 0 0 10px; }
+
+    .cartao ul { margin: 0 0 10px; padding-left: 20px; }
+    .cartao li { margin-bottom: 4px; }
+
+    .cartao__relacao {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(169, 163, 214, 0.4);
+      color: var(--cor-texto-suave);
+      font-size: 14px;
+    }
+
+    .cartao__relacao strong { color: var(--cor-verde); }
+
+    code, pre { font-family: var(--fonte-dados); }
+
+    code {
+      padding: 1px 6px;
+      border-radius: 5px;
+      background: rgba(25, 243, 255, 0.12);
+      color: var(--cor-ciano);
+    }
+
+    pre {
+      margin: 8px 0 12px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      border-left: 3px solid var(--cor-violeta);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #d6f9ff;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    pre code { padding: 0; background: none; color: inherit; }
+
+    /* Métodos HTTP */
+    .metodo {
+      display: inline-block;
+      min-width: 74px;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-family: var(--fonte-dados);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      color: #05030d;
+    }
+
+    .metodo--get { background: var(--cor-verde); }
+    .metodo--post { background: var(--cor-ciano); }
+    .metodo--put { background: var(--cor-amarelo); }
+    .metodo--patch { background: var(--cor-violeta); color: #fff; }
+    .metodo--delete { background: var(--cor-vermelho); color: #fff; }
+
+    .linha-metodo { display: flex; gap: 12px; align-items: baseline; margin-bottom: 8px; }
+
+    /* Códigos de retorno */
+    .faixa-codigo {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(169, 163, 214, 0.2);
+    }
+
+    .faixa-codigo:last-child { border-bottom: none; }
+
+    .faixa-codigo__numero {
+      flex: 0 0 64px;
+      font-family: var(--fonte-titulo);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .faixa-codigo--1xx .faixa-codigo__numero { color: var(--cor-texto-suave); }
+    .faixa-codigo--2xx .faixa-codigo__numero { color: var(--cor-verde); }
+    .faixa-codigo--3xx .faixa-codigo__numero { color: var(--cor-ciano); }
+    .faixa-codigo--4xx .faixa-codigo__numero { color: var(--cor-amarelo); }
+    .faixa-codigo--5xx .faixa-codigo__numero { color: var(--cor-vermelho); }
+
+    /* Fluxo completo */
+    .fluxo { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+
+    .fluxo__passo {
+      padding: 8px 14px;
+      border: 1px solid var(--cor-magenta);
+      border-radius: 10px;
+      background: rgba(255, 43, 214, 0.1);
+      font-family: var(--fonte-dados);
+      font-size: 14px;
+    }
+
+    .fluxo__seta { color: var(--cor-ciano); font-family: var(--fonte-dados); }
+
+    .barra-telemetria {
+      position: relative;
+      height: 6px;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(25, 243, 255, 0.15);
+    }
+
+    .barra-telemetria::after {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 -40%;
+      width: 40%;
+      background: linear-gradient(90deg, transparent, var(--cor-ciano),
+        var(--cor-magenta), transparent);
+      animation: varredura 2.6s ease-in-out infinite;
+    }
+
+    @keyframes varredura { to { left: 100%; } }
+
+    .rodape {
+      margin-top: 50px;
+      text-align: center;
+      color: var(--cor-texto-suave);
+      font-size: 14px;
+    }
+
+    /* Acessibilidade */
+    :focus-visible { outline: 2px solid var(--cor-magenta); outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .rede__linha, .rede__no, .barra-telemetria::after { animation: none; }
+      .cartao { transition: none; }
+    }
+
+    @media (max-width: 720px) {
+      .grade { grid-template-columns: 1fr; }
+      .pagina { padding: 18px 14px 50px; }
+      .fluxo__seta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <span class="topo__selo">Conteúdo adicional da aula</span>
+      <h1 class="topo__titulo">API, HTTP, JSON e DOM</h1>
+      <p class="topo__subtitulo">
+        Os conceitos que ligam o front-end ao back-end: como uma tela conversa com uma API, o que
+        trafega nessa conversa e como o resultado vira elementos na página.
+      </p>
+      <svg class="rede" viewBox="0 0 760 90" role="img" aria-label="Rede de nós ligando as ideias">
+        <line class="rede__linha" x1="60" y1="45" x2="220" y2="20" />
+        <line class="rede__linha" x1="220" y1="20" x2="380" y2="60" />
+        <line class="rede__linha" x1="380" y1="60" x2="540" y2="25" />
+        <line class="rede__linha" x1="540" y1="25" x2="700" y2="50" />
+        <circle class="rede__no rede__no--ciano" cx="60" cy="45" r="6" />
+        <circle class="rede__no" cx="220" cy="20" r="6" />
+        <circle class="rede__no rede__no--violeta" cx="380" cy="60" r="6" />
+        <circle class="rede__no rede__no--ciano" cx="540" cy="25" r="6" />
+        <circle class="rede__no" cx="700" cy="50" r="6" />
+      </svg>
+    </header>
+
+    <nav class="indice" aria-label="Assuntos desta página">
+      <span class="indice__item">API</span>
+      <span class="indice__item">REST</span>
+      <span class="indice__item">Insomnia</span>
+      <span class="indice__item">Métodos</span>
+      <span class="indice__item">Códigos</span>
+      <span class="indice__item">JSON</span>
+      <span class="indice__item">Parâmetros</span>
+      <span class="indice__item">DOM</span>
+      <span class="indice__item">Formulários</span>
+      <span class="indice__item">Atributos e estilos</span>
+    </nav>
+
+    <section class="secao">
+      <h2 class="secao__titulo">01 // Conversa entre sistemas</h2>
+      <p class="secao__intro">Tudo começa com a ideia de um sistema oferecer serviços a outro.</p>
+      <div class="grade">
+        <article class="cartao">
+          <span class="cartao__etiqueta">Conceito</span>
+          <h3 class="cartao__titulo">API</h3>
+          <p>
+            <strong>Application Programming Interface</strong>: um contrato que diz o que um
+            sistema oferece e como pedir. Quem consome não precisa saber como funciona por dentro,
+            só o que enviar e o que vai receber.
+          </p>
+          <p>
+            Analogia: o cardápio de um restaurante. Você pede pelo cardápio,
+            a cozinha é invisível.
+          </p>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> API REST (um estilo de API), JSON (o formato da resposta) e
+            métodos HTTP (os verbos do pedido).
+          </p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Estilo de API</span>
+          <h3 class="cartao__titulo">API REST</h3>
+          <p>
+            Uma API que usa o protocolo <strong>HTTP</strong> e trata tudo como
+            <strong>recurso</strong> com um endereço (URL): alunos, aulas, pedidos.
+          </p>
+          <ul>
+            <li>Um recurso, uma URL: <code>/alunos</code> e <code>/alunos/7</code>.</li>
+            <li>O verbo HTTP diz a ação: ler, criar, trocar, apagar.</li>
+            <li>Sem estado: cada pedido leva tudo de que o servidor precisa.</li>
+            <li>Resposta quase sempre em JSON.</li>
+          </ul>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> métodos, códigos de retorno e parâmetros.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Ferramenta</span>
+          <h3 class="cartao__titulo">Insomnia (ou outro)</h3>
+          <p>
+            Cliente de API: você monta o pedido (método, URL, cabeçalhos, corpo) e vê a resposta
+            sem escrever uma tela. Serve para <strong>testar e explorar</strong> uma API.
+          </p>
+          <p>
+            Alternativas: Postman, Bruno, Thunder Client (VS Code) e o
+            <code>curl</code> no terminal.
+          </p>
+          <pre><code>curl -X GET https://api.exemplo.com/alunos/7</code></pre>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> todos os cards de HTTP: é onde você enxerga
+            método, código e JSON de verdade.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2 class="secao__titulo">02 // O pedido HTTP</h2>
+      <p class="secao__intro">
+        Os verbos dizem a intenção. Em uma API REST, cada um tem seu papel.
+      </p>
+      <div class="grade">
+        <article class="cartao cartao--largo">
+          <span class="cartao__etiqueta">Métodos</span>
+          <h3 class="cartao__titulo">GET, POST, PUT, PATCH e DELETE</h3>
+          <div class="linha-metodo">
+            <span class="metodo metodo--get">GET</span>
+            <span>
+              <strong>Ler.</strong> Busca dados, sem alterar nada.
+              <code>GET /alunos/7</code>
+            </span>
+          </div>
+          <div class="linha-metodo">
+            <span class="metodo metodo--post">POST</span>
+            <span>
+              <strong>Criar.</strong> Envia um novo recurso no corpo.
+              <code>POST /alunos</code>
+            </span>
+          </div>
+          <div class="linha-metodo">
+            <span class="metodo metodo--put">PUT</span>
+            <span>
+              <strong>Substituir.</strong> Troca o recurso inteiro.
+              <code>PUT /alunos/7</code>
+            </span>
+          </div>
+          <div class="linha-metodo">
+            <span class="metodo metodo--patch">PATCH</span>
+            <span>
+              <strong>Alterar em parte.</strong> Só os campos enviados.
+              <code>PATCH /alunos/7</code>
+            </span>
+          </div>
+          <div class="linha-metodo">
+            <span class="metodo metodo--delete">DELETE</span>
+            <span><strong>Apagar.</strong> Remove o recurso. <code>DELETE /alunos/7</code></span>
+          </div>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> o submit de um formulário costuma virar um
+            <code>POST</code> (ou <code>PUT</code>/<code>PATCH</code> ao editar), e o que volta é
+            avaliado pelos códigos de retorno.
+          </p>
+        </article>
+
+        <article class="cartao cartao--largo">
+          <span class="cartao__etiqueta">Respostas</span>
+          <h3 class="cartao__titulo">Códigos de retorno (status HTTP)</h3>
+          <p>
+            Todo retorno traz um número que resume o resultado. Os códigos HTTP padronizados
+            vão de <strong>100 a 599</strong> (não existem códigos acima disso), em cinco
+            famílias pelo primeiro dígito. No dia a dia, quase tudo cabe em 200, 201, 204,
+            400, 401, 403, 404, 422 e 500.
+          </p>
+          <div class="faixa-codigo faixa-codigo--1xx">
+            <span class="faixa-codigo__numero">1xx</span>
+            <span>
+              <strong>Informativo.</strong> O pedido foi recebido, continue.
+              Raro no dia a dia.
+            </span>
+          </div>
+          <div class="faixa-codigo faixa-codigo--2xx">
+            <span class="faixa-codigo__numero">2xx</span>
+            <span>
+              <strong>Sucesso.</strong> <code>200 OK</code>, <code>201 Created</code> (criado),
+              <code>204 No Content</code> (deu certo, sem corpo).
+            </span>
+          </div>
+          <div class="faixa-codigo faixa-codigo--3xx">
+            <span class="faixa-codigo__numero">3xx</span>
+            <span>
+              <strong>Redirecionamento.</strong> O recurso mudou de lugar:
+              <code>301</code> (definitivo), <code>302</code> (temporário),
+              <code>304</code> (use o cache).
+            </span>
+          </div>
+          <div class="faixa-codigo faixa-codigo--4xx">
+            <span class="faixa-codigo__numero">4xx</span>
+            <span>
+              <strong>Erro de quem pediu.</strong> <code>400</code> pedido inválido,
+              <code>401</code> sem login, <code>403</code> sem permissão, <code>404</code> não
+              encontrado, <code>422</code> dados que não passaram na validação.
+            </span>
+          </div>
+          <div class="faixa-codigo faixa-codigo--5xx">
+            <span class="faixa-codigo__numero">5xx</span>
+            <span>
+              <strong>Erro do servidor.</strong> <code>500</code> falha interna,
+              <code>502</code>/<code>503</code> serviço fora do ar.
+            </span>
+          </div>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> a tela decide o que mostrar pelo código: 2xx mostra o
+            resultado, 4xx mostra a mensagem de erro ao usuário, 5xx pede para tentar de novo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2 class="secao__titulo">03 // O que viaja no pedido</h2>
+      <p class="secao__intro">
+        Os dados enviados e recebidos precisam de formato e de lugar certo.
+      </p>
+      <div class="grade">
+        <article class="cartao">
+          <span class="cartao__etiqueta">Formato de dados</span>
+          <h3 class="cartao__titulo">JSON</h3>
+          <p>
+            <strong>JavaScript Object Notation</strong>: texto leve em pares
+            <code>chave: valor</code>, lido por praticamente toda linguagem.
+          </p>
+          <pre><code>{
+  "id": 7,
+  "nome": "Ana",
+  "ativo": true,
+  "notas": [8.5, 9.0]
+}</code></pre>
+          <ul>
+            <li>Tipos: texto, número, booleano, <code>null</code>, lista e objeto.</li>
+            <li>Chaves e textos sempre com aspas duplas.</li>
+            <li><code>JSON.parse()</code> lê o texto; <code>JSON.stringify()</code> gera.</li>
+          </ul>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> é o corpo do <code>POST</code> e o corpo da resposta da API.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Entrada de dados</span>
+          <h3 class="cartao__titulo">Parâmetros</h3>
+          <p>O pedido pode levar informação em quatro lugares:</p>
+          <ul>
+            <li><strong>Caminho (path):</strong> identifica o recurso. <code>/alunos/7</code></li>
+            <li>
+              <strong>Consulta (query):</strong> filtros e paginação.
+              <code>/alunos?turma=3A&amp;pagina=2</code>
+            </li>
+            <li>
+              <strong>Cabeçalho (header):</strong> metadados, como
+              <code>Authorization</code> e <code>Content-Type</code>.
+            </li>
+            <li>
+              <strong>Corpo (body):</strong> os dados em JSON de um
+              <code>POST</code>/<code>PUT</code>/<code>PATCH</code>.
+            </li>
+          </ul>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> no Insomnia, query, headers e body têm cada um sua
+            aba, e o path vai na própria URL; no formulário, os campos viram o corpo ou a query.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2 class="secao__titulo">04 // Do outro lado: a página</h2>
+      <p class="secao__intro">
+        É na página que a resposta da API vira algo que o usuário vê e usa.
+      </p>
+      <div class="grade">
+        <article class="cartao">
+          <span class="cartao__etiqueta">Estrutura</span>
+          <h3 class="cartao__titulo">Elementos DOM</h3>
+          <p>
+            O navegador transforma o HTML em uma <strong>árvore de objetos</strong>, o
+            <strong>Document Object Model</strong>. Cada tag é um nó que o JavaScript
+            pode ler e mudar.
+          </p>
+          <pre><code>const titulo = document.querySelector('#titulo');
+titulo.textContent = 'Olá, Ana';
+
+const lista = document.querySelector('ul');
+const item = document.createElement('li');
+item.textContent = 'Ana';
+lista.append(item);</code></pre>
+          <ul>
+            <li>Buscar: <code>querySelector</code>, <code>getElementById</code>.</li>
+            <li>Criar e inserir: <code>createElement</code>, <code>append</code>.</li>
+            <li>Reagir: <code>addEventListener('click', ...)</code>.</li>
+          </ul>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> o JSON da API é percorrido e vira elementos na tela.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Interação</span>
+          <h3 class="cartao__titulo">Submit de formulários</h3>
+          <p>
+            Ao enviar um <code>&lt;form&gt;</code>, o navegador dispara o evento
+            <code>submit</code> e, por padrão, recarrega a página. Em apps modernos você
+            intercepta, valida e envia por <code>fetch</code>.
+          </p>
+          <pre><code>form.addEventListener('submit', async (evento) =&gt; {
+  evento.preventDefault();
+  const dados = Object.fromEntries(new FormData(form));
+  const resposta = await fetch('/alunos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dados)
+  });
+  if (!resposta.ok) return; // fetch só falha sozinho em erro de rede
+  const criado = await resposta.json();
+});</code></pre>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> usa o <code>POST</code>, manda JSON no corpo, lê o
+            código de retorno e atualiza o DOM com o resultado.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Identificação e aparência</span>
+          <h3 class="cartao__titulo">Atributos, ids, classes CSS e estilos</h3>
+          <ul>
+            <li>
+              <strong>Atributos:</strong> informações na tag (<code>type</code>,
+              <code>name</code>, <code>value</code>, <code>required</code>).
+            </li>
+            <li><strong>id:</strong> único na página; ótimo para achar um elemento.</li>
+            <li>
+              <strong>class:</strong> pode repetir; agrupa elementos para
+              estilizar e selecionar.
+            </li>
+            <li>
+              <strong>Estilos:</strong> regras CSS aplicadas por seletor
+              (<code>#id</code>, <code>.classe</code>, <code>tag</code>).
+            </li>
+          </ul>
+          <pre><code>&lt;input id="nome" name="nome" class="campo campo--erro" required&gt;
+
+/* style.css */
+.campo { border: 1px solid #888; }
+.campo--erro { border-color: crimson; }</code></pre>
+          <p class="cartao__relacao">
+            <strong>Liga com:</strong> o <code>name</code> do campo vira a chave do JSON; a classe
+            muda a aparência quando a API devolve um erro 4xx.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2 class="secao__titulo">05 // Tudo junto</h2>
+      <div class="grade">
+        <article class="cartao cartao--largo">
+          <span class="cartao__etiqueta">Fluxo completo</span>
+          <h3 class="cartao__titulo">Do clique ao resultado na tela</h3>
+          <div class="fluxo">
+            <span class="fluxo__passo">Formulário</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">submit</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">POST + JSON</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">API REST</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">código 201</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">JSON de volta</span><span class="fluxo__seta">&gt;&gt;</span>
+            <span class="fluxo__passo">DOM atualizado</span>
+          </div>
+          <p>
+            O usuário preenche o formulário, o <code>submit</code> é interceptado, o JavaScript
+            envia um <code>POST</code> com JSON para a API REST, a API responde com um código e um
+            JSON, e a página usa essa resposta para criar ou alterar elementos do DOM, ajustando
+            classes e estilos. No Insomnia você testa só o trecho do meio, sem a tela.
+          </p>
+          <div class="barra-telemetria" role="presentation"></div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="rodape">Conteúdo adicional da aula de Testes de Front-end</footer>
+  </main>
+</body>
+</html>

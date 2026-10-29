@@ -10,7 +10,7 @@
 
 ### #432.1 — Criar CONCEITOS-AULA.html
 
-**Próximo passo:** escrever o HTML, conferir por leitura e entregar.
+**Próximo passo:** (entregue) — nada.
 
 - **Nível:** MEDIO — classificado pelo Jev (mensagem do usuário, confiança 0,58 → matriz); 1 arquivo HTML
 - **Modelo:** só Sonnet — nunca outro
@@ -19,4 +19,4 @@
 - **Fonte:** sinais
 - **Descrição:** cards por assunto, relacionados entre si por seção/legenda (sem links externos), visual futurista, sem navegador para validar.
 - **Critérios de aceitação:** todos os itens do `.txt` têm card; nenhum `<a href>`; layout 1 coluna até 720 px; `prefers-reduced-motion` respeitado; foco visível.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/CONCEITOS-AULA.html` (11 cards em 5 seções, visual futurista, sem links) · **Verificação:** revisão por 2 agentes (conteúdo técnico e CSS/acessibilidade), ajustes aplicados; todas as linhas até 100 caracteres, exceto a URL das fontes; 0 `<a>`; sem `style=""` nem JS. Visual só o usuário confirma na tela (sem navegador).
