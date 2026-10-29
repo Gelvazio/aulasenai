@@ -10,6 +10,8 @@
 
 
 
+- #431-e8a41c07 — [Card da aula verde para o professor ignora atividade bloqueada (global)](etapas/ETAPA-578-e8a41c07-VERDE-IGNORA-ATIVIDADE-BLOQUEADA.md) · 🔄 Em andamento · — (não reservável)
+  - #431.1 — Ignorar atividade bloqueada no estado do card · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 10:00)
 - #430-12380dd8 — [Ajustar AULA-04 de TESTES-DE-FRONTEND e criar AULA-04.html em slides](etapas/ETAPA-577-12380dd8-AULA-04-AJUSTES-E-SLIDES-HTML.md) · ⬜ Pendente (aguarda Sonnet; Haiku não pega MEDIO) · — (não reservável)
   - #430.1 — Aplicar as correções 1 a 12 no CONTEUDO/AULA-04 · ⬜ Pendente · nível a classificar pelo Jev
   - #430.2 — Criar AULAS/AULA-04.html em slides · ⬜ Pendente (depende da #430.1) · nível a classificar pelo Jev
