@@ -28,4 +28,4 @@
 - **JEV-AI-SUGGESTION:** SIM
 - **Descrição:** adicionar a linha "Material de apoio" com o link relativo `Scratch-jeito_divertido_de_programar.pdf` na Aula 07 (completo) e uma seção "Material de apoio" no CAPITULO-07.md.
 - **Critérios de aceitação:** o link aparece nos dois arquivos; nenhuma outra linha mudou.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit desta tarefa (ver histórico da `main`) · **Verificação:** leitura das duas linhas do link e existência de `APOSTILA/Scratch-jeito_divertido_de_programar.pdf` (Glob); nenhuma outra linha alterada.

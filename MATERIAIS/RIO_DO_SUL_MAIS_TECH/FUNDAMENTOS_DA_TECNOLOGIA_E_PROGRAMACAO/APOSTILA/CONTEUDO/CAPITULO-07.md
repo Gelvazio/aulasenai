@@ -102,6 +102,10 @@ Programa que pergunta e responde:
 - pergunte "Qual é o seu nome?" e espere
 - diga (junte "Olá, " com resposta) por 2 segundos
 
+## Material de apoio
+
+- [Scratch — jeito divertido de programar (PDF)](../Scratch-jeito_divertido_de_programar.pdf)
+
 ## Vídeos
 
 - ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).

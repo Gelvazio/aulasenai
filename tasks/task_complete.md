@@ -279,3 +279,5 @@
 | #432 | CONCEITOS-AULA.html (cards, visual futurista) em TESTES-DE-FRONTEND | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [579-3f9b6d21](etapas/ETAPA-579-3f9b6d21-CONCEITOS-AULA-HTML.md) | — |
 | #433.1 | PWA (manifest, ícone, service worker) e modo apresentação · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [580-9c2e5a74](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) | — |
 | #433 | CONCEITOS-AULA como PWA com modo apresentação (caneta de slide) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [580-9c2e5a74](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) | — |
+| #431 | Link do PDF Scratch na Aula 07 de FUNDAMENTOS (apostila) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [578-3f8a2d61](etapas/ETAPA-578-3f8a2d61-LINK-PDF-SCRATCH-FUNDAMENTOS.md) | — |
+| #431.1 | Inserir o link do PDF na Aula 07 · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [578-3f8a2d61](etapas/ETAPA-578-3f8a2d61-LINK-PDF-SCRATCH-FUNDAMENTOS.md) | — |

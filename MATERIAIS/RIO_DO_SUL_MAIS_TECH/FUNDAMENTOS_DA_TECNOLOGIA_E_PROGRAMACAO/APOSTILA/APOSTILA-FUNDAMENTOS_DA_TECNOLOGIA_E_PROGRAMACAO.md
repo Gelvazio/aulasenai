@@ -595,6 +595,7 @@ Cada capítulo corresponde a **uma aula** da unidade curricular, com a carga hor
 - **Estratégias:** Projetos em Scratch (jogos, animações e histórias), Resolução de problemas e discussão sobre ética digital
 - **BNCC:** 2 — Pensamento científico, crítico e criativo, 9 — Empatia e cooperação
 - **Observação:** Fecha o Módulo 7 (2 h de algoritmos e fluxogramas) e abre o Módulo 8 (2 h de introdução ao Scratch).
+- **Material de apoio:** [Scratch — jeito divertido de programar (PDF)](Scratch-jeito_divertido_de_programar.pdf)
 
 **Conteúdos oficiais (ementa):**
 
