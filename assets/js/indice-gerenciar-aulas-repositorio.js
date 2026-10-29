@@ -12,9 +12,24 @@ const CAMPOS_AULA_GERENCIAR = 'id,numero,titulo,descricao,materia_id,curso_id,du
 const AULA_NAO_EXCLUIDA_GERENCIAR = 0;
 const RPC_EXCLUIR_AULA_GERENCIAR = 'excluir_aula';
 const RPC_ADMINISTRADOR_GERENCIAR = 'eh_professor_administrador';
+// Marcas de acento depois de NFD e os separadores do nome da pasta (_ e -).
+const REGEX_ACENTOS_GERENCIAR = /[̀-ͯ]/g;
+const REGEX_SEPARADORES_GERENCIAR = /[_-]/g;
 
 /**
- * Busca a matéria pelo nome (materia.descricao, sem diferenciar maiúsculas) e pelo curso.
+ * Põe um nome de matéria na mesma forma para comparar: sem acento, sem _ ou -, com espaços
+ * simples e em maiúsculas. Necessário porque o ilike do banco não ignora acentos.
+ * @param {string} texto - Nome da pasta ou materia.descricao.
+ * @returns {string} Nome normalizado.
+ */
+function normalizarNomeMateriaGerenciar(texto) {
+    return texto.normalize('NFD').replace(REGEX_ACENTOS_GERENCIAR, '')
+        .replace(REGEX_SEPARADORES_GERENCIAR, ' ').replace(/\s+/g, ' ').trim().toUpperCase();
+}
+
+/**
+ * Busca a matéria pelo nome (materia.descricao, sem acento nem diferença de maiúsculas) e pelo
+ * curso. A comparação é feita aqui, não no banco, porque o nome da pasta não tem acento.
  * @param {string} nome - Nome da matéria (nome da pasta com espaços).
  * @param {string} curso - Id do curso (vazio = qualquer curso).
  * @returns {Promise<{id: number, curso_id: number}|null>} Matéria, ou null se não houver
@@ -23,8 +38,11 @@ const RPC_ADMINISTRADOR_GERENCIAR = 'eh_professor_administrador';
 async function buscarMateriaGerenciarAulas(nome, curso) {
     const filtroCurso = curso ? '&curso_id=eq.' + encodeURIComponent(curso) : '';
     const linhas = await sbGet(TABELA_MATERIA_GERENCIAR,
-        'select=id,curso_id&descricao=ilike.' + encodeURIComponent(nome) + filtroCurso);
-    return linhas.length === 1 ? linhas[0] : null;
+        'select=id,curso_id,descricao&order=id' + filtroCurso);
+    const nomeBuscado = normalizarNomeMateriaGerenciar(nome);
+    const achadas = linhas.filter((linha) =>
+        normalizarNomeMateriaGerenciar(linha.descricao) === nomeBuscado);
+    return achadas.length === 1 ? achadas[0] : null;
 }
 
 /**
