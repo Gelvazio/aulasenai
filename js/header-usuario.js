@@ -2,9 +2,9 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
-// Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
-// ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS e REGRAS (nova aba; REGRAS = visualizador
-// .claude/rules/index.html, 2026-10-13). Os demais professores não veem esses menus.
+// Todo professor vê o menu USUARIOS (2026-10-29). Só o Professor Administrador (confirmado pelo
+// banco) vê também RELATORIOS / ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS e REGRAS (nova
+// aba; REGRAS = visualizador .claude/rules/index.html, 2026-10-13).
 // Esse menu sai em 2 linhas de propósito (#358, 2026-10-24): a primeira metade dos itens em cima
 // e a segunda metade embaixo (cada metade num .header-usuario__menu-linha), com o botão EQUIPES
 // dentro da segunda linha, antes do link REGRAS.
@@ -29,9 +29,11 @@ const ROTA_SUPABASE_JS = "supabase.js";
 const ROTA_LOGIN = "../login.html";
 const ROTA_HOME = "../index.html";
 const PERFIL_PROFESSOR_HEADER = "PROFESSOR";
-// Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
+// USUARIOS aparece para todo professor (2026-10-29, pedido do usuário); o banco decide os dados.
+const ITEM_USUARIOS_HEADER = { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" };
+// Os demais itens: só para o Professor Administrador (RPC eh_professor_administrador).
 const MENU_ADMINISTRADOR_HEADER = [
-  { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" },
+  ITEM_USUARIOS_HEADER,
   { rotulo: "RELATORIOS", rota: "../relatorioAtividades.html" },
   { rotulo: "ALUNOS", rota: "../alunos.html" },
   { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
@@ -367,6 +369,7 @@ async function incluirAcessosHeader(contexto) {
     incluirMenuAdministrador(menu);
     return;
   }
+  if (menu) menu.append(criarLinkMenuHeader(ITEM_USUARIOS_HEADER));
   await incluirBotaoEquipesHeader({ cliente, usuario, referencia });
 }
 
