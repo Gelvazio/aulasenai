@@ -593,6 +593,11 @@
           <td>AFTER UPDATE OF ativo em aulas: ao bloquear a aula (ativo → false), grava atividade.ativo = false em todas as atividades dela pela função aulas_bloqueio_propaga_atividades() (security definer, sem execução pela API); desbloquear a aula não mexe nas atividades</td>
         </tr>
         <tr>
+          <td>aulas.link_aula</td>
+          <td>Coluna (2026-10-29)</td>
+          <td>text, opcional; link do PDF do slide da aula (botão "SLIDE AULA NN" no índice de atividades); vazio = sem botão. Script database/2026-10-29-aulas-link-aula.sql (aplicado em 2026-10-29; backup aulas_backup_20261029, RLS ligado e sem política) · #428.1</td>
+        </tr>
+        <tr>
           <td>aulas.nome_card</td>
           <td>Coluna</td>
           <td>text, opcional (1 a 200 caracteres); nome exibido no card do índice (null = título do HTML), editado no modal "✏️ Editar aula" pelo professor (database/2026-10-06-aulas-nome-card.sql, ✅ aplicado)</td>

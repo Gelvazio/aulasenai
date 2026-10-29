@@ -29,7 +29,7 @@
 
 ### #428.1 — Coluna link_aula na tabela aula (SQL com backup)
 
-**Próximo passo:** aguardar o "sim" do usuário; depois fazer backup da tabela `aula` e aplicar o SQL idempotente.
+**Próximo passo:** (entregue) — nada; a #428.2 preenche os links.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -38,7 +38,7 @@
 - **Fonte:** sinais
 - **Descrição:** `alter table aula add column if not exists link_aula text;` com RLS já existente da tabela sem mudança.
 - **Critérios de aceitação:** coluna existe; nenhuma linha apagada; `docs/database.md` e o relatório HTML atualizados.
-- **Entrega:** — · **Verificação:** — (consulta de information_schema)
+- **Entrega:** `database/2026-10-29-aulas-link-aula.sql` (aplicado no banco em 2026-10-29), `docs/database.md` e `docs/relatorio_verificacao_database.html` · **Verificação:** consulta de leitura: coluna `aulas.link_aula` do tipo `text` existe; `aulas` = 126 linhas e `aulas_backup_20261029` = 126 linhas (nenhuma linha apagada); `link_aula` ainda sem valor em todas; o backup tem RLS ligado e 0 políticas.
 
 ### #428.2 — Preencher link_aula das aulas 01 a 10 de TESTES-DE-FRONTEND
 

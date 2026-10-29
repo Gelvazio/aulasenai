@@ -228,6 +228,7 @@ ORDER BY ordem;
 | updated_at | TIMESTAMPTZ | Nullable | `now()` | Data última atualização |
 | excluido | SMALLINT | NOT NULL, CHECK (0, 1) | `0` | Exclusão lógica: `1` = aula excluída (card escondido nos índices) |
 | nome_card | TEXT | CHECK (1 a 200 caracteres) ou NULL | NULL | Nome exibido no card do índice de atividades (NULL = título do HTML); editado no modal "✏️ Editar aula" (`database/2026-10-06-aulas-nome-card.sql`) |
+| link_aula | TEXT | NULL | NULL | Link do PDF do slide da aula; o índice de atividades mostra o botão "SLIDE AULA NN" ao lado do nome (vazio = sem botão). Criada em 2026-10-29 (#428.1, `database/2026-10-29-aulas-link-aula.sql`; backup `aulas_backup_20261029`, RLS ligado e sem política) |
 
 > `rotulo_card` foi removida em 2026-10-17 (#259): o card mostra sempre "AULA NN" de `numero`. Cópia dos valores: `database/2026-10-17-aulas-rotulo-card-copia.sql`.
 
