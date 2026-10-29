@@ -42,7 +42,7 @@
 
 ### #428.2 — Preencher link_aula das aulas 01 a 10 de TESTES-DE-FRONTEND
 
-**Próximo passo:** depois da #428.1, gravar `AULAS/AULA-NN-SLIDES.pdf` em `link_aula` das 10 aulas.
+**Próximo passo:** (entregue) — nada; a #428.3 mostra o botão no índice.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -51,7 +51,7 @@
 - **Fonte:** sinais
 - **Descrição:** update por `aula.id` (matéria TESTES-DE-FRONTEND), um link do GitHub por aula (`https://github.com/Gelvazio/aulasenai/blob/main/MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf`).
 - **Critérios de aceitação:** 10 linhas com `link_aula` preenchido; nenhuma outra linha alterada.
-- **Entrega:** — · **Verificação:** — (select de leitura)
+- **Entrega:** `database/2026-10-29-aulas-link-aula-testes-frontend.sql` (aplicado em 2026-10-29) · **Verificação:** consulta de leitura: exatamente 10 linhas de `aulas` com `link_aula` (aulas 1 a 10, `…/AULA-NN-SLIDES.pdf`); nenhuma outra linha com link; comparando com `aulas_backup_20261029`, 0 linhas com título, número ou ativo alterados; os 10 PDFs existem no Git em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/`.
 
 ### #428.3 — Link "SLIDE AULA NN" ao lado de "Aula NN" no índice de atividades
 

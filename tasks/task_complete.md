@@ -271,3 +271,4 @@
 | #427.1 | Botão de turma favorita ao lado do combo Turma + gerador dos índices · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [574-064a3097](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) | — |
 | **#427-064a3097** | **Botão "Marcar como turma favorita" na faixa de matérias de todos os cursos** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [574-064a3097](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) | — |
 | #428.1 | Coluna link_aula (text) na tabela aulas, com backup · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | Nenhuma | ✅ Concluído | — | [575-1490b69b](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) | — |
+| #428.2 | Preencher link_aula das aulas 01 a 10 · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | #428.1 | ✅ Concluído | — | [575-1490b69b](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) | — |
