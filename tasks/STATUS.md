@@ -10,6 +10,8 @@
 
 
 
+- #431-3f8a2d61 — [Link do PDF Scratch na Aula 07 de FUNDAMENTOS](etapas/ETAPA-578-3f8a2d61-LINK-PDF-SCRATCH-FUNDAMENTOS.md) · 🔄 Em andamento · — (não reservável)
+  - #431.1 — Inserir o link do PDF na Aula 07 · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Em uso por: Claude Code (Haiku 5.5) (local · main) (desde 2026-10-29)
 - #430-12380dd8 — [Ajustar AULA-04 de TESTES-DE-FRONTEND e criar AULA-04.html em slides](etapas/ETAPA-577-12380dd8-AULA-04-AJUSTES-E-SLIDES-HTML.md) · ⬜ Pendente (aguarda Sonnet; Haiku não pega MEDIO) · — (não reservável)
   - #430.1 — Aplicar as correções 1 a 12 no CONTEUDO/AULA-04 · ⬜ Pendente · nível a classificar pelo Jev
   - #430.2 — Criar AULAS/AULA-04.html em slides · ⬜ Pendente (depende da #430.1) · nível a classificar pelo Jev
