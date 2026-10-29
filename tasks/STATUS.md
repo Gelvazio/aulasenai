@@ -10,6 +10,16 @@
 
 
 
+- #429-704a8f75 — [Link "SLIDE AULA NN" em todas as matérias de todos os cursos](etapas/ETAPA-576-704a8f75-LINK-SLIDE-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda "sim"; depende da #428) · — (não reservável)
+  - #429.1 — Inventário de slides por matéria e curso · ⬜ Pendente (depende da #428.4) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #429.2 — Preencher link_aula de todas as matérias · ⬜ Pendente (depende da #429.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #429.3 — Botão "SLIDE AULA NN" no índice de todas as matérias · ⬜ Pendente (depende da #429.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #429.4 — Documentação e conferência · ⬜ Pendente (depende da #429.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+- #428-1490b69b — [Link "SLIDE AULA NN" ao lado de cada aula em TESTES-DE-FRONTEND](etapas/ETAPA-575-1490b69b-LINK-SLIDE-TESTES-FRONTEND.md) · ⬜ Pendente (tarefa grande: aguarda "sim") · — (não reservável)
+  - #428.1 — Coluna link_aula (text) na tabela aula, com backup · ⬜ Pendente (tarefa grande: aguarda "sim") · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #428.2 — Preencher link_aula das aulas 01 a 10 · ⬜ Pendente (depende da #428.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #428.3 — Botão "SLIDE AULA NN" no índice de atividades · ⬜ Pendente (depende da #428.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #428.4 — Documentação e conferência · ⬜ Pendente (depende da #428.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #427-064a3097 — [Botão "Marcar como turma favorita" na faixa de matérias de todos os cursos](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) · ⬜ Pendente · — (não reservável)
   - #427.1 — Botão de turma favorita ao lado do combo Turma + gerador dos índices · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet
 - #426-d4b7a2e9 — [Pasta PEDAGOGICO com index.html e a imagem do slide](etapas/ETAPA-573-d4b7a2e9-PASTA-PEDAGOGICO.md) · ⬜ Pendente · — (não reservável)
