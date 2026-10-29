@@ -5,6 +5,9 @@
 
 ## Tarefas
 
+- #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
+  - #434.2 — Trocar a busca por id (gerador + páginas + Gerenciar Aulas) · ⬜ Pendente · nível a classificar pelo Jev (só Sonnet se PESADO)
+
 
 
 
