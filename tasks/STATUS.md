@@ -10,6 +10,10 @@
 
 
 
+- #430-12380dd8 — [Ajustar AULA-04 de TESTES-DE-FRONTEND e criar AULA-04.html em slides](etapas/ETAPA-577-12380dd8-AULA-04-AJUSTES-E-SLIDES-HTML.md) · ⬜ Pendente (aguarda Sonnet; Haiku não pega MEDIO) · — (não reservável)
+  - #430.1 — Aplicar as correções 1 a 12 no CONTEUDO/AULA-04 · ⬜ Pendente · nível a classificar pelo Jev
+  - #430.2 — Criar AULAS/AULA-04.html em slides · ⬜ Pendente (depende da #430.1) · nível a classificar pelo Jev
+  - #430.3 — Validar e entregar (commit + push) · ⬜ Pendente (depende da #430.2) · nível a classificar pelo Jev
 - #429-704a8f75 — [Link "SLIDE AULA NN" em todas as matérias de todos os cursos](etapas/ETAPA-576-704a8f75-LINK-SLIDE-TODAS-MATERIAS.md) · ⬜ Pendente (tarefa grande: aguarda "sim"; depende da #428) · — (não reservável)
   - #429.1 — Inventário de slides por matéria e curso · ⬜ Pendente (depende da #428.4) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #429.2 — Preencher link_aula de todas as matérias · ⬜ Pendente (depende da #429.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
