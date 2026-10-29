@@ -10,6 +10,8 @@
 
 
 
+- #433-9c2e5a74 — [CONCEITOS-AULA como PWA com modo apresentação (caneta de slide)](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) · 🔄 Em andamento · — (não reservável)
+  - #433.1 — PWA (manifest, ícone, service worker) e modo apresentação · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 10:12)
 - #430-12380dd8 — [Ajustar AULA-04 de TESTES-DE-FRONTEND e criar AULA-04.html em slides](etapas/ETAPA-577-12380dd8-AULA-04-AJUSTES-E-SLIDES-HTML.md) · ⬜ Pendente (aguarda Sonnet; Haiku não pega MEDIO) · — (não reservável)
   - #430.1 — Aplicar as correções 1 a 12 no CONTEUDO/AULA-04 · ⬜ Pendente · nível a classificar pelo Jev
   - #430.2 — Criar AULAS/AULA-04.html em slides · ⬜ Pendente (depende da #430.1) · nível a classificar pelo Jev
