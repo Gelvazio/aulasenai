@@ -29,6 +29,7 @@ JS_CRUD_REPOSITORIO = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-reposito
 JS_CRUD_MODAL = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-modal.js"
 JS_POPUP = RAIZ_PROJETO / "assets" / "js" / "popup.js"
 JS_FAIXA_ENSALADO = RAIZ_PROJETO / "assets" / "js" / "faixa-materias-ensalado.js"
+JS_TURMA_FAVORITA = RAIZ_PROJETO / "assets" / "js" / "turma-favorita.js"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 # Faixa "Matérias" abre em SOMENTE ENSALADO (faixa-materias-ensalado.md, #356): o filtro só liga
 # nos cursos com id no banco (curso.id). Curso novo: acrescentar a pasta e o id aqui.
@@ -244,7 +245,12 @@ def montar_tags_filtro_ensalado(curso, pasta_indice, com_supabase):
     if curso.name not in IDS_CURSO_BANCO:
         return ""
     scripts = [URL_SUPABASE_JS, link_relativo(JS_SUPABASE, pasta_indice)] if com_supabase else []
-    scripts += [link_relativo(js, pasta_indice) for js in (JS_POPUP, JS_FAIXA_ENSALADO)]
+    # turma-favorita.js (#427) vem antes da faixa: o botão "Marcar como turma favorita" usa as
+    # funções dele.
+    scripts += [
+        link_relativo(js, pasta_indice)
+        for js in (JS_POPUP, JS_TURMA_FAVORITA, JS_FAIXA_ENSALADO)
+    ]
     return "".join(f'\n    <script src="{script}" defer></script>' for script in scripts)
 
 

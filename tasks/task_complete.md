@@ -268,3 +268,5 @@
 | **#424-9b2d4f60** | **Filtros Entregue, Andamento e Sem começar no modal "Progresso Atividades"** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [571-9b2d4f60](etapas/ETAPA-571-9b2d4f60-FILTROS-PROGRESSO-ATIVIDADES.md) | — |
 | #425.1 | Criar o dashboard do Jev (HTML, CSS e JS) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [572-c8e51a73](etapas/ETAPA-572-c8e51a73-DASHBOARD-JEV-TEMPO-REAL.md) | — |
 | **#425-c8e51a73** | **Dashboard em tempo real das chamadas do Jev (visual futurista)** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [572-c8e51a73](etapas/ETAPA-572-c8e51a73-DASHBOARD-JEV-TEMPO-REAL.md) | — |
+| #427.1 | Botão de turma favorita ao lado do combo Turma + gerador dos índices · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | Nenhuma | ✅ Concluído | — | [574-064a3097](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) | — |
+| **#427-064a3097** | **Botão "Marcar como turma favorita" na faixa de matérias de todos os cursos** | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [574-064a3097](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) | — |

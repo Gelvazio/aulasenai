@@ -20,6 +20,8 @@ const TABELA_ENSALADO_TURMA = 'turma_materia_ensalado';
 const TABELA_ALUNO_ENSALADO = 'aluno';
 const ROTULO_TURMA_ENSALADO = 'Turma:';
 const PREFIXO_FAVORITA_ENSALADO = '⭐ ';
+const EVENTO_FAVORITA_ALTERADA_ENSALADO = 'turma-favorita-alterada';
+const CLASSE_BOTAO_FAVORITA_ENSALADO = 'btn faixa-materias__favorita';
 const PREFIXO_EMOJI_CARD = /^📘\s*/;
 const TEXTO_SOMENTE_ENSALADO = 'SOMENTE ENSALADO';
 const TEXTO_VER_TODAS_MATERIAS = 'VER TODAS MATÉRIAS';
@@ -312,7 +314,67 @@ function montarComboTurmaEnsalado(faixa, turmas) {
     (turma.favorito ? PREFIXO_FAVORITA_ENSALADO : '') + turma.nome, turma.codigo)));
   etiqueta.append(combo);
   faixa.querySelector('.faixa-materias__barra').append(etiqueta);
+  montarBotaoFavoritaEnsalado(faixa, combo);
   return combo;
+}
+
+/**
+ * Repinta o ⭐ do combo: só a turma favorita atual leva o prefixo.
+ * @param {HTMLSelectElement} combo - Combo Turma da faixa.
+ * @param {string} favorita - Código da turma favorita ('' = nenhuma).
+ */
+function marcarFavoritaNoCombo(combo, favorita) {
+  [...combo.options].forEach((opcao) => {
+    const nome = opcao.text.replace(PREFIXO_FAVORITA_ENSALADO, '');
+    opcao.text = (opcao.value === favorita ? PREFIXO_FAVORITA_ENSALADO : '') + nome;
+  });
+}
+
+/**
+ * Marca (ou desmarca) a turma escolhida no combo como favorita e atualiza combo e botão.
+ * @param {{combo: HTMLSelectElement, botao: HTMLButtonElement, favorita: string}} estado -
+ *     Combo, botão e favorita atual (atualizada aqui).
+ */
+async function alternarFavoritaEnsalado(estado) {
+  const jaEhFavorita = estado.combo.value === estado.favorita;
+  const novaFavorita = jaEhFavorita ? '' : estado.combo.value;
+  estado.botao.disabled = true;
+  try {
+    await definirTurmaFavorita(novaFavorita);
+    estado.favorita = novaFavorita;
+    marcarFavoritaNoCombo(estado.combo, novaFavorita);
+    document.dispatchEvent(new CustomEvent(EVENTO_FAVORITA_ALTERADA_ENSALADO,
+      { detail: novaFavorita }));
+  } catch (erro) {
+    await mostrarPopup(erro.message);
+  }
+  atualizarBotaoFavorita(estado.botao, estado.combo.value === estado.favorita);
+  estado.botao.disabled = !estado.combo.value;
+}
+
+/**
+ * Cria, ao lado do combo Turma, o botão "Marcar como turma favorita" (só professor). Usa
+ * turma-favorita.js; sem ele a faixa segue sem o botão.
+ * @param {HTMLElement} faixa - Elemento nav.faixa-materias.
+ * @param {HTMLSelectElement} combo - Combo Turma da faixa.
+ */
+function montarBotaoFavoritaEnsalado(faixa, combo) {
+  const temFavorita = typeof criarBotaoFavorita === 'function'
+    && typeof definirTurmaFavorita === 'function';
+  if (!temFavorita) return;
+
+  const favoritaInicial = [...combo.options]
+    .find((opcao) => opcao.text.startsWith(PREFIXO_FAVORITA_ENSALADO))?.value ?? '';
+  const estado = { combo, botao: null, favorita: favoritaInicial };
+  estado.botao = criarBotaoFavorita(CLASSE_BOTAO_FAVORITA_ENSALADO,
+    () => alternarFavoritaEnsalado(estado));
+  const atualizar = () => {
+    atualizarBotaoFavorita(estado.botao, combo.value === estado.favorita);
+    estado.botao.disabled = !combo.value;
+  };
+  combo.addEventListener('change', atualizar);
+  atualizar();
+  faixa.querySelector('.faixa-materias__barra').append(estado.botao);
 }
 
 /**

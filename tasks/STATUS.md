@@ -20,8 +20,6 @@
   - #428.2 — Preencher link_aula das aulas 01 a 10 · ⬜ Pendente (depende da #428.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #428.3 — Botão "SLIDE AULA NN" no índice de atividades · ⬜ Pendente (depende da #428.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #428.4 — Documentação e conferência · ⬜ Pendente (depende da #428.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
-- #427-064a3097 — [Botão "Marcar como turma favorita" na faixa de matérias de todos os cursos](etapas/ETAPA-574-064a3097-TURMA-FAVORITA-NA-FAIXA.md) · 🔄 Em andamento · — (não reservável)
-  - #427.1 — Botão de turma favorita ao lado do combo Turma + gerador dos índices · ⬜ Pendente · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 07:30)
 - #426-d4b7a2e9 — [Pasta PEDAGOGICO com index.html e a imagem do slide](etapas/ETAPA-573-d4b7a2e9-PASTA-PEDAGOGICO.md) · ⬜ Pendente · — (não reservável)
   - #426.1 — Criar PEDAGOGICO/index.html e colocar as 3 imagens dos slides · ⬜ Pendente (imagens só no chat: o usuário precisa salvar os arquivos) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #423-5f2c8d1e — [Aba comentada (só professor) na Atividade Dinâmica da aula 02 de UI/UX](etapas/ETAPA-570-5f2c8d1e-ABA-COMENTADA-UIUX-AULA-02.md) · ⬜ Pendente · — (não reservável)

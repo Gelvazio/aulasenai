@@ -13,6 +13,7 @@
     --bloqueio-fundo: #2d3748; --bloqueio-borda: #1a202c; --bloqueio-texto: #a0aec0;
     --bloqueio-veu: rgba(10, 14, 22, 0.62);
     --verde-filtro-ativo: #38a169; --verde-filtro-brilho: rgba(56, 161, 105, 0.45);
+    --amarelo-favorita: #d69e2e; --amarelo-favorita-fundo: #fffaf0;
 }
 /* A altura mínima fica no html: a barra #header-usuario é movida para fora do body e,
    com min-height no body, a página passaria de 100vh e criaria rolagem sem necessidade. */
@@ -166,6 +167,10 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .faixa-materias__onoff:disabled { opacity: 0.5; cursor: not-allowed; }
 .faixa-materias__turma { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; color: var(--primary); }
 .faixa-materias__turma select { font: inherit; font-size: 13px; padding: 4px 8px; }
+/* Botão "Marcar como turma favorita" ao lado do combo Turma (#427) */
+.faixa-materias__favorita { font: inherit; font-size: 12px; font-weight: 700; color: #744210; background: var(--amarelo-favorita-fundo); border: 2px solid var(--amarelo-favorita); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.faixa-materias__favorita:hover { background: #fefcbf; }
+.faixa-materias__favorita:disabled { opacity: 0.5; cursor: not-allowed; }
 .faixa-materias__onoff--ligado { color: white; background: #38a169; border-color: #38a169; }
 
 /* Enquanto o bloqueio da aula é conferido (assets/js/indice-aula-data.js), nenhum link do card

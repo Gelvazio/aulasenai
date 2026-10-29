@@ -20,6 +20,14 @@ curso.
   a pasta e o id ali**; curso fora da tabela fica sem filtro (hoje: QUALIFICACAO-PROFISSIONAL e
   CURSO-PROFESSOR-RAFAEL, sem id registrado no repositório).
 
+## Turma favorita na faixa (2026-10-29, #427, pedido do usuário)
+
+- ✅ Ao lado do combo **Turma:** da faixa (só professor) há o botão **"☆ Marcar como turma favorita"** /
+  **"⭐ Turma favorita (clique para desmarcar)"**: grava a turma do combo como favorita pelo RPC
+  `definir_turma_favorita` (`turma-favorita.js`; a favorita é única no sistema) e repinta o ⭐ do combo.
+- ✅ O gerador (`gerar_indices.py`) emite `turma-favorita.js` junto da faixa; o
+  `atividades-crud-modal.js` não o carrega de novo quando já está na página. Código: `faixa-materias-ensalado.js`.
+
 ## ON/OFF por matéria
 
 - Cada matéria da faixa tem um botão **ON/OFF** ao lado do nome para marcar/desmarcar `ensalado`.

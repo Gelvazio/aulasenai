@@ -22,7 +22,7 @@
 
 ### #427.1 — Botão de turma favorita na faixa de matérias
 
-**Próximo passo:** classificar pelo Jev e, se o modelo for o certo, reservar e implementar o escopo acima.
+**Próximo passo:** (entregue) — nada; o usuário confirma na tela (faixa de matérias: botão ao lado do combo Turma).
 
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
@@ -31,4 +31,4 @@
 - **Fonte:** sinais
 - **Descrição:** botão "Marcar como turma favorita" ao lado do combo Turma da faixa (professor), usando `turma-favorita.js`; gerador e carregamento sem duplicar o script.
 - **Critérios de aceitação:** botão visível só para o professor em todas as faixas com `data-curso-id`; clicar grava a favorita (RPC existente) e atualiza o combo e o texto do botão; sem SQL novo.
-- **Entrega:** — · **Verificação:** — (node --check, py_compile, grep nos index.html gerados)
+- **Entrega:** `assets/js/faixa-materias-ensalado.js` (botão ao lado do combo, `marcarFavoritaNoCombo`, `alternarFavoritaEnsalado`, `montarBotaoFavoritaEnsalado`), `assets/js/atividades-crud-modal.js` (não carrega `turma-favorita.js` duas vezes), `assets/gerador-indices/gerar_indices.py` (emite `turma-favorita.js` antes da faixa), `assets/css/indice-atividades.css` (estilo amarelo do botão), 35 `index.html` regravados pelo gerador (a única mudança é a linha do `<script>`; em 2 páginas mudou também a contagem "N arquivos de atividade") e `.claude/rules/faixa-materias-ensalado.md` · **Verificação:** `node --check` ok nos 2 JS; `py_compile` ok no gerador; `git diff` dos HTML: +30 linhas `../../../../assets/js/turma-favorita.js` e +5 `../../assets/js/turma-favorita.js`; o teste na tela só o usuário confirma (sem navegador).

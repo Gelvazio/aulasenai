@@ -858,7 +858,12 @@ function carregarTurmaFavoritaIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-turma-favorita.css';
-    const scripts = ['js/turma-favorita.js', 'js/unidade.js', 'js/indice-turma-favorita.js'].map((caminho) => {
+    // turma-favorita.js declara constantes globais: se a faixa de matérias (#427) já o trouxe, não
+    // carrega de novo.
+    const jaCarregado = typeof buscarTurmaFavorita === 'function';
+    const arquivos = ['js/turma-favorita.js', 'js/unidade.js', 'js/indice-turma-favorita.js']
+        .filter((caminho) => !(jaCarregado && caminho === 'js/turma-favorita.js'));
+    const scripts = arquivos.map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;
