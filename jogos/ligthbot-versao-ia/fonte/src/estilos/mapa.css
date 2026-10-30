@@ -82,6 +82,21 @@
   pointer-events: none;
 }
 
+.robo__perna {
+  fill: var(--cor-violeta);
+  stroke: var(--cor-ciano);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center top;
+}
+
+.robo__pe {
+  fill: #1b1038;
+  stroke: var(--cor-ciano);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 3px var(--cor-ciano));
+}
+
 .robo__corpo {
   fill: var(--cor-magenta);
   stroke: var(--cor-ciano);
@@ -126,10 +141,22 @@
 /* ---------- Animações de ação (~300 ms cada) ---------- */
 
 .robo--andando { animation: robo-andar 300ms ease-in-out; }
+.robo--andando .robo__perna--esquerda { animation: perna-balancar 300ms ease-in-out; }
+.robo--andando .robo__perna--direita { animation: perna-balancar-oposta 300ms ease-in-out; }
 .robo--pulando { animation: robo-pular 300ms ease-out; }
 .robo--girando { animation: robo-girar 300ms ease-in-out; }
 .robo--acendendo { animation: robo-acender 300ms ease-in-out; }
 .robo--falha { animation: robo-falhar 300ms linear; }
+
+@keyframes perna-balancar {
+  0%, 100% { rotate: 0deg; }
+  50% { rotate: 22deg; }
+}
+
+@keyframes perna-balancar-oposta {
+  0%, 100% { rotate: 0deg; }
+  50% { rotate: -22deg; }
+}
 
 @keyframes robo-andar {
   0%, 100% { translate: 0 0; scale: 1 1; }
@@ -164,6 +191,8 @@
 @media (prefers-reduced-motion: reduce) {
   .mapa__lampada--acesa,
   .robo--andando,
+  .robo--andando .robo__perna--esquerda,
+  .robo--andando .robo__perna--direita,
   .robo--pulando,
   .robo--girando,
   .robo--acendendo,

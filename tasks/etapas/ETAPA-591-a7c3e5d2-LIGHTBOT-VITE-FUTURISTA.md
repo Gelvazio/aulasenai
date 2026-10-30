@@ -324,3 +324,17 @@
 - **Critérios:** Sem node_modules versionado; `git diff --cached --name-only` limpo.
 - **Verificação:** Comando de git.
 
+### #444.25 — Pernas no robô (desenho SVG e estilo)
+**Próximo passo:** entregue.
+- **Nível:** MEDIO — classificado (jev (confiança 0.97))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.97)
+- **Pedido:** usuário, no chat: "o boneco n tem perna!" (subtarefa nova da mãe atual, regra C26).
+- **Arquivos:** fonte/src/interface/robo-visual.js, fonte/src/estilos/mapa.css
+- **Critérios:** duas pernas e dois pés atrás do corpo, base do robô em (0,0); classes `robo__perna` e `robo__pe` estilizadas; balanço das pernas em `robo--andando`; build refeito.
+- **Verificação:** `node --check`; `npm run build` sem erro.
+
+- **Entrega:** robo-visual.js (pernas e pés atrás do corpo) e mapa.css (estilo e balanço das pernas ao andar) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; npm run build sem erro; reduced-motion cobre a animação das pernas

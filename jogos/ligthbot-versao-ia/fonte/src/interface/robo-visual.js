@@ -27,22 +27,42 @@ const CLASSE_POR_COMANDO = Object.freeze({
 
 const CLASSES_ESTADO = Object.freeze([...new Set(Object.values(CLASSE_POR_COMANDO))]);
 
-// Partes do robô, desenhadas a partir da base (0,0) para cima.
+// Partes do robô, desenhadas a partir da base (0,0) para cima: pés, pernas, corpo e cabeça.
 const PARTES = Object.freeze([
   {
     tag: "rect",
-    classe: "robo__corpo",
-    atributos: { x: -9, y: -20, width: 18, height: 16, rx: 3 },
+    classe: "robo__perna robo__perna--esquerda",
+    atributos: { x: -7, y: -10, width: 4, height: 10, rx: 1 },
   },
-  { tag: "line", classe: "robo__antena", atributos: { x1: 0, y1: -30, x2: 0, y2: -37 } },
-  { tag: "circle", classe: "robo__antena", atributos: { cx: 0, cy: -39, r: 2 } },
+  {
+    tag: "rect",
+    classe: "robo__perna robo__perna--direita",
+    atributos: { x: 3, y: -10, width: 4, height: 10, rx: 1 },
+  },
+  {
+    tag: "rect",
+    classe: "robo__pe robo__pe--esquerdo",
+    atributos: { x: -9, y: -3, width: 7, height: 3, rx: 1.5 },
+  },
+  {
+    tag: "rect",
+    classe: "robo__pe robo__pe--direito",
+    atributos: { x: 2, y: -3, width: 7, height: 3, rx: 1.5 },
+  },
+  {
+    tag: "rect",
+    classe: "robo__corpo",
+    atributos: { x: -9, y: -25, width: 18, height: 16, rx: 3 },
+  },
+  { tag: "line", classe: "robo__antena", atributos: { x1: 0, y1: -35, x2: 0, y2: -42 } },
+  { tag: "circle", classe: "robo__antena", atributos: { cx: 0, cy: -44, r: 2 } },
   {
     tag: "rect",
     classe: "robo__cabeca",
-    atributos: { x: -8, y: -31, width: 16, height: 11, rx: 3 },
+    atributos: { x: -8, y: -36, width: 16, height: 11, rx: 3 },
   },
-  { tag: "circle", classe: "robo__olho", atributos: { cx: -3.5, cy: -25.5, r: 1.8 } },
-  { tag: "circle", classe: "robo__olho", atributos: { cx: 3.5, cy: -25.5, r: 1.8 } },
+  { tag: "circle", classe: "robo__olho", atributos: { cx: -3.5, cy: -30.5, r: 1.8 } },
+  { tag: "circle", classe: "robo__olho", atributos: { cx: 3.5, cy: -30.5, r: 1.8 } },
 ]);
 
 /**
