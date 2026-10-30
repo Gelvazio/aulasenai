@@ -175,7 +175,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.13 — Controles: executar, passo a passo, parar, reiniciar, velocidade
-**Próximo passo:** depende da #444.12.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.80))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -184,6 +184,8 @@
 - **Arquivos:** fonte/src/interface/controles.js
 - **Critérios:** Parar interrompe recursão infinita.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/controles.js (montarControles, definirEstadoControles, atualizarTelemetria) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.14 — Seletor de níveis e progresso salvo
 **Próximo passo:** depende da #444.13.
