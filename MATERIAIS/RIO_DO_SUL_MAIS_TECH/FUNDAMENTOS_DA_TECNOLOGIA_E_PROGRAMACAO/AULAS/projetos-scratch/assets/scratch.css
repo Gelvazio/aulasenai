@@ -217,3 +217,4 @@ html:has(.passo), body:has(.passo) { height: 100dvh; overflow: hidden; }
 .ficha-avaliacao th, .ficha-avaliacao td { padding: 0.2rem 0.4rem; border-bottom: 1px solid rgba(122, 60, 255, 0.35); text-align: left; }
 .ficha-avaliacao th { font-family: var(--fonte-titulo); font-size: 0.72rem; color: var(--cor-ciano); }
 .ficha-avaliacao td:nth-child(2), .ficha-avaliacao td:nth-child(3), .ficha-avaliacao th:nth-child(2), .ficha-avaliacao th:nth-child(3) { text-align: center; width: 4.5rem; }
+a.seta { display: inline-block; text-align: center; text-decoration: none; }

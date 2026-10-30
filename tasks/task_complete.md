@@ -291,3 +291,5 @@
 | #435.5 | Ficha de critérios (opção B) no passo Entrega dos 12 projetos | 🟢 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
 | #436.1 | Placar com timer | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-583-6b2e5d17 |
 | #436 | Placar de equipes com timer (projetos Scratch) | 🟡 | — | — | ✅ Concluído | — | ETAPA-583-6b2e5d17 |
+| #437.1 | Botões Início e Final nos 12 projetos | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-584-9c41e7a2 |
+| #437 | Botão "Início" na navegação dos projetos Scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-584-9c41e7a2 |
