@@ -9,3 +9,4 @@
 - **Nível:** MEDIO — Jev (confiança 0,68 → matriz) · **Modelo:** só Sonnet · **Effort:** medium
 - **Critérios:** 2 cards (Light Bot abre em nova aba com `rel="noopener"`; Scratch usa link relativo para `projetos-scratch/index.html`); tokens em `:root`, foco visível, `prefers-reduced-motion`, uma coluna até 720 px.
 - **Verificação:** o link relativo aponta para arquivo existente; sem `style=""` nem `<script>` inline.
+- **Entrega #441.1:** `jogos/index.html` (2 cards) e `jogos/jogos.css` (tema futurista). **Verificação:** link relativo para `projetos-scratch/index.html` existe; sem `style=` nem `<script>` inline. Tela não conferida (sem navegador): abrir `jogos/index.html` para ver o visual.

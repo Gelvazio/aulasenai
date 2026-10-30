@@ -299,3 +299,5 @@
 | #439 | Tempos realistas nos projetos Scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-586-7a3f9c15 |
 | #440.1 | Escrever o AGENTS.md da pasta | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-587-5c2e8a41 |
 | #440 | AGENTS.md da pasta projetos-scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-587-5c2e8a41 |
+| #441.1 | Criar jogos/index.html e jogos/jogos.css | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-588-9b1d4e72 |
+| #441 | Pasta jogos com 2 cards (Light Bot e Projetos Scratch) | 🟡 | — | — | ✅ Concluído | — | ETAPA-588-9b1d4e72 |
