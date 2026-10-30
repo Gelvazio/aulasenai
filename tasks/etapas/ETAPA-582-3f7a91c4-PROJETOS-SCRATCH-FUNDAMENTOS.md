@@ -42,3 +42,8 @@
 - **Nível:** LEVE — decidido pelo Jev (confiança 0,96); **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash; **Effort:** low
 - **Critérios:** pontos de cada ficha somam 10; critérios coerentes com o projeto; sem JS/CSS inline.
 - **Verificação:** `grep -c ficha-avaliacao` = 1 por projeto (12); leitura da soma dos pontos.
+
+### #435.6 — Índice compacto (os 12 cards numa tela)
+**Próximo passo:** reduzir cabeçalho e cards do `index.html` e organizar as Aulas 1 e 2 lado a lado, com 3 colunas de cards cada, para caber sem rolagem em tela de desktop.
+- **Nível:** MEDIO — Jev (confiança 0,73) · **Modelo:** só Sonnet · **Pedido do usuário:** "diminua o menu e o tamanho dos cards, mas faça caber numa página"
+- **Verificação:** leitura do HTML/CSS; sem navegador (usuário confere na tela).
