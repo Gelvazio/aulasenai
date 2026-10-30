@@ -314,3 +314,4 @@
 | #444.5 | Modelo do mundo: matrizes de alturas, objetivos e luzes | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.6 | Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.7 | Memória do programa: slots de MAIN, PROC1 e PROC2 | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.8 | Interpretador com pilha de chamadas P1 e P2 e limite de passos | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

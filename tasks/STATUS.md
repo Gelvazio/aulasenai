@@ -6,7 +6,6 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 22:32)
   - #444.9 — Verificação de vitória (todas as luzes acesas) · ⬜ Pendente (depende da #444.8) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #444.10 — Desenho do mapa (grade isométrica em SVG) · ⬜ Pendente (depende da #444.9) · `MEDIO · effort medium` · só Sonnet
   - #444.11 — Desenho e animação do robô (andar, pular, girar, acender) · ⬜ Pendente (depende da #444.10) · `MEDIO · effort medium` · só Sonnet

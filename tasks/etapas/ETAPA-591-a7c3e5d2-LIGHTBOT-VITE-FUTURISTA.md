@@ -109,7 +109,7 @@
 - **Verificação:** node --check sem erro; contagem = slots preenchidos (REGRAS-JOGO.md seção 10)
 
 ### #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos
-**Próximo passo:** depende da #444.7.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -118,6 +118,8 @@
 - **Arquivos:** fonte/src/nucleo/interpretador.js
 - **Critérios:** Retorno ao token seguinte; recursão funciona; para por vitória, parada manual ou limite de passos.
 - **Verificação:** `node --check`; leitura de um caso de recursão.
+- **Entrega:** fonte/src/nucleo/interpretador.js (pilha P1/P2, limite de passos, parada por vitória, fim, limite e chamadas sem ação) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; leitura contra REGRAS-JOGO.md seções 8 e 9 (passo só por ação primitiva, retorno ao slot seguinte, vitória a cada ação)
 
 ### #444.9 — Verificação de vitória (todas as luzes acesas)
 **Próximo passo:** depende da #444.8.
