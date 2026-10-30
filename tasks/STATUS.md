@@ -8,10 +8,6 @@
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · 🔄 Em andamento (falta 435.5)
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
   - #435.5 — Ficha de critérios (opção B) no passo Entrega dos 12 projetos · ⬜ Pendente (livre para o Haiku) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash (nível decidido pelo Jev, confiança 0,96)
-- #435.1 — Base compartilhada (CSS/JS) e modelo de página · 🔄 Em execução · `PESADO · effort high` · só Sonnet (ou Opus 5.5+/Fable, DeepSeek) · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 21:00)
-  - #435.2 — Projetos da Aula 1 (01 a 06) · ⬜ Pendente (depende da #435.1) · `PESADO · effort high` · só Sonnet
-  - #435.3 — Projetos da Aula 2 (07 a 12) · ⬜ Pendente (depende da #435.1) · `PESADO · effort high` · só Sonnet
-  - #435.4 — index.html, conferência e entrega · ⬜ Pendente (depende da #435.2 e #435.3) · `PESADO · effort high` · só Sonnet
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
   - #434.2 — Trocar a busca por id (mapa pasta→id em JS + Gerenciar Aulas) · ⬜ Pendente · nível a classificar pelo Jev (só Sonnet se PESADO)
 
