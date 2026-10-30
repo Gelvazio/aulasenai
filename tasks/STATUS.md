@@ -9,6 +9,7 @@
   - #444.22 — Build para ligthbot-versao-ia/ e conferência da saída · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:44)
   - #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) · ⬜ Pendente (depende da #444.22) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #444.24 — Conferência final e entrega (commit + push) · ⬜ Pendente (depende da #444.23) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.25 — Pernas no robô (desenho SVG e estilo) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 22:46)
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
