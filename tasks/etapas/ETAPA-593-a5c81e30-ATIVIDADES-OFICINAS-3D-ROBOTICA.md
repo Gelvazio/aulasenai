@@ -274,7 +274,7 @@
 
 ### #436.19 — Índice, menu das atividades e status
 
-**Próximo passo:** aguardar a dependência.
+**Próximo passo:** nenhum (entregue).
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
@@ -284,7 +284,7 @@
 - **Depende de:** #436.1 a #436.18
 - **Descrição:** Regerar `ATIVIDADES/index.html` e o menu pelo `assets/gerador-indices/gerar_indices.py` e atualizar `ATIVIDADES/STATUS-ATIVIDADES.md` e `STATUS_MATERIA.md`.
 - **Critérios de aceitação:** Índice lista as 18 atividades; status das 9 aulas ✅ na coluna Página e Questões.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/index.html` regerado com `gerar_indices.py --forcar`, `RIO_DO_SUL_MAIS_TECH/index.html` (card com 18 atividades) e `STATUS-ATIVIDADES.md`. · **Verificação:** o índice tem 18 páginas de atividade; só os dois `index.html` da matéria e do curso mudaram.
 
 ### #436.20 — Seeds no banco (objetivas e práticas)
 

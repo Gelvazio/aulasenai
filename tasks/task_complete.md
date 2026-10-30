@@ -352,3 +352,4 @@
 | #436.16 | Prática 10 × 3 da aula 07 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
 | #436.17 | Prática 10 × 3 da aula 08 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
 | #436.18 | Prática 10 × 3 da aula 09 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.19 | Índice, menu das atividades e status | 🟡 | PESADO · só Sonnet | #436.1 a #436.18 | ✅ Concluído | — | ETAPA-593-a5c81e30 |
