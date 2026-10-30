@@ -6,7 +6,6 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.16 — CSS: tokens futuristas em :root e base (fundo, grade, tipografia) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a16; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.17 — CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a17; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.18 — CSS: mapa e robô · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a18; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.19 — CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a19; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)

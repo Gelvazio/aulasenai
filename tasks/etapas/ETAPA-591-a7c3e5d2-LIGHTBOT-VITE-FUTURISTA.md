@@ -214,7 +214,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); textContent, sem innerHTML
 
 ### #444.16 — CSS: tokens futuristas em :root e base (fundo, grade, tipografia)
-**Próximo passo:** depende da #444.15.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -223,6 +223,8 @@
 - **Arquivos:** fonte/src/estilos/base.css
 - **Critérios:** Orbitron e Share Tech Mono; neon ciano, magenta e violeta; contraste claro sobre escuro.
 - **Verificação:** Leitura contra VISUAL-FUTURISTA.md.
+- **Entrega:** fonte/src/estilos/base.css (tokens, reset, fundo, tipografia, layout) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.17 — CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria)
 **Próximo passo:** depende da #444.16.

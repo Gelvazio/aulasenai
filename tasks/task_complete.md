@@ -322,3 +322,4 @@
 | #444.13 | Controles: executar, passo a passo, parar, reiniciar, velocidade | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.14 | Seletor de níveis e progresso salvo | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.15 | Tela de vitória e contagem de comandos usados | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.16 | CSS: tokens futuristas em :root e base (fundo, grade, tipografia) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
