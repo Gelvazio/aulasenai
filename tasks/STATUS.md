@@ -5,6 +5,28 @@
 
 ## Tarefas
 
+- #436-a5c81e30 — [Atividades das 9 aulas de Oficinas de Impressão 3D e Robótica](etapas/ETAPA-593-a5c81e30-ATIVIDADES-OFICINAS-3D-ROBOTICA.md) · ⬜ Pendente (plano aprovado pelo usuário em 2026-10-30) · — (não reservável)
+  - #436.1 — Objetiva de 50 questões da aula 01 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.2 — Objetiva de 50 questões da aula 02 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.3 — Objetiva de 50 questões da aula 03 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.4 — Objetiva de 50 questões da aula 04 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.5 — Objetiva de 50 questões da aula 05 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.6 — Objetiva de 50 questões da aula 06 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.7 — Objetiva de 50 questões da aula 07 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.8 — Objetiva de 50 questões da aula 08 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.9 — Objetiva de 50 questões da aula 09 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.10 — Prática 10 × 3 da aula 01 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.11 — Prática 10 × 3 da aula 02 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.12 — Prática 10 × 3 da aula 03 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.13 — Prática 10 × 3 da aula 04 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.14 — Prática 10 × 3 da aula 05 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.15 — Prática 10 × 3 da aula 06 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.16 — Prática 10 × 3 da aula 07 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.17 — Prática 10 × 3 da aula 08 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.18 — Prática 10 × 3 da aula 09 · ⬜ Pendente · nível a classificar pelo Jev
+  - #436.19 — Índice, menu das atividades e status · ⬜ Pendente (depende da #436.1 a #436.18) · nível a classificar pelo Jev
+  - #436.20 — Seeds no banco (objetivas e práticas) · ⬜ Pendente (depende da #436.19) · nível a classificar pelo Jev
+  - #436.21 — Conferência final e entrega · ⬜ Pendente (depende da #436.20) · nível a classificar pelo Jev
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
