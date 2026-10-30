@@ -227,7 +227,7 @@
 - **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.17 — CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria)
-**Próximo passo:** depende da #444.16.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -236,6 +236,8 @@
 - **Arquivos:** fonte/src/estilos/componentes.css
 - **Critérios:** Classes de responsabilidade única; modificadores BEM; sem !important desnecessário.
 - **Verificação:** Leitura.
+- **Entrega:** fonte/src/estilos/componentes.css (painéis, comandos, slots, botões, telemetria, seletor, vitória) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.18 — CSS: mapa e robô
 **Próximo passo:** depende da #444.17.

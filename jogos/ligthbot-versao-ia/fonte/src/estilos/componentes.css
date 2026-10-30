@@ -1,0 +1,366 @@
+/* Componentes da interface do Light Bot (tokens vindos de base.css) */
+
+/* Painel holografico */
+.painel {
+  padding: 1.1rem;
+  background: var(--cor-painel);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  border-radius: var(--raio);
+  box-shadow: 0 0 22px rgba(122, 60, 255, 0.35), inset 0 0 18px rgba(0, 240, 255, 0.06);
+}
+
+/* Paleta de comandos */
+.paleta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.comando {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--fonte-dados);
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--cor-ciano);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.comando:hover:not(:disabled),
+.comando:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 14px var(--cor-ciano);
+}
+
+.comando:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: var(--cor-texto-suave);
+}
+
+.comando--chamada {
+  border-color: var(--cor-violeta);
+  background: rgba(122, 60, 255, 0.18);
+}
+
+.comando--chamada:hover:not(:disabled),
+.comando--chamada:focus-visible {
+  background: rgba(122, 60, 255, 0.35);
+  box-shadow: 0 0 14px var(--cor-violeta);
+}
+
+.comando__simbolo {
+  font-size: 1.25rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.comando__rotulo {
+  font-family: var(--fonte-titulo);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* Areas do programa */
+.areas-programa {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.area-comandos {
+  padding: 0.7rem;
+  border: 1px solid rgba(122, 60, 255, 0.6);
+  border-radius: 10px;
+  background: rgba(5, 3, 13, 0.45);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.area-comandos--ativa {
+  border-color: var(--cor-magenta);
+  box-shadow: 0 0 16px rgba(255, 43, 214, 0.55), inset 0 0 12px rgba(255, 43, 214, 0.1);
+}
+
+.area-comandos--bloqueada {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.area-comandos__titulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--cor-magenta);
+}
+
+/* Slots */
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slot {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.slot--vazio {
+  border: 1px dashed var(--cor-texto-suave);
+  background: rgba(169, 163, 214, 0.06);
+}
+
+.slot--preenchido {
+  border: 1px solid var(--cor-ciano);
+  background: rgba(0, 240, 255, 0.14);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.slot--atual {
+  border-color: var(--cor-verde);
+  background: rgba(45, 255, 160, 0.25);
+  animation: slot-pulsar 0.9s ease-in-out infinite;
+}
+
+.slot__botao {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-family: var(--fonte-dados);
+  font-size: 1.2rem;
+  color: var(--cor-texto);
+  background: transparent;
+  border: 0;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.slot__botao:hover,
+.slot__botao:focus-visible {
+  background: rgba(255, 43, 214, 0.25);
+}
+
+@keyframes slot-pulsar {
+  0%, 100% { box-shadow: 0 0 6px var(--cor-verde); }
+  50% { box-shadow: 0 0 18px var(--cor-verde), 0 0 4px var(--cor-verde) inset; }
+}
+
+/* Controles */
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.botao {
+  padding: 0.55rem 1.1rem;
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto);
+  background: rgba(122, 60, 255, 0.2);
+  border: 1px solid var(--cor-violeta);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.botao:hover:not(:disabled),
+.botao:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px var(--cor-violeta);
+}
+
+.botao:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.botao--primario {
+  color: var(--cor-fundo);
+  background: var(--cor-ciano);
+  border-color: var(--cor-ciano);
+  box-shadow: 0 0 12px var(--cor-ciano);
+}
+
+.botao--primario:hover:not(:disabled),
+.botao--primario:focus-visible {
+  box-shadow: 0 0 20px var(--cor-ciano);
+}
+
+.botao--perigo {
+  border-color: var(--cor-magenta);
+  background: rgba(255, 43, 214, 0.18);
+}
+
+.botao--perigo:hover:not(:disabled),
+.botao--perigo:focus-visible {
+  box-shadow: 0 0 14px var(--cor-magenta);
+}
+
+.botao--velocidade[aria-pressed="true"] {
+  color: var(--cor-fundo);
+  background: var(--cor-verde);
+  border-color: var(--cor-verde);
+  box-shadow: 0 0 12px var(--cor-verde);
+}
+
+.velocidade {
+  display: inline-flex;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+/* Telemetria */
+.telemetria__linha {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.telemetria__rotulo {
+  min-width: 6.5rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.telemetria__valor {
+  min-width: 4rem;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--cor-ciano);
+}
+
+.medidor {
+  position: relative;
+  flex: 1;
+  height: 12px;
+  overflow: hidden;
+  appearance: none;
+  background: rgba(0, 240, 255, 0.12);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  border-radius: 6px;
+}
+
+.medidor::-webkit-progress-bar {
+  background: transparent;
+}
+
+.medidor::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--cor-violeta), var(--cor-ciano));
+  box-shadow: 0 0 10px var(--cor-ciano);
+  transition: width 0.25s ease;
+}
+
+.medidor::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--cor-violeta), var(--cor-ciano));
+  box-shadow: 0 0 10px var(--cor-ciano);
+}
+
+.medidor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  width: 30%;
+  animation: medidor-varredura 2s linear infinite;
+}
+
+@keyframes medidor-varredura {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(400%); }
+}
+
+/* Seletor de niveis */
+.seletor-niveis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nivel-botao {
+  min-width: 44px;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  color: var(--cor-texto);
+  background: rgba(122, 60, 255, 0.18);
+  border: 1px solid var(--cor-violeta);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nivel-botao:hover:not(:disabled),
+.nivel-botao:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px var(--cor-violeta);
+}
+
+.nivel-botao--atual {
+  color: var(--cor-fundo);
+  background: var(--cor-ciano);
+  border-color: var(--cor-ciano);
+  box-shadow: 0 0 14px var(--cor-ciano);
+}
+
+.nivel-botao--concluido {
+  border-color: var(--cor-verde);
+  background: rgba(45, 255, 160, 0.18);
+}
+
+.nivel-botao:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Tela de vitoria */
+.tela-vitoria {
+  max-width: 28rem;
+  padding: 1.6rem;
+  color: var(--cor-texto);
+  text-align: center;
+  background: var(--cor-painel);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--cor-verde);
+  border-radius: var(--raio);
+  box-shadow: 0 0 30px rgba(45, 255, 160, 0.5), inset 0 0 18px rgba(45, 255, 160, 0.08);
+}
+
+.tela-vitoria::backdrop {
+  background: rgba(5, 3, 13, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.tela-vitoria__resumo {
+  margin: 0 0 1.2rem;
+  color: var(--cor-texto-suave);
+}
+
+.tela-vitoria__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
