@@ -11,7 +11,7 @@
   - #435.3 — Projetos da Aula 2 (07 a 12) · ⬜ Pendente (depende da #435.1) · `PESADO · effort high` · só Sonnet
   - #435.4 — index.html, conferência e entrega · ⬜ Pendente (depende da #435.2 e #435.3) · `PESADO · effort high` · só Sonnet
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
-  - #434.2 — Trocar a busca por id (gerador + páginas + Gerenciar Aulas) · ⬜ Pendente · nível a classificar pelo Jev (só Sonnet se PESADO)
+  - #434.2 — Trocar a busca por id (mapa pasta→id em JS + Gerenciar Aulas) · ⬜ Pendente · nível a classificar pelo Jev (só Sonnet se PESADO)
 
 
 

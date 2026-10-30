@@ -23,11 +23,11 @@ O banco guarda "Fundamentos da Tecnologia e Programação" (com acentos, id 26).
 - **Verificação:** `node --check` ok; comparação com o nome do banco confere para Fundamentos. Não conferido na tela (sem navegador, regra do projeto). Noções de Eletricidade continua sem achar (pasta sem "de").
 
 ### #434.2 — Trocar a busca por id (pendente, aprovada)
-**Próximo passo:** no gerador (`assets/gerador-indices/gerar_indices.py`), criar um mapa pasta→id da matéria (com os 28 ids) e gravar `data-materia-id` no `<body>` de cada `ATIVIDADES/index.html`; regravar as páginas com `--forcar`; em `assets/js/indice-gerenciar-aulas-repositorio.js` e `indice-gerenciar-aulas.js`, buscar a matéria por esse id (`materia?id=eq.N`), sem nome.
-- **Nível:** a classificar pelo Jev (mudança em massa; provável PESADO).
+**Próximo passo:** criar `assets/js/materias-ids.js` com um mapa nome da pasta → id da matéria (os 28 ids do banco, com a pasta de cada uma). Em `assets/js/indice-gerenciar-aulas.js`, pegar o nome da pasta da URL, achar o id no mapa e buscar a matéria por id (`materia?id=eq.N`), sem usar o nome do banco. O gerador e as páginas não mudam (decisão do usuário, 2026-10-29: sem regravar as páginas).
+- **Nível:** a classificar pelo Jev (código novo em um arquivo e troca em um JS; provável MEDIO).
 - **Modelo:** — (a definir pelo Jev)
-- **Descrição:** ver "Próximo passo".
-- **Critérios de aceitação:** toda página ATIVIDADES tem `data-materia-id` com o id certo; o botão acha a matéria em todas elas.
+- **Descrição:** ver "Próximo passo". Matéria nova precisa de uma linha no mapa.
+- **Critérios de aceitação:** toda matéria de todos os cursos tem linha no mapa; o botão acha a matéria pelo id nas páginas ATIVIDADES.
 - **Entrega:** —
 - **Verificação:** a conferir: contar páginas com o atributo e comparar com o mapa; `node --check`.
 - **Anotação:** só Sonnet (ou quem o Jev classificar como PESADO) pode executar.
