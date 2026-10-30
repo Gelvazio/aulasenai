@@ -60,6 +60,7 @@
     const botaoVoltar = document.getElementById("passo-anterior");
     const botaoAvancar = document.getElementById("passo-proximo");
     const botaoFinal = document.getElementById("passo-final");
+    const botaoInicio = document.getElementById("passo-inicio");
     const barra = document.getElementById("progresso-passos");
     const contador = document.getElementById("contador-passos");
     const chave = CHAVE_PREFIXO + window.location.pathname;
@@ -75,6 +76,7 @@
       botaoVoltar.disabled = atual === 0;
       botaoAvancar.disabled = atual === passos.length - 1;
       if (botaoFinal) botaoFinal.disabled = atual === passos.length - 1;
+      if (botaoInicio) botaoInicio.disabled = atual === 0;
       barra.max = passos.length;
       barra.value = atual + 1;
       contador.textContent = "Passo " + (atual + 1) + " de " + passos.length;
@@ -84,6 +86,7 @@
 
     botaoVoltar.addEventListener("click", () => mostrar(atual - 1));
     botaoAvancar.addEventListener("click", () => mostrar(atual + 1));
+    if (botaoInicio) botaoInicio.addEventListener("click", () => mostrar(0));
     if (botaoFinal) botaoFinal.addEventListener("click", () => mostrar(passos.length - 1));
     document.addEventListener("keydown", (evento) => {
       if (evento.key === "ArrowRight") mostrar(atual + 1);

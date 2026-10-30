@@ -7,3 +7,5 @@
 ### #438.1 — Início vai ao passo 1
 - **Nível:** MEDIO — Jev (confiança 0,56 → matriz) · **Modelo:** só Sonnet · **Effort:** medium
 - Troca `<a class="seta" href="index.html">Início</a>` por `<button id="passo-inicio" class="seta" type="button">Início</button>` nos 12 projetos e no modelo; `scratch.js` liga o clique a `mostrar(0)`; o botão fica desativado no passo 1. O link "Todos os projetos" no topo continua levando ao menu.
+
+- **Entrega #438.1:** `passo-inicio` (botão) nos 12 projetos e no modelo; `scratch.js` liga a `mostrar(0)` e desativa no passo 1. **Verificação:** `node --check` ok; 1 botão por arquivo; tela não conferida (sem navegador).
