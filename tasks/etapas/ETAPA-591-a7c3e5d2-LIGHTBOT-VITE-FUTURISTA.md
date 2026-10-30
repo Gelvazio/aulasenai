@@ -44,7 +44,7 @@
 - **Verificação:** JSON do package.json válido; node --check do vite.config.js; index.html sem style= nem script inline
 
 ### #444.3 — Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage)
-**Próximo passo:** depende da #444.2.
+**Próximo passo:** entregue.
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
 - **Effort:** high
@@ -53,6 +53,8 @@
 - **Arquivos:** fonte/src/constantes.js
 - **Critérios:** Nenhum número ou texto mágico nos outros módulos.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/constantes.js criado (comandos, orientações, áreas, limites, velocidades, textos, chaves) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check constantes.js sem erro; 5 primitivos, P1/P2 e motivos de parada conferidos contra o REGRAS-JOGO.md
 
 ### #444.4 — Níveis em JSON: formato e os 10 primeiros níveis
 **Próximo passo:** depende da #444.3.
