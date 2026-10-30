@@ -10,3 +10,5 @@
 **Próximo passo:** trocar `jogos.css`, `ligthbot-versao-svg/`, `ligthbot-versao-ia/` e o link do Scratch por caminhos que começam em `/` (`/jogos/jogos.css`, `/jogos/ligthbot-versao-svg/`, `/jogos/ligthbot-versao-ia/`, `/MATERIAIS/.../projetos-scratch/index.html`).
 - **Nível:** MEDIO — causa de publicação na Vercel · **Modelo:** só Sonnet · **Effort:** medium
 - **Verificação:** depois do deploy, `curl` em `/jogos` e `/jogos/` acha `/jogos/jogos.css` com 200; sem `style=` nem `<script>` inline.
+- **Pedido extra (2026-10-29 21:56):** "versao svg, exclua" — card da versão SVG removido de `jogos/index.html` (a pasta `ligthbot-versao-svg` já não existia no disco). Restam 3 cards.
+- **Entrega #445.1:** `jogos.css`, link do Scratch e card da versão IA passam a usar caminhos da raiz (`/jogos/...`, `/MATERIAIS/...`). **Verificação:** 3 cards, sem inline; falta conferir com `curl` depois do deploy.

@@ -5,8 +5,6 @@
 
 ## Tarefas
 
-- #445-8c4f7a21 — [Página jogos sem CSS na nuvem (caminhos da raiz)](etapas/ETAPA-592-8c4f7a21-JOGOS-CAMINHOS-DA-RAIZ.md) · 🔄 Em andamento · — (não reservável)
-  - #445.1 — Usar caminhos a partir da raiz em jogos/index.html · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 21:55)
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 👀 Aguardando o "sim" do usuário (tarefa grande) · — (não reservável)
   - #444.1 — Projeto Vite e estrutura de pastas · ⬜ Pendente · nível a classificar pelo Jev
   - #444.2 — Motor do jogo (níveis, comandos, execução) · ⬜ Pendente (depende da #444.1) · nível a classificar pelo Jev
