@@ -6,7 +6,6 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 22:29)
   - #444.6 — Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT · ⬜ Pendente (depende da #444.5) · `MEDIO · effort medium` · só Sonnet
   - #444.7 — Memória do programa: slots de MAIN, PROC1 e PROC2 · ⬜ Pendente (depende da #444.6) · `MEDIO · effort medium` · só Sonnet
   - #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos · ⬜ Pendente (depende da #444.7) · `MEDIO · effort medium` · só Sonnet

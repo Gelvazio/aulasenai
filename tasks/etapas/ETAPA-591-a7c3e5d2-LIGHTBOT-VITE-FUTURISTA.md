@@ -70,7 +70,7 @@
 - **Verificação:** JSON válido; as 10 soluções simuladas contra as guardas do REGRAS-JOGO.md: todas dão vitória dentro dos limites e dos comandos liberados
 
 ### #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes
-**Próximo passo:** depende da #444.4.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.83))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -79,6 +79,8 @@
 - **Arquivos:** fonte/src/nucleo/mundo.js
 - **Critérios:** Fora dos limites = altura 0; luz só alterna onde há objetivo.
 - **Verificação:** `node --check`; leitura.
+- **Entrega:** fonte/src/nucleo/mundo.js (mundo, alturas, objetivos, luzes, validação do nível) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; abismo fora do mapa e luz só em objetivo conferidos contra REGRAS-JOGO.md seções 1 e 3
 
 ### #444.6 — Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT
 **Próximo passo:** depende da #444.5.
