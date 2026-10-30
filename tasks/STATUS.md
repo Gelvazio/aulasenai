@@ -5,6 +5,8 @@
 
 ## Tarefas
 
+- #438-4d8e2b60 — [Botão "Início" volta ao passo 1](etapas/ETAPA-585-4d8e2b60-INICIO-VOLTA-AO-PASSO-1.md) · 🔄 Em andamento · — (não reservável)
+  - #438.1 — Início vai ao passo 1 · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 23:20)
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
