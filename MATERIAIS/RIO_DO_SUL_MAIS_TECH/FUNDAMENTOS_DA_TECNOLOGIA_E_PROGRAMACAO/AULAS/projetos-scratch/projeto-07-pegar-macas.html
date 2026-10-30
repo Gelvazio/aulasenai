@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 07 - Pegar maçãs</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 1 &middot; PROJETO 07</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Pegar maçãs</h1>
+      <p>Você vai criar um jogo em que uma maçã cai do céu e você move uma cesta para pegá-la. Cada maçã pega vale um ponto!</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Movimento, Controle, Sensores, Operadores, Variáveis</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="10"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 10</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar os atores</h2>
+      <p>Abra um projeto novo no Scratch. Apague o gato (ou deixe-o de lado) e escolha dois atores na biblioteca: uma <strong>cesta</strong> (procure "Bowl" ou "Basket") e uma <strong>maçã</strong> (procure "Apple"). Escolha também um cenário bonito.</p>
+      <div class="dica">Salve o projeto logo no começo, com o nome "Pegar maçãs". Assim você não perde nada.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Mover a cesta com as setas</h2>
+      <p>Clique no ator da cesta. Ela vai andar para os lados quando você apertar as setas do teclado. Monte os dois blocos abaixo, um de cada vez.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para direita</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">20</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para esquerda</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">-20</span></span>
+      </div>
+      <div class="dica">Teste! Aperte as setas e veja a cesta andar. Se ela passar do lado da tela, tudo bem por enquanto.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Posição inicial da cesta</h2>
+      <p>A cesta deve começar sempre embaixo, no meio da tela. Use o bloco "vá para x: y:" logo quando o jogo começar.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">-130</span></span>
+      </div>
+      <div class="dica">O palco tem x de -240 a 240 e y de -180 a 180. O y = -130 deixa a cesta perto do chão.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Criar a variável "pontos"</h2>
+      <p>Uma <strong>variável</strong> é uma caixinha com nome que guarda um valor. Vá na categoria <strong>Variáveis</strong>, clique em "Criar uma variável", dê o nome <strong>pontos</strong> e deixe marcado "Para todos os atores". Ela aparece no palco como um placar.</p>
+      <div class="pilha">
+        <span class="bloco variaveis">pontos</span>
+      </div>
+      <div class="atencao">Escreva "pontos" sem acento e sem espaço extra, para ficar fácil de achar nos blocos.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Zerar o placar no início</h2>
+      <p>Todo jogo novo começa com zero pontos. Escolha o ator da <strong>cesta</strong> e acrescente este bloco embaixo de "vá para x: y:", na pilha da bandeira verde.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">-130</span></span>
+        <span class="bloco variaveis">mude <span class="campo vivo">pontos</span> para <span class="campo">0</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>A maçã cai de um lugar aleatório</h2>
+      <p>Agora clique na <strong>maçã</strong>. Ela vai nascer lá em cima, num ponto sorteado da tela, e descer devagar. O bloco "número aleatório" sorteia um valor entre dois números.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo vivo">número aleatório entre -200 e 200</span> y: <span class="campo">170</span></span>
+        <span class="bloco controle">repita até que <span class="campo vivo">y &lt; -150</span></span>
+        <span class="bloco movimento dentro">mude y por <span class="campo">-5</span></span>
+      </div>
+      <div class="dica">O bloco "número aleatório entre 1 e 10" fica em Operadores. Troque o 1 por -200 e o 10 por 200.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Pegou a maçã? Ganha um ponto</h2>
+      <p>Dentro da repetição, a maçã precisa perguntar: "estou tocando na cesta?". Se estiver, soma 1 ponto e volta lá para cima, num novo lugar sorteado.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">tocando em cesta?</span> então</span>
+        <span class="bloco variaveis dentro">adicione <span class="campo">1</span> a <span class="campo vivo">pontos</span></span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo vivo">número aleatório entre -200 e 200</span> y: <span class="campo">170</span></span>
+      </div>
+      <div class="atencao">O bloco "se" fica DENTRO do "repita até que", logo abaixo do "mude y por -5".</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Deixou cair? Fim de jogo</h2>
+      <p>Quando a maçã chega ao chão, o jogo acaba. Depois do "repita até que", coloque o bloco que para tudo e uma mensagem para o jogador.</p>
+      <div class="pilha">
+        <span class="bloco aparencia">diga <span class="campo">Fim de jogo!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+      <div class="dica">Para a mensagem ficar bonita, use o bloco "junte": junte "Você fez " e pontos.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Mais difícil a cada ponto</h2>
+      <p>Quer um jogo mais emocionante? Faça a maçã cair mais rápido conforme você ganha pontos. Troque o número do "mude y por" por um cálculo.</p>
+      <div class="pilha">
+        <span class="bloco movimento">mude y por <span class="campo vivo">-5 - (pontos / 2)</span></span>
+      </div>
+      <div class="atencao">Se os pontos ficarem altos demais, a maçã fica rápida demais. Teste e ajuste o número.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o jogo funcionando e confira se:
+        <ul>
+          <li>A cesta anda para os dois lados com as setas.</li>
+          <li>A maçã cai de um lugar diferente a cada vez.</li>
+          <li>O placar "pontos" começa em 0 e sobe 1 a cada maçã pega.</li>
+          <li>Se a maçã chega ao chão, aparece "Fim de jogo!" e o jogo para.</li>
+        </ul>
+      </div>
+      <div class="desafio">Faça cair uma segunda fruta (uma banana, por exemplo) que vale 2 pontos, ou uma bomba que acaba o jogo se for pega!</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

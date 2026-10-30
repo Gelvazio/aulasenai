@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 09 - Labirinto 2</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 2 &middot; PROJETO 09</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Labirinto 2</h1>
+      <p>Vamos melhorar o seu labirinto: agora o jogador tem vidas, um tempo para chegar ao fim, pode reiniciar o jogo e ouve uma música de fundo.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: intermediário</li>
+        <li>Blocos: Eventos, Variáveis, Controle, Sensores, Som</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="11"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 11</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o labirinto</h2>
+      <p>Abra o seu projeto do labirinto anterior e use "Arquivo &rarr; Salvar como uma cópia" para não estragar o original. Se não tiver o labirinto, desenhe um fundo com paredes de uma cor só (por exemplo, azul) e uma área de chegada verde.</p>
+      <div class="dica">Seu personagem anda pelas setas e volta ao início quando toca na parede. É isso que vamos melhorar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Criar as variáveis "vidas" e "tempo"</h2>
+      <p>Em <strong>Variáveis</strong>, crie duas variáveis para todos os atores: <strong>vidas</strong> e <strong>tempo</strong>. Variáveis "para todos os atores" (globais) podem ser lidas por qualquer ator do jogo. As variáveis "só para este ator" (locais) só valem para ele.</p>
+      <div class="pilha">
+        <span class="bloco variaveis">vidas</span>
+        <span class="bloco variaveis">tempo</span>
+      </div>
+      <div class="atencao">Marque "Para todos os atores". Se marcar só para este ator, os outros não conseguem usar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Reiniciar o jogo</h2>
+      <p>Todo jogo precisa de um começo bem definido. Quando a bandeira verde for clicada, volte o personagem para a largada e acerte os valores iniciais.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">-200</span> y: <span class="campo">-150</span></span>
+        <span class="bloco variaveis">mude <span class="campo vivo">vidas</span> para <span class="campo">3</span></span>
+        <span class="bloco variaveis">mude <span class="campo vivo">tempo</span> para <span class="campo">60</span></span>
+      </div>
+      <div class="dica">Ajuste x e y para a posição de largada do SEU labirinto.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Perder uma vida na parede</h2>
+      <p>Antes o personagem só voltava ao início. Agora, cada vez que encostar na parede, ele perde 1 vida e volta para a largada.</p>
+      <div class="pilha">
+        <span class="bloco controle">sempre</span>
+        <span class="bloco controle dentro">se <span class="campo vivo">tocando na cor azul?</span> então</span>
+        <span class="bloco variaveis dentro">adicione <span class="campo">-1</span> a <span class="campo vivo">vidas</span></span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo">-200</span> y: <span class="campo">-150</span></span>
+      </div>
+      <div class="atencao">Para escolher a cor no bloco "tocando na cor?", clique no quadrado de cor, depois no conta-gotas e clique na parede do palco.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Fim de jogo sem vidas</h2>
+      <p>Quando as vidas chegarem a zero, o jogador perdeu. Coloque uma nova pilha que fica esperando isso acontecer.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">espere até que <span class="campo vivo">vidas = 0</span></span>
+        <span class="bloco aparencia">diga <span class="campo">Acabaram as vidas!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Cronômetro regressivo</h2>
+      <p>Agora o tempo corre! A cada segundo, o valor de "tempo" diminui 1. Se chegar a zero, o jogo termina.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">repita até que <span class="campo vivo">tempo = 0</span></span>
+        <span class="bloco controle dentro">espere <span class="campo">1</span> segundos</span>
+        <span class="bloco variaveis dentro">adicione <span class="campo">-1</span> a <span class="campo vivo">tempo</span></span>
+        <span class="bloco aparencia">diga <span class="campo">O tempo acabou!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Chegar ao fim: vitória!</h2>
+      <p>Pinte a área de chegada de verde. Quando o personagem tocar nela, o jogador venceu. Mostre quanto tempo sobrou.</p>
+      <div class="pilha">
+        <span class="bloco controle">espere até que <span class="campo vivo">tocando na cor verde?</span></span>
+        <span class="bloco aparencia">diga <span class="campo vivo">junte Você venceu! Sobraram  e tempo</span> por <span class="campo">3</span> segundos</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+      <div class="dica">Use uma cor que não aparece em nenhum outro lugar do cenário, senão o jogo se confunde.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Reiniciar com uma tecla</h2>
+      <p>Que tal recomeçar sem precisar clicar na bandeira? Aperte a tecla R para reiniciar tudo.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">r</span> for pressionada</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+        <span class="bloco eventos">mande <span class="campo vivo">reiniciar</span> para todos</span>
+      </div>
+      <div class="atencao">Se o "pare todos" cortar o próprio "mande", teste outro jeito: use "pare outros scripts" ou deixe só o recomeço pela bandeira verde.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Música de fundo</h2>
+      <p>Na aba <strong>Sons</strong>, escolha uma música na biblioteca (procure "Dance Chill Out" ou "Drive Around"). Depois, toque ela em repetição no começo do jogo.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">sempre</span>
+        <span class="bloco som dentro">toque o som <span class="campo vivo">Dance Chill Out</span> até o fim</span>
+      </div>
+      <div class="dica">Se a música estiver muito alta, use "mude o volume para 40 %".</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 10</span>
+      <h2>Som ao perder uma vida</h2>
+      <p>Para dar emoção, toque um efeito quando o jogador encostar na parede. Coloque o bloco junto com o que tira a vida.</p>
+      <div class="pilha">
+        <span class="bloco som">toque o som <span class="campo vivo">Pop</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o labirinto funcionando e confira se:
+        <ul>
+          <li>O jogo começa com 3 vidas e 60 segundos.</li>
+          <li>Encostar na parede tira 1 vida e leva o personagem de volta à largada.</li>
+          <li>Sem vidas ou sem tempo, o jogo termina com uma mensagem.</li>
+          <li>Chegar ao final mostra a vitória e o tempo que sobrou.</li>
+          <li>Tem música de fundo.</li>
+        </ul>
+      </div>
+      <div class="desafio">Crie uma segunda fase com um labirinto mais difícil que só abre quando o jogador vence a primeira. Ou coloque um inimigo que anda sozinho e tira uma vida ao encostar!</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

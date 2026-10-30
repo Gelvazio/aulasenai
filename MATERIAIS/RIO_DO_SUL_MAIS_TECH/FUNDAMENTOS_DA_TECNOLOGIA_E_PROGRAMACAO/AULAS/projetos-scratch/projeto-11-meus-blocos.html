@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 11 - Meus Blocos</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 3 &middot; PROJETO 11</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Meus Blocos</h1>
+      <p>Você vai criar seus próprios blocos, como "estrela", "flor" e "casa", e usar cada um quantas vezes quiser. É assim que programadores evitam repetir código.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: intermediário</li>
+        <li>Blocos: Meus Blocos, Caneta, Movimento, Controle</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar e entender a ideia</h2>
+      <p>Abra um projeto novo. Clique no botão azul no canto inferior esquerdo (<strong>Adicionar extensão</strong>) e escolha <strong>Caneta</strong>. Com ela, o ator desenha no palco.</p>
+      <p>No livro, o capítulo 5 chama isso de <strong>procedimentos e funções</strong>: um grupo de blocos que ganha um nome e pode ser chamado de novo. No Scratch, eles ficam na categoria <strong>Meus Blocos</strong>.</p>
+      <div class="dica">Pense numa receita de bolo: você escreve uma vez e usa sempre que quiser, só dizendo o nome dela.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Desenhar um quadrado do jeito difícil</h2>
+      <p>Primeiro veja como seria sem um bloco próprio. Este grupo desenha um quadrado:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco caneta">apague tudo</span>
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">4</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">80</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">90</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <p>Funciona, mas se quiser 3 quadrados em lugares diferentes, vai copiar esses blocos 3 vezes. Dá trabalho!</p>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Criar o bloco "quadrado"</h2>
+      <p>Vá em <strong>Meus Blocos</strong> e clique em <strong>Criar um bloco</strong>. Digite o nome <code>quadrado</code> e clique em OK.</p>
+      <p>Aparece um bloco de definição. Coloque os blocos de desenho embaixo dele:</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">quadrado</span></span>
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">4</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">80</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">90</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco caneta">apague tudo</span>
+        <span class="bloco meus-blocos">quadrado</span>
+      </div>
+      <div class="dica">O bloco "definir" é a receita. O bloco "quadrado" lá embaixo é quem usa a receita.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Dar um tamanho ao bloco</h2>
+      <p>E se o quadrado precisar ser grande ou pequeno? Para isso o bloco ganha uma <strong>entrada</strong>.</p>
+      <ol>
+        <li>Clique com o botão direito no bloco "definir quadrado" e escolha <strong>Editar</strong>.</li>
+        <li>Clique em <strong>Adicionar uma entrada (número ou texto)</strong> e dê o nome <code>tamanho</code>.</li>
+        <li>Clique em <strong>OK</strong>.</li>
+      </ol>
+      <p>Arraste a bolinha <code>tamanho</code> do bloco "definir" para dentro do "mova":</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">quadrado</span> <span class="campo">tamanho</span></span>
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">4</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo vivo">tamanho</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">90</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="atencao">A entrada fica azul-rosada em formato redondo. Se o bloco "mova" ainda mostrar 80, arraste a bolinha <code>tamanho</code> até ele.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Usar o bloco várias vezes</h2>
+      <p>Agora você chama o mesmo bloco com tamanhos diferentes:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco caneta">apague tudo</span>
+        <span class="bloco meus-blocos">quadrado <span class="campo">30</span></span>
+        <span class="bloco meus-blocos">quadrado <span class="campo">60</span></span>
+        <span class="bloco meus-blocos">quadrado <span class="campo">90</span></span>
+      </div>
+      <p>Os três quadrados saem um sobre o outro. No próximo passo, vamos movê-los.</p>
+      <div class="dica">Para mudar a cor da caneta, use o bloco "mude a cor da caneta para" dentro do seu bloco.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Criar o bloco "estrela"</h2>
+      <p>Crie um novo bloco chamado <code>estrela</code>, com a entrada <code>tamanho</code>. Uma estrela de 5 pontas usa giro de 144 graus.</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">estrela</span> <span class="campo">tamanho</span></span>
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">5</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo vivo">tamanho</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">144</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="dica">Teste vários tamanhos: 40, 80, 120.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Criar o bloco "flor" usando outro bloco</h2>
+      <p>Um bloco pode chamar outro! A "flor" repete a estrela girando um pouco a cada volta:</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">flor</span> <span class="campo">tamanho</span></span>
+        <span class="bloco controle">repita <span class="campo">12</span> vezes</span>
+        <span class="bloco meus-blocos dentro">quadrado <span class="campo vivo">tamanho</span></span>
+        <span class="bloco movimento dentro">gire <span class="campo">30</span> graus</span>
+      </div>
+      <p>12 vezes 30 graus dá 360 graus: volta completa. Dá para trocar "quadrado" por "estrela" e ver outra figura.</p>
+      <div class="atencao">Se a figura sair torta ou aberta, confira se o giro vezes o número de repetições dá 360 graus.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Criar o bloco "casa"</h2>
+      <p>Crie <code>casa</code> com a entrada <code>tamanho</code>: um quadrado e um triângulo em cima. O triângulo repete 3 vezes com giro de 120 graus.</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">casa</span> <span class="campo">tamanho</span></span>
+        <span class="bloco meus-blocos">quadrado <span class="campo vivo">tamanho</span></span>
+        <span class="bloco movimento">gire &#8630; <span class="campo">90</span> graus</span>
+        <span class="bloco movimento">mova <span class="campo vivo">tamanho</span> passos</span>
+        <span class="bloco movimento">gire &#8631; <span class="campo">30</span> graus</span>
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">3</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo vivo">tamanho</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">120</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <p>Depois do quadrado, o ator sobe pela lateral (gire para a esquerda 90 e mova) e vira um pouco para a direita para começar o telhado.</p>
+      <div class="dica">Se o telhado ficar de lado, ajuste o giro antes do triângulo. Teste e corrija.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Montar uma cena</h2>
+      <p>Use seus blocos para fazer uma cena, mudando de lugar com <code>vá para x: y:</code> entre um desenho e outro, sem a caneta desenhando o caminho:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco caneta">apague tudo</span>
+        <span class="bloco movimento">vá para x: <span class="campo">-150</span> y: <span class="campo">-100</span></span>
+        <span class="bloco meus-blocos">casa <span class="campo">60</span></span>
+        <span class="bloco movimento">vá para x: <span class="campo">50</span> y: <span class="campo">60</span></span>
+        <span class="bloco meus-blocos">estrela <span class="campo">50</span></span>
+      </div>
+      <div class="atencao">Se a caneta riscar o caminho entre as figuras, é porque ela ficou abaixada. Confira se cada bloco termina com "levante a caneta".</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor:
+        <ul>
+          <li>Pelo menos 3 blocos criados por você (por exemplo: quadrado, estrela, flor ou casa).</li>
+          <li>Pelo menos 1 bloco com entrada (<code>tamanho</code>).</li>
+          <li>Um grupo principal na bandeira verde que usa os blocos mais de uma vez, com tamanhos diferentes.</li>
+          <li>Explique em uma frase: por que usar Meus Blocos é melhor do que copiar e colar?</li>
+        </ul>
+      </div>
+      <div class="desafio">Crie um bloco <code>paisagem</code> que chame casa, estrela e flor de uma vez. Ou crie uma segunda entrada, <code>cor</code>, para mudar a cor da caneta.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

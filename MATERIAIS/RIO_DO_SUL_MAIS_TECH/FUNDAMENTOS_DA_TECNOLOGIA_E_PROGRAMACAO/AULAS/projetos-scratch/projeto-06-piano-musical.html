@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 06 - Piano musical</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 3 &middot; PROJETO 06</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Piano musical</h1>
+      <p>Você vai transformar o teclado do computador em um instrumento. Cada tecla toca um som e faz o sprite mudar de cor. No final, você grava uma melodia curta.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Som, Aparência, Extensão Música (opcional)</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar as teclas</h2>
+      <p>Comece um projeto novo. Apague o gato (ou deixe-o como regente da orquestra). Na biblioteca de sprites, escolha um instrumento, como o <strong>Tambor</strong> ou o <strong>Piano</strong>, e um cenário de palco ou de música.</p>
+      <p>Vamos usar as teclas <strong>A, S, D, F, G</strong> como notas.</p>
+      <div class="dica">Você pode copiar um sprite clicando nele com o botão direito e escolhendo "duplicar". Assim cada tecla pode ter um desenho diferente.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Primeiro som: tecla A</h2>
+      <p>Clique na aba <strong>Sons</strong> do sprite para ouvir os sons que ele já tem. Depois monte este bloco:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">a</span> for pressionada</span>
+        <span class="bloco som">toque o som <span class="campo">Drum</span> até o fim</span>
+      </div>
+      <div class="dica">Aperte a tecla A no teclado para testar sem clicar na bandeira verde.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Mais teclas, mais sons</h2>
+      <p>Repita o passo anterior para S, D, F e G, escolhendo um som diferente em cada bloco.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">s</span> for pressionada</span>
+        <span class="bloco som">toque o som <span class="campo">Cymbal</span> até o fim</span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">d</span> for pressionada</span>
+        <span class="bloco som">toque o som <span class="campo">Clap</span> até o fim</span>
+      </div>
+      <div class="atencao">Para trocar a tecla do bloco amarelo, clique na setinha do campo e escolha a letra.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Mudar de cor ao tocar</h2>
+      <p>Para o piano ficar mais divertido, o sprite muda de cor a cada tecla. Acrescente um bloco de Aparência em cada tecla.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">a</span> for pressionada</span>
+        <span class="bloco aparencia">mude o efeito <span class="campo vivo">cor</span> por <span class="campo">25</span></span>
+        <span class="bloco som">toque o som <span class="campo">Drum</span> até o fim</span>
+      </div>
+      <div class="dica">Em cada tecla, tente números diferentes no efeito de cor. Cada nota terá a sua cor.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Bônus visual: o sprite cresce</h2>
+      <p>Que tal fazer o instrumento "pular" a cada nota? Aumente o tamanho e volte ao normal logo depois.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">f</span> for pressionada</span>
+        <span class="bloco aparencia">mude o tamanho para <span class="campo">130</span> %</span>
+        <span class="bloco som">toque o som <span class="campo">Cymbal</span> até o fim</span>
+        <span class="bloco aparencia">mude o tamanho para <span class="campo">100</span> %</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Extensão Música (opcional)</h2>
+      <p>Clique no botão azul no canto inferior esquerdo do Scratch e escolha <strong>Música</strong>. Ela traz notas de verdade, como dó, ré e mi, e instrumentos como piano e guitarra.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">g</span> for pressionada</span>
+        <span class="bloco som">toque a nota <span class="campo">60</span> por <span class="campo">0.5</span> tempos</span>
+      </div>
+      <div class="dica">A nota 60 é o dó do meio. 62 é ré, 64 é mi, 65 é fá e 67 é sol.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Tocar uma melodia sozinho</h2>
+      <p>Agora o computador toca uma música curta quando você apertar a <strong>barra de espaço</strong>. Esta é a melodia que você vai gravar, nota por nota.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">espaço</span> for pressionada</span>
+        <span class="bloco som">toque a nota <span class="campo">60</span> por <span class="campo">0.5</span> tempos</span>
+        <span class="bloco som">toque a nota <span class="campo">62</span> por <span class="campo">0.5</span> tempos</span>
+        <span class="bloco som">toque a nota <span class="campo">64</span> por <span class="campo">0.5</span> tempos</span>
+        <span class="bloco som">toque a nota <span class="campo">60</span> por <span class="campo">1</span> tempos</span>
+      </div>
+      <div class="atencao">Se você não usou a extensão Música, troque pelos blocos "toque o som" e use "espere 0.5 segundos" entre eles.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Repetir a melodia</h2>
+      <p>Para não montar o mesmo trecho várias vezes, use o bloco <strong>repita</strong>. Ele repete tudo que estiver dentro dele.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">espaço</span> for pressionada</span>
+        <span class="bloco controle">repita <span class="campo">2</span> vezes</span>
+        <span class="bloco som dentro">toque a nota <span class="campo">60</span> por <span class="campo">0.5</span> tempos</span>
+        <span class="bloco som dentro">toque a nota <span class="campo">64</span> por <span class="campo">0.5</span> tempos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o piano funcionando. Para registrar a entrega, ele precisa ver:
+        <ul>
+          <li>Pelo menos 5 teclas tocando sons diferentes.</li>
+          <li>O sprite mudando de cor (ou de tamanho) ao tocar.</li>
+          <li>Uma melodia curta tocada com a barra de espaço.</li>
+          <li>Você tocando uma música simples no teclado.</li>
+        </ul>
+      </div>
+      <div class="desafio">Grave a sua própria voz na aba <strong>Sons</strong> (ícone do microfone) e use como uma das teclas do piano.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 01 - Gato Dançarino</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 1 &middot; PROJETO 01</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Gato Dançarino</h1>
+      <p>Você vai conhecer a tela do Scratch e fazer o gato dançar ao som de uma música.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Movimento, Som, Aparência, Controle</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="10"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 10</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Abrir o Scratch e preparar o projeto</h2>
+      <p>Entre em <strong>scratch.mit.edu</strong> e clique em <strong>Criar</strong>. Um projeto novo
+        abre com o gato laranja no palco. Ele será o nosso dançarino.</p>
+      <p>Clique no ícone de <strong>cenário</strong> (canto inferior direito) e escolha um fundo de
+        festa, como <em>Spotlight</em> ou <em>Concert</em>, na biblioteca.</p>
+      <div class="dica">Se o Scratch estiver em inglês, clique no globo no alto da tela e escolha
+        <strong>Português Brasileiro</strong>.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Conhecer a tela do Scratch</h2>
+      <p>A tela tem quatro partes principais. Encontre cada uma:</p>
+      <p><strong>Palco:</strong> onde o projeto aparece e acontece, à direita em cima.<br>
+        <strong>Sprites:</strong> os personagens, na lista abaixo do palco.<br>
+        <strong>Paleta de blocos:</strong> as peças coloridas, à esquerda.<br>
+        <strong>Área de scripts:</strong> o espaço no meio, onde você encaixa os blocos.</p>
+      <div class="dica">Cada cor de bloco é uma categoria: azul é Movimento, roxo é Aparência,
+        rosa é Som, amarelo é Eventos e laranja é Controle.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Começar com a bandeira verde</h2>
+      <p>Todo programa precisa de um começo. Clique em <strong>Eventos</strong> e arraste este bloco
+        para a área de scripts:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+      </div>
+      <p>Ele é um bloco de <strong>chapéu</strong>: os outros blocos ficam grudados embaixo dele.</p>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Fazer o gato se mexer</h2>
+      <p>Em <strong>Movimento</strong>, arraste o bloco "mova 10 passos" e encaixe embaixo do chapéu.
+        Mude o número para 50 e clique no script para ver o gato andar.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">mova <span class="campo">50</span> passos</span>
+        <span class="bloco movimento">gire <span class="campo">15</span> graus</span>
+      </div>
+      <div class="atencao">Os blocos precisam estar encaixados. Se ficarem soltos, nada acontece.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Tocar uma música</h2>
+      <p>Abra a aba <strong>Sons</strong>, clique em <strong>Escolher um som</strong> e pegue uma
+        música de dança, como <em>Dance Funky</em> ou <em>Dance Celebrate</em>. Volte para
+        <strong>Código</strong> e use o bloco de som:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco som">toque o som <span class="campo vivo">Dance Funky</span> até o fim</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Trocar de fantasia para dançar</h2>
+      <p>O gato tem duas <strong>fantasias</strong> (posições de perna). Trocar entre elas dá a
+        impressão de movimento. Use o bloco de Aparência:</p>
+      <div class="pilha">
+        <span class="bloco aparencia">próxima fantasia</span>
+        <span class="bloco controle">espere <span class="campo">0.3</span> segundos</span>
+      </div>
+      <div class="dica">Sem o bloco "espere", a troca fica tão rápida que você nem vê.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Repetir a dança</h2>
+      <p>Para não encaixar o mesmo bloco várias vezes, coloque a dança dentro de um
+        <strong>repita</strong>. Monte um segundo script, que roda junto com a música:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">repita <span class="campo">10</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">20</span> passos</span>
+        <span class="bloco aparencia dentro">próxima fantasia</span>
+        <span class="bloco controle dentro">espere <span class="campo">0.3</span> segundos</span>
+        <span class="bloco movimento dentro">mova <span class="campo">-20</span> passos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Dar um toque de personalidade</h2>
+      <p>Faça o gato falar e mudar de cor durante a dança. Acrescente dentro do repita:</p>
+      <div class="pilha">
+        <span class="bloco aparencia">diga <span class="campo vivo">Vamos dançar!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco aparencia">mude o efeito <span class="campo vivo">cor</span> por <span class="campo">25</span></span>
+      </div>
+      <div class="dica">Clique na bandeira verde a cada mudança para testar. Testar logo evita erros grandes.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Parar tudo quando quiser</h2>
+      <p>O botão vermelho, ao lado da bandeira, para o projeto. Você também pode criar um script que
+        pare a dança ao apertar uma tecla:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">espaço</span> for pressionada</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 10</span>
+      <h2>Entrega</h2>
+      <div class="entrega">Mostre ao professor o gato dançando com música. Para valer a entrega:
+        (1) o projeto começa na bandeira verde; (2) o gato se move e troca de fantasia;
+        (3) a música toca; (4) existe pelo menos um bloco "repita"; (5) o projeto tem seu nome
+        e é salvo na sua conta.</div>
+      <div class="desafio">Coloque um segundo sprite dançando junto, com outra música ou outro ritmo.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

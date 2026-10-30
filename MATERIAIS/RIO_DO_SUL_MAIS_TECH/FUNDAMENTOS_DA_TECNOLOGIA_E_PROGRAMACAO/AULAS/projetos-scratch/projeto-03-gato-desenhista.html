@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 03 - Gato Desenhista</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 2 &middot; PROJETO 03</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Gato Desenhista</h1>
+      <p>Você vai ensinar o gato a desenhar formas usando a extensão Caneta e a ideia de repetição.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Caneta, Controle, Movimento, Eventos</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="10"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 10</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o projeto e a extensão Caneta</h2>
+      <p>Abra um projeto novo e mantenha o gato. Clique no botão azul no canto inferior esquerdo
+        (<strong>Adicionar extensão</strong>) e escolha <strong>Caneta</strong>. Uma nova categoria
+        verde-azulada aparece na paleta.</p>
+      <p>Se quiser, escolha um cenário claro, para o desenho aparecer bem.</p>
+      <div class="dica">A caneta desenha o caminho por onde o sprite passa, como um lápis preso nele.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Preparar a folha</h2>
+      <p>Todo desenho começa com a folha limpa e o gato no ponto de partida:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco caneta">apague tudo</span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">0</span></span>
+        <span class="bloco movimento">aponte para a direção <span class="campo">90</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Primeiro risco</h2>
+      <p>Abaixe a caneta, ande e levante a caneta. Veja o risco no palco:</p>
+      <div class="pilha">
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco movimento">mova <span class="campo">100</span> passos</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="atencao">Se esquecer de "levantar a caneta", o gato continua riscando por onde andar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Quadrado do jeito difícil</h2>
+      <p>Um quadrado tem 4 lados iguais e 4 cantos de 90 graus. Sem repetição, você precisa repetir
+        o par "mova + gire" quatro vezes:</p>
+      <div class="pilha">
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco movimento">mova <span class="campo">100</span> passos</span>
+        <span class="bloco movimento">gire <span class="campo">90</span> graus</span>
+        <span class="bloco movimento">mova <span class="campo">100</span> passos</span>
+        <span class="bloco movimento">gire <span class="campo">90</span> graus</span>
+      </div>
+      <p>Continue até completar os 4 lados. Dá trabalho, não é?</p>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Quadrado do jeito inteligente: repita</h2>
+      <p>No livro do Scratch (capítulo 3), a repetição serve para não escrever a mesma coisa várias
+        vezes. O bloco <strong>repita</strong> faz isso por você. Apague os blocos repetidos e use:</p>
+      <div class="pilha">
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">4</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">100</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">90</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="dica">Tudo que estiver dentro da "boca" do repita é repetido.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Triângulo</h2>
+      <p>Um triângulo tem 3 lados. Os três giros precisam somar 360 graus, então cada um é
+        360 &divide; 3 = <strong>120</strong> graus.</p>
+      <div class="pilha">
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">3</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">100</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">120</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+      <div class="atencao">Antes de desenhar a nova forma, use "vá para x y" para mudar de lugar,
+        senão ela se mistura com o quadrado.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Mudar cor e espessura</h2>
+      <p>Deixe o desenho mais bonito antes de desenhar:</p>
+      <div class="pilha">
+        <span class="bloco caneta">mude a cor da caneta para <span class="campo vivo">30</span></span>
+        <span class="bloco caneta">mude a espessura da caneta para <span class="campo">3</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Estrela</h2>
+      <p>Uma estrela de 5 pontas usa o mesmo truque, mas com giro de <strong>144</strong> graus e
+        5 repetições:</p>
+      <div class="pilha">
+        <span class="bloco caneta">use a caneta</span>
+        <span class="bloco controle">repita <span class="campo">5</span> vezes</span>
+        <span class="bloco movimento dentro">mova <span class="campo">100</span> passos</span>
+        <span class="bloco movimento dentro">gire <span class="campo">144</span> graus</span>
+        <span class="bloco caneta">levante a caneta</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Juntar tudo em um desenho</h2>
+      <p>Monte um único script com as três formas, cada uma em um lugar do palco. Entre uma forma e
+        outra, levante a caneta, vá para o novo ponto e abaixe a caneta de novo.</p>
+      <div class="pilha">
+        <span class="bloco caneta">levante a caneta</span>
+        <span class="bloco movimento">vá para x: <span class="campo">-150</span> y: <span class="campo">0</span></span>
+        <span class="bloco caneta">use a caneta</span>
+      </div>
+      <div class="dica">Teste uma forma de cada vez. Se algo sair torto, confira o número do giro.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 10</span>
+      <h2>Entrega</h2>
+      <div class="entrega">Mostre ao professor o desenho no palco. Para valer a entrega:
+        (1) usa a extensão Caneta; (2) quadrado, triângulo e estrela desenhados com o bloco
+        "repita"; (3) as formas não estão desenhadas umas sobre as outras; (4) usou cor ou
+        espessura diferente em pelo menos uma forma; (5) você sabe explicar por que o giro do
+        triângulo é 120.</div>
+      <div class="desafio">Desenhe um hexágono (6 lados) e um círculo aproximado
+        (repita 36 vezes: mova 10 passos, gire 10 graus). Qual é a regra para achar o giro?</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

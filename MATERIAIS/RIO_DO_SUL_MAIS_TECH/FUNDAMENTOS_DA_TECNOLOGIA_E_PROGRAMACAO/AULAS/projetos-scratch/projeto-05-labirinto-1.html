@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 05 - Labirinto 1</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 3 &middot; PROJETO 05</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Labirinto 1</h1>
+      <p>Você vai desenhar um labirinto simples e levar um personagem do começo até o fim. Se ele encostar na parede, volta para a largada. Se chegar ao final, ele diz "Você venceu!".</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Movimento, Controle, Sensores, Operadores</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o labirinto</h2>
+      <p>Clique em <strong>Palco</strong> e abra a aba <strong>Fundos</strong>. Com a ferramenta de pincel ou de linha, desenhe as paredes do labirinto em uma cor forte, por exemplo <strong>azul escuro</strong>. Use <strong>só essa cor</strong> nas paredes.</p>
+      <p>Depois, escolha na biblioteca um personagem pequeno (a Bola, o Gato ou outro) e uma <strong>bandeira</strong> ou círculo de uma cor diferente para marcar o final do caminho. Pinte o final de <strong>vermelho</strong>.</p>
+      <div class="dica">Deixe os corredores largos o suficiente para o personagem passar. Diminua o tamanho dele se precisar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Largada: onde o personagem começa</h2>
+      <p>Posicione o personagem no começo do labirinto e use este bloco para ele sempre voltar ao mesmo ponto quando o jogo começar.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">-200</span> y: <span class="campo">150</span></span>
+      </div>
+      <div class="dica">Arraste o personagem até a largada e veja os números x e y que aparecem nas informações do sprite. Use esses números.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Andar com as setas</h2>
+      <p>Faça o personagem andar nas quatro direções. Cada seta ganha o seu bloco, em passos curtos (3 ou 4) para dar para controlar nos corredores.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para direita</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">4</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para esquerda</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">-4</span></span>
+      </div>
+      <div class="dica">Faça o mesmo com a seta para cima e para baixo, mudando o <strong>y</strong> por 4 e por -4.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Se tocar na parede, voltar</h2>
+      <p>Agora um bloco de decisão: <strong>se</strong> uma condição for verdadeira, <strong>então</strong> algo acontece. Aqui a condição é tocar na cor da parede.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">sempre</span>
+        <span class="bloco controle dentro">se <span class="campo vivo">tocando na cor azul escuro ?</span> então</span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo">-200</span> y: <span class="campo">150</span></span>
+      </div>
+      <div class="atencao">No bloco "tocando na cor", clique no quadradinho de cor e depois no conta-gotas. Em seguida clique na parede do labirinto no palco para pegar exatamente a mesma cor.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Chegar ao final</h2>
+      <p>Faça outro <em>se</em> para o final do labirinto (a cor vermelha). Quando o personagem tocar nela, ele comemora e o jogo para.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">tocando na cor vermelho ?</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Você venceu!</span> por <span class="campo">3</span> segundos</span>
+        <span class="bloco controle dentro">pare <span class="campo">todos</span></span>
+      </div>
+      <div class="dica">Coloque este segundo <em>se</em> dentro do mesmo <em>sempre</em> do passo anterior, logo abaixo do primeiro.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Se e Senão: duas saídas</h2>
+      <p>O bloco <strong>se ... então ... senão</strong> escolhe entre dois caminhos. Podemos usar para fazer o personagem falar quando bate ou ficar calado quando está livre. Veja como fica:</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">tocando na cor azul escuro ?</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Ai!</span> por <span class="campo">1</span> segundos</span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo">-200</span> y: <span class="campo">150</span></span>
+        <span class="bloco controle">senão</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">(vazio)</span></span>
+      </div>
+      <div class="dica">Para o balão sumir, deixe o campo do bloco "diga" em branco.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Operadores: juntar condições com "ou"</h2>
+      <p>Seu labirinto pode ter paredes de duas cores. Para tratar as duas de uma vez, use o operador <strong>ou</strong>: a condição vale se uma <em>ou</em> a outra for verdadeira. O <strong>e</strong> exige as duas.</p>
+      <div class="pilha">
+        <span class="bloco controle">se</span>
+        <span class="bloco operadores dentro"><span class="campo vivo">tocando na cor azul ?</span> ou <span class="campo vivo">tocando na cor preto ?</span></span>
+        <span class="bloco controle dentro">então</span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo">-200</span> y: <span class="campo">150</span></span>
+      </div>
+      <div class="dica">Operadores de comparação também existem: <strong>&gt;</strong> maior que, <strong>&lt;</strong> menor que e <strong>=</strong> igual a. Eles ficam na categoria verde de Operadores.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Testar e ajustar</h2>
+      <p>Clique na bandeira verde e percorra o labirinto. Teste três coisas: bater na parede, andar no corredor e chegar ao final. Se o personagem passa pela parede, a cor escolhida está diferente da do desenho. Se ele não consegue passar, o corredor está apertado ou os passos são grandes demais.</p>
+      <div class="atencao">Se a parede tiver duas tonalidades quase iguais de azul, o Scratch trata como cores diferentes. Pinte tudo com uma cor só.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o labirinto funcionando. Para registrar a entrega, ele precisa ver:
+        <ul>
+          <li>O personagem andando com as setas do teclado.</li>
+          <li>Ele voltando à largada ao tocar na parede.</li>
+          <li>Ele dizendo "Você venceu!" ao chegar ao final.</li>
+          <li>Pelo menos um bloco <em>se</em> usado no projeto.</li>
+        </ul>
+      </div>
+      <div class="desafio">Crie um segundo labirinto, mais difícil, e coloque uma variável <strong>tentativas</strong> que aumenta cada vez que o personagem bate na parede.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

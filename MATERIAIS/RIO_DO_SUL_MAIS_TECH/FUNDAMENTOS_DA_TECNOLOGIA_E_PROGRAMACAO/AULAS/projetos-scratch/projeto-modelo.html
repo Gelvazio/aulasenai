@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 00 - Modelo</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 1 &middot; PROJETO 00</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Nome do projeto</h1>
+      <p>Uma frase dizendo o que o aluno vai construir.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Movimento, Eventos</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Título do passo</h2>
+      <p>Explicação curta, em frases simples, para a 8ª série.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">mova <span class="campo">10</span> passos</span>
+      </div>
+      <div class="dica">Dica curta.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">O que mostrar ao professor para registrar a entrega.</div>
+      <div class="desafio">Ideia para quem terminar antes.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

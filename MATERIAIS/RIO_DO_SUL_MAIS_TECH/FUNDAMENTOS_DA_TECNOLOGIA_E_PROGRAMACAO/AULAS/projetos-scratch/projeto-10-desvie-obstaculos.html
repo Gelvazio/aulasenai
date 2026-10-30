@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 10 - Desvie dos Obstáculos</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 2 &middot; PROJETO 10</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Desvie dos Obstáculos</h1>
+      <p>Você vai criar um jogo em que uma nave desvia de obstáculos que caem. Quanto mais tempo você sobrevive, mais pontos ganha. Se bater, é fim de jogo!</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: intermediário</li>
+        <li>Blocos: Eventos, Movimento, Controle, Sensores, Operadores, Variáveis</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o projeto</h2>
+      <p>Abra um projeto novo no Scratch. Apague o gato (ou deixe, se quiser que ele seja o herói). Escolha um fundo de que você goste, como "Space" ou "Stars".</p>
+      <ol>
+        <li>Clique em <strong>Escolher um ator</strong> e pegue uma nave, foguete ou outro personagem. Esse será o <strong>Jogador</strong>.</li>
+        <li>Escolha outro ator para ser o <strong>Obstáculo</strong> (uma pedra, um asteroide, uma bola).</li>
+        <li>Renomeie os atores: <code>Jogador</code> e <code>Obstaculo</code>.</li>
+      </ol>
+      <div class="dica">Deixe o Jogador pequeno (tamanho 40 a 60) e posicione na parte de baixo do palco.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Mover o jogador para os lados</h2>
+      <p>Clique no ator <strong>Jogador</strong>. Vamos fazer ele andar com as setas do teclado. Primeiro, a posição inicial e a seta para a direita.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">-140</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para a direita</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">20</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para a esquerda</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">-20</span></span>
+      </div>
+      <div class="atencao">Para ir à esquerda, o número é negativo (<code>-20</code>). Clique na tecla do jogo para testar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Criar as variáveis</h2>
+      <p>Vá em <strong>Variáveis</strong> e clique em <strong>Criar uma variável</strong>. Crie duas, marcando "Para todos os atores":</p>
+      <ul>
+        <li><code>pontos</code> &mdash; guarda quantos pontos o jogador tem.</li>
+        <li><code>jogando</code> &mdash; vale 1 quando o jogo está rodando e 0 quando acabou.</li>
+      </ul>
+      <p>No ator <strong>Jogador</strong>, junte este começo à sua bandeira verde:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco variaveis">defina <span class="campo vivo">pontos</span> para <span class="campo">0</span></span>
+        <span class="bloco variaveis">defina <span class="campo vivo">jogando</span> para <span class="campo">1</span></span>
+      </div>
+      <div class="dica">Sempre que o jogo começa, as variáveis voltam ao valor inicial. É isso que reinicia o jogo.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Ganhar pontos pelo tempo</h2>
+      <p>Quanto mais tempo você sobrevive, mais pontos. Vamos somar 1 ponto a cada segundo. Isso pode ficar no Jogador:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">repita até que <span class="campo vivo">jogando = 0</span></span>
+        <span class="bloco controle dentro">espere <span class="campo">1</span> segundos</span>
+        <span class="bloco variaveis dentro">mude <span class="campo vivo">pontos</span> por <span class="campo">1</span></span>
+      </div>
+      <div class="dica">Marque a caixinha da variável <code>pontos</code> para ela aparecer no palco.</div>
+      <div class="atencao">Dica de leitura: "repita até que jogando = 0" fica no bloco <strong>Controle</strong>, e o "=" fica em <strong>Operadores</strong>.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Obstáculo caindo</h2>
+      <p>Clique no ator <strong>Obstáculo</strong>. Ele nasce no alto, em um lugar sorteado, e desce até o chão.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">repita até que <span class="campo vivo">jogando = 0</span></span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo vivo">número aleatório entre -200 e 200</span> y: <span class="campo">170</span></span>
+        <span class="bloco controle dentro">repita até que <span class="campo vivo">posição y &lt; -150</span></span>
+        <span class="bloco movimento dentro">mude y por <span class="campo">-8</span></span>
+      </div>
+      <p>O bloco <strong>número aleatório</strong> está em Operadores. Cada vez que o obstáculo volta ao alto, ele aparece num lugar diferente.</p>
+      <div class="dica">Para ficar mais fácil ou difícil, mude o <code>-8</code>. Quanto maior o valor negativo, mais rápido ele cai.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Detectar a batida</h2>
+      <p>Falta o jogo reconhecer quando o Obstáculo toca o Jogador. Dentro do mesmo "repita até que" do passo 5, depois de <em>mude y</em>, acrescente um <strong>se</strong>:</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">tocando em Jogador ?</span> então</span>
+        <span class="bloco variaveis dentro">defina <span class="campo vivo">jogando</span> para <span class="campo">0</span></span>
+      </div>
+      <p>O bloco "tocando em ?" fica em <strong>Sensores</strong>; escolha <strong>Jogador</strong> na lista.</p>
+      <div class="atencao">O "se" precisa ficar <strong>dentro</strong> do loop que desce o obstáculo. Se ficar fora, ele só confere uma vez e o jogo não funciona.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Fim de jogo</h2>
+      <p>Quando <code>jogando</code> vira 0, o jogo precisa avisar. No ator <strong>Jogador</strong>, crie um novo grupo de blocos:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">espere até que <span class="campo vivo">jogando = 0</span></span>
+        <span class="bloco aparencia">diga <span class="campo">Fim de jogo!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco controle">pare <span class="campo vivo">todos</span></span>
+      </div>
+      <p>Você pode também tocar um som de erro antes do "pare todos".</p>
+      <div class="dica">Teste o jogo: clique na bandeira verde, deixe o obstáculo bater e veja a mensagem.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Mais obstáculos, mais difícil</h2>
+      <p>Um obstáculo só é fácil. Duplique o ator Obstáculo: clique com o botão direito nele e escolha <strong>duplicar</strong>. O novo ator já vem com os mesmos blocos.</p>
+      <ul>
+        <li>No ator duplicado, mude a velocidade (por exemplo, <code>-12</code>).</li>
+        <li>Se quiser, troque o visual para outro desenho.</li>
+        <li>Faça 2 ou 3 obstáculos no total.</li>
+      </ul>
+      <div class="pilha">
+        <span class="bloco movimento">mude y por <span class="campo">-12</span></span>
+      </div>
+      <div class="dica">Cuidado para não deixar impossível. Peça para um colega testar!</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Revisar e melhorar</h2>
+      <p>Antes de entregar, confira esta lista:</p>
+      <ul>
+        <li>O jogador anda para os dois lados?</li>
+        <li>Os pontos sobem a cada segundo?</li>
+        <li>A batida acaba o jogo?</li>
+        <li>Ao clicar na bandeira verde de novo, tudo recomeça do zero?</li>
+      </ul>
+      <div class="atencao">Se algo não funcionar, clique em cada grupo de blocos para testar um de cada vez. Procure o problema com calma.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre o jogo funcionando ao professor. Para valer a entrega, ele precisa ter:
+        <ul>
+          <li>Jogador que se move com as setas do teclado.</li>
+          <li>Pelo menos 1 obstáculo que cai de lugares diferentes.</li>
+          <li>Pontos que aumentam com o tempo (variável <code>pontos</code>).</li>
+          <li>Mensagem de fim de jogo quando o jogador é tocado.</li>
+        </ul>
+      </div>
+      <div class="desafio">Faça os pontos aumentarem mais rápido com o tempo, ou deixe os obstáculos mais rápidos a cada 10 pontos. Dica: use um "se" com <code>pontos &gt; 10</code>.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

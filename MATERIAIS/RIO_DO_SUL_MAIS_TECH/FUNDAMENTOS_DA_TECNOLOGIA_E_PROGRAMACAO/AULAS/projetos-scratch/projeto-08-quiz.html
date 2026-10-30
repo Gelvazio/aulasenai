@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 08 - Quiz de tecnologia</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 1 &middot; PROJETO 08</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Quiz de tecnologia</h1>
+      <p>Você vai criar um quiz com 5 perguntas sobre informática. O jogo pergunta, o jogador responde, e no final aparece a nota.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Sensores, Controle, Operadores, Variáveis, Aparência</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="10"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 10</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o projeto</h2>
+      <p>Abra um projeto novo no Scratch. Escolha um cenário (por exemplo, "Blue Sky" ou um fundo de sala) e deixe o gato como apresentador do quiz. Salve com o nome "Quiz de tecnologia".</p>
+      <div class="dica">Antes de começar, pense nas 5 perguntas. Elas podem ser sobre hardware, internet, teclado, programas e segurança.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Criar a variável "acertos"</h2>
+      <p>Na categoria <strong>Variáveis</strong>, clique em "Criar uma variável" e dê o nome <strong>acertos</strong>. Ela vai contar quantas perguntas o jogador acertou.</p>
+      <div class="pilha">
+        <span class="bloco variaveis">acertos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Começar o quiz</h2>
+      <p>Quando a bandeira verde for clicada, zere os acertos e dê as boas-vindas ao jogador.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco variaveis">mude <span class="campo vivo">acertos</span> para <span class="campo">0</span></span>
+        <span class="bloco aparencia">diga <span class="campo">Vamos testar seus conhecimentos!</span> por <span class="campo">2</span> segundos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Fazer a primeira pergunta</h2>
+      <p>O bloco "pergunte ... e espere" mostra a pergunta e uma caixa para digitar. O que o jogador escrever fica guardado no bloco <strong>resposta</strong>.</p>
+      <div class="pilha">
+        <span class="bloco sensores">pergunte <span class="campo">Qual dispositivo serve para digitar?</span> e espere</span>
+        <span class="bloco sensores">resposta</span>
+      </div>
+      <div class="dica">O bloco "resposta" fica em Sensores, logo abaixo do "pergunte". Ele não faz nada sozinho: serve para comparar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Conferir se acertou</h2>
+      <p>Use o bloco "se... então... senão" para comparar a resposta com a resposta certa. Acertou? Soma 1 em acertos. Errou? Avisa o jogador.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">resposta = teclado</span> então</span>
+        <span class="bloco variaveis dentro">adicione <span class="campo">1</span> a <span class="campo vivo">acertos</span></span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Acertou!</span> por <span class="campo">1</span> segundos</span>
+        <span class="bloco controle">senão</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Errou! É o teclado.</span> por <span class="campo">2</span> segundos</span>
+      </div>
+      <div class="atencao">O Scratch não liga para letras maiúsculas ou minúsculas: "Teclado" e "teclado" são iguais. Mas "tecklado" com erro de digitação é diferente!</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Mais quatro perguntas</h2>
+      <p>Copie o conjunto "pergunte + se/senão" e cole mais 4 vezes, uma embaixo da outra. Em cada cópia, troque a pergunta e a resposta certa. Sugestões:</p>
+      <div class="pilha">
+        <span class="bloco sensores">pergunte <span class="campo">O que significa a sigla USB? (responda: cabo)</span> e espere</span>
+        <span class="bloco sensores">pergunte <span class="campo">Que programa usamos para navegar na internet?</span> e espere</span>
+        <span class="bloco sensores">pergunte <span class="campo">Quantos bits tem um byte?</span> e espere</span>
+        <span class="bloco sensores">pergunte <span class="campo">Que parte do computador é o "cérebro"?</span> e espere</span>
+      </div>
+      <div class="dica">Prefira perguntas de resposta curta (uma palavra ou um número). Fica mais fácil de comparar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Aceitar mais de uma resposta</h2>
+      <p>Algumas perguntas têm duas respostas boas. Use o bloco "ou" nos Operadores para aceitar as duas.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">resposta = navegador ou resposta = browser</span> então</span>
+        <span class="bloco variaveis dentro">adicione <span class="campo">1</span> a <span class="campo vivo">acertos</span></span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Mostrar a nota final</h2>
+      <p>Depois da quinta pergunta, mostre quantas o jogador acertou. O bloco "junte" cola textos e valores.</p>
+      <div class="pilha">
+        <span class="bloco aparencia">diga <span class="campo vivo">junte Você acertou  e acertos</span> por <span class="campo">3</span> segundos</span>
+      </div>
+      <div class="dica">Para juntar três coisas, coloque um "junte" dentro do outro: junte "Você acertou " (junte acertos " de 5").</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Mensagem para cada resultado</h2>
+      <p>Que tal uma mensagem diferente conforme a nota? Use "se... então... senão" outra vez, agora comparando os acertos.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">acertos &gt; 3</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Parabéns, você manja de tecnologia!</span> por <span class="campo">3</span> segundos</span>
+        <span class="bloco controle">senão</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Vamos estudar mais um pouco!</span> por <span class="campo">3</span> segundos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o quiz funcionando e confira se:
+        <ul>
+          <li>Tem 5 perguntas de tecnologia, uma depois da outra.</li>
+          <li>Cada resposta certa soma 1 na variável "acertos".</li>
+          <li>O jogo avisa se o jogador acertou ou errou.</li>
+          <li>No final aparece a nota e uma mensagem de acordo com ela.</li>
+        </ul>
+      </div>
+      <div class="desafio">Crie uma pergunta de múltipla escolha: escreva as opções A, B e C na pergunta e aceite só a letra certa. Ou deixe o quiz recomeçar sozinho no final!</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

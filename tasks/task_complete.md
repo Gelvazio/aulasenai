@@ -281,3 +281,7 @@
 | #433 | CONCEITOS-AULA como PWA com modo apresentação (caneta de slide) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [580-9c2e5a74](etapas/ETAPA-580-9c2e5a74-CONCEITOS-AULA-PWA-APRESENTACAO.md) | — |
 | #431 | Link do PDF Scratch na Aula 07 de FUNDAMENTOS (apostila) | 🟡 Média | — | Nenhuma | ✅ Concluído | — (não reservável) | [578-3f8a2d61](etapas/ETAPA-578-3f8a2d61-LINK-PDF-SCRATCH-FUNDAMENTOS.md) | — |
 | #431.1 | Inserir o link do PDF na Aula 07 · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | Nenhuma | ✅ Concluído | — | [578-3f8a2d61](etapas/ETAPA-578-3f8a2d61-LINK-PDF-SCRATCH-FUNDAMENTOS.md) | — |
+| #435.1 | Base compartilhada (CSS/JS) e modelo de página | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
+| #435.2 | Projetos da Aula 1 (01 a 06) | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
+| #435.3 | Projetos da Aula 2 (07 a 12) | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
+| #435.4 | index.html, conferência e entrega | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 04 - Pega-pega</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 2 &middot; PROJETO 04</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Pega-pega</h1>
+      <p>Você vai controlar um gato com as setas do teclado e fazer um rato fugir dele. Quando o gato encostar no rato, o jogo avisa e recomeça.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Movimento, Controle, Sensores</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar o palco</h2>
+      <p>Abra o Scratch e comece um projeto novo. Na biblioteca de sprites, escolha o <strong>Gato</strong> (já vem pronto) e o <strong>Rato</strong> (procure por "Mouse"). Na biblioteca de cenários, escolha um fundo que você goste.</p>
+      <p>Deixe o gato de um lado do palco e o rato do outro.</p>
+      <div class="dica">Clique no sprite na lista de baixo para escolher qual deles você vai programar. Cada sprite tem os seus próprios blocos.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Gato: começar no lugar certo</h2>
+      <p>Selecione o gato. Toda vez que a bandeira verde for clicada, ele vai para o canto do palco.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">-180</span> y: <span class="campo">-120</span></span>
+      </div>
+      <div class="dica">Você também pode arrastar o gato no palco. Os números de x e y mudam sozinhos.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Gato: andar para a direita e para a esquerda</h2>
+      <p>Agora o gato vai obedecer ao teclado. Monte um bloco para cada seta. Primeiro, as setas laterais:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para direita</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">10</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para esquerda</span> for pressionada</span>
+        <span class="bloco movimento">mude x por <span class="campo">-10</span></span>
+      </div>
+      <div class="dica">Número negativo anda para trás. Clique nas setas do teclado para testar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Gato: subir e descer</h2>
+      <p>Falta o movimento para cima e para baixo. Agora quem muda é o <strong>y</strong>.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para cima</span> for pressionada</span>
+        <span class="bloco movimento">mude y por <span class="campo">10</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">seta para baixo</span> for pressionada</span>
+        <span class="bloco movimento">mude y por <span class="campo">-10</span></span>
+      </div>
+      <div class="atencao">Se o gato sumir do palco, ele passou da borda. Os blocos de movimento não deixam o sprite sair completamente, então é só mover de volta.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Rato: seguir o mouse</h2>
+      <p>Selecione o rato. Ele vai ficar sempre apontando para o ponteiro do mouse e andando na direção dele. Assim você controla o rato com a mão e o gato com o teclado!</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">sempre</span>
+        <span class="bloco movimento dentro">vá para <span class="campo">ponteiro do mouse</span></span>
+      </div>
+      <div class="dica">Os blocos que ficam "dentro" do sempre se repetem sem parar, enquanto o jogo roda.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Gato: perceber o rato</h2>
+      <p>Hora de usar um <strong>sensor</strong>. O gato precisa verificar o tempo todo se está tocando no rato. Use o bloco <em>se ... então</em> dentro de um <em>sempre</em>.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">sempre</span>
+        <span class="bloco controle dentro">se <span class="campo vivo">tocando em Mouse1 ?</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Peguei!</span> por <span class="campo">2</span> segundos</span>
+      </div>
+      <div class="atencao">O bloco "tocando em" é azul claro (Sensores) e tem formato de hexágono. Escolha o nome do rato na lista dele.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Recomeçar depois de pegar</h2>
+      <p>Depois de falar, o gato volta ao início para uma nova rodada. Acrescente um bloco de movimento dentro do <em>se</em>, logo depois do <em>diga</em>.</p>
+      <div class="pilha">
+        <span class="bloco controle">se <span class="campo vivo">tocando em Mouse1 ?</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Peguei!</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco movimento dentro">vá para x: <span class="campo">-180</span> y: <span class="campo">-120</span></span>
+      </div>
+      <div class="dica">Clique na bandeira verde e tente pegar o rato. Se der certo, o gato fala e volta para o canto.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Fazer o rato fugir de verdade</h2>
+      <p>Seguir o mouse é fácil demais. Troque o rato para ele fugir sozinho: ele anda e, se o gato chegar perto, dá um pulo para outro lugar.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco controle">sempre</span>
+        <span class="bloco movimento dentro">mova <span class="campo">5</span> passos</span>
+        <span class="bloco movimento dentro">se tocar na borda, volte</span>
+        <span class="bloco controle dentro">se <span class="campo vivo">tocando em Gato ?</span> então</span>
+        <span class="bloco movimento dentro">vá para posição <span class="campo">aleatória</span></span>
+      </div>
+      <div class="dica">Para o rato não ficar de cabeça para baixo, em "estilo de rotação" escolha "somente esquerda/direita".</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Mostre ao professor o jogo funcionando. Para registrar a entrega, ele precisa ver:
+        <ul>
+          <li>O gato andando nas quatro direções com as setas.</li>
+          <li>O rato se movendo sozinho (ou seguindo o mouse).</li>
+          <li>O gato dizendo "Peguei!" quando toca no rato.</li>
+          <li>O jogo recomeçando depois de pegar.</li>
+        </ul>
+      </div>
+      <div class="desafio">Crie uma variável chamada <strong>pontos</strong> e some 1 ponto cada vez que o gato pegar o rato.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

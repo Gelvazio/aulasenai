@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 02 - Cartão Animado</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 1 &middot; HORA 1 &middot; PROJETO 02</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Cartão de Apresentação Animado</h1>
+      <p>Você vai criar um cartão que se apresenta sozinho: o personagem fala, pensa, muda de
+        aparência e troca de cenário.</p>
+      <ul class="fichas">
+        <li>Tempo: 30 min</li>
+        <li>Nível: iniciante</li>
+        <li>Blocos: Eventos, Aparência, Controle</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="9"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 9</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Preparar personagem e cenário</h2>
+      <p>Abra um projeto novo. Clique em <strong>Escolher um sprite</strong> e pegue um personagem
+        que combine com você (por exemplo <em>Abby</em>, <em>Max</em> ou <em>Dani</em>). Apague o
+        gato clicando na lixeira dele. Depois escolha um cenário na biblioteca.</p>
+      <div class="dica">Pense em três coisas sobre você para mostrar: nome, idade e um gosto
+        (esporte, jogo, música).</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Começar o cartão</h2>
+      <p>Use o evento da bandeira verde para iniciar o cartão:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Dizer o nome</h2>
+      <p>O bloco <strong>diga</strong> mostra um balão de fala por alguns segundos. Escreva seu
+        nome no campo de texto.</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco aparencia">diga <span class="campo vivo">Oi! Eu sou o Pedro</span> por <span class="campo">2</span> segundos</span>
+      </div>
+      <div class="atencao">Troque "Pedro" pelo seu nome. Cuidado com os erros de digitação.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Pensar e esperar</h2>
+      <p>Para contar mais sobre você, use <strong>pense</strong> (balão de pensamento) e
+        <strong>espere</strong> para dar um tempo entre as frases.</p>
+      <div class="pilha">
+        <span class="bloco aparencia">pense <span class="campo vivo">Eu tenho 14 anos</span> por <span class="campo">2</span> segundos</span>
+        <span class="bloco controle">espere <span class="campo">1</span> segundos</span>
+        <span class="bloco aparencia">diga <span class="campo vivo">Eu gosto de futebol</span> por <span class="campo">2</span> segundos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Trocar de fantasia</h2>
+      <p>Vá à aba <strong>Fantasias</strong> do sprite e veja as poses disponíveis. Depois, na aba
+        <strong>Código</strong>, mude de pose entre as falas:</p>
+      <div class="pilha">
+        <span class="bloco aparencia">mude para a fantasia <span class="campo vivo">fantasia2</span></span>
+        <span class="bloco aparencia">mude o tamanho para <span class="campo">120</span> %</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Trocar de cenário</h2>
+      <p>Clique no <strong>Palco</strong> (lado direito, embaixo) e adicione um segundo cenário na
+        aba <strong>Cenários</strong>. Volte ao sprite e use:</p>
+      <div class="pilha">
+        <span class="bloco aparencia">mude o cenário para <span class="campo vivo">cenário2</span></span>
+      </div>
+      <div class="dica">Combine: cenário 1 para "quem sou eu" e cenário 2 para "o que eu gosto".</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Reagir ao clique</h2>
+      <p>Faça o cartão responder a você. Ao clicar no personagem, ele dá uma mensagem especial:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando este sprite for <span class="campo vivo">clicado</span></span>
+        <span class="bloco aparencia">diga <span class="campo vivo">Obrigado pela visita!</span> por <span class="campo">2</span> segundos</span>
+      </div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Reagir a uma tecla</h2>
+      <p>Agora use uma tecla para voltar ao começo do cartão:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">espaço</span> for pressionada</span>
+        <span class="bloco aparencia">mude o cenário para <span class="campo vivo">cenário1</span></span>
+        <span class="bloco aparencia">diga <span class="campo vivo">Vamos de novo!</span> por <span class="campo">2</span> segundos</span>
+      </div>
+      <div class="atencao">Clique na bandeira verde e teste tudo do começo ao fim antes de entregar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Entrega</h2>
+      <div class="entrega">Mostre ao professor seu cartão rodando. Para valer a entrega:
+        (1) começa na bandeira verde; (2) o personagem diz seu nome e pelo menos mais duas
+        informações sobre você; (3) usa "diga" e "pense"; (4) troca de fantasia e de cenário;
+        (5) reage a um clique ou a uma tecla.</div>
+      <div class="desafio">Acrescente um som de abertura (por exemplo uma música curta) e faça o
+        personagem mudar de tamanho enquanto fala.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>

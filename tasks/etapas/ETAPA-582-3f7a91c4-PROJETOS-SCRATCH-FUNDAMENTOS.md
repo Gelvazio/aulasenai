@@ -28,3 +28,8 @@
 ### #435.4 — index.html, conferência e entrega
 **Próximo passo:** criar `index.html` listando os 12 projetos por aula/hora; conferir links; commit + push.
 - **Nível:** PESADO (mesmo sinal) · **Modelo:** só Sonnet
+
+### Entrega (2026-10-29)
+- 12 projetos `projeto-01..12-*.html`, `index.html`, `assets/scratch.css|js`, `projeto-modelo.html` em `AULAS/projetos-scratch/`; escritos por 4 agentes Sonnet em paralelo.
+- **Verificação:** `node --check assets/scratch.js` ok; cada projeto tem 9 a 11 passos e os 4 ids de navegação; sem CSS/JS inline; links do index existem. Não conferido na tela (sem navegador): testar no Scratch os blocos citados (pare todos/mande no 09, lógica "tocando" no 10, rótulos do 03). Livro lido só em parte por alguns agentes.
+- **Pendente (👀):** avaliação de cada etapa — opção A (nota no sistema, como Atividade Dinâmica) ou B (ficha de critérios na página).

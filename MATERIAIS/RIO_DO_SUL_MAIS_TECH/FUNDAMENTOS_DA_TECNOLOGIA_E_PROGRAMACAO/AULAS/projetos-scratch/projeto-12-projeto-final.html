@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 12 - Projeto Final</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <script src="assets/scratch.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <span class="selo">AULA 2 &middot; HORA 3 &middot; PROJETO 12</span>
+    </header>
+
+    <section class="cartao" aria-label="Resumo do projeto">
+      <h1>Projeto Final</h1>
+      <p>Chegou a hora de criar um projeto só seu. Você escolhe o tema e junta tudo o que aprendeu: eventos, repetição, variáveis e Meus Blocos.</p>
+      <ul class="fichas">
+        <li>Tempo: 45 min</li>
+        <li>Nível: livre</li>
+        <li>Blocos: todos os que você já conhece</li>
+      </ul>
+    </section>
+
+    <progress id="progresso-passos" class="progresso" value="1" max="1"></progress>
+    <p id="contador-passos" class="contador-passos">Passo 1 de 1</p>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 1</span>
+      <h2>Escolher o tema</h2>
+      <p>Pense no que você gostaria de criar. Algumas ideias:</p>
+      <ul>
+        <li>Um jogo (corrida, desviar, pegar objetos, quiz).</li>
+        <li>Uma história animada com diálogos.</li>
+        <li>Uma animação de arte com a caneta.</li>
+        <li>Um tutorial ou cartão animado (aniversário, convite).</li>
+      </ul>
+      <div class="dica">Escolha algo que você consiga terminar em 45 minutos. Um projeto simples e bem feito vale mais que um grande e incompleto.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 2</span>
+      <h2>Planejar no papel</h2>
+      <p>Antes de abrir o Scratch, responda em uma folha:</p>
+      <ol>
+        <li>Qual é o nome do projeto?</li>
+        <li>Quais atores e fundos vou usar?</li>
+        <li>O que acontece quando clico na bandeira verde?</li>
+        <li>Como o jogador ou o usuário interage (teclas, mouse)?</li>
+        <li>Quais variáveis e Meus Blocos vou precisar?</li>
+      </ol>
+      <div class="atencao">Planejar economiza tempo. Quem começa sem plano costuma refazer várias partes.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 3</span>
+      <h2>Montar o cenário e os atores</h2>
+      <p>Abra um projeto novo. Escolha o fundo, adicione os atores e renomeie cada um com um nome claro (<code>Heroi</code>, <code>Inimigo</code>, <code>Fundo</code>).</p>
+      <p>Posicione cada ator no lugar inicial e ajuste o tamanho.</p>
+      <div class="dica">Use sons e imagens apenas do Scratch ou criados por você. Não use imagens de outras pessoas sem permissão.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 4</span>
+      <h2>Começar com eventos</h2>
+      <p>Todo projeto precisa de um ponto de partida. Defina o que acontece ao clicar na bandeira verde e quais teclas ou cliques controlam o projeto:</p>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando <span class="campo vivo">bandeira verde</span> clicada</span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">0</span></span>
+      </div>
+      <div class="pilha">
+        <span class="bloco eventos chapeu">quando a tecla <span class="campo vivo">espaço</span> for pressionada</span>
+        <span class="bloco aparencia">diga <span class="campo">Olá!</span> por <span class="campo">2</span> segundos</span>
+      </div>
+      <div class="dica">Teste cada grupo de blocos logo depois de criá-lo. Erros pequenos são fáceis de achar; erros grandes, nem tanto.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 5</span>
+      <h2>Usar repetição</h2>
+      <p>Use <strong>repita</strong> ou <strong>sempre</strong> para fazer coisas acontecerem várias vezes, como mover um ator ou verificar se algo foi tocado:</p>
+      <div class="pilha">
+        <span class="bloco controle">sempre</span>
+        <span class="bloco controle dentro">se <span class="campo vivo">tocando em Inimigo ?</span> então</span>
+        <span class="bloco aparencia dentro">diga <span class="campo">Ai!</span> por <span class="campo">1</span> segundos</span>
+      </div>
+      <div class="atencao">Um bloco "sempre" nunca termina. Use "pare todos" quando o projeto precisar acabar.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 6</span>
+      <h2>Guardar informações em variáveis</h2>
+      <p>Variáveis guardam números e textos: pontos, vidas, tempo, nível. Crie ao menos uma que faça sentido no seu projeto.</p>
+      <div class="pilha">
+        <span class="bloco variaveis">defina <span class="campo vivo">pontos</span> para <span class="campo">0</span></span>
+        <span class="bloco variaveis">mude <span class="campo vivo">pontos</span> por <span class="campo">1</span></span>
+      </div>
+      <div class="dica">Lembre de zerar as variáveis quando a bandeira verde for clicada, para o projeto sempre começar do zero.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 7</span>
+      <h2>Criar um Meu Bloco</h2>
+      <p>Se você repete o mesmo grupo de blocos em vários lugares, transforme-o em um bloco com nome. Vá em <strong>Meus Blocos</strong>, clique em <strong>Criar um bloco</strong> e, se quiser, acrescente uma entrada.</p>
+      <div class="pilha">
+        <span class="bloco meus-blocos chapeu">definir <span class="campo vivo">reiniciar</span></span>
+        <span class="bloco variaveis">defina <span class="campo vivo">pontos</span> para <span class="campo">0</span></span>
+        <span class="bloco movimento">vá para x: <span class="campo">0</span> y: <span class="campo">0</span></span>
+      </div>
+      <div class="dica">Um bom nome diz o que o bloco faz: <code>reiniciar</code>, <code>desenhar casa</code>, <code>pular</code>.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 8</span>
+      <h2>Checklist de qualidade</h2>
+      <p>Antes de salvar, confira cada item:</p>
+      <ul>
+        <li>O projeto tem um nome e um objetivo claros?</li>
+        <li>Começa corretamente ao clicar na bandeira verde?</li>
+        <li>Usa pelo menos 1 evento, 1 repetição, 1 variável e 1 Meu Bloco?</li>
+        <li>Ao clicar na bandeira verde de novo, ele recomeça do início?</li>
+        <li>Os atores têm nomes claros?</li>
+        <li>Um colega consegue jogar ou assistir sem você explicar?</li>
+      </ul>
+      <div class="atencao">Peça a um colega para testar. Ele pode achar erros que você não viu.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 9</span>
+      <h2>Salvar o projeto</h2>
+      <p>Salve o seu trabalho antes de qualquer outra coisa:</p>
+      <ol>
+        <li>Clique em <strong>Arquivo</strong>.</li>
+        <li>Escolha <strong>Salvar no seu computador</strong>. Será criado um arquivo com final <code>.sb3</code>.</li>
+        <li>Guarde na pasta que o professor indicar, com o seu nome no arquivo.</li>
+      </ol>
+      <div class="dica">Se você tiver uma conta autorizada pelo professor, o botão <strong>Salvar agora</strong> também guarda o projeto online.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO 10</span>
+      <h2>Compartilhar (se o professor orientar)</h2>
+      <p>O Scratch permite que outras pessoas vejam e joguem o seu projeto no site scratch.mit.edu. O capítulo 6 do livro mostra esse passo.</p>
+      <ul>
+        <li>Siga a <strong>orientação do professor</strong> sobre conta e compartilhamento. Não crie conta com dados pessoais sem essa orientação.</li>
+        <li>Com uma conta autorizada, clique em <strong>Compartilhar</strong>, escreva instruções e créditos e confirme.</li>
+        <li>Na página do projeto, outras pessoas podem usar <strong>Veja por dentro</strong> para ver seus blocos e fazer um <strong>remix</strong> (uma cópia para modificar).</li>
+      </ul>
+      <div class="atencao">Se não houver conta, tudo bem: guarde o arquivo <code>.sb3</code> no computador e mostre ao professor.</div>
+    </article>
+
+    <article class="passo cartao">
+      <span class="numero-passo">PASSO FINAL</span>
+      <h2>Entrega</h2>
+      <div class="entrega">
+        Apresente o projeto ao professor. Ele será avaliado por estes critérios:
+        <ul>
+          <li><strong>Funciona:</strong> começa com a bandeira verde e não trava.</li>
+          <li><strong>Eventos:</strong> usa teclas, cliques ou bandeira verde.</li>
+          <li><strong>Repetição:</strong> usa "repita", "sempre" ou "repita até que".</li>
+          <li><strong>Variáveis:</strong> usa pelo menos uma de forma útil.</li>
+          <li><strong>Meus Blocos:</strong> criou ao menos um bloco próprio.</li>
+          <li><strong>Criatividade e capricho:</strong> tem visual, sons e nomes organizados.</li>
+          <li><strong>Explicação:</strong> você sabe explicar em 1 minuto como fez.</li>
+        </ul>
+      </div>
+      <div class="desafio">Troque de computador com um colega e jogue o projeto dele. Dê um elogio e uma sugestão de melhoria.</div>
+    </article>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação dos passos">
+    <button id="passo-anterior" class="seta" type="button">&larr; Voltar</button>
+    <button id="passo-proximo" class="seta" type="button">Avançar &rarr;</button>
+  </nav>
+</body>
+</html>
