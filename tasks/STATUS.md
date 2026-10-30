@@ -5,6 +5,11 @@
 
 ## Tarefas
 
+- #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 👀 Aguardando o "sim" do usuário (tarefa grande) · — (não reservável)
+  - #444.1 — Projeto Vite e estrutura de pastas · ⬜ Pendente · nível a classificar pelo Jev
+  - #444.2 — Motor do jogo (níveis, comandos, execução) · ⬜ Pendente (depende da #444.1) · nível a classificar pelo Jev
+  - #444.3 — Visual futurista (CSS) · ⬜ Pendente (depende da #444.2) · nível a classificar pelo Jev
+  - #444.4 — Conferir e entregar · ⬜ Pendente (depende da #444.3) · nível a classificar pelo Jev
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
