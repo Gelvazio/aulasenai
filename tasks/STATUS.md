@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) · ⬜ Pendente (depende da #444.22) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main) (desde 2026-10-30 18:11)
   - #444.24 — Conferência final e entrega (commit + push) · ⬜ Pendente (depende da #444.23) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
