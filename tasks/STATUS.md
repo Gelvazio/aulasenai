@@ -15,15 +15,15 @@
   - #436.7 — Objetiva de 50 questões da aula 07 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a7) (desde 2026-10-30 19:36)
   - #436.8 — Objetiva de 50 questões da aula 08 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a8) (desde 2026-10-30 19:36)
   - #436.9 — Objetiva de 50 questões da aula 09 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a9) (desde 2026-10-30 19:36)
-  - #436.10 — Prática 10 × 3 da aula 01 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.11 — Prática 10 × 3 da aula 02 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.12 — Prática 10 × 3 da aula 03 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.13 — Prática 10 × 3 da aula 04 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.14 — Prática 10 × 3 da aula 05 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.15 — Prática 10 × 3 da aula 06 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.16 — Prática 10 × 3 da aula 07 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.17 — Prática 10 × 3 da aula 08 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
-  - #436.18 — Prática 10 × 3 da aula 09 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.10 — Prática 10 × 3 da aula 01 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p1) (desde 2026-10-30 19:41)
+  - #436.11 — Prática 10 × 3 da aula 02 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p2) (desde 2026-10-30 19:41)
+  - #436.12 — Prática 10 × 3 da aula 03 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p3) (desde 2026-10-30 19:41)
+  - #436.13 — Prática 10 × 3 da aula 04 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p4) (desde 2026-10-30 19:41)
+  - #436.14 — Prática 10 × 3 da aula 05 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p5) (desde 2026-10-30 19:41)
+  - #436.15 — Prática 10 × 3 da aula 06 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p6) (desde 2026-10-30 19:41)
+  - #436.16 — Prática 10 × 3 da aula 07 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p7) (desde 2026-10-30 19:41)
+  - #436.17 — Prática 10 × 3 da aula 08 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p8) (desde 2026-10-30 19:41)
+  - #436.18 — Prática 10 × 3 da aula 09 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p9) (desde 2026-10-30 19:41)
   - #436.19 — Índice, menu das atividades e status · ⬜ Pendente (depende da #436.1 a #436.18) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #436.20 — Seeds no banco (objetivas e práticas) · ⬜ Pendente (depende da #436.19) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #436.21 — Conferência final e entrega · ⬜ Pendente (depende da #436.20) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
