@@ -306,7 +306,7 @@
 - **Verificação:** npm run build sem erro (33 módulos, refeito após a #444.25); index.html referencia ./assets/ com caminhos relativos; fonte/node_modules ignorado (git check-ignore)
 
 ### #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md)
-**Próximo passo:** depende da #444.22.
+**Próximo passo:** entregue.
 - **Nível:** LEVE — classificado (jev (confiança 0.98))
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -315,6 +315,9 @@
 - **Arquivos:** docs/ORIENTACAO_JS_LIGHTBOT.md
 - **Critérios:** Módulos, como rodar e como gerar o build.
 - **Verificação:** Leitura.
+
+- **Entrega:** docs/ORIENTACAO_JS_LIGHTBOT.md (215 linhas, 8 seções) por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main).
+- **Verificação:** leitura do documento contra o código; sem soluções dos níveis copiadas
 
 ### #444.24 — Conferência final e entrega (commit + push)
 **Próximo passo:** depende da #444.23.
