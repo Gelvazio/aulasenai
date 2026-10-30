@@ -18,7 +18,7 @@
 - **Aprovação do usuário:** ⬜ pendente (tarefa grande: estrutura nova com várias partes).
 
 ### #444.1 — Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos)
-**Próximo passo:** aguardar o sim do usuário.
+**Próximo passo:** entregue; a #444.2 aguarda o "sim" do usuário ao plano.
 - **Nível:** LEVE — classificado (jev (confiança 0.97))
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -26,7 +26,9 @@
 - **Fonte:** jev (confiança 0.97)
 - **Arquivos:** jogos/ligthbot-versao-ia/REGRAS-JOGO.md
 - **Critérios:** Regras sem ambiguidade: eixos, JUMP para baixo, limite de passos, momento da vitória, formato JSON de nível, exemplos de solução.
-- **Verificação:** Leitura do .md conferindo cada ponto listado.
+- **Entrega:** commit desta subtarefa (seções 6 a 15 acrescentadas ao REGRAS-JOGO.md, 338 linhas) por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5).
+- **Verificação:** releitura e grep das seções 6 a 15; as seções 1 a 5 ficaram intactas.
+- **Anotação:** decisões sugeridas pelo executor a confirmar com o usuário: JUMP para baixo de qualquer altura, vitória checada a cada ação (substitui o texto da seção 5), limite de 1000 passos e salvaguarda para P1/P2 seguidos sem ação (8.4).
 
 ### #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore
 **Próximo passo:** depende da #444.1.

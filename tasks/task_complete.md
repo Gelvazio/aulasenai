@@ -307,3 +307,4 @@
 | #443 | Card Light Bot (versão IA) na página de jogos | 🟡 | — | — | ✅ Concluído | — | ETAPA-590-6f2b8d14 |
 | #445.1 | Usar caminhos a partir da raiz em jogos/index.html | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-592-8c4f7a21 |
 | #445 | Página jogos sem CSS na nuvem (caminhos da raiz) | 🟡 | — | — | ✅ Concluído | — | ETAPA-592-8c4f7a21 |
+| #444.1 | Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
