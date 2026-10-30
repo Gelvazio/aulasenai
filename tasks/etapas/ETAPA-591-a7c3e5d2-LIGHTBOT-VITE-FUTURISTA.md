@@ -17,26 +17,267 @@
 - **Proposta (aguarda o "sim"):** fonte em `ligthbot-versao-ia/fonte/` (Vite `root`), build com `outDir: '../'` e `emptyOutDir: false`, para o `index.html` gerado ficar em `ligthbot-versao-ia/index.html` e o card `ligthbot-versao-ia/` abrir direto.
 - **Aprovação do usuário:** ⬜ pendente (tarefa grande: estrutura nova com várias partes).
 
-### #444.1 — Projeto Vite e estrutura de pastas
-**Próximo passo:** aguardar o "sim"; depois criar `fonte/package.json`, `vite.config.js`, `index.html`, `.gitignore`.
-- **Nível:** a classificar pelo Jev · **Modelo:** — (a classificar pelo Jev) · **Effort:** —
-- **Critérios:** `npm run build` gera `ligthbot-versao-ia/index.html` e `assets/`.
-- **Verificação:** `node --check` nos `.js`; `npm run build` sem erro.
+### #444.1 — Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos)
+**Próximo passo:** aguardar o sim do usuário.
+- **Nível:** LEVE — classificado (jev (confiança 0.97))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.97)
+- **Arquivos:** jogos/ligthbot-versao-ia/REGRAS-JOGO.md
+- **Critérios:** Regras sem ambiguidade: eixos, JUMP para baixo, limite de passos, momento da vitória, formato JSON de nível, exemplos de solução.
+- **Verificação:** Leitura do .md conferindo cada ponto listado.
 
-### #444.2 — Motor do jogo (níveis, comandos, execução)
+### #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore
 **Próximo passo:** depende da #444.1.
-- **Nível:** a classificar pelo Jev · **Modelo:** — (a classificar pelo Jev) · **Effort:** —
-- **Critérios:** módulos pequenos (níveis, robô, interpretador, interface), funções ≤ 45 linhas, nomes em português.
-- **Verificação:** `node --check`; leitura do código.
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/package.json, vite.config.js, fonte/index.html, .gitignore
+- **Critérios:** `root` = fonte, `outDir` = '../', `emptyOutDir` false, `base` './'; node_modules ignorado.
+- **Verificação:** `node --check vite.config.js`; JSON válido.
 
-### #444.3 — Visual futurista (CSS)
+### #444.3 — Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage)
 **Próximo passo:** depende da #444.2.
-- **Nível:** a classificar pelo Jev · **Modelo:** — (a classificar pelo Jev) · **Effort:** —
-- **Critérios:** tokens em `:root`, Orbitron/Share Tech Mono, neon ciano/magenta/violeta, `prefers-reduced-motion`, foco visível, 1 coluna até 720 px, sem `style=` nem script inline.
-- **Verificação:** leitura do CSS contra `VISUAL-FUTURISTA.md`.
+- **Nível:** PESADO — classificado (sinais)
+- **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
+- **Effort:** high
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/constantes.js
+- **Critérios:** Nenhum número ou texto mágico nos outros módulos.
+- **Verificação:** `node --check`.
 
-### #444.4 — Conferir e entregar
+### #444.4 — Níveis em JSON: formato e os 10 primeiros níveis
 **Próximo passo:** depende da #444.3.
-- **Nível:** a classificar pelo Jev · **Modelo:** — (a classificar pelo Jev) · **Effort:** —
-- **Critérios:** pasta limpa (sem `node_modules`), card da página de jogos abre o jogo.
-- **Verificação:** `git diff --cached --name-only` sem lixo.
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/niveis/*.json
+- **Critérios:** Cada nível: alturas, objetivos, início, orientação, limites de MAIN/PROC1/PROC2, comandos liberados.
+- **Verificação:** JSON válido; solução manual de cada nível descrita na etapa.
+
+### #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes
+**Próximo passo:** depende da #444.4.
+- **Nível:** MEDIO — classificado (jev (confiança 0.83))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.83)
+- **Arquivos:** fonte/src/nucleo/mundo.js
+- **Critérios:** Fora dos limites = altura 0; luz só alterna onde há objetivo.
+- **Verificação:** `node --check`; leitura.
+
+### #444.6 — Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT
+**Próximo passo:** depende da #444.5.
+- **Nível:** MEDIO — classificado (jev (confiança 0.89))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.89)
+- **Arquivos:** fonte/src/nucleo/robo.js
+- **Critérios:** Guardas de altura exatamente como no REGRAS-JOGO.md; ação inválida não muda o estado.
+- **Verificação:** `node --check`; conferir tabela de guardas.
+
+### #444.7 — Memória do programa: slots de MAIN, PROC1 e PROC2
+**Próximo passo:** depende da #444.6.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/nucleo/programa.js
+- **Critérios:** Slots de tamanho fixo por nível; slot vazio é ignorado; contagem de comandos usados.
+- **Verificação:** `node --check`.
+
+### #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos
+**Próximo passo:** depende da #444.7.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/nucleo/interpretador.js
+- **Critérios:** Retorno ao token seguinte; recursão funciona; para por vitória, parada manual ou limite de passos.
+- **Verificação:** `node --check`; leitura de um caso de recursão.
+
+### #444.9 — Verificação de vitória (todas as luzes acesas)
+**Próximo passo:** depende da #444.8.
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/nucleo/vitoria.js
+- **Critérios:** Checada a cada passo executado.
+- **Verificação:** `node --check`.
+
+### #444.10 — Desenho do mapa (grade isométrica em SVG)
+**Próximo passo:** depende da #444.9.
+- **Nível:** MEDIO — classificado (jev (confiança 0.88))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.88)
+- **Arquivos:** fonte/src/interface/mapa.js
+- **Critérios:** Blocos por altura, luzes azuis, abismo sem bloco; sem `style=` inline.
+- **Verificação:** `node --check`; leitura.
+
+### #444.11 — Desenho e animação do robô (andar, pular, girar, acender)
+**Próximo passo:** depende da #444.10.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/interface/robo-visual.js
+- **Critérios:** Animação desligada com prefers-reduced-motion.
+- **Verificação:** `node --check`.
+
+### #444.12 — Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover)
+**Próximo passo:** depende da #444.11.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/interface/paleta.js
+- **Critérios:** Respeita os slots e os comandos liberados do nível.
+- **Verificação:** `node --check`.
+
+### #444.13 — Controles: executar, passo a passo, parar, reiniciar, velocidade
+**Próximo passo:** depende da #444.12.
+- **Nível:** MEDIO — classificado (jev (confiança 0.80))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.80)
+- **Arquivos:** fonte/src/interface/controles.js
+- **Critérios:** Parar interrompe recursão infinita.
+- **Verificação:** `node --check`.
+
+### #444.14 — Seletor de níveis e progresso salvo
+**Próximo passo:** depende da #444.13.
+- **Nível:** MEDIO — classificado (jev (confiança 0.97))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.97)
+- **Arquivos:** fonte/src/interface/seletor-niveis.js
+- **Critérios:** Progresso só no navegador (localStorage com try/catch); nada no banco.
+- **Verificação:** `node --check`.
+
+### #444.15 — Tela de vitória e contagem de comandos usados
+**Próximo passo:** depende da #444.14.
+- **Nível:** MEDIO — classificado (jev (confiança 0.94))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.94)
+- **Arquivos:** fonte/src/interface/vitoria-tela.js
+- **Critérios:** Mostra comandos usados e limite; botão próximo nível.
+- **Verificação:** `node --check`.
+
+### #444.16 — CSS: tokens futuristas em :root e base (fundo, grade, tipografia)
+**Próximo passo:** depende da #444.15.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/estilos/base.css
+- **Critérios:** Orbitron e Share Tech Mono; neon ciano, magenta e violeta; contraste claro sobre escuro.
+- **Verificação:** Leitura contra VISUAL-FUTURISTA.md.
+
+### #444.17 — CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria)
+**Próximo passo:** depende da #444.16.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/estilos/componentes.css
+- **Critérios:** Classes de responsabilidade única; modificadores BEM; sem !important desnecessário.
+- **Verificação:** Leitura.
+
+### #444.18 — CSS: mapa e robô
+**Próximo passo:** depende da #444.17.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/estilos/mapa.css
+- **Critérios:** Brilho neon nas luzes; animação com @keyframes.
+- **Verificação:** Leitura.
+
+### #444.19 — CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion)
+**Próximo passo:** depende da #444.18.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/estilos/acessibilidade.css
+- **Critérios:** 1 coluna até 720 px sem rolagem horizontal; outline magenta em :focus-visible.
+- **Verificação:** Leitura.
+
+### #444.20 — Fundo animado: rede de nós em SVG
+**Próximo passo:** depende da #444.19.
+- **Nível:** MEDIO — classificado (jev (confiança 0.94))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.94)
+- **Arquivos:** fonte/src/interface/fundo.js + estilos
+- **Critérios:** Linhas tracejadas e nós pulsando; desligado com reduced-motion.
+- **Verificação:** `node --check`.
+
+### #444.21 — main.js: montar tudo com injeção de dependências
+**Próximo passo:** depende da #444.20.
+- **Nível:** MEDIO — classificado (sinais)
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** fonte/src/main.js
+- **Critérios:** Núcleo sem DOM; interface recebe o núcleo por parâmetro.
+- **Verificação:** `node --check`; nenhum arquivo > 1000 linhas e nenhuma função > 45.
+
+### #444.22 — Build para ligthbot-versao-ia/ e conferência da saída
+**Próximo passo:** depende da #444.21.
+- **Nível:** LEVE — classificado (sinais)
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** NAO
+- **Fonte:** sinais
+- **Arquivos:** ligthbot-versao-ia/index.html, assets/
+- **Critérios:** `npm run build` sem erro; card da página de jogos abre o jogo.
+- **Verificação:** `npm run build`.
+
+### #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md)
+**Próximo passo:** depende da #444.22.
+- **Nível:** LEVE — classificado (jev (confiança 0.98))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.98)
+- **Arquivos:** docs/ORIENTACAO_JS_LIGHTBOT.md
+- **Critérios:** Módulos, como rodar e como gerar o build.
+- **Verificação:** Leitura.
+
+### #444.24 — Conferência final e entrega (commit + push)
+**Próximo passo:** depende da #444.23.
+- **Nível:** LEVE — classificado (jev (confiança 0.91))
+- **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
+- **Effort:** low
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.91)
+- **Arquivos:** pasta inteira
+- **Critérios:** Sem node_modules versionado; `git diff --cached --name-only` limpo.
+- **Verificação:** Comando de git.
+

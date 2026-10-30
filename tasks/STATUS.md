@@ -6,10 +6,30 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 👀 Aguardando o "sim" do usuário (tarefa grande) · — (não reservável)
-  - #444.1 — Projeto Vite e estrutura de pastas · ⬜ Pendente · nível a classificar pelo Jev
-  - #444.2 — Motor do jogo (níveis, comandos, execução) · ⬜ Pendente (depende da #444.1) · nível a classificar pelo Jev
-  - #444.3 — Visual futurista (CSS) · ⬜ Pendente (depende da #444.2) · nível a classificar pelo Jev
-  - #444.4 — Conferir e entregar · ⬜ Pendente (depende da #444.3) · nível a classificar pelo Jev
+  - #444.1 — Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos) · 🔄 Em execução · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash · Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:20)
+  - #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore · ⬜ Pendente (depende da #444.1) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #444.3 — Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage) · ⬜ Pendente (depende da #444.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #444.4 — Níveis em JSON: formato e os 10 primeiros níveis · ⬜ Pendente (depende da #444.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes · ⬜ Pendente (depende da #444.4) · `MEDIO · effort medium` · só Sonnet
+  - #444.6 — Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT · ⬜ Pendente (depende da #444.5) · `MEDIO · effort medium` · só Sonnet
+  - #444.7 — Memória do programa: slots de MAIN, PROC1 e PROC2 · ⬜ Pendente (depende da #444.6) · `MEDIO · effort medium` · só Sonnet
+  - #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos · ⬜ Pendente (depende da #444.7) · `MEDIO · effort medium` · só Sonnet
+  - #444.9 — Verificação de vitória (todas as luzes acesas) · ⬜ Pendente (depende da #444.8) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.10 — Desenho do mapa (grade isométrica em SVG) · ⬜ Pendente (depende da #444.9) · `MEDIO · effort medium` · só Sonnet
+  - #444.11 — Desenho e animação do robô (andar, pular, girar, acender) · ⬜ Pendente (depende da #444.10) · `MEDIO · effort medium` · só Sonnet
+  - #444.12 — Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover) · ⬜ Pendente (depende da #444.11) · `MEDIO · effort medium` · só Sonnet
+  - #444.13 — Controles: executar, passo a passo, parar, reiniciar, velocidade · ⬜ Pendente (depende da #444.12) · `MEDIO · effort medium` · só Sonnet
+  - #444.14 — Seletor de níveis e progresso salvo · ⬜ Pendente (depende da #444.13) · `MEDIO · effort medium` · só Sonnet
+  - #444.15 — Tela de vitória e contagem de comandos usados · ⬜ Pendente (depende da #444.14) · `MEDIO · effort medium` · só Sonnet
+  - #444.16 — CSS: tokens futuristas em :root e base (fundo, grade, tipografia) · ⬜ Pendente (depende da #444.15) · `MEDIO · effort medium` · só Sonnet
+  - #444.17 — CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria) · ⬜ Pendente (depende da #444.16) · `MEDIO · effort medium` · só Sonnet
+  - #444.18 — CSS: mapa e robô · ⬜ Pendente (depende da #444.17) · `MEDIO · effort medium` · só Sonnet
+  - #444.19 — CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion) · ⬜ Pendente (depende da #444.18) · `MEDIO · effort medium` · só Sonnet
+  - #444.20 — Fundo animado: rede de nós em SVG · ⬜ Pendente (depende da #444.19) · `MEDIO · effort medium` · só Sonnet
+  - #444.21 — main.js: montar tudo com injeção de dependências · ⬜ Pendente (depende da #444.20) · `MEDIO · effort medium` · só Sonnet
+  - #444.22 — Build para ligthbot-versao-ia/ e conferência da saída · ⬜ Pendente (depende da #444.21) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) · ⬜ Pendente (depende da #444.22) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
+  - #444.24 — Conferência final e entrega (commit + push) · ⬜ Pendente (depende da #444.23) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
