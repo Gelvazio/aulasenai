@@ -318,3 +318,4 @@
 | #444.9 | Verificação de vitória (todas as luzes acesas) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.10 | Desenho do mapa (grade isométrica em SVG) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.11 | Desenho e animação do robô (andar, pular, girar, acender) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.12 | Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

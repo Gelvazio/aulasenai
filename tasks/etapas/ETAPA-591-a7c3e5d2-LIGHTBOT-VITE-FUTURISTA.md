@@ -162,7 +162,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.12 — Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover)
-**Próximo passo:** depende da #444.11.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -171,6 +171,8 @@
 - **Arquivos:** fonte/src/interface/paleta.js
 - **Critérios:** Respeita os slots e os comandos liberados do nível.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/paleta.js (montarPaleta, montarAreas, destacarSlot) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.13 — Controles: executar, passo a passo, parar, reiniciar, velocidade
 **Próximo passo:** depende da #444.12.
