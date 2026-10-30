@@ -83,7 +83,7 @@
 - **Verificação:** node --check sem erro; abismo fora do mapa e luz só em objetivo conferidos contra REGRAS-JOGO.md seções 1 e 3
 
 ### #444.6 — Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT
-**Próximo passo:** depende da #444.5.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.89))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -92,6 +92,8 @@
 - **Arquivos:** fonte/src/nucleo/robo.js
 - **Critérios:** Guardas de altura exatamente como no REGRAS-JOGO.md; ação inválida não muda o estado.
 - **Verificação:** `node --check`; conferir tabela de guardas.
+- **Entrega:** fonte/src/nucleo/robo.js (WALK, JUMP, LEFT, RIGHT, LIGHT por mapa de estratégias) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; guardas de WALK (frente = atual, >0) e JUMP (frente = atual+1 ou menor, >0) conferidas contra REGRAS-JOGO.md
 
 ### #444.7 — Memória do programa: slots de MAIN, PROC1 e PROC2
 **Próximo passo:** depende da #444.6.

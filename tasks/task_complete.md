@@ -312,3 +312,4 @@
 | #444.3 | Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage) | 🟡 | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.4 | Níveis em JSON: formato e os 10 primeiros níveis | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.5 | Modelo do mundo: matrizes de alturas, objetivos e luzes | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.6 | Robô e ações WALK, JUMP, LEFT, RIGHT, LIGHT | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
