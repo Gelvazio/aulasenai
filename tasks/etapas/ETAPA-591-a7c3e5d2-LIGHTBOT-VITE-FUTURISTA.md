@@ -201,7 +201,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); localStorage só em try/catch
 
 ### #444.15 — Tela de vitória e contagem de comandos usados
-**Próximo passo:** depende da #444.14.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.94))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -210,6 +210,8 @@
 - **Arquivos:** fonte/src/interface/vitoria-tela.js
 - **Critérios:** Mostra comandos usados e limite; botão próximo nível.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/vitoria-tela.js (mostrarVitoria) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); textContent, sem innerHTML
 
 ### #444.16 — CSS: tokens futuristas em :root e base (fundo, grade, tipografia)
 **Próximo passo:** depende da #444.15.
