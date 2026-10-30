@@ -49,3 +49,7 @@
 - **Verificação:** leitura do HTML/CSS; sem navegador (usuário confere na tela).
 
 - **Entrega #435.6:** `index.html` refeito (cabeçalho em uma linha, Aula 1 e Aula 2 lado a lado, 3 colunas de cards pequenos) e bloco `.indice-compacto` no `scratch.css`. **Verificação:** 12 cards, links existem; tela não conferida (sem navegador).
+
+### #435.7 — Páginas dos projetos sem barra de rolagem
+**Próximo passo:** CSS em tela cheia (100dvh, cabeçalho compacto) e ajuste automático de escala do passo em `scratch.js`.
+- **Nível:** MEDIO · **Modelo:** só Sonnet · **Pedido:** "não deve ter barra de rolagem nas páginas dos projetos"
