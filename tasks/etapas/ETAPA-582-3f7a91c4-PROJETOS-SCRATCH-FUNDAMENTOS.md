@@ -61,3 +61,4 @@
 - **Critérios:** só um `.passo` visível por vez; sem barra de rolagem; resto do CSS intacto.
 - **Verificação:** leitura do CSS (seletores com `:not(.passo)`); tela conferida pelo usuário.
 - **Entrega #435.8:** em `assets/scratch.css`, os seletores do cabeçalho compacto passaram a usar `> .cartao:not(.passo)`, para o passo deixar de herdar `display: flex`. Só o passo ativo aparece. **Verificação:** leitura do CSS (grep dos seletores); tela a conferir pelo usuário.
+- **Entrega #435.5:** ficha `section.ficha-avaliacao` (4 critérios: funciona 4, usa os blocos 3, organização 2, explica e entrega 1; total 10) no último passo dos 12 projetos; estilo no `scratch.css`. **Verificação:** `grep -l ficha-avaliacao` = 12 arquivos; soma 4+3+2+1 = 10.
