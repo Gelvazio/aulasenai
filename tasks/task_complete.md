@@ -329,3 +329,4 @@
 | #444.20 | Fundo animado: rede de nós em SVG | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.21 | main.js: montar tudo com injeção de dependências | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.25 | Pernas no robô (desenho SVG e estilo) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.22 | Build para ligthbot-versao-ia/ e conferência da saída | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

@@ -292,7 +292,7 @@
 - **Verificação:** node --check sem erro; linhas ≤ 100; imports conferidos contra os exports dos módulos (build real na #444.22)
 
 ### #444.22 — Build para ligthbot-versao-ia/ e conferência da saída
-**Próximo passo:** depende da #444.21.
+**Próximo passo:** entregue.
 - **Nível:** LEVE — classificado (sinais)
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -301,6 +301,9 @@
 - **Arquivos:** ligthbot-versao-ia/index.html, assets/
 - **Critérios:** `npm run build` sem erro; card da página de jogos abre o jogo.
 - **Verificação:** `npm run build`.
+
+- **Entrega:** build gerado: jogos/ligthbot-versao-ia/index.html e assets/ (JS e CSS) por vite build por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main).
+- **Verificação:** npm run build sem erro (33 módulos, refeito após a #444.25); index.html referencia ./assets/ com caminhos relativos; fonte/node_modules ignorado (git check-ignore)
 
 ### #444.23 — Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md)
 **Próximo passo:** depende da #444.22.
