@@ -320,7 +320,7 @@
 - **Verificação:** leitura do documento contra o código; sem soluções dos níveis copiadas
 
 ### #444.24 — Conferência final e entrega (commit + push)
-**Próximo passo:** depende da #444.23.
+**Próximo passo:** entregue.
 - **Nível:** LEVE — classificado (jev (confiança 0.91))
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -329,6 +329,9 @@
 - **Arquivos:** pasta inteira
 - **Critérios:** Sem node_modules versionado; `git diff --cached --name-only` limpo.
 - **Verificação:** Comando de git.
+
+- **Entrega:** .vercelignore (fonte/ do Light Bot fora do site) e conferência final do código por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main).
+- **Verificação:** nenhum arquivo > 1000 linhas (maior: jogo.js, 294); nenhuma função > 45 linhas (varredura por chaves); linhas ≤ 100 caracteres (os 2 avisos do awk eram bytes de acentos); fonte/node_modules ignorado; build refeito e versionado
 
 ### #444.25 — Pernas no robô (desenho SVG e estilo)
 **Próximo passo:** entregue.

@@ -332,3 +332,4 @@
 | #444.22 | Build para ligthbot-versao-ia/ e conferência da saída | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.26 | Braços no robô e andar com deslizamento e pernas em movimento | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.23 | Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.24 | Conferência final e entrega (commit + push) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

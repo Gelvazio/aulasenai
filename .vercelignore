@@ -47,3 +47,6 @@ analises/
 ATIVIDADE-DINAMICA-*.md
 # Clone de MATERIAIS sem HTML (#402): tem Markdown com gabarito e lista de alunos; nunca vai ao site
 MATERIAIS-SEM-HTML/
+
+# Light Bot (versão IA): só o build vai ao site; fonte do Vite, node_modules e gabarito dos níveis ficam no Git
+jogos/ligthbot-versao-ia/fonte/
