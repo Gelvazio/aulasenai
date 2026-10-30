@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 — Projeto Integrado: Impressão 3D + Robótica (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="08" data-tema="Projeto Integrado: Impressão 3D + Robótica" data-total="50"
+      data-uc="Oficinas de Impressão 3D e Robótica" data-uc-curta="Oficinas de Impressão 3D e Robótica"
+      data-docente="Gelvazio Camargo" data-exportar-meu-gabarito="sim" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🤖 Aula 08: Projeto Integrado: Impressão 3D + Robótica</h1>
+            <p>Oficinas de Impressão 3D e Robótica · Rio do Sul Mais Tech — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-08-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Primeiro passo do projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai orientar uma equipe que acaba de começar o projeto integrado. Qual deve ser o primeiro passo, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprimir logo uma peça grande para ganhar tempo na fila.</li>
+                        <li><span class="letra">B)</span>Definir o problema do robô e a peça de que ele precisa.</li>
+                        <li><span class="letra">C)</span>Comprar uma peça comercial pronta sem analisar o robô.</li>
+                        <li><span class="letra">D)</span>Programar o robô antes de saber qual tarefa ele fará.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Perguntas-guia</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa ajudar a equipe a definir o problema. Qual par de perguntas-guia aparece na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qual cor de filamento é a mais bonita? Quantas impressoras a escola tem?</li>
+                        <li><span class="letra">B)</span>Qual equipe imprime mais rápido? Quem termina primeiro?</li>
+                        <li><span class="letra">C)</span>Quanto custa o kit? Quanto custa o rolo de filamento?</li>
+                        <li><span class="letra">D)</span>Que tarefa o robô vai cumprir? Que peça falta?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Exemplos de peças</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, lista as peças que um robô pode receber da impressão 3D. Qual alternativa traz apenas exemplos citados na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Suporte de sensor, para-choque, garra, roda e carcaça.</li>
+                        <li><span class="letra">B)</span>Placa-mãe, monitor, teclado e mouse.</li>
+                        <li><span class="letra">C)</span>Bico extrusor, mesa aquecida, carretel e ventoinha.</li>
+                        <li><span class="letra">D)</span>Roteador, cabo de rede, switch e fonte de energia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Escopo da peça</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, avalia duas opções da equipe: uma peça simples e testável, ou uma peça complexa que dificilmente ficará pronta. Qual orientação da aula você daria?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escolher a peça complexa, porque ela impressiona mais na apresentação.</li>
+                        <li><span class="letra">B)</span>Escolher as duas peças e dividir o tempo igualmente entre elas.</li>
+                        <li><span class="letra">C)</span>Escolher a peça simples e testável, que vale mais que uma complexa inacabada.</li>
+                        <li><span class="letra">D)</span>Deixar a escolha para depois de iniciar a impressão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Papéis da equipe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, organiza a equipe do projeto integrado. Quais papéis são citados na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vendas, marketing, finanças e suporte.</li>
+                        <li><span class="letra">B)</span>Modelagem, impressão, programação e documentação.</li>
+                        <li><span class="letra">C)</span>Soldagem, pintura, embalagem e transporte.</li>
+                        <li><span class="letra">D)</span>Fotografia, edição de vídeo, redes sociais e design gráfico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Quem documenta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica à equipe o papel de quem cuida da documentação. O que essa pessoa faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Registra o processo, as mudanças feitas, as fotos e as anotações do projeto.</li>
+                        <li><span class="letra">B)</span>Opera a impressora durante toda a aula, sem sair do lugar.</li>
+                        <li><span class="letra">C)</span>Escreve o programa que movimenta o robô.</li>
+                        <li><span class="letra">D)</span>Desenha a peça no Tinkercad e define as medidas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Por que medir antes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa justificar por que o robô deve ser medido antes de modelar a peça. Qual é a razão correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para escolher a cor do filamento mais adequada.</li>
+                        <li><span class="letra">B)</span>Para dispensar a etapa de fatiamento.</li>
+                        <li><span class="letra">C)</span>Para que a impressão termine mais rápido, sem outras mudanças.</li>
+                        <li><span class="letra">D)</span>Para que a peça nasça com as medidas reais de furos, distâncias e espaço livre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Instrumentos de medição</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, indica como a equipe deve medir o robô. Quais instrumentos a aula cita?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Termômetro ou cronômetro.</li>
+                        <li><span class="letra">B)</span>Multímetro ou osciloscópio.</li>
+                        <li><span class="letra">C)</span>Paquímetro ou régua.</li>
+                        <li><span class="letra">D)</span>Transferidor ou bússola.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">O que medir no robô</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, confere a lista de medidas que a equipe deve tomar antes de modelar. Qual alternativa está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas o comprimento do cabo USB.</li>
+                        <li><span class="letra">B)</span>Furos de fixação, distância entre pontos e espaço livre.</li>
+                        <li><span class="letra">C)</span>Somente a cor e o brilho da carcaça.</li>
+                        <li><span class="letra">D)</span>Somente a velocidade do motor em rotações por minuto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Faixa de folga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, orienta a equipe sobre os encaixes da peça. Que faixa de folga a aula recomenda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>De 0,2 a 0,4 mm.</li>
+                        <li><span class="letra">B)</span>De 0,02 a 0,04 mm.</li>
+                        <li><span class="letra">C)</span>De 2 a 4 mm.</li>
+                        <li><span class="letra">D)</span>De 20 a 40 mm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Por que usar folga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa explicar por que se usa folga em encaixes impressos. Qual é a razão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a folga deixa a peça mais pesada e resistente.</li>
+                        <li><span class="letra">B)</span>Porque a folga elimina a necessidade de medir o robô.</li>
+                        <li><span class="letra">C)</span>Porque a impressão tem tolerância e a peça pode sair com medidas ligeiramente diferentes das do modelo.</li>
+                        <li><span class="letra">D)</span>Porque o fatiador exige folga para ligar a impressora.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Peso da peça</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, alerta a equipe sobre o peso da peça. Qual é o risco de uma peça pesada demais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não caber na mesa de impressão da escola.</li>
+                        <li><span class="letra">B)</span>Mudar a cor do filamento durante a impressão.</li>
+                        <li><span class="letra">C)</span>Prejudicar apenas o arquivo STL, sem afetar o robô.</li>
+                        <li><span class="letra">D)</span>Atrapalhar o trabalho do motor e da bateria do robô.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Folga em um furo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, mediu um parafuso de fixação com 3,0 mm de diâmetro. Qual medida de furo na peça segue a recomendação de folga da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entre 3,2 e 3,4 mm.</li>
+                        <li><span class="letra">B)</span>Exatamente 3,0 mm, sem folga.</li>
+                        <li><span class="letra">C)</span>2,8 mm, para o parafuso ficar bem apertado.</li>
+                        <li><span class="letra">D)</span>5,0 mm, para sobrar bastante espaço.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Espessura da parede</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o projeto da equipe. Qual é a espessura mínima de parede recomendada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cerca de 0,3 mm.</li>
+                        <li><span class="letra">B)</span>Pelo menos 1,2 mm.</li>
+                        <li><span class="letra">C)</span>Qualquer espessura, pois o fatiador corrige sozinho.</li>
+                        <li><span class="letra">D)</span>No mínimo 12 mm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Face plana de apoio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica por que o projeto da peça deve ter uma face plana de apoio sobre a mesa. Qual é o motivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para a peça ficar mais leve depois de pronta.</li>
+                        <li><span class="letra">B)</span>Para o sensor do robô reconhecer a peça pelo formato.</li>
+                        <li><span class="letra">C)</span>Para gastar menos filamento na camada final.</li>
+                        <li><span class="letra">D)</span>Para a peça assentar firme na mesa durante a impressão, sem depender de suportes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Partes suspensas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa um modelo com várias partes suspensas. O que a aula orienta fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aumentar as partes suspensas, pois o suporte é gerado de graça.</li>
+                        <li><span class="letra">B)</span>Mantê-las e aceitar que algumas camadas falhem.</li>
+                        <li><span class="letra">C)</span>Evitar as partes suspensas para dispensar suportes.</li>
+                        <li><span class="letra">D)</span>Afinar essas partes até 0,3 mm de espessura.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Valor do protótipo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, sugere imprimir primeiro uma versão pequena ou simplificada da peça. Qual é a vantagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Testar o encaixe gastando menos tempo e menos material.</li>
+                        <li><span class="letra">B)</span>Dispensar a medição do robô com paquímetro.</li>
+                        <li><span class="letra">C)</span>Evitar a depuração do programa do robô.</li>
+                        <li><span class="letra">D)</span>Substituir definitivamente a peça final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Ordem das etapas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, monta o cronograma da equipe. Qual sequência está de acordo com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprimir, medir o robô, definir o problema, modelar e testar.</li>
+                        <li><span class="letra">B)</span>Definir o problema, medir o robô, modelar, fatiar, imprimir, integrar e testar.</li>
+                        <li><span class="letra">C)</span>Modelar, programar, medir o robô, definir o problema e imprimir.</li>
+                        <li><span class="letra">D)</span>Testar, imprimir, fatiar, medir o robô e modelar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">A peça não encaixou</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vê que a peça impressa pela equipe não encaixa no robô. Qual conduta a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Forçar o encaixe com um martelo até a peça entrar.</li>
+                        <li><span class="letra">B)</span>Desistir da peça e trocar o tema do projeto.</li>
+                        <li><span class="letra">C)</span>Ajustar a medida no modelo e imprimir de novo.</li>
+                        <li><span class="letra">D)</span>Reescrever todo o programa do robô.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Robô fora do previsto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, percebe que o robô não se comporta como previsto. O que a aula manda fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprimir uma peça nova e maior.</li>
+                        <li><span class="letra">B)</span>Trocar a cor do filamento e testar de novo.</li>
+                        <li><span class="letra">C)</span>Apagar o programa e começar sem testar.</li>
+                        <li><span class="letra">D)</span>Depurar o programa trecho por trecho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Registro das mudanças</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica por que a equipe deve registrar cada mudança, com o que mudou e por quê. Qual é a razão dada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para substituir o arquivo STL na entrega.</li>
+                        <li><span class="letra">B)</span>Esse registro será mostrado na apresentação e documenta o processo.</li>
+                        <li><span class="letra">C)</span>Para que a impressora memorize os ajustes.</li>
+                        <li><span class="letra">D)</span>Para dispensar as fotos do protótipo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Exemplo da indústria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta um exemplo do mundo do trabalho. O que a aula cita como comum na indústria?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprimir em 3D gabaritos e suportes sob medida para sensores de robôs.</li>
+                        <li><span class="letra">B)</span>Imprimir robôs inteiros, já com motores e baterias.</li>
+                        <li><span class="letra">C)</span>Trocar toda a linha de montagem por impressoras.</li>
+                        <li><span class="letra">D)</span>Imprimir somente embalagens para transporte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Vantagem da peça sob medida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, compara a peça impressa com a comercial. Qual vantagem a aula destaca?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resistência sempre maior que a de uma peça comercial de metal.</li>
+                        <li><span class="letra">B)</span>Dispensa o projeto e as medidas do robô.</li>
+                        <li><span class="letra">C)</span>Elimina a necessidade de programar o robô.</li>
+                        <li><span class="letra">D)</span>Baixo custo e produção em horas, sem esperar por uma peça comercial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Entrega da aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, confere o que a equipe deve entregar ao final da aula. Qual alternativa está completa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o arquivo STL da peça.</li>
+                        <li><span class="letra">B)</span>Apenas fotos do robô desligado.</li>
+                        <li><span class="letra">C)</span>Protótipo com a peça funcionando, arquivo STL e registro dos ajustes.</li>
+                        <li><span class="letra">D)</span>O filamento que sobrou e a nota de compra do kit.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Objetivo da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta o objetivo da dinâmica da aula. Qual é ele?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Comparar marcas de impressoras 3D.</li>
+                        <li><span class="letra">B)</span>Montar um protótipo com a peça impressa funcionando.</li>
+                        <li><span class="letra">C)</span>Construir um robô do zero, sem kit.</li>
+                        <li><span class="letra">D)</span>Estudar o histórico da manufatura aditiva.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Uso do Tinkercad</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, orienta a equipe sobre o uso do Tinkercad no projeto. Em que momento ele é usado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para programar o movimento dos motores.</li>
+                        <li><span class="letra">B)</span>Para medir os furos do robô.</li>
+                        <li><span class="letra">C)</span>Para imprimir direto, sem fatiador.</li>
+                        <li><span class="letra">D)</span>Na modelagem da peça, depois de medir o robô.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Função do fatiador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica a função do fatiador no projeto. Qual é ela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Preparar o modelo em camadas e configurar a impressão.</li>
+                        <li><span class="letra">B)</span>Medir os furos de fixação do robô.</li>
+                        <li><span class="letra">C)</span>Cortar fisicamente o filamento.</li>
+                        <li><span class="letra">D)</span>Escrever o programa do robô.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Tempo de modelagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, consulta o roteiro da aula. Quanto tempo ele reserva para medição do robô e modelagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>15 minutos.</li>
+                        <li><span class="letra">B)</span>35 minutos.</li>
+                        <li><span class="letra">C)</span>60 minutos.</li>
+                        <li><span class="letra">D)</span>40 minutos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Duração do roteiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, soma os momentos do roteiro da aula. Qual é o total?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>120 minutos, que equivalem a 2 horas.</li>
+                        <li><span class="letra">B)</span>240 minutos, que equivalem a 4 horas.</li>
+                        <li><span class="letra">C)</span>180 minutos, que equivalem a 3 horas.</li>
+                        <li><span class="letra">D)</span>300 minutos, que equivalem a 5 horas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Momento de 55 minutos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, consulta o roteiro. Qual momento da aula ocupa 55 minutos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Integração, teste e depuração.</li>
+                        <li><span class="letra">B)</span>Fatiamento e impressão.</li>
+                        <li><span class="letra">C)</span>Abertura e formação das equipes.</li>
+                        <li><span class="letra">D)</span>Registro e fechamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Depurar como na Aula 7</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, lê que o programa deve ser depurado como na Aula 7. O que isso significa na prática?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reescrever o programa inteiro a cada falha.</li>
+                        <li><span class="letra">B)</span>Trocar o controlador do robô por outro.</li>
+                        <li><span class="letra">C)</span>Imprimir novamente todas as peças do robô.</li>
+                        <li><span class="letra">D)</span>Testar o programa em partes, trecho por trecho, até achar o erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Componente que capta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa os componentes fundamentais de um robô. Qual deles capta informações do ambiente, como a distância até um obstáculo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atuador.</li>
+                        <li><span class="letra">B)</span>Motor.</li>
+                        <li><span class="letra">C)</span>Sensor.</li>
+                        <li><span class="letra">D)</span>Controlador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Componente que decide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, continua a revisão dos componentes. Qual deles processa o programa e decide o que o robô faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Controlador.</li>
+                        <li><span class="letra">B)</span>Sensor.</li>
+                        <li><span class="letra">C)</span>Para-choque.</li>
+                        <li><span class="letra">D)</span>Roda.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Quem executa o movimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, pergunta à equipe quais componentes colocam o robô em movimento. Qual alternativa responde corretamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sensores e o arquivo STL.</li>
+                        <li><span class="letra">B)</span>Motores e atuadores.</li>
+                        <li><span class="letra">C)</span>Controlador e Tinkercad.</li>
+                        <li><span class="letra">D)</span>Fatiador e filamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Peça para proteger a frente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa escolher uma peça para proteger a frente do robô contra impactos. Qual é a mais adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Garra.</li>
+                        <li><span class="letra">B)</span>Roda.</li>
+                        <li><span class="letra">C)</span>Suporte de sensor.</li>
+                        <li><span class="letra">D)</span>Para-choque.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Peça para segurar objetos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, atende uma equipe cujo robô precisa segurar e levantar pequenos objetos. Qual peça impressa resolve o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para-choque.</li>
+                        <li><span class="letra">B)</span>Carcaça.</li>
+                        <li><span class="letra">C)</span>Garra.</li>
+                        <li><span class="letra">D)</span>Roda.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Peça que cobre a eletrônica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, pergunta qual peça impressa cobre e protege a eletrônica do robô. Qual é ela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Carcaça.</li>
+                        <li><span class="letra">B)</span>Roda.</li>
+                        <li><span class="letra">C)</span>Garra.</li>
+                        <li><span class="letra">D)</span>Suporte de sensor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Parede fina que quebra</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma peça com paredes de 0,8 mm que quebra ao ser manuseada. Qual correção segue a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reduzir a folga do encaixe a zero.</li>
+                        <li><span class="letra">B)</span>Aumentar a parede para pelo menos 1,2 mm e imprimir de novo.</li>
+                        <li><span class="letra">C)</span>Trocar o programa do robô.</li>
+                        <li><span class="letra">D)</span>Imprimir a peça sem face plana de apoio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Encaixe sem folga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vê que a equipe modelou o encaixe com a medida exata do robô, sem folga, e a peça impressa não entrou. Qual é a causa mais provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Excesso de folga no modelo.</li>
+                        <li><span class="letra">B)</span>Erro no programa do robô.</li>
+                        <li><span class="letra">C)</span>Falta de folga de 0,2 a 0,4 mm para compensar a tolerância da impressão.</li>
+                        <li><span class="letra">D)</span>Escolha de uma cor de filamento inadequada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Aba suspensa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma peça com uma aba suspensa que exigiria suportes. Qual solução de design é a mais coerente com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Remover a face plana de apoio da peça.</li>
+                        <li><span class="letra">B)</span>Reduzir a espessura da aba para 0,3 mm.</li>
+                        <li><span class="letra">C)</span>Imprimir a aba no ar, sem apoio na mesa.</li>
+                        <li><span class="letra">D)</span>Redesenhar ou girar a peça para evitar a parte suspensa e apoiar numa face plana.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Robô lento e bateria curta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, percebe que, depois de instalar a peça, o robô ficou lento e a bateria dura menos. Qual ajuste é coerente com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aumentar o tamanho da peça para compensar o peso.</li>
+                        <li><span class="letra">B)</span>Simplificar a peça, reduzindo material sem perder as paredes mínimas.</li>
+                        <li><span class="letra">C)</span>Colocar outra peça pesada do lado oposto.</li>
+                        <li><span class="letra">D)</span>Desligar os sensores para economizar energia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Peça encaixou, programa falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vê que a peça encaixou bem, mas o robô vira para o lado errado ao encontrar um obstáculo. Onde procurar o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No programa, depurando trecho por trecho.</li>
+                        <li><span class="letra">B)</span>Na espessura das paredes da peça.</li>
+                        <li><span class="letra">C)</span>Na cor do filamento escolhido.</li>
+                        <li><span class="letra">D)</span>No tamanho do arquivo STL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Como registrar um ajuste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, acompanha uma equipe que mudou o furo de 3,0 para 3,3 mm depois de uma tentativa que falhou. Como registrar o ajuste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não registrar, pois o problema já foi resolvido.</li>
+                        <li><span class="letra">B)</span>Registrar apenas a nota que a equipe espera tirar.</li>
+                        <li><span class="letra">C)</span>Anotar o que mudou (furo de 3,0 para 3,3 mm) e por quê (folga de encaixe).</li>
+                        <li><span class="letra">D)</span>Apagar a versão antiga do modelo sem anotar nada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Atitude que foge da aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, observa quatro atitudes das equipes. Qual delas NÃO combina com o que a aula ensina?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Medir os furos do robô com paquímetro antes de modelar.</li>
+                        <li><span class="letra">B)</span>Registrar o que mudou e por quê a cada ajuste.</li>
+                        <li><span class="letra">C)</span>Imprimir primeiro um protótipo pequeno para testar o encaixe.</li>
+                        <li><span class="letra">D)</span>Imprimir a peça final direto, sem medir o robô e sem testar uma versão simplificada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Falta pouco tempo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vê que falta pouco tempo para o fim da aula e a equipe ainda não imprimiu sua peça complexa. Que orientação da aula se aplica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Simplificar para uma peça mais simples e testável.</li>
+                        <li><span class="letra">B)</span>Acrescentar mais detalhes ao modelo.</li>
+                        <li><span class="letra">C)</span>Pular os testes e apresentar só o arquivo.</li>
+                        <li><span class="letra">D)</span>Trocar de equipe e começar outro projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Fechamento da aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, acompanha o fechamento da aula. O que o professor confere nesse momento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A quantidade de filamento que sobrou em cada rolo.</li>
+                        <li><span class="letra">B)</span>O estado de cada protótipo, para a apresentação da Aula 9.</li>
+                        <li><span class="letra">C)</span>O ranking de velocidade das impressoras.</li>
+                        <li><span class="letra">D)</span>A lista de peças comerciais compradas pelas equipes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Indicador da aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, confere o indicador de aprendizagem trabalhado nesta aula. Qual é ele?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Diferencia robôs industriais, de serviço e móveis.</li>
+                        <li><span class="letra">B)</span>Compara as tecnologias de impressão FDM, SLA e SLS.</li>
+                        <li><span class="letra">C)</span>Integra uma peça impressa ao robô e depura o programa.</li>
+                        <li><span class="letra">D)</span>Instala o Tinkercad nos computadores da escola.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Capacidade de design</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, relaciona a aula com as capacidades da ementa. Qual delas trata de espessura de paredes, suportes e orientação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entender as diferenças entre as tecnologias FDM, SLA e SLS.</li>
+                        <li><span class="letra">B)</span>Compreender as diferenças entre tipos de robôs.</li>
+                        <li><span class="letra">C)</span>Compreender como as impressoras funcionam: fatiamento, extrusão e camadas.</li>
+                        <li><span class="letra">D)</span>Entender princípios de design para impressão 3D.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Passo a passo da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, acompanha o início da dinâmica. O que cada equipe faz primeiro, segundo o passo a passo da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprime a peça na fila organizada pelo professor.</li>
+                        <li><span class="letra">B)</span>Monta a peça no robô e testa o programa.</li>
+                        <li><span class="letra">C)</span>Escreve, em uma frase, o problema do robô e a peça escolhida.</li>
+                        <li><span class="letra">D)</span>Registra fotos e anotações dos ajustes finais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Ciclo de melhoria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)<br>C5 — Entender os componentes fundamentais de um robô (sensores, atuadores, motores, controladores)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, resume à equipe o que fazer quando o protótipo falha. Qual alternativa descreve melhor o ciclo da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Descobrir se o erro está na peça ou no programa, ajustar o modelo ou depurar o código, testar de novo e registrar.</li>
+                        <li><span class="letra">B)</span>Trocar tudo e recomeçar do zero, sem registrar nada.</li>
+                        <li><span class="letra">C)</span>Repetir o mesmo teste várias vezes, sem alterar nada.</li>
+                        <li><span class="letra">D)</span>Apresentar o protótipo falho sem mencionar o erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Oficinas de Impressão 3D e Robótica — Aula 08: Projeto Integrado: Impressão 3D + Robótica</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

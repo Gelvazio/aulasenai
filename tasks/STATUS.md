@@ -6,15 +6,6 @@
 ## Tarefas
 
 - #436-a5c81e30 — [Atividades das 9 aulas de Oficinas de Impressão 3D e Robótica](etapas/ETAPA-593-a5c81e30-ATIVIDADES-OFICINAS-3D-ROBOTICA.md) · 🔄 Em andamento (plano aprovado pelo usuário em 2026-10-30) · — (não reservável)
-  - #436.1 — Objetiva de 50 questões da aula 01 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a1) (desde 2026-10-30 19:36)
-  - #436.2 — Objetiva de 50 questões da aula 02 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a2) (desde 2026-10-30 19:36)
-  - #436.3 — Objetiva de 50 questões da aula 03 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a3) (desde 2026-10-30 19:36)
-  - #436.4 — Objetiva de 50 questões da aula 04 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a4) (desde 2026-10-30 19:36)
-  - #436.5 — Objetiva de 50 questões da aula 05 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a5) (desde 2026-10-30 19:36)
-  - #436.6 — Objetiva de 50 questões da aula 06 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a6) (desde 2026-10-30 19:36)
-  - #436.7 — Objetiva de 50 questões da aula 07 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a7) (desde 2026-10-30 19:36)
-  - #436.8 — Objetiva de 50 questões da aula 08 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a8) (desde 2026-10-30 19:36)
-  - #436.9 — Objetiva de 50 questões da aula 09 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a9) (desde 2026-10-30 19:36)
   - #436.10 — Prática 10 × 3 da aula 01 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p1) (desde 2026-10-30 19:41)
   - #436.11 — Prática 10 × 3 da aula 02 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p2) (desde 2026-10-30 19:41)
   - #436.12 — Prática 10 × 3 da aula 03 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · p3) (desde 2026-10-30 19:41)

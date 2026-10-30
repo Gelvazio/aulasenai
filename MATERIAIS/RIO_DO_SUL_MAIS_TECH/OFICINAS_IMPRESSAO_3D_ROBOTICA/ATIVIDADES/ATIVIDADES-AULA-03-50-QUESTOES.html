@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Arquivos STL e Fatiamento (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="03" data-tema="Arquivos STL e Fatiamento" data-total="50"
+      data-uc="Oficinas de Impressão 3D e Robótica" data-uc-curta="Oficinas de Impressão 3D e Robótica"
+      data-docente="Gelvazio Camargo" data-exportar-meu-gabarito="sim" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧊 Aula 03: Arquivos STL e Fatiamento</h1>
+            <p>Oficinas de Impressão 3D e Robótica · Rio do Sul Mais Tech — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-03-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O que é um arquivo STL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai explicar a um colega o que é um arquivo STL. Qual explicação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma imagem da peça com todas as cores e texturas.</li>
+                        <li><span class="letra">B)</span>Um formato que descreve a superfície do objeto como uma malha de triângulos.</li>
+                        <li><span class="letra">C)</span>Um conjunto de comandos de movimento enviado à impressora.</li>
+                        <li><span class="letra">D)</span>Uma planilha com o custo do filamento da peça.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">O que o STL não guarda</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, que informações um arquivo STL não guarda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A forma da superfície do objeto.</li>
+                        <li><span class="letra">B)</span>A malha de triângulos que compõe a peça.</li>
+                        <li><span class="letra">C)</span>A geometria da peça no espaço.</li>
+                        <li><span class="letra">D)</span>A cor e a unidade de medida.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Onde conferir a escala</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, recebeu um STL de outra pessoa e precisa saber se o tamanho está correto. Onde a escala deve ser conferida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No fatiador, antes de gerar o G-code.</li>
+                        <li><span class="letra">B)</span>Na unidade gravada dentro do próprio STL.</li>
+                        <li><span class="letra">C)</span>Na cor do modelo mostrada na tela.</li>
+                        <li><span class="letra">D)</span>Não precisa conferir, pois o STL sempre vem em milímetros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Exportar do Tinkercad</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, terminou o chaveiro no Tinkercad. Qual é o caminho para gerar o arquivo STL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Salvar a tela como imagem .PNG.</li>
+                        <li><span class="letra">B)</span>Usar o botão Imprimir e aguardar o arquivo.</li>
+                        <li><span class="letra">C)</span>Usar o botão Exportar e escolher o formato .STL.</li>
+                        <li><span class="letra">D)</span>Usar o botão Compartilhar e escolher .G-code.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Peça final agrupada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, notou que o projeto tem o chaveiro e algumas formas auxiliares usadas durante a modelagem. O que fazer antes de exportar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exportar tudo como está, pois o fatiador separa as formas.</li>
+                        <li><span class="letra">B)</span>Agrupar a peça final e exportar somente ela.</li>
+                        <li><span class="letra">C)</span>Apagar o plano de trabalho e exportar o que sobrar.</li>
+                        <li><span class="letra">D)</span>Exportar uma vez para cada forma auxiliar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Conferência antes de exportar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma conferência recomendada antes de exportar o STL do Tinkercad?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verificar se as medidas estão corretas e se não há formas soltas.</li>
+                        <li><span class="letra">B)</span>Escolher a cor do filamento dentro do Tinkercad.</li>
+                        <li><span class="letra">C)</span>Definir a temperatura do bico da impressora.</li>
+                        <li><span class="letra">D)</span>Anotar o tempo de impressão da peça.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Peça fora do plano de trabalho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, percebeu que o chaveiro de um colega está levemente acima do plano de trabalho. O que deve ser feito antes da exportação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nada, pois o fatiador cria o apoio sozinho.</li>
+                        <li><span class="letra">B)</span>Aumentar a temperatura da mesa para compensar.</li>
+                        <li><span class="letra">C)</span>Trocar o formato do arquivo para G-code.</li>
+                        <li><span class="letra">D)</span>Corrigir a posição, apoiando a peça no plano de trabalho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Função do fatiador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a principal função do fatiador, como o Cura ou o PrusaSlicer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar o modelo 3D do zero, com formas básicas.</li>
+                        <li><span class="letra">B)</span>Converter um arquivo G-code de volta em STL.</li>
+                        <li><span class="letra">C)</span>Transformar o STL em G-code, com as instruções da impressão por camadas.</li>
+                        <li><span class="letra">D)</span>Medir a temperatura real do bico durante a impressão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Exemplos de fatiador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa listar dois programas fatiadores citados na aula. Qual par está correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tinkercad e Paint.</li>
+                        <li><span class="letra">B)</span>Cura e PrusaSlicer.</li>
+                        <li><span class="letra">C)</span>Word e Excel.</li>
+                        <li><span class="letra">D)</span>STL e G-code.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Altura de camada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a altura de camada controla no fatiamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A qualidade da superfície e o tempo de impressão.</li>
+                        <li><span class="letra">B)</span>A cor do filamento usado na peça.</li>
+                        <li><span class="letra">C)</span>O diâmetro do bico da impressora.</li>
+                        <li><span class="letra">D)</span>O tamanho do arquivo STL exportado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Altura de camada típica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai ajustar o fatiador para PLA com bico de 0,4 mm. Qual altura de camada típica a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2 mm.</li>
+                        <li><span class="letra">B)</span>0,02 mm.</li>
+                        <li><span class="letra">C)</span>0,2 mm.</li>
+                        <li><span class="letra">D)</span>1,0 mm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Camada mais fina</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, trocou a altura de camada de 0,2 mm para 0,1 mm. Qual é o efeito esperado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Impressão mais rápida e de superfície mais áspera.</li>
+                        <li><span class="letra">B)</span>Impressão mais rápida, com a mesma qualidade.</li>
+                        <li><span class="letra">C)</span>Nenhuma mudança no tempo de impressão.</li>
+                        <li><span class="letra">D)</span>Superfície mais fina e impressão mais lenta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Para que serve o preenchimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fatiador, o preenchimento controla principalmente:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cor e o brilho da peça.</li>
+                        <li><span class="letra">B)</span>A resistência da peça e o material gasto.</li>
+                        <li><span class="letra">C)</span>A temperatura da mesa de impressão.</li>
+                        <li><span class="letra">D)</span>A posição da peça no plano de trabalho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Preenchimento típico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual faixa de preenchimento a aula indica como valor típico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>15% a 20%.</li>
+                        <li><span class="letra">B)</span>60% a 70%.</li>
+                        <li><span class="letra">C)</span>95% a 100%.</li>
+                        <li><span class="letra">D)</span>1% a 2%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Temperatura do bico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai configurar a temperatura do bico para imprimir em PLA. Qual faixa típica a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>20 °C a 30 °C.</li>
+                        <li><span class="letra">B)</span>55 °C a 60 °C.</li>
+                        <li><span class="letra">C)</span>200 °C a 210 °C.</li>
+                        <li><span class="letra">D)</span>400 °C a 450 °C.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Temperatura da mesa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve a temperatura da mesa de impressão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Derreter o filamento antes de chegar ao bico.</li>
+                        <li><span class="letra">B)</span>Resfriar a peça mais rápido no fim da impressão.</li>
+                        <li><span class="letra">C)</span>Reduzir o consumo de filamento da peça.</li>
+                        <li><span class="letra">D)</span>Melhorar a aderência da primeira camada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Velocidade de impressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual faixa de velocidade de impressão a aula apresenta como valor típico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>40 a 60 mm/s.</li>
+                        <li><span class="letra">B)</span>400 a 600 mm/s.</li>
+                        <li><span class="letra">C)</span>4 a 6 mm/s.</li>
+                        <li><span class="letra">D)</span>4.000 a 6.000 mm/s.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Paredes ou perímetros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fatiador, as paredes (perímetros) influenciam principalmente:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cor externa da peça.</li>
+                        <li><span class="letra">B)</span>A resistência externa da peça.</li>
+                        <li><span class="letra">C)</span>A temperatura da mesa.</li>
+                        <li><span class="letra">D)</span>A escala do arquivo STL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Reduzir o tempo de impressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa diminuir o tempo de impressão de um lote sem trocar a impressora. Qual ajuste ajuda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Diminuir a altura de camada de 0,2 mm para 0,1 mm.</li>
+                        <li><span class="letra">B)</span>Aumentar o preenchimento de 15% para 40%.</li>
+                        <li><span class="letra">C)</span>Aumentar o número de paredes de 2 para 6.</li>
+                        <li><span class="letra">D)</span>Aumentar a altura de camada de 0,2 mm para 0,3 mm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Peça decorativa leve</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para imprimir uma peça apenas decorativa, que não sofre esforço. Qual escolha de preenchimento é mais adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>100%, para a peça ficar mais bonita.</li>
+                        <li><span class="letra">B)</span>40% em todos os casos.</li>
+                        <li><span class="letra">C)</span>Um valor baixo, como 15%, que economiza material e peso.</li>
+                        <li><span class="letra">D)</span>0%, mesmo que a peça fique oca e frágil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Etiquetas da indústria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa o exemplo das 20 etiquetas de identificação de caixas de uma pequena indústria de Rio do Sul. Com camada de 0,3 mm e 10% de preenchimento, o que acontece com o tempo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cai pela metade, sem perder a função da etiqueta.</li>
+                        <li><span class="letra">B)</span>Dobra, mas a etiqueta fica mais resistente.</li>
+                        <li><span class="letra">C)</span>Continua igual ao de uma camada de 0,2 mm.</li>
+                        <li><span class="letra">D)</span>A etiqueta deixa de poder ser impressa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Espessura mínima de parede</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, usa um bico de 0,4 mm. Qual é a espessura mínima de parede recomendada, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0,1 mm.</li>
+                        <li><span class="letra">B)</span>0,2 mm.</li>
+                        <li><span class="letra">C)</span>Cerca de 0,8 mm, o dobro do diâmetro do bico.</li>
+                        <li><span class="letra">D)</span>4 mm, dez vezes o diâmetro do bico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Parede de peça sob esforço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai imprimir um gancho que sofrerá esforço ao segurar uma mochila. Que espessura de parede a aula recomenda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0,4 mm, igual ao diâmetro do bico.</li>
+                        <li><span class="letra">B)</span>1,2 mm ou mais.</li>
+                        <li><span class="letra">C)</span>Menos que o diâmetro do bico.</li>
+                        <li><span class="letra">D)</span>Tanto faz, pois o preenchimento resolve tudo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Orientação da peça</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, como a peça deve ser orientada na mesa para imprimir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sempre em pé, apoiada na menor face.</li>
+                        <li><span class="letra">B)</span>Com a parte mais fina apontada para cima.</li>
+                        <li><span class="letra">C)</span>Em qualquer posição, pois não influencia o resultado.</li>
+                        <li><span class="letra">D)</span>Com a maior face plana apoiada sobre a mesa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Resistência entre camadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa explicar por que a orientação da peça influencia a resistência. Qual é a explicação correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As camadas são mais fracas entre si do que ao longo delas.</li>
+                        <li><span class="letra">B)</span>As camadas são mais fortes entre si do que ao longo delas.</li>
+                        <li><span class="letra">C)</span>A resistência é igual em todas as direções.</li>
+                        <li><span class="letra">D)</span>Só as bordas externas têm camadas, o centro é maciço.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">O que são suportes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que são suportes no design para impressão 3D?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Peças metálicas que prendem a mesa na impressora.</li>
+                        <li><span class="letra">B)</span>Estruturas provisórias que sustentam partes suspensas da peça.</li>
+                        <li><span class="letra">C)</span>Parafusos usados para montar a peça depois de impressa.</li>
+                        <li><span class="letra">D)</span>Arquivos extras que acompanham o STL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Quando usar suportes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, avalia uma peça com uma parte suspensa. A partir de que inclinação a aula indica o uso de suportes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em qualquer inclinação, mesmo nas partes apoiadas.</li>
+                        <li><span class="letra">B)</span>Somente em partes totalmente apoiadas na mesa.</li>
+                        <li><span class="letra">C)</span>Acima de cerca de 45°.</li>
+                        <li><span class="letra">D)</span>Somente abaixo de 5°.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Custo dos suportes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, compara uma peça impressa com suportes e outra sem. Qual desvantagem dos suportes a aula destaca?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixam a peça mais leve e fraca.</li>
+                        <li><span class="letra">B)</span>Impedem o uso de PLA.</li>
+                        <li><span class="letra">C)</span>Obrigam a trocar o bico da impressora.</li>
+                        <li><span class="letra">D)</span>Deixam marcas na peça e gastam material.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Como evitar suportes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, qual atitude pode evitar a necessidade de suportes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reorientar a peça na mesa.</li>
+                        <li><span class="letra">B)</span>Aumentar a temperatura da mesa.</li>
+                        <li><span class="letra">C)</span>Reduzir a velocidade para 4 mm/s.</li>
+                        <li><span class="letra">D)</span>Exportar o arquivo duas vezes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Para que serve a borda</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A borda de aderência (brim) é indicada para qual situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Peças com muita base, que já aderem bem.</li>
+                        <li><span class="letra">B)</span>Peças que precisam de mais cor.</li>
+                        <li><span class="letra">C)</span>Peças com pouca base de apoio na mesa.</li>
+                        <li><span class="letra">D)</span>Peças com paredes muito grossas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Peça em forma de T</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, avalia uma peça em forma de T, com uma barra larga sobre uma haste fina. Como orientá-la para evitar suportes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com a haste apoiada na mesa e a barra larga suspensa.</li>
+                        <li><span class="letra">B)</span>Com a barra larga apoiada na mesa, evitando a parte suspensa.</li>
+                        <li><span class="letra">C)</span>Na diagonal, sempre a 45°, para equilibrar.</li>
+                        <li><span class="letra">D)</span>Com a barra larga suspensa e suportes por todo o corpo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Sequência da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai organizar os passos da dinâmica do chaveiro. Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fatiar, exportar o STL, anotar o tempo e abrir o fatiador.</li>
+                        <li><span class="letra">B)</span>Anotar o tempo, exportar o STL, fatiar e abrir o fatiador.</li>
+                        <li><span class="letra">C)</span>Abrir o fatiador, anotar o tempo, exportar o STL e fatiar.</li>
+                        <li><span class="letra">D)</span>Exportar o STL, abrir no fatiador, conferir medidas e orientação, fatiar e anotar tempo e gramas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Configuração inicial da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica da aula, o chaveiro é fatiado primeiro com quais valores?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Camada de 0,2 mm e preenchimento de 15%.</li>
+                        <li><span class="letra">B)</span>Camada de 0,1 mm e preenchimento de 40%.</li>
+                        <li><span class="letra">C)</span>Camada de 0,3 mm e preenchimento de 10%.</li>
+                        <li><span class="letra">D)</span>Camada de 0,4 mm e preenchimento de 100%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Comparando configurações</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, repetiu o fatiamento do chaveiro com camada de 0,1 mm e depois com preenchimento de 40%. O que se espera em relação à primeira configuração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tempo e consumo de filamento estimados menores.</li>
+                        <li><span class="letra">B)</span>Tempo e/ou consumo de filamento estimados maiores.</li>
+                        <li><span class="letra">C)</span>Nenhuma mudança nas estimativas.</li>
+                        <li><span class="letra">D)</span>Tempo menor e consumo maior em todos os casos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Fechamento da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como termina a dinâmica do chaveiro, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O professor escolhe a configuração sozinho.</li>
+                        <li><span class="letra">B)</span>Cada aluno imprime a peça com a configuração que preferir.</li>
+                        <li><span class="letra">C)</span>A turma escolhe a combinação com melhor equilíbrio entre qualidade e tempo.</li>
+                        <li><span class="letra">D)</span>Escolhe-se sempre a camada mais fina.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Entrega da situação-problema</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, deve informar à escola quanto tempo e quanto filamento os chaveiros da turma vão gastar. O que a entrega deve conter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela com tempo e gramas estimados em três configurações e a recomendação justificada.</li>
+                        <li><span class="letra">B)</span>Apenas o STL do chaveiro.</li>
+                        <li><span class="letra">C)</span>Uma foto do chaveiro já impresso.</li>
+                        <li><span class="letra">D)</span>O G-code de uma única configuração, sem comparação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Papel de cada programa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa relacionar cada programa à sua função no processo. Qual relação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O fatiador modela a peça e o Tinkercad gera o G-code.</li>
+                        <li><span class="letra">B)</span>O fatiador exporta o STL e o Tinkercad define a velocidade.</li>
+                        <li><span class="letra">C)</span>O Tinkercad define o preenchimento e o fatiador cria as formas.</li>
+                        <li><span class="letra">D)</span>O Tinkercad modela e exporta o STL, e o fatiador gera o G-code.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Fluidez do plástico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual parâmetro do fatiador controla a fluidez do plástico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A temperatura da mesa.</li>
+                        <li><span class="letra">B)</span>A temperatura do bico.</li>
+                        <li><span class="letra">C)</span>A altura de camada.</li>
+                        <li><span class="letra">D)</span>O número de paredes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Protótipo rápido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa de um protótipo rápido, só para testar um encaixe, sem exigência de acabamento. Qual configuração é mais adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Camada de 0,05 mm e preenchimento de 100%.</li>
+                        <li><span class="letra">B)</span>Camada de 0,1 mm e preenchimento de 40%.</li>
+                        <li><span class="letra">C)</span>Camada mais grossa e preenchimento baixo.</li>
+                        <li><span class="letra">D)</span>Mais paredes e velocidade mínima.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Peça funcional sob esforço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai imprimir um suporte de fone que ficará sob esforço no dia a dia. Qual conjunto de decisões é mais adequado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Parede de 0,4 mm, preenchimento de 0% e peça em qualquer posição.</li>
+                        <li><span class="letra">B)</span>Camada grossa, preenchimento mínimo e muitos suportes.</li>
+                        <li><span class="letra">C)</span>Parede fina e velocidade máxima, para economizar tempo.</li>
+                        <li><span class="letra">D)</span>Paredes mais grossas, mais preenchimento e orientação que evite esforço entre camadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Miniatura detalhada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai imprimir uma miniatura pequena, com muitos detalhes, e não há pressa. Qual altura de camada favorece o acabamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma camada fina, como 0,1 mm.</li>
+                        <li><span class="letra">B)</span>Uma camada grossa, como 0,4 mm.</li>
+                        <li><span class="letra">C)</span>Qualquer uma, pois não muda o acabamento.</li>
+                        <li><span class="letra">D)</span>Nenhuma, pois o fatiador define sozinho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Modelo minúsculo no fatiador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, abriu um STL no fatiador e a peça apareceu minúscula. O que explica o problema e o que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O fatiador está com defeito e deve ser reinstalado.</li>
+                        <li><span class="letra">B)</span>O filamento escolhido é muito fino; trocar o material.</li>
+                        <li><span class="letra">C)</span>O STL não guarda unidade, então a escala deve ser conferida e ajustada no fatiador.</li>
+                        <li><span class="letra">D)</span>A peça tem cor errada; reexportar com outra cor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Fluxo do arquivo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai desenhar o fluxo do arquivo até a impressão. Qual sequência está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fatiador, STL, Tinkercad, G-code e impressora.</li>
+                        <li><span class="letra">B)</span>Tinkercad, STL, fatiador, G-code e impressora.</li>
+                        <li><span class="letra">C)</span>G-code, fatiador, STL, Tinkercad e impressora.</li>
+                        <li><span class="letra">D)</span>Impressora, G-code, STL, fatiador e Tinkercad.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Parede de 0,4 mm</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa um porta-lápis com paredes de 0,4 mm, impresso com bico de 0,4 mm. Qual é a conclusão mais adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A espessura está ótima, pois é igual ao bico.</li>
+                        <li><span class="letra">B)</span>A espessura é exagerada e desperdiça material.</li>
+                        <li><span class="letra">C)</span>A espessura só importa para peças coloridas.</li>
+                        <li><span class="letra">D)</span>A parede está abaixo do dobro do bico e tende a ficar frágil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Comparando estimativas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, comparou duas configurações do mesmo chaveiro. A primeira (0,2 mm e 15%) estimou 1 h 30 min e 12 g. A segunda (0,1 mm e 40%) estimou 4 h e 20 g. Quantos gramas a mais a segunda gasta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>8 g.</li>
+                        <li><span class="letra">B)</span>12 g.</li>
+                        <li><span class="letra">C)</span>20 g.</li>
+                        <li><span class="letra">D)</span>32 g.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Tempo de um lote</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, calcula o tempo de imprimir 12 chaveiros, um de cada vez, sendo que cada um leva 25 minutos. Qual é o tempo total?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3 horas.</li>
+                        <li><span class="letra">B)</span>5 horas.</li>
+                        <li><span class="letra">C)</span>8 horas.</li>
+                        <li><span class="letra">D)</span>12 horas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Número de camadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa estimar o número de camadas de uma peça com 12 mm de altura, impressa com camada de 0,2 mm. Quantas camadas serão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>24 camadas.</li>
+                        <li><span class="letra">B)</span>40 camadas.</li>
+                        <li><span class="letra">C)</span>60 camadas.</li>
+                        <li><span class="letra">D)</span>120 camadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Camadas com 0,3 mm</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, calcula as camadas de uma peça com 9 mm de altura impressa com camada de 0,3 mm. Quantas camadas serão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3 camadas.</li>
+                        <li><span class="letra">B)</span>18 camadas.</li>
+                        <li><span class="letra">C)</span>45 camadas.</li>
+                        <li><span class="letra">D)</span>30 camadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Ganho de tempo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, quer aplicar o mesmo ganho do exemplo das etiquetas, em que o tempo cai pela metade, a um lote que levaria 4 horas. Quanto tempo sobra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2 horas.</li>
+                        <li><span class="letra">B)</span>1 hora.</li>
+                        <li><span class="letra">C)</span>3 horas.</li>
+                        <li><span class="letra">D)</span>8 horas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Recomendação justificada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai recomendar camada de 0,2 mm e preenchimento de 15% para os chaveiros da turma. Qual é a melhor justificativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É a única configuração que o fatiador aceita.</li>
+                        <li><span class="letra">B)</span>Dá um bom equilíbrio entre qualidade e tempo, suficiente para a função do chaveiro.</li>
+                        <li><span class="letra">C)</span>A camada de 0,1 mm nunca funciona em PLA.</li>
+                        <li><span class="letra">D)</span>Preenchimento acima de 15% é proibido em qualquer peça.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Oficinas de Impressão 3D e Robótica — Aula 03: Arquivos STL e Fatiamento</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

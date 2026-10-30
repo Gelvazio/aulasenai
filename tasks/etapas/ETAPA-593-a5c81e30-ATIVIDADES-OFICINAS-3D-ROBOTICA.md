@@ -32,7 +32,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-01-INTRODUCAO-IMPRESSAO-3D.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-01-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-01-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-01-50-QUESTOES.md` + `ATIVIDADES-AULA-01-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.2 — Objetiva de 50 questões da aula 02 — Modelagem 3D com Tinkercad
 
@@ -46,7 +46,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-02-MODELAGEM-3D-TINKERCAD.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-02-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-02-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-02-50-QUESTOES.md` + `ATIVIDADES-AULA-02-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.3 — Objetiva de 50 questões da aula 03 — Geração de Arquivos STL e Fatiamento
 
@@ -60,7 +60,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-03-ARQUIVOS-STL-FATIAMENTO.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-03-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-03-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-03-50-QUESTOES.md` + `ATIVIDADES-AULA-03-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.4 — Objetiva de 50 questões da aula 04 — Operação de Impressoras 3D
 
@@ -74,7 +74,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-04-OPERACAO-IMPRESSORAS-3D.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-04-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-04-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-04-50-QUESTOES.md` + `ATIVIDADES-AULA-04-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.5 — Objetiva de 50 questões da aula 05 — Introdução a Robótica
 
@@ -88,7 +88,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-05-INTRODUCAO-ROBOTICA.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-05-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-05-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-05-50-QUESTOES.md` + `ATIVIDADES-AULA-05-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.6 — Objetiva de 50 questões da aula 06 — Componentes de Robôs
 
@@ -102,7 +102,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-06-COMPONENTES-DE-ROBOS.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-06-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-06-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-06-50-QUESTOES.md` + `ATIVIDADES-AULA-06-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.7 — Objetiva de 50 questões da aula 07 — Programação de Robôs Simples
 
@@ -116,7 +116,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-07-PROGRAMACAO-ROBOS-SIMPLES.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-07-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-07-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-07-50-QUESTOES.md` + `ATIVIDADES-AULA-07-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.8 — Objetiva de 50 questões da aula 08 — Projeto Integrado: Impressão 3D + Robótica
 
@@ -130,7 +130,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-08-PROJETO-INTEGRADO-3D-ROBOTICA.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-08-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-08-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-08-50-QUESTOES.md` + `ATIVIDADES-AULA-08-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.9 — Objetiva de 50 questões da aula 09 — Apresentação de Projetos
 
@@ -144,7 +144,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-09-APRESENTACAO-DE-PROJETOS.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-09-50-QUESTOES.md` (com gabarito, fora do site) e a página `ATIVIDADES-AULA-09-50-QUESTOES.html` pelo `assets/gerador-atividades/gerar_atividades.py --so=`. Modelo: as objetivas de `FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO`. Enunciados no papel "Você como aluno consultor", sem empresa fictícia.
 - **Critérios de aceitação:** Exatamente 50 questões, 1 alternativa certa cada, só com base na aula; página gerada sem erro; nenhum gabarito no HTML.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-09-50-QUESTOES.md` + `ATIVIDADES-AULA-09-50-QUESTOES.html` (commit desta entrega). · **Verificação:** gerador devolveu 50 itens; `.md` com 50 ITEM e HTML com 50 cards; sem \"Ltda\"/empresa fictícia; HTML sem dados de gabarito; `.vercelignore` cobre `*QUESTOES.md`.
 
 ### #436.10 — Prática 10 × 3 da aula 01 — Introdução a Impressão 3D e Tecnologias
 
@@ -313,3 +313,6 @@
 - **Descrição:** Contar questões e tópicos por página × banco, `node --check`/`py_compile` nos arquivos alterados e fechar a tarefa no quadro (commit + push).
 - **Critérios de aceitação:** Contagem página × banco igual; quadro atualizado.
 - **Entrega:** — · **Verificação:** —
+
+### Observação (aula 04)
+Em 26 das 50 questões da aula 04 a alternativa certa é a mais longa (pista para o aluno). Registrar como revisão futura; não bloqueia a entrega.

@@ -334,3 +334,12 @@
 | #444.23 | Orientação em docs/ (ORIENTACAO_JS_LIGHTBOT.md) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.24 | Conferência final e entrega (commit + push) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444 | Light Bot em Vite com visual futurista | 🟡 | — | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #436.1 | Objetiva de 50 questões da aula 01 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.2 | Objetiva de 50 questões da aula 02 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.3 | Objetiva de 50 questões da aula 03 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.4 | Objetiva de 50 questões da aula 04 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.5 | Objetiva de 50 questões da aula 05 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.6 | Objetiva de 50 questões da aula 06 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.7 | Objetiva de 50 questões da aula 07 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.8 | Objetiva de 50 questões da aula 08 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.9 | Objetiva de 50 questões da aula 09 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |

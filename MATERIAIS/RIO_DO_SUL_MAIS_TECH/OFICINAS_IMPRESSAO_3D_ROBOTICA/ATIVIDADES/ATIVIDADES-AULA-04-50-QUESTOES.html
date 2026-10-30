@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 — Operação de Impressoras 3D (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="04" data-tema="Operação de Impressoras 3D" data-total="50"
+      data-uc="Oficinas de Impressão 3D e Robótica" data-uc-curta="Oficinas de Impressão 3D e Robótica"
+      data-docente="Gelvazio Camargo" data-exportar-meu-gabarito="sim" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🖨️ Aula 04: Operação de Impressoras 3D</h1>
+            <p>Oficinas de Impressão 3D e Robótica · Rio do Sul Mais Tech — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-04-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Temperatura do bico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai orientar a turma sobre os riscos da oficina. Durante a impressão, a que temperatura aproximada fica o bico da impressora FDM?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cerca de 20 °C, igual à do ambiente.</li>
+                        <li><span class="letra">B)</span>Cerca de 200 °C.</li>
+                        <li><span class="letra">C)</span>Cerca de 60 °C, igual à da mesa.</li>
+                        <li><span class="letra">D)</span>Cerca de 500 °C.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Temperatura da mesa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, está montando o cartaz de segurança da oficina. Qual é a temperatura aproximada da mesa durante a impressão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cerca de 200 °C.</li>
+                        <li><span class="letra">B)</span>Cerca de 5 °C.</li>
+                        <li><span class="letra">C)</span>Cerca de 400 °C.</li>
+                        <li><span class="letra">D)</span>Cerca de 60 °C.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Bico quente após o uso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma impressora acabou de terminar o chaveiro de um colega, que quer retirar a peça rapidamente.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, percebe que o colega vai encostar a mão no bico logo após o fim da impressão. Qual é a orientação correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não tocar, pois o bico e a mesa continuam quentes logo após o uso.</li>
+                        <li><span class="letra">B)</span>Tocar rápido, pois o bico esfria assim que a impressão termina.</li>
+                        <li><span class="letra">C)</span>Tocar só de luvas finas de tecido, que já protegem totalmente.</li>
+                        <li><span class="letra">D)</span>Tocar somente na mesa, pois só o bico é quente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Cuidados pessoais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o roteiro de segurança. Qual cuidado pessoal vale antes de operar a impressora perto das peças móveis?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar o cabelo solto para proteger o rosto.</li>
+                        <li><span class="letra">B)</span>Usar pulseiras para identificar a equipe.</li>
+                        <li><span class="letra">C)</span>Prender o cabelo e retirar pulseiras e cordões soltos.</li>
+                        <li><span class="letra">D)</span>Deixar os cordões do uniforme soltos para ficarem à mão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Quem pode operar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica quando a turma pode operar as impressoras da oficina. Qual afirmação está de acordo com o roteiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A operação pode ser feita por qualquer aluno que já tenha visto a aula.</li>
+                        <li><span class="letra">B)</span>A operação só pode ser feita com o professor presente.</li>
+                        <li><span class="letra">C)</span>A operação pode ser feita sozinho no intervalo da aula.</li>
+                        <li><span class="letra">D)</span>A operação pode ser feita por duplas sem professor, em horário livre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Máquina em funcionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, nota que uma peça parece torta durante a impressão e um colega quer abrir a máquina para arrumar. O que o roteiro de segurança manda fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não abrir nem mexer na máquina em funcionamento e chamar o professor.</li>
+                        <li><span class="letra">B)</span>Abrir a máquina com cuidado e ajustar a peça com a mão.</li>
+                        <li><span class="letra">C)</span>Abrir só a parte de cima, pois ali não há peças móveis.</li>
+                        <li><span class="letra">D)</span>Desligar a energia na tomada e puxar a peça imediatamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Ventilação do ambiente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, prepara a sala para uma rodada de impressões. Qual condição do ambiente a aula recomenda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fechar portas e janelas para manter o calor das máquinas.</li>
+                        <li><span class="letra">B)</span>Cobrir as impressoras para evitar poeira no ambiente.</li>
+                        <li><span class="letra">C)</span>Ligar a ventilação apenas depois que a peça for retirada.</li>
+                        <li><span class="letra">D)</span>Manter o ambiente ventilado durante as impressões.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Retirada da peça</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, orienta a retirada de uma peça pronta. Qual é o procedimento seguro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Puxar a peça com as mãos assim que a impressão terminar.</li>
+                        <li><span class="letra">B)</span>Bater na mesa para soltar a peça, perto do rosto.</li>
+                        <li><span class="letra">C)</span>Retirar com a mesa fria ou com espátula, longe do rosto.</li>
+                        <li><span class="letra">D)</span>Retirar a peça com a mesa ainda quente para sair mais fácil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Organização da fila</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Há três pedidos: um chaveiro de 20 minutos, um teste de 25 minutos e a peça do projeto final de uma equipe, que leva várias horas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, deve organizar a fila de impressão. Qual ordem segue a regra da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Primeiro a peça do projeto final e depois as peças rápidas.</li>
+                        <li><span class="letra">B)</span>Primeiro as peças rápidas, de até 30 minutos, e depois a peça do projeto final.</li>
+                        <li><span class="letra">C)</span>A ordem em que os alunos chegarem, sem considerar o tempo.</li>
+                        <li><span class="letra">D)</span>Primeiro a peça mais longa, para ocupar a máquina logo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Regras de segurança principais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, resume em uma frase as regras de segurança da oficina. Qual conjunto está de acordo com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tocar o bico só se estiver de luvas, prender o cabelo e operar sozinho.</li>
+                        <li><span class="letra">B)</span>Usar pulseiras, abrir a máquina em uso e retirar a peça com a mesa quente.</li>
+                        <li><span class="letra">C)</span>Fechar o ambiente, ajustar a máquina em uso e deixar o cabelo solto.</li>
+                        <li><span class="letra">D)</span>Não tocar no bico quente, prender o cabelo e operar só com o professor presente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Função do bico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta as partes da impressora FDM. Qual é a função do bico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Depositar o plástico derretido, formando a peça camada por camada.</li>
+                        <li><span class="letra">B)</span>Servir de superfície onde a peça é construída.</li>
+                        <li><span class="letra">C)</span>Empurrar o filamento do carretel para a máquina.</li>
+                        <li><span class="letra">D)</span>Mostrar ao operador a temperatura e o andamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Função da mesa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica a um colega para que serve a mesa da impressora. Qual é a resposta correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É a peça que derrete o filamento antes da saída.</li>
+                        <li><span class="letra">B)</span>É o botão que liga e desliga a impressão.</li>
+                        <li><span class="letra">C)</span>É a superfície onde a peça é construída e deve estar nivelada.</li>
+                        <li><span class="letra">D)</span>É o fio de plástico que alimenta a máquina.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Função do extrusor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai explicar o caminho do plástico na máquina. Qual é o papel do extrusor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nivelar a mesa durante a impressão.</li>
+                        <li><span class="letra">B)</span>Fatiar o modelo em camadas.</li>
+                        <li><span class="letra">C)</span>Mostrar o andamento da peça ao operador.</li>
+                        <li><span class="letra">D)</span>Empurrar o filamento até o bico, onde ele é aquecido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Função dos eixos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica por que a impressora consegue formar a peça em três dimensões. Qual é o papel dos eixos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Armazenar o filamento enquanto não está em uso.</li>
+                        <li><span class="letra">B)</span>Movimentar o bico e a mesa pelas direções do espaço.</li>
+                        <li><span class="letra">C)</span>Controlar a temperatura da sala de impressão.</li>
+                        <li><span class="letra">D)</span>Registrar a configuração usada pelo aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Função do painel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, mostra a um colega onde o operador acompanha e controla a impressora. Qual parte da máquina cumpre esse papel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O painel, que permite controlar e acompanhar a impressão.</li>
+                        <li><span class="letra">B)</span>O extrusor, que empurra o filamento.</li>
+                        <li><span class="letra">C)</span>O bico, que deposita o plástico.</li>
+                        <li><span class="letra">D)</span>Os eixos, que movimentam a mesa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Caminho do filamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, descreve o caminho do filamento. Qual sequência está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O filamento sai pela mesa, passa pelo painel e é aquecido no eixo.</li>
+                        <li><span class="letra">B)</span>O filamento é aquecido na mesa, passa pelo painel e sai pelo bico.</li>
+                        <li><span class="letra">C)</span>O filamento passa pelo extrusor, é aquecido e sai pelo bico sobre a mesa.</li>
+                        <li><span class="letra">D)</span>O filamento entra pelo bico, passa pelos eixos e é empurrado pelo painel.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">O que é nivelar a mesa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai orientar um colega a preparar a máquina. O que significa nivelar a mesa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar a cor do filamento antes da impressão.</li>
+                        <li><span class="letra">B)</span>Ajustar a distância entre o bico e a mesa.</li>
+                        <li><span class="letra">C)</span>Aumentar a temperatura do bico até o máximo.</li>
+                        <li><span class="letra">D)</span>Limpar a mesa com álcool isopropílico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Teste da folha de papel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, ensina o teste do papel para nivelar. Como deve ficar a folha entre o bico e a mesa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A folha deve ficar presa, sem conseguir se mover.</li>
+                        <li><span class="letra">B)</span>A folha deve deslizar totalmente solta.</li>
+                        <li><span class="letra">C)</span>A folha deve ser amassada pelo bico.</li>
+                        <li><span class="letra">D)</span>A folha deve ser arrastada com leve atrito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Papel solto no teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ao arrastar a folha de papel entre o bico e a mesa, ela desliza totalmente solta, sem nenhum atrito.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, interpreta o teste. O que esse resultado indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O bico está alto demais e o nivelamento precisa ser reajustado.</li>
+                        <li><span class="letra">B)</span>O nivelamento está perfeito e pode iniciar a impressão.</li>
+                        <li><span class="letra">C)</span>O bico está encostado na mesa com força.</li>
+                        <li><span class="letra">D)</span>O filamento já foi carregado corretamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Primeiro passo ao carregar o filamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vai carregar o filamento. Qual é o primeiro passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Inserir o filamento com o bico frio.</li>
+                        <li><span class="letra">B)</span>Purgar o plástico antes de aquecer.</li>
+                        <li><span class="letra">C)</span>Aquecer o bico.</li>
+                        <li><span class="letra">D)</span>Nivelar a mesa com álcool isopropílico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Função de purgar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica por que se purga o filamento. Até quando se purga?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Até o filamento acabar no carretel.</li>
+                        <li><span class="letra">B)</span>Até a mesa atingir 200 °C.</li>
+                        <li><span class="letra">C)</span>Até o plástico sair com qualquer aspecto, mesmo irregular.</li>
+                        <li><span class="letra">D)</span>Até o plástico sair uniforme do bico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Ordem de carregar o filamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, deve ordenar o carregamento do filamento. Qual ordem está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Inserir o filamento, purgar e só depois aquecer o bico.</li>
+                        <li><span class="letra">B)</span>Aquecer o bico, inserir o filamento no extrusor e purgar até sair uniforme.</li>
+                        <li><span class="letra">C)</span>Purgar, inserir o filamento no extrusor e aquecer o bico.</li>
+                        <li><span class="letra">D)</span>Aquecer a mesa, remover o filamento e nivelar o bico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Filamento da oficina</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, confere a lista de materiais da dinâmica. Qual filamento a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Filamento de aço.</li>
+                        <li><span class="letra">B)</span>Filamento de papel.</li>
+                        <li><span class="letra">C)</span>Filamento PLA.</li>
+                        <li><span class="letra">D)</span>Filamento de vidro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Primeira camada ideal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, avalia a calibração da primeira camada. Como ela deve sair?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Achatada, uniforme e aderida à mesa.</li>
+                        <li><span class="letra">B)</span>Redonda, com fios soltos e separados.</li>
+                        <li><span class="letra">C)</span>Alta, com bolhas e cantos levantados.</li>
+                        <li><span class="letra">D)</span>Irregular, pois só as camadas finais importam.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Importância da primeira camada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, justifica a calibração da primeira camada. Por que ela é tão importante?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque é a única camada que o bico deposita.</li>
+                        <li><span class="letra">B)</span>Porque é a camada que decide o sucesso da peça.</li>
+                        <li><span class="letra">C)</span>Porque define apenas a cor da peça.</li>
+                        <li><span class="letra">D)</span>Porque dispensa o nivelamento da mesa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Limpeza da mesa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, quer melhorar a aderência da peça. Qual produto a aula indica para limpar a mesa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Água com sabão forte sobre a mesa quente.</li>
+                        <li><span class="letra">B)</span>Óleo de cozinha.</li>
+                        <li><span class="letra">C)</span>Cola branca em toda a mesa.</li>
+                        <li><span class="letra">D)</span>Álcool isopropílico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Nivelar antes de imprimir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ana nivelou a mesa e conferiu a primeira camada. Bruno pulou o nivelamento para ganhar tempo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, compara as duas posturas. Qual conduta está de acordo com a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A de Bruno, pois a primeira camada se corrige sozinha.</li>
+                        <li><span class="letra">B)</span>As duas, pois nivelar é opcional.</li>
+                        <li><span class="letra">C)</span>A de Ana, pois o nivelamento e a primeira camada decidem o sucesso da peça.</li>
+                        <li><span class="letra">D)</span>A de Bruno, pois o nivelamento só serve para peças grandes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Sequência da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, organiza o passo a passo da dinâmica do chaveiro. Qual sequência está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conferir segurança e fila, nivelar e carregar, enviar o G-code e acompanhar, retirar com a mesa fria.</li>
+                        <li><span class="letra">B)</span>Enviar o G-code, nivelar, conferir a segurança e retirar a peça quente.</li>
+                        <li><span class="letra">C)</span>Retirar a peça, enviar o G-code, nivelar e conferir a segurança.</li>
+                        <li><span class="letra">D)</span>Nivelar, retirar a peça, carregar o filamento e conferir a segurança.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Envio do G-code</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, acompanha a etapa de envio do arquivo à máquina. O que se envia à impressora para começar a imprimir o chaveiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O carretel de filamento já usado.</li>
+                        <li><span class="letra">B)</span>A folha de papel do nivelamento.</li>
+                        <li><span class="letra">C)</span>A ficha de configuração preenchida.</li>
+                        <li><span class="letra">D)</span>O G-code gerado a partir do fatiamento do modelo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Acompanhar os primeiros minutos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica por que o aluno deve acompanhar os primeiros minutos. Qual é o motivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nos primeiros minutos a máquina aquece e não é preciso acompanhar.</li>
+                        <li><span class="letra">B)</span>Nos primeiros minutos se vê se a primeira camada está bem formada e aderida.</li>
+                        <li><span class="letra">C)</span>Só depois da peça pronta é possível avaliar a primeira camada.</li>
+                        <li><span class="letra">D)</span>Nos primeiros minutos é o momento de retirar a peça.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Quando interromper</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em uma oficina, o técnico sempre observa os primeiros minutos: se a primeira camada falha, ele interrompe a impressão na hora.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica essa decisão. Qual é a vantagem de interromper cedo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Garantir que a peça fique melhor sem ajustes.</li>
+                        <li><span class="letra">B)</span>Evitar a necessidade de nivelar de novo.</li>
+                        <li><span class="letra">C)</span>Economizar horas de filamento e de tempo de máquina.</li>
+                        <li><span class="letra">D)</span>Aumentar a velocidade da impressão seguinte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Decisão diante de linhas separadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Cinco minutos após o início, a primeira camada sai com linhas separadas e falta de plástico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, decide o que fazer com a impressão. Qual é a melhor ação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Interromper, reajustar o nivelamento e limpar o bico.</li>
+                        <li><span class="letra">B)</span>Deixar terminar para ver se melhora sozinha.</li>
+                        <li><span class="letra">C)</span>Aumentar a velocidade para cobrir as falhas.</li>
+                        <li><span class="letra">D)</span>Trocar a peça por outra sem nivelar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Economia de filamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, defende a regra de parar cedo uma impressão com defeito. Qual argumento está certo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Peças com defeito na primeira camada sempre se corrigem nas camadas seguintes.</li>
+                        <li><span class="letra">B)</span>Se a primeira camada falha, continuar só gasta filamento em uma peça perdida.</li>
+                        <li><span class="letra">C)</span>Interromper estraga a máquina e deve ser evitado.</li>
+                        <li><span class="letra">D)</span>O filamento gasto não importa, pois é gratuito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Acabamento da peça</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, orienta o acabamento do chaveiro depois de retirá-lo. O que se faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reaquecer a peça sobre o bico.</li>
+                        <li><span class="letra">B)</span>Colar a peça de volta na mesa.</li>
+                        <li><span class="letra">C)</span>Pintar a peça antes de esfriar.</li>
+                        <li><span class="letra">D)</span>Remover as rebarbas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Empenamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma peça solta da mesa, com os cantos levantados. Como se chama essa falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Stringing.</li>
+                        <li><span class="letra">B)</span>Deslocamento de camadas.</li>
+                        <li><span class="letra">C)</span>Empenamento.</li>
+                        <li><span class="letra">D)</span>Purga do bico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Causa do empenamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, procura a causa de uma peça com cantos levantados. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mesa suja ou fria, com pouca aderência.</li>
+                        <li><span class="letra">B)</span>Correia solta ou velocidade alta.</li>
+                        <li><span class="letra">C)</span>Temperatura alta e retração baixa.</li>
+                        <li><span class="letra">D)</span>Orientação ruim que gera suportes difíceis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Correção do empenamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, propõe a correção do empenamento. Qual conjunto de ações a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reduzir a temperatura e ajustar a retração.</li>
+                        <li><span class="letra">B)</span>Conferir as correias e reduzir a velocidade.</li>
+                        <li><span class="letra">C)</span>Reorientar a peça e refatiar para evitar suportes.</li>
+                        <li><span class="letra">D)</span>Limpar a mesa, aquecer e usar borda (brim).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Linhas separadas e falta de plástico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma peça com linhas separadas e falta de plástico. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mesa fria e suja de poeira.</li>
+                        <li><span class="letra">B)</span>Bico alto demais ou entupido.</li>
+                        <li><span class="letra">C)</span>Correia solta nos eixos.</li>
+                        <li><span class="letra">D)</span>Orientação ruim da peça no fatiador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">O que é stringing</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, vê fios finos ligando duas partes da peça. Como se chama essa falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Empenamento, ou cantos levantados.</li>
+                        <li><span class="letra">B)</span>Deslocamento de camadas.</li>
+                        <li><span class="letra">C)</span>Stringing, ou fios entre partes.</li>
+                        <li><span class="letra">D)</span>Purga excessiva.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Causa do stringing</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, investiga o stringing. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Temperatura alta ou retração baixa.</li>
+                        <li><span class="letra">B)</span>Mesa fria e suja.</li>
+                        <li><span class="letra">C)</span>Correia solta ou velocidade alta.</li>
+                        <li><span class="letra">D)</span>Bico muito perto da mesa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Correção do stringing</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, orienta como reduzir o fio entre partes. Qual ajuste no fatiador ajuda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aumentar a temperatura e diminuir a retração.</li>
+                        <li><span class="letra">B)</span>Reduzir a temperatura e ajustar a retração.</li>
+                        <li><span class="letra">C)</span>Aumentar a velocidade e soltar as correias.</li>
+                        <li><span class="letra">D)</span>Usar borda (brim) e limpar a mesa com álcool.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Deslocamento de camadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma peça saiu com camadas deslocadas lateralmente, como se a parte de cima tivesse escorregado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, identifica a provável causa dessa falha. Qual é ela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mesa suja ou fria.</li>
+                        <li><span class="letra">B)</span>Temperatura alta ou retração baixa.</li>
+                        <li><span class="letra">C)</span>Bico baixo demais.</li>
+                        <li><span class="letra">D)</span>Correia solta ou velocidade alta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Correção do deslocamento de camadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, propõe a correção para camadas deslocadas. O que a aula indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conferir as correias e reduzir a velocidade.</li>
+                        <li><span class="letra">B)</span>Reduzir a temperatura e ajustar a retração.</li>
+                        <li><span class="letra">C)</span>Limpar a mesa e usar borda (brim).</li>
+                        <li><span class="letra">D)</span>Reorientar a peça e refatiar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Suportes difíceis de remover</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma peça cujos suportes estão muito difíceis de remover. Qual é a correção indicada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aumentar a temperatura do bico.</li>
+                        <li><span class="letra">B)</span>Limpar a mesa com álcool isopropílico.</li>
+                        <li><span class="letra">C)</span>Reorientar a peça e refatiar.</li>
+                        <li><span class="letra">D)</span>Reduzir a velocidade e conferir as correias.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Função do brim</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, explica o uso da borda (brim) no fatiador. Para que ela serve?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aumentar a velocidade da impressão.</li>
+                        <li><span class="letra">B)</span>Remover os suportes automaticamente.</li>
+                        <li><span class="letra">C)</span>Esfriar o bico durante a impressão.</li>
+                        <li><span class="letra">D)</span>Melhorar a aderência da peça à mesa e evitar que os cantos levantem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Escolha da correção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A peça saiu com fios finos entre duas torres. A velocidade e as correias estão normais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, escolhe a correção mais coerente com o sintoma. Qual é ela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reajustar o nivelamento e limpar o bico.</li>
+                        <li><span class="letra">B)</span>Reduzir a temperatura e ajustar a retração no fatiador.</li>
+                        <li><span class="letra">C)</span>Conferir as correias e reduzir a velocidade.</li>
+                        <li><span class="letra">D)</span>Limpar a mesa e usar borda (brim).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Falha como aprendizado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, resume como a turma trata uma falha de impressão. Qual conduta a aula adota?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Analisar a causa, corrigir no fatiador e imprimir de novo.</li>
+                        <li><span class="letra">B)</span>Esconder a peça com defeito e imprimir outra igual.</li>
+                        <li><span class="letra">C)</span>Culpar a máquina e trocar de impressora.</li>
+                        <li><span class="letra">D)</span>Ignorar o defeito e entregar a peça assim mesmo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Situação-problema da peça solta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Entender princípios de design para impressão 3D (espessura de paredes, suportes, orientação)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na impressão anterior, a peça se soltou da mesa e você foi chamado para descobrir o motivo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, propõe a correção mais coerente. Qual hipótese e ação são adequadas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verificar a correia e aumentar a velocidade.</li>
+                        <li><span class="letra">B)</span>Reduzir a temperatura do bico e a retração.</li>
+                        <li><span class="letra">C)</span>Verificar se a mesa estava suja ou fria e corrigir limpando, aquecendo e usando borda (brim).</li>
+                        <li><span class="letra">D)</span>Reorientar a peça para ter mais suportes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Ficha de entrega</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, prepara a entrega da aula. O que a ficha deve registrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente o nome do aluno e a data.</li>
+                        <li><span class="letra">B)</span>Apenas a cor do filamento escolhido.</li>
+                        <li><span class="letra">C)</span>O preço do filamento e da máquina.</li>
+                        <li><span class="letra">D)</span>A configuração usada, as falhas observadas e os ajustes feitos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Materiais da dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como as impressoras 3D funcionam (fatiamento, extrusão, camadas)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você, como aluno consultor, confere a lista de materiais da dinâmica do chaveiro. Qual item NÃO faz parte dela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Espátulas.</li>
+                        <li><span class="letra">B)</span>Ferro de solda.</li>
+                        <li><span class="letra">C)</span>Álcool isopropílico.</li>
+                        <li><span class="letra">D)</span>Papel para nivelamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Oficinas de Impressão 3D e Robótica — Aula 04: Operação de Impressoras 3D</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/indice-bloqueio-aula-config.js"></script>
+    <script src="../../../../assets/js/atividade-bloqueio-aula.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
