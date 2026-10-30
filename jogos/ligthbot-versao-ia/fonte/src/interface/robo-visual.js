@@ -27,7 +27,7 @@ const CLASSE_POR_COMANDO = Object.freeze({
 
 const CLASSES_ESTADO = Object.freeze([...new Set(Object.values(CLASSE_POR_COMANDO))]);
 
-// Partes do robô, desenhadas a partir da base (0,0) para cima: pés, pernas, corpo e cabeça.
+// Partes do robô, desenhadas a partir da base (0,0) para cima: pés, pernas, braços, corpo e cabeça.
 const PARTES = Object.freeze([
   {
     tag: "rect",
@@ -48,6 +48,16 @@ const PARTES = Object.freeze([
     tag: "rect",
     classe: "robo__pe robo__pe--direito",
     atributos: { x: 2, y: -3, width: 7, height: 3, rx: 1.5 },
+  },
+  {
+    tag: "rect",
+    classe: "robo__braco robo__braco--esquerdo",
+    atributos: { x: -14, y: -24, width: 4, height: 12, rx: 2 },
+  },
+  {
+    tag: "rect",
+    classe: "robo__braco robo__braco--direito",
+    atributos: { x: 10, y: -24, width: 4, height: 12, rx: 2 },
   },
   {
     tag: "rect",
@@ -89,6 +99,30 @@ function criarGrupoRobo() {
 }
 
 /**
+ * Move o grupo para a nova posição; se já estava em outra, desliza entre as duas.
+ * A animação usa a Web Animations API (sem `style` inline); o atributo guarda o destino.
+ * @param {SVGGElement} grupo - Grupo `g.robo`.
+ * @param {{x: number, y: number}} destino - Nova posição no SVG.
+ * @returns {void}
+ */
+function deslizarAte(grupo, destino) {
+  const anterior = grupo.dataset.posicao;
+  const atual = `${destino.x},${destino.y}`;
+  grupo.dataset.posicao = atual;
+  grupo.setAttribute("transform", `translate(${destino.x} ${destino.y})`);
+  if (!anterior || anterior === atual || prefereMovimentoReduzido()) return;
+
+  const [antesX, antesY] = anterior.split(",");
+  grupo.animate(
+    [
+      { transform: `translate(${antesX}px, ${antesY}px)` },
+      { transform: `translate(${destino.x}px, ${destino.y}px)` },
+    ],
+    { duration: DURACAO_ANIMACAO_MS, easing: "ease-in-out" },
+  );
+}
+
+/**
  * Cria ou atualiza o robô na camada do mapa, na célula e orientação atuais.
  * @param {Element} elemento - Contêiner do mapa (com `g.mapa__camada-robo`).
  * @param {{x: number, y: number, orientacao: number}} robo - Estado do robô.
@@ -107,7 +141,7 @@ export function desenharRobo(elemento, robo, mundo) {
 
   const altura = obterAltura(mundo, robo.x, robo.y);
   const posicao = projetarCelula(robo.x, robo.y, altura);
-  grupo.setAttribute("transform", `translate(${posicao.x} ${posicao.y})`);
+  deslizarAte(grupo, posicao);
   grupo.setAttribute("data-orientacao", String(robo.orientacao));
 }
 

@@ -82,6 +82,14 @@
   pointer-events: none;
 }
 
+.robo__braco {
+  fill: var(--cor-violeta);
+  stroke: var(--cor-ciano);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center top;
+}
+
 .robo__perna {
   fill: var(--cor-violeta);
   stroke: var(--cor-ciano);
@@ -141,21 +149,29 @@
 /* ---------- Animações de ação (~300 ms cada) ---------- */
 
 .robo--andando { animation: robo-andar 300ms ease-in-out; }
-.robo--andando .robo__perna--esquerda { animation: perna-balancar 300ms ease-in-out; }
-.robo--andando .robo__perna--direita { animation: perna-balancar-oposta 300ms ease-in-out; }
+.robo--andando .robo__perna--esquerda,
+.robo--andando .robo__braco--direito { animation: membro-balancar 150ms ease-in-out 2; }
+.robo--andando .robo__perna--direita,
+.robo--andando .robo__braco--esquerdo { animation: membro-balancar-oposto 150ms ease-in-out 2; }
+.robo--acendendo .robo__braco { animation: braco-levantar 300ms ease-in-out; }
 .robo--pulando { animation: robo-pular 300ms ease-out; }
 .robo--girando { animation: robo-girar 300ms ease-in-out; }
 .robo--acendendo { animation: robo-acender 300ms ease-in-out; }
 .robo--falha { animation: robo-falhar 300ms linear; }
 
-@keyframes perna-balancar {
-  0%, 100% { rotate: 0deg; }
-  50% { rotate: 22deg; }
+@keyframes membro-balancar {
+  0%, 100% { rotate: -28deg; }
+  50% { rotate: 28deg; }
 }
 
-@keyframes perna-balancar-oposta {
+@keyframes membro-balancar-oposto {
+  0%, 100% { rotate: 28deg; }
+  50% { rotate: -28deg; }
+}
+
+@keyframes braco-levantar {
   0%, 100% { rotate: 0deg; }
-  50% { rotate: -22deg; }
+  50% { rotate: 150deg; }
 }
 
 @keyframes robo-andar {
@@ -193,6 +209,9 @@
   .robo--andando,
   .robo--andando .robo__perna--esquerda,
   .robo--andando .robo__perna--direita,
+  .robo--andando .robo__braco--esquerdo,
+  .robo--andando .robo__braco--direito,
+  .robo--acendendo .robo__braco,
   .robo--pulando,
   .robo--girando,
   .robo--acendendo,

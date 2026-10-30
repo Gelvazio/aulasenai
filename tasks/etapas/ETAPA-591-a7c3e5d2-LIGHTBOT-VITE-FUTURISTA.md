@@ -341,3 +341,18 @@
 
 - **Entrega:** robo-visual.js (pernas e pés atrás do corpo) e mapa.css (estilo e balanço das pernas ao andar) por Claude Code (Sonnet 5.5) (local · main).
 - **Verificação:** node --check sem erro; npm run build sem erro; reduced-motion cobre a animação das pernas
+
+### #444.26 — Braços no robô e andar com deslizamento e pernas em movimento
+**Próximo passo:** entregue.
+- **Nível:** MEDIO — classificado (jev (confiança 0.92))
+- **Modelo:** só Sonnet — nunca outro
+- **Effort:** medium
+- **JEV-AI-SUGGESTION:** SIM
+- **Fonte:** jev (confiança 0.92)
+- **Pedido:** usuário, no chat: "e os bracos?" e "e deve andar movimentando as pernas" (subtarefa nova da mãe atual, regra C26).
+- **Arquivos:** fonte/src/interface/robo-visual.js, fonte/src/estilos/mapa.css, build em ligthbot-versao-ia/
+- **Critérios:** dois braços nas laterais do corpo; ao andar ou pular o robô desliza até a nova célula (Web Animations API, sem `style=`); pernas e braços se movem em oposição; tudo desligado com prefers-reduced-motion; build refeito.
+- **Verificação:** `node --check`; `npm run build` sem erro.
+
+- **Entrega:** robo-visual.js (braços e deslizamento entre células), mapa.css (balanço de pernas e braços ao andar, braços erguidos ao acender) e build refeito por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; npm run build sem erro; reduced-motion cobre as novas animações; assets antigos removidos
