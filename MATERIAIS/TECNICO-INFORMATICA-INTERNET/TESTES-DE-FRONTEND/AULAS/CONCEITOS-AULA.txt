@@ -10,8 +10,6 @@ JSON
 
 PARAMETROS
 
-
-
 elementos dom
 SUBMIT DE FORMULARIOS
 atributos, ids, classes css, estilos
