@@ -149,7 +149,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.11 — Desenho e animação do robô (andar, pular, girar, acender)
-**Próximo passo:** depende da #444.10.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -158,6 +158,8 @@
 - **Arquivos:** fonte/src/interface/robo-visual.js
 - **Critérios:** Animação desligada com prefers-reduced-motion.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/robo-visual.js (desenharRobo, animarAcao) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.12 — Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover)
 **Próximo passo:** depende da #444.11.
