@@ -303,3 +303,5 @@
 | #441 | Pasta jogos com 2 cards (Light Bot e Projetos Scratch) | 🟡 | — | — | ✅ Concluído | — | ETAPA-588-9b1d4e72 |
 | #442.1 | Adicionar o 3º card em jogos/index.html | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-589-3e6a1c95 |
 | #442 | Card Light Bot (versão SVG) na página de jogos | 🟡 | — | — | ✅ Concluído | — | ETAPA-589-3e6a1c95 |
+| #443.1 | Adicionar o 4º card em jogos/index.html | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-590-6f2b8d14 |
+| #443 | Card Light Bot (versão IA) na página de jogos | 🟡 | — | — | ✅ Concluído | — | ETAPA-590-6f2b8d14 |

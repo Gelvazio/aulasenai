@@ -9,3 +9,4 @@
 - **Nível:** LEVE — Jev (mesmo tipo da #442.1) · **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash · **Effort:** low
 - **Critérios:** classes iguais às dos outros cards; sem `style=` nem `<script>` inline.
 - **Verificação:** `grep -c 'class="cartao-jogo"' jogos/index.html` = 4.
+- **Entrega #443.1:** 4º card em `jogos/index.html` (executor-leve, Haiku 5.5). **Verificação:** 4 cards no HTML, sem inline; pasta `ligthbot-versao-ia/` existe mas está vazia. Tela não conferida.
