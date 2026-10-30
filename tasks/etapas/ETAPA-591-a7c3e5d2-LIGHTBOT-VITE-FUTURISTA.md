@@ -279,7 +279,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.21 — main.js: montar tudo com injeção de dependências
-**Próximo passo:** depende da #444.20.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -288,6 +288,8 @@
 - **Arquivos:** fonte/src/main.js
 - **Critérios:** Núcleo sem DOM; interface recebe o núcleo por parâmetro.
 - **Verificação:** `node --check`; nenhum arquivo > 1000 linhas e nenhuma função > 45.
+- **Entrega:** fonte/src/main.js, fonte/src/aplicacao/jogo.js e fonte/src/aplicacao/niveis.js (controlador com dependências injetadas, carga dos níveis, estilos importados) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; linhas ≤ 100; imports conferidos contra os exports dos módulos (build real na #444.22)
 
 ### #444.22 — Build para ligthbot-versao-ia/ e conferência da saída
 **Próximo passo:** depende da #444.21.

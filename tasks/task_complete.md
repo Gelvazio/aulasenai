@@ -327,3 +327,4 @@
 | #444.18 | CSS: mapa e robô | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.19 | CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.20 | Fundo animado: rede de nós em SVG | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.21 | main.js: montar tudo com injeção de dependências | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
