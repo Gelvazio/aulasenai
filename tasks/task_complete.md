@@ -343,3 +343,12 @@
 | #436.7 | Objetiva de 50 questões da aula 07 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
 | #436.8 | Objetiva de 50 questões da aula 08 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
 | #436.9 | Objetiva de 50 questões da aula 09 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.10 | Prática 10 × 3 da aula 01 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.11 | Prática 10 × 3 da aula 02 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.12 | Prática 10 × 3 da aula 03 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.13 | Prática 10 × 3 da aula 04 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.14 | Prática 10 × 3 da aula 05 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.15 | Prática 10 × 3 da aula 06 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.16 | Prática 10 × 3 da aula 07 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.17 | Prática 10 × 3 da aula 08 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |
+| #436.18 | Prática 10 × 3 da aula 09 | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-593-a5c81e30 |

@@ -1,0 +1,57 @@
+-- Seed gerado por assets/gerador-avaliacao-discursiva (não editar à mão; fora do Git).
+-- Rodar depois de database/2026-10-01-respostas-discursivas.sql. Idempotente.
+-- A avaliação nasce BLOQUEADA (ativo = false): o professor libera no índice de atividades.
+do $$
+declare
+  v_aula bigint;
+  v_atividade bigint;
+begin
+  select a.id into v_aula from public.aulas a join public.materia m on m.id = a.materia_id
+    where m.descricao = 'Oficinas de Impressão 3D e Robótica' and a.numero = 2
+    order by a.id limit 1;
+  if v_aula is null then
+    raise exception 'Aula 2 da matéria não encontrada';
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, descricao, pagina,
+      total_itens, ativo)
+    values ('Atividade Prática — Aula 02', 'PENDENTE', v_aula, 'Atividade — Atividade Prática — Aula 02 (10 questões discursivas)',
+      '/MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.html', 10, false)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      descricao = excluded.descricao, total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.topico_discursivo where atividade_id = v_atividade;
+  insert into public.topico_discursivo (atividade_id, item, topico, enunciado, pontos,
+      resposta_esperada, criterios) values
+      (v_atividade, 1, 1, 'Explique o que é o plano de trabalho (Workplane) e para que ele serve.', 0.4, 'O plano de trabalho (Workplane) é a superfície azul onde as peças são apoiadas e construídas.', 'Nota cheia: diz que é a superfície azul/base onde as peças ficam apoiadas e para que serve. Metade: só cita o nome ou descreve de forma vaga. Zero: em branco ou errado.'),
+      (v_atividade, 1, 2, 'Cite três formas que o colega encontra na biblioteca de formas e diga para que serve o painel da forma.', 0.3, 'Formas da biblioteca: caixa, cilindro, esfera, cone, pirâmide, texto (qualquer três). O painel da forma altera o tamanho, o tipo (sólido ou furo) e a cor da forma.', 'Nota cheia: três formas certas e a função do painel. Metade: só as formas ou só o painel, ou duas formas e o painel. Zero: nenhuma certa.'),
+      (v_atividade, 1, 3, 'Explique o que a câmera permite fazer e por que é importante conferir a peça de todos os lados.', 0.3, 'A câmera permite girar, aproximar e centralizar a vista. É importante conferir a peça de todos os lados para achar erros de posição ou formato que não aparecem de um único ângulo.', 'Nota cheia: cita pelo menos duas ações da câmera (girar, aproximar, centralizar) e o motivo de conferir todos os lados. Metade: só as ações ou só o motivo. Zero: sem relação.'),
+      (v_atividade, 2, 1, 'Diga para que serve o Fusion 360 e para que serve o Blender.', 0.4, 'Fusion 360: projetos técnicos. Blender: arte e animação.', 'Nota cheia: os dois usos certos. Metade: um certo. Zero: nenhum ou trocados.'),
+      (v_atividade, 2, 2, 'Diga qual programa a oficina utiliza para modelar as peças e quais ferramentas dele você já conhece.', 0.3, 'A oficina usa apenas o Tinkercad. Ferramentas que o aluno já conhece: mover, elevar, escalar, girar, alinhar, agrupar e furo (pelo menos duas).', 'Nota cheia: Tinkercad e pelo menos duas ferramentas. Metade: Tinkercad com uma ferramenta ou sem ferramentas. Zero: outro programa.'),
+      (v_atividade, 2, 3, 'Indique qual programa seria adequado para modelar a planta de uma casa e justifique.', 0.3, 'SketchUp, porque é o programa usado em arquitetura.', 'Nota cheia: SketchUp com a justificativa de arquitetura. Metade: SketchUp sem justificativa. Zero: outro programa.'),
+      (v_atividade, 3, 1, 'Explique como mover a forma e como elevá-la acima do plano de trabalho.', 0.3, 'Mover: arrastar a forma pela base. Elevar: arrastar a seta de altura (a seta para cima) acima do plano de trabalho.', 'Nota cheia: descreve mover e elevar. Metade: só um dos dois. Zero: errado.'),
+      (v_atividade, 3, 2, 'Explique como escalar a forma mantendo a proporção.', 0.4, 'Puxar os quadradinhos de tamanho segurando a tecla Shift, o que mantém a proporção; também é possível digitar as medidas no painel da forma.', 'Nota cheia: puxar os quadradinhos com Shift. Metade: cita escalar pelos quadradinhos sem a tecla Shift. Zero: errado ou em branco.'),
+      (v_atividade, 3, 3, 'Explique por que a caixa ficou deformada e como evitar isso.', 0.3, 'A caixa deformou porque o quadradinho foi puxado sem manter a proporção. Para evitar, segurar Shift ao escalar (ou digitar as medidas).', 'Nota cheia: causa (sem Shift/sem manter a proporção) e solução. Metade: só um. Zero: sem relação.'),
+      (v_atividade, 4, 1, 'Explique como girar uma forma no Tinkercad.', 0.3, 'Girar pelas setas curvas ao redor da forma, em passos de ângulo.', 'Nota cheia: cita as setas curvas e o giro em ângulo. Metade: só diz que gira, sem as setas. Zero: errado.'),
+      (v_atividade, 4, 2, 'Explique para que serve a ferramenta de alinhamento e como usá-la.', 0.4, 'A ferramenta de alinhamento centraliza duas ou mais formas. Seleciona-se as formas, usa-se a ferramenta de alinhamento e escolhe-se o alinhamento desejado.', 'Nota cheia: seleção de duas ou mais formas e a função de centralizar/alinhar. Metade: só a função ou só o procedimento. Zero: errado.'),
+      (v_atividade, 4, 3, 'Diga que ferramenta você usaria para centralizar o texto na base e por quê.', 0.3, 'A ferramenta de alinhamento, selecionando o texto e a base, para centralizar o texto na base.', 'Nota cheia: alinhamento com a justificativa de centralizar. Metade: alinhamento sem justificativa. Zero: outra ferramenta.'),
+      (v_atividade, 5, 1, 'Explique o que a ferramenta de agrupar faz com as formas.', 0.3, 'Agrupar une as formas em uma só peça.', 'Nota cheia: diz que une as formas em uma peça só. Metade: resposta vaga. Zero: errado.'),
+      (v_atividade, 5, 2, 'Explique o que acontece se as formas não forem agrupadas.', 0.4, 'Se não agrupar, as formas continuam separadas, não formam uma peça única; o furo não é subtraído e a peça pode não ser tratada como uma só.', 'Nota cheia: formas continuam separadas/sem formar uma peça e pelo menos uma consequência. Metade: só que continuam separadas. Zero: errado.'),
+      (v_atividade, 5, 3, 'Explique o que fazer para corrigir uma forma depois de o grupo já ter sido criado.', 0.3, 'Desagrupar o grupo, corrigir a forma e agrupar de novo.', 'Nota cheia: desagrupar e corrigir. Metade: cita desagrupar sem explicar. Zero: errado.'),
+      (v_atividade, 6, 1, 'Explique o que é uma forma do tipo furo e o que ela faz com a forma sólida.', 0.4, 'Forma marcada como furo é subtraída da forma sólida quando as duas são agrupadas, deixando um vazio no lugar.', 'Nota cheia: subtrai da sólida ao agrupar. Metade: diz que faz um buraco sem citar o agrupamento. Zero: errado.'),
+      (v_atividade, 6, 2, 'Descreva os passos para fazer o furo de 5 mm no centro do cilindro de 8 mm.', 0.3, 'Criar o cilindro de 8 mm (sólido); criar outro cilindro de 5 mm; no painel da forma marcar como furo; posicionar e alinhar no centro do cilindro de 8 mm; agrupar.', 'Nota cheia: cilindro de 5 mm marcado como furo, centralizado e agrupado. Metade: falta um passo. Zero: dois ou mais passos faltando ou errados.'),
+      (v_atividade, 6, 3, 'Explique por que o furo não aparece quando o cilindro continua sólido e quando as formas não são agrupadas.', 0.3, 'Porque o cilindro sólido não subtrai nada (só o furo subtrai) e, sem agrupar, o furo não é subtraído da forma sólida.', 'Nota cheia: as duas causas. Metade: uma. Zero: sem relação.'),
+      (v_atividade, 7, 1, 'Diga em que unidade o Tinkercad trabalha e por que é melhor digitar as medidas do que confiar só no olho.', 0.3, 'O Tinkercad trabalha em milímetros. É melhor digitar as medidas porque o olho engana e a peça precisa ter o tamanho certo para imprimir.', 'Nota cheia: milímetros e o motivo. Metade: só um. Zero: errado.'),
+      (v_atividade, 7, 2, 'Escreva as medidas do chaveiro típico: a base e o furo.', 0.4, 'Base: 50 × 20 × 3 mm. Furo: 5 mm.', 'Nota cheia: base 50 × 20 × 3 mm e furo de 5 mm. Metade: um dos dois certo. Zero: nenhum certo.'),
+      (v_atividade, 7, 3, 'Explique por que o furo deve ficar a pelo menos 4 mm da borda.', 0.3, 'Para sobrar material entre o furo e a borda e a peça não ficar frágil ou rasgar com o uso.', 'Nota cheia: material suficiente/não quebrar. Metade: cita só a distância de 4 mm. Zero: sem relação.'),
+      (v_atividade, 8, 1, 'Diga qual é a espessura mínima de parede recomendada para essa impressora.', 0.3, 'Paredes com pelo menos 1,2 mm.', 'Nota cheia: 1,2 mm. Metade: valor próximo sem justificativa. Zero: errado.'),
+      (v_atividade, 8, 2, 'Explique o que pode acontecer com detalhes menores que 1 mm.', 0.3, 'Detalhes menores que 1 mm podem não ser impressos.', 'Nota cheia: podem não ser impressos/sumir. Metade: resposta vaga. Zero: errado.'),
+      (v_atividade, 8, 3, 'Diga se a parede de 0,8 mm e o detalhe de 0,5 mm estão adequados e proponha a correção.', 0.4, 'Não estão adequados: a parede de 0,8 mm é menor que 1,2 mm e o detalhe de 0,5 mm é menor que 1 mm. Corrigir: parede com pelo menos 1,2 mm e detalhe ampliado ou removido.', 'Nota cheia: reprova os dois e propõe correção. Metade: reprova só um ou não propõe correção. Zero: aprova o projeto.'),
+      (v_atividade, 9, 1, 'Diga qual deve ser o traço mínimo das letras e qual a altura do relevo recomendada.', 0.4, 'Traço de pelo menos 1,5 mm e altura do relevo de 1 a 2 mm.', 'Nota cheia: os dois valores certos. Metade: um. Zero: nenhum.'),
+      (v_atividade, 9, 2, 'Diga se as letras do colega estão adequadas e justifique.', 0.3, 'A altura de 2 mm está certa, mas o traço de 1 mm é menor que 1,5 mm; as letras não estão adequadas e precisam ser engrossadas.', 'Nota cheia: aponta o traço como problema e a altura como adequada. Metade: só diz que não está adequado. Zero: aprova as letras.'),
+      (v_atividade, 9, 3, 'Explique como posicionar o texto sobre a base, indicando a altura e a ferramenta para centralizá-lo.', 0.3, 'Inserir a forma de texto com o nome, com altura de 2 mm sobre a base, e usar o alinhamento para centralizar o texto na base.', 'Nota cheia: altura de 2 mm sobre a base e alinhamento. Metade: um. Zero: errado.'),
+      (v_atividade, 10, 1, 'Descreva, em ordem, os passos para montar a base, a argola com furo e o texto.', 0.4, '1) Criar a caixa de 50 × 20 × 3 mm para a base. 2) Acrescentar um cilindro de 8 mm como argola e um cilindro furo de 5 mm no centro dele. 3) Inserir o texto com o nome, altura de 2 mm sobre a base. 4) Alinhar as peças, agrupar tudo e conferir a espessura mínima.', 'Nota cheia: os quatro passos na ordem. Metade: três passos ou ordem trocada. Zero: dois ou menos.'),
+      (v_atividade, 10, 2, 'Liste as medidas, em milímetros, de cada peça do chaveiro.', 0.3, 'Base: 50 × 20 × 3 mm; argola: cilindro de 8 mm; furo: 5 mm; texto: altura de 2 mm sobre a base (traço de pelo menos 1,5 mm).', 'Nota cheia: base, argola, furo e texto certos. Metade: três certos. Zero: dois ou menos.'),
+      (v_atividade, 10, 3, 'Descreva o que você conferiria antes de entregar o projeto.', 0.3, 'Conferir a espessura mínima (paredes de pelo menos 1,2 mm e nada menor que 1 mm), se as peças estão alinhadas e agrupadas, o furo a pelo menos 4 mm da borda, girar a peça na tela para ver todos os lados e salvar o projeto.', 'Nota cheia: pelo menos três conferências corretas. Metade: duas. Zero: uma ou nenhuma.');
+end $$;

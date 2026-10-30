@@ -1,0 +1,57 @@
+-- Seed gerado por assets/gerador-avaliacao-discursiva (não editar à mão; fora do Git).
+-- Rodar depois de database/2026-10-01-respostas-discursivas.sql. Idempotente.
+-- A avaliação nasce BLOQUEADA (ativo = false): o professor libera no índice de atividades.
+do $$
+declare
+  v_aula bigint;
+  v_atividade bigint;
+begin
+  select a.id into v_aula from public.aulas a join public.materia m on m.id = a.materia_id
+    where m.descricao = 'Oficinas de Impressão 3D e Robótica' and a.numero = 1
+    order by a.id limit 1;
+  if v_aula is null then
+    raise exception 'Aula 1 da matéria não encontrada';
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, descricao, pagina,
+      total_itens, ativo)
+    values ('Atividade Prática — Aula 01', 'PENDENTE', v_aula, 'Atividade — Atividade Prática — Aula 01 (10 questões discursivas)',
+      '/MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html', 10, false)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      descricao = excluded.descricao, total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.topico_discursivo where atividade_id = v_atividade;
+  insert into public.topico_discursivo (atividade_id, item, topico, enunciado, pontos,
+      resposta_esperada, criterios) values
+      (v_atividade, 1, 1, 'Defina manufatura aditiva e explique como a peça é formada.', 0.3, 'Manufatura aditiva é fabricar uma peça adicionando material em camadas, uma sobre a outra, até formar o objeto.', 'Nota cheia: diz que o material é adicionado e que isso ocorre em camadas. Metade: cita só um dos dois. Zero: confunde com retirar material ou deixa em branco.'),
+      (v_atividade, 1, 2, 'Defina usinagem e explique o que ela faz com o material em relação à manufatura aditiva.', 0.3, 'Usinagem é fabricar retirando material de um bloco (cortando, furando, desbastando); é o contrário da manufatura aditiva, que adiciona material.', 'Nota cheia: diz que a usinagem retira material e contrasta com a adição da aditiva. Metade: define a usinagem sem contrastar, ou contrasta sem definir. Zero: inverte os conceitos.'),
+      (v_atividade, 1, 3, 'Cite uma vantagem de fabricar essa peça única sob demanda por manufatura aditiva.', 0.4, 'Exemplos: não precisa esperar importação ou estoque; faz só a peça necessária, no mesmo dia; imprime e testa o encaixe na hora; evita desperdiçar um bloco inteiro de material.', 'Nota cheia: uma vantagem coerente com peça única sob demanda. Metade: vantagem genérica, sem ligação com a peça única. Zero: vantagem errada ou em branco.'),
+      (v_atividade, 2, 1, 'Diga em que década surgiram as primeiras máquinas e para que eram usadas.', 0.3, 'As primeiras máquinas surgiram nos anos 1980 e eram usadas para prototipagem rápida (fazer protótipos).', 'Nota cheia: década (1980) e uso (prototipagem rápida). Metade: só um dos dois. Zero: década errada e sem uso correto.'),
+      (v_atividade, 2, 2, 'Diga o que aconteceu com as tecnologias SLA e SLS nos anos 1990.', 0.3, 'Nos anos 1990 as tecnologias SLA e SLS se consolidaram na indústria, isto é, passaram a ser usadas de forma firme em empresas.', 'Nota cheia: cita SLA e SLS e a consolidação na indústria. Metade: cita só uma das tecnologias ou só a ideia de uso na indústria. Zero: sem relação.'),
+      (v_atividade, 2, 3, 'Explique por que a FDM ficou barata nos anos 2000 e 2010 e onde passou a ser usada.', 0.4, 'Com a expiração de patentes a FDM ficou barata, e passou a ser usada em escolas, oficinas e na cultura maker.', 'Nota cheia: cita o fim das patentes (ou o barateamento por patentes) e pelo menos um local de uso (escolas, oficinas, maker). Metade: só a causa ou só o local. Zero: sem relação.'),
+      (v_atividade, 3, 1, 'Indique a área de aplicação de cada um dos três pedidos (saúde, design ou indústria/manutenção).', 0.4, '(1) modelo anatômico e prótese: saúde; (2) joia personalizada: design; (3) peça de reposição: indústria/manutenção.', 'Nota cheia: as três áreas certas. Metade: duas certas. Zero: uma ou nenhuma.'),
+      (v_atividade, 3, 2, 'Cite uma aplicação da impressão 3D na educação.', 0.3, 'Exemplos: modelos de estudo em escolas (peças didáticas, maquetes, modelos para aula), objetos para atividades de oficina.', 'Nota cheia: uma aplicação educacional coerente. Zero: aplicação de outra área ou em branco.'),
+      (v_atividade, 3, 3, 'Explique o que significa produzir uma peça "sob demanda".', 0.3, 'Produzir sob demanda é fazer a peça só quando ela é necessária (um protótipo, uma peça de reposição ou um modelo personalizado), sem produção em massa nem estoque.', 'Nota cheia: explica que se produz quando e quanto for preciso, com exemplo ou ideia de personalização. Metade: ideia correta, muito vaga. Zero: errado ou em branco.'),
+      (v_atividade, 4, 1, 'Explique como a FDM forma a peça, dizendo o que sai pelo bico.', 0.3, 'Na FDM o plástico derretido sai por um bico aquecido e é depositado camada por camada, esfriando e formando a peça.', 'Nota cheia: plástico derretido, bico e camadas. Metade: dois desses. Zero: um ou nenhum.'),
+      (v_atividade, 4, 2, 'Cite três materiais (filamentos) usados na FDM.', 0.3, 'Três entre: PLA, ABS, PETG, TPU.', 'Nota cheia: três filamentos corretos. Metade: dois. Zero: um ou nenhum.'),
+      (v_atividade, 4, 3, 'Descreva o acabamento da superfície e o custo da FDM em comparação com SLA e SLS.', 0.4, 'O acabamento mostra linhas de camada visíveis, e o custo da FDM é o menor entre as três tecnologias.', 'Nota cheia: linhas de camada visíveis e menor custo. Metade: só um. Zero: errado ou em branco.'),
+      (v_atividade, 5, 1, 'Explique como a SLA forma a peça, dizendo o que endurece e o que causa o endurecimento.', 0.3, 'Na SLA, uma luz (laser ou tela) endurece a resina líquida fotossensível, camada por camada.', 'Nota cheia: resina líquida endurecida pela luz. Metade: só um desses. Zero: confunde com fusão de pó ou plástico derretido.'),
+      (v_atividade, 5, 2, 'Descreva o acabamento da SLA e cite dois usos típicos.', 0.3, 'A superfície é lisa e com detalhes finos. Usos típicos: miniaturas, joias, moldes, odontologia (duas dessas).', 'Nota cheia: acabamento liso/detalhes finos e dois usos corretos. Metade: acabamento ou dois usos certos, mas não os dois. Zero: errado ou em branco.'),
+      (v_atividade, 5, 3, 'Diga se a SLA precisa de suportes e o que acontece com eles depois da impressão.', 0.4, 'Sim, a SLA precisa de suportes, que depois da impressão são retirados da peça.', 'Nota cheia: precisa de suportes e são retirados depois. Metade: só um. Zero: diz que não precisa ou em branco.'),
+      (v_atividade, 6, 1, 'Explique como a SLS forma a peça, dizendo o que o laser faz com o pó.', 0.3, 'Na SLS, o laser funde os grãos de pó (como o nylon), camada por camada, formando a peça.', 'Nota cheia: laser, fusão do pó e camadas. Metade: dois desses. Zero: um ou nenhum.'),
+      (v_atividade, 6, 2, 'Explique por que a SLS dispensa suportes.', 0.3, 'Porque o próprio pó que não foi fundido sustenta a peça durante a impressão, então não precisa de suportes.', 'Nota cheia: o pó sustenta a peça. Metade: diz que dispensa suportes sem explicar. Zero: errado ou em branco.'),
+      (v_atividade, 6, 3, 'Cite o uso típico da SLS e diga como é o seu custo em comparação com FDM e SLA.', 0.4, 'Uso típico: peças funcionais resistentes. O custo é o maior entre as três tecnologias.', 'Nota cheia: peças funcionais resistentes e custo maior. Metade: só um. Zero: errado ou em branco.'),
+      (v_atividade, 7, 1, 'Indique a tecnologia (FDM, SLA ou SLS) mais adequada para cada um dos três pedidos.', 0.4, '(1) porta-canetas: FDM; (2) joia com detalhes finos: SLA; (3) engrenagem resistente: SLS.', 'Nota cheia: as três tecnologias certas. Metade: duas certas. Zero: uma ou nenhuma.'),
+      (v_atividade, 7, 2, 'Indique o material mais adequado para cada pedido (filamento, resina ou pó).', 0.3, '(1) filamento, como PLA; (2) resina fotossensível; (3) pó, como o nylon.', 'Nota cheia: os três materiais coerentes com as tecnologias escolhidas. Metade: dois. Zero: um ou nenhum.'),
+      (v_atividade, 7, 3, 'Justifique em duas frases a escolha para o pedido da joia.', 0.3, 'Exemplo: "Escolhi a SLA porque ela endurece resina com luz e entrega superfície lisa e detalhes finos. Por isso é indicada para joias e miniaturas."', 'Nota cheia: duas frases que citam a SLA e relacionam detalhes finos e superfície lisa à joia. Metade: justificativa de uma só ideia, ou só uma frase. Zero: justificativa sem relação.'),
+      (v_atividade, 8, 1, 'Indique o filamento (PLA, ABS, PETG ou TPU) mais adequado para cada um dos quatro pedidos.', 0.4, '(1) PLA; (2) ABS; (3) PETG; (4) TPU.', 'Nota cheia: os quatro certos. Metade: dois ou três. Zero: um ou nenhum.'),
+      (v_atividade, 8, 2, 'Justifique a escolha do filamento do pedido (1) e do pedido (4).', 0.3, '(1) PLA é fácil de imprimir, tem baixo custo e é bom para estudo; (4) TPU é flexível, indicado para peças elásticas.', 'Nota cheia: justificativa correta dos dois pedidos. Metade: um dos dois. Zero: nenhum coerente.'),
+      (v_atividade, 8, 3, 'Diga que cuidados a impressão com ABS exige.', 0.3, 'A impressão com ABS exige mesa aquecida e ventilação (ambiente ventilado).', 'Nota cheia: mesa aquecida e ventilação. Metade: um dos dois. Zero: errado ou em branco.'),
+      (v_atividade, 9, 1, 'Explique o que o fatiador faz com o modelo 3D.', 0.3, 'O fatiador "corta" o modelo 3D em dezenas ou centenas de camadas finas.', 'Nota cheia: diz que corta/divide o modelo em camadas finas. Metade: diz que prepara o modelo sem citar as camadas. Zero: errado ou em branco.'),
+      (v_atividade, 9, 2, 'Explique o que é o G-code e o que a impressora faz com ele.', 0.3, 'G-code é a lista de movimentos e temperaturas gerada pelo fatiador; a impressora a segue para imprimir a peça.', 'Nota cheia: movimentos e temperaturas, e a impressora seguindo o arquivo. Metade: só um desses. Zero: errado ou em branco.'),
+      (v_atividade, 9, 3, 'Explique por que as peças FDM têm linhas de camada visíveis, citando a altura de camada.', 0.4, 'Porque a peça é feita em camadas depositadas uma sobre a outra, e cada camada tem altura (geralmente entre 0,1 e 0,3 mm), o que deixa as linhas visíveis na superfície.', 'Nota cheia: camadas empilhadas e altura de camada (0,1 a 0,3 mm ou valor próximo). Metade: só um. Zero: errado ou em branco.'),
+      (v_atividade, 10, 1, 'Liste, em ordem, as quatro etapas do caminho da peça, do modelo ao acabamento.', 0.3, '1) modelo (3D); 2) fatiamento; 3) impressão; 4) acabamento.', 'Nota cheia: as quatro etapas na ordem certa. Metade: as quatro fora de ordem, ou três na ordem. Zero: duas ou menos.'),
+      (v_atividade, 10, 2, 'Explique o papel do extrusor, do bico aquecido e da mesa, citando a temperatura aproximada do bico para PLA.', 0.4, 'O extrusor empurra o filamento até o bico aquecido (cerca de 200 °C para PLA), que deposita o plástico sobre a mesa.', 'Nota cheia: extrusor empurra o filamento, bico aquecido deposita na mesa e temperatura próxima de 200 °C. Metade: dois desses. Zero: um ou nenhum.'),
+      (v_atividade, 10, 3, 'Explique como as camadas se unem para formar a peça.', 0.3, 'As camadas se unem ao esfriar, formando a peça.', 'Nota cheia: união das camadas pelo esfriamento. Metade: diz que se juntam sem citar o esfriamento. Zero: errado ou em branco.');
+end $$;

@@ -158,7 +158,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-01-INTRODUCAO-IMPRESSAO-3D.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-01.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-01-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.11 — Prática 10 × 3 da aula 02 — Modelagem 3D com Tinkercad
 
@@ -172,7 +172,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-02-MODELAGEM-3D-TINKERCAD.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-02.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-02-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.12 — Prática 10 × 3 da aula 03 — Geração de Arquivos STL e Fatiamento
 
@@ -186,7 +186,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-03-ARQUIVOS-STL-FATIAMENTO.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-03.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-03-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.13 — Prática 10 × 3 da aula 04 — Operação de Impressoras 3D
 
@@ -200,7 +200,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-04-OPERACAO-IMPRESSORAS-3D.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-04.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-04-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.14 — Prática 10 × 3 da aula 05 — Introdução a Robótica
 
@@ -214,7 +214,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-05-INTRODUCAO-ROBOTICA.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-05.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-05-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.15 — Prática 10 × 3 da aula 06 — Componentes de Robôs
 
@@ -228,7 +228,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-06-COMPONENTES-DE-ROBOS.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-06.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-06-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.16 — Prática 10 × 3 da aula 07 — Programação de Robôs Simples
 
@@ -242,7 +242,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-07-PROGRAMACAO-ROBOS-SIMPLES.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-07.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-07-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.17 — Prática 10 × 3 da aula 08 — Projeto Integrado: Impressão 3D + Robótica
 
@@ -256,7 +256,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-08-PROJETO-INTEGRADO-3D-ROBOTICA.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-08.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-08-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.18 — Prática 10 × 3 da aula 09 — Apresentação de Projetos
 
@@ -270,7 +270,7 @@
 - **Depende de:** —
 - **Descrição:** Ler `MATERIAIS/RIO_DO_SUL_MAIS_TECH/OFICINAS_IMPRESSAO_3D_ROBOTICA/CONTEUDO/AULA-09-APRESENTACAO-DE-PROJETOS.md` e gerar `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md` + `-GABARITO.md` (fora do Git) e a página pelo gerador discursivo (`assets/gerador-avaliacao-discursiva/`), seguindo `docs/regras/atividades.md`. Papel "Você como aluno consultor".
 - **Critérios de aceitação:** 10 questões, 3 tópicos cada (30 tópicos), 10 pontos no total, todo tópico com padrão de resposta no gabarito.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** `ATIVIDADE-PRATICA-AULA-09.md`, `-GABARITO.md`, `.html` e seed `database/2026-10-30-atividade-pratica-aula-09-seed-atividades.sql`. · **Verificação:** gerador: 10 questões, 30 tópicos, 10 pontos, 0 tópicos sem padrão; `.md` com 10 ITEM, gabarito com 30 blocos, HTML com 30 tópicos; sem empresa fictícia; HTML sem padrão de resposta.
 
 ### #436.19 — Índice, menu das atividades e status
 
