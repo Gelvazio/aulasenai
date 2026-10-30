@@ -51,7 +51,7 @@ h2 { font-size: clamp(1.2rem, 3vw, 1.6rem); color: var(--cor-magenta); text-shad
 .cabecalho { text-align: center; margin-bottom: 2rem; }
 .cabecalho p { color: var(--cor-texto-suave); margin: 0; }
 
-.grade-jogos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.grade-jogos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 
 /* Cartao holografico */
 .cartao-jogo {

@@ -9,3 +9,4 @@
 - **Nível:** LEVE — Jev (confiança 0,92) · **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash · **Effort:** low
 - **Critérios:** classes iguais às dos outros cards; sem `style=` nem `<script>` inline; grade continua boa (3 cards); `jogos.css` só muda se a grade precisar.
 - **Verificação:** `grep -c 'class="cartao-jogo"' jogos/index.html` = 3.
+- **Entrega #442.1:** 3º card em `jogos/index.html` (executor-leve, Haiku 5.5); grade de `jogos.css` passou a `auto-fit`. **Verificação:** 3 cards no HTML, sem inline; pasta `ligthbot-versao-svg/` existe mas está vazia (o link só abre o jogo quando houver `index.html` nela). Tela não conferida.

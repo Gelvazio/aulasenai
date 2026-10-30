@@ -301,3 +301,5 @@
 | #440 | AGENTS.md da pasta projetos-scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-587-5c2e8a41 |
 | #441.1 | Criar jogos/index.html e jogos/jogos.css | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-588-9b1d4e72 |
 | #441 | Pasta jogos com 2 cards (Light Bot e Projetos Scratch) | 🟡 | — | — | ✅ Concluído | — | ETAPA-588-9b1d4e72 |
+| #442.1 | Adicionar o 3º card em jogos/index.html | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-589-3e6a1c95 |
+| #442 | Card Light Bot (versão SVG) na página de jogos | 🟡 | — | — | ✅ Concluído | — | ETAPA-589-3e6a1c95 |
