@@ -31,7 +31,7 @@
 - **Anotação:** decisões sugeridas pelo executor a confirmar com o usuário: JUMP para baixo de qualquer altura, vitória checada a cada ação (substitui o texto da seção 5), limite de 1000 passos e salvaguarda para P1/P2 seguidos sem ação (8.4).
 
 ### #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore
-**Próximo passo:** depende da #444.1.
+**Próximo passo:** entregue.
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro
 - **Effort:** high
@@ -40,6 +40,8 @@
 - **Arquivos:** fonte/package.json, vite.config.js, fonte/index.html, .gitignore
 - **Critérios:** `root` = fonte, `outDir` = '../', `emptyOutDir` false, `base` './'; node_modules ignorado.
 - **Verificação:** `node --check vite.config.js`; JSON válido.
+- **Entrega:** arquivos criados em jogos/ligthbot-versao-ia/fonte/ (package.json, vite.config.js, index.html, .gitignore) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** JSON do package.json válido; node --check do vite.config.js; index.html sem style= nem script inline
 
 ### #444.3 — Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage)
 **Próximo passo:** depende da #444.2.

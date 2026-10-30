@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Bot · Versão IA</title>
+</head>
+<body>
+  <div id="fundo" class="fundo-rede" aria-hidden="true"></div>
+
+  <main class="pagina">
+    <header class="cabecalho">
+      <h1>LIGHT BOT</h1>
+      <p>Programe o robô para acender todas as luzes do mapa.</p>
+      <nav id="seletor-niveis" class="seletor-niveis" aria-label="Escolha do nível"></nav>
+    </header>
+
+    <section class="area-jogo" aria-label="Área do jogo">
+      <section class="painel painel-mapa" aria-labelledby="titulo-mapa">
+        <h2 id="titulo-mapa">MAPA</h2>
+        <div id="mapa" class="mapa" role="img" aria-label="Mapa do nível atual"></div>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="painel painel-programa" aria-labelledby="titulo-programa">
+        <h2 id="titulo-programa">PROGRAMA</h2>
+        <div id="paleta" class="paleta" role="group" aria-label="Comandos disponíveis"></div>
+        <div id="areas-programa" class="areas-programa">
+          <div id="area-main" class="area-comandos" data-area="main"></div>
+          <div id="area-proc1" class="area-comandos" data-area="proc1"></div>
+          <div id="area-proc2" class="area-comandos" data-area="proc2"></div>
+        </div>
+        <div id="controles" class="controles" role="group" aria-label="Controles da execução"></div>
+        <div id="telemetria" class="telemetria" aria-label="Telemetria da execução"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="tela-vitoria" class="tela-vitoria" aria-labelledby="titulo-vitoria"></dialog>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
