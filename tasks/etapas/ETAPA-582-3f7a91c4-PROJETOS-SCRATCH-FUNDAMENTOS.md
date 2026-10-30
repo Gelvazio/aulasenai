@@ -54,3 +54,9 @@
 **Próximo passo:** CSS em tela cheia (100dvh, cabeçalho compacto) e ajuste automático de escala do passo em `scratch.js`.
 - **Nível:** MEDIO · **Modelo:** só Sonnet · **Pedido:** "não deve ter barra de rolagem nas páginas dos projetos"
 - **Entrega #435.7:** CSS em tela cheia (100dvh, cabeçalho compacto) e `ajustarEscala` no `scratch.js` (reduz a fonte do passo até caber, mínimo 50%). **Verificação:** `node --check` ok; tela não conferida (sem navegador).
+
+### #435.8 — Só o passo ativo aparece (regressão da #435.7)
+**Próximo passo:** em `AULAS/projetos-scratch/assets/scratch.css`, trocar a regra `.pagina:has(.passo) > .cartao { display: flex; ... }` e suas variações (`> .cartao h1`, `p`, `.fichas`) para `> .cartao:not(.passo)`, e acrescentar `.passo { display: none; }` e `.passo.ativo { display: block; }` depois dela. Causa: o `article.passo.cartao` é filho direto de `.pagina`, então a regra do cabeçalho compacto (mais específica) forçou `display: flex` em todos os passos e eles aparecem empilhados e cortados.
+- **Nível:** LEVE — Jev (confiança 0,91) · **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash · **Effort:** low
+- **Critérios:** só um `.passo` visível por vez; sem barra de rolagem; resto do CSS intacto.
+- **Verificação:** leitura do CSS (seletores com `:not(.passo)`); tela conferida pelo usuário.
