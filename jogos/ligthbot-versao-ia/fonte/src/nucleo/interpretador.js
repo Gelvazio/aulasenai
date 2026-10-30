@@ -14,46 +14,63 @@ import { estaVazio } from "./programa.js";
 
 const PRIMEIRO_SLOT = 0;
 
-/**
- * Cria o interpretador de uma execução.
- * @param {object} dependencias - Dependências injetadas.
- * @param {object} dependencias.programa - Slots de MAIN, PROC1 e PROC2.
- * @param {object} dependencias.mundo - Mundo do nível.
- * @param {object} dependencias.robo - Robô.
- * @param {Function} dependencias.executarAcao - (robo, mundo, comando) => boolean.
- * @param {Function} dependencias.verificarVitoria - (mundo) => boolean.
- * @param {number} [dependencias.passosMaximos] - Limite de passos da execução.
- * @returns {{proximoPasso: Function, obterPassos: Function}} Interpretador.
- */
-export function criarInterpretador(dependencias) {
-  const { programa, mundo, robo, executarAcao, verificarVitoria } = dependencias;
-  const passosMaximos = dependencias.passosMaximos ?? PASSOS_MAXIMOS_PADRAO;
-  const estado = { area: AREA_MAIN, indice: PRIMEIRO_SLOT, pilha: [], passos: 0, chamadas: 0 };
-
-  function parada(motivo) {
-    return { parou: true, motivo, passos: estado.passos };
+export class Interpretador {
+  /**
+   * Cria o interpretador de uma execução.
+   * @param {object} dependencias - Dependências injetadas.
+   * @param {object} dependencias.programa - Slots de MAIN, PROC1 e PROC2.
+   * @param {object} dependencias.mundo - Mundo do nível.
+   * @param {object} dependencias.robo - Robô.
+   * @param {Function} dependencias.executarAcao - (robo, mundo, comando) => boolean.
+   * @param {Function} dependencias.verificarVitoria - (mundo) => boolean.
+   * @param {number} [dependencias.passosMaximos] - Limite de passos da execução.
+   */
+  constructor(dependencias) {
+    this.programa = dependencias.programa;
+    this.mundo = dependencias.mundo;
+    this.robo = dependencias.robo;
+    this.executarAcao = dependencias.executarAcao;
+    this.verificarVitoria = dependencias.verificarVitoria;
+    this.passosMaximos = dependencias.passosMaximos ?? PASSOS_MAXIMOS_PADRAO;
+    this.area = AREA_MAIN;
+    this.indice = PRIMEIRO_SLOT;
+    this.pilha = [];
+    this.passos = 0;
+    this.chamadas = 0;
   }
 
-  function chamar(comando) {
-    estado.chamadas += 1;
-    estado.pilha.push({ area: estado.area, indice: estado.indice });
-    estado.area = AREA_DO_COMANDO[comando];
-    estado.indice = PRIMEIRO_SLOT;
+  /**
+   * Informa quantos passos (ações primitivas) já foram executados.
+   * @returns {number} Total de passos.
+   */
+  obterPassos() {
+    return this.passos;
   }
 
-  function retornar() {
-    const { area, indice } = estado.pilha.pop();
-    estado.area = area;
-    estado.indice = indice;
+  parar(motivo) {
+    return { parou: true, motivo, passos: this.passos };
   }
 
-  function executar(comando, posicao) {
-    estado.chamadas = 0;
-    estado.passos += 1;
-    const efetiva = executarAcao(robo, mundo, comando);
-    const venceu = verificarVitoria(mundo);
+  chamar(comando) {
+    this.chamadas += 1;
+    this.pilha.push({ area: this.area, indice: this.indice });
+    this.area = AREA_DO_COMANDO[comando];
+    this.indice = PRIMEIRO_SLOT;
+  }
+
+  retornar() {
+    const { area, indice } = this.pilha.pop();
+    this.area = area;
+    this.indice = indice;
+  }
+
+  executar(comando, posicao) {
+    this.chamadas = 0;
+    this.passos += 1;
+    const efetiva = this.executarAcao(this.robo, this.mundo, comando);
+    const venceu = this.verificarVitoria(this.mundo);
     const motivo = venceu ? MOTIVO_VITORIA : undefined;
-    return { parou: venceu, motivo, comando, efetiva, posicao, passos: estado.passos };
+    return { parou: venceu, motivo, comando, efetiva, posicao, passos: this.passos };
   }
 
   /**
@@ -61,30 +78,48 @@ export function criarInterpretador(dependencias) {
    * @returns {{parou: boolean, motivo?: string, comando?: string, efetiva?: boolean,
    *   posicao?: {area: string, indice: number}, passos: number}} Resultado do passo.
    */
-  function proximoPasso() {
+  proximoPasso() {
     for (;;) {
-      const sequencia = programa[estado.area];
-      const acabouSequencia = estado.indice >= sequencia.length;
-      if (acabouSequencia && estado.pilha.length === 0) return parada(MOTIVO_FIM_PROGRAMA);
+      const sequencia = this.programa[this.area];
+      const acabouSequencia = this.indice >= sequencia.length;
+      if (acabouSequencia && this.pilha.length === 0) return this.parar(MOTIVO_FIM_PROGRAMA);
       if (acabouSequencia) {
-        retornar();
+        this.retornar();
         continue;
       }
 
-      const posicao = { area: estado.area, indice: estado.indice };
-      const comando = sequencia[estado.indice];
-      estado.indice += 1;
+      const posicao = { area: this.area, indice: this.indice };
+      const comando = sequencia[this.indice];
+      this.indice += 1;
       if (estaVazio(comando)) continue;
 
-      if (comando in AREA_DO_COMANDO) {
-        if (estado.chamadas >= passosMaximos) return parada(MOTIVO_SEM_ACAO);
-        chamar(comando);
-        continue;
-      }
-      if (estado.passos >= passosMaximos) return parada(MOTIVO_LIMITE_PASSOS);
-      return executar(comando, posicao);
+      const resultado = this.tratarComando(comando, posicao);
+      if (resultado) return resultado;
     }
   }
 
-  return { proximoPasso, obterPassos: () => estado.passos };
+  /**
+   * Trata um comando lido: chamada empilha; ação primitiva é executada.
+   * @param {string} comando - Token lido do slot.
+   * @param {{area: string, indice: number}} posicao - Slot de origem.
+   * @returns {object|undefined} Resultado do passo, ou undefined para seguir lendo.
+   */
+  tratarComando(comando, posicao) {
+    if (comando in AREA_DO_COMANDO) {
+      if (this.chamadas >= this.passosMaximos) return this.parar(MOTIVO_SEM_ACAO);
+      this.chamar(comando);
+      return undefined;
+    }
+    if (this.passos >= this.passosMaximos) return this.parar(MOTIVO_LIMITE_PASSOS);
+    return this.executar(comando, posicao);
+  }
+}
+
+/**
+ * Cria o interpretador de uma execução.
+ * @param {object} dependencias - Ver o construtor de Interpretador.
+ * @returns {Interpretador} Interpretador novo.
+ */
+export function criarInterpretador(dependencias) {
+  return new Interpretador(dependencias);
 }
