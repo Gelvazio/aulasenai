@@ -188,7 +188,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.14 — Seletor de níveis e progresso salvo
-**Próximo passo:** depende da #444.13.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.97))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -197,6 +197,8 @@
 - **Arquivos:** fonte/src/interface/seletor-niveis.js
 - **Critérios:** Progresso só no navegador (localStorage com try/catch); nada no banco.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/seletor-niveis.js (montarSeletor, carregarProgresso, salvarProgresso) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); localStorage só em try/catch
 
 ### #444.15 — Tela de vitória e contagem de comandos usados
 **Próximo passo:** depende da #444.14.
