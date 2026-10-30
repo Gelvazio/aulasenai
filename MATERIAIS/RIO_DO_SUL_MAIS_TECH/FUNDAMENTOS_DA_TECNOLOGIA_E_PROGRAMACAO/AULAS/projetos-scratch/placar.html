@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Placar das Equipes - Projetos Scratch</title>
+  <link rel="stylesheet" href="assets/scratch.css">
+  <link rel="stylesheet" href="assets/placar.css">
+  <script src="assets/placar.js" defer></script>
+</head>
+<body class="tela-placar">
+  <main class="placar-pagina">
+    <header class="placar-topo">
+      <a class="voltar" href="index.html">&larr; Todos os projetos</a>
+      <h1>PLACAR DAS EQUIPES</h1>
+      <button id="botao-zerar-tudo" class="botao botao-perigo" type="button">Zerar placar</button>
+    </header>
+
+    <section class="placar-esquerda">
+      <div class="cartao timer" aria-label="Cronômetro">
+        <div id="timer-visor" class="timer-visor" role="timer" aria-live="off">30:00</div>
+        <progress id="timer-barra" class="progresso" value="0" max="100"></progress>
+        <div class="linha-botoes">
+          <button id="timer-iniciar" class="botao" type="button">Iniciar</button>
+          <button id="timer-pausar" class="botao" type="button">Pausar</button>
+          <button id="timer-zerar" class="botao" type="button">Zerar</button>
+        </div>
+        <div class="linha-botoes">
+          <label for="timer-minutos">Minutos</label>
+          <input id="timer-minutos" class="campo-entrada" type="number" min="1" max="180" value="30">
+          <button class="botao botao-mini" type="button" data-minutos="10">10</button>
+          <button class="botao botao-mini" type="button" data-minutos="30">30</button>
+          <button class="botao botao-mini" type="button" data-minutos="60">60</button>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <h2>Projeto da vez</h2>
+        <select id="projeto-atual" class="campo-entrada" aria-label="Projeto da vez"></select>
+        <div class="linha-botoes">
+          <input id="nome-equipe" class="campo-entrada" type="text" maxlength="20" placeholder="Nome da equipe">
+          <button id="botao-add-equipe" class="botao" type="button">+ Equipe</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="placar-direita" aria-label="Ranking">
+      <ol id="ranking" class="ranking"></ol>
+      <p id="aviso-vazio" class="aviso-vazio">Crie as equipes para começar (até 8).</p>
+    </section>
+  </main>
+</body>
+</html>

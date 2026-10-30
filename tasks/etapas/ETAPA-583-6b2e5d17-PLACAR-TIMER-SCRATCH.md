@@ -9,3 +9,5 @@
 - **Nível:** MEDIO — Jev (confiança 0,92) · **Modelo:** só Sonnet · **Effort:** medium
 - **Critérios:** equipes (nome e cor), pontos por projeto e bônus, ranking com medalhas, timer regressivo (iniciar, pausar, zerar, alerta sonoro), dados salvos no navegador, sem rolagem na tela.
 - **Verificação:** `node --check`; leitura do HTML/CSS.
+
+- **Entrega #436.1:** `placar.html`, `assets/placar.css`, `assets/placar.js` e link no `index.html`. Até 8 equipes, pontos por projeto (+1, +5, +10, bônus), ranking com medalhas, timer 1 a 180 min com alerta sonoro, dados no `localStorage`. **Verificação:** `node --check` ok; tela não conferida (sem navegador).
