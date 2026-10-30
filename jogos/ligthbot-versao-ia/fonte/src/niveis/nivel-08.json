@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 08 - Rotina e sub-rotina",
+  "alturas": [
+    [1, 1, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 1, 1]
+  ],
+  "objetivos": [[1, 0], [2, 1], [4, 2]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 8, "proc1": 2, "proc2": 4 },
+  "comandosLiberados": ["WALK", "LEFT", "RIGHT", "LIGHT", "P1", "P2"],
+  "passosMaximos": 1000
+}

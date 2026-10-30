@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 04 - Descida e abismo",
+  "alturas": [
+    [1, 1, 2, 1],
+    [1, 0, 0, 1],
+    [1, 1, 1, 1]
+  ],
+  "objetivos": [[3, 0], [3, 2]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 9, "proc1": 0, "proc2": 0 },
+  "comandosLiberados": ["WALK", "JUMP", "LEFT", "RIGHT", "LIGHT"],
+  "passosMaximos": 1000
+}

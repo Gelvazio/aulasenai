@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 07 - Corredor recursivo",
+  "alturas": [
+    [1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+  ],
+  "objetivos": [[2, 0], [4, 0], [6, 0]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 2, "proc1": 4, "proc2": 0 },
+  "comandosLiberados": ["WALK", "LIGHT", "P1"],
+  "passosMaximos": 1000
+}

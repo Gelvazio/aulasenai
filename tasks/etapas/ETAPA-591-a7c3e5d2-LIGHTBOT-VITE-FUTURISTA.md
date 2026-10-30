@@ -57,7 +57,7 @@
 - **Verificação:** node --check constantes.js sem erro; 5 primitivos, P1/P2 e motivos de parada conferidos contra o REGRAS-JOGO.md
 
 ### #444.4 — Níveis em JSON: formato e os 10 primeiros níveis
-**Próximo passo:** depende da #444.3.
+**Próximo passo:** entregue.
 - **Nível:** LEVE — classificado (sinais)
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -66,6 +66,8 @@
 - **Arquivos:** fonte/src/niveis/*.json
 - **Critérios:** Cada nível: alturas, objetivos, início, orientação, limites de MAIN/PROC1/PROC2, comandos liberados.
 - **Verificação:** JSON válido; solução manual de cada nível descrita na etapa.
+- **Entrega:** fonte/src/niveis/nivel-01.json a nivel-10.json e solucoes.md (gabarito do projeto, só na fonte) por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main).
+- **Verificação:** JSON válido; as 10 soluções simuladas contra as guardas do REGRAS-JOGO.md: todas dão vitória dentro dos limites e dos comandos liberados
 
 ### #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes
 **Próximo passo:** depende da #444.4.

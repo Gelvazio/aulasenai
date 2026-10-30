@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 05 - Escada de luzes",
+  "alturas": [
+    [1, 2, 3, 4, 4],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
+  ],
+  "objetivos": [[1, 0], [2, 0], [3, 0], [4, 0]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 9, "proc1": 0, "proc2": 0 },
+  "comandosLiberados": ["WALK", "JUMP", "LEFT", "RIGHT", "LIGHT"],
+  "passosMaximos": 1000
+}

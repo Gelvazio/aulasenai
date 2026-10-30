@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 01 - Primeiro giro",
+  "alturas": [
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1]
+  ],
+  "objetivos": [[0, 2]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 5, "proc1": 0, "proc2": 0 },
+  "comandosLiberados": ["WALK", "LEFT", "RIGHT", "LIGHT"],
+  "passosMaximos": 1000
+}

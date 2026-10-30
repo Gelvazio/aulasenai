@@ -1,0 +1,15 @@
+{
+  "nome": "Nível 09 - Mapa com desníveis",
+  "alturas": [
+    [1, 1, 2, 2, 0, 0],
+    [0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0]
+  ],
+  "objetivos": [[1, 0], [3, 0], [3, 1], [5, 2]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 14, "proc1": 0, "proc2": 0 },
+  "comandosLiberados": ["WALK", "JUMP", "LEFT", "RIGHT", "LIGHT"],
+  "passosMaximos": 1000
+}

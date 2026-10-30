@@ -310,3 +310,4 @@
 | #444.1 | Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.2 | Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore | 🟡 | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.3 | Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage) | 🟡 | PESADO · só Opus 5.5+/Fable, Sonnet ou DeepSeek | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.4 | Níveis em JSON: formato e os 10 primeiros níveis | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

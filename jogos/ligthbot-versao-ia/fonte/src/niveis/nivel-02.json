@@ -1,0 +1,13 @@
+{
+  "nome": "Nível 02 - Duas luzes em linha",
+  "alturas": [
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
+  ],
+  "objetivos": [[2, 0], [4, 0]],
+  "inicio": { "x": 0, "y": 0, "orientacao": 1 },
+  "limites": { "main": 7, "proc1": 0, "proc2": 0 },
+  "comandosLiberados": ["WALK", "LEFT", "RIGHT", "LIGHT"],
+  "passosMaximos": 1000
+}
