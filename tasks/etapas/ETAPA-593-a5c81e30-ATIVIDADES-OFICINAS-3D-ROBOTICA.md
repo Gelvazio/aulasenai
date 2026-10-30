@@ -288,7 +288,7 @@
 
 ### #436.20 — Seeds no banco (objetivas e práticas)
 
-**Próximo passo:** aguardar a dependência.
+**Próximo passo:** ⛔ Bloqueado em 2026-10-30: o conector Supabase (`execute_sql`) respondeu "You do not have permission to perform this action" até para `select 1`. Quando o acesso voltar: (1) conferir se a matéria "Oficinas de Impressão 3D e Robótica" e as 9 aulas existem no banco (uma consulta anterior indicou que a matéria não tem linha; criar matéria/aulas exige pedido do usuário, `scripts/seeds/README.md`); (2) as 9 práticas já têm seed em `database/2026-10-30-atividade-pratica-aula-NN-seed-atividades.sql`; (3) as 9 objetivas ainda NÃO têm seed: gerar o gabarito para o banco (`scripts/gerar-seed-atividades.py --so=...`, hoje fixo na matéria INTRODUCAO-TIC, precisa de adaptação); (4) registrar PENDENTE em `database/SEEDS-APLICADOS.md`, aplicar com `dividir_seed.py`, conferir md5 e marcar CONCLUÍDO.
 
 - **Nível:** PESADO — classificado (sinais)
 - **Modelo:** só Opus 5.5+/Fable, Sonnet ou DeepSeek — nunca outro

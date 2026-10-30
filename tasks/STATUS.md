@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #436-a5c81e30 — [Atividades das 9 aulas de Oficinas de Impressão 3D e Robótica](etapas/ETAPA-593-a5c81e30-ATIVIDADES-OFICINAS-3D-ROBOTICA.md) · 🔄 Em andamento (plano aprovado pelo usuário em 2026-10-30) · — (não reservável)
-  - #436.20 — Seeds no banco (objetivas e práticas) · ⬜ Pendente (depende da #436.19) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.20 — Seeds no banco (objetivas e práticas) · ⛔ Bloqueado (conector Supabase sem permissão em 2026-10-30; destrava quando o usuário liberar o execute_sql) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #436.21 — Conferência final e entrega · ⬜ Pendente (depende da #436.20) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
