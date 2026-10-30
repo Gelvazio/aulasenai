@@ -6,7 +6,7 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #444.2 — Esqueleto Vite: package.json, vite.config.js, fonte/index.html, .gitignore · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 22:24)
   - #444.3 — Arquivo de constantes (orientações, limites, tamanhos, textos, chaves de storage) · ⬜ Pendente (depende da #444.2) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
   - #444.4 — Níveis em JSON: formato e os 10 primeiros níveis · ⬜ Pendente (depende da #444.3) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
   - #444.5 — Modelo do mundo: matrizes de alturas, objetivos e luzes · ⬜ Pendente (depende da #444.4) · `MEDIO · effort medium` · só Sonnet
