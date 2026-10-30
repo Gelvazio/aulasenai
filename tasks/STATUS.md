@@ -5,28 +5,28 @@
 
 ## Tarefas
 
-- #436-a5c81e30 — [Atividades das 9 aulas de Oficinas de Impressão 3D e Robótica](etapas/ETAPA-593-a5c81e30-ATIVIDADES-OFICINAS-3D-ROBOTICA.md) · ⬜ Pendente (plano aprovado pelo usuário em 2026-10-30) · — (não reservável)
-  - #436.1 — Objetiva de 50 questões da aula 01 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.2 — Objetiva de 50 questões da aula 02 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.3 — Objetiva de 50 questões da aula 03 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.4 — Objetiva de 50 questões da aula 04 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.5 — Objetiva de 50 questões da aula 05 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.6 — Objetiva de 50 questões da aula 06 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.7 — Objetiva de 50 questões da aula 07 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.8 — Objetiva de 50 questões da aula 08 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.9 — Objetiva de 50 questões da aula 09 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.10 — Prática 10 × 3 da aula 01 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.11 — Prática 10 × 3 da aula 02 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.12 — Prática 10 × 3 da aula 03 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.13 — Prática 10 × 3 da aula 04 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.14 — Prática 10 × 3 da aula 05 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.15 — Prática 10 × 3 da aula 06 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.16 — Prática 10 × 3 da aula 07 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.17 — Prática 10 × 3 da aula 08 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.18 — Prática 10 × 3 da aula 09 · ⬜ Pendente · nível a classificar pelo Jev
-  - #436.19 — Índice, menu das atividades e status · ⬜ Pendente (depende da #436.1 a #436.18) · nível a classificar pelo Jev
-  - #436.20 — Seeds no banco (objetivas e práticas) · ⬜ Pendente (depende da #436.19) · nível a classificar pelo Jev
-  - #436.21 — Conferência final e entrega · ⬜ Pendente (depende da #436.20) · nível a classificar pelo Jev
+- #436-a5c81e30 — [Atividades das 9 aulas de Oficinas de Impressão 3D e Robótica](etapas/ETAPA-593-a5c81e30-ATIVIDADES-OFICINAS-3D-ROBOTICA.md) · 🔄 Em andamento (plano aprovado pelo usuário em 2026-10-30) · — (não reservável)
+  - #436.1 — Objetiva de 50 questões da aula 01 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a1) (desde 2026-10-30 19:36)
+  - #436.2 — Objetiva de 50 questões da aula 02 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a2) (desde 2026-10-30 19:36)
+  - #436.3 — Objetiva de 50 questões da aula 03 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a3) (desde 2026-10-30 19:36)
+  - #436.4 — Objetiva de 50 questões da aula 04 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a4) (desde 2026-10-30 19:36)
+  - #436.5 — Objetiva de 50 questões da aula 05 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a5) (desde 2026-10-30 19:36)
+  - #436.6 — Objetiva de 50 questões da aula 06 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a6) (desde 2026-10-30 19:36)
+  - #436.7 — Objetiva de 50 questões da aula 07 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a7) (desde 2026-10-30 19:36)
+  - #436.8 — Objetiva de 50 questões da aula 08 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a8) (desde 2026-10-30 19:36)
+  - #436.9 — Objetiva de 50 questões da aula 09 · 🔄 Em execução · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek · Claude Code (Sonnet 5.5 · executor-pesado; líder Sonnet 5.5) (local · main · a9) (desde 2026-10-30 19:36)
+  - #436.10 — Prática 10 × 3 da aula 01 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.11 — Prática 10 × 3 da aula 02 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.12 — Prática 10 × 3 da aula 03 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.13 — Prática 10 × 3 da aula 04 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.14 — Prática 10 × 3 da aula 05 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.15 — Prática 10 × 3 da aula 06 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.16 — Prática 10 × 3 da aula 07 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.17 — Prática 10 × 3 da aula 08 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.18 — Prática 10 × 3 da aula 09 · ⬜ Pendente · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.19 — Índice, menu das atividades e status · ⬜ Pendente (depende da #436.1 a #436.18) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.20 — Seeds no banco (objetivas e práticas) · ⬜ Pendente (depende da #436.19) · `PESADO · effort high` · só Opus 5.5+/Fable, Sonnet ou DeepSeek
+  - #436.21 — Conferência final e entrega · ⬜ Pendente (depende da #436.20) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · ✅ Concluído
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
 - #434-d8914710 — [Gerenciar Aulas não acha a matéria (buscar por id nas 28 matérias)](etapas/ETAPA-581-d8914710-CORRIGIR-GERENCIAR-MATERIA.md) · 🔄 Em andamento (falta 434.2) · — (não reservável)
