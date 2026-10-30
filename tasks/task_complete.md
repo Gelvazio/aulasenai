@@ -325,3 +325,4 @@
 | #444.16 | CSS: tokens futuristas em :root e base (fundo, grade, tipografia) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.17 | CSS: componentes (cartões holográficos, botões, slots, medidores de telemetria) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.18 | CSS: mapa e robô | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.19 | CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |

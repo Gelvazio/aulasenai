@@ -1,0 +1,100 @@
+/* Acessibilidade: foco visivel, telas pequenas, movimento reduzido e alto contraste.
+   Os tokens de :root vem do base.css. */
+
+:focus-visible {
+  outline: 2px solid var(--cor-magenta, #ff2bd6);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+progress:focus-visible,
+dialog:focus-visible {
+  outline: 2px solid var(--cor-magenta, #ff2bd6);
+  outline-offset: 3px;
+}
+
+.somente-leitor-de-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .pagina {
+    padding: 12px 10px;
+  }
+
+  .area-jogo {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa__svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .botao,
+  .comando,
+  .nivel-botao,
+  .slot,
+  .slot__botao {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .controles {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+
+  .robo,
+  .robo *,
+  .mapa__lampada,
+  .fundo-rede__no,
+  .fundo-rede__linha {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+  }
+}
+
+@media (forced-colors: active) {
+  .botao,
+  .comando,
+  .nivel-botao,
+  .slot,
+  .slot__botao {
+    border: 2px solid ButtonText;
+  }
+
+  .slot--atual,
+  .area-comandos--ativa,
+  .nivel-botao--atual {
+    border-color: Highlight;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}

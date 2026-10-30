@@ -253,7 +253,7 @@
 - **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.19 — CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion)
-**Próximo passo:** depende da #444.18.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -262,6 +262,8 @@
 - **Arquivos:** fonte/src/estilos/acessibilidade.css
 - **Critérios:** 1 coluna até 720 px sem rolagem horizontal; outline magenta em :focus-visible.
 - **Verificação:** Leitura.
+- **Entrega:** fonte/src/estilos/acessibilidade.css (foco, 720px, reduced-motion, forced-colors) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.20 — Fundo animado: rede de nós em SVG
 **Próximo passo:** depende da #444.19.
