@@ -297,3 +297,5 @@
 | #438 | Botão "Início" volta ao passo 1 | 🟡 | — | — | ✅ Concluído | — | ETAPA-585-4d8e2b60 |
 | #439.1 | Atualizar os tempos nos 12 projetos | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-586-7a3f9c15 |
 | #439 | Tempos realistas nos projetos Scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-586-7a3f9c15 |
+| #440.1 | Escrever o AGENTS.md da pasta | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-587-5c2e8a41 |
+| #440 | AGENTS.md da pasta projetos-scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-587-5c2e8a41 |
