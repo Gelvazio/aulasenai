@@ -7,3 +7,4 @@
 ### #439.1 — Atualizar os tempos nos 12 projetos
 - **Nível:** LEVE — Jev (confiança 0,53 → matriz) · **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash · **Effort:** low
 - **Verificação:** `grep -o "Tempo: [0-9]* min"` em cada projeto bate com a tabela.
+- **Entrega #439.1:** Tempo atualizado nos 12 projetos (30/30/40/40/45/30/40/45/50/45/40/60 min). **Verificação:** grep conferido; tela não conferida.

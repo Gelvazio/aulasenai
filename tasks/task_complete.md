@@ -295,3 +295,5 @@
 | #437 | Botão "Início" na navegação dos projetos Scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-584-9c41e7a2 |
 | #438.1 | Início vai ao passo 1 | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-585-4d8e2b60 |
 | #438 | Botão "Início" volta ao passo 1 | 🟡 | — | — | ✅ Concluído | — | ETAPA-585-4d8e2b60 |
+| #439.1 | Atualizar os tempos nos 12 projetos | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-586-7a3f9c15 |
+| #439 | Tempos realistas nos projetos Scratch | 🟡 | — | — | ✅ Concluído | — | ETAPA-586-7a3f9c15 |
