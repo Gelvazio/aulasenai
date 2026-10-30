@@ -6,7 +6,6 @@
 ## Tarefas
 
 - #444-a7c3e5d2 — [Light Bot em Vite com visual futurista](etapas/ETAPA-591-a7c3e5d2-LIGHTBOT-VITE-FUTURISTA.md) · 🔄 Em andamento (plano aprovado em 2026-10-29) · — (não reservável)
-  - #444.10 — Desenho do mapa (grade isométrica em SVG) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a10; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.11 — Desenho e animação do robô (andar, pular, girar, acender) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a11; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.12 — Paleta de comandos e áreas MAIN, PROC1 e PROC2 (clique para inserir e remover) · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a12; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)
   - #444.13 — Controles: executar, passo a passo, parar, reiniciar, velocidade · 🔄 Em execução · `MEDIO · effort medium` · só Sonnet · Claude Code (Sonnet 5.5 · executor-medio a13; líder Sonnet 5.5) (local · main) (desde 2026-10-29 22:33)

@@ -136,7 +136,7 @@
 - **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.10 — Desenho do mapa (grade isométrica em SVG)
-**Próximo passo:** depende da #444.9.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.88))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -145,6 +145,8 @@
 - **Arquivos:** fonte/src/interface/mapa.js
 - **Critérios:** Blocos por altura, luzes azuis, abismo sem bloco; sem `style=` inline.
 - **Verificação:** `node --check`; leitura.
+- **Entrega:** fonte/src/interface/mapa.js (desenharMapa, atualizarLuzes, projetarCelula) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.11 — Desenho e animação do robô (andar, pular, girar, acender)
 **Próximo passo:** depende da #444.10.

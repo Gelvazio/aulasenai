@@ -316,3 +316,4 @@
 | #444.7 | Memória do programa: slots de MAIN, PROC1 e PROC2 | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.8 | Interpretador com pilha de chamadas P1 e P2 e limite de passos | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
 | #444.9 | Verificação de vitória (todas as luzes acesas) | 🟡 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
+| #444.10 | Desenho do mapa (grade isométrica em SVG) | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-591-a7c3e5d2 |
