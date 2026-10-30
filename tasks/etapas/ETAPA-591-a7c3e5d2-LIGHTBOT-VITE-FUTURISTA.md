@@ -96,7 +96,7 @@
 - **Verificação:** node --check sem erro; guardas de WALK (frente = atual, >0) e JUMP (frente = atual+1 ou menor, >0) conferidas contra REGRAS-JOGO.md
 
 ### #444.7 — Memória do programa: slots de MAIN, PROC1 e PROC2
-**Próximo passo:** depende da #444.6.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -105,6 +105,8 @@
 - **Arquivos:** fonte/src/nucleo/programa.js
 - **Critérios:** Slots de tamanho fixo por nível; slot vazio é ignorado; contagem de comandos usados.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/nucleo/programa.js (slots fixos, inserir, remover, limpar, contar) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; contagem = slots preenchidos (REGRAS-JOGO.md seção 10)
 
 ### #444.8 — Interpretador com pilha de chamadas P1 e P2 e limite de passos
 **Próximo passo:** depende da #444.7.
