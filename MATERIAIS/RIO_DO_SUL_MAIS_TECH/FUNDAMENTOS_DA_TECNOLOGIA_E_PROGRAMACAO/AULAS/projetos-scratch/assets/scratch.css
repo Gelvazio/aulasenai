@@ -190,3 +190,22 @@ ol, ul { padding-left: 1.3rem; }
 .tag-hora { float: right; font-family: var(--fonte-titulo); font-size: 0.65rem; padding: 0.1rem 0.45rem; border: 1px solid var(--cor-ciano); border-radius: 999px; color: var(--cor-ciano); }
 @media (max-width: 1000px) { .aulas { grid-template-columns: 1fr; } }
 @media (max-width: 720px) { .grade-compacta { grid-template-columns: 1fr 1fr; } }
+
+/* Paginas de projeto: tudo numa tela, sem barra de rolagem (a escala do passo se ajusta no scratch.js) */
+html:has(.passo), body:has(.passo) { height: 100dvh; overflow: hidden; }
+.pagina:has(.passo) { display: flex; flex-direction: column; height: 100dvh; max-width: 1100px; padding: 0.5rem 1rem 4.4rem; }
+.pagina:has(.passo) .topo { margin-bottom: 0.4rem; }
+.pagina:has(.passo) > .cartao { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 1rem; padding: 0.5rem 1rem; margin-bottom: 0.4rem; }
+.pagina:has(.passo) > .cartao h1 { font-size: 1.2rem; margin: 0; }
+.pagina:has(.passo) > .cartao p { margin: 0; font-size: 0.85rem; flex: 1 1 280px; }
+.pagina:has(.passo) > .cartao .fichas { margin: 0; gap: 0.3rem; }
+.pagina:has(.passo) > .cartao .fichas li { font-size: 0.72rem; padding: 0.05rem 0.45rem; }
+.pagina:has(.passo) .contador-passos { margin: 0.15rem 0 0.4rem; font-size: 0.75rem; }
+.passo.ativo { flex: 1 1 auto; min-height: 0; overflow: hidden; font-size: calc(1rem * var(--escala-passo, 1)); margin-bottom: 0; padding: 0.7rem 1.1rem; }
+.passo h2 { font-size: 1.35em; margin-bottom: 0.3em; }
+.passo p { margin: 0.35em 0; }
+.passo .bloco { font-size: 0.9em; }
+.passo .dica, .passo .atencao, .passo .desafio, .passo .entrega { margin: 0.5em 0; padding: 0.4em 0.8em; }
+.passo li { margin: 0.1em 0; }
+.navegacao { padding: 0.45rem 1rem; }
+.seta { padding: 0.5rem 1rem; }

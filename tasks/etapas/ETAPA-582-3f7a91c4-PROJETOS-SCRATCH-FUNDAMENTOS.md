@@ -53,3 +53,4 @@
 ### #435.7 — Páginas dos projetos sem barra de rolagem
 **Próximo passo:** CSS em tela cheia (100dvh, cabeçalho compacto) e ajuste automático de escala do passo em `scratch.js`.
 - **Nível:** MEDIO · **Modelo:** só Sonnet · **Pedido:** "não deve ter barra de rolagem nas páginas dos projetos"
+- **Entrega #435.7:** CSS em tela cheia (100dvh, cabeçalho compacto) e `ajustarEscala` no `scratch.js` (reduz a fonte do passo até caber, mínimo 50%). **Verificação:** `node --check` ok; tela não conferida (sem navegador).

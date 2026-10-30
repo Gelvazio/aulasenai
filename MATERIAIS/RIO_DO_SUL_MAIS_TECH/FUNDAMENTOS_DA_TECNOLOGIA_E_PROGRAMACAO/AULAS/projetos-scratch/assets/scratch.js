@@ -7,6 +7,21 @@
 
   const CLASSE_ATIVO = "ativo";
   const CHAVE_PREFIXO = "scratch-passo:";
+  const ESCALA_MINIMA = 0.5;
+  const PASSO_ESCALA = 0.04;
+
+  /**
+   * Reduz a escala do passo ativo até ele caber na tela, sem barra de rolagem.
+   * @param {HTMLElement} passo - Passo visível.
+   */
+  function ajustarEscala(passo) {
+    let escala = 1;
+    passo.style.setProperty("--escala-passo", escala);
+    while (passo.scrollHeight > passo.clientHeight && escala > ESCALA_MINIMA) {
+      escala = Math.round((escala - PASSO_ESCALA) * 100) / 100;
+      passo.style.setProperty("--escala-passo", escala);
+    }
+  }
 
   /**
    * Lê o último passo visto neste projeto (se o navegador permitir).
@@ -62,7 +77,7 @@
       barra.value = atual + 1;
       contador.textContent = "Passo " + (atual + 1) + " de " + passos.length;
       salvarPasso(chave, atual);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      ajustarEscala(passos[atual]);
     }
 
     botaoVoltar.addEventListener("click", () => mostrar(atual - 1));
@@ -71,6 +86,7 @@
       if (evento.key === "ArrowRight") mostrar(atual + 1);
       if (evento.key === "ArrowLeft") mostrar(atual - 1);
     });
+    window.addEventListener("resize", () => ajustarEscala(passos[atual]));
     mostrar(atual);
   }
 

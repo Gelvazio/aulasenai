@@ -286,3 +286,4 @@
 | #435.3 | Projetos da Aula 2 (07 a 12) | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
 | #435.4 | index.html, conferência e entrega | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
 | #435.6 | Índice compacto: os 12 cards numa tela só | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
+| #435.7 | Páginas dos projetos sem barra de rolagem | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
