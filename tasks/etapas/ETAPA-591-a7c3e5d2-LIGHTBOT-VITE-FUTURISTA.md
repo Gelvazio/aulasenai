@@ -15,7 +15,7 @@
 
 ### Decisões
 - **Proposta (aguarda o "sim"):** fonte em `ligthbot-versao-ia/fonte/` (Vite `root`), build com `outDir: '../'` e `emptyOutDir: false`, para o `index.html` gerado ficar em `ligthbot-versao-ia/index.html` e o card `ligthbot-versao-ia/` abrir direto.
-- **Aprovação do usuário:** ⬜ pendente (tarefa grande: estrutura nova com várias partes).
+- **Aprovação do usuário:** ✅ 2026-10-29 (usuário, no chat): "Sim, aprovo o plano da #444 e as decisões sugeridas" (JUMP para baixo de qualquer altura, vitória a cada ação, limite de 1000 passos, salvaguarda 8.4).
 
 ### #444.1 — Detalhar o REGRAS-JOGO.md (ambiguidades, limites, formato de nível, exemplos)
 **Próximo passo:** entregue; a #444.2 aguarda o "sim" do usuário ao plano.
