@@ -47,3 +47,5 @@
 **Próximo passo:** reduzir cabeçalho e cards do `index.html` e organizar as Aulas 1 e 2 lado a lado, com 3 colunas de cards cada, para caber sem rolagem em tela de desktop.
 - **Nível:** MEDIO — Jev (confiança 0,73) · **Modelo:** só Sonnet · **Pedido do usuário:** "diminua o menu e o tamanho dos cards, mas faça caber numa página"
 - **Verificação:** leitura do HTML/CSS; sem navegador (usuário confere na tela).
+
+- **Entrega #435.6:** `index.html` refeito (cabeçalho em uma linha, Aula 1 e Aula 2 lado a lado, 3 colunas de cards pequenos) e bloco `.indice-compacto` no `scratch.css`. **Verificação:** 12 cards, links existem; tela não conferida (sem navegador).

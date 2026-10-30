@@ -172,3 +172,21 @@ ol, ul { padding-left: 1.3rem; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Indice compacto: os 12 projetos cabem numa tela */
+.indice-compacto { max-width: 1400px; padding: 0.6rem 1rem 1rem; }
+.indice-compacto .cabecalho { padding: 0.6rem 1.2rem; margin-bottom: 0.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.2rem; }
+.indice-compacto h1 { font-size: 1.5rem; margin: 0; }
+.indice-compacto .cabecalho p { margin: 0; font-size: 0.9rem; flex: 1 1 320px; }
+.indice-compacto .fichas { margin: 0; gap: 0.4rem; }
+.indice-compacto .fichas li { font-size: 0.78rem; padding: 0.1rem 0.5rem; }
+.aulas { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.aula-titulo { font-size: 1rem; margin: 0 0 0.5rem; }
+.grade-compacta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.indice-compacto .projeto-card { padding: 0.6rem 0.8rem; margin: 0; }
+.indice-compacto .projeto-card .numero { font-size: 1.3rem; }
+.indice-compacto .projeto-card h3 { font-size: 0.85rem; margin: 0.1rem 0; }
+.indice-compacto .projeto-card p { font-size: 0.78rem; line-height: 1.35; margin: 0; color: var(--cor-texto-suave); }
+.tag-hora { float: right; font-family: var(--fonte-titulo); font-size: 0.65rem; padding: 0.1rem 0.45rem; border: 1px solid var(--cor-ciano); border-radius: 999px; color: var(--cor-ciano); }
+@media (max-width: 1000px) { .aulas { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .grade-compacta { grid-template-columns: 1fr 1fr; } }
