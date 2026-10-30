@@ -123,7 +123,7 @@
 - **Verificação:** node --check sem erro; leitura contra REGRAS-JOGO.md seções 8 e 9 (passo só por ação primitiva, retorno ao slot seguinte, vitória a cada ação)
 
 ### #444.9 — Verificação de vitória (todas as luzes acesas)
-**Próximo passo:** depende da #444.8.
+**Próximo passo:** entregue.
 - **Nível:** LEVE — classificado (sinais)
 - **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash — nunca outro
 - **Effort:** low
@@ -132,6 +132,8 @@
 - **Arquivos:** fonte/src/nucleo/vitoria.js
 - **Critérios:** Checada a cada passo executado.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/nucleo/vitoria.js (todasLuzesAcesas) por Claude Code (Haiku 5.5 · executor-leve; líder Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline)
 
 ### #444.10 — Desenho do mapa (grade isométrica em SVG)
 **Próximo passo:** depende da #444.9.
