@@ -1,0 +1,182 @@
+/* Mapa isométrico (SVG) e robô. Tokens de :root vêm de base.css. */
+
+.mapa {
+  width: 100%;
+  display: block;
+}
+
+.mapa__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* ---------- Blocos ---------- */
+
+.mapa__topo,
+.mapa__lado-esquerdo,
+.mapa__lado-direito {
+  stroke-linejoin: round;
+  transition: fill 200ms ease;
+}
+
+.mapa__topo {
+  fill: #3b1d78;
+  stroke: var(--cor-ciano);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.55));
+}
+
+.mapa__topo[data-altura="1"] { fill: #2a1560; }
+.mapa__topo[data-altura="2"] { fill: #3f2090; }
+.mapa__topo[data-altura="3"] { fill: #5a2fc0; }
+.mapa__topo[data-altura="4"] { fill: #7c4dff; }
+
+.mapa__lado-esquerdo {
+  fill: #1a0d3d;
+  stroke: rgba(0, 240, 255, 0.35);
+  stroke-width: 1;
+}
+
+.mapa__lado-direito {
+  fill: #12082b;
+  stroke: rgba(0, 240, 255, 0.25);
+  stroke-width: 1;
+}
+
+.mapa__lado-esquerdo[data-altura="3"],
+.mapa__lado-esquerdo[data-altura="4"] { fill: #240f52; }
+
+.mapa__lado-direito[data-altura="3"],
+.mapa__lado-direito[data-altura="4"] { fill: #190a3a; }
+
+/* ---------- Lâmpada-objetivo ---------- */
+
+.mapa__lampada {
+  fill: #0a3a5c;
+  stroke: var(--cor-ciano);
+  stroke-width: 1.5;
+  opacity: 0.75;
+  transition: fill 250ms ease, opacity 250ms ease;
+}
+
+.mapa__lampada--acesa {
+  fill: var(--cor-ciano);
+  stroke: #ffffff;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--cor-ciano)) drop-shadow(0 0 18px var(--cor-ciano));
+  animation: lampada-pulsar 1.4s ease-in-out infinite;
+}
+
+@keyframes lampada-pulsar {
+  0%, 100% { filter: drop-shadow(0 0 6px var(--cor-ciano)) drop-shadow(0 0 12px var(--cor-ciano)); }
+  50% { filter: drop-shadow(0 0 12px var(--cor-ciano)) drop-shadow(0 0 28px var(--cor-ciano)); }
+}
+
+/* ---------- Robô ---------- */
+
+.robo {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  pointer-events: none;
+}
+
+.robo__corpo {
+  fill: var(--cor-magenta);
+  stroke: var(--cor-ciano);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 5px var(--cor-magenta));
+}
+
+.robo__cabeca {
+  fill: #1b1038;
+  stroke: var(--cor-ciano);
+  stroke-width: 1.5;
+}
+
+.robo__antena {
+  stroke: var(--cor-ciano);
+  stroke-width: 2;
+  fill: var(--cor-ciano);
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: rotate 200ms ease;
+}
+
+.robo__olho {
+  fill: #ffffff;
+  stroke: var(--cor-ciano);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px var(--cor-ciano));
+  transition: translate 200ms ease;
+}
+
+/* A orientação gira a antena e desloca os olhos para o lado em que o robô olha. */
+.robo[data-orientacao="0"] .robo__antena { rotate: 0deg; }
+.robo[data-orientacao="1"] .robo__antena { rotate: 25deg; }
+.robo[data-orientacao="2"] .robo__antena { rotate: 0deg; }
+.robo[data-orientacao="3"] .robo__antena { rotate: -25deg; }
+
+.robo[data-orientacao="0"] .robo__olho { translate: 2px -1px; }
+.robo[data-orientacao="1"] .robo__olho { translate: 2px 1px; }
+.robo[data-orientacao="2"] .robo__olho { translate: -2px 1px; }
+.robo[data-orientacao="3"] .robo__olho { translate: -2px -1px; }
+
+/* ---------- Animações de ação (~300 ms cada) ---------- */
+
+.robo--andando { animation: robo-andar 300ms ease-in-out; }
+.robo--pulando { animation: robo-pular 300ms ease-out; }
+.robo--girando { animation: robo-girar 300ms ease-in-out; }
+.robo--acendendo { animation: robo-acender 300ms ease-in-out; }
+.robo--falha { animation: robo-falhar 300ms linear; }
+
+@keyframes robo-andar {
+  0%, 100% { translate: 0 0; scale: 1 1; }
+  50% { translate: 0 -3px; scale: 1.05 0.95; }
+}
+
+@keyframes robo-pular {
+  0% { translate: 0 0; scale: 1 1; }
+  40% { translate: 0 -14px; scale: 0.95 1.1; }
+  100% { translate: 0 0; scale: 1 1; }
+}
+
+@keyframes robo-girar {
+  0% { scale: 1 1; }
+  50% { scale: 0.7 1; }
+  100% { scale: 1 1; }
+}
+
+@keyframes robo-acender {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 0 transparent); }
+  50% { filter: brightness(1.6) drop-shadow(0 0 12px var(--cor-ciano)); }
+}
+
+@keyframes robo-falhar {
+  0%, 100% { translate: 0 0; }
+  20% { translate: -4px 0; }
+  40% { translate: 4px 0; }
+  60% { translate: -3px 0; }
+  80% { translate: 3px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa__lampada--acesa,
+  .robo--andando,
+  .robo--pulando,
+  .robo--girando,
+  .robo--acendendo,
+  .robo--falha {
+    animation: none;
+  }
+
+  .mapa__topo,
+  .mapa__lado-esquerdo,
+  .mapa__lado-direito,
+  .mapa__lampada,
+  .robo__antena,
+  .robo__olho {
+    transition: none;
+  }
+}

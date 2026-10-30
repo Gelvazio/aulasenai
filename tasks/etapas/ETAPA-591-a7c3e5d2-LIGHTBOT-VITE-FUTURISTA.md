@@ -240,7 +240,7 @@
 - **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.18 — CSS: mapa e robô
-**Próximo passo:** depende da #444.17.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (sinais)
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -249,6 +249,8 @@
 - **Arquivos:** fonte/src/estilos/mapa.css
 - **Critérios:** Brilho neon nas luzes; animação com @keyframes.
 - **Verificação:** Leitura.
+- **Entrega:** fonte/src/estilos/mapa.css (mapa, robô e animações) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.19 — CSS: responsivo e acessibilidade (720 px, foco visível, reduced-motion)
 **Próximo passo:** depende da #444.18.
