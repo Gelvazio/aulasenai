@@ -7,7 +7,6 @@
 
 - #435-3f7a91c4 — [Projetos Scratch passo a passo (12 projetos, 2 aulas) em Fundamentos da Tecnologia e Programação](etapas/ETAPA-582-3f7a91c4-PROJETOS-SCRATCH-FUNDAMENTOS.md) · 🔄 Em andamento (falta 435.5)
   - Subtarefas #435.1 a #435.4 entregues (CSS/JS, 12 projetos, index.html); linhas movidas para o task_complete.md
-  - #435.8 — Corrigir CSS: só o passo ativo aparece (passos empilhados e cortados) · ⬜ Pendente (livre para o Haiku) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash (Jev, confiança 0,91)
   - #435.5 — Ficha de critérios (opção B) no passo Entrega dos 12 projetos · ⬜ Pendente (livre para o Haiku) · `LEVE · effort low` · só Haiku 5.5 ou DeepSeek V4.1 Flash (nível decidido pelo Jev, confiança 0,96)
 - #435.1 — Base compartilhada (CSS/JS) e modelo de página · 🔄 Em execução · `PESADO · effort high` · só Sonnet (ou Opus 5.5+/Fable, DeepSeek) · Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-29 21:00)
   - #435.2 — Projetos da Aula 1 (01 a 06) · ⬜ Pendente (depende da #435.1) · `PESADO · effort high` · só Sonnet

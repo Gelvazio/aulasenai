@@ -60,3 +60,4 @@
 - **Nível:** LEVE — Jev (confiança 0,91) · **Modelo:** só Haiku 5.5 ou DeepSeek V4.1 Flash · **Effort:** low
 - **Critérios:** só um `.passo` visível por vez; sem barra de rolagem; resto do CSS intacto.
 - **Verificação:** leitura do CSS (seletores com `:not(.passo)`); tela conferida pelo usuário.
+- **Entrega #435.8:** em `assets/scratch.css`, os seletores do cabeçalho compacto passaram a usar `> .cartao:not(.passo)`, para o passo deixar de herdar `display: flex`. Só o passo ativo aparece. **Verificação:** leitura do CSS (grep dos seletores); tela a conferir pelo usuário.

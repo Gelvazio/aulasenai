@@ -287,3 +287,4 @@
 | #435.4 | index.html, conferência e entrega | 🟡 | PESADO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
 | #435.6 | Índice compacto: os 12 cards numa tela só | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
 | #435.7 | Páginas dos projetos sem barra de rolagem | 🟡 | MEDIO · só Sonnet | — | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
+| #435.8 | Corrigir CSS: só o passo ativo aparece | 🟢 | LEVE · só Haiku 5.5 ou DeepSeek V4.1 Flash | #435.7 | ✅ Concluído | — | ETAPA-582-3f7a91c4 |
