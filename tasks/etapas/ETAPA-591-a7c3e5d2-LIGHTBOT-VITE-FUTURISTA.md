@@ -266,7 +266,7 @@
 - **Verificação:** CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.20 — Fundo animado: rede de nós em SVG
-**Próximo passo:** depende da #444.19.
+**Próximo passo:** entregue.
 - **Nível:** MEDIO — classificado (jev (confiança 0.94))
 - **Modelo:** só Sonnet — nunca outro
 - **Effort:** medium
@@ -275,6 +275,8 @@
 - **Arquivos:** fonte/src/interface/fundo.js + estilos
 - **Critérios:** Linhas tracejadas e nós pulsando; desligado com reduced-motion.
 - **Verificação:** `node --check`.
+- **Entrega:** fonte/src/interface/fundo.js e fonte/src/estilos/fundo.css (rede de nós animada) por Claude Code (Sonnet 5.5) (local · main).
+- **Verificação:** node --check sem erro; exports conferidos contra o contrato; revisão de leitura (JSDoc, nomes em português, sem style= inline); CSS relido; tokens var(--...) conferidos contra o :root do base.css (nenhum indefinido); sem !important
 
 ### #444.21 — main.js: montar tudo com injeção de dependências
 **Próximo passo:** depende da #444.20.
